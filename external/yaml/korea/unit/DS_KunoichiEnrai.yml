@@ -3229,6 +3229,23 @@ skills:
             base: 55
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 입힙니다.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff">모든 화염 속성 저항 증감 효과를 해제</sec><sec typ="attr">재생성</sec>하고 3라운드 동안 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="0" r /></sec>를 감소시킵니다.
+        <sec typ="cond">스킬 사용 후</sec>, 자신의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 사거리 증감 효과를 모두 해제</sec>합니다.
+      JP: |-
+        単一対象に<sec typ="attr">保護無視</sec> <dmg elem="fire" />を与えます。
+        <sec typ="cond">命中時</sec>、対象の<sec typ="buff">すべての火属性抵抗増減効果を解除</sec><sec typ="attr">再生成</sec>し、3ラウンドの間<sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="0" r /></sec>を減少させます。
+        <sec typ="cond">スキル使用後</sec>、自分の<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 射程増減効果をすべて解除</sec>します。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="fire" /> to a single target.
+        <sec typ="cond">On hit</sec>, removes all fire resistance increase/decrease effects from the target, <sec typ="attr">regenerates</sec> them, and decreases <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="0" r /></sec> for 3 rounds.
+        <sec typ="cond">After using the skill</sec>, removes all <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> range increase/decrease effects</sec> from self.
+      TC: |-
+        對單一目標造成<sec typ="attr">無視保護</sec> <dmg elem="fire" />。
+        <sec typ="cond">命中時</sec>，解除目標所有火焰屬性抗性增減效果，並<sec typ="attr">重新生成</sec>，且在3回合內降低<sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="0" r /></sec>。
+        <sec typ="cond">技能使用後</sec>，解除自身所有<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 射程增減效果</sec>。
   "2":
     key: "2"
     icon: WideLightning
@@ -5954,6 +5971,23 @@ skills:
             base: 55
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 입힙니다.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff">모든 전기 속성 저항 증감 효과를 해제</sec><sec typ="attr">재생성</sec>하고 3라운드 동안 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="0" r /></sec>를 감소시킵니다.
+        <sec typ="cond">스킬 사용 후</sec>, 자신의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 사거리 증감 효과를 모두 해제</sec>합니다.
+      JP: |-
+        単一対象に<sec typ="attr">保護無視</sec> <dmg elem="lightning" />を与えます。
+        <sec typ="cond">命中時</sec>、対象の<sec typ="buff">すべての電気属性抵抗増減効果を解除</sec><sec typ="attr">再生成</sec>し、3ラウンドの間<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="0" r /></sec>を減少させます。
+        <sec typ="cond">スキル使用後</sec>、自分の<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 射程増減効果をすべて解除</sec>します。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> to a single target.
+        <sec typ="cond">On hit</sec>, removes all lightning resistance increase/decrease effects from the target, <sec typ="attr">regenerates</sec> them, and decreases <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="0" r /></sec> for 3 rounds.
+        <sec typ="cond">After using the skill</sec>, removes all <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> range increase/decrease effects</sec> from self.
+      TC: |-
+        對單一目標造成<sec typ="attr">無視保護</sec> <dmg elem="lightning" />。
+        <sec typ="cond">命中時</sec>，解除目標所有電氣屬性抗性增減效果，並<sec typ="attr">重新生成</sec>，且在3回合內降低<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電氣抗性 <val idx="0" r /></sec>。
+        <sec typ="cond">技能使用後</sec>，解除自身所有<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 射程增減效果</sec>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -6145,6 +6179,35 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신 외에 <cmt t="쿠노이치">$$KUNOICHI:0$</cmt>가 있을 경우</sec>, 자신은 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막/피해 감소 무시</sec> 효과를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신 외의 <cmt t="쿠노이치">$$KUNOICHI:0$</cmt>가 없을 경우</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 아군 공격기의 공격을 지원</sec>합니다.
+        <sec typ="cond">공격 적중 시</sec>, 대상이 <sec typ="cond"><buff typ="FireDMG_DOT" /> 지속 화염 피해</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 상태일 경우 <sec typ="dmg"><buff typ="FireATK_UP" /> / <buff typ="LightningATK_UP" /> 피해량 <val idx="2" slot="1" r /></sec>가 증가합니다.
+        $$KUNOICHI~
+        <char uid="DS_KunoichiZero" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiEnrai" />
+        ~$$KUNOICHI
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec><sec typ="cond">自分以外に<cmt t="クノイチ">$$KUNOICHI:0$</cmt>がいる場合</sec>、自分は<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア/ダメージ減少無視</sec>効果を獲得します。
+        <sec typ="cond">ラウンド開始時</sec><sec typ="cond">自分以外の<cmt t="クノイチ">$$KUNOICHI:0$</cmt>がいない場合</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 味方攻撃機の攻撃を支援</sec>します。
+        <sec typ="cond">攻撃命中時</sec>、対象が<sec typ="cond"><buff typ="FireDMG_DOT" /> 継続火炎ダメージ</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避減少</sec>状態の場合、<sec typ="dmg"><buff typ="FireATK_UP" /> / <buff typ="LightningATK_UP" /> ダメージ <val idx="2" slot="1" r /></sec>が増加します。
+        $$KUNOICHI~
+        <char uid="DS_KunoichiZero" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiEnrai" />
+        ~$$KUNOICHI
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if there is <cmt t="Kunoichi">$$KUNOICHI:0$</cmt> other than self</sec>, self gains <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier/Damage Reduction</sec>.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if there is no <cmt t="Kunoichi">$$KUNOICHI:0$</cmt> other than self</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports allied attackers' attacks</sec>.
+        <sec typ="cond">On attack hit</sec>, if the target is under <sec typ="cond"><buff typ="FireDMG_DOT" /> continuous fire damage</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> evade reduction</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> / <buff typ="LightningATK_UP" /> damage <val idx="2" slot="1" r /></sec> increases.
+        $$KUNOICHI~
+        <char uid="DS_KunoichiZero" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiEnrai" />
+        ~$$KUNOICHI
+      TC: |-
+        <sec typ="cond">回合開始時</sec><sec typ="cond">若自身以外還有<cmt t="女忍者">$$KUNOICHI:0$</cmt></sec>，自身獲得<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減少</sec>效果。
+        <sec typ="cond">回合開始時</sec><sec typ="cond">若自身以外沒有<cmt t="女忍者">$$KUNOICHI:0$</cmt></sec>，則<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 支援我軍攻擊器的攻擊</sec>。
+        <sec typ="cond">攻擊命中時</sec>，若目標處於<sec typ="cond"><buff typ="FireDMG_DOT" /> 持續火焰傷害</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避降低</sec>狀態，則<sec typ="dmg"><buff typ="FireATK_UP" /> / <buff typ="LightningATK_UP" /> 傷害 <val idx="2" slot="1" r /></sec>增加。
+        $$KUNOICHI~
+        <char uid="DS_KunoichiZero" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiEnrai" />
+        ~$$KUNOICHI
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -6423,6 +6486,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>이(가) 증가합니다.
+        <sec typ="cond">첫 라운드 이후 라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP를 <val idx="0" signless />(으)로 변경</sec>합니다.
+        <sec>자신이 스킬을 사용한 다음 라운드까지는 효과가 발동하지 않습니다.</sec>
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> <buff typ="TOGETHER_ATTACK" /> 지원/협동 공격 시</sec>, 다음 자신의 직접 공격 1회에 한하여 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="4" slot="1" r /></sec>가 증가합니다. (최대 1중첩)
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>が増加します。
+        <sec typ="cond">最初のラウンド以降のラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" /> APを <val idx="0" signless />に変更</sec>します。
+        <sec>自分がスキルを使用した次のラウンドまでは効果が発動しません。</sec>
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> <buff typ="TOGETHER_ATTACK" /> 支援/協同攻撃時</sec>、次の自分の直接攻撃1回に限り<sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="4" slot="1" r /></sec>が増加します。(最大1重複)
+      EN: |-
+        <sec typ="cond">At combat start</sec>, increases self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>.
+        <sec typ="cond">At the start of the round after the first</sec>, changes self's <sec typ="buff"><buff typ="AP_UP" /> AP to <val idx="0" signless /></sec>.
+        <sec>Effects do not activate until the round after self uses a skill.</sec>
+        <sec typ="cond">During <buff typ="SUPPORT_ATTACK" /> <buff typ="TOGETHER_ATTACK" /> support/cooperative attacks</sec>, increases <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="4" slot="1" r /></sec> for the next 1 direct attack only. (Max 1 stack)
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，增加自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>。
+        <sec typ="cond">第一回合之後的回合開始時</sec>，將自身的<sec typ="buff"><buff typ="AP_UP" /> AP變更為 <val idx="0" signless /></sec>。
+        <sec>在自身使用技能後的下一回合之前，效果不會發動。</sec>
+        <sec typ="cond">於<buff typ="SUPPORT_ATTACK" /> <buff typ="TOGETHER_ATTACK" /> 支援／協同攻擊時</sec>，僅下一次自身直接攻擊提升<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="4" slot="1" r /></sec>。(最多1層)
   "5":
     key: "5"
     icon: P.Beam
@@ -6641,6 +6725,39 @@ skills:
             base: 2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">면허개전</sec>을 보유한 <cmt t="쿠노이치">$$KUNOICHI:0$</cmt>에게 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="1" /></sec> 증가 효과를 부여합니다.
+        <sec typ="note">면허개전</sec>을 보유한 <char uid="DS_KunoichiKaen" />의 <sec typ="note">일격필살</sec> 효과가 대기를 통해 재활성화 될 수 있도록 합니다.
+        <sec typ="note">면허개전</sec>을 보유한 <char uid="DS_KunoichiZero" />의 <sec typ="note">가속</sec> 처치 효과 발동 시, 다른 <cmt t="쿠노이치">$$KUNOICHI:0$</cmt>에게도 동일한 효과를 부여하도록 합니다.
+        $$KUNOICHI~
+        <char uid="DS_KunoichiZero" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiEnrai" />
+        ~$$KUNOICHI
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">免許皆伝</sec>を保有した<cmt t="クノイチ">$$KUNOICHI:0$</cmt>に<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="1" /></sec>増加効果を付与します。
+        <sec typ="note">免許皆伝</sec>を保有した<char uid="DS_KunoichiKaen" />の<sec typ="note">一撃必殺</sec>効果が待機を通じて再活性化できるようにします。
+        <sec typ="note">免許皆伝</sec>を保有した<char uid="DS_KunoichiZero" />の<sec typ="note">加速</sec>の処置効果発動時、他の<cmt t="クノイチ">$$KUNOICHI:0$</cmt>にも同じ効果を付与します。
+        $$KUNOICHI~
+        <char uid="DS_KunoichiZero" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiEnrai" />
+        ~$$KUNOICHI
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases self's <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="0" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, grants a <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="1" /></sec> increase effect to <cmt t="Kunoichi">$$KUNOICHI:0$</cmt> that has <sec typ="note">Master's Teachings</sec>.
+        Allows <char uid="DS_KunoichiKaen" /> with <sec typ="note">Master's Teachings</sec> to reactivate <sec typ="note">Lethal Blow</sec> through waiting.
+        When the kill effect of <sec typ="note">Acceleration</sec> triggers for <char uid="DS_KunoichiZero" /> with <sec typ="note">Master's Teachings</sec>, applies the same effect to other <cmt t="Kunoichi">$$KUNOICHI:0$</cmt> combatants.
+        $$KUNOICHI~
+        <char uid="DS_KunoichiZero" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiEnrai" />
+        ~$$KUNOICHI
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加自身的<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，向持有<sec typ="note">盡得真髓</sec>的<cmt t="女忍者">$$KUNOICHI:0$</cmt>賦予<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="1" /></sec>增加效果。
+        使持有<sec typ="note">盡得真髓</sec>的<char uid="DS_KunoichiKaen" />之<sec typ="note">一擊必殺</sec>效果可透過待機重新啟用。
+        當持有<sec typ="note">盡得真髓</sec>的<char uid="DS_KunoichiZero" />的<sec typ="note">加速</sec>處置效果發動時，也向其他<cmt t="女忍者">$$KUNOICHI:0$</cmt>賦予相同效果。
+        $$KUNOICHI~
+        <char uid="DS_KunoichiZero" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiEnrai" />
+        ~$$KUNOICHI
 dialogue:
   KR:
     "1":
@@ -6697,9 +6814,7 @@ dialogue:
         어머, 오해라고 하셨사옵니까?
         아뇨, 매지컬 독심술로 본심을 읽었사오니,
         사양하지 마시옵소서.
-      Oath: 모모와 백토가 말하기를, 마법소녀는 누구 하나의 것이 되어서는 안 된다고 하였는데… 매지컬 젠틀맨께서는 자꾸 소첩의 마음을 흔들어
-        놓으시니, 소첩은 어쩔 방법을 모르겠사옵니다. …이리 된 이상 어쩔 수 없군요. 마법소녀는 그만두고… 사랑하는 주공만의 마법새댁이
-        되는 수 밖에요.
+      Oath: 모모와 백토가 말하기를, 마법소녀는 누구 하나의 것이 되어서는 안 된다고 하였는데… 매지컬 젠틀맨께서는 자꾸 소첩의 마음을 흔들어 놓으시니, 소첩은 어쩔 방법을 모르겠사옵니다. …이리 된 이상 어쩔 수 없군요. 마법소녀는 그만두고… 사랑하는 주공만의 마법새댁이 되는 수 밖에요.
       OathIdle_01: |-
         그 동안은 마법소녀이기에 자제했으나,
         자꾸 이렇게 소첩을 자극하신다면..
@@ -6763,9 +6878,7 @@ dialogue:
         더… 조금 더, 주공…
         아직 소첩은 이보다 더 한 것을
         받아낼 자신이 있사옵니다…
-      Oath: 비키니란 의상을 생각하다, 문득 이 복장이 떠올랐지요. 주공을 섬기면서도, 어느 정도의 섹시함과… 단련의 의지까지 보여드릴 수 있는
-        복장이지요. 소첩의 결의를 주공께서 이리 받아 주실 줄이야… 오늘 밤, 소첩의 결의를 주공께서 잔뜩 연마해주시길 삼가
-        바라옵니다…♥
+      Oath: 비키니란 의상을 생각하다, 문득 이 복장이 떠올랐지요. 주공을 섬기면서도, 어느 정도의 섹시함과… 단련의 의지까지 보여드릴 수 있는 복장이지요. 소첩의 결의를 주공께서 이리 받아 주실 줄이야… 오늘 밤, 소첩의 결의를 주공께서 잔뜩 연마해주시길 삼가 바라옵니다…♥
       OathIdle_01: |-
         새로운 단련법에 눈을 뜨셨사옵니까?
         원하시오면 이보다 더 어려운 단련법을
@@ -6830,9 +6943,7 @@ dialogue:
         더… 조금 더, 주공…
         아직 소첩은 이보다 더 한 것을
         받아낼 자신이 있사옵니다…
-      Oath: 비키니란 의상을 생각하다, 문득 이 복장이 떠올랐지요. 주공을 섬기면서도, 어느 정도의 섹시함과… 단련의 의지까지 보여드릴 수 있는
-        복장이지요. 소첩의 결의를 주공께서 이리 받아 주실 줄이야… 오늘 밤, 소첩의 결의를 주공께서 잔뜩 연마해주시길 삼가
-        바라옵니다…♥
+      Oath: 비키니란 의상을 생각하다, 문득 이 복장이 떠올랐지요. 주공을 섬기면서도, 어느 정도의 섹시함과… 단련의 의지까지 보여드릴 수 있는 복장이지요. 소첩의 결의를 주공께서 이리 받아 주실 줄이야… 오늘 밤, 소첩의 결의를 주공께서 잔뜩 연마해주시길 삼가 바라옵니다…♥
       OathIdle_01: |-
         새로운 단련법에 눈을 뜨셨사옵니까?
         원하시오면 이보다 더 어려운 단련법을
@@ -7008,9 +7119,7 @@ dialogue:
         어머, 오해라고 하셨사옵니까?
         아뇨, 매지컬 독심술로 본심을 읽었사오니,
         사양하지 마시옵소서.
-      Oath: "[미번역]모모와 백토가 말하기를, 마법소녀는 누구 하나의 것이 되어서는 안 된다고 하였는데… 매지컬 젠틀맨께서는 자꾸 소첩의 마음을
-        흔들어 놓으시니, 소첩은 어쩔 방법을 모르겠사옵니다. …이리 된 이상 어쩔 수 없군요. 마법소녀는 그만두고… 사랑하는 주공만의
-        마법새댁이 되는 수 밖에요."
+      Oath: "[미번역]모모와 백토가 말하기를, 마법소녀는 누구 하나의 것이 되어서는 안 된다고 하였는데… 매지컬 젠틀맨께서는 자꾸 소첩의 마음을 흔들어 놓으시니, 소첩은 어쩔 방법을 모르겠사옵니다. …이리 된 이상 어쩔 수 없군요. 마법소녀는 그만두고… 사랑하는 주공만의 마법새댁이 되는 수 밖에요."
       OathIdle_01: |-
         [미번역]그 동안은 마법소녀이기에 자제했으나,
         자꾸 이렇게 소첩을 자극하신다면..
@@ -7093,17 +7202,13 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: この折れた剣が気になりますか？我が一族に代々伝わる刀でございます。半分しか残っておりませんが…
-        ふふ、ご心配には及びません。この長さでも、殿の敵を斬るのにはまったく問題ございません。
-      Idle_01_02: スミレとハツナ、二人とも立派に成長してくれて何も言うことはございません。この母がいなくとも、一人前のくノ一、そして艶やかなおなごとして成長してくれましたから……
-        二人の成長をそばで見守ってやれなかったことは、一生悔やんでも悔やみきれません。
-      Idle_01_03: …じゅ、熟女……？
-        殿、妙齢のおなごに使う言葉ではありませんよ。場合によっては失礼にあたります。いいえ、別に年のことを気にしているだとか、ただでさえ気にしていることを指摘されて怒っているとかではございません。本当です。
+      Idle_01_01: この折れた剣が気になりますか？我が一族に代々伝わる刀でございます。半分しか残っておりませんが… ふふ、ご心配には及びません。この長さでも、殿の敵を斬るのにはまったく問題ございません。
+      Idle_01_02: スミレとハツナ、二人とも立派に成長してくれて何も言うことはございません。この母がいなくとも、一人前のくノ一、そして艶やかなおなごとして成長してくれましたから…… 二人の成長をそばで見守ってやれなかったことは、一生悔やんでも悔やみきれません。
+      Idle_01_03: …じゅ、熟女……？ 殿、妙齢のおなごに使う言葉ではありませんよ。場合によっては失礼にあたります。いいえ、別に年のことを気にしているだとか、ただでさえ気にしていることを指摘されて怒っているとかではございません。本当です。
       SPIdle_01_01: 殿がお望みならば、それに応えるのがくノ一の役目……
       Idle_02_01: 殿のお力がなかったなら、わたくしと娘達はむごたらしい結末を迎えていたことでしょう……ですので、わたくし達の命も、残りの人生も、すべて殿のものでございます。このわたくしめをお好きなようにお使いください。
       Idle_03_01: ゼロもカエンも…まだ至らぬ点が多く……殿にお仕えするという重要な任務を任せるには無理があると存じます。ですので、当面はわたくしが二人に代わりお仕えいたします。もちろん、寝床のお供も……ふふ。
-      Idle_04_01: 殿は実に素晴らしい御方でございます。殿に出会う前の人生が霞んでしまうほどに……
-        殿がわたくしの夫だったなら、と思うほどにでございます。…ふふ、出過ぎたことを言ってしまいました。今のは忘れてください。
+      Idle_04_01: 殿は実に素晴らしい御方でございます。殿に出会う前の人生が霞んでしまうほどに…… 殿がわたくしの夫だったなら、と思うほどにでございます。…ふふ、出過ぎたことを言ってしまいました。今のは忘れてください。
       SPIdle_02_01: まぁ、殿……娘たちではなくわたくしをお選びになるとは……ふふ、でしたら殿にくノ一の夜の技術をしっかりとお見せいたしましょう。さあ、力を抜いて…わたくしに体を委ねてくださいませ……
       Oath: なんと、まあ…くノ一は本来消耗品に過ぎませんのに、殿はこんなわたくしをも愛してくださり、おなごとして生きる資格があると仰るのですね？ふふ…嬉しくて天にも昇る心地でございます。では…くノ一としてのエンライという名ではなく、おなごとしての名……オウカと呼んでくださいませ、殿…いいえ、旦那様。
       OathIdle_01: 二人の母であるにも関わらず、こうして愛してくださるのなら……それに精一杯応えるのが妻としての道理でございましょう。わたくしの胸に飛び込んできてくださいませ、旦那様…三人目の子どもについてはどうお考えでしょうか？
@@ -7126,13 +7231,9 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ムラサキ家には代々、カエンとライデンという二人の娘が生まれるのです。ですが……
-        三人目の子どもがいてはいけないという決まりはありません。子どもの名前は……そうですね、旦那様がお決めになるのはいかがでしょうか？
-      Idle_01_02: う～ん、何と言って旦那様を誘惑すれば……そうね…… オウカは旦那様のために咲いた桜の花にございます……
-        うふふ、これはとても愛らしい誘い方……。 あ、あら、旦那様？い、いつからそこにおいででしたか？
-      Idle_01_03: 振袖は未婚女性が着るもの……ですって？
-        ……ほ…ほぉ？そうなんですね。知りませんでした。わざわざ教えていただき、ありがとうございます。殿。
-        はい？何を仰いますか。わたくしはちっとも怒っていませんよ。えぇ。
+      Idle_01_01: ムラサキ家には代々、カエンとライデンという二人の娘が生まれるのです。ですが…… 三人目の子どもがいてはいけないという決まりはありません。子どもの名前は……そうですね、旦那様がお決めになるのはいかがでしょうか？
+      Idle_01_02: う～ん、何と言って旦那様を誘惑すれば……そうね…… オウカは旦那様のために咲いた桜の花にございます…… うふふ、これはとても愛らしい誘い方……。 あ、あら、旦那様？い、いつからそこにおいででしたか？
+      Idle_01_03: 振袖は未婚女性が着るもの……ですって？ ……ほ…ほぉ？そうなんですね。知りませんでした。わざわざ教えていただき、ありがとうございます。殿。 はい？何を仰いますか。わたくしはちっとも怒っていませんよ。えぇ。
       SPIdle_01_01: どうぞこちらへ、旦那様。まずエンライをお抱きになりますか？それともオウカ？それとも…わたくし？ふふ、何が違うのかですって？少しずつ違うところがあるのです。気になるようでしたら、全て抱いてみるのは…いかがです？
       MVP: ""
   EN:
@@ -7285,15 +7386,11 @@ dialogue:
         Then I shall have to show you
         the skills of the Kunoichi. 
         Relax and leave your body to me…
-      Oath: >-
+      Oath: |-
         Oh, my… Kunoichis are expendable…
-
         Yet, you say that I deserve
-
         to be loved. I am so happy, I don't know what to do. In that case… rather than calling me Enrai,
-
         my Kunoichi name, please refer to me as Ouka.
-
         My Lord… I mean… dear…
       OathIdle_01: |-
         Loving me this way, despite me being a mother of two…

@@ -1054,6 +1054,11 @@ skills:
             base: 0.15
             per: 0.015
             chance: 0
+    desc:
+      KR: 단일 대상에게 <dmg elem="physics" />를 줍니다. <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격</sec> 또는 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 시, 2라운드 동안 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="3" slot="4" r /></sec>가 증가합니다.
+      JP: 単一対象に<dmg elem="physics" />を与えます。<sec typ="cond"><buff typ="SUPPORT_ATTACK" />支援攻撃</sec>または<sec typ="cond"><buff typ="SUPPORT_ATTACK" />再攻撃</sec>時、2ラウンドの間<sec typ="buff"><buff typ="SKILL_UP" />スキル威力 <val idx="3" slot="4" r /></sec>が増加します。
+      EN: Deals <dmg elem="physics" /> to a single target. When <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> providing Attack Support</sec> or <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> re-attacking</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="3" slot="4" r /></sec> increases for 2 rounds.
+      TC: 對單一目標造成<dmg elem="physics" />傷害。進行<sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻擊支援</sec>或<sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec>時，於2回合內增加<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="3" slot="4" r /></sec>。
   "2":
     key: "2"
     icon: Hang
@@ -1744,6 +1749,11 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: 지정 범위의 적에게 {0}의 보호 무시 피해를 줍니다. 적중 여부와 상관 없이 대상의 회피 강화 효과를 해제하고, 1스킬과 2스킬이 <원격 폭탄 격발>로 변경됩니다.
+      JP: 指定範囲の敵に{0}の防御無視ダメージを与えます。命中の有無に関係なく対象の回避強化効果を解除し、スキル1とスキル2が<遠隔爆弾撃発>に変更されます。
+      EN: Deals {0} Ignore Protection damage to enemies in the designated area. Regardless of whether it hits, removes the target's EVA increase effects, and Skill 1 and Skill 2 change to <Remote Detonation>.
+      TC: 對指定範圍內的敵軍造成{0}的無視保護傷害。無論是否命中，都會解除目標的迴避強化效果，並使技能1和技能2變更為<引爆遙控炸彈>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -1960,6 +1970,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">공격기가 자신 뿐이거나</sec>, <sec typ="cond">자신 외에 <cmt t="엠프레시스 하운드">$$EmpressHound:?$</cmt> 전투원이 있는 경우</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과를 획득합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">攻撃機が自分だけの場合、または</sec> <sec typ="cond">自分以外に<cmt t="エンプレシスハウンド">$$EmpressHound:?$</cmt>戦闘員がいる場合</sec>、<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア / 被ダメージ減少無視</sec>効果を獲得します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="0" r /></sec> increases.
+        <sec typ="cond">If self is the only attacker</sec>, or <sec typ="cond">if there are <cmt t="Empress Hounds">$$EmpressHound:?$</cmt> combatants other than self</sec>, gains <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> effects.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec>增加。
+        <sec typ="cond">若自身為唯一攻擊機</sec>，或<sec typ="cond">自身以外有<cmt t="女皇獵犬">$$EmpressHound:?$</cmt>戰鬥員時</sec>，將獲得<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視防護罩 / 傷害減少</sec>效果。
   "4":
     key: "4"
     icon: P.SelfAtkDeBuff
@@ -2212,6 +2235,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        병적인 집착과 광폭함으로 인해 기본 150%의 치명타 수치를 갖습니다.
+        적 사망 시, <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="0" r /></sec> 감소 효과를 영구 획득합니다.
+        자신이 <sec typ="cond"><buff typ="DEF_Char" /> 지정 보호</sec>를 받고 있을 때, 라운드 개시 시 자신에게 적용된 <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 치명타 감소 효과를 해제</sec>합니다.
+      JP: |-
+        病的な執着と狂暴さにより、基本150%のクリティカル値を持ちます。
+        敵死亡時、<sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル <val idx="0" r /></sec>減少効果を永続的に獲得します。
+        自分が<sec typ="cond"><buff typ="DEF_Char" />指定保護</sec>を受けている時、ラウンド開始時に自分へ適用された<sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" />クリティカル減少効果を解除</sec>します。
+      EN: |-
+        Due to pathological obsession and ferocity, has a base 150% CRIT value.
+        When an enemy dies, permanently gains a <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="0" r /></sec> decrease effect.
+        When self is receiving <sec typ="cond"><buff typ="DEF_Char" /> designated protection</sec>, removes the <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> CRIT decrease effects</sec> applied to self at the start of the round.
+      TC: |-
+        由於病態的執著與狂暴，基本暴擊數值為150%。
+        敵軍死亡時，永久獲得<sec typ="attr">有害</sec>的<sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="0" r /></sec>減少效果。
+        當自身受到<sec typ="cond"><buff typ="DEF_Char" /> 指定保護</sec>時，會在回合開始時解除套用於自身的<sec typ="attr">有害</sec>的<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 暴擊減少效果</sec>。
   "5":
     key: "5"
     icon: P.BombActive
@@ -2443,6 +2483,23 @@ skills:
             base: 0.3
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 보호기 / 지원기 아군의 공격을 지원</sec>합니다.
+        자신과 <sec typ="cond">인접한 아군이 2 이상일 때</sec>, 라운드 개시 시 자신은 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec> 증가 효과를 획득합니다.
+        자신과 <sec typ="cond">인접한 아군이 4 이상일 때</sec>, 라운드 개시 시 자신은 <sec typ="buff"><buff typ="ATK_UP" /> 광역 피해 집중 <val idx="4" r /></sec> 효과를 획득합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />保護機 / 支援機味方の攻撃を支援</sec>します。
+        自分と<sec typ="cond">隣接した味方が2以上いる時</sec>、ラウンド開始時に自分は<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="3" r /></sec>増加効果を獲得します。
+        自分と<sec typ="cond">隣接した味方が4以上いる時</sec>、ラウンド開始時に自分は<sec typ="buff"><buff typ="ATK_UP" />範囲ダメージ集中 <val idx="4" r /></sec>効果を獲得します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, supports the attacks of ally defenders/supporters within range with <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> attack support</sec>.
+        When there are <sec typ="cond">2 or more adjacent allies</sec> to self, self gains a <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="3" r /></sec> increase effect at the start of the round.
+        When there are <sec typ="cond">4 or more adjacent allies</sec> to self, self gains a <sec typ="buff"><buff typ="ATK_UP" /> AoE damage focus <val idx="4" r /></sec> effect at the start of the round.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，支援範圍內我軍防護機 / 支援機的攻擊。
+        當與自身<sec typ="cond">相鄰的我軍達2名以上</sec>時，回合開始時自身將獲得<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec>增加效果。
+        當與自身<sec typ="cond">相鄰的我軍達4名以上</sec>時，回合開始時自身將獲得<sec typ="buff"><buff typ="ATK_UP" /> 廣域傷害集中 <val idx="4" r /></sec>效果。
   F1:
     key: F1
     icon: BombActive
@@ -3353,6 +3410,11 @@ skills:
             base: 64
             per: 0
             chance: 1
+    desc:
+      KR: 지정 범위의 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" /> 피해를 주고, 1스킬과 2스킬이 기본 형태로 변경됩니다. 지원 공격 또는 재공격 시, 2라운드 동안 스킬 위력이 증가합니다.
+      JP: 指定範囲の敵に<sec typ="attr">防御無視</sec> <dmg elem="physics" />ダメージを与え、スキル1とスキル2が基本形態に変更されます。支援攻撃または再攻撃時、2ラウンドの間、スキル威力が増加します。
+      EN: Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage to enemies in the designated area and changes Skill 1 and Skill 2 to their basic form. Skill Power increases for 2 rounds when providing Attack Support or re-attacking.
+      TC: 對指定範圍內的敵軍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害，並使技能1和技能2變更為基本型態。進行攻擊支援或再次攻擊時，於2回合內增加技能威力。
   F2:
     key: F2
     icon: BombActive
@@ -4263,6 +4325,11 @@ skills:
             base: 64
             per: 0
             chance: 1
+    desc:
+      KR: 지정 범위의 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" /> 피해를 주고, 1스킬과 2스킬이 기본 형태로 변경됩니다. 지원 공격 또는 재공격 시, 2라운드 동안 스킬 위력이 증가합니다.
+      JP: 指定範囲の敵に<sec typ="attr">防御無視</sec> <dmg elem="physics" />ダメージを与え、スキル1とスキル2が基本形態に変更されます。支援攻撃または再攻撃時、2ラウンドの間、スキル威力が増加します。
+      EN: Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage to enemies in the designated area and changes Skill 1 and Skill 2 to their basic form. Skill Power increases for 2 rounds when providing Attack Support or re-attacking.
+      TC: 對指定範圍內的敵軍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害，並使技能1和技能2變更為基本型態。進行攻擊支援或再次攻擊時，於2回合內增加技能威力。
   F4:
     key: F4
     icon: P.SelfAtkDeBuff
@@ -4472,6 +4539,23 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        병적인 집착과 광폭함으로 인해 기본 150%의 치명타 수치를 갖습니다.
+        적 사망 시, <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="0" r /></sec> 감소 효과를 영구 획득합니다.
+        자신이 지정 보호를 받고 있을 때, 라운드 개시 시 자신에게 적용된 <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 치명타 감소 효과를 해제</sec>합니다.
+      JP: |-
+        病的な執着と狂暴さにより、基本150%のクリティカル値を持ちます。
+        敵死亡時、<sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル <val idx="0" r /></sec>減少効果を永続的に獲得します。
+        自分が指定保護を受けている時、ラウンド開始時に自分へ適用された<sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" />クリティカル減少効果を解除</sec>します。
+      EN: |-
+        Due to pathological obsession and ferocity, has a base 150% CRIT value.
+        When an enemy dies, permanently gains a <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="0" r /></sec> decrease effect.
+        When self is receiving designated protection, removes the <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> CRIT decrease effects</sec> applied to self at the start of the round.
+      TC: |-
+        由於病態的執著與狂暴，基本暴擊數值為150%。
+        敵軍死亡時，永久獲得<sec typ="attr">有害</sec>的<sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="0" r /></sec>減少效果。
+        當自身受到指定保護時，會在回合開始時解除套用於自身的<sec typ="attr">有害</sec>的<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 暴擊減少效果</sec>。
 dialogue:
   KR:
     "1":
@@ -4582,8 +4666,7 @@ dialogue:
       SPIdle_02_01: |-
         저… 혹시 묶어놓고 하는 건…
         싫어… 하시나요?
-      Oath: 상정하지 못한 상황이군요. 지금까지의 작전안을 전부 폐기해야겠습니다. 제가 구상한 어떠한 작전보다… 긍정적인 상황이니까요. 저도...
-        당신을... 사랑합니다. 그러니… 앞으로는 절 혼자 두지 말아주세요. 앞으로도… 영원히…
+      Oath: 상정하지 못한 상황이군요. 지금까지의 작전안을 전부 폐기해야겠습니다. 제가 구상한 어떠한 작전보다… 긍정적인 상황이니까요. 저도... 당신을... 사랑합니다. 그러니… 앞으로는 절 혼자 두지 말아주세요. 앞으로도… 영원히…
       OathIdle_01: |-
         사랑합니다. 사랑합니다. 사랑합니다.
         사랑합니다. 사랑합니다. 사랑합니다.
@@ -4640,8 +4723,7 @@ dialogue:
         어? 처, 천아가 너는 이런 모습 좋아한다고…
         싫었어? 싫으면 그만 두고…
         좋았어? 좋았으면… 더 좋은 모습 보여줄게.
-      Oath: 많이 컸다? 나한테 오라가라 그러고? 그래놓고 준다는 게 반지? 하… 웃음이 절로 나오네. 진짜… 기뻐서… 이런 모습 좋아한다는 게
-        사실이었구나? 네가 싫어했으면 이런 모습도 안 했지. 헤헤. 아! 흠! 흠! 이렇게 됐으니까. 오늘로 1일이다? 알겠지, 남친?
+      Oath: 많이 컸다? 나한테 오라가라 그러고? 그래놓고 준다는 게 반지? 하… 웃음이 절로 나오네. 진짜… 기뻐서… 이런 모습 좋아한다는 게 사실이었구나? 네가 싫어했으면 이런 모습도 안 했지. 헤헤. 아! 흠! 흠! 이렇게 됐으니까. 오늘로 1일이다? 알겠지, 남친?
       OathIdle_01: |-
         천아가 속였다는 걸 알았을 때는
         많이 빡쳤는데… 지금은 괜찮아.
@@ -5052,9 +5134,8 @@ dialogue:
         You were the one who told me to work at the cafe.
         *Chuckles* Yeah right. I only mean so much
         to you, I guess.​
-      Idle_01_03: >-
+      Idle_01_03: |-
         I told them I would never wear this stupid outfit…!
-
         But they’d just annoy me with their grins… What are you looking at? You think this is funny?​
       SPIdle_01_01: Beat it. I’m busy.​
       Idle_02_01: |-
@@ -5074,12 +5155,9 @@ dialogue:
         You want me to wear other stuff as well, Right?
         If you order me to, master,
         I can do anything for you…​
-      Oath: >-
-        This means you’re in love with me, right? … Master? Does this mean
-        you’re not gonna leave me,
-
+      Oath: |-
+        This means you’re in love with me, right? … Master? Does this mean you’re not gonna leave me,
         because I’ve been a good girl…? Hehe… Master, do you want to do something right now? Can I bring you anything to eat?
-
         If that’s not the case… Just tell me anything you want. I can do anything you want me to do for you, Master…
       OathIdle_01: |-
         Hey. What do you want me to wear today?
@@ -5127,13 +5205,10 @@ dialogue:
         Many tell me that I look cold.
         But I’ll show you that's not true.
       SPIdle_02_01: Umm… do you not want to… restrain me?
-      Oath: >-
+      Oath: |-
         It's not what I expected. All of the operation schematics until now
-
         will have to be discarded. It's better than any operation plan I came up with…
-
         I… love you too… So… don't leave me alone by myself from now on…
-
         forever…
       OathIdle_01: |-
         I love you. I love you. I love you.
@@ -5239,27 +5314,19 @@ dialogue:
         Ha, mother this, mother that. Are you playing house or what?
         What? I can become a family? Nonsense!
         I don’t need… that.
-      Idle_03_01: >-
+      Idle_03_01: |-
         After everything disappeared,
-
         I just wandered around with no purpose. Yes, I wanted to find the meaning of my life… Hmph. I can’t believe I’m saying this.
-
         I must have gone crazy like you.​
-      Idle_04_01: >-
+      Idle_04_01: |-
         I’m not sure… about this feeling. I’m relaxed but nervous.
-
         I’m happy, but I feel like going insane. What do you think… I should do? You’re staying here, aren’t you? Don’t…
-
         leave me. Please, please, please…!
-
         … Forget what I just said. It was nothing.​
       SPIdle_02_01: "*Panting*… Go on. So that… I can feel alive."
-      Oath: >-
-        … I’m not sure what to do. I feel lonely, anxious, and happy at the same
-        time. … Right, that’s it.
-
+      Oath: |-
+        … I’m not sure what to do. I feel lonely, anxious, and happy at the same time. … Right, that’s it.
         You are the meaning of my life that I’ve been keep looking for. Haha, Ahahaha. How did I not know about this already? Yes. I love you, really.
-
         So… you will also love me a lot, right? You won’t… leave me alone anymore, right?​
       OathIdle_01: |-
         I’m your bride. Of course I’m always

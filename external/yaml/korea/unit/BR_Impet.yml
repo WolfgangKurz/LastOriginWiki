@@ -1327,6 +1327,19 @@ skills:
             base: -0.3
             per: -0.04
             chance: 1
+    desc:
+      KR: |-
+        대 장갑 로켓을 발사해 <dmg elem="physics" />를 줍니다.
+        적중 시, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다.
+      JP: |-
+        対装甲ロケットを発射して<dmg elem="physics" />を与えます。
+        命中時、2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を減少させます。
+      EN: |-
+        Fires an Anti-Armor Rocket, dealing <dmg elem="physics" /> damage.
+        On hit, decreases the target’s <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> for 2 rounds.
+      TC: |-
+        發射反裝甲火箭，造成<dmg elem="physics" />傷害。
+        命中時，在2回合內減少目標的<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>。
   "2":
     key: "2"
     icon: Missile
@@ -3064,6 +3077,23 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        열압력탄을 발사해 대상에게 <dmg elem="physics" />를 줍니다.
+        치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        또한 대상이 <sec typ="cond"><buff typ="DEF_DOWN" /> <buff typ="EVADE_DOWN" /> 방어력 / 회피 감소</sec> 상태인 경우 각각 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      JP: |-
+        サーモバリック弾を発射して対象に<dmg elem="physics" />を与えます。
+        クリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        さらに対象が<sec typ="cond"><buff typ="DEF_DOWN" /> <buff typ="EVADE_DOWN" /> 防御力 / 回避減少</sec>状態の場合、それぞれ<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
+      EN: |-
+        Fires a thermobaric round, dealing <dmg elem="physics" /> damage to the target.
+        On CRIT, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        Also, if the target is in <sec typ="cond"><buff typ="DEF_DOWN" /> <buff typ="EVADE_DOWN" /> DEF / EVA Decrease</sec> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases for each.
+      TC: |-
+        發射熱壓彈，對目標造成<dmg elem="physics" />傷害。
+        暴擊時，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        此外，若目標處於<sec typ="cond"><buff typ="DEF_DOWN" /> <buff typ="EVADE_DOWN" /> 防禦力 / 迴避減少</sec>狀態，則各自的<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>增加。
   "3":
     key: "3"
     icon: P.Missile
@@ -3445,6 +3475,35 @@ skills:
             base: 0.25
             per: 0.0125
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신은 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 / 중장형 피해량 <val idx="0" r /></sec>가 증가합니다.
+        라운드 개시 시, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통</sec>이 증가합니다.
+        해당 효과는 전열에 가까울 수록 최대 2배까지 증가합니다.
+        전열 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec>
+        중열 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec>
+        후열 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="9" r /></sec>
+      JP: |-
+        ラウンド開始時、自身の<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型 / 重装型ダメージ量 <val idx="0" r /></sec>が増加します。
+        ラウンド開始時、自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通</sec>が増加します。
+        この効果は前列に近いほど最大2倍まで増加します。
+        前列 : <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="5" r /></sec>
+        中列 : <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec>
+        後列 : <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="9" r /></sec>
+      EN: |-
+        At the start of the round, self’s <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage to Light Armor / Heavy Armor <val idx="0" r /></sec> increases.
+        At the start of the round, self’s <sec typ="buff"><buff typ="ATK_UP" /> ATK</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration</sec> increases.
+        This effect increases up to 2x the closer self is to the front line.
+        Front line: <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="5" r /></sec>
+        Middle line: <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="7" r /></sec>
+        Rear line: <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="8" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="9" r /></sec>
+      TC: |-
+        回合開始時，自身的<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型 / 重裝型傷害量 <val idx="0" r /></sec>增加。
+        回合開始時，自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿</sec>增加。
+        此效果越接近前列，最多可增加至2倍。
+        前列：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="5" r /></sec>
+        中列：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="7" r /></sec>
+        後列：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="9" r /></sec>
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -4042,6 +4101,31 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        스쿼드 구성에 따라 맡은 바 임무를 달성할 수 있도록, 라운드 개시 시 자신과 해당 역할군의 전투원은 다음 효과를 획득합니다.
+        공격기 2기 이상 : <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec> 증가
+        보호기 2기 이상 : <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 모든 해로운 효과 제거</sec>
+        지원기 2기 이상 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec> 증가
+        라운드 개시 시, 만족된 상기 조건 1종 당 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리가 <val idx="7" />씩 증가</sec>합니다.
+      JP: |-
+        分隊構成に応じて任務を達成できるよう、ラウンド開始時に自分と該当役割の戦闘員は以下の効果を獲得します。
+        攻撃機2機以上：<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="4" r /></sec>増加
+        保護機2機以上：<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 全ての有害な効果を解除</sec>
+        支援機2機以上：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>増加
+        ラウンド開始時、満たされた上記の条件1種ごとに自分の<sec typ="buff"><buff typ="RANGE_UP" /> 射程が <val idx="7" />ずつ増加</sec>します。
+      EN: |-
+        To complete assigned duties based on squad composition, self and units of the corresponding role gain the following effects at the start of the round.
+        2 or more Attackers: <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="4" r /></sec> increase
+        2 or more Defenders: <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> remove all harmful effects</sec>
+        2 or more Supporters: <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="6" r /></sec> increase
+        At the start of the round, self’s <sec typ="buff"><buff typ="RANGE_UP" /> range increases by <val idx="7" /></sec> for each fulfilled condition above.
+      TC: |-
+        為了依據小隊編成完成各自負責的任務，回合開始時，自身與該角色群的戰鬥員獲得以下效果。
+        2個以上攻擊機：<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" r /></sec>增加
+        2個以上保護機：<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除所有有害效果</sec>
+        2個以上支援機：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>增加
+        回合開始時，每滿足上述1種條件，自身的<sec typ="buff"><buff typ="RANGE_UP" /> 射程增加 <val idx="7" /></sec>。
   "5":
     key: "5"
     icon: P.Scan
@@ -4499,6 +4583,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신은 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 효과를 획득합니다.
+        라운드 개시 시, <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격 / 공격 지원</sec> 효과가 적용 중인 모든 아군에게 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec> 증가 효과를 부여합니다.
+        대상이 <sec typ="cond">기동형</sec>이거나 <sec typ="cond"><cmt t="스틸라인 계열">$$SteelLine:?$</cmt> 전투원</sec>인 경우, 효과가 50% 증가하고 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="8" r /></sec> 증가 효과가 추가됩니다.
+      JP: |-
+        ラウンド開始時、自身は<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec>効果を獲得します。
+        ラウンド開始時、<sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃 / 攻撃支援</sec>効果が適用中のすべての味方に<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>増加効果を付与します。
+        対象が<sec typ="cond">機動型</sec>または<sec typ="cond"><cmt t="スチールライン系統">$$SteelLine:?$</cmt>戦闘員</sec>の場合、効果が50%増加し、<sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="8" r /></sec>増加効果が追加されます。
+      EN: |-
+        At the start of the round, self gains <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Re-Attack</sec>.
+        At the start of the round, grants all allies with <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> Re-Attack / Attack Support</sec> active <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="5" r /></sec> increases.
+        If the target is <sec typ="cond">Mobile</sec> or a <sec typ="cond"><cmt t="Steel Line">$$SteelLine:?$</cmt> soldier</sec>, the effect increases by 50% and an additional <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="8" r /></sec> increase is granted.
+      TC: |-
+        回合開始時，自身獲得<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec>效果。
+        回合開始時，對所有正在套用<sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊 / 攻擊支援</sec>效果的我軍施加<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>增加效果。
+        若目標為<sec typ="cond">機動型</sec>或<sec typ="cond"><cmt t="鋼線系統">$$SteelLine:?$</cmt>戰鬥員</sec>，則效果增加50%，並額外獲得<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="8" r /></sec>增加效果。
 dialogue:
   KR:
     "1":
@@ -4610,8 +4711,7 @@ dialogue:
         복사기는 침대가 아냐
         팀장님… 헤헷…♥
         저기, 숙직실 가서 마저 할까?
-      Oath: 내가 아무리 대리라고 해도… 아내로서의 커리어는 파릇한 신입이라 그런지 걱정이네. 뭐, 언제나 그렇듯 팀장님이 세심하게 가르쳐주겠지?
-        그럼 이제 비밀 사내 연애는 졸업인 건가? 남편을 즐겁게 해주는 신입 아내의 업무 지시도 이어서 잘 부탁할게… 팀장님♥
+      Oath: 내가 아무리 대리라고 해도… 아내로서의 커리어는 파릇한 신입이라 그런지 걱정이네. 뭐, 언제나 그렇듯 팀장님이 세심하게 가르쳐주겠지? 그럼 이제 비밀 사내 연애는 졸업인 건가? 남편을 즐겁게 해주는 신입 아내의 업무 지시도 이어서 잘 부탁할게… 팀장님♥
       OathIdle_01: |-
         팀장님,
         스틸라인 성교육 사진 자료가 더 필요한데…
@@ -4908,12 +5008,9 @@ dialogue:
       SPIdle_02_01: |-
         Oh… I feel like blowing
         away… I-it’s fine. Go on.
-      Oath: >-
-        Haha, seriously… I thought I was going to explode while waiting for you,
-        commander. Hm? Of course.
-
+      Oath: |-
+        Haha, seriously… I thought I was going to explode while waiting for you, commander. Hm? Of course.
         Then did you think I was joking? Wait and see. From now on, I’ll pour all my heart…
-
         so that you can’t even do your job…
       OathIdle_01: |-
         I-I’ll refrain from
@@ -4994,10 +5091,8 @@ dialogue:
         Then you will also know my current temperature,
         right?
       SPIdle_02_01: You are speedy as a rocket, Commander.
-      Oath: >-
-        Hoho… Mr. Commander, did you finally get the courage? You already know
-        what I'll say, don't you?
-
+      Oath: |-
+        Hoho… Mr. Commander, did you finally get the courage? You already know what I'll say, don't you?
         Commander… I've waited so long… You'll reward me for doing so, right?
       OathIdle_01: |-
         Ugh… Commander… Don’t talk about
@@ -5023,13 +5118,10 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         Ugh… this is rough. Our subordinates are making so many mistakes…
-
         There’s so much work…
-
         The top dogs are barking at me… But meh, who cares… This position is supposed to be rough.
-
         And… the commander is here… Right?
       Idle_01_02: |-
         I… used to have a dream. I thought it’d be so nice

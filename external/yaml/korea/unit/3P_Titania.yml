@@ -3790,6 +3790,19 @@ skills:
             base: 29
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec> <sec typ="cond">스쿼드 내에 <char uid="3P_Rhea" />가 있을 경우</sec>, 2라운드 동안 모든 적을 <sec typ="note">침수</sec> 상태로 만듭니다.
+        <sec typ="cond">전투 개시 시</sec> <sec typ="cond">스쿼드 내에 <char uid="3P_Titania" />가 있을 경우</sec>, 아쿠아가 모든 적에게 <sec typ="buff"><sec typ="note">천년서리</sec>를 1중첩 누적</sec>합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec> <sec typ="cond">分隊に <char uid="3P_Rhea" /> がいる場合</sec>、2ラウンドの間、全ての敵を<sec typ="note">浸水</sec>状態にします。
+        <sec typ="cond">戦闘開始時</sec> <sec typ="cond">分隊に <char uid="3P_Titania" /> がいる場合</sec>、アクアが全ての敵に<sec typ="buff"><sec typ="note">千年の霜</sec>を1スタック蓄積します。
+      EN: |-
+        <sec typ="cond">At the start of combat</sec> <sec typ="cond">if <char uid="3P_Rhea" /> is in the squad</sec>, all enemies are <sec typ="note">Submerged</sec> for 2 rounds.
+        <sec typ="cond">At the start of combat</sec> <sec typ="cond">if <char uid="3P_Titania" /> is in the squad</sec>, Aqua stacks 1 <sec typ="buff"><sec typ="note">Millennium Frost</sec></sec> on all enemies.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec> <sec typ="cond">若小隊內有<char uid="3P_Rhea" /></sec>，使所有敵軍陷入<sec typ="note">浸水</sec>狀態，持續2回合。
+        <sec typ="cond">戰鬥開始時</sec> <sec typ="cond">若小隊內有<char uid="3P_Titania" /></sec>，阿庫婭對所有敵軍累積1層<sec typ="buff"><sec typ="note">千年寒冰</sec></sec>。
   "2":
     key: "2"
     icon: WideIceShot
@@ -7124,6 +7137,19 @@ skills:
             base: 29
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 <dmg elem="ice" />를 입힙니다.
+        피격된 적은 2라운드 동안 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 및 <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="3" r /></sec> 감소 상태가 되고 3라운드 동안 <sec typ="dmg"><buff typ="IceDMG_DOT" /> <val idx="0" signless /> 냉기 지속 피해</sec>를 입게 됩니다.
+      JP: |-
+        単一対象に<dmg elem="ice" />を与えます。
+        命中した敵は2ラウンドの間、<sec typ="buff"><buff typ="SNARE" /> 移動不可</sec>および<sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="3" r /></sec>減少状態となり、3ラウンドの間<sec typ="dmg"><buff typ="IceDMG_DOT" /> <val idx="0" signless /> 冷気持続ダメージ</sec>を受けます。
+      EN: |-
+        Deals <dmg elem="ice" /> to a single target.
+        The hit enemy becomes <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> and <sec typ="buff"><buff typ="ICERES_DOWN" /> Cold Resistance <val idx="3" r /></sec> Decrease for 2 rounds, and takes <sec typ="dmg"><buff typ="IceDMG_DOT" /> <val idx="0" signless /> Cold DoT</sec> for 3 rounds.
+      TC: |-
+        對單一目標造成<dmg elem="ice" />。
+        被命中的敵軍將在2回合內陷入<sec typ="buff"><buff typ="SNARE" /> 無法移動</sec>與<sec typ="buff"><buff typ="ICERES_DOWN" /> 冰霜抵抗 <val idx="3" r /></sec>降低狀態，並在3回合內受到<sec typ="dmg"><buff typ="IceDMG_DOT" /> <val idx="0" signless /> 冰霜持續傷害</sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -7462,6 +7488,11 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: 라운드 개시 시, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec>, <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 대 중장 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: ラウンド開始時、自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r /></sec>、<sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ量 <val idx="0" r /></sec>が増加します。
+      EN: At the start of the round, self’s <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="1" r /></sec> and <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy Armor Damage <val idx="0" r /></sec> increase.
+      TC: 回合開始時，增加自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r /></sec>與<sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害量 <val idx="0" r /></sec>。
   "4":
     key: "4"
     icon: P.TeamSpdDeBuff
@@ -7797,6 +7828,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 범위 내 아군 보호기에게 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 화염 저항 감소 면역</sec>효과를 부여합니다.
+        또한 범위 내 아군의 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 대 중장 피해량 <val idx="2" r /></sec>를 증가시킵니다.
+      JP: |-
+        ラウンド開始時、範囲内の味方保護機に<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 火炎耐性減少免疫</sec>効果を付与します。
+        さらに、範囲内の味方の<sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="0" r /></sec>と<sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ量 <val idx="2" r /></sec>を増加させます。
+      EN: |-
+        At the start of the round, grants allies in range that are Protectors <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> Immunity to Fire Resistance Decrease</sec>.
+        Also increases allies in range's <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="0" r /></sec> and <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy Armor Damage <val idx="2" r /></sec>.
+      TC: |-
+        回合開始時，賦予範圍內我軍保護機<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 火焰抵抗降低免疫</sec>效果。
+        另外，增加範圍內我軍的<sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抵抗 <val idx="0" r /></sec>與<sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害量 <val idx="2" r /></sec>。
   "5":
     key: "5"
     icon: P.DefCounter
@@ -8375,6 +8419,11 @@ skills:
             base: 0.36
             per: 0.036
             chance: 1
+    desc:
+      KR: <sec typ="important">서리 폭풍</sec> 사용으로 인해 <sec typ="cond"><buff typ="Speed_DOWN" /> 행동력 감소</sec>인 상태에서 라운드 개시 시, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="0" /></sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec>, <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="2" r /></sec>를 증가시키고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec>를 감소시키며 <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 위력으로 반격</sec> 효과를 발동시킵니다.
+      JP: <sec typ="important">フロストストーム</sec>使用による<sec typ="cond"><buff typ="Speed_DOWN" /> 行動力減少</sec>状態のとき、ラウンド開始時に自分の<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r /></sec>、<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="2" r /></sec>を増加させ、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="3" r inv /></sec>を減少させ、<sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> の威力で反撃</sec>効果を発動します。
+      EN: While self is in the <sec typ="cond"><buff typ="Speed_DOWN" /> MOVE Decrease</sec> state caused by using <sec typ="important">Frost Storm</sec>, at the start of the round, increases self’s <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="0" /></sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="1" r /></sec>, and <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="2" r /></sec>, decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="3" r inv /></sec>, and triggers a counterattack with <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> power</sec>.
+      TC: 因使用<sec typ="important">冰霜風暴</sec>而處於<sec typ="cond"><buff typ="Speed_DOWN" /> 行動力降低</sec>狀態時，回合開始時，增加自身的<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>、<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r /></sec>、<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="2" r /></sec>，減少<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="3" r inv /></sec>，並發動以<sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 威力</sec>進行反擊的效果。
 dialogue:
   KR:
     "1":
@@ -8545,9 +8594,7 @@ dialogue:
         무슨 검사냐고?
         여왕의 고통을 잊게 해 줄 수 있는지…
         알아보는 검사야.
-      Oath: 여왕과 평생 함께하고 싶다고? 그거야 당연한 일이지. 넌 여왕을 책임져야 하니까. ...오해하지 마. 내가 말한 책임은… 고통과
-        증오밖에 몰랐던 여왕에게 남을 돕는 일의 즐거움을… 자매들의 소중함을... 그리고 널 향한… 이… 말할 수 없는 기분을 알려준
-        책임을 말하는 거니까.
+      Oath: 여왕과 평생 함께하고 싶다고? 그거야 당연한 일이지. 넌 여왕을 책임져야 하니까. ...오해하지 마. 내가 말한 책임은… 고통과 증오밖에 몰랐던 여왕에게 남을 돕는 일의 즐거움을… 자매들의 소중함을... 그리고 널 향한… 이… 말할 수 없는 기분을 알려준 책임을 말하는 거니까.
       OathIdle_01: |-
         잠깐 기다려. 장갑을 벗어야 하니까.
         네 손을 잡고 있는 소중한 시간을…
@@ -8666,9 +8713,8 @@ dialogue:
       Idle_03_01: お酒も悪くはないかもね。こんな風に少しでも苦痛を忘れられるわけだし。他の方法？…好きにしたら…？
       Idle_04_01: うっ…！はぁ、はぁ…ふふ、あぁ、少し、辛い。全身が、引き裂かれそうなほどに痛い…。だから…この手、離さないで…
       SPIdle_02_01: やっぱりそうだったのね。…好きにしたら…。…私も…たまに、そういう気分になることは…あるから。…お酒のせいでね…。
-      Oath: >-
+      Oath: |-
         お酒に酔ってるなら私がイエスって言うと思ったって…？…本当にあなたらしい考えね。単純で、一辺倒で、幼稚で…本当…殺してしまいたいって…いつも…思ってる。
-
         …何してるの？一杯飲もうってあなたが言ったくせに。早く喋りなさい、聞いてあげるから。……あなたのそのどうでもいい話、結構楽しいんだから…。
       OathIdle_01: 思ったより大したことなかった…。何がって？あなたが口酸っぱく言ってた…幸せ、よ…。
       MVP: 私も自分の気持ちが…よく分からない…
@@ -8750,9 +8796,7 @@ dialogue:
         무슨 검사냐고?
         여왕의 고통을 잊게 해 줄 수 있는지…
         알아보는 검사야.
-      Oath: "[미번역]여왕과 평생 함께하고 싶다고? 그거야 당연한 일이지. 넌 여왕을 책임져야 하니까. ...오해하지 마. 내가 말한 책임은…
-        고통과 증오밖에 몰랐던 여왕에게 남을 돕는 일의 즐거움을… 자매들의 소중함을... 그리고 널 향한… 이… 말할 수 없는 기분을
-        알려준 책임을 말하는 거니까."
+      Oath: "[미번역]여왕과 평생 함께하고 싶다고? 그거야 당연한 일이지. 넌 여왕을 책임져야 하니까. ...오해하지 마. 내가 말한 책임은… 고통과 증오밖에 몰랐던 여왕에게 남을 돕는 일의 즐거움을… 자매들의 소중함을... 그리고 널 향한… 이… 말할 수 없는 기분을 알려준 책임을 말하는 거니까."
       OathIdle_01: |-
         [미번역]잠깐 기다려. 장갑을 벗어야 하니까.
         네 손을 잡고 있는 소중한 시간을…
@@ -8786,9 +8830,8 @@ dialogue:
       Idle_03_01: はぁ、はぁ…ふふ、この女王が哀れで、見ていて滑稽なのだろう？使い物にならない廃品がみっともなく足掻いているから。…同情なんかいらない。
       Idle_04_01: そのどうでもいい頑固さは手の施しようがないのか？…この女王は幸せとは無縁だ。余に残されたものは…苦痛と憎悪しかない。
       SPIdle_02_01: うっ…痛かったかだと？この程度、何ともない。好きなだけやれ。
-      Oath: >-
+      Oath: |-
         …何のためにこの女王にここまでする？余…いや、私のような失敗作に…？…まだ幸せだとかふざけた妄想に浸っているのか？…必ず私を幸せにする、だと…？ 
-
         …いいだろう。私の負け。この女王の敗北だ。全てお前の思い通りにさせてやる…その代わり本当にこの女王を幸せにするのだ。いいな？
       OathIdle_01: …幸せか？…だと？何のことだか。初めからそんなもの知らずに生きてきた。ただ…お前の横にいると苦痛が減る…それは悪くない。
       MVP: うっふふふふ…あはははははは！
@@ -8861,12 +8904,9 @@ dialogue:
         Ugh…! *Panting*… Hoo hoo, no, I’m not okay.
         It’s like my body’s being ripped apart. So…
         don’t let go of my hand.​
-      SPIdle_02_01: I knew you were up to this… Do whatever you want. It must be the
-        alcohol… The Queen feels like doing it.​
-      Oath: >-
-        You thought the queen would say yes with some alcohol? … That really
-        sounds like you. You are simple-minded, childish…
-
+      SPIdle_02_01: I knew you were up to this… Do whatever you want. It must be the alcohol… The Queen feels like doing it.​
+      Oath: |-
+        You thought the queen would say yes with some alcohol? … That really sounds like you. You are simple-minded, childish…
         and I seriously can’t stop thinking about you. … What are you doing? You said you wanted to have a drink with me. I’ll listen, so do whatever you want to do… Because watching you rambling is quite… entertaining.
       OathIdle_01: |-
         So it was nothing special. You know what I’m talking about.
@@ -8890,8 +8930,7 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: You got involved the others on top of Rhea… What are you gonna do?
-        You take responsibility of it.​
+      Idle_01_01: You got involved the others on top of Rhea… What are you gonna do? You take responsibility of it.​
       Idle_01_02: |-
         Do I feel good these days?
         … Come to think of it, I do.
@@ -8907,30 +8946,20 @@ dialogue:
         Talking with my sisters,
         watching you fool around.
         To be honest… I’m enjoying them.
-      Idle_03_01: >-
+      Idle_03_01: |-
         Why did I wear it if I don’t like it.
-
         I just, wanted to experience-
-
         I feel like a fool trying to pull up excuses… ‘Cause you asked me to wear it. Okay?
-      Idle_04_01: >-
+      Idle_04_01: |-
         So, what’s next? What do you mean what.
-
         I went to the party,
-
         and we talked, as you wished. Oh yeah?
-
         Alright. I’ll look forward to it.
-
         You didn’t hear me wrong. I am really… Looking forward to what I’ll do with you.
-      SPIdle_02_01: Do it right if you’re gonna do it. Or else… You’re just gonna make
-        the queen who anticipated so much look like an idiot.
-      Oath: >-
-        Ha, so that’s how it’s gonna be. What you can think of to make the queen
-        happy is quite predictable.
-
+      SPIdle_02_01: Do it right if you’re gonna do it. Or else… You’re just gonna make the queen who anticipated so much look like an idiot.
+      Oath: |-
+        Ha, so that’s how it’s gonna be. What you can think of to make the queen happy is quite predictable.
         So, am I happy? … Well. I’m not sure yet. At least I think you’re going in the right direction.
-
         So… I’ll keep hanging out with you.
       OathIdle_01: |-
         You must not cherish your life.
@@ -8987,19 +9016,14 @@ dialogue:
         What kind of examination is it?
         It's an examination to see…
         if it makes you forget the queen's pain.
-      Oath: Do you want to live with the queen for the rest of your life? That’s a
-        given. You’re responsible for her. Don’t take it the wrong way. I'm
-        talking about the responsibility of showing a queen who knew nothing but
-        pain and hate the joy of helping others… the importance of sisters… and
-        this… unspeakable feeling I have for you.
+      Oath: Do you want to live with the queen for the rest of your life? That’s a given. You’re responsible for her. Don’t take it the wrong way. I'm talking about the responsibility of showing a queen who knew nothing but pain and hate the joy of helping others… the importance of sisters… and this… unspeakable feeling I have for you.
       OathIdle_01: |-
         Wait a moment. I have to take off my gloves.
         I don’t want to share with my gloves
         the precious time I get to hold your hand.
       MVP: ""
     "":
-      Join: The name of the queen is Titania. How dare you… you’ve brought back the
-        Queen into this desolate world?
+      Join: The name of the queen is Titania. How dare you… you’ve brought back the Queen into this desolate world?
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -9018,9 +9042,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         Rhea… Yes, it’s all because of Rhea.
-
         If it weren’t for that despicable woman, Queen would be… Hoo hoo, I’ll kill her.
       Idle_01_02: |-
         You’re going to make Queen happy…? *Chuckles*
@@ -9040,11 +9063,9 @@ dialogue:
       SPIdle_02_01: |-
         Ugh… Does it hurt? It’s nothing.
         Do whatever you want.
-      Oath: >-
+      Oath: |-
         Why are you going this far for the queen? A quee… no, a failure like me?
-
         … You’re still talking about that happiness nonsense. You’re going to make me happy…? 
-
         … Okay. You won. It’s the queen’s defeat. I’ll do whatever you want… Make the queen happy in return.
       OathIdle_01: |-
         Am I happy? I don’t know. I never knew what it was
@@ -9069,15 +9090,12 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         I don’t want to encounter the Fairy Series.
-
         When I see them… it feels like
-
         the existence of the Queen is being denied… Yes. If you affirm the existence, I might be alright.
-      Idle_01_02: >-
+      Idle_01_02: |-
         I can never get used to this pain. Sometimes it’s the head,
-
         sometimes it’s the whole body… that aches… But I can forget about it when I’m in your arms.
       Idle_01_03: |-
         Do you really think you saved the Queen?

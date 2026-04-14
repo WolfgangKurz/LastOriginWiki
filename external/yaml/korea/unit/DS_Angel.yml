@@ -1731,6 +1731,19 @@ skills:
             base: 29
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 <dmg elem="physics" />를 주고 적중한 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격을 해제</sec>합니다.
+        2라운드 동안 대상의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec>를 증가시키고 <sec typ="buff"><buff typ="MARKING" /> 표식 지정</sec>합니다.
+      JP: |-
+        単体対象に<dmg elem="physics" />のダメージを与え、命中した対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />反撃を解除</sec>します。
+        2ラウンドの間、対象の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="2" r /></sec>を増加させ、<sec typ="buff"><buff typ="MARKING" />標的指定</sec>します。
+      EN: |-
+        Deals <dmg elem="physics" /> damage to a single target and <sec typ="buff"><buff typ="REMOVE_BUFF" />removes Retaliation</sec> from the hit target.
+        For 2 rounds, increases the target’s <sec typ="buff"><buff typ="VULNERABLE" />received damage<val idx="2" r /></sec> and <sec typ="buff"><buff typ="MARKING" />Marks</sec> them.
+      TC: |-
+        對單一目標造成<dmg elem="physics" />傷害，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除命中目標的反擊</sec>。
+        於2回合內增加目標的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="2" r /></sec>，並<sec typ="buff"><buff typ="MARKING" />指定標記</sec>。
   "2":
     key: "2"
     icon: DefCounter
@@ -2140,6 +2153,11 @@ skills:
             base: 2
             per: 0
             chance: 1
+    desc:
+      KR: 아군 공격기의 <sec typ="buff"><buff typ="AP_UP" /> AP를 <val idx="0" signless />로 변경</sec>시키고 2라운드 동안 <sec typ="buff"><buff typ="COUNTER" /> <val idx="1" r signless /> 위력으로 반격</sec>을 부여하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="6" r inv /></sec>를 감소시키며 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="11" /></sec>을(를) 증가시킵니다.
+      JP: 味方の攻撃機の<sec typ="buff"><buff typ="AP_UP" />APを<val idx="0" signless />に変更</sec>し、2ラウンドの間<sec typ="buff"><buff typ="COUNTER" /><val idx="1" r signless />威力で反撃</sec>を付与し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="6" r inv /></sec>を減少させ、<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="11" /></sec>を増加させます。
+      EN: Changes ally Attackers’ <sec typ="buff"><buff typ="AP_UP" />AP to <val idx="0" signless /></sec>, grants <sec typ="buff"><buff typ="COUNTER" />counterattack with <val idx="1" r signless /> power</sec> for 2 rounds, decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage<val idx="6" r inv /></sec>, and increases <sec typ="buff"><buff typ="RANGE_UP" />Range<val idx="11" /></sec>.
+      TC: 將我軍攻擊機的<sec typ="buff"><buff typ="AP_UP" />AP改為<val idx="0" signless /></sec>，並於2回合內賦予<sec typ="buff"><buff typ="COUNTER" />以<val idx="1" r signless />威力反擊</sec>，同時減少<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="6" r inv /></sec>，並增加<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="11" /></sec>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -2505,6 +2523,19 @@ skills:
             base: 0.2475
             per: 0.0225
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 아군 공격기 및 <sec typ="note">코헤이 교단</sec> 대원의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장 피해량 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="note">코헤이 교단</sec> 대원에게는 효과가 50% 증가합니다.
+      JP: |-
+        ラウンド開始時、味方の攻撃機および<sec typ="note">コウヘイ教団</sec>隊員の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />対重装ダメージ量<val idx="2" r /></sec>が増加します。
+        <sec typ="note">コウヘイ教団</sec>隊員には効果が50%増加します。
+      EN: |-
+        At the start of the round, increases <sec typ="buff"><buff typ="ATK_UP" />ATK<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />ACU<val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />Anti-Heavy Armor Damage<val idx="2" r /></sec> for ally Attackers and <sec typ="note">Kouhei Church</sec> members.
+        The effect is increased by 50% for <sec typ="note">Kouhei Church</sec> members.
+      TC: |-
+        回合開始時，增加我軍攻擊機與<sec typ="note">科佩教團</sec>大員的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝傷害量<val idx="2" r /></sec>。
+        <sec typ="note">科佩教團</sec>大員的效果增加50%。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -3014,6 +3045,19 @@ skills:
             base: 3
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전투 시작 시, 자신에게 1회 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP로 전투 속행</sec> 효과와 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="1" /></sec> 효과를 부여합니다.
+        <sec typ="cond"><buff typ="DEF_RESSURRECT" /> 전투 속행</sec> 발동 시, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="8" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 전투 속행</sec>이 발동한 라운드에는 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화</sec>효과를 획득합니다.
+      JP: |-
+        戦闘開始時、自分に1回<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="0" signless />HPで戦闘続行</sec>効果と<sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア<val idx="1" /></sec>効果を付与します。
+        <sec typ="cond"><buff typ="DEF_RESSURRECT" />戦闘続行</sec>発動時、自分の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="8" r /></sec>が増加し、<sec typ="buff"><buff typ="DEF_RESSURRECT" />戦闘続行</sec>が発動したラウンドには<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化</sec>効果を獲得します。
+      EN: |-
+        At the start of combat, grants self a 1-time <sec typ="buff"><buff typ="DEF_RESSURRECT" />Continue Combat with <val idx="0" signless /> HP</sec> effect and <sec typ="buff"><buff typ="DAMAGE_ABSORB" />Barrier<val idx="1" /></sec>.
+        When <sec typ="cond"><buff typ="DEF_RESSURRECT" />Continue Combat</sec> triggers, self’s <sec typ="buff"><buff typ="AP_UP" />MOVE<val idx="7" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />Effect Resistance<val idx="8" r /></sec> increases, and in the round in which <sec typ="buff"><buff typ="DEF_RESSURRECT" />Continue Combat</sec> triggers, gains <sec typ="buff"><buff typ="DEF_All" />Damage Invalidation</sec>.
+      TC: |-
+        戰鬥開始時，賦予自身1次<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="0" signless /> HP繼續戰鬥</sec>效果與<sec typ="buff"><buff typ="DAMAGE_ABSORB" />防護罩<val idx="1" /></sec>效果。
+        <sec typ="cond"><buff typ="DEF_RESSURRECT" />繼續戰鬥</sec>發動時，自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="8" r /></sec>增加，且在<sec typ="buff"><buff typ="DEF_RESSURRECT" />繼續戰鬥</sec>發動的回合中，獲得<sec typ="buff"><buff typ="DEF_All" />傷害無效化</sec>效果。
 dialogue:
   KR:
     "1":
@@ -3346,12 +3390,9 @@ dialogue:
         Umm, can I cover it with a hat?..?
         I know that the light will allow it… But thinking of someone is looking
         not just you… It’s very embarrassing…​
-      Oath: >-
-        Sometimes I wondered what would have happened if I hadn't met you. The
-        breeze, the fresh wind,
-
+      Oath: |-
+        Sometimes I wondered what would have happened if I hadn't met you. The breeze, the fresh wind,
         The shining sunlight, and even this heart… I wouldn't have known of these. Yes, the feeling you are feeling right now.
-
         …For now on, I will call you My dear partner! You like it more, and I'm also… happy with it.
       OathIdle_01: |-
         Lalala♪ Oh, did you hear me? Maybe because I sensed
@@ -3359,8 +3400,7 @@ dialogue:
         so excited about the date already.​
       MVP: ""
     "":
-      Join: I will bring the will of the Light here. I will spread the will of the
-        Light to the world with you.
+      Join: I will bring the will of the Light here. I will spread the will of the Light to the world with you.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -3378,10 +3418,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        The angels and nuns of the Sisterhood were all here… Thank you so much,
-        O mighty Light.
-
+      Idle_01_01: |-
+        The angels and nuns of the Sisterhood were all here… Thank you so much, O mighty Light.
         Now I can propagate doctrines.
       Idle_01_02: |-
         H-hello. … Yes, I was here alone.
@@ -3404,13 +3442,9 @@ dialogue:
         Savior, if you’re not too busy, will you stay with me?
         I prefer being with you than staying alone.
         It makes me feel so peaceful. … Thank you so much. I like you.
-      SPIdle_02_01: Is it… really okay? I shouldn’t do something irreverent… The Light
-        should be watching… Am I corrupted?
-      Oath: >-
-        I came as you told me to… Savior, but… Are you alright? Your mind is
-        unstable, calm down… It was because of this. Oh my… I don’t know what
-        I’m feeling… Glad, embarrassed, nervous…?
-
+      SPIdle_02_01: Is it… really okay? I shouldn’t do something irreverent… The Light should be watching… Am I corrupted?
+      Oath: |-
+        I came as you told me to… Savior, but… Are you alright? Your mind is unstable, calm down… It was because of this. Oh my… I don’t know what I’m feeling… Glad, embarrassed, nervous…?
         If you allow it Light… no, Savior… should I call you dear, from now on?
       OathIdle_01: |-
         My heart pounds whenever I run into you.

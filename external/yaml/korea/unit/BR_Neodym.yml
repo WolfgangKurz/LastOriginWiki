@@ -2487,6 +2487,23 @@ skills:
             base: 150
             per: 15
             chance: 1
+    desc:
+      KR: |-
+        금속 잔해를 투척해 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>이(가) 감소하고 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+        <sec typ="cond">치명타 시</sec>, 2라운드 동안 대상이 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec>가 증가하고 자신은 <sec typ="buff"><sec typ="note">잔해</sec>를 1중첩 획득</sec>합니다.
+      JP: |-
+        金属の残骸を投げつけて <dmg elem="physics" /> を与えます。
+        <sec typ="cond">命中時</sec>、対象の <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> が減少し、<sec typ="buff"><buff typ="REMOVE_BUFF" /> 被ダメージ減少効果を解除</sec>します。
+        <sec typ="cond">クリティカル時</sec>、2ラウンドの間、対象の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec> が増加し、自分は <sec typ="buff"><sec typ="note">残骸</sec>を1スタック獲得</sec>します。
+      EN: |-
+        Throws metal debris to deal <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, reduces the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> and removes <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage reduction effects</sec>.
+        <sec typ="cond">On critical hit</sec>, increases the target's <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec> for 2 rounds, and self gains 1 stack of <sec typ="note">Debris</sec>.
+      TC: |-
+        投擲金屬殘骸，造成 <dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，使目標的 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> 降低，並解除 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害降低效果</sec>。
+        <sec typ="cond">暴擊時</sec>，使目標在 2 回合內的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" r /></sec> 提高，且自身獲得 1 層 <sec typ="note">殘骸</sec>。
   "2":
     key: "2"
     icon: WideBeamShot
@@ -7682,6 +7699,35 @@ skills:
               level: "0"
             value: Effect_BR_Neodym_N_51
             chance: 1
+    desc:
+      KR: |-
+        금속으로 된 감옥에 적을 가두어 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상은 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec>가 감소하고 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태가 됩니다.
+        <sec typ="cond">스킬 사용 후</sec> <sec typ="buff"><sec typ="note">잔해</sec>를 모두 소모</sec>하며, 소모한 <sec typ="note">잔해</sec> 중첩 수에 따라 다음 효과가 추가로 적용됩니다.
+        <box t="잔해 1중첩"><sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="5" /></sec> 감소</box>
+        <box t="잔해 2중첩"><sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="6" r /></sec> 감소</box>
+        <box t="잔해 3중첩"><sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과 해제</sec></box>
+      JP: |-
+        金属製の牢獄に敵を閉じ込めて <sec typ="attr">保護無視</sec> <dmg elem="physics" /> を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="0" r /></sec> が減少し、<sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態になります。
+        <sec typ="cond">スキル使用後</sec> <sec typ="buff"><sec typ="note">残骸</sec>をすべて消費</sec>し、消費した <sec typ="note">残骸</sec> のスタック数に応じて次の効果が追加で適用されます。
+        <box t="残骸1スタック"><sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="5" /></sec> 減少</box>
+        <box t="残骸2スタック"><sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="6" r /></sec> 減少</box>
+        <box t="残骸3スタック"><sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を解除</sec></box>
+      EN: |-
+        Traps the enemy in a metal prison and deals <sec typ="attr">ignore protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, reduces the target's <sec typ="buff"><buff typ="EVADE_DOWN" /> evasion <val idx="0" r /></sec> for 2 rounds and inflicts <sec typ="buff"><buff typ="SNARE" /> immobility</sec>.
+        <sec typ="cond">After using the skill</sec>, <sec typ="buff"><sec typ="note">Debris</sec> is fully consumed</sec>, and the following effects are additionally applied based on the number of <sec typ="note">Debris</sec> stacks consumed.
+        <box t="1 Debris stack"><sec typ="buff"><buff typ="RANGE_DOWN" /> range <val idx="5" /></sec> decrease</box>
+        <box t="2 Debris stacks"><sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="6" r /></sec> decrease</box>
+        <box t="3 Debris stacks"><sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec></box>
+      TC: |-
+        將敵人關入金屬牢籠，造成 <sec typ="attr">無視保護</sec> 的 <dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，使目標在 2 回合內的 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="0" r /></sec> 降低，並進入 <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 狀態。
+        <sec typ="cond">技能使用後</sec>會<sec typ="buff"><sec typ="note">殘骸</sec>全部消耗</sec>，並依消耗的 <sec typ="note">殘骸</sec> 層數追加以下效果。
+        <box t="殘骸 1 層"><sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="5" /></sec> 降低</box>
+        <box t="殘骸 2 層"><sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="6" r /></sec> 降低</box>
+        <box t="殘骸 3 層"><sec typ="buff"><buff typ="REMOVE_BUFF" /> 解除強化效果</sec></box>
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -8252,6 +8298,27 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec>가 감소하고 <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 모든 속성 저항 <val idx="5" r /></sec>가 증가합니다.
+        <sec typ="cond">대상의 HP가 50% 이상인 경우</sec>, 상기 효과 수치가 50% 증폭됩니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신의 HP가 50% 이상인 경우</sec>, 범위 내 아군 보호기는 추가로 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="13" /></sec>이(가) 증가합니다.
+        <sec typ="cond">상기 효과를 보유한 아군이 있을 경우</sec>, 자신도 동일한 효과를 획득합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="4" r inv /></sec> が減少し、<sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 全属性耐性 <val idx="5" r /></sec> が増加します。
+        <sec typ="cond">対象のHPが50%以上の場合</sec>、上記効果値が50%増幅されます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自分のHPが50%以上の場合</sec>、範囲内の味方保護機はさらに <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="13" /></sec> が増加します。
+        <sec typ="cond">上記効果を持つ味方がいる場合</sec>、自分も同じ効果を獲得します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, reduces allies within range's <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="4" r inv /></sec> and increases <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> all-element resistance <val idx="5" r /></sec>.
+        <sec typ="cond">If the target's HP is 50% or higher</sec>, the above effect values are amplified by 50%.
+        <sec typ="cond">At round start</sec> <sec typ="cond">if own HP is 50% or higher</sec>, allied protectors within range additionally gain <sec typ="buff"><buff typ="DEF_UP" /> defense <val idx="12" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="13" /></sec>.
+        <sec typ="cond">If there are allies with the above effects</sec>, self also gains the same effects.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，使範圍內友軍的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="4" r inv /></sec> 降低，並使 <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 全屬性抗性 <val idx="5" r /></sec> 提高。
+        <sec typ="cond">若目標 HP 50% 以上</sec>，上述效果數值提升 50%。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若自身 HP 50% 以上</sec>，範圍內友軍保護機額外獲得 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="13" /></sec> 提高。
+        <sec typ="cond">若有友軍持有上述效果</sec>，自身也會獲得相同效果。
   "4":
     key: "4"
     icon: P.Barrier
@@ -8589,6 +8656,27 @@ skills:
             base: 2000
             per: 200
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="2" signless /></sec>을(를) 획득합니다.
+        <sec typ="cond">공격 받을 시</sec> <sec typ="cond">자신에게 방어막이 없을 경우</sec>, 범위 내 아군에게 1라운드 동안 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="4" signless /></sec>을(를) 부여합니다.
+        <sec typ="cond"><sec typ="note">잔해</sec>를 보유한 경우</sec>, <sec typ="note">반응 방벽</sec>으로 인한 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막</sec>이 두 배로 증폭됩니다.
+        <sec>자신의 액티브 스킬은 레벨당 20%의 적중 보정이 적용됩니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分は <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="2" signless /></sec> を獲得します。
+        <sec typ="cond">攻撃を受けた時</sec> <sec typ="cond">自分にバリアがない場合</sec>、範囲内の味方に1ラウンドの間 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="4" signless /></sec> を付与します。
+        <sec typ="cond"><sec typ="note">残骸</sec>を保有している場合</sec>、<sec typ="note">反応障壁</sec>による <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア</sec> が2倍に増幅されます。
+        <sec>自分のアクティブスキルには、レベルごとに20%の命中補正が適用されます。</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, self gains <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> a shield of <val idx="2" signless /></sec>.
+        <sec typ="cond">When attacked</sec> <sec typ="cond">if self has no shield</sec>, grants allies within range <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> a shield of <val idx="4" signless /></sec> for 1 round.
+        <sec typ="cond">If <sec typ="note">Debris</sec> is held</sec>, the <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> shield</sec> from <sec typ="note">Reaction Barrier</sec> is doubled.
+        <sec>Self's active skills gain 20% accuracy correction per level.</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身獲得 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> <val idx="2" signless /></sec> 的護盾。
+        <sec typ="cond">受到攻擊時</sec> <sec typ="cond">若自身沒有護盾</sec>，則在 1 回合內賦予範圍內友軍 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> <val idx="4" signless /></sec> 的護盾。
+        <sec typ="cond">若持有 <sec typ="note">殘骸</sec></sec>，則由 <sec typ="note">反應防壁</sec> 產生的 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾</sec> 會變為 2 倍。
+        <sec>自身的主動技能每級都會套用 20% 命中補正。</sec>
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -9006,6 +9094,27 @@ skills:
             base: 2
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">대기</sec> 또는 <sec typ="cond">적 사망 시</sec>, 주변의 금속 잔해를 수집하여 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" /></sec>이(가) 증가합니다. <sec>(최대 3중첩)</sec>
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">잔해</sec> 1 중첩당 범위 내 아군 보호기의 <sec typ="dmg"><buff typ="SKILL_UP" /> 방어력 <val idx="6" r />만큼 스킬 위력</sec>이 증가합니다.
+        <sec typ="cond"><sec typ="note">마그넷 프리즌</sec>으로 <sec typ="note">잔해</sec> 중첩을 소모하면</sec>, 2라운드 동안 상기 효과가 추가로 적용됩니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond"><sec typ="note">잔해</sec>를 보유하지 않은 경우</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>이(가) 증가합니다.
+      JP: |-
+        <sec typ="cond">待機時</sec> または <sec typ="cond">敵死亡時</sec>、周囲の金属の残骸を回収して自分の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" /></sec> が増加します。 <sec>(最大3スタック)</sec>
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">残骸</sec>1スタックごとに範囲内の味方保護機の <sec typ="dmg"><buff typ="SKILL_UP" /> 防御力 <val idx="6" r />分のスキル威力</sec> が増加します。
+        <sec typ="cond"><sec typ="note">マグネットプリズン</sec>で <sec typ="note">残骸</sec> のスタックを消費した場合</sec>、2ラウンドの間、上記効果がさらに適用されます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond"><sec typ="note">残骸</sec>を所持していない場合</sec>、自分の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec> が増加します。
+      EN: |-
+        <sec typ="cond">When waiting</sec> or <sec typ="cond">when an enemy dies</sec>, collects nearby metal debris and increases own <sec typ="buff"><buff typ="DEF_UP" /> defense <val idx="0" /></sec>. <sec>(Up to 3 stacks)</sec>
+        <sec typ="cond">At round start</sec>, each <sec typ="note">Debris</sec> stack increases allied protectors within range's <sec typ="dmg"><buff typ="SKILL_UP" /> skill power equal to defense <val idx="6" r /></sec>.
+        <sec typ="cond">If <sec typ="note">Debris</sec> stacks are consumed by <sec typ="note">Magnet Prison</sec></sec>, the above effect is additionally applied for 2 rounds.
+        <sec typ="cond">At round start</sec> <sec typ="cond">if no <sec typ="note">Debris</sec> is held</sec>, increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>.
+      TC: |-
+        <sec typ="cond">待機</sec> 或 <sec typ="cond">敵人死亡時</sec>，收集周圍的金屬殘骸，使自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" /></sec> 提高。 <sec>(最多 3 層)</sec>
+        <sec typ="cond">回合開始時</sec>，每 1 層 <sec typ="note">殘骸</sec> 會使範圍內友軍保護機的 <sec typ="dmg"><buff typ="SKILL_UP" /> 等同於防禦力 <val idx="6" r /> 的技能威力</sec> 提高。
+        <sec typ="cond">若以 <sec typ="note">Magnet Prison</sec> 消耗 <sec typ="note">殘骸</sec> 層數</sec>，則上述效果會額外套用 2 回合。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若未持有 <sec typ="note">殘骸</sec></sec>，則自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec> 提高。
 dialogue:
   KR:
     "1":
@@ -9106,9 +9215,7 @@ dialogue:
         사령관, 그거 알아? 장거리 비행기에는
         승무원 침실이 마련되어 있대.
         같이 자러 갈래?
-      Oath: 옛날에는 다시 태어나면 비행기가 되고 싶다고 생각했어. 저 하늘을 자유롭게 날아보고 싶었거든. 하지만 지금은 달라. 나는 다시
-        태어나더라도 네오딤이 되고 싶어. 다시 한번 사령관을 만나서, 다시 한번 사랑에 빠지고… 다시 한번 반지를 받고 싶거든.
-        그러니까… 평생 함께 하자, 사령관.
+      Oath: 옛날에는 다시 태어나면 비행기가 되고 싶다고 생각했어. 저 하늘을 자유롭게 날아보고 싶었거든. 하지만 지금은 달라. 나는 다시 태어나더라도 네오딤이 되고 싶어. 다시 한번 사령관을 만나서, 다시 한번 사랑에 빠지고… 다시 한번 반지를 받고 싶거든. 그러니까… 평생 함께 하자, 사령관.
       OathIdle_01: |-
         우리 비행기에는 좌석 벨트가 없지 않냐고?
         대신 내가 있잖아.
@@ -9159,9 +9266,7 @@ dialogue:
       SPIdle_02_01: |-
         응… 알겠어.
         오늘 밤… 사령관의 사랑을 훔치러 갈게.
-      Oath: 괴도 N을 가둘 수 있는 감옥은 없어. 그런데… 지금 보니까 그 말은 틀린 것 같아. 사령관이 만든 이 사랑이라는 감옥은, 너무
-        행복해서 나갈 생각조차 들지 않거든. 탈옥할 방법이 없으니… 평생 같이 지내야겠네. 그렇지? 그럼… 앞으로 잘 부탁해, 사랑하는
-        간수장님.
+      Oath: 괴도 N을 가둘 수 있는 감옥은 없어. 그런데… 지금 보니까 그 말은 틀린 것 같아. 사령관이 만든 이 사랑이라는 감옥은, 너무 행복해서 나갈 생각조차 들지 않거든. 탈옥할 방법이 없으니… 평생 같이 지내야겠네. 그렇지? 그럼… 앞으로 잘 부탁해, 사랑하는 간수장님.
       OathIdle_01: |-
         난 잡히면 안 되는 도둑이지만…
         사령관한테 잡히는 건
@@ -9350,9 +9455,7 @@ dialogue:
         [미번역]사령관, 그거 알아? 장거리 비행기에는
         승무원 침실이 마련되어 있대.
         같이 자러 갈래?
-      Oath: "[미번역]옛날에는 다시 태어나면 비행기가 되고 싶다고 생각했어. 저 하늘을 자유롭게 날아보고 싶었거든. 하지만 지금은 달라. 나는
-        다시 태어나더라도 네오딤이 되고 싶어. 다시 한번 사령관을 만나서, 다시 한번 사랑에 빠지고… 다시 한번 반지를 받고 싶거든.
-        그러니까… 평생 함께 하자, 사령관."
+      Oath: "[미번역]옛날에는 다시 태어나면 비행기가 되고 싶다고 생각했어. 저 하늘을 자유롭게 날아보고 싶었거든. 하지만 지금은 달라. 나는 다시 태어나더라도 네오딤이 되고 싶어. 다시 한번 사령관을 만나서, 다시 한번 사랑에 빠지고… 다시 한번 반지를 받고 싶거든. 그러니까… 평생 함께 하자, 사령관."
       OathIdle_01: |-
         [미번역]우리 비행기에는 좌석 벨트가 없지 않냐고?
         대신 내가 있잖아.
@@ -9403,9 +9506,7 @@ dialogue:
       SPIdle_02_01: |-
         [미번역]응… 알겠어.
         오늘 밤… 사령관의 사랑을 훔치러 갈게.
-      Oath: "[미번역]괴도 N을 가둘 수 있는 감옥은 없어. 그런데… 지금 보니까 그 말은 틀린 것 같아. 사령관이 만든 이 사랑이라는 감옥은,
-        너무 행복해서 나갈 생각조차 들지 않거든. 탈옥할 방법이 없으니… 평생 같이 지내야겠네. 그렇지? 그럼… 앞으로 잘 부탁해,
-        사랑하는 간수장님."
+      Oath: "[미번역]괴도 N을 가둘 수 있는 감옥은 없어. 그런데… 지금 보니까 그 말은 틀린 것 같아. 사령관이 만든 이 사랑이라는 감옥은, 너무 행복해서 나갈 생각조차 들지 않거든. 탈옥할 방법이 없으니… 평생 같이 지내야겠네. 그렇지? 그럼… 앞으로 잘 부탁해, 사랑하는 간수장님."
       OathIdle_01: |-
         [미번역]난 잡히면 안 되는 도둑이지만…
         사령관한테 잡히는 건
@@ -9521,10 +9622,8 @@ dialogue:
         You love me, don’t you Commander?
         … I love you, too. Do you want a hug?
       SPIdle_02_01: Do you think I can do well?
-      Oath: >-
-        Is this… for me? Thank you, Commander… You can rest by my side when you
-        feel sad.
-
+      Oath: |-
+        Is this… for me? Thank you, Commander… You can rest by my side when you feel sad.
         Since you must have done your absolute best… I’ll pet and hug you, commander… I love you… commander.
       OathIdle_01: |-
         We’re lovers now,
@@ -9634,9 +9733,8 @@ dialogue:
       SPIdle_02_01: |-
         Well, since we’re on the same side… umm…
         I’ll let you do it a bit.
-      Oath: >-
+      Oath: |-
         Commander… you prepared all this? I also… feel the same thing. 
-
         Uh… I'm glad… But I'm so surprised, I don't know what to do. - What should I do?
       OathIdle_01: |-
         Umm… The day you gave me the present?

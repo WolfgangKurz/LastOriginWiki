@@ -4239,6 +4239,19 @@ skills:
             base: 29
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        가위날로 장갑을 깎아 <dmg elem="physics" />를 주고, 3라운드 동안 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      JP: |-
+        ハサミ刃で装甲を削り、<dmg elem="physics" />のダメージを与え、3ラウンドの間、<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を減少させます。
+        <sec typ="cond">クリティカル時</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
+      EN: |-
+        Cuts away armor with a scissor blade, dealing <dmg elem="physics" /> damage and decreasing <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> for 3 rounds.
+        <sec typ="cond">On CRIT</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+      TC: |-
+        以剪刀刃削開裝甲，造成<dmg elem="physics" />傷害，並在3回合內減少<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -7972,6 +7985,19 @@ skills:
             base: 29
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        시저스 블레이드 연속 베기로 <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> 상태인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 각각 증가합니다.
+      JP: |-
+        シザースブレードの連続斬りで<dmg elem="physics" />のダメージを与えます。
+        対象が<sec typ="cond"><buff typ="DEF_DOWN" /> 防御力減少</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> 受けるダメージ増加</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>がそれぞれ増加します。
+      EN: |-
+        Delivers <dmg elem="physics" /> damage with a series of Scissors Blade strikes.
+        If the target is in <sec typ="cond"><buff typ="DEF_DOWN" /> DEF Decrease</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> Increased Received Damage</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases accordingly.
+      TC: |-
+        以西洋劍連續斬擊造成<dmg elem="physics" />傷害。
+        若目標處於<sec typ="cond"><buff typ="DEF_DOWN" /> 防禦力減少</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> 所受傷害增加</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>會分別增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -8256,6 +8282,23 @@ skills:
             base: 1
             per: -0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r />가 증가합니다.
+        <sec typ="cond">공격 적중 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="6" r /></sec>가 증가합니다.
+        <sec>상기 효과는 효과 해제로 해제할 수 없으며</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가</sec> 효과는 <sec>최대 5회까지 중첩됩니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>, 自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r />が増加します。
+        <sec typ="cond">攻撃命中時</sec>, 2ラウンドの間、自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="6" r /></sec>が増加します。
+        <sec>上記効果は効果解除では解除できず</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力増加</sec>効果は<sec>最大5回までスタックします。</sec>
+      EN: |-
+        At the start of the round, self’s <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /> increases.
+        <sec typ="cond">On attack hit</sec>, for 2 rounds self’s <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="6" r /></sec> increases.
+        <sec>These effects cannot be removed by effect removal</sec>, and the <sec typ="buff"><buff typ="ATK_UP" /> ATK Increase</sec> effect<sec> stacks up to 5 times.</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="2" r />增加。
+        <sec typ="cond">攻擊命中時</sec>，在2回合內自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="6" r /></sec>增加。
+        <sec>上述效果無法透過解除強化解除</sec>，而<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力增加</sec>效果<sec>最多可疊加5次。</sec>
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -8533,6 +8576,35 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec>이(가) 증가합니다.
+        <sec typ="cond">적 공격 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가합니다. (최대 2중첩)
+        <sec typ="cond">스쿼드 내에 <cmt t="처리하고 싶은 해충">$$LISE_TARGET:?$</cmt>이 있는 경우</sec>에는 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>가 추가로 증가합니다.
+        $$LISE_TARGET~
+        <char uid="3P_BlackLilith" /> / <char uid="3P_Sowan" />
+        ~$$LISE_TARGET
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>, 自身の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">敵攻撃時</sec>, 2ラウンドの間、自身の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が増加します。(最大2スタック)
+        <sec typ="cond">分隊内に<cmt t="処理したい害虫">$$LISE_TARGET:?$</cmt>がいる場合</sec>は<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>が追加で増加します。
+        $$LISE_TARGET~
+        <char uid="3P_BlackLilith" /> / <char uid="3P_Sowan" />
+        ~$$LISE_TARGET
+      EN: |-
+        At the start of combat, self’s <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec> increases.
+        <sec typ="cond">When attacked by an enemy</sec>, self’s <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="3" r /></sec> increases for 2 rounds. (max 2 stacks)
+        <sec typ="cond">If there is a <cmt t="Pests to Deal With">$$LISE_TARGET:?$</cmt> in the squad</sec>, <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="4" r /></sec> additionally increases.
+        $$LISE_TARGET~
+        <char uid="3P_BlackLilith" /> / <char uid="3P_Sowan" />
+        ~$$LISE_TARGET
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec>增加。
+        <sec typ="cond">受到敵軍攻擊時</sec>，在2回合內自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>增加。(最多2層)
+        <sec typ="cond">若小隊內有<cmt t="想處理的害蟲">$$LISE_TARGET:?$</cmt></sec>，則<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>額外增加。
+        $$LISE_TARGET~
+        <char uid="3P_BlackLilith" /> / <char uid="3P_Sowan" />
+        ~$$LISE_TARGET
   "5":
     key: "5"
     icon: P.Music
@@ -8952,6 +9024,31 @@ skills:
             base: 140
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP로 전투 속행</sec> 효과를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="dmg"><buff typ="DamageAmp_Me" /> 자신의 HP 반비례 피해량 <val idx="4" r /></sec> 증가 효과를 획득합니다.
+        <sec typ="cond">대기 시</sec>, 다음 라운드에 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 반복 행동</sec> 효과를 획득합니다.
+        <sec>자신 또는 대상이 행동할 수 없을 때까지 효과가 유지</sec>되며, <sec typ="cond">스킬 사용 시</sec> <sec typ="buff"><buff typ="HP_DOWN" /> 자신의 최대 HP <val idx="7" slot="1" r signless />만큼 피해</sec>를 받습니다.
+        <sec>반복 행동 중 다른 이가 개입할 수 없으며</sec>, <sec typ="cond">적 처치 시</sec> 지친 나머지 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 상태가 됩니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>, 自身は<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HPで戦闘続行</sec>効果を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>, 自身は<sec typ="dmg"><buff typ="DamageAmp_Me" /> 自身のHPに反比例するダメージ量 <val idx="4" r /></sec>増加効果を獲得します。
+        <sec typ="cond">待機時</sec>, 次のラウンドに<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 反復行動</sec>効果を獲得します。
+        <sec>自身または対象が行動できなくなるまで効果は維持</sec>され、<sec typ="cond">スキル使用時</sec> <sec typ="buff"><buff typ="HP_DOWN" /> 自身の最大HP <val idx="7" slot="1" r signless />分のダメージ</sec>を受けます。
+        <sec>反復行動中は他者が介入できず</sec>, <sec typ="cond">敵を撃破すると</sec>疲れ果てて<sec typ="buff"><buff typ="SEAL_SKILL" /> スキル使用不可</sec>状態になります。
+      EN: |-
+        At the start of combat, self gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat with <val idx="0" r signless /> HP</sec>.
+        <sec typ="cond">At the start of the round</sec>, self gains an effect that increases <sec typ="dmg"><buff typ="DamageAmp_Me" /> damage inversely proportional to self’s HP <val idx="4" r /></sec>.
+        <sec typ="cond">On standby</sec>, self gains <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Repeat Action</sec> on the next round.
+        <sec>The effect lasts until self or the target can no longer act</sec>, and <sec typ="cond">when the skill is used</sec> self takes <sec typ="buff"><buff typ="HP_DOWN" /> damage equal to <val idx="7" slot="1" r signless /> of self’s max HP</sec>.
+        <sec>No one else can intervene during Repeat Action</sec>, and <sec typ="cond">when an enemy is defeated</sec> self becomes too exhausted to <sec typ="buff"><buff typ="SEAL_SKILL" /> use skills</sec>.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以<val idx="0" r signless /> HP繼續戰鬥</sec>效果。
+        <sec typ="cond">回合開始時</sec>，自身獲得<sec typ="dmg"><buff typ="DamageAmp_Me" /> 與自身生命力成反比的傷害量 <val idx="4" r /></sec>增加效果。
+        <sec typ="cond">待機時</sec>，在下回合獲得<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 重複行動</sec>效果。
+        <sec>效果持續至自身或目標無法行動為止</sec>，且<sec typ="cond">使用技能時</sec>會受到相當於<sec typ="buff"><buff typ="HP_DOWN" /> 自身最大生命力 <val idx="7" slot="1" r signless /></sec>的傷害。
+        <sec>重複行動期間他人無法介入</sec>，且<sec typ="cond">擊殺敵軍時</sec>會因疲憊而進入<sec typ="buff"><buff typ="SEAL_SKILL" /> 無法使用技能</sec>狀態。
 dialogue:
   KR:
     "1":
@@ -9007,8 +9104,7 @@ dialogue:
         주인님께서 저 때문에… 이러면 제가
         책임지고 간호해드릴 수밖에 없겠네요.
         침대에… 누워주세요.
-      Oath: 주인님, 역시 그 누구보다도 저에게 간호를 받고 싶으신 거죠? 걱정 마세요. 저 역시도 주인님과 같은 병에 걸렸으니까요. 사랑이라는
-        병에요. 후후후후후후. 그러니 그 누구보다도 주인님을 잘 간호할 수 있을 거예요. 평생을 간호해드릴게요. 사랑해요, 저의 주인님.
+      Oath: 주인님, 역시 그 누구보다도 저에게 간호를 받고 싶으신 거죠? 걱정 마세요. 저 역시도 주인님과 같은 병에 걸렸으니까요. 사랑이라는 병에요. 후후후후후후. 그러니 그 누구보다도 주인님을 잘 간호할 수 있을 거예요. 평생을 간호해드릴게요. 사랑해요, 저의 주인님.
       OathIdle_01: |-
         문을 잠근 이유요?
         안정을 취하셔야 하니까요.
@@ -9124,9 +9220,7 @@ dialogue:
       SPIdle_02_01: |-
         주인님… 아이들이 우리 일기를 읽지 못할...
         그런 일을 해주세요.
-      Oath: 주인님께 전하고 싶은 마음이 이렇게 넘치고넘치고넘치고넘쳐서… 노트 수백수천 권만으로는 부족해졌는데… 이렇게 반지까지 주시면… 어떻게
-        노트만으로 제 마음을 전부 전할 수 있을까요? 사랑해요, 사랑해요, 사랑해요. 저의 삶 전체로 주인님께 제 마음을 전할게요.
-        사랑해요, 주인님.
+      Oath: 주인님께 전하고 싶은 마음이 이렇게 넘치고넘치고넘치고넘쳐서… 노트 수백수천 권만으로는 부족해졌는데… 이렇게 반지까지 주시면… 어떻게 노트만으로 제 마음을 전부 전할 수 있을까요? 사랑해요, 사랑해요, 사랑해요. 저의 삶 전체로 주인님께 제 마음을 전할게요. 사랑해요, 주인님.
       OathIdle_01: |-
         주인님 주위를 얼쩡거리는 해충들을 모두
         구제해버리고 싶었어요.
@@ -9277,9 +9371,7 @@ dialogue:
         (미번역)주인님께서 저 때문에… 이러면 제가
         책임지고 간호해드릴 수밖에 없겠네요.
         침대에… 누워주세요.
-      Oath: (미번역)주인님, 역시 그 누구보다도 저에게 간호를 받고 싶으신 거죠? 걱정 마세요. 저 역시도 주인님과 같은 병에 걸렸으니까요.
-        사랑이라는 병에요. 후후후후후후. 그러니 그 누구보다도 주인님을 잘 간호할 수 있을 거예요. 평생을 간호해드릴게요. 사랑해요,
-        저의 주인님.
+      Oath: (미번역)주인님, 역시 그 누구보다도 저에게 간호를 받고 싶으신 거죠? 걱정 마세요. 저 역시도 주인님과 같은 병에 걸렸으니까요. 사랑이라는 병에요. 후후후후후후. 그러니 그 누구보다도 주인님을 잘 간호할 수 있을 거예요. 평생을 간호해드릴게요. 사랑해요, 저의 주인님.
       OathIdle_01: |-
         (미번역)문을 잠근 이유요?
         안정을 취하셔야 하니까요.
@@ -9346,8 +9438,7 @@ dialogue:
         私がご主人様の次に愛している姉妹たちが私をこんなに素敵にしてくれたんです。
       SPIdle_02_01: ご主人様…子供たちに日記を見せられなくなってしまうような……そんなことを…してください。
       Oath: ご主人様に伝えたい想いがこんなにも溢れて…日記帳が何万冊あっても足りないのに…指輪まで頂いてしまったら…もうこれだけでは私の想いを全て伝えることができません。愛してます。私の人生を全て捧げて、ご主人様にこの想いを伝えます。愛してます、愛してます、愛してます、愛してます…ご主人様。
-      OathIdle_01: ご主人様の周りをうろつく害虫はすべて駆除したいです。ですがご主人様を愛せば愛すほど、私もご主人様がお好きなものを好きに…
-        なろうと努力しているところです。
+      OathIdle_01: ご主人様の周りをうろつく害虫はすべて駆除したいです。ですがご主人様を愛せば愛すほど、私もご主人様がお好きなものを好きに… なろうと努力しているところです。
       MVP: ""
     "":
       Join: ご主人様… やっとお会いできましたね！ご安心ください。私の目が届く範囲に害虫どもはおりませんから。
@@ -9446,11 +9537,9 @@ dialogue:
         My experience as a nurse? Don't worry.
         I had plenty through Dryad.
         I at least know how to tell if someone is faking it or not.
-      Idle_01_03: >-
+      Idle_01_03: |-
         What's this red thing? Hehehe… What do you think it is?
-
         Come to think of it, a pest that damaged your eyes got hurt, right? Hehehe…
-
         I put some medicine on it.
       SPIdle_01_01: Hehehe… You like me better, right?
       Idle_02_01: |-
@@ -9472,10 +9561,7 @@ dialogue:
         Because of me… with things like this,
         I have no choice but to take responsibility and nurse you, Master.
         Please… lie down on the bed.
-      Oath: You want to get nursed by me more than anyone else, right, Master? Don't
-        worry. I'm also suffering from the same illness as you. The illness
-        called love. Hehehehehe… So I'll be able to take care of you better than
-        anyone else. I will take care of you forever. I love you, Master.
+      Oath: You want to get nursed by me more than anyone else, right, Master? Don't worry. I'm also suffering from the same illness as you. The illness called love. Hehehehehe… So I'll be able to take care of you better than anyone else. I will take care of you forever. I love you, Master.
       OathIdle_01: |-
         The reason I locked the door?
         Because you have to take it easy.
@@ -9532,10 +9618,8 @@ dialogue:
         Master… There’s almost
         no chocolate left. Now…
         *Chuckles*
-      Oath: >-
-        Master… This is not a dream, is it? Haha, Hahaha… Master, I love you… I
-        love you…!
-
+      Oath: |-
+        Master… This is not a dream, is it? Haha, Hahaha… Master, I love you… I love you…!
         Now please make me… fully yours, master…!
       OathIdle_01: |-
         You have my scent,
@@ -9569,8 +9653,7 @@ dialogue:
         I wasn't able to write in the exchange diaries that much this time.
         I've been busy exterminating pests these days.
         Here are 30 books I wrote.
-      Idle_01_03: Um… Master. You see… i-it’s kinda difficult to ask… but c-can I hold
-        your hand?
+      Idle_01_03: Um… Master. You see… i-it’s kinda difficult to ask… but c-can I hold your hand?
       SPIdle_01_01: Master… If you do that… Ah…
       Idle_02_01: |-
         …Agh!
@@ -9587,22 +9670,17 @@ dialogue:
       SPIdle_02_01: |-
         Master… please do something…
         that will keep our children from reading my diary.
-      Oath: >-
+      Oath: |-
         Hundreds and thousands of handwritten notes…
-
         they weren't enough to express my heart to you, as it overflows endlessly…
-
         but if you give me a ring like this…
-
         how can I express my feelings to you with just words? I love you, I love you, I love you. I will express my heart to you with all of my being. I love you, Master.
-      OathIdle_01: >-
+      OathIdle_01: |-
         I wanted to exterminate all the pests lurking around you, Master.
-
         But the more I love you, the more I’m trying to like… the things you like.
       MVP: ""
     "":
-      Join: Master… so we finally meet! Don't worry. There will be no bugs to bother
-        us in my sector!
+      Join: Master… so we finally meet! Don't worry. There will be no bugs to bother us in my sector!
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -9645,10 +9723,8 @@ dialogue:
         a fortress outside the submarine. And put the other girls
         inside the Fortress…
       SPIdle_02_01: I see… is this a seduction?
-      Oath: >-
-        I was waiting for you. Master… Here. I prepared, too… So, take this
-        ring… 
-
+      Oath: |-
+        I was waiting for you. Master… Here. I prepared, too… So, take this ring… 
         We… will be together forever… Just the two of us…
       OathIdle_01: |-
         *Chuckles* Don’t worry. I already glued

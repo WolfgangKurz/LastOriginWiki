@@ -811,6 +811,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        특별한 파장을 담은 자신의 목소리로 대상을 매혹합니다.
+        적중에 관계 없이 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 회피 강화 효과를 해제</sec>하고, 3라운드 동안 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="4" r /></sec> 감소 효과를 부여합니다.
+        적중 시, <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 가하고 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 강화 효과를 해제</sec>합니다.
+        <sec typ="cond"><buff typ="Pull" /> 매혹</sec> 상태의 적은 피격 시마다 가능한 경우 전열 쪽으로 끌려오게 됩니다. (<sec typ="buff"><buff typ="Pull" /> 앞으로 <val idx="6" signless />칸 당깁니다</sec>)
+      JP: |-
+        特別な波長を込めた自分の声で対象を魅了します。
+        命中に関係なく対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />回避強化効果を解除</sec>し、3ラウンドの間<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="4" r /></sec>減少効果を付与します。
+        命中時、<sec typ="attr">保護無視</sec>の<dmg elem="physics" />を与え、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />反撃強化効果を解除</sec>します。
+        <sec typ="cond"><buff typ="Pull" />魅了</sec>状態の敵は被弾するたび、可能であれば前列へ引き寄せられます。（<sec typ="buff"><buff typ="Pull" />前へ<val idx="6" signless />マス引き寄せます</sec>）
+      EN: |-
+        Charms the target with her own voice imbued with special waves.
+        Regardless of hit, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> EVADE buff</sec> and applies a 3-round <sec typ="buff"><buff typ="EVADE_DOWN" /> EVADE <val idx="4" r /></sec> reduction effect.
+        On hit, deals <sec typ="attr">ignores Protection</sec> <dmg elem="physics" /> damage and removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> counterattack buff</sec>.
+        Enemies under <sec typ="cond"><buff typ="Pull" />Charm</sec> are pulled toward the front line whenever they are hit, if possible. (<sec typ="buff"><buff typ="Pull" /> Pulls forward <val idx="6" signless /> cells</sec>)
+      TC: |-
+        以蘊含特殊波長的自身聲音魅惑目標。
+        不論是否命中，皆會<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的迴避強化效果</sec>，並賦予3回合的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="4" r /></sec>減少效果。
+        命中時，造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的反擊強化效果</sec>。
+        處於<sec typ="cond"><buff typ="Pull" />魅惑</sec>狀態的敵軍，在每次受擊時若可行，會被拉向前排。（<sec typ="buff"><buff typ="Pull" />向前拉<val idx="6" signless />格</sec>）
   "2":
     key: "2"
     icon: Music
@@ -1165,6 +1186,23 @@ skills:
             base: 0.15
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        지정 범위 내 아군에게 2라운드 동안 아군 1체당 <sec typ="buff"><buff typ="ATK_UP" /> 자신의 공격력 <val idx="0" r signless /> 만큼 공격력 증가</sec> 효과를 부여합니다.
+        스킬 사용 시, 자신은 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="5" slot="4" r /></sec> 감소 일반 효과를 획득합니다.
+        라운드 개시 및 스킬 사용 시, 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 타 전투원의 공격력 비례 공격력 증가 효과를 해제</sec>합니다.
+      JP: |-
+        指定範囲内の味方に、2ラウンドの間、味方1体につき<sec typ="buff"><buff typ="ATK_UP" />自分の攻撃力<val idx="0" r signless />分だけ攻撃力増加</sec>効果を付与します。
+        スキル使用時、自分は<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="5" slot="4" r /></sec>減少の一般効果を獲得します。
+        ラウンド開始時とスキル使用時、自分に適用された<sec typ="buff"><buff typ="REMOVE_BUFF" />他の戦闘員の攻撃力比率による攻撃力増加効果を解除</sec>します。
+      EN: |-
+        Grants allies within the designated area an <sec typ="buff"><buff typ="ATK_UP" /> ATK increase equal to her own ATK <val idx="0" r signless /></sec> per ally for 2 rounds.
+        When the skill is used, self gains a normal <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="5" slot="4" r /></sec> reduction effect.
+        At round start and when the skill is used, removes the <sec typ="buff"><buff typ="REMOVE_BUFF" /> ATK increase effect based on another combatant's ATK</sec> applied to self.
+      TC: |-
+        對指定範圍內我軍賦予2回合效果：每1名我軍皆會獲得<sec typ="buff"><buff typ="ATK_UP" />相當於自身攻擊力<val idx="0" r signless />的攻擊力增加</sec>效果。
+        使用技能時，自身會獲得<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="5" slot="4" r /></sec>減少的一般效果。
+        在回合開始及使用技能時，解除自身受到的<sec typ="buff"><buff typ="REMOVE_BUFF" />其他戰鬥員攻擊力比例的攻擊力增加效果</sec>。
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -1454,6 +1492,35 @@ skills:
             base: 20
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, <sec typ="cond">자신보다 행동력이 낮은</sec> 주변 아군에게 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 증가 효과를 부여합니다.
+        라운드 개시 시, 자신 주변 아군에게 역할군에 따라 1라운드 동안 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 해로운 효과 면역</sec> 상태를 부여합니다.
+        자신은 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 모든 면역 상태를 획득</sec>합니다.
+        공격기 : <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 공격력 감소 면역</sec>
+        보호기 : <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 방어력 감소 면역</sec>
+        지원기 : <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> AP 감소 면역</sec>
+      JP: |-
+        戦闘開始時、<sec typ="cond">自分より行動力が低い</sec>周辺の味方に<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>増加効果を付与します。
+        ラウンド開始時、自分の周辺の味方に役割群に応じて1ラウンドの間<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />有害効果免疫</sec>状態を付与します。
+        自分は<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />すべての免疫状態を獲得</sec>します。
+        攻撃機 : <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />攻撃力減少免疫</sec>
+        保護機 : <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />防御力減少免疫</sec>
+        支援機 : <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />AP減少免疫</sec>
+      EN: |-
+        At battle start, grants nearby allies whose AP is lower than self an <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increase effect.
+        At round start, grants nearby allies immunity to harmful effects for 1 round according to role.
+        Self gains <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> all immunity states</sec>.
+        Attacker: <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immunity to ATK reduction</sec>
+        Protector: <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immunity to DEF reduction</sec>
+        Supporter: <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immunity to AP reduction</sec>
+      TC: |-
+        在戰鬥開始時，對<sec typ="cond">行動力低於自身</sec>的周圍我軍賦予<sec typ="buff"><buff typ="AP_UP" /> AP<val idx="0" /></sec>增加效果。
+        在回合開始時，依據角色分類，對自身周圍我軍賦予1回合的<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />有害效果免疫</sec>狀態。
+        自身會獲得<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />所有免疫狀態</sec>。
+        攻擊機：<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />攻擊力減少免疫</sec>
+        保護機：<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />防禦力減少免疫</sec>
+        支援機：<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />AP減少免疫</sec>
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -2020,6 +2087,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신은 1라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> 증가 일반 효과를 획득합니다.
+        적 사망 시, <sec typ="note">With You</sec>에 의한 자신의 <sec typ="buff">공격력 감소 효과를 해제</sec>합니다.
+        라운드 개시 시, <sec typ="note">With You</sec>에 의한 자신의 <sec typ="cond">공격력 감소 효과가 적용되지 않은 상태인 경우</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가합니다.
+        아군에 <char uid="PECS_Muse" />가 편성된 경우, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="4" r signless /> HP로 전투 속행</sec> 효과를 얻습니다.
+      JP: |-
+        ラウンド開始時、自分は1ラウンドの間<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>増加の一般効果を獲得します。
+        敵死亡時、<sec typ="note">With You</sec>による自分の<sec typ="buff">攻撃力減少効果を解除</sec>します。
+        ラウンド開始時、<sec typ="note">With You</sec>による自分の<sec typ="cond">攻撃力減少効果が適用されていない場合</sec>、自分の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>が増加します。
+        味方に<char uid="PECS_Muse" />が編成されている場合、<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="4" r signless /> HPで戦闘続行</sec>効果を得ます。
+      EN: |-
+        At round start, self gains a normal <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> increase effect for 1 round.
+        When an enemy dies, removes self's <sec typ="note">With You</sec>-caused <sec typ="buff">ATK reduction effect</sec>.
+        At round start, if self is <sec typ="cond">not under the <sec typ="note">With You</sec>-caused ATK reduction effect</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" r /></sec> increases.
+        If <char uid="PECS_Muse" /> is in the squad, gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat with <val idx="4" r signless /> HP</sec> effect.
+      TC: |-
+        在回合開始時，自身會獲得持續1回合的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>增加一般效果。
+        敵軍死亡時，解除自身因<sec typ="note">With You</sec>所造成的<sec typ="buff">攻擊力減少效果</sec>。
+        在回合開始時，若自身<sec typ="cond">未受到<sec typ="note">With You</sec>所造成的攻擊力減少效果</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>會增加。
+        若我軍編成中有<char uid="PECS_Muse" />，則可獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="4" r signless /> HP繼續戰鬥</sec>效果。
   "5":
     key: "5"
     icon: P.TeamSpdDeBuff
@@ -2624,6 +2712,31 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond"><sec typ="note">넌 이미☆나의 FAN</sec> 사용시</sec>, 대상 아군에게 <sec typ="note">앙코르 연주</sec> 강화 효과를 줍니다.
+        <sec>부여 항목은 <sec typ="note">라이브 연주</sec>와 동일하며 수치는 <sec typ="note">앙코르 연주</sec>의 레벨에 따릅니다.</sec>
+        <sec typ="cond"><char uid="PECS_Erato" /> 피격시</sec>, <sec typ="cond"><char uid="PECS_Erato" />에게 <sec typ="note">여운</sec>이 있고 <sec typ="note">작곡가님…!</sec>이 없다면</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="9" r signless /> HP로 전투 속행</sec>을 주는 <sec typ="note">한곡만 더!</sec>와 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="10" r inv /></sec> 감소를 주는 <sec typ="note">피날레</sec> <sec typ="attr">일반 효과</sec>를 부여하고 <sec typ="buff">여운을 제거</sec>합니다.
+        <sec><sec typ="note">피날레</sec>와 <sec typ="note">한곡만 더!</sec>는 <sec typ="attr">일반 효과</sec>이며 <sec typ="note">피날레</sec>가 있는한 <sec typ="note">한곡만 더!</sec>는 얻을 수 없습니다.</sec>
+        <sec>모든 효과는 중첩이 없습니다.</sec>
+      JP: |-
+        <sec typ="cond"><sec typ="note">もう☆私のFAN</sec>使用時</sec>、対象の味方に<sec typ="note">アンコール演奏</sec>の強化効果を与えます。
+        <sec>付与される項目は<sec typ="note">ライブ演奏</sec>と同一で、数値は<sec typ="note">アンコール演奏</sec>のレベルに応じます。</sec>
+        <sec typ="cond"><char uid="PECS_Erato" />被弾時</sec>、<sec typ="cond"><char uid="PECS_Erato" />に<sec typ="note">残響</sec>があり、<sec typ="note">作曲家さま…！</sec>がない場合</sec>、<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="9" r signless /> HPで戦闘続行</sec>を与える<sec typ="note">もう1曲！</sec>と、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="10" r inv /></sec>減少を与える<sec typ="note">フィナーレ</sec><sec typ="attr">一般効果</sec>を付与し、<sec typ="buff">残響を解除</sec>します。
+        <sec><sec typ="note">フィナーレ</sec>と<sec typ="note">もう1曲！</sec>は<sec typ="attr">一般効果</sec>であり、<sec typ="note">フィナーレ</sec>がある限り<sec typ="note">もう1曲！</sec>は獲得できません。</sec>
+        <sec>すべての効果は重複しません。</sec>
+      EN: |-
+        When <sec typ="cond"><sec typ="note">You Are Already ☆ My FAN</sec> is used</sec>, grants the target ally the <sec typ="note">Encore Performance</sec> enhancement effect.
+        <sec>The granted effects are the same as <sec typ="note">Live Performance</sec>, and the values depend on the level of <sec typ="note">Encore Performance</sec>.</sec>
+        <sec typ="cond">When <char uid="PECS_Erato" /> is hit</sec>, if <char uid="PECS_Erato" /> has <sec typ="note">Afterglow</sec> and does not have <sec typ="note">Maestro...!</sec></sec>, grants the <sec typ="note">One More Song!</sec> general effect, which gives <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat with <val idx="9" r signless /> HP</sec>, and the <sec typ="note">Finale</sec> general effect, which grants <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="10" r inv /></sec> reduction, and removes <sec typ="buff">Afterglow</sec>.
+        <sec><sec typ="note">Finale</sec> and <sec typ="note">One More Song!</sec> are <sec typ="attr">general effects</sec>, and as long as <sec typ="note">Finale</sec> exists, <sec typ="note">One More Song!</sec> cannot be obtained.</sec>
+        <sec>All effects do not stack.</sec>
+      TC: |-
+        在<sec typ="cond"><sec typ="note">你已經☆是我的FAN</sec>使用時</sec>，會對目標我軍賦予<sec typ="note">安可演奏</sec>強化效果。
+        <sec>賦予項目與<sec typ="note">現場演奏</sec>相同，數值則依照<sec typ="note">安可演奏</sec>的等級而定。</sec>
+        <sec typ="cond"><char uid="PECS_Erato" />受擊時</sec>，若<char uid="PECS_Erato" />擁有<sec typ="note">餘韻</sec>且沒有<sec typ="note">作曲家大人…！</sec></sec>，則賦予會提供<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="9" r signless /> HP繼續戰鬥</sec>的<sec typ="note">再來一曲！</sec>，以及提供<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="10" r inv /></sec>減少的<sec typ="note">終章</sec><sec typ="attr">一般效果</sec>，並<sec typ="buff">移除餘韻</sec>。
+        <sec><sec typ="note">終章</sec>與<sec typ="note">再來一曲！</sec>皆為<sec typ="attr">一般效果</sec>，且只要存在<sec typ="note">終章</sec>，便無法獲得<sec typ="note">再來一曲！</sec>。</sec>
+        <sec>所有效果皆無法疊加。</sec>
 dialogue:
   KR:
     "1":
@@ -2751,12 +2864,9 @@ dialogue:
         내 퍼포먼스에
         결점은 없는 지 오늘 밤..
         프로듀싱을 부탁해도 될까?​
-      Oath: >-
-        흐음~ 특별히 신경쓴 내 모습을 보고 세삼 다시 반해버린 거구나? 이 귀여운 프로듀서씨를 어떡하지? 알다시피 난 만인의 가수
-        에라토 뭐..뭣?
-
+      Oath: |-
+        흐음~ 특별히 신경쓴 내 모습을 보고 세삼 다시 반해버린 거구나? 이 귀여운 프로듀서씨를 어떡하지? 알다시피 난 만인의 가수 에라토 뭐..뭣?
         진심으로 하는 소리였다고? 정마알 알다가도 모르겠다니까.. 프로듀서와 계속해서 함께 할 수 있다면 내 꿈을 이룬 거나 다름 없을지도 몰라.
-
         이 공연이 끝나는 대로 우리 영원을 약속하자! 오늘은 프로듀서를 위한 사랑의 노래를 부를게!
       OathIdle_01: |-
         누군가에 이렇게
@@ -3038,9 +3148,8 @@ dialogue:
         I actually prepared a secret show for you…
         Our hearts really connected.
         Should we head to the stage together?
-      Oath: >-
+      Oath: |-
         I didn't show it when I was trying the dress… but a part of me really
-
         wished that I was going to be your bride. Thank you for understanding me! You are truly the greatest producer!
       OathIdle_01: |-
         I'd love to hear
@@ -3079,8 +3188,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Join: You must be the producer? I’m Erato. Let’s show my fans the best stage
-        ever!
+      Join: You must be the producer? I’m Erato. Let’s show my fans the best stage ever!
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -3138,12 +3246,9 @@ dialogue:
         I don’t dislike the Producer either.
         The Producer is deep in my heart…
         So the fans will understand…?​
-      Oath: >-
-        I don’t dislike the Producer. No, I like the Producer. But for me to
-        continue singing… I’ll wait?
-
+      Oath: |-
+        I don’t dislike the Producer. No, I like the Producer. But for me to continue singing… I’ll wait?
         …What if I sing until I die? Even then? What IS that? …But I made up my mind. Marry me, Producer.
-
         I might have to give up my dreams, but if we say we love each other, the fans will understand. Always forever, Producer!
       OathIdle_01: |-
         Tell me if you have a song you want to hear.

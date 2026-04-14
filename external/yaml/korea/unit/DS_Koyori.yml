@@ -1904,6 +1904,19 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        부적을 던져 지정 범위에 <dmg elem="physics" />를 줍니다.
+        적중 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가 효과를 해제</sec>하고 2라운드 동안 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다.
+      JP: |-
+        お札を投げて指定範囲に<dmg elem="physics" />を与えます。
+        命中時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />防御力増加効果を解除</sec>し、2ラウンドの間<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>を減少させます。
+      EN: |-
+        Throws a talisman to deal <dmg elem="physics" /> damage to the designated area.
+        On hit, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> DEF increase effect</sec> and decreases <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> for 2 rounds.
+      TC: |-
+        投擲符紙，對指定範圍造成<dmg elem="physics" />傷害。
+        命中時，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的防禦力增加效果</sec>，並於2回合內降低<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力<val idx="0" r /></sec>。
   "2":
     key: "2"
     icon: Vortex
@@ -3023,6 +3036,23 @@ skills:
             base: -0.3
             per: -0.05
             chance: 1
+    desc:
+      KR: |-
+        수인을 맺고 구자진언을 외며 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 적중 강화 효과를 해제</sec>하고 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>를 감소시킵니다.
+        스킬 사용 시, 자신은 1라운드 동안 <sec typ="buff"><buff typ="EVASION_UP" /> 회피 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="MOVE_UP" /> 행동력 <val idx="5" r /></sec> 증가 효과를 획득합니다.
+      JP: |-
+        印を結び、九字真言を唱えて指定範囲に<sec typ="attr">保護無視</sec>の<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />命中強化効果を解除</sec>し、<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="0" r /></sec>を減少させます。
+        スキル使用時、自分は1ラウンドの間<sec typ="buff"><buff typ="EVASION_UP" />回避<val idx="4" r /></sec> / <sec typ="buff"><buff typ="MOVE_UP" />行動力<val idx="5" r /></sec>増加効果を獲得します。
+      EN: |-
+        Forms hand seals and recites a mantra to deal <sec typ="attr">ignores Protection</sec> <dmg elem="physics" /> damage to the designated area.
+        <sec typ="cond">On hit</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Accuracy buff effect</sec> and decreases <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> for 2 rounds.
+        When the skill is used, self gains <sec typ="buff"><buff typ="EVASION_UP" /> EVADE <val idx="4" r /></sec> / <sec typ="buff"><buff typ="MOVE_UP" /> AP <val idx="5" r /></sec> increase effects for 1 round.
+      TC: |-
+        結印並誦念咒語，對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害。
+        <sec typ="cond">命中時</sec>，於2回合內<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的命中強化效果</sec>，並降低<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中<val idx="0" r /></sec>。
+        使用技能時，自身會於1回合內獲得<sec typ="buff"><buff typ="EVASION_UP" /> 迴避<val idx="4" r /></sec> / <sec typ="buff"><buff typ="MOVE_UP" /> 行動力<val idx="5" r /></sec>增加效果。
   "3":
     key: "3"
     icon: P.Charm
@@ -3321,6 +3351,19 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP로 전투 속행</sec> 효과를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 효과를 획득합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自分は<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HPで戦闘続行</sec>効果を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、自分は<sec typ="buff"><buff typ="SUPPORT_ATTACK" />再攻撃</sec>効果を獲得します。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat with <val idx="0" r signless /> HP</sec>.
+        <sec typ="cond">At round start</sec>, self gains <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Reattack</sec>.
+      TC: |-
+        <sec typ="cond">在戰鬥開始時</sec>，自身會獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以<val idx="0" r signless /> HP繼續戰鬥</sec>效果。
+        <sec typ="cond">在回合開始時</sec>，自身會獲得<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻擊</sec>效果。
   "4":
     key: "4"
     icon: P.SuicideBomb
@@ -3570,6 +3613,11 @@ skills:
               level: "0"
             value: Effect_DS_Koyori_N_4
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+      JP: <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>が増加します。
+      EN: <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+      TC: <sec typ="cond">在回合開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> AP<val idx="0" /></sec>增加。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -3957,6 +4005,11 @@ skills:
             base: 0.6
             per: 0.06
             chance: 1
+    desc:
+      KR: 이 유닛은 출력 슬롯이 없습니다.
+      JP: このユニットには出力スロットがありません。
+      EN: This unit has no output slots.
+      TC: 此單位沒有輸出槽位。
 dialogue:
   KR:
     "20":
@@ -4009,9 +4062,7 @@ dialogue:
       SPIdle_02_01: |-
         후후... 내 매력에 푹 빠지기라도 한 거야?
         하긴, 내 미모에 반하는 건 당연한 일이지.
-      Oath: 옛날 생각 나네. 보상으로 공주님을 주세요! 라고 했다가 정말 공주님을 받았던 적이 있거든. 물론 그건 어디까지나 각본 상의
-        일이었지만… 이번에는 진짜로 왕자님을 받아버렸네? 다행히 이번 보상은 내 마음에 쏙 드는데… 좋아, 이제부터 사령관은 내 거야.
-        절대 안 돌려줄 거니까 각오해?
+      Oath: 옛날 생각 나네. 보상으로 공주님을 주세요! 라고 했다가 정말 공주님을 받았던 적이 있거든. 물론 그건 어디까지나 각본 상의 일이었지만… 이번에는 진짜로 왕자님을 받아버렸네? 다행히 이번 보상은 내 마음에 쏙 드는데… 좋아, 이제부터 사령관은 내 거야. 절대 안 돌려줄 거니까 각오해?
       OathIdle_01: |-
         사령관을 돕는 이유? 그야, 보상금 때문에…
         …농담이니까 그렇게 보지 마.
@@ -4070,9 +4121,7 @@ dialogue:
       SPIdle_02_01: |-
         흐음~ 뭐, 그만큼 내가 매력적이라는 거겠지.
         다음부터는 먼저 물어보고 해. 알았지?
-      Oath: 이 정의외 미모의 무녀 코요리가 마음에 들었다는 거지? 옛날에도 나 좋다고 하던 애들이 있었는데 말이야… 음. 지금 다른 애들
-        이야기는 멋없지? 하하하! 다행스럽게도 나도 사령관이 마음에 들어. 오늘 일은 절대로 잊지 않을게. 그러니 사령관도 잊지 말아
-        줘. 알겠지?
+      Oath: 이 정의외 미모의 무녀 코요리가 마음에 들었다는 거지? 옛날에도 나 좋다고 하던 애들이 있었는데 말이야… 음. 지금 다른 애들 이야기는 멋없지? 하하하! 다행스럽게도 나도 사령관이 마음에 들어. 오늘 일은 절대로 잊지 않을게. 그러니 사령관도 잊지 말아 줘. 알겠지?
       OathIdle_01: |-
         인류가 멸망하고 나쁜 일만 있을 거라고 
         생각했는데… 꼭 그런 것만은 아니네.

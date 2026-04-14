@@ -2942,6 +2942,23 @@ skills:
             base: -0.5
             per: -0.025
             chance: 1
+    desc:
+      KR: |-
+        시어 블레이드를 소환하여 지정된 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 발생시킵니다.
+        <sec typ="cond">스킬 적중 시</sec> 대상은 2라운드 동안 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> 및 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시키고 <cmt loc t="FLOOD">$$FLOOD:4,5,6$</cmt> 상태로 만듭니다.
+        <sec typ="cond">치명타 시</sec> 2라운드 동안 <sec typ="dmg"><buff typ="IceDMG_DOT" /> 지속 냉기 피해 <val idx="3" signless /></sec>를 발생시킵니다.
+      JP: |-
+        シアブレードを召喚し、指定範囲に<sec typ="attr">保護無視</sec><dmg elem="ice" />を発生させます。
+        <sec typ="cond">スキル命中時</sec>、対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>および<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="1" r /></sec>を2ラウンドの間減少させ、<cmt loc t="FLOOD">$$FLOOD:4,5,6$</cmt>状態にします。
+        <sec typ="cond">クリティカル時</sec>、2ラウンドの間<sec typ="dmg"><buff typ="IceDMG_DOT" />持続冷気ダメージ<val idx="3" signless /></sec>を発生させます。
+      EN: |-
+        Summons a Sheer Blade and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="ice" /> damage to the designated area.
+        <sec typ="cond">On Skill Hit</sec>, decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="1" r /></sec> for 2 rounds, and puts them into <cmt loc t="FLOOD">$$FLOOD:4,5,6$</cmt> state.
+        <sec typ="cond">On CRIT</sec>, inflicts <sec typ="dmg"><buff typ="IceDMG_DOT" /> Cold DoT <val idx="3" signless /></sec> for 2 rounds.
+      TC: |-
+        召喚冰刃，對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="ice" />傷害。
+        <sec typ="cond">技能命中時</sec>，於2回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>及<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="1" r /></sec>，並使其進入<cmt loc t="FLOOD">$$FLOOD:4,5,6$</cmt>狀態。
+        <sec typ="cond">暴擊時</sec>，於2回合內施加<sec typ="dmg"><buff typ="IceDMG_DOT" />持續冷氣傷害<val idx="3" signless /></sec>。
   "2":
     key: "2"
     icon: AirStrike
@@ -6236,6 +6253,27 @@ skills:
             base: 0.02
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        공중에서 시어 블레이드를 소환하여 지정 범위에 <dmg elem="ice" />를 발생시킵니다.
+        <sec typ="cond">스킬 적중 시</sec> 2라운드 동안 아군 전체의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> 및 <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">스킬 적중 시</sec> <sec typ="cond">대상이 <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt> 상태이면</sec> <sec typ="dmg"><buff typ="IceATK_UP" /> <val idx="5" r signless /> 추가 냉기 피해</sec>를 입히고 증가하고 2라운드 동안 <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="6" r /></sec>가 감소합니다.
+        <sec typ="cond">치명타 시</sec> 2라운드 동안 아군 전체 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="7" r /></sec>가 증가합니다.
+      JP: |-
+        空中でシアブレードを召喚し、指定範囲に<dmg elem="ice" />を発生させます。
+        <sec typ="cond">スキル命中時</sec>、2ラウンドの間、味方全体の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec>および<sec typ="dmg"><buff typ="SKILL_UP" />スキル威力<val idx="1" r /></sec>が増加します。
+        <sec typ="cond">スキル命中時</sec>、<sec typ="cond">対象が<cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>状態の場合</sec>、<sec typ="dmg"><buff typ="IceATK_UP" /><val idx="5" r signless />の追加冷気ダメージ</sec>を与え、2ラウンドの間<sec typ="buff"><buff typ="ICERES_DOWN" />冷気耐性<val idx="6" r /></sec>が減少します。
+        <sec typ="cond">クリティカル時</sec>、2ラウンドの間、味方全体の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="7" r /></sec>が増加します。
+      EN: |-
+        Summons a Sheer Blade from the air and deals <dmg elem="ice" /> damage to the designated area.
+        <sec typ="cond">On Skill Hit</sec>, increases all allies' <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> and <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="1" r /></sec> for 2 rounds.
+        <sec typ="cond">On Skill Hit</sec>, <sec typ="cond">if the target is in <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt> state</sec>, deals <sec typ="dmg"><buff typ="IceATK_UP" /> additional Cold Damage <val idx="5" r signless /></sec> and decreases <sec typ="buff"><buff typ="ICERES_DOWN" /> Cold Resistance <val idx="6" r /></sec> for 2 rounds.
+        <sec typ="cond">On CRIT</sec>, increases all allies' <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="7" r /></sec> for 2 rounds.
+      TC: |-
+        從空中召喚冰刃，對指定範圍造成<dmg elem="ice" />傷害。
+        <sec typ="cond">技能命中時</sec>，於2回合內增加我軍全體的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="0" r /></sec>及<sec typ="dmg"><buff typ="SKILL_UP" />技能威力<val idx="1" r /></sec>。
+        <sec typ="cond">技能命中時</sec>，<sec typ="cond">若目標處於<cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>狀態</sec>，則造成<sec typ="dmg"><buff typ="IceATK_UP" />額外冷氣傷害<val idx="5" r signless /></sec>，並於2回合內降低<sec typ="buff"><buff typ="ICERES_DOWN" />冷氣抗性<val idx="6" r /></sec>。
+        <sec typ="cond">暴擊時</sec>，於2回合內增加我軍全體的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="7" r /></sec>。
   "3":
     key: "3"
     icon: P.Vortex
@@ -6737,6 +6775,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 아군 전체의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, <char uid="3P_ScissorsLise" />가 있는 경우</sec> <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, <char uid="3P_ScissorsLise" />는 2배로 효과를 받습니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, <char uid="3P_ScissorsLise" />가 있는 경우</sec> <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, <char uid="3P_ScissorsLise" />를 공격 지원</sec>합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、味方全体の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="2" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">分隊に<char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" />がいる場合</sec>、<char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" />は2倍の効果を受けます。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">分隊に<char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" />がいる場合</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" />を攻撃支援</sec>します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases all allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACU <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="2" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, if <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, and <char uid="3P_ScissorsLise" /> are in the squad, they receive double effects.
+        <sec typ="cond">At the start of the round</sec>, if <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, and <char uid="3P_ScissorsLise" /> are in the squad, provides <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attack Support to <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, and <char uid="3P_ScissorsLise" /></sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加我軍全體的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="2" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，若小隊中有<char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" />，則會使<char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" />以2倍效果受益。
+        <sec typ="cond">回合開始時</sec>，若小隊中有<char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" />，則會<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援攻擊<char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" /></sec>。
   "4":
     key: "4"
     icon: P.TeamAtkDeBuff
@@ -7091,6 +7146,23 @@ skills:
             base: -0.02
             per: -0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">피격 시</sec> 자신의 모든 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> 적군 전체의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="5" r /></sec> 및 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="6" r /></sec>, <sec typ="dmg"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="7" r /></sec>를 감소시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">기동형 적군</sec>은 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="8" r /></sec> 및 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="9" r /></sec>가 감소합니다.
+      JP: |-
+        <sec typ="cond">被撃時</sec>、自分の全ての<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害な効果を解除</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、敵軍全体の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="5" r /></sec>および<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="6" r /></sec>、<sec typ="dmg"><buff typ="SKILL_DOWN" />スキル威力<val idx="7" r /></sec>を減少させます。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">機動型敵軍</sec>は<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="8" r /></sec>および<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="9" r /></sec>が減少します。
+      EN: |-
+        <sec typ="cond">When attacked</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes all Malign Effects from self</sec>.
+        <sec typ="cond">At the start of the round</sec>, decreases all enemies' <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACU <val idx="6" r /></sec> / <sec typ="dmg"><buff typ="SKILL_DOWN" /> Skill Power <val idx="7" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">enemy Mobile units</sec> have their <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="8" r /></sec> and <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="9" r /></sec> decreased.
+      TC: |-
+        <sec typ="cond">被擊時</sec>，解除自身所有的<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害效果</sec>。
+        <sec typ="cond">回合開始時</sec>，降低敵軍全體的<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="5" r /></sec>及<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="6" r /></sec>、<sec typ="dmg"><buff typ="SKILL_DOWN" />技能威力<val idx="7" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">機動型敵軍</sec>的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="8" r /></sec>及<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="9" r /></sec>降低。
   "5":
     key: "5"
     icon: P.Vortex
@@ -7413,6 +7485,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 아군 전체의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> 및 <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> 전투원이 있는 경우</sec> 자신을 포함한 <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> 전투원은 2배로 효과를 받습니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> 전투원이 있는 경우</sec> 자신을 제외한 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> 전투원을 공격 지원</sec>합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、味方全体の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec>および<sec typ="dmg"><buff typ="SKILL_UP" />スキル威力<val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">分隊に<cmt t="라이언 コ퍼레이션">$$LionCooperation:?$</cmt>戦闘員がいる場合</sec>、自分を含む<cmt t="라이언 コ퍼레이션">$$LionCooperation:?$</cmt>戦闘員は2倍の効果を受けます。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">分隊に<cmt t="라이언 コ퍼레이션">$$LionCooperation:?$</cmt>戦闘員がいる場合</sec>、自分を除く<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="라이언 コ퍼레이션">$$LionCooperation:?$</cmt>戦闘員を攻撃支援</sec>します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases all allies' <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> and <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="1" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, if there are <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> units in the squad, <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> units including self receive double effects.
+        <sec typ="cond">At the start of the round</sec>, if there are <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> units in the squad, provides <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attack Support to <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> units other than self</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加我軍全體的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="0" r /></sec>及<sec typ="dmg"><buff typ="SKILL_UP" />技能威力<val idx="1" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，若小隊中有<cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt>戰鬥員，則包含自身在內的<cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt>戰鬥員會以2倍效果受益。
+        <sec typ="cond">回合開始時</sec>，若小隊中有<cmt t="라이언 コ퍼레이션">$$LionCooperation:?$</cmt>戰鬥員，則會<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援攻擊除自身外的<cmt t="라이언 コ퍼레이션">$$LionCooperation:?$</cmt>戰鬥員</sec>。
 dialogue:
   KR:
     "1":
@@ -7463,8 +7552,7 @@ dialogue:
         오, 오빠!?
         거, 거기는… 꼬리가 귀엽다고…?
         아, 응, 고마워요…
-      Oath: 오르카 분들과 늦은 저녁까지 함께 한 걸스 토크 정말 즐거웠어요. 이렇게 많은 분들과 밤 늦게까지 쉬지 않고 이야기해본 경험은 난생
-        처음이에요. 이번에는 오빠하고 러브 토크를 하고 싶은데… 괜찮을까요?
+      Oath: 오르카 분들과 늦은 저녁까지 함께 한 걸스 토크 정말 즐거웠어요. 이렇게 많은 분들과 밤 늦게까지 쉬지 않고 이야기해본 경험은 난생 처음이에요. 이번에는 오빠하고 러브 토크를 하고 싶은데… 괜찮을까요?
       OathIdle_01: |-
         토끼는 외로우면 죽는다고 해요.
         그러니까 오빠가 외롭지 않게 해주셔야 해요.
@@ -7521,8 +7609,7 @@ dialogue:
         저는 머리 쓰다듬기로 넘어가 줄 정도로
         어린애가 아니에요!
         계속… 해줘도 달라지는 건 없으니까요…!
-      Oath: 저는 아직 오빠의 등 뒤에 설 자격이 없다고 생각했어요. 하지만 오빠는 제 손을 잡고 옆자리에 설 수 있게 이끌어주셨죠. 그러니까
-        계속 이 자리에 있을 수 있도록… 계속 오빠의 손을 잡고 있을 수 있도록… 자신을 믿을 거예요.
+      Oath: 저는 아직 오빠의 등 뒤에 설 자격이 없다고 생각했어요. 하지만 오빠는 제 손을 잡고 옆자리에 설 수 있게 이끌어주셨죠. 그러니까 계속 이 자리에 있을 수 있도록… 계속 오빠의 손을 잡고 있을 수 있도록… 자신을 믿을 거예요.
       OathIdle_01: |-
         조금만 더 성장하면 좋을 텐데…
         신장을 말한 거예요!

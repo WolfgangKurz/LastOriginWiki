@@ -1972,6 +1972,23 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        지정 대상에게 <dmg elem="physics" />를 줍니다.
+        2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>가 낮아지며, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 증가하고 <sec typ="buff"><buff typ="Push" /> 뒤로 <val idx="2" signless />칸 밀립니다</sec>.
+        출력 전개 상태면 <sec typ="chance">50% 확률</sec>로 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만들며, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> 효과가 50% 상승합니다.
+      JP: |-
+        指定対象に<dmg elem="physics" />を与えます。
+        2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>が低下し、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>が増加し、<sec typ="buff"><buff typ="Push" />後ろに<val idx="2" signless />マス押し出します</sec>。
+        出力展開状態なら<sec typ="chance">50%の確率</sec>で<sec typ="buff"><buff typ="STUN" />行動不能</sec>状態にし、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ増加</sec>効果が50%上昇します。
+      EN: |-
+        Deals <dmg elem="physics" /> to the designated target.
+        For 2 rounds, the target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> decreases, <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="1" r /></sec> increases, and it is pushed back <sec typ="buff"><buff typ="Push" /> <val idx="2" signless /> tiles</sec>.
+        If in output deployment state, there is a <sec typ="chance">50% chance</sec> to inflict <sec typ="buff"><buff typ="STUN" /> Unable to Act</sec>, and the <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage Increase</sec> effect rises by 50%.
+      TC: |-
+        對指定目標造成<dmg elem="physics" />。
+        在2回合內，目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>降低、<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="1" r /></sec>增加，並<sec typ="buff"><buff typ="Push" />向後推<val idx="2" signless />格</sec>。
+        若處於輸出展開狀態，則有<sec typ="chance">50%機率</sec>使其進入<sec typ="buff"><buff typ="STUN" />無法行動</sec>狀態，且<sec typ="buff"><buff typ="VULNERABLE" />所受傷害增加</sec>效果提升50%。
   "2":
     key: "2"
     icon: Hang
@@ -3948,6 +3965,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        목표 범위 내 대상을 포획해, <dmg elem="physics" />를 주며 <sec typ="buff"><buff typ="Pull" /> 앞으로 <val idx="0" signless />칸 당깁니다</sec>.
+        2라운드 동안 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태가 되며, <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>이(가) 감소합니다.
+        <sec typ="chance">50% 확률</sec>로 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>하며, <sec typ="note">출력 전개</sec> 상태면 <sec typ="chance">100% 확률로</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 해제</sec>합니다.
+      JP: |-
+        目標範囲内の対象を捕らえ、<dmg elem="physics" />を与え、<sec typ="buff"><buff typ="Pull" />前に<val idx="0" signless />マス引き寄せます</sec>。
+        2ラウンドの間<sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態となり、<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="4" /></sec>が減少します。
+        <sec typ="chance">50%の確率</sec>で<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>し、<sec typ="note">出力展開</sec>状態なら<sec typ="chance">100%の確率で</sec><sec typ="buff"><buff typ="REMOVE_BUFF" />解除</sec>します。
+      EN: |-
+        Captures enemies within the target area, deals <dmg elem="physics" />, and <sec typ="buff"><buff typ="Pull" /> pulls them forward by <val idx="0" signless /> tiles</sec>.
+        For 2 rounds, inflicts <sec typ="buff"><buff typ="SNARE" /> Immobilize</sec> and decreases <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>.
+        There is a <sec typ="chance">50% chance</sec> to <sec typ="buff"><buff typ="REMOVE_BUFF" /> remove buff effects</sec>, and if in <sec typ="note">output deployment</sec> state, <sec typ="chance">removes them with 100% chance</sec>.
+      TC: |-
+        捕捉目標範圍內的敵人，造成<dmg elem="physics" />，並<sec typ="buff"><buff typ="Pull" />向前拉<val idx="0" signless />格</sec>。
+        在2回合內進入<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態，且<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>減少。
+        有<sec typ="chance">50%機率</sec>可<sec typ="buff"><buff typ="REMOVE_BUFF" />解除強化效果</sec>，若處於<sec typ="note">輸出展開</sec>狀態，則以<sec typ="chance">100%機率</sec><sec typ="buff"><buff typ="REMOVE_BUFF" />解除</sec>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -4630,6 +4664,35 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신에게 적용된 강화 효과를 분석해 새 발명품을 만들어 주변 아군들에게 전달합니다.
+        <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+        <sec typ="cond"><buff typ="ATK_UP" /> 공격력 증가</sec>일 때 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec>
+        <sec typ="cond"><buff typ="CRITICAL_UP" /> 치명타 증가</sec>일 때 : <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec>
+        <sec typ="cond"><buff typ="AP_UP" /> 행동력 증가</sec>일 때 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="7" r /></sec>
+        <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec>일 때 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" r inv /></sec>
+      JP: |-
+        ラウンド開始時、自分に適用された強化効果を分析して新しい発明品を作り、周辺の味方に配ります。
+        <sec>スキルレベル10で範囲が増加します。</sec>
+        <sec typ="cond"><buff typ="ATK_UP" />攻撃力増加</sec>時：<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r /></sec>
+        <sec typ="cond"><buff typ="CRITICAL_UP" />クリティカル増加</sec>時：<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="5" r /></sec>
+        <sec typ="cond"><buff typ="AP_UP" />行動力増加</sec>時：<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>
+        <sec typ="cond"><buff typ="DAMAGE_REDUCE" />受けるダメージ減少</sec>時：<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="8" r inv /></sec>
+      EN: |-
+        At round start, analyzes buff effects applied to self, creates a new invention, and distributes it to nearby allies.
+        <sec>Range increases at skill level 10.</sec>
+        <sec typ="cond">When <buff typ="ATK_UP" /> Attack is increased</sec>: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r /></sec>
+        <sec typ="cond">When <buff typ="CRITICAL_UP" /> Critical is increased</sec>: <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="5" r /></sec>
+        <sec typ="cond">When <buff typ="AP_UP" /> AP is increased</sec>: <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>
+        <sec typ="cond">When <buff typ="DAMAGE_REDUCE" /> received damage is reduced</sec>: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="8" r inv /></sec>
+      TC: |-
+        於回合開始時，分析套用在自身的強化效果，製造新發明並分送給周圍友軍。
+        <sec>技能等級10時範圍增加。</sec>
+        <sec typ="cond">當<buff typ="ATK_UP" />攻擊力增加</sec>時：<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r /></sec>
+        <sec typ="cond">當<buff typ="CRITICAL_UP" />暴擊增加</sec>時：<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="5" r /></sec>
+        <sec typ="cond">當<buff typ="AP_UP" />行動力增加</sec>時：<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" /></sec>
+        <sec typ="cond">當<buff typ="DAMAGE_REDUCE" />所受傷害減少</sec>時：<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="8" r inv /></sec>
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -5051,6 +5114,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        대기 시, 기체의 출력을 강화해 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec>가 증가합니다.
+        <sec>스킬 레벨 10에서 효과 라운드가 1 증가합니다.</sec>
+      JP: |-
+        待機時、機体の出力を強化し2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="2" r /></sec>が増加します。
+        <sec>スキルレベル10で効果ラウンドが1増加します。</sec>
+      EN: |-
+        On standby, reinforces the machine's output and increases <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="2" r /></sec> for 2 rounds.
+        <sec>At skill level 10, the effect duration increases by 1 round.</sec>
+      TC: |-
+        待機時，強化機體輸出，在2回合內使<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="2" r /></sec>增加。
+        <sec>技能等級10時，效果回合數增加1。</sec>
   "5":
     key: "5"
     icon: P.EnemyDetect
@@ -5216,6 +5292,23 @@ skills:
             base: -0.006
             per: -0.004
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, 적을 분해해서 연구하기 위해 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="4" /></sec>이(가) 증가합니다.
+        전투 종료 시, <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec> 다음에 출현할 적 정보를 얻습니다.
+        <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec> 상태로 전투 개시 시, 적의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="3" r /></sec>가 감소합니다.
+      JP: |-
+        戦闘開始時、敵を分解して研究するため<sec typ="buff"><buff typ="AP_UP" />AP<val idx="3" slot="4" /></sec>が増加します。
+        戦闘終了時、<sec typ="buff"><buff typ="SCOUTING" />偵察</sec>の次に出現する敵情報を取得します。
+        <sec typ="buff"><buff typ="SCOUTING" />偵察</sec>状態で戦闘開始時、敵の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="3" r /></sec>が減少します。
+      EN: |-
+        At battle start, increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="4" /></sec> in order to dissect enemies for research.
+        At battle end, gains information about the enemy that will appear after <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec>.
+        When battle starts in <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> state, decreases enemies' <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="3" r /></sec>.
+      TC: |-
+        戰鬥開始時，為了分解敵人進行研究，<sec typ="buff"><buff typ="AP_UP" />AP<val idx="3" slot="4" /></sec>增加。
+        戰鬥結束時，取得<sec typ="buff"><buff typ="SCOUTING" />偵察</sec>後即將出現的敵人情報。
+        以<sec typ="buff"><buff typ="SCOUTING" />偵察</sec>狀態開始戰鬥時，敵人的<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="3" r /></sec>減少。
 dialogue:
   KR:
     "1":
@@ -5377,12 +5470,9 @@ dialogue:
       SPIdle_02_01: |-
         나도 알 거 다 아는데… 어른이 되기 전 
         특권이라고 생각하면 돼, 오빠?
-      Oath: >-
-        아, 오빠… 이건… 오빠는 이렇게나 우리를 믿어주는구나. 이 감정들은 전부, 만들어진 걸지도 모르는데… 에헤헷, 하나도 안
-        먹히네?
-
+      Oath: |-
+        아, 오빠… 이건… 오빠는 이렇게나 우리를 믿어주는구나. 이 감정들은 전부, 만들어진 걸지도 모르는데… 에헤헷, 하나도 안 먹히네?
         응. 오빠의 마음도, 우리의 마음도… 전부 진짜인게 분명하니까. 장난쳐서 미안해. 나도 조금, 부끄러워서 그랬어. 용서해 줄거지?
-
         ...헤헷. 저도, 정말정말 좋아해요. 오빠.
       OathIdle_01: 헤헤. 서약 때? 당연히 좋았지. 설마...
       MVP: MVP야~! 오빠, 상품도 있어?
@@ -5530,9 +5620,8 @@ dialogue:
         そうか…いくら邪悪そのものって感じの悪党でも、
         こういうささやかな温もりが必要だったみたい…
         お兄ちゃん、もっとやって。お願い～
-      Oath: >-
+      Oath: |-
         え？お兄ちゃんもついに私と一緒に大儀に生きる決心がついたってこと？待ってました！証明書はすぐに発行するね。まずはプロジェクトの概要を読んでみて。席も準備しておいたよ。う～ん…でもその前に…
-
         世界征服よりもっと重要な誓約式を終わらせちゃわない？お兄ちゃん、いつも私に合わせてくれてありがとう。愛してるよ～
       OathIdle_01: |-
         お兄ちゃん、どうだった？えへへ、楽しかったね！
@@ -5658,10 +5747,8 @@ dialogue:
         Ahaha, you’re tickling me.
         Do you really like this? Umm… then
         I’ll stay still.
-      Oath: >-
-        This is… Haha, becoming an adult was worth it. Now I can stay with you,
-        right?
-
+      Oath: |-
+        This is… Haha, becoming an adult was worth it. Now I can stay with you, right?
         Bro-Bro… I love you.
       OathIdle_01: |-
         *Giggles* I feel happy when I think about then.
@@ -5719,12 +5806,9 @@ dialogue:
         Yes… No matter how evil the villain is,
         they needed this kind of a little kindness…
         More. Please?​
-      Oath: >-
-        Huh? Finally, you have made your mind to be with us? Awesome! The
-        certificate will be issued immediately,
-
+      Oath: |-
+        Huh? Finally, you have made your mind to be with us? Awesome! The certificate will be issued immediately,
         read the project overview first. I already prepared your position. Hmm… Still, before that…
-
         Let’s finish the marriage vow first? It’s more important than the world domination. Thank you for always being there for me. I love you!
       OathIdle_01: |-
         What do you think? Hehehe, it was fun, right?
@@ -5775,12 +5859,9 @@ dialogue:
       SPIdle_02_01: |-
         I know things… Is it like a privilege 
         of being young?
-      Oath: >-
-        Oh… This is… You really trust us, don't you? These emotions may be
-        artificial. All of them… Hehehe. That didn't work at all.
-
+      Oath: |-
+        Oh… This is… You really trust us, don't you? These emotions may be artificial. All of them… Hehehe. That didn't work at all.
         Yeah. It's clear that… your feelings and ours are genuine. I'm sorry for that joke. I was just a bit shy, that's all. You'll forgive me, right?
-
         … He he. I really really like you, too. Bro-Bro.
       OathIdle_01: He he. The day of the pledge? Of course I liked it. No way…
       MVP: ""

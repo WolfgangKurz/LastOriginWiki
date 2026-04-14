@@ -1224,6 +1224,19 @@ skills:
             base: 0.3
             per: 0.04
             chance: 0
+    desc:
+      KR: |-
+        미사일을 난사해 지정 범위에 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="6" slot="4" r /></sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">대상이 중장형인 경우</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: |-
+        ミサイルを乱射して指定範囲に<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="6" slot="4" r /></sec> <dmg elem="physics" />を与えます。
+        <sec typ="cond">対象が重装型の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+      EN: |-
+        Sprays missiles and deals <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="6" slot="4" r /></sec> <dmg elem="physics" /> to the designated area.
+        <sec typ="cond">If the target is Heavy Armor</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="0" r /></sec> increases.
+      TC: |-
+        大量發射飛彈，對指定範圍造成<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="6" slot="4" r /></sec> <dmg elem="physics" />。
+        <sec typ="cond">若目標為重裝型</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: AirStrike
@@ -2531,6 +2544,23 @@ skills:
               level: "0"
             value: Char_BR_NightAngel_N
             chance: 1
+    desc:
+      KR: |-
+        미사일 폭격으로 대상 지점에 <sec typ="attr">보호 무시</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="6" slot="4" r signless /></sec> <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 디버프를 가지고 있으면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">스쿼드에 <char uid="BR_NightAngel" />이 있다면</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">고공 폭격</sec> 협동 공격</sec>을 유도합니다.
+      JP: |-
+        ミサイル爆撃で対象地点に<sec typ="attr">保護無視</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="6" slot="4" r signless /></sec> <dmg elem="physics" />を与えます。
+        対象が<sec typ="cond"><buff typ="MARKING" /> マーク</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避減少</sec>デバフを持っている場合、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">分隊に<char uid="BR_NightAngel" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">高空爆撃</sec>協同攻撃</sec>を誘導します。
+      EN: |-
+        Uses a missile bombardment and deals <sec typ="attr">Ignore Protection</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="6" slot="4" r signless /></sec> <dmg elem="physics" /> to the target location.
+        If the target has the <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilize</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> EVA Decrease</sec> debuff, <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">If <char uid="BR_NightAngel" /> is in the squad</sec>, induces a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> cooperative attack with <sec typ="note">High-Altitude Explosive Bombardment</sec></sec>.
+      TC: |-
+        以飛彈轟炸對目標地點造成<sec typ="attr">無視保護</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="6" slot="4" r signless /></sec> <dmg elem="physics" />。
+        若目標持有<sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避降低</sec>減益，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">若小隊內有<char uid="BR_NightAngel" /></sec>，則會引導與<sec typ="note">高空爆炸轟炸</sec>的<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 協同攻擊</sec>。
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -2838,6 +2868,27 @@ skills:
             base: 0.1
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">중열</sec> 또는 <sec typ="cond">후열</sec>에 있는 경우, 1스킬 사용 후 <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec>이 증가하고, 2스킬 사용 후 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력</sec>이 증가합니다.
+        <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec>은 <sec typ="cond">후열</sec>에 있을 때, <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력</sec>은 <sec typ="cond">중열</sec>에 있을 때 최대 수치로 적용되며, 반대의 경우 50%만 적용됩니다.
+        중열 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="5" r /></sec>
+        후열 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="6" r /></sec>
+      JP: |-
+        <sec typ="cond">中列</sec>または<sec typ="cond">後列</sec>にいる場合、1スキル使用後に<sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>が増加し、2スキル使用後に<sec typ="buff"><buff typ="SKILL_UP" /> スキル威力</sec>が増加します。
+        <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>は<sec typ="cond">後列</sec>にいる時、<sec typ="buff"><buff typ="SKILL_UP" /> スキル威力</sec>は<sec typ="cond">中列</sec>にいる時に最大値で適用され、逆の場合は50%のみ適用されます。
+        中列 : <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="5" r /></sec>
+        後列 : <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="6" r /></sec>
+      EN: |-
+        If in the <sec typ="cond">middle line</sec> or <sec typ="cond">rear line</sec>, using Skill 1 increases <sec typ="buff"><buff typ="AP_UP" /> MOVE</sec> and using Skill 2 increases <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power</sec>.
+        <sec typ="buff"><buff typ="AP_UP" /> MOVE</sec> is applied at its maximum value when in the <sec typ="cond">rear line</sec>, while <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power</sec> is applied at its maximum value when in the <sec typ="cond">middle line</sec>; otherwise, only 50% is applied.
+        Middle line: <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="5" r /></sec>
+        Rear line: <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="6" r /></sec>
+      TC: |-
+        若處於<sec typ="cond">中列</sec>或<sec typ="cond">後列</sec>，在使用1技能後<sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>增加，使用2技能後<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力</sec>增加。
+        <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>在<sec typ="cond">後列</sec>時會以最大值套用，<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力</sec>則在<sec typ="cond">中列</sec>時以最大值套用，反之僅套用50%。
+        中列：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="5" r /></sec>
+        後列：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="6" r /></sec>
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3117,6 +3168,19 @@ skills:
             base: 0.3
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        언제나 우월감에 가득찬 상태라 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+        스쿼드에 <char uid="BR_NightAngel" />이 있으면 해당 효과가 3배 추가 적용됩니다.
+      JP: |-
+        いつも強い優越感に満ちた状態なので、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
+        分隊に<char uid="BR_NightAngel" />がいる場合、この効果がさらに3倍適用されます。
+      EN: |-
+        Always brimming with superiority, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="2" r /></sec>.
+        If <char uid="BR_NightAngel" /> is in the squad, this effect is additionally applied 3 times over.
+      TC: |-
+        因為總是充滿優越感，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
+        若小隊內有<char uid="BR_NightAngel" />，則此效果會再額外套用3倍。
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -3304,6 +3368,19 @@ skills:
             base: -0.1
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 적 전체의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">스쿼드 내에 <char uid="BR_NightAngel" />이 있다면</sec> 적 전체의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="3" r /></sec>를 약화시킵니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、敵全体の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">分隊内に<char uid="BR_NightAngel" />がいる場合</sec>、敵全体の<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ減少 <val idx="3" r /></sec>を弱化させます。
+      EN: |-
+        At the start of the round, decreases all enemies' <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="1" r /></sec>.
+        <sec typ="cond">If <char uid="BR_NightAngel" /> is in the squad</sec>, weakens all enemies' <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage Decrease <val idx="3" r /></sec>.
+      TC: |-
+        回合開始時，降低所有敵軍的<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec>。
+        <sec typ="cond">若小隊內有<char uid="BR_NightAngel" /></sec>，則削弱所有敵軍的<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害降低 <val idx="3" r /></sec>。
 dialogue:
   KR:
     "1":
@@ -3502,13 +3579,10 @@ dialogue:
       SPIdle_02_01: |-
         아... 저, 저기... 부끄러우니까...
         옷은 가급적 그대로, 부탁드려요...
-      Oath: >-
+      Oath: |-
         후후, 역시 사령관님도 저를 필요로 하시는 거군요? 군인으로서는 물론, 여성으로서도... 저는... 죄송해요.
-
         이런 때까지...​ ...맞아요. 저는 컴플렉스 덩어리에요. 군살 투성이인 몸도, 저조한 성과도... 떠올릴 때마다 스스로가 싫어져요.
-
         그리고 다른 분들이 그것 때문에 저를 싫어할까봐... 스스로가 더 미워져요. 그런데도 사령관님은... 괜찮다고, 저는 멋지다고 말해주셨죠.
-
         ...훌쩍, 그러니까, 힘 낼게요. 정말로 좋아하는 사령... 아니, 서방님께서 믿어주신 것처럼, 정말 멋진 사람이 되도록요.
       OathIdle_01: |-
         지금은 다른 분들의 인정보다도, 서방님의...
@@ -3602,8 +3676,7 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: 水着を着るチャンスをずっと窺っていました、やっと私にも運が回ってきたようです！いかがですか？司令官様。ドゥームブリンガーでこういう体型は私しかいませんよね！……
-        あ！ジニヤ―がいましたね……
+      Idle_01_01: 水着を着るチャンスをずっと窺っていました、やっと私にも運が回ってきたようです！いかがですか？司令官様。ドゥームブリンガーでこういう体型は私しかいませんよね！…… あ！ジニヤ―がいましたね……
       Idle_01_02: ダイエットはナイトエンジェルが詳しいのですが、実際はあまり参考になりません。理由ですか？司令官様もご存知じゃないですか。痩せてはならない部位が痩せてしまっているでしょう？あれじゃあ何の意味もありませんよ。
       Idle_01_03: 今回、自分との戦いがどれほど辛いものかよく分かりました。それはまるで苦難と逆境の中で咲き誇る、一輪の花の凄絶な一生のようなもの！大げさに聞こえるかもしれませんが、私がダイエットをして感じたことなのです。
       SPIdle_01_01: はい？何かされましたか？そんなことより、この水着、ちょっと小さくて胸が苦しいんです。今誰かに触られてもよく分からないと思います。
@@ -3695,11 +3768,9 @@ dialogue:
         Oh, Commander! Would you like to come in for a second?
         I’ll get you some food from the kitchen.
         *Snicker* What do you think?​
-      Idle_01_02: >-
+      Idle_01_02: |-
         Losing weight? That’s no biggie.
-
         All you have to do is cut down on snacks and sweets… Sweets… Could you leave me alone for just a moment?
-
         I think I just said something worth treating myself.​
       Idle_01_03: |-
         Am I not embarrassed? Not at all!
@@ -3714,30 +3785,22 @@ dialogue:
         *Snicker* Please enjoy. If there’s anything you need
         don’t hesitate to ask me. Everything’s on the house
         for you, Commander!​
-      Idle_03_01: >-
+      Idle_03_01: |-
         I’ve heard about its hype, but that is not the reason I’m wearing this.
-
         I’m wearing this to show off
-
         my body to you, Commander. What do you think? What’s your impression about my new look?
-
         Oh! I’ll slim down there as well…!​
       Idle_04_01: |-
         I should be able to do anything
         to become a woman befitting to Commander. Including losing weight.
         That’s not difficult at- Y-you surprised me!
         Stop whispering ‘You look so pretty today.’ in my ear…!​
-      SPIdle_02_01: >-
+      SPIdle_02_01: |-
         I-it’s already…! Everyone’s seen us 
-
         coming out of the building together. I better get ba- *Chuckles* You’re not gonna let me go?
-
         If I get fired, you have take care of me for all my life. Okay?​
-      Oath: >-
-        This took long enough. I don’t know how many detours we’ve made… Well,
-        but still, I was certain that today would come someday… Why? You told me
-        I could accomplish anything. So I knew what I wanted the most would
-
+      Oath: |-
+        This took long enough. I don’t know how many detours we’ve made… Well, but still, I was certain that today would come someday… Why? You told me I could accomplish anything. So I knew what I wanted the most would
         someday come true. What comes next is… I’ve only imagined about it, so I don’t really know the details… Would you let me know one by one?
       OathIdle_01: |-
         I used to be full of insecurities.
@@ -3788,15 +3851,10 @@ dialogue:
         by calling me fat. It seems that you prefer a body 
         like mine, but… your preference 
         hasn't changed to ones that are flat, has it?
-      Idle_03_01: >-
-        Ah, Commander! If you're tired, come lie next to me. The tube is soft
-        and cushy, so it'll be nice to rest on it. What's that? You've seen this
-        tube somewhere?
-
+      Idle_03_01: |-
+        Ah, Commander! If you're tired, come lie next to me. The tube is soft and cushy, so it'll be nice to rest on it. What's that? You've seen this tube somewhere?
         What? Is the wet stuff oil?
-
         Ah, no, it's my sweat…
-
         Ah, actually you're right, it's oil.
       Idle_04_01: |-
         What's the difference between a swimsuit and an undergarment?
@@ -3808,14 +3866,10 @@ dialogue:
         Wait… Did you really think I wouldn't know?
         I lied because I thought you'd get embarrassed…
         Ah! I yield. I yield. I lost, Commander.
-      Oath: >-
-        I was so busy trying to lose weight… I can't believe you gave me a ring…
-        It feels like I'm being rewarded for all my hard work.
-
+      Oath: |-
+        I was so busy trying to lose weight… I can't believe you gave me a ring… It feels like I'm being rewarded for all my hard work.
         Actually, there were so many times I wanted to give up because of all the things getting in the way of my diet… but I've decided.
-
         From now on, I'm going to turn every last one of my insecurities into something charming for you.
-
         Just you wait. I'm going to become the most attractive woman on the Orca.
       OathIdle_01: |-
         After trying my best, I realized that there’s
@@ -3843,15 +3897,11 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        Night Angel? Hoo hoo… I’m her older sister. Of course I’m better.
-        Although
-
+      Idle_01_01: |-
+        Night Angel? Hoo hoo… I’m her older sister. Of course I’m better. Although
         she won’t admit that herself.
-      Idle_01_02: >-
-        I said something I didn’t really mean today… I wasn’t going to… I
-        thought I felt annoyed- Oh. C-Commander?!
-
+      Idle_01_02: |-
+        I said something I didn’t really mean today… I wasn’t going to… I thought I felt annoyed- Oh. C-Commander?!
         *Chuckles* Is there something only I can do?
       Idle_01_03: |-
         It can’t be helped. There’s no other bioroid
@@ -3866,23 +3916,17 @@ dialogue:
         Banshee always listens to what I say.
         And Wraith tells me that she respects me. *Sighs*
         I hope Colonel could be like them.
-      Idle_03_01: >-
+      Idle_03_01: |-
         Oh, uh… I’m sorry. In this training,
-
         I made a mistake… You can hate me-
-
         What? … Yes. I’ll do better… next time… It’s okay to make mistakes… No one’s ever told me that…
-      Idle_04_01: >-
+      Idle_04_01: |-
         Um… Commander. I have something to… What? I-I didn’t say anything
-
         yet… Why are you telling me it’s okay?
-
         *Sniffles*… Yes. Then the beautiful and excellent bioroid… I’ll assist you.
       SPIdle_02_01: Oh, um… I’m embarrassed… P-please leave the clothes…
-      Oath: >-
-        Haha, you also need me. don’t you, commander? Indeed as a soldier, and
-        even as a woman… I’m… I’m sorry.
-
+      Oath: |-
+        Haha, you also need me. don’t you, commander? Indeed as a soldier, and even as a woman… I’m… I’m sorry.
         Even in a situation like this… I know. I’m very insecure. I don’t like myself every time I think about stuff like my chubby body and poor performance… And I don’t like myself even more when I think about other people might not like me because of that… But commander… you told me that it is okay and I’m great…*Sniffles* So, I’ll do my best. So that I become the great person that you saw in me, Comman… no, Dear Husband.
       OathIdle_01: |-
         These days, I prefer to hear "Good job" from you

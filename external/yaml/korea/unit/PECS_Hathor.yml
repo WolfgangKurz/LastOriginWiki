@@ -2867,6 +2867,23 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        거대한 황금빛 무기를 휘둘러 단일 대상에게 <dmg elem="physics" />를 입힙니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다.
+        <sec typ="dmg"><buff typ="DamageAmp_Me" /> 자신의 HP가 낮을 수록 피해량 <val idx="2" r /></sec>가 증가합니다.
+      JP: |-
+        巨大な黄金の武器を振るい、単一対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>を減少させます。
+        <sec typ="dmg"><buff typ="DamageAmp_Me" />自身のHPが低いほどダメージ量<val idx="2" r /></sec>が増加します。
+      EN: |-
+        Swings a massive golden weapon, dealing <dmg elem="physics" /> to a single target.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> for 2 rounds.
+        <sec typ="dmg"><buff typ="DamageAmp_Me" />The lower self's HP, the higher the damage dealt <val idx="2" r /></sec> increases.
+      TC: |-
+        揮舞巨大的金色武器，對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，於2回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>。
+        <sec typ="dmg"><buff typ="DamageAmp_Me" />自身HP越低，傷害量<val idx="2" r /></sec>越高。
   "2":
     key: "2"
     icon: Beam
@@ -6288,6 +6305,23 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        신성한 징벌이 도래했음을 알리며 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 입힙니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 모든 광역 피해 분산 효과를 해제</sec>하고 2라운드 동안 대상이 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="cond">적중 시</sec> <sec typ="cond">스쿼드 내에 <char uid="PECS_Sekhmet" />가 있을 경우</sec>, 해당 라운드 동안 대상의 <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="5" /></sec>를 감소시키고 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">순환하는 생명의 굴레</sec> 협동 공격을 유도</sec>합니다.
+      JP: |-
+        神聖な裁きの到来を告げ、指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_DEBUFF" />すべての広域ダメージ分散効果を解除</sec>し、2ラウンドの間対象が<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="0" r /></sec>を増加させます。
+        <sec typ="cond">命中時</sec> <sec typ="cond">スコード内に<char uid="PECS_Sekhmet" />がいる場合</sec>、そのラウンドの間対象の<sec typ="buff"><buff typ="RANGE_DOWN" />射程<val idx="5" /></sec>を減少させ、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">循環する生命の柵</sec>協同攻撃を誘導</sec>します。
+      EN: |-
+        Announces the arrival of divine punishment and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area.
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes all area damage dispersion effects</sec> from the target and increases the target's <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> for 2 rounds.
+        <sec typ="cond">On hit</sec> <sec typ="cond">if <char uid="PECS_Sekhmet" /> is in the squad</sec>, decreases the target's <sec typ="buff"><buff typ="RANGE_DOWN" /> Range <val idx="5" /></sec> for that round and <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> induces a co-op attack with <sec typ="note">Binding Circle of Life</sec></sec>.
+      TC: |-
+        宣告神聖的制裁降臨，對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除目標所有範圍傷害分散效果</sec>，並於2回合內增加目標的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="0" r /></sec>。
+        <sec typ="cond">命中時</sec> <sec typ="cond">若小隊內有<char uid="PECS_Sekhmet" /></sec>，則於該回合降低目標的<sec typ="buff"><buff typ="RANGE_DOWN" />射程<val idx="5" /></sec>，並<sec typ="buff"><buff typ="TOGETHER_ATTACK" />引導與<sec typ="note">循環生命之柵</sec>的協力攻擊</sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -6533,6 +6567,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">대기 시</sec>, 동력원 교체를 통해 신체를 강화하여 전투 종료 시까지 자신은 다음 효과를 획득합니다.
+        - <sec typ="cond">공격 적중 시</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>하고 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" slot="1" r /></sec>가 증가하지만 부하가 발생하여 <sec typ="dmg"><buff typ="PhyATK_UP" /> 자신의 공격력의 <val idx="5" slot="1" r signless />만큼 물리 피해</sec>를 입습니다.
+        - <sec typ="cond">자신에게 <sec typ="note">숲의 노래</sec> 효과 적용 시</sec>, 모든 효과가 두 배로 증폭됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="0" r /></sec>が増加します。
+        <sec typ="cond">待機時</sec>、動力源の交換により身体を強化し、戦闘終了時まで自分は次の効果を獲得します。
+        - <sec typ="cond">攻撃命中時</sec>、<sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ減少効果を解除</sec>し、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="4" slot="1" r /></sec>が増加しますが、負荷が発生して<sec typ="dmg"><buff typ="PhyATK_UP" />自身の攻撃力の<val idx="5" slot="1" r signless />分の物理ダメージ</sec>を受けます。
+        - <sec typ="cond">自身に<sec typ="note">森の歌</sec>効果が適用される場合</sec>、すべての効果が2倍に増幅されます。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases self's <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> effect resistance <val idx="0" r /></sec>.
+        <sec typ="cond">When waiting</sec>, strengthens the body by replacing the power source, and until battle ends, self gains the following effects:
+        - <sec typ="cond">When attacks hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes received damage reduction effects</sec> and <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt <val idx="4" slot="1" r /></sec> increases, but overload occurs and self takes <sec typ="dmg"><buff typ="PhyATK_UP" /> physical damage equal to <val idx="5" slot="1" r signless /> of its own ATK</sec>.
+        - <sec typ="cond">If <sec typ="note">Song of the Forest</sec> is applied to self</sec>, all effects are doubled.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性<val idx="0" r /></sec>提升。
+        <sec typ="cond">待機時</sec>，透過更換動力源強化身體，直到戰鬥結束前自身獲得以下效果。
+        - <sec typ="cond">攻擊命中時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除所受傷害減少效果</sec>，並使<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="4" slot="1" r /></sec>增加，但會產生過載而承受<sec typ="dmg"><buff typ="PhyATK_UP" />相當於自身攻擊力<val idx="5" slot="1" r signless />的物理傷害</sec>。
+        - <sec typ="cond">若自身套用<sec typ="note">森林之歌</sec>效果時</sec>，所有效果加倍。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -6736,6 +6791,23 @@ skills:
             base: 0.3
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP로 전투 속행</sec> 효과를 획득합니다.
+        <sec typ="cond">적 처치 시</sec>, 상기 효과를 추가로 획득합니다. (최대 1중첩)
+        <sec typ="cond">피격 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自分は<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless />HPで戦闘続行</sec>効果を獲得します。
+        <sec typ="cond">敵を撃破時</sec>、上記効果を追加で獲得します。(最大1スタック)
+        <sec typ="cond">被弾時</sec>、3ラウンドの間、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="2" /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP Continue Combat</sec>.
+        <sec typ="cond">On enemy kill</sec>, gains the above effect again. (max 1 stack)
+        <sec typ="cond">When hit</sec>, increases self's <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="2" /></sec> for 3 rounds.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="0" r signless /> HP繼續戰鬥</sec>效果。
+        <sec typ="cond">擊破敵人時</sec>，會再次獲得上述效果。（最多1層）
+        <sec typ="cond">受到攻擊時</sec>，於3回合內提升自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="2" /></sec>。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -7182,6 +7254,23 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">모성</sec> 효과가 적용중인 아군에게 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과를 부여하고 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="1" /></sec>를 증가시킵니다.
+        <sec typ="cond">전투 개시 시</sec>, 스쿼드 내 <cmt t="엘븐형 바이오로이드">$$ELVENS:?$</cmt> 수에 따라 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 증가합니다.
+        <sec typ="cond">자신 사망 시</sec>, 2라운드 동안 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="9" r /></sec>를 증가시킵니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">母性</sec>効果が適用中の味方に<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア / ダメージ減少無視</sec>効果を付与し、<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="1" /></sec>を増加させます。
+        <sec typ="cond">戦闘開始時</sec>、スコード内の<cmt t="エルヴン型バイオロイド">$$ELVENS:?$</cmt>数に応じて自分の<sec typ="buff"><buff typ="AP_UP" /> AP<val idx="4" /></sec>が増加します。
+        <sec typ="cond">自分が死亡時</sec>、2ラウンドの間、味方全体の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="9" r /></sec>を増加させます。
+      EN: |-
+        <sec typ="cond">At round start</sec>, grants allies affected by <sec typ="note">Maternal Instinct</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" />Barrier / Damage Reduction Ignore</sec> and increases their <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="1" /></sec>.
+        <sec typ="cond">At battle start</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increases depending on the number of <cmt t="Elven Bioroids">$$ELVENS:?$</cmt> in the squad.
+        <sec typ="cond">When self dies</sec>, increases all allies' <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="9" r /></sec> for 2 rounds.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，賦予正在受到<sec typ="note">母性</sec>效果影響的友軍<sec typ="buff"><buff typ="BARRIER_PIERCE" />無視護盾 / 傷害減少</sec>效果，並提升其<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="1" /></sec>。
+        <sec typ="cond">戰鬥開始時</sec>，依小隊內<cmt t="精靈型生化人偶">$$ELVENS:?$</cmt>數量，自身的<sec typ="buff"><buff typ="AP_UP" /> AP<val idx="4" /></sec>提升。
+        <sec typ="cond">自身死亡時</sec>，於2回合內提升友軍全體的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="9" r /></sec>。
 dialogue:
   KR:
     "1":
@@ -7234,9 +7323,7 @@ dialogue:
         나 참, 그렇게 엘븐 밀크가 먹고 싶었으면
         말을 하지. 어쩔 수 없네.
         누나가 잔뜩 먹여줄 테니까... 잠깐 따라와?
-      Oath: 헉, 반지까지 줄 정도로 엘븐 밀크가 좋아, 사령관? 농담이야. 누나한테 주는 반지라는 거 알고 있어. 그야, 지금 누나를 보는
-        사령관의 눈이 사랑으로 반짝이고 있거든. 누나가 매일 아침 세상에서 제일 사랑하는 사령관을 생각하면서 거울을 볼 때처럼 말이야.
-        에헤헷…
+      Oath: 헉, 반지까지 줄 정도로 엘븐 밀크가 좋아, 사령관? 농담이야. 누나한테 주는 반지라는 거 알고 있어. 그야, 지금 누나를 보는 사령관의 눈이 사랑으로 반짝이고 있거든. 누나가 매일 아침 세상에서 제일 사랑하는 사령관을 생각하면서 거울을 볼 때처럼 말이야. 에헤헷…
       OathIdle_01: |-
         자, 우리 사령관 누나랑 꼬옥 하자~
         응? 너무 아기처럼 대하는 거 아니냐고?
@@ -7292,8 +7379,7 @@ dialogue:
       SPIdle_02_01: |-
         소는 다산과 풍요의 상징이야.
         왜 그런지... 같이 알아볼까?
-      Oath: 버려질 거라고 생각했어. 우울하고 음침한 여자애는 다들 싫어하니까. 그런데도... 누나가 우울해진 모습을 보고도, 사령관은 누나를
-        좋아해 주는구나? 잔뜩 들뜬 누나도, 한껏 가라앉은 누나도... 똑같이 사랑해 주는 거구나? 고마워. 그리고... 사랑해.
+      Oath: 버려질 거라고 생각했어. 우울하고 음침한 여자애는 다들 싫어하니까. 그런데도... 누나가 우울해진 모습을 보고도, 사령관은 누나를 좋아해 주는구나? 잔뜩 들뜬 누나도, 한껏 가라앉은 누나도... 똑같이 사랑해 주는 거구나? 고마워. 그리고... 사랑해.
       OathIdle_01: |-
         사령관, 잠깐 누나 옷 좀 갈아입고 올게.
         사령관이랑... 아니, 그게...
@@ -7386,9 +7472,7 @@ dialogue:
         [미번역]나 참, 그렇게 엘븐 밀크가 먹고 싶었으면
         말을 하지. 어쩔 수 없네.
         누나가 잔뜩 먹여줄 테니까... 잠깐 따라와?
-      Oath: "[미번역]헉, 반지까지 줄 정도로 엘븐 밀크가 좋아, 사령관? 농담이야. 누나한테 주는 반지라는 거 알고 있어. 그야, 지금 누나를
-        보는 사령관의 눈이 사랑으로 반짝이고 있거든. 누나가 매일 아침 세상에서 제일 사랑하는 사령관을 생각하면서 거울을 볼 때처럼
-        말이야. 에헤헷…"
+      Oath: "[미번역]헉, 반지까지 줄 정도로 엘븐 밀크가 좋아, 사령관? 농담이야. 누나한테 주는 반지라는 거 알고 있어. 그야, 지금 누나를 보는 사령관의 눈이 사랑으로 반짝이고 있거든. 누나가 매일 아침 세상에서 제일 사랑하는 사령관을 생각하면서 거울을 볼 때처럼 말이야. 에헤헷…"
       OathIdle_01: |-
         [미번역]자, 우리 사령관 누나랑 꼬옥 하자~
         응? 너무 아기처럼 대하는 거 아니냐고?
@@ -7433,8 +7517,7 @@ dialogue:
         弟くん、そのエルブンミルクどう？美味しい？最高？
         ふ～ん…そっか～。美味しいんだ～。ひひひ！嬉しい！え？どうして笑ってるのかって？……なんでだろうね～
       SPIdle_02_01: 天の牝牛、ハトホルは愛と美と豊さの象徴。どうしてそう言われるのか……一緒にお勉強しよっか？
-      Oath: 捨てられるって思ってた。陰気な女の子なんてみんな嫌でしょ？でも……私がこんな風に暗いところを見せても、弟くんは私のことを好きになってくれるんだね？頑張って元気なフリをしてたお姉さんも、暗くてうじうじしてる私も……どっちも同じように愛してくれるんだね？
-        ありがとう。そして……私も愛してる。
+      Oath: 捨てられるって思ってた。陰気な女の子なんてみんな嫌でしょ？でも……私がこんな風に暗いところを見せても、弟くんは私のことを好きになってくれるんだね？頑張って元気なフリをしてたお姉さんも、暗くてうじうじしてる私も……どっちも同じように愛してくれるんだね？ ありがとう。そして……私も愛してる。
       OathIdle_01: |-
         弟くん、ちょっと着替えてくるね。
         そうそう、弟くんとずっと……違うよぉ！ほ、ほら……YOROIをずっと着てたから汗かいちゃっただけ……！

@@ -2517,6 +2517,27 @@ skills:
               level: "0"
             value: Char_BR_Harpy_N
             chance: 1
+    desc:
+      KR: |-
+        빔 포트를 발사하여 지정 범위에 <dmg elem="physics" />를 줍니다.
+        적중 시, 2라운드 동안 대상이 받는 피해를 증가시킵니다. 대상이 중장형인 경우 효과가 두 배로 증폭됩니다. (중첩 불가)
+        치명타 시, 대상의 받는 피해 감소 효과를 해제합니다.
+        스쿼드 내 <P-22 하르페이아>가 있을 경우, <sec typ="note">풀 버스트</sec> 스킬 협동 공격을 유도합니다.
+      JP: |-
+        ビームポートを発射して指定範囲に<dmg elem="physics" />のダメージを与えます。
+        命中時、2ラウンドの間対象が受けるダメージを増加させます。対象が重装型の場合は効果が2倍に増幅されます。(スタック不可)
+        クリティカル時、対象の受けるダメージ減少効果を解除します。
+        分隊内に<P-22ハルピュイア>がいる場合、<sec typ="note">フルバースト</sec>スキル協同攻撃を誘導します。
+      EN: |-
+        Shoots a beam port and deals <dmg elem="physics" /> damage to the designated area.
+        When attack hits, increases the target’s received damage for 2 rounds. If the target is a Heavy Armor unit, the effect doubles (cannot stack).
+        When CRIT hit, the target’s Received Damage Decrease effect is removed.
+        If <P-22 Harpyia> is in the squad, initiates a co-op attack with the <sec typ="note">Full Burst</sec> skill.
+      TC: |-
+        發射光束埠，對指定範圍造成<dmg elem="physics" />傷害。
+        命中時，於2回合內增加目標所受傷害。若目標為重裝型，效果增幅2倍。（無法疊加）
+        暴擊時，解除目標的所受傷害減少效果。
+        若小隊內有<P-22 哈比亞>，則引發<sec typ="note">全爆發</sec>技能協力攻擊。
   "2":
     key: "2"
     icon: AirStrike
@@ -6637,6 +6658,23 @@ skills:
             base: 0.15
             per: 0.075
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고 <sec typ="dmg"><buff typ="REMOVE_BUFF" />  대 기동형 피해량 / 적중 증가 효과를 해제</sec>합니다.
+        적중 시, 2라운드 동안 대상의 대 기동형 피해량 / 적중을 감소시키고 이동 불가 상태로 만듭니다. (중첩 불가)
+        아군이 기동형만으로 구성되어 있을 경우, 해당 라운드 동안 지속 효과가 50% 증폭됩니다.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、<sec typ="dmg"><buff typ="REMOVE_BUFF" />対機動型ダメージ量/命中増加効果を解除</sec>します。
+        命中時、2ラウンドの間対象の対機動型ダメージ量/命中を減少させ、移動不可状態にします。(スタック不可)
+        味方が機動型のみで構成されている場合、該当ラウンドの持続効果が50%増幅されます。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area and <sec typ="dmg"><buff typ="REMOVE_BUFF" />removes Anti-Air Damage/ACU Increase effects</sec>.
+        When attack hits, decreases the target’s Anti-Air Damage/ACU for 2 rounds and Immobilizes them. (cannot stack)
+        If the squad is composed only of Air allies, duration effects are amplified by 50% for that round.
+      TC: |-
+        對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害，並<sec typ="dmg"><buff typ="REMOVE_BUFF" />解除對機動型傷害量/命中增加效果</sec>。
+        命中時，於2回合內減少目標的對機動型傷害量/命中，並使其無法移動。（無法疊加）
+        若我軍僅由機動型組成，則該回合的持續效果增幅50%。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -7028,6 +7066,19 @@ skills:
             base: 53
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="1" r /></sec>를 증가시킵니다.
+        라운드 개시 시, 범위 내 <sec typ="note">스카이 나이츠</sec> 소속 전투원의 회피 / 사거리를 증가시킵니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />対軽装型ダメージ量<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />対重装型ダメージ量<val idx="1" r /></sec>を増加させます。
+        ラウンド開始時、範囲内の<sec typ="note">スカイナイツ</sec>所属戦闘員の回避/射程を増加させます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases allies’ <sec typ="dmg"><buff typ="TROOPER_DMG_UP" />Anti-Light Armor Damage<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />Anti-Heavy Armor Damage<val idx="1" r /></sec> within range.
+        At the start of the round, increases the EVA/Range of <sec typ="note">Sky Knights</sec> soldiers within range.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加範圍內我軍的<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />對輕裝型傷害量<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型傷害量<val idx="1" r /></sec>。
+        回合開始時，增加範圍內<sec typ="note">天空騎士</sec>所屬戰鬥員的迴避/射程。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -7408,6 +7459,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 1라운드 동안 자신은 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시 효과</sec>를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 자신의 행동력이 증가합니다.
+        자신 외의 <sec typ="note">스카이 나이츠</sec> 소속 전투원이 있을 경우, <sec typ="note">간섭 대응 유닛</sec>의 효과 지속이 각각 1라운드씩 증가합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、1ラウンドの間自分は<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視効果</sec>を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間自分の行動力が増加します。
+        自分以外の<sec typ="note">スカイナイツ</sec>所属戦闘員がいる場合、<sec typ="note">干渉対応ユニット</sec>の効果持続がそれぞれ1ラウンドずつ増加します。
+      EN: |-
+        At the start of combat, self gains <sec typ="buff"><buff typ="DEF_All" />Damage Invalidation</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" />Ignore Protection</sec> for 1 round.
+        <sec typ="cond">At the start of the round</sec>, self’s MOVE increases for 2 rounds.
+        If there is another <sec typ="note">Sky Knights</sec> soldier apart from self, the duration of <sec typ="note">Interference Response Unit</sec> effects each increase by 1 round.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身於1回合內獲得<sec typ="buff"><buff typ="DEF_All" />傷害無效化</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護效果</sec>。
+        <sec typ="cond">回合開始時</sec>，自身的行動力於2回合內增加。
+        若除了自身以外還有<sec typ="note">天空騎士</sec>所屬戰鬥員，則<sec typ="note">干涉應對單位</sec>的效果持續時間各增加1回合。
   "5":
     key: "5"
     icon: P.AWACS
@@ -7552,6 +7620,23 @@ skills:
             base: 0.1
             per: 0.05
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">지휘 통제</sec> 범위 내 기동형 아군에게 <sec typ="note">강제 이동 면역</sec> 효과를 부여합니다.
+        <sec typ="cond"><sec typ="note">대공 무력화</sec> 치명타 시</sec>, 해당 라운드 동안 대상의 효과 저항을 감소시킵니다. 효과는 <sec typ="note">대공 무력화</sec>의 스킬 레벨에 비례합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="0" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">指揮統制</sec>範囲内の機動型の味方に<sec typ="note">強制移動免疫</sec>効果を付与します。
+        <sec typ="cond"><sec typ="note">対空無力化</sec>クリティカル時</sec>、そのラウンドの間対象の効果耐性を減少させます。効果は<sec typ="note">対空無力化</sec>のスキルレベルに比例します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, self’s <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />Effect Resistance<val idx="0" r /></sec> increases.
+        <sec typ="cond">At the start of the round</sec>, grants <sec typ="note">Forced Move Immunity</sec> to Air allies within <sec typ="note">Command Control</sec>’s range.
+        <sec typ="cond">When <sec typ="note">Anti-Aircraft Neutralization</sec> lands as a CRIT hit</sec>, the target’s Effect Resistance is decreased for that round. This effect is proportional to <sec typ="note">Anti-Aircraft Neutralization</sec>’s skill level.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="0" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，對<sec typ="note">指揮管制</sec>範圍內機動型我軍賦予<sec typ="note">強制移動免疫</sec>效果。
+        <sec typ="cond">當<sec typ="note">防空無力化</sec>發生暴擊時</sec>，於該回合內減少目標的效果抵抗。效果與<sec typ="note">防空無力化</sec>的技能等級成正比。
 dialogue:
   KR:
     "1":
@@ -7741,8 +7826,7 @@ dialogue:
         흣… 이 모습을 소대원들이
         보기라도 하면… 아, 안돼요
         사령관님….
-      Oath: 사령관님이 이렇게 적극적인 분이셨을 줄은… 저도 미처 몰랐습니다. ... 그런데 사령관님? 어째서 저처럼 깐깐하고, 고지식한 군인에게
-        관심을 가지셨는지. 여쭤봐도 될까요? ... 그런가요? 알겠습니다… 앞으로도 사령관님의 기대에 부응하도록 최선을 다하겠어요.
+      Oath: 사령관님이 이렇게 적극적인 분이셨을 줄은… 저도 미처 몰랐습니다. ... 그런데 사령관님? 어째서 저처럼 깐깐하고, 고지식한 군인에게 관심을 가지셨는지. 여쭤봐도 될까요? ... 그런가요? 알겠습니다… 앞으로도 사령관님의 기대에 부응하도록 최선을 다하겠어요.
       OathIdle_01: |-
         사령관님? 소대원들의 계도는 끝내
         두었으니, 이제 걱정하실 것 없어요.
@@ -7869,9 +7953,8 @@ dialogue:
       Idle_03_01: 盗聴器は無力化させておきましたが、古典的な方法だけはこの私でも…その…、ドアの外から盗み聞くような方法には対応のしようがありません。
       Idle_04_01: 私と司令官様の関係が、小隊員たちにバレてしまったのではないかと少し心配です…
       SPIdle_02_01: ふぅ…こんな姿を小隊員たちに見られたりしたら……だ、だめです。司令官様…
-      Oath: >-
+      Oath: |-
         司令官様がこんなに積極的なお方だったとは…今までわかりませんでした。…ところで司令官様？どうして私のような気難しくてただ真面目なだけの軍人に興味をお持ちになられたのでしょうか。
-
         理由を聞かせていただけますか？…そうだったんですか。わかりました…これからも司令官様のご期待に沿えるよう最善を尽くしてまいります。
       OathIdle_01: 司令官様？隊員たちならしっかりと教育しておきましたので、もう心配ございません。
       MVP: ""
@@ -7923,18 +8006,15 @@ dialogue:
       Idle_01_02: |-
         Look forward to it, Producer. We-
         All of us are putting in a lot of effort.
-      Idle_01_03: >-
-        I have to do my best to get the best result… I’m sorry, but will you
-        join me in my practice,
-
+      Idle_01_03: |-
+        I have to do my best to get the best result… I’m sorry, but will you join me in my practice,
         Producer?
       SPIdle_01_01: I-I’ll take it as a mistake.
       Idle_02_01: |-
         Momo…? She’s waiting for the concert?
         Is that true? You’re not lying, are you?!
         Everyone. Let’s get in full swing from the first song!
-      Idle_03_01: … May I lean on your shoulder? I wanted to rest… Thanks to you, it
-        was successful… Yes. Good work, Producer.
+      Idle_03_01: … May I lean on your shoulder? I wanted to rest… Thanks to you, it was successful… Yes. Good work, Producer.
       Idle_04_01: |-
         I know my taste and personality are…
         kind of a nuisance… But you still understood me.
@@ -7943,16 +8023,12 @@ dialogue:
         … Producer?
         You do know concert is about to begin, right?
         … Gosh. Okay, but… you know, right?
-      Oath: >-
-        This wasn’t part of the rehearsal… Is this a really happening? At least
-        it happened after the live performance.
-
+      Oath: |-
+        This wasn’t part of the rehearsal… Is this a really happening? At least it happened after the live performance.
         If it happened during it, it would’ve been an accident. Okay. As an idol, I’ll make your wish come true.
-
         Just remember that you can’t terminate it any time.​
-      OathIdle_01: >-
+      OathIdle_01: |-
         A private idol?
-
         I’m very strict with my contract terms… But if it’s you, I’m okay with everything.
       MVP: ""
     "2":
@@ -7973,12 +8049,9 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        I found a floaty that I like, but it took me a long time to find a
-        swimsuit that looks good on me.
-
+      Idle_01_01: |-
+        I found a floaty that I like, but it took me a long time to find a swimsuit that looks good on me.
         Since it’s a vacation with everyone… 
-
         and because you're joining the summer trip.
       Idle_01_02: |-
         I wanted to get Momo’s signature on the Magical Momo
@@ -8021,12 +8094,9 @@ dialogue:
         swimsuit? Well, either way, it doesn't really matter.
         I actually kinda like you
         being aggressive like this.
-      Oath: >-
-        I didn't wear this swimsuit just to get your attention. But it'd be a
-        lie if I told you I didn't want that.
-
+      Oath: |-
+        I didn't wear this swimsuit just to get your attention. But it'd be a lie if I told you I didn't want that.
         Anyway, it's been quite a while since we had a vacation. I'll never be able to forget this day.
-
         Everything is more than great, but what makes it even better is that I got to know how you feel.
       OathIdle_01: |-
         It's been a while since we had a summer vacation.
@@ -8087,9 +8157,7 @@ dialogue:
         Oh… If the members
         see us… N-no.
         Commander…
-      Oath: I didn’t know you could be so active. … But Commander? Why would you be
-        interested in a strict, hardhead solider like me? May I ask you that? …
-        Is that so? Okay… I’ll do my best to live up to your expectation.
+      Oath: I didn’t know you could be so active. … But Commander? Why would you be interested in a strict, hardhead solider like me? May I ask you that? … Is that so? Okay… I’ll do my best to live up to your expectation.
       OathIdle_01: |-
         Commander? I finished
         guiding the members. Don’t worry.

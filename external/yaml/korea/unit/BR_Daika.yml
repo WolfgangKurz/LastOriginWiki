@@ -5187,6 +5187,39 @@ skills:
               level: "0"
             value: Char_BR_ALWraith_N
             chance: 1
+    desc:
+      KR: |-
+        대상 지점에 대 레이더 미사일을 발사해 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">공격 적중 시</sec>, 대상에게 걸려있는 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 적중 강화 효과를 해제</sec>하고 2라운드 동안 <sec typ="note">혼란</sec> 상태로 만듭니다.
+        <box t="혼란">
+        <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="7" r /></sec> 감소
+        </box>
+        <sec typ="cond">스쿼드에 <char uid="BR_May" />, <char uid="BR_NightAngel" />, <char uid="BR_Sylphid" />, <char uid="BR_Banshee" />, <char uid="BR_StratoAngel" />, <char uid="BR_ALWraith" />가 있을 시</sec>, <sec typ="chance">100% 확률</sec>로 각각 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">석기 시대로!</sec>, <sec typ="note">고공 폭격</sec>, <sec typ="note">열 추적 로크 미사일</sec>, <sec typ="note">기관포 소사</sec>, <sec typ="note">고고도 폭격</sec>, <sec typ="note">조준 폭격</sec> 스킬로 협동 공격</sec>을 유도합니다.
+        <sec>협동 공격이 가능한 전투원이 여렷인 경우, 위 표기된 순으로 우선권을 가집니다. (<char uid="BR_May" /> -&gt; <char uid="BR_ALWraith" /> 순)</sec>
+      JP: |-
+        対象地点に対レーダーミサイルを発射して <dmg elem="physics" /> を与えます。
+        <sec typ="cond">攻撃命中時</sec>、対象にかかっている <sec typ="buff"><buff typ="REMOVE_BUFF" /> 命中強化効果を解除</sec>し、2ラウンドの間 <sec typ="note">混乱</sec> 状態にします。
+        <box t="混乱">
+        <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" r /></sec> 減少
+        </box>
+        <sec typ="cond">スコードに <char uid="BR_May" />、<char uid="BR_NightAngel" />、<char uid="BR_Sylphid" />、<char uid="BR_Banshee" />、<char uid="BR_StratoAngel" />、<char uid="BR_ALWraith" /> がいる場合</sec>、<sec typ="chance">100%の確率</sec>でそれぞれ <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Stone Age!</sec>、<sec typ="note">High-Altitude Bombing</sec>、<sec typ="note">Heat-Seeking Lock Missile</sec>、<sec typ="note">Autocannon Fire</sec>、<sec typ="note">High-Altitude Bombardment</sec>、<sec typ="note">Aimed Bombardment</sec> のスキルで連携攻撃</sec>を誘発します。
+        <sec>連携攻撃が可能な戦闘員が複数いる場合、上記の順で優先されます。 (<char uid="BR_May" /> -> <char uid="BR_ALWraith" /> の順)</sec>
+      EN: |-
+        Fires an anti-radar missile at the target location, dealing <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> accuracy-related buffs</sec> and turns it into <sec typ="note">Confusion</sec> for 2 rounds.
+        <box t="Confusion">
+        <sec typ="buff"><buff typ="ACCURACY_DOWN" /> accuracy <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> critical <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" r /></sec> decrease
+        </box>
+        <sec typ="cond">If the squad has <char uid="BR_May" />, <char uid="BR_NightAngel" />, <char uid="BR_Sylphid" />, <char uid="BR_Banshee" />, <char uid="BR_StratoAngel" />, and <char uid="BR_ALWraith" /></sec>, each triggers a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> combined attack with <sec typ="note">Stone Age!</sec>, <sec typ="note">High-Altitude Bombing</sec>, <sec typ="note">Heat-Seeking Lock Missile</sec>, <sec typ="note">Autocannon Fire</sec>, <sec typ="note">High-Altitude Bombardment</sec>, and <sec typ="note">Aimed Bombardment</sec> with <sec typ="chance">100% chance</sec>.
+        <sec>When multiple combatants can perform a combined attack, priority is given in the order listed above. (<char uid="BR_May" /> -> <char uid="BR_ALWraith" />)</sec>
+      TC: |-
+        向目標地點發射反雷達飛彈，造成 <dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，解除目標身上的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 命中強化效果</sec>，並使其進入 <sec typ="note">混亂</sec> 狀態，持續 2 回合。
+        <box t="混亂">
+        <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" r /></sec> 降低
+        </box>
+        <sec typ="cond">若隊伍中有 <char uid="BR_May" />、<char uid="BR_NightAngel" />、<char uid="BR_Sylphid" />、<char uid="BR_Banshee" />、<char uid="BR_StratoAngel" />、<char uid="BR_ALWraith" /></sec>，則會以 <sec typ="chance">100% 機率</sec> 分別發動 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 與 <sec typ="note">Stone Age!</sec>、<sec typ="note">High-Altitude Bombing</sec>、<sec typ="note">Heat-Seeking Lock Missile</sec>、<sec typ="note">Autocannon Fire</sec>、<sec typ="note">High-Altitude Bombardment</sec>、<sec typ="note">Aimed Bombardment</sec> 的協同攻擊</sec>。
+        <sec>若可進行協同攻擊的戰鬥員有多名，將依上述順序優先。 (<char uid="BR_May" /> -> <char uid="BR_ALWraith" /> 順序)</sec>
   "2":
     key: "2"
     icon: AWACS
@@ -5534,6 +5567,11 @@ skills:
             base: 2
             per: 0.05
             chance: 1
+    desc:
+      KR: 인접한 아군들에게 전황을 전달해 대상들의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>을(를) 증가시키며, 2라운드 동안 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="3" /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec>를 올려줍니다.
+      JP: 隣接する味方に戦況を伝え、対象の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> を増加させ、2ラウンドの間 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="3" /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> を上昇させます。
+      EN: Relays the battlefield situation to adjacent allies, increasing their <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> and raising <sec typ="buff"><buff typ="RANGE_UP" /> range <val idx="3" /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="2" r /></sec> for 2 rounds.
+      TC: 向鄰近友軍傳達戰況，使其 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> 提高，並於 2 回合內使 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="3" /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> 提高。
   "3":
     key: "3"
     icon: P.AWACS
@@ -5919,6 +5957,27 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="buff"><buff typ="SCOUTING" /> 다음에 출현할 적정보 </sec>를 얻을 수 있으며, 적 진영과 가까울수록 <sec typ="buff"><buff typ="EVADE_UP" /> 회피</sec>가 증가합니다.
+        전열 : <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="2" r /></sec>
+        중열 : <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="3" r /></sec>
+        후열 : <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec>
+      JP: |-
+        <sec typ="buff"><buff typ="SCOUTING" /> 次に出現する敵情報 </sec>を得ることができ、敵陣に近いほど <sec typ="buff"><buff typ="EVADE_UP" /> 回避</sec>が増加します。
+        前列 : <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="2" r /></sec>
+        中列 : <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="3" r /></sec>
+        後列 : <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="4" r /></sec>
+      EN: |-
+        <sec typ="buff"><buff typ="SCOUTING" /> information about the next enemy to appear </sec> can be obtained, and the closer you are to the enemy formation, the more <sec typ="buff"><buff typ="EVADE_UP" /> evasion</sec> increases.
+        Front line: <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="2" r /></sec>
+        Middle line: <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="3" r /></sec>
+        Back line: <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="4" r /></sec>
+      TC: |-
+        <sec typ="buff"><buff typ="SCOUTING" /> 可獲得下一個出現敵人的情報 </sec>，且越接近敵方陣營，<sec typ="buff"><buff typ="EVADE_UP" /> 迴避</sec>越高。
+        前列：<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="2" r /></sec>
+        中列：<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="3" r /></sec>
+        後列：<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="4" r /></sec>
   "4":
     key: "4"
     icon: P.AWACS
@@ -6298,6 +6357,27 @@ skills:
             base: 1
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 스쿼드 내 아군의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec>를 증가시키고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec>를 감소시킵니다.
+        <sec typ="cond">해당 효과 적용 시</sec>, 대상에게 걸린 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 적중 / 회피 감소 효과를 해제</sec>합니다.
+        <sec typ="cond">대상이 기동형인 경우</sec>, <sec typ="buff">효과가 50% 증가</sec>합니다.
+        <sec typ="cond">스쿼드 내에 <char uid="BR_May" />가 없다면</sec> 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" /></sec>을(를) 증가시킵니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> スコード内の味方の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec> を増加させ、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="2" r inv /></sec> を減少させます。
+        <sec typ="cond">この効果が適用されると</sec>、対象にかかっている <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 命中 / 回避減少効果を解除</sec>します。
+        <sec typ="cond">対象が機動型の場合</sec>、<sec typ="buff">効果が50%増加</sec>します。
+        <sec typ="cond">スコード内に <char uid="BR_May" /> がいない場合</sec> 範囲内の味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" /></sec> を増加させます。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases allies in the squad's <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="1" r /></sec> and reduces <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="2" r inv /></sec>.
+        <sec typ="cond">When this effect is applied</sec>, removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> accuracy/evasion reduction effects</sec> from the target.
+        <sec typ="cond">If the target is mobile</sec>, <sec typ="buff">the effect increases by 50%</sec>.
+        <sec typ="cond">If the squad does not contain <char uid="BR_May" /></sec>, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" /></sec> of allies within range.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，使隊伍內友軍的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec> 提高，並降低 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="2" r inv /></sec>。
+        <sec typ="cond">當此效果套用時</sec>，解除目標身上的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 命中 / 迴避降低效果</sec>。
+        <sec typ="cond">若目標為機動型</sec>，<sec typ="buff">效果提升 50%</sec>。
+        <sec typ="cond">若隊伍中沒有 <char uid="BR_May" /></sec>，使範圍內友軍的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" /></sec> 提高。
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -6569,6 +6649,19 @@ skills:
             base: -0.11
             per: -0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 적에게 <sec typ="attr">일반 효과</sec> <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="0" r inv /></sec> 감소를 주고 2라운드 동안 <sec typ="attr">일반 효과</sec> <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="1" r /></sec> 감소와 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="4" r /></sec> 감소를 부여합니다.
+        <sec typ="cond">스쿼드 내 $$DoomBringer:?$가 5개체라면</sec> 적 전체에게 받는 피해 감소 약화 효과를 줍니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 敵に <sec typ="attr">一般効果</sec> <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="0" r inv /></sec> 減少を与え、2ラウンドの間 <sec typ="attr">一般効果</sec> <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="1" r /></sec> 減少と <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="4" r /></sec> 減少を付与します。
+        <sec typ="cond">スコード内に $$DoomBringer:?$ が5体いる場合</sec> 敵全体に受けるダメージ減少の弱体効果を与えます。
+      EN: |-
+        <sec typ="cond">At round start</sec>, inflicts enemies with a <sec typ="attr">normal effect</sec> that reduces <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> effect resistance <val idx="0" r inv /></sec>, and for 2 rounds applies <sec typ="attr">normal effect</sec> <sec typ="buff"><buff typ="DEF_DOWN" /> defense <val idx="1" r /></sec> reduction and <sec typ="buff"><buff typ="EVADE_DOWN" /> evasion <val idx="4" r /></sec> reduction.
+        <sec typ="cond">If there are 5 $$DoomBringer:?$ units in the squad</sec>, inflicts all enemies with a weakening effect that reduces damage mitigation.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，對敵人施加 <sec typ="attr">一般效果</sec>，使其 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="0" r inv /></sec> 降低，並於 2 回合內賦予 <sec typ="attr">一般效果</sec> <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="1" r /></sec> 降低與 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="4" r /></sec> 降低。
+        <sec typ="cond">若隊伍內有 5 個 $$DoomBringer:?$</sec>，則對敵全體施加降低受傷減免的弱化效果。
 dialogue:
   KR:
     "":
@@ -6765,10 +6858,8 @@ dialogue:
       SPIdle_02_01: |-
         I’ll cover us…
         please… do what you want…
-      Oath: >-
-        Finally… you confessed your love to me… I'm pleased… So joyful… But I
-        don't know why this makes me want to hide…
-
+      Oath: |-
+        Finally… you confessed your love to me… I'm pleased… So joyful… But I don't know why this makes me want to hide…
         Thank you, Commander… From now on… I'll pay attention to you only.
       OathIdle_01: |-
         Commander, you’re always elegant.
@@ -6797,13 +6888,10 @@ dialogue:
         bath in the warm sunlight, and listen to
         the sound of the surroundings! Oh, and… I wish you to be there
         beside me, Commander. Just like the present, fufu.​
-      Idle_01_02: >-
+      Idle_01_02: |-
         I have been keeping my feelings for so long.
-
         You have no idea how happy I was when I got to release them. Hmm? Wasn’t it tough?
-
         Of course, it was tough sometimes. But this happiness…
-
         Even all that waiting has turned into happiness, so it’s all good.​
       Idle_01_03: |-
         Doom Bringer’s secret files? Whose files do you wish

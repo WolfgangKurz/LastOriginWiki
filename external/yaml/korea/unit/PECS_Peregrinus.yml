@@ -1553,6 +1553,27 @@ skills:
             base: -0.06
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="note">마검 : 어둠의 서약</sec>을 휘둘러 <dmg elem="physics" />를 줍니다.
+        적중 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="9" r inv /></sec>를 2라운드 동안 감소시키며, 자신에게 적용된 <sec typ="note">진조의 권능</sec> 수에 따라 효과가 증폭됩니다.
+        <sec typ="cond">자신의 HP가 40% 이상</sec>일 때, 공격 적중 시 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 / 피해 최소화 효과를 해제</sec>하며 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec>각 효과는 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" /> 효과 저항</sec>의 영향을 받지 않습니다.</sec>
+      JP: |-
+        <sec typ="note">魔剣：闇の誓約</sec>を振るい、<dmg elem="physics" />を与えます。
+        命中した対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_RATEUP" />効果耐性<val idx="9" r inv /></sec>を2ラウンドの間減少させ、自分に適用された<sec typ="note">真祖の権能</sec>の数に応じて効果が増幅されます。
+        <sec typ="cond">自分のHPが40%以上</sec>の時、攻撃命中時に対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />反撃 / ダメージ最小化効果を解除</sec>し、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+        <sec>各効果は<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" />効果耐性</sec>の影響を受けません。</sec>
+      EN: |-
+        <sec typ="note">Magic Sword: Oath of Darkness</sec> swings to deal <dmg elem="physics" />.
+        Decreases the hit target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> effect resistance <val idx="9" r inv /></sec> for 2 rounds, with the effect amplified by the number of <sec typ="note">True Ancestor's Power</sec> effects applied to self.
+        <sec typ="cond">When self's HP is 40% or higher</sec>, on attack hit removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> retaliation / damage minimization effects</sec> and increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt <val idx="0" r /></sec>.
+        <sec>The effects are not affected by <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" /> effect resistance</sec>.</sec>
+      TC: |-
+        揮舞<sec typ="note">魔劍：黑暗之約</sec>造成<dmg elem="physics" />。
+        使命中目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_RATEUP" />效果抗性<val idx="9" r inv /></sec>於2回合內降低，並依自身所套用的<sec typ="note">真祖之權能</sec>數量增幅效果。
+        <sec typ="cond">若自身HP為40%以上</sec>，在攻擊命中時解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />反擊 / 傷害最小化效果</sec>，並提升<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>。
+        <sec>各效果不受<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" />效果抗性</sec>影響。</sec>
   "2":
     key: "2"
     icon: AssaultAttack
@@ -2702,6 +2723,23 @@ skills:
             base: 0.11
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        안대의 봉인을 해제한 후, 진홍빛 섬광을 발사해 목표 지점에 <dmg elem="physics" />를 주고 적중 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>합니다.
+        또한 자신에게 적용된 <sec typ="note">진조의 권능</sec> 수에 따라 2라운드 동안 적중 대상의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 감소 약화 <val idx="2" r /></sec>를 약화시킵니다.
+        <sec>스킬 레벨 10에서 효과 범위가 크게 증가합니다.</sec>
+      JP: |-
+        眼帯の封印を解いた後、真紅の閃光を放ち、目標地点に<dmg elem="physics" />を与えて命中対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />反撃効果を解除</sec>します。
+        さらに、自分に適用された<sec typ="note">真祖の権能</sec>の数に応じて、2ラウンドの間命中対象の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />ダメージ減少弱化<val idx="2" r /></sec>を弱めます。
+        <sec>スキルレベル10で効果範囲が大きく増加します。</sec>
+      EN: |-
+        After unsealing the eyepatch, fires a crimson flash, dealing <dmg elem="physics" /> to the target point and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removing retaliation effects</sec> from hit targets.
+        Additionally, based on the number of <sec typ="note">True Ancestor's Power</sec> effects applied to self, weakens hit targets' <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage reduction weakening <val idx="2" r /></sec> for 2 rounds.
+        <sec>The effect area greatly increases at skill level 10.</sec>
+      TC: |-
+        解除眼罩的封印後，發射深紅閃光，對目標地點造成<dmg elem="physics" />並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除被命中目標的反擊效果</sec>。
+        另外，依自身套用的<sec typ="note">真祖之權能</sec>數量，於2回合內削弱命中目標的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />傷害減少弱化<val idx="2" r /></sec>。
+        <sec>技能等級10時，效果範圍會大幅增加。</sec>
   "3":
     key: "3"
     icon: P.FormChange
@@ -2973,6 +3011,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="note">진조의 권능 : 사안</sec> : 라운드 개시 시, <sec typ="cond">자신이 공격 지원 효과를 받고 있지 않은 경우</sec>, 1라운드 동안 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="note">진조의 권능 : 운명조작</sec> : 라운드 개시 시, <sec typ="cond">자신이 공격 지원 및 지정 보호 효과를 받고 있지 않은 경우</sec>, 1라운드 동안 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 획득합니다.
+        <sec typ="note">진조의 권능 : 불사</sec> : 적 처치 시, 해제 불가 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="4" r signless /> HP로 전투 속행</sec> 효과를 획득합니다. (최대 3중첩)
+      JP: |-
+        <sec typ="note">真祖の権能：邪眼</sec>：ラウンド開始時、<sec typ="cond">自分が攻撃支援効果を受けていない場合</sec>、1ラウンドの間<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="0" r /></sec>が増加します。
+        <sec typ="note">真祖の権能：運命操作</sec>：ラウンド開始時、<sec typ="cond">自分が攻撃支援および指定保護効果を受けていない場合</sec>、1ラウンドの間<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視</sec>効果を獲得します。
+        <sec typ="note">真祖の権能：不死</sec>：敵撃破時、解除不可の<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="4" r signless />HPで戦闘続行</sec>効果を獲得します。(最大3スタック)
+      EN: |-
+        <sec typ="note">True Ancestor's Power: Evil Eye</sec>: At round start, <sec typ="cond">if self is not receiving Attack Support</sec>, increases <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> for 1 round.
+        <sec typ="note">True Ancestor's Power: Fate Manipulation</sec>: At round start, <sec typ="cond">if self is not receiving Attack Support or Designated Protection</sec>, gains <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> for 1 round.
+        <sec typ="note">True Ancestor's Power: Immortality</sec>: On enemy kill, gains an unremovable <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat with <val idx="4" r signless /> HP</sec> effect. (max 3 stacks)
+      TC: |-
+        <sec typ="note">真祖之權能：邪眼</sec>：回合開始時，<sec typ="cond">若自身未受到攻擊支援效果</sec>，則於1回合內提升<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="0" r /></sec>。
+        <sec typ="note">真祖之權能：命運操控</sec>：回合開始時，<sec typ="cond">若自身未受到攻擊支援及指定保護效果</sec>，則於1回合內獲得<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>效果。
+        <sec typ="note">真祖之權能：不死</sec>：擊破敵人時，獲得不可解除的<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="4" r signless /> HP繼續戰鬥</sec>效果。（最多3層）
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3169,6 +3224,23 @@ skills:
             base: 0.11
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신에게 적용된 <sec typ="note">진조의 권능</sec> 수에 따라 1라운드 동안 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>를 증가시킵니다.
+        범위 내 아군에게 <sec typ="note">LRL : 진조의 힘?</sec>이 적용된 상태인 경우, 기본 효과가 추가 적용되며 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="12" r /></sec>가 증가합니다.
+        자신이 <sec typ="cond"><buff typ="DEF_RESSURRECT" /> 전투 속행 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+      JP: |-
+        ラウンド開始時、自分に適用された<sec typ="note">真祖の権能</sec>の数に応じて、1ラウンドの間範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>を増加させます。
+        範囲内の味方に<sec typ="note">LRL：真祖の力？</sec>が適用されている場合、基本効果が追加適用され、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="12" r /></sec>が増加します。
+        自分が<sec typ="cond"><buff typ="DEF_RESSURRECT" />戦闘続行中</sec>の場合、範囲内の味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>が増加します。
+      EN: |-
+        At round start, increases allies within range's <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" r /></sec> for 1 round based on the number of <sec typ="note">True Ancestor's Power</sec> effects applied to self.
+        If allies within range are affected by <sec typ="note">LRL: True Ancestor's Power?</sec>, the base effect is additionally applied and <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="12" r /></sec> increases.
+        <sec typ="cond">When self is in <buff typ="DEF_RESSURRECT" /> Continue Combat</sec>, increases allies within range's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>.
+      TC: |-
+        回合開始時，依自身套用的<sec typ="note">真祖之權能</sec>數量，於1回合內提升範圍內友軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>。
+        若範圍內友軍受到<sec typ="note">LRL：真祖之力？</sec>影響，則會另外套用基礎效果，並提升<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="12" r /></sec>。
+        <sec typ="cond">若自身處於<buff typ="DEF_RESSURRECT" />戰鬥續行</sec>狀態</sec>，則提升範圍內友軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -3786,6 +3858,23 @@ skills:
             base: 0.55
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        공격 적중 시, 자신에게 <sec typ="note">진조의 권능</sec>이 2종류 이상 적용된 경우, 대상의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 공격 지원 효과 해제</sec> / <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 지정 보호 효과를 해제</sec>하며 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec>를 증가시킵니다.
+        라운드 개시 시, <sec typ="note">영원한 진조의 섬광</sec> 및 <sec typ="note">LRL : 사이클롭스 이터널 빔</sec> 효과가 모두 적용 중인 적군은 <sec typ="buff"><buff typ="Action_Number_Change_Up copy" /> 최대 행동 횟수 <val idx="5" /></sec>이(가) 감소합니다.
+        <sec>각 효과들은 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> <buff typ="DEBUFF_PERDOWN" /> 효과 저항</sec>의 영향을 받지 않습니다.</sec>
+      JP: |-
+        攻撃命中時、自分に<sec typ="note">真祖の権能</sec>が2種類以上適用されている場合、対象の<sec typ="buff"><buff typ="REMOVE_DEBUFF" />攻撃支援効果を解除</sec> / <sec typ="buff"><buff typ="REMOVE_DEBUFF" />指定保護効果を解除</sec>し、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="4" r /></sec>を増加させます。
+        ラウンド開始時、<sec typ="note">永遠なる真祖の閃光</sec>および<sec typ="note">LRL：サイクロプス・エターナルビーム</sec>効果がすべて適用中の敵軍は<sec typ="buff"><buff typ="Action_Number_Change_Up copy" />最大行動回数<val idx="5" /></sec>が減少します。
+        <sec>各効果は<sec typ="buff"><buff typ="DEBUFF_RATEUP" /> <buff typ="DEBUFF_PERDOWN" />効果耐性</sec>の影響を受けません。</sec>
+      EN: |-
+        On attack hit, if 2 or more kinds of <sec typ="note">True Ancestor's Power</sec> are applied to self, removes the target's <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Attack Support effect</sec> / <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Designated Protection effect</sec> and increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec>.
+        At round start, enemy units with both <sec typ="note">Eternal True Ancestor's Flash</sec> and <sec typ="note">LRL: Cyclops Eternal Beam</sec> effects applied have their <sec typ="buff"><buff typ="Action_Number_Change_Up copy" /> maximum actions <val idx="5" /></sec> reduced.
+        <sec>The effects are not affected by <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> <buff typ="DEBUFF_PERDOWN" /> effect resistance</sec>.</sec>
+      TC: |-
+        攻擊命中時，若自身套用的<sec typ="note">真祖之權能</sec>達2種以上，則解除目標的<sec typ="buff"><buff typ="REMOVE_DEBUFF" />攻擊支援效果</sec> / <sec typ="buff"><buff typ="REMOVE_DEBUFF" />指定保護效果</sec>，並提升<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="4" r /></sec>。
+        回合開始時，若敵軍同時受到<sec typ="note">永恆真祖之閃光</sec>與<sec typ="note">LRL：Cyclops Eternal Beam</sec>效果影響，則其<sec typ="buff"><buff typ="Action_Number_Change_Up copy" />最大行動次數<val idx="5" /></sec>減少。
+        <sec>各效果不受<sec typ="buff"><buff typ="DEBUFF_RATEUP" /> <buff typ="DEBUFF_PERDOWN" />效果抗性</sec>影響。</sec>
   F1:
     key: F1
     icon: AssaultAttack
@@ -6162,6 +6251,19 @@ skills:
             base: 0.33
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        지정 범위 적에게 <dmg elem="physics" />를 주고 3라운드 동안 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec>를 감소시킵니다.
+        대상이 <sec typ="cond"><buff typ="DEF_Side" /> 행 보호</sec> 또는 <sec typ="cond"><buff typ="DEF_Line" /> 열 보호</sec> 활성화 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      JP: |-
+        指定範囲の敵に<dmg elem="physics" />を与え、3ラウンドの間対象の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="0" r /></sec>を減少させます。
+        対象が<sec typ="cond"><buff typ="DEF_Side" />行保護</sec>または<sec typ="cond"><buff typ="DEF_Line" />列保護</sec>の発動状態なら、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="2" r /></sec>が増加します。
+      EN: |-
+        Deals <dmg elem="physics" /> to enemies in the designated area and decreases the target's <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="0" r /></sec> for 3 rounds.
+        If the target has <sec typ="cond"><buff typ="DEF_Side" /> Row Protection</sec> or <sec typ="cond"><buff typ="DEF_Line" /> Column Protection</sec> active, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt <val idx="2" r /></sec> increases.
+      TC: |-
+        對指定範圍內的敵人造成<dmg elem="physics" />，並於3回合內降低目標的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="0" r /></sec>。
+        若目標處於<sec typ="cond"><buff typ="DEF_Side" />行保護</sec>或<sec typ="cond"><buff typ="DEF_Line" />列保護</sec>啟用狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="2" r /></sec>會增加。
   F2:
     key: F2
     icon: BeamShot
@@ -12278,6 +12380,23 @@ skills:
             base: 6
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위 적에게 <sec typ="attr">보호 무시</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec> <dmg elem="physics" />를 줍니다.
+        적중 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어막 효과를 해제</sec>하고 적 수에 비례하여 <sec typ="buff"><buff typ="DEF_DOWN" /> 광역 피해 분산 효과 <val idx="6" r /></sec>를 감소시킵니다.
+        해당 스킬 사용 시, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 팔콘 폼 모드로 변환</sec>됩니다.
+      JP: |-
+        指定範囲の敵に<sec typ="attr">保護無視</sec>の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="5" r /></sec><dmg elem="physics" />を与えます。
+        命中対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />バリア効果を解除</sec>し、敵数に応じて<sec typ="buff"><buff typ="DEF_DOWN" />広域ダメージ分散効果<val idx="6" r /></sec>を減少させます。
+        このスキルを使用すると、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />ファルコンフォームモードに変換</sec>されます。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="5" r /></sec> <dmg elem="physics" /> to enemies in the designated area.
+        Removes hit targets' <sec typ="buff"><buff typ="REMOVE_BUFF" /> barrier effects</sec> and decreases the <sec typ="buff"><buff typ="DEF_DOWN" /> area damage dispersion effect <val idx="6" r /></sec> in proportion to the number of enemies.
+        Using this skill transforms self into <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Falcon Form Mode</sec>.
+      TC: |-
+        對指定範圍內的敵人造成<sec typ="attr">無視保護</sec>的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="5" r /></sec><dmg elem="physics" />。
+        解除被命中目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />屏障效果</sec>，並依敵人數量減少<sec typ="buff"><buff typ="DEF_DOWN" />廣域傷害分散效果<val idx="6" r /></sec>。
+        使用此技能時，會<sec typ="buff"><buff typ="REMOVE_DEBUFF" />變換為 Falcon Form 模式</sec>。
   F3:
     key: F3
     icon: P.FormChange
@@ -12391,6 +12510,23 @@ skills:
             base: 64
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 광역 피해량 집중 <val idx="0" r /></sec> 효과가 영구히 적용됩니다.
+        최대 5중첩까지 가능합니다.
+        2스킬 사용 시, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 팔콘 폼으로 변환</sec>됩니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" />広域ダメージ集中<val idx="0" r /></sec>効果が永続的に適用されます。
+        最大5スタックまで可能です。
+        2スキル使用時、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />ファルコンフォームに変換</sec>されます。
+      EN: |-
+        At round start, permanently applies the <sec typ="buff"><buff typ="ATK_UP" /> area damage concentration <val idx="0" r /></sec> effect.
+        This can stack up to 5 times.
+        Using Skill 2 transforms self into <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Falcon Form</sec>.
+      TC: |-
+        回合開始時，會永久套用<sec typ="buff"><buff typ="ATK_UP" />廣域傷害集中<val idx="0" r /></sec>效果。
+        最多可疊加5層。
+        使用2技能時，會<sec typ="buff"><buff typ="REMOVE_DEBUFF" />變換為 Falcon Form</sec>。
 dialogue:
   KR:
     "":
@@ -12479,14 +12615,10 @@ dialogue:
         Am I sure? Of course!
         Mobility is key for Harpies like me.
         I’m not the King of Harpy for no reason.
-      Idle_01_02: >-
-        Dragon Slayer? Hmm… Dragon Slayer knew how to fight cautiously yet
-        wisely,
-
+      Idle_01_02: |-
+        Dragon Slayer? Hmm… Dragon Slayer knew how to fight cautiously yet wisely,
         knew how to value his colleagues,
-
         and led us gently yet strongly.
-
         Yes, just like you.
       Idle_01_03: |-
         Who cares

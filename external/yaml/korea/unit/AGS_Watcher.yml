@@ -3139,6 +3139,19 @@ skills:
             base: 0.14
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        벌컨포를 소사하여 대상에게 <dmg elem="physics" />를 주고 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 강화 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>를 증가시킵니다.
+      JP: |-
+        バルカン砲を掃射して対象に<dmg elem="physics" />を与え、<sec typ="buff"><buff typ="REMOVE_BUFF" />防御力強化効果を解除</sec>します。
+        <sec typ="cond">命中時</sec>、2ラウンドの間<sec typ="buff"><buff typ="MARKING" />標的</sec>を付与し、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="3" r /></sec>を増加させます。
+      EN: |-
+        Sprays Vulcan cannon fire at the target, dealing <dmg elem="physics" /> and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removing Defense buff effects</sec>.
+        <sec typ="cond">On hit</sec>, applies <sec typ="buff"><buff typ="MARKING" /> Mark</sec> for 2 rounds and increases <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="3" r /></sec>.
+      TC: |-
+        以火神砲掃射目標，造成<dmg elem="physics" />並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除防禦力強化效果</sec>。
+        <sec typ="cond">命中時</sec>，賦予2回合的<sec typ="buff"><buff typ="MARKING" />標記</sec>，並增加<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="3" r /></sec>。
   "2":
     key: "2"
     icon: AWACS
@@ -3730,6 +3743,27 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">스킬 사용 시</sec>, 아군에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 행동력 / 스킬 위력 감소 효과를 해제</sec>합니다.
+        <sec typ="cond">스킬 사용 시</sec>, 아군 구성에 따라 아군 전체에 4라운드 동안 다음 효과를 부여합니다. (중첩 불가)
+        - 중장형 (1기당) : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec> 증가
+        - 경장형 (1기당) : <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력  <val idx="8" r /></sec>증가
+      JP: |-
+        <sec typ="cond">スキル使用時</sec>、味方に付与された<sec typ="buff"><buff typ="REMOVE_DEBUFF" />行動力 / スキル威力減少効果を解除</sec>します。
+        <sec typ="cond">スキル使用時</sec>、味方編成に応じて味方全体に4ラウンドの間、次の効果を付与します。（重複不可）
+        - 重装型（1体ごと）: <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>増加
+        - 軽装型（1体ごと）: <sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="8" r /></sec>増加
+      EN: |-
+        <sec typ="cond">When the skill is used</sec>, removes applied <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> AP / skill power reduction effects</sec> from allies.
+        <sec typ="cond">When the skill is used</sec>, based on ally composition, grants the following effects to all allies for 4 rounds. (Does not stack)
+        - Heavy type (per unit): <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" r /></sec> increase
+        - Light type (per unit): <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="8" r /></sec> increase
+      TC: |-
+        <sec typ="cond">使用技能時</sec>，解除我軍身上的<sec typ="buff"><buff typ="REMOVE_DEBUFF" />行動力 / 技能威力減少效果</sec>。
+        <sec typ="cond">使用技能時</sec>，依據我軍組成，對全體我軍賦予持續4回合的以下效果。（不可疊加）
+        - 中裝型（每1機）：<sec typ="buff"><buff typ="AP_UP" /> AP<val idx="4" r /></sec>增加
+        - 輕裝型（每1機）：<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力<val idx="8" r /></sec>增加
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -4039,6 +4073,23 @@ skills:
             base: 0.3
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        자신의 공격은 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상의 HP가 낮을 수록 피해량 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 경장형/중장형 아군의 공격을 지원</sec>하고 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec>스킬 레벨 10에서 자신의 위치와 관계없이 전체 적용됩니다.</sec>
+      JP: |-
+        自分の攻撃は<sec typ="dmg"><buff typ="DamageAmp_Opp" />対象のHPが低いほどダメージ量<val idx="3" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />軽装型/重装型の味方の攻撃を支援</sec>し、<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="0" /></sec>を増加させます。
+        <sec>スキルレベル10で自分の位置に関係なく全体に適用されます。</sec>
+      EN: |-
+        Self's attacks increase <sec typ="dmg"><buff typ="DamageAmp_Opp" /> damage <val idx="3" r /></sec> as the target's HP gets lower.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports the attacks of nearby Light/Heavy type allies</sec> and increases <sec typ="buff"><buff typ="RANGE_UP" /> range <val idx="0" /></sec>.
+        <sec>At Skill Lv. 10, this applies to the whole field regardless of self's position.</sec>
+      TC: |-
+        自身的攻擊會隨著目標HP越低而增加<sec typ="dmg"><buff typ="DamageAmp_Opp" />傷害量<val idx="3" r /></sec>。
+        <sec typ="cond">在回合開始時</sec>，<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援範圍內輕裝型 / 重裝型我軍的攻擊</sec>，並增加<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="0" /></sec>。
+        <sec>技能等級10時，會不受自身位置影響而套用至全場。</sec>
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -4231,6 +4282,19 @@ skills:
             base: 0.14
             per: 0.04
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">공격 적중 시</sec>, 자신은 2라운드 동안 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 효과를 획득하고 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="7" slot="1" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>/<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec>/<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="2" r /></sec>が増加します。
+        <sec typ="cond">攻撃命中時</sec>、自分は2ラウンドの間<sec typ="buff"><buff typ="SUPPORT_ATTACK" />再攻撃</sec>効果を獲得し、<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="7" slot="1" r /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="2" r /></sec> increase.
+        <sec typ="cond">On attack hit</sec>, self gains <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Reattack</sec> for 2 rounds and <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="7" slot="1" r /></sec> increases.
+      TC: |-
+        <sec typ="cond">在回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透<val idx="2" r /></sec>增加。
+        <sec typ="cond">攻擊命中時</sec>，自身獲得持續2回合的<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻擊</sec>效果，並增加<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力<val idx="7" slot="1" r /></sec>。
   "5":
     key: "5"
     icon: P.EnemyDetect
@@ -4469,6 +4533,23 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SCOUTING" /> 정찰 활성화</sec> 상태를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><buff typ="SCOUTING" /> 정찰 활성화 상태인 아군에게</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막/피해 감소 무시</sec> 효과를 부여합니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격/공격 지원 시</sec>, 2라운드 동안 <sec typ="cond"><buff typ="MARKING" /> 표식</sec>이 부여된 적의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="4" r inv /></sec>를 감소시킵니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自分は<sec typ="buff"><buff typ="SCOUTING" />偵察有効化</sec>状態を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond"><buff typ="SCOUTING" />偵察有効化状態の味方に</sec><sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア/ダメージ減少無視</sec>効果を付与します。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />再攻撃/攻撃支援時</sec>、2ラウンドの間<sec typ="cond"><buff typ="MARKING" />標的</sec>が付与された敵の<sec typ="buff"><buff typ="DEBUFF_RATEUP" />効果抵抗<val idx="4" r inv /></sec>を減少させます。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self gains <sec typ="buff"><buff typ="SCOUTING" /> Scouting Activated</sec>.
+        <sec typ="cond">At round start</sec>, grants nearby allies who are in <sec typ="cond"><buff typ="SCOUTING" /> Scouting Activated</sec> state <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier / Damage Reduction Ignore</sec>.
+        <sec typ="cond">When <buff typ="SUPPORT_ATTACK" /> Reattack / Support Attack triggers</sec>, decreases the <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="4" r inv /></sec> of enemies with <sec typ="cond"><buff typ="MARKING" /> Mark</sec> for 2 rounds.
+      TC: |-
+        <sec typ="cond">在戰鬥開始時</sec>，自身獲得<sec typ="buff"><buff typ="SCOUTING" />偵察啟動</sec>狀態。
+        <sec typ="cond">在回合開始時</sec>，對<sec typ="cond"><buff typ="SCOUTING" />偵察啟動狀態</sec>的我軍賦予<sec typ="buff"><buff typ="BARRIER_PIERCE" />無視防護罩 / 減傷</sec>效果。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />再攻擊 / 攻擊支援時</sec>，於2回合內降低帶有<sec typ="cond"><buff typ="MARKING" />標記</sec>的敵軍之<sec typ="buff"><buff typ="DEBUFF_RATEUP" />效果抵抗<val idx="4" r inv /></sec>。
 dialogue:
   KR:
     "":

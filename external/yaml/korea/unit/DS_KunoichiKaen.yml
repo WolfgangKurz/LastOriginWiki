@@ -2732,6 +2732,23 @@ skills:
               level: "0"
             value: Char_DS_KunoichiEnrai_N
             chance: 1
+    desc:
+      KR: |-
+        대상에 <dmg elem="fire" />를 주고 적중 시 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="0" r inv /></sec>를 감소시킵니다.
+        치명타 시, 지속 화염 피해를 입힙니다.
+        <sec typ="note">일격필살</sec> 활성화 상태인 경우, 피해량이 증가합니다.
+      JP: |-
+        対象に<dmg elem="fire" />のダメージを与え、命中時に<sec typ="buff"><buff typ="DEBUFF_RATEUP" />効果耐性<val idx="0" r inv /></sec>を減少させます。
+        クリティカル時、持続火炎ダメージを与えます。
+        <sec typ="note">一撃必殺</sec>が有効化状態の場合、ダメージ量が増加します。
+      EN: |-
+        Deals <dmg elem="fire" /> damage to the target and, when attack hits, decreases the target’s <sec typ="buff"><buff typ="DEBUFF_RATEUP" />Effect Resistance<val idx="0" r inv /></sec>.
+        When CRIT hit, inflicts Fire DoT.
+        If <sec typ="note">Lethal Blow</sec> is active, damage is increased.
+      TC: |-
+        對目標造成<dmg elem="fire" />傷害，命中時減少目標的<sec typ="buff"><buff typ="DEBUFF_RATEUP" />效果抵抗<val idx="0" r inv /></sec>。
+        暴擊時，造成持續性火焰傷害。
+        若<sec typ="note">一擊必殺</sec>處於啟用狀態，傷害量增加。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -4579,6 +4596,23 @@ skills:
             base: 0.25
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 주고 대상의 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="0" r /></sec>를 감소시킵니다.
+        대상이 냉기/전기 속성 저항 감소 상태일 경우, 피해량이 증가합니다.
+        <sec typ="note">일격필살</sec> 활성화 상태인 경우, 피해량이 증가합니다.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="fire" />を与え、対象の<sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性<val idx="0" r /></sec>を減少させます。
+        対象が冷気/電気属性耐性減少状態の場合、ダメージ量が増加します。
+        <sec typ="note">一撃必殺</sec>が有効化状態の場合、ダメージ量が増加します。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="fire" /> damage to the designated area and decreases the target’s <sec typ="buff"><buff typ="FIRERES_DOWN" />Fire Resistance<val idx="0" r /></sec>.
+        Damage is increased if the target has decreased Cold/Electric Resistance.
+        Damage is increased if <sec typ="note">Lethal Blow</sec> is active.
+      TC: |-
+        對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="fire" />傷害，並減少目標的<sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抵抗<val idx="0" r /></sec>。
+        若目標處於冰霜/電擊屬性抵抗減少狀態，傷害量增加。
+        若<sec typ="note">一擊必殺</sec>處於啟用狀態，傷害量增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -5002,6 +5036,19 @@ skills:
             base: 0.35
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec>을 크게 증가시킵니다.
+        해당 효과는 4라운드 동안 점차 감소합니다.
+      JP: |-
+        ラウンド開始時、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力</sec>を大幅に増加させます。
+        この効果は4ラウンドの間徐々に減少します。
+      EN: |-
+        At the start of the round, significantly increases self’s <sec typ="buff"><buff typ="ATK_UP" />ATK</sec>.
+        This effect decreases gradually over 4 rounds.
+      TC: |-
+        回合開始時，大幅增加自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力</sec>。
+        此效果會於4回合內逐漸減少。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -5166,6 +5213,19 @@ skills:
             base: 0.12
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시 <sec typ="note">일격필살</sec> 버프가 활성화됩니다.
+        라운드 개시 시, 자신의 행동력이 증가합니다.
+      JP: |-
+        戦闘開始時、<sec typ="note">一撃必殺</sec>バフが有効化します。
+        ラウンド開始時、自分の行動力が増加します。
+      EN: |-
+        At the start of combat, activates the <sec typ="note">Lethal Blow</sec> buff.
+        At the start of the round, increases self’s MOVE.
+      TC: |-
+        戰鬥開始時，<sec typ="note">一擊必殺</sec>增益啟用。
+        回合開始時，增加自身的行動力。
   "5":
     key: "5"
     icon: P.Beam
@@ -5409,6 +5469,23 @@ skills:
             base: 0.4
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="note">불꽃의 춤</sec> 효과 중 라운드 경과에 따른 공격력 점감이 발생하지 않습니다.
+        <sec typ="note">시라누이</sec> 사용 시, 스쿼드 내에 <char uid="Kunoichi Enrai" />가 있을 경우 <sec typ="note">호무라</sec> 협동공격을 유도합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自分の<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />対軽装型ダメージ量<val idx="0" r /></sec>が増加します。
+        <sec typ="note">炎の舞</sec>効果中、ラウンド経過による攻撃力漸減は発生しません。
+        <sec typ="note">不知火</sec>使用時、分隊内に<char uid="Kunoichi Enrai" />がいる場合、<sec typ="note">炎</sec>協同攻撃を誘導します。
+      EN: |-
+        <sec typ="cond">At the start of combat</sec>, self’s <sec typ="dmg"><buff typ="TROOPER_DMG_UP" />Anti-Light Armor Damage<val idx="0" r /></sec> increases.
+        During the <sec typ="note">Dance of Fire</sec> effect, the gradual ATK decrease over rounds does not occur.
+        When using <sec typ="note">Shiranui</sec>, if <char uid="Kunoichi Enrai" /> is in the squad, initiates a co-op attack with <sec typ="note">Homura</sec>.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />對輕裝型傷害量<val idx="0" r /></sec>增加。
+        在<sec typ="note">火焰之舞</sec>效果期間，不會發生隨回合遞減的攻擊力減少。
+        使用<sec typ="note">不知火</sec>時，若小隊內有<char uid="Kunoichi Enrai" />，則引發<sec typ="note">焰</sec>協力攻擊。
 dialogue:
   KR:
     "1":
@@ -5504,10 +5581,8 @@ dialogue:
         명령이, 아냐…? 그럼… 응. 부탁.
         기억해. 카엔을, 기분좋게
         해주세요. ...이것도, 아냐?
-      Oath: >-
-        카엔, 주공한테  배웠어. 주공의 생각, 취향, 습관… 전부, 알아. 이것도… 알아. 응. 사랑. 주공이 카엔을, 카엔이 주공을,
-        사랑해. 
-
+      Oath: |-
+        카엔, 주공한테  배웠어. 주공의 생각, 취향, 습관… 전부, 알아. 이것도… 알아. 응. 사랑. 주공이 카엔을, 카엔이 주공을, 사랑해. 
         이름, 알려줄게. 사랑하면, 이름 알려주는 게 규칙. 카엔의 이름, 하츠나. 유채꽃이라는 뜻. 주공. 하츠나, 불러줘. ...응. 기뻐.
       OathIdle_01: |-
         주공하고 있는 거, 좋아. 주공은,
@@ -5580,9 +5655,8 @@ dialogue:
       SPIdle_02_01: 殿…カエン、おいしい…？カエンも殿、食べる。
       Oath: カエン…うぅん、ハツナ、こんなに幸せなの…初めて。全部、殿がくれた。だからハツナも、殿に、あげる。うん。全部。ハツナは丸ごと、殿のもの。
       OathIdle_01: 殿。今日もハツナから…？うん。お風呂とご飯は、後で。
-      MVP: >-
+      MVP: |-
         司令官様がこんなに積極的なお方だったとは…今までわかりませんでした。…ところで司令官様？どうして私のような気難しくてただ真面目なだけの軍人に興味をお持ちになられたのでしょうか。
-
         理由を聞かせていただけますか？…そうだったんですか。わかりました…これからも司令官様のご期待に沿えるよう最善を尽くしてまいります。
     "":
       Join: …クノイチ・カエン。殿の敵を、始末。
@@ -5612,9 +5686,8 @@ dialogue:
       Idle_03_01: 命令、ないと不安。命令、受ければ――…笑って、ほしい？こう？…殿。変な、顔。
       Idle_04_01: この前の言葉、わかる…気がする。 命令、殿、からっぽ…白紙…。うん。カエン、殿の色に…染めて。
       SPIdle_02_01: 命令じゃ、ない…？ なら…うん。 お願い。仕方、覚えてる。カエンを、気持ちよくしてください。 …これも、違う？
-      Oath: >-
+      Oath: |-
         カエン、殿から教わった。殿の考え、好み、癖… 全部、わかる。これも…わかる。うん。愛。殿はカエンを、カエンは殿を、愛してる。
-
         名前、教えてあげる。愛したら、名前教えるのが、決まり。カエンの名前、ハツナ。 春に咲く花、菜の花、の意味。殿、ハツナって、呼んで。…うん。嬉しい。
       OathIdle_01: 殿といると、いい。 殿は、どう…？
       MVP: ""
@@ -5637,8 +5710,7 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: くぅ…くぅ… ……！！あ、殿…うん。 昼寝。…殿もハツナと、寝る？
-      Idle_01_02: ハツナ。 もう命令、嫌い。命令は全部、痛い…。 痛いし…悲しい。 ううん。 殿は、違う。 殿はいつも、ハツナを嬉しくする。 うん。
-        だから…本当に、好き。
+      Idle_01_02: ハツナ。 もう命令、嫌い。命令は全部、痛い…。 痛いし…悲しい。 ううん。 殿は、違う。 殿はいつも、ハツナを嬉しくする。 うん。 だから…本当に、好き。
       Idle_01_03: |-
         やりたいこと…する？ 何でも？ うん。 …今は、だめ？ なんで？ …殿、嘘ついた。 やってくれるまで殿と、話、しない。
         …今の、冗談。 殿が何しても、大丈夫、だから。 うん。これが、愛。
@@ -5666,8 +5738,7 @@ dialogue:
       Idle_01_01: |-
         Kaen made sushi. Yes. I learned…
         a lot of things. I like… cooking.
-      Idle_01_02: Sumire is liquor. Kaen is snack. You can have either… Why are you
-        taking a deep breath? Are you… angry?
+      Idle_01_02: Sumire is liquor. Kaen is snack. You can have either… Why are you taking a deep breath? Are you… angry?
       Idle_01_03: |-
         Yes. I wore it when I sneaked into quarters.
         People liked Kaen. Do you like it, too?
@@ -5685,9 +5756,8 @@ dialogue:
       SPIdle_02_01: |-
         Umm, Lord… Is Kaen good?
         Kaen wants Lord, too.
-      Oath: >-
+      Oath: |-
         Kyan… Mm, Hatsuna, I’ve never been this happy. Lord gave me all of it.
-
         So, Hatsuna will give it to you as well. Yes. All of it. I, Hatsuna, is fully yours.​
       OathIdle_01: |-
         My Lord. Hatsuna first?
@@ -5738,10 +5808,8 @@ dialogue:
         Not, order? Then… Yes. Favor.
         I remember. Make Kaen
         happy. … No?
-      Oath: >-
-        Kaen learned from Lord. I know your thoughts, taste, habits… everything.
-        I know this too. Yes. Love. Lord loves Kaen, and Kaen loves Lord. 
-
+      Oath: |-
+        Kaen learned from Lord. I know your thoughts, taste, habits… everything. I know this too. Yes. Love. Lord loves Kaen, and Kaen loves Lord. 
         I’ll tell you my name. It’s a rule, telling my name to someone I love. Kaen’s name is Hatsuna. It means canola flower. Lord. Call me Hatsuna. … Yes. I’m happy.
       OathIdle_01: |-
         I like being with you. How about

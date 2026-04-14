@@ -1603,6 +1603,11 @@ skills:
             base: 0.25
             per: 0.05
             chance: 1
+    desc:
+      KR: 적에게 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> <dmg elem="physics" />를 주고, <sec typ="note">과흥분</sec> 상태일 시 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      JP: 敵に<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / ダメージ減少無視</sec> <dmg elem="physics" />を与え、<sec typ="note">過興奮</sec>状態の場合は<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="2" r /></sec>が増加します。
+      EN: Deals <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> <dmg elem="physics" /> to enemies, and if in <sec typ="note">Overexcited</sec> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+      TC: 對敵人造成<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減少</sec> <dmg elem="physics" />，若處於<sec typ="note">過興奮</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -3260,6 +3265,19 @@ skills:
             base: 0.22
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        지정 범위 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="3" r /></sec>를 감소시킵니다.
+        <sec typ="note">과흥분</sec> 상태일 시 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
+      JP: |-
+        指定範囲の敵に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与え、<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="3" r /></sec>を減少させます。
+        <sec typ="note">過興奮</sec>状態の場合は<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="4" r /></sec>が増加します。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to enemies in the designated area and decreases <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACC <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="3" r /></sec>.
+        If in <sec typ="note">Overexcited</sec> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec> increases.
+      TC: |-
+        對指定範圍敵人造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />，並降低<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="3" r /></sec>。
+        若處於<sec typ="note">過興奮</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="4" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3838,6 +3856,23 @@ skills:
               level: "0"
             value: Effect_3P_Poi_N_32
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 시작 시</sec> <sec typ="note">과흥분</sec> 상태가 됩니다.
+        피격 시 <sec typ="note">과흥분</sec> 상태가 해제되고, 2회 공격 후 라운드 시작 시 <sec typ="note">과흥분</sec> 상태가 재활성화 됩니다.
+        자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec>가 증가하며 <sec typ="note">과흥분</sec> 상태일 시 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="9" r /></sec>가 추가로 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">過興奮</sec>状態になります。
+        被弾時に<sec typ="note">過興奮</sec>状態が解除され、2回攻撃後のラウンド開始時に<sec typ="note">過興奮</sec>状態が再活性化されます。
+        自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" r /></sec>が増加し、<sec typ="note">過興奮</sec>状態の時は<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="9" r /></sec>がさらに増加します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, enters <sec typ="note">Overexcited</sec> state.
+        When hit, <sec typ="note">Overexcited</sec> state is removed, and after 2 attacks, it reactivates at the start of the round.
+        Increases self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="8" r /></sec>, and if in <sec typ="note">Overexcited</sec> state, additionally increases <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="9" r /></sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>進入<sec typ="note">過興奮</sec>狀態。
+        被擊時，<sec typ="note">過興奮</sec>狀態會解除，且在攻擊2次後的回合開始時重新啟用<sec typ="note">過興奮</sec>狀態。
+        增加自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" r /></sec>，若處於<sec typ="note">過興奮</sec>狀態，則另外增加<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="9" r /></sec>。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -4003,6 +4038,19 @@ skills:
             base: 0.01
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 증가합니다.
+        과흥분 상태일 시 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 추가로 증가합니다.
+      JP: |-
+        自分の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>が増加します。
+        <sec typ="note">過興奮</sec>状態の時は<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>がさらに増加します。
+      EN: |-
+        Increases self's <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="0" r /></sec>.
+        If in <sec typ="note">Overexcited</sec> state, additionally increases <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="2" r /></sec>.
+      TC: |-
+        增加自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>。
+        若處於<sec typ="note">過興奮</sec>狀態，則另外增加<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>。
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -4334,6 +4382,23 @@ skills:
             base: 0.05
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 경장형 보호기와 <sec typ="note">컴패니언</sec> 소속 캐릭터를 지원 공격</sec>합니다.
+        자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="5" r /></sec>가 증가하며 <sec typ="note">과흥분</sec> 상태가 해제되면 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec>가 추가로 증가합니다.
+        <sec typ="note">컴패니언</sec> : <char uid="3P_BlackLilith" /> / <char uid="3P_CSPerrault" /> / <char uid="3P_Hachiko" /> / <char uid="3P_Fenrir" /> / <char uid="3P_SnowFeather" /> / <char uid="3P_Poi" />
+      JP: |-
+        <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 軽装型保護機と<sec typ="note">コンパニオン</sec>所属キャラクターを攻撃支援</sec>します。
+        自分の<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="5" r /></sec>が増加し、<sec typ="note">過興奮</sec>状態が解除されると<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec>がさらに増加します。
+        <sec typ="note">コンパニオン</sec> : <char uid="3P_BlackLilith" /> / <char uid="3P_CSPerrault" /> / <char uid="3P_Hachiko" /> / <char uid="3P_Fenrir" /> / <char uid="3P_SnowFeather" /> / <char uid="3P_Poi" />
+      EN: |-
+        <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Supports the attacks of light-armored protectors and characters from the <sec typ="note">Companion</sec></sec> faction.
+        Increases self's <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="5" r /></sec>, and if <sec typ="note">Overexcited</sec> state is removed, additionally increases <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="6" r /></sec>.
+        <sec typ="note">Companion</sec> : <char uid="3P_BlackLilith" /> / <char uid="3P_CSPerrault" /> / <char uid="3P_Hachiko" /> / <char uid="3P_Fenrir" /> / <char uid="3P_SnowFeather" /> / <char uid="3P_Poi" />
+      TC: |-
+        <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 支援輕裝型保護機與<sec typ="note">夥伴</sec>所屬角色的攻擊</sec>。
+        增加自身的<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="5" r /></sec>，且若<sec typ="note">過興奮</sec>狀態解除，則另外增加<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec>。
+        <sec typ="note">夥伴</sec> : <char uid="3P_BlackLilith" /> / <char uid="3P_CSPerrault" /> / <char uid="3P_Hachiko" /> / <char uid="3P_Fenrir" /> / <char uid="3P_SnowFeather" /> / <char uid="3P_Poi" />
 dialogue:
   KR:
     "1":
@@ -4510,8 +4575,7 @@ dialogue:
       SPIdle_02_01: |-
         하아, 하아… 주인님…
         너무, 좋아….
-      Oath: 냐하하핫. 자신 있으신가 보네요? 그런데 이번은… 지금까지랑은 다를 거예요. 주인님이 진짜로… 포이를 감당하실만한 자격이 있는지…
-        확인해볼 테니까요. 그러니까… 빨리하자♡
+      Oath: 냐하하핫. 자신 있으신가 보네요? 그런데 이번은… 지금까지랑은 다를 거예요. 주인님이 진짜로… 포이를 감당하실만한 자격이 있는지… 확인해볼 테니까요. 그러니까… 빨리하자♡
       OathIdle_01: |-
         냐아… 죄송해요오… 앞으론 착하게
         굴 테니까… 그거, 더 해줘어…♡
@@ -4779,12 +4843,9 @@ dialogue:
       SPIdle_02_01: |-
         Umm… That’s not milk…
          Poi got turned on bad right now, hurry…
-      Oath: >-
-        I was about to get turned on… Ehem. Poi swears an endless love to you,
-        master.
-
+      Oath: |-
+        I was about to get turned on… Ehem. Poi swears an endless love to you, master.
         Nyahaha. Are we good now? Keep doing what you’ve been doing. Poi, I can’t… Of course I’m serious.
-
         If I don’t love the person who can handle me, who else would I love…?
       OathIdle_01: |-
         Real milk… Umm, no. Lilith will
@@ -4809,10 +4870,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        Sis… Audrey? She made this for me… Huh? Are these actual clothes?
-        There’s even a zipper here.
-
+      Idle_01_01: |-
+        Sis… Audrey? She made this for me… Huh? Are these actual clothes? There’s even a zipper here.
         Look. Of course they’re clothes♡
       Idle_01_02: |-
         Meowhaha~ You know, the Vampire… She said she’ll make you serve her!
@@ -4840,10 +4899,8 @@ dialogue:
         You must have noticed too, Master.
         Poi got fired up already… Master, go on and let yourself
         feel delightful. Hurry♡
-      Oath: >-
-        Huh? Why are you giving this to me after having sooo much fun with other
-        girls?
-
+      Oath: |-
+        Huh? Why are you giving this to me after having sooo much fun with other girls?
         … I’m the one you like the most? Really? I’ll trust you this one time. Since I was a little disappointed today… I’ll play with you until you can’t even lift a finger, master. Mewohahaha, are you excited?
       OathIdle_01: |-
         Poi doesn’t like water~
@@ -4907,9 +4964,7 @@ dialogue:
       SPIdle_02_01: |-
         *Panting* Master…
         I like it…
-      Oath: Meowhahaha. Are you that sure of yourself? But this time it will be
-        different. I’ll have to see if you’re really good enough for Poi… So…
-        let’s do it.♡
+      Oath: Meowhahaha. Are you that sure of yourself? But this time it will be different. I’ll have to see if you’re really good enough for Poi… So… let’s do it.♡
       OathIdle_01: |-
         Meow… I’m sorry… I’ll be
         a good girl… More, more…♡

@@ -7,7 +7,7 @@ import { SkillEntity, SkillGroup } from "@/types/DB/Skill";
 import { ACTOR_BODY_TYPE, ACTOR_GRADE } from "@/types/Enums";
 import { BuffStat } from "@/types/Buffs";
 
-import { useLocale } from "@/libs/Locale";
+import { CurrentLocale, useLocale } from "@/libs/Locale";
 import Session from "@/libs/Session";
 import { RarityDisplay } from "@/libs/Const";
 import { BuildClass, cn } from "@/libs/Class";
@@ -44,7 +44,7 @@ interface SkillTableProps {
 }
 
 const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc, _, locKey] = useLocale();
 
 	const unit = props.unit;
 	const skills = useMemo((): Record<string, SkillItem> => {
@@ -136,11 +136,12 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 	}, [skills]);
 
 	const GetSkillDescriptions = useCallback((skill: SkillItem, values: Record<string, SkillDescriptionValueData[]>) => {
-		const key = `UNIT_SKILL_DESC_${unit.uid}_${skill.key}`;
-		const orig = loc[key] || "";
+		const orig = skill.desc?.[locKey] ||
+			// loc[`UNIT_SKILL_DESC_${unit.uid}_${skill.key}`] ||
+			"";
 
 		return GetSkillDescription(orig, skill.slot, values);
-	}, [loc, unit]);
+	}, [loc, locKey, unit]);
 	function GetRates (skill: SkillItem): number[] {
 		return skill.buffs.index
 			.map(x => skill.buffs.data[x].rate);

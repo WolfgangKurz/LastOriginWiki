@@ -2204,6 +2204,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        집중 포격으로 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="0" r inv /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="3" /></sec>이(가) 감소합니다. <sec>(중첩 불가)</sec>
+        <sec>스킬 레벨 5 / 10에서 사거리가 추가로 감소합니다.</sec>
+        <sec typ="cond">적중 시</sec> <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 자신이 공격 지원을 받고 있을 경우</sec>, 중장형 아군에게 해당 라운드 동안 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막  / 피해 감소 무시</sec> 효과를 부여합니다.
+      JP: |-
+        集中砲撃で単一対象に<sec typ="attr">保護無視</sec>の<dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、3ラウンドの間対象の<sec typ="buff"><buff typ="DEBUFF_RATEUP" />効果抵抗<val idx="0" r inv /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" />射程<val idx="3" /></sec>が減少します。<sec>(重複不可)</sec>
+        <sec>スキルレベル5 / 10で射程がさらに減少します。</sec>
+        <sec typ="cond">命中時</sec> <sec typ="cond"><buff typ="SUPPORT_ATTACK" />自分が攻撃支援を受けている場合</sec>、重装型の味方にそのラウンドの間<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア / ダメージ減少無視</sec>効果を付与します。
+      EN: |-
+        Fires concentrated bombardment that deals <sec typ="attr">ignores Protection</sec> <dmg elem="physics" /> damage to a single target.
+        <sec typ="cond">On crit</sec>, decreases the target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="0" r inv /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> range <val idx="3" /></sec> for 3 rounds. <sec>(Does not stack)</sec>
+        <sec>Range decreases further at Skill Lv. 5 / 10.</sec>
+        <sec typ="cond">On hit</sec>, if <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> self is receiving support attack</sec>, grants heavy-type allies <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier / Damage Reduction Ignore</sec> for that round.
+      TC: |-
+        以集中砲擊對單一目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害。
+        <sec typ="cond">暴擊時</sec>，於3回合內使目標的<sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抵抗<val idx="0" r inv /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程<val idx="3" /></sec>減少。<sec>（不可疊加）</sec>
+        <sec>技能等級達5 / 10時，射程會進一步減少。</sec>
+        <sec typ="cond">命中時</sec>，若<sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 自身正受到攻擊支援</sec>，則對重裝型我軍於該回合賦予<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視防護罩 / 減傷</sec>效果。
   "2":
     key: "2"
     icon: Wave
@@ -2591,6 +2612,27 @@ skills:
             base: 0.225
             per: 0.0225
             chance: 1
+    desc:
+      KR: |-
+        머메이드만의 교리와 신조를 주입하여, 스킬 사용 시 모든 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond"><buff typ="ATK_UP" /> 대상에게 공격력 강화 효과가 있을 경우</sec>, 추가로 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 광역 피해 집중 <val idx="3" r /></sec> 효과를 부여합니다.
+        <sec typ="cond"><buff typ="DEF_UP" /> 대상에게 방어력 강화 효과가 있을 경우</sec>, 추가로 2라운드 동안 <sec typ="buff"><buff typ="DEF_UP" /> 광역 피해 분산 <val idx="4" r /></sec> 효과를 부여합니다.
+        <sec typ="cond">대상이 중장형인 경우</sec>, 지속 라운드와 효과 수치가 50% 증폭됩니다.
+      JP: |-
+        マーメイデンだけの教義と信条を注ぎ込み、スキル使用時に全味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>が増加します。
+        <sec typ="cond"><buff typ="ATK_UP" />対象に攻撃力強化効果がある場合</sec>、追加で2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" />広域ダメージ集中<val idx="3" r /></sec>効果を付与します。
+        <sec typ="cond"><buff typ="DEF_UP" />対象に防御力強化効果がある場合</sec>、追加で2ラウンドの間<sec typ="buff"><buff typ="DEF_UP" />広域ダメージ分散<val idx="4" r /></sec>効果を付与します。
+        <sec typ="cond">対象が重装型の場合</sec>、持続ラウンドと効果数値が50%増幅されます。
+      EN: |-
+        Imbues Mermaid doctrines and tenets, increasing all allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> when the skill is used.
+        <sec typ="cond">If the target has an <buff typ="ATK_UP" /> ATK buff</sec>, additionally grants <sec typ="buff"><buff typ="ATK_UP" /> Area Damage Concentration <val idx="3" r /></sec> for 2 rounds.
+        <sec typ="cond">If the target has a <buff typ="DEF_UP" /> DEF buff</sec>, additionally grants <sec typ="buff"><buff typ="DEF_UP" /> Area Damage Dispersion <val idx="4" r /></sec> for 2 rounds.
+        <sec typ="cond">If the target is heavy-type</sec>, the duration and effect value are increased by 50%.
+      TC: |-
+        注入美人魚獨有的教義與信條，使用技能時會提升全體我軍的<sec typ="buff"><buff typ="AP_UP" /> AP<val idx="0" /></sec>。
+        <sec typ="cond">若目標具有<buff typ="ATK_UP" /> 攻擊力強化效果</sec>，則額外於2回合內賦予<sec typ="buff"><buff typ="ATK_UP" /> 廣域傷害集中<val idx="3" r /></sec>效果。
+        <sec typ="cond">若目標具有<buff typ="DEF_UP" /> 防禦力強化效果</sec>，則額外於2回合內賦予<sec typ="buff"><buff typ="DEF_UP" /> 廣域傷害分散<val idx="4" r /></sec>效果。
+        <sec typ="cond">若目標為重裝型</sec>，持續回合與效果數值會增加50%。
   "3":
     key: "3"
     icon: P.Command
@@ -4657,6 +4699,27 @@ skills:
             base: 55
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 중장형 아군 수에 비례하여 중장형 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 중장형 아군 수에 비례하여 모든 아군의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="25" r /></sec>가 증가하고 모든 적의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="35" r /></sec>가 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 중장형 아군의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="45" /></sec>이(가) 증가하고 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 사거리 감소 효과에 면역</sec> 상태가 됩니다.
+        <cmt t="머메이드">$$Mermaid:?$</cmt> 소속 전투원은 상기 조건 판정에서 <sec typ="important">2기</sec>로 취급합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、重装型の味方数に応じて重装型の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、重装型の味方数に応じて全味方の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="25" r /></sec>が増加し、全敵の<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="35" r /></sec>が減少します。
+        <sec typ="cond">ラウンド開始時</sec>、重装型の味方の<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="45" /></sec>が増加し、<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />射程減少効果に免疫</sec>状態になります。
+        <cmt t="マーメイデン">$$Mermaid:?$</cmt>所属戦闘員は上記条件判定で<sec typ="important">2体</sec>として扱います。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases heavy-type allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> in proportion to the number of heavy-type allies.
+        <sec typ="cond">At round start</sec>, increases all allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="25" r /></sec> and decreases all enemies' <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="35" r /></sec> in proportion to the number of heavy-type allies.
+        <sec typ="cond">At round start</sec>, increases heavy-type allies' <sec typ="buff"><buff typ="RANGE_UP" /> range <val idx="45" /></sec> and grants <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immunity to range reduction effects</sec>.
+        <cmt t="Mermaid">$$Mermaid:?$</cmt> faction combatants are treated as <sec typ="important">2 units</sec> for the above condition check.
+      TC: |-
+        <sec typ="cond">在回合開始時</sec>，依重裝型我軍數量提升重裝型我軍的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中<val idx="6" r /></sec>。
+        <sec typ="cond">在回合開始時</sec>，依重裝型我軍數量提升全體我軍的<sec typ="buff"><buff typ="AP_UP" /> 行動力<val idx="25" r /></sec>，並降低全體敵軍的<sec typ="buff"><buff typ="AP_DOWN" /> 行動力<val idx="35" r /></sec>。
+        <sec typ="cond">在回合開始時</sec>，提升重裝型我軍的<sec typ="buff"><buff typ="RANGE_UP" /> 射程<val idx="45" /></sec>，並進入<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 射程減少免疫</sec>狀態。
+        <cmt t="美人魚">$$Mermaid:?$</cmt>所屬戰鬥員在上述條件判定中視為<sec typ="important">2名</sec>。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -4913,6 +4976,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 중장형 아군이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소하고 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond"><buff typ="BARRIER" /> 방어막을 보유</sec>한 아군은 1회에 한하여 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec>가 추가로 감소합니다.
+        <cmt t="머메이드">$$Mermaid:?$</cmt> 소속 전투원은 <sec typ="cond">액티브 2스킬 적중 시</sec>, 각자 스스로에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        <sec typ="cond"><char uid="3P_Galatea" />의 경우</sec> 더 이상 스킬 효과로 인한 피해를 입지 않으며, 모든 중장형 아군에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>하고 적중 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の重装型の味方の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" r inv /></sec>が減少し、<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="1" r /></sec>が増加します。
+        <sec typ="cond"><buff typ="BARRIER" />バリアを保有</sec>する味方は1回に限り、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="4" r inv /></sec>が追加で減少します。
+        <cmt t="マーメイデン">$$Mermaid:?$</cmt>所属戦闘員は<sec typ="cond">アクティブ2スキル命中時</sec>、各自に適用されている<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害な効果を解除</sec>します。
+        <sec typ="cond"><char uid="3P_Galatea" />の場合</sec>、これ以上スキル効果によるダメージを受けず、すべての重装型の味方に適用された<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害な効果を解除</sec>し、命中対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="0" r inv /></sec> of heavy-type allies in the area and increases <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="1" r /></sec>.
+        Allies who have <sec typ="cond"><buff typ="BARRIER" /> Barrier</sec> additionally reduce <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="4" r inv /></sec> once.
+        <cmt t="Mermaid">$$Mermaid:?$</cmt> faction combatants <sec typ="cond">when active skill 2 hits</sec> remove <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec> applied to themselves.
+        <sec typ="cond">For <char uid="3P_Galatea" /></sec>, no longer takes damage from skill effects, removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec> applied to all heavy-type allies, and removes the hit target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> buffs</sec>.
+      TC: |-
+        <sec typ="cond">在回合開始時</sec>，降低範圍內重裝型我軍的<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害<val idx="0" r inv /></sec>，並提升<sec typ="buff"><buff typ="DEF_UP" /> 防禦力<val idx="1" r /></sec>。
+        持有<sec typ="cond"><buff typ="BARRIER" /> 防護罩</sec>的我軍，可額外且僅一次降低<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害<val idx="4" r inv /></sec>。
+        <cmt t="美人魚">$$Mermaid:?$</cmt>所屬戰鬥員於<sec typ="cond">主動2技能命中時</sec>，會解除各自身上套用的<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>。
+        <sec typ="cond">若為<char uid="3P_Galatea" /></sec>，則不再受到技能效果造成的傷害，並解除套用於所有重裝型我軍的<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>，以及解除命中目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果</sec>。
   "5":
     key: "5"
     icon: P.Scan
@@ -6197,6 +6281,23 @@ skills:
             base: -2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
+        <sec><cmt t="머메이드">$$Mermaid:?$</cmt> 소속 전투원의 스킬 효과 발동에 필요한 역할군 조건을 제거합니다.</sec>
+        <sec><cmt t="머메이드">$$Mermaid:?$</cmt> 소속 전투원의 <sec typ="cond">전투 개시 시</sec> 발동 효과를 <sec typ="cond">라운드 개시 시</sec>에 발동하도록 변경합니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗<val idx="0" r /></sec>が増加します。
+        <sec><cmt t="マーメイデン">$$Mermaid:?$</cmt>所属戦闘員のスキル効果発動に必要な役割群条件を除去します。</sec>
+        <sec><cmt t="マーメイデン">$$Mermaid:?$</cmt>所属戦闘員の<sec typ="cond">戦闘開始時</sec>に発動する効果を<sec typ="cond">ラウンド開始時</sec>に発動するよう変更します。</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases self's <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec>.
+        <sec>Removes the role-group conditions required to trigger skill effects for <cmt t="Mermaid">$$Mermaid:?$</cmt> faction combatants.</sec>
+        <sec>Changes <cmt t="Mermaid">$$Mermaid:?$</cmt> faction combatants' effects that trigger <sec typ="cond">at battle start</sec> to trigger <sec typ="cond">at round start</sec>.</sec>
+      TC: |-
+        <sec typ="cond">在回合開始時</sec>，提升自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗<val idx="0" r /></sec>。
+        <sec>移除<cmt t="美人魚">$$Mermaid:?$</cmt>所屬戰鬥員觸發技能效果所需的角色分類條件。</sec>
+        <sec>將<cmt t="美人魚">$$Mermaid:?$</cmt>所屬戰鬥員原本於<sec typ="cond">戰鬥開始時</sec>觸發的效果，改為於<sec typ="cond">回合開始時</sec>觸發。</sec>
 dialogue:
   KR:
     "1":

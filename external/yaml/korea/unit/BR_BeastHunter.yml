@@ -2889,6 +2889,27 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        성형 작약탄을 발사해 <dmg elem="physics" />를 줍니다.
+        대상의 방어력을 일정 비율 무시합니다. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r signless /></sec>
+        대상이 <sec typ="cond">중장형</sec> 또는 <sec typ="cond">보호기</sec>인 경우 각각 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+        스쿼드 내에 <char uid="BR_Pani" />가 있을 경우 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">183mm HESH탄</sec> 협동 공격</sec>을 유도합니다.
+      JP: |-
+        成形炸薬弾を発射して<dmg elem="physics" />を与えます。
+        対象の防御力を一定割合無視します。<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="1" r signless /></sec>
+        対象が<sec typ="cond">重装型</sec>または<sec typ="cond">保護機</sec>の場合、それぞれ<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="3" r /></sec>が増加します。
+        スコード内に<char uid="BR_Pani" />がいる場合、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">183mm HESH弾</sec>協同攻撃</sec>を誘導します。
+      EN: |-
+        Fires a shaped charge round and deals <dmg elem="physics" />.
+        Ignores a certain percentage of the target's defense. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="1" r signless /></sec>
+        If the target is a <sec typ="cond">Heavy Armor</sec> unit or a <sec typ="cond">Defender</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt <val idx="3" r /></sec> increases for each.
+        If <char uid="BR_Pani" /> is in the squad, triggers a co-op attack with the <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">183mm HESH Round</sec></sec>.
+      TC: |-
+        發射成型裝藥彈，造成<dmg elem="physics" />。
+        無視目標一定比例的防禦力。<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="1" r signless /></sec>
+        若目標為<sec typ="cond">重裝型</sec>或<sec typ="cond">防護機</sec>，則各自會增加<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="3" r /></sec>。
+        若隊伍內有<char uid="BR_Pani" />，則誘導以<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">183mm HESH彈</sec>協力攻擊</sec>。
   "2":
     key: "2"
     icon: CannonShotWide
@@ -4746,6 +4767,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        유산탄을 발사해 목표 범위 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">대상이 전열에 위치</sec>한 경우 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+        대상이 <sec typ="cond">경장형</sec>인 경우 위치에 관계 없이 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 대상의 받는 피해 감소 효과를 해제</sec>하고, <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      JP: |-
+        榴散弾を発射して目標範囲の対象に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">対象が前列に位置する場合</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ減少効果を解除</sec>します。
+        対象が<sec typ="cond">軽装型</sec>の場合、位置に関係なく<sec typ="buff"><buff typ="REMOVE_BUFF" />対象の受けるダメージ減少効果を解除</sec>し、<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />ダメージ量<val idx="3" r /></sec>が増加します。
+      EN: |-
+        Fires shrapnel rounds and deals <sec typ="attr">ignore protection</sec> <dmg elem="physics" /> to enemies in the target area.
+        <sec typ="cond">If the target is in the front line</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> received damage reduction effect</sec>.
+        If the target is a <sec typ="cond">Light Armor</sec> unit, regardless of position, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's received damage reduction effect</sec> and <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage dealt <val idx="3" r /></sec> increases.
+      TC: |-
+        發射榴霰彈，對目標範圍內敵人造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        <sec typ="cond">若目標位於前列</sec>，則解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />所受傷害減少效果</sec>。
+        若目標為<sec typ="cond">輕裝型</sec>，則不論位置為何都會<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的所受傷害減少效果</sec>，並使<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />傷害量<val idx="3" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4940,6 +4978,23 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">적 처치 시</sec>, 자신의 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="3" r /></sec>가 영구 증가합니다. (최대 3중첩)
+        <sec typ="cond">적 공격 시</sec>, <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상 HP 반비례 피해량 <val idx="6" slot="1" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />対重装型ダメージ量<val idx="0" r /></sec>が増加します。
+        <sec typ="cond">敵撃破時</sec>、自分の<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />対重装型ダメージ量<val idx="3" r /></sec>が永続増加します。 (最大3スタック)
+        <sec typ="cond">敵攻撃時</sec>、<sec typ="dmg"><buff typ="DamageAmp_Opp" />対象HP反比例ダメージ量<val idx="6" slot="1" r /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, self's <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage dealt to heavy armor units <val idx="0" r /></sec> increases.
+        <sec typ="cond">On enemy kill</sec>, self's <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage dealt to heavy armor units <val idx="3" r /></sec> permanently increases. (up to 3 stacks)
+        <sec typ="cond">When attacking an enemy</sec>, <sec typ="dmg"><buff typ="DamageAmp_Opp" /> damage dealt in inverse proportion to the target's HP <val idx="6" slot="1" r /></sec> increases.
+      TC: |-
+        <sec typ="cond">於回合開始時</sec>，自身的<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型傷害量<val idx="0" r /></sec>增加。
+        <sec typ="cond">擊殺敵人時</sec>，自身的<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型傷害量<val idx="3" r /></sec>永久增加。（最多3層）
+        <sec typ="cond">攻擊敵人時</sec>，<sec typ="dmg"><buff typ="DamageAmp_Opp" />依目標HP成反比的傷害量<val idx="6" slot="1" r /></sec>增加。
   "4":
     key: "4"
     icon: P.CannonShot
@@ -5224,6 +5279,23 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec> 증가 효과를 획득합니다.
+        스쿼드 내에 <cmt t="AA 캐노니어 소속 지원기">$$AACannonier_Supporter:?$</cmt>가 있을 경우, 상기 효과가 50% 증폭됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막/피해 감소 무시</sec> 효과를 획득합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分は<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="4" r /></sec>増加効果を獲得します。
+        スコード内に<cmt t="AA 캐노니어 소속 지원기">$$AACannonier_Supporter:?$</cmt>がいる場合、上記の効果は50%増幅されます。
+        <sec typ="cond">ラウンド開始時</sec>、自分は<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア/ダメージ減少無視</sec>効果を獲得します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, self gains <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" r /></sec> increase effects.
+        If there is a <cmt t="AA 캐노니어 소속 지원기">$$AACannonier_Supporter:?$</cmt> unit in the squad, the above effects are amplified by 50%.
+        <sec typ="cond">At round start</sec>, self gains <sec typ="buff"><buff typ="BARRIER_PIERCE" /> ignore barrier/damage reduction</sec>.
+      TC: |-
+        <sec typ="cond">於回合開始時</sec>，自身獲得<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="4" r /></sec>增加效果。
+        若隊伍內有<cmt t="AA 캐노니어 소속 지원기">$$AACannonier_Supporter:?$</cmt>，上述效果會增幅50%。
+        <sec typ="cond">於回合開始時</sec>，自身獲得<sec typ="buff"><buff typ="BARRIER_PIERCE" />無視護盾/傷害減少</sec>效果。
   "5":
     key: "5"
     icon: P.AWACS
@@ -6449,6 +6521,23 @@ skills:
             base: -0.075
             per: -0.0075
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 스쿼드 내 중장형 전투원 수에 따라 적 전체의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>씩 증가시킵니다.
+        <sec>해당 효과는 피격 시 해제됩니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 스쿼드 내 공격기 전투원 수에 따라 적 전체의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="13" r /></sec>씩 감소시킵니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、スコード内の重装型戦闘員数に応じて敵全体の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="3" r /></sec>を増加させます。
+        <sec>この効果は被撃時に解除されます。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、スコード内の攻撃機戦闘員数に応じて敵全体の<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="13" r /></sec>を減少させます。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases all enemies' <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="3" r /></sec> based on the number of Heavy Armor units in the squad.
+        <sec>This effect is removed when hit.</sec>
+        <sec typ="cond">At round start</sec>, decreases all enemies' <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="13" r /></sec> based on the number of Attacker units in the squad.
+      TC: |-
+        <sec typ="cond">於回合開始時</sec>，依隊伍內重裝型戰鬥員數量增加敵全體的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="3" r /></sec>。
+        <sec>此效果會在被擊中時解除。</sec>
+        <sec typ="cond">於回合開始時</sec>，依隊伍內攻擊機戰鬥員數量減少敵全體的<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="13" r /></sec>。
 dialogue:
   KR:
     "1":
@@ -6553,9 +6642,7 @@ dialogue:
         술기운에 그러셨다는 변명은 저한테 
         통하지 않는 거 아시죠?
         저를 달아오르게 만든 책임… 지셔야 해요?
-      Oath: 익숙지 않은 술 때문에 취해버린 걸까요, 아니면 이미 술에 취해 잠들어버린 걸까요? 매일 밤 꿈꾸던 사령관님의 모습이 지금 눈앞에
-        보이네요… 후후, 농담이에요 사령관님. 사령관님이 제 손을 잡으셨을 때 벌써 취기가 사라져버렸는걸요. 건배하시겠어요? 우리 둘의
-        영원한 사랑을 맹세하면서.
+      Oath: 익숙지 않은 술 때문에 취해버린 걸까요, 아니면 이미 술에 취해 잠들어버린 걸까요? 매일 밤 꿈꾸던 사령관님의 모습이 지금 눈앞에 보이네요… 후후, 농담이에요 사령관님. 사령관님이 제 손을 잡으셨을 때 벌써 취기가 사라져버렸는걸요. 건배하시겠어요? 우리 둘의 영원한 사랑을 맹세하면서.
       OathIdle_01: |-
         술자리에는 빠질 수 없는 게 여러 가지 있죠.
         좋은 술과 어울리는 안주, 멋진 분위기
@@ -6744,9 +6831,7 @@ dialogue:
         [미번역]술기운에 그러셨다는 변명은 저한테 
         통하지 않는 거 아시죠?
         저를 달아오르게 만든 책임… 지셔야 해요?
-      Oath: "[미번역]익숙지 않은 술 때문에 취해버린 걸까요, 아니면 이미 술에 취해 잠들어버린 걸까요? 매일 밤 꿈꾸던 사령관님의 모습이 지금
-        눈앞에 보이네요… 후후, 농담이에요 사령관님. 사령관님이 제 손을 잡으셨을 때 벌써 취기가 사라져버렸는걸요. 건배하시겠어요? 우리
-        둘의 영원한 사랑을 맹세하면서."
+      Oath: "[미번역]익숙지 않은 술 때문에 취해버린 걸까요, 아니면 이미 술에 취해 잠들어버린 걸까요? 매일 밤 꿈꾸던 사령관님의 모습이 지금 눈앞에 보이네요… 후후, 농담이에요 사령관님. 사령관님이 제 손을 잡으셨을 때 벌써 취기가 사라져버렸는걸요. 건배하시겠어요? 우리 둘의 영원한 사랑을 맹세하면서."
       OathIdle_01: |-
         [미번역]술자리에는 빠질 수 없는 게 여러 가지 있죠.
         좋은 술과 어울리는 안주, 멋진 분위기
@@ -6863,10 +6948,8 @@ dialogue:
         Commander. So, well…
         you know what I mean?
       SPIdle_02_01: Hmm… Are you going to do more?
-      Oath: >-
-        Commander. I’ve only waited for this day to come. I’ll train your mind
-        and body from now on.
-
+      Oath: |-
+        Commander. I’ve only waited for this day to come. I’ll train your mind and body from now on.
         You can look forward to it. I’ll make you a better man.
       OathIdle_01: |-
         Hmm… I wasn’t joking when I said
@@ -6945,9 +7028,8 @@ dialogue:
       SPIdle_02_01: |-
         Hmm… Are you trying to
         break me? I can’t allow that.
-      Oath: >-
+      Oath: |-
         You've made up your mind. Commander. I've waited for this moment, too.
-
         Today, I'll train you, Commander. It's be a once in a lifetime experience.
       OathIdle_01: |-
         Commander, shall I keep the promise
@@ -6971,14 +7053,10 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        The sense of accomplishment of defeating a strong enemy… It’s really
-        overwhelming. Power of myself and that of the enemy
-
+      Idle_01_01: |-
+        The sense of accomplishment of defeating a strong enemy… It’s really overwhelming. Power of myself and that of the enemy
         collides… W-what was it like
-
         when I defeated you? You lost on purpose.
-
         After that, it was me who… Ugh…​
       Idle_01_02: |-
         She’s right. I came up with a tougher training.

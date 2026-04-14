@@ -3594,6 +3594,23 @@ skills:
             base: 0.55
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        빔 사격으로 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 도발하며 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="7" r /></sec>를 감소시킵니다. (중첩 불가)
+        <sec typ="cond">스쿼드 내 <char uid="BR_Harpy" />가 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">풀 버스트</sec> 스킬 협동 공격을 유도</sec>합니다.
+      JP: |-
+        ビーム射撃で対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象を挑発し、<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル率<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="7" r /></sec>を減少させます。(スタック不可)
+        <sec typ="cond">スコード内に<char uid="BR_Harpy" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">フルバースト</sec>スキル協同攻撃を誘導</sec>します。
+      EN: |-
+        Fires a beam and deals <dmg elem="physics" /> to the target.
+        <sec typ="cond">On hit</sec>, provokes the target for 2 rounds and decreases their <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACC <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="7" r /></sec>. (cannot stack)
+        <sec typ="cond">If <char uid="BR_Harpy" /> is in the squad</sec>, induces a co-op attack with the <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Full Burst</sec> skill</sec>.
+      TC: |-
+        以光束射擊對目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，使目標在2回合內陷入挑釁，並減少其<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="7" r /></sec>。（不可疊加）
+        <sec typ="cond">若小隊內有<char uid="BR_Harpy" /></sec>，則引導以<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">全彈發射</sec>技能</sec>進行協同攻擊。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -6675,6 +6692,27 @@ skills:
             base: 0.55
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        목표 지점에 돌진해 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>합니다.
+        대상의 방어력을 일정 비율 무시합니다. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="8" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
+        <sec typ="cond">공격 시</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> 자신 회피의 <val idx="1" r signless />만큼 스킬 위력이 증가</sec>합니다.
+      JP: |-
+        目標地点に突進して<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与え、<sec typ="buff"><buff typ="REMOVE_BUFF" />反撃効果を解除</sec>します。
+        対象の防御力を一定比率無視します。<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec>
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="8" r /></sec>を減少させ、<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態にします。
+        <sec typ="cond">攻撃時</sec>、<sec typ="buff"><buff typ="SKILL_UP" />自分の回避の<val idx="1" r signless />だけスキル威力が増加</sec>します。
+      EN: |-
+        Charges toward the target point, dealing <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removing counterattack effects</sec>.
+        Ignores a certain percentage of the target's DEF. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec>
+        <sec typ="cond">On hit</sec>, for 2 rounds decreases the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACC <val idx="8" r /></sec> and makes them <sec typ="buff"><buff typ="MARKING" /> Marked</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec>.
+        <sec typ="cond">On attack</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> skill power increases by <val idx="1" r signless /> based on self's EVA</sec>.
+      TC: |-
+        衝向目標地點，造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除反擊效果</sec>。
+        無視目標一定比例的防禦力。<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="0" r /></sec>
+        <sec typ="cond">命中時</sec>，在2回合內減少目標的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="8" r /></sec>，並使其陷入<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態。
+        <sec typ="cond">攻擊時</sec>，<sec typ="buff"><buff typ="SKILL_UP" />依自身迴避的<val idx="1" r signless />而增加技能威力</sec>。
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -7227,6 +7265,23 @@ skills:
             base: 13
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>를 증가시키고 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 보호기를 제외한 기동형 아군을 보호</sec>합니다.
+        <sec>스킬 레벨 10에서 자신의 위치와 관계없이 전체 적용됩니다.</sec>
+        <sec>자신은 스킬 레벨 당 +9%의 적중 보정이 적용됩니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>を増加させ、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />保護機を除く機動型の味方を保護</sec>します。
+        <sec>スキルレベル10で自分の位置に関係なく全体に適用されます。</sec>
+        <sec>自分にはスキルレベルごとに+9%の命中補正が適用されます。</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases allies within range's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="6" r /></sec> and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> protects Mobile allies excluding Protectors</sec>.
+        <sec>At skill level 10, the effect applies to all regardless of self's position.</sec>
+        <sec>Self receives a +9% hit compensation per skill level.</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加範圍內我軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />保護除外的機動型我軍</sec>。
+        <sec>技能等級10時，無論自身位置如何，皆套用至全體。</sec>
+        <sec>自身每1個技能等級套用+9%的命中校正。</sec>
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -7366,6 +7421,23 @@ skills:
             base: 0.4
             per: 0.02
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">회피 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 영구히 증가합니다. (최대 3중첩)
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond"><sec typ="note">어딜 보는거야?</sec> 중첩이 최대치인경우</sec>, 아군 전체의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 행동력 / 회피 감소 효과를 해제</sec>합니다. 
+        <sec typ="cond"><sec typ="note">어딜 보는거야?</sec> 중첩이 최대치인경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> <sec typ="note">한계돌파</sec>의 피해량 <val idx="9" slot="2" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">回避時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>が永続的に増加します。(最大3スタック)
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond"><sec typ="note">どこ見てるの？</sec>のスタックが最大値の場合</sec>、味方全体の<sec typ="buff"><buff typ="REMOVE_DEBUFF" />行動力 / 回避減少効果を解除</sec>します。
+        <sec typ="cond"><sec typ="note">どこ見てるの？</sec>のスタックが最大値の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" /><sec typ="note">限界突破</sec>のダメージ量<val idx="9" slot="2" r /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">On evade</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="0" r /></sec> permanently increases. (Max 3 stacks)
+        <sec typ="cond">At round start</sec> <sec typ="cond">if <sec typ="note">What You Looking At?</sec> is at max stacks</sec>, removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> MOVE / EVA Decrease effects</sec> from all allies.
+        <sec typ="cond">If <sec typ="note">What You Looking At?</sec> is at max stacks</sec>, increases the damage of <sec typ="dmg"><buff typ="PhyATK_UP" /><sec typ="note">Limit Breakthrough</sec> <val idx="9" slot="2" r /></sec>.
+      TC: |-
+        <sec typ="cond">迴避時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>會永久增加。（最多3層）
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若<sec typ="note">你在看哪裡？</sec>疊加達最大值</sec>，解除我軍全體的<sec typ="buff"><buff typ="REMOVE_DEBUFF" />行動力 / 迴避降低效果</sec>。
+        <sec typ="cond">若<sec typ="note">你在看哪裡？</sec>疊加達最大值</sec>，會增加<sec typ="dmg"><buff typ="PhyATK_UP" /><sec typ="note">突破極限</sec>造成的傷害量<val idx="9" slot="2" r /></sec>。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -7649,6 +7721,23 @@ skills:
             base: 0.3
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="5" r /></sec>가 증가합니다.
+        <sec typ="cond">공격 시</sec>, 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 회피 / 행동력 감소 효과를 해제</sec>하며 2라운드 동안 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="9" slot="1" r /></sec>가 증가합니다. (최대 3중첩)
+        <sec typ="cond">공격 받을 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec>가 증가합니다. (최대 2중첩)
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="5" r /></sec>が増加します。
+        <sec typ="cond">攻撃時</sec>、自分に適用された<sec typ="buff"><buff typ="REMOVE_DEBUFF" />回避 / 行動力減少効果を解除</sec>し、2ラウンドの間自分の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="9" slot="1" r /></sec>が増加します。(最大3スタック)
+        <sec typ="cond">攻撃を受けた時</sec>、2ラウンドの間自分の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec>が増加します。(最大2スタック)
+      EN: |-
+        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="5" r /></sec> increases.
+        <sec typ="cond">On attack</sec>, removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> EVA / MOVE decrease effects</sec> applied to self, and increases self's <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="9" slot="1" r /></sec> for 2 rounds. (Max 3 stacks)
+        <sec typ="cond">When attacked</sec>, self's <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="6" r /></sec> increases for 2 rounds. (Max 2 stacks)
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="5" r /></sec>增加。
+        <sec typ="cond">攻擊時</sec>，解除套用於自身的<sec typ="buff"><buff typ="REMOVE_DEBUFF" />迴避 / 行動力降低效果</sec>，並使自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="9" slot="1" r /></sec>在2回合內增加。（最多3層）
+        <sec typ="cond">受到攻擊時</sec>，自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec>在2回合內增加。（最多2層）
 dialogue:
   KR:
     "1":
@@ -7861,8 +7950,7 @@ dialogue:
       SPIdle_02_01: |-
         자, 잠시만... 시작부터 풀 쓰로틀로 달리면
         나 너무 빨리 타버려...
-      Oath: 행복한 왕자 이야기 알아, 사령관? 왕자님을 사랑해서, 추운 겨울이 오는데도 왕자님의 옆을 떠나지 못한 미련한 제비가 나오는 동화
-        말이야. 나도... 그 제비처럼 언제까지나 사령관의 곁에 있을게. 왜냐면, 사령관은 내 왕자님이니까.
+      Oath: 행복한 왕자 이야기 알아, 사령관? 왕자님을 사랑해서, 추운 겨울이 오는데도 왕자님의 옆을 떠나지 못한 미련한 제비가 나오는 동화 말이야. 나도... 그 제비처럼 언제까지나 사령관의 곁에 있을게. 왜냐면, 사령관은 내 왕자님이니까.
       OathIdle_01: |-
         제비는 철새지만, 내가 떠날까봐 걱정하진 마.
         난 사령관 옆에 꼭 붙어 있을 테니까.
@@ -8075,8 +8163,7 @@ dialogue:
       SPIdle_02_01: |-
         ちょ、ちょっとぉ… 最初からフルスロットルなんて…
         す、すぐに燃え尽きちゃうよ…？
-      Oath: 司令官は幸福な王子ってお話は知ってる？王子様のことを好きになって、寒い冬になっても王子様のそばを離れられなかったツバメが出てくる童話よ。私も…
-        そのツバメみたいにいつまでもあなたの傍にいるからね。だって、司令官は私の王子様だから。
+      Oath: 司令官は幸福な王子ってお話は知ってる？王子様のことを好きになって、寒い冬になっても王子様のそばを離れられなかったツバメが出てくる童話よ。私も… そのツバメみたいにいつまでもあなたの傍にいるからね。だって、司令官は私の王子様だから。
       OathIdle_01: |-
         心配しないで、ツバメは渡り鳥だけど私はいなくならないわ。
         私はずっと司令官の隣にいるからね。
@@ -8189,10 +8276,8 @@ dialogue:
         Say thank you… You are
         the only one to have the permission
         to touch this top celebrity.
-      Oath: >-
-        Oh, no… I’m not supposed to personally get involved with a fan… ughh…
-        you know that, right? It’s a secret!
-
+      Oath: |-
+        Oh, no… I’m not supposed to personally get involved with a fan… ughh… you know that, right? It’s a secret!
         Do not tell anyone about this. Also… thanks.
       OathIdle_01: |-
         You didn’t get caught, did you? Commander,
@@ -8248,10 +8333,8 @@ dialogue:
         Shh! Someone is going to see us! You should’ve
         told me first. You fool!
         … Okay. I’m ready.
-      Oath: >-
-        Commander, look at you… Being romantic at a place like this… You planned
-        this, didn’t you?
-
+      Oath: |-
+        Commander, look at you… Being romantic at a place like this… You planned this, didn’t you?
         Pft… I can’t say no! I also get weak in a situation like this…
       OathIdle_01: |-
         Commander, I sometimes think you’re cunning.
@@ -8278,11 +8361,9 @@ dialogue:
       Idle_01_01: |-
         L-leader of SkyNights…!
         I’ve never been an idol leader before. I keep getting confused.
-      Idle_01_02: >-
+      Idle_01_02: |-
         P-Producer…?! When did you get here?
-
         … When I come up with a good idea,
-
         I write it down in this notebook. Choreo, staging, lyrics… Things like that!
       Idle_01_03: |-
         The reason I decided to become an idol?
@@ -8301,14 +8382,10 @@ dialogue:
         How was our subunit group song?
         I was looking at you-
         Mmph?! Umm… It touched you… Okay. I’m dedicated just to you.
-      SPIdle_02_01: I’m the leader, I should be taking the lead… I can’t be doing this
-        with you here… Don’t whisper in my ear…
-      Oath: >-
-        Did you suddenly decide to propose? Or… did you plan the surprise
-        proposal in advance?
-
+      SPIdle_02_01: I’m the leader, I should be taking the lead… I can’t be doing this with you here… Don’t whisper in my ear…
+      Oath: |-
+        Did you suddenly decide to propose? Or… did you plan the surprise proposal in advance?
         Since I am a public figure, I need to retire after getting marred… Fine! I’ll just sign an exclusive contract with you until the end of this world, Producer!
-
         I’m looking forward to our life together.
       OathIdle_01: |-
         Dance and song just for you? No problem!
@@ -8386,8 +8463,7 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: My top speed? Do you know who I am? If I really try, I think I can
-        top Mach 100.
+      Idle_01_01: My top speed? Do you know who I am? If I really try, I think I can top Mach 100.
       Idle_01_02: |-
         My body is the perfect aerodynamic design.
         My bust? I had it made smaller on purpose.
@@ -8408,10 +8484,8 @@ dialogue:
         No, right?
         You like the skinny type, right?
       SPIdle_02_01: This is okay.
-      Oath: >-
-        Commander? What? This is… an oath ceremony? H-heh… You'll take my heart
-        by… by…
-
+      Oath: |-
+        Commander? What? This is… an oath ceremony? H-heh… You'll take my heart by… by…
         Oh gosh! Commander! You won't change your mind, right? No take backs! OK?
       OathIdle_01: |-
         Token? Y-yes! Of course I have it!

@@ -2679,6 +2679,23 @@ skills:
             base: 2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        수중용 절단기로 <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 강화 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" r /></sec>가 증가하며 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 감소 효과를 해제</sec>합니다.
+      JP: |-
+        水中用切断機で<dmg elem="physics" />のダメージを与え、<sec typ="buff"><buff typ="REMOVE_BUFF" />防御力強化効果を解除</sec>します。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>を減少させます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="5" r /></sec>が増加し、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />ダメージ減少効果を解除</sec>します。
+      EN: |-
+        Attacks with Underwater Cutter, dealing <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="REMOVE_BUFF" />removing DEF Upgrade effects</sec>.
+        <sec typ="cond">When attack hits</sec>, the target’s <sec typ="buff"><buff typ="DEF_DOWN" />DEF<val idx="0" r /></sec> is decreased for 2 rounds.
+        <sec typ="cond">When CRIT hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" />damage amount<val idx="5" r /></sec> is increased and the target’s <sec typ="buff"><buff typ="REMOVE_BUFF" />Damage Decrease effect is removed</sec>.
+      TC: |-
+        用水下切割機造成<dmg elem="physics" />傷害，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除防禦力強化效果</sec>。
+        <sec typ="cond">命中時</sec>，減少目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>，持續2回合。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="5" r /></sec>增加，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的傷害減少效果</sec>。
   "2":
     key: "2"
     icon: BeamShot
@@ -5634,6 +5651,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 주며 대상을 <sec typ="buff"><buff typ="Push" /> 뒤로 <val idx="0" signless />칸 밉니다</sec>.
+        <sec typ="cond">적중 시</sec>, 대상에게 2라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec> 증가 효과를 부여합니다.
+        <sec typ="cond">대상이 <sec typ="note">침수</sec> 상태인 경우</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>하고 <sec typ="chance">50% 확률</sec>로 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만듭니다.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="ice" />を与え、対象を<sec typ="buff"><buff typ="Push" />後方へ<val idx="0" signless />マス押し出します</sec>。
+        <sec typ="cond">命中時</sec>、対象に2ラウンドの間、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="5" r /></sec>増加効果を付与します。
+        <sec typ="cond">対象が<sec typ="note">浸水</sec>状態の場合</sec>、<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>し、<sec typ="chance">50%の確率</sec>で<sec typ="buff"><buff typ="STUN" />行動不可</sec>状態にします。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="ice" /> to the designated area and <sec typ="buff"><buff typ="Push" />pushes the target back <val idx="0" signless /> tiles</sec>.
+        <sec typ="cond">When attack hits</sec>, inflicts <sec typ="buff"><buff typ="VULNERABLE" />Received Damage Increase<val idx="5" r /></sec> on the target for 2 rounds.
+        <sec typ="cond">If the target is in <sec typ="note">Submerged</sec> state</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" />remove their Upgrade effects</sec> and, with <sec typ="chance">50% chance</sec>, make them <sec typ="buff"><buff typ="STUN" />Action Disabled</sec>.
+      TC: |-
+        對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="ice" />傷害，並以<sec typ="buff"><buff typ="Push" /><val idx="0" signless />格</sec>將目標往後推開。
+        <sec typ="cond">命中時</sec>，對目標施加2回合的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害增加<val idx="5" r /></sec>效果。
+        <sec typ="cond">若目標處於<sec typ="note">浸水</sec>狀態</sec>，則<sec typ="buff"><buff typ="REMOVE_BUFF" />解除強化效果</sec>，並以<sec typ="chance">50%機率</sec>使其陷入<sec typ="buff"><buff typ="STUN" />無法行動</sec>狀態。
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -7801,6 +7835,27 @@ skills:
             base: 0.15
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 바이오로이드 아군의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 속성 저항<val idx="7" r /></sec>를 증가시킵니다.
+        대상이 배치된 위치에 따라 다음 효과가 두 배 증폭됩니다.
+        - <sec typ="cond">전열</sec> : <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 </sec> / <sec typ="cond">중열</sec> : <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 속성 저항</sec> / <sec typ="cond">후열</sec> : <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec>
+        <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内のバイオロイド味方の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="6" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" />属性耐性<val idx="7" r /></sec>を増加させます。
+        対象が配置されている位置に応じて、次の効果が2倍に増幅されます。
+        - <sec typ="cond">前列</sec> : <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性</sec> / <sec typ="cond">中列</sec> : <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" />属性耐性</sec> / <sec typ="cond">後列</sec> : <sec typ="buff"><buff typ="AP_UP" />行動力</sec>
+        <sec>スキルレベル10で範囲が増加します。</sec>
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases <sec typ="buff"><buff typ="AP_UP" />MOVE<val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />Effect Resistance<val idx="6" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" />Element Resistance<val idx="7" r /></sec> of ally Bioroids within range.
+        The below effects are doubled depending on their position.
+        - <sec typ="cond">Front line</sec> : <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />Effect Resistance</sec> / <sec typ="cond">Middle line</sec> : <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" />Element Resistance</sec> / <sec typ="cond">Rear line</sec> : <sec typ="buff"><buff typ="AP_UP" />MOVE</sec>
+        <sec>Effective range increases at Skill Lv. 10.</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加範圍內我軍生化人的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="6" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" />屬性抵抗<val idx="7" r /></sec>。
+        依據目標所處位置，下列效果將增幅2倍。
+        - <sec typ="cond">前列</sec>：<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗</sec> / <sec typ="cond">中列</sec>：<sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" />屬性抵抗</sec> / <sec typ="cond">後列</sec>：<sec typ="buff"><buff typ="AP_UP" />行動力</sec>
+        <sec>技能等級達到等級10時，會擴大範圍。</sec>
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -8556,6 +8611,27 @@ skills:
             base: 0.075
             per: 0.0075
             chance: 1
+    desc:
+      KR: |-
+        자신의 <sec typ="buff"><buff typ="ICERES_UP" /> 기본 냉기 저항이 80%로 증가</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 <sec typ="note">침수</sec> 상태인 경우</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="note">프런티어 리더</sec> 효과를 받는 아군도 <sec typ="note">침수</sec> 상태가 되면 해당 효과의 50%가 적용됩니다.
+      JP: |-
+        自分の<sec typ="buff"><buff typ="ICERES_UP" />基本冷気耐性が80%に増加</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、自分が<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" r inv /></sec>が減少します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自分が<sec typ="note">浸水</sec>状態の場合</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>が増加します。
+        <sec typ="note">フロンティアリーダー</sec>効果を受ける味方も<sec typ="note">浸水</sec>状態になると、その効果の50%が適用されます。
+      EN: |-
+        Self’s <sec typ="buff"><buff typ="ICERES_UP" />basic Cold Resistance</sec> is increased to 80%.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage<val idx="0" r inv /></sec> is decreased for self.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if self is in <sec typ="note">Submerged</sec> state</sec>, <sec typ="buff"><buff typ="ATK_UP" />ATK<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />CRIT<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />MOVE<val idx="6" r /></sec> increases.
+        If allies receiving the <sec typ="note">Frontier Leader</sec> effect also become <sec typ="note">Submerged</sec>, 50% of the effect is applied.
+      TC: |-
+        自身的<sec typ="buff"><buff typ="ICERES_UP" />基本冰霜抵抗</sec>增加至80%。
+        <sec typ="cond">回合開始時</sec>，減少自身的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="0" r inv /></sec>。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若自身處於<sec typ="note">浸水</sec>狀態</sec>，則<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>增加。
+        獲得<sec typ="note">前線領袖</sec>效果的我軍若也處於<sec typ="note">浸水</sec>狀態，則套用該效果的50%。
   "5":
     key: "5"
     icon: P.Wave
@@ -9128,6 +9204,23 @@ skills:
             base: -0.5
             per: -0.025
             chance: 1
+    desc:
+      KR: |-
+        자신의 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 기본 전기 저항이 80%로 증가</sec>합니다.
+        <sec typ="cond">전투 개시 시</sec>, 자신은 영구적으로 <sec typ="note">침수</sec> 상태가 되고, 2라운드 동안 적 전체를 <sec typ="note">침수</sec> 상태로 만듭니다.
+        <sec typ="cond">대기 시</sec>, 적 전체를 2라운드 동안 <sec typ="note">침수</sec> 상태로 만듭니다.
+      JP: |-
+        自分の<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />基本電気耐性が80%に増加</sec>します。
+        <sec typ="cond">戦闘開始時</sec>、自分は永続的に<sec typ="note">浸水</sec>状態になり、2ラウンドの間、敵全体を<sec typ="note">浸水</sec>状態にします。
+        <sec typ="cond">待機時</sec>、敵全体を2ラウンドの間<sec typ="note">浸水</sec>状態にします。
+      EN: |-
+        Self’s <sec typ="buff"><buff typ="LIGHTNINGRES_UP" />basic Electric Resistance</sec> is increased to 80%.
+        <sec typ="cond">At the start of combat</sec>, self becomes permanently <sec typ="note">Submerged</sec>, and all enemies become <sec typ="note">Submerged</sec> for 2 rounds.
+        <sec typ="cond">If on standby</sec>, <sec typ="note">Submerge</sec> all enemies for 2 rounds.
+      TC: |-
+        自身的<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />基本電擊抵抗</sec>增加至80%。
+        <sec typ="cond">戰鬥開始時</sec>，自身會永久進入<sec typ="note">浸水</sec>狀態，並使敵軍全體陷入<sec typ="note">浸水</sec>狀態，持續2回合。
+        <sec typ="cond">等待時</sec>，使敵軍全體陷入<sec typ="note">浸水</sec>狀態，持續2回合。
 dialogue:
   KR:
     "":
@@ -9250,8 +9343,7 @@ dialogue:
       Idle_03_01: え、えっと…正確に言うと…魚群探知機で魚を追いかけることなんだけど…。で、でも！…それも一種の会話なの！コミュニケーションよ！
       Idle_04_01: やだ～、恥ずかしい～。もう大金持ちとかお宝とかよりもキャプテンとただ一緒にいることの方がずっといいよ～。キャプテンもそう思うよね？そう…だよね？
       SPIdle_02_01: ばか…言葉で言ってくれたらいいのに…
-      Oath: 何なのよ…キャプテン？これって…まさか…宝探しの一生のパートナーになりたいってこと？嘘でしょ？そんなこと言われたら…私も正直に言わなきゃいけないじゃん。こんなのずるいよ…でも…しょうがないな…
-        。
+      Oath: 何なのよ…キャプテン？これって…まさか…宝探しの一生のパートナーになりたいってこと？嘘でしょ？そんなこと言われたら…私も正直に言わなきゃいけないじゃん。こんなのずるいよ…でも…しょうがないな… 。
       OathIdle_01: ねぇ…キャプテン？ソーフィッシュに乗ってみる気は…ない？だ、大丈夫。ちょっと狭いけど二人までなら乗れるから。
       MVP: ""
     M:
@@ -9339,9 +9431,8 @@ dialogue:
         than finding treasure. You feel the same, right Commander?
         Hmm… What?
       SPIdle_02_01: Fool! You should’ve told me.
-      Oath: >-
+      Oath: |-
         Oh… Haha. This is it? Now, it's time for me to settle down with you.
-
         … Treasure hunt? Uh. I think we can do that a bit later. Since… I seem to have found a much more precious thing here.
       OathIdle_01: |-
         Umm… Commander? Don’t you want to

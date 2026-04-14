@@ -1996,6 +1996,23 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        저격으로 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 대상에게 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec> 증가 효과를 부여합니다.
+        대상이 <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 상태인 경우, 받는 피해 증가 효과가 50% 증폭됩니다.
+      JP: |-
+        狙撃で単体対象に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、対象に2ラウンドの間<sec typ="buff"><buff typ="MARKING" /> マーク</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="2" r /></sec>増加効果を付与します。
+        対象が<sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避減少</sec>状態の場合、受けるダメージ増加効果が50%増幅されます。
+      EN: |-
+        Uses a sniper shot and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to a single target.
+        <sec typ="cond">On hit</sec>, inflicts the target with <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="2" r /></sec> Increase for 2 rounds.
+        If the target is <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> EVA Decreased</sec>, the Received Damage Increase effect is amplified by 50%.
+      TC: |-
+        以狙擊對單一目標造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，使目標獲得持續2回合的<sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="2" r /></sec>增加效果。
+        若目標處於<sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避降低</sec>狀態，則所受傷害增加效果會提升50%。
   "2":
     key: "2"
     icon: TeamAtkBuff
@@ -2267,6 +2284,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        플로팅 아머리를 전개해 지정 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시키고, 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec>를 증가시킵니다.
+        효과가 적용된 대상은 1라운드 동안 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과를 획득합니다.
+        <sec typ="cond">대상이 중장형인 경우</sec>, <sec><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시 효과 지속이 1라운드 연장됩니다.</sec>
+      JP: |-
+        フローティング・アーモリーを展開し、指定範囲内の味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させ、2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec>を増加させます。
+        効果が適用された対象は1ラウンドの間<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / ダメージ軽減無視</sec>効果を獲得します。
+        <sec typ="cond">対象が重装型の場合</sec>、<sec><buff typ="BARRIER_PIERCE" /> バリア / ダメージ軽減無視効果の持続が1ラウンド延長されます。</sec>
+      EN: |-
+        Deploys the Floating Armory, increasing designated allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> within range and <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="3" r /></sec> for 2 rounds.
+        Targets affected gain <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier / Damage Reduction Ignore</sec> for 1 round.
+        <sec typ="cond">If the target is Heavy Armor</sec>, <sec><buff typ="BARRIER_PIERCE" /> the Barrier / Damage Reduction Ignore duration is extended by 1 round.</sec>
+      TC: |-
+        展開浮動軍械庫，增加指定範圍內我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>，並在2回合內增加<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec>。
+        受效果影響的目標在1回合內獲得<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視防護罩 / 傷害減少</sec>效果。
+        <sec typ="cond">若目標為重裝型</sec>，<sec>則<buff typ="BARRIER_PIERCE" /> 無視防護罩 / 傷害減少效果持續時間延長1回合。</sec>
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -2506,6 +2540,19 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 중장형 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec>가 감소합니다.
+        <sec typ="cond">자신 외의 <cmt t="AA 캐노니어">$$AACannonier:?$</cmt> 소속 전투원이 있을 경우</sec>, 효과가 두 배로 증폭됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の重装型味方の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="2" r inv /></sec>が減少します。
+        <sec typ="cond">自分以外の<cmt t="AA キャノニア">$$AACannonier:?$</cmt>所属戦闘員がいる場合</sec>、効果が2倍に増幅されます。
+      EN: |-
+        At the start of the round, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="1" r /></sec> of heavy-armor allies within range, and decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="2" r inv /></sec>.
+        <sec typ="cond">If there are any <cmt t="AA Cannoneer">$$AACannonier:?$</cmt> affiliated units other than self</sec>, the effect is doubled.
+      TC: |-
+        回合開始時，提升範圍內重裝型我軍的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" r /></sec>，並降低<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="2" r inv /></sec>。
+        <sec typ="cond">若除自身外還有<cmt t="AA 캐논ियर">$$AACannonier:?$</cmt>所屬戰鬥員</sec>，則效果會加倍。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -2745,6 +2792,19 @@ skills:
             base: 9
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">대상이 <sec typ="note">F.아머리 전개</sec> 효과를 받는 상태인 경우</sec>, <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 공격력 / 치명타 감소 면역</sec> 효과를 부여합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec><sec typ="cond">対象が<sec typ="note">F.アーモリー展開</sec>効果を受けている場合</sec>、<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 攻撃力 / クリティカル減少免疫</sec>効果を付与します。
+      EN: |-
+        At the start of the round, increases allies' <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="1" r /></sec> within range.
+        <sec typ="cond">At the start of the round</sec><sec typ="cond">if the target is under <sec typ="note">F. Armory Deployment</sec></sec>, grants <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> Attack / Critical Decrease Immunity</sec>.
+      TC: |-
+        回合開始時，增加範圍內我軍的<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>。
+        <sec typ="cond">回合開始時</sec><sec typ="cond">若目標處於<sec typ="note">F.裝甲庫展開</sec>效果中</sec>，則賦予<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 攻擊力 / 暴擊降低免疫</sec>效果。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -2955,6 +3015,19 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군 중장형 공격기의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">대상이 <sec typ="note">F.아머리 전개</sec> 효과를 받는 상태인 경우</sec>, 대상의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 추가로 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、味方重装型攻撃機の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">対象が<sec typ="note">F.アーモリー展開</sec>効果を受けている場合</sec>、対象の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が追加で増加します。
+      EN: |-
+        At the start of the round, increases heavy-armor attackers' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="2" r /></sec>.
+        <sec typ="cond">If the target is under <sec typ="note">F. Armory Deployment</sec></sec>, the target's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> additionally increases.
+      TC: |-
+        回合開始時，增加我軍重裝型攻擊器的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="2" r /></sec>。
+        <sec typ="cond">若目標處於<sec typ="note">F.裝甲庫展開</sec>效果中</sec>，則目標的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>會額外增加。
 dialogue:
   KR:
     "1":
@@ -3077,12 +3150,9 @@ dialogue:
         더 이상은 안 되겠군. 그대의 사랑을,
         참았던 만큼 나에게 마음껏 쏟아내주겠나.
         내가... 도저히 헤어 나오지 못하도록.​
-      Oath: >-
-        아... 후후, 별거 아니다. 사랑하는 이를 위해 무언가를 준비하고, 그것에 사랑하는 사람이 기뻐해 준다는 게 이렇게나 기쁠 줄은
-        생각하지
-
+      Oath: |-
+        아... 후후, 별거 아니다. 사랑하는 이를 위해 무언가를 준비하고, 그것에 사랑하는 사람이 기뻐해 준다는 게 이렇게나 기쁠 줄은 생각하지
         못한 것뿐. ...그래, 잠시 손을 빌려주겠나? 느껴지겠지? 그대 때문에 이렇게나... 그대를 처음 만났을 때처럼 가슴이 두근거리고
-
         있다. 이 애달픈 마음에 취해서, 사춘기 소녀처럼 어른스럽지 못한 모습을 보일지도 모르지만... 이해해주기 바란다.
       OathIdle_01: |-
         조금이라도 방심하면 언제 흘러내려도
@@ -3145,9 +3215,7 @@ dialogue:
       SPIdle_02_01: |-
         메인 디쉬를 맛볼 시간이군.
         자, 그대가 원하는 곳부터… 포장을 벗기도록.
-      Oath: 이번 여름은 유독 덥군. 하지만 그건 저 태양 때문이 아니라, 그대가 지금 건넨 반지 때문에 내 마음이 사랑으로 뜨겁게 타오르고 있기
-        때문이다. 그럼, 같이 여름을 한껏 만끽해 보지 않겠나? 일사병은 걱정할 필요 없다. 그대를 향한 내 사랑이, 겨우 태양 따위에
-        질 리 없지 않나?
+      Oath: 이번 여름은 유독 덥군. 하지만 그건 저 태양 때문이 아니라, 그대가 지금 건넨 반지 때문에 내 마음이 사랑으로 뜨겁게 타오르고 있기 때문이다. 그럼, 같이 여름을 한껏 만끽해 보지 않겠나? 일사병은 걱정할 필요 없다. 그대를 향한 내 사랑이, 겨우 태양 따위에 질 리 없지 않나?
       OathIdle_01: |-
         이 옷에 공연음란이란 성립하지 않는다.
         그야, 나는 머리끝부터 발끝까지 그대의 것.
@@ -3386,9 +3454,7 @@ dialogue:
       SPIdle_02_01: |-
         [미번역]메인 디쉬를 맛볼 시간이군.
         자, 그대가 원하는 곳부터… 포장을 벗기도록.
-      Oath: "[미번역]이번 여름은 유독 덥군. 하지만 그건 저 태양 때문이 아니라, 그대가 지금 건넨 반지 때문에 내 마음이 사랑으로 뜨겁게
-        타오르고 있기 때문이다. 그럼, 같이 여름을 한껏 만끽해 보지 않겠나? 일사병은 걱정할 필요 없다. 그대를 향한 내 사랑이, 겨우
-        태양 따위에 질 리 없지 않나?"
+      Oath: "[미번역]이번 여름은 유독 덥군. 하지만 그건 저 태양 때문이 아니라, 그대가 지금 건넨 반지 때문에 내 마음이 사랑으로 뜨겁게 타오르고 있기 때문이다. 그럼, 같이 여름을 한껏 만끽해 보지 않겠나? 일사병은 걱정할 필요 없다. 그대를 향한 내 사랑이, 겨우 태양 따위에 질 리 없지 않나?"
       OathIdle_01: |-
         [미번역]이 옷에 공연음란이란 성립하지 않는다.
         그야, 나는 머리끝부터 발끝까지 그대의 것.
@@ -3522,12 +3588,9 @@ dialogue:
         Ugh…… Ha ha. You look happy.
         I’ll give you a minute. In one minute…
         I don’t even know what I’ll do.
-      Oath: >-
-        I sort of expected it when you made me wear this outfit… As you probably
-        know very well, I’m just a mere soldier.
-
+      Oath: |-
+        I sort of expected it when you made me wear this outfit… As you probably know very well, I’m just a mere soldier.
         All I can give you is my loyalty… and my body. Would that be okay? … Love? Haha, do I really have to say it?
-
         It looks like I unintentionally made you anxious. I do love you. So… feel free to do whatever you want to do with me for tonight.
       OathIdle_01: |-
         Oh, darn. My hands are full.
@@ -3561,22 +3624,17 @@ dialogue:
         I may not seem like the type, but as a woman,
         I get nervous showing my loved one what I have prepared.
         Are you ready to hear it? This song is just for you.​
-      Idle_01_03: >-
+      Idle_01_03: |-
         There is no reason behind it.
-
         I just wanted to. That’s all… I must have forgot the fact that you know about me too well.
-
         Yes, there is a real reason behind it.​
       SPIdle_01_01: |-
         Try to hold off just a little longer.
         All these teasing… Will only arouse us,
         And lead us to a very special occasion.​
-      Idle_02_01: >-
-        I always thought outfits don’t play much of a part… They’d just get in
-        the way when the main game starts.
-
+      Idle_02_01: |-
+        I always thought outfits don’t play much of a part… They’d just get in the way when the main game starts.
         The sight of you makes me revalue my thoughts.
-
         You look much, much more manlier than usual.​
       Idle_03_01: |-
         Did you like it? *Chuckles* I can see it from your eyes.
@@ -3587,26 +3645,18 @@ dialogue:
         *Chuckles* I’ve mastered 
         Every seduction skills that I could find. Why? Isn’t that obvious?
         For you. Only for you.​
-      SPIdle_02_01: >-
-        I’ve been trying to hold on for a little longer… But I can’t help it
-        anymore. Please,
-
+      SPIdle_02_01: |-
+        I’ve been trying to hold on for a little longer… But I can’t help it anymore. Please,
         Let go of everything you’ve been holding off.
-
         Until I can’t live without you anymore.​
-      Oath: >-
+      Oath: |-
         Ah… *Chuckles* It’s nothing. I just didn’t realize that
-
         I would be so happy to prepare something for someone I love and see that person happy with what I’ve prepared. … Why don’t you lend me a hand just for a moment? You can feel it, right? My heart is beating just like the first time we’ve met.
-
         It’s all because of you. I might act like an adolescent girl, drenched in my own emotions, but please try and understand.
-      OathIdle_01: >-
+      OathIdle_01: |-
         It wouldn’t be a surprise if my dress
-
         Slipped down if I don’t pay attention. I’m guessing that’s your favorite aspect
-
         Of this outfit.
-
         What say you? Would you like to do the honor?​
       MVP: ""
     "3":
@@ -3664,10 +3714,8 @@ dialogue:
       SPIdle_02_01: |-
         It's time to taste the main dish.
         Now, you can start unwrapping… wherever you want.
-      Oath: >-
-        This summer has been hot. But it's because my heart is burning with love
-        for the ring you gave me,
-
+      Oath: |-
+        This summer has been hot. But it's because my heart is burning with love for the ring you gave me,
         not the sun. Then why don't we enjoy the summer together? You don't have to worry about getting heatstroke. There's no way my love for you will lose to the sun, right?
       OathIdle_01: |-
         There is nothing indecent about this outfit.
@@ -3725,12 +3773,9 @@ dialogue:
         You never get exhausted. 
         … Okay. You should pay the price
         for charming my heart.
-      Oath: >-
-        … You know me quite well now, don't you? I'll give you one last change
-        to withdraw. 
-
+      Oath: |-
+        … You know me quite well now, don't you? I'll give you one last change to withdraw. 
         …… Sigh. So stubborn. … Alright. Somehow, you grew on me, and now I also love you.
-
         You'll have to brace yourself good. In order to deal with me from now on.
       OathIdle_01: |-
         I warned you it won’t be easy.

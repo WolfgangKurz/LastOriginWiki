@@ -50,7 +50,7 @@ export function GetCachedLocaleTable (locale: LocaleTypes) {
 
 export const CurrentLocale = signal<LocaleTypes>(LangValidation(getCookie("LO_LANG", DefaultLang)));
 export const GlobalLocaleRequestId = signal<number>(0);
-export function useLocale (): [table: Record<string, string>, loaded: boolean] {
+export function useLocale (): [table: Record<string, string>, loaded: boolean, localeKey: string] {
 	const update = useUpdate();
 	const [currentLocale, setCurrentLocale] = useState<LocaleTypes>(CurrentLocale.peek());
 	const updateCallback = useCallback(() => update(), [update]);
@@ -66,19 +66,16 @@ export function useLocale (): [table: Record<string, string>, loaded: boolean] {
 	if (currentLocale in CachedLocales) {
 		if (CachedLocales[currentLocale] instanceof Set) {
 			CachedLocales[currentLocale].add(updateCallback);
-			return [{}, false];
+			return [{}, false, currentLocale];
 		}
 
-		return [CachedLocales[currentLocale]!, true];
+		return [CachedLocales[currentLocale]!, true, currentLocale];
 	}
 
 	CachedLocales[currentLocale] = new Set([updateCallback]);
 
-	const count = idxs[currentLocale] || 0;
-	const localeKeys = Array.from(
-		{ length: count }, // ArrayLike
-		(_, i) => `${StaticDB.Locale[currentLocale]}.${i}`,
-	);
+	const subgroups: string[] = idxs[currentLocale] || [];
+	const localeKeys = subgroups.map(g => `${StaticDB.Locale[currentLocale]}.${g}`);
 	JsonLoaderCore("", localeKeys)
 		.then(() => {
 			const loc: Record<string, string> = {};
@@ -102,7 +99,7 @@ export function useLocale (): [table: Record<string, string>, loaded: boolean] {
 			delete CachedLocales[currentLocale];
 			[...pending].forEach(fn => fn());
 		});
-	return [{}, false];
+	return [{}, false, currentLocale];
 };
 
 export function formatString (template: string, ...p: any[]): string {

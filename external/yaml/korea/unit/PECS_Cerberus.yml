@@ -3343,6 +3343,23 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        스턴 롯드로 <dmg elem="lightning" />를 주고, 3라운드 동안 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="4" r /></sec>를 낮춥니다.
+        2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하며, 대상이 <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 상태일 경우 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec>로 만듭니다.
+        스쿼드 내에 <char uid="PECS_Leanne" />이 있을 시, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 대상에게 <sec typ="note">위협사격</sec> 협동 공격</sec>을 합니다.
+      JP: |-
+        スタンロッドで<dmg elem="lightning" />のダメージを与え、3ラウンドの間、<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性<val idx="4" r /></sec>を減少させます。
+        2ラウンドの間対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>し、対象が<sec typ="cond"><buff typ="SNARE" />移動不可</sec>状態の場合は<sec typ="buff"><buff typ="STUN" />行動不可</sec>にします。
+        分隊内に<char uid="PECS_Leanne" />がいる場合、<sec typ="buff"><buff typ="TOGETHER_ATTACK" />対象に<sec typ="note">威嚇射撃</sec>協同攻撃</sec>を行います。
+      EN: |-
+        Attacks with a Stun Rod and deals <dmg elem="lightning" /> damage, decreasing Electric Resistance <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />for 3 rounds<val idx="4" r /></sec>.
+        Provokes the target for 2 rounds, and if the target is <sec typ="cond"><buff typ="SNARE" />Immobilized</sec>, they also become <sec typ="buff"><buff typ="STUN" />Action Disabled</sec>.
+        If <char uid="PECS_Leanne" /> is in the squad, launch a co-op attack at the target with the <sec typ="note">Threat Fire</sec> skill.
+      TC: |-
+        用電擊棒造成<dmg elem="lightning" />傷害，並在3回合內減少<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電擊抵抗<val idx="4" r /></sec>。
+        挑釁目標，持續2回合；若目標處於<sec typ="cond"><buff typ="SNARE" />無法移動</sec>狀態，則使其<sec typ="buff"><buff typ="STUN" />無法行動</sec>。
+        若小隊內有<char uid="PECS_Leanne" />，則對目標使用<sec typ="note">威嚇射擊</sec>技能進行協力攻擊。
   "2":
     key: "2"
     icon: ShieldWall
@@ -3645,6 +3662,19 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        방어 태세를 취해 3라운드 동안 <sec typ="buff"><buff typ="DEF_Char" /> 지정한 아군을 보호</sec>하며, 자신에게 <sec typ="buff"><buff typ="COUNTER" /> <val idx="1" r signless /> 위력으로 반격</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec> 감소 / <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="6" /></sec> 증가 효과가 적용됩니다.
+        <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 증가</sec> 효과는 2라운드 동안만 적용됩니다.
+      JP: |-
+        防御態勢を取り、3ラウンドの間<sec typ="buff"><buff typ="DEF_Char" />指定した味方を保護</sec>し、自分に<sec typ="buff"><buff typ="COUNTER" /><val idx="1" signless />威力で反撃</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="4" r inv /></sec>減少 / <sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="6" /></sec>増加効果が適用されます。
+        <sec typ="buff"><buff typ="RANGE_UP" />射程増加</sec>効果は2ラウンドの間のみ適用されます。
+      EN: |-
+        Takes a defensive stance and for 3 rounds <sec typ="buff"><buff typ="DEF_Char" />protects the designated ally</sec>, while self gains <sec typ="buff"><buff typ="COUNTER" />counterattack with <val idx="1" signless /> power</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage<val idx="4" r inv /></sec> decrease / <sec typ="buff"><buff typ="RANGE_UP" />range<val idx="6" /></sec> increase effects.
+        The <sec typ="buff"><buff typ="RANGE_UP" />range increase</sec> effect only applies for 2 rounds.
+      TC: |-
+        採取防禦態勢，持續3回合<sec typ="buff"><buff typ="DEF_Char" />保護指定的我軍</sec>，並使自身獲得<sec typ="buff"><buff typ="COUNTER" />以<val idx="1" signless />威力反擊</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />減少所受傷害<val idx="4" r inv /></sec> / <sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="6" /></sec>增加效果。
+        <sec typ="buff"><buff typ="RANGE_UP" />射程增加</sec>效果僅適用於2回合。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -4350,6 +4380,23 @@ skills:
             base: 0.09
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="DEF_Char" /> 지정 범위의 아군을 보호</sec>하고 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec>를 증가시킵니다.
+        자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="6" r /></sec>가 증가하며, 보호 대상 중 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격기의 공격을 지원</sec>합니다.
+        <sec>스킬 레벨 5, 10에서 범위가 증가</sec>합니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="DEF_Char" />指定範囲の味方を保護</sec>し、<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="5" r /></sec>を増加させます。
+        自分の<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="6" r /></sec>が増加し、保護対象のうち<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃機の攻撃を支援</sec>します。
+        <sec>スキルレベル5、10で範囲が増加</sec>します。
+      EN: |-
+        At the start of the round, <sec typ="buff"><buff typ="DEF_Char" />protects allies in the designated area</sec> and increases <sec typ="buff"><buff typ="CRITICAL_UP" />CRIT<val idx="5" r /></sec>.
+        Self’s <sec typ="buff"><buff typ="DEF_UP" />DEF<val idx="6" r /></sec> is increased, and <sec typ="buff"><buff typ="SUPPORT_ATTACK" />Attack Support</sec> is given to Attackers under protection.
+        Effective range increases at <sec>Skill Lv. 5 and 10</sec>.
+      TC: |-
+        回合開始時，<sec typ="buff"><buff typ="DEF_Char" />保護指定範圍內的我軍</sec>，並增加<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="5" r /></sec>。
+        增加自身的<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="6" r /></sec>，並對受到保護的<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻擊機提供攻擊支援</sec>。
+        <sec>技能等級達到等級5、10時，會擴大範圍</sec>。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -4665,6 +4712,19 @@ skills:
             base: 0.15
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신에게 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="7" r inv /></sec> 감소를 부여합니다.
+        지정 범위 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>를 증가시키며, <cmt t="시티가드">$$CityGuard:?$</cmt> 소속일 시 효과가 2배로 적용됩니다.
+      JP: |-
+        ラウンド開始時、自分に<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="7" r inv /></sec>減少を付与します。
+        指定範囲の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>を増加させ、<cmt t="시티가드">$$CityGuard:?$</cmt>所属の場合は効果が2倍に適用されます。
+      EN: |-
+        At the start of the round, grants a <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage decrease<val idx="7" r inv /></sec> to self.
+        Increases <sec typ="buff"><buff typ="ATK_UP" />ATK<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />ACU<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />MOVE<val idx="2" r /></sec> of allies in the designated area, and the effect is doubled for <cmt t="시티가드">$$CityGuard:?$</cmt> members.
+      TC: |-
+        回合開始時，賦予自身<sec typ="buff"><buff typ="DAMAGE_REDUCE" />減少所受傷害<val idx="7" r inv /></sec>效果。
+        增加指定範圍內我軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>；若屬於<cmt t="시티가드">$$CityGuard:?$</cmt>，則效果套用2倍。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -4985,6 +5045,19 @@ skills:
             base: 0.07
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="6" r /></sec>를 증가시킵니다.
+        지정 범위 내 <cmt t="시티가드">$$CityGuard:?$</cmt> 소속 전투원의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>합니다.
+      JP: |-
+        ラウンド開始時、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" />火炎耐性<val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電気耐性<val idx="6" r /></sec>を増加させます。
+        指定範囲内の<cmt t="시티가드">$$CityGuard:?$</cmt>所属戦闘員の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃を支援</sec>します。
+      EN: |-
+        At the start of the round, increases self’s <sec typ="buff"><buff typ="ATK_UP" />ATK<val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" />Fire Resistance<val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" />Electric Resistance<val idx="6" r /></sec>.
+        <sec typ="buff"><buff typ="SUPPORT_ATTACK" />Attack Support</sec> is given to <cmt t="시티가드">$$CityGuard:?$</cmt> members within the designated area.
+      TC: |-
+        回合開始時，增加自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" />火焰抵抗<val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電擊抵抗<val idx="6" r /></sec>。
+        對指定範圍內<cmt t="시티가드">$$CityGuard:?$</cmt>所屬戰鬥員提供<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻擊支援</sec>。
 dialogue:
   KR:
     "1":
@@ -5475,9 +5548,8 @@ dialogue:
         Whoa! You should’ve… told me this
         before and… I could’ve been
         ready…
-      Oath: >-
+      Oath: |-
         Oh… really? Is this for me? Oh… I’m not allowed to move anymore,
-
         right? Commander… you are at least going to let me go take a walk, right? Hehe.
       OathIdle_01: |-
         You’re mine now!
@@ -5525,10 +5597,8 @@ dialogue:
       SPIdle_02_01: |-
         Hmm… You made me wear this for that?
         Ha, ha… a new game?
-      Oath: >-
-        Huh? Commander… Is this… for me? Lilith said… this is no different than
-        a collar
-
+      Oath: |-
+        Huh? Commander… Is this… for me? Lilith said… this is no different than a collar
         so I shouldn’t ever take it… Commander, will you keep this a secret, right? Promise!
       OathIdle_01: |-
         Commander. What are secret friends?
@@ -5582,10 +5652,8 @@ dialogue:
         Ehehe, you feel nice
         because it’s soft?
         I’ll do it too! There!
-      Oath: >-
-        W-woah… Commander. Please hug me. Hurry! Hehe… I want to run out because
-        I’m so happy,
-
+      Oath: |-
+        W-woah… Commander. Please hug me. Hurry! Hehe… I want to run out because I’m so happy,
         but I shouldn’t do that right now. If the Vow Ceremony ends while we are hugging like this, until the honeymoon… ahaha.
       OathIdle_01: |-
         Commander. Hold out your hand,
@@ -5638,10 +5706,8 @@ dialogue:
         becomes peaceful, I’m going to
         date with you every day.
       SPIdle_02_01: Gosh! Oh, it was you, Commander!
-      Oath: >-
-        What? Huh? Ooh! This is really mine? Ha ha! Hehehe!! Mr. Commander, wait
-        a minute… It's because I'm so happy…
-
+      Oath: |-
+        What? Huh? Ooh! This is really mine? Ha ha! Hehehe!! Mr. Commander, wait a minute… It's because I'm so happy…
         I'll go have just a few glasses of liquor… And next… Ohoho!
       OathIdle_01: |-
         Ha… When I think about the day of pledge,
@@ -5672,10 +5738,8 @@ dialogue:
         It’s not just a walk. It’s for the sake of
         others’ safety and public security. So let’s hurry-
         O-oh… it’s cheating… Scratching me on the chin…​
-      Idle_01_03: >-
-        We need to find peace so that I can become a mother… You want to be a
-        father, right?
-
+      Idle_01_03: |-
+        We need to find peace so that I can become a mother… You want to be a father, right?
         I’ll have to try harder.
       SPIdle_01_01: |-
         *Moans*… Do you like this that much…?

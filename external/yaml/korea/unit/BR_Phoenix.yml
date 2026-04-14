@@ -1946,6 +1946,23 @@ skills:
             base: -0.1
             per: -0.04
             chance: 1
+    desc:
+      KR: |-
+        정밀 포격으로 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="note">지상 제압 포격</sec> 상태일 시, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>을(를) 감소시키고, 2라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>를 증가시킵니다.
+      JP: |-
+        精密砲撃で<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        対象が<sec typ="cond"><buff typ="MARKING" />標識</sec> / <sec typ="cond"><buff typ="SNARE" />移動不可</sec>状態なら、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
+        <sec typ="note">地上制圧砲撃</sec>状態の時、対象の<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="2" /></sec>を減少させ、2ラウンドの間<sec typ="buff"><buff typ="VULNERABLE" />被ダメージ<val idx="1" r /></sec>を増加させます。
+      EN: |-
+        Deals <sec typ="attr">protection-ignoring</sec> <dmg elem="physics" /> with precision bombardment.
+        If the target is <sec typ="cond"><buff typ="MARKING" /> Marked</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobile</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        While in <sec typ="note">Ground Suppression Bombardment</sec> state, decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec> and increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> for 2 rounds.
+      TC: |-
+        以精密砲擊造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        若目標處於<sec typ="cond"><buff typ="MARKING" />標記</sec> / <sec typ="cond"><buff typ="SNARE" />無法移動</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="0" r /></sec>增加。
+        處於<sec typ="note">地面壓制砲擊</sec>狀態時，會降低目標的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>，並在2回合內增加<sec typ="buff"><buff typ="VULNERABLE" />受傷害<val idx="1" r /></sec>。
   "2":
     key: "2"
     icon: CannonShotWide
@@ -3774,6 +3791,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        포격을 난사해 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="note">지상 제압 포격</sec> 상태일 시, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>을(를) 감소시키고, 2라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>를 증가시킵니다.
+      JP: |-
+        砲撃を乱射して指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        対象が<sec typ="cond"><buff typ="SNARE" />移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />回避低下</sec>状態なら、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
+        <sec typ="note">地上制圧砲撃</sec>状態の時、対象の<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="2" /></sec>を減少させ、2ラウンドの間<sec typ="buff"><buff typ="VULNERABLE" />被ダメージ<val idx="1" r /></sec>を増加させます。
+      EN: |-
+        Sprays bombardment to the designated area, dealing <sec typ="attr">protection-ignoring</sec> <dmg elem="physics" />.
+        If the target is <sec typ="cond"><buff typ="SNARE" /> Immobile</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        While in <sec typ="note">Ground Suppression Bombardment</sec> state, decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec> and increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> for 2 rounds.
+      TC: |-
+        對指定範圍亂射砲擊，造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        若目標處於<sec typ="cond"><buff typ="SNARE" />無法移動</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="0" r /></sec>增加。
+        處於<sec typ="note">地面壓制砲擊</sec>狀態時，會降低目標的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>，並在2回合內增加<sec typ="buff"><buff typ="VULNERABLE" />受傷害<val idx="1" r /></sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4019,6 +4053,23 @@ skills:
             base: 0.05
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 범위 내 자신을 제외한 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="스틸라인 계열">$$SteelLine:?$</cmt> 부대원 또는 행동력이 낮은 경장/중장형 아군의 공격을 지원</sec>합니다.
+        <sec>해당 효과는 해제할 수 없습니다.</sec>
+        자신이 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 다른 전투원의 공격을 지원</sec>할 경우, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>이(가) 증가합니다.
+      JP: |-
+        ラウンド開始時、範囲内の自分を除く<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="Steel Line">$$SteelLine:?$</cmt>部隊員または行動力の低い軽装/重装型味方の攻撃を支援</sec>します。
+        <sec>この効果は解除できません。</sec>
+        自身が<sec typ="cond"><buff typ="SUPPORT_ATTACK" />他の戦闘員の攻撃を支援</sec>する場合、自身の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>が増加します。
+      EN: |-
+        At round start, supports the attacks of <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="Steel Line">$$SteelLine:?$</cmt> squad members in range excluding self, or Light / Heavy Armor allies with lower AP</sec>.
+        <sec>This effect cannot be removed.</sec>
+        When self <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> supports another combatant's attack</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec> increases.
+      TC: |-
+        回合開始時，支援範圍內除自身外的<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="鋼鐵線">$$SteelLine:?$</cmt>部隊員或行動力較低的輕裝 / 重裝型我方的攻擊</sec>。
+        <sec>此效果無法解除。</sec>
+        當自身<sec typ="cond"><buff typ="SUPPORT_ATTACK" />支援其他戰鬥員的攻擊</sec>時，自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>增加。
   "4":
     key: "4"
     icon: P.Snipe
@@ -4443,6 +4494,23 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        숙련된 조준으로 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec>가 증가합니다.
+        <sec>스킬 레벨 10에서 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val base="1" per="0" /></sec> 효과가 추가됩니다.</sec>
+        자신이 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원</sec> 또는 <sec typ="cond"><buff typ="DEF_Char" /> 지정 보호</sec>를 받는 상태인 경우, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val base="0.2" per="0.01" r /></sec>가 증가합니다.
+      JP: |-
+        熟練した照準で<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="1" r /></sec>が増加します。
+        <sec>スキルレベル10で<sec typ="buff"><buff typ="RANGE_UP" />射程<val base="1" per="0" /></sec>効果が追加されます。</sec>
+        自身が<sec typ="cond"><buff typ="SUPPORT_ATTACK" />攻撃支援</sec>または<sec typ="cond"><buff typ="DEF_Char" />指定保護</sec>を受けている状態の場合、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val base="0.2" per="0.01" r /></sec>が増加します。
+      EN: |-
+        With trained aim, increases <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="1" r /></sec>.
+        <sec>At Skill Lv. 10, an additional <sec typ="buff"><buff typ="RANGE_UP" /> Range <val base="1" per="0" /></sec> effect is added.</sec>
+        If self is under <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> support attack</sec> or <sec typ="cond"><buff typ="DEF_Char" /> designated protection</sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val base="0.2" per="0.01" r /></sec> increases.
+      TC: |-
+        以熟練的瞄準使<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="1" r /></sec>增加。
+        <sec>技能等級10時，會追加<sec typ="buff"><buff typ="RANGE_UP" />射程<val base="1" per="0" /></sec>效果。</sec>
+        若自身處於<sec typ="cond"><buff typ="SUPPORT_ATTACK" />攻擊支援</sec>或<sec typ="cond"><buff typ="DEF_Char" />指定保護</sec>狀態，則<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val base="0.2" per="0.01" r /></sec>增加。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -5693,6 +5761,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, <sec typ="note">지상 제압 포격</sec> 상태가 적용되며 경장 또는 중장형 적 1기당 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>가 증가합니다.
+        또한 <sec typ="cond">중장형 적이 3기 이상</sec>일 경우, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="11" r /></sec>가 추가로 증가합니다.
+        <sec>해당 효과들은 해제 불가입니다.</sec>
+      JP: |-
+        戦闘開始時、<sec typ="note">地上制圧砲撃</sec>状態が適用され、軽装または重装型の敵1体につき自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>が増加します。
+        さらに<sec typ="cond">重装型の敵が3体以上</sec>の場合、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="11" r /></sec>が追加で増加します。
+        <sec>これらの効果は解除できません。</sec>
+      EN: |-
+        At battle start, applies the <sec typ="note">Ground Suppression Bombardment</sec> state, and increases own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> for each Light or Heavy Armor enemy.
+        If there are <sec typ="cond">3 or more Heavy Armor enemies</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="11" r /></sec> increases additionally.
+        <sec>These effects cannot be removed.</sec>
+      TC: |-
+        戰鬥開始時，套用<sec typ="note">地面壓制砲擊</sec>狀態，並使每1名輕裝或重裝型敵人讓自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>增加。
+        此外，若<sec typ="cond">重裝型敵人達3名以上</sec>，則自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="11" r /></sec>會額外增加。
+        <sec>上述效果皆無法解除。</sec>
 dialogue:
   KR:
     "1":
@@ -5805,9 +5890,7 @@ dialogue:
         그러니까, 지금부터 인류 재건에 꼭 필요한
         물자를 약탈할 거야.
         사령관 말이야.
-      Oath: 해적이 하는 일은 약탈하고 빼앗는 거지. 그러니까 사령관이 나한테 마음을 빼앗기는 것도 당연한 일이야… 그치만 고백하기까지 너무 오래
-        걸렸어! 내가 얼마나 기대하고 있었는지 알아? 흥, 내가 사랑하는 사람이니까 한 번 봐준다. 앞으로는 나 화 안 나게 매일매일
-        사랑한다고 해줘야 해?
+      Oath: 해적이 하는 일은 약탈하고 빼앗는 거지. 그러니까 사령관이 나한테 마음을 빼앗기는 것도 당연한 일이야… 그치만 고백하기까지 너무 오래 걸렸어! 내가 얼마나 기대하고 있었는지 알아? 흥, 내가 사랑하는 사람이니까 한 번 봐준다. 앞으로는 나 화 안 나게 매일매일 사랑한다고 해줘야 해?
       OathIdle_01: |-
         사령관, 해적단 하나 만들 생각 없어?
         아직 선원이 하나도 없긴 한데…
@@ -6193,12 +6276,9 @@ dialogue:
       SPIdle_02_01: |-
         Okay, Commander. Get on top.
         Now… I think it’s time for… high-altitude flying…
-      Oath: >-
-        I gave you a hint. Glad it worked… What? Oh, nothing. Thank you for
-        reading my mind. I'm… not exactly the honest type.
-
+      Oath: |-
+        I gave you a hint. Glad it worked… What? Oh, nothing. Thank you for reading my mind. I'm… not exactly the honest type.
         See, Commander. Today's celebration day, so how about going a bit further away? We can land midway… and rest there…
-
         … Hehe. Then I'll wait for you. Be quick, OK?
       OathIdle_01: |-
         Commander, sometimes I want to

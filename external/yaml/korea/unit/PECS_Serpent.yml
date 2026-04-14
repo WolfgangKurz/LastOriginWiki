@@ -2710,6 +2710,11 @@ skills:
             base: -0.5
             per: -0.025
             chance: 1
+    desc:
+      KR: 물 대포를 고압 분사해 <dmg elem="ice" />를 주며, 2라운드 동안 <sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 냉기/전기 저항력 <val idx="4" r /></sec>가 감소하며 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="3" r /></sec>가 증가하는 <sec typ="note">침수</sec> 상태로 만듭니다.
+      JP: 放水砲を高圧噴射し<dmg elem="ice" />のダメージを与え、2ラウンドの間、<sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" />冷気/電気耐性<val idx="4" r /></sec>が減少し、<sec typ="buff"><buff typ="FIRERES_UP" />火炎耐性<val idx="3" r /></sec>が増加する<sec typ="note">浸水</sec>状態にします。
+      EN: Sprays high pressure water from a water cannon and deals <dmg elem="ice" /> damage, Submerging the target for 2 rounds, which decreases <sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" />Cold/Electric Resistance<val idx="4" r /></sec> and increases <sec typ="buff"><buff typ="FIRERES_UP" />Fire Resistance<val idx="3" r /></sec>.
+      TC: 以高壓噴射水砲造成<dmg elem="ice" />傷害，使目標進入<sec typ="note">浸水</sec>狀態，持續2回合，並減少<sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" />冰霜/電擊抵抗<val idx="4" r /></sec>、增加<sec typ="buff"><buff typ="FIRERES_UP" />火焰抵抗<val idx="3" r /></sec>。
   "2":
     key: "2"
     icon: IceShot
@@ -4855,6 +4860,27 @@ skills:
               level: "0"
             value: Char_PECS_Sadius_N
             chance: 1
+    desc:
+      KR: |-
+        액화 질소를 분사해 <dmg elem="ice" />를 주며, 2라운드 동안 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
+        대상이 <sec typ="note">침수</sec> 상태면 <sec typ="note">빙결</sec> 상태로 만듭니다.
+        <sec typ="cond">빙결</sec> 상태에선 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec>이며, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 적용됩니다.
+        스쿼드 내에 <char uid="PECS_Sadius" />가 있을 시, 지정 대상에게 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">일렉트릭 펜스</sec> 스킬 협동 공격</sec>을 합니다.
+      JP: |-
+        液化窒素を噴射し<dmg elem="ice" />のダメージを与え、2ラウンドの間<sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態にします。
+        対象が<sec typ="note">浸水</sec>状態の場合は<sec typ="note">氷結</sec>状態にします。
+        <sec typ="cond">氷結</sec>状態では<sec typ="buff"><buff typ="STUN" />行動不可</sec>となり、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>が適用されます。
+        分隊内に<char uid="PECS_Sadius" />がいる場合、指定対象に<sec typ="buff"><buff typ="TOGETHER_ATTACK" /><sec typ="note">エレクトリックフェンス</sec>スキル協同攻撃</sec>を行います。
+      EN: |-
+        Sprays Liquid Nitrogen and deals <dmg elem="ice" /> damage, Immobilizing the target for 2 rounds.
+        If the target is <sec typ="note">Submerged</sec>, inflict <sec typ="note">Freeze</sec>.
+        While <sec typ="cond">Frozen</sec>, the target becomes <sec typ="buff"><buff typ="STUN" />Action Disabled</sec> and <sec typ="buff"><buff typ="VULNERABLE" />received damage<val idx="1" r /></sec> is applied.
+        If <char uid="PECS_Sadius" /> is in the squad, launch a co-op attack at the designated target with the <sec typ="note">Electric Fence</sec> skill.
+      TC: |-
+        噴射液態氮造成<dmg elem="ice" />傷害，並使目標陷入<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態，持續2回合。
+        若目標處於<sec typ="note">浸水</sec>狀態，則使其陷入<sec typ="note">冰凍</sec>狀態。
+        處於<sec typ="cond">冰凍</sec>狀態時，會<sec typ="buff"><buff typ="STUN" />無法行動</sec>，並套用<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="1" r /></sec>。
+        若小隊內有<char uid="PECS_Sadius" />，則對指定目標使用<sec typ="note">電圍欄</sec>技能進行協力攻擊。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -5013,6 +5039,11 @@ skills:
             base: 0.04
             per: 0.01
             chance: 1
+    desc:
+      KR: 라운드 개시 시, 지정 범위의 <sec typ="buff"><buff typ="DEF_Char" /> 경장 / 중장형 아군을 보호</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>를 증가시킵니다.
+      JP: ラウンド開始時、指定範囲の<sec typ="buff"><buff typ="DEF_Char" />軽装型 / 重装型の味方を保護</sec>し、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>を増加させます。
+      EN: At the start of the round, protects <sec typ="buff"><buff typ="DEF_Char" />Light Armor / Heavy Armor allies</sec> in the designated area and increases their <sec typ="buff"><buff typ="AP_UP" />MOVE<val idx="3" r /></sec>.
+      TC: 回合開始時，保護指定範圍內的<sec typ="buff"><buff typ="DEF_Char" />輕裝型 / 重裝型我軍</sec>，並增加其<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -5348,6 +5379,19 @@ skills:
             base: 0.12
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="3" signless /> HP로 전투 속행</sec> 효과를 얻습니다.
+        라운드 개시 시, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소하며 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="5" r /></sec>가 증가합니다.
+      JP: |-
+        戦闘開始時、<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="3" signless />HPで戦闘続行</sec>効果を獲得します。
+        ラウンド開始時、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" r inv /></sec>が減少し、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" />火炎耐性<val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" />冷気耐性<val idx="5" r /></sec>が増加します。
+      EN: |-
+        At the start of combat, gains <sec typ="buff"><buff typ="DEF_RESSURRECT" />Continue Combat with <val idx="3" signless /> HP</sec>.
+        At the start of the round, <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage<val idx="0" r inv /></sec> is decreased and <sec typ="buff"><buff typ="AP_UP" />MOVE<val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" />Fire Resistance<val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" />Cold Resistance<val idx="5" r /></sec> increases.
+      TC: |-
+        戰鬥開始時，獲得以<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="3" signless /> HP繼續戰鬥</sec>效果。
+        回合開始時，減少<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="0" r inv /></sec>，並增加<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" />火焰抵抗<val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" />冰霜抵抗<val idx="5" r /></sec>。
 dialogue:
   KR:
     "1":
@@ -5404,9 +5448,7 @@ dialogue:
         선크림 다 지워지잖아!
         사령관 손 모양으로 타버리지 않게…
         다시 꼼꼼히 발라줘야 된다?
-      Oath: 정말이지… 사령관 때문에 내가 점점 이상해지는 거 같아. 수영장에서 다치는 사람이 없나 열심히 두리번거려야 되는데, 수영장에서
-        사령관이 보이면 사령관만 보게 되는걸… 책임져야 해, 사령관! 사령관한테 빠져서 허우적대는 나를 구할 수 있는 건, 이제 사령관
-        뿐이란 말이야!
+      Oath: 정말이지… 사령관 때문에 내가 점점 이상해지는 거 같아. 수영장에서 다치는 사람이 없나 열심히 두리번거려야 되는데, 수영장에서 사령관이 보이면 사령관만 보게 되는걸… 책임져야 해, 사령관! 사령관한테 빠져서 허우적대는 나를 구할 수 있는 건, 이제 사령관 뿐이란 말이야!
       OathIdle_01: |-
         사령관! 전신 운동하고 나서
         스트레칭 빼먹으면 안 된다고!
@@ -5463,9 +5505,7 @@ dialogue:
         우리 사령관의 이 넘치는 양기를 
         유령의 음기로 덮어줘야 하는데… 
         나까지 몸이 뜨거워져 버리네…
-      Oath: 유령을 성불시키려면 소원을 들어줘야 한다고 하는데, 사령관이 내 소원을 들어줘 버렸네? 헤헤, 그래도 아직은 성불할 수 없지!
-        죽어서도 바라던 사령관의 반지를 드디어 받게 되었는걸! 나도 사랑해, 사령관! 유령한테 평생이란 말은 어색하니까, 영원히!
-        사령관만을 사랑할게!
+      Oath: 유령을 성불시키려면 소원을 들어줘야 한다고 하는데, 사령관이 내 소원을 들어줘 버렸네? 헤헤, 그래도 아직은 성불할 수 없지! 죽어서도 바라던 사령관의 반지를 드디어 받게 되었는걸! 나도 사랑해, 사령관! 유령한테 평생이란 말은 어색하니까, 영원히! 사령관만을 사랑할게!
       OathIdle_01: |-
         사령관과 함께하는 날들이 너무 행복해서 
         성불해 버릴 것 같아… 헤헤, 농담이야! 
@@ -5617,9 +5657,7 @@ dialogue:
         선크림 다 지워지잖아!
         사령관 손 모양으로 타버리지 않게…
         다시 꼼꼼히 발라줘야 된다?
-      Oath: "[미번역]정말이지… 사령관 때문에 내가 점점 이상해지는 거 같아. 수영장에서 다치는 사람이 없나 열심히 두리번거려야 되는데,
-        수영장에서 사령관이 보이면 사령관만 보게 되는걸… 책임져야 해, 사령관! 사령관한테 빠져서 허우적대는 나를 구할 수 있는 건,
-        이제 사령관 뿐이란 말이야!"
+      Oath: "[미번역]정말이지… 사령관 때문에 내가 점점 이상해지는 거 같아. 수영장에서 다치는 사람이 없나 열심히 두리번거려야 되는데, 수영장에서 사령관이 보이면 사령관만 보게 되는걸… 책임져야 해, 사령관! 사령관한테 빠져서 허우적대는 나를 구할 수 있는 건, 이제 사령관 뿐이란 말이야!"
       OathIdle_01: |-
         [미번역]사령관! 전신 운동하고 나서
         스트레칭 빼먹으면 안 된다고!
@@ -5674,9 +5712,7 @@ dialogue:
         [미번역]우리 사령관의 이 넘치는 양기를 
         유령의 음기로 덮어줘야 하는데… 
         나까지 몸이 뜨거워져 버리네…
-      Oath: "[미번역]유령을 성불시키려면 소원을 들어줘야 한다고 하는데, 사령관이 내 소원을 들어줘 버렸네? 헤헤, 그래도 아직은 성불할 수
-        없지! 죽어서도 바라던 사령관의 반지를 드디어 받게 되었는걸! 나도 사랑해, 사령관! 유령한테 평생이란 말은 어색하니까, 영원히!
-        사령관만을 사랑할게!"
+      Oath: "[미번역]유령을 성불시키려면 소원을 들어줘야 한다고 하는데, 사령관이 내 소원을 들어줘 버렸네? 헤헤, 그래도 아직은 성불할 수 없지! 죽어서도 바라던 사령관의 반지를 드디어 받게 되었는걸! 나도 사랑해, 사령관! 유령한테 평생이란 말은 어색하니까, 영원히! 사령관만을 사랑할게!"
       OathIdle_01: |-
         [미번역]사령관과 함께하는 날들이 너무 행복해서 
         성불해 버릴 것 같아… 헤헤, 농담이야! 
@@ -5812,8 +5848,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Join: Yeap! Nice to meet you, Commander. I just need to follow your orders,
-        right?
+      Join: Yeap! Nice to meet you, Commander. I just need to follow your orders, right?
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -5858,10 +5893,8 @@ dialogue:
       SPIdle_02_01: |-
         I guess… a man should have
         that kind of courage.
-      Oath: >-
-        Commander… Now I realize your glances were full of love. Oh, I fell a
-        step behind. I should've said it
-
+      Oath: |-
+        Commander… Now I realize your glances were full of love. Oh, I fell a step behind. I should've said it
         first. Commander, I'll make you happy. And walk only flower paths. What do you say?
       OathIdle_01: |-
         Don’t worry, Commander. I’ll keep my promise
@@ -5890,13 +5923,10 @@ dialogue:
         A P.E. teacher would suit me well too, right?
         Well, whatever job I take, it won't change the fact
         that I'll be with the Commandere.​
-      Idle_01_02: >-
+      Idle_01_02: |-
         Snacks? Hmm… Later. I’m shooting for a calendar soon
-
         So I’m taking care of my body. It’s not like I’m not confident with my body
-
         but the Commander is going to see, so I should keep in shape.
-
         Aren’t you looking forward to it?​
       Idle_01_03: |-
         I’m here! You called me, right? Did you miss me much?

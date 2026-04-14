@@ -2671,6 +2671,19 @@ skills:
             base: 36
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        기관총을 발사해 <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 상태인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가하며 각각 중첩되어 적용됩니다.
+      JP: |-
+        機関銃を発射して<dmg elem="physics" />を与えます。
+        対象が<sec typ="cond"><buff typ="EVADE_DOWN" /> 回避減少</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 防御力減少</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加し、それぞれ重複して適用されます。
+      EN: |-
+        Fires a machine gun, dealing <dmg elem="physics" /> damage.
+        If the target is in <sec typ="cond"><buff typ="EVADE_DOWN" /> EVA Decrease</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> DEF Decrease</sec> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases and each effect stacks separately.
+      TC: |-
+        發射機關槍，造成<dmg elem="physics" />傷害。
+        若目標處於<sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避減少</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 防禦力減少</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加，且各自獨立疊加。
   "2":
     key: "2"
     icon: MGWideShot
@@ -4559,6 +4572,19 @@ skills:
             base: 36
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        기관총을 난사해 목표 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 상태인 경우 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가하며 각각 중첩되어 적용됩니다.
+      JP: |-
+        機関銃を乱射して目標範囲に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
+        対象が<sec typ="cond"><buff typ="EVADE_DOWN" /> 回避減少</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 防御力減少</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加し、それぞれ重複して適用されます。
+      EN: |-
+        Sprays a machine gun at the target area, dealing <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage.
+        If the target is in <sec typ="cond"><buff typ="EVADE_DOWN" /> EVA Decrease</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> DEF Decrease</sec> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases and each effect stacks separately.
+      TC: |-
+        以機關槍掃射目標範圍，造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害。
+        若目標處於<sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避減少</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 防禦力減少</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加，且各自獨立疊加。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -4867,6 +4893,27 @@ skills:
             base: 48
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+        범위 내에 자신을 제외한 <sec typ="note">스틸라인 계통</sec> 부대원 또는 지원기에게 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격 지원</sec> 효과를 부여합니다.
+        라운드 개시 시, 스쿼드 내에 <char uid="BR_Brownie" />가 있으면 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 받는 피해 증가 효과를 제거</sec>합니다.
+        <sec typ="note">스틸라인 계통</sec> : <char uid="BR_Marie" />, <char uid="BR_Brownie" />, <char uid="BR_Efreeti" />, <char uid="BR_Impet" />, <char uid="BR_PXSilky" />, <char uid="BR_Phoenix" />, <char uid="BR_Gnome" />, <char uid="BR_RedHood" />
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
+        範囲内の自分を除く<sec typ="note">スチールライン系統</sec>の部隊員または支援機に<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃支援</sec>効果を付与します。
+        ラウンド開始時、分隊内に<char uid="BR_Brownie" />がいる場合、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 受けるダメージ増加効果を解除</sec>します。
+        <sec typ="note">スチールライン系統</sec> : <char uid="BR_Marie" />, <char uid="BR_Brownie" />, <char uid="BR_Efreeti" />, <char uid="BR_Impet" />, <char uid="BR_PXSilky" />, <char uid="BR_Phoenix" />, <char uid="BR_Gnome" />, <char uid="BR_RedHood" />
+      EN: |-
+        At the start of the round, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="2" r /></sec>.
+        Grants <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attack Support</sec> to <sec typ="note">Steel Line</sec> units or Supporters within range excluding self.
+        At the start of the round, if <char uid="BR_Brownie" /> is in the squad, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes Received Damage Increase effects</sec>.
+        <sec typ="note">Steel Line</sec> : <char uid="BR_Marie" />, <char uid="BR_Brownie" />, <char uid="BR_Efreeti" />, <char uid="BR_Impet" />, <char uid="BR_PXSilky" />, <char uid="BR_Phoenix" />, <char uid="BR_Gnome" />, <char uid="BR_RedHood" />
+      TC: |-
+        回合開始時，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
+        對範圍內除了自身以外的<sec typ="note">鋼線系統</sec>隊員或支援機施加<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻擊支援</sec>效果。
+        回合開始時，若小隊內有<char uid="BR_Brownie" />，則<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除所受傷害增加效果</sec>。
+        <sec typ="note">鋼線系統</sec> : <char uid="BR_Marie" />、<char uid="BR_Brownie" />、<char uid="BR_Efreeti" />、<char uid="BR_Impet" />、<char uid="BR_PXSilky" />、<char uid="BR_Phoenix" />、<char uid="BR_Gnome" />、<char uid="BR_RedHood" />
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -5205,6 +5252,19 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>가 증가하고 스쿼드 내의 지원기 1기당 <sec typ="note">잔탄 보급</sec> 상태가 적용되어 최대 4중첩까지 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="note">잔탄 보급</sec>이 적용된 상태에서 <sec typ="cond">액티브 스킬을 사용 시</sec>, 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" slot="1" r /></sec>를 감소시키고 치명타 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>が増加し、分隊内の支援機1機ごとに<sec typ="note">残弾補給</sec>状態が適用され、最大4スタックまで<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
+        <sec typ="note">残弾補給</sec>が適用された状態で<sec typ="cond">アクティブスキル使用時</sec>, 対象の<sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="2" slot="1" r /></sec>を減少させ、クリティカル時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ減少効果を解除</sec>します。
+      EN: |-
+        At the start of the round, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec>, and grants <sec typ="note">Remaining Ammo Supply</sec> for each Supporter in the squad, increasing <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="2" r /></sec> up to 4 stacks.
+        While <sec typ="note">Remaining Ammo Supply</sec> is active, <sec typ="cond">when using an Active Skill</sec>, decreases the target’s <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="2" slot="1" r /></sec>, and on CRIT removes the target’s <sec typ="buff"><buff typ="REMOVE_BUFF" /> Received Damage Decrease effect</sec>.
+      TC: |-
+        回合開始時，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>增加，且小隊內每1名支援機都會套用<sec typ="note">殘彈補給</sec>狀態，使<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>最多增加至4層。
+        在套用<sec typ="note">殘彈補給</sec>狀態下<sec typ="cond">使用主動技能時</sec>，降低目標的<sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="2" slot="1" r /></sec>，暴擊時則<sec typ="buff"><buff typ="REMOVE_BUFF" /> 解除目標的所受傷害減少效果</sec>。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -5613,6 +5673,23 @@ skills:
             base: 0.04
             per: 0.004
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>가 증가하고 스쿼드 내에 <sec typ="note">스틸라인 계통 지원기</sec>가 있는 경우 기본 효과가 추가 적용됩니다.
+        라운드 개시 시,  자신에게 <sec typ="cond"><buff typ="SKILL_UP" /> 스킬 위력 증가</sec> 효과가 적용 중인 경우 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec> 증가 / <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec>이 부여됩니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />  공격 지원 시</sec>, 최대 5회까지 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="9" r /></sec>가 증가합니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec>が増加し、分隊内に<sec typ="note">スチールライン系統支援機</sec>がいる場合、基本効果が追加で適用されます。
+        ラウンド開始時、自分に<sec typ="cond"><buff typ="SKILL_UP" /> スキル威力増加</sec>効果が適用中の場合、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec>増加 / <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec>が付与されます。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻撃支援時</sec>, 最大5回まで<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="9" r /></sec>が増加します。
+      EN: |-
+        At the start of the round, increases <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="0" r /></sec>, and if there is a <sec typ="note">Steel Line Supporter</sec> in the squad, the basic effect is additionally applied.
+        At the start of the round, if <sec typ="cond"><buff typ="SKILL_UP" /> Skill Power Increase</sec> is active on self, grants <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="6" r /></sec> Increase / <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Re-Attack</sec>.
+        When <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> providing Attack Support</sec>, increases <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="8" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="9" r /></sec> up to 5 times.
+      TC: |-
+        回合開始時，<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec>增加，且若小隊內有<sec typ="note">鋼線系統支援機</sec>，則額外套用基本效果。
+        回合開始時，若自身套用<sec typ="cond"><buff typ="SKILL_UP" /> 技能威力增加</sec>效果，則獲得<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec>增加 / <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec>。
+        在<sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻擊支援時</sec>，最多可增加5次<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="9" r /></sec>。
 dialogue:
   KR:
     "1":
@@ -5668,9 +5745,7 @@ dialogue:
         개방된 모습을 했다고 개방적인 행동이
         허용되는 것은 아닙니다.
         …각하니까 허용되는 겁니다.
-      Oath: 저보다 특별한 분들이 많았기에 포기하고 있었습니다. 저는 기껏해야 말단 병사 중 하나니까요. 하지만… 각하께 저는 특별한 한
-        명이었군요. 각하께서 저를 특별히 여겨주셨기에 저도 제 자신을 특별히 여길 수 있게 되었어요. 그렇기에 저도 자신감을 가지고
-        말해보고자 합니다. 사랑합니다.
+      Oath: 저보다 특별한 분들이 많았기에 포기하고 있었습니다. 저는 기껏해야 말단 병사 중 하나니까요. 하지만… 각하께 저는 특별한 한 명이었군요. 각하께서 저를 특별히 여겨주셨기에 저도 제 자신을 특별히 여길 수 있게 되었어요. 그렇기에 저도 자신감을 가지고 말해보고자 합니다. 사랑합니다.
       OathIdle_01: |-
         각하께선 제가 노출이 많은 옷을
         입기를 바라십니까?
@@ -5729,9 +5804,7 @@ dialogue:
         각하를 위해서 특별한 공부를 했는데…
         마침 각하께서도 원하시는 것 같네요.
         실습… 해봐야겠죠?
-      Oath: 저 같은 말단 병사는 전쟁이 끝날 때까지 살아남기 힘듭니다. 그렇다고 해서 전쟁 후의 삶을 꿈꾸지 않는 것은 아닙니다. 전쟁이
-        끝나면… 선생님이 되고 싶어요. 그리고… 각하의 신부가 되고 싶어요. 전쟁은 끝나지 않았지만 제 꿈이 모두 이뤄졌네요.
-        감사합니다. 그리고… 사랑해요.
+      Oath: 저 같은 말단 병사는 전쟁이 끝날 때까지 살아남기 힘듭니다. 그렇다고 해서 전쟁 후의 삶을 꿈꾸지 않는 것은 아닙니다. 전쟁이 끝나면… 선생님이 되고 싶어요. 그리고… 각하의 신부가 되고 싶어요. 전쟁은 끝나지 않았지만 제 꿈이 모두 이뤄졌네요. 감사합니다. 그리고… 사랑해요.
       OathIdle_01: |-
         모든 전쟁이 끝나면 아이들이 태어나겠죠?
         그리고 그 아이들 중에는…
@@ -5880,9 +5953,7 @@ dialogue:
         [미번역]개방된 모습을 했다고 개방적인 행동이
         허용되는 것은 아닙니다.
         …각하니까 허용되는 겁니다.
-      Oath: "[미번역]저보다 특별한 분들이 많았기에 포기하고 있었습니다. 저는 기껏해야 말단 병사 중 하나니까요. 하지만… 각하께 저는 특별한
-        한 명이었군요. 각하께서 저를 특별히 여겨주셨기에 저도 제 자신을 특별히 여길 수 있게 되었어요. 그렇기에 저도 자신감을 가지고
-        말해보고자 합니다. 사랑합니다."
+      Oath: "[미번역]저보다 특별한 분들이 많았기에 포기하고 있었습니다. 저는 기껏해야 말단 병사 중 하나니까요. 하지만… 각하께 저는 특별한 한 명이었군요. 각하께서 저를 특별히 여겨주셨기에 저도 제 자신을 특별히 여길 수 있게 되었어요. 그렇기에 저도 자신감을 가지고 말해보고자 합니다. 사랑합니다."
       OathIdle_01: |-
         [미번역]각하께선 제가 노출이 많은 옷을
         입기를 바라십니까?
@@ -5941,9 +6012,7 @@ dialogue:
         [미번역]각하를 위해서 특별한 공부를 했는데…
         마침 각하께서도 원하시는 것 같네요.
         실습… 해봐야겠죠?
-      Oath: "[미번역]저 같은 말단 병사는 전쟁이 끝날 때까지 살아남기 힘듭니다. 그렇다고 해서 전쟁 후의 삶을 꿈꾸지 않는 것은 아닙니다.
-        전쟁이 끝나면… 선생님이 되고 싶어요. 그리고… 각하의 신부가 되고 싶어요. 전쟁은 끝나지 않았지만 제 꿈이 모두 이뤄졌네요.
-        감사합니다. 그리고… 사랑해요."
+      Oath: "[미번역]저 같은 말단 병사는 전쟁이 끝날 때까지 살아남기 힘듭니다. 그렇다고 해서 전쟁 후의 삶을 꿈꾸지 않는 것은 아닙니다. 전쟁이 끝나면… 선생님이 되고 싶어요. 그리고… 각하의 신부가 되고 싶어요. 전쟁은 끝나지 않았지만 제 꿈이 모두 이뤄졌네요. 감사합니다. 그리고… 사랑해요."
       OathIdle_01: |-
         [미번역]모든 전쟁이 끝나면 아이들이 태어나겠죠?
         그리고 그 아이들 중에는…
@@ -6119,9 +6188,8 @@ dialogue:
         Are you a male version
         of Brownie? This is not a proper behavior
         at a public place.
-      Oath: >-
+      Oath: |-
         This… can't be… I don't know… how I look…
-
         These things only happened in my imaginations… Your Excellency, am I crying?
       OathIdle_01: |-
         Please forget

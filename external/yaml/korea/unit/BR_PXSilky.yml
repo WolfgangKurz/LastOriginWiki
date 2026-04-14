@@ -2081,6 +2081,23 @@ skills:
             base: -0.1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        점착탄을 던진 후, SMG를 발사해 <dmg elem="physics" />를 줍니다.
+        적중 대상은 2라운드 동안 대상은 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 증가하며, <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec>가 감소하고 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태가 됩니다.
+        대상이 <sec typ="cond">경장 / 중장형</sec>일 경우 2라운드 동안 기본 효과의 50%가 추가 적용되며 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="5" r /></sec>를 감소시킵니다.
+      JP: |-
+        粘着弾を投げた後、SMGを発射して<dmg elem="physics" />を与えます。
+        命中した対象は2ラウンドの間、<sec typ="buff"><buff typ="VULNERABLE" />被ダメージ<val idx="1" r /></sec>が増加し、<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="0" r /></sec>が減少し、<sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態になります。
+        対象が<sec typ="cond">軽装 / 重装型</sec>の場合、2ラウンドの間、基本効果の50%が追加適用され、<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="5" r /></sec>を減少させます。
+      EN: |-
+        Throws a sticky bomb and then fires an SMG to deal <dmg elem="physics" />.
+        The target hit has <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increased, <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="0" r /></sec> reduced, and becomes <sec typ="buff"><buff typ="SNARE" /> Immobile</sec> for 2 rounds.
+        If the target is <sec typ="cond">Light / Heavy Armor</sec>, 50% of the base effect is additionally applied for 2 rounds and <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" r /></sec> is reduced.
+      TC: |-
+        丟擲黏著彈後，以SMG造成<dmg elem="physics" />。
+        命中的目標在2回合內會使<sec typ="buff"><buff typ="VULNERABLE" />受傷害<val idx="1" r /></sec>增加、<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="0" r /></sec>降低，並進入<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態。
+        若目標為<sec typ="cond">輕裝 / 重裝型</sec>，則在2回合內額外套用50%的基礎效果，並使<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="5" r /></sec>降低。
   "2":
     key: "2"
     icon: SelfSpdBuff
@@ -2451,6 +2468,31 @@ skills:
             base: 4
             per: 0.2
             chance: 1
+    desc:
+      KR: |-
+        현장 보급으로 목표 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>을(를) 증가시키고, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        대상의 역할군에 따라 2라운드 동안 추가 효과를 받습니다.
+        공격기 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>
+        보호기 : <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="6" r /></sec>
+        지원기 : <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>
+      JP: |-
+        現場補給で目標の味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="8" /></sec>を増加させ、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害効果を解除</sec>します。
+        対象の役割に応じて、2ラウンドの間追加効果を受けます。
+        攻撃機 : <sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec>
+        保護機 : <sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="6" r /></sec>
+        支援機 : <sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" /></sec>
+      EN: |-
+        Field resupply increases the target ally's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes harmful effects</sec>.
+        Depending on the target's role, additional effects are gained for 2 rounds.
+        Attacker: <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec>
+        Protector: <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="6" r /></sec>
+        Supporter: <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>
+      TC: |-
+        透過現場補給提升目標我方的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除有害效果</sec>。
+        依照目標的職能，在2回合內獲得追加效果。
+        攻擊機：<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec>
+        保護機：<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="6" r /></sec>
+        支援機：<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -2614,6 +2656,19 @@ skills:
             base: 9999999
             per: 0
             chance: 0.1
+    desc:
+      KR: |-
+        적이 공격할 경우, 몸을 웅크려 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소하고 <sec typ="buff"><buff typ="DEF_UP" /> 효과 저항<val idx="1" r /></sec>가 증가합니다.
+        피격 시, <sec typ="chance"><chance idx="2" /> 확률</sec>로 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 최소 피해</sec>만 받습니다.
+      JP: |-
+        敵が攻撃する場合、身をかがめて<sec typ="buff"><buff typ="DAMAGE_REDUCE" />被ダメージ<val idx="0" r inv /></sec>が減少し、<sec typ="buff"><buff typ="DEF_UP" />効果抵抗<val idx="1" r /></sec>が増加します。
+        被弾時、<sec typ="chance"><chance idx="2" />確率</sec>で<sec typ="buff"><buff typ="DAMAGE_REDUCE" />最小ダメージ</sec>のみ受けます。
+      EN: |-
+        When enemies attack, crouches to reduce <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> and increase <sec typ="buff"><buff typ="DEF_UP" /> Effect Resistance <val idx="1" r /></sec>.
+        When hit, there is a <sec typ="chance"><chance idx="2" /> chance</sec> to only take <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> minimum damage</sec>.
+      TC: |-
+        當敵人攻擊時，會蹲下使<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受傷害<val idx="0" r inv /></sec>降低，並使<sec typ="buff"><buff typ="DEF_UP" />效果抵抗<val idx="1" r /></sec>增加。
+        被擊中時，將有<sec typ="chance"><chance idx="2" />機率</sec>僅受到<sec typ="buff"><buff typ="DAMAGE_REDUCE" />最低傷害</sec>。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -2917,6 +2972,19 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 거대한 배낭으로 경장 / 중장형 아군들에게 간이 바리케이트를 제공해 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec>를 증가 시키고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec> 감소 효과를 부여합니다.
+        <sec typ="cond">대상이 자신보다 행동력이 낮을 경우</sec> <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="3" r /></sec>를 감소 시키고 <sec typ="cond">자신이 피격 또는 <sec type="note">점착탄 투척</sec> 사용 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 증가합니다.
+      JP: |-
+        ラウンド開始時、巨大な背負い袋で軽装 / 重装型の味方に簡易バリケードを提供し、<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="0" r /></sec>を増加させ、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />被ダメージ<val idx="1" r inv /></sec>減少効果を付与します。
+        <sec typ="cond">対象の行動力が自分より低い場合</sec> <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="3" r /></sec>を減少させ、<sec typ="cond">自分が被弾または<sec typ="note">粘着弾投擲</sec>使用時</sec>、範囲内の味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が増加します。
+      EN: |-
+        At round start, provides makeshift barricades to Light / Heavy Armor allies with a huge backpack, increasing <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> and granting <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="1" r inv /></sec> reduction.
+        <sec typ="cond">If the target has lower AP than self</sec>, reduces <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="3" r /></sec>, and <sec typ="cond">when self is hit or uses <sec typ="note">Sticky Bomb Throw</sec></sec>, increases allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> in range.
+      TC: |-
+        回合開始時，以巨大背包為輕裝 / 重裝型我方提供簡易路障，使<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="0" r /></sec>增加，並賦予<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受傷害<val idx="1" r inv /></sec>降低效果。
+        <sec typ="cond">若目標的行動力低於自身</sec>，則降低<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="3" r /></sec>；且<sec typ="cond">當自身被擊中或使用<sec type="note">黏著彈投擲</sec></sec>時，範圍內我方的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>增加。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -3290,6 +3358,23 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>를 증가 시킵니다.
+        대상이 <cmt t="스틸라인 계열">$$SteelLine:?$</cmt> 부대원일 경우, 기본 효과가 추가 적용되고 <sec typ="buff"><buff typ="AP_UP" />  행동력 <val idx="6" r /></sec>가 증가합니다.
+        대상이 <sec typ="cond">아군에 의한 행동력 증가 상태인 경우</sec>, 기본 효과가 추가 적용되고 <sec typ="buff"><buff typ="AP_UP" /> 방어 관통 <val idx="9" r /></sec>가 증가합니다.
+      JP: |-
+        ラウンド開始時、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec>を増加させます。
+        対象が<cmt t="Steel Line">$$SteelLine:?$</cmt>部隊員の場合、基本効果が追加適用され、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>が増加します。
+        対象が<sec typ="cond">味方による行動力増加状態の場合</sec>、基本効果が追加適用され、<sec typ="buff"><buff typ="AP_UP" />防御貫通<val idx="9" r /></sec>が増加します。
+      EN: |-
+        At round start, increases allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> in range.
+        If the target is a <cmt t="Steel Line">$$SteelLine:?$</cmt> unit, the base effect is additionally applied and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" r /></sec> increases.
+        If the target is in a <sec typ="cond">AP-up state caused by an ally</sec>, the base effect is additionally applied and <sec typ="buff"><buff typ="AP_UP" /> Defense Penetration <val idx="9" r /></sec> increases.
+      TC: |-
+        回合開始時，提升範圍內我方的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>。
+        若目標為<cmt t="鋼鐵線部隊">$$SteelLine:?$</cmt>部隊員，則會追加套用基礎效果，並使<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>增加。
+        若目標處於<sec typ="cond">由我方造成的行動力增加狀態</sec>，則會追加套用基礎效果，並使<sec typ="buff"><buff typ="AP_UP" />防禦穿透<val idx="9" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -3416,10 +3501,7 @@ dialogue:
         사령관님. 잠깐만요…
         파라솔로 가리고…
         마저… 해요…​
-      Oath: 이건 비밀인데요, 훈련 중 가끔 상상했어요. 무거운 가방을 짊어진 게 아닌 해변에서 여유로운 시간을 보내는 제 모습을요…​ 그치만
-        이런 수영복을 입은 모습은... 상상 속에서 조차 주인공이 되진 못했는데…​ 이렇게 사령관님께서 반지까지 주시는 걸 보니 깨어나면
-        사라질 한 여름밤의 꿈은 아닐거에요, 그렇죠…?​ 네…? 절 위한 보급품까지 따로 준비 해 주셨다고요? 그건… 우읏...
-        ​무서우니까... 부드럽게... 대해 주셔야 해요, 부탁 드리겠습니다♥
+      Oath: 이건 비밀인데요, 훈련 중 가끔 상상했어요. 무거운 가방을 짊어진 게 아닌 해변에서 여유로운 시간을 보내는 제 모습을요…​ 그치만 이런 수영복을 입은 모습은... 상상 속에서 조차 주인공이 되진 못했는데…​ 이렇게 사령관님께서 반지까지 주시는 걸 보니 깨어나면 사라질 한 여름밤의 꿈은 아닐거에요, 그렇죠…?​ 네…? 절 위한 보급품까지 따로 준비 해 주셨다고요? 그건… 우읏... ​무서우니까... 부드럽게... 대해 주셔야 해요, 부탁 드리겠습니다♥
       OathIdle_01: |-
         사령관님과 보내는 시간이 너무 행복해요…
         저, 한 번 타봐도 될까요?​
@@ -3724,12 +3806,9 @@ dialogue:
       SPIdle_02_01: |-
         Ugh, summer combat suit is
         thin… if you do that…
-      Oath: >-
-        Co-commander, you really meant it. I thought you were just saying that…
-        Thank you so much, commander.
-
+      Oath: |-
+        Co-commander, you really meant it. I thought you were just saying that… Thank you so much, commander.
         I’ll do everything else from now on, so only focus on your job, commander.
-
         And sometimes… tell me that I’m pretty like you just did.
       OathIdle_01: |-
         Commander, I brought you coffee.
@@ -3805,11 +3884,9 @@ dialogue:
         Commander. I feel comfortable
         just being with you?
       SPIdle_02_01: Excuse me… Commander? What are you thinking about?
-      Oath: >-
+      Oath: |-
         Whaat?! Isn't this… too fast? I mean… I'm not ready yet… Uh…
-
         I'll do the housekeeping so that you can focus on your work only. 
-
         Our house… doesn't have to be big. If there is a dining room for the two of us… I'm find with that.
       OathIdle_01: |-
         Hehe… My commander.
@@ -3841,9 +3918,8 @@ dialogue:
         Was everything okay today?
         Let’s cheer up for tomorrow.
         You can do it, Commander!
-      Idle_01_03: >-
+      Idle_01_03: |-
         Tell me if you want anything.
-
         Ammunition, sleeping bag, daily supplies… I can get you anything. … I-Including me, of course.
       SPIdle_01_01: S-stop whispering that I’m pretty… It makes my whole body tickle…
       MVP: ""

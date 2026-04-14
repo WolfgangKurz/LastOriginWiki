@@ -1864,6 +1864,23 @@ skills:
             base: -0.25
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        적과 충돌하여 단일 대상에게 <dmg elem="fire" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="3" r /></sec>를 감소시킵니다.
+        <sec>스킬 레벨 당 +10%의 적중 보정이 적용됩니다.</sec>
+      JP: |-
+        敵と衝突して単体対象に<dmg elem="fire" />を与えます。
+        <sec typ="cond">命中時</sec>、3ラウンドの間対象の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="3" r /></sec>を減少させます。
+        <sec>スキルレベルごとに+10%の命中補正が適用されます。</sec>
+      EN: |-
+        Collides with the enemy and deals <dmg elem="fire" /> to a single target.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="2" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="3" r /></sec> for 3 rounds.
+        <sec>+10% hit compensation is applied per skill level.</sec>
+      TC: |-
+        與敵人碰撞，對單一目標造成<dmg elem="fire" />。
+        <sec typ="cond">命中時</sec>，在3回合內降低目標的<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="3" r /></sec>。
+        <sec>每提升1級技能，都會套用+10%的命中補正。</sec>
   "2":
     key: "2"
     icon: WideFireShot
@@ -4567,6 +4584,27 @@ skills:
             base: 0.35
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 줍니다.
+        <sec typ="dmg">목표 지점 주변은 피해량이 75% 감소합니다.</sec>
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="6" r /></sec>를 감소시킵니다.
+        <sec typ="important">적중 여부에 관계 없이</sec>, 2라운드 동안 대상에게 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 지속 화염 피해 <val idx="7" signless /></sec>를 입힙니다.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="fire" />を与えます。
+        <sec typ="dmg">目標地点周辺はダメージ量が75%減少します。</sec>
+        <sec typ="cond">命中時</sec>、3ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="5" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性<val idx="6" r /></sec>を減少させます。
+        <sec typ="important">命中の有無に関係なく</sec>、2ラウンドの間対象に<sec typ="dmg"><buff typ="FireDMG_DOT" />継続火炎ダメージ<val idx="7" signless /></sec>を与えます。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="fire" /> to the designated area.
+        <sec typ="dmg">Damage dealt around the target location is reduced by 75%.</sec>
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="5" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> fire resistance <val idx="6" r /></sec> for 3 rounds.
+        <sec typ="important">Regardless of whether it hits</sec>, inflicts the target with <sec typ="dmg"><buff typ="FireDMG_DOT" /> persistent fire damage <val idx="7" signless /></sec> for 2 rounds.
+      TC: |-
+        對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="fire" />。
+        <sec typ="dmg">目標點周圍的傷害量會減少75%。</sec>
+        <sec typ="cond">命中時</sec>，在3回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="5" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性<val idx="6" r /></sec>。
+        <sec typ="important">無論是否命中</sec>，都會在2回合內對目標造成<sec typ="dmg"><buff typ="FireDMG_DOT" />持續火焰傷害<val idx="7" signless /></sec>。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -4779,6 +4817,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 3라운드 동안 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소합니다.
+        <sec typ="cond"><sec typ="note">화염 발톱</sec> 적중 시</sec>, <sec>효과를 갱신합니다.</sec>
+        <sec typ="cond"><elem type="fire" /> 화염 속성 피격 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="2" signless />회</sec>를 획득합니다.
+        <sec typ="cond">자신 외의 <sec typ="note"><cmt t="배틀 메이드">$$BattleMaid:?$</cmt></sec> 소속 전투원이 있을 경우</sec>, 상기 효과는 <sec><elem type="ice" /> 냉기 속성 피격 시에도 발동</sec>합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、3ラウンドの間自分の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" r inv /></sec>が減少します。
+        <sec typ="cond"><sec typ="note">炎の爪</sec>命中時</sec>、<sec>効果を更新します。</sec>
+        <sec typ="cond"><elem type="fire" />火炎属性被撃時</sec>、自分は<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化<val idx="2" signless />回</sec>を獲得します。
+        <sec typ="cond">自分以外の<sec typ="note"><cmt t="バトルメイド">$$BattleMaid:?$</cmt></sec>所属戦闘員がいる場合</sec>、上記効果は<sec><elem type="ice" />冷気属性被撃時にも発動</sec>します。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self's <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decreases for 3 rounds.
+        <sec typ="cond">When <sec typ="note">Fire Claws</sec> hits</sec>, <sec>the effect is refreshed.</sec>
+        <sec typ="cond">When hit by a <elem type="fire" /> fire attack</sec>, self gains <sec typ="buff"><buff typ="DEF_All" /> 1 damage nullification <val idx="2" signless /></sec>.
+        <sec typ="cond">If there is a combatant affiliated with <sec typ="note"><cmt t="Battle Maid">$$BattleMaid:?$</cmt></sec> other than self</sec>, the above effect also triggers when hit by <sec><elem type="ice" /> ice attacks</sec>.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，3回合內自身的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到的傷害<val idx="0" r inv /></sec>降低。
+        <sec typ="cond">當<sec typ="note">火焰爪</sec>命中時</sec>，<sec>效果會更新。</sec>
+        <sec typ="cond">受到<elem type="fire" />火焰屬性攻擊時</sec>，自身獲得<sec typ="buff"><buff typ="DEF_All" />1次傷害無效化<val idx="2" signless /></sec>。
+        <sec typ="cond">若自身以外有隸屬於<sec typ="note"><cmt t="戰鬥女僕">$$BattleMaid:?$</cmt></sec>的戰鬥員</sec>，上述效果在受到<sec><elem type="ice" />冰霜屬性攻擊</sec>時也會發動。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -5067,6 +5126,23 @@ skills:
             base: 0.05
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 범위 내 아군을 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">전투 개시 시</sec> <sec typ="cond">스쿼드 내에서 자신의 방어력이 가장 높을 경우</sec>, 자신은 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="4" slot="5" r /></sec>을 획득합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="DEF_Char" />保護機を除く範囲内の味方を指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="FIRERES_UP" />火炎耐性<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>が増加します。
+        <sec typ="cond">戦闘開始時</sec> <sec typ="cond">分隊内で自分の防御力が最も高い場合</sec>、自分は<sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除抵抗<val idx="4" slot="5" r /></sec>を獲得します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, <sec typ="buff"><buff typ="DEF_Char" /> designates and protects allies within range, excluding Defenders</sec>.
+        <sec typ="cond">At the start of the round</sec>, allies within range gain <sec typ="buff"><buff typ="FIRERES_UP" /> fire resistance <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec>.
+        <sec typ="cond">At battle start</sec>, <sec typ="cond">if own DEF is the highest in the squad</sec>, self gains <sec typ="buff"><buff typ="Remove_Buff_Resist" /> buff removal resistance <val idx="4" slot="5" r /></sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，會<sec typ="buff"><buff typ="DEF_Char" />指定保護範圍內除保護機以外的我軍</sec>。
+        <sec typ="cond">回合開始時</sec>，範圍內我軍的<sec typ="buff"><buff typ="FIRERES_UP" />火焰抗性<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec> <sec typ="cond">若自身防禦力為小隊中最高</sec>，則自身獲得<sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除抗性<val idx="4" slot="5" r /></sec>。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -5356,6 +5432,27 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 모든 적의 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="0" r /></sec>를 감소시킵니다.
+        <sec typ="cond">피격 시</sec>, 3라운드 동안 모든 적의 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec>상기 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 감소</sec> 효과는 합계 3회까지 중첩됩니다.</sec>
+        <sec>액티브 스킬의 <sec typ="cond">적중 시</sec> 효과는, <sec typ="dmg"><buff typ="FireDMG_DOT" /> 지속 화염 피해</sec> 상태인 대상의 <sec typ="chance">효과 저항을 무시</sec>할 수 있습니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間すべての敵の<sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性<val idx="0" r /></sec>を減少させます。
+        <sec typ="cond">被撃時</sec>、3ラウンドの間すべての敵の<sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性<val idx="1" r /></sec>を減少させます。
+        <sec>上記の<sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性減少</sec>効果は合計3回までスタックします。</sec>
+        <sec>アクティブスキルの<sec typ="cond">命中時</sec>効果は、<sec typ="dmg"><buff typ="FireDMG_DOT" />継続火炎ダメージ</sec>状態の対象の<sec typ="chance">効果抵抗を無視</sec>できます。</sec>
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, decreases all enemies' <sec typ="buff"><buff typ="FIRERES_DOWN" /> fire resistance <val idx="0" r /></sec> for 3 rounds.
+        <sec typ="cond">When hit</sec>, decreases all enemies' <sec typ="buff"><buff typ="FIRERES_DOWN" /> fire resistance <val idx="1" r /></sec> for 3 rounds.
+        <sec>The above <sec typ="buff"><buff typ="FIRERES_DOWN" /> fire resistance decrease</sec> effect stacks up to 3 times in total.</sec>
+        <sec>For active skills, the <sec typ="cond">on-hit</sec> effect can <sec typ="chance">ignore Effect Resistance</sec> on targets suffering <sec typ="dmg"><buff typ="FireDMG_DOT" /> persistent fire damage</sec>.</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，在3回合內使所有敵軍的<sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性<val idx="0" r /></sec>降低。
+        <sec typ="cond">受到攻擊時</sec>，在3回合內使所有敵軍的<sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性<val idx="1" r /></sec>降低。
+        <sec>上述<sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性降低</sec>效果合計最多可疊加3次。</sec>
+        <sec>主動技能的<sec typ="cond">命中時</sec>效果，對處於<sec typ="dmg"><buff typ="FireDMG_DOT" />持續火焰傷害</sec>狀態的目標可<sec typ="chance">無視效果抗性</sec>。
 dialogue:
   KR:
     "1":
@@ -5699,8 +5796,7 @@ dialogue:
       Idle_03_01: …ご主人様のお傍にいると、よく妙な気分になります。命令されなくともご主人様のためなら、どんなことでもできるような…そんな気分になります。
       Idle_04_01: 正直申し上げますと、少々戸惑っております。…この感情に陥ってしまった後、ご主人様を失ってしまうのではないかと…不安で堪りません。
       SPIdle_02_01: …お望みの反応をして差し上げられないことを、どうかご理解いただければ幸いです。今は…まだ…
-      Oath: …こうならないよう願っていたのに…こんなことをされてはもう私は…この想いを押し殺すことができません。少しだけ、この感情に正直になってもいいのでしょうか…？
-        不安な未来ではなく、幸せな今を生きてもいいのでしょうか…？
+      Oath: …こうならないよう願っていたのに…こんなことをされてはもう私は…この想いを押し殺すことができません。少しだけ、この感情に正直になってもいいのでしょうか…？ 不安な未来ではなく、幸せな今を生きてもいいのでしょうか…？
       OathIdle_01: 未来が心配ではありますが、それは幸せな今があるからだとわかっております。ですので…私が今だけを見ていられるよう…傍にいてください。
       MVP: ""
     M:
@@ -5785,10 +5881,8 @@ dialogue:
       SPIdle_02_01: |-
         Ah… Now you don’t have to
         check how I’m doing. You’ll know it when you hear me.
-      Oath: >-
-        After the emotion control function stopped working… my feelings for you
-        grew bigger and bigger every day. This is what you give me back in
-        return, master.
+      Oath: |-
+        After the emotion control function stopped working… my feelings for you grew bigger and bigger every day. This is what you give me back in return, master.
          Right now, I’m so happy that I’m thinking I might have been born for this moment.
          I’ll dedicate myself to you so that I can keep this happiness, this feeling.
       OathIdle_01: |-
@@ -5831,19 +5925,14 @@ dialogue:
       Idle_03_01: |-
         Hoo hoo… I never thought you’d become someone
         so important to me… I’m so happy just by holding your hand.
-      Idle_04_01: >-
+      Idle_04_01: |-
         I don’t care if this feeling I have for you…
-
         is the reaction from a broken emotion control module. I’ll give you all my heart
-
         so that it becomes my sincere feeling… I love you, Master. Will you take me in…
-
         my body and my mind?
       SPIdle_02_01: You’ll watch how I react? You’re so mean… Whenever you touch me…
-      Oath: >-
-        To think that I’m chosen by you… I didn’t imagine I’d feel this much
-        joy. Master. I’m your shield.
-
+      Oath: |-
+        To think that I’m chosen by you… I didn’t imagine I’d feel this much joy. Master. I’m your shield.
         No matter what kind of enemies stand on your way… or unpredictable events occur… I’ll always stay by you.
       OathIdle_01: |-
         It’s important to strike your lover’s enemies,
@@ -5851,8 +5940,7 @@ dialogue:
         I’ll do my best so that you don’t get hurt.
       MVP: ""
     "":
-      Join: I’m BlackWyrm S9, a guard model for big battles. I promise the best
-        protection.
+      Join: I’m BlackWyrm S9, a guard model for big battles. I promise the best protection.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -5901,10 +5989,8 @@ dialogue:
       SPIdle_02_01: |-
         … Please understand that I can’t
         react properly. Not yet…
-      Oath: >-
-        … I didn't want this to happen… But if you do this… I can't hold it in
-        much longer.
-
+      Oath: |-
+        … I didn't want this to happen… But if you do this… I can't hold it in much longer.
         Will it be OK for me to be more honest with my feelings…? Will it be OK for me to live this happy moment, not an anxious future…?
       OathIdle_01: |-
         The future is insecure, but I know

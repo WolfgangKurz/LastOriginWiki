@@ -2539,6 +2539,19 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        아킴보 사격으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하며 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec>와 <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec>를 감소시킵니다.
+        대상이 <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태이면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" r /></sec>가 증가하며, <sec typ="cond">가학성향 : 정조준</sec> 상태면 공격 대상 수가 적을수록 피해량 <sec typ="dmg"><buff typ="ATK_UP" /> <val idx="6" r /></sec>가 추가로 증가합니다.
+      JP: |-
+        二丁拳銃で<dmg elem="physics" />を与え、2ラウンドの間、対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>させ、<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="2" r /></sec>と<sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="1" r /></sec>を減少させます。
+        対象が<sec typ="cond"><buff typ="PROVOKE" />挑発</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="5" r /></sec>が増加し、<sec typ="cond">サディズム：ターゲッティング</sec>状態の場合、攻撃対象の数が少ないほど<sec typ="dmg"><buff typ="ATK_UP" /><val idx="6" r /></sec>ダメージが追加で増加します。
+      EN: |-
+        Uses Akimbo Fire and deals <dmg elem="physics" />, Provoking the target and decreasing their ATK and CRIT for 2 rounds.
+        If the target is in <sec typ="cond"><buff typ="PROVOKE" /> Provoked</sec> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec> increases, and if <sec typ="cond">Sadist: Sharp Aim</sec> is active, damage increases further the fewer attack targets there are.
+      TC: |-
+        以雙持射擊造成<dmg elem="physics" />，並使目標在2回合內處於<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>狀態，同時降低<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="2" r /></sec>與<sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="1" r /></sec>。
+        若目標處於<sec typ="cond"><buff typ="PROVOKE" />挑釁</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="5" r /></sec>會增加；若處於<sec typ="cond">施虐傾向：精確瞄準</sec>狀態，攻擊目標越少，<sec typ="dmg"><buff typ="ATK_UP" /><val idx="6" r /></sec>造成的傷害就會額外增加。
   "2":
     key: "2"
     icon: SelfDefBuff
@@ -2934,6 +2947,23 @@ skills:
             base: 0.2
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        3라운드 동안 <sec typ="buff"><buff typ="DEF_Char" /> 지정한 아군을 보호</sec>합니다.
+        스킬 적용 시, 대상과 자신에게 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="1" signless />회</sec>를 부여하고 대상과 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec>와 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec>가 증가합니다.
+        각 효과들은 중첩 적용되지는 않으며, <sec typ="note">기타 효과</sec>로 취급되어 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 해제</sec>로 해제되지 않습니다.
+      JP: |-
+        3ラウンドの間、<sec typ="buff"><buff typ="DEF_Char" />指定した味方を保護</sec>します。
+        スキル適用時、対象と自分に<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化<val idx="1" signless />回</sec>を付与し、対象と自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec>と<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec>が増加します。
+        各効果は重複して適用されず、<sec typ="note">その他効果</sec>として扱われるため、<sec typ="buff"><buff typ="REMOVE_BUFF" />強化解除</sec>では解除されません。
+      EN: |-
+        For 3 rounds, <sec typ="buff"><buff typ="DEF_Char" /> protects the designated ally</sec>.
+        When the skill is used, grants <sec typ="buff"><buff typ="DEF_All" /> Invalidate Damage <val idx="1" signless /> Time</sec> to the target and self, and increases the target and self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> and <sec typ="buff"><buff typ="ACCURACY_UP" /> ACU <val idx="5" r /></sec>.
+        Each effect does not stack, and as they are treated as <sec typ="note">other effects</sec>, they cannot be removed with <sec typ="buff"><buff typ="REMOVE_BUFF" /> Remove Upgrade</sec>.
+      TC: |-
+        在3回合內<sec typ="buff"><buff typ="DEF_Char" />保護指定我軍</sec>。
+        使用技能時，對目標與自身賦予<sec typ="buff"><buff typ="DEF_All" />傷害無效化<val idx="1" signless />次</sec>，並增加目標與自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec>與<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec>。
+        各效果不會疊加套用，且因被視為<sec typ="note">其他效果</sec>，不會因<sec typ="buff"><buff typ="REMOVE_BUFF" />解除強化</sec>而被解除。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -3299,6 +3329,27 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시 <sec typ="cond">자신의 방어력이 공격력의 25% 이상</sec>인 경우, 해제 불가한 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="6" r signless /> HP로 전투 속행</sec>이 적용됩니다.
+        라운드 개시 시, <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="5" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec>가 감소합니다.
+        자신 외에 아군이 있는 경우, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 효과가 50% 추가 적용됩니다.
+        피격 시 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 최대 3회까지 증가합니다.
+      JP: |-
+        戦闘開始時<sec typ="cond">自分の防御力が攻撃力の25%以上</sec>の場合、解除不可能な<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="6" r signless /> HPで戦闘続行</sec>が適用されます。
+        ラウンド開始時、<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗<val idx="5" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="4" r inv /></sec>が減少します。
+        自分以外に味方がいる場合、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ減少</sec>効果が50%追加で適用されます。
+        被撃時、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>が最大3回まで増加します。
+      EN: |-
+        At the start of combat, <sec typ="cond">if self’s DEF is at 25% or more of ATK</sec>, an unremovable <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat with <val idx="6" r signless /> HP</sec> is granted.
+        At the start of the round, <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="5" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="4" r inv /></sec> decreases.
+        If there are allies besides self, the <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease</sec> effect is additionally applied by 50%.
+        When attacked, <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="0" r /></sec> increases up to 3 times.
+      TC: |-
+        戰鬥開始時，<sec typ="cond">若自身防禦力達到攻擊力的25%以上</sec>，則會套用無法解除的<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="6" r signless /> HP繼續戰鬥</sec>。
+        回合開始時，<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="5" r /></sec>增加，<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到的傷害<val idx="4" r inv /></sec>減少。
+        若除自身以外還有我軍，則會額外套用50%的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到的傷害減少</sec>效果。
+        受到攻擊時，<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>最多增加3次。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3656,6 +3707,27 @@ skills:
             base: 0.2
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">자신의 공격력이 방어력의 4배 이상</sec>인 경우, 공격 받으면 <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 위력으로 반격</sec>합니다.
+        적 또는 아군이 처치될 경우, 해당 전투 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec>와 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec>가 증가합니다.
+        아군이 처치된 경우에는 2배 수치가 적용됩니다.
+        라운드 개시 시, 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="8" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">自分の攻撃力が防御力の4倍以上</sec>の場合、攻撃されると<sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless />威力で反撃</sec>します。
+        敵または味方が撃破されると、その戦闘の間、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec>と<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="5" r /></sec>が増加します。
+        味方が撃破された場合は2倍の数値が適用されます。
+        ラウンド開始時、自分の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="8" r /></sec>が増加します。
+      EN: |-
+        If <sec typ="cond">self’s ATK is 4 times or more than DEF</sec>, retaliate when attacked with <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> power</sec>.
+        If an enemy or ally is defeated, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="5" r /></sec> increase for that battle.
+        If an ally is defeated, the value is doubled.
+        At the start of the round, own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="8" r /></sec> increases.
+      TC: |-
+        <sec typ="cond">若自身攻擊力為防禦力的4倍以上</sec>，在受到攻擊時會以<sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless />威力進行反擊</sec>。
+        若敵人或我軍被擊殺，則在該場戰鬥中增加<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec>與<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="5" r /></sec>。
+        若被擊殺的是我軍，則套用2倍數值。
+        回合開始時，自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="8" r /></sec>增加。
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -4018,6 +4090,19 @@ skills:
             base: -0.1
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 전방 범위 내의 아군들을 집요하게 쫓아다니며 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>하고 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>를 증가시킵니다.
+        <sec typ="cond">자신의 공격력 / 행동력이 대상의 각 능력치보다 높을 경우</sec>, 보호 대상은 부담스러움을 느껴 각 효과가 50%씩 추가 적용되지만 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="6" r /></sec>가 감소합니다.
+      JP: |-
+        ラウンド開始時、前方範囲内の味方たちにしつこく付きまとい、<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>し、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">自分の攻撃力 / 行動力が対象の各能力値より高い場合</sec>、保護対象は重圧を感じ、各効果が50%ずつ追加適用されますが、<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="6" r /></sec>が減少します。
+      EN: |-
+        At the start of the round, relentlessly follows allies in the front area, giving them <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> and increasing their <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="1" r /></sec>.
+        <sec typ="cond">If self’s ATK / MOVE is higher than the target’s corresponding stats</sec>, the protected target feels burdened, so each effect is additionally applied by 50%, but their <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACU <val idx="6" r /></sec> decreases.
+      TC: |-
+        回合開始時，會緊追前方範圍內的我軍並施加<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>，同時增加其<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>。
+        <sec typ="cond">若自身攻擊力 / 行動力高於目標的各項能力值</sec>，被保護的目標會感到壓力，因此各效果會額外套用50%，但<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="6" r /></sec>會減少。
 dialogue:
   KR:
     "2":
@@ -4424,10 +4509,8 @@ dialogue:
         I was waiting for you. Let’s
         go. Somewhere quiet?
         Or somewhere open?
-      Oath: >-
-        I wish I could kill everyone… and stay with you at a beach like this…
-        You want that too, right master?
-
+      Oath: |-
+        I wish I could kill everyone… and stay with you at a beach like this… You want that too, right master?
         If you keep cherishing me like this, I’ll play with you however you want, master. Really.
       OathIdle_01: |-
         The gun is ready.
@@ -4489,12 +4572,9 @@ dialogue:
         Were you that fond of the naughty Lilith?
         Hehe, then please take a seat on the throne for a moment.
         Lilith will take care of the rest…
-      Oath: >-
-        I feel like the whole world is mine now that we're together. Now that I
-        have the world in my hands, I'm going to stop
-
+      Oath: |-
+        I feel like the whole world is mine now that we're together. Now that I have the world in my hands, I'm going to stop
         being an evil empress. I have so much to say and I don't think all the time I have left would be enough. 
-
         If you want to listen… I'll tell you. Everything that's in Lilith's heart.
       OathIdle_01: |-
         Empress Lilith’s throne is for two people.
@@ -4521,10 +4601,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        The best way to protect is to eliminate danger before it even becomes
-        one.
-
+      Idle_01_01: |-
+        The best way to protect is to eliminate danger before it even becomes one.
         That’s what this handgun is for.
       Idle_01_02: |-
         Hmm… Don’t you think you’re
@@ -4548,14 +4626,10 @@ dialogue:
       SPIdle_02_01: |-
         Are you being bold… because there’s no one
         here? It’s not that I don’t like it, but…
-      Oath: >-
-        Master…! Lilith knew it all along. I trusted you. That you would
-        eventually
-
+      Oath: |-
+        Master…! Lilith knew it all along. I trusted you. That you would eventually
         choose Lilith…! HAHA. HAHAHAR… The certificate of our love… Master? Since you're a man of great capacity,
-
         I'll allow you to hand out with other people sometimes. But still… you have to love me
-
         more than them. Okay?
       OathIdle_01: |-
         When I stroke the gift

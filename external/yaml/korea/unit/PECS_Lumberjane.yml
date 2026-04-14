@@ -1875,6 +1875,23 @@ skills:
             base: 0.2
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        톱날을 발사하여 목표 지점에 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">적중 대상이 중장형인 경우</sec>, <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 중장형 대상 피해량 <val idx="2" r /></sec>이 증가합니다.
+      JP: |-
+        鋸刃を発射して目標地点に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、3ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">命中対象が重装型の場合</sec>、<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />重装型対象へのダメージ量<val idx="2" r /></sec>が増加します。
+      EN: |-
+        Fires a saw blade and deals <dmg elem="physics" /> to the target location.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" r /></sec> for 3 rounds.
+        <sec typ="cond">If the hit target is Heavy Armor</sec>, <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage dealt to Heavy Armor <val idx="2" r /></sec> increases.
+      TC: |-
+        發射鋸刃，對目標地點造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，在3回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="1" r /></sec>。
+        <sec typ="cond">若命中的目標為重裝型</sec>，則<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型目標的傷害量<val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: CannonShot
@@ -3673,6 +3690,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 대상에게 1:1 대화를 시도하여 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 대상이 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 감소</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 감소</sec> 상태인 경우</sec>, 각각 피해량이 증가합니다.
+      JP: |-
+        指定対象に1対1の対話を試みて<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象が<sec typ="buff"><buff typ="DEF_DOWN" />防御力減少</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力減少</sec>状態の場合</sec>、それぞれダメージ量が増加します。
+      EN: |-
+        Attempts a 1-on-1 conversation with the designated target and deals <dmg elem="physics" />.
+        <sec typ="cond">If the hit target is in <sec typ="buff"><buff typ="DEF_DOWN" /> DEF down</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP down</sec> status</sec>, damage dealt increases respectively.
+      TC: |-
+        對指定目標嘗試1對1對話，造成<dmg elem="physics" />。
+        <sec typ="cond">若命中的目標處於<sec typ="buff"><buff typ="DEF_DOWN" />防禦力減少</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力減少</sec>狀態</sec>，則各自的傷害量會增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4319,6 +4349,19 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec>가 영구적으로 증가합니다. (최대 4중첩)
+        <sec typ="cond">공격 적중 시</sec>, <sec typ="note">화끈하게 가보자고!</sec> 중첩 수에 비례하여 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="1" r /></sec>が永続的に増加します。(最大4スタック)
+        <sec typ="cond">攻撃命中時</sec>、<sec typ="note">思い切りやろうぜ！</sec>のスタック数に比例して自分の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="1" r /></sec> permanently increases. (max 4 stacks)
+        <sec typ="cond">On attack hit</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> increases in proportion to the stack count of <sec typ="note">Let’s Move Out in Style!</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="1" r /></sec>永久增加。(最多4層)
+        <sec typ="cond">攻擊命中時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" /></sec>會依<sec typ="note">轟轟烈烈幹一場！</sec>的疊加層數而增加。
   "4":
     key: "4"
     icon: P.SelfDefDeBuff
@@ -4488,6 +4531,23 @@ skills:
             base: 0.01
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 적 전체의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="note">입목등기</sec> 효과는 효과 저항의 영향을 받지 않지만 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec>로 해제할 수 있습니다.
+        <sec typ="cond"><sec typ="note">입목등기</sec> 중첩이 3 이상인 대상에게 <sec typ="note">대화 시도</sec> 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과</sec>를 해제합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間敵全体の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="0" r /></sec>を増加させます。
+        <sec typ="note">立木登記</sec>効果は効果抵抗の影響を受けませんが、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害効果の解除</sec>で解除できます。
+        <sec typ="cond"><sec typ="note">立木登記</sec>のスタックが3以上の対象に<sec typ="note">話し合いの試み</sec>を行う時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果</sec>を解除します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases all enemies' <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> for 3 rounds.
+        The <sec typ="note">Tree Ownership</sec> effect is not affected by Effect Resistance, but it can be removed by <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Remove harmful effects</sec>.
+        <sec typ="cond">When using <sec typ="note">Communication Attempt</sec> on a target with 3 or more <sec typ="note">Tree Ownership</sec> stacks</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> buff effects</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，在3回合內使所有敵軍的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="0" r /></sec>增加。
+        <sec typ="note">立木登記</sec>效果不受效果抗性影響，但可透過<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除有害效果</sec>解除。
+        <sec typ="cond">對<sec typ="note">立木登記</sec>疊加數3以上的目標使用<sec typ="note">嘗試對話</sec>時</sec>，會解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />強化效果</sec>。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -4602,6 +4662,19 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> 증가 일반 효과를 획득합니다.
+        <sec typ="note">화끈하게 가보자고!</sec>의 중첩 누적 속도가 두 배로 증폭되고 최대 중첩 수가 50% 증폭됩니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自分は<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="0" r /></sec>増加の通常効果を獲得します。
+        <sec typ="note">思い切りやろうぜ！</sec>のスタック蓄積速度が2倍に増幅され、最大スタック数が50%増幅されます。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self gains a normal effect that increases <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="0" r /></sec>.
+        The stack accumulation speed of <sec typ="note">Let’s Move Out in Style!</sec> is doubled, and the maximum stack count is increased by 50%.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身獲得<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="0" r /></sec>增加的一般效果。
+        <sec typ="note">轟轟烈烈幹一場！</sec>的疊加累積速度提升2倍，最大疊加數提升50%。
 dialogue:
   KR:
     "1":
@@ -4809,8 +4882,7 @@ dialogue:
       OathIdle_01: |-
         (미번역)우리 남편이 너~무 듬직해서…
         가끔씩 폭 안기고 싶다니까?
-      MVP: …こうならないよう願っていたのに…こんなことをされてはもう私は…この想いを押し殺すことができません。少しだけ、この感情に正直になってもいいのでしょうか…？
-        不安な未来ではなく、幸せな今を生きてもいいのでしょうか…？
+      MVP: …こうならないよう願っていたのに…こんなことをされてはもう私は…この想いを押し殺すことができません。少しだけ、この感情に正直になってもいいのでしょうか…？ 不安な未来ではなく、幸せな今を生きてもいいのでしょうか…？
     "":
       Join: 私が必要？なら、指示をお願いね。
       SquadJoin: ""
@@ -4927,10 +4999,8 @@ dialogue:
         Hold on, let me get this away…
         Are you in such a hurry?
         There, all done. Come here.
-      Oath: >-
-        This is… a ring…! Is this really for me? I'm sorry, Commander. If I had
-        known about this before
-
+      Oath: |-
+        This is… a ring…! Is this really for me? I'm sorry, Commander. If I had known about this before
         , I would've prepared something… huh? You don't need anything? Haa, seriously… You are so charming.
       OathIdle_01: |-
         My Hubby is so reliable…
@@ -4986,11 +5056,8 @@ dialogue:
       SPIdle_02_01: |-
         I think it’s about time we stopped…
         N-no. As much as you want. … Ha ha.
-      Oath: >-
-        You're giving this to me…? Oh. I'll have to work hard on whatever I do
-        from now on. Since now, it's a favor from my dear, not an order from my
-        Commander.
-
+      Oath: |-
+        You're giving this to me…? Oh. I'll have to work hard on whatever I do from now on. Since now, it's a favor from my dear, not an order from my Commander.
         … Uh, Commander. Since it's a special day… how about a glass of wine?
       OathIdle_01: |-
         I’m not drinking with you again…

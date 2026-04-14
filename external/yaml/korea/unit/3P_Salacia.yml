@@ -1547,6 +1547,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        지정 범위 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        대상에게 <sec typ="note">엠피트리테 : 레이더 포착</sec> 효과가 적용 중이면 피해량이 증가합니다.
+        대상이 <sec typ="cond"><buff typ="AP_UP" /> 행동력 증가</sec> 상태가 아니면 피해량이 추가로 증가합니다.
+      JP: |-
+        指定範囲の敵に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        対象に<sec typ="note">アンフィトリテ：レーダー捕捉</sec>効果が適用されている場合、ダメージ量が増加します。
+        対象が<sec typ="cond"><buff typ="AP_UP" />行動力増加</sec>状態ではない場合、ダメージ量がさらに増加します。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage to enemies in the designated area.
+        Damage is increased if <sec typ="note">Amphitrite: Radar Detection</sec> is active on the target.
+        Damage is further increased if the target is not under <sec typ="cond"><buff typ="AP_UP" /> MOVE Increase</sec>.
+      TC: |-
+        對指定範圍敵軍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害。
+        若目標套用<sec typ="note">安菲特萊特：捕捉雷達</sec>效果，則傷害增加。
+        若目標未處於<sec typ="cond"><buff typ="AP_UP" />行動力增加</sec>狀態，則傷害進一步增加。
   "2":
     key: "2"
     icon: MGShot
@@ -2856,6 +2873,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위 적에게 <dmg elem="physics" />를 줍니다.
+        치명타 시, 피해량이 증가합니다.
+        대상이 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 상태가 아니면 피해량이 추가로 증가합니다.
+      JP: |-
+        指定範囲の敵に<dmg elem="physics" />を与えます。
+        クリティカル時、ダメージ量が増加します。
+        対象が<sec typ="cond"><buff typ="DAMAGE_REDUCE" />受けるダメージ減少</sec>状態ではない場合、ダメージ量がさらに増加します。
+      EN: |-
+        Deals <dmg elem="physics" /> damage to enemies in the designated area.
+        Damage increases on CRIT.
+        Damage is further increased if the target is not under <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> Received Damage Decrease</sec>.
+      TC: |-
+        對指定範圍敵軍造成<dmg elem="physics" />傷害。
+        暴擊時，傷害增加。
+        若目標未處於<sec typ="cond"><buff typ="DAMAGE_REDUCE" />所受傷害減少</sec>狀態，則傷害進一步增加。
   "3":
     key: "3"
     icon: P.SuicideBomb
@@ -3097,6 +3131,19 @@ skills:
             base: 0.05
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="note">엠피트리테 : 지휘전파</sec> 효과를 받는 상태로 라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec>가 증가합니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec>が増加します。
+        <sec typ="note">アンフィトリテ：指揮伝播</sec>効果を受けている状態でラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="5" r /></sec>が増加します。
+      EN: |-
+        At the start of the round, increases <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec>.
+        At the start of the round while under <sec typ="note">Amphitrite: Relay Command</sec>, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="5" r /></sec>.
+      TC: |-
+        回合開始時，增加<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>。
+        於回合開始時若處於<sec typ="note">安菲特萊特：指揮傳達</sec>效果下，則增加<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="5" r /></sec>。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3386,6 +3433,23 @@ skills:
             base: 0.15
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="cond"><buff typ="AP_UP" /> 행동력 증가</sec> 상태면 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="0" r /></sec>가 증가합니다.
+        스쿼드에 엠피트리테가 있으면 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가하고, <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시 효과가 활성화</sec>됩니다.
+        <sec typ="note">엠피트리테 : 돌격 진형</sec> 또는 <sec typ="note">엠피트리테 : 우회 진형</sec> 효과를 받는 상태면 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="6" r /></sec>가 추가로 증가합니다.
+      JP: |-
+        ラウンド開始時、<sec typ="cond"><buff typ="AP_UP" />行動力増加</sec>状態の場合、<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="0" r /></sec>が増加します。
+        分隊にアンフィトリテがいる場合、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>が増加し、<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視効果が有効化</sec>されます。
+        <sec typ="note">アンフィトリテ：突撃陣形</sec>または<sec typ="note">アンフィトリテ：迂回陣形</sec>効果を受けている場合、<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="6" r /></sec>がさらに増加します。
+      EN: |-
+        At the start of the round, if under <sec typ="cond"><buff typ="AP_UP" /> MOVE Increase</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="0" r /></sec> increases.
+        If Amphitrite is in the squad, <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="1" r /></sec> increases and <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection is activated</sec>.
+        If receiving <sec typ="note">Amphitrite: Charge Formation</sec> or <sec typ="note">Amphitrite: Detour Formation</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="6" r /></sec> additionally increases.
+      TC: |-
+        回合開始時，若處於<sec typ="cond"><buff typ="AP_UP" />行動力增加</sec>狀態，則<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="0" r /></sec>增加。
+        若小隊中有安菲特萊特，則<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>增加，並<sec typ="buff"><buff typ="Guardpierce_Apply" />啟用無視保護效果</sec>。
+        若處於<sec typ="note">安菲特萊特：突擊陣形</sec>或<sec typ="note">安菲特萊特：迂迴陣形</sec>效果下，則<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="6" r /></sec>額外增加。
   "5":
     key: "5"
     icon: P.MGShot
@@ -4512,6 +4576,19 @@ skills:
             base: 0.4
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 적중 <val idx="1" r /></sec>가 증가합니다.
+        스쿼드 내 자신을 제외한 공격기 1기마다  효과가 50%씩 증가합니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />命中<val idx="1" r /></sec>が増加します。
+        分隊内の自分を除く攻撃機1機ごとに効果が50%ずつ増加します。
+      EN: |-
+        At the start of the round, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> ACU <val idx="1" r /></sec>.
+        The effect increases by 50% for each Attacker in the squad, excluding self.
+      TC: |-
+        回合開始時，增加<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />命中<val idx="1" r /></sec>。
+        小隊內每有1名除自身外的攻擊機，效果就增加50%。
 dialogue:
   KR:
     "1":
@@ -4563,9 +4640,7 @@ dialogue:
         엠피 언니가 이상한 사람 조심하라고 했는데…
         헤헤, 하지만 전단장님은 전단장님이니까
         괜찮지?
-      Oath: 시아는 전단장님만 보면 방긋방긋해. 그런데 지금은 방긋방긋보다 더 방긋방긋해져. 전단장님도 시아를 보면 방긋방긋해? 헤헤. 그러면
-        시아도 앞으로 전단장님이 더 방긋방긋하게 해줄게. 좋아해… 아니, 이럴 때는 다른 말을 쓰는 거라 배웠는데… 아! 세상에서 제일
-        사랑해, 전단장님!
+      Oath: 시아는 전단장님만 보면 방긋방긋해. 그런데 지금은 방긋방긋보다 더 방긋방긋해져. 전단장님도 시아를 보면 방긋방긋해? 헤헤. 그러면 시아도 앞으로 전단장님이 더 방긋방긋하게 해줄게. 좋아해… 아니, 이럴 때는 다른 말을 쓰는 거라 배웠는데… 아! 세상에서 제일 사랑해, 전단장님!
       OathIdle_01: |-
         전단장님. 헤헤. 전단장님.
         왜 부르냐고?
@@ -4799,9 +4874,7 @@ dialogue:
         [미번역]엠피 언니가 이상한 사람 조심하라고 했는데…
         헤헤, 하지만 전단장님은 전단장님이니까
         괜찮지?
-      Oath: "[미번역]시아는 전단장님만 보면 방긋방긋해. 그런데 지금은 방긋방긋보다 더 방긋방긋해져. 전단장님도 시아를 보면 방긋방긋해? 헤헤.
-        그러면 시아도 앞으로 전단장님이 더 방긋방긋하게 해줄게. 좋아해… 아니, 이럴 때는 다른 말을 쓰는 거라 배웠는데… 아! 세상에서
-        제일 사랑해, 전단장님!"
+      Oath: "[미번역]시아는 전단장님만 보면 방긋방긋해. 그런데 지금은 방긋방긋보다 더 방긋방긋해져. 전단장님도 시아를 보면 방긋방긋해? 헤헤. 그러면 시아도 앞으로 전단장님이 더 방긋방긋하게 해줄게. 좋아해… 아니, 이럴 때는 다른 말을 쓰는 거라 배웠는데… 아! 세상에서 제일 사랑해, 전단장님!"
       OathIdle_01: |-
         [미번역]전단장님. 헤헤. 전단장님.
         왜 부르냐고?
@@ -4971,8 +5044,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Join: Wow, such a high ranking officer! Then you must be the admiral. Yes. The
-        admiral is someone with a reeaaally high rank.
+      Join: Wow, such a high ranking officer! Then you must be the admiral. Yes. The admiral is someone with a reeaaally high rank.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -4994,18 +5066,13 @@ dialogue:
         Sister Amphi told Cia not to ‘smile smile’ at anyone.
         Admiral, do you like ‘smile smile’? Cia likes it.
         Ehehe, smile smile~
-      Idle_01_02: >-
-        It was so difficult, getting here… But Cia’s glad she’s here. Everyone’s
-        nice, the bed’s comfy,
-
+      Idle_01_02: |-
+        It was so difficult, getting here… But Cia’s glad she’s here. Everyone’s nice, the bed’s comfy,
         and… oh! The food is great! Hehe, Cia’s full… This? Yes. Cia hates carrots.
-
         Will you eat them, Admiral?
-      Idle_01_03: >-
+      Idle_01_03: |-
         Cia can do well on her own. Eating, brushing her teeth,
-
         washing her face, and dressing up… Actually, Cia’s not very good at wearing clothes.
-
         It’s too difficult…
       SPIdle_01_01: |-
         Sister Amphi said someone who does this is
@@ -5024,19 +5091,11 @@ dialogue:
       SPIdle_02_01: |-
         Hey. We shouldn’t be doing this.
         But Cia really really likes you, Admiral… So it’s okay.
-      Oath: Wow…! Cia knows this. You give this to someone you reaaally love and ma…
-        rry them. Right? … Oh. But… Cia doesn't have this. What should Cia do…
-        Hm? Cia doesn't have to give it to you? But Cia really really likes
-        Admiral… Are you sure Cia doesn't have to give you one…? Hmm… Then,
-        then… oh! Then, Cia will make all of your wishes come true.
-      OathIdle_01: >-
-        Admiral. Cia was supposed to grant your wish… Can you do Cia a favor,
-        too?
-
+      Oath: Wow…! Cia knows this. You give this to someone you reaaally love and ma… rry them. Right? … Oh. But… Cia doesn't have this. What should Cia do… Hm? Cia doesn't have to give it to you? But Cia really really likes Admiral… Are you sure Cia doesn't have to give you one…? Hmm… Then, then… oh! Then, Cia will make all of your wishes come true.
+      OathIdle_01: |-
+        Admiral. Cia was supposed to grant your wish… Can you do Cia a favor, too?
         Cia wants to live happily ever after…
-
         with her favorite admiral,
-
         and sister Amphi.​
       MVP: ""
     M:
@@ -5063,9 +5122,8 @@ dialogue:
         Practicing dressing up once a day.
         What’s it for today, Admiral? Eh…? You want Cia to…
         eat carrots…? Why?
-      Idle_01_02: >-
+      Idle_01_02: |-
         Ehehe, Cia likes this. When you hug Cia,
-
         Cia likes to smell your clothes. Umm… Cia’s a bit sleepy… But… Admiral’s working… Cia is…
       Idle_01_03: |-
         Good boy, good boy… Huh? Cia likes it

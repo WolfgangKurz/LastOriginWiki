@@ -3037,6 +3037,23 @@ skills:
               level: "0"
             value: Char_BR_QuickCamel_N
             chance: 1
+    desc:
+      KR: |-
+        근접 포격으로 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>를 증가시킵니다. (중첩 불가)
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: |-
+        近接砲撃で単体対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象に<sec typ="buff"><buff typ="MARKING" />標的</sec>を付与し、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="5" r /></sec>を増加させます。(重複不可)
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+      EN: |-
+        Closes in with close-range bombardment and deals <dmg elem="physics" /> to a single target.
+        <sec typ="cond">On hit</sec>, for 2 rounds inflict the target with <sec typ="buff"><buff typ="MARKING" /> Marking</sec> and increase <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec>. (does not stack)
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      TC: |-
+        以近距砲擊對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，使目標在2回合內獲得<sec typ="buff"><buff typ="MARKING" />標記</sec>，並提高<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="5" r /></sec>。（不可疊加）
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -5551,6 +5568,23 @@ skills:
               level: "0"
             value: Char_BR_QuickCamel_N
             chance: 1
+    desc:
+      KR: |-
+        고속 연계 공격으로 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>를 증가시킵니다. (중첩 불가)
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: |-
+        高速連携攻撃で単体対象に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象に<sec typ="buff"><buff typ="MARKING" />標的</sec>を付与し、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="5" r /></sec>を増加させます。(重複不可)
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+      EN: |-
+        Delivers a high-speed combo attack to a single target for <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage.
+        <sec typ="cond">On hit</sec>, for 2 rounds inflict the target with <sec typ="buff"><buff typ="MARKING" /> Marking</sec> and increase <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec>. (does not stack)
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      TC: |-
+        以高速連攜攻擊對單一目標造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，使目標在2回合內獲得<sec typ="buff"><buff typ="MARKING" />標記</sec>，並提高<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="5" r /></sec>。（不可疊加）
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.Command
@@ -6139,6 +6173,27 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec> <sec typ="cond">자신이 전열인 경우</sec>, 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        자신은 효과가 두 배로 증폭됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="9" r /></sec>가 증가합니다.
+        <cmt t="앵거 오브 호드">$$AngerOfTheHorde:?$</cmt> 소속 전투원을 제외한 중장형 / 기동형 아군에게는 상기 효과의 50%만 적용됩니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec> <sec typ="cond">自身が前列の場合</sec>、味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        自身は効果が2倍に増幅されます。
+        <sec typ="cond">ラウンド開始時</sec>、味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率<val idx="9" r /></sec>が増加します。
+        <cmt t="アンガーオブホード">$$AngerOfTheHorde:?$</cmt>所属戦闘員を除く重装型 / 機動型の味方には上記効果の50%のみ適用されます。
+      EN: |-
+        <sec typ="cond">At battle start</sec> <sec typ="cond">if self is in the front line</sec>, allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        The effect is doubled for self.
+        <sec typ="cond">At round start</sec>, allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="9" r /></sec> increases.
+        For Heavy Armor / Mobile allies excluding <cmt t="Anger of Horde">$$AngerOfTheHorde:?$</cmt> combatants, only 50% of the above effect is applied.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec> <sec typ="cond">若自身位於前列</sec>，我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        自身的效果會增幅2倍。
+        <sec typ="cond">回合開始時</sec>，我軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="9" r /></sec>增加。
+        除<cmt t="部落之怒">$$AngerOfTheHorde:?$</cmt>所屬戰鬥員外，重裝型 / 機動型我軍僅套用上述效果的50%。
   "4":
     key: "4"
     icon: P.Scan
@@ -6553,6 +6608,31 @@ skills:
             base: 2
             per: 0.2
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SKILL_UP" /> 회피의 <val idx="0" r signless /> 만큼 스킬 위력 감쇄</sec> 효과를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec>가 증가하고 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 획득합니다.
+        <sec>해당 효과는 효과 해제로 해제할 수 없습니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 자신을 제외한 <cmt t="앵거 오브 호드">$$AngerOfTheHorde:?$</cmt> 소속 전투원의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec>를 증가시킵니다.
+        <sec>해당 효과는 회피 시 해제됩니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身は<sec typ="buff"><buff typ="SKILL_UP" />回避の<val idx="0" r signless />だけスキル威力減衰</sec>効果を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="4" r /></sec>が増加し、<sec typ="buff"><buff typ="MARKING" />標的</sec>を獲得します。
+        <sec>この効果は効果解除では解除できません。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の自身を除く<cmt t="アンガーオブホード">$$AngerOfTheHorde:?$</cmt>所属戦闘員の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec>を増加させます。
+        <sec>この効果は回避時に解除されます。</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, self gains <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power reduced by own <val idx="0" r signless /> EVA</sec>.
+        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="4" r /></sec> increases and self gains <sec typ="buff"><buff typ="MARKING" /> Marking</sec>.
+        <sec>This effect cannot be removed by effect removal.</sec>
+        <sec typ="cond">At round start</sec>, increases <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="6" r /></sec> of allies within range excluding self who belong to <cmt t="Anger of Horde">$$AngerOfTheHorde:?$</cmt>.
+        <sec>This effect is removed upon evasion.</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身獲得<sec typ="buff"><buff typ="SKILL_UP" />依自身迴避的<val idx="0" r signless />而減少的技能威力</sec>效果。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="4" r /></sec>增加，並獲得<sec typ="buff"><buff typ="MARKING" />標記</sec>。
+        <sec>此效果無法透過效果解除移除。</sec>
+        <sec typ="cond">回合開始時</sec>，增加範圍內除自身外、屬於<cmt t="部落之怒">$$AngerOfTheHorde:?$</cmt>的戰鬥員之<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec>。
+        <sec>此效果會在迴避時解除。</sec>
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -6973,6 +7053,23 @@ skills:
             base: 0.02
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">적 처치 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" />対軽装型ダメージ量<val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />対重装型ダメージ量<val idx="2" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>が増加します。
+        <sec typ="cond">敵撃破時</sec>、2ラウンドの間自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="8" r /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light Armor Damage <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy Armor Damage <val idx="2" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, for 3 rounds self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="6" r /></sec> increases.
+        <sec typ="cond">On enemy kill</sec>, for 2 rounds self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="8" r /></sec> increases.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" />對輕裝型傷害量<val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型傷害量<val idx="2" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，持續3回合，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>增加。
+        <sec typ="cond">擊殺敵人時</sec>，持續2回合，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="8" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -7195,8 +7292,7 @@ dialogue:
         이럴 때 탈론페더가 이 말을 하라고 하더군.
         여기 등장하는 모든 인물은 20세 이상이다…
         오빠… 그러니까 부디 마음껏…
-      Oath: 이런 모습이 되면 선배가 좋아할 거라고 부하들이 그러더군. 지금까지 반신반의했지만… 선배가 고백한 것을 보면 사실인가 보군. 하지만
-        선배가 원한다면 그 어떤 모습이든 보여주겠다. 사랑하는… 오, 오빠를 위해서라면.
+      Oath: 이런 모습이 되면 선배가 좋아할 거라고 부하들이 그러더군. 지금까지 반신반의했지만… 선배가 고백한 것을 보면 사실인가 보군. 하지만 선배가 원한다면 그 어떤 모습이든 보여주겠다. 사랑하는… 오, 오빠를 위해서라면.
       OathIdle_01: |-
         사령관, 당신, 그대, 선배, 자기, 오빠…
         그대가 무슨 호칭을 좋아할 지 검증 중이다.
@@ -7263,9 +7359,7 @@ dialogue:
         거긴 브레이크가 잘 안 먹히는 구간이다.
         이제 와서 속도를 줄이라 말해도 소용없을 거다,
         사령관.
-      Oath: 전장에서의 환호도, 도로 위에서의 여유도… 전부 그대가 곁에 있어 주었기에 누릴 수 있었지. 하지만 사령관, 날 위해 무리해 가속
-        페달을 밟지 않아도 된다.​ 내가 끝까지 함께 발맞춰 달리고 싶은 사람은 오직 그대뿐이니까. 처음부터 이 조수석과, 내 미래는
-        모두 그대의 것이었다.​ 어느 속도라도 좋다. 그대의 피앙세로서 마지막까지 함께 달리겠다.
+      Oath: 전장에서의 환호도, 도로 위에서의 여유도… 전부 그대가 곁에 있어 주었기에 누릴 수 있었지. 하지만 사령관, 날 위해 무리해 가속 페달을 밟지 않아도 된다.​ 내가 끝까지 함께 발맞춰 달리고 싶은 사람은 오직 그대뿐이니까. 처음부터 이 조수석과, 내 미래는 모두 그대의 것이었다.​ 어느 속도라도 좋다. 그대의 피앙세로서 마지막까지 함께 달리겠다.
       OathIdle_01: |-
         후후, 사령관.
         그렇게 붙잡지 않아도
@@ -7492,8 +7586,7 @@ dialogue:
       Idle_03_01: あっ…、そういえばハイエナとケシクからアロマキャンドルをもらった。 確かこの辺に……ん、ここにあったか。どんな香りか嗅いでみるか？
       Idle_04_01: うぅっ！あ…いや…、何でもない。すまない。妙な気分で……その……少しでいい…そばにいてくれないか？もっとそばに…来てくれ。
       SPIdle_02_01: …そ…そういうことをするために着たが……。その…今日はゆっくりと長く…あなたを愛したい。いいか…？
-      Oath: も、もちろん…こうなることを期待してこれを着た。だが、この格好でこういう状況になるとは思っていなかった…。い、嫌なわけないだろう…。嬉しいに決まってる！
-        そう…嬉しいんだ……。ふふ、恥ずかしさのあまり、慌ててしまった……。今言うべきことはただ一つ……私もあなたを愛してる。
+      Oath: も、もちろん…こうなることを期待してこれを着た。だが、この格好でこういう状況になるとは思っていなかった…。い、嫌なわけないだろう…。嬉しいに決まってる！ そう…嬉しいんだ……。ふふ、恥ずかしさのあまり、慌ててしまった……。今言うべきことはただ一つ……私もあなたを愛してる。
       OathIdle_01: 私が読んでいた雑誌だ。どれがいいか選んでくれ。あなたが選んでくれたものを…着ることにしよう。
       MVP: ""
     "4":
@@ -7550,8 +7643,7 @@ dialogue:
         [미번역]이럴 때 탈론페더가 이 말을 하라고 하더군.
         여기 등장하는 모든 인물은 20세 이상이다…
         오빠… 그러니까 부디 마음껏…
-      Oath: "[미번역]이런 모습이 되면 선배가 좋아할 거라고 부하들이 그러더군. 지금까지 반신반의했지만… 선배가 고백한 것을 보면 사실인가
-        보군. 하지만 선배가 원한다면 그 어떤 모습이든 보여주겠다. 사랑하는… 오, 오빠를 위해서라면."
+      Oath: "[미번역]이런 모습이 되면 선배가 좋아할 거라고 부하들이 그러더군. 지금까지 반신반의했지만… 선배가 고백한 것을 보면 사실인가 보군. 하지만 선배가 원한다면 그 어떤 모습이든 보여주겠다. 사랑하는… 오, 오빠를 위해서라면."
       OathIdle_01: |-
         [미번역]사령관, 당신, 그대, 선배, 자기, 오빠…
         그대가 무슨 호칭을 좋아할 지 검증 중이다.
@@ -7698,10 +7790,8 @@ dialogue:
       SPIdle_02_01: |-
         Fooling around with your subordinate is
         a stupid move… but you can make an exception for me.
-      Oath: >-
-        I remember the first day I saw the commander. And… I was glad to just be
-        your subordinate who earned your trust.
-
+      Oath: |-
+        I remember the first day I saw the commander. And… I was glad to just be your subordinate who earned your trust.
         … But… I guess I spent… way too much time with you…senior
       OathIdle_01: |-
         I’d like to call you sweetie…
@@ -7811,12 +7901,9 @@ dialogue:
         I-I did wear this underclothing for this,
         but tonight… I want it to be…
         long and slow. Could you do that for me?​
-      Oath: >-
-        I-indeed… I dressed like this in desire for the situation to turn out
-        this way. But I didn’t expect it to actually happen
-
+      Oath: |-
+        I-indeed… I dressed like this in desire for the situation to turn out this way. But I didn’t expect it to actually happen
         immediately after dressing like this… Am I not happy? Nonsense! I am happy! Yes, I am happy… Fufu,
-
         I’m just talking nonsense in great shyness. But there’s only one thing I can say… I love you too.
       OathIdle_01: |-
         I’ve been reading a magazine.
@@ -7882,8 +7969,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Join: My name is Khan. I’m the leader of the Hordes I look forward to working
-        with you.
+      Join: My name is Khan. I’m the leader of the Hordes I look forward to working with you.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -7924,10 +8010,8 @@ dialogue:
       SPIdle_02_01: |-
         I can dodge this but…
         I’m not, and you know that, right?
-      Oath: >-
-        … Now you give me this… Too late. Commander, you'll have to pay for
-        making me wait.
-
+      Oath: |-
+        … Now you give me this… Too late. Commander, you'll have to pay for making me wait.
         Oh, but… Don't rush and kill the mood.
       OathIdle_01: |-
         If you keep doing that,

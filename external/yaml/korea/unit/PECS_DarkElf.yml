@@ -1764,6 +1764,19 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        더블배럴 샷건으로 지정 대상에게 <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond">경장형</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      JP: |-
+        ダブルバレルショットガンで指定対象に<dmg elem="physics" />を与えます。
+        対象が<sec typ="cond">軽装型</sec> / <sec typ="cond"><buff typ="DEF_DOWN" />防御力減少</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />回避減少</sec>状態なら、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="2" r /></sec>が増加します。
+      EN: |-
+        Deals <dmg elem="physics" /> to the designated target with a Double-Barrel Shotgun.
+        If the target is in <sec typ="cond">Light Armor</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> DEF decrease</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> EVA decrease</sec> status, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+      TC: |-
+        以雙管霰彈槍對指定目標造成<dmg elem="physics" />傷害。
+        若目標處於<sec typ="cond">輕裝型</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 防禦力減少</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避減少</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: Scan
@@ -3888,6 +3901,23 @@ skills:
             base: 7
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        독수리와 협공해 대상에게 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec>를 감소시킵니다.
+        감소 효과는 적용 라운드에는 2배로 적용됩니다.
+        치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="6" r /></sec>가 증가하며 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 적중 강화 효과를 해제</sec>합니다.
+      JP: |-
+        ワシと連携して対象に<dmg elem="physics" />を与え、2ラウンドの間対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル <val idx="1" r /></sec>を減少させます。
+        減少効果は適用ラウンドでは2倍で適用されます。
+        クリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="6" r /></sec>が増加し、<sec typ="buff"><buff typ="REMOVE_BUFF" />命中強化効果を解除</sec>します。
+      EN: |-
+        Coordinates with the eagle to deal <dmg elem="physics" /> to the target, and decreases the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="1" r /></sec> for 2 rounds.
+        The decrease effect is applied at double strength in the round it is applied.
+        On critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="6" r /></sec> increases and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes Accuracy Increase effects</sec>.
+      TC: |-
+        與鷹協同攻擊，對目標造成<dmg elem="physics" />傷害，並於2回合內降低目標的<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="1" r /></sec>。
+        減少效果在套用的回合會以2倍效果生效。
+        暴擊時，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="6" r /></sec>增加，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除命中強化效果</sec>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -4049,6 +4079,11 @@ skills:
             base: 1
             per: 0.05
             chance: 1
+    desc:
+      KR: <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 자신과 같은 행 뒤쪽에 배치된 아군의 공격을 지원</sec>하며, 대상의 전투 개시 시 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>을(를) 올려줍니다.
+      JP: <sec typ="buff"><buff typ="SUPPORT_ATTACK" />自分と同じ列の後方に配置された味方の攻撃を支援</sec>し、対象の戦闘開始時に<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>を上げます。
+      EN: <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports the attacks of allies positioned behind self in the same row</sec>, and increases the target's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> at the start of combat.
+      TC: <sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援與自身相同列後方的我軍攻擊</sec>，並在目標戰鬥開始時提高其<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -4421,6 +4456,11 @@ skills:
             base: 1
             per: 0.05
             chance: 1
+    desc:
+      KR: 라운드 개시 시, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="3" r /></sec>가 증가하며, <char uid="PECS_ElvenForestmaker" />의 패시브 효과를 받는 대상과 <char uid="PECS_HighElven" />, <char uid="PECS_Sekhmet" />, <char uid="PECS_ElvenForestmaker" />, <char uid="PECS_Hathor" />의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>하고 전투 개시 시 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>을(를) 증가시킵니다.
+      JP: ラウンド開始時、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec>と<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="3" r /></sec>が増加し、<char uid="PECS_ElvenForestmaker" />のパッシブ効果を受ける対象と<char uid="PECS_HighElven" />、<char uid="PECS_Sekhmet" />、<char uid="PECS_ElvenForestmaker" />、<char uid="PECS_Hathor" />の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃を支援</sec>し、戦闘開始時に<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>を増加させます。
+      EN: At the start of the round, self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="3" r /></sec> increase, and supports the attacks of the target receiving <char uid="PECS_ElvenForestmaker" />'s passive effect and those of <char uid="PECS_HighElven" />, <char uid="PECS_Sekhmet" />, <char uid="PECS_ElvenForestmaker" />, and <char uid="PECS_Hathor" /> with <sec typ="buff"><buff typ="SUPPORT_ATTACK" /></sec>; at the start of combat, increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>.
+      TC: 回合開始時，自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>與<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="3" r /></sec>增加，並支援受<char uid="PECS_ElvenForestmaker" />被動效果影響的目標，以及<char uid="PECS_HighElven" />、<char uid="PECS_Sekhmet" />、<char uid="PECS_ElvenForestmaker" />、<char uid="PECS_Hathor" />的<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻擊</sec>，於戰鬥開始時增加<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -4583,6 +4623,19 @@ skills:
             base: 5
             per: 0.5
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" /></sec>가 증가합니다.
+        <sec typ="cond">공격이 적중하지 않을 시</sec>, 1라운드 동안 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec>가 크게 증가합니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" /></sec>が増加します。
+        <sec typ="cond">攻撃が命中しない場合</sec>、1ラウンドの間<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="2" r /></sec>が大きく増加します。
+      EN: |-
+        At the start of the round, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" /></sec> increases.
+        <sec typ="cond">If the attack does not hit</sec>, <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="2" r /></sec> greatly increases for 1 round.
+      TC: |-
+        回合開始時，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" /></sec>增加。
+        <sec typ="cond">若攻擊未命中</sec>，於1回合內<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec>大幅增加。
 dialogue:
   KR:
     "1":
@@ -4785,8 +4838,7 @@ dialogue:
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
-      StageStart: 私が昨日、「好き」って100回言ってた？か、数えてたの…？
-        あ、あれは…もう、どうしようもなくて。だってあんたがあんな風に…って！言わせないでよ～！
+      StageStart: 私が昨日、「好き」って100回言ってた？か、数えてたの…？ あ、あれは…もう、どうしようもなくて。だってあんたがあんな風に…って！言わせないでよ～！
       Retreat: ""
       SearchStart: ""
       SearchEnd: ""
@@ -4831,8 +4883,7 @@ dialogue:
         (미번역)아, 무, 뭐… 하아, 표정을 보니까 진심인 것 같네. 그래도 할 말은 해야겠어.
         꼭 이런 거 입혀놓고 해야겠… 아, 알았어. 알았다구. ...당신, 정말 악취미야.
         꼭 대놓고 말하게 해야 성이 풀리는 거야? 으… 조, 좋아해...
-      OathIdle_01: 私が昨日、「好き」って100回言ってた？か、数えてたの…？
-        あ、あれは…もう、どうしようもなくて。だってあんたがあんな風に…って！言わせないでよ～！
+      OathIdle_01: 私が昨日、「好き」って100回言ってた？か、数えてたの…？ あ、あれは…もう、どうしようもなくて。だってあんたがあんな風に…って！言わせないでよ～！
       MVP: ""
     "2":
       SquadJoin: 私の名前はキルケー―。テーマパークの魔女です。
@@ -5005,12 +5056,9 @@ dialogue:
       SPIdle_02_01: |-
         N-no! I won’t let you
         touch me if you keep saying nonsense.
-      Oath: >-
-        Oh, w-well… *Sighs*, seeing your face, it looks like you really mean it.
-        But I should say this.
-
+      Oath: |-
+        Oh, w-well… *Sighs*, seeing your face, it looks like you really mean it. But I should say this.
         Do you really have to make me wear something like thi… A-all right. I said all right. … You’re really sneaky.
-
         Do you really have to make me say it out loud? Ugh… I-I like you…
       OathIdle_01: |-
         I told you that I like you
@@ -5065,10 +5113,8 @@ dialogue:
       SPIdle_02_01: |-
         Weren’t you going to kiss me first?
         O-okay… Do as you wish.
-      Oath: >-
-        I’ve been… waiting for you to tell me your feelings first. I’m sorry,
-        and thank you…​
-
+      Oath: |-
+        I’ve been… waiting for you to tell me your feelings first. I’m sorry, and thank you…​
         From now on, I’ll try to be more honest, so… please keep hugging me like this…
       OathIdle_01: |-
         Yesterday’s yesterday.
@@ -5117,11 +5163,9 @@ dialogue:
         I’m comfortable with the term.
         There’s no other intention, got it?
       SPIdle_02_01: I said stop!!
-      Oath: >-
+      Oath: |-
         W-wait! Are you… serious? You know what this means, right?
-
         N-no! I'm not saying no… I mean… that is… A-anyway! If you happen
-
         to glance at another girl, I'll shoot you in a flash. So you'd better be careful. OK?
       OathIdle_01: |-
         You’re acting strange… Are you

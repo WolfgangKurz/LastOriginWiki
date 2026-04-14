@@ -2093,6 +2093,19 @@ skills:
             base: 3
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        화염 방사로 <dmg elem="fire" />를 주고, <sec typ="dmg">뒤의 대상에게는 50% 감소한 피해</sec>를 줍니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상에게 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 지속 화염 피해 <val idx="0" signless /></sec>를 주고 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="1" r inv /></sec>를 감소시킵니다.
+      JP: |-
+        火炎放射で <dmg elem="fire" />を与え、<sec typ="dmg">後方の対象には50%減少したダメージ</sec>を与えます。
+        <sec typ="cond">命中時</sec>、3ラウンドの間対象に<sec typ="dmg"><buff typ="FireDMG_DOT" /> 継続火炎ダメージ <val idx="0" signless /></sec>を与え、<sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="1" r inv /></sec>を減少させます。
+      EN: |-
+        Deals <dmg elem="fire" /> with a flamethrower attack, and deals <sec typ="dmg">50% reduced damage to units behind the target</sec>.
+        <sec typ="cond">On hit</sec>, for 3 rounds, inflicts <sec typ="dmg"><buff typ="FireDMG_DOT" /> continuous fire damage <val idx="0" signless /></sec> and reduces <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="1" r inv /></sec>.
+      TC: |-
+        以火焰噴射造成 <dmg elem="fire" />，並對<sec typ="dmg">目標後方的敵人造成 50% 減少的傷害</sec>。
+        <sec typ="cond">命中時</sec>，在 3 回合內使目標受到 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 持續火焰傷害 <val idx="0" signless /></sec>，並降低 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抵抗 <val idx="1" r inv /></sec>。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -4757,6 +4770,27 @@ skills:
             base: 4.5
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        목표 대상에게 돌격해 <dmg elem="physics" />를 줍니다.
+        대상의 방어력을 일정 비율 무시합니다. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r signless /></sec>
+        적중 대상이 <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 또는 <sec typ="cond"><buff typ="PROVOKE" /> 표식</sec> 상태인 경우, 각각 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond">스킬 사용 시</sec>, 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 회피 / 행동력 감소 효과를 해제</sec>합니다.
+      JP: |-
+        目標対象に突撃して <dmg elem="physics" />を与えます。
+        対象の防御力を一定割合無視します。<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r signless /></sec>
+        命中対象が<sec typ="cond"><buff typ="SNARE" /> 移動不能</sec>または<sec typ="cond"><buff typ="PROVOKE" /> マーク</sec>状態の場合、それぞれ<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
+        <sec typ="cond">スキル使用時</sec>、自身に適用された<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 回避 / 行動力減少効果を解除</sec>します。
+      EN: |-
+        Charges at the target and deals <dmg elem="physics" />.
+        Ignores a set percentage of the target's Defense. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="0" r signless /></sec>
+        If the hit target is <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> or <sec typ="cond"><buff typ="PROVOKE" /> Marked</sec>, respectively, the <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
+        <sec typ="cond">On skill use</sec>, removes applied <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Evasion / AP reduction effects</sec> from self.
+      TC: |-
+        衝向目標並造成 <dmg elem="physics" />。
+        會無視目標一定比例的防禦力。<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r signless /></sec>
+        若命中目標處於<sec typ="cond"><buff typ="SNARE" /> 無法移動</sec>或<sec typ="cond"><buff typ="PROVOKE" /> 標記</sec>狀態，則各自的<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>會增加。
+        <sec typ="cond">使用技能時</sec>，會解除自身所受的<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 閃避 / 行動力下降效果</sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -5076,6 +5110,19 @@ skills:
             base: 0.3
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">적 공격 시</sec>, 부스터 출력을 올려 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="3" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">敵攻撃時</sec>、ブースター出力を上げて2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間、自身の<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="3" r /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">When an enemy attacks</sec>, boosts booster output and increases <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec> for 2 rounds.
+        <sec typ="cond">At the start of the round</sec>, increases own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="3" r /></sec> for 2 rounds.
+      TC: |-
+        <sec typ="cond">敵人攻擊時</sec>，提升推進器輸出，使 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>在 2 回合內增加。
+        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="3" r /></sec>在 2 回合內增加。
   "4":
     key: "4"
     icon: P.Missile
@@ -5309,6 +5356,27 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec>가 크게 증가합니다.
+        <sec>해당 효과는 라운드 경과에 따라 점감합니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec> 자신이 <sec typ="cond"><buff typ="DEF_Char" /> 지정 보호를 받고 있을 경우</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 증가합니다.
+        <sec typ="note">예열 개시</sec>의 발동 효과 지속이 1라운드 증가합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自身の<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec>が大きく増加します。
+        <sec>この効果はラウンド経過に伴い徐々に弱まります。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、自身が<sec typ="cond"><buff typ="DEF_Char" /> 指定保護を受けている場合</sec>、自身の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が増加します。
+        <sec typ="note">予熱開始</sec>の発動効果持続が1ラウンド増加します。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> greatly increases.
+        <sec>This effect weakens as rounds pass.</sec>
+        <sec typ="cond">At the start of the round</sec>, if self is under <sec typ="cond"><buff typ="DEF_Char" /> designated protection</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increases.
+        <sec typ="note">Preheating Start</sec>'s trigger duration increases by 1 round.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="0" r /></sec>大幅增加。
+        <sec>此效果會隨回合經過而逐漸衰減。</sec>
+        <sec typ="cond">回合開始時</sec>，若自身正受到 <sec typ="cond"><buff typ="DEF_Char" /> 指定保護</sec>，則自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>會增加。
+        <sec typ="note">預熱開始</sec>的觸發效果持續時間增加 1 回合。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -5454,6 +5522,23 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SKILL_UP" /> 회피 <val idx="0" r signless />만큼 스킬 위력 증가</sec> 효과를 획득합니다.
+        <sec typ="cond"><sec typ="note">네이팜 버너</sec> 사용 시</sec>, 초가속하여 3라운드 동안 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과를 획득합니다.
+        <sec typ="cond"><sec typ="note">초가속</sec> 상태에서 적 처치 시</sec>, 사용한 <sec typ="buff"><buff typ="AP_UP" /> AP</sec>의 50%를 돌려받습니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身は<sec typ="buff"><buff typ="SKILL_UP" /> 回避 <val idx="0" r signless />分のスキル威力増加</sec>効果を獲得します。
+        <sec typ="cond"><sec typ="note">ネイ팜バーナー</sec>使用時</sec>、超加速し、3ラウンドの間<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / 被ダメージ減少無視</sec>効果を獲得します。
+        <sec typ="cond"><sec typ="note">超加速</sec>状態で敵を撃破時</sec>、使用した<sec typ="buff"><buff typ="AP_UP" /> AP</sec>の50%を取り戻します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, self gains a <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power Increase equal to Evasion <val idx="0" r signless /></sec> effect.
+        <sec typ="cond">On use of <sec typ="note">Napalm Burner</sec></sec>, enters hyper acceleration and gains <sec typ="buff"><buff typ="BARRIER_PIERCE" /> barrier / damage reduction ignore</sec> for 3 rounds.
+        <sec typ="cond">When an enemy is killed while in <sec typ="note">Hyper Acceleration</sec></sec>, recovers 50% of the <sec typ="buff"><buff typ="AP_UP" /> AP</sec> used.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身會獲得 <sec typ="buff"><buff typ="SKILL_UP" /> 相當於閃避 <val idx="0" r signless /> 的技能威力提升</sec>效果。
+        <sec typ="cond"><sec typ="note">燃燒彈噴射器</sec>使用時</sec>，進入超加速並在 3 回合內獲得 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視防護罩 / 傷害減少</sec>效果。
+        <sec typ="cond">在 <sec typ="note">超加速</sec> 狀態下擊殺敵人時</sec>，會返還所使用 <sec typ="buff"><buff typ="AP_UP" /> AP</sec> 的 50%。
 dialogue:
   KR:
     "":

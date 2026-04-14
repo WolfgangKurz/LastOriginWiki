@@ -1993,6 +1993,19 @@ skills:
             base: 0.15
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        사격으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>으로 설정합니다.
+        대상은 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>가 감소하며 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>가 증가합니다.
+      JP: |-
+        射撃で<dmg elem="physics" />を与え、2ラウンドの間、対象を<sec typ="buff"><buff typ="MARKING" /> マーク</sec>状態にします。
+        対象の<sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec>が減少し、<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="3" r /></sec>が増加します。
+      EN: |-
+        Shoots and deals <dmg elem="physics" /> to the target, inflicting <sec typ="buff"><buff typ="MARKING" /> Mark</sec> for 2 rounds.
+        The target's <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="1" r /></sec> decreases, and <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="3" r /></sec> increases.
+      TC: |-
+        以射擊造成<dmg elem="physics" />，並使目標在2回合內陷入<sec typ="buff"><buff typ="MARKING" /> 標記</sec>狀態。
+        目標的<sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec>降低，<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="3" r /></sec>增加。
   "2":
     key: "2"
     icon: SelfDefBuff
@@ -2311,6 +2324,19 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        3라운드 동안 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> 효과와 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="5" r /></sec> 증가 효과를 얻고, <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> 자신의 현재 HP%에 비례해 공격자의 방어 관통 <val idx="6" r inv /></sec>가 감소합니다. => <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> 방어 관통 저항 <val idx="6" r /></sec>
+        <sec typ="note">방벽 생성</sec>의 효과는 중첩되지 않습니다.
+      JP: |-
+        3ラウンドの間、<sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec>効果と<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果耐性 <val idx="5" r /></sec>増加効果を得て、<sec typ="buff"><buff typ="Current_Hp_Piercedown" /> 自分の現在HP%に比例して攻撃者の防御貫通 <val idx="6" r inv /></sec>が減少します。=> <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> 防御貫通抵抗 <val idx="6" r /></sec>
+        <sec typ="note">防壁生成</sec>の効果は重複しません。
+      EN: |-
+        For 3 rounds, gains <sec typ="buff"><buff typ="DEF_Line" /> Protect Line</sec> and increases <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="5" r /></sec>, and decreases the attacker's <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> Defense Penetration <val idx="6" r inv /></sec> in proportion to self's current HP%. => <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> Defense Penetration Resistance <val idx="6" r /></sec>
+        <sec typ="note">Barrier Construction</sec> effects do not stack.
+      TC: |-
+        持續3回合，獲得<sec typ="buff"><buff typ="DEF_Line" /> 列保護</sec>效果，以及<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="5" r /></sec>增加效果，並使攻擊者的<sec typ="buff"><buff typ="Current_Hp_Piercedown" /> 防禦貫穿 <val idx="6" r inv /></sec>按自身目前HP%比例降低。=> <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> 防禦貫穿抗性 <val idx="6" r /></sec>
+        <sec typ="note">構建防壁</sec>的效果不會疊加。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -2600,6 +2626,19 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소합니다.
+        스쿼드 내에 자신을 제외한 <sec typ="note">스틸라인 계통</sec> 전투원이 있을 경우 범위 내 <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 아군을 지정 보호</sec>하며 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>를 증가시킵니다.
+      JP: |-
+        ラウンド開始時、自分が<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec>が減少します。
+        分隊内に自分を除いた<sec typ="note">スチールライン系統</sec>の戦闘員がいる場合、範囲内の<sec typ="buff"><buff typ="DEF_Char" /> 保護機を除いた味方を指定保護</sec>し、<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>を増加させます。
+      EN: |-
+        At the start of the round, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="0" r inv /></sec> decreases.
+        If there is a <sec typ="note">Steel Line</sec> unit in the squad other than self, grants <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection for allies within range excluding protectors</sec> and increases <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="4" r /></sec>.
+      TC: |-
+        回合開始時，自身的<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="0" r inv /></sec>降低。
+        若小隊內存在除自身以外的<sec typ="note">鋼線系統</sec>戰鬥員，則會對範圍內<sec typ="buff"><buff typ="DEF_Char" /> 除保護機外的我軍指定保護</sec>，並增加<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>。
   "4":
     key: "4"
     icon: P.TeamDefDeBuff
@@ -2979,6 +3018,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 적 전체의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec>를 감소시킵니다.
+        대상이 <sec typ="note">원호 사격 : 표식</sec> 상태라면 기본 효과가 추가 적용되며 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" /></sec>을(를) 감소 시킵니다.
+        <sec typ="note">방벽 생성</sec> 스킬 사용 시,  대상에게 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>을 적용하고 후열의 적에게는  <sec typ="buff"><buff typ="Guardpierce_No_Apply" /> 보호 무시 기능을 비활성화</sec> 시킵니다.
+      JP: |-
+        ラウンド開始時、敵全体の<sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="1" r /></sec>を減少させます。
+        対象が<sec typ="note">援護射撃 : マーク</sec>状態なら基本効果が追加適用され、<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" /></sec>を減少させます。
+        <sec typ="note">防壁生成</sec>スキル使用時、対象に<sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>を適用し、後列の敵には<sec typ="buff"><buff typ="Guardpierce_No_Apply" /> 保護無視機能を無効化</sec>します。
+      EN: |-
+        At the start of the round, decreases all enemies' <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="1" r /></sec>.
+        If the target is in <sec typ="note">Covering Fire: Mark</sec> state, the basic effect is additionally applied and <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" /></sec> is decreased.
+        When using <sec typ="note">Barrier Construction</sec>, applies <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> to the target and <sec typ="buff"><buff typ="Guardpierce_No_Apply" /> disables Ignore Protection functionality</sec> for rear enemies.
+      TC: |-
+        回合開始時，降低所有敵軍的<sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="1" r /></sec>。
+        若目標處於<sec typ="note">拋物射擊：標記</sec>狀態，則會額外套用基本效果，並降低<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" /></sec>。
+        使用<sec typ="note">構建防壁</sec>技能時，會對目標套用<sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>，並對後排敵軍<sec typ="buff"><buff typ="Guardpierce_No_Apply" /> 停用無視保護功能</sec>。
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -3442,6 +3498,23 @@ skills:
             base: 0.1
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        전투 시작 시, 해제 불가능한 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec> 감소 / <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 모든 속성 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="8" r /></sec> 효과를 얻습니다.
+        라운드 개시 시, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>이(가) 증가하며 자신을 제외한 <cmt t="스틸라인 계열">$$SteelLine:?$</cmt> 부대원이 있거나 공격 지원을 받는 경우 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" /></sec>가 추가로 증가합니다.
+        라운드 개시 시, <sec typ="note">스틸라인 포메이션</sec> 범위 내 공격기 / 지원기 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" slot="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" slot="3" r /></sec>가 증가합니다.
+      JP: |-
+        戦闘開始時、解除不可能な<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec>減少 / <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 全属性耐性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除耐性 <val idx="8" r /></sec>効果を得ます。
+        ラウンド開始時、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>が増加し、自分を除いた<cmt t="スチールライン系統">$$SteelLine:?$</cmt>部隊員がいるか攻撃支援を受ける場合、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" /></sec>が追加で増加します。
+        ラウンド開始時、<sec typ="note">スチールライン・フォーメーション</sec>範囲内の攻撃機 / 支援機味方の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" slot="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" slot="3" r /></sec>が増加します。
+      EN: |-
+        At the start of combat, gains unremovable <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="0" r inv /></sec> Decrease / <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> All Elemental Resistance <val idx="5" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Remove Buff Resistance <val idx="8" r /></sec> effects.
+        At the start of the round, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec> increases, and if there are <cmt t="Steel Line">$$SteelLine:?$</cmt> squad members other than self or if receiving Support Attack, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" /></sec> increases further.
+        At the start of the round, increases <sec typ="note">Steel Line Formation</sec> allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" slot="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="6" slot="3" r /></sec> for attackers / supporters within range.
+      TC: |-
+        戰鬥開始時，獲得無法解除的<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="0" r inv /></sec>降低 / <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 全屬性抗性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抗性 <val idx="8" r /></sec>效果。
+        回合開始時，<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>增加，且若除自身以外存在<cmt t="鋼線系統">$$SteelLine:?$</cmt>部隊員或正在受到攻擊支援，則<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" /></sec>會額外增加。
+        回合開始時，<sec typ="note">鋼線編隊</sec>範圍內攻擊型 / 支援型我軍的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" slot="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" slot="3" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -3869,9 +3942,7 @@ dialogue:
         Oh! … I-I’m sorry. I still
         feel like this is immoral…
         I-I’ll try better…
-      Oath: Co-commander? If… I take this, we’ll really become family… Urgh… What
-        should I do? … No, commander… I have no reason to decline… My dream… has
-        finally come true…
+      Oath: Co-commander? If… I take this, we’ll really become family… Urgh… What should I do? … No, commander… I have no reason to decline… My dream… has finally come true…
       OathIdle_01: |-
         Commander? Will you talk with me?
         It can be something trivial.
@@ -3895,17 +3966,13 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         Commander, please look at me.
-
         To become a Bunny
-
         I went through such a harsh training… I will show you the result from now on!
-      Idle_01_02: >-
+      Idle_01_02: |-
         I heard others besides me are also looking for
-
         or have found the Bunny suit.
-
         The reason that they look for costumes popular among men… You must have noticed too, Commander.
       Idle_01_03: |-
         I made a lot of parfaits while training.
@@ -3913,13 +3980,10 @@ dialogue:
         is one of the essential virtues of Bunny.
         Now I can make it with my eyes closed.
       SPIdle_01_01: I-I don’t feel good right now… Please hold back for a while, Commander…​
-      Idle_02_01: >-
+      Idle_02_01: |-
         What do you think?
-
         Wasn’t I just like a real rabbit?
-
         … Haha, the hard work paid off… What? Bunny Girl is different from a rabbit?
-
         Huh…? Then, what was all that work for…​
       Idle_03_01: |-
         You like sweets too, Commander.
@@ -3933,19 +3997,14 @@ dialogue:
         having a family with me?
         If you choose me, I can wear something…
         even better than this…
-      SPIdle_02_01: >-
+      SPIdle_02_01: |-
         My senses are heightened… I must have shown embarrassing responses
-
         every time Commander touched me… Yet you found it cute? Ugh… Well, do you want to see… more of my cuteness?​
-      Oath: >-
-        … At first, I just wore the rabbit ears out of simple curiosity, but
-        after I found out what a rabbit really is,
-
+      Oath: |-
+        … At first, I just wore the rabbit ears out of simple curiosity, but after I found out what a rabbit really is,
         I’ve gone through harsh training to mimic it. I was so glad to finally show the result to Commander… Everything is coming up roses. Now that we’re truly a family… why don’t we make a big family like rabbits do? I'm ready.​
-      OathIdle_01: >-
-        Now that I’ve come to my senses… This costume… covers so little… But if
-        Commander likes it,
-
+      OathIdle_01: |-
+        Now that I’ve come to my senses… This costume… covers so little… But if Commander likes it,
         I also like… I mean, Commander.
       MVP: ""
     "":
@@ -3991,12 +4050,9 @@ dialogue:
         I can feel my heart thumping… I feel
         like this is not right. Is something
         wrong with me?
-      Oath: >-
-        Yes. What? We're… practically a family. Ugh… Are family members allowed
-        to do this?
-
+      Oath: |-
+        Yes. What? We're… practically a family. Ugh… Are family members allowed to do this?
         Seriously… Oh… OK. To be specific, it's OK for step-siblings… So,
-
         it'll be OK for you and me. Right?
       OathIdle_01: |-
         … But… I’m glad we aren’t

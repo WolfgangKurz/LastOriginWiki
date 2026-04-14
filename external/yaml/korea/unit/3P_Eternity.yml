@@ -2865,6 +2865,19 @@ skills:
             base: -0.17
             per: -0.07
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <dmg elem="physics" />를 주고, 3라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다.
+        <sec typ="note">헌신</sec> 상태일 경우, 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="4" r /></sec>를 증가시키고 <sec typ="note">분노</sec> 상태일 경우, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>하고 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="6" r /></sec>를 대폭 감소시킵니다.
+      JP: |-
+        対象に<dmg elem="physics" />を与え、3ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を減少させます。
+        <sec typ="note">献身</sec>状態の場合、自分の<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="4" r /></sec>を増加させ、<sec typ="note">怒り</sec>状態の場合、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ減少効果を解除</sec>し、<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="6" r /></sec>を大幅に減少させます。
+      EN: |-
+        Deals <dmg elem="physics" /> to the target and decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> for 3 rounds.
+        If in <sec typ="note">Devotion</sec> state, increases self's <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="4" r /></sec>; if in <sec typ="note">Rage</sec> state, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> received damage reduction effect</sec> and greatly decreases <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="6" r /></sec>.
+      TC: |-
+        對目標造成<dmg elem="physics" />，並在3回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>。
+        若處於<sec typ="note">奉獻</sec>狀態，則增加自身的<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="4" r /></sec>；若處於<sec typ="note">憤怒</sec>狀態，則解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 所受傷害減少效果</sec>，並大幅降低<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="6" r /></sec>。
   "2":
     key: "2"
     icon: MGShot
@@ -3426,6 +3439,11 @@ skills:
             base: 0.26
             per: 0.06
             chance: 1
+    desc:
+      KR: 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, <sec typ="note">분노</sec> 상태일 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: 指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与え、<sec typ="note">怒り</sec>状態の場合は、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="0" r /></sec>が増加します。
+      EN: Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area, and if in <sec typ="note">Rage</sec> state, increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec>.
+      TC: 對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />，若處於<sec typ="note">憤怒</sec>狀態，則增加<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="0" r /></sec>。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -3827,6 +3845,23 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        전투 개시 시, 자신 아래 1인에게 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="0" signless /> 회</sec>  / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec> 감소 효과를 부여하고 라운드 개시 시, <sec typ="buff"><buff typ="DEF_Char" /> 자신 아래 1인을 지정 보호</sec>합니다.
+        라운드 개시 시, <sec typ="cond">지정 보호 대상의 체력이 25% 초과</sec>일 경우 자신에게 <sec typ="note">헌신</sec> 상태가 적용되고 <sec typ="cond">지정 보호 대상이 공격기 또는 보호기</sec> 일 경우, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec>를 증가시키고 <sec typ="cond">지원기</sec> 일 경우, <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" r /></sec>를 증가시킵니다.
+        <sec typ="cond">지정 보호 대상의 체력이 25% 이하</sec> 일 경우 자신에게 <sec typ="note">분노</sec> 상태가 적용되고 지정 보호 대상의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="7" r /></sec>를 증가시킵니다.
+      JP: |-
+        戦闘開始時、自分の下の1体に<sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="0" signless />回</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec>減少効果を付与し、ラウンド開始時に<sec typ="buff"><buff typ="DEF_Char" /> 自分の下の1体を指定保護</sec>します。
+        ラウンド開始時、<sec typ="cond">指定保護対象の体力が25%超過</sec>の場合、自分に<sec typ="note">献身</sec>状態が適用され、<sec typ="cond">指定保護対象が攻撃機または保護機</sec>の場合は<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec>を増加させ、<sec typ="cond">支援機</sec>の場合は<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>を増加させます。
+        <sec typ="cond">指定保護対象の体力が25%以下</sec>の場合、自分に<sec typ="note">怒り</sec>状態が適用され、指定保護対象の<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="7" r /></sec>を増加させます。
+      EN: |-
+        At combat start, grants the ally one position below self <sec typ="buff"><buff typ="DEF_All" /> damage immunity <val idx="0" signless /> times</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="1" r inv /></sec> decrease effects, and at the start of the round, <sec typ="buff"><buff typ="DEF_Char" /> designates one ally below self for protection</sec>.
+        At the start of the round, if the <sec typ="cond">designated protection target's HP is above 25%</sec>, self gains <sec typ="note">Devotion</sec> state; if the <sec typ="cond">designated protection target is an attacker or protector</sec>, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="6" r /></sec>; if it is a <sec typ="cond">supporter</sec>, increases <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="8" r /></sec>.
+        <sec typ="cond">If the designated protection target's HP is 25% or less</sec>, self gains <sec typ="note">Rage</sec> state and increases the designated protection target's <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="7" r /></sec>.
+      TC: |-
+        戰鬥開始時，向自身下方1名賦予<sec typ="buff"><buff typ="DEF_All" /> 傷害無效 <val idx="0" signless />次</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="1" r inv /></sec>減少效果，且在回合開始時，<sec typ="buff"><buff typ="DEF_Char" /> 對自身下方1名進行指定保護</sec>。
+        回合開始時，若<sec typ="cond">指定保護目標的HP超過25%</sec>，自身將套用<sec typ="note">奉獻</sec>狀態；若<sec typ="cond">指定保護目標為攻擊器或保護機</sec>，則增加<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec>；若為<sec typ="cond">支援器</sec>，則增加<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>。
+        <sec typ="cond">若指定保護目標的HP為25%以下</sec>，則自身套用<sec typ="note">憤怒</sec>狀態，並增加指定保護目標的<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="7" r /></sec>。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -4243,6 +4278,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="4" r signless /> HP로 전투 속행</sec> 효과가 부여되고 라운드 개시 시, <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec> 감소가 부여됩니다.
+        라운드 개시 시, <sec typ="note">헌신</sec> 상태일 경우, 해제 불가의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="7" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" r inv /></sec> 감소 효과가 추가적으로 적용됩니다.
+      JP: |-
+        戦闘開始時、<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="4" r signless /> HPで戦闘継続</sec>効果が付与され、ラウンド開始時に<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec>減少が付与されます。
+        ラウンド開始時、<sec typ="note">献身</sec>状態の場合、解除不能の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="7" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="8" r inv /></sec>減少効果が追加で適用されます。
+      EN: |-
+        At combat start, grants <sec typ="buff"><buff typ="DEF_RESSURRECT" /> battle continuation with <val idx="4" r signless /> HP</sec>, and at the start of the round grants <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="0" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="1" r inv /></sec> decrease.
+        At the start of the round, if in <sec typ="note">Devotion</sec> state, additionally applies unremovable <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="7" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="8" r inv /></sec> decrease effects.
+      TC: |-
+        戰鬥開始時，賦予<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以<val idx="4" r signless /> HP繼續戰鬥</sec>效果，且在回合開始時賦予<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="1" r inv /></sec>減少。
+        回合開始時，若處於<sec typ="note">奉獻</sec>狀態，則另外套用無法解除的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="7" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="8" r inv /></sec>減少效果。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -4535,6 +4583,19 @@ skills:
             base: 0.18
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="note">분노</sec> 상태일 경우, 해제 불가의 <sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 위력으로 반격</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec>가 추가적으로 부여됩니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec>が増加します。
+        <sec typ="note">怒り</sec>状態の場合、解除不能な<sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 威力で反撃</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec>が追加で付与されます。
+      EN: |-
+        At the start of the round, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="1" r /></sec>.
+        If in <sec typ="note">Rage</sec> state, additionally grants unremovable <sec typ="buff"><buff typ="COUNTER" /> counterattack with <val idx="5" r signless /> power</sec> / <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="7" r /></sec>.
+      TC: |-
+        回合開始時，增加<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="1" r /></sec>。
+        若處於<sec typ="note">憤怒</sec>狀態，則另外賦予無法解除的<sec typ="buff"><buff typ="COUNTER" /> 以<val idx="5" r signless /> 威力反擊</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="7" r /></sec>。
 dialogue:
   KR:
     "1":
@@ -4699,8 +4760,7 @@ dialogue:
         해드려야 하는데. 제가 주인님 덕분에
         행복해지다니 주인님?
         함께 행복해지시겠어요?
-      Oath: 저는 요람에서 무덤까지, 아니, 무덤에 묻힌 이후의 영원한 사후 세계에서도 주인님을 섬기기 위해 만들어졌어요. 이것만으로도 행복한데
-        주인님께서 영원의 동반자로 저를 선택해주셔서 더욱 행복해요. 영원히 당신을 사랑할게요, 주인님.
+      Oath: 저는 요람에서 무덤까지, 아니, 무덤에 묻힌 이후의 영원한 사후 세계에서도 주인님을 섬기기 위해 만들어졌어요. 이것만으로도 행복한데 주인님께서 영원의 동반자로 저를 선택해주셔서 더욱 행복해요. 영원히 당신을 사랑할게요, 주인님.
       OathIdle_01: |-
         주인님의 곁에 있으면 너무 행복해서
         모든 것을 잊게 돼요. 저의 입장, 우리의 적
@@ -4781,10 +4841,8 @@ dialogue:
         주인님…
         절… 침대에서 죽이실 생각이신 가요?!
         너무 행복해요… 하아…​
-      Oath: >-
-        저는 마침내 삶과 죽음의 경계를 자유로이 넘나드는 주인님께, 저의 죽음까지도 주인님의 발 아래 조아리기 위한 예를 갖추고자 해요.
-        죽음은 또다른 이름의 삶.
-
+      Oath: |-
+        저는 마침내 삶과 죽음의 경계를 자유로이 넘나드는 주인님께, 저의 죽음까지도 주인님의 발 아래 조아리기 위한 예를 갖추고자 해요. 죽음은 또다른 이름의 삶.
         삶이란 또다른 이름의 죽음이니… 저는 영원히 주인님의 것이에요. 영원을… 함께해요. 나의 주인님, 사랑하는 나의 하데스…
       OathIdle_01: |-
         주인님…
@@ -5125,9 +5183,8 @@ dialogue:
         Licking someone’s chin expresses obedience.
         Master, excuse- Umm… But that changes the meaning…
       SPIdle_02_01: I should lie down again, right? Master…
-      Oath: >-
+      Oath: |-
         Master, this is… never mind. How could I disobey you, master? Also,
-
         I’m happy as long as I can be with you. As long as I can stay with you at the end of forever, master.​
       OathIdle_01: |-
         As long as I can stay with you,
@@ -5157,13 +5214,10 @@ dialogue:
       Idle_01_02: |-
         Oh. Master, don’t go. When you’re not beside me,
         I feel nervous to death.
-      Idle_01_03: Master. Let’s go sea bathing, eat shaved ice… So… like a date. What
-        do you think?
+      Idle_01_03: Master. Let’s go sea bathing, eat shaved ice… So… like a date. What do you think?
       SPIdle_01_01: A-are you finally embracing me?
-      Idle_02_01: >-
-        I thought dolling myself wouldn’t make a difference… But seeing that you
-        like it,
-
+      Idle_02_01: |-
+        I thought dolling myself wouldn’t make a difference… But seeing that you like it,
         I’m so glad.
       Idle_03_01: |-
         Master. I know I’m asking for too much, but please look at me.
@@ -5176,12 +5230,9 @@ dialogue:
       SPIdle_02_01: |-
         Ah… You’re giving me love… I’m so happy that I might die.
         I want to have more…
-      Oath: >-
-        I didn’t have a single moment where I didn’t think about you since the
-        day I met you, master.
-
+      Oath: |-
+        I didn’t have a single moment where I didn’t think about you since the day I met you, master.
         I, too, always want to be by your side, master. I swear my eternity to you.
-
         Not even death can do us part.
       OathIdle_01: |-
         Even if I die one day,
@@ -5247,10 +5298,7 @@ dialogue:
         making you happy. But I’m the one becoming happy
         because of you. Master?
         Would you like to be happy together?
-      Oath: I was made to serve you from the cradle to the grave--no, even in the
-        afterlife, long after I'm dead and buried. Even though that alone makes
-        me happy, I'm even happier that you chose me to be your eternal
-        companion. I will love you forever, Master.
+      Oath: I was made to serve you from the cradle to the grave--no, even in the afterlife, long after I'm dead and buried. Even though that alone makes me happy, I'm even happier that you chose me to be your eternal companion. I will love you forever, Master.
       OathIdle_01: |-
         When I’m by your side, I become so happy
         that I forget about everything else. My position, our enemies,
@@ -5338,8 +5386,7 @@ dialogue:
         I’m sorry I didn’t notice.
         I’ll get ready soon. Please wait,
         Master.
-      Oath: Is this…? Yes, Master! I’m your loyal maid. I’ll be with you until the end
-        of the world. Forever…
+      Oath: Is this…? Yes, Master! I’m your loyal maid. I’ll be with you until the end of the world. Forever…
       OathIdle_01: |-
         You’re grown to be
         a responsible grown-up… I’m…

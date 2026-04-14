@@ -2624,6 +2624,23 @@ skills:
             base: 0.025
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        유탄을 차 날려 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 강화 효과를 해제</sec>합니다.
+      JP: |-
+        榴弾を蹴り飛ばして <dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">命中時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃強化効果を解除</sec>します。
+      EN: |-
+        Kicks a grenade away, dealing <dmg elem="physics" />.
+        <sec typ="cond">On crit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's counterattack enhancement effect</sec>.
+      TC: |-
+        踢飛手榴彈並造成 <dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>會增加。
+        <sec typ="cond">命中時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊強化效果</sec>。
   "2":
     key: "2"
     icon: MeleeAttack
@@ -5758,6 +5775,31 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        정권지르기로 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> <dmg elem="physics" /> 피해를 줍니다.
+        <sec typ="dmg"><buff typ="PhyATK_UP" /> 대상이 전열에 가까울 수록 피해량이 증가</sec>합니다.
+        대상 전열 : <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>
+        대상 중열 : <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>
+        대상 후열 : <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>
+      JP: |-
+        正拳突きで <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec> <dmg elem="physics" />ダメージを与えます。
+        <sec typ="dmg"><buff typ="PhyATK_UP" /> 対象が前列に近いほどダメージ量が増加</sec>します。
+        対象前列 : <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>
+        対象中列 : <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>
+        対象後列 : <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="4" r /></sec>
+      EN: |-
+        Delivers a straight punch that deals <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="0" r /></sec> <dmg elem="physics" /> damage.
+        <sec typ="dmg"><buff typ="PhyATK_UP" /> The closer the target is to the front line, the higher the damage</sec>.
+        Target front line: <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec>
+        Target middle line: <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec>
+        Target back line: <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec>
+      TC: |-
+        以正拳造成 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec> <dmg elem="physics" /> 傷害。
+        <sec typ="dmg"><buff typ="PhyATK_UP" /> 目標越接近前排，傷害量越高</sec>。
+        目標前排：<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>
+        目標中排：<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>
+        目標後排：<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="4" r /></sec>
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -6693,6 +6735,31 @@ skills:
             base: 150
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">적 공격 시</sec>, <sec typ="cond">적 처치 시</sec>, <sec typ="cond">공격 당할 시</sec>마다 해당 수치의 50% 만큼의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> 증가 효과를 영구 획득합니다. (각 최대 3중첩)
+        <sec typ="cond">적 공격 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec>이(가) 증가합니다.
+        <sec typ="cond">치명타 시</sec>, 추가로 해당 수치의 50% 만큼 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP가 증가</sec>합니다.
+        <sec typ="buff"><buff typ="AP_UP" /> AP 증가 효과</sec>는 각 <sec>액티브 스킬 레벨에 비례</sec>합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">敵攻撃時</sec>、<sec typ="cond">敵を撃破時</sec>、<sec typ="cond">攻撃を受けた時</sec>ごとに、その数値の50%分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>増加効果を永続的に獲得します。 (各最大3重複)
+        <sec typ="cond">敵攻撃時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec>、さらにその数値の50%分だけ自身の<sec typ="buff"><buff typ="AP_UP" /> APが増加</sec>します。
+        <sec typ="buff"><buff typ="AP_UP" /> AP増加効果</sec>は各<sec>アクティブスキルレベルに比例</sec>します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec>.
+        <sec typ="cond">When attacking enemies</sec>, <sec typ="cond">when killing an enemy</sec>, and <sec typ="cond">when taking attacks</sec>, permanently gains Attack <sec typ="buff"><buff typ="ATK_UP" /> <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> increase effects equal to 50% of that value. (Up to 3 stacks each)
+        <sec typ="cond">When attacking enemies</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec> increases.
+        <sec typ="cond">On crit</sec>, additionally increases own <sec typ="buff"><buff typ="AP_UP" /> AP</sec> by 50% of that value.
+        The <sec typ="buff"><buff typ="AP_UP" /> AP increase effect</sec> scales with each <sec>active skill level</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>會增加。
+        <sec typ="cond">敵人攻擊時</sec>、<sec typ="cond">擊殺敵人時</sec>、<sec typ="cond">受到攻擊時</sec>，每次都會永久獲得相當於該數值 50% 的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>增加效果。（各最多 3 層）
+        <sec typ="cond">敵人攻擊時</sec>，自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec>會增加。
+        <sec typ="cond">暴擊時</sec>，另外使自身的 <sec typ="buff"><buff typ="AP_UP" /> AP</sec>增加相當於該數值 50% 的量。
+        <sec typ="buff"><buff typ="AP_UP" /> AP 增加效果</sec>會依各<sec>主動技能等級</sec>而提升。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -7116,6 +7183,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="0" /></sec>가 증가합니다.
+        <sec>스킬 레벨 10에서 사거리가 추가로 증가합니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="4" /></sec>이(가) 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>が増加します。
+        <sec>スキルレベル10で射程がさらに増加します。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大行動回数 <val idx="4" /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases own <sec typ="buff"><buff typ="RANGE_UP" /> range <val idx="0" /></sec>.
+        <sec>Range increases further at skill level 10.</sec>
+        <sec typ="cond">At the start of the round</sec>, increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, increases own <sec typ="buff"><buff typ="Action_Number_Change_Up" /> maximum action count <val idx="4" /></sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>會增加。
+        <sec>在技能等級 10 時射程會再次增加。</sec>
+        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>會增加。
+        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大行動次數 <val idx="4" /></sec>會增加。
   "5":
     key: "5"
     icon: P.AssaultAttack
@@ -7305,6 +7393,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        깨달음을 얻은 티에치엔의 모든 공격은 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 대상의 방어력을 무시</sec>합니다.
+        <sec typ="note">백보신권</sec>의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통</sec> 효과가 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막/받는 피해 감소 무시</sec> 효과로 변환됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="3" r /></sec>가 증가합니다.
+      JP: |-
+        悟りを得たティエチエンのすべての攻撃は<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 対象の防御力を無視</sec>します。
+        <sec typ="note">Hundred-Step Divine Fist</sec>の<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通</sec>効果が<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア/被ダメージ減少無視</sec>効果に変換されます。
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ量 <val idx="3" r /></sec>が増加します。
+      EN: |-
+        All attacks by the awakened Tiequan <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> ignore the target's Defense</sec>.
+        The <sec typ="note">Hundred-Step Divine Fist</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce</sec> effect is converted into <sec typ="buff"><buff typ="BARRIER_PIERCE" /> barrier / damage reduction ignore</sec>.
+        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> damage to Heavy-type <val idx="3" r /></sec> increases.
+      TC: |-
+        覺醒後的提乾所有攻擊都會 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 無視目標的防禦力</sec>。
+        <sec typ="note">百步神拳</sec>的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透</sec>效果會轉換為 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視防護罩/受到傷害減少</sec>效果。
+        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害量 <val idx="3" r /></sec>會增加。
 dialogue:
   KR:
     "1":
@@ -7407,9 +7512,7 @@ dialogue:
         흐응? 코치. 테니스 코칭보다는…
         침대 위의 코칭에 더 관심이 많아 보이네?
         그러면… 경기장을 바꿔볼까?
-      Oath: 헤에~ 코치, 그런 눈으로 날 바라보고 있었어? 헤헤, 농담. 언제 고백하나 열심히 기다리고 있었지. 그거 알아, 코치? 단식으로
-        뛰기에는 삶이란 경기장이 나에게는 너무 넓어. 그러니... 나랑 같이 복식으로 삶이란 경기장에서 뛰어줄래? 러브 올! 코치와 나의
-        경기는 지금부터야!
+      Oath: 헤에~ 코치, 그런 눈으로 날 바라보고 있었어? 헤헤, 농담. 언제 고백하나 열심히 기다리고 있었지. 그거 알아, 코치? 단식으로 뛰기에는 삶이란 경기장이 나에게는 너무 넓어. 그러니... 나랑 같이 복식으로 삶이란 경기장에서 뛰어줄래? 러브 올! 코치와 나의 경기는 지금부터야!
       OathIdle_01: |-
         수신제가치국평천하라.
         챔피언이 되기 위해선 갈 길이 머네.
@@ -7699,8 +7802,7 @@ dialogue:
       SPIdle_02_01: |-
         Ummm… are you doing this because
         I seem to be out of energy?
-      Oath: Oh… So, what did you like about me, master? I don’t… Ugh, whatever!
-        Anyway, once a master, always a master. So, keep that in mind…!
+      Oath: Oh… So, what did you like about me, master? I don’t… Ugh, whatever! Anyway, once a master, always a master. So, keep that in mind…!
       OathIdle_01: |-
         I want to learn a lot of things
         from you. He… You’ll teach me, right?
@@ -7753,11 +7855,7 @@ dialogue:
         Hmm? Coach. It seems like you’re more interested in…
         coaching on the bed rather than on the court.
         Then… shall we change where we're playing?
-      Oath: Come on, Coach, why are you looking at me like that? Hehe, I’m kidding. I
-        was patiently waiting for you to confess to me. You know what? The court
-        that is life is too big for me to play a single match. So… would you
-        play a doubles match in the game of life with me? Love All! Our match
-        starts now!
+      Oath: Come on, Coach, why are you looking at me like that? Hehe, I’m kidding. I was patiently waiting for you to confess to me. You know what? The court that is life is too big for me to play a single match. So… would you play a doubles match in the game of life with me? Love All! Our match starts now!
       OathIdle_01: |-
         The strength of a nation derives from the integrity of the home.
         I have a long way to go to become a champion.
@@ -7765,8 +7863,7 @@ dialogue:
         shouldn’t I focus more on cleaning up my home?
       MVP: ""
     "":
-      Join: Nice to meet you. You know who I am, right? It doesn’t matter if you
-        don’t. You will soon.
+      Join: Nice to meet you. You know who I am, right? It doesn’t matter if you don’t. You will soon.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -7812,10 +7909,8 @@ dialogue:
       SPIdle_02_01: |-
         *Sighs* This pervert is…
         my Master…
-      Oath: >-
-        Huh? I know you fell in love… in love… Whoa… Master! I was totally
-        thinking the same thing!
-
+      Oath: |-
+        Huh? I know you fell in love… in love… Whoa… Master! I was totally thinking the same thing!
         Let's go up the ladder of success together! Let our goal be… world conquest.
       OathIdle_01: |-
         I wasn’t joking when I said
@@ -7845,14 +7940,10 @@ dialogue:
         a good thing? Master. Can’t you guess
         Why I’m losing weight? You keep saying we should train…
         Well, we could call it training.​
-      Idle_01_02: >-
-        Come to think of it, success isn’t that huge. Finding someone to spend
-        the rest
-
+      Idle_01_02: |-
+        Come to think of it, success isn’t that huge. Finding someone to spend the rest
         of your life with, and tying the knot.
-
         What better success is there?
-
         I’ve already succeeded!​
       Idle_01_03: |-
         What should I do if I achieve world domination? Master.
@@ -7962,9 +8053,8 @@ dialogue:
         嗯？教練，比起網球指導…
         你好像對床上指導更有興趣？
         那麼…我們要不要換個賽場？
-      Oath: >-
+      Oath: |-
         嘿～教練，你在用那種眼神望著我嗎？嘿嘿，開玩笑的，我一直在努力等你告白。
-
 
         教練，你知道嗎？要我在人生這個賽場裡單打的話，場地對我來說太廣了，所以…你要跟我一起在人生這個賽場裡打雙打嗎？LOVE ALL！教練和我的比賽，現在才要開始！
       OathIdle_01: |-

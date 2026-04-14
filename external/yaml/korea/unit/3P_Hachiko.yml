@@ -3002,6 +3002,23 @@ skills:
             base: 0.2
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        대상에게 유탄포를 발사해 <dmg elem="physics" />를 주고 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>합니다.
+        대상이 <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 또는 <sec typ="cond"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> 상태일 시 <sec typ="dmg"><buff typ="PhyATK_UP" /> 추가 피해 <val idx="0" r /></sec>를 줍니다.
+        대상이 <sec typ="cond">경장 / 중장</sec> 일 경우 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec> 합니다.
+      JP: |-
+        対象に榴弾砲を発射して<dmg elem="physics" />を与え、対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>します。
+        対象が<sec typ="cond"><buff typ="DEF_DOWN" />防御力減少</sec>または<sec typ="cond"><buff typ="VULNERABLE" />受けるダメージ増加</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />追加ダメージ<val idx="0" r /></sec>を与えます。
+        対象が<sec typ="cond">軽装/重装</sec>の場合、<sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ減少効果を解除</sec>します。
+      EN: |-
+        Fires an explosive shell at the target, dealing <dmg elem="physics" /> and <sec typ="buff"><buff typ="PROVOKE" /> Provoking</sec> them.
+        If the target is in <sec typ="cond"><buff typ="DEF_DOWN" /> DEF decrease</sec> or <sec typ="cond"><buff typ="VULNERABLE" /> Received Damage Increase</sec> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> additional damage <val idx="0" r /></sec> is dealt.
+        If the target is a <sec typ="cond">Light Armor / Heavy Armor</sec> unit, their <sec typ="buff"><buff typ="REMOVE_BUFF" /> Received Damage Decrease effect is removed</sec>.
+      TC: |-
+        對目標發射榴彈砲，造成<dmg elem="physics" />並使其處於<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>狀態。
+        若目標處於<sec typ="cond"><buff typ="DEF_DOWN" />防禦力減少</sec>或<sec typ="cond"><buff typ="VULNERABLE" />受到的傷害增加</sec>狀態，則會造成<sec typ="dmg"><buff typ="PhyATK_UP" />額外傷害<val idx="0" r /></sec>。
+        若目標為<sec typ="cond">輕裝型 / 重裝型</sec>，則會<sec typ="buff"><buff typ="REMOVE_BUFF" />解除其受到的傷害減少效果</sec>。
   "2":
     key: "2"
     icon: TeamSpdBuff
@@ -3374,6 +3391,23 @@ skills:
             base: 0.1
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="note">경비 모드!</sec>로 보호받는 아군들의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>와(과) <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>를 증가시킵니다.
+        자신을 제외 한 <sec typ="note">컴페니언 부대원</sec>들에게는 <sec typ="note">경비 모드!</sec>의 보호 효과 적용 여부와 상관 없이 효과가 50% 추가됩니다.
+        <sec typ="note">컴페니언 부대원</sec> : <char uid="3P_CSPerrault" />, <char uid="3P_BlackLilith" />, <char uid="3P_Fenrir" />, <char uid="3P_SnowFeather" />, <char uid="3P_Poi" />
+      JP: |-
+        <sec typ="note">警備モード！</sec>で保護されている味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>と<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>を増加させます。
+        自分を除く<sec typ="note">コンパニオン部隊員</sec>には、<sec typ="note">警備モード！</sec>の保護効果の適用有無に関わらず効果が50%追加されます。
+        <sec typ="note">コンパニオン部隊員</sec> : <char uid="3P_CSPerrault" />, <char uid="3P_BlackLilith" />, <char uid="3P_Fenrir" />, <char uid="3P_SnowFeather" />, <char uid="3P_Poi" />
+      EN: |-
+        Increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> and <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="4" r /></sec> of allies protected by <sec typ="note">Guard Mode!</sec>.
+        For <sec typ="note">Companion Squad Members</sec> other than self, the effect is additionally increased by 50% regardless of whether they are affected by the protection effect of <sec typ="note">Guard Mode!</sec>.
+        <sec typ="note">Companion Squad Members</sec> : <char uid="3P_CSPerrault" />, <char uid="3P_BlackLilith" />, <char uid="3P_Fenrir" />, <char uid="3P_SnowFeather" />, <char uid="3P_Poi" />
+      TC: |-
+        增加受<sec typ="note">戒備模式！</sec>保護的我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>與<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>。
+        對除自身以外的<sec typ="note">同伴部隊員</sec>而言，無論是否受到<sec typ="note">戒備模式！</sec>的保護效果影響，效果都會額外增加50%。
+        <sec typ="note">同伴部隊員</sec> : <char uid="3P_CSPerrault" />, <char uid="3P_BlackLilith" />, <char uid="3P_Fenrir" />, <char uid="3P_SnowFeather" />, <char uid="3P_Poi" />
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -3540,6 +3574,19 @@ skills:
             base: 0.3
             per: 0.02
             chance: 0
+    desc:
+      KR: |-
+        라운드 개시 시, 범위 내 아군들을 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>하고 자신에게 <sec typ="buff"><buff typ="COUNTER" /> <val idx="8" slot="4" r signless /> 위력으로 반격</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="9" slot="4" r inv /></sec> 감소를 부여합니다.
+        액티브 스킬 사용 시, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" slot="1" r /></sec>를 증가시킵니다.
+      JP: |-
+        ラウンド開始時、範囲内の味方を<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>し、自分に<sec typ="buff"><buff typ="COUNTER" /> <val idx="8" slot="4" r signless />威力で反撃</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="9" slot="4" r inv /></sec>減少を付与します。
+        アクティブスキル使用時、自分の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" slot="1" r /></sec>を増加させます。
+      EN: |-
+        At the start of the round, grants <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> to allies within range and grants self <sec typ="buff"><buff typ="COUNTER" /> retaliate with <val idx="8" slot="4" r signless /> power</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="9" slot="4" r inv /></sec> decrease.
+        When using an Active Skill, increases own <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="5" slot="1" r /></sec>.
+      TC: |-
+        回合開始時，對範圍內我軍施加<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>，並對自身賦予<sec typ="buff"><buff typ="COUNTER" />以<val idx="8" slot="4" r signless />威力反擊</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到的傷害<val idx="9" slot="4" r inv /></sec>減少。
+        使用主動技能時，增加自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" slot="1" r /></sec>。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -3977,6 +4024,23 @@ skills:
             base: 0.3
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP로 전투 속행</sec> 효과를 얻습니다.
+        라운드 개시 시, <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="4" r /></sec>가 증가하며 <sec typ="cond">HP가 50% 이하인 경우</sec>에는 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> 증가 / <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec> 효과가 발동합니다.
+        <sec typ="note">불굴의 의지</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 전투 속행</sec> 효과가 비활성화 상태에서 피격 시, <sec typ="chance"><chance idx="7" /> 확률</sec>로 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 전투 속행</sec> 효과가 적용됩니다.
+      JP: |-
+        戦闘開始時、<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HPで戦闘続行</sec>効果を得ます。
+        ラウンド開始時、<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="4" r /></sec>が増加し、<sec typ="cond">HPが50%以下の場合</sec>は<sec typ="buff"><buff typ="AP_UP" />AP<val idx="5" /></sec>増加 / <sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害な効果解除</sec>効果が発動します。
+        <sec typ="note">不屈の意志</sec>の<sec typ="buff"><buff typ="DEF_RESSURRECT" />戦闘続行</sec>効果が無効化された状態で被撃すると、<sec typ="chance"><chance idx="7" />確率</sec>で<sec typ="buff"><buff typ="DEF_RESSURRECT" />戦闘続行</sec>効果が適用されます。
+      EN: |-
+        At the start of combat, gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat with <val idx="0" r signless /> HP</sec>.
+        At the start of the round, <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="4" r /></sec> increases, and if <sec typ="cond">HP is 50% or below</sec>, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> increase / <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> remove harmful effects</sec> is triggered.
+        When attacked while <sec typ="note">Indomitable Will</sec>'s <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat</sec> effect is inactive, a <sec typ="chance"><chance idx="7" /> chance</sec> to grant <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat</sec> is applied.
+      TC: |-
+        戰鬥開始時，獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="0" r signless /> HP繼續戰鬥</sec>效果。
+        回合開始時，<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="4" r /></sec>增加；若<sec typ="cond">HP低於50%</sec>，則會觸發<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>增加 / <sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除有害效果</sec>效果。
+        當<sec typ="note">不屈不撓</sec>的<sec typ="buff"><buff typ="DEF_RESSURRECT" />繼續戰鬥</sec>效果未啟用時受到攻擊，以<sec typ="chance"><chance idx="7" />機率</sec>套用<sec typ="buff"><buff typ="DEF_RESSURRECT" />繼續戰鬥</sec>效果。
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -4271,6 +4335,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="3" r /></sec> 효과가 적용 되고 <sec typ="buff"><buff typ="CRITICAL_UP" /> 자신의 방어력 <val idx="4" rr signless />만큼 공격자의 치명타를 감소</sec>시킵니다.
+        자신에게 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원 효과가 적용 중</sec>일 시, <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> / <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>가 활성화 됩니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗<val idx="0" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除耐性<val idx="3" r /></sec>効果が適用され、<sec typ="buff"><buff typ="CRITICAL_UP" />自分の防御力<val idx="4" rr signless />分だけ攻撃者のクリティカルを減少</sec>させます。
+        自分に<sec typ="cond"><buff typ="SUPPORT_ATTACK" />攻撃支援効果が適用中</sec>の場合、<sec typ="buff"><buff typ="DEF_Line" />行保護</sec> / <sec typ="buff"><buff typ="DEF_Side" />列保護</sec>が有効化されます。
+      EN: |-
+        At the start of the round, <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Upgrade Removal Resistance <val idx="3" r /></sec> effects are applied, and the attacker's CRIT is decreased by <sec typ="buff"><buff typ="CRITICAL_UP" /> the amount equal to own DEF <val idx="4" rr signless /></sec>.
+        If <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> Attack Support is active on self</sec>, <sec typ="buff"><buff typ="DEF_Line" /> Protect Row</sec> / <sec typ="buff"><buff typ="DEF_Side" /> Protect Line</sec> are activated.
+      TC: |-
+        回合開始時，會套用<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="0" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />解除強化抵抗<val idx="3" r /></sec>效果，並使攻擊者的暴擊減少相當於<sec typ="buff"><buff typ="CRITICAL_UP" />自身防禦力<val idx="4" rr signless /></sec>的數值。
+        若<sec typ="cond"><buff typ="SUPPORT_ATTACK" />攻擊支援效果正在套用於自身</sec>，則會啟用<sec typ="buff"><buff typ="DEF_Line" />保護一排</sec> / <sec typ="buff"><buff typ="DEF_Side" />保護一列</sec>。
 dialogue:
   KR:
     "1":
@@ -4465,8 +4542,7 @@ dialogue:
       SPIdle_02_01: |-
         흐앙, 주인님의 손… 너무 따뜻해서…
         하치코가 버터처럼 녹아버려요...
-      Oath: 주인님이 민트초코를 좋아하시는지, 싫어하시는지는 잘 모르겠어요. 하지만, 괜찮아요! 하치코는 그런거랑 상관 없이 주인님을 정말정말
-        좋아하니까요! 미트파이보다 더, 민트초코보다 더요! 세상에서 제일 좋아해요, 주인님!
+      Oath: 주인님이 민트초코를 좋아하시는지, 싫어하시는지는 잘 모르겠어요. 하지만, 괜찮아요! 하치코는 그런거랑 상관 없이 주인님을 정말정말 좋아하니까요! 미트파이보다 더, 민트초코보다 더요! 세상에서 제일 좋아해요, 주인님!
       OathIdle_01: |-
         이 커다란 미트파이는 주인님 거,
         이 중간 크기 미트파이는 하치코 거,
@@ -4821,12 +4897,9 @@ dialogue:
       Idle_03_01: You’re small-minded.
       Idle_04_01: Y-you’re mean…
       SPIdle_02_01: Eh- I want to do it-
-      Oath: >-
-        Hmph, I can't really see your face… But, I'm okay because I can still
-        hear your voice,
-
+      Oath: |-
+        Hmph, I can't really see your face… But, I'm okay because I can still hear your voice,
         my dear master. because… I can feel that you love me very very much!
-
         Haha. Since we made vows, I can fly not, right?
       MVP: ""
     "3":
@@ -4887,12 +4960,9 @@ dialogue:
         but keep receiving from you… Can I
         make you happy this time?
         Master?​
-      Oath: >-
-        The fortune telling said that Hachiko’s wish will become true, but I
-        didn’t expect it this fast! I think I used
-
+      Oath: |-
+        The fortune telling said that Hachiko’s wish will become true, but I didn’t expect it this fast! I think I used
         the others’ luck instead… You will always be with me, I’m already a lucky girl for that!
-
         You have made me happy so much, I will bring you happiness too!
       OathIdle_01: |-
         How was it, Master? Did something good happen today?

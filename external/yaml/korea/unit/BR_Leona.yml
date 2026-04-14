@@ -2106,6 +2106,19 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        권총을 발사해 <dmg elem="physics" />를 주고, <sec>적중 여부에 관계 없이</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 회피 관련 <sec typ="attr">강화 효과</sec>를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec>를 증가시킵니다. <sec>(중첩 불가)</sec>
+      JP: |-
+        拳銃を発射して <dmg elem="physics" /> を与え、<sec>命中の有無にかかわらず</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 回避関連の <sec typ="attr">強化効果</sec> を解除</sec>します。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象に <sec typ="buff"><buff typ="MARKING" /> マーク</sec> を付与し、<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec> を増加させます。 <sec>(重複不可)</sec>
+      EN: |-
+        Fires a pistol, dealing <dmg elem="physics" /> and, <sec>regardless of whether it hits</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes evasion-related <sec typ="attr">buffs</sec></sec>.
+        <sec typ="cond">On hit</sec>, marks the target for 2 rounds and increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec>. <sec>(Cannot stack)</sec>
+      TC: |-
+        發射手槍，造成 <dmg elem="physics" />，且不論是否命中都會解除 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 迴避相關的 <sec typ="attr">強化效果</sec></sec>。
+        <sec typ="cond">命中時</sec>，使目標獲得 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>，並提高 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" r /></sec>，持續 2 回合。 <sec>(不可疊加)</sec>
   "2":
     key: "2"
     icon: SelfSpdBuff
@@ -2582,6 +2595,23 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        지정한 아군의 현재 <sec typ="buff"><buff typ="AP_UP" /> AP를 <val idx="0" signless />로 변경</sec>시키며, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        현재 활성화된 자신의 <sec typ="note">지휘</sec> 스킬에 따라, 2라운드 동안 해당 <sec typ="note">지휘</sec> 효과를 추가로 부여합니다.
+        <sec>스킬 레벨이 높아질수록 소모 AP가 감소합니다.</sec>
+      JP: |-
+        指定した味方の現在の <sec typ="buff"><buff typ="AP_UP" /> AP を <val idx="0" signless /> に変更</sec>し、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害な効果を解除</sec>します。
+        現在有効な自分の <sec typ="note">指揮</sec> スキルに応じて、2ラウンドの間、該当する <sec typ="note">指揮</sec> 効果を追加で付与します。
+        <sec>スキルレベルが上がるほど消費APが減少します。</sec>
+      EN: |-
+        Sets the chosen ally's current <sec typ="buff"><buff typ="AP_UP" /> AP</sec> to <val idx="0" signless /> and removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec>.
+        According to your currently active <sec typ="note">command</sec> skill, grants that <sec typ="note">command</sec> effect for 2 rounds.
+        <sec>AP cost decreases as skill level increases.</sec>
+      TC: |-
+        將指定友軍目前的 <sec typ="buff"><buff typ="AP_UP" /> AP</sec> 變更為 <val idx="0" signless />，並解除 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>。
+        依照目前啟用中的 <sec typ="note">指揮</sec> 技能，額外賦予該 <sec typ="note">指揮</sec> 效果，持續 2 回合。
+        <sec>技能等級越高，消耗 AP 越低。</sec>
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -2819,6 +2849,19 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 공격기의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="3" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間、範囲内の味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方攻撃機の <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="3" r /></sec> が増加します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases allies within range's <sec typ="buff"><buff typ="ATK_UP" /> attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="1" r /></sec> for 3 rounds.
+        <sec typ="cond">At round start</sec>, increases the <sec typ="buff"><buff typ="SKILL_UP" /> skill power <val idx="3" r /></sec> of allied attackers within range.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，使範圍內友軍的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> 提高，持續 3 回合。
+        <sec typ="cond">回合開始時</sec>，使範圍內友軍攻擊機的 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="3" r /></sec> 提高。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -3043,6 +3086,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec>가 감소합니다.
+        <sec typ="cond">대기 시</sec>, <sec typ="note">방어 지휘</sec>로 전환하며 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        <sec typ="cond"><equip uid="Sub_QMObserver" /> 장착 시</sec>, <sec typ="note">방어 지휘</sec> 상태로 취급하여 <sec typ="note">시스터즈 오브 발할라</sec> 소속 전투원의 스킬 효과를 발동시킬 수 있습니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec> が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec> が減少します。
+        <sec typ="cond">待機時</sec>、<sec typ="note">防御指揮</sec> に切り替え、自分に付与されている <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害な効果を解除</sec>します。
+        <sec typ="cond"><equip uid="Sub_QMObserver" /> 装備時</sec>、<sec typ="note">防御指揮</sec> 状態として扱い、<sec typ="note">シスターズ・オブ・ヴァルハラ</sec> 所属戦闘員のスキル効果を発動できます。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases allies within range's <sec typ="buff"><buff typ="DEF_UP" /> defense <val idx="0" r /></sec> and reduces <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="1" r inv /></sec>.
+        <sec typ="cond">When waiting</sec>, switches to <sec typ="note">Defense Command</sec> and removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec> applied to self.
+        <sec typ="cond">When equipped with <equip uid="Sub_QMObserver" /></sec>, treats self as being in <sec typ="note">Defense Command</sec> and can trigger the skill effects of <sec typ="note">Sisters of Valhalla</sec> members.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，使範圍內友軍的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec> 提高，並降低 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="1" r inv /></sec>。
+        <sec typ="cond">待機時</sec>，切換為 <sec typ="note">防禦指揮</sec>，並解除自身所受的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>。
+        <sec typ="cond"><equip uid="Sub_QMObserver" /> 裝備時</sec>，視為處於 <sec typ="note">防禦指揮</sec> 狀態，並可發動 <sec typ="note">瓦爾哈拉姊妹會</sec> 所屬戰鬥員的技能效果。
   "5":
     key: "5"
     icon: P.EnemyDetect
@@ -3370,6 +3430,27 @@ skills:
             base: 0.025
             per: 0.0025
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 아군 공격기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><buff typ="SCOUTING" /> 다음에 출현할 적 정보를 획득</sec>할 수 있습니다.
+        <sec typ="cond">라운드 개시 시</sec>, 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>가 증가합니다.
+        <sec typ="cond">자신이 <buff typ="SCOUTING" />정찰 상태인 경우</sec>, 효과가 50% 증폭됩니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、味方攻撃機の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> が増加します。
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="buff"><buff typ="SCOUTING" /> 次に出現する敵の情報を取得</sec>できます。
+        <sec typ="cond">ラウンド開始時</sec>、味方全体の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" r /></sec> が増加します。
+        <sec typ="cond">自分が <buff typ="SCOUTING" />偵察状態の場合</sec>、効果が50%増幅されます。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, increases allied attackers' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>.
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="SCOUTING" /> obtains information on enemies that will appear next</sec>.
+        <sec typ="cond">At round start</sec>, increases all allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" r /></sec>.
+        <sec typ="cond">If self is in <buff typ="SCOUTING" />scouting state</sec>, the effect is amplified by 50%.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，使友軍攻擊機的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 提高。
+        <sec typ="cond">戰鬥開始時</sec>，可 <sec typ="buff"><buff typ="SCOUTING" /> 獲得下一個出現敵人的情報</sec>。
+        <sec typ="cond">回合開始時</sec>，使友軍全體的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" r /></sec> 提高。
+        <sec typ="cond">若自身處於 <buff typ="SCOUTING" />偵查狀態</sec>，效果提升 50%。
   F2:
     key: F2
     icon: P.SelfSpdBuff
@@ -3846,6 +3927,23 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        지정한 아군의 현재 <sec typ="buff"><buff typ="AP_UP" /> AP를 <val idx="0" signless />로 변경</sec>시키며, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        현재 활성화된 자신의 <sec typ="note">지휘</sec> 스킬에 따라, 2라운드 동안 해당 <sec typ="note">지휘</sec> 효과를 추가로 부여합니다.
+        <sec>스킬 레벨이 높아질수록 소모 AP가 감소합니다.</sec>
+      JP: |-
+        指定した味方の現在の <sec typ="buff"><buff typ="AP_UP" /> AP を <val idx="0" signless /> に変更</sec>し、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害な効果を解除</sec>します。
+        現在有効な自分の <sec typ="note">指揮</sec> スキルに応じて、2ラウンドの間、該当する <sec typ="note">指揮</sec> 効果を追加で付与します。
+        <sec>スキルレベルが上がるほど消費APが減少します。</sec>
+      EN: |-
+        Sets the chosen ally's current <sec typ="buff"><buff typ="AP_UP" /> AP</sec> to <val idx="0" signless /> and removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec>.
+        According to your currently active <sec typ="note">command</sec> skill, grants that <sec typ="note">command</sec> effect for 2 rounds.
+        <sec>AP cost decreases as skill level increases.</sec>
+      TC: |-
+        將指定友軍目前的 <sec typ="buff"><buff typ="AP_UP" /> AP</sec> 變更為 <val idx="0" signless />，並解除 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>。
+        依照目前啟用中的 <sec typ="note">指揮</sec> 技能，額外賦予該 <sec typ="note">指揮</sec> 效果，持續 2 回合。
+        <sec>技能等級越高，消耗 AP 越低。</sec>
   F3:
     key: F3
     icon: P.TeamDefBuff
@@ -4084,6 +4182,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 범위 내 아군의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec>가 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 보호기의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec>가 추가로 감소합니다.
+        <sec>해당 효과는 피격 시 해제됩니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間、範囲内の味方の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec> が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec> が減少します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方保護機の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="3" r inv /></sec> がさらに減少します。
+        <sec>この効果は被弾時に解除されます。</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases allies within range's <sec typ="buff"><buff typ="DEF_UP" /> defense <val idx="0" r /></sec> for 3 rounds and reduces <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="1" r inv /></sec>.
+        <sec typ="cond">At round start</sec>, further reduces <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="3" r inv /></sec> for allied protectors within range.
+        <sec>This effect is removed when hit.</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，使範圍內友軍的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec> 提高，持續 3 回合，並降低 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="1" r inv /></sec>。
+        <sec typ="cond">回合開始時</sec>，使範圍內友軍保護機的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="3" r inv /></sec> 額外降低。
+        <sec>此效果會在被擊中時解除。</sec>
   F4:
     key: F4
     icon: P.TeamAtkBuff
@@ -4310,6 +4425,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">대기 시</sec>, <sec typ="note">공격 지휘</sec>로 전환하며 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        <sec typ="cond"><equip uid="Sub_QMObserver" /> 장착 시</sec>, <sec typ="note">공격 지휘</sec> 상태로 취급하여 <sec typ="note">시스터즈 오브 발할라</sec> 소속 전투원의 스킬 효과를 발동시킬 수 있습니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> が増加します。
+        <sec typ="cond">待機時</sec>、<sec typ="note">攻撃指揮</sec> に切り替え、自分に付与されている <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害な効果を解除</sec>します。
+        <sec typ="cond"><equip uid="Sub_QMObserver" /> 装備時</sec>、<sec typ="note">攻撃指揮</sec> 状態として扱い、<sec typ="note">シスターズ・オブ・ヴァルハラ</sec> 所属戦闘員のスキル効果を発動できます。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases allies within range's <sec typ="buff"><buff typ="ATK_UP" /> attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="1" r /></sec>.
+        <sec typ="cond">When waiting</sec>, switches to <sec typ="note">Attack Command</sec> and removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec> applied to self.
+        <sec typ="cond">When equipped with <equip uid="Sub_QMObserver" /></sec>, treats self as being in <sec typ="note">Attack Command</sec> and can trigger the skill effects of <sec typ="note">Sisters of Valhalla</sec> members.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，使範圍內友軍的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> 提高。
+        <sec typ="cond">待機時</sec>，切換為 <sec typ="note">攻擊指揮</sec>，並解除自身所受的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>。
+        <sec typ="cond"><equip uid="Sub_QMObserver" /> 裝備時</sec>，視為處於 <sec typ="note">攻擊指揮</sec> 狀態，並可發動 <sec typ="note">瓦爾哈拉姊妹會</sec> 所屬戰鬥員的技能效果。
 dialogue:
   KR:
     "1":
@@ -4358,8 +4490,7 @@ dialogue:
         나 참... 못 말려.
         그럼 이불 안으로 들어와.
         상냥하게... 부탁할게.
-      Oath: 잘 시간에 이렇게 부르길래 무슨 일인가 했더니... 이런 이벤트를 준비하고 있었어? 나 참, 정말이지... 너무 행복해서, 순간
-        꿈으로 착각할 뻔 했잖아. 꿈이 아니라는 걸 증명하기 위해, 그리고 이 순간을 기념하기 위해... 키스, 해 줄래?
+      Oath: 잘 시간에 이렇게 부르길래 무슨 일인가 했더니... 이런 이벤트를 준비하고 있었어? 나 참, 정말이지... 너무 행복해서, 순간 꿈으로 착각할 뻔 했잖아. 꿈이 아니라는 걸 증명하기 위해, 그리고 이 순간을 기념하기 위해... 키스, 해 줄래?
       OathIdle_01: |-
         달링, 뭐 해? 빨리 이불 속으로 들어와서...
         당신 아내를 꼭 안아줘야지.
@@ -4410,9 +4541,7 @@ dialogue:
       SPIdle_02_01: |-
         랩 한 바퀴 더 돌 준비 됐어?
         그럼, 다시 한 번... 안아줘, 정열적으로.
-      Oath: 레이스에서 가장 중요한 건, 결국 몇 등으로 들어오는지 아니겠어? 그런 의미에서 사령관은 참 대단해. 내 마음 속에서 1등을 놓친
-        적이 단 한 번도 없거든. 그럼, 레이스의 승리자를 위해 그 어떤 메달이나 트로피보다 영예로운 걸 줄게. 바로 내 사랑이야.
-        사랑해, 달링.
+      Oath: 레이스에서 가장 중요한 건, 결국 몇 등으로 들어오는지 아니겠어? 그런 의미에서 사령관은 참 대단해. 내 마음 속에서 1등을 놓친 적이 단 한 번도 없거든. 그럼, 레이스의 승리자를 위해 그 어떤 메달이나 트로피보다 영예로운 걸 줄게. 바로 내 사랑이야. 사랑해, 달링.
       OathIdle_01: |-
         엔진 소리가 사람의 심장을 뛰게 한다지?
         하지만, 그것보다 더 날 두근대게 하는 건
@@ -4516,9 +4645,7 @@ dialogue:
         내가 이런 걸 허락하는 건 사령관 뿐이야.
         그러니까, 이 시간을 헛되이 쓰지 말고...
         빨리, 꼭 안아줘.
-      Oath: 피도 눈물도 없는 보스. 그게 바로 나야. 하지만 이상하게... 당신 앞에만 서면 수줍은 소녀가 되어버려. 두근대는 심장소리가
-        부끄러워서, 그걸 감추기 위해 무서운 모습을 연기했는데... 더는 그럴 필요가 없겠네. 그러니, 당신을 사랑하는 소녀를 잘
-        부탁해. 나의... 달링.
+      Oath: 피도 눈물도 없는 보스. 그게 바로 나야. 하지만 이상하게... 당신 앞에만 서면 수줍은 소녀가 되어버려. 두근대는 심장소리가 부끄러워서, 그걸 감추기 위해 무서운 모습을 연기했는데... 더는 그럴 필요가 없겠네. 그러니, 당신을 사랑하는 소녀를 잘 부탁해. 나의... 달링.
       OathIdle_01: |-
         내가 대모를 자처하기는 해도,
         진짜 어머니가 된 건 아니야.
@@ -4654,8 +4781,7 @@ dialogue:
         (미번역)나 참... 못 말려.
         그럼 이불 안으로 들어와.
         상냥하게... 부탁할게.
-      Oath: (미번역)잘 시간에 이렇게 부르길래 무슨 일인가 했더니... 이런 이벤트를 준비하고 있었어? 나 참, 정말이지... 너무 행복해서,
-        순간 꿈으로 착각할 뻔 했잖아. 꿈이 아니라는 걸 증명하기 위해, 그리고 이 순간을 기념하기 위해... 키스, 해 줄래?
+      Oath: (미번역)잘 시간에 이렇게 부르길래 무슨 일인가 했더니... 이런 이벤트를 준비하고 있었어? 나 참, 정말이지... 너무 행복해서, 순간 꿈으로 착각할 뻔 했잖아. 꿈이 아니라는 걸 증명하기 위해, 그리고 이 순간을 기념하기 위해... 키스, 해 줄래?
       OathIdle_01: |-
         (미번역)달링, 뭐 해? 빨리 이불 속으로 들어와서...
         당신 아내를 꼭 안아줘야지.
@@ -4706,9 +4832,7 @@ dialogue:
       SPIdle_02_01: |-
         (미번역)랩 한 바퀴 더 돌 준비 됐어?
         그럼, 다시 한 번... 안아줘, 정열적으로.
-      Oath: (미번역)레이스에서 가장 중요한 건, 결국 몇 등으로 들어오는지 아니겠어? 그런 의미에서 사령관은 참 대단해. 내 마음 속에서 1등을
-        놓친 적이 단 한 번도 없거든. 그럼, 레이스의 승리자를 위해 그 어떤 메달이나 트로피보다 영예로운 걸 줄게. 바로 내 사랑이야.
-        사랑해, 달링.
+      Oath: (미번역)레이스에서 가장 중요한 건, 결국 몇 등으로 들어오는지 아니겠어? 그런 의미에서 사령관은 참 대단해. 내 마음 속에서 1등을 놓친 적이 단 한 번도 없거든. 그럼, 레이스의 승리자를 위해 그 어떤 메달이나 트로피보다 영예로운 걸 줄게. 바로 내 사랑이야. 사랑해, 달링.
       OathIdle_01: |-
         (미번역)엔진 소리가 사람의 심장을 뛰게 한다지?
         하지만, 그것보다 더 날 두근대게 하는 건
@@ -4904,10 +5028,7 @@ dialogue:
         Aww… What am I going to do with you?
         Then come under the blanket.
         Gently… please.
-      Oath: I was wondering who called me when it’s time to sleep… Were you preparing
-        an event like this? Seriously… I’m so happy that I thought this was a
-        dream for a moment. To prove that it's not a dream and to celebrate this
-        moment… would you kiss me?
+      Oath: I was wondering who called me when it’s time to sleep… Were you preparing an event like this? Seriously… I’m so happy that I thought this was a dream for a moment. To prove that it's not a dream and to celebrate this moment… would you kiss me?
       OathIdle_01: |-
         What are you doing, darling? You have to quickly get under the blanket…
         and hug your wife.
@@ -4958,11 +5079,7 @@ dialogue:
       SPIdle_02_01: |-
         Are you ready to run another lap?
         Then, once more… hug me, passionately.
-      Oath: In the end, isn't the most important thing in a race what position you
-        cross the finish line in? In that sense, you are incredible, Commander.
-        You have never lost your 1st place position in my heart. Then, I'll give
-        the winner of the race something more honorable than any medal or
-        trophy. My love. I love you, darling.
+      Oath: In the end, isn't the most important thing in a race what position you cross the finish line in? In that sense, you are incredible, Commander. You have never lost your 1st place position in my heart. Then, I'll give the winner of the race something more honorable than any medal or trophy. My love. I love you, darling.
       OathIdle_01: |-
         They say the sound of an engine makes people's hearts pound, right?
         But, the thing that makes my heart pound is
@@ -4997,11 +5114,9 @@ dialogue:
         Come under the umbrella if it’s too hot.
         I’m giving you special permission.
       SPIdle_01_01: Not yet.
-      Idle_02_01: >-
+      Idle_02_01: |-
         Will you escort me?
-
         On such a special day,
-
         you’re the only one who can stand next to me, darling. I can’t believe you’ve become such an amazing man.
       Idle_03_01: |-
         A bigger umbrella? Well… Don’t you want to stay close to me, darling?
@@ -5014,12 +5129,9 @@ dialogue:
         *Sighs*… What’s wrong, darling? ……!
         T-today is a special day.
         I was just concentrating. Weren’t you, darling?
-      Oath: >-
-        … Would you believe it if I told you I intuitively knew that you will be
-        my man the moment I first met you?
-
+      Oath: |-
+        … Would you believe it if I told you I intuitively knew that you will be my man the moment I first met you?
         Would you understand it… if I say I was cold to you because of that? My answer is… yes, darling.
-
         From this moment forward, I’ll only live for one man only. I love you too, darling.
       OathIdle_01: |-
         I already got your morning kiss when you were asleep.
@@ -5069,10 +5181,7 @@ dialogue:
         You're the only one I allow to do this.
         So, stop wasting time and…
         hug me, hurry.
-      Oath: Merciless boss. That’s me. But strangely… I become a shy girl around you.
-        The sound of my heart pounding is embarrassing. I acted scary to hide
-        that… But there's no need to do that anymore. So, please take care of
-        the girl who loves you, my… darling.
+      Oath: Merciless boss. That’s me. But strangely… I become a shy girl around you. The sound of my heart pounding is embarrassing. I acted scary to hide that… But there's no need to do that anymore. So, please take care of the girl who loves you, my… darling.
       OathIdle_01: |-
         Even though I am a godmother,
         I’m not a real mother.
@@ -5120,10 +5229,8 @@ dialogue:
       SPIdle_02_01: |-
         I’m gonna keep my eyes closed. Nope… 
         I don’t know a thing and I can’t see anything…
-      Oath: >-
-        I knew it… You couldn't resist my attractiveness. I understand. Because
-        I think you're OK, too.
-
+      Oath: |-
+        I knew it… You couldn't resist my attractiveness. I understand. Because I think you're OK, too.
         Then Commander, we've formed a special relationship with each other, haven't we? Commander, do you want a reward? Huh?
       OathIdle_01: |-
         Commander, try not to show you like me.

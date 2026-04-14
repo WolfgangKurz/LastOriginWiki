@@ -1784,6 +1784,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">스킬 적중 시</sec> 2라운드 동안 대상의 공격력과 치명타를 감소시킵니다.
+        대상의 HP가 100%인 경우, 1라운드 동안 스킬 사용 불가 효과를 부여합니다.
+      JP: |-
+        対象に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">スキル命中時</sec>、2ラウンドの間、対象の攻撃力とクリティカルを減少させます。
+        対象のHPが100%の場合、1ラウンドの間スキル使用不可効果を付与します。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the target.
+        <sec typ="cond">When skill hits</sec>, decreases the target’s ATK and CRIT for 2 rounds.
+        If the target’s HP is 100%, inflicts Skill Disabled for 1 round.
+      TC: |-
+        對目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害。
+        <sec typ="cond">技能命中時</sec>，於2回合內減少目標的攻擊力與暴擊。
+        若目標HP為100%，則施加1回合的無法使用技能效果。
   "2":
     key: "2"
     icon: CannonShot
@@ -3022,6 +3039,19 @@ skills:
             base: 76
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 회피가 매우 어려운 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">스킬 적중 시</sec> 열 / 행 / 지정 보호 효과를 해제합니다.
+      JP: |-
+        指定範囲に回避が非常に困難な<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">スキル命中時</sec>、列/行/指定保護効果を解除します。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area and is very hard to evade.
+        <sec typ="cond">When skill hits</sec>, removes Protect Line / Protect Row / Designated Protection effects.
+      TC: |-
+        對指定範圍造成極難迴避的<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害。
+        <sec typ="cond">技能命中時</sec>，解除保護一列 / 保護一排 / 指定保護效果。
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -3340,6 +3370,23 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가 시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> 아군의 효과 저항 / 강화 해제 저항이 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> 스쿼드에 <레모네이드 감마>, <멀린>, <트리톤>, <메로페>가 있는 경우 레모네이드 감마 및 멀린, 트리톤, 메로페 추가 효과를 받습니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、味方の効果耐性/強化解除耐性が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、分隊に<レモネード・ガンマ>、<メルリン>、<トリトン>、<メロペ>がいる場合、レモネード・ガンマおよびメルリン、トリトン、メロペの追加効果を受けます。
+      EN: |-
+        <sec typ="cond">At the start of combat</sec>, increases self’s <sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>.
+        <sec typ="cond">At the start of the round</sec>, allies’ Effect Resistance / Remove Upgrade Resistance increases.
+        <sec typ="cond">At the start of the round</sec>, if <Lemonade Gamma>, <Merlin>, <Triton>, and <Merope> are in the squad, Rhode receives additional effects from Lemonade Gamma and Merlin, Triton, and Merope.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，增加自身的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>。
+        <sec typ="cond">回合開始時</sec>，我軍的效果抵抗 / 強化解除抵抗增加。
+        <sec typ="cond">回合開始時</sec>，若小隊內有<檸檬水·伽瑪>、<梅林>、<特里同>、<梅洛佩>，則羅德會獲得檸檬水·伽瑪以及梅林、特里同、梅洛佩的追加效果。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3473,6 +3520,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시시</sec>, 1 라운드 동안 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>를  증가시킵니다.
+        <sec typ="cond">일반 모드에서 [그만두세요!] 스킬 사용 시</sec> 함대 대포격 모드로 전환합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、1ラウンドの間、自分の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>を増加させます。
+        <sec typ="cond">通常モードで[やめてください！]スキル使用時</sec>、艦隊砲撃モードに切り替えます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases self’s <sec typ="buff"><buff typ="AP_UP" />MOVE<val idx="0" r /></sec> for 1 round.
+        <sec typ="cond">When using [Please Stop!] in Normal Mode</sec>, switches to Fleet Bombardment Mode.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，於1回合內增加自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>。
+        <sec typ="cond">在一般模式下使用[請停下！]技能時</sec>，切換為艦隊砲擊模式。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -3783,6 +3843,27 @@ skills:
             base: 0.05
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시시</sec> <char uid="PECS_LemonadeGamma" />, <char uid="PECS_Triton" />, <char uid="PECS_Merlin" />, <char uid="3P_Merope" />의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">라운드 개시시</sec> <char uid="PECS_LemonadeGamma" />, <char uid="3P_Merope" />는 AP가 추가로 증가합니다.
+        <sec typ="cond">라운드 개시시</sec> 레모네이드 감마에게  전투 중 방어막과 받는 피해 감소 무시 효과를 부여합니다.
+        <sec typ="cond">라운드 개시시</sec> 메로페에게 전투 중 받는 피해 감소 효과를 부여합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<char uid="PECS_LemonadeGamma" />、<char uid="PECS_Triton" />、<char uid="PECS_Merlin" />、<char uid="3P_Merope" />の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、<char uid="PECS_LemonadeGamma" />、<char uid="3P_Merope" />はAPが追加で増加します。
+        <sec typ="cond">ラウンド開始時</sec>、レモネード・ガンマに戦闘中バリアと受けるダメージ減少無視効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、メロペに戦闘中受けるダメージ減少効果を付与します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases <sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec> of <char uid="PECS_LemonadeGamma" />, <char uid="PECS_Triton" />, <char uid="PECS_Merlin" />, and <char uid="3P_Merope" />.
+        <sec typ="cond">At the start of the round</sec>, <char uid="PECS_LemonadeGamma" /> and <char uid="3P_Merope" /> additionally gain AP.
+        <sec typ="cond">At the start of the round</sec>, grants Lemonade Gamma effects that ignore in-combat Barrier and Received Damage Decrease.
+        <sec typ="cond">At the start of the round</sec>, grants Merope an in-combat Received Damage Decrease effect.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加<char uid="PECS_LemonadeGamma" />、<char uid="PECS_Triton" />、<char uid="PECS_Merlin" />、<char uid="3P_Merope" />的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>。
+        <sec typ="cond">回合開始時</sec>，<char uid="PECS_LemonadeGamma" />與<char uid="3P_Merope" />會額外增加AP。
+        <sec typ="cond">回合開始時</sec>，賦予檸檬水·伽瑪戰鬥中防護罩與忽視減少所受傷害效果。
+        <sec typ="cond">回合開始時</sec>，賦予梅洛佩戰鬥中減少所受傷害效果。
   F1:
     key: F1
     icon: CannonShot
@@ -5011,6 +5092,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">스킬 적중시</sec> 2라운드 동안 대상의 공격력과 치명타를 감소시킵니다.
+        <sec typ="cond">대상의 HP가 100%인 경우</sec>, 1라운드 동안 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 효과를 부여합니다.
+      JP: |-
+        対象に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">スキル命中時</sec>、2ラウンドの間、対象の攻撃力とクリティカルを減少させます。
+        <sec typ="cond">対象のHPが100%の場合</sec>、1ラウンドの間<sec typ="buff"><buff typ="SEAL_SKILL" />スキル使用不可</sec>効果を付与します。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the target.
+        <sec typ="cond">When skill hits</sec>, decreases the target’s ATK and CRIT for 2 rounds.
+        <sec typ="cond">If the target’s HP is 100%</sec>, inflicts <sec typ="buff"><buff typ="SEAL_SKILL" />Skill Disabled</sec> for 1 round.
+      TC: |-
+        對目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害。
+        <sec typ="cond">技能命中時</sec>，於2回合內減少目標的攻擊力與暴擊。
+        <sec typ="cond">若目標HP為100%</sec>，則施加1回合的<sec typ="buff"><buff typ="SEAL_SKILL" />無法使用技能</sec>效果。
   F2:
     key: F2
     icon: CannonShot
@@ -7514,6 +7612,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 회피가 매우 어려운 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중시</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 열/행/지정 보호 효과를 해제</sec>하고 1라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="8" r /></sec> 증가 효과를 주고 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" /></sec>을(를) 감소시킵니다.
+        <sec typ="cond">사용시</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 원래 형태로 돌아갑니다</sec>.
+      JP: |-
+        指定範囲に回避が非常に困難な<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、<sec typ="buff"><buff typ="REMOVE_BUFF" />列/行/指定保護効果を解除</sec>し、1ラウンドの間<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="8" r /></sec>増加効果を与え、<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="7" /></sec>を減少させます。
+        <sec typ="cond">使用時</sec>、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />元の形態に戻ります</sec>。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area and is very hard to evade.
+        <sec typ="cond">When skill hits</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" />removes Protect Line / Protect Row / Designated Protection</sec>, inflicts <sec typ="buff"><buff typ="VULNERABLE" />received damage increase<val idx="8" r /></sec> for 1 round, and decreases <sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="7" /></sec>.
+        <sec typ="cond">When used</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" />returns to original form</sec>.
+      TC: |-
+        對指定範圍造成極難迴避的<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害。
+        <sec typ="cond">命中時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除行 / 列 / 指定保護效果</sec>，並於1回合內施加<sec typ="buff"><buff typ="VULNERABLE" />所受傷害增加<val idx="8" r /></sec>效果，同時減少<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="7" /></sec>。
+        <sec typ="cond">使用時</sec>，<sec typ="buff"><buff typ="REMOVE_DEBUFF" />回復原形態</sec>。
 dialogue:
   KR:
     "1":
@@ -7571,10 +7686,8 @@ dialogue:
       SPIdle_02_01: |-
         사령관님… 천천히 드세요…♥​
         로데는… 아직 많이 남았어요…히힛….​
-      Oath: >-
-        사령관님, 이거 말고 다른 디저트도 더 있는데… 네?​ 로데라는 디저트가 더 좋다고요? 헤… 헤헷… 아, 알겠어요 사령관님.
-        다과회가 끝나면 더 드릴게요.
-
+      Oath: |-
+        사령관님, 이거 말고 다른 디저트도 더 있는데… 네?​ 로데라는 디저트가 더 좋다고요? 헤… 헤헷… 아, 알겠어요 사령관님. 다과회가 끝나면 더 드릴게요.
         저도 사령관님이라는 디저트가 더 먹고 싶은데… ​저도, 많이… 이 상황을… 음미해도 되는 거죠? 헤헤… 알겠어요, 저도 사랑… 해요♥ 사령관님
       OathIdle_01: |-
         사령관님! 어라라… 또… 넘어진다아…!​
@@ -7643,12 +7756,9 @@ dialogue:
         역시 저질이에요… 사령관님…​
         그래도… 사령관님에게라면…
         저… 괜찮아요…​
-      Oath: >-
-        …저한테, 이 반지를 말인가요…? 정말이죠? 이건 꿈이 아닌 거죠?​ 제가 정말 이런 행복을 누려도 괜찮은 걸까요…? 이런 건…
-        상상으로밖에 생각하지 못했는데…
-
+      Oath: |-
+        …저한테, 이 반지를 말인가요…? 정말이죠? 이건 꿈이 아닌 거죠?​ 제가 정말 이런 행복을 누려도 괜찮은 걸까요…? 이런 건… 상상으로밖에 생각하지 못했는데…
         앗… 에헤헤, 평소에 무슨 상상을 했는지 들켜버렸네요… 하지만, 이제 현실이 됐으니까 괜찮겠죠?​ 사령관님… 첫 번째 상상이 이루어졌으니…
-
         다음은 두 번째 상상을 이뤄도 될까요? 저… 기대하고 있을 테니까요.
       OathIdle_01: |-
         저한테 좋은 향기가 난다고요…?

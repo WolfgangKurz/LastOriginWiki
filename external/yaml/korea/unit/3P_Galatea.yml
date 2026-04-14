@@ -1616,6 +1616,27 @@ skills:
             base: -0.15
             per: -0.015
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 <dmg elem="physics" />를 입힙니다.
+        적중 여부와 관계없이 2라운드 동안 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec>를 감소시킵니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec>를 감소시킵니다.
+        <sec>스킬 레벨 당 10%의 적중 보정이 적용됩니다.</sec>
+      JP: |-
+        単一対象に<dmg elem="physics" />を与えます。
+        命中の有無に関係なく、2ラウンドの間、対象の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="0" r /></sec>を減少させます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="2" r /></sec>を減少させます。
+        <sec>スキルレベルごとに10%の命中補正が適用されます。</sec>
+      EN: |-
+        Deals <dmg elem="physics" /> damage to a single target.
+        Regardless of whether it hits, decreases the target's <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="0" r /></sec> for 2 rounds.
+        <sec typ="cond">On Hit</sec>, decreases the target's <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="2" r /></sec> for 2 rounds.
+        <sec>10% ACU compensation is applied per skill level.</sec>
+      TC: |-
+        對單一目標造成<dmg elem="physics" />傷害。
+        不論是否命中，目標的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="0" r /></sec>在2回合內降低。
+        <sec typ="cond">命中時</sec>，目標的<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="2" r /></sec>在2回合內降低。
+        <sec>每個技能等級套用10%的命中修正。</sec>
   "2":
     key: "2"
     icon: AssaultAttack
@@ -5792,6 +5813,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        일직선상의 대상에게 충각으로 돌격하여 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 입히고, 2라운드 동안 <sec typ="buff"><buff typ="PROVOKE" /> 적중 대상을 도발</sec>합니다.
+        자신이 <sec typ="cond"><buff typ="DEF_UP" /> 방어력 증가</sec> / <sec typ="cond"><buff typ="AP_UP" /> 행동력 증가</sec> <sec typ="attr">강화 효과</sec>를 보유한 경우 각각 피해량이 증가하고 대상이 보유 중인 동일한 강화 효과를 해제합니다.
+        <sec typ="cond">적중 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 자신의 공격력 <val idx="10" r signless /> 고정 물리 피해</sec>를 입으며, 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 모든 해로운 효과를 해제</sec>합니다.
+        스쿼드에 자신을 제외한 <cmt t="머메이드">$$Mermaid:0$</cmt> 전투원이 있으면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 고정 물리 피해 수치가 공격력 <val idx="12" r signless />로 경감</sec>되며 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="14" r /></sec> 효과가 추가됩니다.
+      JP: |-
+        一直線上の対象に衝角で突撃し、<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、2ラウンドの間、<sec typ="buff"><buff typ="PROVOKE" />命中した対象を挑発</sec>します。
+        自分が<sec typ="cond"><buff typ="DEF_UP" />防御力増加</sec> / <sec typ="cond"><buff typ="AP_UP" />行動力増加</sec>の<sec typ="attr">強化効果</sec>を持つ場合、それぞれダメージ量が増加し、対象が持っている同一の強化効果を解除します。
+        <sec typ="cond">命中時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />自分の攻撃力<val idx="10" r signless />固定物理ダメージ</sec>を与え、自分に適用された<sec typ="buff"><buff typ="REMOVE_DEBUFF" />全ての有害な効果を解除</sec>します。
+        分隊に自分を除く<cmt t="머메이드">$$Mermaid:0$</cmt>戦闘員がいる場合、<sec typ="dmg"><buff typ="PhyATK_UP" />固定物理ダメージ数値が攻撃力<val idx="12" r signless />に軽減</sec>され、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="14" r /></sec>効果が追加されます。
+      EN: |-
+        Charges at targets in a straight line with a ram, dealing <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> and <sec typ="buff"><buff typ="PROVOKE" /> provoking the hit target</sec> for 2 rounds.
+        If self has <sec typ="cond"><buff typ="DEF_UP" /> DEF Increase</sec> / <sec typ="cond"><buff typ="AP_UP" /> MOVE Increase</sec> <sec typ="attr">upgrade effects</sec>, damage increases for each and the same upgrade effects on the target are removed.
+        <sec typ="cond">On Hit</sec>, deals <sec typ="dmg"><buff typ="PhyATK_UP" /> fixed physical damage equal to self's ATK <val idx="10" r signless /></sec>, and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes all Malign Effects applied to self</sec>.
+        If there is another <cmt t="머메이드">$$Mermaid:0$</cmt> unit in the squad aside from self, the <sec typ="dmg"><buff typ="PhyATK_UP" /> fixed physical damage value is reduced to ATK <val idx="12" r signless /></sec>, and <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="14" r /></sec> is additionally granted.
+      TC: |-
+        以衝角對直線上的目標發動衝鋒，造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害，並於2回合內<sec typ="buff"><buff typ="PROVOKE" />嘲諷命中的目標</sec>。
+        若自身擁有<sec typ="cond"><buff typ="DEF_UP" />防禦力增加</sec> / <sec typ="cond"><buff typ="AP_UP" />行動力增加</sec><sec typ="attr">強化效果</sec>，則各自傷害增加，並解除目標所擁有的相同強化效果。
+        <sec typ="cond">命中時</sec>，造成<sec typ="dmg"><buff typ="PhyATK_UP" />等同自身攻擊力<val idx="10" r signless />的固定物理傷害</sec>，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除施加於自身的所有有害效果</sec>。
+        若小隊中除自身外另有<cmt t="머메이드">$$Mermaid:0$</cmt>戰鬥員，則<sec typ="dmg"><buff typ="PhyATK_UP" />固定物理傷害數值會降低為攻擊力<val idx="12" r signless /></sec>，並額外獲得<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="14" r /></sec>效果。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -6390,6 +6432,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군 지원기를 지정 보호하고 방어막을 부여합니다. 자신 또한 동일한 수치의 방어막을 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신이 지정 보호 중인 아군이 <sec typ="cond">중열에 위치한 경우</sec>, 대상의 행동력을, <sec typ="cond">후열에 위치한 경우</sec> 공격력을 증가시킵니다.
+        <char uid="3P_Amphitrite" />의 <sec typ="note">지휘 전파</sec> 효과를 받는 아군 공격기에게도 동일한 지정 보호와 방어막을 부여합니다.
+        <char uid="3P_Salacia" />의 <sec typ="note">시아, 엄~청 세!</sec> 기능 중 공격기 1기당 추가되는 효과에 <sec>자신을 공격기 취급</sec>하여 버프 효과에 합산합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、味方の支援機を指定保護し、バリアを付与します。自分も同数値のバリアを獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、自分が指定保護中の味方が<sec typ="cond">中列に位置する場合</sec>は対象の行動力を、<sec typ="cond">後列に位置する場合</sec>は攻撃力を増加させます。
+        <char uid="3P_Amphitrite" />の<sec typ="note">指揮伝播</sec>効果を受ける味方の攻撃機にも同一の指定保護とバリアを付与します。
+        <char uid="3P_Salacia" />の<sec typ="note">シア、すっご～い強いぞ！</sec>機能のうち、攻撃機1機ごとに追加される効果に<sec>自分を攻撃機として扱い</sec>、バフ効果に加算します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, provides Designated Protection to ally Supporters and grants a Defensive Shield. Self also gains a Defensive Shield with the same value.
+        <sec typ="cond">At the start of the round</sec>, if the ally receiving self's Designated Protection is <sec typ="cond">in the middle line</sec>, their MOVE is increased; if they are <sec typ="cond">in the rear line</sec>, their ATK is increased.
+        Also grants the same Designated Protection and Defensive Shield to ally Attackers receiving <char uid="3P_Amphitrite" />'s <sec typ="note">Relay Command</sec> effect.
+        Counts self as an Attacker and adds it to the buff effects among <char uid="3P_Salacia" />'s <sec typ="note">Cia, So Strong!</sec> effects that are added per Attacker.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，對我軍支援機施加指定保護並賦予防護罩。自身也獲得相同數值的防護罩。
+        <sec typ="cond">回合開始時</sec>，若自身指定保護的我軍<sec typ="cond">位於中列</sec>，則增加其行動力；若<sec typ="cond">位於後列</sec>，則增加其攻擊力。
+        也對受到<char uid="3P_Amphitrite" />的<sec typ="note">指揮傳達</sec>效果的我軍攻擊機施加相同的指定保護與防護罩。
+        在<char uid="3P_Salacia" />的<sec typ="note">西亞，超~強哦！</sec>功能中，將自身視為攻擊機，並計入每1名攻擊機所增加的追加增益效果。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -6733,6 +6796,23 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> 효과를 획득하고 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> HP <val idx="5" r signless />만큼 방어 관통 저항 증가</sec> 효과를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신이 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <sec typ="attr">강화 효과</sec></sec> 를 보유한 경우, <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="4" r /></sec>가 추가로 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신이 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원 <sec typ="attr">강화 효과</sec></sec>를 보유한 경우, <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> HP <val idx="6" r signless />만큼 방어 관통 저항 증가</sec> 효과를 추가로 획득합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分は<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>効果を獲得し、<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="Current_Hp_Piercedown" />HP<val idx="5" r signless />分の防御貫通耐性増加</sec>効果を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、自分が<sec typ="cond"><buff typ="DAMAGE_REDUCE" />受けるダメージ減少<sec typ="attr">強化効果</sec></sec>を保有している場合、<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="4" r /></sec>がさらに増加します。
+        <sec typ="cond">ラウンド開始時</sec>、自分が<sec typ="cond"><buff typ="SUPPORT_ATTACK" />攻撃支援<sec typ="attr">強化効果</sec></sec>を保有している場合、<sec typ="buff"><buff typ="Current_Hp_Piercedown" />HP<val idx="6" r signless />分の防御貫通耐性増加</sec>効果を追加で獲得します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, self gains <sec typ="buff"><buff typ="DEF_Line" /> Protect Row</sec> and <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="3" r /></sec> / <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> Defense Penetration Resistance equal to HP <val idx="5" r signless /></sec> increase effects.
+        <sec typ="cond">At the start of the round</sec>, if self has <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> Received Damage Decrease <sec typ="attr">upgrade effects</sec></sec>, <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="4" r /></sec> increases further.
+        <sec typ="cond">At the start of the round</sec>, if self has <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> Attack Support <sec typ="attr">upgrade effects</sec></sec>, additionally gains <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> Defense Penetration Resistance equal to HP <val idx="6" r signless /></sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身獲得<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>效果，並獲得<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="Current_Hp_Piercedown" />相當於HP<val idx="5" r signless />的防禦穿透抗性增加</sec>效果。
+        <sec typ="cond">回合開始時</sec>，若自身持有<sec typ="cond"><buff typ="DAMAGE_REDUCE" />所受傷害減少<sec typ="attr">強化效果</sec></sec>，則<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="4" r /></sec>進一步增加。
+        <sec typ="cond">回合開始時</sec>，若自身持有<sec typ="cond"><buff typ="SUPPORT_ATTACK" />支援攻擊<sec typ="attr">強化效果</sec></sec>，則額外獲得<sec typ="buff"><buff typ="Current_Hp_Piercedown" />相當於HP<val idx="6" r signless />的防禦穿透抗性增加</sec>效果。
   "5":
     key: "5"
     icon: P.AWACS
@@ -6987,6 +7067,23 @@ skills:
             base: 0.4
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> 효과를 보유한 모든 적에게 1라운드 동안 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> 감소 효과를 부여합니다.
+        <sec typ="cond">피격 시</sec>, <sec typ="note">영웅의 기상</sec>에 의한 <sec typ="cond"><buff typ="AP_DOWN" /> 행동력 감소</sec> 효과가 적용중인 대상에게 2라운드 동안 <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> 대 중장형 피해량 <val idx="3" r /></sec> 감소 효과를 부여합니다. (최대 3중첩)
+        <sec typ="cond">피격 시</sec>, <sec typ="note">함대원형진</sec>에 의한 <sec typ="cond"><buff typ="DAMAGE_ABSORB" />  방어막 효과</sec>가 적용중인 대상의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>을(를) 증가시킵니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond"><buff typ="VULNERABLE" />受けるダメージ増加</sec>効果を持つ全ての敵に1ラウンドの間、<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="0" r /></sec>減少効果を付与します。
+        <sec typ="cond">被撃時</sec>、<sec typ="note">英雄の気迫</sec>による<sec typ="cond"><buff typ="AP_DOWN" />行動力減少</sec>効果が適用中の対象に2ラウンドの間、<sec typ="buff"><buff typ="ARMORED_DMG_DOWN" />対重装型ダメージ量<val idx="3" r /></sec>減少効果を付与します。(最大3スタック)
+        <sec typ="cond">被撃時</sec>、<sec typ="note">艦隊輪形陣</sec>による<sec typ="cond"><buff typ="DAMAGE_ABSORB" />バリア効果</sec>が適用中の対象の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="4" /></sec>を増加させます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, inflicts <sec typ="cond"><buff typ="VULNERABLE" /> Received Damage Increase</sec> targets with <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="0" r /></sec> decrease for 1 round.
+        <sec typ="cond">When attacked</sec>, inflicts targets affected by the <sec typ="cond"><buff typ="AP_DOWN" /> MOVE Decrease</sec> effect from <sec typ="note">Hero's Awakening</sec> with <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> Anti-Heavy Armor Damage <val idx="3" r /></sec> decrease for 2 rounds. (Max 3 stacks)
+        <sec typ="cond">When attacked</sec>, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> of targets affected by the <sec typ="cond"><buff typ="DAMAGE_ABSORB" /> Defensive Shield effect</sec> from <sec typ="note">Fleet Circular Formation</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，對所有持有<sec typ="cond"><buff typ="VULNERABLE" />所受傷害增加</sec>效果的敵人，在1回合內施加<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="0" r /></sec>減少效果。
+        <sec typ="cond">被擊時</sec>，對處於<sec typ="note">英雄之氣勢</sec>所造成的<sec typ="cond"><buff typ="AP_DOWN" />行動力減少</sec>效果中的目標，於2回合內施加<sec typ="buff"><buff typ="ARMORED_DMG_DOWN" />對重裝型傷害量<val idx="3" r /></sec>減少效果。（最多3層）
+        <sec typ="cond">被擊時</sec>，增加受到<sec typ="note">艦隊圓形陣</sec>所造成的<sec typ="cond"><buff typ="DAMAGE_ABSORB" />防護罩效果</sec>影響之目標的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="4" /></sec>。
 dialogue:
   KR:
     "1":
@@ -7104,9 +7201,7 @@ dialogue:
         엄청 열심히 준비했는데…
         예쁜 속옷은 준비를 못 했거든…?
         그러니까… 이따가 너무 놀라면 안돼…?
-      Oath: 옛날 어떤 나라에서는 은행나무 아래에서 사랑을 고백했대. 그래서 나도 허니에게 내 사랑이 전해지길 바라며 노란색 옷을 입었던 건데…
-        다행히 잘 전달된 모양이네. 은행나무 덕에 함께 하게 되었으니, 우리 사랑도 천 년 동안 사는 은행나무처럼 오래오래 이어가자,
-        허니!
+      Oath: 옛날 어떤 나라에서는 은행나무 아래에서 사랑을 고백했대. 그래서 나도 허니에게 내 사랑이 전해지길 바라며 노란색 옷을 입었던 건데… 다행히 잘 전달된 모양이네. 은행나무 덕에 함께 하게 되었으니, 우리 사랑도 천 년 동안 사는 은행나무처럼 오래오래 이어가자, 허니!
       OathIdle_01: |-
         나중에 멋진 남자친구가 생기면
         같이 뭘 할까 정리해둔 리스트가 있거든?
@@ -7308,9 +7403,7 @@ dialogue:
         엄청 열심히 준비했는데…
         예쁜 속옷은 준비를 못 했거든…?
         그러니까… 이따가 너무 놀라면 안돼…?
-      Oath: "[미번역]옛날 어떤 나라에서는 은행나무 아래에서 사랑을 고백했대. 그래서 나도 허니에게 내 사랑이 전해지길 바라며 노란색 옷을
-        입었던 건데… 다행히 잘 전달된 모양이네. 은행나무 덕에 함께 하게 되었으니, 우리 사랑도 천 년 동안 사는 은행나무처럼 오래오래
-        이어가자, 허니!"
+      Oath: "[미번역]옛날 어떤 나라에서는 은행나무 아래에서 사랑을 고백했대. 그래서 나도 허니에게 내 사랑이 전해지길 바라며 노란색 옷을 입었던 건데… 다행히 잘 전달된 모양이네. 은행나무 덕에 함께 하게 되었으니, 우리 사랑도 천 년 동안 사는 은행나무처럼 오래오래 이어가자, 허니!"
       OathIdle_01: |-
         [미번역]나중에 멋진 남자친구가 생기면
         같이 뭘 할까 정리해둔 리스트가 있거든?
@@ -7409,19 +7502,14 @@ dialogue:
       SPIdle_01_01: |-
         Huh? You're wiping off the ice cream that melted?
         Thanks.
-      Idle_02_01: >-
+      Idle_02_01: |-
         Ugh… My chest is sticky… Is my ice cream
-
         melting so fast because it’s so hot here? Hmm?
-
         What’s wrong? Are you hot too, Honey? Should I go get you some ice cream?
-      Idle_03_01: >-
+      Idle_03_01: |-
         Sit here. Now! A question.
-
         A girl that likes you arrives in a swimsuit. Your answer should be? Hehe.
-
         Thanks for saying I’m pretty. It feels rewarding to have picked out something
-
         I knew you would like.
       Idle_04_01: |-
         What should we do now? Go swimming? Play in the water? Go on the slides?
@@ -7431,12 +7519,9 @@ dialogue:
       SPIdle_02_01: |-
         It's sticky because of the ice cream. 
         This ice cream was delicious… Isn't it such a waste?
-      Oath: >-
-        I’ve seen the pool and swimsuits from afar, but this is the first time
-        actually wearing one and playing.
-
+      Oath: |-
+        I’ve seen the pool and swimsuits from afar, but this is the first time actually wearing one and playing.
         But… developing feelings for someone… the person I like saying they have feelings for me… My dreams are coming true one by one when I’m with you, Honey.
-
         Now that we're here… Can you grant me another wish? Hehe, you know what I mean, don't you?
       OathIdle_01: |-
         I played in the swimming pool, tried on swimsuits…
@@ -7475,8 +7560,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Join: Hi! I heard that the last human was here! Am I in the right… Whoa,
-        awesome! Umm… Do you like girls who are active?
+      Join: Hi! I heard that the last human was here! Am I in the right… Whoa, awesome! Umm… Do you like girls who are active?
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -7499,38 +7583,26 @@ dialogue:
         I had parted with long ago were here. Princess Mel,
         Amphi, and Cia. They look so much happier
         than when we last saw each other. Honey, you're so nice!
-      Idle_01_02: >-
+      Idle_01_02: |-
         Umm, do you like soaps? Old ones. I love them
-
         so much. I found some in the archives
-
         and gave them a watch because I was bored.
-
         It was everything I ever wanted! Let's watch together when you have time.
-
         I'm sure you'll love them too, Honey.
-      Idle_01_03: >-
+      Idle_01_03: |-
         You think I stay too much in the front during battle?
-
         Are you worried about me? That makes me glad. But you don't have to worry about me.
-
         I wouldn't be in the front if I wasn't sure I could handle it. Also,
-
         the farther ahead I stay,
-
         the safer the others are.
       SPIdle_01_01: |-
         Waugh?! Already? Hehe,
         you fall in love quickly just like me, don't you?
-      Idle_02_01: >-
+      Idle_02_01: |-
         I just met a girl 
-
         named Orangeade. She’s so much fun. She said she watched a lot of cartoons,
-
         and that a lot of soaps
-
         were remade as cartoons.
-
         We promised to watch some together. You wanna come with me?
       Idle_03_01: |-
         Hnngh, what are you looking at? Are you only going to look?
@@ -7548,23 +7620,15 @@ dialogue:
         Umm… Honey? Do you feel happy?
         If you want… I can do…
         whatever you want…
-      Oath: >-
-        What's the matter? Are you finally understanding how I feel--is that a
-        ring? For real? This is a joke, right? You have no idea how much I've
-        waited for this day… Is it late?
-
+      Oath: |-
+        What's the matter? Are you finally understanding how I feel--is that a ring? For real? This is a joke, right? You have no idea how much I've waited for this day… Is it late?
         No, not at all… I would never have thought that way. Hmm? My answer? I confessed my feelings to you every day. Wasn't that enough? You leave me no choice.
-
         I'll tell you again. Listen well. I've loved you since the moment we met. I'll confess my love to you every day from now on!
-      OathIdle_01: >-
+      OathIdle_01: |-
         The reason I like you? I like your style.
-
         Just kidding! I can talk about those reasons for days,
-
         but that wouldn’t look very cool now, would it? There’s no specific reason
-
         to liking someone. I just woke up
-
         and there I was, in love with you.
       MVP: ""
     M:
@@ -7585,13 +7649,10 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         Do you want something from me? Let me know anytime
-
         if you do. I can do anything if it's for Honey. Hm? What do I want? Umm… a lot of things!
-
         Like, a lot! An eternity wouldn't be enough.
-
         So let's stay together our whole lives.
       Idle_01_02: |-
         Honey, now that I've 

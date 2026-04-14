@@ -1,5 +1,6 @@
-import { BuffStat } from "@/types/Buffs";
-import { ACTOR_GRADE, NUM_OUTPUTTYPE, SKILL_ATTR } from "@/types/Enums";
+import type { BuffStat } from "@/types/Buffs";
+import type { ACTOR_GRADE, NUM_OUTPUTTYPE, SKILL_ATTR } from "@/types/Enums";
+import type { LocaleTypes } from "@/types/Locale";
 
 /* eslint-disable camelcase */
 export interface SkillSummonInfo {
@@ -61,7 +62,7 @@ export interface SkillEntity {
 		index: number[];
 		data: SkillValueData[][];
 	};
-	// desc: string[];
+	desc?: Record<LocaleTypes, string>;
 }
 /* eslint-enable camelcase */
 

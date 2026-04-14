@@ -2884,6 +2884,27 @@ skills:
             base: 2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        당근 칼리버를 휘둘러 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        적중 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하고, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec> 증가 / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec> 감소 효과를 적용합니다.
+        적중 여부와 관계 없이 자신과 대상에게 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="6" /></sec> 증가 효과를 적용하고 자신에게 <sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 위력으로 반격</sec>, 대상에게 <sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless /> 위력으로 반격</sec> 효과를 적용합니다.
+        해당 효과는 반격 후 사라집니다.
+      JP: |-
+        ニンジンカリバーを振るい、敵に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        命中対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>し、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>増加 / <sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="2" r /></sec>減少効果を適用します。
+        命中の有無に関係なく、自分と対象に<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="6" /></sec>増加効果を適用し、自分に<sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless />の威力で反撃</sec>、対象に<sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless />の威力で反撃</sec>効果を適用します。
+        この効果は反撃後に消滅します。
+      EN: |-
+        Swings the Carrot Calibur and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage to enemies.
+        Provokes the hit target and applies <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="1" r /></sec> increase / <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="2" r /></sec> decrease effects.
+        Regardless of whether the attack hits, applies <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="6" /></sec> increase effects to self and the target, <sec typ="buff"><buff typ="COUNTER" /> retaliates with <val idx="5" r signless /> power</sec> on self, and <sec typ="buff"><buff typ="COUNTER" /> retaliates with <val idx="7" r signless /> power</sec> on the target.
+        This effect disappears after retaliating.
+      TC: |-
+        揮舞胡蘿蔔神劍，對敵人造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+        挑釁命中目標，並套用<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="1" r /></sec>增加 / <sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="2" r /></sec>減少效果。
+        無論是否命中，都會對自身與目標套用<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="6" /></sec>增加效果，對自身套用<sec typ="buff"><buff typ="COUNTER" />以<val idx="5" r signless />威力反擊</sec>，對目標套用<sec typ="buff"><buff typ="COUNTER" />以<val idx="7" r signless />威力反擊</sec>效果。
+        此效果會在反擊後消失。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -5050,6 +5071,23 @@ skills:
             base: 0.07
             per: 0.014
             chance: 1
+    desc:
+      KR: |-
+        혼신의 힘을 담은 발차기로 지정 범위의 적에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="note">바니!</sec> 중첩당 <sec typ="note">바니 파멸킥!</sec>의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="7" slot="5" /></sec> / <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="note">바니!</sec> 스택이 3중첩인 경우, 적중 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
+      JP: |-
+        渾身の力を込めたキックで指定範囲の敵に<dmg elem="physics" />を与えます。
+        <sec typ="note">Bunny!</sec>のスタックごとに、<sec typ="note">Bunny Deadly Kick!</sec>の<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="7" slot="5" /></sec> / <sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="3" r /></sec>が増加します。
+        <sec typ="note">Bunny!</sec>のスタックが3のとき、命中対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>します。
+      EN: |-
+        Kicks with full force and deals <dmg elem="physics" /> damage to enemies in the designated area.
+        For each <sec typ="note">Bunny!</sec> stack, <sec typ="note">Bunny Deadly Kick!</sec>'s <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="7" slot="5" /></sec> / <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
+        If <sec typ="note">Bunny!</sec> is at 3 stacks, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the hit target's buffs</sec>.
+      TC: |-
+        以全力踢擊對指定範圍內的敵人造成<dmg elem="physics" />。
+        每疊加1層<sec typ="note">Bunny!</sec>，<sec typ="note">兔子毀滅踢！</sec>的<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="7" slot="5" /></sec> / <sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="3" r /></sec>增加。
+        若<sec typ="note">Bunny!</sec>疊加至3層，則<sec typ="buff"><buff typ="REMOVE_BUFF" />解除命中目標的強化效果</sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -5760,6 +5798,39 @@ skills:
             base: 0.45
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="note">바니!</sec> 스택이 없는 경우 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        또한 <sec typ="note">바니!</sec> 스택이 3중첩이 아닌 경우, <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 행동 횟수 <val idx="10" slot="5" />회</sec>가 증가합니다.
+        <sec typ="cond">공격 적중 시</sec>, <sec typ="note">바니!</sec> 스택이 최대 3중첩까지 쌓입니다.
+        중첩별 자신은 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>가 증가하고 추가로 라운드 개시 시 다음 효과를 획득합니다.
+        1중첩 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" slot="5" r /></sec> 증가
+        2중첩 : <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막/피해 감소 무시</sec>
+        3중첩 : <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="6" slot="5" r /></sec>
+      JP: |-
+        ラウンド開始時、<sec typ="note">Bunny!</sec>スタックがない場合、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        また、<sec typ="note">Bunny!</sec>スタックが3スタックでない場合、<sec typ="buff"><buff typ="Action_Number_Change_Up" />行動回数<val idx="10" slot="5" />回</sec>が増加します。
+        <sec typ="cond">攻撃命中時</sec>、<sec typ="note">Bunny!</sec>スタックが最大3スタックまで累積します。
+        スタックごとに自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec>が増加し、さらにラウンド開始時に以下の効果を獲得します。
+        1スタック : <sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" slot="5" r /></sec>増加
+        2スタック : <sec typ="buff"><buff typ="BARRIER_PIERCE" />防御壁/受けるダメージ無視</sec>
+        3スタック : <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除抵抗<val idx="6" slot="5" r /></sec>
+      EN: |-
+        At the start of the round, if there are no <sec typ="note">Bunny!</sec> stacks, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        Also, if <sec typ="note">Bunny!</sec> is not at 3 stacks, <sec typ="buff"><buff typ="Action_Number_Change_Up" /> action count <val idx="10" slot="5" /> times</sec> increases.
+        <sec typ="cond">On attack hit</sec>, <sec typ="note">Bunny!</sec> stacks can build up to 3.
+        Each stack increases own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec>, and additionally grants the following effects at the start of the round.
+        1 stack: <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" slot="5" r /></sec> increase
+        2 stacks: <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Defensive Shield/Damage Decrease</sec>
+        3 stacks: <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Upgrade Removal Resistance <val idx="6" slot="5" r /></sec>
+      TC: |-
+        回合開始時，若沒有<sec typ="note">Bunny!</sec>疊加數，則<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        另外，若<sec typ="note">Bunny!</sec>疊加未達3層，則<sec typ="buff"><buff typ="Action_Number_Change_Up" />行動次數<val idx="10" slot="5" />次</sec>增加。
+        <sec typ="cond">攻擊命中時</sec>，<sec typ="note">Bunny!</sec>疊加最多可堆疊至3層。
+        每疊加1層，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec>增加，並額外於回合開始時獲得以下效果。
+        1層：<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" slot="5" r /></sec>增加
+        2層：<sec typ="buff"><buff typ="BARRIER_PIERCE" />無視防護罩/傷害減少</sec>
+        3層：<sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除抗性<val idx="6" slot="5" r /></sec>
   "4":
     key: "4"
     icon: P.TeamAtkDeBuff
@@ -5959,6 +6030,59 @@ skills:
             base: 0.45
             per: 0.015
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">피격 시</sec>, <sec typ="cond"><buff typ="COUNTER" /> 반격</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원</sec> / <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 효과가 적용된 적 개체가 존재할 경우, 대상의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 행 / 열 / 지정 보호 효과를 해제</sec>합니다.
+        라운드 개시 시, 자신은 1라운드 동안 해제 불가의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 효과를 획득합니다.
+        해당 효과는 적이 많을수록 효과가 증가합니다.
+        적 1체 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="6" slot="3" r inv /></sec> 감소
+        적 2체 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="7" slot="3" r inv /></sec> 감소
+        적 3체 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" slot="3" r inv /></sec> 감소
+        적 4체 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="9" slot="3" r inv /></sec> 감소
+        적 5체 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="10" slot="3" r inv /></sec> 감소
+        적 6체 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="11" slot="3" r inv /></sec> 감소
+        적 7체 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="12" slot="3" r inv /></sec> 감소
+        적 8체 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="13" slot="3" r inv /></sec> 감소
+        적 9체 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="14" slot="3" r inv /></sec> 감소
+      JP: |-
+        <sec typ="cond">被弾時</sec>、<sec typ="cond"><buff typ="COUNTER" />反撃</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" />攻撃支援</sec> / <sec typ="cond"><buff typ="PROVOKE" />挑発</sec>効果が適用された敵が存在する場合、対象の<sec typ="buff"><buff typ="REMOVE_DEBUFF" />行 / 列 / 指定保護効果を解除</sec>します。
+        ラウンド開始時、自分は1ラウンドの間、解除不可の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ減少</sec>効果を獲得します。
+        この効果は敵が多いほど強くなります。
+        敵1体 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="6" slot="3" r inv /></sec>減少
+        敵2体 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="7" slot="3" r inv /></sec>減少
+        敵3体 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="8" slot="3" r inv /></sec>減少
+        敵4体 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="9" slot="3" r inv /></sec>減少
+        敵5体 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="10" slot="3" r inv /></sec>減少
+        敵6体 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="11" slot="3" r inv /></sec>減少
+        敵7体 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="12" slot="3" r inv /></sec>減少
+        敵8体 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="13" slot="3" r inv /></sec>減少
+        敵9体 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="14" slot="3" r inv /></sec>減少
+      EN: |-
+        <sec typ="cond">When attacked</sec>, if there are enemies affected by <sec typ="cond"><buff typ="COUNTER" /> Retaliation</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> Attack Support</sec> / <sec typ="cond"><buff typ="PROVOKE" /> Provoke</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes their Protect Row / Protect Line / Designated Protection effects</sec>.
+        At the start of the round, self gains an unremovable <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage decrease</sec> effect for 1 round.
+        This effect becomes stronger the more enemies there are.
+        1 enemy: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="6" slot="3" r inv /></sec> decrease
+        2 enemies: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="7" slot="3" r inv /></sec> decrease
+        3 enemies: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="8" slot="3" r inv /></sec> decrease
+        4 enemies: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="9" slot="3" r inv /></sec> decrease
+        5 enemies: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="10" slot="3" r inv /></sec> decrease
+        6 enemies: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="11" slot="3" r inv /></sec> decrease
+        7 enemies: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="12" slot="3" r inv /></sec> decrease
+        8 enemies: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="13" slot="3" r inv /></sec> decrease
+        9 enemies: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="14" slot="3" r inv /></sec> decrease
+      TC: |-
+        <sec typ="cond">受攻擊時</sec>，若存在套用<sec typ="cond"><buff typ="COUNTER" />反擊</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" />支援攻擊</sec> / <sec typ="cond"><buff typ="PROVOKE" />挑釁</sec>效果的敵人，則<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除其行 / 列 / 指定保護效果</sec>。
+        回合開始時，自身獲得1回合內無法解除的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害減少</sec>效果。
+        此效果會隨敵人數量增加而增強。
+        1體敵人：<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="6" slot="3" r inv /></sec>減少
+        2體敵人：<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="7" slot="3" r inv /></sec>減少
+        3體敵人：<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="8" slot="3" r inv /></sec>減少
+        4體敵人：<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="9" slot="3" r inv /></sec>減少
+        5體敵人：<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="10" slot="3" r inv /></sec>減少
+        6體敵人：<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="11" slot="3" r inv /></sec>減少
+        7體敵人：<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="12" slot="3" r inv /></sec>減少
+        8體敵人：<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="13" slot="3" r inv /></sec>減少
+        9體敵人：<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="14" slot="3" r inv /></sec>減少
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -6903,6 +7027,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">공격 받을 시</sec>, 2라운드 동안 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec> 증가 효과를 획득합니다.
+        라운드 개시 시, 자신이 해당 효과를 획득한 상태인 경우 범위 내 아군에게 1라운드 동안 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec> 증가 효과를 부여합니다.
+        <sec>스킬 레벨 10에서 자신의 위치와 관계없이 아군 전체 적용됩니다.</sec>
+      JP: |-
+        <sec typ="cond">攻撃を受けた時</sec>、2ラウンドの間<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>増加効果を獲得します。
+        ラウンド開始時、自分がこの効果を獲得している場合、範囲内の味方に1ラウンドの間<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>増加効果を付与します。
+        <sec>スキルレベル10で自分の位置に関係なく味方全体に適用されます。</sec>
+      EN: |-
+        <sec typ="cond">When attacked</sec>, gains <sec typ="buff"><buff typ="ACCURACY_UP" /> ACU <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec> increase effects for 2 rounds.
+        At the start of the round, if self has gained this effect, grants allies in range <sec typ="buff"><buff typ="ACCURACY_UP" /> ACU <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" r /></sec> increase effects for 1 round.
+        <sec>At Skill Lv. 10, this applies to all allies regardless of self’s position.</sec>
+      TC: |-
+        <sec typ="cond">受到攻擊時</sec>，獲得持續2回合的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>增加效果。
+        回合開始時，若自身已獲得此效果，則對範圍內我軍賦予持續1回合的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>增加效果。
+        <sec>技能等級10時，無論自身位置如何都會套用至全體我軍。</sec>
 dialogue:
   KR:
     "1":
@@ -7041,9 +7182,7 @@ dialogue:
         니히히… 바니 대왕 씨…
         날 엉망진창으로 만들 생각인 거지…?
         메리 커미션처럼…♥
-      Oath: 그 옛날 바니걸은 내게 있어 수치나 다름없었다. 하지만 바니 대왕 씨의 러브는 바니의 저주에서 날 구원해주었지! 이로써 나는 바니
-        퀸이요, 바니의 초월자가 되었다…! …요약하자면, 이런 내 모습까지 좋아해줘서 고맙다고. 니히히… 사령관 씨…? 오늘은 이 니바의
-        서로다른 두 가지 매력을 잔뜩 맛 볼 각오, 단단히 하는 게 좋을 거야!
+      Oath: 그 옛날 바니걸은 내게 있어 수치나 다름없었다. 하지만 바니 대왕 씨의 러브는 바니의 저주에서 날 구원해주었지! 이로써 나는 바니 퀸이요, 바니의 초월자가 되었다…! …요약하자면, 이런 내 모습까지 좋아해줘서 고맙다고. 니히히… 사령관 씨…? 오늘은 이 니바의 서로다른 두 가지 매력을 잔뜩 맛 볼 각오, 단단히 하는 게 좋을 거야!
       OathIdle_01: |-
         힘이 약해진 바니 살해자 니바를
         바니 대왕 씨는 잔인하게 유린했다.
@@ -7112,11 +7251,9 @@ dialogue:
         저기... 그게 있지... 그... 
         자꾸 그러면 나...
         발정, 해버리는데...?​
-      Oath: >-
+      Oath: |-
         바니 대왕 씨를 만나고... 내 안에서 또 다른 무언가가 타오르기 시작했어. 그래... 그건 바로, 러브...! 바니 대왕-
-
         아니, 사령관 씨를 향한 내 불타는 마음이야! 이제 '타오르는 바니의 혼'이 아니라 이 뜨겁고 달콤한 감정이 내 삶의 원동력...!
-
         ...아, 응. 오버해서 미안해. 그, 그냥 좀 부끄러워서. 에헤헤... 나도 정말 좋아해, 사령관 씨.
       OathIdle_01: |-
         으음... 헤헷. 응? 이거? 그루밍. 니히힛,
@@ -7315,13 +7452,10 @@ dialogue:
         W-wait! If you put your hand on me right now,
         You might get hurt from my ‘Killer-Bunny Spirit’-
         Kyaaaa!​
-      Idle_02_01: >-
+      Idle_02_01: |-
         How is it? What do you think? It’s awesome, pretty, the best. Right?
-
         Bahaha, this is NiBA who completely
-
         absorbed the ‘Killer-Bunny Spirit’… Hello? Bunny King? Are you listening? When someone is talking to you,
-
         look into their eyes. Not their breasts!​
       Idle_03_01: |-
         Hmm… Alright. Bunny King must have deeply fallen
@@ -7337,20 +7471,13 @@ dialogue:
       SPIdle_02_01: |-
         … Bunny King, you’re so horny. You’re such a beast.
         Bahaha. That’s why I like you so much ♥​
-      Oath: >-
-        … I see. Bunny King was not in love with Reverse Bunnies… He was in love
-        with NiBA. Me. Now that I think of it, you actually gave me a lot of
-        hints.
-
+      Oath: |-
+        … I see. Bunny King was not in love with Reverse Bunnies… He was in love with NiBA. Me. Now that I think of it, you actually gave me a lot of hints.
         Why didn’t I notice them? … Yes, that must be it. This pink cloud called LOVE must have been clouding my judgement!
-
         Bahaha, now that the cloud is cleared , I can now win myself a true L.O.V.E…! Baha hahaha… I guess I went over the top just by a little. This is embarrassing… Huh? Do I need to say it, too? R-right now…? … W-well, you know. Umm… I love you, Commander.
-      OathIdle_01: >-
-        This is the full power of ‘NiBA the Bride’… I am the embodiment of the
-        word ‘goodwife’…! Bahahaha, Commander.
-
+      OathIdle_01: |-
+        This is the full power of ‘NiBA the Bride’… I am the embodiment of the word ‘goodwife’…! Bahahaha, Commander.
         How was work today? Do you want to take a shower first?
-
         And… do you want to do the dishes, or do you want to do me?​
       MVP: ""
     "2":
@@ -7404,15 +7531,11 @@ dialogue:
       Idle_01_01: |-
         Bunny Girls… Repulsive bastards. I can’t even stand the sight of them.
         Yeah… There’s no reason to keep them alive!​
-      Idle_01_02: >-
+      Idle_01_02: |-
         Hah. I loathe Bunny Girls.
-
         But to tell the truth, I used to be a Bunny Girl myself. "No one knows why she chose to
-
         Walk down this road filled with hatred and blood. We can only imagine
-
         From her sorrowful eyes…"
-
         < From NiBA’s secret diary >​
       Idle_01_03: |-
         *Chuckles* Your precious Bunny Girls are
@@ -7428,37 +7551,25 @@ dialogue:
         I may look calm like a lake,
         But I have a volcano beneath the still wate- Woah, carrots!
         Yum yum… Hmph? Do you want some, Bunny King?​
-      Idle_03_01: >-
+      Idle_03_01: |-
         You see, Bunny King told me
-
         That he’ll come pick me up at three tomorrow.
-
         So my heart will start pounding from 2:30 today. Huh? You didn’t say you’d come pick me up?
-
         Did you know? There is a very slim chance of getting back your memory
-
         When you get hit by my ‘Ex-carrot-ber’. *Chuckles* Did that refresh your memory?
-
         I’ll be waiting.​
-      Idle_04_01: >-
+      Idle_04_01: |-
         I guess you aren’t that much of a bad guy, Bunny King.
-
         Yeah. I didn’t hate Bunny Girls
-
         From the get-go, you know? Hoo hoo… You’re the worst. You just made me remind my past
-
         With those words, you know?
-
         It’s on all you, Bunny King♥​
       SPIdle_02_01: |-
         If you keep touching me 
         Like that… I’m going to get horny, you know?​
-      Oath: >-
-        After meeting the Bunny King, I can feel something inside has kindled.
-        Yes… This must be love…! Bunny King-
-
+      Oath: |-
+        After meeting the Bunny King, I can feel something inside has kindled. Yes… This must be love…! Bunny King-
         No, my heart is burning with love for Commander! What drives me is no longer ‘Burning Bunny Spirit’, but this hot, sweet melting pot of emotions!
-
         Ah, yeah. Sorry if I seemed over the top. I-it’s just a little embarrassing, that’s all. Hehe… I really really like you too, Commander.
       OathIdle_01: |-
         Hmm… Hehe. Huh? What am I doing? I’m grooming you, of course. *Chuckles*
@@ -7483,20 +7594,13 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        No matter how much I think about it, the answer is no. Forgive Bunny
-        Girls?
-
+      Idle_01_01: |-
+        No matter how much I think about it, the answer is no. Forgive Bunny Girls?
         That totally ruins my character! No matter how circumstances have changed,
-
         I used to be a Bunny Slayer! Bahahahaha I might give it some thoughts
-
         If you serve me like a queen,
-
         Commander. For example, give me compliments so that I’d feel good about myself,
-
         feed me food, or kneel and kiss me on my foot.
-
         Last one was a joke, obviously- huh?!! A-are you really trying to do it?!​
       Idle_01_02: |-
         Did you know? I acquired a new ability
@@ -7504,17 +7608,12 @@ dialogue:
         I’ll be more of your type day by day,
         and become the one and only bride just for you.
         Bahaha. What do you think? Don’t I already look different?
-      Idle_01_03: >-
+      Idle_01_03: |-
         "NiBA. A ruthless bunny assassin
-
         known to have no mercy. She met the Bunny King,
-
         the head of the bunny girls. Fight of life and death continued for three nights and days.
-
         In the middle of the fight,
-
         the Bunny King suddenly confesses his feelings for her." Hehe, all done.
-
         I’ll leave the rest of the writing to you, Commander. Pretty please?​
       SPIdle_01_01: |-
         You reaaally enjoy being nasty, don’t you?

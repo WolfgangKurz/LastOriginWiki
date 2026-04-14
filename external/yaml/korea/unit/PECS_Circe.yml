@@ -1926,6 +1926,19 @@ skills:
             base: 36
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        호박을 던져 대상에게 <dmg elem="fire" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec> 증가 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="1" r /></sec> 감소 상태로 만듭니다.
+        적중 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 감소 효과를 해제</sec>합니다.
+      JP: |-
+        かぼちゃを投げて対象に<dmg elem="fire" />を与え、2ラウンドの間<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" />被ダメージ <val idx="2" r /></sec>増加 / <sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性 <val idx="1" r /></sec>減少状態にします。
+        命中した対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />被ダメージ減少効果を解除</sec>します。
+      EN: |-
+        Throws a pumpkin to deal <dmg elem="fire" /> to the target, and for 2 rounds applies <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="2" r /></sec> increase / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire RES <val idx="1" r /></sec> decrease.
+        Removes the hit target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Received Damage Decrease effect</sec>.
+      TC: |-
+        投擲南瓜對目標造成<dmg elem="fire" />傷害，並於2回合內使其陷入<sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="2" r /></sec>增加 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="1" r /></sec>減少狀態。
+        解除命中目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 所受傷害減少效果</sec>。
   "2":
     key: "2"
     icon: TeamAtkDeBuff
@@ -2224,6 +2237,23 @@ skills:
             base: 7
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>를 감소시키며 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 적중 강화 효과를 해제</sec>합니다.
+        적중 대상은 해당 라운드 동안 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬을 사용하지 못합니다</sec>.
+        <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+      JP: |-
+        指定範囲に<dmg elem="physics" />を与え、2ラウンドの間<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="0" r /></sec>を減少させ、<sec typ="buff"><buff typ="REMOVE_BUFF" />命中強化効果を解除</sec>します。
+        命中した対象はそのラウンドの間<sec typ="buff"><buff typ="SEAL_SKILL" />スキルを使用できません</sec>。
+        <sec>スキルレベル10で範囲が増加します。</sec>
+      EN: |-
+        Deals <dmg elem="physics" /> to the designated area, decreases <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> for 2 rounds, and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes Accuracy Increase effects</sec>.
+        Hit targets <sec typ="buff"><buff typ="SEAL_SKILL" /> cannot use skills</sec> for that round.
+        <sec>Range increases at skill level 10.</sec>
+      TC: |-
+        對指定範圍造成<dmg elem="physics" />傷害，並於2回合內降低<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>，且<sec typ="buff"><buff typ="REMOVE_BUFF" />解除命中強化效果</sec>。
+        命中的目標於該回合<sec typ="buff"><buff typ="SEAL_SKILL" />無法使用技能</sec>。
+        <sec>技能等級10時，範圍會增加。</sec>
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -2384,6 +2414,19 @@ skills:
             base: -0.285
             per: -0.015
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, 인접 바이오로이드들에게 마실 것을 줘 대상들의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>를 증가시키지만 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="3" r /></sec>가 감소합니다.
+        해당 효과들은 장비와 동일한 <sec typ="attr">기타 효과</sec>로 분류됩니다.
+      JP: |-
+        戦闘開始時、隣接するバイオロイドに飲み物を与え、対象の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="2" r /></sec>を増加させますが、<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="3" r /></sec>が減少します。
+        これらの効果は装備と同じ<sec typ="attr">その他効果</sec>として分類されます。
+      EN: |-
+        At the start of combat, gives drinks to adjacent Bioroids, increasing the targets' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec> while decreasing <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="3" r /></sec>.
+        These effects are classified as <sec typ="attr">Other effects</sec> and are treated the same as equipment.
+      TC: |-
+        戰鬥開始時，向相鄰的生化人提供飲品，使目標的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="2" r /></sec>增加，但<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="3" r /></sec>減少。
+        這些效果會被歸類為與裝備相同的<sec typ="attr">其他效果</sec>。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -2698,6 +2741,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec>가 증가하며 <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec> 다음에 출현할 적을 확인할 수 있습니다.
+        <sec typ="cond"><buff typ="SCOUTING" /> 정찰</sec> 활성화 시, 해당 효과가 50% 추가 적용됩니다.
+        <equip uid="Sub_FortuneOrb" />를 장착하면 라운드 개시 시, 자신과 주변 아군들의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>을(를) 올려줍니다.
+      JP: |-
+        ラウンド開始時、自分の<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避 <val idx="1" r /></sec>が増加し、<sec typ="buff"><buff typ="SCOUTING" />偵察</sec>で次に出現する敵を確認できます。
+        <sec typ="cond"><buff typ="SCOUTING" />偵察</sec>が有効化されている場合、当該効果が50%追加適用されます。
+        <equip uid="Sub_FortuneOrb" />を装備している場合、ラウンド開始時に自分と周囲の味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>を上げます。
+      EN: |-
+        At the start of the round, self's <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="1" r /></sec> increases, and <sec typ="buff"><buff typ="SCOUTING" /> Recon</sec> lets you check the next enemy to appear.
+        When <sec typ="cond"><buff typ="SCOUTING" /> Recon</sec> is active, the effect is additionally applied by 50%.
+        If <equip uid="Sub_FortuneOrb" /> is equipped, increases self and nearby allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> at the start of the round.
+      TC: |-
+        回合開始時，自身的<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec>增加，並可透過<sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec>確認下次出現的敵軍。
+        <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec>啟用時，該效果會額外套用50%。
+        裝備<equip uid="Sub_FortuneOrb" />時，會在回合開始時提升自身與周圍我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>。
 dialogue:
   KR:
     "1":
@@ -2811,8 +2871,7 @@ dialogue:
         후훗, 사령관님께서 용기의 물약을
         많이 마시셨나보네요.
         그런 거 없어도… 사령관님이라면 괜찮은데…
-      Oath: 크리스마스 선물인가요? 그러면 저도 선물을 드려야겠네요. 사령관님은 올 한 해 착한 아이셨나요? 네? 아이가 아니라고요? 음… 그러면
-        착한 어른이셨나요? 착한 어른에게 산타가 키르케를 선물합니다. 평생 동안 소중히 아껴주세요. 아셨죠? 후후.
+      Oath: 크리스마스 선물인가요? 그러면 저도 선물을 드려야겠네요. 사령관님은 올 한 해 착한 아이셨나요? 네? 아이가 아니라고요? 음… 그러면 착한 어른이셨나요? 착한 어른에게 산타가 키르케를 선물합니다. 평생 동안 소중히 아껴주세요. 아셨죠? 후후.
       OathIdle_01: |-
         지역마다 다르지만 옛시대에는 9월에
         태어나는 아이들이 많았다고 해요.
@@ -3128,12 +3187,9 @@ dialogue:
       SPIdle_02_01: |-
         Then should we pick up
         where we left off?
-      Oath: >-
-        Commander, you look concerned. Haha. How about you stop thinking about
-        that for a second, and drink this with me?
-
+      Oath: |-
+        Commander, you look concerned. Haha. How about you stop thinking about that for a second, and drink this with me?
         This is the magic sap I prepared that will make us become one.
-
         Oh, if you also have sap, commander… Can you share a little with me? Just a little bit is enough…​
       OathIdle_01: |-
         Even if you don’t say it,
@@ -3217,10 +3273,8 @@ dialogue:
       SPIdle_02_01: |-
         Umm… it just felt like teasing… Kaboom! Can’t you just
         make it exciting like that?
-      Oath: >-
-        I was just an ordinary witch. I would drink liquor all alone where no
-        one was around.
-
+      Oath: |-
+        I was just an ordinary witch. I would drink liquor all alone where no one was around.
         But not anymore. I found the place I should be. Commander? How about… we talk over a glass of wine?
       OathIdle_01: |-
         One, two, good.
@@ -3244,10 +3298,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        I used to do nothing but drinking because I was lonely… But it’s good to
-        be with someone.
-
+      Idle_01_01: |-
+        I used to do nothing but drinking because I was lonely… But it’s good to be with someone.
         Do you know what I mean?​
       Idle_01_02: |-
         I had a drink~

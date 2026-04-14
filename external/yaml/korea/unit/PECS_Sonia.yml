@@ -5164,6 +5164,23 @@ skills:
               level: "0"
             value: Effect_BUFF_Flood_N_23
             chance: 1
+    desc:
+      KR: |-
+        지정 범위 내 적에게 유탄을 발사하여 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r signless /></sec> <dmg elem="physics" />를 줍니다.
+        적중 시, 대상이 <sec typ="cond">침수</sec> 상태인 경우 침수로 인한 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 화염 저항 증가 효과를 해제</sec>하고 3라운드 동안 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="3" r inv /></sec>를 감소시킵니다.
+        대상이 <sec typ="cond">경장형</sec>일 경우 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 피해량 <val idx="1" r /></sec>가 증가합니다.
+      JP: |-
+        指定範囲内の敵に榴弾を発射し、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r signless /></sec>の<dmg elem="physics" />を与えます。
+        命中時、対象が<sec typ="cond">浸水</sec>状態の場合、浸水による<sec typ="buff"><buff typ="REMOVE_BUFF" />火炎耐性増加効果を解除</sec>し、3ラウンドの間<sec typ="buff"><buff typ="DEBUFF_RATEUP" />効果抵抗<val idx="3" r inv /></sec>を減少させます。
+        対象が<sec typ="cond">軽装型</sec>の場合、<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />ダメージ量<val idx="1" r /></sec>が増加します。
+      EN: |-
+        Fires a grenade at enemies in the designated area, dealing <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="0" r signless /></sec> <dmg elem="physics" /> damage.
+        On hit, if the target is <sec typ="cond">Flooded</sec>, removes the <sec typ="buff"><buff typ="REMOVE_BUFF" /> Fire Resistance increase effect</sec> caused by Flooding and decreases <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="3" r inv /></sec> for 3 rounds.
+        If the target is <sec typ="cond">Light Armor</sec>, <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage <val idx="1" r /></sec> increases.
+      TC: |-
+        向指定範圍內敵軍發射榴彈，造成<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透<val idx="0" r signless /></sec><dmg elem="physics" />傷害。
+        命中時，若目標處於<sec typ="cond">浸水</sec>狀態，則會<sec typ="buff"><buff typ="REMOVE_BUFF" />解除因浸水而獲得的火炎抗性增加效果</sec>，並在3回合內降低<sec typ="buff"><buff typ="DEBUFF_RATEUP" />效果抵抗<val idx="3" r inv /></sec>。
+        若目標為<sec typ="cond">輕裝型</sec>，則<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />傷害量<val idx="1" r /></sec>增加。
   "2":
     key: "2"
     icon: SuicideBomb
@@ -7368,6 +7385,27 @@ skills:
               level: "0"
             value: Char_PECS_Sadius_N
             chance: 1
+    desc:
+      KR: |-
+        양손으로 각각 MGL을 쥐고 지정 범위 내 적에게 열압력탄을 난사하여 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 줍니다.
+        치명타 시, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        적중 여부에 관계없이 2라운드 동안 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="4" r /></sec>를 감소시키고, 적중 시 추가로 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec>를 감소시킵니다.
+        스쿼드 내에 <char uid="PECS_Sadius" />가 있을 시, 지정 대상에게 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">일렉트릭 펜스</sec> 스킬 협동 공격</sec>을 합니다.
+      JP: |-
+        両手にMGLをそれぞれ構え、指定範囲内の敵に熱圧力弾を掃射して<sec typ="attr">保護無視</sec>の<dmg elem="fire" />を与えます。
+        クリティカル時、<sec typ="dmg"><buff typ="FireATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+        命中の有無に関係なく2ラウンドの間、対象の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="4" r /></sec>を減少させ、命中時は追加で対象の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="2" r /></sec>を減少させます。
+        スコッド内に<char uid="PECS_Sadius" />がいる場合、指定対象に<sec typ="buff"><buff typ="TOGETHER_ATTACK" /><sec typ="note">エレクトリックフェンス</sec>スキル協同攻撃</sec>を行います。
+      EN: |-
+        Wields an MGL in each hand and sprays thermobaric rounds at enemies in the designated area, dealing <sec typ="attr">ignores Protection</sec> <dmg elem="fire" /> damage.
+        On crit, <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="0" r /></sec> increases.
+        Regardless of whether it hits, decreases the target's <sec typ="buff"><buff typ="EVADE_DOWN" /> EVADE <val idx="4" r /></sec> for 2 rounds, and on hit additionally decreases the target's <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="2" r /></sec>.
+        If <char uid="PECS_Sadius" /> is in the squad, performs a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Electric Fence</sec> cooperative attack</sec> on the designated target.
+      TC: |-
+        雙手各持一把MGL，向指定範圍內敵軍掃射熱壓力彈，造成<sec typ="attr">無視保護</sec><dmg elem="fire" />傷害。
+        暴擊時，<sec typ="dmg"><buff typ="FireATK_UP" />傷害量<val idx="0" r /></sec>增加。
+        不論是否命中，皆會於2回合內降低目標的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="4" r /></sec>，且命中時會額外降低目標的<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="2" r /></sec>。
+        若編成中有<char uid="PECS_Sadius" />，則會對指定目標發動<sec typ="buff"><buff typ="TOGETHER_ATTACK" /><sec typ="note">電圍欄</sec>技能協同攻擊</sec>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -7696,6 +7734,27 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        적 사망 시, 범위 내 아군에게 3라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" /></sec> 증가 효과를 부여합니다.
+        자신은 공격력 증가 효과가 두 배로 증가합니다. (최대 3중첩)
+        웨이브 종료 시, 범위 내 아군에게 <sec typ="buff"><buff typ="SCOUTING" /> 정찰 효과를 부여</sec>합니다.
+        라운드 개시 시, <sec typ="cond"><buff typ="SCOUTING" /> 정찰</sec> 상태인 범위 내 아군에게 1라운드 동안 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="7" r /></sec> 증가 효과를 부여합니다.
+      JP: |-
+        敵死亡時、範囲内の味方に3ラウンドの間<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" /></sec>増加効果を付与します。
+        自分は攻撃力増加効果が2倍になります。（最大3スタック）
+        ウェーブ終了時、範囲内の味方に<sec typ="buff"><buff typ="SCOUTING" />偵察効果を付与</sec>します。
+        ラウンド開始時、<sec typ="cond"><buff typ="SCOUTING" />偵察</sec>状態の範囲内の味方に1ラウンドの間<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>/<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="7" r /></sec>増加効果を付与します。
+      EN: |-
+        When an enemy dies, grants allies in the area an <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" /></sec> increase effect for 3 rounds.
+        Self's ATK increase effect is doubled. (Up to 3 stacks)
+        At wave end, grants allies in the area a <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> effect.
+        At round start, grants allies in the area who are in <sec typ="cond"><buff typ="SCOUTING" /> Scouting</sec> state an <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="7" r /></sec> increase effect for 1 round.
+      TC: |-
+        敵軍死亡時，對範圍內我軍賦予持續3回合的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力<val idx="0" /></sec>增加效果。
+        自身的攻擊力增加效果會變為兩倍。（最多3層）
+        波次結束時，對範圍內我軍賦予<sec typ="buff"><buff typ="SCOUTING" />偵察效果</sec>。
+        在回合開始時，對範圍內處於<sec typ="cond"><buff typ="SCOUTING" />偵察</sec>狀態的我軍賦予持續1回合的<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中<val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊<val idx="7" r /></sec>增加效果。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -8400,6 +8459,31 @@ skills:
             base: 0.3
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, <sec typ="cond">적 개체 수가 6 이상</sec>일 경우 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가하고 영구적으로 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec>가 증가합니다.
+        라운드 개시 시, 적 개체 수에 비례하여 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec>이 증가합니다.
+        적 1체 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val base="0.06" per="0" r /></sec> 증가
+        적 2체 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val base="0.09" per="0" r /></sec> 증가
+        적 3체 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val base="0.12" per="0" r /></sec> 증가... 등
+      JP: |-
+        戦闘開始時、<sec typ="cond">敵の数が6体以上</sec>の場合、自分の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>が増加し、永続的に<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec>が増加します。
+        ラウンド開始時、敵数に応じて自分の<sec typ="buff"><buff typ="AP_UP" />行動力</sec>が増加します。
+        敵1体 : <sec typ="buff"><buff typ="AP_UP" />行動力<val base="0.06" per="0" r /></sec>増加
+        敵2体 : <sec typ="buff"><buff typ="AP_UP" />行動力<val base="0.09" per="0" r /></sec>増加
+        敵3体 : <sec typ="buff"><buff typ="AP_UP" />行動力<val base="0.12" per="0" r /></sec>増加... など
+      EN: |-
+        At battle start, if there are <sec typ="cond">6 or more enemy units</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases and <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> increases permanently.
+        At round start, self's <sec typ="buff"><buff typ="AP_UP" /> AP</sec> increases in proportion to the number of enemies.
+        1 enemy: <sec typ="buff"><buff typ="AP_UP" /> AP <val base="0.06" per="0" r /></sec> increase
+        2 enemies: <sec typ="buff"><buff typ="AP_UP" /> AP <val base="0.09" per="0" r /></sec> increase
+        3 enemies: <sec typ="buff"><buff typ="AP_UP" /> AP <val base="0.12" per="0" r /></sec> increase... etc.
+      TC: |-
+        在戰鬥開始時，若<sec typ="cond">敵方數量達6以上</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> AP<val idx="0" /></sec>會增加，且<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力<val idx="4" r /></sec>會永久增加。
+        在回合開始時，自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>會依敵方數量增加。
+        敵1體：<sec typ="buff"><buff typ="AP_UP" /> 行動力<val base="0.06" per="0" r /></sec>增加
+        敵2體：<sec typ="buff"><buff typ="AP_UP" /> 行動力<val base="0.09" per="0" r /></sec>增加
+        敵3體：<sec typ="buff"><buff typ="AP_UP" /> 行動力<val base="0.12" per="0" r /></sec>增加... 等
   "5":
     key: "5"
     icon: P.Hang
@@ -8676,6 +8760,23 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="cond"><buff typ="COUNTER" /> 반격 상태</sec>인 적의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec>를 감소시킵니다.
+        라운드 개시 시, <sec typ="cond"><buff typ="SNARE" /> 이동 불가 상태</sec>인 적의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="4" r inv /></sec>를 감소시킵니다.
+        라운드 개시 시, <sec typ="cond"><buff typ="STUN" /> 행동 불능 상태</sec>인 적의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>를 증가시킵니다.
+      JP: |-
+        ラウンド開始時、<sec typ="cond"><buff typ="COUNTER" />反撃状態</sec>の敵の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="0" r /></sec>/<sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="1" r /></sec>を減少させます。
+        ラウンド開始時、<sec typ="cond"><buff typ="SNARE" />移動不可状態</sec>の敵の<sec typ="buff"><buff typ="DEBUFF_RATEUP" />効果抵抗<val idx="4" r inv /></sec>を減少させます。
+        ラウンド開始時、<sec typ="cond"><buff typ="STUN" />行動不能状態</sec>の敵の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="5" r /></sec>を増加させます。
+      EN: |-
+        At round start, decreases the <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="1" r /></sec> of enemies in <sec typ="cond"><buff typ="COUNTER" /> Counter</sec> state.
+        At round start, decreases the <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="4" r inv /></sec> of enemies in <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> state.
+        At round start, increases <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="5" r /></sec> of enemies in <sec typ="cond"><buff typ="STUN" /> Stunned</sec> state.
+      TC: |-
+        在回合開始時，降低處於<sec typ="cond"><buff typ="COUNTER" /> 反擊狀態</sec>敵軍的<sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊<val idx="1" r /></sec>。
+        在回合開始時，降低處於<sec typ="cond"><buff typ="SNARE" /> 無法移動狀態</sec>敵軍的<sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抵抗<val idx="4" r inv /></sec>。
+        在回合開始時，增加處於<sec typ="cond"><buff typ="STUN" /> 行動不能狀態</sec>敵軍的<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害<val idx="5" r /></sec>。
 dialogue:
   KR:
     "1":
@@ -8825,9 +8926,7 @@ dialogue:
         이런 잔챙이들로 더는
         기분 좋아질 수 없어…
         저, 절정으로 닿을 수 있게?!
-      Oath: 이런 이런… 부패 경찰을 취조한다며 수갑을 채우곤 당장 고백이라니… 보스 너무 무드 없는 걸? 뭐 좋아, 수갑을 풀어 달라는 말은
-        취소하도록 하지, 보스. 하지만… 내가 잘못을 한 건 맞으니 벌을 받아야겠지, 이 술 보다 더 짜릿하고 징계보다 더 혹독한 벌을
-        말이야. 어서, 날 엄중히 벌해주도록 하겠어 보스?
+      Oath: 이런 이런… 부패 경찰을 취조한다며 수갑을 채우곤 당장 고백이라니… 보스 너무 무드 없는 걸? 뭐 좋아, 수갑을 풀어 달라는 말은 취소하도록 하지, 보스. 하지만… 내가 잘못을 한 건 맞으니 벌을 받아야겠지, 이 술 보다 더 짜릿하고 징계보다 더 혹독한 벌을 말이야. 어서, 날 엄중히 벌해주도록 하겠어 보스?
       OathIdle_01: |-
         하아…
         키르케가 내게 아주 독한 술을 준 모양이야…
@@ -8965,11 +9064,9 @@ dialogue:
       Idle_01_03: ボス～。ボスと一緒に飲もうと思ってビール持ってきたぞ……はぁ？これは正当に金を払って買ってきたものなんだがぁ？ボスが私をそんな風に見てたなんて……まさか私を矯正するつもりか～？
       SPIdle_01_01: 動くな！この手はほんと、悪い手だねぇ？こりゃあ……私が矯正しなければなぁ？
       Idle_02_01: 怠け者？ボスには私がいつも怠けてるように見えるみたいだな。これはボスが私に休暇をくれないからだぞ。そーゆーわけで、せっかくこうして会ったんだ、何かして私を喜ばせてくれんか？
-      Idle_03_01: どう考えてもやっぱり私の水着が一番だと思うんだが、ボスはどう思う？私はボスの考えを聞いただけなのに何で近寄ったのかな…？
-        どうしようか？私だけが使う牢屋に閉じ込めてやろうかな～？
+      Idle_03_01: どう考えてもやっぱり私の水着が一番だと思うんだが、ボスはどう思う？私はボスの考えを聞いただけなのに何で近寄ったのかな…？ どうしようか？私だけが使う牢屋に閉じ込めてやろうかな～？
       Idle_04_01: はぁ～困ったなぁ。もう私を満足させられるのはボスしかいないみたいだ。もちろん、ボスも同じだろ？じゃあお互いの気持ちは確認できたことだし、次のステップに進むのはどうだぁ？欲望を我慢する必要なんて…お互いないでしょ？
-      SPIdle_02_01: これまでの矯正の成果ってやつか。ふむふむ…でも、私の好みにはまだまだ遠いかなぁ……？
-        そういうわけでだ…私の矯正プログラム専用の部屋に行かないかぁ？今度こそ私の好みをみっちり教えてやろう。
+      SPIdle_02_01: これまでの矯正の成果ってやつか。ふむふむ…でも、私の好みにはまだまだ遠いかなぁ……？ そういうわけでだ…私の矯正プログラム専用の部屋に行かないかぁ？今度こそ私の好みをみっちり教えてやろう。
       Oath: ボスってさ、私の相手する時はドが付くほど慎重だったけど、あれってボスの作戦だったわけ？おかげで私の方が先に熱くなっちゃったよ。矯正するつもりだったのに、私が矯正されちゃうなんてな～……でも告白はボスからしてくれたし、ある程度は情状酌量してやるよ。ソニアの108つの矯正プログラムを全部受けたら許してあげるとしよう。
       OathIdle_01: 誰にも言えない好みをお互い知ってしまった以上、私たちは一つになるしかない運命だ……。ボスの密かな欲望を叶えてあげられるのは私しかいない。じゃあ……お互いに欲望を叶え合おうじゃないか……。いいだろ？
       MVP: ""
@@ -9103,13 +9200,10 @@ dialogue:
         This is only happening because you never give us breaks.
         Why don't you give me something else
         while you're here?
-      Idle_03_01: >-
+      Idle_03_01: |-
         No matter how much I look around,
-
         I feel like my swimsuit is the prettiest. What do you think? I was just asking your thoughts.
-
         If you come close like that… what am I supposed to do?
-
         Should I imprison you in my private cage?
       Idle_04_01: |-
         This is trouble. You're now
@@ -9122,14 +9216,10 @@ dialogue:
         Well, you're still a bit off for my tastes…
         Let's head to the correction room,
         shall we? I'll tell you what I want.
-      Oath: >-
-        You always treated me with care. Maybe that was your plan, Boss? In the
-        end, you got me so hot that I was the one who got anxious.
-
+      Oath: |-
+        You always treated me with care. Maybe that was your plan, Boss? In the end, you got me so hot that I was the one who got anxious.
         I was trying to correct you, but it turned out the other way around.
-
         But you’re still the one who confessed first, so I’ll lighten the punishment a bit.
-
         How do I forgive you? Should we start with Sonia’s 108-step correction manual?
       OathIdle_01: |-
         We know each other's secret tastes.
@@ -9168,8 +9258,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Join: Yo! You are my boss, huh? Pleased to meet you, I’m Sergeant Sonia of the
-        Cityguard. I’m asking this just in case, but the job intense here?
+      Join: Yo! You are my boss, huh? Pleased to meet you, I’m Sergeant Sonia of the Cityguard. I’m asking this just in case, but the job intense here?
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -9192,13 +9281,10 @@ dialogue:
         I met them, I just wanna say hi. Is Sadius
         also here? …Nothing special. We just were on
         a same team and… We are having the same hobby too.​
-      Idle_01_02: >-
+      Idle_01_02: |-
         It's good to be motivated… But, Boss.
-
         You remember it has changed to the majority vote last time? Now, overworking is
-
         illegal too. I'll warn you for now.
-
         But you will be arrested next time. Get it?​
       Idle_01_03: |-
         If you do something wrong, you should be punished according to the law.
@@ -9208,14 +9294,10 @@ dialogue:
         Boss? I think you don’t know what’s gonna happen
         when you mess up with me like this…
         You need more education, huh?​
-      Idle_02_01: >-
-        It’s rare that the Cityguard have no work to do, how peaceful these days
-        are.
-
+      Idle_02_01: |-
+        It’s rare that the Cityguard have no work to do, how peaceful these days are.
         It’s enough to slack off. A little bit sad that
-
         I can enjoy my hobby, though… You want to help? Hmm…
-
         Are you sure, Boss?​
       Idle_03_01: |-
         How are you doing, Boss? Here, take it. I’ve got some “small gifts” from
@@ -9223,25 +9305,18 @@ dialogue:
         No problem! Do not worry.
         … Are you doubting me if these are not real gift? Hey, Boss.
         Too much of curiosity can be harmful, you know?
-      Idle_04_01: >-
-        I knew this was going to happen, you're working secretly again. I
-        already
-
+      Idle_04_01: |-
+        I knew this was going to happen, you're working secretly again. I already
         have warned you several times… I will arrest you as a current criminal.
-
         What should I do to an outlaw who doesn't follow the regulation?
-
         He should be punished really hard, right?​
       SPIdle_02_01: |-
         You seems much more satisfied than the last time, but well…
         It still feels like you are playing with me…
         Wait for it. Soon, I will make you truly happy.​
-      Oath: >-
-        I’m a little confused. Is this for me, Boss? I’m not saying I don’t like
-        it… You know my hobby is a bit special,
-
+      Oath: |-
+        I’m a little confused. Is this for me, Boss? I’m not saying I don’t like it… You know my hobby is a bit special,
         I thought it would be not easy to be understanded. However… That concern lost the point.
-
         Do you want to go back to what we were doing before? The expression you showed me the other day… I want to see it right now.
       OathIdle_01: |-
         …No, I just felt funny feeling. I never thought that I would

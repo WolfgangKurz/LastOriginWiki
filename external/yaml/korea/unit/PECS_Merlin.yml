@@ -2239,6 +2239,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        가방 속에서 자그마한 중화기를 꺼내 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="cond">대상이 공격기일 경우</sec>, <sec typ="buff"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가하고 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
+      JP: |-
+        カバンの中から小さな重火器を取り出し、単一対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="0" r /></sec>を増加させます。
+        <sec typ="cond">対象が攻撃機の場合</sec>、<sec typ="buff"><buff typ="PhyATK_UP" />ダメージ量 <val idx="3" r /></sec>が増加し、<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>します。
+      EN: |-
+        Takes out a small heavy weapon from her bag and deals <dmg elem="physics" /> to a single target.
+        <sec typ="cond">When attack hits</sec>, the target’s <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="0" r /></sec> increases for 2 rounds.
+        <sec typ="cond">If the target is an Attacker</sec>, <sec typ="buff"><buff typ="PhyATK_UP" /> damage amount <val idx="3" r /></sec> increases and <sec typ="buff"><buff typ="REMOVE_BUFF" /> upgrade effects are removed</sec>.
+      TC: |-
+        從包包裡拿出小型重火器，對單個目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，目標的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害 <val idx="0" r /></sec>會增加，持續2回合。
+        <sec typ="cond">若目標為攻擊機</sec>，則<sec typ="buff"><buff typ="PhyATK_UP" />傷害量 <val idx="3" r /></sec>增加，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除強化效果</sec>。
   "2":
     key: "2"
     icon: TeamAtkBuff
@@ -2378,6 +2395,19 @@ skills:
             base: 0.6
             per: 0.05
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">스킬 사용 시</sec>, 무기고를 전개하여 <sec typ="buff"><buff typ="AP_UP" /> 범위 내 아군 공격기의 AP <val idx="0" /></sec>을(를) 증가시키고, 3라운드 동안 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec>를 증가시킵니다.
+        <sec typ="cond">스쿼드 내에 보호기가 없을 경우</sec>, 위치와 관계 없이 모든 중장형 아군에게 2라운드 동안 <sec typ="buff"><buff typ="COUNTER" /> <val idx="17" slot="4" r signless /> 위력으로 반격</sec> 효과를 부여합니다.
+      JP: |-
+        <sec typ="cond">スキル使用時</sec>、武器庫を展開して<sec typ="buff"><buff typ="AP_UP" />範囲内の味方攻撃機のAP <val idx="0" /></sec>を増加させ、3ラウンドの間<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">分隊内に保護機がいない場合</sec>、位置に関係なく全ての重装型の味方に2ラウンドの間<sec typ="buff"><buff typ="COUNTER" /> <val idx="17" slot="4" r signless />の威力で反撃</sec>効果を付与します。
+      EN: |-
+        <sec typ="cond">When using skill</sec>, deploys the armory to increase <sec typ="buff"><buff typ="AP_UP" /> AP of ally Attackers within range <val idx="0" /></sec>, and increases <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="1" r /></sec> for 3 rounds.
+        <sec typ="cond">If there are no Defenders in the squad</sec>, grants <sec typ="buff"><buff typ="COUNTER" /> Counterattack with <val idx="17" slot="4" r signless /> power</sec> to all Heavy Armor allies for 2 rounds, regardless of position.
+      TC: |-
+        <sec typ="cond">使用技能時</sec>，展開武器庫，增加<sec typ="buff"><buff typ="AP_UP" />範圍內我軍攻擊機的AP <val idx="0" /></sec>，並在3回合內增加<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿 <val idx="1" r /></sec>。
+        <sec typ="cond">若小隊內沒有保護機</sec>，則無論位置如何，會對所有重裝型我軍施加2回合的<sec typ="buff"><buff typ="COUNTER" />以 <val idx="17" slot="4" r signless />威力反擊</sec>效果。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -2756,6 +2786,27 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 공격기의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>를 영구적으로 증가시킵니다. (최대 5중첩)
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">아군 공격기가 2 이상인 경우</sec>, 범위 내 아군 공격기의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec>를 감소시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">아군 공격기가 4 이상인 경우</sec>, 범위 내 아군 공격기의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>를 증가시킵니다.
+        중장형 공격기는 효과 수치가 두 배로 증폭됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方攻撃機の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec>を永続的に増加させます。(最大5スタック)
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">味方攻撃機が2機以上いる場合</sec>、範囲内の味方攻撃機の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ <val idx="4" r inv /></sec>を減少させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">味方攻撃機が4機以上いる場合</sec>、範囲内の味方攻撃機の<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="5" r /></sec>を増加させます。
+        重装型の攻撃機は効果数値が2倍に増幅されます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, permanently increases the <sec typ="buff"><buff typ="ATK_UP" />ATK <val idx="0" r /></sec> of ally Attackers within range. (Max 5 stacks)
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if there are 2 or more ally Attackers</sec>, decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage <val idx="4" r inv /></sec> of ally Attackers within range.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if there are 4 or more ally Attackers</sec>, increases <sec typ="buff"><buff typ="AP_UP" />MOVE <val idx="5" r /></sec> of ally Attackers within range.
+        The effect is doubled for Heavy Armor Attackers.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，永久增加範圍內我軍攻擊機的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="0" r /></sec>。(最多5層)
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若我軍攻擊機為2個以上</sec>，減少範圍內我軍攻擊機的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害 <val idx="4" r inv /></sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若我軍攻擊機為4個以上</sec>，增加範圍內我軍攻擊機的<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="5" r /></sec>。
+        重裝型攻擊機的效果數值會加倍。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -3470,6 +3521,19 @@ skills:
             base: 0.6
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군 공격기 수에 따라 중장형 아군의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중</sec>을 증가시킵니다.
+        <sec typ="cond">전투 개시 시</sec> <sec typ="cond">아군 공격기가 5기일 경우</sec>, 반격을 제외한 <sec typ="note">UNREP</sec> 효과가 아군 전체에 적용됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、味方攻撃機の数に応じて重装型の味方の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中</sec>を増加させます。
+        <sec typ="cond">戦闘開始時</sec> <sec typ="cond">味方攻撃機が5機の場合</sec>、反撃を除く<sec typ="note">UNREP</sec>効果が味方全体に適用されます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />Effect Resistance</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />ACU</sec> for Heavy Armor allies depending on the number of ally Attackers.
+        <sec typ="cond">If there are 5 ally Attackers at the start of combat</sec>, <sec typ="note">UNREP</sec> effects, except for Retaliation, are granted to all allies.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，根據我軍攻擊機數量，增加重裝型我軍的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中</sec>。
+        <sec typ="cond">戰鬥開始時</sec> <sec typ="cond">若有5個我軍攻擊機</sec>，則除了反擊以外，<sec typ="note">UNREP</sec>效果會套用到全體我軍。
   "5":
     key: "5"
     icon: P.SuicideBomb
@@ -3611,6 +3675,23 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신 외의 <sec typ="note">포세이돈</sec> 소속 공격기가 1기 이상 존재할 경우</sec>, 자신은 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec>가 활성화되고 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="note">포세이돈</sec> 소속 공격기가 보유한 <sec typ="note">출력 제한 해제</sec> 스킬의 발동 조건을 무시하고 즉시 발동할 수 있도록 합니다.
+        <sec typ="note">포세이돈</sec> 소속 공격기 : <char uid="PECS_Triton" />
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自分以外の<sec typ="note">ポセイドン</sec>所属攻撃機が1機以上存在する場合</sec>、自分は<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視</sec>が活性化し<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="1" r /></sec>が増加します。
+        <sec typ="note">ポセイドン</sec>所属攻撃機が保有する<sec typ="note">出力制限解除</sec>スキルの発動条件を無視して即時発動できるようにします。
+        <sec typ="note">ポセイドン</sec>所属攻撃機 : <char uid="PECS_Triton" />
+      EN: |-
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if there is 1 or more <sec typ="note">Poseidon</sec> Attacker other than self</sec>, self’s <sec typ="buff"><buff typ="Guardpierce_Apply" />Ignore Protection</sec> is activated and <sec typ="buff"><buff typ="CRITICAL_UP" />CRIT <val idx="1" r /></sec> increases.
+        Ignores <sec typ="note">Poseidon</sec> Attackers’ <sec typ="note">Remove Output Restriction</sec> skill trigger conditions and instantly triggers it instead.
+        <sec typ="note">Poseidon</sec> Attacker : <char uid="PECS_Triton" />
+      TC: |-
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若自身以外存在1個以上<sec typ="note">波賽頓</sec>所屬攻擊機</sec>，自身的<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>會啟用，並且<sec typ="buff"><buff typ="CRITICAL_UP" />致命率 <val idx="1" r /></sec>增加。
+        會無視<sec typ="note">波賽頓</sec>所屬攻擊機持有的<sec typ="note">解除輸出限制</sec>技能發動條件，並使其立即發動。
+        <sec typ="note">波賽頓</sec>所屬攻擊機 : <char uid="PECS_Triton" />
 dialogue:
   KR:
     "1":
@@ -3663,9 +3744,7 @@ dialogue:
         맛있는 커피랑…
         더 맛있는 멀린이 나오는 메뉴랍니다!
         맛있게 드셔주세요!
-      Oath: 커피를 가져다 줬더니, 반지를 내밀 줄이야… 정말 기분 좋은 서프라이즈 이벤트네. 그런데, 아서의 사랑은 커피 한 잔 값 치고는 너무
-        많으니까, 거스름돈으로… 내 인생의 절반과, 내 마음의 전부를 줄게. 슬플 때나 기쁠 때나 세계를 정복할 때나 항상 함께하자,
-        아서!
+      Oath: 커피를 가져다 줬더니, 반지를 내밀 줄이야… 정말 기분 좋은 서프라이즈 이벤트네. 그런데, 아서의 사랑은 커피 한 잔 값 치고는 너무 많으니까, 거스름돈으로… 내 인생의 절반과, 내 마음의 전부를 줄게. 슬플 때나 기쁠 때나 세계를 정복할 때나 항상 함께하자, 아서!
       OathIdle_01: |-
         어서 와, 아서! 항상 먹던 그 메뉴 맞지?
         그런 메뉴 없다고? 무슨 소리야?
@@ -3721,9 +3800,7 @@ dialogue:
       SPIdle_02_01: |-
         이번에는 아서가 한 번 연주해 볼래?
         그런데 이번에 연주할 악기는… 바로 나야.
-      Oath: 내 음악회가 마음에 들었던 모양이네, 아서? 특등석 평생 이용권을 위해 이런 뇌물을 주다니. 농담이야. 장난 좀 쳐 봤어. 그냥
-        '나도 사랑해 여봉' 하는 건 나답지 않잖아? 뭐, 그래도… 이런 때는 내 마음에 솔직해져야겠지. 그러니까... 응! 나도
-        사랑해, 아서! 평생 함께 하자!
+      Oath: 내 음악회가 마음에 들었던 모양이네, 아서? 특등석 평생 이용권을 위해 이런 뇌물을 주다니. 농담이야. 장난 좀 쳐 봤어. 그냥 '나도 사랑해 여봉' 하는 건 나답지 않잖아? 뭐, 그래도… 이런 때는 내 마음에 솔직해져야겠지. 그러니까... 응! 나도 사랑해, 아서! 평생 함께 하자!
       OathIdle_01: |-
         듀엣도 좋지만, 트리오나 콰르텟은 더 좋지.
         또 음악회를 열 생각이냐고?
@@ -3801,8 +3878,7 @@ dialogue:
       SPIdle_02_01: |-
         그럼... 아서의 엑스칼리버 구경 좀 해볼까...?
         히힛…
-      Oath: 후후, 역시 아서도 내 매력에 푹 빠져버렸구나?​ 뭐, 초천재미소녀대악당인 나한테 반하는 거야 당연한 일이지.​ 근데, 사실 난
-        아서가 날 구해줬을 때부터 이미 아서한테 반해 있었어.​ 히힛, 나도 사랑해, 아서.
+      Oath: 후후, 역시 아서도 내 매력에 푹 빠져버렸구나?​ 뭐, 초천재미소녀대악당인 나한테 반하는 거야 당연한 일이지.​ 근데, 사실 난 아서가 날 구해줬을 때부터 이미 아서한테 반해 있었어.​ 히힛, 나도 사랑해, 아서.
       OathIdle_01: |-
         아침에 맡는 네이팜 냄새보다 더 기분 좋은 건,
         아침에 맡는 아서 냄새밖에 없지.
@@ -4044,11 +4120,7 @@ dialogue:
         It consists of great coffee…
         and an even greater Merlin!
         Enjoy!
-      Oath: Who would have thought I'd get a ring when I gave you a cup of coffee…
-        It's a wonderful surprise. However, I feel like Arthur's love is too
-        expensive for a cup of coffee… so I'll give you half of my life and all
-        of my heart as change. Let's stay together through happiness, sadness,
-        and world domination, Arthur!
+      Oath: Who would have thought I'd get a ring when I gave you a cup of coffee… It's a wonderful surprise. However, I feel like Arthur's love is too expensive for a cup of coffee… so I'll give you half of my life and all of my heart as change. Let's stay together through happiness, sadness, and world domination, Arthur!
       OathIdle_01: |-
         Welcome, welcome! The usual, right?
         It's not on the menu? What do you mean?
@@ -4085,8 +4157,7 @@ dialogue:
       MVP: ""
     "":
       Intro: ""
-      Join: Merlin, the great villain of PECS and Orca’s cutiepie, here in all her
-        glory!
+      Join: Merlin, the great villain of PECS and Orca’s cutiepie, here in all her glory!
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -4104,10 +4175,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        I’ll call you Arthur. Because I’m Merlin and you’re the only king I
-        serve…
-
+      Idle_01_01: |-
+        I’ll call you Arthur. Because I’m Merlin and you’re the only king I serve…
         but most of all, Commander sounds so boring!
       Idle_01_02: |-
         Prydwen apparently means beautiful face.
@@ -4165,21 +4234,15 @@ dialogue:
         If there's anywhere you want to go, just tell me.
         Doesn't matter if there are Metal Parasites.
         We can capture the area and call it our own.
-      Idle_01_02: >-
+      Idle_01_02: |-
         What I want is war.
-
         A war where we crush the Metal Parasite that took the lives of my friends.
-
         That’s the reason why I say I’m a war freak.
-
         And that won't change until our war against the Metal Parasite is over.
-      Idle_01_03: >-
+      Idle_01_03: |-
         General Gamma would never agree… but…
-
         I think a fight is better when it’s easier.
-
         I mean, that would lessen casualties on our end… I am not going to lose my friends ever again.
-
         Though I doubt that would happen if I'm with you, Arthur. Right?
       SPIdle_01_01: |-
         My name was taken from the Knights of the Round Table,

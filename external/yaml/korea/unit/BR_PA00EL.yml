@@ -2157,6 +2157,23 @@ skills:
             base: 36
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        미사일을 발사해 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 대상이 <buff typ="MARKING" /> 표식 / <buff typ="SNARE" /> 이동 불가 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">스쿼드 내 <char uid="BR_Lindwurm" />이 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 대 장갑 미사일</sec> 스킬 협동 공격을 유도</sec>합니다.
+      JP: |-
+        ミサイルを発射して<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象が<buff typ="MARKING" />標的 / <buff typ="SNARE" />移動不可状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+        <sec typ="cond">スコード内に<char uid="BR_Lindwurm" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25対装甲ミサイル</sec>スキル協同攻撃を誘導</sec>します。
+      EN: |-
+        Shoots missiles and deals <dmg elem="physics" />.
+        <sec typ="cond">If the hit target is <buff typ="MARKING" /> Marked / <buff typ="SNARE" /> Immobilized</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">If <char uid="BR_Lindwurm" /> is in the squad</sec>, induces a co-op attack with the <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 Anti-Armor Missile</sec> skill</sec>.
+      TC: |-
+        發射導彈，造成<dmg elem="physics" />。
+        <sec typ="cond">若命中目標處於<buff typ="MARKING" />標記 / <buff typ="SNARE" />無法移動狀態</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
+        <sec typ="cond">若小隊內有<char uid="BR_Lindwurm" /></sec>，將引導<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25反裝甲導彈</sec>技能協同攻擊</sec>。
   "2":
     key: "2"
     icon: MultiMissile
@@ -3574,6 +3591,31 @@ skills:
             base: 300
             per: 30
             chance: 1
+    desc:
+      KR: |-
+        네이팜 미사일로 목표 지점에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="dmg">목표 지점 주변은 피해가 25% 감소합니다.</sec>
+        <sec>스킬 레벨 10에서 위치에 관계 없이 온전한 피해를 입힙니다.</sec>
+        <sec typ="cond">적중 시</sec>, 대상에게 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여하고 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="4" signless /> 지속 화염 피해</sec>를 입힙니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: |-
+        ナパームミサイルで目標地点に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
+        <sec typ="dmg">目標地点周辺のダメージは25%減少します。</sec>
+        <sec>スキルレベル10で位置に関係なく完全なダメージを与えます。</sec>
+        <sec typ="cond">命中時</sec>、対象に2ラウンドの間<sec typ="buff"><buff typ="MARKING" />標的</sec>を付与し、<sec typ="dmg"><buff typ="FireDMG_DOT" /><val idx="4" signless />継続火炎ダメージ</sec>を与えます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+      EN: |-
+        Napalm missiles deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the target point.
+        <sec typ="dmg">Damage around the target point is reduced by 25%.</sec>
+        <sec>At skill level 10, full damage is dealt regardless of position.</sec>
+        <sec typ="cond">On hit</sec>, inflicts <sec typ="buff"><buff typ="MARKING" /> Marking</sec> for 2 rounds and deals <sec typ="dmg"><buff typ="FireDMG_DOT" /><val idx="4" signless /> continuous Fire damage</sec>.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      TC: |-
+        以凝固汽油導彈對目標地點造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+        <sec typ="dmg">目標地點周圍的傷害減少25%。</sec>
+        <sec>技能等級10時，無論位置如何都會造成完整傷害。</sec>
+        <sec typ="cond">命中時</sec>，對目標施加2回合的<sec typ="buff"><buff typ="MARKING" />標記</sec>，並造成<sec typ="dmg"><buff typ="FireDMG_DOT" /><val idx="4" signless />持續火焰傷害</sec>。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.EnemyDetect
@@ -3905,6 +3947,23 @@ skills:
             base: 0.1
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 적의 진형과 상태를 정찰해 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec>가 증가합니다.
+        <sec typ="cond">전투 종료 시</sec>, <sec typ="buff"><buff typ="SCOUTING" /> 다음에 출현할 적 정보를 획득 (정찰)</sec>합니다.
+        <sec typ="cond">전투 개시 시</sec> <sec typ="cond">자신이 <buff typ="SCOUTING" /> 정찰 활성화 상태인 경우</sec>, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>이(가) 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、敵の陣形と状態を偵察し、自身の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="7" r /></sec>が増加します。
+        <sec typ="cond">戦闘終了時</sec>、<sec typ="buff"><buff typ="SCOUTING" />次に出現する敵情報を獲得（偵察）</sec>します。
+        <sec typ="cond">戦闘開始時</sec> <sec typ="cond">自分が<buff typ="SCOUTING" />偵察有効化状態の場合</sec>、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, scouts the enemy's formation and status to increase self's <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="7" r /></sec>.
+        <sec typ="cond">At combat end</sec>, <sec typ="buff"><buff typ="SCOUTING" /> obtains information on the next enemy to appear (Recon)</sec>.
+        <sec typ="cond">At battle start</sec> <sec typ="cond">if self's <buff typ="SCOUTING" /> Recon is active</sec>, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> increases.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，偵察敵軍的陣型與狀態，使自身的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="7" r /></sec>增加。
+        <sec typ="cond">戰鬥結束時</sec>，<sec typ="buff"><buff typ="SCOUTING" />獲得下一個出現敵人的資訊（偵察）</sec>。
+        <sec typ="cond">開始戰鬥時</sec> <sec typ="cond">若自身的<buff typ="SCOUTING" />偵察處於啟用狀態</sec>，<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -4191,6 +4250,23 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 기동형 아군의 공격을 지원</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <cmt t="스카이 나이츠">$$SkyKnight:?$</cmt> 소속 전투원의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec>를 증가시킵니다.
+        자신은 효과가 두 배로 증폭됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />機動型の味方の攻撃を支援</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の<cmt t="スカイナイツ">$$SkyKnight:?$</cmt>所属戦闘員の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率<val idx="4" r /></sec>を増加させます。
+        自分は効果が2倍に増幅されます。
+      EN: |-
+        <sec typ="cond">At round start</sec>, provides <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attack Support to Mobile allies within range</sec>.
+        <sec typ="cond">At round start</sec>, increases the <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="4" r /></sec> of <cmt t="Sky Knights">$$SkyKnight:?$</cmt> combatants within range.
+        The effect is doubled for self.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，支援範圍內<sec typ="buff"><buff typ="SUPPORT_ATTACK" />機動型我軍的攻擊</sec>。
+        <sec typ="cond">回合開始時</sec>，增加範圍內<cmt t="天空騎士">$$SkyKnight:?$</cmt>所屬戰鬥員的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="4" r /></sec>。
+        自身效果會增幅2倍。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -4776,6 +4852,27 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격 / 공격 지원 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 증가합니다.
+        <sec typ="cond"><sec typ="note">인페르노 미사일</sec> 적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+        <sec typ="cond"><sec typ="note">화염 폭격</sec> 적중 시</sec>, <sec typ="dmg"><buff typ="ATK_UP" /> 대상이 적을 수록 피해량 <val idx="6" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="0" /></sec>が増加します。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />再攻撃 / 攻撃支援時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が増加します。
+        <sec typ="cond"><sec typ="note">インフェルノミサイル</sec>命中時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ減少効果を解除</sec>します。
+        <sec typ="cond"><sec typ="note">火炎爆撃</sec>命中時</sec>、<sec typ="dmg"><buff typ="ATK_UP" />対象が少ないほどダメージ量<val idx="6" r /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="0" /></sec> increases.
+        <sec typ="cond">When <buff typ="SUPPORT_ATTACK" /> re-attacking / providing Attack Support</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increases.
+        <sec typ="cond">On hit with <sec typ="note">Inferno Missile</sec></sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's damage taken decrease effects</sec>.
+        <sec typ="cond">On hit with <sec typ="note">Fire Explosive Bombardment</sec></sec>, <sec typ="dmg"><buff typ="ATK_UP" /> damage <val idx="6" r /></sec> increases the fewer targets there are.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="0" /></sec>增加。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />再次攻擊 / 支援攻擊時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>增加。
+        <sec typ="cond">被<sec typ="note">地獄導彈</sec>命中時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的所受傷害減少效果</sec>。
+        <sec typ="cond">被<sec typ="note">火焰轟炸</sec>命中時</sec>，<sec typ="dmg"><buff typ="ATK_UP" />目標越少時傷害量<val idx="6" r /></sec>增加。
 dialogue:
   KR:
     "2":
@@ -4885,9 +4982,7 @@ dialogue:
         모두를 위한 파티이지만…
         지금 이 순간만큼은
         내가 사령관을 독점할 거야.
-      Oath: 최후의 인간을 발견했을 때 실망 많이했어. 이게 인간? 이 인간에게 우리의 미래가 달려있다고? 이런 식으로 말이야. 그 때는 몰랐어.
-        그 인간이 승승장구하며 오르카를 이렇게 큰 세력으로 키워낼 것이라고는. 그리고… 내가 그 인간을 사랑하게 될 줄을. 고마워!
-        영원히 사령관과 함께 할게!
+      Oath: 최후의 인간을 발견했을 때 실망 많이했어. 이게 인간? 이 인간에게 우리의 미래가 달려있다고? 이런 식으로 말이야. 그 때는 몰랐어. 그 인간이 승승장구하며 오르카를 이렇게 큰 세력으로 키워낼 것이라고는. 그리고… 내가 그 인간을 사랑하게 될 줄을. 고마워! 영원히 사령관과 함께 할게!
       OathIdle_01: |-
         인간, 사령관, 변태, 프로듀서, 바보…
         생각해보니 나도 참 다양한 호칭으로
@@ -5143,10 +5238,8 @@ dialogue:
         W-who looks happy?
         I just don’t want to get in others’ way.
         I’m not that excited about the stage.
-      Idle_01_03: >-
-        What? What’s with that banner? Give it to me…’Glittering Griffon is the
-        best’… W-why did you get such a thing?
-
+      Idle_01_03: |-
+        What? What’s with that banner? Give it to me…’Glittering Griffon is the best’… W-why did you get such a thing?
         F-forget it. Don’t bring it.
       SPIdle_01_01: You’re ruining my costume, idiot.
       Idle_02_01: |-
@@ -5165,15 +5258,11 @@ dialogue:
       SPIdle_02_01: |-
         This is because of… the stage.
         So… it’s just this once.
-      Oath: >-
-        It’s too late, stupid. Do you have any idea who I even danced and sang
-        for? I tried so hard…!
-
+      Oath: |-
+        It’s too late, stupid. Do you have any idea who I even danced and sang for? I tried so hard…!
         You stupid… I’m gonna remember that you said you’ll make me happy from now on. You’ll have to marry me, Producer…
-      OathIdle_01: >-
-        Hmm, wearing this reminds me of the stage… You want me to sing? I’ll
-        think about it.
-
+      OathIdle_01: |-
+        Hmm, wearing this reminds me of the stage… You want me to sing? I’ll think about it.
         You fool♥
       MVP: ""
     "3":
@@ -5250,10 +5339,8 @@ dialogue:
       SPIdle_02_01: |-
         Human! Just because we’re friends,
         it doesn’t mean that you can do this.
-      Oath: >-
-        What? Human? This? Is this… what I think it is? Hehe… Haha… Human, this
-        is a vow, right?
-
+      Oath: |-
+        What? Human? This? Is this… what I think it is? Hehe… Haha… Human, this is a vow, right?
         … You've tried so hard. If I say no… that'll be too cruel. So I'll say yes. Only because I feel sorry for you… Get it?
       OathIdle_01: |-
         Human, you didn’t forget about

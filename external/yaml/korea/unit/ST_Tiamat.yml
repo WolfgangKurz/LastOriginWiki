@@ -3016,6 +3016,23 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <dmg elem="physics" />를 주고, 치명타 시 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="5" r /></sec>를 감소시키며, 대상이 <sec typ="note">간파</sec> 상태면 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec>가 증가합니다.
+        자신의 <sec typ="buff"><buff typ="SKILL_UP" /> 회피의 <val idx="3" r signless /> 만큼 스킬 위력이 증가</sec>합니다.
+      JP: |-
+        対象に <dmg elem="physics" />を与え、クリティカル時に<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        2ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="5" r /></sec>を減少させ、対象が<sec typ="note">看破</sec>状態なら<sec typ="buff"><buff typ="VULNERABLE" /> 被ダメージ <val idx="4" r /></sec>が増加します。
+        自身の<sec typ="buff"><buff typ="SKILL_UP" /> 回避の <val idx="3" r signless /> 分だけスキル威力が増加</sec>します。
+      EN: |-
+        Deals <dmg elem="physics" /> to the target, and on crit increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec>.
+        For 2 rounds, reduces the target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="5" r /></sec>, and if the target is in <sec typ="note">Insight</sec> status, increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec>.
+        Increases own skill power by <sec typ="buff"><buff typ="SKILL_UP" /> Evasion <val idx="3" r signless /></sec>.
+      TC: |-
+        對目標造成 <dmg elem="physics" />，且在暴擊時增加 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>。
+        在 2 回合內降低目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="5" r /></sec>，若目標處於 <sec typ="note">看破</sec> 狀態，則 <sec typ="buff"><buff typ="VULNERABLE" /> 受到傷害 <val idx="4" r /></sec>會增加。
+        自身的技能威力會依 <sec typ="buff"><buff typ="SKILL_UP" /> 閃避 <val idx="3" r signless /></sec> 提升。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -5589,6 +5606,23 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <dmg elem="physics" />를 줍니다.
+        대상의 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 효과를 무시</sec>하며, <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="6" r /></sec>이 증가하고 치명타 시 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" r /></sec>가 증가합니다.
+        스킬 사용 시, 자신의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력 <val idx="4" r signless /> 고정 물리 피해</sec>를 입으며, <sec typ="dmg"><buff typ="DamageAmp_Me" /> 자신의 현재 HP가 낮을수록 피해량 <val idx="8" r /></sec>이 증가합니다.
+      JP: |-
+        対象に <dmg elem="physics" />を与えます。
+        対象の<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / 被ダメージ減少効果を無視</sec>し、<sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ量 <val idx="6" r /></sec>が増加し、クリティカル時に<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="5" r /></sec>が増加します。
+        スキル使用時、自身は<sec typ="dmg"><buff typ="PhyATK_UP" /> 攻撃力 <val idx="4" r signless /> 固定物理ダメージ</sec>を受け、<sec typ="dmg"><buff typ="DamageAmp_Me" /> 自身の現在HPが低いほどダメージ量 <val idx="8" r /></sec>が増加します。
+      EN: |-
+        Deals <dmg elem="physics" /> to the target.
+        Ignores the target's <sec typ="buff"><buff typ="BARRIER_PIERCE" /> barrier / damage reduction effects</sec>, increases <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage to Heavy-type <val idx="6" r /></sec>, and on crit increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec>.
+        On skill use, self takes <sec typ="dmg"><buff typ="PhyATK_UP" /> fixed physical damage equal to Attack <val idx="4" r signless /></sec>, and <sec typ="dmg"><buff typ="DamageAmp_Me" /> damage <val idx="8" r /></sec> increases as own current HP gets lower.
+      TC: |-
+        對目標造成 <dmg elem="physics" />。
+        會無視目標的 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 防護罩 / 受到傷害減少效果</sec>，並提升 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害量 <val idx="6" r /></sec>，且在暴擊時提升 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="5" r /></sec>。
+        使用技能時，自身會承受 <sec typ="dmg"><buff typ="PhyATK_UP" /> 等同攻擊力 <val idx="4" r signless /> 的固定物理傷害</sec>，且 <sec typ="dmg"><buff typ="DamageAmp_Me" /> 自身目前 HP 越低，傷害量 <val idx="8" r /></sec>會增加。
   "3":
     key: "3"
     icon: P.DefCounter
@@ -5908,6 +5942,23 @@ skills:
             base: 0.25
             per: -0.0125
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">자신보다 행동력이 낮은</sec> 적의 행동을 간파해 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="7" r /></sec>와 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="8" r /></sec>를 감소시킵니다.
+        자신은 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="5" r /></sec>가 증가하며, 해당 상태에서 공격받으면 <sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> 위력으로 반격</sec>합니다.
+        적을 공격하면 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>가 최대 3회까지 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">自分より行動力が低い</sec>敵の動きを見抜いて<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec>と<sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="8" r /></sec>を減少させます。
+        自身は<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="5" r /></sec>が増加し、その状態で攻撃を受けると<sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> 威力で反撃</sec>します。
+        敵を攻撃すると<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>が最大3回まで増加します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, detects the actions of enemies with <sec typ="cond">lower AP than self</sec> and reduces their <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="7" r /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="8" r /></sec>.
+        Own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="5" r /></sec> increases, and if attacked while in that state, counterattacks with <sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> power</sec>.
+        Attacking enemies increases <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> up to 3 times.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，會看破 <sec typ="cond">行動力低於自身</sec>的敵人行動，使其 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec>與 <sec typ="buff"><buff typ="EVADE_DOWN" /> 閃避 <val idx="8" r /></sec>下降。
+        自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="5" r /></sec>會增加，且在該狀態下受到攻擊時，會以 <sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> 威力反擊</sec>。
+        攻擊敵人時，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>最多可增加 3 次。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -6246,6 +6297,19 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        범위 내 기동형 아군들의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
+        자신이 <sec typ="cond">전열</sec>이면 경장형 / 중장형 아군에게도 적용됩니다.
+      JP: |-
+        範囲内の機動型味方の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>が増加します。
+        自分が<sec typ="cond">前列</sec>なら軽装型 / 重装型味方にも適用されます。
+      EN: |-
+        Increases range Mobile-type allies' <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec>.
+        If self is in the <sec typ="cond">front line</sec>, this also applies to light-type / heavy-type allies.
+      TC: |-
+        提升範圍內機動型隊友的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>。
+        若自身處於 <sec typ="cond">前排</sec>，則此效果也會套用於輕裝型 / 重裝型隊友。
   "5":
     key: "5"
     icon: P.Scan
@@ -6614,6 +6678,19 @@ skills:
             base: 0.15
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>가 증가하며, <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec>로 다음에 출현할 적을 확인할 수 있습니다.
+        <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec> 활성화 상태로 라운드 개시 시, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" r /></sec>가 증가합니다.
+      JP: |-
+        自身の<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec>で次に出現する敵を確認できます。
+        <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec>有効状態でラウンド開始時、<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>が増加します。
+      EN: |-
+        Increases own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="0" r /></sec>, and <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> lets you identify the next enemy to appear.
+        At the start of the round while <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> is active, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="9" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" r /></sec> increase.
+      TC: |-
+        自身的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec>會增加，並可透過 <sec typ="buff"><buff typ="SCOUTING" /> 偵查</sec>確認下一個出現的敵人。
+        在 <sec typ="buff"><buff typ="SCOUTING" /> 偵查</sec>啟動狀態下回合開始時，<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>會增加。
 dialogue:
   KR:
     "1":
@@ -6798,9 +6875,7 @@ dialogue:
         사령관이 원하는 대로…
         폴리네시안 게임의 마지막 단계를
         시작해주세요...♥​
-      Oath: 사령관의 뜨거운 시선이 파티 내내 느껴졌어요. ​처음 도전해본 과감한 디자인이라 부끄러웠는데… 이 파자마를 입은 보람이 있네요.
-        ​이제 그렇게 바라보기만 하는 건 그만 두고, 꼬옥 안아 주시겠어요?​ 곧 있으면 파자마 파티가 끝나겠지만… 사령관과의 밤은
-        지금부터 시작이니까요…♥
+      Oath: 사령관의 뜨거운 시선이 파티 내내 느껴졌어요. ​처음 도전해본 과감한 디자인이라 부끄러웠는데… 이 파자마를 입은 보람이 있네요. ​이제 그렇게 바라보기만 하는 건 그만 두고, 꼬옥 안아 주시겠어요?​ 곧 있으면 파자마 파티가 끝나겠지만… 사령관과의 밤은 지금부터 시작이니까요…♥
       OathIdle_01: |-
         다음 파티에는 사령관도…
         멋진 파자마를 입고 오길 기대할게요…?
@@ -7128,12 +7203,9 @@ dialogue:
         always… N-next time
         is later? O-okay.
         …… *Sighs*…
-      Oath: >-
-        You trust me even though I have so many flaws. … Me too. I’m not anxious
-        anymore.
-
+      Oath: |-
+        You trust me even though I have so many flaws. … Me too. I’m not anxious anymore.
         I know that the commander will never turn away from us. Haha, Commander.
-
         Now only the last step remains. I’ll bite the chocolate. Now give me the kiss… huh…?
       OathIdle_01: |-
         P-please don’t talk about that.
@@ -7163,56 +7235,39 @@ dialogue:
         That is our duty as the defenders of hearts!
         We are P-Strikers! As always, we shall give our all
         for the sake of everyone! H-How was it?
-      Idle_01_02: >-
+      Idle_01_02: |-
         The others must be giving their all, aren’t they?
-
         Since we are all in this together,
-
         I would like to give my best and keep being cheerful. I want people to smile
-
         whenever they look at me. Of course… That includes you too, Commander…
-      Idle_01_03: >-
+      Idle_01_03: |-
         This is something that I’ve never done before.
-
         The feeling though, is not of fear but an excitement,
-
         and I am eager to do it well.
-
         But that’s not to say that there wasn’t an instance where I’ve not given my best.
       SPIdle_01_01: T-Too soon, Commander.
-      Idle_02_01: >-
-        This costume? Apparently, it is a costume that was made for the new
-        show.
-
+      Idle_02_01: |-
+        This costume? Apparently, it is a costume that was made for the new show.
         It’s… a little too explicit,
-
         Everyone said that it’s good…
-
         and that the Commander will like it…
       Idle_03_01: |-
         I received a lot of help from Momo.
         Vocalization, pronunciation, gestures, eye contact, background,
         mindset, and…R-Romance…
-      Idle_04_01: >-
-        As I was preparing for this show, I could feel that I have changed a
-        lot.
-
+      Idle_04_01: |-
+        As I was preparing for this show, I could feel that I have changed a lot.
         I have not just grown, but I could now also face my
-
         past.
-
         Witness me who has changed, Commander.
       SPIdle_02_01: |-
         M-My power is the power of my heart.
         And what empowers my heart is
         my connection with you, Commander. T-That said…
         Shall we go and…fortify our connection?
-      Oath: >-
-        In the show, I am a hero who fights monsters and protects people’s
-        hearts.
-
+      Oath: |-
+        In the show, I am a hero who fights monsters and protects people’s hearts.
         Whenever I research this character, I come to realize that the true hero is close to me.
-
         You are the hero. Thank you for confessing your love to me. I love you too, my hero.
       OathIdle_01: |-
         I wanted to protect people’s hearts
@@ -7298,12 +7353,9 @@ dialogue:
         get ready. I prepared
         something for…
         What? N-no?
-      Oath: >-
-        Oh… Commander, this… You don't have to leave evidence, because I believe
-        everything you say even if you don't.
-
+      Oath: |-
+        Oh… Commander, this… You don't have to leave evidence, because I believe everything you say even if you don't.
         Still… I'm happy. The trust you built in me, and which you gave…
-
         I'll carve it deep into my heart.
       OathIdle_01: |-
         I feel comfortable when I’m with you.

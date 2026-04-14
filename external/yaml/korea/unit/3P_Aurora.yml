@@ -1411,6 +1411,19 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        지정 대상에게 <dmg elem="physics" />를 주고 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>을(를) 감소시킵니다.
+        적중 대상은 2라운드 동안 회피가 감소하며 받는 피해가 증가합니다.
+      JP: |-
+        指定対象に<dmg elem="physics" />のダメージを与え、<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>を減少させます。
+        命中した対象は2ラウンドの間、回避が減少し受けるダメージが増加します。
+      EN: |-
+        Deals <dmg elem="physics" /> damage to a designated target and decreases their <sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>.
+        Hit targets get decreased EVA and increased received damage for 2 rounds.
+      TC: |-
+        對指定目標造成<dmg elem="physics" />傷害並減少其<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>。
+        命中目標於2回合內迴避減少，且所受傷害增加。
   "2":
     key: "2"
     icon: SelfAtkBuff
@@ -1784,6 +1797,19 @@ skills:
             base: 0.4
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        지정 바이오로이드 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 상승시키고, 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec>를 높이며 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        해당 효과가 적용된 바이오로이드 아군은 1라운드 동안 효과 저항이 증가합니다.
+      JP: |-
+        指定バイオロイドの味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>を上昇させ、2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>を高め、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害な効果を解除</sec>します。
+        この効果が適用されたバイオロイドの味方は1ラウンドの間、効果耐性が増加します。
+      EN: |-
+        Increases the <sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec> of the designated ally Bioroid, increases <sec typ="buff"><buff typ="ATK_UP" />ATK<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />ACU<val idx="6" r /></sec> for 2 rounds, and <sec typ="buff"><buff typ="REMOVE_DEBUFF" />removes Malign Effects</sec>.
+        Bioroid allies receiving this effect have increased Effect Resistance for 1 round.
+      TC: |-
+        提升指定生化人我軍的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>，並於2回合內增加其<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>，同時<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除減益效果</sec>。
+        套用此效果的生化人我軍於1回合內效果抵抗增加。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -2016,6 +2042,11 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: 라운드 개시 시, 범위 내 아군과 자신에게 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" /></sec> 부여 / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec> 감소 효과를 부여합니다.
+      JP: ラウンド開始時、範囲内の味方と自分に<sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア<val idx="0" /></sec>付与 / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="4" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="3" r inv /></sec>減少効果を付与します。
+      EN: At the start of the round, grants self and allies within range <sec typ="buff"><buff typ="DAMAGE_ABSORB" />Barrier<val idx="0" /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />EVA<val idx="4" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage decrease<val idx="3" r inv /></sec> effects.
+      TC: 回合開始時，對範圍內我軍與自身賦予<sec typ="buff"><buff typ="DAMAGE_ABSORB" />防護罩<val idx="0" /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="4" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />減少所受傷害<val idx="3" r inv /></sec>效果。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -2278,6 +2309,11 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: 범위 내 바이오로이드 아군의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
+      JP: 範囲内のバイオロイド味方の<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>が増加します。
+      EN: Increases <sec typ="buff"><buff typ="CRITICAL_UP" />CRIT<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />MOVE<val idx="1" r /></sec> of ally Bioroids within range.
+      TC: 增加範圍內我軍生化人的<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -2903,6 +2939,11 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: 전투 개시 시, 스쿼드 내 자신을 제외한 아군 바이오로이드 1기당 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가 시키고 라운드 개시 시, <sec typ="note">회심의 디저트</sec> 효과가 적용 중인 아군에게 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="10" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 효과 해제 저항 <val idx="11" r /></sec>를 부여하고 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시를 활성화</sec> 시킵니다. <sec typ="note">밑준비</sec> 효과가 적용 중인 적군의 강화 효과를 해제하고 강화 불가 상태를 부여합니다. (일반 효과)
+      JP: 戦闘開始時、分隊内に自分を除く味方バイオロイド1機ごとに自分の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>を増加させ、ラウンド開始時、<sec typ="note">会心のデザート</sec>効果が適用中の味方に<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="10" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化効果解除耐性<val idx="11" r /></sec>を付与し、<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視を有効化</sec>します。<sec typ="note">下準備</sec>効果が適用中の敵の強化効果を解除し、強化不可状態を付与します。(一般効果)
+      EN: At the start of combat, increases self’s <sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec> for every 1 ally Bioroid in the squad aside from self. At the start of the round, grants allies affected by <sec typ="note">Critical Dessert</sec> <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />Effect Resistance<val idx="10" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />Remove Upgrade Resistance<val idx="11" r /></sec> and activates <sec typ="buff"><buff typ="Guardpierce_Apply" />Ignore Protection</sec>. Removes upgrade effects of enemies affected by <sec typ="note">Pre-Prepare</sec> and inflicts Disable Upgrade (normal effect).
+      TC: 戰鬥開始時，依照小隊內除自身以外每1個我軍生化人，增加自身的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>。回合開始時，對處於<sec typ="note">會心甜點</sec>效果中的我軍賦予<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="10" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化效果解除抵抗<val idx="11" r /></sec>，並<sec typ="buff"><buff typ="Guardpierce_Apply" />啟用無視保護</sec>。解除處於<sec typ="note">準備工作</sec>效果中的敵軍強化效果，並施加無法強化狀態。（普通效果）
 dialogue:
   KR:
     "1":
@@ -3455,11 +3496,8 @@ dialogue:
         You’re… drunk? T-then… We don’t have a choice…
         Hehe… good boy… Umm, what should
         I do?
-      Oath: >-
-        Can I… really take this? I always worry… if I will be a burden to you…
-        Hm? Whaaat…? You even liked that about me? Yes! Don’t worry, I’ll always
-        be
-
+      Oath: |-
+        Can I… really take this? I always worry… if I will be a burden to you… Hm? Whaaat…? You even liked that about me? Yes! Don’t worry, I’ll always be
         your personal patissiere, Commander. I’ll try a little bit harder. I love you, Commander.​
       OathIdle_01: |-
         He he. Keep holding me, Commander.
@@ -3484,9 +3522,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         Wow… I didn’t know when I just looked, but the Horizon uniform is
-
         just as revealing as the Reverse Bunny costume… I-I think I can see everything from behind.​
       Idle_01_02: |-
         You know, Commander. I heard this in Amor, too.
@@ -3511,20 +3548,15 @@ dialogue:
         and the clothes and the atmosphere… 
         Haha… I hope, you don’t like it…?
         Good… Then… Can I be more aggressive…?​
-      Idle_04_01: >-
+      Idle_04_01: |-
         *Sighs* I’m kinda used to it now.
-
         ‘Cause someone kept sniffing at me.
-
         H-huh? Tasting… I’m not used to… But it might be okay… if it’s that someone…?​
       SPIdle_02_01: |-
         Really…? Er… I-I’m the sweetest menu
         in our cafe… A-Aurora.
         Help yourself… M-Master.​
-      Oath: Haha… Actually, I wanted to tell him first that I like him, to marry me…
-        But I couldn’t take that one last step. … Yeah. I’m a timid person.
-        Still, I’m really happy that you come to me… As much as I cannot go to
-        you…… Thank you, Commander. I really really like you.
+      Oath: Haha… Actually, I wanted to tell him first that I like him, to marry me… But I couldn’t take that one last step. … Yeah. I’m a timid person. Still, I’m really happy that you come to me… As much as I cannot go to you…… Thank you, Commander. I really really like you.
       OathIdle_01: |-
         Commander, hug me- Hehe… You know, Commander.
         I think I came to like your smell.
@@ -3584,12 +3616,9 @@ dialogue:
         My, you shouldn’t…
         Hey, t-then… Do you want to go to the changing room with me…?
         Because, I’m not wearing a skirt now…​
-      Oath: >-
-        Oh, ohh… This is it…? It would have been nicer if I wore clothes with
-        better atmosphere…
-
+      Oath: |-
+        Oh, ohh… This is it…? It would have been nicer if I wore clothes with better atmosphere…
         But, whatever you wear, my answer is the same. I like the Commander too.
-
         So… Your lovely patissiere will be next to you for ever! Got that?
       OathIdle_01: |-
         Yep, got you.
@@ -3598,8 +3627,7 @@ dialogue:
         I’m going to hold on and never let go…​
       MVP: ""
     "":
-      Join: Nice to meet you, everyone! I’ll put you in a nice, sweet slumber! Haha,
-        this is just something I say as a greeting. Good to see you all…
+      Join: Nice to meet you, everyone! I’ll put you in a nice, sweet slumber! Haha, this is just something I say as a greeting. Good to see you all…
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -3652,12 +3680,9 @@ dialogue:
         Ha… You know, you can
         touch me… but can you hold me
         from the back?
-      Oath: >-
-        You'll already know… but I'm timid and clumsy… so I might drive you
-        crazy. 
-
+      Oath: |-
+        You'll already know… but I'm timid and clumsy… so I might drive you crazy. 
         Still… can I lean on you? Yeah… Hahaha. So this was your answer.
-
         … Thank you.
       OathIdle_01: |-
         Ugh, it was a tough day…

@@ -1704,6 +1704,23 @@ skills:
             base: -0.25
             per: -0.025
             chance: 1
+    desc:
+      KR: |-
+        라이플을 발사해 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec> 증가 상태로 만듭니다.
+        <sec typ="cond">치명타 시</sec>, 해당 라운드 동안 대상의 <sec typ="buff"><buff typ="TROOPER_DMG_DOWN" /> 대 경장형 피해량 <val idx="2" r /></sec>를 감소시킵니다. (중첩 불가)
+      JP: |-
+        ライフルを発射し、単体対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象を<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="0" r /></sec>増加状態にします。
+        <sec typ="cond">クリティカル時</sec>、そのラウンドの間、対象の<sec typ="buff"><buff typ="TROOPER_DMG_DOWN" />対軽装型ダメージ<val idx="2" r /></sec>を減少させます。(重複不可)
+      EN: |-
+        Fires a rifle shot to deal <dmg elem="physics" /> to a single target.
+        <sec typ="cond">On hit</sec>, make the target <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> up for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, reduce the target's <sec typ="buff"><buff typ="TROOPER_DMG_DOWN" /> damage to Light Armor <val idx="2" r /></sec> for that round. (does not stack)
+      TC: |-
+        發射步槍，對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，使目標在2回合內處於<sec typ="buff"><buff typ="VULNERABLE" />受到的傷害<val idx="0" r /></sec>增加狀態。
+        <sec typ="cond">暴擊時</sec>，在該回合內降低目標的<sec typ="buff"><buff typ="TROOPER_DMG_DOWN" />對輕裝型傷害<val idx="2" r /></sec>。(不可重疊)
   "2":
     key: "2"
     icon: SlowShot
@@ -3450,6 +3467,23 @@ skills:
             base: 29
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        보리와 함께 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="4" r /></sec> 감소 상태로 만듭니다. (중첩 불가)
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>합니다.
+      JP: |-
+        ボリと共に単体対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象を<sec typ="buff"><buff typ="MARKING" />マーキング</sec> / <sec typ="buff"><buff typ="SNARE" />移動不可</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="4" r /></sec>減少状態にします。(重複不可)
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />反撃効果を解除</sec>します。
+      EN: |-
+        Fires together with Boryeon to deal <dmg elem="physics" /> to a single target.
+        <sec typ="cond">On hit</sec>, for 2 rounds make the target <sec typ="buff"><buff typ="MARKING" /> Marked</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" r /></sec> down. (does not stack)
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's counterattack effect</sec>.
+      TC: |-
+        與保連一同對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，使目標在2回合內處於<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="SNARE" />無法移動</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="4" r /></sec>減少狀態。(不可重疊)
+        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的反擊效果</sec>。
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -3611,6 +3645,19 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 꼼꼼한 준비를 통해 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 아군의 <sec typ="buff"><buff typ="EXP_UP" /> 획득 경험치 <val idx="2" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、入念な準備により自分の<sec typ="buff"><buff typ="AP_UP" /> AP<val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、味方の<sec typ="buff"><buff typ="EXP_UP" />獲得経験値<val idx="2" r /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, careful preparation increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>.
+        <sec typ="cond">On round start</sec>, allies' <sec typ="buff"><buff typ="EXP_UP" /> EXP gained <val idx="2" r /></sec> increases.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，透過周全準備使自身的<sec typ="buff"><buff typ="AP_UP" /> AP<val idx="0" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，我方的<sec typ="buff"><buff typ="EXP_UP" />獲得經驗值<val idx="2" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -3795,6 +3842,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">적 공격 시</sec>, 2라운드 동안 아군의 공격력 / 적중 / 치명타가 증가합니다.
+        스쿼드 내 <cmt t="배틀 메이드">$$BattleMaid:?$</cmt> 소속 전투원이 제공하는 모든 <sec typ="buff"><buff typ="AP_UP" /> 행동력 증가</sec> 효과가 두 배로 증폭됩니다.
+      JP: |-
+        <sec typ="cond">敵攻撃時</sec>、2ラウンドの間味方の攻撃力 / 命中 / クリティカルが増加します。
+        スコード内の<cmt t="バトルメイドプロジェクト">$$BattleMaid:?$</cmt>所属戦闘員が付与するすべての<sec typ="buff"><buff typ="AP_UP" />行動力増加</sec>効果が2倍に増幅されます。
+      EN: |-
+        <sec typ="cond">When the enemy attacks</sec>, allies' ATK / Accuracy / Critical increase for 2 rounds.
+        All <sec typ="buff"><buff typ="AP_UP" /> AP increase</sec> effects provided by combatants belonging to the <cmt t="Battle Maid Project">$$BattleMaid:?$</cmt> within the squad are doubled.
+      TC: |-
+        <sec typ="cond">敵方攻擊時</sec>，我方的攻擊力 / 命中 / 暴擊在2回合內增加。
+        隊伍內<cmt t="戰鬥女僕計畫">$$BattleMaid:?$</cmt>所屬戰鬥員提供的所有<sec typ="buff"><buff typ="AP_UP" />行動力增加</sec>效果會加倍增幅。
   "5":
     key: "5"
     icon: P.Beam
@@ -4013,6 +4073,31 @@ skills:
             base: 4
             per: 0.2
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="note">준비만전</sec>의 AP 증가 효과를 <cmt t="배틀 메이드">$$BattleMaid:?$</cmt> 소속 전투원에게 공유합니다.
+        스킬 효과는 <sec typ="note">오르카 하우스키퍼</sec>의 스킬 레벨에 비례합니다.
+        <sec typ="cond">스쿼드 내에 <char uid="3P_Labiata" />이 있을 경우</sec>, 상기 효과의 대상이 아군 바이오로이드로 확장됩니다.
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
+        <sec>해당 효과는 효과 해제로 해제되지 않습니다.</sec>
+      JP: |-
+        <sec typ="note">準備万端</sec>のAP増加効果を<cmt t="バトルメイドプロジェクト">$$BattleMaid:?$</cmt>所属戦闘員に共有します。
+        スキル効果は<sec typ="note">オルカ・ハウスキーパー</sec>のスキルレベルに比例します。
+        <sec typ="cond">スコード内に<char uid="3P_Labiata" />がいる場合</sec>、上記効果の対象が味方バイオロイドへ拡張されます。
+        <sec typ="cond">戦闘開始時</sec>、自分の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗<val idx="0" r /></sec>が増加します。
+        <sec>この効果は効果解除では解除されません。</sec>
+      EN: |-
+        Shares <sec typ="note">Fully Prepared</sec>'s AP increase effect with combatants belonging to the <cmt t="Battle Maid Project">$$BattleMaid:?$</cmt>.
+        The skill effect scales with the skill level of <sec typ="note">Orca Housekeeper</sec>.
+        <sec typ="cond">If <char uid="3P_Labiata" /> is in the squad</sec>, the above effect's target expands to allied Bioroids.
+        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> effect resistance <val idx="0" r /></sec> increases.
+        <sec>This effect cannot be removed by effect removal.</sec>
+      TC: |-
+        將<sec typ="note">準備齊全</sec>的AP增加效果共享給<cmt t="戰鬥女僕計畫">$$BattleMaid:?$</cmt>所屬戰鬥員。
+        技能效果會依照<sec typ="note">奧爾卡管家</sec>的技能等級而提升。
+        <sec typ="cond">若隊伍內有<char uid="3P_Labiata" /></sec>，上述效果的對象會擴展為我方生化人偶。
+        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="0" r /></sec>增加。
+        <sec>該效果無法透過解除效果移除。</sec>
 dialogue:
   KR:
     "3":
@@ -4066,9 +4151,7 @@ dialogue:
       SPIdle_02_01: |-
         주인님? 다른 게임을… 즐기고 싶으신가요?
         후후, 그러면… 단 둘만의 게임을 시작할까요?
-      Oath: 주인님의 곁에만 있어도 분에 넘칠 정도로 행복한데... 사랑의 증표까지 주시니 너무 행복해서 어쩔 줄 모르겠어요. 우리들의 결말이
-        어떻게 될지는 모르겠지만... 제가 죽는 그날까지 오늘 이 순간은 결코 잊지 못할 거예요. 아, 제일 중요한 말을 빼먹을
-        뻔했네요. 저도 주인님을 사랑해요.
+      Oath: 주인님의 곁에만 있어도 분에 넘칠 정도로 행복한데... 사랑의 증표까지 주시니 너무 행복해서 어쩔 줄 모르겠어요. 우리들의 결말이 어떻게 될지는 모르겠지만... 제가 죽는 그날까지 오늘 이 순간은 결코 잊지 못할 거예요. 아, 제일 중요한 말을 빼먹을 뻔했네요. 저도 주인님을 사랑해요.
       OathIdle_01: |-
         수많은 고난이 있었지만 주인님께서 계신
         덕분에 그 어느 때보다 희망찬 시기네요.
@@ -4217,9 +4300,7 @@ dialogue:
       SPIdle_02_01: |-
         (미번역)주인님? 다른 게임을… 즐기고 싶으신가요?
         후후, 그러면… 단 둘만의 게임을 시작할까요?
-      Oath: (미번역)주인님의 곁에만 있어도 분에 넘칠 정도로 행복한데... 사랑의 증표까지 주시니 너무 행복해서 어쩔 줄 모르겠어요. 우리들의
-        결말이 어떻게 될지는 모르겠지만... 제가 죽는 그날까지 오늘 이 순간은 결코 잊지 못할 거예요. 아, 제일 중요한 말을 빼먹을
-        뻔했네요. 저도 주인님을 사랑해요.
+      Oath: (미번역)주인님의 곁에만 있어도 분에 넘칠 정도로 행복한데... 사랑의 증표까지 주시니 너무 행복해서 어쩔 줄 모르겠어요. 우리들의 결말이 어떻게 될지는 모르겠지만... 제가 죽는 그날까지 오늘 이 순간은 결코 잊지 못할 거예요. 아, 제일 중요한 말을 빼먹을 뻔했네요. 저도 주인님을 사랑해요.
       OathIdle_01: |-
         (미번역)수많은 고난이 있었지만 주인님께서 계신
         덕분에 그 어느 때보다 희망찬 시기네요.
@@ -4338,19 +4419,13 @@ dialogue:
         I also prepared some clothes for you.
         I actually wanted yours to match mine…
         No, no… I didn't say anything.
-      Idle_04_01: >-
-        As a royal guard, I’ll have to stay by your side at all times, right? Be
-        with you, help you, and protect you.
-
+      Idle_04_01: |-
+        As a royal guard, I’ll have to stay by your side at all times, right? Be with you, help you, and protect you.
         Huh? That's what I already do. Hehe.
       SPIdle_02_01: |-
         Master? Do you want to play… a different kind of game?
         Haha, then.. we should start a game for two players.
-      Oath: I get unbelievably happy just staying beside you… and you even reward me
-        with a symbol of love. I couldn't be any happier. I don't know how our
-        ending will turn out… but I'm sure I won't forget what happened here
-        until the day I die. Oh, I almost forgot to say the most important
-        thing. I also love you, Master.
+      Oath: I get unbelievably happy just staying beside you… and you even reward me with a symbol of love. I couldn't be any happier. I don't know how our ending will turn out… but I'm sure I won't forget what happened here until the day I die. Oh, I almost forgot to say the most important thing. I also love you, Master.
       OathIdle_01: |-
         We had a lot of hardship to endure, but with you, we found hope.
         How do we thank you with mere words?
@@ -4399,10 +4474,8 @@ dialogue:
       SPIdle_02_01: |-
         Oh, gosh! You should’ve told me…
         Then I wouldn’t be so shocked…
-      Oath: >-
-        I, uh… I'm just a maid… So I never expected something like this… Never.
-        Master, but…
-
+      Oath: |-
+        I, uh… I'm just a maid… So I never expected something like this… Never. Master, but…
         This is evidence I'm yours, right?
       OathIdle_01: |-
         Sometimes… I’m jealous of

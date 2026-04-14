@@ -2852,6 +2852,23 @@ skills:
             base: 0.1
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        미니건을 발사해 <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 기동형 피해량 <val idx="4" r /></sec> 증가가 적용되며, 자신에게 <sec typ="note"><char uid="BR_Sirene" /> : 포격 지휘</sec> 효과가 적용된 상태면 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="5" r /></sec>가 증가합니다.
+      JP: |-
+        ミニガンを発射して<dmg elem="physics" />を与えます。
+        対象が<sec typ="cond"><buff typ="MARKING" />標的</sec> / <sec typ="cond"><buff typ="PROVOKE" />挑発</sec>状態なら、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
+        <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />対機動型ダメージ<val idx="4" r /></sec>増加が適用され、自分に<sec typ="note"><char uid="BR_Sirene" /> : 砲撃指揮</sec>効果が適用されている場合、<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="5" r /></sec>が増加します。
+      EN: |-
+        Fires a Mini Gun and deals <dmg elem="physics" />.
+        If the target is <sec typ="cond"><buff typ="MARKING" /> Marked</sec> / <sec typ="cond"><buff typ="PROVOKE" /> Provoked</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> Damage to Air units <val idx="4" r /></sec> also increases, and if <sec typ="note"><char uid="BR_Sirene" /> : Bombardment Command</sec> is active on self, <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="5" r /></sec> increases.
+      TC: |-
+        發射迷你槍造成<dmg elem="physics" />。
+        若目標處於<sec typ="cond"><buff typ="MARKING" />標記</sec>／<sec typ="cond"><buff typ="PROVOKE" />挑釁</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="0" r /></sec>提升。
+        <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />對機動型造成的傷害<val idx="4" r /></sec>提升，且若自身套用<sec typ="note"><char uid="BR_Sirene" />：砲擊指揮</sec>效果，則<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="5" r /></sec>提升。
   "2":
     key: "2"
     icon: MGWideShot
@@ -4838,6 +4855,23 @@ skills:
             base: 76
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        미니건을 난사해 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        자신에게 <sec typ="note"><char uid="BR_Sirene" /> : 포격 지휘</sec> 효과가 적용된 상태면, 대상에게 적용된 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 보호 효과를 해제</sec>합니다.
+      JP: |-
+        ミニガンを乱射して対象に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        クリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
+        自分に<sec typ="note"><char uid="BR_Sirene" /> : 砲撃指揮</sec>効果が適用されている場合、対象に適用されている<sec typ="buff"><buff typ="REMOVE_BUFF" />保護効果を解除</sec>します。
+      EN: |-
+        Randomly fires a Mini Gun and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the target.
+        On crit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        If <sec typ="note"><char uid="BR_Sirene" /> : Bombardment Command</sec> is active on self, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the protection effects applied to the target</sec>.
+      TC: |-
+        亂射迷你槍對目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        暴擊時，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="0" r /></sec>提升。
+        若自身套用<sec typ="note"><char uid="BR_Sirene" />：砲擊指揮</sec>效果，則<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標套用的保護效果</sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -5254,6 +5288,27 @@ skills:
             base: 0.06
             per: 0.004
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소합니다.
+        <sec typ="cond">HP가 50% 이하</sec>일 때는 받는 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 감소</sec>가 50% 추가 적용됩니다.
+        <sec typ="cond">적을 처치하거나 피격 시</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>이(가) 증가합니다.
+        액티브 스킬 공격 적중 시, <sec typ="note">네리의 승리~!</sec> <sec typ="note">어쭈구리?</sec> <sec typ="note">대공 포메이션!</sec> 중 하나라도 적용된 상태면 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과가 적용됩니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" r inv /></sec>が減少します。
+        <sec typ="cond">HPが50%以下</sec>の時は、受ける<sec typ="buff"><buff typ="DAMAGE_REDUCE" />ダメージ減少</sec>がさらに50%適用されます。
+        <sec typ="cond">敵を撃破するか被撃時</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />AP<val idx="5" /></sec>が増加します。
+        アクティブスキル攻撃が命中した時、<sec typ="note">ネリの勝利～！</sec> <sec typ="note">ほほう？</sec> <sec typ="note">対空フォーメーション！</sec>のいずれかが適用されている場合、<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア/ダメージ減少無視</sec>効果が適用されます。
+      EN: |-
+        At round start, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="0" r inv /></sec> decreases.
+        When <sec typ="cond">HP is 50% or below</sec>, received <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage reduction</sec> is additionally applied by 50%.
+        <sec typ="cond">When defeating an enemy or when hit</sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> increases.
+        When an Active Skill attack hits, if any one of <sec typ="note">Neri's Victory~!</sec> <sec typ="note">What The?</sec> <sec typ="note">Anti-Aircraft Formation!</sec> is active, <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> is applied.
+      TC: |-
+        於回合開始時，<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="0" r inv /></sec>降低。
+        <sec typ="cond">HP在50%以下</sec>時，會額外套用50%的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害降低</sec>。
+        <sec typ="cond">擊殺敵人或被擊時</sec>，<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="8" r /></sec>／<sec typ="buff"><buff typ="AP_UP" />AP<val idx="5" /></sec>提升。
+        主動技能攻擊命中時，若<sec typ="note">涅瑞獲勝~！</sec>／<sec typ="note">喲呵？</sec>／<sec typ="note">防空陣形！</sec>任一效果生效，則套用<sec typ="buff"><buff typ="BARRIER_PIERCE" />無視防護罩／傷害減少</sec>效果。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -5466,6 +5521,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP로 전투 속행</sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec> 증가 효과를 얻습니다.
+        전투 불능이 되어 <sec typ="cond"><buff typ="DEF_RESSURRECT" /> 전투 속행</sec> 발동 시, <sec typ="dmg"><buff typ="DamageAmp_Me" /> 자신의 현재 HP%가 낮을수록 피해량 <val idx="4" r /></sec>가 증가합니다.
+        각 효과들은 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 해제</sec> 효과로 해제되지 않습니다.
+      JP: |-
+        戦闘開始時、<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="0" r signless />HPで戦闘続行</sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="2" r /></sec>増加効果を獲得します。
+        戦闘不能になって<sec typ="cond"><buff typ="DEF_RESSURRECT" />戦闘続行</sec>が発動した時、<sec typ="dmg"><buff typ="DamageAmp_Me" />自分の現在HP%が低いほどダメージ<val idx="4" r /></sec>が増加します。
+        各効果は<sec typ="buff"><buff typ="REMOVE_BUFF" />強化解除</sec>効果では解除されません。
+      EN: |-
+        At battle start, gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat at <val idx="0" r signless /> HP</sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="2" r /></sec> increase effects.
+        If Combat Disabled and <sec typ="cond"><buff typ="DEF_RESSURRECT" /> Continue Combat</sec> triggers, <sec typ="dmg"><buff typ="DamageAmp_Me" /> damage <val idx="4" r /></sec> increases as self’s current HP% gets lower.
+        Each effect cannot be removed by <sec typ="buff"><buff typ="REMOVE_BUFF" /> Remove Upgrade</sec> effects.
+      TC: |-
+        於戰鬥開始時，獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="0" r signless />HP繼續戰鬥</sec>／<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="1" r /></sec>／<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="2" r /></sec>增加效果。
+        當無法戰鬥並發動<sec typ="cond"><buff typ="DEF_RESSURRECT" />繼續戰鬥</sec>時，<sec typ="dmg"><buff typ="DamageAmp_Me" />自身目前HP%越低，傷害<val idx="4" r /></sec>越高。
+        各效果皆無法被<sec typ="buff"><buff typ="REMOVE_BUFF" />解除強化</sec>效果解除。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -6832,6 +6904,23 @@ skills:
             base: 0.06
             per: 0.06
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, 적 기동형 1기마다 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>이(가) 증가합니다.
+        라운드 개시 시, 범위 내에 <sec typ="note"><char uid="BR_Sirene" /> : 포격 지휘</sec> <sec typ="note"><char uid="BR_Undine" /> : 오만과 분노</sec> <sec typ="note"><char uid="BR_Thetis" /> : 전술 공중중계</sec> 효과가 적용된 대상이 있으면 각 효과마다 <sec typ="note">대공 포메이션!</sec> 기본 효과를 추가 적용해 줍니다.
+        <sec typ="note">대공 포메이션!</sec> 기본 효과 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>
+      JP: |-
+        戦闘開始時、敵のAir unit 1体ごとに自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />AP<val idx="2" /></sec>が増加します。
+        ラウンド開始時、範囲内に<sec typ="note"><char uid="BR_Sirene" /> : 砲撃指揮</sec> <sec typ="note"><char uid="BR_Undine" /> : 傲慢と憤怒</sec> <sec typ="note"><char uid="BR_Thetis" /> : 戦術空中中継</sec>効果が適用されている対象がいる場合、各効果ごとに<sec typ="note">対空フォーメーション！</sec>の基本効果を追加適用します。
+        <sec typ="note">対空フォーメーション！</sec>の基本効果：<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />AP<val idx="2" /></sec>
+      EN: |-
+        At battle start, increases own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> for each enemy Air unit.
+        At round start, if there is a target within range with any of <sec typ="note"><char uid="BR_Sirene" /> : Bombardment Command</sec> <sec typ="note"><char uid="BR_Undine" /> : Pride & Rage</sec> <sec typ="note"><char uid="BR_Thetis" /> : Tactical Aerial Broadcast</sec>, additionally grants the base effect of <sec typ="note">Anti-Aircraft Formation!</sec> for each effect.
+        <sec typ="note">Anti-Aircraft Formation!</sec> base effect: <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>
+      TC: |-
+        於戰鬥開始時，每1個敵方機動型都會使自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>／<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec>／<sec typ="buff"><buff typ="AP_UP" />AP<val idx="2" /></sec>提升。
+        於回合開始時，若範圍內有套用<sec typ="note"><char uid="BR_Sirene" />：砲擊指揮</sec>／<sec typ="note"><char uid="BR_Undine" />：傲慢與憤怒</sec>／<sec typ="note"><char uid="BR_Thetis" />：戰術空中中繼</sec>效果的目標，則依每種效果額外套用<sec typ="note">防空陣形！</sec>基本效果。
+        <sec typ="note">防空陣形！</sec>基本效果：<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>／<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec>／<sec typ="buff"><buff typ="AP_UP" />AP<val idx="2" /></sec>。
 dialogue:
   KR:
     "1":
@@ -6997,10 +7086,8 @@ dialogue:
         사령관, 사령관, 내가 즐겁게
         해줄까? 히히, 맡겨 두라구!
       SPIdle_02_01: 좋아! 사령관, 장난 대결이지?
-      Oath: >-
-        왜 그래? 그런 얼굴로… 설마… 어제 밤에 얼굴에 낙서한 것 때문에? 응? 그런데… 이거… 어? 응? 사령관… 나… 나한테 이런
-        걸 줘도 돼?
-
+      Oath: |-
+        왜 그래? 그런 얼굴로… 설마… 어제 밤에 얼굴에 낙서한 것 때문에? 응? 그런데… 이거… 어? 응? 사령관… 나… 나한테 이런 걸 줘도 돼?
         기뻐… 기쁜데… 나중에 사령관이 날 싫어하게 되면 어쩌지? 응? 싫어하지 않을 거지?
       OathIdle_01: 사령관, 헤헤… 사령관. 너무 좋아.
       MVP: 데헷~!
@@ -7237,10 +7324,8 @@ dialogue:
         Oh, are you drying my swimsuit? Hmm…
         I don’t think that’s it.
         Commander, what are you up to?
-      Oath: >-
-        Hehe, Commander. You are messing with me again, aren’t you? Neri doesn’t
-        fall for this kind of thing. … Huh? You aren’t messing with me…?
-
+      Oath: |-
+        Hehe, Commander. You are messing with me again, aren’t you? Neri doesn’t fall for this kind of thing. … Huh? You aren’t messing with me…?
         Th-then… what am I supposed to do now? … Hehe. So all I have to do is… to get in your arms, commander?
       OathIdle_01: |-
         Neri wants to make
@@ -7265,16 +7350,12 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        Welcome to Cafe Horizon… We serve hot coffee and delicious desserts… Do
-        I feel embarrassed? O-of course!
-
+      Idle_01_01: |-
+        Welcome to Cafe Horizon… We serve hot coffee and delicious desserts… Do I feel embarrassed? O-of course!
         Neri’s never wore such revealing clothes before…​
-      Idle_01_02: >-
+      Idle_01_02: |-
         Neri is so embarrassed… But Thetis,
-
         Undine, and Lieutenant Commander are all wearing it… I can’t be the only one left out… And I heard that Command- no,
-
         Master would like such thing…​
       Idle_01_03: |-
         Here. Master, you should go to our coffee shop
@@ -7291,23 +7372,16 @@ dialogue:
         Umm… I still have flyers left… Hehe.
         Then should we loaf around for a moment?
         Neri wanted to play… too… D-don’t stare at me…
-      Idle_04_01: >-
+      Idle_04_01: |-
         Do you really like Neri? The other girls are
-
         also wearing these clothes,
-
         and Neri can’t even call you "Master" properly… Really? Then Neri won’t feel embarrassed any more.
-
         I’m going to do my best. … Hm?
-
         You like how I blush when I feel embarrassed?​
       SPIdle_02_01: M-Master, stop… Neri is so embarrassed… It feels weird…​
-      Oath: >-
-        It’s a ring… Neri likes Commander, too. But my heart is pounding so fast
-        that I can’t think straight.
-
+      Oath: |-
+        It’s a ring… Neri likes Commander, too. But my heart is pounding so fast that I can’t think straight.
         Master… Tell Neri what I should do… As I like it? Are you really OK?
-
         Then… Neri still feels embarrassed because of the outfit. I’ll be okay if you can hold me tight. Hehe…
       OathIdle_01: |-
         I’m not used to calling you… Master… Umm… You know, Commander~
@@ -7355,11 +7429,8 @@ dialogue:
         Commander! Do you want me to make you
         happy? Ha, ha. Just leave it to me!
       SPIdle_02_01: Okay! This is a fooling around contest, right?
-      Oath: >-
-        Why? Why the look…? No way… Is it because I doodled on your face last
-        night? Huh? But… this… Huh? What? Commander… are you… really giving this
-        for me to keep?
-
+      Oath: |-
+        Why? Why the look…? No way… Is it because I doodled on your face last night? Huh? But… this… Huh? What? Commander… are you… really giving this for me to keep?
         I'm happy… So happy… But what if you don't like me later on? Huh? You won't change your mind, will you?
       OathIdle_01: Commander, hehe… Commander. I really like you.
       MVP: ""

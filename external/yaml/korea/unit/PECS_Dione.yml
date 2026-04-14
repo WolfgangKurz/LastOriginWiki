@@ -1747,6 +1747,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 입힙니다.
+        <sec typ="cond">적중 시</sec> 대상은 1라운드 동안 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태가 됩니다.
+        <sec typ="cond"><sec typ="note">안전 범위 이탈!</sec>로 적을 처치 시</sec> 자신에게 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="3" signless />회</sec>를 획득합니다.
+        적을 처치 후 <sec typ="note">안전 범위 이탈!</sec>로 획득하는 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화</sec>는 <sec typ="note">골든 워커즈 토르피도</sec>의 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화</sec>와 <sec typ="important">중첩 적용되지 않으며 갱신될 수 있습니다.</sec>
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="ice" />を与えます。
+        <sec typ="cond">命中時</sec>、対象は1ラウンドの間<sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態になります。
+        <sec typ="cond"><sec typ="note">安全範囲離脱!</sec>で敵を撃破した場合</sec>、自分は<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化 <val idx="3" signless />回</sec>を獲得します。
+        敵を撃破した後、<sec typ="note">安全範囲離脱!</sec>で獲得する<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化</sec>は、<sec typ="note">ゴールデンワーカーズ・トルピード</sec>の<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化</sec>と<sec typ="important">重複適用されず、更新できます。</sec>
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="ice" /> damage to the designated area.
+        <sec typ="cond">When attack hits</sec>, the target becomes <sec typ="buff"><buff typ="SNARE" />Immobilized</sec> for 1 round.
+        <sec typ="cond">When an enemy is defeated with <sec typ="note">Leave Safe Range!</sec></sec>, self gains <sec typ="buff"><buff typ="DEF_All" />1-time Damage Nullification <val idx="3" signless /></sec>.
+        The <sec typ="buff"><buff typ="DEF_All" />Damage Nullification</sec> gained from <sec typ="note">Leave Safe Range!</sec> after defeating enemies does <sec typ="important">not stack with</sec> and can be refreshed by <sec typ="note">Golden Workers Torpedo</sec>’s <sec typ="buff"><buff typ="DEF_All" />Damage Nullification</sec>.
+      TC: |-
+        對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="ice" />傷害。
+        <sec typ="cond">命中時</sec>，目標會在1回合內進入<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態。
+        <sec typ="cond">若以<sec typ="note">脫離安全範圍!</sec>擊殺敵人時</sec>，自身將獲得<sec typ="buff"><buff typ="DEF_All" />1次傷害無效化 <val idx="3" signless />次</sec>。
+        擊殺敵人後，從<sec typ="note">脫離安全範圍!</sec>取得的<sec typ="buff"><buff typ="DEF_All" />傷害無效化</sec>與<sec typ="note">黃金行者·魚雷</sec>的<sec typ="buff"><buff typ="DEF_All" />傷害無效化</sec><sec typ="important">不會疊加，且可更新。</sec>
   "2":
     key: "2"
     icon: MultiMissile
@@ -4221,6 +4242,23 @@ skills:
             base: 0.5
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 입힙니다.
+        <sec typ="cond">적중 시</sec> 대상은 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="1" r /></sec>  감소, <cmt loc t="FLOOD">$$FLOOD:7,5,6$</cmt> 상태가 됩니다.
+        <sec typ="cond"><cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt> 시</sec> 대상의 2라운드 동안 <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="6" r /></sec> 감소, <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="7" r /></sec> 증가 상태가 됩니다.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="ice" />を与えます。
+        <sec typ="cond">命中時</sec>、対象は<sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="1" r /></sec>減少、<cmt loc t="FLOOD">$$FLOOD:7,5,6$</cmt>状態になります。
+        <sec typ="cond"><cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>時</sec>、対象は2ラウンドの間<sec typ="buff"><buff typ="ICERES_DOWN" />冷気耐性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性 <val idx="6" r /></sec>減少、<sec typ="buff"><buff typ="FIRERES_UP" />火炎耐性 <val idx="7" r /></sec>増加状態になります。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="ice" /> damage to the designated area.
+        <sec typ="cond">When attack hits</sec>, the target’s <sec typ="buff"><buff typ="AP_DOWN" />MOVE <val idx="1" r /></sec> decreases and they become <cmt loc t="FLOOD">$$FLOOD:7,5,6$</cmt>.
+        <sec typ="cond">When <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt></sec>, for 2 rounds the target’s <sec typ="buff"><buff typ="ICERES_DOWN" />Cold Resistance <val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />Electric Resistance <val idx="6" r /></sec> decreases and <sec typ="buff"><buff typ="FIRERES_UP" />Fire Resistance <val idx="7" r /></sec> increases.
+      TC: |-
+        對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="ice" />傷害。
+        <sec typ="cond">命中時</sec>，目標的<sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="1" r /></sec>減少，並進入<cmt loc t="FLOOD">$$FLOOD:7,5,6$</cmt>狀態。
+        <sec typ="cond">當<cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>時</sec>，目標在2回合內的<sec typ="buff"><buff typ="ICERES_DOWN" />冰霜抵抗 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電擊抵抗 <val idx="6" r /></sec>減少，<sec typ="buff"><buff typ="FIRERES_UP" />火焰抵抗 <val idx="7" r /></sec>增加。
   "3":
     key: "3"
     icon: P.Scan
@@ -4456,6 +4494,19 @@ skills:
             base: 0.12
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 모든 적을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>합니다.
+        2라운드 동안 적의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="3" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec>를 증가시킵니다. <sec>최대 3 중첩</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、全ての敵を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>します。
+        2ラウンドの間、敵の<sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="3" r /></sec>を減少させ、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="4" r /></sec>を増加させます。<sec>最大3スタック</sec>
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, Provoke all enemies.
+        For 2 rounds, decreases enemy <sec typ="buff"><buff typ="AP_DOWN" />MOVE <val idx="3" r /></sec> and increases <sec typ="buff"><buff typ="VULNERABLE" />received damage <val idx="4" r /></sec>. <sec>Max 3 stacks</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，對所有敵人施加<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>。
+        在2回合內，減少敵人的<sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="3" r /></sec>並增加<sec typ="buff"><buff typ="VULNERABLE" />所受傷害 <val idx="4" r /></sec>。<sec>最多3層</sec>
   "4":
     key: "4"
     icon: P.FormChange
@@ -4749,6 +4800,19 @@ skills:
             base: 36
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt> 상태인 경우</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt> 상태로 피격 시</sec> 적의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과가 해제</sec>됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自分が<cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>状態の場合</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自分が<cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>状態で被弾した場合</sec>、敵の<sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ減少効果が解除</sec>されます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if self is in <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt> state</sec>, <sec typ="buff"><buff typ="ATK_UP" />ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />MOVE <val idx="2" r /></sec> increase.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if self is attacked while in <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt> state</sec>, the enemy’s <sec typ="buff"><buff typ="REMOVE_BUFF" />Received Damage Decrease effect is removed</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若自身處於<cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>狀態</sec>，則<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="2" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若自身以<cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>狀態受到攻擊</sec>，敵人的<sec typ="buff"><buff typ="REMOVE_BUFF" />所受傷害減少效果會被解除</sec>。
   "5":
     key: "5"
     icon: P.Wave
@@ -5013,6 +5077,19 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="골든 워커즈">$$GoldenWorkers:?$</cmt> 소속 전투원이 있을 경우</sec> <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="4" signless />회</sec>를 획득하고, <sec typ="cond">피격 시</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="dmg"><buff typ="COUNTER" /> <val idx="3" r signless /> 위력으로 반격</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="note">골든 워커즈 토르피도</sec>로 획득하는 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화</sec>는 <sec typ="note">안전 범위 이탈!</sec>의 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화</sec>와 <sec typ="important">중첩 적용되지 않으며 갱신될 수 있습니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">分隊に自分を除く<cmt t="ゴールデンワーカーズ">$$GoldenWorkers:?$</cmt>所属戦闘員がいる場合</sec>、<sec typ="buff"><buff typ="ICERES_UP" />冷気耐性 <val idx="0" r /></sec>と<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化 <val idx="4" signless />回</sec>を獲得し、<sec typ="cond">被弾時</sec>に<sec typ="chance">100%確率</sec>で<sec typ="dmg"><buff typ="COUNTER" /> <val idx="3" r signless />の威力で反撃</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">ゴールデンワーカーズ・トルピード</sec>で獲得する<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化</sec>は、<sec typ="note">安全範囲離脱!</sec>の<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化</sec>と<sec typ="important">重複適用されず、更新できます。</sec>
+      EN: |-
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if there are other <cmt t="Golden Workers">$$GoldenWorkers:?$</cmt> units in the squad besides self</sec>, gains <sec typ="buff"><buff typ="ICERES_UP" />Cold Resistance <val idx="0" r /></sec> and <sec typ="buff"><buff typ="DEF_All" />Damage Nullification <val idx="4" signless /> times</sec>, and <sec typ="cond">when attacked</sec> retaliates with <sec typ="chance">100% chance</sec> at <sec typ="dmg"><buff typ="COUNTER" /> <val idx="3" r signless /> power</sec>.
+        <sec typ="cond">At the start of the round</sec>, the <sec typ="note">Damage Nullification</sec> gained from <sec typ="note">Golden Workers Torpedo</sec> does <sec typ="important">not stack with</sec> the <sec typ="buff"><buff typ="DEF_All" />Damage Nullification</sec> from <sec typ="note">Leave Safe Range!</sec> and can be refreshed.
+      TC: |-
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若小隊中除自身外還有<cmt t="Golden Workers">$$GoldenWorkers:?$</cmt>所屬戰鬥員</sec>，則獲得<sec typ="buff"><buff typ="ICERES_UP" />冰霜抵抗 <val idx="0" r /></sec>與<sec typ="buff"><buff typ="DEF_All" />傷害無效化 <val idx="4" signless />次</sec>，並在<sec typ="cond">受到攻擊時</sec>以<sec typ="chance">100%機率</sec>用<sec typ="dmg"><buff typ="COUNTER" /> <val idx="3" r signless />威力反擊</sec>。
+        <sec typ="cond">回合開始時</sec>，從<sec typ="note">黃金行者·魚雷</sec>獲得的<sec typ="buff"><buff typ="DEF_All" />傷害無效化</sec>與<sec typ="note">脫離安全範圍!</sec>的<sec typ="buff"><buff typ="DEF_All" />傷害無效化</sec><sec typ="important">不會疊加，且可更新。</sec>
 dialogue:
   KR:
     "1":
@@ -5052,10 +5129,8 @@ dialogue:
         만들어 줄게? 우후후….​
       Idle_04_01: 나한테도 주사… 놔 줄래?​
       SPIdle_02_01: 나… 수술실에서... 기다릴게…?​
-      Oath: >-
-        다, 당신…! 알겠으니까 어서 이것 좀 어떻게 해달란 말이야… 이렇게 묶어 두지 않아도… 난 당신 곁을 지키며 당신만을 계속 간호
-        할 거니까…
-
+      Oath: |-
+        다, 당신…! 알겠으니까 어서 이것 좀 어떻게 해달란 말이야… 이렇게 묶어 두지 않아도… 난 당신 곁을 지키며 당신만을 계속 간호 할 거니까…
         당신도 참… 사랑은 병이 아니야… 고칠 수 없다구! …그러니까 당신이 날 볼 때마다 불끈불끈 대는 건 어쩔 수 없어. 사랑하는만큼… 불끈불끈해볼까? 당신… 자신 있지?
       OathIdle_01: |-
         오늘만큼은…
@@ -5107,10 +5182,8 @@ dialogue:
       SPIdle_02_01: |-
         유니폼 위로…
         튀어 나와버렸어…​
-      Oath: >-
-        당신… 이, 이건 반칙이야! …내가 먼저 안전 범위를 이탈하고 싶었단말야…​ 오늘부터 해변이 아닌 곳에서도 당신을 지키는 건 내게
-        있어 가장 중요한 임무가 되는 거야.
-
+      Oath: |-
+        당신… 이, 이건 반칙이야! …내가 먼저 안전 범위를 이탈하고 싶었단말야…​ 오늘부터 해변이 아닌 곳에서도 당신을 지키는 건 내게 있어 가장 중요한 임무가 되는 거야.
         ​언니가 그토록 찾고 싶어하는 보물 말인데… 이제 알 것 같아. 내게 있어 보물은 바로 당신이니까.평생 내 곁에서, 그렇게… 부서지는 파도처럼 빛나 줄 거지, 그렇지?
       OathIdle_01: |-
         내 파도…

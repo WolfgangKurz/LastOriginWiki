@@ -2717,6 +2717,19 @@ skills:
             base: -0.5
             per: -0.025
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 물대포를 발사해 <dmg elem="ice" />를 주고, 2라운드 동안 대상을 <sec typ="note">침수</sec> 상태로 만듭니다.
+        <sec typ="note">침수</sec> : <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="5" r /></sec>
+      JP: |-
+        指定範囲にウォーターキャノンを発射して <dmg elem="ice" />を与え、2ラウンドの間対象を<sec typ="note">浸水</sec>状態にします。
+        <sec typ="note">浸水</sec> : <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎抵抗 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気抵抗 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気抵抗 <val idx="5" r /></sec>
+      EN: |-
+        Fires a water cannon at the designated area, dealing <dmg elem="ice" /> and putting the target in <sec typ="note">Flooded</sec> status for 2 rounds.
+        <sec typ="note">Flooded</sec> : <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> Cold Resistance <val idx="4" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="5" r /></sec>
+      TC: |-
+        對指定範圍發射水砲，造成 <dmg elem="ice" />，並使目標在 2 回合內進入 <sec typ="note">浸水</sec> 狀態。
+        <sec typ="note">浸水</sec>：<sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷氣抗性 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電氣抗性 <val idx="5" r /></sec>
   "2":
     key: "2"
     icon: MeleeAttack
@@ -4184,6 +4197,19 @@ skills:
             base: 0
             per: 0
             chance: 0.5
+    desc:
+      KR: |-
+        지정 대상에게 묘목을 심어 <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="1" r /></sec>를 낮춥니다.
+        대상이 <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 상태면 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>가 증가하는 상태로 만들며, <sec typ="chance"><chance idx="4" /> 확률</sec>로 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태가 됩니다.
+      JP: |-
+        指定対象に苗木を植えて <dmg elem="physics" />を与え、<sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎抵抗 <val idx="1" r /></sec>を下げます。
+        対象が<sec typ="cond"><buff typ="DEF_DOWN" /> 防御力減少</sec>状態なら<sec typ="buff"><buff typ="VULNERABLE" /> 被ダメージ <val idx="3" r /></sec>が増加する状態にし、<sec typ="chance"><chance idx="4" /> 確率</sec>で<sec typ="buff"><buff typ="STUN" /> 行動不能</sec>状態にします。
+      EN: |-
+        Plants a sapling on the designated target, dealing <dmg elem="physics" /> and lowering <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="1" r /></sec>.
+        If the target is in <sec typ="cond"><buff typ="DEF_DOWN" /> Defense reduction</sec> state, it gains increased <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec>, and with <sec typ="chance"><chance idx="4" /> chance</sec> becomes <sec typ="buff"><buff typ="STUN" /> Immobilized</sec>.
+      TC: |-
+        對指定目標種植樹苗，造成 <dmg elem="physics" />，並降低 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="1" r /></sec>。
+        若目標處於 <sec typ="cond"><buff typ="DEF_DOWN" /> 防禦力下降</sec> 狀態，則會變成 <sec typ="buff"><buff typ="VULNERABLE" /> 受到傷害 <val idx="3" r /></sec>增加的狀態，並有 <sec typ="chance"><chance idx="4" /> 機率</sec>進入 <sec typ="buff"><buff typ="STUN" /> 行動不能</sec>狀態。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -4324,6 +4350,11 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: 라운드 개시 시, 자신과 같은 행의 뒤에 배치된 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>를 증가시키며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec>를 감소시킵니다.
+      JP: ラウンド開始時、自身と同じ列の後方に配置された味方の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>を増加させ、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 被ダメージ <val idx="2" r inv /></sec>を減少させます。
+      EN: At the start of the round, increases allies placed behind self in the same row with <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> and reduces <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="2" r inv /></sec>.
+      TC: 回合開始時，提升與自身同列後方隊友的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>，並降低 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到傷害 <val idx="2" r inv /></sec>。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -4695,6 +4726,11 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: 라운드 개시 시, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>를 증가시키며, <char uid="PECS_DarkElf" />의 패시브 효과를 받는 대상과 <char uid="PECS_HighElven" />, <char uid="PECS_Sekhmet" />, <char uid="PECS_DarkElf" />의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec>를 증가시키고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="6" r inv /></sec>를 감소시킵니다.
+      JP: ラウンド開始時、自身の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>を増加させ、<char uid="PECS_DarkElf" />のパッシブ効果を受ける対象と<char uid="PECS_HighElven" />、<char uid="PECS_Sekhmet" />、<char uid="PECS_DarkElf" />の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="5" r /></sec>を増加させ、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 被ダメージ <val idx="6" r inv /></sec>を減少させます。
+      EN: At the start of the round, increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec>, and increases <char uid="PECS_DarkElf" /> passive-effect recipients and <char uid="PECS_HighElven" />, <char uid="PECS_Sekhmet" />, <char uid="PECS_DarkElf" /> <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="5" r /></sec> while reducing <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="6" r inv /></sec>.
+      TC: 回合開始時，提升自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>，並提升 <char uid="PECS_DarkElf" /> 的被動效果受益目標與 <char uid="PECS_HighElven" />、<char uid="PECS_Sekhmet" />、<char uid="PECS_DarkElf" />的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="5" r /></sec>，同時降低 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到傷害 <val idx="6" r inv /></sec>。
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -4919,6 +4955,19 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="3" r /></sec> 효과를 얻습니다.
+        <sec typ="cond">스킬 사용 시</sec>, 행동력 증가 효과를 받지 않는 모든 적의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec>를 2라운드 동안 증가시킵니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抵抗 <val idx="3" r /></sec>効果を得ます。
+        <sec typ="cond">スキル使用時</sec>、行動力増加効果を受けていないすべての敵の<sec typ="buff"><buff typ="VULNERABLE" /> 被ダメージ <val idx="2" r /></sec>を2ラウンドの間増加させます。
+      EN: |-
+        At the start of the round, gains <sec typ="buff"><buff typ="Remove_Buff_Resist" /> buff removal resistance <val idx="3" r /></sec>.
+        <sec typ="cond">On skill use</sec>, increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="2" r /></sec> of all enemies not receiving AP increase effects for 2 rounds.
+      TC: |-
+        回合開始時，獲得 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抵抗 <val idx="3" r /></sec>效果。
+        <sec typ="cond">使用技能時</sec>，使所有未受到行動力增加效果的敵人在 2 回合內的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到傷害 <val idx="2" r /></sec>提升。
 dialogue:
   KR:
     "2":
@@ -5251,12 +5300,9 @@ dialogue:
         If you do that so suddenly, I get surprised,
         Commander… We have time,
         slow down…
-      Oath: >-
-        Now that I’m up here, I’m getting a little nervous… Huh? Wh-what are you
-        talking about?
-
+      Oath: |-
+        Now that I’m up here, I’m getting a little nervous… Huh? Wh-what are you talking about?
         You know, I knew that you will choose me. So
-
         … Ha! … Mm… Can you do that… one more time…? I’m talking about the kiss…
       OathIdle_01: |-
         What? You mean about the pledge? Well,
@@ -5306,9 +5352,8 @@ dialogue:
       SPIdle_02_01: |-
         Oh! What are you
         thinking…
-      Oath: >-
+      Oath: |-
         W-wait! That's too fast! Are you serious? Really?…?
-
         … Then from now on,… even if I pester you, you'll be TOTALLY OK with that. Deal? He he.
       OathIdle_01: |-
         I pushed you around?

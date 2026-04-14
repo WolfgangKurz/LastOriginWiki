@@ -2804,6 +2804,23 @@ skills:
             base: -0.5
             per: -0.025
             chance: 1
+    desc:
+      KR: |-
+        빠르게 적에게 접근하여 단일 대상에게 <dmg elem="ice" />를 입힙니다.
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상의 HP에 반비례하여 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <cmt loc t="FLOOD">$$FLOOD:4,5,6$</cmt> 상태로 만듭니다.
+      JP: |-
+        素早く敵に接近し、単体対象に<dmg elem="ice" />を与えます。
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" />対象のHPに反比例してダメージ量<val idx="0" r /></sec>が増加します。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象を<cmt loc t="FLOOD">$$FLOOD:4,5,6$</cmt>状態にします。
+      EN: |-
+        Quickly approaches the enemy and deals <dmg elem="ice" /> to a single target.
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> Damage <val idx="0" r /></sec> increases in inverse proportion to the target's HP.
+        <sec typ="cond">On hit</sec>, makes the target <cmt loc t="FLOOD">$$FLOOD:4,5,6$</cmt> for 2 rounds.
+      TC: |-
+        迅速接近敵人，對單一目標造成<dmg elem="ice" />。
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" />傷害量<val idx="0" r /></sec>會隨目標的HP成反比增加。
+        <sec typ="cond">命中時</sec>，使目標在2回合內進入<cmt loc t="FLOOD">$$FLOOD:4,5,6$</cmt>狀態。
   "2":
     key: "2"
     icon: Wave
@@ -4621,6 +4638,23 @@ skills:
             base: 500
             per: 50
             chance: 1
+    desc:
+      KR: |-
+        거대한 닻을 내리쳐 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 입힙니다.
+        <sec typ="cond">스킬을 사용한 다음 라운드 개시 시</sec>, <sec typ="note">극지 생존 경쟁</sec> 범위 내 아군에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        <sec typ="cond">대상이 <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt> 상태인 경우</sec>, 1라운드 동안 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만들고 <sec typ="dmg"><buff typ="IceDMG_DOT" /> 지속 냉기 피해 <val idx="4" signless /></sec>을(를) 입힙니다.
+      JP: |-
+        巨大な錨を叩き下ろし、<sec typ="attr">保護無視</sec> <dmg elem="ice" />を与えます。
+        <sec typ="cond">スキル使用後の次のラウンド開始時</sec>、<sec typ="note">後衛</sec>範囲内の味方に付与された<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害効果を解除</sec>します。
+        <sec typ="cond">対象が<cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>状態の場合</sec>、1ラウンドの間<sec typ="buff"><buff typ="STUN" />行動不能</sec>状態にし、<sec typ="dmg"><buff typ="IceDMG_DOT" />継続冷気ダメージ<val idx="4" signless /></sec>を与えます。
+      EN: |-
+        Slams down a massive anchor and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="ice" />.
+        <sec typ="cond">At the start of the round after using the skill</sec>, <sec typ="note">Rear Guard</sec> removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec> applied to allies within range.
+        <sec typ="cond">If the target is <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt></sec>, inflicts <sec typ="buff"><buff typ="STUN" /> unable to act</sec> for 1 round and deals <sec typ="dmg"><buff typ="IceDMG_DOT" /> continuous Cold damage <val idx="4" signless /></sec>.
+      TC: |-
+        重擊巨大錨，對單一目標造成<sec typ="attr">無視保護</sec> <dmg elem="ice" />。
+        <sec typ="cond">使用技能後的下一回合開始時</sec>，解除<sec typ="note">後衛</sec>範圍內我軍身上的<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害效果</sec>。
+        <sec typ="cond">若目標處於<cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>狀態</sec>，使其在1回合內陷入<sec typ="buff"><buff typ="STUN" />無法行動</sec>狀態，並造成<sec typ="dmg"><buff typ="IceDMG_DOT" />持續冰霜傷害<val idx="4" signless /></sec>。
   "3":
     key: "3"
     icon: P.ShieldWall
@@ -5049,6 +5083,23 @@ skills:
               level: "0"
             value: Effect_3P_Alcyone_N_2
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 아군을 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 후열에 위치한 경우</sec>, <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>가 활성화되고 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="8" /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の<sec typ="buff"><buff typ="DEF_Char" />保護機を除く味方を指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="FIRERES_UP" />火炎耐性<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" />冷気耐性<val idx="6" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身が後列にいる場合</sec>、<sec typ="buff"><buff typ="DEF_Side" />列保護</sec>が有効になり、<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="8" /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, grants <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> to allies within range excluding Protectors.
+        <sec typ="cond">At round start</sec>, allies within range gain <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> Cold Resistance <val idx="6" r /></sec>.
+        <sec typ="cond">At round start</sec> <sec typ="cond">if self is in the rear line</sec>, <sec typ="buff"><buff typ="DEF_Side" /> Protect Line</sec> activates and <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="8" /></sec> increases.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，對範圍內除保護機外的我軍賦予<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>，增加範圍內我軍的<sec typ="buff"><buff typ="FIRERES_UP" />火焰抵抗<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" />冰霜抵抗<val idx="6" r /></sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若自身位於後列</sec>，<sec typ="buff"><buff typ="DEF_Side" />保護一列</sec>會啟用，並增加<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="8" /></sec>。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -5189,6 +5240,23 @@ skills:
             base: 0.25
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소합니다.
+        <sec typ="cond">자신이 <buff typ="DEF_Char" />지정 보호 중인 아군이 있을 경우</sec>, 받는 피해 감소 효과가 두 배로 증폭됩니다.
+        <sec>자신의 기본 화염 / 냉기 속성 저항이 35%로 증가합니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身が受ける<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" r inv /></sec>が減少します。
+        <sec typ="cond">自身が<buff typ="DEF_Char" />指定保護中の味方がいる場合</sec>、被ダメージ減少効果が2倍に増幅されます。
+        <sec>自身の基本火炎 / 冷気属性耐性が35%に増加します。</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decreases.
+        <sec typ="cond">If self has an ally under <buff typ="DEF_Char" /> Designated Protection</sec>, the damage taken decrease effect is doubled.
+        <sec>Self's base Fire / Cold resistance increases to 35%.</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="0" r inv /></sec>減少。
+        <sec typ="cond">若自身有處於<buff typ="DEF_Char" />指定保護中的我軍</sec>，則所受傷害減少效果會增幅2倍。
+        <sec>自身的基本火焰 / 冰霜屬性抵抗增加至35%。</sec>
   "5":
     key: "5"
     icon: P.DefCounter
@@ -5704,6 +5772,23 @@ skills:
             base: 0.15
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">피격 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>이(가) 증가하고 <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 위력으로 반격</sec>을 획득합니다.
+        <sec typ="cond">속성 공격 피격 시</sec>, 반격 효과가 <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 위력으로 반격</sec>으로 증폭됩니다.
+        <sec typ="cond">스쿼드 내에 자신 외의 보호기가 있을 경우</sec>, AP 증가 효과 대상이 아군 전체로 확대됩니다.
+      JP: |-
+        <sec typ="cond">被弾時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>が増加し、<sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless />威力で反撃</sec>を獲得します。
+        <sec typ="cond">属性攻撃を受けた時</sec>、反撃効果が<sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless />威力で反撃</sec>に増幅されます。
+        <sec typ="cond">スコード内に自分以外の保護機がいる場合</sec>、AP増加効果の対象が味方全体に拡大されます。
+      EN: |-
+        <sec typ="cond">When hit</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec> increases and self gains <sec typ="buff"><buff typ="COUNTER" /> counterattack with <val idx="0" r signless /> power</sec>.
+        <sec typ="cond">When hit by an elemental attack</sec>, the counterattack effect is amplified into <sec typ="buff"><buff typ="COUNTER" /> counterattack with <val idx="4" r signless /> power</sec>.
+        <sec typ="cond">If there is another Protector besides self in the squad</sec>, the AP increase effect is expanded to all allies.
+      TC: |-
+        <sec typ="cond">被擊中時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>增加，並獲得以<sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless />威力反擊</sec>。
+        <sec typ="cond">被屬性攻擊擊中時</sec>，反擊效果會增幅為<sec typ="buff"><buff typ="COUNTER" />以<val idx="4" r signless />威力反擊</sec>。
+        <sec typ="cond">若小隊內除自身外還有保護機</sec>，AP增加效果的對象會擴大至我軍全體。
 dialogue:
   KR:
     "1":
@@ -5761,8 +5846,7 @@ dialogue:
         아직도 이렇게 팔팔하다고?
         어쩔 수 없네… 남은 기운 전부…
         나한테 쓰게 하는 수밖에...
-      Oath: 주인님의 말이 모두 끝날 때까지 얼마나 긴장했는지 몰라. 마치 연기 후에 결과를 기다릴 때처럼 말이야. 그리고 그 결과는… 하하!
-        이곳의 이름이 정해진 거 같아! 키스 앤 크라이가 아니라 키스 앤 스마일로! 키스해줘. 그리고 웃어줘. 그리고 영원히 행복해지자!
+      Oath: 주인님의 말이 모두 끝날 때까지 얼마나 긴장했는지 몰라. 마치 연기 후에 결과를 기다릴 때처럼 말이야. 그리고 그 결과는… 하하! 이곳의 이름이 정해진 거 같아! 키스 앤 크라이가 아니라 키스 앤 스마일로! 키스해줘. 그리고 웃어줘. 그리고 영원히 행복해지자!
       OathIdle_01: |-
         주인님, 이번 연기 정말로 완벽했어!
         헤헤, 그렇게 연습했으니 당연하지.
@@ -5833,11 +5917,9 @@ dialogue:
         너무 빠르다고!​
         우선, 내 흥분하는 꼬리부터…
         가라앉혀줄래?​
-      Oath: >-
+      Oath: |-
         주인님, 내 이상형이 뭔지 생각 나? 헤헷… 날 번쩍 들어올릴 정도로 힘이 센 남자...​ 그래서 하고 싶은 말이 뭐냐고?
-
         당연히, 주인님은 내 이상형이니까 지금 이 반지도 받아줄 거란 말지!​ 주인님, 내가 이 반지 껴주면… 나 드디어 내가 꿈꾸던 이상형이랑 결혼하는 거지?
-
         맞지! ​헤헤… 나… 부탁이 있는데… 우리 나중에 전쟁이 끝나면 날 딱 빼 닮은 아기 범고래 만들어 줄래...?
       OathIdle_01: |-
         하아… 흠뻑 젖었는데,
@@ -5902,9 +5984,7 @@ dialogue:
         나 참… 고래가 포유류기는 해도,
         난 아직 아무것도 안 나오거든?
         …정 아쉬우면 뭐… 나오게 해 주던가.
-      Oath: 이런 건 굳이 안 줘도 괜찮은데. 그야... 난 주인님과 함께하는 매 순간마다 사랑에 빠지고 있거든. 같이 낚시하러 가서도 낚싯대가
-        아니라 주인님 얼굴만 멍하니 바라보고 있을 정도로 말이야. 아! 그렇다고 싫다는 건 아니야! 이건... 내가 영원히 주인님과
-        함께라는 증거니까.
+      Oath: 이런 건 굳이 안 줘도 괜찮은데. 그야... 난 주인님과 함께하는 매 순간마다 사랑에 빠지고 있거든. 같이 낚시하러 가서도 낚싯대가 아니라 주인님 얼굴만 멍하니 바라보고 있을 정도로 말이야. 아! 그렇다고 싫다는 건 아니야! 이건... 내가 영원히 주인님과 함께라는 증거니까.
       OathIdle_01: |-
         범고래는 굉장히 사나운 동물이라고.
         귀엽게 생겼다고 방심하다간,
@@ -6004,9 +6084,7 @@ dialogue:
         아직도 이렇게 팔팔하다고?
         어쩔 수 없네… 남은 기운 전부…
         나한테 쓰게 하는 수밖에...
-      Oath: "[미번역]주인님의 말이 모두 끝날 때까지 얼마나 긴장했는지 몰라. 마치 연기 후에 결과를 기다릴 때처럼 말이야. 그리고 그 결과는…
-        하하! 이곳의 이름이 정해진 거 같아! 키스 앤 크라이가 아니라 키스 앤 스마일로! 키스해줘. 그리고 웃어줘. 그리고 영원히
-        행복해지자!"
+      Oath: "[미번역]주인님의 말이 모두 끝날 때까지 얼마나 긴장했는지 몰라. 마치 연기 후에 결과를 기다릴 때처럼 말이야. 그리고 그 결과는… 하하! 이곳의 이름이 정해진 거 같아! 키스 앤 크라이가 아니라 키스 앤 스마일로! 키스해줘. 그리고 웃어줘. 그리고 영원히 행복해지자!"
       OathIdle_01: |-
         [미번역]주인님, 이번 연기 정말로 완벽했어!
         헤헤, 그렇게 연습했으니 당연하지.
@@ -6098,9 +6176,7 @@ dialogue:
         [미번역]나 참… 고래가 포유류기는 해도,
         난 아직 아무것도 안 나오거든?
         …정 아쉬우면 뭐… 나오게 해 주던가.
-      Oath: "[미번역]이런 건 굳이 안 줘도 괜찮은데. 그야... 난 주인님과 함께하는 매 순간마다 사랑에 빠지고 있거든. 같이 낚시하러 가서도
-        낚싯대가 아니라 주인님 얼굴만 멍하니 바라보고 있을 정도로 말이야. 아! 그렇다고 싫다는 건 아니야! 이건... 내가 영원히
-        주인님과 함께라는 증거니까."
+      Oath: "[미번역]이런 건 굳이 안 줘도 괜찮은데. 그야... 난 주인님과 함께하는 매 순간마다 사랑에 빠지고 있거든. 같이 낚시하러 가서도 낚싯대가 아니라 주인님 얼굴만 멍하니 바라보고 있을 정도로 말이야. 아! 그렇다고 싫다는 건 아니야! 이건... 내가 영원히 주인님과 함께라는 증거니까."
       OathIdle_01: |-
         [미번역]범고래는 굉장히 사나운 동물이라고.
         귀엽게 생겼다고 방심하다간,
@@ -6231,11 +6307,9 @@ dialogue:
         I got in trouble with Frigga for surfing on my shield.
         You say I look happy getting yelled at?
         …There was someone who used to yell at me like that a long time ago.
-      Idle_01_03: >-
+      Idle_01_03: |-
         Guards have to hide their emotions,
-
         but I don’t think I’m good at that at all.
-
         Why not? You see, I can’t stop myself from laughing out of joy whenever I see you…
       SPIdle_01_01: |-
         Killer whales are very aggressive animals.
@@ -6261,9 +6335,8 @@ dialogue:
         It’s so cute how small and innocent Ajax is.
         She says she’s older than me because her model was made first…
         but I actually want to make her my little sister.
-      OathIdle_01: >-
+      OathIdle_01: |-
         As of now I’m the greatest fisherman.
-
         Because I caught the world’s most incredible, considerate, brave, lovely fish.
       MVP: ""
     M:
@@ -6289,14 +6362,11 @@ dialogue:
         And what is most definitely forbidden
         is telling me you love me while rubbing the part
         between my tail and my back! You got that?
-      Idle_01_02: >-
-        Master, did you know? Killer whales are known to be real good at raising
-        children.
-
+      Idle_01_02: |-
+        Master, did you know? Killer whales are known to be real good at raising children.
         Don't you wanna see how great they are?
       Idle_01_03: Alcyone Blueprints
-      SPIdle_01_01: Blueprints we happened to come across during our search. You'll
-        able to obtain the character if you gather several blueprints.
+      SPIdle_01_01: Blueprints we happened to come across during our search. You'll able to obtain the character if you gather several blueprints.
       MVP: ""
   TC:
     "1":

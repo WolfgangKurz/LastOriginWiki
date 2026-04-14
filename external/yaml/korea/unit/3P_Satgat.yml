@@ -1206,6 +1206,23 @@ skills:
             base: 2000
             per: 100
             chance: 1
+    desc:
+      KR: |-
+        초진동 블레이드로 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec>, 대상에게 2라운드 동안 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> 감소 / <sec typ="dmg"><buff typ="phyDMG_DOT" /> 지속 물리 피해 <val idx="1" signless /></sec> 효과를 부여합니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원 / 재공격 시</sec>, <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 효과가 적용된 모든 적에게 추가로 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 지속 물리 피해 <val idx="9" slot="3" signless /></sec> 효과를 부여합니다.
+      JP: |-
+        超振動ブレードで単一対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、対象に2ラウンドの間、<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>減少 / <sec typ="dmg"><buff typ="phyDMG_DOT" />持続物理ダメージ<val idx="1" signless /></sec>効果を付与します。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />攻撃支援 / 再攻撃時</sec>、<sec typ="buff"><buff typ="DEF_DOWN" />防御力減少</sec>効果が適用された全ての敵に追加で<sec typ="dmg"><buff typ="phyDMG_DOT" />持続物理ダメージ<val idx="9" slot="3" signless /></sec>効果を付与します。
+      EN: |-
+        Deals <dmg elem="physics" /> damage to a single target with a Sonic Blade.
+        <sec typ="cond">On CRIT</sec>, inflicts the target with <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> decrease / <sec typ="dmg"><buff typ="phyDMG_DOT" /> Physical DoT <val idx="1" signless /></sec> effects for 2 rounds.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> When providing Attack Support / Re-Attacking</sec>, additionally inflicts <sec typ="dmg"><buff typ="phyDMG_DOT" /> Physical DoT <val idx="9" slot="3" signless /></sec> on all enemies affected by <sec typ="buff"><buff typ="DEF_DOWN" /> DEF Decrease</sec>.
+      TC: |-
+        以超振動刀刃對單一目標造成<dmg elem="physics" />傷害。
+        <sec typ="cond">暴擊時</sec>，使目標於2回合內承受<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>減少 / <sec typ="dmg"><buff typ="phyDMG_DOT" />持續物理傷害<val idx="1" signless /></sec>效果。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />支援攻擊 / 再次攻擊時</sec>，對所有受到<sec typ="buff"><buff typ="DEF_DOWN" />防禦力減少</sec>效果影響的敵人額外施加<sec typ="dmg"><buff typ="phyDMG_DOT" />持續物理傷害<val idx="9" slot="3" signless /></sec>效果。
   "2":
     key: "2"
     icon: WideBeamShot
@@ -1448,6 +1465,23 @@ skills:
             base: 20000
             per: 1000
             chance: 9.99
+    desc:
+      KR: |-
+        적이 스스로 베인 것조차 모르도록 찰나의 순간을 베어냅니다.
+        <sec typ="cond">적중 시</sec>, 대상에게 1라운드 동안 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> / <sec typ="dmg"><buff typ="phyDMG_DOT" /> 지속 물리 피해 <val idx="3" signless /></sec> 효과를 부여합니다.
+        자신에게 <sec typ="note">현월지세</sec> 효과가 적용중인 경우, <sec typ="dmg"><buff typ="phyDMG_DOT" /> 지속 물리 피해 효과 <val idx="4" signless /></sec>로 증폭되며 <sec typ="chance">효과 저항을 무시</sec>합니다.
+      JP: |-
+        敵が自分が斬られたことすら気づかないほどの瞬間を斬り裂きます。
+        <sec typ="cond">命中時</sec>、対象に1ラウンドの間、<sec typ="buff"><buff typ="SEAL_SKILL" />スキル使用不可</sec> / <sec typ="dmg"><buff typ="phyDMG_DOT" />持続物理ダメージ<val idx="3" signless /></sec>効果を付与します。
+        自分に<sec typ="note">弦月之勢</sec>効果が適用されている場合、<sec typ="dmg"><buff typ="phyDMG_DOT" />持続物理ダメージ効果<val idx="4" signless /></sec>へ増幅され、<sec typ="chance">効果耐性を無視</sec>します。
+      EN: |-
+        Cuts through a fleeting moment so fast the enemy does not even realize they have been cut.
+        <sec typ="cond">On Hit</sec>, inflicts the target with <sec typ="buff"><buff typ="SEAL_SKILL" /> Skill Disabled</sec> / <sec typ="dmg"><buff typ="phyDMG_DOT" /> Physical DoT <val idx="3" signless /></sec> effects for 1 round.
+        If the <sec typ="note">Shape of the Crescent Moon</sec> effect is active on self, the <sec typ="dmg"><buff typ="phyDMG_DOT" /> Physical DoT effect <val idx="4" signless /></sec> is amplified and <sec typ="chance">ignores Effect Resistance</sec>.
+      TC: |-
+        以連敵人都察覺不到自己被斬中的瞬間斬下。
+        <sec typ="cond">命中時</sec>，使目標於1回合內承受<sec typ="buff"><buff typ="SEAL_SKILL" />無法使用技能</sec> / <sec typ="dmg"><buff typ="phyDMG_DOT" />持續物理傷害<val idx="3" signless /></sec>效果。
+        若自身套用<sec typ="note">現月之勢</sec>效果，則<sec typ="dmg"><buff typ="phyDMG_DOT" />持續物理傷害效果<val idx="4" signless /></sec>會被增幅，並<sec typ="chance">無視效果抵抗</sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -1861,6 +1895,23 @@ skills:
             base: 2000
             per: 100
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">공격 적중 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">적 사망 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec>가 증가합니다.
+        상기 효과 중 하나 이상을 보유한 상태에서 <sec typ="cond">대기 시</sec>, 2라운드 동안 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec>가 활성화되고 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="8" /></sec>이(가) 증가합니다.
+      JP: |-
+        <sec typ="cond">攻撃命中時</sec>、2ラウンドの間、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec>が増加します。
+        <sec typ="cond">敵死亡時</sec>、3ラウンドの間、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>が増加します。
+        上記効果のうち1つ以上を保有した状態で<sec typ="cond">待機時</sec>、2ラウンドの間<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視</sec>が有効化され、<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="8" /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">On Attack Hit</sec>, increases self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> for 2 rounds.
+        <sec typ="cond">When an enemy dies</sec>, increases self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACU <val idx="6" r /></sec> for 3 rounds.
+        If self has one or more of the above effects and is <sec typ="cond">on Standby</sec>, <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> is activated and <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="8" /></sec> increases for 2 rounds.
+      TC: |-
+        <sec typ="cond">攻擊命中時</sec>，於2回合內增加自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>。
+        <sec typ="cond">敵人死亡時</sec>，於3回合內增加自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>。
+        若自身持有上述任一效果且處於<sec typ="cond">待命時</sec>，則於2回合內啟用<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>，並增加<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="8" /></sec>。
   "4":
     key: "4"
     icon: P.Charm
@@ -2724,6 +2775,31 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군을 <sec typ="note">짝</sec>으로 지정합니다. <sec typ="cond"><sec typ="note">짝</sec>이 AGS인 경우</sec>, 대상의 공격을 지원합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">짝</sec>의 역할군에 따라 <sec typ="note">짝</sec>은 다음 효과를 획득합니다. <sec typ="cond"><sec typ="note">짝</sec>이 바이오로이드인 경우</sec>, 효과가 50% 감소합니다.
+        공격기 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> 증가
+        보호기 : <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="4" signless /></sec>
+        지원기 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec> 증가
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方を<sec typ="note">パートナー</sec>に指定します。<sec typ="cond"><sec typ="note">パートナー</sec>がAGSの場合</sec>、対象の攻撃を支援します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">パートナー</sec>の役割群に応じて<sec typ="note">パートナー</sec>は以下の効果を獲得します。<sec typ="cond"><sec typ="note">パートナー</sec>がバイオロイドの場合</sec>、効果が50%減少します。
+        攻撃機 : <sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>増加
+        保護機 : <sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア<val idx="4" signless /></sec>
+        支援機 : <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>増加
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, designates an ally within range as a <sec typ="note">Partner</sec>. <sec typ="cond">If the <sec typ="note">Partner</sec> is an AGS</sec>, provides Attack Support to the target.
+        <sec typ="cond">At the start of the round</sec>, the <sec typ="note">Partner</sec> gains the following effects depending on role. <sec typ="cond">If the <sec typ="note">Partner</sec> is a Bioroid</sec>, the effects are reduced by 50%.
+        Attacker: <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> increase
+        Defender: <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Defensive Shield <val idx="4" signless /></sec>
+        Supporter: <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="5" r /></sec> increase
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，將範圍內我軍指定為<sec typ="note">搭檔</sec>。<sec typ="cond">若<sec typ="note">搭檔</sec>為AGS</sec>，則支援目標的攻擊。
+        <sec typ="cond">回合開始時</sec>，依據<sec typ="note">搭檔</sec>的職能，<sec typ="note">搭檔</sec>會獲得以下效果。<sec typ="cond">若<sec typ="note">搭檔</sec>為生化人</sec>，則效果減少50%。
+        攻擊機：<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>增加
+        保護機：<sec typ="buff"><buff typ="DAMAGE_ABSORB" />防護罩<val idx="4" signless /></sec>
+        支援機：<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>增加
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -3058,6 +3134,27 @@ skills:
             base: 0.05
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> <sec typ="attr">일반 효과</sec>를 획득합니다.
+        <sec typ="note">현하지변</sec>에 의한 <sec typ="note">짝</sec> 지정이 자신 또는 상대의 위치가 변경되어도 영구히 유지되며, <sec typ="note">짝</sec>을 여럿 거느릴 수 있습니다.
+        <sec typ="cond">이동 시</sec>, 자신과 <sec typ="note">짝</sec>의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>이(가) 증가합니다.
+        <sec typ="note">소식영허지세</sec>의 공격력 / 치명타 / 적중 증가 효과를 <sec typ="note">짝</sec>에게도 부여합니다. 스킬 효과는 <sec typ="note">소요유</sec> 스킬 레벨에 비례합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自分は<sec typ="buff"><buff typ="SUPPORT_ATTACK" />再攻撃</sec><sec typ="attr">一般効果</sec>を獲得します。
+        <sec typ="note">懸河之弁</sec>による<sec typ="note">パートナー</sec>指定は、自分または相手の位置が変わっても永続的に維持され、<sec typ="note">パートナー</sec>を複数従えることができます。
+        <sec typ="cond">移動時</sec>、自分と<sec typ="note">パートナー</sec>の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="2" /></sec>が増加します。
+        <sec typ="note">消息盈虛之勢</sec>の攻撃力 / クリティカル / 命中増加効果を<sec typ="note">パートナー</sec>にも付与します。スキル効果は<sec typ="note">逍遙遊</sec>スキルレベルに比例します。
+      EN: |-
+        <sec typ="cond">At the start of combat</sec>, self gains the <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Re-Attack</sec> <sec typ="attr">normal effect</sec>.
+        The <sec typ="note">Partner</sec> designation from <sec typ="note">Flowing Words</sec> is permanently maintained even if self's or the opponent's position changes, and self can have multiple <sec typ="note">Partners</sec>.
+        <sec typ="cond">When moving</sec>, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> increases for self and the <sec typ="note">Partner</sec>.
+        Also grants the <sec typ="note">Partner</sec> the ATK / CRIT / ACU increase effects of <sec typ="note">Passing of Time and Fortune</sec>. Skill effects are proportional to the skill level of <sec typ="note">Easy Wandering</sec>.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身獲得<sec typ="buff"><buff typ="SUPPORT_ATTACK" />再次攻擊</sec><sec typ="attr">一般效果</sec>。
+        由<sec typ="note">懸河之辯</sec>所指定的<sec typ="note">搭檔</sec>，即使自身或對手的位置改變也會永久維持，且可同時擁有多名<sec typ="note">搭檔</sec>。
+        <sec typ="cond">移動時</sec>，自身與<sec typ="note">搭檔</sec>的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="2" /></sec>增加。
+        也會將<sec typ="note">消息盈虛之勢</sec>的攻擊力 / 暴擊 / 命中增加效果賦予<sec typ="note">搭檔</sec>。技能效果與<sec typ="note">逍遙遊</sec>技能等級成正比。
 dialogue:
   KR:
     "1":
@@ -3126,8 +3223,7 @@ dialogue:
         다시 평범한 방랑 시인으로
         돌아가더라도 오늘의 영광을
         잊지 않을 생각이오.
-      Oath: 철로 만든 몸이라고는 하나 이 마음은 주군을 향유하고 있소. 무관이라면, 필시 주인을 위한 검이 되는 것이 도리. 이
-        몸이 부서질지언정, 내 그대를 지켜 내겠다는 약조를 지켜보이겠소.
+      Oath: 철로 만든 몸이라고는 하나 이 마음은 주군을 향유하고 있소. 무관이라면, 필시 주인을 위한 검이 되는 것이 도리. 이 몸이 부서질지언정, 내 그대를 지켜 내겠다는 약조를 지켜보이겠소.
       OathIdle_01: |-
         소생의 배필을 찾는 여정은
         앞으로도 계속할 생각이오.
@@ -3184,9 +3280,7 @@ dialogue:
       SPIdle_02_01: |-
         소생은 존재한다,
         고로… 자네를 위해 봉사하겠네.
-      Oath: 아무래도 이곳에 너무 오랫동안 있었던 모양이군. 소생은 보이저ㅡ 그저 떠돌이 방랑자에 불과하기에 언젠가 다시 여행을 떠나리라
-        생각했지. 허나, 이젠 그러기 어렵게 되었소. 사령관, 자네라는 벗이 생겼으니 말이오. 그러니 책임을 지고 소생의 배필을
-        꼭 찾아주시게나.
+      Oath: 아무래도 이곳에 너무 오랫동안 있었던 모양이군. 소생은 보이저ㅡ 그저 떠돌이 방랑자에 불과하기에 언젠가 다시 여행을 떠나리라 생각했지. 허나, 이젠 그러기 어렵게 되었소. 사령관, 자네라는 벗이 생겼으니 말이오. 그러니 책임을 지고 소생의 배필을 꼭 찾아주시게나.
       OathIdle_01: |-
         만약 배필을 맞이하게 되면
         어떻게 할지 말인가?

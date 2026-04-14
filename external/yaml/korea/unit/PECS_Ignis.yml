@@ -1260,6 +1260,23 @@ skills:
             base: -0.3
             per: -0.015
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <dmg elem="fire" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 속성 저항 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="dmg">목표 지점 뒤의 대상일수록 피해량이 50%씩 줄어듭니다.</sec>
+        <sec>스킬 레벨 당 10%의 적중 보정이 적용됩니다.</sec>
+      JP: |-
+        指定範囲に <dmg elem="fire" />を与え、2ラウンドの間<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎属性抵抗 <val idx="1" r /></sec>を減少させます。
+        <sec typ="dmg">目標地点の後方にいる対象ほどダメージ量が50%ずつ減少します。</sec>
+        <sec>スキルレベルごとに10%の命中補正が適用されます。</sec>
+      EN: |-
+        Deals <dmg elem="fire" /> to the designated area and reduces the target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="1" r /></sec> for 2 rounds.
+        <sec typ="dmg">Damage is reduced by 50% for each target behind the target point.</sec>
+        <sec>10% accuracy correction is applied per skill level.</sec>
+      TC: |-
+        對指定範圍造成 <dmg elem="fire" />，並在 2 回合內降低目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰屬性抗性 <val idx="1" r /></sec>。
+        <sec typ="dmg">目標點後方的對象越多，傷害量就會以 50% 逐次降低。</sec>
+        <sec>每個技能等級會套用 10% 的命中補正。</sec>
   "2":
     key: "2"
     icon: WideFireShot
@@ -2608,6 +2625,19 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="0" r /></sec>를 감소시키며 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> 지속 화염 피해</sec>를 부여합니다.
+        대상이 <sec typ="cond"><buff typ="FIRERES_DOWN" /> 화염 저항 감소</sec> 상태인 경우, 추가로 <sec typ="dmg"><buff typ="FireATK_UP" /> 자신의 공격력 <val idx="3" r signless /> 고정 화염 피해</sec>를 입힙니다.
+      JP: |-
+        指定範囲に<sec typ="attr">防護無視</sec> <dmg elem="fire" />を与え、2ラウンドの間対象の<sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="0" r /></sec>を減少させ、<sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> 継続火炎ダメージ</sec>を付与します。
+        対象が<sec typ="cond"><buff typ="FIRERES_DOWN" /> 火炎抵抗減少</sec>状態の場合、さらに<sec typ="dmg"><buff typ="FireATK_UP" /> 自身の攻撃力 <val idx="3" r signless /> 固定火炎ダメージ</sec>を与えます。
+      EN: |-
+        Deals <sec typ="attr">ignore protection</sec> <dmg elem="fire" /> to the designated area, reducing the target's <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="0" r /></sec> for 2 rounds and applying <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> continuous fire damage</sec>.
+        If the target is in <sec typ="cond"><buff typ="FIRERES_DOWN" /> Fire Resistance reduction</sec> status, additionally deals <sec typ="dmg"><buff typ="FireATK_UP" /> fixed fire damage equal to own Attack <val idx="3" r signless /></sec>.
+      TC: |-
+        對指定範圍造成 <sec typ="attr">無視保護</sec> <dmg elem="fire" />，並在 2 回合內降低目標的 <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="0" r /></sec>，同時賦予 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> 持續火焰傷害</sec>。
+        若目標處於 <sec typ="cond"><buff typ="FIRERES_DOWN" /> 火焰抗性下降</sec>狀態，則另外造成 <sec typ="dmg"><buff typ="FireATK_UP" /> 等同自身攻擊力 <val idx="3" r signless /> 的固定火焰傷害</sec>。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -2942,6 +2972,23 @@ skills:
             base: 0.35
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond"><elem type="fire" /><elem type="ice" /><elem type="lightning" /> 각 속성 공격 피격 시</sec>, 2라운드 동안 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 해당 속성 저항이 저항 증가 수치만큼 추가로 적용</sec>됩니다.
+        <sec typ="cond"><elem type="physics" /> 물리 공격 피격 시</sec>, 2라운드 동안 <sec typ="buff"><buff typ="DEF_UP" /> 방어력이 추가로 적용</sec>됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="FIRERES_UP" /> 火炎抵抗 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond"><elem type="fire" /><elem type="ice" /><elem type="lightning" /> 各属性攻撃被弾時</sec>、2ラウンドの間<sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 該当属性抵抗が抵抗増加値分だけ追加適用</sec>されます。
+        <sec typ="cond"><elem type="physics" /> 物理攻撃被弾時</sec>、2ラウンドの間<sec typ="buff"><buff typ="DEF_UP" /> 防御力が追加適用</sec>されます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="0" r /></sec>.
+        <sec typ="cond"><elem type="fire" /><elem type="ice" /><elem type="lightning" /> When hit by each elemental attack</sec>, for 2 rounds, the corresponding resistance is additionally applied by the resistance increase amount through <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /></sec>.
+        <sec typ="cond"><elem type="physics" /> When hit by a physical attack</sec>, Defense is additionally applied for 2 rounds.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec>會增加。
+        <sec typ="cond"><elem type="fire" /><elem type="ice" /><elem type="lightning" /> 各屬性攻擊被擊中時</sec>，在 2 回合內會透過 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 將對應屬性的抗性依抗性增加數值額外套用</sec>。
+        <sec typ="cond"><elem type="physics" /> 被物理攻擊命中時</sec>，會在 2 回合內額外套用 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力</sec>。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -3172,6 +3219,19 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 보호기를 제외한 범위 내 대상을 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>하며 자신은 <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>가 활성화됩니다.
+        <sec typ="cond">라운드 개시 시</sec> 자신이 <sec typ="cond">지정 보호할 대상이 있는 경우</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 자신이 받는 피해 <val idx="4" r inv /></sec>가 감소합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、保護機を除く範囲内の対象を<sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>し、自身は<sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>が有効になります。
+        <sec typ="cond">ラウンド開始時</sec>、自身に<sec typ="cond">指定保護する対象がいる場合</sec>、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 自身が受けるダメージ <val idx="4" r inv /></sec>が減少します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, grants <sec typ="buff"><buff typ="DEF_Char" /> designated protection</sec> to targets in range excluding Defenders, and self gains active <sec typ="buff"><buff typ="DEF_Side" /> column protection</sec>.
+        <sec typ="cond">At the start of the round</sec>, if self has a target to designate protection for, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="4" r inv /></sec> decreases.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，會對範圍內除保護機以外的目標賦予 <sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>，而自身則會啟動 <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>。
+        <sec typ="cond">回合開始時</sec> 若自身有 <sec typ="cond">要指定保護的目標</sec>，則 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 自身受到的傷害 <val idx="4" r inv /></sec>會降低。
   "5":
     key: "5"
     icon: P.Barrier
@@ -3662,6 +3722,27 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        자신의 <sec typ="buff"><elem type="fire" /><elem type="ice" /><elem type="lightning" /> 기본 속성 저항이 각 35%로 증가</sec>합니다.
+        <sec typ="cond">전투 개시 시</sec> 자신이 <sec typ="cond">전열에 위치한 경우</sec>, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리가 <val idx="0" /> 증가</sec>하고<sec typ="buff"><buff typ="COUNTER" />  <val idx="3" r signless /> 위력으로 반격</sec>이 활성화됩니다.
+        <sec typ="buff"><buff typ="COUNTER" /> 반격 효과</sec>는 대기를 통해 활성화 여부를 변경할 수 있습니다.
+        <sec typ="cond">라운드 개시 시</sec> 자신이 <sec typ="cond"><buff typ="FIRERES_UP" /><buff typ="FIRERES_DOWN" /><buff typ="ICERES_UP" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_UP" /><buff typ="LIGHTNINGRES_DOWN" /> 속성 저항 증감 상태인 경우</sec>, <sec typ="buff"><buff typ="FireRes_Value_Min" /><buff typ="IceRes_Value_Min" /><buff typ="LightningRes_Value_Min" /> 해당 속성 저항 하한 <val idx="7" r signless /></sec>을 획득합니다.
+      JP: |-
+        自身の<sec typ="buff"><elem type="fire" /><elem type="ice" /><elem type="lightning" /> 基本属性抵抗がそれぞれ35%に増加</sec>します。
+        <sec typ="cond">戦闘開始時</sec>、自身が<sec typ="cond">前列に位置する場合</sec>、自身の<sec typ="buff"><buff typ="RANGE_UP" /> 射程が <val idx="0" /> 増加</sec>し、<sec typ="buff"><buff typ="COUNTER" /> <val idx="3" r signless /> 威力で反撃</sec>が有効になります。
+        <sec typ="buff"><buff typ="COUNTER" /> 反撃効果</sec>は待機で有効化の切り替えができます。
+        <sec typ="cond">ラウンド開始時</sec>、自身が<sec typ="cond"><buff typ="FIRERES_UP" /><buff typ="FIRERES_DOWN" /><buff typ="ICERES_UP" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_UP" /><buff typ="LIGHTNINGRES_DOWN" /> 属性抵抗増減状態にある場合</sec>、<sec typ="buff"><buff typ="FireRes_Value_Min" /><buff typ="IceRes_Value_Min" /><buff typ="LightningRes_Value_Min" /> 該当属性抵抗下限 <val idx="7" r signless /></sec>を獲得します。
+      EN: |-
+        Self's <sec typ="buff"><elem type="fire" /><elem type="ice" /><elem type="lightning" /> base elemental resistance increases to 35% each</sec>.
+        <sec typ="cond">At battle start</sec>, if self is <sec typ="cond">in the front line</sec>, own <sec typ="buff"><buff typ="RANGE_UP" /> range increases by <val idx="0" /></sec> and <sec typ="buff"><buff typ="COUNTER" /> counterattacks with <val idx="3" r signless /> power</sec> become active.
+        The <sec typ="buff"><buff typ="COUNTER" /> counterattack effect</sec> can be toggled on or off by waiting.
+        <sec typ="cond">At the start of the round</sec>, if self is in a <sec typ="cond"><buff typ="FIRERES_UP" /><buff typ="FIRERES_DOWN" /><buff typ="ICERES_UP" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_UP" /><buff typ="LIGHTNINGRES_DOWN" /> elemental resistance increase/decrease state</sec>, gains <sec typ="buff"><buff typ="FireRes_Value_Min" /><buff typ="IceRes_Value_Min" /><buff typ="LightningRes_Value_Min" /> the corresponding elemental resistance floor <val idx="7" r signless /></sec>.
+      TC: |-
+        自身的 <sec typ="buff"><elem type="fire" /><elem type="ice" /><elem type="lightning" /> 基本屬性抗性各提升至 35%</sec>。
+        <sec typ="cond">戰鬥開始時</sec>，若自身<sec typ="cond">位於前排</sec>，則自身的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程增加 <val idx="0" /></sec>，並啟動 <sec typ="buff"><buff typ="COUNTER" /> 以 <val idx="3" r signless /> 威力反擊</sec>。
+        <sec typ="buff"><buff typ="COUNTER" /> 反擊效果</sec>可透過待機切換啟用與否。
+        <sec typ="cond">回合開始時</sec>，若自身處於 <sec typ="cond"><buff typ="FIRERES_UP" /><buff typ="FIRERES_DOWN" /><buff typ="ICERES_UP" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_UP" /><buff typ="LIGHTNINGRES_DOWN" /> 屬性抗性增減狀態</sec>，則可獲得 <sec typ="buff"><buff typ="FireRes_Value_Min" /><buff typ="IceRes_Value_Min" /><buff typ="LightningRes_Value_Min" /> 對應屬性抗性下限 <val idx="7" r signless /></sec>。
 dialogue:
   KR:
     "1":
@@ -3779,9 +3860,7 @@ dialogue:
         이럴 때면 사령관님이 정말 어린아이처럼 
         여겨져요. 헤헤, 프리가씨나 세레스티아씨가
         이해되네요…
-      Oath: 엘븐 밀크 평생 구독을 진심으로 감사드립니다, 사령관님! 구독 내용에 따라… 앞으로 매일 아침! 신선하고 맛있는 우유를 제가 직접
-        따라 드릴 것을 약속드립니다! 헤헤… 사령관님, 설명은 잘 들으셨나요…? 제가 준비한 서비스… 기대되시나요? 구독 해지는
-        안된다구요!
+      Oath: 엘븐 밀크 평생 구독을 진심으로 감사드립니다, 사령관님! 구독 내용에 따라… 앞으로 매일 아침! 신선하고 맛있는 우유를 제가 직접 따라 드릴 것을 약속드립니다! 헤헤… 사령관님, 설명은 잘 들으셨나요…? 제가 준비한 서비스… 기대되시나요? 구독 해지는 안된다구요!
       OathIdle_01: |-
         사령관님은 정말로 엘븐 밀크를
         좋아하시네요… 매일 아침에
@@ -3970,9 +4049,7 @@ dialogue:
         [미번역]이럴 때면 사령관님이 정말 어린아이처럼 
         여겨져요. 헤헤, 프리가씨나 세레스티아씨가
         이해되네요…
-      Oath: "[미번역]엘븐 밀크 평생 구독을 진심으로 감사드립니다, 사령관님! 구독 내용에 따라… 앞으로 매일 아침! 신선하고 맛있는 우유를
-        제가 직접 따라 드릴 것을 약속드립니다! 헤헤… 사령관님, 설명은 잘 들으셨나요…? 제가 준비한 서비스… 기대되시나요? 구독
-        해지는 안된다구요!"
+      Oath: "[미번역]엘븐 밀크 평생 구독을 진심으로 감사드립니다, 사령관님! 구독 내용에 따라… 앞으로 매일 아침! 신선하고 맛있는 우유를 제가 직접 따라 드릴 것을 약속드립니다! 헤헤… 사령관님, 설명은 잘 들으셨나요…? 제가 준비한 서비스… 기대되시나요? 구독 해지는 안된다구요!"
       OathIdle_01: |-
         [미번역]사령관님은 정말로 엘븐 밀크를
         좋아하시네요… 매일 아침에
@@ -4005,11 +4082,9 @@ dialogue:
       Idle_03_01: あの…機会があればエルブンと仲直りさせてくれませんか？
       Idle_04_01: 今こうして汗が出るのは…作業のせいなのか…司令官のせいなのか、よくわかりません。とにかく顔が熱いです…。
       SPIdle_02_01: そんなことされたら…体温が上がってしまいます…熱を下げないと…
-      Oath: >-
+      Oath: |-
         どういうことなのか…よくわかりません…その…ですから…これをくださるということは…え？
-
         そんなはずが…私はただ…与えられた任務を遂行するだけのバイオロイドなのに…私に…こんな日が来るなんて…少しだけ待ってください…少しだけ…体温を下げる時間が…必要です…。
-
         ………答えは…もうおわかりじゃないですかっ…！
       OathIdle_01: あの時のことを考えるとまた顔が熱くなってきます…ちょ、ちょっと冷たいシャワーを浴びてきます…。
       MVP: ""
@@ -4106,12 +4181,9 @@ dialogue:
         Oh… Commander…
         N-not the bang…
         D-don’t look at my face…
-      Oath: >-
-        oh, um… I’m not sure what to do since this type of situation was not
-        written on the script… Y-you want me to improvise?
-
+      Oath: |-
+        oh, um… I’m not sure what to do since this type of situation was not written on the script… Y-you want me to improvise?
         Th-then… I’m sorry Evil Overlord, but I admit my defeat.
-
         So, will you… be with me forever?
       OathIdle_01: |-
         The script didn’t say what happened to
@@ -4191,12 +4263,9 @@ dialogue:
       SPIdle_02_01: |-
         If you do that… my temperature
         will rise… I need to cool down…
-      Oath: >-
-        I don't know… the meaning of your words… So it means… The reason you
-        give me is… What? No way… I'm just… a workaholic bioroid…
-
+      Oath: |-
+        I don't know… the meaning of your words… So it means… The reason you give me is… What? No way… I'm just… a workaholic bioroid…
         I never imagined… this would happen to me… Wait a minute… Just a sec… I need time to cool off…
-
         My answer? I think you already know!
       OathIdle_01: |-
         I feel hot when I think about then…

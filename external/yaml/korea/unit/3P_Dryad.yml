@@ -6974,6 +6974,23 @@ skills:
             base: 29
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        거대한 낫으로 지정 범위에 <dmg elem="physics" /> 피해를 줍니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 방어력이 감소하고 받는 피해가 증가합니다.
+        스킬 사용 후, 3라운드 동안 자신의 공격력 / 행동력이 증가합니다.
+      JP: |-
+        巨大な鎌で指定範囲に<dmg elem="physics" />ダメージを与えます。
+        <sec typ="cond">命中時</sec>、3ラウンドの間、対象の防御力が減少し、受けるダメージが増加します。
+        スキル使用後、3ラウンドの間、自分の攻撃力 / 行動力が増加します。
+      EN: |-
+        Swings a giant scythe to deal <dmg elem="physics" /> damage to the designated area.
+        <sec typ="cond">On hit</sec>, the target’s DEF decreases and received damage increases for 3 rounds.
+        After using the skill, own ATK / MOVE increases for 3 rounds.
+      TC: |-
+        以巨大鐮刀對指定範圍造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，目標的防禦力會降低且所受傷害增加，持續3回合。
+        使用技能後，自身攻擊力 / 行動力增加，持續3回合。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -12384,6 +12401,27 @@ skills:
             base: 29
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        거대한 낫으로 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" /> 피해를 줍니다.
+        <sec typ="cond">치명타 시</sec>, 피해량이 증가합니다.
+        스킬 사용 후, 탈진하여 2라운드 동안 자신의 행동력이 크게 감소합니다.
+        스킬 레벨당 10%의 적중 보정이 적용됩니다.
+      JP: |-
+        巨大な鎌で単一対象に<sec typ="attr">保護無視</sec><dmg elem="physics" />ダメージを与えます。
+        <sec typ="cond">クリティカル時</sec>、ダメージ量が増加します。
+        スキル使用後、疲労して2ラウンドの間、自分の行動力が大きく減少します。
+        スキルレベルごとに10%の命中補正が適用されます。
+      EN: |-
+        Swings a giant scythe to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage to a single target.
+        <sec typ="cond">On critical hit</sec>, damage increases.
+        After using the skill, becomes exhausted and own MOVE decreases greatly for 2 rounds.
+        A 10% accuracy bonus is applied per skill level.
+      TC: |-
+        以巨大鐮刀對單一目標造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>，傷害量增加。
+        使用技能後會進入疲勞狀態，自身行動力大幅降低，持續2回合。
+        每提升1級技能，會套用10%的命中修正。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -12552,6 +12590,19 @@ skills:
             base: 0.2
             per: 0.02
             chance: 0
+    desc:
+      KR: |-
+        라운드 개시 시, 자신의 치명타 / 방어 관통 / 대 중장형 피해량이 증가합니다.
+        자신보다 행동력이 낮은 적에 대해, 자신의 스킬 피해량이 증가합니다.
+      JP: |-
+        ラウンド開始時、自分のクリティカル / 防御貫通 / 対重装型ダメージ量が増加します。
+        自分より行動力が低い敵に対して、自分のスキルダメージ量が増加します。
+      EN: |-
+        At the start of the round, own CRIT / Defense Pierce / Anti-Heavy Armor damage increases.
+        Against enemies with lower MOVE than self, own skill damage increases.
+      TC: |-
+        回合開始時，自身的暴擊 / 防禦貫穿 / 對重裝型傷害量增加。
+        對於行動力低於自身的敵人，自身的技能傷害量增加。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -12983,6 +13034,27 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        공격 적중 시, 자신의 AP가 증가합니다.
+        라운드 개시 시, 자신의 AP가 증가합니다.
+        적 처치 시, 자신의 AP가 증가합니다.
+        스쿼드 내에 <페어리 시리즈> 자매들이 있을 경우, 상기 AP 증가 효과를 50%만큼 공유합니다.
+      JP: |-
+        攻撃命中時、自分のAPが増加します。
+        ラウンド開始時、自分のAPが増加します。
+        敵を撃破時、自分のAPが増加します。
+        分隊内に<フェアリーシリーズ>の姉妹たちがいる場合、上記のAP増加効果を50%共有します。
+      EN: |-
+        On attack hit, own AP increases.
+        At round start, own AP increases.
+        On enemy kill, own AP increases.
+        If the <Fairy Series> sisters are in the squad, the above AP increase effects are shared by 50%.
+      TC: |-
+        攻擊命中時，自身AP增加。
+        回合開始時，自身AP增加。
+        擊殺敵人時，自身AP增加。
+        若小隊內有<Fairy Series>姊妹們，則上述AP增加效果會共享50%。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -13172,6 +13244,27 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신은 재공격 효과를 획득합니다. <수확의 낫>의 공격력 / 행동력 증가 효과는 재공격 시에도 적용됩니다.
+        라운드 개시 시, 기동형 아군의 대 중장형 피해량이 증가합니다.
+        공격 적중 시, 대상을 <부식> 상태로 만듭니다. 효과 수치는 액티브 스킬 레벨에 비례합니다.
+        적중 대상이 이미 <부식> 상태인 경우, 추가로 자신의 공격력에 비례한 고정 피해를 줍니다.
+      JP: |-
+        ラウンド開始時、自分は再攻撃効果を獲得します。<収穫の鎌>の攻撃力 / 行動力増加効果は再攻撃時にも適用されます。
+        ラウンド開始時、機動型の味方の対重装型ダメージ量が増加します。
+        攻撃命中時、対象を<腐食>状態にします。効果数値はアクティブスキルレベルに比例します。
+        命中対象がすでに<腐食>状態の場合、追加で自分の攻撃力に比例した固定ダメージを与えます。
+      EN: |-
+        At the start of the round, gains a Retaliation effect. The ATK / MOVE increase effects of <Harvest Scythe> also apply on Retaliation.
+        At the start of the round, anti-heavy-armor damage of allied Mobility units increases.
+        On attack hit, inflicts the target with <Corrosion>. Effect values are proportional to the active skill level.
+        If the hit target is already <Corrosion>, additionally deals fixed damage proportional to own ATK.
+      TC: |-
+        回合開始時，自身獲得再次攻擊效果。<收穫之鐮>的攻擊力 / 行動力增加效果在再次攻擊時也會套用。
+        回合開始時，機動型我軍的對重裝型傷害量增加。
+        攻擊命中時，使目標進入<腐蝕>狀態。效果數值與主動技能等級成正比。
+        若命中目標已處於<腐蝕>狀態，則另外依自身攻擊力造成固定傷害。
 dialogue:
   KR:
     "1":
@@ -13269,8 +13362,7 @@ dialogue:
         만들어지고 바로 마시는 게 제일 좋아요.
         그러니까… 주인님… 만들어진 걸
         바로 마시는 게 맛있지 않을까요?
-      Oath: 오늘의 축제가 끝나도, 내일의 수확이 시작돼도, 저는 언제나 주인님의 잔을 먼저 채울 거예요. 넘실대는 거품처럼… 기쁨이 차올라도
-        흔들리지 않도록… 그러니까 주인님도 저의 잔을 가득 채워주시겠어요?
+      Oath: 오늘의 축제가 끝나도, 내일의 수확이 시작돼도, 저는 언제나 주인님의 잔을 먼저 채울 거예요. 넘실대는 거품처럼… 기쁨이 차올라도 흔들리지 않도록… 그러니까 주인님도 저의 잔을 가득 채워주시겠어요?
       OathIdle_01: |-
         저도 주인님의 맥주를
         시음해 봐도 괜찮을까요?
@@ -13325,8 +13417,7 @@ dialogue:
       SPIdle_02_01: |-
         네 주인님… 제 몸과 마음은 모두 주인님의
         것이니… 주인님 마음대로 해 주세요….
-      Oath: 앗… 이건 주인님이 아끼시던 물건 아닌가요? 이런 걸 제가 받아도 될까요? 역시 안 되겠죠? 네? …된다고요? 아아... 제가 가동을
-        시작한 이후 처음으로 제 마음의 밭에 풍년이 들었어요!
+      Oath: 앗… 이건 주인님이 아끼시던 물건 아닌가요? 이런 걸 제가 받아도 될까요? 역시 안 되겠죠? 네? …된다고요? 아아... 제가 가동을 시작한 이후 처음으로 제 마음의 밭에 풍년이 들었어요!
       OathIdle_01: |-
         주인님과 함께라면, 전 아무것도 두렵지
         않아요.
@@ -13413,9 +13504,8 @@ dialogue:
         (미번역)저는 이렇게 꾀병을 부려서라도 주인님의 관심과 애정을 받고 싶었어요. 이런 나쁜 아이인
         저에게… 주인님. 제 열병은… 주인님만 치료해주실 수 있어요. 앞으로도 계속… 저를 사랑해주세요.
       OathIdle_01: (미번역)주인님의 사랑이 없다면 진짜로 아플지도 몰라요.
-      MVP: >-
+      MVP: |-
         指…輪？おい、司令官？これを私に渡したらどうなるのかわかってるのか？ふっ…まぁいい、私も司令官のようなスタイルは嫌いではないからな。
-
         言っておくが、万が一、私の前で情けない姿を見せようものなら、相応の覚悟をしておくように…。私のキツイ蹴りで、少々痛い目に遭うこともありうるからな？
     "2":
       SquadJoin: ""
@@ -13531,12 +13621,10 @@ dialogue:
       Idle_03_01: |-
         W-wait a minute. I’m sweating… Wait…! It’s smaller than I thought.
         Come closer…
-      Idle_04_01: I’m sorry. Actually, I’m not ill… N-no. I am, I am really ill…
-        Master, will you give me an injection?
+      Idle_04_01: I’m sorry. Actually, I’m not ill… N-no. I am, I am really ill… Master, will you give me an injection?
       SPIdle_02_01: Ah… I’m so happy… I want to be yours…
-      Oath: >-
+      Oath: |-
         I wanted to get attention and love by pretending to be sick. I’m such
-
         a bad girl… master. Only you can treat my disease… Please keep giving me love.
       OathIdle_01: I might really fall ill if you don’t love me.
       MVP: ""
@@ -13618,9 +13706,7 @@ dialogue:
       SPIdle_02_01: |-
         Yes, Master… My body and my mind…
         They’re all yours. Do as you wish.
-      Oath: Oh… Isn’t this something you cherished? Can I really take it? I guess not,
-        right? Huh? I can? Oh… I finally feel happy for the first time ever
-        since I’ve been operating!
+      Oath: Oh… Isn’t this something you cherished? Can I really take it? I guess not, right? Huh? I can? Oh… I finally feel happy for the first time ever since I’ve been operating!
       OathIdle_01: |-
         With you, I’m not afraid of
         anything.

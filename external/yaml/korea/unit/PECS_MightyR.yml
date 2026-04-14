@@ -1166,6 +1166,19 @@ skills:
             base: 0.21
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        바벨로 강타해 <dmg elem="physics" />를 줍니다.
+        <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: |-
+        バーベルで強打して<dmg elem="physics" />を与えます。
+        <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt>状態なら、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="0" r /></sec>が増加します。
+      EN: |-
+        Smashes with a barbell to deal <dmg elem="physics" />.
+        If in <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      TC: |-
+        用杠鈴重擊，造成<dmg elem="physics" />。
+        若處於<cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -1906,6 +1919,19 @@ skills:
             base: 0.3
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        목표에 돌격하여 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고 대상 뒷 열에 <sec typ="dmg">25% 감소한 피해</sec>를 줍니다.
+        <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> 상태인 경우 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="1" r /></sec>가 증가하고 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>을(를) 감소시킵니다.
+      JP: |-
+        目標に突撃して<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与え、対象の後列に<sec typ="dmg">25%減少したダメージ</sec>を与えます。
+        <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="1" r /></sec>が増加し、対象の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>を減少させます。
+      EN: |-
+        Charges the target to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> and deals <sec typ="dmg">25% reduced damage</sec> to the rear line behind the target.
+        If in <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="1" r /></sec> increases and decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>.
+      TC: |-
+        衝刺目標，造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />，並對目標後排造成<sec typ="dmg">減少25%的傷害</sec>。
+        若處於<cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="1" r /></sec>增加，並降低目標的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -2467,6 +2493,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">공격 시</sec>, 영구적으로 <sec typ="note">벌크 업</sec> 상태가 되어 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다. (최대 3스택)
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">벌크 업</sec> 스택이 최대치인 경우, <sec typ="buff"><buff typ="CHANGE_CHAR" /> 초 펌핑 업</sec> 상태가 되어 각 스킬이 강화되고 <sec typ="note">벌크 업</sec> 기본 효과를 아군 바이오로이드에게도 적용합니다.
+        <sec typ="cond">5인 스쿼드로 전투 개시 시</sec>, 즉시 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 초 펌핑 업</sec> 상태를 획득합니다.
+      JP: |-
+        <sec typ="cond">攻撃時</sec>、永続的に<sec typ="note">バルクアップ</sec>状態になり、自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>が増加します。(最大3スタック)
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">バルクアップ</sec>スタックが最大値の場合、<sec typ="buff"><buff typ="CHANGE_CHAR" /> 超ポンプアップ</sec>状態になり、各スキルが強化され、<sec typ="note">バルクアップ</sec>の基本効果を味方バイオロイドにも適用します。
+        <sec typ="cond">5人分隊で戦闘開始時</sec>、即座に<sec typ="buff"><buff typ="CHANGE_CHAR" /> 超ポンプアップ</sec>状態を獲得します。
+      EN: |-
+        <sec typ="cond">On attack</sec>, permanently enters <sec typ="note">Bulk-Up</sec> state, increasing self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec>. (Max 3 stacks)
+        <sec typ="cond">At the start of the round</sec>, if <sec typ="note">Bulk-Up</sec> stacks are at maximum, enters <sec typ="buff"><buff typ="CHANGE_CHAR" /> Ultra Pumping-Up</sec> state, empowering each skill and applying <sec typ="note">Bulk-Up</sec>'s base effect to allied biroids as well.
+        <sec typ="cond">When battle starts with a 5-member squad</sec>, immediately gains <sec typ="buff"><buff typ="CHANGE_CHAR" /> Ultra Pumping-Up</sec> state.
+      TC: |-
+        <sec typ="cond">攻擊時</sec>，永久進入<sec typ="note">增肌</sec>狀態，使自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>增加。(最多3層)
+        <sec typ="cond">回合開始時</sec>，若<sec typ="note">增肌</sec>層數已達上限，則進入<sec typ="buff"><buff typ="CHANGE_CHAR" /> 超級膨脹</sec>狀態，使各技能獲得強化，並將<sec typ="note">增肌</sec>的基礎效果套用至我軍生化人。
+        <sec typ="cond">以5人小隊開始戰鬥時</sec>，立即獲得<sec typ="buff"><buff typ="CHANGE_CHAR" /> 超級膨脹</sec>狀態。
   "4":
     key: "4"
     icon: P.ExpUp
@@ -3062,6 +3105,23 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군 바이오로이드의 <sec typ="buff"><buff typ="EXP_UP" /> 경험치 획득량 <val idx="0" r /></sec>가 증가합니다.
+        자신의 <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> 스택에 비례하여 <sec typ="buff"><buff typ="EXP_UP" /> 경험치 획득량이 추가로 증가</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> 효과를 받는 아군에게 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="6" r /></sec> 증가 효과를 부여합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、味方バイオロイドの<sec typ="buff"><buff typ="EXP_UP" /> 経験値獲得量 <val idx="0" r /></sec>が増加します。
+        自分の<cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt>スタックに比例して、<sec typ="buff"><buff typ="EXP_UP" /> 経験値獲得量が追加で増加</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、<cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt>効果を受ける味方に<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="6" r /></sec>増加効果を付与します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases allied biroids' <sec typ="buff"><buff typ="EXP_UP" /> EXP gain <val idx="0" r /></sec>.
+        This additionally increases <sec typ="buff"><buff typ="EXP_UP" /> EXP gain</sec> in proportion to self's <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> stacks.
+        <sec typ="cond">At the start of the round</sec>, grants allies affected by <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> with <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="6" r /></sec> increase effects.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加我軍生化人的<sec typ="buff"><buff typ="EXP_UP" /> 經驗值獲得量 <val idx="0" r /></sec>。
+        並依據自身的<cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt>層數，額外增加<sec typ="buff"><buff typ="EXP_UP" /> 經驗值獲得量</sec>。
+        <sec typ="cond">回合開始時</sec>，向受到<cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt>效果的我軍賦予<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="6" r /></sec>增加效果。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -3549,6 +3609,27 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
+        라운드 개시 시, 자신에게 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원 효과가 적용된 경우</sec> <cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt>의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 증가</sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 증가</sec> 효과를 50% 증폭시킵니다.
+        <sec>자신에게 적용된 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격 지원 효과</sec>는 발동하지 않습니다.</sec>
+        <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> / <cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt> 효과가 아군 AGS에도 영향을 미칩니다.
+      JP: |-
+        ラウンド開始時、自分の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="0" r /></sec>が増加します。
+        ラウンド開始時、自分に<sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻撃支援効果が適用されている場合</sec>、<cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt>の<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通増加</sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力増加</sec>効果を50%増幅します。
+        <sec>自分に適用された<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃支援効果</sec>は発動しません。</sec>
+        <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> / <cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt>効果は味方AGSにも影響します。
+      EN: |-
+        At the start of the round, increases self's <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec>.
+        At the start of the round, if self has <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> attack support</sec> applied, amplifies the <cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration Increase</sec> / <sec typ="buff"><buff typ="DEF_UP" /> DEF Increase</sec> effects by 50%.
+        <sec>The <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> attack support effect</sec> applied to self does not trigger.</sec>
+        <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> / <cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt> effects also affect allied AGS units.
+      TC: |-
+        回合開始時，增加自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="0" r /></sec>。
+        回合開始時，若自身套用了<sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻擊支援效果</sec>，則將<cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt>的<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿增加</sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力增加</sec>效果增幅50%。
+        <sec>自身套用的<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻擊支援效果</sec>不會發動。</sec>
+        <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> / <cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt>效果也會影響我軍AGS。
   F1:
     key: F1
     icon: MeleeAttack
@@ -4070,6 +4151,19 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        바벨로 적을 분쇄하여 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>를 증가시킵니다.
+      JP: |-
+        バーベルで敵を粉砕して<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="0" r /></sec>を増加させます。
+      EN: |-
+        Crushes the enemy with a barbell to deal <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, increases the target's <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="0" r /></sec> for 2 rounds.
+      TC: |-
+        用杠鈴粉碎敵人，造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，在2回合內增加目標的<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="0" r /></sec>。
   F2:
     key: F2
     icon: AssaultAttack
@@ -5119,6 +5213,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        마하의 속도로 목표에 돌격하여 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 그 충격파로 주변에는 <sec typ="dmg">25% 감소한 피해</sec>를 입힙니다.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>을(를) 감소시킵니다.
+        <sec typ="cond">대상이 전열에 위치한 경우</sec> 2라운드 동안 <sec typ="buff"><buff typ="STUN" /> 행동 불능</sec> 상태를 부여합니다.
+      JP: |-
+        マッハの速度で目標に突撃し、<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与え、その衝撃波で周囲に<sec typ="dmg">25%減少したダメージ</sec>を与えます。
+        <sec typ="cond">命中時</sec>、対象の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>を減少させます。
+        <sec typ="cond">対象が前列にいる場合</sec>、2ラウンドの間<sec typ="buff"><buff typ="STUN" /> 行動不能</sec>状態を付与します。
+      EN: |-
+        Charges the target at Mach speed to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />, and the shockwave deals <sec typ="dmg">25% reduced damage</sec> to nearby enemies.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>.
+        <sec typ="cond">If the target is in the front line</sec>, inflicts <sec typ="buff"><buff typ="STUN" /> incapacitated</sec> for 2 rounds.
+      TC: |-
+        以馬赫速度衝向目標，造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />，並以衝擊波對周圍造成<sec typ="dmg">減少25%的傷害</sec>。
+        <sec typ="cond">命中時</sec>，降低目標的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>。
+        <sec typ="cond">若目標位於前排</sec>，則在2回合內賦予<sec typ="buff"><buff typ="STUN" /> 行動不能</sec>狀態。
   F3:
     key: F3
     icon: P.SelfAtkBuff
@@ -5711,6 +5822,23 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">초 펌핑 업</sec> 상태가 되어 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 아군 바이오로이드의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>를 증가시킵니다.
+        <sec typ="cond">공격 적중 시</sec>, 2라운드 동안 아군 바이오로이드의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="7" r /></sec>를 추가로 증가시킵니다. (최대 1중첩)
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">超ポンプアップ</sec>状態になり、自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、味方バイオロイドの<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>を増加させます。
+        <sec typ="cond">攻撃命中時</sec>、2ラウンドの間、味方バイオロイドの<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="7" r /></sec>をさらに増加させます。(最大1重複)
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, enters <sec typ="note">Ultra Pumping-Up</sec> state and increases self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, increases allied biroids' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" r /></sec>.
+        <sec typ="cond">On attack hit</sec>, further increases allied biroids' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" r /></sec> for 2 rounds. (Max 1 stack)
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，進入<sec typ="note">超級膨脹</sec>狀態，使自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，增加我軍生化人的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>。
+        <sec typ="cond">攻擊命中時</sec>，在2回合內另外增加我軍生化人的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="7" r /></sec>。(最多1層)
   F4:
     key: F4
     icon: P.ExpUp
@@ -6056,6 +6184,19 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군 바이오로이드의 <sec typ="buff"><buff typ="EXP_UP" /> 경험치 획득량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <cmt loc t="MIGHTYR_SUPERPUMPUP">$$MIGHTYR_SUPERPUMPUP:F3@0,F3@1,F3@4,F3@5,F3@6,F3@7$</cmt> 효과를 받는 아군에게 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="5" r /></sec> 증가 효과를 부여합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、味方バイオロイドの<sec typ="buff"><buff typ="EXP_UP" /> 経験値獲得量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<cmt loc t="MIGHTYR_SUPERPUMPUP">$$MIGHTYR_SUPERPUMPUP:F3@0,F3@1,F3@4,F3@5,F3@6,F3@7$</cmt>効果を受けている味方に<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="5" r /></sec>増加効果を付与します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases allied biroids' <sec typ="buff"><buff typ="EXP_UP" /> EXP gain <val idx="0" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, grants allies affected by <cmt loc t="MIGHTYR_SUPERPUMPUP">$$MIGHTYR_SUPERPUMPUP:F3@0,F3@1,F3@4,F3@5,F3@6,F3@7$</cmt> with <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="5" r /></sec> increase effects.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加我軍生化人的<sec typ="buff"><buff typ="EXP_UP" /> 經驗值獲得量 <val idx="0" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，向受到<cmt loc t="MIGHTYR_SUPERPUMPUP">$$MIGHTYR_SUPERPUMPUP:F3@0,F3@1,F3@4,F3@5,F3@6,F3@7$</cmt>效果的我軍賦予<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="5" r /></sec>增加效果。
   F5:
     key: F5
     icon: P.TeamAtkBuff
@@ -6303,6 +6444,27 @@ skills:
             base: 77
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신에게 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원 효과가 적용된 경우</sec> <cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt>의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 증가</sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 증가</sec> 효과를 50% 증폭시킵니다.
+        <sec>자신에게 적용된 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격 지원 효과</sec>는 발동하지 않습니다.</sec>
+        <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> / <cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt> 효과가 아군 AGS에도 영향을 미칩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、自分に<sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻撃支援効果が適用されている場合</sec>、<cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt>の<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通増加</sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力増加</sec>効果を50%増幅します。
+        <sec>自分に適用された<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃支援効果</sec>は発動しません。</sec>
+        <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> / <cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt>効果は味方AGSにも影響します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases self's <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, if self has <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> attack support</sec> applied, amplifies the <cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration Increase</sec> / <sec typ="buff"><buff typ="DEF_UP" /> DEF Increase</sec> effects by 50%.
+        <sec>The <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> attack support effect</sec> applied to self does not trigger.</sec>
+        <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> / <cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt> effects also affect allied AGS units.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="0" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，若自身套用了<sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻擊支援效果</sec>，則將<cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt>的<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿增加</sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力增加</sec>效果增幅50%。
+        <sec>自身套用的<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻擊支援效果</sec>不會發動。</sec>
+        <cmt loc t="MIGHTYR_BULKUP">$$MIGHTYR_BULKUP:3@0,3@2$</cmt> / <cmt loc t="MIGHTYR_PT">$$MIGHTYR_PT:4@0,4@5,4@6$</cmt>效果也會影響我軍AGS。
 dialogue:
   KR:
     "1":
@@ -6363,8 +6525,7 @@ dialogue:
         흐응... 경기 신청인가요, 사령관님?
         좋아요. 받아들일게요. 이번 경기장은...
         침대 위겠네요.
-      Oath: 사령관님과 제가 함께 태그 팀을 결성하게 되다니... 큰일났네요. 지금 너무 행복해서, 악역 연기를 전혀 할 수 없을 것 같거든요.
-        아무래도 당분간 배역을 좀 전환해야겠어요. 악역 레슬러에서, 사령관님의 아내로... 잘 부탁드려요, 사령관님?
+      Oath: 사령관님과 제가 함께 태그 팀을 결성하게 되다니... 큰일났네요. 지금 너무 행복해서, 악역 연기를 전혀 할 수 없을 것 같거든요. 아무래도 당분간 배역을 좀 전환해야겠어요. 악역 레슬러에서, 사령관님의 아내로... 잘 부탁드려요, 사령관님?
       OathIdle_01: |-
         오늘 밤, 어제 경기의 리벤지 매치...
         가능할까요? 어제는 녹아웃 당해버렸지만...
@@ -6585,53 +6746,36 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         When I told her I was going to take pictures of my debut as a wrestler,
-
         Lena lent me her champion’s belt.
-
         I might have borrowed it this time, but later I’m going to take a picture
-
         wearing the belt I earned with my skills!
       Idle_01_02: |-
         Actually, it’s not easy playing the villainous wrestler.
         How can I lose with more finesse,
         how can I look more like a villain…
         You have to keep thinking about those kinds of things.
-      Idle_01_03: Why do I have Breaker at the end of my name? Because I break anyone
-        who dares to face me! …Of course, that's just my stage persona!
+      Idle_01_03: Why do I have Breaker at the end of my name? Because I break anyone who dares to face me! …Of course, that's just my stage persona!
       SPIdle_01_01: It’s dangerous if you do that while practicing your skills!
-      Idle_02_01: >-
-        Your name is Lena the champion? How about taking out "champion" and just
-        going with Lena?
-
+      Idle_02_01: |-
+        Your name is Lena the champion? How about taking out "champion" and just going with Lena?
         You’re going to get crushed by me anyway!
-
         …That’s the taunt I’ve prepared,
-
         but you don't think Lena will get upset, do you?
-      Idle_03_01: >-
+      Idle_03_01: |-
         Even if you’re a wrestler, you can't let up on working out.
-
         Muscles help with preventing injuries and it make it easier to learn new skills.
-
         So, do you want to do just 500 squats with me?
-      Idle_04_01: >-
-        I was booed a lot by the crowd after I became a bad guy wrestler. Haha,
-        but it's okay.
-
+      Idle_04_01: |-
+        I was booed a lot by the crowd after I became a bad guy wrestler. Haha, but it's okay.
         That just means that I was that good.
-
         Besides… you're always cheering me on and supporting me.
       SPIdle_02_01: |-
         Hmmm… Are you requesting a match, Commander?
         Ok. I accept. This match will be…
         on the bed.
-      Oath: I can't believe you and I became a tag team, Commander… This is a big
-        deal. Right now I'm so happy, I don't think I could play the part of the
-        bad guy. I think I have to change my role for the time being. From the
-        villainous wrestler… to the Commander's wife… Let's live happily ever
-        after, okay, Commander?
+      Oath: I can't believe you and I became a tag team, Commander… This is a big deal. Right now I'm so happy, I don't think I could play the part of the bad guy. I think I have to change my role for the time being. From the villainous wrestler… to the Commander's wife… Let's live happily ever after, okay, Commander?
       OathIdle_01: |-
         Tonight, a revenge match of yesterday's match…
         Can I do it? I got knocked out yesterday…
@@ -6683,10 +6827,8 @@ dialogue:
       SPIdle_02_01: |-
         It seems like you are very… interested
         in this?
-      Oath: >-
-        I somehow… expected this. Because… All I could think about was… you,
-        Commander… 
-
+      Oath: |-
+        I somehow… expected this. Because… All I could think about was… you, Commander… 
         From now on, I'll be responsible to keep you safe, Commander. But… you'll have to be prepared. Ha, ha.
       OathIdle_01: |-
         Ugh… My muscles ache bad…
@@ -6715,11 +6857,9 @@ dialogue:
         I know how many you did.
         But I believe in what you can do, Commander.
         Now, two more!
-      Idle_01_02: >-
+      Idle_01_02: |-
         Commander, will you help me?
-
         I think my body is losing balance… Oh?! It’s dangerous to play pranks when I’m working out.
-
         You should save that for later.​
       Idle_01_03: |-
         Umm… Commander.

@@ -1791,6 +1791,23 @@ skills:
             base: -0.2
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        통로개척용 착암기로 대상을 찔러 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 순간적으로 전류를 흘려넣어 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>을(를) 감소시키고 2라운드 동안 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="3" r /></sec>를 추가로 감소시킵니다.
+      JP: |-
+        通路開拓用の削岩機で対象を突き、<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、瞬時に電流を流し込み<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>を減少させ、2ラウンドの間<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="3" r /></sec>を追加で減少させます。
+      EN: |-
+        Pokes the target with a tunnel-breaching rock drill, dealing <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, briefly floods them with electricity, decreasing <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> and decreasing <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="1" r /></sec> for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, additionally decreases <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="3" r /></sec>.
+      TC: |-
+        以開路用的岩鑽戳刺目標，造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，瞬間灌入電流，減少<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>，並在2回合內減少<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="1" r /></sec>。
+        <sec typ="cond">暴擊時</sec>，會另外減少<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="3" r /></sec>。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -4543,6 +4560,27 @@ skills:
             base: 0.3
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        특수개조 배터링 램으로 가격해 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        대상의 방어력을 일정 비율 무시합니다. → <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="9" r /></sec>
+        적중 대상이 <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="8" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 시</sec>, 대상을 <sec typ="buff"><buff typ="Push" /> 뒤로 <val idx="0" signless />칸 밀어내고</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 행 / 열 / 지정 보호 / 받는 피해 감소 효과를 해제</sec>합니다.
+      JP: |-
+        特殊改造のバッタリングラムで殴りつけ、<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        対象の防御力を一定割合無視します。→<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="9" r /></sec>
+        命中対象が<sec typ="cond"><buff typ="DEF_DOWN" />防御力減少状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="8" r /></sec>が増加します。
+        <sec typ="cond">命中時</sec>、対象を<sec typ="buff"><buff typ="Push" />後ろに<val idx="0" signless />マス押し出し</sec>、<sec typ="buff"><buff typ="REMOVE_BUFF" />行 / 列 / 指定保護 / 受けるダメージ減少効果を解除</sec>します。
+      EN: |-
+        Bashes the target with a specially modified battering ram, dealing <sec typ="attr">ignore protection</sec> <dmg elem="physics" />.
+        Ignores a certain percentage of the target's Defense. -> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="9" r /></sec>
+        If the hit target is in <sec typ="cond"><buff typ="DEF_DOWN" /> Defense Down state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt <val idx="8" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, pushes the target back by <sec typ="buff"><buff typ="Push" /> <val idx="0" signless /> tiles</sec> and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes row / column / designated protection / received damage reduction effects</sec>.
+      TC: |-
+        以特殊改裝的撞錘敲擊，造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        無視目標一定比例的防禦力。→<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="9" r /></sec>
+        若命中目標處於<sec typ="cond"><buff typ="DEF_DOWN" />防禦力減少狀態</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="8" r /></sec>增加。
+        <sec typ="cond">命中時</sec>，將目標<sec typ="buff"><buff typ="Push" />向後推<val idx="0" signless />格</sec>，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除行 / 列 / 指定保護 / 所受傷害減少效果</sec>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -4908,6 +4946,27 @@ skills:
             base: 0.04
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="1" r /></sec>가 증가합니다.
+        <char uid="BR_HongRyun" />의 <sec typ="note">진압 대형 편성</sec> / <sec typ="note">정밀 저격 지시</sec> 효과를 받는 자신 외의 아군은 50%의 효과가 적용됩니다.
+        <sec typ="cond"><equip uid="Sub_T60ExtArmor" /> 장착 시</sec>, <sec typ="attr">자신을 보호기로 취급</sec>하여 <sec typ="note">몽구스 팀</sec> 소속 전투원의 스킬 효과를 발동시킬 수 있습니다.
+        <sec typ="cond"><equip uid="Sub_BulgasariPileBunker" /> 장착 시</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> 액티브 스킬이 <elem type="lightning" /> 전기 피해로 변경</sec>되고 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리</sec> / <sec typ="dmg"><elem type="lightning" /> 피해량</sec>이 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />対軽装型ダメージ量<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />対重装型ダメージ量<val idx="1" r /></sec>が増加します。
+        <char uid="BR_HongRyun" />の<sec typ="note">鎮圧隊形編成</sec> / <sec typ="note">精密狙撃指示</sec>効果を受ける自分以外の味方は50%の効果が適用されます。
+        <sec typ="cond"><equip uid="Sub_T60ExtArmor" />装着時</sec>、<sec typ="attr">自分を保護機として扱い</sec>、<sec typ="note">マングースチーム</sec>所属戦闘員のスキル効果を発動できます。
+        <sec typ="cond"><equip uid="Sub_BulgasariPileBunker" />装着時</sec>、<sec typ="buff"><buff typ="CHANGE_CHAR" />アクティブスキルが<elem type="lightning" />電気ダメージに変更</sec>され、<sec typ="buff"><buff typ="RANGE_UP" />射程</sec> / <sec typ="dmg"><elem type="lightning" />ダメージ量</sec>が増加します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases self's <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage dealt to light armor units <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage dealt to heavy armor units <val idx="1" r /></sec>.
+        Allies other than self that are affected by <char uid="BR_HongRyun" />'s <sec typ="note">Suppression Formation</sec> / <sec typ="note">Precision Sniper Order</sec> effects receive 50% of the effect.
+        <sec typ="cond">When <equip uid="Sub_T60ExtArmor" /> is equipped</sec>, treats self as a defender and can trigger skill effects from <sec typ="note">Team Mongoose</sec> units.
+        <sec typ="cond">When <equip uid="Sub_BulgasariPileBunker" /> is equipped</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> active skill is changed to electric damage</sec> and <sec typ="buff"><buff typ="RANGE_UP" /> range</sec> / <sec typ="dmg">electric damage dealt</sec> increases.
+      TC: |-
+        <sec typ="cond">於回合開始時</sec>，自身的<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />對輕裝型傷害量<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型傷害量<val idx="1" r /></sec>增加。
+        受到<char uid="BR_HongRyun" />的<sec typ="note">鎮壓隊形編成</sec> / <sec typ="note">精密狙擊指示</sec>效果影響的自身以外友軍將套用50%的效果。
+        <sec typ="cond">裝備<equip uid="Sub_T60ExtArmor" />時</sec>，<sec typ="attr">將自身視為防護機</sec>，可發動<sec typ="note">貓鼬隊</sec>所屬戰鬥員的技能效果。
+        <sec typ="cond">裝備<equip uid="Sub_BulgasariPileBunker" />時</sec>，<sec typ="buff"><buff typ="CHANGE_CHAR" />主動技能變更為電擊傷害</sec>，且<sec typ="buff"><buff typ="RANGE_UP" />射程</sec> / <sec typ="dmg">電擊傷害量</sec>增加。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -5184,6 +5243,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 공격기 / 보호기의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>를 증가시킵니다.
+        <cmt t="몽구스 팀">$$TeamMongus:0$</cmt> 소속 전투원은 효과가 두 배로 증폭되고 역할군 조건 및 위치에 관계 없이 적용됩니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond"><char uid="BR_Miho" />가 없을 경우</sec>, 범위 내 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격기 / 보호기의 공격을 지원</sec>합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の攻撃機 / 保護機の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>を増加させます。
+        <cmt t="몽구스 팀">$$TeamMongus:0$</cmt>所属戦闘員は効果が2倍に増幅され、役職条件や位置に関係なく適用されます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond"><char uid="BR_Miho" />がいない場合</sec>、範囲内の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃機 / 保護機の攻撃を支援</sec>します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec> of attackers / defenders in range.
+        For <cmt t="몽구스 팀">$$TeamMongus:0$</cmt> units, the effect is doubled and applies regardless of class conditions or position.
+        <sec typ="cond">At round start</sec> <sec typ="cond">if <char uid="BR_Miho" /> is absent</sec>, supports attacks of attackers / defenders in range.
+      TC: |-
+        <sec typ="cond">於回合開始時</sec>，增加範圍內攻擊機 / 防護機的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>。
+        <cmt t="몽구스 팀">$$TeamMongus:0$</cmt>所屬戰鬥員的效果會變為2倍，且不受職能條件與位置限制。
+        <sec typ="cond">於回合開始時</sec> <sec typ="cond">若<char uid="BR_Miho" />不在場</sec>，支援範圍內攻擊機 / 防護機的攻擊。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -6514,6 +6590,23 @@ skills:
             base: 0.05
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군 인원 수에 비례하여 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="2" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec>가 감소합니다.
+        <sec typ="cond"><char uid="BR_HongRyun" /> / <char uid="BR_Miho" />가 있을 경우</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타</sec> 증가 효과의 50%를 아군 전체에 적용합니다.
+        <sec typ="cond"><char uid="BR_AS12TurtleDragon" /> / <char uid="BR_PoniesAnger" />가 있을 경우</sec>, <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 증가</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 효과의 50%를 아군 전체에 적용합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、味方人数に比例して自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="2" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="3" r inv /></sec>が減少します。
+        <sec typ="cond"><char uid="BR_HongRyun" /> / <char uid="BR_Miho" />がいる場合</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力</sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル</sec>増加効果の50%を味方全体に適用します。
+        <sec typ="cond"><char uid="BR_AS12TurtleDragon" /> / <char uid="BR_PoniesAnger" />がいる場合</sec>、<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性増加</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ減少</sec>効果の50%を味方全体に適用します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases self's <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> effect resistance <val idx="2" r /></sec> in proportion to the number of allies, and decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="3" r inv /></sec>.
+        If <char uid="BR_HongRyun" /> / <char uid="BR_Miho" /> is present, applies 50% of the <sec typ="buff"><buff typ="ATK_UP" /> Attack</sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical</sec> increase effects to all allies.
+        If <char uid="BR_AS12TurtleDragon" /> / <char uid="BR_PoniesAnger" /> is present, applies 50% of the <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> effect resistance increase</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage decrease</sec> effects to all allies.
+      TC: |-
+        <sec typ="cond">於回合開始時</sec>，依友軍人數比例增加自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性<val idx="2" r /></sec>，並減少<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="3" r inv /></sec>。
+        若<char uid="BR_HongRyun" /> / <char uid="BR_Miho" />在場，則將<sec typ="buff"><buff typ="ATK_UP" />攻擊力</sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊</sec>增加效果的50%套用至友軍全體。
+        若<char uid="BR_AS12TurtleDragon" /> / <char uid="BR_PoniesAnger" />在場，則將<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性增加</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害減少</sec>效果的50%套用至友軍全體。
   F1:
     key: F1
     icon: Shock
@@ -8940,6 +9033,27 @@ skills:
             base: -0.3
             per: -0.015
             chance: 1
+    desc:
+      KR: |-
+        전격 스파이크로 대상을 찔러 <dmg elem="lightning" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 강력한 전류를 흘려넣어 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>을(를) 감소시키고 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 행동력 강화 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 여부와 관계없이</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="4" r /></sec>를 감소시킵니다.
+        <sec typ="cond">대상이 <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt> 상태인 경우</sec>, <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 효과가 두 배로 증폭됩니다.
+      JP: |-
+        電撃スパイクで対象を突き、<dmg elem="lightning" />を与えます。
+        <sec typ="cond">命中時</sec>、強力な電流を流し込み対象の<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>を減少させ、<sec typ="buff"><buff typ="REMOVE_BUFF" />行動力増加効果を解除</sec>します。
+        <sec typ="cond">命中の有無に関係なく</sec>、3ラウンドの間対象の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="4" r /></sec>を減少させます。
+        <sec typ="cond">対象が<cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>状態の場合</sec>、<sec typ="buff"><buff typ="EVADE_DOWN" />回避減少</sec>効果が2倍に増幅されます。
+      EN: |-
+        Pierces the target with a lightning spike, dealing <dmg elem="lightning" />.
+        <sec typ="cond">On hit</sec>, floods the target with strong current, decreasing the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removing AP increase effects</sec>.
+        <sec typ="cond">Regardless of whether it hits</sec>, decreases the target's <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="4" r /></sec> for 3 rounds.
+        <sec typ="cond">If the target is in <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt> state</sec>, the <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion decrease</sec> effect is doubled.
+      TC: |-
+        以電擊尖刺刺穿目標，造成<dmg elem="lightning" />。
+        <sec typ="cond">命中時</sec>，灌入強力電流，減少目標的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除行動力增加效果</sec>。
+        <sec typ="cond">不論是否命中</sec>，都會在3回合內減少目標的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="4" r /></sec>。
+        <sec typ="cond">若目標處於<cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>狀態</sec>，則<sec typ="buff"><buff typ="EVADE_DOWN" />迴避減少</sec>效果會變為2倍。
   F2:
     key: F2
     icon: WideLightning
@@ -10596,6 +10710,23 @@ skills:
             base: 50
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        파일 벙커로 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 주고 <sec typ="dmg">한 칸 뒤 대상에게 25% 감소된 피해</sec>를 입힙니다.
+        <sec typ="cond">적중 대상이 <buff typ="AP_DOWN" /> 행동력 / <buff typ="EVADE_DOWN" /> 회피 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="0" r /></sec>이 증가합니다.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 행 / 열 / 지정 보호 / 받는 피해 감소 효과를 해제</sec>합니다.
+      JP: |-
+        パイルバンカーで<sec typ="attr">保護無視</sec><dmg elem="lightning" />を与え、<sec typ="dmg">1マス後方の対象に25%減少したダメージ</sec>を与えます。
+        <sec typ="cond">命中対象が<buff typ="AP_DOWN" />行動力 / <buff typ="EVADE_DOWN" />回避減少状態の場合</sec>、<sec typ="dmg"><buff typ="LightningATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+        <sec typ="cond">命中時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />行 / 列 / 指定保護 / 受けるダメージ減少効果を解除</sec>します。
+      EN: |-
+        Deals <sec typ="attr">ignore protection</sec> <dmg elem="lightning" /> with a pile bunker and inflicts <sec typ="dmg">25% reduced damage to the target one tile behind</sec>.
+        <sec typ="cond">If the hit target is in <buff typ="AP_DOWN" /> AP / <buff typ="EVADE_DOWN" /> Evasion decrease state</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> damage dealt <val idx="0" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes row / column / designated protection / received damage reduction effects</sec> from the target.
+      TC: |-
+        以樁錘造成<sec typ="attr">無視保護</sec><dmg elem="lightning" />，並對後方1格目標施加<sec typ="dmg">減少25%的傷害</sec>。
+        <sec typ="cond">若命中目標處於<buff typ="AP_DOWN" />行動力 / <buff typ="EVADE_DOWN" />迴避減少狀態</sec>，則<sec typ="dmg"><buff typ="LightningATK_UP" />傷害量<val idx="0" r /></sec>增加。
+        <sec typ="cond">命中時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的行 / 列 / 指定保護 / 所受傷害減少效果</sec>。
 dialogue:
   KR:
     "1":
@@ -10693,9 +10824,7 @@ dialogue:
       SPIdle_02_01: |-
         땀 났는데 괜찮아?
         ...그게 좋은 거라고? 흐흣, 이 변태.
-      Oath: 사령관의 마음은 기쁜데, 왜 하필 이런 상황에서 고백을 하는 거야... 적어도 예쁜 옷으로 갈아입고 나서 고백받았으면 좋았을 텐데.
-        하지만... 이건 내가 어떤 모습이어도, 어떤 옷을 입고 있어도 관계없이 날 사랑한다는 뜻이지? 후후.... 나도 사랑해,
-        사령관.
+      Oath: 사령관의 마음은 기쁜데, 왜 하필 이런 상황에서 고백을 하는 거야... 적어도 예쁜 옷으로 갈아입고 나서 고백받았으면 좋았을 텐데. 하지만... 이건 내가 어떤 모습이어도, 어떤 옷을 입고 있어도 관계없이 날 사랑한다는 뜻이지? 후후.... 나도 사랑해, 사령관.
       OathIdle_01: |-
         이제는 씻고 오겠다는 말 안 한다고?
         그야... 이젠 안 부끄럽거든.
@@ -10971,8 +11100,7 @@ dialogue:
         when I’m with you Commander. Hmm…
         that’s not good…
       SPIdle_02_01: Did you get a good look??? Was it soft as expected?
-      Oath: Commander, do you see this? This red string I tied on the finger… Haa! I
-        knew it. It was connected to you…
+      Oath: Commander, do you see this? This red string I tied on the finger… Haa! I knew it. It was connected to you…
       OathIdle_01: |-
         You know, Commander. I cut down on donuts
         to wear this…
@@ -11081,16 +11209,12 @@ dialogue:
       SPIdle_02_01: |-
         Does that make you feel good?
         How does it feel?
-      Oath: >-
-        You're such a fool, Commander. Am I really that attractive? … There's no
-        way I would
-
+      Oath: |-
+        You're such a fool, Commander. Am I really that attractive? … There's no way I would
         hate you, you fool. Thank you for taking courage, Commander… From now on,
-
         be confident and tell me everything. I'm here to listen to everythingㅡ you say. OK?
-      OathIdle_01: >-
+      OathIdle_01: |-
         Are you going to keep holding onto me?
-
         I have to meet the girls… They’ll understand? Umm, then… Should I stay this way a bit longer?
       MVP: ""
     M:

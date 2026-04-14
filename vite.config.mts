@@ -232,6 +232,11 @@ export default defineConfig(async ({ mode }) => {
 			minify: isProd,
 			sourcemap: isDev,
 
+			watch: {
+				exclude: [
+					"external/yaml/**",
+				]
+			},
 			rollupOptions: {
 				onLog (_level, log, _handler) {
 					if (log.code === "CIRCULAR_DEPENDENCY")

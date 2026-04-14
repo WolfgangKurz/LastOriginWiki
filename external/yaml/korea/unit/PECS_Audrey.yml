@@ -3938,6 +3938,31 @@ skills:
             base: -0.2
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        철충을 재봉해 <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만들며 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 낮춥니다.
+        현재 적용 중인 <sec typ="note">심미 탐구</sec> 상태에 따라 추가 방해 효과를 적용합니다.
+        <sec typ="note">심미 탐구 : 기술 선도</sec> : <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec> 증가 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 속성 저항 <val idx="6" r /></sec> 감소
+        <sec typ="note">심미 탐구 : 대중성 추구</sec> : <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="10" r /></sec> 감소
+        <sec typ="note">심미 탐구 : 극비 신작 연구</sec> : <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="12" r /></sec> 감소
+      JP: |-
+        鉄虫を縫い付けて<dmg elem="physics" />のダメージを与え、<sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態にし、<sec typ="buff"><buff typ="EVADE_DOWN" />回避 <val idx="1" r /></sec>を低下させます。
+        現在適用中の<sec typ="note">審美探求</sec>状態に応じて、追加の妨害効果を適用します。
+        <sec typ="note">審美探求：技術先導</sec> : <sec typ="buff"><buff typ="VULNERABLE" />被ダメージ <val idx="5" r /></sec>増加 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" />属性耐性 <val idx="6" r /></sec>減少
+        <sec typ="note">審美探求：大衆性追求</sec> : <sec typ="buff"><buff typ="ATK_DOWN" />攻撃力 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル <val idx="10" r /></sec>減少
+        <sec typ="note">審美探求：極秘新作研究</sec> : <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="12" r /></sec>減少
+      EN: |-
+        Sews Metal Parasite and deals <dmg elem="physics" /> damage, Immobilizing the target and decreasing their EVA <sec typ="buff"><buff typ="EVADE_DOWN" /> <val idx="1" r /></sec>.
+        Additional interference effects are granted based on the currently active <sec typ="note">Aesthetic Exploration</sec> status.
+        <sec typ="note">Aesthetic Exploration: Technical Leadership</sec> : <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="5" r /></sec> increase / <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> Attribute RES <val idx="6" r /></sec> decrease
+        <sec typ="note">Aesthetic Exploration: Pursuit of Popularity</sec> : <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="9" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="10" r /></sec> decrease
+        <sec typ="note">Aesthetic Exploration: Top-Secret New Work Research</sec> : <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="11" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="12" r /></sec> decrease
+      TC: |-
+        縫紉鐵蟲，造成<dmg elem="physics" />傷害，使其陷入<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態，並降低<sec typ="buff"><buff typ="EVADE_DOWN" />迴避 <val idx="1" r /></sec>。
+        根據當前生效中的<sec typ="note">審美探索</sec>狀態，套用額外妨礙效果。
+        <sec typ="note">審美探索：技術先導</sec> : <sec typ="buff"><buff typ="VULNERABLE" />所受傷害 <val idx="5" r /></sec>增加 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 屬性抗性 <val idx="6" r /></sec>減少
+        <sec typ="note">審美探索：大眾性追求</sec> : <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="10" r /></sec>減少
+        <sec typ="note">審美探索：極密新作研究</sec> : <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動點數 <val idx="12" r /></sec>減少
   "2":
     key: "2"
     icon: SelfSpdBuff
@@ -4622,6 +4647,47 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        즉석에서 의상을 제작해 지정 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 높입니다.
+        현재 적용 중인 <sec typ="note">심미 탐구</sec> 상태에 따라 추가 효과가 적용됩니다.
+        <sec typ="note">심미 탐구 : 기술 선도</sec> : <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec> 증가
+        <sec typ="note">심미 탐구 : 대중성 추구</sec> : <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="6" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="7" r inv /></sec> 감소
+        <sec typ="note">심미 탐구 : 극비 신작 연구</sec> : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="9" r /></sec> 증가
+        <sec typ="cond">대상이 <char uid="PECS_Olivia" /></sec>라면 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" /></sec> 및 다음 효과가 추가로 적용됩니다.
+        <sec typ="note">심미 탐구 : 기술 선도</sec> : <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="12" r /></sec> 증가
+        <sec typ="note">심미 탐구 : 대중성 추구</sec> : <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="13" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="14" r inv /></sec> 감소
+        <sec typ="note">심미 탐구 : 극비 신작 연구</sec> : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="15" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="16" r /></sec> 증가
+      JP: |-
+        その場で衣装を製作して指定した味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を高めます。
+        現在適用中の<sec typ="note">審美探求</sec>状態に応じて、追加効果が適用されます。
+        <sec typ="note">審美探求：技術先導</sec> : <sec typ="buff"><buff typ="EVADE_UP" />回避 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="5" r /></sec>増加
+        <sec typ="note">審美探求：大衆性追求</sec> : <sec typ="buff"><buff typ="DEF_UP" />防御力 <val idx="6" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />被ダメージ <val idx="7" r inv /></sec>減少
+        <sec typ="note">審美探求：極秘新作研究</sec> : <sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="9" r /></sec>増加
+        <sec typ="cond">対象が<char uid="PECS_Olivia" />なら</sec> <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" /></sec>と次の効果が追加で適用されます。
+        <sec typ="note">審美探求：技術先導</sec> : <sec typ="buff"><buff typ="EVADE_UP" />回避 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="12" r /></sec>増加
+        <sec typ="note">審美探求：大衆性追求</sec> : <sec typ="buff"><buff typ="DEF_UP" />防御力 <val idx="13" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />被ダメージ <val idx="14" r inv /></sec>減少
+        <sec typ="note">審美探求：極秘新作研究</sec> : <sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="15" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="16" r /></sec>増加
+      EN: |-
+        Instantly creates a costume and increases the designated ally's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>.
+        Additional effects are applied based on the currently active <sec typ="note">Aesthetic Exploration</sec> status.
+        <sec typ="note">Aesthetic Exploration: Technical Leadership</sec> : <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" r /></sec> increase
+        <sec typ="note">Aesthetic Exploration: Pursuit of Popularity</sec> : <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="6" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="7" r inv /></sec> decrease
+        <sec typ="note">Aesthetic Exploration: Top-Secret New Work Research</sec> : <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="9" r /></sec> increase
+        <sec typ="cond">If the target is <char uid="PECS_Olivia" /></sec>, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" /></sec> and the following effects are additionally applied.
+        <sec typ="note">Aesthetic Exploration: Technical Leadership</sec> : <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="11" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="12" r /></sec> increase
+        <sec typ="note">Aesthetic Exploration: Pursuit of Popularity</sec> : <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="13" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="14" r inv /></sec> decrease
+        <sec typ="note">Aesthetic Exploration: Top-Secret New Work Research</sec> : <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="15" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="16" r /></sec> increase
+      TC: |-
+        現場製作服裝，提升指定我軍的<sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="0" /></sec>。
+        根據當前生效中的<sec typ="note">審美探索</sec>狀態，套用額外效果。
+        <sec typ="note">審美探索：技術先導</sec> : <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="5" r /></sec>增加
+        <sec typ="note">審美探索：大眾性追求</sec> : <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="6" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="7" r inv /></sec>減少
+        <sec typ="note">審美探索：極密新作研究</sec> : <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="9" r /></sec>增加
+        <sec typ="cond">若目標為<char uid="PECS_Olivia" /></sec>，<sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="10" /></sec>及下列效果將額外套用。
+        <sec typ="note">審美探索：技術先導</sec> : <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="12" r /></sec>增加
+        <sec typ="note">審美探索：大眾性追求</sec> : <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="13" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="14" r inv /></sec>減少
+        <sec typ="note">審美探索：極密新作研究</sec> : <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="15" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="16" r /></sec>增加
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -4905,6 +4971,27 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        배치된 열에 따라 추가 효과를 얻으며, 액티브 스킬의 추가 효과가 변경됩니다.
+        <sec typ="cond">전열</sec> : <sec typ="note">기술 선도</sec> : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec> 증가
+        <sec typ="cond">중열</sec> : <sec typ="note">대중성 추구</sec> :  <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec> 감소
+        <sec typ="cond">후열</sec> : <sec typ="note">극비 신작 연구</sec> : <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec> 증가
+      JP: |-
+        配置された列に応じて追加効果を獲得し、アクティブスキルの追加効果が変更されます。
+        <sec typ="cond">前列</sec> : <sec typ="note">技術先導</sec> : <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>増加
+        <sec typ="cond">中列</sec> : <sec typ="note">大衆性追求</sec> :  <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 被ダメージ <val idx="4" r inv /></sec>減少
+        <sec typ="cond">後列</sec> : <sec typ="note">極秘新作研究</sec> : <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec>増加
+      EN: |-
+        Grants additional effects based on the deployed line and changes the additional effects of Active Skills.
+        <sec typ="cond">Front line</sec> : <sec typ="note">Technical Leadership</sec> : <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec> increase
+        <sec typ="cond">Middle line</sec> : <sec typ="note">Pursuit of Popularity</sec> :  <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="4" r inv /></sec> decrease
+        <sec typ="cond">Back line</sec> : <sec typ="note">Top-Secret New Work Research</sec> : <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="6" r /></sec> increase
+      TC: |-
+        根據部署列獲得額外效果，並變更主動技能的額外效果。
+        <sec typ="cond">前列</sec> : <sec typ="note">技術先導</sec> : <sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="0" r /></sec>增加
+        <sec typ="cond">中列</sec> : <sec typ="note">大眾性追求</sec> :  <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="4" r inv /></sec>減少
+        <sec typ="cond">後列</sec> : <sec typ="note">極密新作研究</sec> : <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec>增加
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -5190,6 +5277,23 @@ skills:
             base: 0.05
             per: 0.0025
             chance: 1
+    desc:
+      KR: |-
+        자신과 같은 열 아래 행에 배치된 <sec typ="note">바이오로이드</sec>들을 차기작 모델로 선정합니다.
+        대상들은 기분이 들떠 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 상승합니다.
+        <sec typ="cond">대상이 <char uid="PECS_Olivia" /></sec>라면 효과가 2배로 적용됩니다.
+      JP: |-
+        自分と同じ列の下段に配置された<sec typ="note">バイオロイド</sec>たちを次回作のモデルとして選定します。
+        対象は気分が高まり、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が上昇します。
+        <sec typ="cond">対象が<char uid="PECS_Olivia" /></sec>なら効果が2倍適用されます。
+      EN: |-
+        Selects <sec typ="note">Bioroids</sec> positioned in the row below the same line self is in as next models.
+        The targets become excited, and their <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" r /></sec> increases.
+        <sec typ="cond">If the target is <char uid="PECS_Olivia" /></sec>, the effect is doubled.
+      TC: |-
+        將位於與自身相同列之下一排的<sec typ="note">生化人</sec>選為下一作品模特兒。
+        目標會變得興奮，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="3" r /></sec>提升。
+        <sec typ="cond">若目標為<char uid="PECS_Olivia" /></sec>，效果加倍。
   "5":
     key: "5"
     icon: P.TeamDefBuff
@@ -5405,6 +5509,19 @@ skills:
             base: 3
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">인접한 아군의 HP가 90% 이하</sec>인 경우, 대상에게 걸려있는 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 방어력 감소 효과를 해제</sec>하고 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" signless /></sec>을(를) 제공합니다.
+        <char uid="PECS_Olivia" />에게는 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="2" signless /></sec>을(를) 제공합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">隣接した味方のHPが90%以下</sec>の場合、対象にかかっている<sec typ="buff"><buff typ="REMOVE_DEBUFF" />防御力減少効果を解除</sec>し、<sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="0" signless /></sec>を付与します。
+        <char uid="PECS_Olivia" />には<sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="2" signless /></sec>を付与します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if the HP of adjacent allies is 90% or below</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> DEF Decrease effects</sec> and grants a <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> barrier <val idx="0" signless /></sec>.
+        <char uid="PECS_Olivia" /> is granted a <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> barrier <val idx="2" signless /></sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，若<sec typ="cond">相鄰我軍的生命值為90%以下</sec>，解除目標身上的<sec typ="buff"><buff typ="REMOVE_DEBUFF" />防禦力減少效果</sec>，並賦予<sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 防護罩 <val idx="0" signless /></sec>。
+        <char uid="PECS_Olivia" />將獲得<sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 防護罩 <val idx="2" signless /></sec>。
 dialogue:
   KR:
     "1":
@@ -5810,10 +5927,8 @@ dialogue:
         Stop it. 
         … Hmm, we’ll do the rest after
         the party. Just the two of us. Okay?
-      Oath: >-
-        Oh, that’s romantic of you to say that right now. Good. Now, I should
-        make a wedding dress
-
+      Oath: |-
+        Oh, that’s romantic of you to say that right now. Good. Now, I should make a wedding dress
         and tuxedo. Before that, shall we enjoy this mood… a little bit more?
       OathIdle_01: |-
         Are you looking forward to that day? So
@@ -5838,10 +5953,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        At first, I didn’t get along with BoRyeon. But… I think BoRyeon and I
-        can create a synergy effect
-
+      Idle_01_01: |-
+        At first, I didn’t get along with BoRyeon. But… I think BoRyeon and I can create a synergy effect
         more than I thought. We’re after the same thing.
       Idle_01_02: |-
         Didn’t I tell you?
@@ -5863,14 +5976,12 @@ dialogue:
         Let me measure… Wow. You’re more fit than I thought.
         Let me check the whole body.
         From head to toe.
-      Idle_04_01: Gosh… You just can’t stop staring… Come here. I can get wet in this
-        outfit.
+      Idle_04_01: Gosh… You just can’t stop staring… Come here. I can get wet in this outfit.
       SPIdle_02_01: |-
         *Sighs*… Can’t you really wait?
         Oh my… Hoo hoo. I can’t help it. Then… Shall we go the locker room?
-      Oath: >-
+      Oath: |-
         A proposal under the scorching sun…? You are so interesting.
-
         I wonder how much more stimulation you will bring me… Haha, I’ll look forward to it.
       OathIdle_01: |-
         The sun is scorching. We can’t lose.
@@ -5922,12 +6033,9 @@ dialogue:
         Oh… nice! But… let’s go to somewhere
         more quiet. Other girls will see us
         if we do this here. Understand?
-      Oath: >-
-        I didn't think… you were had poor sense at first… But, uh… You
-        definitely improved.
-
+      Oath: |-
+        I didn't think… you were had poor sense at first… But, uh… You definitely improved.
         But don't get too happy. I'll make sure you do things well by your side.
-
         And… thank you.
       OathIdle_01: |-
         *Chuckles* You must be feeling how nice it is

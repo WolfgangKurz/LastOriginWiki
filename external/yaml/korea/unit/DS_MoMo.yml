@@ -1227,6 +1227,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        마법신의 요술봉으로 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가하며, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 대상의 강화 효과를 해제</sec>합니다.
+      JP: |-
+        魔法神のステッキで指定範囲に<sec typ="attr">防御無視</sec> <dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec> <sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="REMOVE_BUFF" />対象の強化効果を解除</sec>します。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area with Magical God's Wand.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases, and <sec typ="buff"><buff typ="REMOVE_BUFF" /> the target's buffs are removed</sec>.
+      TC: |-
+        使用魔法神的魔法棒，對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的強化效果</sec>。
   "2":
     key: "2"
     icon: SwordAttk
@@ -4200,6 +4213,23 @@ skills:
             base: 0.5
             per: 0.025
             chance: 0.1
+    desc:
+      KR: |-
+        마법의 티타늄 합금 카타나로 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가하며, <sec typ="chance"><chance idx="3" /> 확률</sec>로 급소를 찌릅니다. (<sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>)
+        <sec typ="cond">대상의 HP가 25% 이하</sec>인 경우, 매지컬 파워로 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 대상의 강화 효과를 해제</sec>하고 <sec typ="chance">반드시</sec> 급소를 찌를 수 있습니다.
+      JP: |-
+        魔法のチタン合金カタナで対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec> <sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="0" r /></sec>が増加し、<sec typ="chance"><chance idx="3" />確率</sec>で急所を突きます。(<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="3" r /></sec>)
+        <sec typ="cond">対象のHPが25%以下</sec>の場合、マジカルパワーで<sec typ="buff"><buff typ="REMOVE_BUFF" />対象の強化効果を解除</sec>し、<sec typ="chance">必ず</sec>急所を突くことができます。
+      EN: |-
+        Deals <dmg elem="physics" /> to the target with a magical titanium alloy katana.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases, and there is a <sec typ="chance"><chance idx="3" /> chance</sec> to pierce a vital point. (<sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec>)
+        <sec typ="cond">If the target's HP is 25% or below</sec>, Magical Power removes the target's buffs with <sec typ="buff"><buff typ="REMOVE_BUFF" /> buff removal</sec> and <sec typ="chance">guarantees</sec> a vital-point strike.
+      TC: |-
+        用魔法鈦合金長劍對目標造成<dmg elem="physics" />傷害。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加，並以<sec typ="chance"><chance idx="3" />機率</sec>刺中要害。(<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>)
+        <sec typ="cond">當目標生命力低於25%</sec>時，會以魔法力量<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的強化效果</sec>，並<sec typ="chance">必定</sec>刺中要害。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4498,6 +4528,55 @@ skills:
             base: 0.4
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 마법신의 가호를 받아 무작위 강화 효과를 얻습니다.
+        <sec typ="cond">스쿼드 내에 <cmt t="다른 마법소녀">$$MAGICAL_GIRLS_ALT:?$</cmt>가 존재할 경우</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중</sec> 증가 효과는 항상 획득할 수 있습니다.
+        무작위 강화 효과는 다음과 같습니다.
+        - <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> <sec typ="chance"><chance idx="0" /> 확률</sec>
+        - <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> <sec typ="chance"><chance idx="1" /> 확률</sec>
+        - <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec> <sec typ="chance"><chance idx="2" /> 확률</sec>
+        - <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="3" r /></sec> <sec typ="chance"><chance idx="3" /> 확률</sec>
+        - <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec> <sec typ="chance"><chance idx="4" /> 확률</sec>
+        $$MAGICAL_GIRLS_ALT~
+        <char uid="DS_Baekto" />, <char uid="DS_Sarena" />
+        ~$$MAGICAL_GIRLS_ALT
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、魔法神の加護を受けてランダムな強化効果を得ます。
+        <sec typ="cond">分隊内に<cmt t="他の魔法少女">$$MAGICAL_GIRLS_ALT:?$</cmt>が存在する場合</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力</sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中</sec>増加効果は常に獲得できます。
+        ランダム強化効果は次のとおりです。
+        - <sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec> <sec typ="chance"><chance idx="0" />確率</sec>
+        - <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="1" r /></sec> <sec typ="chance"><chance idx="1" />確率</sec>
+        - <sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="2" r /></sec> <sec typ="chance"><chance idx="2" />確率</sec>
+        - <sec typ="buff"><buff typ="EVADE_UP" />回避 <val idx="3" r /></sec> <sec typ="chance"><chance idx="3" />確率</sec>
+        - <sec typ="buff"><buff typ="DAMAGE_REDUCE" />被ダメージ <val idx="4" r inv /></sec> <sec typ="chance"><chance idx="4" />確率</sec>
+        $$MAGICAL_GIRLS_ALT~
+        <char uid="DS_Baekto" />、<char uid="DS_Sarena" />
+        ~$$MAGICAL_GIRLS_ALT
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, receives the Grace of the Magical God and gains a random upgrade effect.
+        <sec typ="cond">If another <cmt t="Magical Girl">$$MAGICAL_GIRLS_ALT:?$</cmt> exists in the squad</sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK</sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy</sec> increase effects can always be obtained.
+        Random upgrade effects are as follows.
+        - <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> <sec typ="chance"><chance idx="0" /> chance</sec>
+        - <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> <sec typ="chance"><chance idx="1" /> chance</sec>
+        - <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="2" r /></sec> <sec typ="chance"><chance idx="2" /> chance</sec>
+        - <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="3" r /></sec> <sec typ="chance"><chance idx="3" /> chance</sec>
+        - <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="4" r inv /></sec> <sec typ="chance"><chance idx="4" /> chance</sec>
+        $$MAGICAL_GIRLS_ALT~
+        <char uid="DS_Baekto" />, <char uid="DS_Sarena" />
+        ~$$MAGICAL_GIRLS_ALT
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，受到魔法神之加護，獲得隨機強化效果。
+        <sec typ="cond">若小隊內存在另一名<cmt t="其他魔法少女">$$MAGICAL_GIRLS_ALT:?$</cmt></sec>，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力</sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中</sec>增加效果可始終獲得。
+        隨機強化效果如下。
+        - <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> <sec typ="chance"><chance idx="0" /> 機率</sec>
+        - <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> <sec typ="chance"><chance idx="1" /> 機率</sec>
+        - <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> <sec typ="chance"><chance idx="2" /> 機率</sec>
+        - <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="3" r /></sec> <sec typ="chance"><chance idx="3" /> 機率</sec>
+        - <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="4" r inv /></sec> <sec typ="chance"><chance idx="4" /> 機率</sec>
+        $$MAGICAL_GIRLS_ALT~
+        <char uid="DS_Baekto" />、<char uid="DS_Sarena" />
+        ~$$MAGICAL_GIRLS_ALT
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -4841,6 +4920,23 @@ skills:
             base: 0.2
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 불능 시</sec>, 주변 아군을 분기시켜 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>하고 2라운드 동안 능력치를 대폭 증가시킵니다.
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec>
+        <sec>스킬 레벨 10에서 효과 라운드가 증가합니다.</sec>
+      JP: |-
+        <sec typ="cond">戦闘不能時</sec>、周囲の味方を奮い立たせ、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害効果を解除</sec>し、2ラウンドの間能力値を大幅に増加させます。
+        <sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />被ダメージ <val idx="4" r inv /></sec>
+        <sec>スキルレベル10で効果ラウンドが増加します。</sec>
+      EN: |-
+        <sec typ="cond">When Combat Disabled</sec>, rallies nearby allies, removing <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec> and greatly increasing stats for 2 rounds.
+        <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="4" r inv /></sec>
+        <sec>Effect duration increases at skill level 10.</sec>
+      TC: |-
+        <sec typ="cond">於無法戰鬥時</sec>，激勵周圍我軍，<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除有害效果</sec>，並於2回合內大幅提升能力值。
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="4" r inv /></sec>
+        <sec>技能等級10時，效果回合數會增加。</sec>
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -5117,6 +5213,23 @@ skills:
               level: "0"
             value: Effect_DS_MoMo_N_3
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">세기말 마법소녀</sec> 확률 발동 효과를 <sec typ="note">성장형 마법소녀</sec> 스킬 레벨에 비례하는 수치로 모두 획득합니다.
+        <sec typ="note">모모 찬바라</sec> 효과 중, 급소를 반드시 찌를 수 있는 HP 비율이 50%로 완화됩니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="5" signless /> HP로 전투 속행</sec> 효과를 획득합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">世紀末魔法少女</sec>の確率発動効果を<sec typ="note">成長型魔法少女</sec>のスキルレベルに比例する数値ですべて獲得します。
+        <sec typ="note">モモチャンバラ</sec>効果のうち、急所を必ず突けるHP比率が50%に緩和されます。
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="5" signless />HPで戦闘続行</sec>効果を獲得します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, gains all chance-trigger effects of <sec typ="note">Magical Girl of the Century</sec> with values proportional to the skill level of <sec typ="note">Growth-Type Magical Girl</sec>.
+        Among the effects of <sec typ="note">Momo Chanbara</sec>, the HP ratio that guarantees a vital-point strike is eased to 50%.
+        <sec typ="cond">At the start of combat</sec>, gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat with <val idx="5" signless /> HP</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，以與<sec typ="note">成長型魔法少女</sec>技能等級成正比的數值，獲得<sec typ="note">世紀末魔法少女</sec>的所有機率發動效果。
+        在<sec typ="note">莫莫・贊巴拉</sec>效果中，可必定刺中要害的生命力比例放寬至50%。
+        <sec typ="cond">戰鬥開始時</sec>，獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以 <val idx="5" signless /> HP繼續戰鬥</sec>效果。
 dialogue:
   KR:
     "1":
@@ -5290,8 +5403,7 @@ dialogue:
         헤매시는 건가요?
         그러면 제가 가르쳐 드릴게요.
         직접. 하나. 하나.
-      Oath: 사령관님은 모모가 어떤 모습이더라도 사랑해 주시는 거죠? 달의 힘이 가득할 때도, 검은 달의 힘을 받았을 때도, 그리고 지금 이
-        모습일 때도. 헤헤! 그건 모모도 마찬가지예요! 사령관님! 백년해로. 아니, 천년해로. 아니, 억겁해로하도록 해요!
+      Oath: 사령관님은 모모가 어떤 모습이더라도 사랑해 주시는 거죠? 달의 힘이 가득할 때도, 검은 달의 힘을 받았을 때도, 그리고 지금 이 모습일 때도. 헤헤! 그건 모모도 마찬가지예요! 사령관님! 백년해로. 아니, 천년해로. 아니, 억겁해로하도록 해요!
       OathIdle_01: |-
         사령관님, 제가 입기를 바라는 옷이
         있으신가요? 사령관님이 바라시면
@@ -5299,16 +5411,12 @@ dialogue:
         원하신다면... 바람을... 입을 수도 있어요.
       MVP: 흐흐. 각본 대로네요.
     "":
-      Intro: >-
-        안녕하세요. 어린이 친구들! 여러분의 사무라이 마법 소녀 모모예요! 여러분의 간절한 마음이 마법 세계에 전해져서 이렇게 오게
-        되었답니다!
-
+      Intro: |-
+        안녕하세요. 어린이 친구들! 여러분의 사무라이 마법 소녀 모모예요! 여러분의 간절한 마음이 마법 세계에 전해져서 이렇게 오게 되었답니다!
 
         모모는 여러분의 웃음을 지키기 위해 철충들과 싸우고 있어요. 지구를 침략한 우주 괴물은 이 모모가 뾰로롱 매지컬 모모로 변신해서 해치울 테니 걱정 말아요. 이 모모는 철충과 싸우기 위해 많은 마법을 가지고 왔으니까요. 모모의 요술봉과 마법의 티타늄 합금 카타나, 그리고 어린이 친구들의 착하고 선한 마음이 모이면 무찌르지 못할 적은 없어요.
 
-
         헤헤. 마법 소녀 매지컬 모모에서 이 세계를 침략하는 뽀끄루 마왕을 물리쳤던 것처럼 모모는 철충 괴물들도 물리칠 거예요. 그리고 (곧 생길) 어린이들에게 꿈과 희망, 그리고 웃음을 되찾아 드릴게요.
-
         모모에게 맡겨 두라구요!
       Join: 마법의 시간이 돌아왔어요!
       Leader: 모두 약속해줘요 악에 굴복하지 않기로
@@ -5540,15 +5648,12 @@ dialogue:
         お望みなら…風を…着ることだって、できますよ。
       MVP: ""
     "":
-      Intro: >-
+      Intro: |-
         良い子のみんな～！こんにちは～！みんなの侍魔法少女、モモです！みんなの切実な思いが魔法世界に届いたので、バビュッと駆け付けましたよ！
-
 
         モモはみんなの笑顔を守るために鉄虫と戦っています。地球に攻めてきた宇宙の怪物は、このモモがピョロローンとマジカルモモに変身してやっつけちゃうから心配いりません！鉄虫と戦うための魔法をい～っぱい用意してますから！モモのマジカルステッキと魔法のチタンと、それと良い子のみんなの綺麗な心が集まれば倒せない敵なんていません。
 
-
         うふふっ。むか～し世界を侵略していたポックル大魔王を退けた時みたく、モモが鉄虫怪物たちもやっつけます！それに子供たちに夢と希望、そして笑顔を取り戻してあげます。
-
 
         モモにぜ～んぶ任せてください！
       Join: マジカルタイムの始まりだよ～！/召喚に応えてマジカルモモ参上です！
@@ -5655,12 +5760,9 @@ dialogue:
         when I need to go.
         Say… that you love me.
       SPIdle_02_01: Your wish… is that all?
-      Oath: >-
-        Oh, no. Momo cannot stay for long. The magic association isn’t going to
-        leave you alone.
-
+      Oath: |-
+        Oh, no. Momo cannot stay for long. The magic association isn’t going to leave you alone.
         But… if you promise that you will hug me every day… 
-
         The association would have to deal with wedding Momo!
       OathIdle_01: |-
         Is there anything that bothers you
@@ -5693,41 +5795,32 @@ dialogue:
         If I fall in love with one man… This is how I get.
         Gentleman, which Momo do you prefer?
         I think I already know the answer…
-      Idle_01_03: >-
+      Idle_01_03: |-
         Ritual of the Moon? There’s no need.
-
         We can get to the end immediately… We don’t have to tantalize each other, do we?
       SPIdle_01_01: Ha, good. Let’s fall into corruption.
-      Idle_02_01: >-
+      Idle_02_01: |-
         How was my acting? I appeared in the 4th movie
-
         and surprised everyone! Ta-da, Black Momo!
-
         I-I do feel embarrassed because of the costume… But Momo of today won’t be defeated.
-
         Magical Girl who’s corrupted with love is strong!
       Idle_03_01: |-
         Ehehe, actually, the rituals of the Moon is like…
         an expedient the first Magical Girl made,
         so that she won’t be corrupted by falling in love.
         But I don’t think I can… wait like that.
-      Idle_04_01: >-
+      Idle_04_01: |-
         Even if I look like this, I’m still me.
-
         If there’s one thing different… I don’t hide my feelings for you any more.
       SPIdle_02_01: |-
         If you do that… Momo might not
         get enchanted any more…
-      Oath: >-
-        Actually. I prepared this because I felt a little shy to seduce you.
-        Since I won’t get distracted
-
+      Oath: |-
+        Actually. I prepared this because I felt a little shy to seduce you. Since I won’t get distracted
         with other thoughts if I wear a character mask. But… urgh, I don’t think I can’t stand it anymore! I just really like you, commander!
          … Hehe, I said it out loud. You know you’re responsible for adulterating a magical girl… right?​
-      OathIdle_01: >-
-        I’m embarrassed to be putting on such an act… But Momo can’t be a
-        Magical Girl any more
-
+      OathIdle_01: |-
+        I’m embarrassed to be putting on such an act… But Momo can’t be a Magical Girl any more
         because of you, Gentleman… You should take the responsibility♡
       MVP: ""
     "3":
@@ -5748,21 +5841,15 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         I used to do a lot of overseas filming
-
         before the downfall of the humans. They even localized the movies into a number of languages. These clothes were part of the localization…
-
         Haha, you like them?
-      Idle_01_02: >-
+      Idle_01_02: |-
         What exactly was the dark shape
-
         that appeared in front of the magess magic peach?
-
         Ah… It's the script from the crappy translation program. But still, it's a huge improvement.
-
         Back in the day, there were translations like
-
         “All your base are belong to us.”
       Idle_01_03: |-
         Moonbit also changed clothes. Did you see?
@@ -5784,35 +5871,24 @@ dialogue:
         They said that these were made to celebrate the year of the rabbit.
         Wearing these makes me feel like I understand the rabbits.
         Please don't make me feel lonely.
-      SPIdle_02_01: >-
-        Hehehe, Commander. Are you having a hard time because these clothes are
-        new?
-
+      SPIdle_02_01: |-
+        Hehehe, Commander. Are you having a hard time because these clothes are new?
         Here, I’ll teach you…
-
         myself… One… by one…
-      Oath: >-
-        Commander, you'd love me no matter what, wouldn't you? When the power of
-        the moon is full,
-
+      Oath: |-
+        Commander, you'd love me no matter what, wouldn't you? When the power of the moon is full,
         when I've received the power of the dark moon, and also at this moment. Hehe! It's the same for me! Commander! I'd like to live a hundred years with you. No, let's make it a thousand years. No, let's make it a hundred million years!
-      OathIdle_01: >-
-        Commander, is there something you want me to wear? I can wear anything
-        you want me to.
-
+      OathIdle_01: |-
+        Commander, is there something you want me to wear? I can wear anything you want me to.
         If you want… I can even wear… something lighter… like air…
       MVP: ""
     "":
-      Intro: >-
-        Hello. Kids! Everyone, I'm your Samurai Magical Sorceress MoMo! Your
-        desperate wish was conveyed to Magic World, so I came!
-
+      Intro: |-
+        Hello. Kids! Everyone, I'm your Samurai Magical Sorceress MoMo! Your desperate wish was conveyed to Magic World, so I came!
 
         I'm fighting with the Metal Parasites to keep everyone happy. Don't worry. I'll transform into Magical MoMo and those invading alien monsters will be history. I, MoMo, brought a lot of magic to fight with the Metal Parasites. We have Magical MoMo's magic wand, titanium alloy Katana. And with your nice and sweet thoughts, all enemies can be beat. 
 
-
         He he. Like I beat Devil Faucre who invaded Earth in Magical Sorceress MoMo, I'll win the Metal Parasites, too. And I'll take back dream, hope and happiness for kids (to be here soon).
-
 
         Just leave it to Magical MoMo!
       Join: Magical time is back!
@@ -6076,15 +6152,12 @@ dialogue:
         如果司令官想要…空氣…也可以穿喔。
       MVP: ""
     "":
-      Intro: >-
+      Intro: |-
         你好。小朋友們！我是你們的武士，魔法少女莫莫！因為大家懇切的心願傳到了魔法世界，所以我來了！
-
 
         莫莫為了守護大家的笑容，正在和鐵蟲們戰鬥。莫莫會變成巴啦啦魔法莫莫幹掉所有侵略地球的宇宙怪物，所以不用擔心。因為莫莫為了和鐵蟲搏鬥，帶來了許多魔法。只要莫莫的魔法棒和魔法鈦合金長劍，加上小朋友們柔軟善良的心凝聚在一起，就沒有我們不能打敗的敵人。
 
-
         嘿嘿。就像魔法少女的魔法莫莫打敗了侵略世界的波格魯魔王一樣，莫莫也會打敗鐵蟲怪物。為（即將出現的）孩子們找回夢想和希望，以及笑容。
-
         一切都交給莫莫吧！
       Join: 魔法時間到了！
       Leader: ""

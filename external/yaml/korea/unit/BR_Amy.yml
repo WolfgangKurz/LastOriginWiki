@@ -1272,6 +1272,20 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        권총을 발사해 <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec> 증가 상태로 만듭니다.
+        <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 제외한 효과는 중첩 가능합니다.
+      JP: |-
+        拳銃を発射して<dmg elem="physics" />を与え、2ラウンドの間<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>増加状態にします。
+        <sec typ="buff"><buff typ="MARKING" />標的</sec>を除く効果は重複可能です。
+      EN: |-
+        Fires a pistol and deals <dmg elem="physics" />.
+        For 2 rounds, inflicts <sec typ="buff"><buff typ="MARKING" /> Marking</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increase.
+        Effects other than <sec typ="buff"><buff typ="MARKING" /> Marking</sec> can stack.
+      TC: |-
+        發射手槍，造成<dmg elem="physics" />，並使目標在2回合內進入<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="1" r /></sec>增加狀態。
+        除<sec typ="buff"><buff typ="MARKING" />標記</sec>外的效果可以疊加。
   "2":
     key: "2"
     icon: Snipe
@@ -1853,6 +1867,19 @@ skills:
             base: 0.3
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        라이플 저격으로 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가 </sec>상태인 경우 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: |-
+        ライフル狙撃で<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
+        対象が<sec typ="cond"><buff typ="MARKING" />標的</sec> / <sec typ="cond"><buff typ="SNARE" />移動不可</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+      EN: |-
+        Rifle sniping deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        If the target is <sec typ="cond"><buff typ="MARKING" /> Marked</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      TC: |-
+        以步槍狙擊造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+        若目標處於<sec typ="cond"><buff typ="MARKING" />標記</sec> / <sec typ="cond"><buff typ="SNARE" />無法移動</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -2016,6 +2043,19 @@ skills:
             base: 2
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 적의 HP%가 낮을수록 피해량 <val idx="0" r /></sec>가 증가합니다.
+        적 처치 시, 다음 목표를 찾기 시작해 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>이(가) 증가합니다.
+      JP: |-
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" />敵のHP%が低いほどダメージ量<val idx="0" r /></sec>が増加します。
+        敵撃破時、次の目標を探し始めて<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>が増加します。
+      EN: |-
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> damage <val idx="0" r /></sec> increases as the enemy's HP% decreases.
+        When an enemy is killed, begins searching for the next target and gains <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>.
+      TC: |-
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" />敵軍HP%越低，傷害量<val idx="0" r /></sec>越增加。
+        擊殺敵人時，會開始尋找下一個目標並增加<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -2863,6 +2903,19 @@ skills:
             base: 0.16
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="cond">아군의 경장형 전투원 수에 비례</sec>하여 아군 경장형의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" r /></sec>와 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>를 증가시킵니다.
+        자신은 2배의 효과가 적용됩니다.
+      JP: |-
+        ラウンド開始時、<sec typ="cond">味方の軽装型戦闘員数に比例して</sec>味方軽装型の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="2" r /></sec>と<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率<val idx="0" r /></sec>を増加させます。
+        自身には2倍の効果が適用されます。
+      EN: |-
+        At round start, <sec typ="cond">in proportion to the number of allied Light Armor combatants</sec>, increases allied Light Armor's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="2" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="0" r /></sec>.
+        The effect is doubled for self.
+      TC: |-
+        回合開始時，<sec typ="cond">依我軍輕裝型戰鬥員數量比例</sec>增加我軍輕裝型的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="2" r /></sec>和<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="0" r /></sec>。
+        自身套用2倍效果。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -3085,6 +3138,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신은 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막/피해 감소 무시</sec> 효과가 적용됩니다.
+        적 처치 시 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 추가로 획득 하며 획득과 동시에 자신이 추가로 획득한 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>을(를) 차감합니다.
+        경장형 아군 전체에게 차감한 만큼의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 부여합니다.
+      JP: |-
+        ラウンド開始時、自身に<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア/被ダメージ減少無視</sec>効果が適用されます。
+        敵撃破時、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を追加で獲得し、獲得と同時に自身が追加で獲得した<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>を差し引きます。
+        差し引いた分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を軽装型の味方全体に付与します。
+      EN: |-
+        At round start, self is granted <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier / Damage Reduction Ignore</sec>.
+        When an enemy is killed, gains additional <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>, and at the same time subtracts the additionally gained <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec> from self.
+        Grants all Light Armor allies <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> equal to the amount subtracted.
+      TC: |-
+        回合開始時，自身套用<sec typ="buff"><buff typ="BARRIER_PIERCE" />無視護盾 / 傷害減少</sec>效果。
+        擊殺敵人時，額外獲得<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>，並在獲得的同時扣除自身額外獲得的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>。
+        將扣除的數值以<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>的形式賦予所有輕裝型我軍。
 dialogue:
   KR:
     "2":
@@ -3382,12 +3452,9 @@ dialogue:
         was useless. But now… I think I found my new role. How about…
         your wife, and mother of our cute child?
       SPIdle_02_01: "*Chuckles*… Come."
-      Oath: >-
-        I’m a weapon A weapon… that kills the opponent in the most brutal way.
-        If I was born a long time ago,
-
+      Oath: |-
+        I’m a weapon A weapon… that kills the opponent in the most brutal way. If I was born a long time ago,
         I would’ve killed, and killed… and also end up killing a person I love. Although I’m different
-
         after meeting you, honey. Although you have granted my one wish… Can I also tell you about my other wish? ​
       OathIdle_01: |-
         Don’t be so disappointed. Our dream…
@@ -3434,10 +3501,8 @@ dialogue:
       SPIdle_02_01: |-
         Ha, ha. Sweetie, I understand what you want.
         Can you wait a bit?
-      Oath: >-
-        Oh gosh… My sweetie… Don't tell me you really believed what I said? Hoo
-        hoo… Good.
-
+      Oath: |-
+        Oh gosh… My sweetie… Don't tell me you really believed what I said? Hoo hoo… Good.
         It came from the heart… Then, honey… keep up the good work.
       OathIdle_01: |-
         I never knew I’d fall for man…
@@ -3462,11 +3527,9 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         A child?
-
         I’d like to have one as soon as possible… But I’ll have to wait for now, right?
-
         You should wait for now, too.
       Idle_01_02: |-
         *Chuckles*… I can’t help being excited.

@@ -2904,6 +2904,27 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        드릴 랜스를 찔러넣어 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        대상의 방어력을 일정 비율 무시합니다. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>
+        <sec typ="cond">적중 시</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      JP: |-
+        ドリルランスを突き刺して単一対象に<dmg elem="physics" />を与えます。
+        対象の防御力を一定割合無視します。<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>
+        <sec typ="cond">命中時</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻撃支援時</sec>、2ラウンドの間自分の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="3" r /></sec>が増加します。
+      EN: |-
+        Thrusts a drill lance to deal <dmg elem="physics" /> to a single target.
+        Ignores a certain percentage of the target's DEF. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="0" r /></sec>
+        <sec typ="cond">On hit</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> on attack support</sec>, increases self's <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="4" r /></sec> for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec>.
+      TC: |-
+        以鑽頭長槍刺入，對單一目標造成<dmg elem="physics" />。
+        無視目標一定比例的防禦力。<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="0" r /></sec>
+        <sec typ="cond">命中時</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻擊支援時</sec>，在2回合內增加自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>。
+        <sec typ="cond">暴擊時</sec>，增加<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="3" r /></sec>。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -5030,6 +5051,27 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        부스터를 전력 가동 후 돌진하여 지정 범위에 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec> <sec typ="cond"><sec typ="note">헬벤트</sec> 중첩이 2 이상인 경우</sec>, 자신은 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과를 획득합니다.
+        <sec typ="cond">적중 시</sec> <sec typ="cond"><sec typ="note">헬벤트</sec> 중첩이 3 이상인 경우</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 대상의 방어력을 완전히 무시</sec>합니다. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec>
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
+      JP: |-
+        ブースターを全力稼働して突進し、指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec><sec typ="cond"><sec typ="note">ヘルベント</sec>のスタックが2以上の場合</sec>、自分は<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / ダメージ減少無視</sec>効果を獲得します。
+        <sec typ="cond">命中時</sec><sec typ="cond"><sec typ="note">ヘルベント</sec>のスタックが3以上の場合</sec>、<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 対象の防御力を完全に無視</sec>します。<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec>
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="4" r /></sec>が増加します。
+      EN: |-
+        Charges forward after fully powering the booster, dealing <dmg elem="physics" /> to the designated area.
+        <sec typ="cond">On hit</sec>, if <sec typ="note">Hellbent</sec> has 2 or more stacks, self gains <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec>.
+        <sec typ="cond">On hit</sec>, if <sec typ="note">Hellbent</sec> has 3 or more stacks, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> completely ignores the target's DEF</sec>. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="3" r /></sec>
+        <sec typ="cond">On critical hit</sec>, increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec>.
+      TC: |-
+        全力啟動助推器後衝刺，對指定範圍造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，若<sec typ="note">地獄意志</sec>疊層達2以上，自身獲得<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減少</sec>效果。
+        <sec typ="cond">命中時</sec>，若<sec typ="note">地獄意志</sec>疊層達3以上，則<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 完全無視目標防禦力</sec>。<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="3" r /></sec>
+        <sec typ="cond">暴擊時</sec>，增加<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="4" r /></sec>。
   "3":
     key: "3"
     icon: P.Hang
@@ -5240,6 +5282,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 획득합니다.
+        <sec>해당 효과는 <sec typ="note">돌파!! 아크데모닉 러시</sec> 사용 시 해제됩니다.</sec>
+        <sec typ="cond">공격 적중 시</sec> <sec typ="cond"><buff typ="VULNERABLE" /> 자신이 받는 피해 증가 상태인 경우</sec>, 액티브 스킬의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="6" slot="1" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、自分は<sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視</sec>効果を獲得します。
+        <sec>この効果は<sec typ="note">突破!! アークデモニックラッシュ</sec>使用時に解除されます。</sec>
+        <sec typ="cond">攻撃命中時</sec><sec typ="cond"><buff typ="VULNERABLE" /> 自分が受けるダメージ増加状態の場合</sec>、アクティブスキルの<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="6" slot="1" r /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, self gains <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec>.
+        <sec>This effect is removed when using <sec typ="note">Breakthrough!! ArcDemonic Rush</sec>.</sec>
+        <sec typ="cond">On attack hit</sec><sec typ="cond">if self is in <buff typ="VULNERABLE" /> received damage increase state</sec>, increases the <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="6" slot="1" r /></sec> of active skills.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，自身獲得<sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec>效果。
+        <sec>使用<sec typ="note">突破!! 極惡魔衝刺</sec>時會解除該效果。</sec>
+        <sec typ="cond">攻擊命中時</sec><sec typ="cond">若自身處於<buff typ="VULNERABLE" /> 所受傷害增加狀態</sec>，則增加主動技能的<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="6" slot="1" r /></sec>。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -5588,6 +5651,23 @@ skills:
             base: 0.3
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">피격 시</sec>, 장갑을 퍼지하여 해당 라운드 동안 자신이 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 증가합니다.
+        <sec typ="cond">스쿼드 내 <char uid="AGS_Goltarion" />가 있을 경우</sec>, 상기 효과를 대상에게도 물려줄 수 있고 <sec typ="buff"><buff typ="AP_UP" /> AP 증가 효과</sec>를 서로 공유합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">전열에 위치한 아군 경장형 보호기</sec>의 <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>를 활성화합니다.
+      JP: |-
+        <sec typ="cond">被弾時</sec>、装甲をパージしてそのラウンドの間、自分が<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が増加します。
+        <sec typ="cond">分隊内に<char uid="AGS_Goltarion" />がいる場合</sec>、上記効果を対象にも引き継ぐことができ、<sec typ="buff"><buff typ="AP_UP" /> AP増加効果</sec>を互いに共有します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">前列に位置する味方軽装型保護機</sec>の<sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>を有効化します。
+      EN: |-
+        <sec typ="cond">On being hit</sec>, purges the armor, increasing self's <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="0" r /></sec> and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> for that round.
+        <sec typ="cond">If <char uid="AGS_Goltarion" /> is in the squad</sec>, the above effect can also be passed on to the target, and <sec typ="buff"><buff typ="AP_UP" /> AP increase effects</sec> are shared mutually.
+        <sec typ="cond">At the start of the round</sec>, activates <sec typ="buff"><buff typ="DEF_Side" /> side protection</sec> for allied light-armored protectors positioned in the front line.
+      TC: |-
+        <sec typ="cond">被擊時</sec>，清除裝甲，使自身在該回合內<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="0" r /></sec>增加，並使<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>增加。
+        <sec typ="cond">若小隊內有<char uid="AGS_Goltarion" /></sec>，則上述效果也可傳遞給目標，且雙方共享<sec typ="buff"><buff typ="AP_UP" /> AP增加效果</sec>。
+        <sec typ="cond">回合開始時</sec>，啟動<sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec>於位於前排的我軍輕裝型保護機。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -5800,6 +5880,55 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 스쿼드 내 <cmt t="마왕군">$$EVIL_ARMY:?$</cmt> 및 <cmt t="마법소녀">$$MAGICAL_GIRLS:?$</cmt>의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>하고 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" /></sec>을(를) 증가시킵니다.
+        이하의 스킬에 대하여 자신을 <cmt t="마법소녀">$$MAGICAL_GIRLS_ALT:?$</cmt>로서 취급하여 효과를 발동시킬 수 있습니다.
+        - <char uid="DS_MoMo" />의 <sec typ="note">세기말 마법소녀</sec>
+        - <char uid="AGS_Goltarion" />의 <sec typ="note">마왕님의 명이라면…!</sec>
+        $$EVIL_ARMY~
+        <char uid="DS_Faucre" />, <char uid="AGS_Goltarion" />, <char uid="DS_Sarena" />
+        ~$$EVIL_ARMY
+        $$MAGICAL_GIRLS_ALT~
+        <char uid="DS_MoMo" />, <char uid="DS_Baekto" />, <char uid="DS_Sarena" />
+        ~$$MAGICAL_GIRLS_ALT
+        $$MAGICAL_GIRLS~
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、分隊内の<cmt t="魔王軍">$$EVIL_ARMY:?$</cmt>および<cmt t="魔法少女">$$MAGICAL_GIRLS:?$</cmt>の<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃を支援</sec>し、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" /></sec>を増加させます。
+        以下のスキルについて、自分を<cmt t="魔法少女">$$MAGICAL_GIRLS_ALT:?$</cmt>として扱い、効果を発動させることができます。
+        - <char uid="DS_MoMo" />の<sec typ="note">世紀末魔法少女</sec>
+        - <char uid="AGS_Goltarion" />の<sec typ="note">魔王様の命令なら…！</sec>
+        $$EVIL_ARMY~
+        <char uid="DS_Faucre" />, <char uid="AGS_Goltarion" />, <char uid="DS_Sarena" />
+        ~$$EVIL_ARMY
+        $$MAGICAL_GIRLS_ALT~
+        <char uid="DS_MoMo" />, <char uid="DS_Baekto" />, <char uid="DS_Sarena" />
+        ~$$MAGICAL_GIRLS_ALT
+        $$MAGICAL_GIRLS~
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, supports the attacks of <cmt t="Demon King Army">$$EVIL_ARMY:?$</cmt> and <cmt t="Magical Girls">$$MAGICAL_GIRLS:?$</cmt> in the squad and increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" /></sec>.
+        For the skills below, self can be treated as <cmt t="Magical Girls">$$MAGICAL_GIRLS_ALT:?$</cmt> to trigger effects.
+        - <char uid="DS_MoMo" />'s <sec typ="note">Post-Apocalyptic Magical Girl</sec>
+        - <char uid="AGS_Goltarion" />'s <sec typ="note">If it is the Demon King's command...!</sec>
+        $$EVIL_ARMY~
+        <char uid="DS_Faucre" />, <char uid="AGS_Goltarion" />, <char uid="DS_Sarena" />
+        ~$$EVIL_ARMY
+        $$MAGICAL_GIRLS_ALT~
+        <char uid="DS_MoMo" />, <char uid="DS_Baekto" />, <char uid="DS_Sarena" />
+        ~$$MAGICAL_GIRLS_ALT
+        $$MAGICAL_GIRLS~
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，支援小隊內<cmt t="魔王軍">$$EVIL_ARMY:?$</cmt>及<cmt t="魔法少女">$$MAGICAL_GIRLS:?$</cmt>的<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻擊</sec>，並增加<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" /></sec>。
+        以下技能中，自身可被視為<cmt t="魔法少女">$$MAGICAL_GIRLS_ALT:?$</cmt>以觸發效果。
+        - <char uid="DS_MoMo" />的<sec typ="note">末世魔法少女</sec>
+        - <char uid="AGS_Goltarion" />的<sec typ="note">若是魔王大人的命令…！</sec>
+        $$EVIL_ARMY~
+        <char uid="DS_Faucre" />, <char uid="AGS_Goltarion" />, <char uid="DS_Sarena" />
+        ~$$EVIL_ARMY
+        $$MAGICAL_GIRLS_ALT~
+        <char uid="DS_MoMo" />, <char uid="DS_Baekto" />, <char uid="DS_Sarena" />
+        ~$$MAGICAL_GIRLS_ALT
+        $$MAGICAL_GIRLS~
 dialogue:
   KR:
     "":
@@ -5859,8 +5988,7 @@ dialogue:
         왜냐면… 지금의 저... 
         연기할 여유가 없으니까…
         계속… 해주세요.
-      Oath: 이, 이건... 저로... 괜찮으세요? 저는 감독님한테 도움만 받고 아무것도 돌려드리지 못했는데... 그런데도 반지까지... 아뇨,
-        아니에요. 앞으로 많이 돌려드리면 되는 거죠? 저도 사랑해요… 자기야…
+      Oath: 이, 이건... 저로... 괜찮으세요? 저는 감독님한테 도움만 받고 아무것도 돌려드리지 못했는데... 그런데도 반지까지... 아뇨, 아니에요. 앞으로 많이 돌려드리면 되는 거죠? 저도 사랑해요… 자기야…
       OathIdle_01: |-
         가슴의 흉터요? 안 지울 거예요.
         이 상처는 저의 죽음을 상징하죠.

@@ -2199,6 +2199,39 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        우정의 철퇴를 휘둘러 단일 대상에게 <dmg elem="physics" />를 입히고, 적중 시 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>합니다.
+        적중 대상이 <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태인 경우, 2라운드 동안 대상의 <sec typ="dmg"><buff typ="TROOPER_DMG_DOWN" /> 대 경장형 피해량 <val idx="3" r /></sec>를 감소시킵니다. (최대 2중첩)
+        <sec type="cond">아군 중 <cmt t="아우">$$BROTHER:4@0$</cmt>가 존재하는 경우</sec>, 해당 라운드 동안 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과를 획득합니다.
+        $$BROTHER~
+        <sec typ="cond">HP가 25% 이상인 아군</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val param="$1" r /></sec>
+        ~$$BROTHER
+      JP: |-
+        友情の鉄槌を振るって単一対象に<dmg elem="physics" />を与え、命中時に2ラウンドの間対象を<sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>します。
+        命中対象が<sec typ="cond"><buff typ="PROVOKE" /> 挑発</sec>状態の場合、2ラウンドの間対象の<sec typ="dmg"><buff typ="TROOPER_DMG_DOWN" /> 対軽装型ダメージ <val idx="3" r /></sec>を減少させます。(最大2重複)
+        <sec type="cond">味方の中に<cmt t="兄">$$BROTHER:4@0$</cmt>が存在する場合</sec>、そのラウンドの間<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / ダメージ減少無視</sec>効果を獲得します。
+        $$BROTHER~
+        <sec typ="cond">HPが25%以上の味方</sec>
+        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val param="$1" r /></sec>
+        ~$$BROTHER
+      EN: |-
+        Swings the Hammer of Friendship to deal <dmg elem="physics" /> to a single target, and on hit, provokes the target for 2 rounds.
+        If the hit target is in <sec typ="cond"><buff typ="PROVOKE" /> provoked</sec> state, decreases the target's <sec typ="dmg"><buff typ="TROOPER_DMG_DOWN" /> damage to light armor <val idx="3" r /></sec> for 2 rounds. (Max 2 stacks)
+        <sec type="cond">If there is a teammate among allies with <cmt t="Brother">$$BROTHER:4@0$</cmt></sec>, gains <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> for that round.
+        $$BROTHER~
+        <sec typ="cond">Allies with HP of 25% or higher</sec>
+        <sec typ="cond">At the start of the round</sec>, for 2 rounds, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val param="$1" r /></sec>
+        ~$$BROTHER
+      TC: |-
+        揮舞友誼鐵鎚，對單一目標造成<dmg elem="physics" />，命中時使目標在2回合內<sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>。
+        若命中目標處於<sec typ="cond"><buff typ="PROVOKE" /> 挑釁</sec>狀態，則在2回合內降低目標的<sec typ="dmg"><buff typ="TROOPER_DMG_DOWN" /> 對輕裝型傷害 <val idx="3" r /></sec>。(最多2層)
+        <sec type="cond">若我軍中存在<cmt t="哥哥">$$BROTHER:4@0$</cmt></sec>，則在該回合獲得<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減少</sec>效果。
+        $$BROTHER~
+        <sec typ="cond">HP高於25%的我軍</sec>
+        <sec typ="cond">回合開始時</sec>，在2回合內<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val param="$1" r /></sec>
+        ~$$BROTHER
   "2":
     key: "2"
     icon: AssaultAttack
@@ -3976,6 +4009,43 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        부츠의 분사 장치를 가동하여 온 몸을 날리며 지정 범위 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 입힙니다.
+        적중 대상이 <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">아군 중 <cmt t="아우">$$BROTHER:4@0$</cmt>가 존재하는 경우</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 광역 피해량 집중 <val idx="3" r /></sec> 효과가 적용됩니다.
+        <sec typ="cond">두 조건을 모두 만족하는 경우</sec> 대상은 2라운드 동안 <sec typ="buff"><buff typ="STUN" /> 행동 불능</sec> 상태가 됩니다.
+        $$BROTHER~
+        <sec typ="cond">HP가 25% 이상인 아군</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val param="$1" r /></sec>
+        ~$$BROTHER
+      JP: |-
+        ブーツの噴射装置を起動して身体ごと飛び、指定範囲の対象に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
+        命中対象が<sec typ="cond"><buff typ="PROVOKE" /> 挑発</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">味方の中に<cmt t="兄">$$BROTHER:4@0$</cmt>が存在する場合</sec>、<sec typ="buff"><buff typ="ATK_UP" /> 広域ダメージ集中 <val idx="3" r /></sec>効果が適用されます。
+        <sec typ="cond">両方の条件を満たす場合</sec>、対象は2ラウンドの間<sec typ="buff"><buff typ="STUN" /> 行動不能</sec>状態になります。
+        $$BROTHER~
+        <sec typ="cond">HPが25%以上の味方</sec>
+        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val param="$1" r /></sec>
+        ~$$BROTHER
+      EN: |-
+        Activates the boots' jet propulsion to launch herself and deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to targets in the designated area.
+        If the hit target is in <sec typ="cond"><buff typ="PROVOKE" /> provoked</sec> state, increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec>.
+        <sec typ="cond">If there is a teammate among allies with <cmt t="Brother">$$BROTHER:4@0$</cmt></sec>, applies <sec typ="buff"><buff typ="ATK_UP" /> AoE damage focus <val idx="3" r /></sec>.
+        <sec typ="cond">If both conditions are met</sec>, the target becomes <sec typ="buff"><buff typ="STUN" /> incapacitated</sec> for 2 rounds.
+        $$BROTHER~
+        <sec typ="cond">Allies with HP of 25% or higher</sec>
+        <sec typ="cond">At the start of the round</sec>, for 2 rounds, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val param="$1" r /></sec>
+        ~$$BROTHER
+      TC: |-
+        啟動靴子的噴射裝置將全身飛起，對指定範圍目標造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+        若命中目標處於<sec typ="cond"><buff typ="PROVOKE" /> 挑釁</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="0" r /></sec>增加。
+        <sec typ="cond">若我軍中存在<cmt t="哥哥">$$BROTHER:4@0$</cmt></sec>，則套用<sec typ="buff"><buff typ="ATK_UP" /> 範圍傷害集中 <val idx="3" r /></sec>效果。
+        <sec typ="cond">若同時滿足兩項條件</sec>，目標將在2回合內進入<sec typ="buff"><buff typ="STUN" /> 行動不能</sec>狀態。
+        $$BROTHER~
+        <sec typ="cond">HP高於25%的我軍</sec>
+        <sec typ="cond">回合開始時</sec>，在2回合內<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val param="$1" r /></sec>
+        ~$$BROTHER
   "3":
     key: "3"
     icon: P.Charm
@@ -4575,6 +4645,47 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">5인 스쿼드인 경우</sec>, 효과가 증폭됩니다. (<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="5" r /></sec>)
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">자신이 혼자가 아닌 경우</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="6" r signless /> HP로 전투 속행</sec> 효과를 획득합니다.
+        <sec typ="cond">아군이 수적 열세일 때</sec>, 효과가 추가로 적용됩니다.
+        <sec typ="cond">전투 속행 시</sec>, 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 모든 해로운 효과를 해제</sec>하고, <cmt t="악당">$$VILLAIN:0$</cmt>의 모든 강화 효과를 해제합니다.
+        $$VILLAIN~
+        <sec typ="cond">HP 비율이 <char uid="DS_Cloverace" />와 같거나 보다 높은 적</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>
+        ~$$VILLAIN
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">5人分隊の場合</sec>、効果が増幅されます。(<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="5" r /></sec>)
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="cond">自分がひとりではない場合</sec><sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="6" r signless /> HPで戦闘継続</sec>効果を獲得します。
+        <sec typ="cond">味方が数的劣勢の時</sec>、効果が追加で適用されます。
+        <sec typ="cond">戦闘継続時</sec>、自分に適用された<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> すべての有害な効果を解除</sec>し、<cmt t="悪党">$$VILLAIN:0$</cmt>のすべての強化効果を解除します。
+        $$VILLAIN~
+        <sec typ="cond">HP比率が<char uid="DS_Cloverace" />と同じかそれ以上の敵</sec>
+        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間<sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>
+        ~$$VILLAIN
+      EN: |-
+        <sec typ="cond">At combat start</sec>, increases <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec>.
+        <sec typ="cond">If in a 5-member squad</sec>, the effect is amplified. (<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="5" r /></sec>)
+        <sec typ="cond">At combat start</sec>, <sec typ="cond">if self is not alone</sec>, gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> battle continuation with <val idx="6" r signless /> HP</sec>.
+        <sec typ="cond">When allies are outnumbered</sec>, the effect is additionally applied.
+        <sec typ="cond">On battle continuation</sec>, removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> all harmful effects</sec> applied to self, and removes all buffs from <cmt t="Villain">$$VILLAIN:0$</cmt>.
+        $$VILLAIN~
+        <sec typ="cond">Enemies whose HP ratio is equal to or higher than <char uid="DS_Cloverace" /></sec>
+        <sec typ="cond">At the start of the round</sec>, for 2 rounds, <sec typ="attr">malicious</sec> <sec typ="buff"><buff typ="PROVOKE" /> provoke</sec>
+        ~$$VILLAIN
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，增加<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="0" r /></sec>。
+        <sec typ="cond">若為5人小隊</sec>，則效果增幅。( <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="5" r /></sec> )
+        <sec typ="cond">戰鬥開始時</sec>，<sec typ="cond">若自身不是單獨一人</sec>，則獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以<val idx="6" r signless /> HP繼續戰鬥</sec>效果。
+        <sec typ="cond">當我軍處於數量劣勢時</sec>，效果會額外套用。
+        <sec typ="cond">在繼續戰鬥時</sec>，解除自身套用的<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 所有有害效果</sec>，並解除<cmt t="壞蛋">$$VILLAIN:0$</cmt>的所有強化效果。
+        $$VILLAIN~
+        <sec typ="cond">HP比例與<char uid="DS_Cloverace" />相同或更高的敵人</sec>
+        <sec typ="cond">回合開始時</sec>，在2回合內<sec typ="attr">有害的</sec> <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>
+        ~$$VILLAIN
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -4907,6 +5018,39 @@ skills:
             base: 0.03
             per: 0.004
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec>가 증가하고, HP 25% 이상인 아군을 <cmt t="아우">$$BROTHER:0$</cmt>로 지목하여 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">자신을 제외한 <cmt t="D-엔터테인먼트">$$Dentertainment:0$</cmt> 전투원이 존재하는 경우</sec> 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec>가 증가합니다.
+        <sec typ="cond">공격 적중 시</sec>, 2라운드 동안 자신과 <cmt t="아우">$$BROTHER:4@0$</cmt>의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>를 증가시킵니다. (최대 3중첩)
+        $$BROTHER~
+        <sec typ="cond">HP가 25% 이상인 아군</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val param="$1" r /></sec>
+        ~$$BROTHER
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec>が増加し、HP25%以上の味方を<cmt t="兄">$$BROTHER:0$</cmt>として指名して2ラウンドの間対象の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">自分以外の<cmt t="D-エンターテインメント">$$Dentertainment:0$</cmt>戦闘員が存在する場合</sec>、自分の<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="5" r /></sec>が増加します。
+        <sec typ="cond">攻撃命中時</sec>、2ラウンドの間、自分と<cmt t="兄">$$BROTHER:4@0$</cmt>の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>を増加させます。(最大3重複)
+        $$BROTHER~
+        <sec typ="cond">HPが25%以上の味方</sec>
+        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val param="$1" r /></sec>
+        ~$$BROTHER
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> and designates allies with HP of 25% or higher as <cmt t="Brother">$$BROTHER:0$</cmt>, increasing the target's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> for 2 rounds.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if there are combatants other than self from <cmt t="D-Entertainment">$$Dentertainment:0$</cmt></sec>, increases self's <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="5" r /></sec>.
+        <sec typ="cond">On attack hit</sec>, increases self and <cmt t="Brother">$$BROTHER:4@0$</cmt>'s <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" r /></sec> for 2 rounds. (Max 3 stacks)
+        $$BROTHER~
+        <sec typ="cond">Allies with HP of 25% or higher</sec>
+        <sec typ="cond">At the start of the round</sec>, for 2 rounds, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val param="$1" r /></sec>
+        ~$$BROTHER
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec>，並將HP25%以上的我軍指名為<cmt t="哥哥">$$BROTHER:0$</cmt>，在2回合內增加目標的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若存在除自身以外的<cmt t="D-娛樂">$$Dentertainment:0$</cmt>戰鬥員</sec>，則增加自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="5" r /></sec>。
+        <sec typ="cond">攻擊命中時</sec>，在2回合內增加自身與<cmt t="哥哥">$$BROTHER:4@0$</cmt>的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>。(最多3層)
+        $$BROTHER~
+        <sec typ="cond">HP高於25%的我軍</sec>
+        <sec typ="cond">回合開始時</sec>，在2回合內<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val param="$1" r /></sec>
+        ~$$BROTHER
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -5251,6 +5395,43 @@ skills:
             base: 0
             per: 0
             chance: 9.99
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">HP 비율이 같거나 자신보다 높은 적</sec>을 <cmt t="악당">$$VILLAIN:0$</cmt>으로 지목하여 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" />도발</sec>합니다.
+        <cmt t="악당">$$VILLAIN:0$</cmt> 지목은 대상의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" /> 효과 저항</sec>에 영향을 받지 않지만, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec>로 해제할 수 있습니다.
+        <sec typ="cond">적 사망 시</sec>, 모든 <cmt t="악당">$$VILLAIN:0$</cmt>은 기세에 눌려 3라운드 동안 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="3" inv r /></sec>가 감소합니다. (최대 3중첩)
+        <sec typ="cond">공격 받을 시</sec>, <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태인 적에게 3라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec> 증가 효과를 부여합니다. (최대 3중첩)
+        $$VILLAIN~
+        <sec typ="cond">HP 비율이 <char uid="DS_Cloverace" />와 같거나 보다 높은 적</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>
+        ~$$VILLAIN
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">HP比率が自分と同じかそれ以上の敵</sec>を<cmt t="悪党">$$VILLAIN:0$</cmt>として指名し、2ラウンドの間対象を<sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>します。
+        <cmt t="悪党">$$VILLAIN:0$</cmt>の指名は対象の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" /> 効果抵抗</sec>の影響を受けませんが、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害な効果解除</sec>で解除できます。
+        <sec typ="cond">敵が死亡した時</sec>、すべての<cmt t="悪党">$$VILLAIN:0$</cmt>は勢いに押され、3ラウンドの間<sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="3" inv r /></sec>が減少します。(最大3重複)
+        <sec typ="cond">攻撃された時</sec>、<sec typ="cond"><buff typ="PROVOKE" /> 挑発</sec>状態の敵に3ラウンドの間<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec>増加効果を付与します。(最大3重複)
+        $$VILLAIN~
+        <sec typ="cond">HP比率が<char uid="DS_Cloverace" />と同じかそれ以上の敵</sec>
+        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間<sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>
+        ~$$VILLAIN
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, designates <sec typ="cond">enemies whose HP ratio is equal to or higher than self</sec> as <cmt t="Villain">$$VILLAIN:0$</cmt> and provokes the target for 2 rounds.
+        The <cmt t="Villain">$$VILLAIN:0$</cmt> designation is not affected by the target's <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" /> effect resistance</sec>, but it can be removed by <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removing harmful effects</sec>.
+        <sec typ="cond">When an enemy dies</sec>, all <cmt t="Villain">$$VILLAIN:0$</cmt> are overwhelmed by momentum, decreasing <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> effect resistance <val idx="3" inv r /></sec> for 3 rounds. (Max 3 stacks)
+        <sec typ="cond">When attacked</sec>, grants enemies in <sec typ="cond"><buff typ="PROVOKE" /> provoked</sec> state an increase to <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="4" r /></sec> for 3 rounds. (Max 3 stacks)
+        $$VILLAIN~
+        <sec typ="cond">Enemies whose HP ratio is equal to or higher than <char uid="DS_Cloverace" /></sec>
+        <sec typ="cond">At the start of the round</sec>, for 2 rounds, <sec typ="attr">malicious</sec> <sec typ="buff"><buff typ="PROVOKE" /> provoke</sec>
+        ~$$VILLAIN
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，將<sec typ="cond">HP比例與自身相同或更高的敵人</sec>指名為<cmt t="壞蛋">$$VILLAIN:0$</cmt>，並在2回合內使目標進入<sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>。
+        <cmt t="壞蛋">$$VILLAIN:0$</cmt>的指名不受目標的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" /> 效果抗性</sec>影響，但可透過<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除有害效果</sec>解除。
+        <sec typ="cond">敵人死亡時</sec>，所有<cmt t="壞蛋">$$VILLAIN:0$</cmt>都會被氣勢壓制，在3回合內降低<sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="3" inv r /></sec>。(最多3層)
+        <sec typ="cond">被攻擊時</sec>，對處於<sec typ="cond"><buff typ="PROVOKE" /> 挑釁</sec>狀態的敵人，在3回合內賦予<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="4" r /></sec>增加效果。(最多3層)
+        $$VILLAIN~
+        <sec typ="cond">HP比例與<char uid="DS_Cloverace" />相同或更高的敵人</sec>
+        <sec typ="cond">回合開始時</sec>，在2回合內<sec typ="attr">有害的</sec> <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>
+        ~$$VILLAIN
 dialogue:
   KR:
     "1":
@@ -5308,8 +5489,7 @@ dialogue:
         …지휘관?
         슈트에 숨겨진 기능을
         같이 찾아줬으면 하는데?
-      Oath: 이 슈트를 입은 뒤로, 계속 지휘관을 의식하게 돼 버렸어. 더 멋지고 날렵해진 내게서 눈을 떼지 말아줬으면 하는 느낌? 하하… 이렇게
-        지휘관한테 정신까지 함락된 기분도 나쁘지 않은데? 사랑에 패배한 히어로의 처분을 당신한테 맡기도록 할게.
+      Oath: 이 슈트를 입은 뒤로, 계속 지휘관을 의식하게 돼 버렸어. 더 멋지고 날렵해진 내게서 눈을 떼지 말아줬으면 하는 느낌? 하하… 이렇게 지휘관한테 정신까지 함락된 기분도 나쁘지 않은데? 사랑에 패배한 히어로의 처분을 당신한테 맡기도록 할게.
       OathIdle_01: |-
         지구의 미래를 지키기 위해서라도
         2세대 클로버를 당신과 같이 만들어야겠어…
@@ -5385,9 +5565,8 @@ dialogue:
         그래…
         이것도 모두의 행복을 위해 필요하다면
         내가 감수해야지…​
-      Oath: >-
+      Oath: |-
         뭐, 뭐 하는 거야 지휘관? 갑자기 나에게 반지라니. 지금도 자매들은 평화를 위해 싸우고 있는데…그렇군. 
-
         지휘관의 마음을 받아주는 것도 결국 평화를 위한 길이었어. 미안해 지휘관. 눈앞의 적만 쫓다 보니 항상 나를 감싸주고 있는 당신의 존재를 잠시 잊고 있었어. 이런 나를 사랑해 줘서 고마워. 그리고 나도…당신을 세상 그 누구보다 사랑해.​
       OathIdle_01: |-
         당신을 알기 전에 나는 행복과 우정의
@@ -5569,8 +5748,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Join: The symbol of happiness and friendship! Clover Ace! I heard your desperate
-        cries, friend.
+      Join: The symbol of happiness and friendship! Clover Ace! I heard your desperate cries, friend.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -5638,24 +5816,16 @@ dialogue:
         Okay…
         If that’s what's needed
         for everyone to be happy…
-      Oath: >-
-        Wh-what are you doing, Commander? Why are you giving me a ring all of a
-        sudden? The sisters are fighting for peace as we speak… I see it now. 
-
+      Oath: |-
+        Wh-what are you doing, Commander? Why are you giving me a ring all of a sudden? The sisters are fighting for peace as we speak… I see it now. 
         In the end, accepting your affection was also a path to peace. I’m sorry, Commander. I've been so busy chasing after the enemy, I had forgotten about you and how you'd always embrace me. Thank you for loving someone like me. And I… I love you more than anyone else in the world.
-      OathIdle_01: >-
+      OathIdle_01: |-
         Before I knew you, I protected the world 
-
         as a symbol of happiness and friendship. But after I met you,
-
         I began feeling things
-
         I've never felt before. Don't get me wrong.
-
         I'm not planning on ignoring my ways. To my friends, I'm still the symbol
-
         of happiness and friendship.
-
         To you, I'd like to be the symbol of love.
       MVP: ""
     M:
@@ -5802,9 +5972,8 @@ dialogue:
         好吧…
         如果為了大家的幸福需要這樣的話，
         我就必須承受…
-      Oath: >-
+      Oath: |-
         你在幹什麼啊，指揮官？怎麼突然給我戒指？但姐妹們現在也在為和平而戰…原來如此。 
-
         接受指揮官的心意，最終也是為了實現和平。對不起，指揮官。我只顧著追趕眼前的敵人，暫時忘了一直包容我的你。謝謝你愛這樣的我。而我…也比世上的任何人更加愛你。
       OathIdle_01: |-
         認識你之前，我以幸福和友情的

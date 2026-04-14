@@ -2430,6 +2430,23 @@ skills:
               level: "0"
             value: Char_BR_Efreeti_N
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec>를 낮춥니다.
+        <sec typ="cond"><buff typ="DEF_DOWN" /> <buff typ="EVADE_DOWN" /> 방어력 / 회피 감소</sec> 대상에게 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
+        스쿼드 내에 <sec typ="note">M-5 이프리트</sec>가 있을 시, 지정 타겟 대상으로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">곡사 포격</sec> 스킬 협동 공격</sec>을 합니다.
+      JP: |-
+        対象に<dmg elem="physics" />を与え、2ラウンドの間、対象の<sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="1" r /></sec>を下げます。
+        <sec typ="cond"><buff typ="DEF_DOWN" /> <buff typ="EVADE_DOWN" /> 防御力 / 回避減少</sec>の対象には、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="4" r /></sec>が増加します。
+        分隊内に<sec typ="note">M-5 イフリート</sec>がいる場合、指定ターゲットに対して<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">曲射砲撃</sec>スキルの協同攻撃</sec>を行います。
+      EN: |-
+        Deals <dmg elem="physics" /> to the target and lowers the target's <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="1" r /></sec> for 2 rounds.
+        Against targets with <sec typ="cond"><buff typ="DEF_DOWN" /> <buff typ="EVADE_DOWN" /> DEF / EVA Decrease</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="4" r /></sec> increases.
+        If <sec typ="note">M-5 Efreeti</sec> is in the squad, performs a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> cooperative attack with <sec typ="note">Howitzer Fire</sec></sec> on the designated target.
+      TC: |-
+        對目標造成<dmg elem="physics" />，並在2回合內降低目標的<sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="1" r /></sec>。
+        對於處於<sec typ="cond"><buff typ="DEF_DOWN" /> <buff typ="EVADE_DOWN" /> 防禦力 / 迴避降低</sec>的目標，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="4" r /></sec>會增加。
+        若小隊內有<sec typ="note">M-5 伊芙利特</sec>，則會以指定目標為對象，執行<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 與<sec typ="note">曲射砲擊</sec>技能的協同攻擊</sec>。
   "2":
     key: "2"
     icon: MGWideShot
@@ -3867,6 +3884,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 주고, 3라운드 동안 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 지속 화염 피해 <val idx="3" signless /></sec>을(를) 입는 <sec typ="note">점화</sec> 상태로 만듭니다.
+        적중 시, 대상에게 3라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여합니다.
+        치명타 시, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="fire" />を与え、3ラウンドの間、<sec typ="dmg"><buff typ="FireDMG_DOT" /> 持続火炎ダメージ <val idx="3" signless /></sec>を受ける<sec typ="note">点火</sec>状態にします。
+        命中時、対象に3ラウンドの間<sec typ="buff"><buff typ="MARKING" /> マーク</sec>を付与します。
+        クリティカル時、<sec typ="dmg"><buff typ="FireATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="fire" /> to the designated area and puts enemies into <sec typ="note">Ignition</sec>, which causes <sec typ="dmg"><buff typ="FireDMG_DOT" /> Continuous Fire Damage <val idx="3" signless /></sec> for 3 rounds.
+        On hit, inflicts <sec typ="buff"><buff typ="MARKING" /> Mark</sec> on the target for 3 rounds.
+        On critical hit, <sec typ="dmg"><buff typ="FireATK_UP" /> Damage <val idx="0" r /></sec> increases.
+      TC: |-
+        對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="fire" />，並使其進入<sec typ="note">點火</sec>狀態，在3回合內受到<sec typ="dmg"><buff typ="FireDMG_DOT" /> 持續火焰傷害 <val idx="3" signless /></sec>。
+        命中時，對目標施加持續3回合的<sec typ="buff"><buff typ="MARKING" /> 標記</sec>。
+        暴擊時，<sec typ="dmg"><buff typ="FireATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -4419,6 +4453,31 @@ skills:
             base: 52
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>를 증가시킵니다.
+        대상이 <sec typ="cond">전열</sec>에 위치하거나, <cmt t="스틸라인 계열">$$SteelLine:?$</cmt>인 경우 추가로 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="9" r /></sec>를 증가시킵니다.
+        스쿼드 내 <cmt t="스틸라인 계열">$$SteelLine:?$</cmt>에게 <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 뒤로 밀기 효과 면역</sec> 효과를 부여합니다.
+        대기 시, <sec typ="cond">대상의 HP가 25% 이상</sec>이면 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="5" signless /> 고정 물리 피해</sec>를 입히며 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">자신 사망 시</sec>, 고정 피해 없이 <sec typ="buff"><buff typ="AP_UP" /> AP 증가</sec> 효과의 2배가 대상들에게 적용됩니다.
+      JP: |-
+        ラウンド開始時、味方全体の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>を増加させます。
+        対象が<sec typ="cond">前列</sec>に位置するか、<cmt t="スチールライン系統">$$SteelLine:?$</cmt>の場合、追加で<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果耐性 <val idx="9" r /></sec>を増加させます。
+        分隊内の<cmt t="スチールライン系統">$$SteelLine:?$</cmt>に<sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> ノックバック効果免疫</sec>効果を付与します。
+        待機時、<sec typ="cond">対象のHPが25%以上</sec>なら<sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="5" signless /> 固定物理ダメージ</sec>を与え、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>を増加させます。
+        <sec typ="cond">自分死亡時</sec>、固定ダメージなしで<sec typ="buff"><buff typ="AP_UP" /> AP増加</sec>効果の2倍が対象に適用されます。
+      EN: |-
+        At the start of the round, increases all allies' <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="0" r /></sec>.
+        If the target is positioned in the <sec typ="cond">front line</sec> or is a <cmt t="Steel Line">$$SteelLine:?$</cmt>, additionally increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="8" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="9" r /></sec>.
+        Grants allies in the squad's <cmt t="Steel Line">$$SteelLine:?$</cmt> <sec typ="attr">malign</sec> <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> Knockback Immunity</sec>.
+        When waiting, if <sec typ="cond">the target's HP is 25% or higher</sec>, deals <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="5" signless /> fixed Physical Damage</sec> and increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>.
+        <sec typ="cond">When self dies</sec>, applies double the <sec typ="buff"><buff typ="AP_UP" /> AP Increase</sec> effect to the targets, without fixed damage.
+      TC: |-
+        回合開始時，增加所有我軍的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>。
+        若目標位於<sec typ="cond">前排</sec>，或為<cmt t="鋼線系統">$$SteelLine:?$</cmt>，則額外增加<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="9" r /></sec>。
+        賦予小隊內<cmt t="鋼線系統">$$SteelLine:?$</cmt>的<sec typ="attr">有害</sec><sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 擊退效果免疫</sec>效果。
+        待機時，若<sec typ="cond">目標HP在25%以上</sec>，則造成<sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="5" signless /> 固定物理傷害</sec>，並增加<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>。
+        <sec typ="cond">自身死亡時</sec>，不造成固定傷害，直接對目標套用2倍的<sec typ="buff"><buff typ="AP_UP" /> AP增加</sec>效果。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -4784,6 +4843,47 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec>가 감소합니다.
+        스쿼드 내에 자신을 제외한 <cmt t="장교 계급 스틸라인 계열">$$SteelLine_Officer:?$</cmt> 전투원이 있을 경우 효과가 50% 증가합니다.
+        스쿼드 내에 <cmt t="부사관 / 병사 계급 스틸라인 계열">$$SteelLine_Soldier:?$</cmt> 전투원이 있을 경우, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="9" r /></sec>가 증가합니다.
+        $$SteelLine_Officer~
+        <char uid="BR_Marie" />, <char uid="BR_Phoenix" />, <char uid="BR_Habetrot" />
+        ~$$SteelLine_Officer
+        $$SteelLine_Soldier~
+        <char uid="BR_Leprechaun" />, <char uid="BR_Brownie" />, <char uid="BR_Impet" />, <char uid="BR_Gnome" />, <char uid="BR_PXSilky" />, <char uid="BR_Efreeti" />
+        ~$$SteelLine_Soldier
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="3" r inv /></sec>が減少します。
+        分隊内に自分を除いた<cmt t="士官階級スチールライン系統">$$SteelLine_Officer:?$</cmt>の戦闘員がいる場合、効果が50%増加します。
+        分隊内に<cmt t="下士官 / 兵士階級スチールライン系統">$$SteelLine_Soldier:?$</cmt>の戦闘員がいる場合、自分の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="9" r /></sec>が増加します。
+        $$SteelLine_Officer~
+        <char uid="BR_Marie" />, <char uid="BR_Phoenix" />, <char uid="BR_Habetrot" />
+        ~$$SteelLine_Officer
+        $$SteelLine_Soldier~
+        <char uid="BR_Leprechaun" />, <char uid="BR_Brownie" />, <char uid="BR_Impet" />, <char uid="BR_Gnome" />, <char uid="BR_PXSilky" />, <char uid="BR_Efreeti" />
+        ~$$SteelLine_Soldier
+      EN: |-
+        At the start of the round, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="2" r /></sec> increases, and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="3" r inv /></sec> decreases.
+        If there is any <cmt t="Steel Line officer rank">$$SteelLine_Officer:?$</cmt> unit in the squad other than self, the effect increases by 50%.
+        If there is a <cmt t="Steel Line enlisted rank">$$SteelLine_Soldier:?$</cmt> unit in the squad, self's <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="9" r /></sec> increases.
+        $$SteelLine_Officer~
+        <char uid="BR_Marie" />, <char uid="BR_Phoenix" />, <char uid="BR_Habetrot" />
+        ~$$SteelLine_Officer
+        $$SteelLine_Soldier~
+        <char uid="BR_Leprechaun" />, <char uid="BR_Brownie" />, <char uid="BR_Impet" />, <char uid="BR_Gnome" />, <char uid="BR_PXSilky" />, <char uid="BR_Efreeti" />
+        ~$$SteelLine_Soldier
+      TC: |-
+        回合開始時，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="2" r /></sec>增加，<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="3" r inv /></sec>減少。
+        若小隊內存在除自身以外的<cmt t="鋼線軍官階級">$$SteelLine_Officer:?$</cmt>戰鬥員，效果會增加50%。
+        若小隊內存在<cmt t="鋼線士官 / 士兵階級">$$SteelLine_Soldier:?$</cmt>戰鬥員，自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="9" r /></sec>增加。
+        $$SteelLine_Officer~
+        <char uid="BR_Marie" />, <char uid="BR_Phoenix" />, <char uid="BR_Habetrot" />
+        ~$$SteelLine_Officer
+        $$SteelLine_Soldier~
+        <char uid="BR_Leprechaun" />, <char uid="BR_Brownie" />, <char uid="BR_Impet" />, <char uid="BR_Gnome" />, <char uid="BR_PXSilky" />, <char uid="BR_Efreeti" />
+        ~$$SteelLine_Soldier
   "5":
     key: "5"
     icon: P.Command
@@ -6019,6 +6119,47 @@ skills:
             base: 500
             per: 50
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, 영구적으로 아군 전체의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>를 증가시킵니다.
+        해당 효과는 스쿼드 내 전투원 수에 따라 증폭됩니다.
+        자신은 효과가 2배로 적용됩니다.
+
+        자신이 생존한 동안 전투 불능으로 인해 전투 개시 시점보다 아군 인원 수가 줄어들 때마다, 라운드 개시 시 아군 전체에게 다음 일반 효과를 부여합니다.
+        1인 감소 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="14" r /></sec> 증가
+        2인 감소 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="18" r /></sec> 감소
+        3인 감소 : <sec typ="buff"><buff typ="COUNTER" /> <val idx="21" r signless /> 위력으로 반격</sec>
+        4인 감소 : 매 라운드 1회 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="23" signless /> HP로 전투 속행</sec>
+      JP: |-
+        戦闘開始時、永続的に味方全体の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>を増加させます。
+        この効果は分隊内の戦闘員数に応じて増幅されます。
+        自分には効果が2倍で適用されます。
+
+        自分が生存している間、戦闘不能により戦闘開始時点より味方人数が減るたび、ラウンド開始時に味方全体へ次の一般効果を付与します。
+        1人減少 : <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="14" r /></sec>増加
+        2人減少 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="18" r /></sec>減少
+        3人減少 : <sec typ="buff"><buff typ="COUNTER" /> <val idx="21" r signless /> 威力で反撃</sec>
+        4人減少 : 毎ラウンド1回 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="23" signless /> HPで戦闘続行</sec>
+      EN: |-
+        At the start of combat, permanently increases all allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec>.
+        This effect is amplified based on the number of units in the squad.
+        Self receives double the effect.
+
+        While self is alive, whenever the number of allies drops below the amount at the start of combat due to incapacitation, grants all allies the following normal effects at the start of the round.
+        Down by 1: <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="14" r /></sec> increase
+        Down by 2: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="18" r /></sec> decrease
+        Down by 3: <sec typ="buff"><buff typ="COUNTER" /> Counter with <val idx="21" r signless /> power</sec>
+        Down by 4: Once per round, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat with <val idx="23" signless /> HP</sec>
+      TC: |-
+        戰鬥開始時，永久增加所有我軍的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>。
+        此效果會依據小隊內戰鬥員數量而增幅。
+        自身會套用2倍效果。
+
+        自身存活期間，只要因戰鬥不能而使我軍人數較戰鬥開始時減少，則每次在回合開始時賦予所有我軍以下一般效果。
+        減少1名：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="14" r /></sec>增加
+        減少2名：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="18" r /></sec>減少
+        減少3名：<sec typ="buff"><buff typ="COUNTER" /> 以<val idx="21" r signless />威力反擊</sec>
+        減少4名：每回合1次<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以<val idx="23" signless />HP繼續戰鬥</sec>
 dialogue:
   KR:
     "1":
@@ -6326,12 +6467,8 @@ dialogue:
         Oh… I thought I wouldn’t be enough
         to motivate you.
         I didn’t think you’d like me so much…
-      Oath: >-
-        At first, it was to gain a better understanding of Captain Marie and
-        because of my subordinates’ suggestion. However, the more I spend time
-        with you… I feel extremely anxious and happy than I can stand. I believe
-        I’m in… love with you, Commander.
-
+      Oath: |-
+        At first, it was to gain a better understanding of Captain Marie and because of my subordinates’ suggestion. However, the more I spend time with you… I feel extremely anxious and happy than I can stand. I believe I’m in… love with you, Commander.
         Can you allow me to be a woman, not a soldier, for the time we spend alone…?​
       OathIdle_01: |-
         I didn’t want to be a soldier,
@@ -6389,12 +6526,9 @@ dialogue:
         I-I don’t understand! Why would you
         want my b, b, body…
         Umm…
-      Oath: >-
-        But Commander? I don't understand. There are much cooler and more
-        attractive bioroids… 
-
+      Oath: |-
+        But Commander? I don't understand. There are much cooler and more attractive bioroids… 
         N-no… Sorry to be so uncool… in such an important moment.
-
         Although I have much to learn, I'll try my best.
       OathIdle_01: |-
         It’s an honor

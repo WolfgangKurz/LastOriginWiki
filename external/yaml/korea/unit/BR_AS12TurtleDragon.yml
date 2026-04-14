@@ -2763,6 +2763,27 @@ skills:
               level: "0"
             value: Char_BR_Bulgasari_N
             chance: 1
+    desc:
+      KR: |-
+        샷건을 발사해 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">적중 시</sec>, <sec typ="chance">25%</sec> 확률로 해당 라운드 동안 대상을 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만듭니다.
+        <sec typ="cond">스쿼드 내 <char uid="BR_HongRyun" />이 있을 경우</sec>, <sec typ="chance">확률이 75%로 증가</sec>합니다.
+        <sec typ="cond">스쿼드 내 <char uid="BR_Bulgasari" />가 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">배터링 램</sec> / <sec typ="note">벙커 버스터</sec> 스킬 협동 공격</sec>을 유도합니다.
+      JP: |-
+        ショットガンを発射して<dmg elem="physics" />を与え、2ラウンドの間対象の<sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">命中時</sec>、<sec typ="chance">25%</sec>の確率でそのラウンドの間対象を<sec typ="buff"><buff typ="STUN" /> 行動不可</sec>状態にします。
+        <sec typ="cond">分隊内に<char uid="BR_HongRyun" />がいる場合</sec>、<sec typ="chance">確率が75%に増加</sec>します。
+        <sec typ="cond">分隊内に<char uid="BR_Bulgasari" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Battering Ram</sec> / <sec typ="note">Bunker Buster</sec>スキルの協同攻撃</sec>を誘導します。
+      EN: |-
+        Fires a shotgun and deals <dmg elem="physics" /> to the target, decreasing the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="1" r /></sec> for 2 rounds.
+        <sec typ="cond">On hit</sec>, has a <sec typ="chance">25%</sec> chance to put the target into <sec typ="buff"><buff typ="STUN" /> Action Disabled</sec> for that round.
+        <sec typ="cond">If <char uid="BR_HongRyun" /> is in the squad</sec>, the chance increases to <sec typ="chance">75%</sec>.
+        <sec typ="cond">If <char uid="BR_Bulgasari" /> is in the squad</sec>, induces a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> cooperative attack with <sec typ="note">Battering Ram</sec> / <sec typ="note">Bunker Buster</sec></sec>.
+      TC: |-
+        發射霰彈槍造成<dmg elem="physics" />，並在2回合內降低目標的<sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec>。
+        <sec typ="cond">命中時</sec>，有<sec typ="chance">25%</sec>機率使目標在該回合進入<sec typ="buff"><buff typ="STUN" /> 行動不能</sec>狀態。
+        <sec typ="cond">若小隊內有<char uid="BR_HongRyun" /></sec>，則機率提升至<sec typ="chance">75%</sec>。
+        <sec typ="cond">若小隊內有<char uid="BR_Bulgasari" /></sec>，則引導與<sec typ="note">Battering Ram</sec> / <sec typ="note">Bunker Buster</sec>技能的<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 協同攻擊</sec>。
   "2":
     key: "2"
     icon: ShieldWall
@@ -3007,6 +3028,19 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        대형 방패를 세워 3라운드 동안 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">스킬 사용 시</sec> <sec typ="cond"><buff typ="COUNTER" /> 반격 활성화 상태인 경우</sec>, 추가로 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="4" r /></sec>가 증가합니다.
+      JP: |-
+        大盾を構え、3ラウンドの間自分の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果耐性 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除耐性 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">スキル使用時</sec><sec typ="cond"><buff typ="COUNTER" /> 反撃有効状態の場合</sec>、さらに<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="4" r /></sec>が増加します。
+      EN: |-
+        Raises a large shield and increases self's <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Remove Buff Resistance <val idx="1" r /></sec> for 3 rounds.
+        <sec typ="cond">When using the skill</sec>, if <sec typ="cond"><buff typ="COUNTER" /> Retaliation is active</sec>, additionally increases <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="4" r /></sec>.
+      TC: |-
+        舉起大型盾牌，使自身在3回合內的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抗性 <val idx="1" r /></sec>增加。
+        <sec typ="cond">使用技能時</sec>，若處於<sec typ="cond"><buff typ="COUNTER" /> 反擊啟用狀態</sec>，則另外增加<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="4" r /></sec>。
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -3312,6 +3346,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec>가 감소하며 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec>가 활성화됩니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 전열에 위치한 경우</sec>, <sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 위력으로 반격</sec>이 활성화됩니다.
+        <sec typ="cond">피격 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>이(가) 증가하고 해당 라운드 동안 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="7" /></sec>이(가) 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec>が減少し、<sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec>が有効になります。
+        <sec typ="cond">ラウンド開始時</sec><sec typ="cond">自分が前列に位置する場合</sec>、<sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 威力で反撃</sec>が有効になります。
+        <sec typ="cond">被撃時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>が増加し、そのラウンドの間<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="7" /></sec>が増加します。
+      EN: |-
+        At the start of the round, increases self's <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="0" r /></sec>, decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="1" r inv /></sec>, and activates <sec typ="buff"><buff typ="DEF_Line" /> Protect Line</sec>.
+        <sec typ="cond">At the start of the round</sec><sec typ="cond">if self is in the front line</sec>, activates <sec typ="buff"><buff typ="COUNTER" /> Retaliation with <val idx="5" r signless /> power</sec>.
+        <sec typ="cond">When attacked</sec>, increases self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> and increases <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="7" /></sec> for that round.
+      TC: |-
+        回合開始時，增加自身的<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec>，並降低<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="1" r inv /></sec>，同時啟用<sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec>。
+        <sec typ="cond">回合開始時</sec><sec typ="cond">若自身位於前排</sec>，則啟用以<val idx="5" r signless />威力反擊的<sec typ="buff"><buff typ="COUNTER" /> 反擊</sec>。
+        <sec typ="cond">受到攻擊時</sec>，增加自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>，且該回合內<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="7" /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -3766,6 +3817,23 @@ skills:
             base: 0.015
             per: 0.001
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_Char" /> 전열에 위치한 아군 공격기/지원기를 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">대상 또는 자신이 전열에 위치한 경우</sec>, 각각 효과가 50% 증폭됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="DEF_Char" /> 前列に位置する味方の攻撃機/支援機を指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>が増加します。
+        <sec typ="cond">対象または自分が前列に位置する場合</sec>、それぞれの効果が50%増幅されます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> is applied to allies' attackers/supporters in the front line.
+        <sec typ="cond">At the start of the round</sec>, increases allies within range with <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" r /></sec>.
+        <sec typ="cond">If the target or self is in the front line</sec>, each effect is amplified by 50%.
+      TC: |-
+        回合開始時，對<sec typ="buff"><buff typ="DEF_Char" /> 位於前排的我軍攻擊器／支援器指定保護</sec>。
+        回合開始時，增加範圍內我軍的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>。
+        <sec typ="cond">若目標或自身位於前排</sec>，則各效果增幅50%。
   "5":
     key: "5"
     icon: P.DefCounter
@@ -4226,6 +4294,27 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="PROVOKE" /> 모든 적 보호기를 도발</sec>하고 <sec typ="buff"><buff typ="Guardpierce_No_Apply" /> 보호 무시를 비활성화</sec>합니다.
+        <sec typ="cond">피격 시</sec>, 도발 상태인 적의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec>을(를) 감소시키고 2라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="6" r /></sec>를 증가시킵니다. (최대 3중첩)
+        <sec typ="cond">자신에게 <buff typ="SUPPORT_ATTACK" /> 공격 지원 효과가 적용된 경우</sec>, <sec typ="note">대형 방패 전개</sec>의 사용 효과가 아군 전체에 적용됩니다.
+        <sec>스킬 효과는 <sec typ="note">팃포탯</sec>의 스킬 레벨에 비례합니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="PROVOKE" /> 全ての敵保護機を挑発</sec>し、<sec typ="buff"><buff typ="Guardpierce_No_Apply" /> 保護無視を無効化</sec>します。
+        <sec typ="cond">被撃時</sec>、挑発状態の敵の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec>を減少させ、2ラウンドの間<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="6" r /></sec>を増加させます。(最大3スタック)
+        <sec typ="cond">自分に<buff typ="SUPPORT_ATTACK" /> 支援攻撃効果が適用されている場合</sec>、<sec typ="note">大盾展開</sec>の使用効果が味方全体に適用されます。
+        <sec>スキル効果は<sec typ="note">チップアンドデール</sec>のスキルレベルに比例します。</sec>
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, <sec typ="buff"><buff typ="PROVOKE" /> provokes all enemy protectors</sec> and <sec typ="buff"><buff typ="Guardpierce_No_Apply" /> disables Ignore Protection</sec>.
+        <sec typ="cond">When attacked</sec>, decreases the <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec> of provoked enemies and increases <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="6" r /></sec> for 2 rounds. (Max 3 stacks)
+        <sec typ="cond">If self has <buff typ="SUPPORT_ATTACK" /> Support Attack</sec> applied, the use effect of <sec typ="note">Large Shield Deployment</sec> applies to all allies.
+        <sec>The skill effect is proportional to the skill level of <sec typ="note">Tiff & Taff</sec>.</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="PROVOKE" /> 嘲諷所有敵方保護機</sec>並<sec typ="buff"><buff typ="Guardpierce_No_Apply" /> 停用無視保護</sec>。
+        <sec typ="cond">受到攻擊時</sec>，降低處於嘲諷狀態敵軍的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec>，並在2回合內增加<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="6" r /></sec>。（最多3層）
+        <sec typ="cond">若自身套用<buff typ="SUPPORT_ATTACK" /> 支援攻擊效果</sec>，則<sec typ="note">大型盾牌展開</sec>的使用效果會套用至我軍全體。
+        <sec>技能效果與<sec typ="note">Tip Tap</sec>的技能等級成正比。</sec>
 dialogue:
   KR:
     "1":
@@ -4335,8 +4424,7 @@ dialogue:
         히익! 가, 갑자기 만지지마…
         갑자기가 아니면 괜찮냐고?
         ……응.
-      Oath: 데이트는 전투라는 말이 무슨 의미인지 지금은 알 거 같아. 전투에서 다른 애들을 먼저 생각하는 것처럼 데이트에서는 사령관을 먼저
-        생각하라는 거지? 응! 완벽히 이해했어! 앞으로도 계속 사령관만을 생각할게!
+      Oath: 데이트는 전투라는 말이 무슨 의미인지 지금은 알 거 같아. 전투에서 다른 애들을 먼저 생각하는 것처럼 데이트에서는 사령관을 먼저 생각하라는 거지? 응! 완벽히 이해했어! 앞으로도 계속 사령관만을 생각할게!
       OathIdle_01: |-
         데이트는 전투라고 해서 많이 긴장했는데.
         생각했던 것보다 즐거워.
@@ -4515,8 +4603,7 @@ dialogue:
       Idle_03_01: 司令官、あそこで一緒に弁当食べようぜ。お母さんが弁当… はっ、違う違う、作戦官が…あ、あぅぅ、ダメって言われてたのに…
       Idle_04_01: ミホはカフェ、ブルガサリは洋服屋、ピントは映画館って言ってた。どこがいい？私が行きたい場所？司令官と一緒ならどこだっていいよ！
       SPIdle_02_01: ひぃっ！きゅ、急に触るなよ…急じゃなかったらいいのかって？……うん。いいよ。
-      Oath: デートは戦いって言葉の意味が今なら分かる気がするんだ。戦いでは仲間達のことを一番に考えるように、デートでも司令官のことを一番に考えろってことだろ？
-        よし！完璧に理解した！これからもずっと司令官のことを考えるぞー！
+      Oath: デートは戦いって言葉の意味が今なら分かる気がするんだ。戦いでは仲間達のことを一番に考えるように、デートでも司令官のことを一番に考えろってことだろ？ よし！完璧に理解した！これからもずっと司令官のことを考えるぞー！
       OathIdle_01: デートは戦いだって言うからすごく緊張してたけど、思ったより楽しいんだな。司令官と一緒に歩いて、一緒に話して、一緒に飯も食べて。これが司令官じゃなかったら楽しくないんだろうな。これからもずっと一緒にいような！
       MVP: ""
     "":
@@ -4635,12 +4722,9 @@ dialogue:
         Wanna take a walk?
         Oh! Don’t…
       SPIdle_02_01: Okay… only while watching this…
-      Oath: >-
-        Dating advice? You’ve come to the right place. With my intelligence, you
-        can solve anything.
-
+      Oath: |-
+        Dating advice? You’ve come to the right place. With my intelligence, you can solve anything.
         So who is it? Are you trying to ask for a date? Huh? …Ah? Me?! Oh… Uhhhhh! What should say in this case…
-
         Books haven’t told me this…! Hey… Umm, till death do us part…
       OathIdle_01: |-
         I’m not sure what’s the difference.
@@ -4685,9 +4769,8 @@ dialogue:
         Don't stand in front of me. That's my role.
         You want to hold my hand?
         Hehe, well I guess I don't have a choice. Here.
-      Idle_03_01: >-
+      Idle_03_01: |-
         Commander, let's eat our packed lunch over there.
-
         This packed lunch was given to me by Moth-- I mean, the operations officer… Uh… she… Oh… she told me not to mention it…
       Idle_04_01: |-
         Miho suggested the cafe, Starfish the clothing store,
@@ -4698,21 +4781,14 @@ dialogue:
         Eek! D-don’t touch me so suddenly like that…
         You're asking if it's okay to touch me slowly then?
         …Yes…
-      Oath: >-
-        I think I now understand why they said dates are like battles. Just like
-        I think of others first in battle,
-
+      Oath: |-
+        I think I now understand why they said dates are like battles. Just like I think of others first in battle,
         on our date I kept thinking about you. Yeah! I understood perfectly! From now on, you're all I'll think about!
-      OathIdle_01: >-
-        I guess I got nervous because they said going on a date was like a
-        battle.
-
+      OathIdle_01: |-
+        I guess I got nervous because they said going on a date was like a battle.
         But it’s so much more fun than I imagined.
-
         Walking, talking, and eating with you. 
-
         Maybe it just feels special because it’s you I’m with, no?
-
         Let's be together from now on!
       MVP: ""
     "":
@@ -4753,12 +4829,9 @@ dialogue:
         *Giggles* Commander, do you want to
         sweat together? What?
       SPIdle_02_01: Well… alright, I guess.
-      Oath: >-
-        Huh? Commander, are you going to ask for a date to the girl you like?
-        Just tell me, I can help! Umm… But, I’m the only one here…?
-
+      Oath: |-
+        Huh? Commander, are you going to ask for a date to the girl you like? Just tell me, I can help! Umm… But, I’m the only one here…?
         What? Really?! Me? I mean, marriage…! …I know what that is, I’ve been studying. But I don’t know how…
-
         Still, I also have a feeling for you, commander… Huh? You will teach us step by step from now on? Sure! Thank you so much!
       OathIdle_01: |-
         If you laugh like that, you look like a fool.

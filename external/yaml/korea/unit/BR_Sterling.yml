@@ -448,8 +448,7 @@ releaseDate: 1745452800000
 height: 177cm
 weight: 0.000000076Mt
 weapon1: Flight Warrant Officer
-weapon2: Remote Control Clock "L.A.C.A." (Light Automatic Clever
-  Artificial-intelligence)
+weapon2: Remote Control Clock "L.A.C.A." (Light Automatic Clever Artificial-intelligence)
 company: ""
 country: ""
 age: ""
@@ -5598,6 +5597,31 @@ skills:
               level: "0"
             value: Char_BR_ALWraith_N
             chance: 1
+    desc:
+      KR: |-
+        지정 범위의 적들에게 <dmg elem="physics" /> 피해를 입히고 적중시 2라운드 동안 지속되는 공격력 감소/ 회피 감소/ 받는 피해 증가 디버프 및 효과 저항 약화 일반 효과를 각각 33%로 부여합니다.
+        각 효과는 모두 적용되거나 그렇지 않을 수 있으며 중첩 제한이 없습니다.
+        스쿼드에 <char uid="BR_Fafnir" />, <char uid="BR_May" />, <char uid="B11_NightAngel" />, <char uid="P18_Sylphid" />, <char uid="A87_Banshee" />, <char uid="B7_StratoAngel" />, <char uid="AL_Race" />가 있을 시, 100%로 [뇌정벽력], [석기 시대로!], [고공 폭격], [열 추적 로크 미사일], [기관포 소사], [고고도 폭격], [조준 폭격] 스킬로 협동 공격을 유도합니다.
+        협동 공격이 가능한 전투원이 여러 명인 경우, 위 표기된 순으로 우선권을 가집니다. (파프니르->AL 레이스 순)
+        다수의 적이 대상인 경우, 사거리가 닿는 적을 우선 선택하고 사거리로 인해 협동 공격이 불가능할 경우 다음 순서의 전투원이 협동 공격을 실행합니다.
+      JP: |-
+        指定範囲の敵に<dmg elem="physics" />ダメージを与え、命中時に2ラウンドの間持続する攻撃力減少/回避減少/受けるダメージ増加のデバフおよび効果抵抗弱化の一般効果をそれぞれ33%で付与します。
+        各効果はすべて適用される場合もあれば、そうでない場合もあり、重複制限はありません。
+        分隊に<char uid="BR_Fafnir" />、<char uid="BR_May" />、<char uid="B11_NightAngel" />、<char uid="P18_Sylphid" />、<char uid="A87_Banshee" />、<char uid="B7_StratoAngel" />、<char uid="AL_Race" />がいる場合、100%で[雷霆霹靂]、[石器時代へ! ]、[高空爆撃]、[熱追跡ロックミサイル]、[機関砲乱射]、[高高度爆撃]、[照準爆撃]スキルによる協同攻撃を誘導します。
+        協同攻撃が可能な戦闘員が複数いる場合、上記の順で優先権を持ちます。(ファフニール->ALレースの順)
+        複数の敵が対象の場合、射程が届く敵を優先選択し、射程の都合で協同攻撃が不可能な場合は次の順番の戦闘員が協同攻撃を実行します。
+      EN: |-
+        Deals <dmg elem="physics" /> damage to enemies in the designated area, and on hit, applies 33% chances for each of the following 2-round debuffs: ATK decrease, EVA decrease, received damage increase, and Effect Resistance weakening.
+        Each effect may or may not be applied, and there are no stacking restrictions.
+        If <char uid="BR_Fafnir" />, <char uid="BR_May" />, <char uid="B11_NightAngel" />, <char uid="P18_Sylphid" />, <char uid="A87_Banshee" />, <char uid="B7_StratoAngel" />, and <char uid="AL_Race" /> are in the squad, launches co-op attacks with [Thunderclap], [Stone Age!], [High-Altitude Bombardment], [Heat-Seeking Lock Missile], [Machine Gun Suppression], [High-Altitude Bombing], and [Aimed Bombardment] skills at 100% chance.
+        If multiple combatants can perform co-op attacks, priority follows the order shown above. (Fafnir -> AL Race)
+        If multiple enemies are targeted, the enemy within range is chosen first, and if co-op attacks are impossible due to range, the combatant next in order will perform the co-op attack.
+      TC: |-
+        對指定範圍內的敵人造成<dmg elem="physics" />，命中時以33%機率施加以下持續2回合的減益：攻擊力下降、迴避下降、所受傷害增加，以及效果抵抗削弱。
+        各效果可能全數套用，也可能不套用，且無疊加限制。
+        若小隊中有<char uid="BR_Fafnir" />、<char uid="BR_May" />、<char uid="B11_NightAngel" />、<char uid="P18_Sylphid" />、<char uid="A87_Banshee" />、<char uid="B7_StratoAngel" />、<char uid="AL_Race" />，則會以100%機率發動[雷霆霹靂]、[石器時代！]、[高空轟炸]、[熱追蹤鎖定飛彈]、[機關炮掃射]、[高空轟炸]、[瞄準轟炸]技能協力攻擊。
+        若可發動協力攻擊的戰鬥員有多名，則依上述順序優先。(法芙妮爾->AL Race順序)
+        若目標為多名敵人，會優先選擇射程可及的敵人；若因射程無法進行協力攻擊，則由下一順位的戰鬥員執行協力攻擊。
   "2":
     key: "2"
     icon: TeamAtkBuff
@@ -5938,6 +5962,19 @@ skills:
             base: 0.4
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        지정 범위 아군에게 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec> 증가 버프를 줍니다. <sec>(중첩 무제한)</sec>
+        대상이 둠 브링어와 파프니르는 3배 수치로 적용되고 파프니르인 경우 AP가 증가합니다.
+      JP: |-
+        指定範囲の味方に2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" />スキル威力<val idx="1" r /></sec>増加バフを与えます。<sec>(重複制限なし)</sec>
+        対象がDoom BringerとFafnirの場合は3倍の数値で適用され、Fafnirの場合はAPが増加します。
+      EN: |-
+        Grants allies in the designated area a 2-round buff that increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> skill power <val idx="1" r /></sec>. <sec>(no stacking limit)</sec>
+        If the target is Doom Bringer or Fafnir, the effect is applied at 3x value, and if the target is Fafnir, AP also increases.
+      TC: |-
+        對指定範圍內的我軍施加持續2回合的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" />技能威力<val idx="1" r /></sec>增加增益。<sec>(無疊加上限)</sec>
+        若目標是毀滅使者與法芙妮爾，則以3倍數值套用；若目標是法芙妮爾，AP也會增加。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -6325,6 +6362,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 1라운드 동안 범위내 아군에게 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec> 증가 버프를 줍니다.
+        대상이 둠 브링어와 파프니르라면 3배 수치로 적용되고 파프니르는 1라운드 동안 방어막 및 받는 피해 감소 무시 버프를 얻습니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、1ラウンドの間、範囲内の味方に<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>増加バフを与えます。
+        対象がDoom BringerとFafnirの場合は3倍の数値で適用され、Fafnirは1ラウンドの間バリアおよび受けるダメージ減少無視バフを得ます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, grants allies in range a 1-round buff that increases <sec typ="buff"><buff typ="ACCURACY_UP" /> ACU <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec>.
+        If the target is Doom Bringer or Fafnir, the effect is applied at 3x value, and Fafnir gains a 1-round buff that ignores Barrier and Damage Decrease.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，對範圍內我軍施加持續1回合的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>增加增益。
+        若目標為毀滅使者與法芙妮爾，則以3倍數值套用；法芙妮爾將獲得持續1回合的無視防護罩與所受傷害減少增益。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -6743,6 +6793,31 @@ skills:
             base: 0.032
             per: 0.002
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시시</sec> 전체 아군 전원의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">라운드 개시시</sec> 둠 브링어 구성원과 파프니르의 AP를 증가시킵니다.
+        자신을 제외한 어떤 아군이든 공격을 성공시키면 모든 아군에게 2라운드 동안 공격력 증가 버프를 줍니다.(5중첩)
+        이 수치는 둠 브링어 구성원과 파프니르는 3배로 적용되고 파프니르는 추가로 스킬위력이 증가합니다. (5중첩)
+        협동 공격, 공격 지원, 반격은 이 효과를 발동시키지 않습니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、全味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、Doom Bringer構成員とFafnirのAPを増加させます。
+        自分以外のどの味方でも攻撃を成功させると、全味方に2ラウンドの間、攻撃力増加バフを与えます。(5スタック)
+        この数値はDoom Bringer構成員とFafnirには3倍で適用され、Fafnirはさらにスキル威力が増加します。(5スタック)
+        協同攻撃、攻撃支援、反撃はこの効果を発動させません。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, increases all allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>.
+        <sec typ="cond">At round start</sec>, increases the AP of Doom Bringer members and Fafnir.
+        Whenever any ally other than self lands an attack, all allies gain a 2-round ATK increase buff. (5 stacks)
+        This value is applied at 3x strength for Doom Bringer members and Fafnir, and Fafnir additionally gains increased skill power. (5 stacks)
+        Co-op attacks, attack support, and retaliation do not trigger this effect.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，提升全體我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>。
+        <sec typ="cond">回合開始時</sec>，提升毀滅使者成員與法芙妮爾的AP。
+        當除自身外的任一我軍成功攻擊時，會使全體我軍獲得持續2回合的攻擊力增加增益。(5層)
+        此數值對毀滅使者成員與法芙妮爾以3倍套用，且法芙妮爾另外提升技能威力。(5層)
+        協力攻擊、攻擊支援、反擊不會觸發此效果。
   "5":
     key: "5"
     icon: P.TeamDefBuff
@@ -7087,6 +7162,23 @@ skills:
             base: 0.22
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 1라운드 동안 범위 내 아군에게 방어력/ 효과 저항 증가 버프를 주고 스쿼드 내 둠브링어가 5명이라면 회피를 증가시킵니다.
+        추가로 파프니르에게 1라운드 동안 받는 피해 감소 및 피해 무효화 1회(고정)를 부여합니다.
+        자신을 제외한 어떤 아군이든 피격 당하면 모든 아군에게 기존 보호막 효과를 삭제시키고 1라운드동안 보호막 버프를 줍니다.(1중첩)
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、1ラウンドの間、範囲内の味方に防御力/効果抵抗増加バフを与え、分隊内のDoom Bringerが5人なら回避を増加させます。
+        さらにFafnirに1ラウンドの間、受けるダメージ減少および1回のダメージ無効化(固定)を付与します。
+        自分以外のどの味方でも被弾すると、全味方の既存バリア効果を削除し、1ラウンドの間バリアバフを与えます。(1スタック)
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, grants allies in range a 1-round buff that increases DEF/Effect Resistance, and if there are 5 Doom Bringer members in the squad, increases EVA.
+        Additionally, grants Fafnir 1 round of received damage decrease and 1 fixed damage negate.
+        When any ally other than self is hit, removes existing barrier effects from all allies and grants a 1-round barrier buff. (1 stack)
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，對範圍內我軍施加持續1回合的防禦力 / 效果抵抗增加增益；若小隊內有5名毀滅使者，則提升迴避。
+        另外，賦予法芙妮爾持續1回合的所受傷害減少與1次固定傷害無效。
+        若除自身外的任一我軍受到攻擊，則移除全體我軍現有的護盾效果，並賦予持續1回合的護盾增益。(1層)
 dialogue:
   KR:
     "1":
@@ -7160,11 +7252,9 @@ dialogue:
         기분은 좋으니까…
         한번 더 코칭, 부탁드릴게요♥
         에헤헤​
-      Oath: >-
+      Oath: |-
         제가 보기는 이래도, 운동은 진짜 잼병이라 몇 번이고 실패했었습니다, 살 찌는 체질은 아니라고 생각했는데.​
-
         사실, 처음 만났던 때의 제가 사령관님껜 더 좋게 비춰질 것 같아서, 요즘들어 다시 열심히 하고 있는 거예요.​
-
         네? 이런 저도 좋다고요? 그래도 전 옛날로 돌아가고 싶단 말이에요… 그러니까, 속성으로… 운동 가르쳐주세요… 몸치인 것도 서러운데… 1대1 교습으로… 차근차근 가르쳐… 주시면 안 될까요?♥
       OathIdle_01: |-
         …이제야 깨닫았어요.
@@ -7243,10 +7333,8 @@ dialogue:
       SPIdle_02_01: |-
         …사령관님 허벅지 위로…
         제가 착륙하면 되나요?​
-      Oath: >-
-        사실 사령관님께 고백받는 건 상상도 못했어요. 그저 하카를 다시 만들어주신 데에 보답을 하고 싶었을 뿐 이었거든요… 제가 아는
-        거라곤… 비행과 관련된 지식 뿐이지만…
-
+      Oath: |-
+        사실 사령관님께 고백받는 건 상상도 못했어요. 그저 하카를 다시 만들어주신 데에 보답을 하고 싶었을 뿐 이었거든요… 제가 아는 거라곤… 비행과 관련된 지식 뿐이지만…
         이번 기회에 사령관님께 연애도 배우고 싶어졌어요… 꺄아아아앗?! 사령관님… 절 들고 어디로 가시려는… 비행기 안 태워 주셔도 돼요! 부, 부끄러워요!
       OathIdle_01: |-
         저는 사령관님께 바르그 님이나

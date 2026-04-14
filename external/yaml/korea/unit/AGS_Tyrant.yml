@@ -3379,6 +3379,11 @@ skills:
             base: -0.5
             per: -0.025
             chance: 1
+    desc:
+      KR: 대상을 물어뜯어 <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="7" r /></sec>를 낮춥니다.
+      JP: 対象に噛みついて <dmg elem="physics" />を与え、2ラウンドの間 <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="7" r /></sec>を低下させます。
+      EN: Bites the target, dealing <dmg elem="physics" />, and lowers <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="7" r /></sec> for 2 rounds.
+      TC: 咬住目標造成 <dmg elem="physics" />，並在 2 回合內降低 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="7" r /></sec>。
   "2":
     key: "2"
     icon: WideFireShot
@@ -5915,6 +5920,11 @@ skills:
             base: 0.25
             per: 0.0125
             chance: 1
+    desc:
+      KR: 플라즈마를 분사해 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 줍니다.
+      JP: プラズマを噴射して指定範囲に <sec typ="attr">防護無視</sec> <dmg elem="fire" />を与えます。
+      EN: Sprays plasma to deal <sec typ="attr">ignore protection</sec> <dmg elem="fire" /> to the designated area.
+      TC: 噴射等離子體，對指定範圍造成 <sec typ="attr">無視保護</sec> <dmg elem="fire" />。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -6342,6 +6352,11 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, 전열에 가까울수록 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
+      JP: <sec typ="cond">ラウンド開始時</sec>、前列に近いほど <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が増加します。
+      EN: <sec typ="cond">At the start of the round</sec>, the closer to the front row, the more <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="2" r /></sec> increases.
+      TC: <sec typ="cond">回合開始時</sec>，越靠近前列，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="2" r /></sec>會越增加。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -6799,6 +6814,11 @@ skills:
             base: 76
             per: 0
             chance: 1
+    desc:
+      KR: 적 공격 시, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 지정 보호 효과를 해제</sec>하며 2라운드 동안 자신에게 <sec typ="buff"><buff typ="MARKING" /> 이로운 표식</sec>이 지정됩니다.
+      JP: 敵の攻撃時、<sec typ="buff"><buff typ="REMOVE_BUFF" /> 指定保護効果を解除</sec>し、2ラウンドの間自身に <sec typ="buff"><buff typ="MARKING" /> 有利なマーク</sec>が付与されます。
+      EN: When attacking an enemy, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the specified protection effect</sec>, and for 2 rounds self is assigned a <sec typ="buff"><buff typ="MARKING" /> beneficial mark</sec>.
+      TC: 攻擊敵人時，會 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 解除指定保護效果</sec>，並在 2 回合內使自身獲得 <sec typ="buff"><buff typ="MARKING" /> 有利標記</sec>。
   "5":
     key: "5"
     icon: P.SuicideBomb
@@ -6945,6 +6965,11 @@ skills:
             base: 0.4
             per: 0.02
             chance: 0
+    desc:
+      KR: 전투 개시 시, 해제 불가한 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="1" signless /> HP로 전투 속행</sec> 효과가 적용됩니다.
+      JP: 戦闘開始時、解除不可な <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="1" signless /> HPで戦闘続行</sec>効果が適用されます。
+      EN: At battle start, an unremovable <sec typ="buff"><buff typ="DEF_RESSURRECT" /> continue battle with <val idx="1" signless /> HP</sec> effect is applied.
+      TC: 戰鬥開始時，會套用不可解除的 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以 <val idx="1" signless /> HP 繼續戰鬥</sec>效果。
 dialogue:
   KR:
     "1":
@@ -7099,8 +7124,7 @@ dialogue:
         I’m turning strange…
       MVP: ""
     "":
-      Join: You seem to have control to deal with me. If you let me fight, I'll follow
-        your orders.
+      Join: You seem to have control to deal with me. If you let me fight, I'll follow your orders.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""

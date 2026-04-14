@@ -1008,6 +1008,11 @@ skills:
             base: -0.55
             per: -0.05
             chance: 1
+    desc:
+      KR: 단일 대상에게 <dmg elem="physics" />를 입히고 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>을(를) 감소시킵니다.
+      JP: 単一対象に<dmg elem="physics" />を与え、<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>を減少させます。
+      EN: Deals <dmg elem="physics" /> damage to a single target and decreases its <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>.
+      TC: 對單一目標造成<dmg elem="physics" />傷害，並降低其<sec typ="buff"><buff typ="AP_DOWN" /> AP<val idx="0" /></sec>。
   "2":
     key: "2"
     icon: TeamAtkDeBuff
@@ -2246,6 +2251,19 @@ skills:
             base: 7
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        범위 내 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 입힙니다.
+        적중한 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec>를 크게 감소시키고 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 적중 강화 효과를 해제</sec>하며 <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="0" r /></sec>를 감소시킵니다.
+      JP: |-
+        範囲内の対象に<sec typ="attr">保護無視</sec>の<dmg elem="physics" />を与えます。
+        命中した対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="1" r /></sec>を大きく減少させ、<sec typ="buff"><buff typ="REMOVE_BUFF" />命中強化効果を解除</sec>し、<sec typ="buff"><buff typ="SKILL_DOWN" />スキル威力<val idx="0" r /></sec>を減少させます。
+      EN: |-
+        Deals <sec typ="attr">ignores Protection</sec> <dmg elem="physics" /> damage to targets in the area.
+        Greatly decreases the <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="1" r /></sec> of hit targets, removes their <sec typ="buff"><buff typ="REMOVE_BUFF" /> Accuracy buff effects</sec>, and decreases <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="0" r /></sec>.
+      TC: |-
+        對範圍內目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害。
+        大幅降低命中目標的<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中<val idx="1" r /></sec>，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除命中強化效果</sec>，以及降低<sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力<val idx="0" r /></sec>。
   "3":
     key: "3"
     icon: P.EnemyDetect
@@ -2647,6 +2665,19 @@ skills:
             base: 9
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전투 시작 시, 주변 아군에게 <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec> 효과를 부여합니다.
+        라운드 개시 시, 주변 아군의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec>를 증가시키고 공격기 대상에게는 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 공격력 감소 / 적중 감소 / 치명타 감소 효과를 제거</sec>하고 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="10" r /></sec>를 증가시킵니다.
+      JP: |-
+        戦闘開始時、周辺の味方に<sec typ="buff"><buff typ="SCOUTING" />偵察</sec>効果を付与します。
+        ラウンド開始時、周辺の味方の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec>を増加させ、攻撃機対象には<sec typ="buff"><buff typ="REMOVE_DEBUFF" />攻撃力減少 / 命中減少 / クリティカル減少効果を解除</sec>し、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="10" r /></sec>を増加させます。
+      EN: |-
+        At battle start, grants nearby allies the <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> effect.
+        At round start, increases nearby allies' <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec>, and for attacker targets removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> ATK reduction / Accuracy reduction / Critical reduction effects</sec> and increases <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="10" r /></sec>.
+      TC: |-
+        在戰鬥開始時，對周圍我軍賦予<sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec>效果。
+        在回合開始時，提升周圍我軍的<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中<val idx="5" r /></sec>，並對攻擊機目標<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除攻擊力減少 / 命中減少 / 暴擊減少效果</sec>，以及提升<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透<val idx="10" r /></sec>。
   "4":
     key: "4"
     icon: P.Barrier
@@ -2879,6 +2910,11 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: 라운드 개시 시, <sec typ="cond">전열 아군</sec> 대상 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>를 감소시켜주고 대상이 <sec typ="cond">보호기</sec>일 경우, <sec typ="buff"><buff typ="MARKING" /> 이로운 표식</sec>과 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec> 감소 효과를 추가 부여합니다.
+      JP: ラウンド開始時、<sec typ="cond">前列の味方</sec>対象の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" r inv /></sec>を減少させ、対象が<sec typ="cond">保護機</sec>の場合、<sec typ="buff"><buff typ="MARKING" />有利な標的</sec>と<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="4" r inv /></sec>減少効果を追加で付与します。
+      EN: At round start, reduces <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="0" r inv /></sec> for <sec typ="cond">front-line allies</sec>; if the target is a <sec typ="cond">Protector</sec>, additionally grants <sec typ="buff"><buff typ="MARKING" /> Beneficial Mark</sec> and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="4" r inv /></sec> reduction.
+      TC: 在回合開始時，降低<sec typ="cond">前排我軍</sec>所受的<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 傷害<val idx="0" r inv /></sec>；若目標為<sec typ="cond">保護機</sec>，則會額外賦予<sec typ="buff"><buff typ="MARKING" /> 有益標記</sec>與<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害<val idx="4" r inv /></sec>減少效果。
 dialogue:
   KR:
     "1":

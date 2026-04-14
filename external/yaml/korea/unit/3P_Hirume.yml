@@ -1790,6 +1790,27 @@ skills:
             base: -0.3
             per: -0.03
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <dmg elem="fire" />를 줍니다.
+        <sec typ="dmg">목표 지점 후방은 피해량이 25%씩 감소합니다.</sec>
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상을 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 지속 화염 피해 <val idx="0" signless /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="3" r /></sec> 감소 / <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
+        <sec>화염 저항 감소 효과는 중첩되지 않습니다.</sec>
+      JP: |-
+        指定範囲に <dmg elem="fire" />を与えます。
+        <sec typ="dmg">目標地点の後方はダメージ量が25%ずつ減少します。</sec>
+        <sec typ="cond">命中時</sec>、3ラウンドの間対象を<sec typ="dmg"><buff typ="FireDMG_DOT" /> 継続火炎ダメージ <val idx="0" signless /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎抵抗 <val idx="3" r /></sec>減少 / <sec typ="buff"><buff typ="SNARE" /> 移動不能</sec>状態にします。
+        <sec>火炎抵抗減少効果は重複しません。</sec>
+      EN: |-
+        Deals <dmg elem="fire" /> to the designated area.
+        <sec typ="dmg">Damage decreases by 25% for enemies behind the target point.</sec>
+        <sec typ="cond">On hit</sec>, for 3 rounds, puts the target into <sec typ="dmg"><buff typ="FireDMG_DOT" /> continuous fire damage <val idx="0" signless /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="3" r /></sec> reduction / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> status.
+        <sec>Fire Resistance reduction effects do not stack.</sec>
+      TC: |-
+        對指定範圍造成 <dmg elem="fire" />。
+        <sec typ="dmg">目標點後方的對象，傷害量會以 25% 逐次降低。</sec>
+        <sec typ="cond">命中時</sec>，在 3 回合內使目標進入 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 持續火焰傷害 <val idx="0" signless /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="3" r /></sec>下降 / <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 狀態。
+        <sec>火焰抗性下降效果不會疊加。</sec>
   "2":
     key: "2"
     icon: Barrier
@@ -2028,6 +2049,23 @@ skills:
             base: 600
             per: 60
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">스킬 사용 시</sec>, 2라운드 동안 범위 내 아군에게 <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="0" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="4" signless /></sec>을 부여합니다.
+        <sec typ="cond">자신이 상기 효과의 대상이 되었을 경우</sec>, 추가로 범위 내 경장형 아군의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="3" r /></sec>가 증가합니다.
+        <sec>각 효과는 중첩되지 않습니다.</sec>
+      JP: |-
+        <sec typ="cond">スキル使用時</sec>、2ラウンドの間、範囲内の味方に<sec typ="buff"><buff typ="ICERES_UP" /> 冷気抵抗 <val idx="0" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="4" signless /></sec>を付与します。
+        <sec typ="cond">自分が上記効果の対象になった場合</sec>、さらに範囲内の軽装型味方の<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="3" r /></sec>が増加します。
+        <sec>各効果は重複しません。</sec>
+      EN: |-
+        <sec typ="cond">On skill use</sec>, for 2 rounds grants allies in range <sec typ="buff"><buff typ="ICERES_UP" /> Cold Resistance <val idx="0" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="4" signless /></sec>.
+        <sec typ="cond">If self is the target of the above effect</sec>, additionally increases <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="3" r /></sec> of light-type allies in range.
+        <sec>Each effect does not stack.</sec>
+      TC: |-
+        <sec typ="cond">使用技能時</sec>，在 2 回合內賦予範圍內隊友 <sec typ="buff"><buff typ="ICERES_UP" /> 冷氣抗性 <val idx="0" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 屏障 <val idx="4" signless /></sec>。
+        <sec typ="cond">若自身成為上述效果的目標</sec>，則另外提升範圍內輕裝型隊友的 <sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="3" r /></sec>。
+        <sec>各效果不會疊加。</sec>
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -2216,6 +2254,19 @@ skills:
             base: 2
             per: 0.25
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec>가 감소합니다.
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ICERES_UP" /> 冷気抵抗 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 被ダメージ <val idx="1" r inv /></sec>が減少します。
+        <sec typ="cond">戦闘開始時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="ICERES_UP" /> Cold Resistance <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="1" r inv /></sec> decreases.
+        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec> increases.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="ICERES_UP" /> 冷氣抗性 <val idx="0" r /></sec>會增加，且 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到傷害 <val idx="1" r inv /></sec>會減少。
+        <sec typ="cond">戰鬥開始時</sec>，自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>會增加。
   "4":
     key: "4"
     icon: P.ShieldWall
@@ -2667,6 +2718,35 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 범위 내 아군을 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="6" r /></sec>가 증가합니다.
+        <sec>역할군에 따라 다음 효과를 추가로 부여합니다.</sec>
+        - 공격기 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> 증가
+        - 보호기 : <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="7" r /></sec> 증가
+        - 지원기 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="9" r /></sec> 증가
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="DEF_Char" /> 保護機を除く範囲内の味方を指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="ICERES_UP" /> 冷気抵抗 <val idx="6" r /></sec>が増加します。
+        <sec>役割群に応じて次の効果を追加で付与します。</sec>
+        - 攻撃機 : <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec>増加
+        - 保護機 : <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec>増加
+        - 支援機 : <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="9" r /></sec>増加
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, grants <sec typ="buff"><buff typ="DEF_Char" /> designated protection to allies in range excluding Defenders</sec>.
+        <sec typ="cond">At the start of the round</sec>, increases allies' <sec typ="buff"><buff typ="ICERES_UP" /> Cold Resistance <val idx="6" r /></sec> in range.
+        <sec>Additionally grants the following effects depending on role group.</sec>
+        - Attacker: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> increase
+        - Defender: <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="7" r /></sec> increase
+        - Supporter: <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" r /></sec> increase
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，對 <sec typ="buff"><buff typ="DEF_Char" /> 除保護機以外的範圍內隊友賦予指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>，提升範圍內隊友的 <sec typ="buff"><buff typ="ICERES_UP" /> 冷氣抗性 <val idx="6" r /></sec>。
+        <sec>會依角色群額外賦予以下效果。</sec>
+        - 攻擊機：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec>增加
+        - 保護機：<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec>增加
+        - 支援機：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="9" r /></sec>增加
   "5":
     key: "5"
     icon: P.Scan
@@ -3026,6 +3106,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 3라운드 동안 모든 적의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="0" r inv /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="4" r /></sec>를 감소시킵니다.
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="5" signless />회</sec>를 획득합니다.
+        <sec typ="cond">자신이 <buff typ="SCOUTING" />정찰 활성화 상태인 경우</sec> <sec typ="buff"><buff typ="DEF_All" /> 횟수가 1회 증가</sec>합니다.
+        <sec typ="cond">전투 종료 시</sec>, 자신은 <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec>이 활성화되어 다음에 출현할 적을 확인할 수 있습니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、3ラウンドの間、すべての敵の<sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="0" r inv /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎抵抗 <val idx="4" r /></sec>を減少させます。
+        <sec typ="cond">戦闘開始時</sec>、自身は<sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="5" signless />回</sec>を獲得します。
+        <sec typ="cond">自分が<buff typ="SCOUTING" />偵察有効状態の場合</sec>、<sec typ="buff"><buff typ="DEF_All" /> 回数が1回増加</sec>します。
+        <sec typ="cond">戦闘終了時</sec>、自身は<sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec>が有効になり、次に出現する敵を確認できます。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, for 3 rounds reduces all enemies' <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="0" r inv /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="4" r /></sec>.
+        <sec typ="cond">At battle start</sec>, self gains <sec typ="buff"><buff typ="DEF_All" /> damage nullification <val idx="5" signless /> times</sec>.
+        <sec typ="cond">If self is in <buff typ="SCOUTING" />Scouting active state</sec>, <sec typ="buff"><buff typ="DEF_All" /> the number of times increases by 1</sec>.
+        <sec typ="cond">At battle end</sec>, self becomes <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> active and can identify the next enemy to appear.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，在 3 回合內降低所有敵人的 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抵抗 <val idx="0" r inv /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="4" r /></sec>。
+        <sec typ="cond">戰鬥開始時</sec>，自身會獲得 <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 <val idx="5" signless /> 次</sec>。
+        <sec typ="cond">若自身處於 <buff typ="SCOUTING" />偵查啟動狀態</sec>，則 <sec typ="buff"><buff typ="DEF_All" /> 次數增加 1 次</sec>。
+        <sec typ="cond">戰鬥結束時</sec>，自身會啟動 <sec typ="buff"><buff typ="SCOUTING" /> 偵查</sec>，並可確認下一個出現的敵人。
 dialogue:
   KR:
     "1":
@@ -3034,8 +3135,7 @@ dialogue:
       SortiePick: 이것도... 하나의 고비라면 어쩌할 도리가 없는 법이지... 알겠느니라.
       StageStart: 우리 두 사람을 가로막는 시련이 천지의 별 구름보다 무수하니...
       Retreat: 이 또한 운명이라면...
-      SearchStart: 탐사...?! 첩이? 하아, 그대여... 아직도 무어가 중요한지 깨닫지 못하였구나. 우리가 윤회를 넘어 재회했다 한들
-        삶은 유한... 끼, 끼니를 인질 삼는 건 치사하지 않느냐!
+      SearchStart: 탐사...?! 첩이? 하아, 그대여... 아직도 무어가 중요한지 깨닫지 못하였구나. 우리가 윤회를 넘어 재회했다 한들 삶은 유한... 끼, 끼니를 인질 삼는 건 치사하지 않느냐!
       SearchEnd: 못됐느니라...! 나빴느니라...!! 흥!!! 어서 사과의 의미로 머리를 쓰다듬거라! 하아, 그렇게 계속...
       BattleFocus: 발언하거라.
       ActionApprove: 그리하겠노라.
@@ -3160,9 +3260,7 @@ dialogue:
         몸이 녹아나는구나.
         바라건대 첩의 온몸을 녹여주지 않겠느냐?
         아, 안쪽까지... 말이다.
-      Oath: 구미호든, 설녀든 첩은 인간과 인외의 사랑 이야기는 좋아하지 않는다. 왜냐하면 대부분 비극으로 끝나기 때문이다. 하지만 그대와 첩의
-        사랑은 전생부터 이어져서 현재에 다다르고 미래영겁까지 이어질 터이니 무엇이 두렵겠느냐? 그러니 그대여, 근심걱정일랑 내려놓고
-        일심전력 사랑을 나누자꾸나.
+      Oath: 구미호든, 설녀든 첩은 인간과 인외의 사랑 이야기는 좋아하지 않는다. 왜냐하면 대부분 비극으로 끝나기 때문이다. 하지만 그대와 첩의 사랑은 전생부터 이어져서 현재에 다다르고 미래영겁까지 이어질 터이니 무엇이 두렵겠느냐? 그러니 그대여, 근심걱정일랑 내려놓고 일심전력 사랑을 나누자꾸나.
       OathIdle_01: |-
         첩은 차가워 보이지만 첩이 품은 불꽃은
         지옥불조차 태워버릴 정도로 뜨거우니.
@@ -3215,26 +3313,19 @@ dialogue:
         사, 사령관. 지금이라면 호감도가 충분해서,
         그 동안 못했던 이런 일이나 저런 일들을
         다 해 볼 수 있는데...
-      Oath: 그렇다. 첩은 그대를 위한 최고의 학창시절을 만들어주고 싶어 이번 일을 계획한 것이다. 어땠느냐, 첩과 함께하는 학창시절은?
-        즐거웠느냐? 그대를 향한 첩의 사랑이 잘 전해졌느냐? 아니, 물어볼 필요도 없었겠구나. 이렇게 첩에게 반지를 건네는 것을
-        보면... 후후.
+      Oath: 그렇다. 첩은 그대를 위한 최고의 학창시절을 만들어주고 싶어 이번 일을 계획한 것이다. 어땠느냐, 첩과 함께하는 학창시절은? 즐거웠느냐? 그대를 향한 첩의 사랑이 잘 전해졌느냐? 아니, 물어볼 필요도 없었겠구나. 이렇게 첩에게 반지를 건네는 것을 보면... 후후.
       OathIdle_01: |-
         게임 속의 히루메와, 현실의 히루메...
         많은 차이가 있지만, 이것 하나는 변함없다.
         바로 그대를 사랑한다는 것이지.
       MVP: 역시 소꿉친구 히로인이 최고지?
     "":
-      Intro: >-
+      Intro: |-
         소개 말이더냐. 첩은 고귀한 존재를 모시는 무녀, 히루메다. 잠시 그대에게 신세를- ……! 가, 가까이 오지 말고 거기서 듣거라!
-
         흠흠. 첩을 만든 삼안 산업에서는 점점 더 혼란스러워져가는 정치구도에 주목했다. 날이 갈수록 정치인들을 대상으로 한 각종 암살 시도와 모략이 횡행했고, 심지어 일반 시민들에게까지 목숨을 위협받게 되었지.
-
         삼안 산업에서는 그것을 기회로 삼아, 여러 나라들의 전설과 전통을 반영한 고급 모델을 기획했다. 그래, 첩은 그 중에서도 가장 혼란스러웠던- ...윽. 무, 무례한 말을 하는구나. 첩은 문제가 있어서 컴패니언에서 배틀메이드로 소속이 옮겨진 것이 절.대.로. 아니다. 오히려 첩의 힘을 더욱 활용하기 위함이었지.
-
         첩은 신성한 광휘와 불꽃을 이용해 악한 것을 정화하고, 아군을 수호한다. 원한다면 그대 또한- 
-
         ...그런데 그대, 조금 전부터 눈빛이 수상하구나. 혹시… 그, 그렇군. 네녀석, 첩에게 심한 짓을 할 생각이로구나…! 큭, 불찰이었다. 선뜻 식량을 나눠줄 때 눈치를 챘어야 했건만…
-
         발뺌하지 말거라! 줄곧 첩의 꼬리와 귀를 끈적하게 쳐다보았지 않느냐! 흑... 첩은 고작 참치캔 몇 개에 엉망진창으로 당하고 말겠구나… 이래서 누구와도 만나고 싶지 않았건만...
       Join: 첩은 고귀한 존재를 모시는 무녀, 히루메다. ...이, 이상한 생각을 하고 있는 건 아니겠지?
       SquadJoin: 첩의 도움이 필요한 것이더냐?
@@ -3428,20 +3519,16 @@ dialogue:
       Idle_03_01: 部活でもしようかなって思って軽音部に入ったの。…なんで軽音部なのかって？学園祭で誰かさんに好きだよって告白しようと思ってね～。
       Idle_04_01: 学生生活についてなら漫画とゲームで勉強したんだ。だから私を信じてついてきて！司令官に最高の学生生活の思い出を作ってあげるから！
       SPIdle_02_01: し、司令官。今は好感度MAXだから、今までできなかったあんなことやこんなこと…全部して、いいよ……
-      Oath: そうだ。ぬしに最高の学生生活の思い出を作ってやりたくて…今回の計画を立てたのだ。 妾と共に過ごした学生生活はどうだった。
-        楽しかったか？妾のぬしへの愛はちゃんと伝わったか？ いや、そんなこと、聞くまでもないな。今こうして、妾に指輪をくれるのだから……ふふ。
+      Oath: そうだ。ぬしに最高の学生生活の思い出を作ってやりたくて…今回の計画を立てたのだ。 妾と共に過ごした学生生活はどうだった。 楽しかったか？妾のぬしへの愛はちゃんと伝わったか？ いや、そんなこと、聞くまでもないな。今こうして、妾に指輪をくれるのだから……ふふ。
       OathIdle_01: ゲームの中のヒルメと、現実のヒルメ……いろいろと違うだろうが……一つだけ変わらないことがある。ぬしを愛しているということ……これだけは、変わらない……
       MVP: ""
     "":
-      Intro: >-
+      Intro: |-
         妾に自己紹介しろと？ふむ…妾は高貴な存在に仕える巫女、ヒルメと申す。ちょいとぬしの世話に―！？…近づくことなくっ！そこから聞いてもらいたい！
-
 
         ふむ。妾を作った三安産業はどんどん秩序を失っていく政治構造に注目した。日に日に政治家たちを狙った暗殺未遂事件や陰謀が増加し、ひいては一般市民までもが命の危険に晒された。三安産業はこうした状況を上手く利用し、各国の伝説や伝統を反映させた高級モデルの生産を企画した。そう、その通り、妾はその中でも最もややこしかっ―…うっ…ふ、不敬極まりないな…ぬしは。妾は決して問題があってコンパニオンからバトルメイドに所属を変えたわけではない。むしろ妾の力を有効活用するためだったのだ。妾は神聖なる光輝と炎で悪を浄化し、味方を護る。望むならぬしも―
 
-
         ……ところで、ぬしの目つきが先ほどから怪しいぞ？もしや…！？そ…そうか、そうだったのか！ぬしは、妾にとんでもないことをするつもりなのだな…！？くぅっ、なんという不覚…。何となしにツナ缶をくれた時に気づくべきだった…ええい！言い訳をするな！先ほどからずっと妾の尻尾と耳を…くっ！食い入るように見ておったではないか！
-
 
         うぅ…妾はたかがツナ缶のせいで…滅茶苦茶にされてしまうのか…これだから誰とも会いたくなかったのだ…
       Join: 妾は高貴な存在に仕える巫女、ヒルメと申す。…ぬしよ…はしたないことを考えてはおらんだろうな？
@@ -3525,11 +3612,9 @@ dialogue:
         realize it yet? Then… I’ll wait until you figure it out.
         This is the first and last promise
         we made.
-      Idle_01_03: >-
+      Idle_01_03: |-
         It’s familiar. In the past, there was this much distance
-
         between you and me. Back then, we had to spend an eternity
-
         until we became close… But I don’t think it would take that long this time.​
       SPIdle_01_01: |-
         You shouldn’t spoil the moment.
@@ -3544,37 +3629,24 @@ dialogue:
         started from the past life. We finally met again,
         after all that time… Dear. Like I did in my past life,
         I’m still loving you right now.​
-      Idle_04_01: >-
+      Idle_04_01: |-
         When I first met you, I was busy running.
-
         It’s a shame I spent time like that. If I realized it earlier,
-
         I wouldn’t have wasted the time… But regrets always come late. Since you and I lost the time,
-
         I’ll do my best in spending the very moment now.​
-      SPIdle_02_01: >-
-        The morning sunshine is about to come… Yet you’re still not satisfied… I
-        have no choice.
-
+      SPIdle_02_01: |-
+        The morning sunshine is about to come… Yet you’re still not satisfied… I have no choice.
         I promised to be with you for eternity.
-
         I’ll accept you until you’re satisfied.​
-      Oath: >-
-        Hoo hoo… We were a married couple in our past life as well. I’m sure I
-        already went through this,
-
+      Oath: |-
+        Hoo hoo… We were a married couple in our past life as well. I’m sure I already went through this,
         but my heart is pounding and my face is burning red. … Do you need an answer? Like I said,
-
         I promise to love you forever and ever. Like you are mine now, I’m yours.
-      OathIdle_01: >-
+      OathIdle_01: |-
         We went through eternal cycles of birth and death,
-
         but we always ended up in the same way. We promised to be together forever,
-
         and to love each other forever. This life saw
-
         the same ending. Ehem. It’s chilly. Let’s go in.
-
         Let’s go and share warmth with each other.
       MVP: ""
     "2":
@@ -3604,27 +3676,20 @@ dialogue:
         Do you like them? You should.
         I've been scolded so many times for dozing off during the day.
         It would not be worth it.
-      Idle_01_03: >-
+      Idle_01_03: |-
         You can't look past the snowstorm I've created.
-
         I'd gladly show you if you want.
-
         …Just for today.
-
         I spent all my tuna cans making my clothes. I had to borrow a holo device…
       SPIdle_01_01: |-
         If you get charmed by my beauty and touch me,
         your hand is sure to freeze.
-      Idle_02_01: >-
+      Idle_02_01: |-
         My dear, hold my hand.
-
         It’s n-not because I’m cold!
-
         I'm a snow witch right now. It would be illogical for me to feel cold. *Achoo*
-      Idle_03_01: >-
-        My tail will be sealed. Sometimes, I feel like my tail is all you really
-        like.
-
+      Idle_03_01: |-
+        My tail will be sealed. Sometimes, I feel like my tail is all you really like.
         Aren't you interested in other things? Hm?
       Idle_04_01: |-
         Why are you looking at me like that?
@@ -3635,9 +3700,8 @@ dialogue:
         All the places that you touch are getting warmer.
         I want you to make my whole body warm.
         All the way… deep inside…
-      Oath: >-
+      Oath: |-
         Whether it'd be a nine-tailed fox or an ice witch,
-
         I don't like love stories that involve fear. Because most of them end in tragedy. But I have nothing to fear, because our love has spanned through multiple lives. So my dear, put aside your worries and let's make love.
       OathIdle_01: |-
         I may look cold, but my flames are hotter than the fires of hell.
@@ -3690,32 +3754,21 @@ dialogue:
         C-Commander, we can do all the things
         we couldn’t before
         since I like you enough now.
-      Oath: That's right. I planned this because I wanted to give you the best school
-        experience. How was school life with me? Was it fun? Did you feel the
-        love that I have for you? Never mind, there is no need to ask. Seeing as
-        you how you're handing me a ring… Hehe.
+      Oath: That's right. I planned this because I wanted to give you the best school experience. How was school life with me? Was it fun? Did you feel the love that I have for you? Never mind, there is no need to ask. Seeing as you how you're handing me a ring… Hehe.
       OathIdle_01: |-
         The Hirume in the game and the real Hirume…
         They are different, but one thing doesn't change…
         the fact that I love you.
       MVP: ""
     "":
-      Intro: >-
-        An introduction? Hmph... My name is Hirume. I am a shaman serving a
-        noble being. I am here to entrust mys-! S-stay right there! Don’t come
-        any closer!
-
+      Intro: |-
+        An introduction? Hmph... My name is Hirume. I am a shaman serving a noble being. I am here to entrust mys-! S-stay right there! Don’t come any closer!
         Hm Hm. My creator, Sam’s Industry paid attention political composition that’s going chaotic day by day. Assassination attempt and schemes on politicians were rampant. Even regular citizens threatened politicians’ lives.
-
         Sam’s Industry was quick to turn this to an opportunity and design a premium model reflecting each country’s legends and traditions. Yes, I was in the centre of that chaotic- ugh... You must have quite the audacity to speak such words. I was not moved from Companion to Battle Maid because I am faulty.It reallyReally. No. It was to utilize my abilities even more.
-
         I use sacred radiance and flames to purify the evil and protect allies. I shall protect you as w- 
-
         By the way... I think you’ve been looking at me with a furtive eye. Are you... O-of course. You are planning to do unspeakable things to me, aren’t you?! I should have known. I should’ve known when you provided me food without any hesitation.
-
         Don’t you dare deny! I know you’ve been eyeing my ears and tail this whole time! This is why I’ve been contact with anyone... I’m going to be violated so hard because of few tuna cans...
-      Join: My name is Hirume. I am a shaman serving a noble being. You… you’re not
-        thinking anything weird, are you?
+      Join: My name is Hirume. I am a shaman serving a noble being. You… you’re not thinking anything weird, are you?
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -3744,12 +3797,10 @@ dialogue:
         I am a shaman serving the sacred radiance. I will protect-
         W-wait! Don’t come closer!
       SPIdle_01_01: "*Sobs*… Next must be…"
-      Idle_02_01: >-
+      Idle_02_01: |-
         I don’t need your attention. Anyway-
-
         Oh… are you leaving? N-no. You’re busy… Go on with your business. Don’t mind me.
-      Idle_03_01: Promise you’ll be gentle to me. T-then… You can come a little, just
-        a little closer.
+      Idle_03_01: Promise you’ll be gentle to me. T-then… You can come a little, just a little closer.
       Idle_04_01: |-
         Gosh… You’ve been touching it
         for hours now. E-enough with the tail,
@@ -3758,14 +3809,10 @@ dialogue:
         I knew it. I was bound to fall victim
         to your dark desires…… W-what are you doing? I’ll accept you
         until you’re satisfied.
-      Oath: >-
-        … It’s been lonely. I could not meet anyone for decades. No… I haven’t
-        met anyone.
-
+      Oath: |-
+        … It’s been lonely. I could not meet anyone for decades. No… I haven’t met anyone.
         Dear. You have no idea… How happy I was when you reached your hand out to me. 
-
         When you hugged me so tightly even though I’ve been nothing but clumsy and stubborn… This will never if I spell everything out one by one.
-
         Please share everything with me one by one from now on. Until the both of us return in to the arms of God.
       OathIdle_01: Stay still. When I’m in your arms… I feel cool.
       MVP: ""
@@ -3993,17 +4040,12 @@ dialogue:
         那就是我愛你。
       MVP: ""
     "":
-      Intro: >-
+      Intro: |-
         自我介紹啊，本妾是侍奉尊貴者的巫女，希魯梅。暫時要打擾——！你，你不要靠近，在那裡聽著就好！
-
         咳嗯，製造本妾的三安產業關注了日益混亂的政治結構。日復一日，針對政治家的各種暗殺企圖和陰謀猖獗，甚至連平民百姓的生命也受到了威脅。
-
         三安產業以此為契機，策劃了一款體現各國傳說和傳統的高端機型。對，本妾是其中最混亂的——……呃，你，你這話太無禮了！本妾絕.對.不.是因為有什麼問題才從伴侶轉到戰鬥女僕的！而是為了更靈活使用本妾的力量。
-
         本妾使用的神聖的光輝可以淨化邪惡，守護友軍。如果你也希望的話—— 
-
         ……話說回來，你的眼神從剛才開始就很可疑。莫非……原，原來如此！你這傢伙，企圖對本妾做過分的事……！咳，是本妾大意了。當你豁然分給我食物的時候，就應該察覺……
-
         你別想抵賴！你不是一直用陰險的眼神盯著本妾的耳朵和尾巴嗎？嗚嗚……本妾才吃了幾罐金槍魚罐頭而已，就要被你淩辱了……本妾正是怕會這樣才不想見任何人的啊……
       Join: 本妾是侍奉尊貴者的巫女，希魯梅。…你，你該不會是在想奇怪的事情吧？
       SquadJoin: ""

@@ -3250,6 +3250,19 @@ skills:
             base: 2000
             per: 100
             chance: 1
+    desc:
+      KR: |-
+        붉은 빛의 기계장치를 사출하여 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        적중 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가 효과를 해제</sec>하고 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다.
+      JP: |-
+        赤い光の機械装置を射出して単一対象に<dmg elem="physics" />を与えます。
+        命中時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />防御力増加効果を解除</sec>し、<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>を減少させます。
+      EN: |-
+        Launches a red-light mechanical device to deal <dmg elem="physics" /> damage to a single target.
+        On hit, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> DEF increase effect</sec> and decreases <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec>.
+      TC: |-
+        射出紅光機械裝置，對單一目標造成<dmg elem="physics" />傷害。
+        命中時，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的防禦力增加效果</sec>，並降低<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力<val idx="0" r /></sec>。
   "2":
     key: "2"
     icon: SuicideBomb
@@ -4339,6 +4352,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전방위를 향해 에너지를 방출하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec>를 감소시키고 2라운드 동안 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="4" r /></sec> 감소 효과를 부여합니다.
+      JP: |-
+        全方位へエネルギーを放出し、指定範囲に<sec typ="attr">保護無視</sec>の<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、対象の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="0" r /></sec>を減少させ、2ラウンドの間<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="4" r /></sec>減少効果を付与します。
+      EN: |-
+        Releases energy in all directions to deal <sec typ="attr">ignores Protection</sec> <dmg elem="physics" /> damage to the designated area.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="EVADE_DOWN" /> EVADE <val idx="0" r /></sec> and applies <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" r /></sec> reduction for 2 rounds.
+      TC: |-
+        向四面八方釋放能量，對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害。
+        <sec typ="cond">命中時</sec>，降低目標的<sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避<val idx="0" r /></sec>，並於2回合內賦予<sec typ="buff"><buff typ="AP_DOWN" /> 行動力<val idx="4" r /></sec>減少效果。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4891,6 +4917,11 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드 내에 보호기가 없을 경우</sec>, 적 전체를 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>합니다.
+      JP: <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スコッド内に保護機がいない場合</sec>、敵全体を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>します。
+      EN: <sec typ="cond">At round start</sec>, <sec typ="cond">if there are no Protectors in the squad</sec>, provokes all enemies with <sec typ="buff"><buff typ="PROVOKE" /> Provocation</sec>.
+      TC: <sec typ="cond">在回合開始時</sec>，<sec typ="cond">若編成中沒有保護機</sec>，則對全體敵軍施加<sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>。
   "4":
     key: "4"
     icon: P.Barrier
@@ -5176,6 +5207,19 @@ skills:
             base: 2000
             per: 100
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="1" signless /></sec>을(를) 획득합니다.
+        <sec typ="cond">스쿼드 내에 <char uid="DS_Koyori" />가 있을 경우</sec>, 상기 효과 수치가 두 배로 증폭됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗<val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア<val idx="1" signless /></sec>を獲得します。
+        <sec typ="cond">スコッド内に<char uid="DS_Koyori" />がいる場合</sec>、上記効果値が2倍に増幅されます。
+      EN: |-
+        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increases and self gains <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="1" signless /></sec>.
+        <sec typ="cond">If <char uid="DS_Koyori" /> is in the squad</sec>, the above effect values are doubled.
+      TC: |-
+        <sec typ="cond">在回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗<val idx="0" r /></sec>增加，並獲得<sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 防護罩<val idx="1" signless /></sec>。
+        <sec typ="cond">若編成中有<char uid="DS_Koyori" /></sec>，則上述效果數值會變為2倍。
   "5":
     key: "5"
     icon: P.DefCounter
@@ -5367,6 +5411,11 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: <sec typ="cond">피격 시</sec>, 자신은 2라운드 동안 <sec typ="dmg"><buff typ="COUNTER" /> <val idx="0" r signless /> 위력으로 반격</sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 기동형 피해량 <val idx="3" r /></sec> 증가 효과를 획득합니다. (중첩 불가)
+      JP: <sec typ="cond">被弾時</sec>、自分は2ラウンドの間<sec typ="dmg"><buff typ="COUNTER" /> <val idx="0" r signless />威力で反撃</sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />対機動型ダメージ量<val idx="3" r /></sec>増加効果を獲得します。（重複不可）
+      EN: <sec typ="cond">When hit</sec>, self gains <sec typ="dmg"><buff typ="COUNTER" /> retaliates with <val idx="0" r signless /> power</sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> damage vs. Mobile type <val idx="3" r /></sec> increase effects for 2 rounds. (Does not stack)
+      TC: <sec typ="cond">受擊時</sec>，自身會於2回合內獲得<sec typ="dmg"><buff typ="COUNTER" /> 以<val idx="0" r signless /> 威力反擊</sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 對機動型傷害量<val idx="3" r /></sec>增加效果。（不可疊加）
 dialogue:
   KR:
     "":
@@ -5424,9 +5473,7 @@ dialogue:
         이 옷이 여러모로 어필하고 있다는
         자각은 하고 있다.
         ……그래서 책망하고 싶지는 않군.
-      Oath: 내가 등장했던 작품에서 나는 악역 외에는 전혀 상정되지 않았다. 그래서 다른 배우들이 즐거운 시간을 보내는 것을 보기만 했었지.
-        그런데 지금 너는... 나를... 기쁘게 하는군. 실망스러운 모습을 보여줄지도 모르지만 그래도 좋은 모습을 보여주기 위해 최선을
-        다하겠다. 잘 부탁하지.
+      Oath: 내가 등장했던 작품에서 나는 악역 외에는 전혀 상정되지 않았다. 그래서 다른 배우들이 즐거운 시간을 보내는 것을 보기만 했었지. 그런데 지금 너는... 나를... 기쁘게 하는군. 실망스러운 모습을 보여줄지도 모르지만 그래도 좋은 모습을 보여주기 위해 최선을 다하겠다. 잘 부탁하지.
       OathIdle_01: |-
         이미 여기에는 나말고 다른 카엔이 있더군.
         앞으로는 카엔이라 부르지 말고...

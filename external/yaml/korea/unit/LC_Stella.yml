@@ -1695,6 +1695,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        친구를 소환하여 전방의 적들에게 소울 브레스를 뿜어 목표 지점에 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 입힙니다.
+        <sec typ="cond">적중 시</sec> 2라운드 동안 <i>대상의</i> <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> 및 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>가 감소합니다.
+        <sec typ="cond">치명타 시</sec> 1라운드 동안 <i>대상을</i> <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
+      JP: |-
+        友を召喚して前方の敵にソウルブレスを吐き、目標地点に<sec typ="attr">保護無視</sec> <dmg elem="lightning" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間<i>対象の</i><sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>および<sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec>が減少します。
+        <sec typ="cond">クリティカル時</sec>、1ラウンドの間<i>対象を</i><sec typ="buff"><buff typ="SNARE" /> 移動不可</sec>状態にします。
+      EN: |-
+        Summons a companion and breathes Soul Breath at enemies in front, dealing <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> to the target point.
+        <sec typ="cond">On hit</sec>, decreases <i>the target's</i> <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, makes <i>the target</i> <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> for 1 round.
+      TC: |-
+        召喚朋友，向前方敵人吐出靈魂吐息，對目標地點造成<sec typ="attr">無視保護</sec> <dmg elem="lightning" />。
+        <sec typ="cond">命中時</sec>，於2回合內降低<i>目標的</i><sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>與<sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec>。
+        <sec typ="cond">暴擊時</sec>，於1回合內使<i>目標</i>陷入<sec typ="buff"><buff typ="SNARE" /> 無法移動</sec>狀態。
   "2":
     key: "2"
     icon: Music
@@ -4568,6 +4585,35 @@ skills:
             base: -0.5
             per: -0.025
             chance: 1
+    desc:
+      KR: |-
+        전방에 스피커를 소환하여 무대를 만든 후 지정 범위에 <dmg elem="lightning" /> 발생시킵니다.
+        <sec typ="cond">스킬 적중 시</sec> 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>를 감소시키고 <cmt t="회로 과열">$$STELLA_1:?$</cmt> 상태로 만듭니다.
+        <sec typ="cond">치명타 시</sec> <sec typ="dmg"><buff typ="LightningATK_UP" /> <val idx="5" r signless /> 전기 추가 피해</sec>가 발생합니다.
+        $$STELLA_1~
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="8" r /></sec>
+        ~$$STELLA_1
+      JP: |-
+        前方にスピーカーを召喚してステージを作った後、指定範囲に<dmg elem="lightning" />を発生させます。
+        <sec typ="cond">スキル命中時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec>を減少させ、<cmt t="回路過熱">$$STELLA_1:?$</cmt>状態にします。
+        <sec typ="cond">クリティカル時</sec> <sec typ="dmg"><buff typ="LightningATK_UP" /> <val idx="5" r signless /> の電気追加ダメージ</sec>が発生します。
+        $$STELLA_1~
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="8" r /></sec>
+        ~$$STELLA_1
+      EN: |-
+        Summons a speaker in front to create a stage, then deals <dmg elem="lightning" /> in the designated area.
+        <sec typ="cond">On skill hit</sec>, decreases the target's <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> for 2 rounds and puts them into <cmt t="Circuit Overheat">$$STELLA_1:?$</cmt> status.
+        <sec typ="cond">On critical hit</sec>, deals <sec typ="dmg"><buff typ="LightningATK_UP" /> <val idx="5" r signless /> additional lightning damage</sec>.
+        $$STELLA_1~
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> Cold Resistance <val idx="7" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance <val idx="8" r /></sec>
+        ~$$STELLA_1
+      TC: |-
+        在前方召喚音響設備打造舞台後，對指定範圍造成<dmg elem="lightning" />。
+        <sec typ="cond">技能命中時</sec>，於2回合內降低目標的<sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec>，並使其進入<cmt t="迴路過熱">$$STELLA_1:?$</cmt>狀態。
+        <sec typ="cond">暴擊時</sec>，造成<sec typ="dmg"><buff typ="LightningATK_UP" /> <val idx="5" r signless /> 電擊追加傷害</sec>。
+        $$STELLA_1~
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抵抗 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 冰霜抵抗 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抵抗 <val idx="8" r /></sec>
+        ~$$STELLA_1
   "3":
     key: "3"
     icon: P.Vortex
@@ -4778,6 +4824,19 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 적 전체의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="2" r /></sec>를 감소 시킵니다.
+        <sec typ="cond">피격 시</sec> 자신에게 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="4" signless />회</sec>를 부여합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、敵全体の<sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="2" r /></sec>を減少させます。
+        <sec typ="cond">被弾時</sec>、自分に<sec typ="buff"><buff typ="DEF_All" /> 被ダメージ無効化 <val idx="4" signless />回</sec>を付与します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, decreases all enemies' <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="2" r /></sec>.
+        <sec typ="cond">When hit</sec>, grants self <sec typ="buff"><buff typ="DEF_All" /> damage nullification <val idx="4" signless /> time(s)</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，降低全體敵軍的<sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="2" r /></sec>。
+        <sec typ="cond">被擊中時</sec>，賦予自身<sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 <val idx="4" signless />次</sec>。
   "4":
     key: "4"
     icon: P.Music
@@ -5197,6 +5256,31 @@ skills:
             base: 0.02
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">피격 시</sec> 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        <sec typ="cond">공격 적중 시</sec> 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">피격 시</sec> 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">적 처치 시</sec> 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <char uid="BR_Hela" />가 있는 경우</sec> 자신과 헬라의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>이(가) 증가합니다.
+      JP: |-
+        <sec typ="cond">被弾時</sec>、自分に適用された<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を解除</sec>します。
+        <sec typ="cond">攻撃命中時</sec>、味方全体の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>を増加させます。
+        <sec typ="cond">被弾時</sec>、味方全体の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>を増加させます。
+        <sec typ="cond">敵撃破時</sec>、味方全体の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スコードに<char uid="BR_Hela" />がいる場合</sec>、自分とヘラの<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">When hit</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes applied harmful effects</sec>.
+        <sec typ="cond">On attack hit</sec>, increases all allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>.
+        <sec typ="cond">When hit</sec>, increases all allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>.
+        <sec typ="cond">On enemy kill</sec>, increases all allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if <char uid="BR_Hela" /> is in the squad</sec>, increases self and Hela's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>.
+      TC: |-
+        <sec typ="cond">被擊中時</sec>，解除套用於自身的<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>。
+        <sec typ="cond">攻擊命中時</sec>，提升全體我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>。
+        <sec typ="cond">被擊中時</sec>，提升全體我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>。
+        <sec typ="cond">擊殺敵人時</sec>，提升全體我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若隊伍中有<char uid="BR_Hela" /></sec>，則提升自身與海拉的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>。
   "5":
     key: "5"
     icon: P.Music
@@ -5818,6 +5902,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 자신에게 <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="0" r /></sec> 증가 효과를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> 소속 전투원이 있을 경우</sec> 인원수에 따라 아군 전체에게 <sec typ="note">도움?</sec>를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec> 자신을 제외한 <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> 전투원을 공격 지원</sec>합니다.
+        <sec>※ 스쿼드 내에 공격 지원 대상이 중복된 경우 공격 지원은 1회만 적용됩니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分に<sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="0" r /></sec>増加効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スコードに自分を除いた<cmt t="ライオン・コーポレーション">$$LionCooperation:?$</cmt>所属戦闘員がいる場合</sec>、人数に応じて味方全体に<sec typ="note">手助け?</sec>を付与します。
+        <sec typ="cond">ラウンド開始時</sec> 自分を除いた<cmt t="ライオン・コーポレーション">$$LionCooperation:?$</cmt>戦闘員を攻撃支援</sec>します。
+        <sec>※スコード内に攻撃支援対象が重複する場合、攻撃支援は1回のみ適用されます。</sec>
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, grants self increased <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="0" r /></sec>.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if there are squad members from <cmt t="Lion Corporation">$$LionCooperation:?$</cmt> besides self</sec>, grants all allies <sec typ="note">Help?</sec> based on the number of members.
+        <sec typ="cond">At the start of the round</sec> provides Attack Support to <cmt t="Lion Corporation">$$LionCooperation:?$</cmt> combatants besides self</sec>.
+        <sec>※ If the attack support target overlaps within the squad, Attack Support is applied only once.</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，賦予自身<sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="0" r /></sec>增加效果。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若隊伍中有除自身以外的<cmt t="獅子公司">$$LionCooperation:?$</cmt>所屬戰鬥員</sec>，則依人數向全體我軍賦予<sec typ="note">幫助?</sec>。
+        <sec typ="cond">回合開始時</sec> 對除自身以外的<cmt t="獅子公司">$$LionCooperation:?$</cmt>戰鬥員進行攻擊支援</sec>。
+        <sec>※ 若隊伍內的攻擊支援目標重複，則攻擊支援僅套用1次。</sec>
 dialogue:
   KR:
     "1":
@@ -5891,9 +5996,7 @@ dialogue:
         조금 더…
         오빠가 원하는 대로…
         춤춰줘…
-      Oath: 오빠… 이번 무도회 하이라이트는 바로, 오늘 밤 서로 마음을 나누고 싶은 사람끼리 커플 댄스를 추는 거야. 오빠가 이런 선물까지 내게
-        준비해준 걸 보면… 오늘 밤 뿐만 아니라 무도회가 끝난 다음에도.… 오빠의 마음은 변하지 않는다는 거겠지? 그렇다면… 오늘 밤,
-        모두가 모인 무대 위에서, 왕자님처럼 맹세해줄래? 영원히… 함께 해주겠다고…
+      Oath: 오빠… 이번 무도회 하이라이트는 바로, 오늘 밤 서로 마음을 나누고 싶은 사람끼리 커플 댄스를 추는 거야. 오빠가 이런 선물까지 내게 준비해준 걸 보면… 오늘 밤 뿐만 아니라 무도회가 끝난 다음에도.… 오빠의 마음은 변하지 않는다는 거겠지? 그렇다면… 오늘 밤, 모두가 모인 무대 위에서, 왕자님처럼 맹세해줄래? 영원히… 함께 해주겠다고…
       OathIdle_01: |-
         축제를 열어줘서 고마워 오빠,
         덕분에 헬라 언니는 물론,
@@ -5969,9 +6072,7 @@ dialogue:
         아~ 영감님! 안돼! 그만 나와…!
         어린 애 취급 하지 마!
         난 어른이니까, 오빠랑 데이트 할 거야!
-      Oath: 영감님, 잠깐 조용히 해! 오빠가 한 말은 그러니까… 좋아하는 남자가 좋아하는 여자에게 하는 프로포즈… 인 거지? 그렇다면, 날…
-        동생이 아니라 어른으로… 보는 거 맞지? 에헤헤헤헤… 만세! …오빠는 다른 사람들과 다르게… 나에게 슬픔이 아닌, 희망을
-        줬으니까. 나도 오빠, 많이 많이 많이 좋아해 줄게. 증거로 오빠 입술에 뽀뽀… 해도 돼?
+      Oath: 영감님, 잠깐 조용히 해! 오빠가 한 말은 그러니까… 좋아하는 남자가 좋아하는 여자에게 하는 프로포즈… 인 거지? 그렇다면, 날… 동생이 아니라 어른으로… 보는 거 맞지? 에헤헤헤헤… 만세! …오빠는 다른 사람들과 다르게… 나에게 슬픔이 아닌, 희망을 줬으니까. 나도 오빠, 많이 많이 많이 좋아해 줄게. 증거로 오빠 입술에 뽀뽀… 해도 돼?
       OathIdle_01: |-
         오빠,
         오르카 호에 오고나서 많은 게 바뀌었어.

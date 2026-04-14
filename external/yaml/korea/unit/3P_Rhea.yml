@@ -4890,6 +4890,31 @@ skills:
             base: 29
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 줍니다.
+        <sec typ="dmg">선택 지점 주변에는 25% 피해만 적용됩니다.</sec>
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <cmt loc t="FLOOD">$$FLOOD:5,6,7$</cmt> 상태로 만듭니다.
+        <sec typ="cond">치명타 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="9" r /></sec>가 감소합니다.
+        <sec typ="cond">대상이 <sec typ="note">부식</sec> 상태인 경우</sec>, <sec>치명타 조건을 무시</sec>할 수 있습니다.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="lightning" />を与えます。
+        <sec typ="dmg">選択地点の周辺には25%のダメージのみ適用されます。</sec>
+        <sec typ="cond">命中時</sec>, 2ラウンドの間、対象を<cmt loc t="FLOOD">$$FLOOD:5,6,7$</cmt>状態にします。
+        <sec typ="cond">クリティカル時</sec>, 2ラウンドの間、対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="9" r /></sec>が減少します。
+        <sec typ="cond">対象が<sec typ="note">腐食</sec>状態の場合</sec>, <sec>クリティカル条件を無視</sec>できます。
+      EN: |-
+        Deals <sec typ="attr">protection-ignoring</sec> <dmg elem="lightning" /> to the designated area.
+        <sec typ="dmg">Only 25% damage is applied around the selected point.</sec>
+        <sec typ="cond">On hit</sec>, makes the target <cmt loc t="FLOOD">$$FLOOD:5,6,7$</cmt> for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, for 2 rounds, the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="9" r /></sec> decreases.
+        <sec typ="cond">If the target is in <sec typ="note">Corrosion</sec> state</sec>, it <sec>can ignore the critical-hit condition</sec>.
+      TC: |-
+        對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="lightning" />。
+        <sec typ="dmg">目標點周圍只會套用25%傷害。</sec>
+        <sec typ="cond">命中時</sec>，使目標在2回合內進入<cmt loc t="FLOOD">$$FLOOD:5,6,7$</cmt>狀態。
+        <sec typ="cond">暴擊時</sec>，使目標在2回合內的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="9" r /></sec>降低。
+        <sec typ="cond">若目標處於<sec typ="note">腐蝕</sec>狀態</sec>，則<sec>可無視暴擊條件</sec>。
   "2":
     key: "2"
     icon: WideIceShot
@@ -7326,6 +7351,27 @@ skills:
             base: 29
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>가 감소하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+        <sec typ="cond">대상이 <sec typ="note">부식</sec> 상태인 경우</sec>, <sec>치명타 조건을 무시</sec>할 수 있습니다.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="ice" />を与えます。
+        <sec typ="cond">命中時</sec>, 2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>が減少し、<sec typ="buff"><buff typ="VULNERABLE" /> 被ダメージ <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec>, 対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 被ダメージ減少効果を解除</sec>します。
+        <sec typ="cond">対象が<sec typ="note">腐食</sec>状態の場合</sec>, <sec>クリティカル条件を無視</sec>できます。
+      EN: |-
+        Deals <sec typ="attr">protection-ignoring</sec> <dmg elem="ice" /> to the designated area.
+        <sec typ="cond">On hit</sec>, for 2 rounds, the target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> decreases and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increases.
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's damage reduction effect</sec>.
+        <sec typ="cond">If the target is in <sec typ="note">Corrosion</sec> state</sec>, it <sec>can ignore the critical-hit condition</sec>.
+      TC: |-
+        對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="ice" />。
+        <sec typ="cond">命中時</sec>，在2回合內使目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>降低，並使<sec typ="buff"><buff typ="VULNERABLE" />受傷害<val idx="1" r /></sec>增加。
+        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的受傷害降低效果</sec>。
+        <sec typ="cond">若目標處於<sec typ="note">腐蝕</sec>狀態</sec>，則<sec>可無視暴擊條件</sec>。
   "3":
     key: "3"
     icon: P.SelfSpdDeBuff
@@ -7671,6 +7717,19 @@ skills:
             base: 13
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 행동력 감소 효과에 면역</sec> 상태가 됩니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신에게 <buff typ="AP_UP" /> 행동력 증가 효과가 적용된 경우</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 해당 효과를 해제</sec>하고 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="7" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>, 自身は<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 行動力減少効果に免疫</sec>状態になります。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身に<buff typ="AP_UP" /> 行動力増加効果が適用されている場合</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> その効果を解除</sec>し、自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, self becomes <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immune to AP down effects</sec>.
+        <sec typ="cond">At round start</sec> <sec typ="cond">if an <buff typ="AP_UP" /> AP up effect is applied to self</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes that effect</sec> and self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="7" r /></sec> increases.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身將進入<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />對行動力降低效果免疫</sec>狀態。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若自身套用了<buff typ="AP_UP" />行動力增加效果</sec>，則<sec typ="buff"><buff typ="REMOVE_BUFF" />解除該效果</sec>，並使自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="7" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -8310,6 +8369,23 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 범위 내 기동형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 자신을 제외한 기동형 아군의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 속성 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="8" r /></sec>가 증가합니다.
+        <sec>스킬 레벨 10에서 자신의 위치와 관계 없이 전체 적용됩니다.</sec>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>, 範囲内の機動型味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>, 範囲内の自分を除く機動型味方の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 属性耐性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="8" r /></sec>が増加します。
+        <sec>スキルレベル10で自分の位置に関係なく全体に適用されます。</sec>
+      EN: |-
+        <sec typ="cond">At battle start</sec>, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of allied Mobile units in range.
+        <sec typ="cond">At round start</sec>, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> elemental resistance <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="8" r /></sec> of allied Mobile units in range except self.
+        <sec>At Skill Lv. 10, it applies to all targets regardless of self's position.</sec>
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，增加範圍內我方機動型夥伴的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>。
+        <sec typ="cond">回合開始時</sec>，增加範圍內除自身外的機動型我方的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" />屬性抗性<val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="8" r /></sec>。
+        <sec>技能等級10時，將不受自身位置影響而全體套用。</sec>
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -8876,6 +8952,23 @@ skills:
             base: 0.4
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec>본인을 포함</sec>한 기동형 아군 수에 따라 자신은 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 X회</sec>를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 속성 저항 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="12" r /></sec>가 증가합니다.
+        <sec typ="cond">자신이 있는 한</sec>, <cmt t="페어리 시리즈">$$3PFairy:?$</cmt> 자매들의 공격은 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>, <sec>自分を含む</sec>機動型味方の数に応じて、自身は<sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 X回</sec>を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>, 自身の<sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 属性耐性 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="12" r /></sec>が増加します。
+        <sec typ="cond">自身がいる限り</sec>, <cmt t="フェアリーシリーズ">$$3PFairy:?$</cmt>姉妹たちの攻撃は対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃効果を解除</sec>します。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, based on the number of Mobile allies including <sec>self</sec>, self gains <sec typ="buff"><buff typ="DEF_All" /> X instances of damage nullification</sec>.
+        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> elemental resistance <val idx="9" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="12" r /></sec> increases.
+        <sec typ="cond">While self is present</sec>, attacks from the <cmt t="Fairy Series">$$3PFairy:?$</cmt> sisters <sec typ="buff"><buff typ="REMOVE_BUFF" /> remove the target's counterattack effect</sec>.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，根據<sec>包含自身在內</sec>的機動型我方數量，自身將獲得<sec typ="buff"><buff typ="DEF_All" />X次傷害無效化</sec>。
+        <sec typ="cond">回合開始時</sec>，提升自身的<sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" />屬性抗性<val idx="9" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="12" r /></sec>。
+        <sec typ="cond">只要自身存在</sec>，<cmt t="妖精系列">$$3PFairy:?$</cmt>姐妹們的攻擊會<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的反擊效果</sec>。
 dialogue:
   KR:
     "1":
@@ -9039,9 +9132,7 @@ dialogue:
         주인님은 왜 이리 여체에 관심이 많으실까
         어쩔 수 없네요. 
         제가 하나하나 알려드릴게요.
-      Oath: 오르카에서 가장 유행하는 병에 걸린 것 같아요. 상사병 말이에요. 후후, 하지만 이제는 괜찮을 거예요. 상사병의 특효약을 지금
-        받았으니까요. 주인님의 사랑을 말이죠. 의사로서 특효약이 널리 퍼지길 바라야겠지만… 지금 만큼은 저의 병을 치료하는 데에
-        집중해야겠네요. 사랑해요, 주인님.
+      Oath: 오르카에서 가장 유행하는 병에 걸린 것 같아요. 상사병 말이에요. 후후, 하지만 이제는 괜찮을 거예요. 상사병의 특효약을 지금 받았으니까요. 주인님의 사랑을 말이죠. 의사로서 특효약이 널리 퍼지길 바라야겠지만… 지금 만큼은 저의 병을 치료하는 데에 집중해야겠네요. 사랑해요, 주인님.
       OathIdle_01: |-
         주인님, 가족력이라는 걸 알고 계시나요?
         미리미리 알아두는 것이 좋을 거 같아서요.
@@ -9309,9 +9400,7 @@ dialogue:
         [미번역]주인님은 왜 이리 여체에 관심이 많으실까
         어쩔 수 없네요. 
         제가 하나하나 알려드릴게요.
-      Oath: "[미번역]오르카에서 가장 유행하는 병에 걸린 것 같아요. 상사병 말이에요. 후후, 하지만 이제는 괜찮을 거예요. 상사병의 특효약을
-        지금 받았으니까요. 주인님의 사랑을 말이죠. 의사로서 특효약이 널리 퍼지길 바라야겠지만… 지금 만큼은 저의 병을 치료하는 데에
-        집중해야겠네요. 사랑해요, 주인님."
+      Oath: "[미번역]오르카에서 가장 유행하는 병에 걸린 것 같아요. 상사병 말이에요. 후후, 하지만 이제는 괜찮을 거예요. 상사병의 특효약을 지금 받았으니까요. 주인님의 사랑을 말이죠. 의사로서 특효약이 널리 퍼지길 바라야겠지만… 지금 만큼은 저의 병을 치료하는 데에 집중해야겠네요. 사랑해요, 주인님."
       OathIdle_01: |-
         [미번역]주인님, 가족력이라는 걸 알고 계시나요?
         미리미리 알아두는 것이 좋을 거 같아서요.
@@ -9434,10 +9523,8 @@ dialogue:
       SPIdle_02_01: |-
         I guess I have to calm down
         the bad boy.
-      Oath: >-
-        I shouldn’t be like this… I have younger sibling to take care of… Is it
-        going to be okay? Okay… if you say so, master.
-
+      Oath: |-
+        I shouldn’t be like this… I have younger sibling to take care of… Is it going to be okay? Okay… if you say so, master.
         I should keep our relationship a secret… until my siblings can understand it…
       OathIdle_01: |-
         It seems sisters don’t know about
@@ -9489,17 +9576,12 @@ dialogue:
         Master… I was holding myself back
         for a wonderful night…
         now I can’t stop.
-      Oath: >-
-        Oh, master… Yes, I’m really happy. Haha, no. I decided to not think
-        about anything else
-
+      Oath: |-
+        Oh, master… Yes, I’m really happy. Haha, no. I decided to not think about anything else
         right now. About what other people might not think of me… and even my younger siblings. Because… you made me the main character, master.
-
         I love you, commander. Even more than every love that exists in this world combined.
-      OathIdle_01: >-
-        It doesn’t matter now. All my dreams came true. Now I won’t care about
-        anyone,
-
+      OathIdle_01: |-
+        It doesn’t matter now. All my dreams came true. Now I won’t care about anyone,
         and just stay with you.
       MVP: ""
     "3":
@@ -9577,12 +9659,9 @@ dialogue:
         That’s cheating! You can’t just
         sneak in like this… I’m going to darken the sky
         a bit… please wait. OK?
-      Oath: >-
-        Huh? … But… I have to look after my younger sisters… How can I be the
-        only happy one…
-
+      Oath: |-
+        Huh? … But… I have to look after my younger sisters… How can I be the only happy one…
         Would it be OK? Really? Everyone will be disappointed though…… Still… it wouldn't hurt for me to be a bit happier…
-
         would it? It'll be OK if kept secret. Right?
       OathIdle_01: |-
         This is thrilling. Dating…

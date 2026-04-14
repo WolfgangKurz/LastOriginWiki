@@ -3430,6 +3430,23 @@ skills:
             base: -0.5
             per: -0.025
             chance: 1
+    desc:
+      KR: |-
+        전방으로 투창하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 발생시킵니니다.
+        <sec typ="cond">스킬 적중 시</sec> 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가를 해제</sec>하고 2라운드 동안 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> 지속 전기 피해 <val idx="0" signless /></sec>를 발생시키며 <sec typ="note">회로 과열</sec> 상태로 만듭니다.
+        <sec typ="cond">치명타 시</sec> 대상을 1라운드 동안 <sec typ="chance">50% 확률</sec>로 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 상태로 만듭니다.
+      JP: |-
+        前方へ槍を投げ、指定範囲に <sec typ="attr">防護無視</sec> <dmg elem="lightning" />を発生させます。
+        <sec typ="cond">スキル命中時</sec>、対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防御力増加を解除</sec>し、2ラウンドの間 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> 継続電気ダメージ <val idx="0" signless /></sec>を発生させ、<sec typ="note">回路過熱</sec>状態にします。
+        <sec typ="cond">クリティカル時</sec>、対象を1ラウンドの間 <sec typ="chance">50%確率</sec>で <sec typ="buff"><buff typ="SEAL_SKILL" /> スキル使用不可</sec>状態にします。
+      EN: |-
+        Throws a spear forward, causing <sec typ="attr">ignore protection</sec> <dmg elem="lightning" /> in the designated area.
+        <sec typ="cond">On skill hit</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> defense increase</sec>, causes <sec typ="dmg"><buff typ="LightningDMG_DOT" /> ongoing electric damage <val idx="0" signless /></sec> for 2 rounds, and puts it into <sec typ="note">Circuit Overheat</sec> status.
+        <sec typ="cond">On crit</sec>, for 1 round puts the target into <sec typ="chance">50% chance</sec> <sec typ="buff"><buff typ="SEAL_SKILL" /> skill-use-disabled</sec> status.
+      TC: |-
+        向前投槍，對指定範圍造成 <sec typ="attr">無視保護</sec> <dmg elem="lightning" />。
+        <sec typ="cond">技能命中時</sec>，解除目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防禦力增加</sec>，並在 2 回合內造成 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> 持續電擊傷害 <val idx="0" signless /></sec>，使其進入 <sec typ="note">迴路過熱</sec>狀態。
+        <sec typ="cond">暴擊時</sec>，在 1 回合內以 <sec typ="chance">50% 機率</sec>使目標進入 <sec typ="buff"><buff typ="SEAL_SKILL" /> 無法使用技能</sec>狀態。
   "2":
     key: "2"
     icon: WideLightning
@@ -6473,6 +6490,27 @@ skills:
             base: 0.03
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        에너지를 모아 전력으로 공중 도약하여 지정 범위에 <dmg elem="lightning" />를 발생시킵니다.
+        <sec typ="cond">스킬 적중 시</sec> 아군 전체 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 증가 및 2라운드 동안 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec> 및 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장 피해량 <val idx="5" r /></sec>를 증가시킵니다.
+        <sec typ="cond">스킬 적중 시</sec> <sec typ="cond">대상이 <sec typ="note">회로 과열</sec> 상태이면</sec> <sec typ="dmg"><buff typ="LightningATK_UP" /> <val idx="6" r signless /> 추가 전기 피해</sec>를 입히고 2라운드 동안 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="7" r /></sec>가 감소합니다.
+        <sec typ="cond">치명타 시</sec> 대상에게 <sec typ="dmg"><buff typ="LightningATK_UP" /> <val idx="8" r signless /> 추가 전기 피해</sec>를 입힙니다.
+      JP: |-
+        エネルギーを集めて全力で空中跳躍し、指定範囲に <dmg elem="lightning" />を発生させます。
+        <sec typ="cond">スキル命中時</sec>、味方全体の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させ、2ラウンドの間 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec> および <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装ダメージ量 <val idx="5" r /></sec>を増加させます。
+        <sec typ="cond">スキル命中時</sec> <sec typ="cond">対象が <sec typ="note">回路過熱</sec>状態なら</sec>、<sec typ="dmg"><buff typ="LightningATK_UP" /> <val idx="6" r signless /> 追加電気ダメージ</sec>を与え、2ラウンドの間 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気抵抗 <val idx="7" r /></sec>が減少します。
+        <sec typ="cond">クリティカル時</sec>、対象に <sec typ="dmg"><buff typ="LightningATK_UP" /> <val idx="8" r signless /> 追加電気ダメージ</sec>を与えます。
+      EN: |-
+        Gathers energy and leaps into the air with full force, causing <dmg elem="lightning" /> in the designated area.
+        <sec typ="cond">On skill hit</sec>, increases all allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>, and for 2 rounds increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec> and <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage against Light units <val idx="5" r /></sec>.
+        <sec typ="cond">On skill hit</sec> <sec typ="cond">if the target is in <sec typ="note">Circuit Overheat</sec> status</sec>, deals <sec typ="dmg"><buff typ="LightningATK_UP" /> <val idx="6" r signless /> additional electric damage</sec> and for 2 rounds reduces <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance <val idx="7" r /></sec>.
+        <sec typ="cond">On crit</sec>, deals <sec typ="dmg"><buff typ="LightningATK_UP" /> <val idx="8" r signless /> additional electric damage</sec> to the target.
+      TC: |-
+        聚集能量全力向空中跳躍，對指定範圍造成 <dmg elem="lightning" />。
+        <sec typ="cond">技能命中時</sec>，提升友軍全體的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>，並在 2 回合內提升 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>及<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害量 <val idx="5" r /></sec>。
+        <sec typ="cond">技能命中時</sec> <sec typ="cond">若目標處於 <sec typ="note">迴路過熱</sec>狀態</sec>，則造成 <sec typ="dmg"><buff typ="LightningATK_UP" /> <val idx="6" r signless /> 額外電擊傷害</sec>，並在 2 回合內降低 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="7" r /></sec>。
+        <sec typ="cond">暴擊時</sec>，對目標造成 <sec typ="dmg"><buff typ="LightningATK_UP" /> <val idx="8" r signless /> 額外電擊傷害</sec>。
   "3":
     key: "3"
     icon: P.FormChange
@@ -7052,6 +7090,63 @@ skills:
             base: 0.02
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">피격 시</sec> 자신의 모든 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> 소속 전투원이 있을 경우</sec> 인원수에 따라 아군 전체에게 <sec typ="note">바람!</sec>을 부여합니다.
+        <box t="바람! 1">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="5" r /></sec> 증가
+        </box>
+        <box t="바람! 2">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장 피해량 <val idx="7" r /></sec> 증가
+        </box>
+        <box t="바람! 3">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="8" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장 피해량 <val idx="9" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 기동 피해량 <val idx="10" r /></sec> 증가
+        </box>
+        <box t="바람! 4">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="11" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장 피해량 <val idx="12" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 기동 피해량 <val idx="13" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장 피해량 <val idx="14" r /></sec> 증가
+      JP: |-
+        <sec typ="cond">被弾時</sec>、自身のすべての <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を解除</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">分隊に自分以外の <cmt t="ライオンコーポレーション">$$LionCooperation:?$</cmt> 所属戦闘員がいる場合</sec>、人数に応じて味方全体に <sec typ="note">風！</sec>を付与します。
+        <box t="風！ 1">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="5" r /></sec> 増加
+        </box>
+        <box t="風！ 2">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装ダメージ量 <val idx="7" r /></sec> 増加
+        </box>
+        <box t="風！ 3">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="8" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装ダメージ量 <val idx="9" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 対機動ダメージ量 <val idx="10" r /></sec> 増加
+        </box>
+        <box t="風！ 4">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="11" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装ダメージ量 <val idx="12" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 対機動ダメージ量 <val idx="13" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装ダメージ量 <val idx="14" r /></sec> 増加
+      EN: |-
+        <sec typ="cond">When hit</sec>, removes all own <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec>.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if there are allied combatants from <cmt t="Lion Corporation">$$LionCooperation:?$</cmt> besides self in the squad</sec>, grants all allies <sec typ="note">Wind!</sec> based on the number of allies.
+        <box t="Wind! 1">
+        <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="5" r /></sec> increase
+        </box>
+        <box t="Wind! 2">
+        <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage against Light units <val idx="7" r /></sec> increase
+        </box>
+        <box t="Wind! 3">
+        <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="8" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage against Light units <val idx="9" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> damage against Flying units <val idx="10" r /></sec> increase
+        </box>
+        <box t="Wind! 4">
+        <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="11" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage against Light units <val idx="12" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> damage against Flying units <val idx="13" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage against Heavy units <val idx="14" r /></sec> increase
+      TC: |-
+        <sec typ="cond">受擊時</sec>，解除自身所有的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若隊伍中有除自身以外來自 <cmt t="Lion Corporation">$$LionCooperation:?$</cmt> 的戰鬥員</sec>，則依人數賦予友軍全體 <sec typ="note">風！</sec>。
+        <box t="風！ 1">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="5" r /></sec>增加
+        </box>
+        <box t="風！ 2">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="6" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害量 <val idx="7" r /></sec>增加
+        </box>
+        <box t="風！ 3">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="8" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害量 <val idx="9" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 對機動型傷害量 <val idx="10" r /></sec>增加
+        </box>
+        <box t="風！ 4">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="11" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害量 <val idx="12" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 對機動型傷害量 <val idx="13" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害量 <val idx="14" r /></sec>增加
   "4":
     key: "4"
     icon: P.FormChange
@@ -7291,6 +7386,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 자신에게 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP로 전투 속행</sec> 효과를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <cmt t="스트라이커즈">$$Strikers:?$</cmt> 전투원이 있는 경우</sec> <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 스트라이커즈 전투원을 공격 지원</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> 전투원이 있는 경우</sec> 자신을 제외한 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 라이언 코퍼레이션 전투원을 공격 지원</sec>합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身に <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HPで戦闘続行</sec>効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">分隊に <cmt t="ストライカーズ">$$Strikers:?$</cmt> 戦闘員がいる場合</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> ストライカーズ戦闘員の攻撃を支援</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">分隊に <cmt t="ライオンコーポレーション">$$LionCooperation:?$</cmt> 戦闘員がいる場合</sec>、自分以外の <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> ライオンコーポレーション戦闘員の攻撃を支援</sec>します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, grants self a <sec typ="buff"><buff typ="DEF_RESSURRECT" /> continue battle with <val idx="0" r signless /> HP</sec> effect.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if the squad has combatants from <cmt t="Strikers">$$Strikers:?$</cmt></sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports Strikers combatants' attacks</sec>.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if the squad has combatants from <cmt t="Lion Corporation">$$LionCooperation:?$</cmt></sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports Lion Corporation combatants' attacks</sec> other than self.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，賦予自身 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以 <val idx="0" r signless /> HP 繼續戰鬥</sec>效果。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若隊伍中有來自 <cmt t="Strikers">$$Strikers:?$</cmt> 的戰鬥員</sec>，則以 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 支援 Strikers 戰鬥員的攻擊</sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若隊伍中有來自 <cmt t="Lion Corporation">$$LionCooperation:?$</cmt> 的戰鬥員</sec>，則以 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 支援除自身以外的 Lion Corporation 戰鬥員攻擊</sec>。
   "5":
     key: "5"
     icon: P.TeamAtkDeBuff
@@ -7579,6 +7691,43 @@ skills:
             base: 0.03
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">홀수 라운드인 경우</sec> 적 공격기에게 <sec typ="buff"><sec typ="note">사라져!</sec>를 부여</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">짝수 라운드인 경우</sec> 아군 공격기에게 <sec typ="buff"><sec typ="note">놀자고!</sec>를 부여</sec>합니다.
+        <box t="사라져!">
+        <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>, <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec>, <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="2" r /></sec> 감소
+        </box>
+        <box t="놀자고!">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>, <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec>, <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="7" r /></sec> 증가
+        </box>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">奇数ラウンドの場合</sec>、敵攻撃機に <sec typ="buff"><sec typ="note">消えろ！</sec>を付与</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">偶数ラウンドの場合</sec>、味方攻撃機に <sec typ="buff"><sec typ="note">遊ぼう！</sec>を付与</sec>します。
+        <box t="消えろ！">
+        <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec>、<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec>、<sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="2" r /></sec>減少
+        </box>
+        <box t="遊ぼう！">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec>、<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>、<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="7" r /></sec>増加
+        </box>
+      EN: |-
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if it is an odd round</sec>, grants enemy Attackers <sec typ="buff"><sec typ="note">Disappear!</sec></sec>.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if it is an even round</sec>, grants allied Attackers <sec typ="buff"><sec typ="note">Let's Play!</sec></sec>.
+        <box t="Disappear!">
+        <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec>, <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="1" r /></sec>, <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="2" r /></sec> decrease
+        </box>
+        <box t="Let's Play!">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec>, <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec>, <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="7" r /></sec> increase
+        </box>
+      TC: |-
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若為奇數回合</sec>，則賦予敵方攻擊機 <sec typ="buff"><sec typ="note">消失吧！</sec>를 부여</sec>합니다.
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若為偶數回合</sec>，則賦予友軍攻擊機 <sec typ="buff"><sec typ="note">來玩吧！</sec>를 부여</sec>합니다。
+        <box t="消失吧！">
+        <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec>、<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec>、<sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="2" r /></sec>下降
+        </box>
+        <box t="來玩吧！">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec>、<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>、<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="7" r /></sec>增加
+        </box>
 dialogue:
   KR:
     "1":
@@ -7643,10 +7792,7 @@ dialogue:
         남의 불행으로 행복해하는 것들을
         짓밟고 보란듯이 비웃어줄거야.
       SPIdle_02_01: 네가 가진 창이 날 관통했어…♡
-      Oath: 너도 참… 어지간히 제 정신은 아니구나. 난 그냥 내 목적에만 충실할 뿐이야. 이런 이기적인 나한테 이렇게까지 할 가치가 뭐 있다고
-        들러붙는 건데? 하여간… 진짜 얘를 어떻게 해야 되냐. 네가 선택한 거니까 나중에 나한테 등 뒤에서 창 찔려도 원망하기 없기다?
-        네가 조금이라도 한 눈 파는 것 같다 싶으면 확! 사령관 꼬치를 만들어버릴거니까… 흥, 네가 지갑이라서 참는 거야. 오해하지
-        마라~?! …그, 그러니까, 여러모로 잘 부탁한다고.
+      Oath: 너도 참… 어지간히 제 정신은 아니구나. 난 그냥 내 목적에만 충실할 뿐이야. 이런 이기적인 나한테 이렇게까지 할 가치가 뭐 있다고 들러붙는 건데? 하여간… 진짜 얘를 어떻게 해야 되냐. 네가 선택한 거니까 나중에 나한테 등 뒤에서 창 찔려도 원망하기 없기다? 네가 조금이라도 한 눈 파는 것 같다 싶으면 확! 사령관 꼬치를 만들어버릴거니까… 흥, 네가 지갑이라서 참는 거야. 오해하지 마라~?! …그, 그러니까, 여러모로 잘 부탁한다고.
       OathIdle_01: |-
         우리는 끈적한 무언가로 연결되어 있어…
         우후후…
@@ -7699,10 +7845,7 @@ dialogue:
         안 그래?
       Idle_04_01: 뭐… 네 정체가 뭐든 이젠 아무래도 좋아…
       SPIdle_02_01: 내 문신… 자세히 보고 싶지 않아?
-      Oath: 야 됐어! 우리 사이에 무슨… 그, 그래도 이건 비싸보이니까 잘 받아두도록 할게. 아냐, 안 팔아 먹어! 내가 뭐 그렇게까지 의리
-        없는 애는 아니거든?! 사람 잘. 못. 보. 셨. 네. 요! 눈알은 장식인가… 그래도 뭐, 이쁘긴 하네… 근데 말이야… 이거 끼고
-        다니면, 이제 오르카 호 절반 정도는 내 지분이라고 할 수 있는 건가…? 앞으로 노후 걱정은 없겠는데? 아싸~ 중간에 무르기
-        없기다?
+      Oath: 야 됐어! 우리 사이에 무슨… 그, 그래도 이건 비싸보이니까 잘 받아두도록 할게. 아냐, 안 팔아 먹어! 내가 뭐 그렇게까지 의리 없는 애는 아니거든?! 사람 잘. 못. 보. 셨. 네. 요! 눈알은 장식인가… 그래도 뭐, 이쁘긴 하네… 근데 말이야… 이거 끼고 다니면, 이제 오르카 호 절반 정도는 내 지분이라고 할 수 있는 건가…? 앞으로 노후 걱정은 없겠는데? 아싸~ 중간에 무르기 없기다?
       OathIdle_01: |-
         내 진짜 이름… 너한테만 알려줄게.
         '마리'… 그치만 계속 '에프넬'이라고 불러줘…

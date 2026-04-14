@@ -8776,6 +8776,23 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        수류탄을 던져 지정 범위에 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 아군 수에 비례하여 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>을 감소시키고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>를 증가시킵니다.
+        적중 대상이 지속 화염 피해 상태인 경우, 피해량이 증가합니다.
+      JP: |-
+        手榴弾を投げて指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、味方の数に比例して2ラウンドの間対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="0" r /></sec>を減少させ、<sec typ="buff"><buff typ="VULNERABLE" />被ダメージ<val idx="1" r /></sec>を増加させます。
+        命中対象が継続火炎ダメージ状態の場合、ダメージ量が増加します。
+      EN: |-
+        Throws a grenade and deals <dmg elem="physics" /> to the designated area.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> and increases their <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> for 2 rounds, proportional to the number of allies.
+        If the hit target is suffering persistent fire damage, damage dealt increases.
+      TC: |-
+        投擲手榴彈，對指定範圍造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，依我軍數量在2回合內降低目標的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="0" r /></sec>，並增加<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="1" r /></sec>。
+        若命中的目標處於持續火焰傷害狀態，則傷害量會增加。
   "2":
     key: "2"
     icon: ShotGun
@@ -19265,6 +19282,23 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        샷건으로 단일 대상에게 <dmg elem="physics" />를 입힙니다.
+        <sec typ="cond">적중 시</sec>, 아군 수에 비례하여 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다. (중첩 불가)
+        <sec typ="cond">치명타 시</sec>, 피해량이 증가합니다.
+      JP: |-
+        ショットガンで単体対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、味方の数に比例して2ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>を減少させます。(重複不可)
+        <sec typ="cond">クリティカル時</sec>、ダメージ量が増加します。
+      EN: |-
+        Uses a shotgun to deal <dmg elem="physics" /> to a single target.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> for 2 rounds, proportional to the number of allies. (does not stack)
+        <sec typ="cond">On critical hit</sec>, damage dealt increases.
+      TC: |-
+        以霰彈槍對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，依我軍數量在2回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>。(不可重疊)
+        <sec typ="cond">暴擊時</sec>，傷害量會增加。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -20059,6 +20093,19 @@ skills:
             base: 0.075
             per: 0.0075
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군 수에 비례하여 아군 전체의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
+        자신의 스킬 효과 중 '인원 수에 비례하는 효과'는, 자신 외의 <sec typ="note">앵거 오브 호드</sec> 소속 전투원이 있을 경우 효과가 50% 증폭됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、味方の数に比例して味方全体の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>が増加します。
+        自分のスキル効果のうち「人数に比例する効果」は、自分以外の<sec typ="note">アンガー・オブ・ホード</sec>所属戦闘員がいる場合、効果が50%増幅されます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases all allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec> in proportion to the number of allies.
+        Among self's skill effects, the 'effects proportional to the number of members' are amplified by 50% if there is any <sec typ="note">Anger of Horde</sec> combatant other than self.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，依我軍數量提升我軍全體的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>。
+        自身技能效果中的「依人數比例的效果」，若有自身以外的<sec typ="note">憤怒之群</sec>所屬戰鬥員在場，則效果會增幅50%。
   "4":
     key: "4"
     icon: SetBomb
@@ -29563,6 +29610,23 @@ skills:
             base: 1.05
             per: 0.105
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="0" /></sec>가 증가합니다. 해당 효과는 3회 공격 적중 시 해제됩니다.
+        <sec typ="cond">공격 적중 시</sec> <sec typ="cond"><sec typ="note">짧은 도화선</sec>에 의한 사거리 증가 효과가 없을 경우</sec>, 아군 / 적 수에 비례하여 자신의 스킬 위력이 증가합니다.
+        스킬 위력 증가 효과는 적 처치 시까지 유지되며, 효과 해제 후 다시 사거리 증가 효과를 획득합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自分の<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="0" /></sec>が増加します。この効果は3回攻撃が命中すると解除されます。
+        <sec typ="cond">攻撃命中時</sec> <sec typ="cond"><sec typ="note">短い導火線</sec>による射程増加効果がない場合</sec>、味方 / 敵の数に比例して自分のスキル威力が増加します。
+        スキル威力増加効果は敵を撃破するまで維持され、効果解除後は再び射程増加効果を獲得します。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="0" /></sec> increases. This effect is removed after 3 attack hits.
+        <sec typ="cond">On attack hit</sec> <sec typ="cond">if there is no Range increase effect from <sec typ="note">Short Fuse</sec></sec>, own skill power increases in proportion to the number of allies / enemies.
+        The skill power increase effect lasts until an enemy is defeated, and after the effect ends, the Range increase effect is obtained again.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="0" /></sec>增加。此效果會在命中3次攻擊後解除。
+        <sec typ="cond">攻擊命中時</sec> <sec typ="cond">若沒有來自<sec typ="note">短引信</sec>的射程增加效果</sec>，則自身技能威力會依我軍 / 敵軍數量增加。
+        技能威力增加效果會持續至擊殺敵人為止，效果解除後會再次獲得射程增加效果。
   "5":
     key: "5"
     icon: P.SuicideBomb
@@ -30286,6 +30350,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 아군 수에 비례하여 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond"><sec typ="note">죽여주는 수류탄</sec> 적중 시</sec>, 2라운드 동안 기폭제를 추가 부착하여 다음 <sec typ="note">죽여주는 수류탄</sec>의 피해량이 증가합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、味方の数に比例して自分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond"><sec typ="note">殺してくれる手榴弾</sec>命中時</sec>、2ラウンドの間起爆剤を追加で取り付け、次の<sec typ="note">殺してくれる手榴弾</sec>のダメージ量が増加します。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases in proportion to the number of allies.
+        <sec typ="cond">When <sec typ="note">Awesome Grenade</sec> hits</sec>, adds extra detonators for 2 rounds, increasing the damage dealt by the next <sec typ="note">Awesome Grenade</sec>.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>會依我軍數量增加。
+        <sec typ="cond">當<sec typ="note">超讚手榴彈</sec>命中時</sec>，會在2回合內額外裝上起爆器，使下一次<sec typ="note">超讚手榴彈</sec>的傷害量增加。
 dialogue:
   KR:
     "1":
@@ -30407,9 +30484,7 @@ dialogue:
         사령관이 가만히 있을 리 없지!
         그래서… 내 몸에 그림 그렸는데…
         보여 줄까? 아니… 봐줘…
-      Oath: 캬하핫! 벽이란 벽에다가 사령관♡하이에나라고 쓰고 다닌 보람이 있네! 그거 있잖아. 어… 무슨무슨 효과… 어쨌든! 사실이 됐으니까
-        굳이 지울 필요는 없지? 아니다. 이제는 더 크게 쓰고 다녀야지! 자! 가자, 사령관! 같이 공동작 업하러 가야지! 우리가 얼마나
-        사랑하는지 보여주자고!
+      Oath: 캬하핫! 벽이란 벽에다가 사령관♡하이에나라고 쓰고 다닌 보람이 있네! 그거 있잖아. 어… 무슨무슨 효과… 어쨌든! 사실이 됐으니까 굳이 지울 필요는 없지? 아니다. 이제는 더 크게 쓰고 다녀야지! 자! 가자, 사령관! 같이 공동작 업하러 가야지! 우리가 얼마나 사랑하는지 보여주자고!
       OathIdle_01: |-
         내가 최근에 벽에 그린 글자들 봤어?
         못 봤다고?
@@ -30646,13 +30721,10 @@ dialogue:
         aren't allowed in Aqua Land. I am one
         with my explosives! So, I just took a few with me.
         Just ignore the fact that I have them.
-      Idle_01_03: >-
+      Idle_01_03: |-
         Hey. Commander. Did you happen to see Salamander?
-
         She took my prize money and bolted.
-
         How could she do that with a smile on her face? I was planning to pay Kheshig back
-
         with that money.
       SPIdle_01_01: |-
         If you play with fire…
@@ -30662,35 +30734,24 @@ dialogue:
         They're not explosives! Here. Take this. It's ice cream. What the?!
         Were you expecting something dirty? Well that's a relief.
         The popsicle stick is the pin. Enjoy!
-      Idle_03_01: >-
+      Idle_03_01: |-
         You know how everyone enjoys
-
         fireworks at night? Would it be the same
-
         if we set off some bombs? What's dangerous about that? We'd just be watching.
-
         Well… If you say so.
-
         I'll think about it.
-      Idle_04_01: >-
-        This swimsuit? I’m not taking it off even if you tell me it’s not
-        pretty.
-
+      Idle_04_01: |-
+        This swimsuit? I’m not taking it off even if you tell me it’s not pretty.
         I chose it and I’m sticking to it. I knew you’d be
-
         like that. You're just as
-
         weird as I am. Maybe that's why I like you.
       SPIdle_02_01: |-
         Oh! Looks like you've made up your mind.
         What do you think? You want me to make this
         a tad bit more exciting?
-      Oath: >-
-        Commander. Something seems different about you today… Maybe you don't
-        know what to do because my swimsuit is hotter
-
+      Oath: |-
+        Commander. Something seems different about you today… Maybe you don't know what to do because my swimsuit is hotter
         than explosives… What do you say we spend a loud night together? Ah, Commander! I knew you're as weird as I am!
-
         It might hurt a little tonight, Hubby.
       OathIdle_01: |-
         I have a little something for you, my husband.
@@ -30769,15 +30830,11 @@ dialogue:
         Want me to be careful in battle? Keep the distance? Eh, I don’t want to.
         There’s no point of fighting. … Well, if you say so.
         I’ll take a step or two back. Okay?
-      SPIdle_02_01: >-
-        If you keep doing that, this might go off… Pfft, I was kidding. This
-        thing doesn’t go off.
-
+      SPIdle_02_01: |-
+        If you keep doing that, this might go off… Pfft, I was kidding. This thing doesn’t go off.
         Do as you wish.
-      Oath: >-
-        Hm… Yo, Commander. Are you into the kinky, crazy type? … You should have
-        told me sooner!
-
+      Oath: |-
+        Hm… Yo, Commander. Are you into the kinky, crazy type? … You should have told me sooner!
         I also happen to be into kinky, crazy men! Kyahaha, let’s hang around for a lo~ng time, and blow everything up~
       OathIdle_01: Hey, Hubby. I want something… I-it’s not a bomb.
       MVP: ""

@@ -6159,6 +6159,11 @@ skills:
             base: 66
             per: 0
             chance: 1
+    desc:
+      KR: 적에게 불길을 쏟아내어 대상에게 <dmg elem="fire" />를 줍니다.
+      JP: 敵に炎を浴びせて対象に <dmg elem="fire" />を与えます。
+      EN: Unleashes flames on the enemy and deals <dmg elem="fire" /> to the target.
+      TC: 向敵人傾瀉烈焰，對目標造成 <dmg elem="fire" />。
   "2":
     key: "2"
     icon: Vortex
@@ -12276,6 +12281,11 @@ skills:
             base: 66
             per: 0
             chance: 1
+    desc:
+      KR: 곁에 있는 늑대를 보내 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 줍니다.
+      JP: そばにいる狼を送り、指定範囲に <sec typ="attr">防護無視</sec> <dmg elem="fire" />を与えます。
+      EN: Sends the wolf beside her to deal <sec typ="attr">ignore protection</sec> <dmg elem="fire" /> to the designated area.
+      TC: 派遣身旁的狼，對指定範圍造成 <sec typ="attr">無視保護</sec> <dmg elem="fire" />。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -12898,6 +12908,11 @@ skills:
             base: -0.05
             per: 0
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+      JP: <sec typ="cond">ラウンド開始時</sec>、自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が増加します。
+      EN: <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increases.
+      TC: <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>會增加。
   "4":
     key: "4"
     icon: P.SetBarricade
@@ -13331,6 +13346,11 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군에게 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 지속 화염 피해</sec>를 입히고 <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="5" r /></sec>를 증가시킵니다.
+      JP: <sec typ="cond">ラウンド開始時</sec>、範囲内の味方に <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 継続火炎ダメージ</sec>を与え、<sec typ="buff"><buff typ="ICERES_UP" /> 冷気抵抗 <val idx="5" r /></sec>を増加させます。
+      EN: <sec typ="cond">At the start of the round</sec>, deals <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> ongoing fire damage</sec> to allies in range and increases <sec typ="buff"><buff typ="ICERES_UP" /> Cold Resistance <val idx="5" r /></sec>.
+      TC: <sec typ="cond">回合開始時</sec>，對範圍內友軍施加 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 持續火焰傷害</sec>，並提升 <sec typ="buff"><buff typ="ICERES_UP" /> 冷氣抗性 <val idx="5" r /></sec>。
   "5":
     key: "5"
     icon: P.Wave
@@ -13423,6 +13443,11 @@ skills:
             base: 500
             per: 50
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 모든 적에게 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 지속 화염 피해</sec>를 부여합니다. <sec>(최대 5중첩)</sec>
+      JP: <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間すべての敵に <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 継続火炎ダメージ</sec>を付与します。<sec>(最大5重複)</sec>
+      EN: <sec typ="cond">At the start of the round</sec>, applies <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> ongoing fire damage</sec> to all enemies for 3 rounds. <sec>(up to 5 stacks)</sec>
+      TC: <sec typ="cond">回合開始時</sec>，在 3 回合內對所有敵人施加 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 持續火焰傷害</sec>。<sec>（最多 5 層）</sec>
 dialogue:
   KR:
     "1":
@@ -13479,9 +13504,7 @@ dialogue:
         손 발을 묶고 무방비 상태가 되는 거지.
         아무래도 이 상태라면... 당신이 무슨 짓을 해도
         손을 쓸 수가 없겠네. 무슨 짓을 해도, 말이야.
-      Oath: 이상하네. 마술 연습을 하면서 반지는 수백 번을 넘게 만져봤을 텐데... 당신이 주는 반지는 또 느낌이 달라. 응? 이번에는 안
-        튕기냐고? 후훗, 그게 무슨 바보같은 소리야? 내가 아무리 솔직하지 못해도... 사랑하는 사람이 주는 반지를 어떻게 거절할 수
-        있겠어.
+      Oath: 이상하네. 마술 연습을 하면서 반지는 수백 번을 넘게 만져봤을 텐데... 당신이 주는 반지는 또 느낌이 달라. 응? 이번에는 안 튕기냐고? 후훗, 그게 무슨 바보같은 소리야? 내가 아무리 솔직하지 못해도... 사랑하는 사람이 주는 반지를 어떻게 거절할 수 있겠어.
       OathIdle_01: |-
         자, 선물이야. 특수 제작한 카드를 줄게.
         왜 다 하트 카드밖에 없냐고?
@@ -13644,9 +13667,7 @@ dialogue:
         손 발을 묶고 무방비 상태가 되는 거지.
         아무래도 이 상태라면... 당신이 무슨 짓을 해도
         손을 쓸 수가 없겠네. 무슨 짓을 해도, 말이야.
-      Oath: (미번역)이상하네. 마술 연습을 하면서 반지는 수백 번을 넘게 만져봤을 텐데... 당신이 주는 반지는 또 느낌이 달라. 응? 이번에는
-        안 튕기냐고? 후훗, 그게 무슨 바보같은 소리야? 내가 아무리 솔직하지 못해도... 사랑하는 사람이 주는 반지를 어떻게 거절할 수
-        있겠어.
+      Oath: (미번역)이상하네. 마술 연습을 하면서 반지는 수백 번을 넘게 만져봤을 텐데... 당신이 주는 반지는 또 느낌이 달라. 응? 이번에는 안 튕기냐고? 후훗, 그게 무슨 바보같은 소리야? 내가 아무리 솔직하지 못해도... 사랑하는 사람이 주는 반지를 어떻게 거절할 수 있겠어.
       OathIdle_01: |-
         (미번역)자, 선물이야. 특수 제작한 카드를 줄게.
         왜 다 하트 카드밖에 없냐고?
@@ -13789,16 +13810,11 @@ dialogue:
         From now on, you have to hold my hand for one hour a day.
         That way we can understand each other better.
         …Don't get me wrong, it's all for magic.
-      SPIdle_02_01: >-
+      SPIdle_02_01: |-
         …Fine. From now on, we’re going to practice escaping.
-
         I’ll have to tie your hands and feet.
-
         When you're like this… you won't be able to do anything, no matter what I do to you. And I mean… no matter what…
-      Oath: Strange. I've touched the ring hundreds of times while practicing the
-        magic trick… but it feels different when you give it to me. Hm? Why am I
-        not playing hard to get? Hah! What are you talking about? Though I may
-        not be honest… how can I reject a ring from the person I love?
+      Oath: Strange. I've touched the ring hundreds of times while practicing the magic trick… but it feels different when you give it to me. Hm? Why am I not playing hard to get? Hah! What are you talking about? Though I may not be honest… how can I reject a ring from the person I love?
       OathIdle_01: |-
         Here, it's a gift. It's a special card.
         Why are there only hearts?
@@ -13859,12 +13875,9 @@ dialogue:
         …This isn't the end, is it?
         It's disappointing compared to your being so confident.
         More. Do as much more as you desired.​
-      Oath: >-
-        I can't beat around the bush anymore. Why do you keep bothering me? …I
-        really can't understand you.
-
+      Oath: |-
+        I can't beat around the bush anymore. Why do you keep bothering me? …I really can't understand you.
         Why you would be interested in me, why you would give me things like this. And why would I… Fine. I'll accept.
-
         It's already too late to regret. I'm already your Nauthiz. Be careful not to make a mistake and turn into a pile of ashes.
       OathIdle_01: |-
         I don’t have anything I want from you.

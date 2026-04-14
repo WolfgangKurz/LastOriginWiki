@@ -1548,6 +1548,19 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        히트블레이드를 교차하며 단일 대상에게 <dmg elem="fire" />를 줍니다.
+        적중 대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="FIRERES_DOWN" /> 화염 저항 감소</sec> 상태인 경우, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="0" r /></sec>가 각각 증가합니다.
+      JP: |-
+        ヒートブレードを交差させて単一対象に <dmg elem="fire" /> を与えます。
+        命中した対象が <sec typ="cond"><buff typ="MARKING" /> マーク</sec> / <sec typ="cond"><buff typ="FIRERES_DOWN" /> 火炎耐性減少</sec> 状態の場合、<sec typ="dmg"><buff typ="FireATK_UP" /> ダメージ量 <val idx="0" r /></sec> がそれぞれ増加します。
+      EN: |-
+        Crosses heat blades to deal <dmg elem="fire" /> to a single target.
+        If the target is <sec typ="cond"><buff typ="MARKING" /> Marked</sec> / <sec typ="cond"><buff typ="FIRERES_DOWN" /> Fire Resistance Down</sec>, increases <sec typ="dmg"><buff typ="FireATK_UP" /> damage dealt <val idx="0" r /></sec> respectively.
+      TC: |-
+        交叉熱刃，對單一目標造成 <dmg elem="fire" />。
+        若命中目標處於 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="FIRERES_DOWN" /> 火焰抗性降低</sec> 狀態，則各自使 <sec typ="dmg"><buff typ="FireATK_UP" /> 傷害量 <val idx="0" r /></sec> 提高。
   "2":
     key: "2"
     icon: MGShot
@@ -2826,6 +2839,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        처형 프로세스를 실행하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여하고 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      JP: |-
+        処刑プロセスを実行して指定範囲に <sec typ="attr">保護無視</sec> <dmg elem="fire" /> を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象に <sec typ="buff"><buff typ="MARKING" /> マーク</sec> を付与し、<sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="1" r /></sec> を減少させます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="FireATK_UP" /> ダメージ量 <val idx="3" r /></sec> が増加します。
+      EN: |-
+        Executes the execution process to deal <sec typ="attr">ignore protection</sec> <dmg elem="fire" /> to the designated area.
+        <sec typ="cond">On hit</sec>, marks the target for 2 rounds and reduces <sec typ="buff"><buff typ="FIRERES_DOWN" /> fire resistance <val idx="1" r /></sec>.
+        <sec typ="cond">On critical hit</sec>, increases <sec typ="dmg"><buff typ="FireATK_UP" /> damage dealt <val idx="3" r /></sec>.
+      TC: |-
+        執行處刑程序，對指定範圍造成 <sec typ="attr">無視保護</sec> 的 <dmg elem="fire" />。
+        <sec typ="cond">命中時</sec>，使目標獲得 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>，持續 2 回合，並降低 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="1" r /></sec>。
+        <sec typ="cond">暴擊時</sec>，使 <sec typ="dmg"><buff typ="FireATK_UP" /> 傷害量 <val idx="3" r /></sec> 提高。
   "3":
     key: "3"
     icon: P.DefCounter
@@ -3277,6 +3307,39 @@ skills:
             base: 1
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 그림자 난무 프로토콜을 전개해 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">공격 받을 시</sec>, 2라운드 동안 자신은 <sec typ="buff"><buff typ="COUNTER" /> 반격</sec>이 활성화됩니다.
+        <sec>자신이 전열에 가까울 수록 반격 위력이 증가합니다.</sec>
+        <box t="전열"><sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 위력으로 반격</sec></box>
+        <box t="중열"><sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 위력으로 반격</sec></box>
+        <box t="후열"><sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> 위력으로 반격</sec></box>
+        <sec typ="cond">적 처치 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>이(가) 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、シャドウ乱舞プロトコルを展開し、<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> が増加します。
+        <sec typ="cond">攻撃を受けた時</sec>、2ラウンドの間、自分は <sec typ="buff"><buff typ="COUNTER" /> 反撃</sec> が有効になります。
+        <sec>自分が前列に近いほど反撃威力が増加します。</sec>
+        <box t="前列"><sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> の威力で反撃</sec></box>
+        <box t="中列"><sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> の威力で反撃</sec></box>
+        <box t="後列"><sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> の威力で反撃</sec></box>
+        <sec typ="cond">敵を処理した時</sec>、自分の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec> が増加します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, deploys the Shadow Barrage Protocol, increasing <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> critical <val idx="1" r /></sec>.
+        <sec typ="cond">When attacked</sec>, self's <sec typ="buff"><buff typ="COUNTER" /> counterattack</sec> becomes active for 2 rounds.
+        <sec>The closer self is to the front line, the higher the counterattack power.</sec>
+        <box t="Front line"><sec typ="buff"><buff typ="COUNTER" /> counterattack with power <val idx="4" r signless /></sec></box>
+        <box t="Middle line"><sec typ="buff"><buff typ="COUNTER" /> counterattack with power <val idx="5" r signless /></sec></box>
+        <box t="Back line"><sec typ="buff"><buff typ="COUNTER" /> counterattack with power <val idx="6" r signless /></sec></box>
+        <sec typ="cond">On enemy kill</sec>, increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，展開影子亂舞協定，使 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> 提高。
+        <sec typ="cond">受到攻擊時</sec>，自身的 <sec typ="buff"><buff typ="COUNTER" /> 反擊</sec> 會持續 2 回合啟動。
+        <sec>自身越接近前排，反擊威力越高。</sec>
+        <box t="前排"><sec typ="buff"><buff typ="COUNTER" /> 以 <val idx="4" r signless /> 威力反擊</sec></box>
+        <box t="中排"><sec typ="buff"><buff typ="COUNTER" /> 以 <val idx="5" r signless /> 威力反擊</sec></box>
+        <box t="後排"><sec typ="buff"><buff typ="COUNTER" /> 以 <val idx="6" r signless /> 威力反擊</sec></box>
+        <sec typ="cond">敵人被擊殺時</sec>，使自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec> 提高。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3862,6 +3925,31 @@ skills:
             base: 0.3
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 적 수에 반비례하여 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec>이 증가합니다.
+        <box>
+        <sec typ="cond">적이 1 체일 때</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="10" r /></sec> 증가, 이후 적 1체당 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val base="0.15" per="0" r /></sec> 증가 <sec>(최대 <val idx="2" r /> 증가)</sec>
+        </box>
+        <sec>해당 효과는 효과 해제로 해제할 수 없습니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、敵の数に反比例して自分の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力</sec> が増加します。
+        <box>
+        <sec typ="cond">敵が1体の時</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="10" r /></sec> 増加、その後は敵1体ごとに <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val base="0.15" per="0" r /></sec> 増加 <sec>(最大 <val idx="2" r /> 増加)</sec>
+        </box>
+        <sec>この効果は効果解除では解除できません。</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="ATK_UP" /> attack</sec> increases inversely with the number of enemies.
+        <box>
+        <sec typ="cond">When there is 1 enemy</sec> <sec typ="buff"><buff typ="ATK_UP" /> attack <val idx="10" r /></sec> increases, then for each enemy added, <sec typ="buff"><buff typ="ATK_UP" /> attack <val base="0.15" per="0" r /></sec> increases <sec>(up to <val idx="2" r /> increase)</sec>
+        </box>
+        <sec>This effect cannot be removed by effect removal.</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力</sec> 會隨敵人數量增加而反比提升。
+        <box>
+        <sec typ="cond">當敵人為 1 體時</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="10" r /></sec> 提高，之後每增加 1 體敵人，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val base="0.15" per="0" r /></sec> 提高 <sec>(最多 <val idx="2" r /> 提高)</sec>
+        </box>
+        <sec>此效果無法透過效果解除移除。</sec>
   "5":
     key: "5"
     icon: P.Scan
@@ -4158,6 +4246,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec>이 활성화됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">정찰이 활성화된 아군</sec>의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="dmg"><buff typ="SKILL_UP" /> 회피의 <val idx="4" r signless />만큼 스킬 위력</sec>이 증가합니다.
+        <sec typ="cond">적이 3기 이하일 때</sec>, <sec typ="note">그림자 난무 프로토콜</sec>로 인한 <sec><sec typ="buff"><buff typ="EVADE_UP" /> 회피 증가</sec> 효과가 두 배로 증폭</sec>되고 <sec><sec typ="cond">적 처치 시</sec> 효과가 <sec typ="cond">공격 적중 시</sec>로 변경</sec>됩니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自分は <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> が有効になります。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">偵察が有効な味方</sec>の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="3" r /></sec> が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、自分の <sec typ="dmg"><buff typ="SKILL_UP" /> 回避の <val idx="4" r signless /> 分のスキル威力</sec> が増加します。
+        <sec typ="cond">敵が3体以下の場合</sec>、<sec typ="note">シャドウ乱舞プロトコル</sec>による <sec><sec typ="buff"><buff typ="EVADE_UP" /> 回避増加</sec> 効果が2倍に増幅</sec>され、<sec><sec typ="cond">敵を処理した時</sec> 効果が <sec typ="cond">攻撃命中時</sec> に変更</sec>されます。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self's <sec typ="buff"><buff typ="SCOUTING" /> scouting</sec> becomes active.
+        <sec typ="cond">At round start</sec>, increases <sec typ="buff"><buff typ="CRITICAL_UP" /> critical <val idx="3" r /></sec> of <sec typ="cond">allies with scouting active</sec>.
+        <sec typ="cond">At round start</sec>, increases own skill power by <sec typ="dmg"><buff typ="SKILL_UP" /> evasion <val idx="4" r signless /></sec>.
+        <sec typ="cond">If there are 3 or fewer enemies</sec>, the <sec><sec typ="buff"><buff typ="EVADE_UP" /> evasion increase</sec> effect from <sec typ="note">Shadow Barrage Protocol</sec> is doubled</sec> and the trigger changes from <sec typ="cond">on enemy kill</sec> to <sec typ="cond">on hit</sec>.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身的 <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 會啟動。
+        <sec typ="cond">回合開始時</sec>，使 <sec typ="cond">偵察已啟動的友軍</sec> 的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="3" r /></sec> 提高。
+        <sec typ="cond">回合開始時</sec>，使自身的技能威力依照 <sec typ="dmg"><buff typ="SKILL_UP" /> 迴避 <val idx="4" r signless /></sec> 提高。
+        <sec typ="cond">若敵人為 3 體以下</sec>，則 <sec typ="note">影子亂舞協定</sec> 所帶來的 <sec><sec typ="buff"><buff typ="EVADE_UP" /> 迴避增加</sec> 效果會變為 2 倍</sec>，且 <sec><sec typ="cond">敵人被擊殺時</sec> 效果會改為 <sec typ="cond">攻擊命中時</sec></sec>。
 dialogue:
   KR:
     "1":
@@ -4287,8 +4396,7 @@ dialogue:
       ItemEquip: ""
       CoreLink: ""
       Login: ""
-      Idle_01_01: Now the scythe of judgment aims Master’s enemies… Speak where
-        darkness and fear shall arrive.
+      Idle_01_01: Now the scythe of judgment aims Master’s enemies… Speak where darkness and fear shall arrive.
       Idle_01_02: |-
         Death is peace… I can put you
         into eternal rest.

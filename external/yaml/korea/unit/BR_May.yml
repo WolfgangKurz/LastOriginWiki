@@ -1104,6 +1104,19 @@ skills:
             base: 0.3
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        융단 폭격으로 대상 지점에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">대상이 <buff typ="SNARE" /> 이동 불가</sec>이거나 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> 혹은 <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소 디버프를 받으면</sec> 정밀 폭격으로 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: |-
+        絨毯爆撃で対象地点に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
+        <sec typ="cond">対象が<buff typ="SNARE" />移動不可</sec>、<sec typ="cond"><buff typ="MARKING" />標的</sec>、または<sec typ="cond"><buff typ="EVADE_DOWN" />回避減少デバフを受けている場合</sec>、精密爆撃による<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+      EN: |-
+        Drops carpet bombing on the target point and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        If the target is <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec>, <sec typ="cond"><buff typ="MARKING" /> Marked</sec>, or under an <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down debuff</sec>, damage from precision bombardment increases in <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec>.
+      TC: |-
+        以地毯式轟炸對目標地點造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+        若目標處於<sec typ="cond"><buff typ="SNARE" />無法移動</sec>、<sec typ="cond"><buff typ="MARKING" />標記</sec>，或受到<sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低減益</sec>時，精準轟炸的<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>會增加。
   "2":
     key: "2"
     icon: CruiseMissile
@@ -2182,6 +2195,27 @@ skills:
             base: 0.35
             per: 0.015
             chance: 0
+    desc:
+      KR: |-
+        1라운드 후 착탄해, <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주는 ALCM을 발사합니다.
+        목표 지점 주변은 <sec typ="dmg">피해량이 감소</sec>하며 적중 대상은 3라운드 동안 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 지속 화염 피해 <val idx="0" slot="7" signless /></sec>을(를) 입습니다.
+        대상이 <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 디버프를 가지고 있으면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="1" slot="7" r /></sec>가 증가하며 <sec typ="cond">ALCM착탄으로 인한 지속 화염 피해 중첩이 4이상</sec> 이라면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" slot="7" r /></sec>가 추가로 증가합니다.
+        <sec typ="cond">착탄 시</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 대상의 반격 효과를 해제</sec>합니다.
+      JP: |-
+        1ラウンド後に着弾し、<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えるALCMを発射します。
+        目標地点周辺では<sec typ="dmg">ダメージ量が減少</sec>し、命中した対象は3ラウンドの間<sec typ="dmg"><buff typ="FireDMG_DOT" />継続火炎ダメージ<val idx="0" slot="7" signless /></sec>を受けます。
+        対象が<sec typ="cond"><buff typ="SNARE" />移動不可</sec> / <sec typ="cond"><buff typ="MARKING" />標的</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />回避減少</sec>デバフを持っている場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="1" slot="7" r /></sec>が増加し、<sec typ="cond">ALCM着弾による継続火炎ダメージの重複が4以上</sec>なら、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="3" slot="7" r /></sec>がさらに増加します。
+        <sec typ="cond">着弾時</sec>、<sec typ="buff"><buff typ="REMOVE_BUFF" />対象の反撃効果を解除</sec>します。
+      EN: |-
+        Fires an ALCM that lands after 1 round and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        Damage around the target point is reduced, and the hit target suffers <sec typ="dmg"><buff typ="FireDMG_DOT" /> continuous Fire damage <val idx="0" slot="7" signless /></sec> for 3 rounds.
+        If the target has <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="cond"><buff typ="MARKING" /> Marking</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down</sec> debuffs, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="1" slot="7" r /></sec> increases, and if the stacking of continuous Fire damage caused by ALCM impact is 4 or higher, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" slot="7" r /></sec> increases further.
+        <sec typ="cond">On impact</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's counterattack effect</sec>.
+      TC: |-
+        在1回合後著彈並發射造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />的ALCM。
+        目標地點周圍的<sec typ="dmg">傷害量會降低</sec>，命中目標會在3回合內受到<sec typ="dmg"><buff typ="FireDMG_DOT" />持續火焰傷害<val idx="0" slot="7" signless /></sec>。
+        若目標擁有<sec typ="cond"><buff typ="SNARE" />無法移動</sec> / <sec typ="cond"><buff typ="MARKING" />標記</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec>減益，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="1" slot="7" r /></sec>會增加；若因ALCM著彈造成的持續火焰傷害疊加數達4以上，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="3" slot="7" r /></sec>會進一步增加。
+        <sec typ="cond">著彈時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的反擊效果</sec>。
   "3":
     key: "3"
     icon: P.Command
@@ -2357,6 +2391,19 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 범위 내 기동형 아군을 지휘해 자신과 대상의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        <sec>스킬 레벨 10에서 자신의 위치와 상관없이 효과가 적용됩니다.</sec>
+      JP: |-
+        ラウンド開始時、範囲内の機動型味方を指揮して自分と対象の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>と<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率<val idx="1" r /></sec>が増加します。
+        <sec>スキルレベル10で自分の位置に関係なく効果が適用されます。</sec>
+      EN: |-
+        At round start, commands Mobile allies in range, increasing self and the target's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec>.
+        <sec>At skill level 10, the effect applies regardless of self's position.</sec>
+      TC: |-
+        回合開始時，指揮範圍內的機動型我軍，使自身與目標的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>和<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>增加。
+        <sec>技能等級10時，效果不受自身位置影響。</sec>
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -2540,6 +2587,19 @@ skills:
             base: 0.3
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec>가 증가하며 적이 처치될 경우, 폭발하는 모습에 영감을 얻어 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가</sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 증가</sec> 효과는 중첩됩니다.
+      JP: |-
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="3" r /></sec>が増加し、敵を撃破すると爆発する姿に着想を得て<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>と<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>が増加します。
+        <sec typ="buff"><buff typ="ATK_UP" />攻撃力増加</sec> / <sec typ="buff"><buff typ="AP_UP" />行動力増加</sec>効果は重複します。
+      EN: |-
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="3" r /></sec> increases, and when an enemy is killed, self is inspired by the exploding sight and gains <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> and <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="1" r /></sec>.
+        <sec typ="buff"><buff typ="ATK_UP" /> ATK increase</sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE increase</sec> effects stack.
+      TC: |-
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="3" r /></sec>增加，若擊殺敵人，會受到爆炸景象啟發，使<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>和<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>增加。
+        <sec typ="buff"><buff typ="ATK_UP" />攻擊力增加</sec> / <sec typ="buff"><buff typ="AP_UP" />行動力增加</sec>效果可疊加。
   "5":
     key: "5"
     icon: P.SuicideBomb
@@ -4592,6 +4652,23 @@ skills:
             base: 1
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        자신이 <sec typ="attr">전투 불능</sec>이 될 경우, <sec typ="chance"><chance idx="0" /></sec> 확률로 ALCM이 유폭해 주변 아군에게 <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력 <val idx="0" r signless /> 물리 피해</sec>를 줍니다.
+        라운드 개시 시 <sec typ="cond">자신의 HP가 50% 이하</sec>면 유폭 범위 내 아군들의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>, <sec typ="cond">25% 이하</sec>면 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>가 추가로 증가합니다.
+        <sec>스킬 레벨이 높을수록 유폭 확률이 감소합니다.</sec>
+      JP: |-
+        自身が<sec typ="attr">戦闘不能</sec>になると、<sec typ="chance"><chance idx="0" /></sec>の確率でALCMが誘爆し、周囲の味方に<sec typ="dmg"><buff typ="PhyATK_UP" />攻撃力<val idx="0" r signless />物理ダメージ</sec>を与えます。
+        ラウンド開始時、<sec typ="cond">自身のHPが50%以下</sec>なら誘爆範囲内の味方の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>が、<sec typ="cond">25%以下</sec>なら<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が追加で増加します。
+        <sec>スキルレベルが高いほど誘爆確率は低下します。</sec>
+      EN: |-
+        If self becomes <sec typ="attr">incapacitated</sec>, there is a <sec typ="chance"><chance idx="0" /></sec> chance that the ALCM will detonate, dealing <sec typ="dmg"><buff typ="PhyATK_UP" /> Physical damage <val idx="0" r signless /></sec> to nearby allies.
+        At round start, if <sec typ="cond">self's HP is 50% or lower</sec>, allies within the detonation range additionally gain <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="3" r /></sec>, and if <sec typ="cond">25% or lower</sec>, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> is additionally increased.
+        <sec>The higher the skill level, the lower the detonation chance.</sec>
+      TC: |-
+        若自身變為<sec typ="attr">戰鬥不能</sec>，則以<sec typ="chance"><chance idx="0" /></sec>機率使ALCM殉爆，對周圍我軍造成<sec typ="dmg"><buff typ="PhyATK_UP" />攻擊力<val idx="0" r signless />物理傷害</sec>。
+        回合開始時，<sec typ="cond">若自身HP為50%以下</sec>，則會額外增加殉爆範圍內我軍的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>；<sec typ="cond">若為25%以下</sec>，則會額外增加<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>。
+        <sec>技能等級越高，殉爆機率越低。</sec>
   "7":
     key: "7"
     icon: P.CruiseMissile
@@ -6361,6 +6438,27 @@ skills:
             base: 0.35
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        1라운드 후 착탄해, <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주는 ALCM을 발사합니다.
+        목표 지점 주변은 <sec typ="dmg">피해량이 감소</sec>하며, <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="MARKING" /> 표식</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="1" r /></sec>가 증가합니다.
+        적중 대상은 3라운드 동안 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 고정 화염 피해</sec>를 입습니다.
+        착탄 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>합니다.
+      JP: |-
+        1ラウンド後に着弾し、<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えるALCMを発射します。
+        目標地点周辺では<sec typ="dmg">ダメージ量が減少</sec>し、<sec typ="cond"><buff typ="SNARE" />移動不可</sec> / <sec typ="cond"><buff typ="MARKING" />標的</sec>状態なら<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="1" r /></sec>が増加します。
+        命中した対象は3ラウンドの間<sec typ="dmg"><buff typ="FireDMG_DOT" /><val idx="0" signless />固定火炎ダメージ</sec>を受けます。
+        <sec typ="cond">着弾時</sec>、<sec typ="buff"><buff typ="REMOVE_BUFF" />対象の反撃効果を解除</sec>します。
+      EN: |-
+        Fires an ALCM that lands after 1 round and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        Damage around the target point is reduced, and if the target is <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="cond"><buff typ="MARKING" /> Marked</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="1" r /></sec> increases.
+        The hit target suffers <sec typ="dmg"><buff typ="FireDMG_DOT" /><val idx="0" signless /> fixed Fire damage</sec> for 3 rounds.
+        <sec typ="cond">On impact</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's counterattack effect</sec>.
+      TC: |-
+        在1回合後著彈並發射造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />的ALCM。
+        目標地點周圍的<sec typ="dmg">傷害量會降低</sec>；若目標處於<sec typ="cond"><buff typ="SNARE" />無法移動</sec> / <sec typ="cond"><buff typ="MARKING" />標記</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="1" r /></sec>會增加。
+        命中的目標會在3回合內受到<sec typ="dmg"><buff typ="FireDMG_DOT" /><val idx="0" signless />固定火焰傷害</sec>。
+        <sec typ="cond">著彈時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的反擊效果</sec>。
 dialogue:
   KR:
     "2":
@@ -6751,8 +6849,7 @@ dialogue:
       Login: ""
       Idle_01_01: 雰囲気がいつもと違うって？そりゃあ服が違うからそう見えるんじゃない？ん……？なんでかって？それは…隣に座ってくれたら教えてあげる。
       Idle_01_02: どうしよう…！？またギターの弦が…緩いと音がちゃんと出ないし、強く張ったら張ったですぐ切れちゃうのよね。やっぱり適度に緩めたり締めたりしないと―どこかで聞いたことあるフレーズだわ。
-      Idle_01_03: こっちに来て。大した用件ではないんだけど
-        …ううん、違う……大したことだわ。今から歌を歌うから……。……私の想いを全部込めて作った歌だから……ちゃんと、聞いてね。
+      Idle_01_03: こっちに来て。大した用件ではないんだけど …ううん、違う……大したことだわ。今から歌を歌うから……。……私の想いを全部込めて作った歌だから……ちゃんと、聞いてね。
       SPIdle_01_01: あぁぁ…、まっまだ早いから！こ！これが終わったら…終わったらいいから……ね？
       Idle_02_01: 今日は特別な日になると思って、とっておきの服を引っ張り出して着てみたの。どうして特別な日になるのかは…今から教えてあげる。
       Idle_03_01: できた！最初から最後まで1回も間違わなかったわ。…でも、もしものことがあるかもしれないし、もう少し練習しなきゃ。司令官に初めて聞いてもらう私の歌だもん、どんな些細なミスも許されないわ。
@@ -6881,11 +6978,8 @@ dialogue:
         I mean… behave! Okay?
         Follow me. I’m going to teach you a lesson
         in a quiet place.
-      Oath: >-
-        Well, I knew this would happen just by looking at the commander’s
-        temperature change. This outfit is also for the confession at the beach,
-        isn’t it?
-
+      Oath: |-
+        Well, I knew this would happen just by looking at the commander’s temperature change. This outfit is also for the confession at the beach, isn’t it?
         But… if I accept it so easily, the commander will become too cocky… Still… I should accept it, shouldn’t I? Since I don’t want to show a silly face.
       OathIdle_01: |-
         Say thank you. You’re the only thing
@@ -6943,11 +7037,8 @@ dialogue:
         No…
         I-I want you.
         So…
-      Oath: >-
-        So you understand my feeling…? Haha, it feels like I’m dreaming. I make
-        it like that from the beginning… No, I don't want to say this. You know.
-        I like you, commander. I really really like you.
-
+      Oath: |-
+        So you understand my feeling…? Haha, it feels like I’m dreaming. I make it like that from the beginning… No, I don't want to say this. You know. I like you, commander. I really really like you.
         You… also like me, right…? You should get prepared. You stupid Commander ♡
       OathIdle_01: |-
         Commander. Hold my hand. … Hehe. Then now…
@@ -6977,13 +7068,10 @@ dialogue:
         It’s not what I usually wear.
         That must be why. … Why I wore this?
         I’ll tell you if you come sit by my side.​
-      Idle_01_02: >-
+      Idle_01_02: |-
         Ouch! The guitar strings… again.
-
         If they’re loose, they don’t make the right sound. If they’re tight, they snap.
-
         Everything has to be modestly-
-
         I think I heard that from somewhere.​
       Idle_01_03: |-
         You came. It’s not something important… No, this is important.
@@ -7007,16 +7095,11 @@ dialogue:
         that I wanted to tell you all along.
         How did you… No, I want your answer. How-
         You stupid Commander. You’re late…​
-      SPIdle_02_01: >-
-        Er…! Umm… S-sorry. My eyes are tearing up… I’m not scared. I’m just
-        happy… My dreams are coming true… I’m fine. Go on.
-
+      SPIdle_02_01: |-
+        Er…! Umm… S-sorry. My eyes are tearing up… I’m not scared. I’m just happy… My dreams are coming true… I’m fine. Go on.
         I feel the same way with you…​
-      Oath: >-
-        I don’t know how to show you that I like you, that I love you… It was a
-        shame that I couldn’t express it… I finally got to show you how I feel…
-        Do you know how much I went through for this song?
-
+      Oath: |-
+        I don’t know how to show you that I like you, that I love you… It was a shame that I couldn’t express it… I finally got to show you how I feel… Do you know how much I went through for this song?
         I have callus forms and blisters… But I feel like it’s all been compensated for. … Stay with me forever, Commander.​
       OathIdle_01: |-
         It’s not bad, watching the sunset together.
@@ -7025,8 +7108,7 @@ dialogue:
         I’m on your side.​
       MVP: ""
     "":
-      Join: What? What's with that face? You should be happy to see me! So where's the
-        welcoming party?
+      Join: What? What's with that face? You should be happy to see me! So where's the welcoming party?
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -7069,12 +7151,9 @@ dialogue:
       SPIdle_02_01: |-
         This looks so indecent. Please do it
         with some decency!
-      Oath: >-
-        What's the matter? Why did you bring me here? All dressed up and… Oh,
-        really? I guess you finally decided
-
+      Oath: |-
+        What's the matter? Why did you bring me here? All dressed up and… Oh, really? I guess you finally decided
         to treat me specially. Well, I'll receive it for now. You put a lot of effort in preparing this for me.
-
         How could I not take it? And… Since this is a day we should c-celebrate… I will stay with you… a bit more.
       OathIdle_01: |-
         You’ll have to put in a lot of effort

@@ -1575,6 +1575,11 @@ skills:
             base: -0.15
             per: -0.0075
             chance: 1
+    desc:
+      KR: 차크람 블레이드로 <dmg elem="fire" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="3" r /></sec> 감소 상태로 만듭니다.
+      JP: チャクラムブレードで<dmg elem="fire" />を与え、2ラウンドの間対象を<sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="3" r /></sec>減少状態にします。
+      EN: Deals <dmg elem="fire" /> with Chakram Blade and makes the target <sec typ="buff"><buff typ="PROVOKE" /> provoke</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACC <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="3" r /></sec> decreased for 2 rounds.
+      TC: 以飛輪刀造成<dmg elem="fire" />，並使目標在2回合內處於<sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="3" r /></sec>降低狀態。
   "2":
     key: "2"
     icon: SelfSpdBuff
@@ -2126,6 +2131,31 @@ skills:
             base: -0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정한 빈 아군 영역에 9라운드 동안 유지되며, 피격 시 파괴되는 <sec typ="important">홀로그램 타이거</sec>를 소환합니다.
+        <sec typ="important">홀로그램 타이거</sec>는 <sec typ="buff">최대 <val base="1.1" per="0.1" signless floor /> 마리 소환</sec>할 수 있습니다.
+        <sec typ="important">홀로그램 타이거</sec>의 스킬 적중 시, 범위 내 적의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val base="-0.2" per="0" r /></sec>를 감소시키며 자신을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>으로 지정합니다.
+        <sec>스킬 레벨이 높아질수록 소모 AP가 감소</sec>하며, <sec>스킬 레벨 10에서 소환 가능한 수가 1 증가합니다.</sec>
+        <sec>소환 스킬은 <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 감소</sec> 효과에 영향받지 않습니다.</sec>
+      JP: |-
+        指定した空の味方マスに9ラウンド維持され、被弾時に破壊される<sec typ="important">ホログラムタイガー</sec>を召喚します。
+        <sec typ="important">ホログラムタイガー</sec>は<sec typ="buff">最大<val base="1.1" per="0.1" signless floor />体召喚</sec>できます。
+        <sec typ="important">ホログラムタイガー</sec>のスキル命中時、範囲内の敵の<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val base="-0.2" per="0" r /></sec>を減少させ、自分を<sec typ="buff"><buff typ="MARKING" /> マーク</sec>します。
+        <sec>スキルレベルが高いほど消費APが減少</sec>し、<sec>スキルレベル10で召喚可能数が1増加します。</sec>
+        <sec>召喚スキルは<sec typ="buff"><buff typ="RANGE_DOWN" /> 射程減少</sec>効果の影響を受けません。</sec>
+      EN: |-
+        Summons a <sec typ="important">Hologram Tiger</sec> in the designated empty ally area, lasting for 9 rounds and destroyed when hit.
+        The <sec typ="important">Hologram Tiger</sec> can summon up to <sec typ="buff">max <val base="1.1" per="0.1" signless floor /> units</sec>.
+        On <sec typ="important">Hologram Tiger</sec> skill hit, decreases <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACC <val base="-0.2" per="0" r /></sec> of enemies within range and marks self with <sec typ="buff"><buff typ="MARKING" /> Mark</sec>.
+        <sec>Consumed AP decreases as the skill level increases</sec>, and <sec>the number of summons increases by 1 at Skill Lv. 10.</sec>
+        <sec>Summon skills are not affected by <sec typ="buff"><buff typ="RANGE_DOWN" /> range decrease</sec> effects.</sec>
+      TC: |-
+        在指定的空我軍區域召喚會持續9回合、被擊中時會破壞的<sec typ="important">全息虎</sec>。
+        <sec typ="important">全息虎</sec>最多可<sec typ="buff">召喚 <val base="1.1" per="0.1" signless floor /> 隻</sec>。
+        <sec typ="important">全息虎</sec>技能命中時，降低範圍內敵人的<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val base="-0.2" per="0" r /></sec>，並將自身標記為<sec typ="buff"><buff typ="MARKING" /> 標記</sec>。
+        <sec>技能等級越高，消耗AP越少</sec>，且<sec>在技能等級10時，可召喚數量增加1。</sec>
+        <sec>召喚技能不受<sec typ="buff"><buff typ="RANGE_DOWN" /> 射程減少</sec>效果影響。</sec>
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -2356,6 +2386,19 @@ skills:
             base: 0.005
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 범위 내 <sec typ="buff"><buff typ="DEF_Char" /> 공격기 / 지원기를 지정 보호</sec>하며 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" slot="4" r /></sec>가 증가합니다.
+        <char uid="PECS_Sunny" />의 <sec typ="cond">공격이 적중</sec>하거나 <sec typ="cond">적의 공격을 회피</sec>하면 2라운드 동안 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가합니다.
+      JP: |-
+        ラウンド開始時、範囲内の<sec typ="buff"><buff typ="DEF_Char" /> 攻撃機 / 支援機を指定保護</sec>し、自分の<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="4" slot="4" r /></sec>が増加します。
+        <char uid="PECS_Sunny" />の<sec typ="cond">攻撃が命中</sec>または<sec typ="cond">敵の攻撃を回避</sec>すると、2ラウンドの間範囲内の味方の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が増加します。
+      EN: |-
+        At the start of the round, applies designated protection to <sec typ="buff"><buff typ="DEF_Char" /> attackers / supporters within range</sec> and increases self's <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="4" slot="4" r /></sec>.
+        When <char uid="PECS_Sunny" />'s <sec typ="cond">attack hits</sec> or <sec typ="cond">she evades an enemy attack</sec>, increases allies within range' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" r /></sec> for 2 rounds.
+      TC: |-
+        回合開始時，對範圍內<sec typ="buff"><buff typ="DEF_Char" /> 攻擊器／支援器進行指定保護</sec>，並增加自身的<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="4" slot="4" r /></sec>。
+        當<char uid="PECS_Sunny" />的<sec typ="cond">攻擊命中</sec>或<sec typ="cond">迴避敵人攻擊</sec>時，在2回合內增加範圍內我軍的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -2764,6 +2807,23 @@ skills:
             base: 0.15
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, 해제 불가한 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP로 전투 속행</sec> 효과가 적용됩니다.
+        공격 받을 때, <sec typ="cond">기본 능력치를 감소시키는 해로운 효과가 적용된 상태</sec>일 경우, 2라운드 동안 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="7" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="6" r inv /></sec>가 감소합니다.
+        해당 효과들은 중첩되지 않습니다.
+      JP: |-
+        戦闘開始時、解除不能な<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HPで戦闘継続</sec>効果が適用されます。
+        攻撃を受けた時、<sec typ="cond">基本能力値を減少させる有害効果が適用されている状態</sec>の場合、2ラウンドの間<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="7" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="6" r inv /></sec>が減少します。
+        これらの効果は重複しません。
+      EN: |-
+        At combat start, applies an unremovable <sec typ="buff"><buff typ="DEF_RESSURRECT" /> battle continuation with <val idx="0" signless /> HP</sec>.
+        When attacked, if <sec typ="cond">a harmful effect that decreases base stats is applied</sec>, increases <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="7" r /></sec> and decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="6" r inv /></sec> for 2 rounds.
+        These effects do not stack.
+      TC: |-
+        戰鬥開始時，套用無法解除的<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以<val idx="0" signless /> HP繼續戰鬥</sec>效果。
+        受到攻擊時，若<sec typ="cond">處於會降低基礎能力值的有害效果狀態</sec>，則在2回合內增加<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="7" r /></sec>，並降低<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="6" r inv /></sec>。
+        這些效果不會疊加。
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -2929,6 +2989,11 @@ skills:
             base: 3
             per: 0
             chance: 1
+    desc:
+      KR: <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">자신 뒤에 있는 아군 1개체의 HP가 25%이하</sec>라면 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="2" r /></sec>를 증가시키고 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효 <val idx="3" signless />회</sec>를 부여합니다.
+      JP: <sec typ="cond">戦闘開始時</sec>、<sec typ="cond">自分の後ろにいる味方1体のHPが25%以下</sec>なら、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="2" r /></sec>を増加させ、<sec typ="buff"><buff typ="DEF_All" /> ダメージ無効 <val idx="3" signless />回</sec>を付与します。
+      EN: <sec typ="cond">At combat start</sec>, if <sec typ="cond">one allied unit behind self has 25% HP or less</sec>, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="2" r /></sec> and grants <sec typ="buff"><buff typ="DEF_All" /> damage immunity <val idx="3" signless /> times</sec>.
+      TC: <sec typ="cond">戰鬥開始時</sec>，若<sec typ="cond">自身後方1名我軍的HP低於25%</sec>，則增加<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="2" r /></sec>，並賦予<sec typ="buff"><buff typ="DEF_All" /> 傷害無效 <val idx="3" signless />次</sec>。
 dialogue:
   KR:
     "1":
@@ -3053,11 +3118,9 @@ dialogue:
         이젠… 어떻게든 좋아…
         나… 이제… 새로운 취향에…
         눈뜰 지도…​
-      Oath: >-
+      Oath: |-
         오늘 제 무대 괜찮았어요? 어… 이런 스페셜 퍼포먼스는 미리 얘기 들은 바 없는데… 정말 제게 주시는 건가요?
-
         오늘 진짜 피날레는 제 공연이 아니라 사령관님의 선물이었네요! 사실 더 보여드리고 싶은 게 많은데… 오늘 밤 사령관님 앞에서 마저 보여 드릴게요!
-
         밤은 기니까, 기대해… 주실 거죠?
       OathIdle_01: |-
         사령관님…
@@ -3361,10 +3424,8 @@ dialogue:
         Is it beginning now…?
         I flexed my body so that I can
         do any posture…
-      Oath: >-
-        No matter how positive I am, I was always anxious about the relationship
-        with you, commander.
-
+      Oath: |-
+        No matter how positive I am, I was always anxious about the relationship with you, commander.
         So I practiced various things to make you happy… Haha, I practiced it so… I’ll show you all of it today. You can test out anything you want, commander.
       OathIdle_01: |-
         Even if we’re married, we might get bored
@@ -3456,12 +3517,9 @@ dialogue:
         Aha, it’s like your way of
         showing affection! Then can I
         do it together?
-      Oath: >-
-        Wowww. Is this really for me? Thank you so muchㅡ Oh… L-let me do it once
-        more. It seems like
-
+      Oath: |-
+        Wowww. Is this really for me? Thank you so muchㅡ Oh… L-let me do it once more. It seems like
         I've took it too lightly. Oh… what do I do… these things really don't suit me. 
-
         Thank you so much, Commander. Today… I'll say OK to everything you want.
       OathIdle_01: |-
         Ugh, I did say OK to everything, but…
@@ -3489,13 +3547,10 @@ dialogue:
         My body has become more flexible thanks to the intense training! Now,
         I should be able to do positions I couldn’t do before with you—
         I-I mean yoga positions! But… We can also do ‘that.’​
-      Idle_01_02: >-
+      Idle_01_02: |-
         I can no longer describe myself as ‘positive’ when I introduce myself.
-
         Because I get quite anxious
-
         even when we are apart for just momentarily. So please, would you allow me…
-
         to stay beside you today too?​
       Idle_01_03: |-
         I used to think sharing is caring,

@@ -2180,6 +2180,23 @@ skills:
               level: "0"
             value: Effect_PECS_Sadius_N_36
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <dmg elem="lightning" />를 주고 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="0" r /></sec>를 감소시킵니다.
+        <sec typ="cond"><sec typ="note">고전압</sec> 상태에서는 대상의 전기 속성 저항을 크게 감소시키고 1라운드 동안 행동 불가 상태로 만듭니다.</sec>
+        스킬 사용 후 <sec typ="note">고전압</sec> 상태는 해제됩니다.
+      JP: |-
+        指定範囲に<dmg elem="lightning" />を与え、<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性<val idx="0" r /></sec>を減少させます。
+        <sec typ="cond"><sec typ="note">高電圧</sec>状態では対象の電気属性耐性を大きく減少させ、1ラウンドの間、行動不可状態にします。</sec>
+        スキル使用後、<sec typ="note">高電圧</sec>状態は解除されます。
+      EN: |-
+        Deals <dmg elem="lightning" /> damage to the designated area and decreases <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance <val idx="0" r /></sec>.
+        <sec typ="cond">In the <sec typ="note">High Voltage</sec> state</sec>, greatly decreases the target's Electric Resistance and makes them Action Disabled for 1 round.
+        After using the skill, the <sec typ="note">High Voltage</sec> state is removed.
+      TC: |-
+        對指定範圍造成<dmg elem="lightning" />，並降低<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電擊抗性<val idx="0" r /></sec>。
+        <sec typ="cond">處於<sec typ="note">高電壓</sec>狀態時</sec>，會大幅降低目標的電擊屬性抗性，並使其在1回合內進入無法行動狀態。
+        使用技能後，<sec typ="note">高電壓</sec>狀態會解除。
   "2":
     key: "2"
     icon: WideLightning
@@ -3339,6 +3356,19 @@ skills:
             base: 0.3
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 주고 적이 <sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> 전기 속성 저항 감소</sec> 상태일 시 적 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec>를 감소시킵니다.
+        <sec typ="cond">치명타 시</sec>, 피해량이 증가합니다.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="lightning" />を与え、敵が<sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" />電気属性耐性減少</sec>状態なら敵の<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="0" r /></sec>を減少させます。
+        <sec typ="cond">クリティカル時</sec>、ダメージ量が増加します。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> damage to the designated area, and if the enemy is in a <sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance decrease</sec> state, decreases the enemy's <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="0" r /></sec>.
+        <sec typ="cond">On critical hit</sec>, damage increases.
+      TC: |-
+        對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="lightning" />，若敵人處於<sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" />電擊屬性抗性降低</sec>狀態，則降低敵人的<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="0" r /></sec>。
+        <sec typ="cond">暴擊時</sec>，傷害量增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3855,6 +3885,19 @@ skills:
               level: "0"
             value: Effect_PECS_Sadius_N_35
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가하며, <sec typ="cond">아군 인원이 3명</sec>일 시 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>, <sec typ="cond">아군 인원이 5명</sec>일 시 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>가 추가 증가합니다.
+        지정 범위 아군 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="8" r /></sec>를 증가시킵니다.
+      JP: |-
+        ラウンド開始時、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec>が増加し、<sec typ="cond">味方人数が3人</sec>なら<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec>、<sec typ="cond">味方人数が5人</sec>なら<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="6" r /></sec>がさらに増加します。
+        指定範囲の味方の<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電気耐性<val idx="8" r /></sec>を増加させます。
+      EN: |-
+        At the start of the round, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> increases, and if <sec typ="cond">allied count is 3</sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> increases further; if <sec typ="cond">allied count is 5</sec>, <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="6" r /></sec> increases further.
+        Increases allies in the designated area’s <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Electric Resistance <val idx="8" r /></sec>.
+      TC: |-
+        回合開始時，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>增加；若<sec typ="cond">我軍人數為3名</sec>，則<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec>額外增加；若<sec typ="cond">我軍人數為5名</sec>，則<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="6" r /></sec>額外增加。
+        提升指定範圍內我軍的<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電擊抗性<val idx="8" r /></sec>。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -4018,6 +4061,11 @@ skills:
             base: 0.015
             per: 0.015
             chance: 1
+    desc:
+      KR: 공격 적중 시 지정 범위 아군 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 최대 3중첩하여 증가합니다.
+      JP: 攻撃命中時、指定範囲の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>が最大3スタックまで増加します。
+      EN: On attack hit, allies in the designated area's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="0" r /></sec> increases, up to 3 stacks.
+      TC: 攻擊命中時，指定範圍內我軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>會增加，最多3層。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -4801,6 +4849,19 @@ skills:
             base: 0.06
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">스쿼드 내 <cmt t="시티가드">$$CityGuard:?$</cmt> 소속 전투원 수에 따라</sec> 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec>가 추가로 증가합니다.
+        지정 범위 아군 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="0" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">分隊内の<cmt t="City Guard">$$CityGuard:?$</cmt>所属戦闘員数に応じて</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="2" r /></sec>がさらに増加します。
+        指定範囲の味方の<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電気耐性<val idx="0" r /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">According to the number of <cmt t="City Guard">$$CityGuard:?$</cmt> combatants in the squad</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="2" r /></sec> increases further.
+        Increases allies in the designated area’s <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Electric Resistance <val idx="0" r /></sec>.
+      TC: |-
+        <sec typ="cond">依小隊內<cmt t="City Guard">$$CityGuard:?$</cmt>所屬戰鬥員數量</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="2" r /></sec>會額外增加。
+        提升指定範圍內我軍的<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電擊抗性<val idx="0" r /></sec>。
 dialogue:
   KR:
     "1":
@@ -4913,9 +4974,7 @@ dialogue:
         감당 가능해? 당신이 좋다면…
         좋아. 어울려주지.
         자, 핥아봐.
-      Oath: 나는 누구를 괴롭히는 게 취향인데… 사령관과 함께라면 내 취향도 바뀌는 게 느껴진단 말이야. 사령관이 고통스럽고 괴로워하기보다는
-        행복하고 즐겁기를 바라는 것을 보면… 뭐, 그래도 고통을 즐긴다면 말만 해. 나도 즐거운 마음으로 괴롭혀 줄 테니까. 어느 쪽이든
-        행복했으면 좋겠어.
+      Oath: 나는 누구를 괴롭히는 게 취향인데… 사령관과 함께라면 내 취향도 바뀌는 게 느껴진단 말이야. 사령관이 고통스럽고 괴로워하기보다는 행복하고 즐겁기를 바라는 것을 보면… 뭐, 그래도 고통을 즐긴다면 말만 해. 나도 즐거운 마음으로 괴롭혀 줄 테니까. 어느 쪽이든 행복했으면 좋겠어.
       OathIdle_01: |-
         물에 들어가기 전에 운동은 충분히 했지?
         갑자기 물에 들어갔다가
@@ -4966,9 +5025,7 @@ dialogue:
         규칙을 위반한 파트너에겐 벌을 주기로
         한 것... 잊진 않았겠지?
       SPIdle_02_01: 으음... 이건... 규칙 위반인데? 무법자님?
-      Oath: 반… 지? 이봐, 사령관님? 이걸 나한테 주는 게 어떤 의미인지는 알고 있는 거겠지? 뭐 좋아, 일단 나도 사령관 같은 스타일이 싫진
-        않으니까. 하지만, 혹시라도 내 앞에서 소심한 모습을 보일 거라면 단단히 각오해 둬. 내 발길질로 당신의 하루하루가 조금 괴로워질
-        수도 있거든.
+      Oath: 반… 지? 이봐, 사령관님? 이걸 나한테 주는 게 어떤 의미인지는 알고 있는 거겠지? 뭐 좋아, 일단 나도 사령관 같은 스타일이 싫진 않으니까. 하지만, 혹시라도 내 앞에서 소심한 모습을 보일 거라면 단단히 각오해 둬. 내 발길질로 당신의 하루하루가 조금 괴로워질 수도 있거든.
       OathIdle_01: |-
         뭐… 반지로 날 구속하겠다는 발상은…
         꽤 참신했어. 뭐, 뭐야… 상이라도 바라는
@@ -5043,8 +5100,7 @@ dialogue:
         ふ…ふん。こんな風に扱われたのは初めてだったからちょっと驚いただけだ…。
         他人の苦痛から快楽を得るこの私がそんな簡単に屈服すると思うか？
       SPIdle_02_01: ほら…この前みたいにあれはしないのか？こんな風に優しくしてもだな―うっ…！？…ふふふ、ようやくその気になったみたいだな？
-      Oath: …司令官は一体どれが本当の姿なんだ？昨日の夜は…
-        まあ、いい。どちらにしても関係ない。司令官のおかげで私もああいうことも楽しめるようになったんだからな。それから念のために言っておくが、こんな関係になったからって気など遣ったりするな。夜は今まで通り手荒く、好き放題にやってくれればいいってことだ……
+      Oath: …司令官は一体どれが本当の姿なんだ？昨日の夜は… まあ、いい。どちらにしても関係ない。司令官のおかげで私もああいうことも楽しめるようになったんだからな。それから念のために言っておくが、こんな関係になったからって気など遣ったりするな。夜は今まで通り手荒く、好き放題にやってくれればいいってことだ……
       OathIdle_01: つ、角でも尻尾でも翼でも何でも好きに触ればいいだろう。どのみちそうするつもりだったんだろ？
       MVP: ""
     "2":
@@ -5098,9 +5154,7 @@ dialogue:
         [미번역]감당 가능해? 당신이 좋다면…
         좋아. 어울려주지.
         자, 핥아봐.
-      Oath: "[미번역]나는 누구를 괴롭히는 게 취향인데… 사령관과 함께라면 내 취향도 바뀌는 게 느껴진단 말이야. 사령관이 고통스럽고
-        괴로워하기보다는 행복하고 즐겁기를 바라는 것을 보면… 뭐, 그래도 고통을 즐긴다면 말만 해. 나도 즐거운 마음으로 괴롭혀 줄
-        테니까. 어느 쪽이든 행복했으면 좋겠어."
+      Oath: "[미번역]나는 누구를 괴롭히는 게 취향인데… 사령관과 함께라면 내 취향도 바뀌는 게 느껴진단 말이야. 사령관이 고통스럽고 괴로워하기보다는 행복하고 즐겁기를 바라는 것을 보면… 뭐, 그래도 고통을 즐긴다면 말만 해. 나도 즐거운 마음으로 괴롭혀 줄 테니까. 어느 쪽이든 행복했으면 좋겠어."
       OathIdle_01: |-
         [미번역]물에 들어가기 전에 운동은 충분히 했지?
         갑자기 물에 들어갔다가
@@ -5134,9 +5188,8 @@ dialogue:
       Idle_03_01: 正直に言うと、テロリスト退治はただの言い訳に過ぎない。本当は奴らが苦しみもがく姿を見るのが楽しいだけだ。
       Idle_04_01: 業務中は雑談禁止と言ったはずだ。もう忘れたのか？司令官、これは違反行為だ。規則を違反したパートナーには罰を与えること…忘れてはいないだろうな？
       SPIdle_02_01: うぅん…これは…ルール違反だぞ？この無法者さんめ…？
-      Oath: >-
+      Oath: |-
         指…輪？おい、司令官？これを私に渡したらどうなるのかわかってるのか？ふっ…まぁいい、私も司令官のようなスタイルは嫌いではないからな。
-
         言っておくが、万が一、私の前で情けない姿を見せようものなら、相応の覚悟をしておくように…。私のキツイ蹴りで、少々痛い目に遭うこともありうるからな？
       OathIdle_01: まぁ…指輪で私を拘束するという発想は…かなり斬新だった。な、何だ…褒美でも欲しいのか？
       MVP: ""
@@ -5183,13 +5236,10 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         Look. It’s still awkward, but I can move
-
         like it’s my real body. The artificial nerves are connected to the module-
-
         I can see what you’re thinking.
-
         You want to feel thrilling?
       Idle_01_02: |-
         Horns? Why would horns… Ha. Think I’ll let you
@@ -5205,11 +5255,9 @@ dialogue:
         Okay, okay. You can touch a little-
         Huh?! …… It felt unfamiliar.
         I was just surprised.
-      Idle_03_01: >-
+      Idle_03_01: |-
         Well? Would you like a taste? … Don’t be
-
         so scared. We promised to do that only in the night… Wait. Come to think of it, I think you were the only one
-
         who got to have fun…
       Idle_04_01: |-
         Hmph. It was just the first time I was treated that way.
@@ -5219,10 +5267,8 @@ dialogue:
         Ugh… What about the thing from last time?
         Being so nice- Ugh?!
         *Chuckles* Do you finally feel like doing it?
-      Oath: >-
-        … Commander, which one is your true side? Just a night before… well,
-        fine. I guess it doesn’t matter. ALL THANKS TO YOU.
-
+      Oath: |-
+        … Commander, which one is your true side? Just a night before… well, fine. I guess it doesn’t matter. ALL THANKS TO YOU.
         I enjoy those things now. By the way, don’t worry about me just because we’re are in this kind of relationship.
          I’m saying that you can just be rough and however you want at night.
       OathIdle_01: |-
@@ -5257,11 +5303,9 @@ dialogue:
         you have to bring me something that's worth it.
         What? A criminal showed up?
         Then I can't just sit here.
-      Idle_01_03: >-
+      Idle_01_03: |-
         These handcuffs?
-
         It’s an occupational hazard. It'll be disappointing if I don't have them when I need them.
-
         It's also my hobby. Hehe.
       SPIdle_01_01: You wanna get put in handcuffs?
       Idle_02_01: |-
@@ -5282,11 +5326,9 @@ dialogue:
         Are you sure you can handle it? If you want…
         Sure. I’ll play along.
         Now, lick it.
-      Oath: >-
+      Oath: |-
         I prefer making others suffer…
-
         but I can feel my preference changing when I’m with you, Commander. Seeing how I wish for you to be happy instead of in pain or suffering…
-
         Well, if you enjoy pain by any chance, let me know. I will make you suffer with a joyful heart. Whatever it is, I just want you to be happy.
       OathIdle_01: |-
         You warmed up before going in the pool, right?
@@ -5338,9 +5380,7 @@ dialogue:
         And you do remember that
         a partner who breaks the rule is getting punished, right?
       SPIdle_02_01: Umm… This is against the rule. Mr. Outlaw?
-      Oath: A ring? Commander? You do know what it means to give this to me, right?
-        Well, okay. I do like someone like you. But you’d better not act timid
-        in front of me. I might kick you.
+      Oath: A ring? Commander? You do know what it means to give this to me, right? Well, okay. I do like someone like you. But you’d better not act timid in front of me. I might kick you.
       OathIdle_01: |-
         It was a novel idea, trying to tie me
         with a ring. W-what… You want a reward

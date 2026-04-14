@@ -1773,6 +1773,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        단일 대상 <dmg elem="lightning" />를 입히고 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>을(를) 감소시키며 2라운드 동안 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="0" r /></sec>를 감소시킵니다.
+        공격 적중 시, 자신은 <sec typ="note">충전</sec>상태가 됩니다.
+      JP: |-
+        単一対象に<dmg elem="lightning" />を与え、<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>を減少させ、2ラウンドの間<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性 <val idx="0" r /></sec>を減少させます。
+        攻撃命中時、自分は<sec typ="note">充電</sec>状態になります。
+      EN: |-
+        Deals <dmg elem="lightning" /> to a single target, decreases <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>, and decreases <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance <val idx="0" r /></sec> for 2 rounds.
+        On attack hit, self becomes <sec typ="note">Charge</sec> state.
+      TC: |-
+        對單一目標造成<dmg elem="lightning" />，減少<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>，並於2回合內降低<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電擊抗性 <val idx="0" r /></sec>。
+        攻擊命中時，自身進入<sec typ="note">充電</sec>狀態。
   "2":
     key: "2"
     icon: WideLightning
@@ -4166,6 +4179,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        범위 내 대상 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 입히고 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>을(를) 감소시키며 2라운드 동안 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="0" r /></sec>를 감소시킵니다.
+        자신은 2라운드 동안 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="3" signless /> 고정 전기 피해</sec>를 받으면서 공격 적중 시, <sec typ="note">충전</sec>상태가 됩니다.
+        (<sec typ="dmg"><buff typ="LightningDMG_DOT" /> 고정 전기 피해</sec>는 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항</sec>을 높여 피해를 줄일 수 있습니다.)
+      JP: |-
+        範囲内の対象に<sec typ="attr">保護無視</sec><dmg elem="lightning" />を与え、<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>を減少させ、2ラウンドの間<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性 <val idx="0" r /></sec>を減少させます。
+        自分は2ラウンドの間<sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="3" signless />固定電気ダメージ</sec>を受けつつ、攻撃命中時に<sec typ="note">充電</sec>状態になります。
+        (<sec typ="dmg"><buff typ="LightningDMG_DOT" />固定電気ダメージ</sec>は<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電気耐性</sec>を上げることで被害を減らせます。)
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> to targets within range, decreases <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>, and decreases <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance <val idx="0" r /></sec> for 2 rounds.
+        For 2 rounds, self takes <sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="3" signless /> fixed electric damage</sec>, and on attack hit becomes <sec typ="note">Charge</sec> state.
+        (<sec typ="dmg"><buff typ="LightningDMG_DOT" /> fixed electric damage</sec> can be reduced by raising <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Electric Resistance</sec>.)
+      TC: |-
+        對範圍內目標造成<sec typ="attr">無視保護</sec><dmg elem="lightning" />，減少<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>，並於2回合內降低<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電擊抗性 <val idx="0" r /></sec>。
+        自身在2回合內承受<sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="3" signless />固定電擊傷害</sec>，並於攻擊命中時進入<sec typ="note">充電</sec>狀態。
+        （<sec typ="dmg"><buff typ="LightningDMG_DOT" />固定電擊傷害</sec>可透過提升<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電擊抗性</sec>來減少。) 
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -4308,6 +4338,11 @@ skills:
             base: 0.0455
             per: 0.003
             chance: 1
+    desc:
+      KR: 라운드 개시 시, 자신의 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+      JP: ラウンド開始時、自分の<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電気耐性 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="2" r /></sec>が増加します。
+      EN: At round start, increases self's <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Electric Resistance <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec>.
+      TC: 回合開始時，提升自身的<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電擊抗性 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="2" r /></sec>。
   "4":
     key: "4"
     icon: P.WideLightning
@@ -4699,6 +4734,19 @@ skills:
             base: 550
             per: 50
             chance: 1
+    desc:
+      KR: |-
+        공격 적중 시, 자신의 <sec typ="note">충전</sec>상태의 중첩 횟수에 따라 적군 전체에게 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> 고정 전기 피해</sec> 효과를 적용시킵니다.
+        <sec typ="note">충전</sec> 2중첩 이상일 때 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="0" signless /> 고정 전기 피해</sec>, 3중첩 이상부터 7중첩 이상까지 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> 고정 전기 피해 <val idx="2" signless /></sec>씩 증가합니다.
+      JP: |-
+        攻撃命中時、自分の<sec typ="note">充電</sec>状態の重ね数に応じて、敵軍全体に<sec typ="dmg"><buff typ="LightningDMG_DOT" />固定電気ダメージ</sec>効果を適用します。
+        <sec typ="note">充電</sec>が2重ね以上の時は<sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="0" signless />固定電気ダメージ</sec>、3重ね以上から7重ね以上まで<sec typ="dmg"><buff typ="LightningDMG_DOT" />固定電気ダメージ <val idx="2" signless /></sec>ずつ増加します。
+      EN: |-
+        On attack hit, applies <sec typ="dmg"><buff typ="LightningDMG_DOT" /> fixed electric damage</sec> to all enemies based on the number of self's <sec typ="note">Charge</sec> stacks.
+        When <sec typ="note">Charge</sec> is at 2 stacks or higher, <sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="0" signless /> fixed electric damage</sec> is applied, and from 3 stacks or higher up to 7 stacks or higher, <sec typ="dmg"><buff typ="LightningDMG_DOT" /> fixed electric damage <val idx="2" signless /></sec> increases by stage.
+      TC: |-
+        攻擊命中時，依自身<sec typ="note">充電</sec>狀態的疊層數，對全體敵軍施加<sec typ="dmg"><buff typ="LightningDMG_DOT" />固定電擊傷害</sec>效果。
+        當<sec typ="note">充電</sec>達2層以上時，將施加<sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="0" signless />固定電擊傷害</sec>；自3層以上到7層以上時，則每階段增加<sec typ="dmg"><buff typ="LightningDMG_DOT" />固定電擊傷害 <val idx="2" signless /></sec>。
   "5":
     key: "5"
     icon: P.Scan
@@ -4937,6 +4985,11 @@ skills:
             base: 0.21
             per: 0.01
             chance: 1
+    desc:
+      KR: 라운드 개시 시, 아군의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec>를 감소시키는 대신 적들의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>를 증가시킵니다.
+      JP: ラウンド開始時、味方の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル <val idx="1" r /></sec>を減少させる代わりに、敵の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="5" r /></sec>を増加させます。
+      EN: At round start, decreases allies' <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="1" r /></sec>, and instead increases enemies' <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec>.
+      TC: 回合開始時，降低友軍的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊 <val idx="1" r /></sec>，但會改為提升敵人的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害 <val idx="5" r /></sec>。
 dialogue:
   KR:
     "1":
@@ -5171,8 +5224,7 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: もうそろそろ妹たちにもしっかりしてもらいたいんだけど。甥っ子でもいたら変わるのかしら…ダーリンはどう思う？
-      Idle_01_02: はい、ミルクティー。疲れた時は甘いものがいいのよ。何言ってるのよ～。推理なんていらないわ。愛する人が疲れてるかどうかなんて…
-        見ればすぐにわかるもの。
+      Idle_01_02: はい、ミルクティー。疲れた時は甘いものがいいのよ。何言ってるのよ～。推理なんていらないわ。愛する人が疲れてるかどうかなんて… 見ればすぐにわかるもの。
       Idle_01_03: 結婚してから趣味の時間が、恋人だった時に比べて大分減った気がするの。これじゃあストレスを発散できないわ！…せっかくだし…今から行かない？いい場所を見つけておいたの。
       SPIdle_01_01: ダメ！最近ただでさえダーリンのせいで趣味の時間も減って、推理小説もろくに読めてないのに…！ずるいわ、もうっ。だったら私ももう我慢しないわ！
       MVP: ""
@@ -5225,10 +5277,8 @@ dialogue:
       SPIdle_02_01: |-
         You’re not interested in the coat any more.
         It’s soft and smooth… Do you feel good?
-      Oath: >-
-        Although I expected you had feelings for me, I didn’t know you loved me
-        this much. You are
-
+      Oath: |-
+        Although I expected you had feelings for me, I didn’t know you loved me this much. You are
         so unpredictable. You want me to answer? I’m not supposed to think about other things during the mission though… I also like you, honey. I like you so much that I’d like to show my everything to you. Promise me you would look at all of them, okay?
       OathIdle_01: |-
         Honey, are you shy?
@@ -5237,8 +5287,7 @@ dialogue:
         We’ll do that ‘infiltration mission’ again.
       MVP: ""
     "":
-      Join: My name is Nicky Tracy. Seems like you need a great agent! Then, it was
-        the great idea to restore me.
+      Join: My name is Nicky Tracy. Seems like you need a great agent! Then, it was the great idea to restore me.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -5260,9 +5309,8 @@ dialogue:
         My home is where
         my lovely family is at. How are Tomo…
         and Shirayuri doing?
-      Idle_01_02: >-
+      Idle_01_02: |-
         Even the best agents
-
         can be stressed out. They have to relieve the stress with leisure activities… My hobby? It’s a secret.
       Idle_01_03: |-
         You wouldn’t have noticed,
@@ -5283,14 +5331,10 @@ dialogue:
         In a remote place at late night,
         with nothing on… I’ll let you have the best seat.
         Shall we enjoy the day? Commander.
-      SPIdle_02_01: This is more nervous than showing. But… To you, I want to show you
-        everything… Oh, I’m embarrassed!
-      Oath: >-
-        Woah, what is this? Wait, let me guess. This is a ring for proposing.
-        And you Commander,
-
+      SPIdle_02_01: This is more nervous than showing. But… To you, I want to show you everything… Oh, I’m embarrassed!
+      Oath: |-
+        Woah, what is this? Wait, let me guess. This is a ring for proposing. And you Commander,
         Will hand that over to… oh, I’m the only one here! Wait, wait a minute. Uh… Umm… Well… Do I have to say something right now?
-
         Uhh…! Alright! But… promise to make me the happiest woman on earth. Promise, babe?
       OathIdle_01: |-
         Honey, should I wear a leash next time?

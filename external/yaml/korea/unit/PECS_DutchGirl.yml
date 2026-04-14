@@ -1822,6 +1822,19 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        드릴을 발사해 <dmg elem="physics" />를 주며, 3라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 낮춥니다.
+        치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      JP: |-
+        ドリルを発射し<dmg elem="physics" />のダメージを与え、3ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>を減少させます。
+        クリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="2" r /></sec>が増加します。
+      EN: |-
+        Shoots Drill and deals <dmg elem="physics" /> damage, decreasing the target’s <sec typ="buff"><buff typ="DEF_DOWN" />DEF <val idx="0" r /></sec> for 3 rounds.
+        Damage is increased when CRIT hit for <sec typ="dmg"><buff typ="PhyATK_UP" />damage amount<val idx="2" r /></sec>.
+      TC: |-
+        發射鑽頭，造成<dmg elem="physics" />傷害，並減少目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>，持續3回合。
+        暴擊時，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: BombActive
@@ -2742,6 +2755,23 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        굴착용 폭탄으로 대상과 대상 주변에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        적이 처치된 경우 연쇄 폭발로 주변에 <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력 <val idx="0" r signless /> 고정 물리 피해</sec>를 줍니다.
+        <sec>스킬 레벨 5부터 범위가 증가합니다.</sec>
+      JP: |-
+        掘削用爆弾で対象と対象周辺に<sec typ="attr">保護無視</sec><dmg elem="physics" />のダメージを与えます。
+        敵が撃破された場合は連鎖爆発で周辺に<sec typ="dmg"><buff typ="PhyATK_UP" />攻撃力<val idx="0" r signless />固定物理ダメージ</sec>を与えます。
+        <sec>スキルレベル5から範囲が増加します。</sec>
+      EN: |-
+        Attacks with Excavation Bomb and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the target and enemies nearby.
+        If the enemy is defeated, causes chain explosions that deal <sec typ="dmg"><buff typ="PhyATK_UP" />Fixed Physical Damage equal to ATK <val idx="0" r signless /></sec> to enemies nearby.
+        <sec>Effective range increases from Skill Lv. 5.</sec>
+      TC: |-
+        用挖掘炸彈對目標與目標周圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害。
+        若敵軍被擊破，會引發連鎖爆炸，對周圍造成<sec typ="dmg"><buff typ="PhyATK_UP" />等同於攻擊力<val idx="0" r signless />的固定物理傷害</sec>。
+        <sec>技能等級達到等級5時，會擴大範圍。</sec>
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -2882,6 +2912,11 @@ skills:
             base: 0.33
             per: 0.03
             chance: 1
+    desc:
+      KR: 채굴 레벨이 늘어, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
+      JP: 採掘レベルが上昇し、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="2" r /></sec>が増加します。
+      EN: Excavation level is improved and increases <sec typ="buff"><buff typ="ATK_UP" />ATK<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />CRIT<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />Defense Penetration<val idx="2" r /></sec>.
+      TC: 由於開採等級增加，<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="2" r /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -3079,6 +3114,19 @@ skills:
             base: 0.2
             per: 0.01
             chance: 0
+    desc:
+      KR: |-
+        "라운드 개시 시, <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" /> 대 경장형 & 중장형 피해량 <val idx="2" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소합니다.
+        해당 효과가 활성화 된 상태에서 경장 / 중장형 적에게 <sec typ="note">다이너마이트 웜</sec> 치명타 적중 시, 2라운드 동안 대상이 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" slot="2" r /></sec>가 증가합니다."
+      JP: |-
+        「ラウンド開始時、<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" />対軽装型＆重装型ダメージ量<val idx="2" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" r inv /></sec>が減少します。
+        この効果が有効な状態で軽装型/重装型の敵に<sec typ="note">ダイナマイトワーム</sec>がクリティカルヒットした場合、2ラウンドの間、対象の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" slot="2" r /></sec>が増加します。」
+      EN: |-
+        "At the start of the round, increases <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />Effect Resistance<val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" />Anti-Light Armor & Anti-Heavy Armor Damage<val idx="2" r /></sec>, and decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage<val idx="0" r inv /></sec>.
+        If <sec typ="note">Dynamite Worm</sec> lands as a CRIT hit on a Light Armor / Heavy Armor enemy while this effect is active, the target’s <sec typ="buff"><buff typ="VULNERABLE" />received damage<val idx="1" slot="2" r /></sec> increases for 2 rounds."
+      TC: |-
+        「回合開始時，增加<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" />對輕裝型&重裝型傷害量<val idx="2" r /></sec>，並減少<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="0" r inv /></sec>。
+        在此效果啟用期間，<sec typ="note">炸藥蠕蟲</sec>對輕裝型/重裝型敵軍造成暴擊命中時，目標的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="1" slot="2" r /></sec>增加，持續2回合。」
 dialogue:
   KR:
     "1":
@@ -3187,8 +3235,7 @@ dialogue:
         예전에는 별로 안 좋아했는데…
         지금은 사령관의 손길을 느끼고 있으면
         안심이 돼. 따뜻해…
-      Oath: 오늘은 내가 산타 역할인데… 기뻐. 정말로 기뻐... 내가 이렇게 행복해도 되는 걸까? 크리스마스를 이렇게 축하할 수 있는 것만으로도
-        행복했는데... 이런 것까지 받다니... 고마워요, 나의 산타클로스. 행복을 선물해줘서....
+      Oath: 오늘은 내가 산타 역할인데… 기뻐. 정말로 기뻐... 내가 이렇게 행복해도 되는 걸까? 크리스마스를 이렇게 축하할 수 있는 것만으로도 행복했는데... 이런 것까지 받다니... 고마워요, 나의 산타클로스. 행복을 선물해줘서....
       OathIdle_01: |-
         산타는 올해 열심히 노력한 아이들을
         칭찬해 주는 게 일이니까. 칭찬해주고 싶어.
@@ -3476,11 +3523,8 @@ dialogue:
       Idle_04_01: |-
         I sometimes wish
         I had wings… Thank you, Commander.
-      SPIdle_02_01: … I think I dozed off… Can I go back to sleep? Yes. Commander… I
-        really like you…
-      Oath: No way… Are you messing with me right now? I’m okay… so please stop, if
-        you’re joking… Really…? Thank you, commander… I’m really glad. Thank
-        you, Commander.
+      SPIdle_02_01: … I think I dozed off… Can I go back to sleep? Yes. Commander… I really like you…
+      Oath: No way… Are you messing with me right now? I’m okay… so please stop, if you’re joking… Really…? Thank you, commander… I’m really glad. Thank you, Commander.
       OathIdle_01: |-
         You like patting on my head,
         don’t you? Yes.! Don’t worry about me. Do as you wish.
@@ -3559,10 +3603,8 @@ dialogue:
       SPIdle_02_01: |-
         Yes… It’s meaningful. … Keep stroking me.
         So that I’ll always feel your warmth.
-      Oath: >-
-        You're not mistaking me for someone else, are you? Commander… for real?
-        No way.
-
+      Oath: |-
+        You're not mistaking me for someone else, are you? Commander… for real? No way.
         I thought only unfortunate things happened to me, but now… Thank you, Commander. This is my only fortunate memory.
       OathIdle_01: |-
         Commander saved me…

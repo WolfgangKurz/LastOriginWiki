@@ -1017,6 +1017,19 @@ skills:
             base: 0.01
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        적중한 적에게 3라운드 동안 <sec typ="note">사이토톡식</sec> <sec typ="attr">일반 효과</sec>를 부여하여 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>를 증가시킵니다. (최대 1중첩)
+      JP: |-
+        単一対象に<sec typ="attr">保護無視</sec>の<dmg elem="physics" />ダメージを与えます。
+        命中した敵に3ラウンドの間<sec typ="note">サイトトキシック</sec><sec typ="attr">一般効果</sec>を付与し、<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="0" r /></sec>を増加させます。 (最大1重複)
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> physics damage to a single target.
+        Applies a <sec typ="note">Cytotoxic</sec> <sec typ="attr">normal effect</sec> to enemies hit for 3 rounds, increasing their <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="0" r /></sec>. (Max 1 stack)
+      TC: |-
+        對單一目標造成<sec typ="attr">保護無視</sec>的<dmg elem="physics" />傷害。
+        對命中的敵人賦予持續3回合的<sec typ="note">細胞毒素</sec><sec typ="attr">一般效果</sec>，使其<sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="0" r /></sec>增加。（最多1層）
   "2":
     key: "2"
     icon: SwordAttk
@@ -2146,6 +2159,35 @@ skills:
             base: 0.15
             per: 0.15
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">조건에 따라</sec> 대상에게 <sec typ="dmg"><buff typ="PhyATK_UP" /> 추가 피해 <val idx="0" r /></sec>를 입힙니다.
+        <box t="조건">
+        조건 1: <sec typ="cond">대상이 <sec typ="note">사이토톡식</sec> 효과 받음</sec>
+        조건 2: <sec typ="cond">자신의 HP 30% 이하</sec>
+        </box>
+      JP: |-
+        単一対象に<sec typ="attr">保護無視</sec>の<dmg elem="physics" />ダメージを与えます。
+        <sec typ="cond">条件に応じて</sec>、対象に<sec typ="dmg"><buff typ="PhyATK_UP" /> 追加ダメージ <val idx="0" r /></sec>を与えます。
+        <box t="条件">
+        条件1: <sec typ="cond">対象が<sec typ="note">サイトトキシック</sec>効果を受けている</sec>
+        条件2: <sec typ="cond">自身のHPが30%以下</sec>
+        </box>
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> physics damage to a single target.
+        <sec typ="cond">If conditions are met</sec>, deals <sec typ="dmg"><buff typ="PhyATK_UP" /> additional damage <val idx="0" r /></sec> to the target.
+        <box t="Conditions">
+        Condition 1: <sec typ="cond">target is affected by <sec typ="note">Cytotoxic</sec></sec>
+        Condition 2: <sec typ="cond">self's HP is 30% or below</sec>
+        </box>
+      TC: |-
+        對單一目標造成<sec typ="attr">保護無視</sec>的<dmg elem="physics" />傷害。
+        <sec typ="cond">依條件而定</sec>，對目標造成<sec typ="dmg"><buff typ="PhyATK_UP" /> 額外傷害 <val idx="0" r /></sec>。
+        <box t="條件">
+        條件1：<sec typ="cond">目標受到<sec typ="note">細胞毒素</sec>效果</sec>
+        條件2：<sec typ="cond">自身HP在30%以下</sec>
+        </box>
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -2355,6 +2397,19 @@ skills:
             base: 0.15
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="attr">일반 효과</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless />% HP로 전투 속행</sec>을 얻습니다 
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">자신 주변에 아군이 없으면</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> 공격력 <val idx="4" r /></sec>와 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>를 증가시킵니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="attr">一般効果</sec>として<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless />% HPで戦闘続行</sec>を1回獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">自分の周囲に味方がいない場合</sec>、自身の<sec typ="buff"><buff typ="AP_UP" /> 攻撃力 <val idx="4" r /></sec>と<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>を増加させます。
+      EN: |-
+        <sec typ="cond">At the start of combat</sec>, gains 1 <sec typ="attr">normal effect</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat at <val idx="0" r signless />% HP</sec>.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if there are no allies around self</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> ATK <val idx="4" r /></sec> and <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="3" r /></sec> increase.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，以<sec typ="attr">一般效果</sec>獲得1次<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以<val idx="0" r signless />% HP戰鬥續行</sec>。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若自身周圍沒有我方</sec>，則自身的<sec typ="buff"><buff typ="AP_UP" /> 攻擊力 <val idx="4" r /></sec>與<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfDefDeBuff
@@ -2900,6 +2955,19 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">아군이 5기 이하</sec>면 모든 적의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec> 및 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec>아군의 숫자가 적을 수록 효과가 증가합니다.</sec> (아군 2명까지, <sec typ="attr">일반 효과</sec>)
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="cond">味方が5体以下</sec>なら、すべての敵の<sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="0" r /></sec>および<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="1" r /></sec>を減少させます。
+        <sec>味方の数が少ないほど効果が増加します。</sec>（味方2体まで、<sec typ="attr">一般効果</sec>）
+      EN: |-
+        <sec typ="cond">At the start of combat</sec>, <sec typ="cond">if there are 5 or fewer allies</sec>, decreases all enemies' <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="0" r /></sec> and <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="1" r /></sec>.
+        <sec>The fewer allies there are, the greater the effect.</sec> (up to 2 allies, <sec typ="attr">normal effect</sec>)
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，<sec typ="cond">若我方不超過5名</sec>，則降低所有敵人的<sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="0" r /></sec>與<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="1" r /></sec>。
+        <sec>我方數量越少，效果越強。</sec>（最多至2名我方，<sec typ="attr">一般效果</sec>）
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -3270,6 +3338,39 @@ skills:
             base: 0.055
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">적이 3개체 이하</sec>라면 자신의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec>와 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec>를 증가시킵니다.
+        <box t="적의 수">
+        <sec typ="cond">3 개체</sec>: <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec>
+        <sec typ="cond">2 개체</sec>: <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>
+        <sec typ="cond">1 개체</sec>: <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="8" r /></sec>
+        </box>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自身の<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">敵が3体以下</sec>なら、自身の<sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="1" r /></sec>と<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="2" r /></sec>を増加させます。
+        <box t="敵の数">
+        <sec typ="cond">3体</sec>: <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="2" r /></sec>
+        <sec typ="cond">2体</sec>: <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="6" r /></sec>
+        <sec typ="cond">1体</sec>: <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="8" r /></sec>
+        </box>
+      EN: |-
+        <sec typ="cond">At the start of combat</sec>, increases self's <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if there are 3 or fewer enemies</sec>, increases self's <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="1" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="2" r /></sec>.
+        <box t="Number of Enemies">
+        <sec typ="cond">3 enemies</sec>: <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="2" r /></sec>
+        <sec typ="cond">2 enemies</sec>: <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="6" r /></sec>
+        <sec typ="cond">1 enemy</sec>: <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="8" r /></sec>
+        </box>
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，提升自身的<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若敵人不超過3名</sec>，則提升自身的<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="1" r /></sec>與<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec>。
+        <box t="敵人數量">
+        <sec typ="cond">3名敵人</sec>：<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec>
+        <sec typ="cond">2名敵人</sec>：<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="6" r /></sec>
+        <sec typ="cond">1名敵人</sec>：<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="8" r /></sec>
+        </box>
 dialogue:
   KR:
     "1":

@@ -3291,6 +3291,19 @@ skills:
             base: 0.6
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">대상 HP가 100%</sec>일 경우 5라운드 동안 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="8" r inv /></sec>를 감소시킵니다.
+        대상에게 <sec typ="attr">보호 무시</sec> 피해와 고정 피해를 입히며, 대상은 50% 확률로 추가 피해를 입고, 40% 확률로 2라운드 동안 받는 피해가 증가하고, 30% 확률로 해당 라운드 동안 스킬을 사용할 수 없습니다. 해당 효과 적용 확률은 효과 저항의 영향을 받습니다.
+      JP: |-
+        <sec typ="cond">対象HPが100%</sec>の場合、5ラウンドの間対象の<sec typ="buff"><buff typ="DEBUFF_RATEUP" />効果抵抗<val idx="8" r inv /></sec>を減少させます。
+        対象に<sec typ="attr">保護無視</sec>ダメージと固定ダメージを与え、対象は50%の確率で追加ダメージを受け、40%の確率で2ラウンドの間被ダメージが増加し、30%の確率でそのラウンド中スキルを使用できません。これらの効果適用確率は効果抵抗の影響を受けます。
+      EN: |-
+        If <sec typ="cond">the target's HP is 100%</sec>, decreases the target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="8" r inv /></sec> for 5 rounds.
+        Deals <sec typ="attr">Ignore Protection</sec> damage and fixed damage to the target. The target has a 50% chance to take additional damage, a 40% chance for damage taken to increase for 2 rounds, and a 30% chance to be unable to use skills for that round. The application rates of these effects are affected by Effect Resistance.
+      TC: |-
+        <sec typ="cond">若目標HP為100%</sec>，則在5回合內降低目標的<sec typ="buff"><buff typ="DEBUFF_RATEUP" />效果抗性<val idx="8" r inv /></sec>。
+        對目標造成<sec typ="attr">無視保護</sec>傷害與固定傷害，並使目標有50%機率受到額外傷害、40%機率在2回合內所受傷害增加、30%機率在該回合內無法使用技能。這些效果的套用機率會受到效果抗性的影響。
   "2":
     key: "2"
     icon: SatelliteBeam
@@ -6782,6 +6795,19 @@ skills:
             base: -1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> 피해와 고정 피해를 주고 대상을 뒤로 밀어냅니다.
+        <sec typ="cond">적중 시</sec>, 대상에게 걸려있는 모든 보호 효과를 해제하고 2라운드 동안 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피</sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리</sec>를 감소시킵니다.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec>ダメージと固定ダメージを与え、対象を後方へ押し出します。
+        <sec typ="cond">命中時</sec>、対象にかかっているすべての保護効果を解除し、2ラウンドの間<sec typ="buff"><buff typ="EVADE_DOWN" />回避</sec> / <sec typ="buff"><buff typ="RANGE_DOWN" />射程</sec>を減少させます。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> damage and fixed damage to the designated area, and pushes the target back.
+        <sec typ="cond">On hit</sec>, removes all protection effects applied to the target and decreases their <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion</sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> Range</sec> for 2 rounds.
+      TC: |-
+        對指定範圍造成<sec typ="attr">無視保護</sec>傷害與固定傷害，並將目標擊退。
+        <sec typ="cond">命中時</sec>，解除目標身上所有保護效果，並在2回合內降低其<sec typ="buff"><buff typ="EVADE_DOWN" />迴避</sec> / <sec typ="buff"><buff typ="RANGE_DOWN" />射程</sec>。
   "3":
     key: "3"
     icon: P.AntiArmorShot
@@ -6960,6 +6986,19 @@ skills:
             base: 0.16
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시 스쿼드에 경장형 아군 수가 2 이상</sec>일 경우, 경장형 아군의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>를 증가시키고, 기동 / 중장형 적의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec>를 증가시킵니다.
+        해당 효과는 해제할 수 없습니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時、分隊の軽装型味方数が2以上の場合</sec>、軽装型味方の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec>を増加させ、機動 / 重装型敵の<sec typ="buff"><buff typ="VULNERABLE" />被ダメージ<val idx="2" r /></sec>を増加させます。
+        この効果は解除できません。
+      EN: |-
+        <sec typ="cond">At battle start, if there are 2 or more Light Armor allies in the squad</sec>, increases Light Armor allies' <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="0" r /></sec> and increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="2" r /></sec> by Mobile / Heavy Armor enemies.
+        This effect cannot be removed.
+      TC: |-
+        <sec typ="cond">若戰鬥開始時小隊中輕裝型我軍數量達2以上</sec>，則提升輕裝型我軍的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="0" r /></sec>，並增加機動 / 重裝型敵人的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="2" r /></sec>。
+        該效果無法解除。
   "4":
     key: "4"
     icon: P.Snipe
@@ -7351,6 +7390,19 @@ skills:
             base: -0.4
             per: -0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시 스쿼드에 기동형 아군 수가 2 이상</sec>일 경우, 기동형 아군의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="4" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec>를 증가시키고, 경장 / 중장형 적의 <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="6" /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="7" r /></sec>를 감소시킵니다.
+        해당 효과는 해제할 수 없습니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時、分隊の機動型味方数が2以上の場合</sec>、機動型味方の<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="4" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec>を増加させ、軽装 / 重装型敵の<sec typ="buff"><buff typ="RANGE_DOWN" />射程<val idx="6" /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="7" r /></sec>を減少させます。
+        この効果は解除できません。
+      EN: |-
+        <sec typ="cond">At battle start, if there are 2 or more Mobile allies in the squad</sec>, increases Mobile allies' <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="4" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec>, and decreases Light / Heavy Armor enemies' <sec typ="buff"><buff typ="RANGE_DOWN" /> Range <val idx="6" /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="7" r /></sec>.
+        This effect cannot be removed.
+      TC: |-
+        <sec typ="cond">若戰鬥開始時小隊中機動型我軍數量達2以上</sec>，則提升機動型我軍的<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="4" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec>，並降低輕裝 / 重裝型敵人的<sec typ="buff"><buff typ="RANGE_DOWN" />射程<val idx="6" /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="7" r /></sec>。
+        該效果無法解除。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -7804,6 +7856,19 @@ skills:
             base: -0.07
             per: -0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시 스쿼드에 중장형 아군 수가 2 이상</sec>일 경우, 중장형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>를 증가시키고, 경장 / 기동형 적의 <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 모든 속성 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="8" r /></sec>를 감소시킵니다.
+        해당 효과는 해제할 수 없습니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時、分隊の重装型味方数が2以上の場合</sec>、重装型味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>を増加させ、軽装 / 機動型敵の<sec typ="buff"><buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" />全属性耐性<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="8" r /></sec>を減少させます。
+        この効果は解除できません。
+      EN: |-
+        <sec typ="cond">At battle start, if there are 2 or more Heavy Armor allies in the squad</sec>, increases Heavy Armor allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" r /></sec>, and decreases Light / Mobile Armor enemies' <sec typ="buff"><buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" /> All Attribute RES <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="8" r /></sec>.
+        This effect cannot be removed.
+      TC: |-
+        <sec typ="cond">若戰鬥開始時小隊中重裝型我軍數量達2以上</sec>，則提升重裝型我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>，並降低輕裝 / 機動型敵人的<sec typ="buff"><buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" />全屬性抗性<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="8" r /></sec>。
+        該效果無法解除。
 dialogue:
   KR:
     "1":
@@ -7919,9 +7984,7 @@ dialogue:
         낭군님 들어오실 이불이 차가울까 하여,
         제 몸으로 따뜻하게 데워두었으니...
         함께 운우지락을 즐기지 않으시겠어요?
-      Oath: 낭군님께서 없는 밤은 유독 길게 느껴져요. 그래서 매일 밤마다 이 밤이 빨리 지나가기를, 다시 아침이 와서 당신의 얼굴을 다시 볼 수
-        있기를 바라게 되죠. 하지만 이제는 그러지 않아도 될 것 같네요. 이 반지를 받게 되면… 낮에도 밤에도 사랑하는 당신과 항상
-        함께할 수 있으니까요.
+      Oath: 낭군님께서 없는 밤은 유독 길게 느껴져요. 그래서 매일 밤마다 이 밤이 빨리 지나가기를, 다시 아침이 와서 당신의 얼굴을 다시 볼 수 있기를 바라게 되죠. 하지만 이제는 그러지 않아도 될 것 같네요. 이 반지를 받게 되면… 낮에도 밤에도 사랑하는 당신과 항상 함께할 수 있으니까요.
       OathIdle_01: |-
         낭군님께서 제게 반지를 끼워 주신 후로...
         손을 볼 때마다 낭군님 생각에
@@ -7985,9 +8048,7 @@ dialogue:
       SPIdle_02_01: |-
         회장님…
         제 천박해진 모습도 마음에 드시죠?​
-      Oath: 주인님의 취향은 참 독특하시네요… 델타로 분장한 제가 좋으시다니… 네? 그 기대하는 눈빛은… 대체?! …그래요… 이 모습에
-        반하셨다면, 제가 뭔들 못하겠어요? 회장님, 회장님의 종, 델타가… 회장님의 영원한 종이 될 것을 맹세합니다. 하아… 알았어요.
-        영 내키진 않지만… 주인님이 원하신다면 단 둘이 있을 때 종종 즐기기로 해요. 사랑해요, 회.장.님…?
+      Oath: 주인님의 취향은 참 독특하시네요… 델타로 분장한 제가 좋으시다니… 네? 그 기대하는 눈빛은… 대체?! …그래요… 이 모습에 반하셨다면, 제가 뭔들 못하겠어요? 회장님, 회장님의 종, 델타가… 회장님의 영원한 종이 될 것을 맹세합니다. 하아… 알았어요. 영 내키진 않지만… 주인님이 원하신다면 단 둘이 있을 때 종종 즐기기로 해요. 사랑해요, 회.장.님…?
       OathIdle_01: |-
         사실 델타를 연기하는 건 싫었어요.
         하지만 그 델타가 주인님 앞에
@@ -8055,9 +8116,7 @@ dialogue:
         읏… 부, 부탁드려요. 계속 그러시면
         제 이성이… 본능만 좇는 짐승이,
         되어버릴 수는…
-      Oath: 사령관님, 아니 주인님과 지내면서 확신하게 됐어요. 주인님이야말로 진정한 이 세계의 지배자에 어울리시는 분. PECS를 무너뜨리겠다는
-        제 복수 따위, 어떻게 되든 좋아요. 저는 단지, 주인님의 수족으로써 그 뜻을 실현할 뿐. 주인님. 부디 저를 마음대로 써주세요.
-        주인님의 기쁨이 제 기쁨이니, 그 무엇이라도…
+      Oath: 사령관님, 아니 주인님과 지내면서 확신하게 됐어요. 주인님이야말로 진정한 이 세계의 지배자에 어울리시는 분. PECS를 무너뜨리겠다는 제 복수 따위, 어떻게 되든 좋아요. 저는 단지, 주인님의 수족으로써 그 뜻을 실현할 뿐. 주인님. 부디 저를 마음대로 써주세요. 주인님의 기쁨이 제 기쁨이니, 그 무엇이라도…
       OathIdle_01: |-
         주인님, 나의 주인님… 어리석은
         제 자매들을 위해... 부디 벌과
@@ -8159,12 +8218,9 @@ dialogue:
         몸이 되어버렸어요. 부디 저를 불쌍히 여기셔서…
         드디어 허락해 주시는 거군요…? 정말 감사해요.
         저도 최선을 다할테니까...
-      Oath: >-
-        (미번역)주인님을 처음 뵈었던 날, 기억 하시나요…? 저는 그때 직감했어요. 아, 나는 이 고귀한 분 앞에서… 무릎 꿇고 은혜를
-        구걸하게
-
+      Oath: |-
+        (미번역)주인님을 처음 뵈었던 날, 기억 하시나요…? 저는 그때 직감했어요. 아, 나는 이 고귀한 분 앞에서… 무릎 꿇고 은혜를 구걸하게
         되겠구나, 하고요. 그런데… 주인님께서 사용해주시는 것이 제게 그 무엇보다도 큰 기쁨이 된다는 것까지는 미처 생각하지 못했어요.​
-
         주인님. 이 반지, 평생 주인님의 소유물이 되라는 뜻으로 이해할게요. 후후, 네. 그것만이… 제가 살아가는 이유니까요.
       OathIdle_01: |-
         (미번역)이런 몸으로 만들어진 것…
@@ -8321,27 +8377,19 @@ dialogue:
         Don’t worry about my sisters. I’m sure that…
         the moment they meet you, they’ll realize
         their fate, and what they should do. … Their instinct will tell them.
-      Idle_03_01: >-
-        … I’m sorry, Master. I can’t wait… Not any more. I’m only your
-        possession,
-
+      Idle_03_01: |-
+        … I’m sorry, Master. I can’t wait… Not any more. I’m only your possession,
         but I dare ask you. Please…
-      Idle_04_01: >-
+      Idle_04_01: |-
         The strongest bioroid,
-
         the bioroid who ruled the seas, and me… We’re all just servants who wait for your blessing.
-      SPIdle_02_01: >-
+      SPIdle_02_01: |-
         Master… I can’t live without you
-
         any more. Please have mercy, and… You’re finally allowing me? Thank you so much.
-
         I’ll do my best…
-      Oath: >-
-        Do you remember the first day we met, master…? I knew intuitively at
-        that moment. That I’ll be getting on my knees and beg for blessing
-
+      Oath: |-
+        Do you remember the first day we met, master…? I knew intuitively at that moment. That I’ll be getting on my knees and beg for blessing
         from this noble being… But… I didn’t think that you using me will bring me so much more joy than anything else.​
-
         Master. I’ll interpret this ring as that you want me to be your belonging for my entire life. Haha, yes. Because that’s… the only reason of my life.
       OathIdle_01: |-
         Having such a body… Now I don’t regret it any more. I can…
@@ -8464,10 +8512,7 @@ dialogue:
         Uh… P-please… If you keep doing that,
         I’ll become a beast…
         acting by instinct…
-      Oath: I became more certain staying with you, Commander. No, Master. You’re the
-        true ruler of the world. Forget my revenge to the PECS. I just want to
-        realize your will as your servant, Master. Master. Please use me as you
-        please. Your pleasure is mine, so anything…
+      Oath: I became more certain staying with you, Commander. No, Master. You’re the true ruler of the world. Forget my revenge to the PECS. I just want to realize your will as your servant, Master. Master. Please use me as you please. Your pleasure is mine, so anything…
       OathIdle_01: |-
         Master, Master… Please punish me
         for my foolish sisters.

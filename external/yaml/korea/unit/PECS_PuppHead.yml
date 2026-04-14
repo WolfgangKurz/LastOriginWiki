@@ -1276,6 +1276,11 @@ skills:
             base: -0.3
             per: -0.015
             chance: 1
+    desc:
+      KR: 목표 적을 감전시켜 <dmg elem="lightning" />를 주고 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>와 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시킵니다.
+      JP: 目標の敵を感電させ<dmg elem="lightning" />を与え、<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>と<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="1" r /></sec>を減少させます。
+      EN: Electrocutes the enemy target, dealing <dmg elem="lightning" /> damage and decreasing <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="1" r /></sec>.
+      TC: 使目標敵軍觸電，造成<dmg elem="lightning" />，並降低<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>與<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="1" r /></sec>。
   "2":
     key: "2"
     icon: Hang
@@ -1738,6 +1743,23 @@ skills:
               level: "0"
             value: Char_AGS_Rampart_N
             chance: 1
+    desc:
+      KR: |-
+        목표 대상을 체포해 최대 <sec typ="buff"><buff typ="Pull" /> <val idx="0" signless />칸 앞으로 당기며</sec>, 2라운드 동안 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
+        대상은 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec> 증가 상태가 됩니다.
+        스쿼드 내에 <char uid="AGS_Rampart" />가 있을 시, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 대상에게 <sec typ="note">목표 견제</sec> 스킬 협동 공격</sec>을 합니다.
+      JP: |-
+        目標対象を捕縛し、最大<sec typ="buff"><buff typ="Pull" /> <val idx="0" signless />マス前方へ引き寄せ</sec>、2ラウンドの間<sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態にします。
+        対象は2ラウンドの間<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="5" r /></sec>増加状態になります。
+        分隊内に<char uid="AGS_Rampart" />がいる場合、<sec typ="buff"><buff typ="TOGETHER_ATTACK" />対象に<sec typ="note">目標牽制</sec>スキル協同攻撃</sec>を行います。
+      EN: |-
+        Arrests the target and pulls them forward by up to <sec typ="buff"><buff typ="Pull" /> <val idx="0" signless /> spaces</sec>, and makes them <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> for 2 rounds.
+        The target becomes <sec typ="buff"><buff typ="MARKING" /> Marked</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="5" r /></sec> increase for 2 rounds.
+        If <char uid="AGS_Rampart" /> is in the squad, launches a co-op attack against the target with the <sec typ="note">Target Containment</sec> skill.
+      TC: |-
+        逮捕目標，最多以<sec typ="buff"><buff typ="Pull" /> <val idx="0" signless />格</sec>向前拉動，並使其在2回合內進入<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態。
+        目標會在2回合內陷入<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="5" r /></sec>增加狀態。
+        若小隊內有<char uid="AGS_Rampart" />，則對目標發動<sec typ="buff"><buff typ="TOGETHER_ATTACK" />與<sec typ="note">牽制目標</sec>的技能協力攻擊</sec>。
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -2341,6 +2363,19 @@ skills:
             base: 0.25
             per: 0.0125
             chance: 1
+    desc:
+      KR: |-
+        스킬 적중 시 인접 아군들의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 상승하며, 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec>가 증가합니다.
+        <sec>스킬 레벨 5 / 10에서 범위가 증가</sec>합니다.
+      JP: |-
+        スキル命中時、隣接する味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が上昇し、2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>が増加します。
+        <sec>スキルレベル5 / 10で範囲が増加</sec>します。
+      EN: |-
+        When the skill hits, the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of adjacent allies increases, and their <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACU <val idx="6" r /></sec> increases for 2 rounds.
+        <sec>Effective range increases at Skill Lv. 5/10</sec>.
+      TC: |-
+        技能命中時，相鄰我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>會上升，並於2回合內提升其<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>。
+        <sec>技能等級5 / 10時範圍增加</sec>。
   "4":
     key: "4"
     icon: P.None
@@ -2430,6 +2465,11 @@ skills:
             base: 0.3
             per: 0.01
             chance: 1
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
   "5":
     key: "5"
     icon: P.None
@@ -2546,14 +2586,17 @@ skills:
             base: -0.1
             per: -0.1
             chance: 1
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
 dialogue:
   KR:
     "":
-      Intro: >-
+      Intro: |-
         안녕하신가. 내 이름은 펍 헤드. 6급 경찰 공무원 로봇이지. 응? 왜 놀라는 얼굴이지?
-
         난 거리의 용이한 순찰과 돌발적 범죄자에 대한 체포를 위해 태어난 로봇이라네. 덕분에 로봇 치고는 컴팩트한 사이즈와 굉장히 사용처가 용이한 스턴 건을 가지게 되었지.
-
 
         안타깝게도 난 이걸로 범죄자를 체포한 것 보다는 철충을 상대한 세월이 더 길다네. 만약 언젠가 우리가 철충을 완전히 제압할 수 있다면 난 안전한 사회를 위해 범죄자를 상대하는 그런 일로 돌아갈 수 있겠지. 사실 그게 내가 바라는 가장 큰 소원이라네.
       Join: 안녕하신가. 난 펍 헤드입니다!
@@ -2586,9 +2629,8 @@ dialogue:
       MVP: 이건 훌륭한 공로군! 보상으로 전기를 요구하네.
   JP:
     "":
-      Intro: >-
+      Intro: |-
         ごきげんよう。僕の名前はポップヘッド。6級警察公務員ロボット。うん？何で驚いてるの？僕は簡単な巡回や突発的な犯罪者の逮捕のために生まれたロボットだ。おかげでロボットにしてはコンパクトなサイズと、とっても使いやすいスタンガンを装備している。
-
 
         でもとても残念なことに僕は今まで犯罪者を逮捕した経験より、鉄虫を相手にした期間の方が長いんだ。もし、いつか僕たちが鉄虫を完全に制圧できたら、僕は安全な社会で犯罪者を相手にする、そんな仕事に戻りたい。もちろん、犯罪者なんていない方がいいけど。それが僕の一番大きな願いだ。
       Join: やあごきげんよう。僕はポップヘッド。
@@ -2614,12 +2656,9 @@ dialogue:
       MVP: ""
   EN:
     "":
-      Intro: >-
-        Hello. My name is Pupp Head. I'm a cop, a 6-level civil servant robot.
-        Huh? Why do you look surprised?
-
+      Intro: |-
+        Hello. My name is Pupp Head. I'm a cop, a 6-level civil servant robot. Huh? Why do you look surprised?
         I'm a robot built for smooth patrol on the streets and to arrest unexpected criminals. So, my size is pretty compact for a robot. And I got to have a stun gun, which can be used in many places.
-
 
         I'm sorry to say that I used this more on the Metal Parasites than arresting criminals. If the day comes when Metal Parasites are completely suppressed, I'll be able to go back to arresting criminals for a safe society. Actually, it's my biggest wish.
       Join: Hi, there-! I’m Pupp Head!
@@ -2650,11 +2689,9 @@ dialogue:
       MVP: ""
   TC:
     "":
-      Intro: >-
+      Intro: |-
         你好，我叫狗頭。是6級公務員機器人。嗯？你看起來似乎很驚訝？
-
         我是為了方便巡查和逮捕突發性罪犯而被製造的機器人。因此，擁有著不像機器人的小巧體型和非常容易使用的眩暈槍。
-
 
         遺憾的是，我的這個裝備比起逮捕罪犯，更多是用於了對付鐵蟲。如果有一天我們能完全制服鐵蟲，我應該就能回到為了社會安全而對付犯罪分子的工作崗位了吧。其實這是我最大的願望。
       Join: 你好，我是狗頭！

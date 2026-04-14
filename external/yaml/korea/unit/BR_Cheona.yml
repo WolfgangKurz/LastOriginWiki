@@ -1412,6 +1412,19 @@ skills:
               level: "0"
             value: Char_BR_Cheona_N
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <dmg elem="physics" />를 줍니다.
+        치명타 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>합니다.
+      JP: |-
+        対象に <dmg elem="physics" />を与えます。
+        クリティカル時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃効果を解除</sec>します。
+      EN: |-
+        Deals <dmg elem="physics" /> to the target.
+        <sec>On crit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's counterattack effect</sec>.
+      TC: |-
+        對目標造成 <dmg elem="physics" />。
+        暴擊時，解除目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊效果</sec>。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -2311,6 +2324,19 @@ skills:
               level: "0"
             value: Char_BR_Cheona_N
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <dmg elem="physics" />를 줍니다.
+        치명타 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 감소 효과를 해제</sec>합니다.
+      JP: |-
+        対象に <dmg elem="physics" />を与えます。
+        クリティカル時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 被ダメージ減少効果を解除</sec>します。
+      EN: |-
+        Deals <dmg elem="physics" /> to the target.
+        <sec>On crit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's damage reduction effect</sec>.
+      TC: |-
+        對目標造成 <dmg elem="physics" />。
+        暴擊時，解除目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到傷害減少效果</sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -2689,6 +2715,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">인접한 아군이 없을 경우</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 효과를 얻고 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수가 <val idx="6" />회</sec> 증가합니다.
+        <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="엠프레시스 하운드">$$EmpressHound:?$</cmt> 소속 전투원이 있는 경우</sec>, <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 얻습니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">隣接する味方がいない場合</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec>効果を得て、<sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大行動回数が <val idx="6" />回</sec>増加します。
+        <sec typ="cond">分隊に自分以外の<cmt t="엠프레시스 하운드">$$EmpressHound:?$</cmt>所属戦闘員がいる場合</sec>、<sec typ="buff"><buff typ="Guardpierce_Apply" /> 防護無視</sec>効果を得ます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec>.
+        <sec typ="cond">If there are no adjacent allies</sec>, gains <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec> and increases <sec typ="buff"><buff typ="Action_Number_Change_Up" /> maximum action count by <val idx="6" /> times</sec>.
+        <sec typ="cond">If the squad has an allied unit from <cmt t="엠프레시스 하운드">$$EmpressHound:?$</cmt> other than self</sec>, gains <sec typ="buff"><buff typ="Guardpierce_Apply" /> ignore protection</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>會增加。
+        <sec typ="cond">若周圍沒有鄰接隊友</sec>，則獲得 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻擊</sec>效果，並使 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大行動次數增加 <val idx="6" /> 次</sec>。
+        <sec typ="cond">若隊伍中有除自身以外的 <cmt t="엠프레시스 하운드">$$EmpressHound:?$</cmt> 所屬戰鬥員</sec>，則獲得 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec>效果。
   "4":
     key: "4"
     icon: P.WideSwordAttk
@@ -2806,6 +2849,19 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        홀수 라운드일 경우, <sec typ="note">단검 투척</sec> 스킬 사용 시 대상에게 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">뱀 송곳니</sec> 스킬 협동 공격</sec>을 합니다.
+        짝수 라운드일 경우, <sec typ="note">뱀 송곳니</sec> 스킬 사용 시 대상에게 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">단검 투척</sec> 스킬 협동 공격</sec>을 합니다.
+      JP: |-
+        奇数ラウンドの場合、<sec typ="note">短剣投擲</sec>スキル使用時に対象へ<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">蛇の牙</sec>スキルの協同攻撃</sec>を行います。
+        偶数ラウンドの場合、<sec typ="note">蛇の牙</sec>スキル使用時に対象へ<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">短剣投擲</sec>スキルの協同攻撃</sec>を行います。
+      EN: |-
+        On odd rounds, when using <sec typ="note">Dagger Throw</sec>, performs a joint attack with <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Snake Fang</sec></sec> on the target.
+        On even rounds, when using <sec typ="note">Snake Fang</sec>, performs a joint attack with <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Dagger Throw</sec></sec> on the target.
+      TC: |-
+        在奇數回合時，使用 <sec typ="note">短劍投擲</sec> 會對目標發動 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 與 <sec typ="note">蛇之獠牙</sec> 的協同攻擊</sec>。
+        在偶數回合時，使用 <sec typ="note">蛇之獠牙</sec> 會對目標發動 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 與 <sec typ="note">短劍投擲</sec> 的協同攻擊</sec>。
   "5":
     key: "5"
     icon: P.FireShot
@@ -3130,6 +3186,19 @@ skills:
             base: 0.05
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+        <sec>아군에 의한</sec> <sec typ="cond"><buff typ="ICERES_UP" /> 냉기 저항 증가</sec> 효과를 받고 있는 경우, <sec typ="note">따뜻해서 좋네~</sec> 효과가 2배로 적용됩니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
+        <sec>味方による</sec><sec typ="cond"><buff typ="ICERES_UP" /> 冷気抵抗増加</sec>効果を受けている場合、<sec typ="note">暖かくていいね〜</sec>効果が2倍で適用されます。
+      EN: |-
+        At the start of the round, increases <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec>.
+        If affected by an ally-applied <sec typ="cond"><buff typ="ICERES_UP" /> Cold Resistance increase</sec> effect, the <sec typ="note">So Warm and Nice~</sec> effect is applied twice.
+      TC: |-
+        回合開始時，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>會增加。
+        若正受到<sec typ="cond"><buff typ="ICERES_UP" /> 由隊友賦予的冷氣抗性增加</sec>效果，則 <sec typ="note">暖呼呼真不錯～</sec>效果會套用 2 次。
 dialogue:
   KR:
     "1":
@@ -3252,9 +3321,7 @@ dialogue:
         핫팩, 나랑 같이 생물 공부하고 싶어?
         좋아. 그럼 같이 알아볼까…?
         뱀이 얼마나 큰 물건까지 삼킬 수 있는지.
-      Oath: 반지까지 줄 정도라니… 내가 그렇게 좋아? 에휴, 알겠어. 우리 핫팩이 나 없으면 못 살겠다는데… 내가 선심 좀 써야지. 농담이야,
-        븅신아. 나도 널 좋아하니까 이렇게 받아주는 거지, 그게 아니었으면 같이 놀지도 않았을 걸? 아무튼, 그래서… 이제 뭐부터 하고
-        싶어, 우리 남친?
+      Oath: 반지까지 줄 정도라니… 내가 그렇게 좋아? 에휴, 알겠어. 우리 핫팩이 나 없으면 못 살겠다는데… 내가 선심 좀 써야지. 농담이야, 븅신아. 나도 널 좋아하니까 이렇게 받아주는 거지, 그게 아니었으면 같이 놀지도 않았을 걸? 아무튼, 그래서… 이제 뭐부터 하고 싶어, 우리 남친?
       OathIdle_01: |-
         남치인~ 애인이 이렇게 추워하는데
         빨리 체온 상승 좀 시켜줘야 하지 않겠어?
@@ -3312,11 +3379,9 @@ dialogue:
       SPIdle_02_01: |-
         남친, 나 속옷 치수 좀 재줄래? 엥, 모른다고?​
         에이~ 남친 손이 잘 기억하니까 자세히 재 봐~
-      Oath: >-
+      Oath: |-
         남친, 뭐하는데 혼자 돌아다니다 온… 어? 이거 뭐야?​ 이거… 나한테 주는 거야? 그러니까… 나한테 프로포즈 한다는 거지?
-
         나… 나 이제… 정말 애기 엄마 되는 거야?​ 고마워 남친! 아니, 남친이 아니지… 한 번 애기 아빠라고 불러 볼까?​ 응? 애기가 없다고?
-
         히힛… 쇼핑 끝나고 만들러 가자.​ 뱀 짝짓기는… 엄청 긴 거 남친도 알고 있지?
       OathIdle_01: |-
         왜 육아 용품 보고 있냐고? 히힛… 언젠가 애기 엄마 될 텐데,
@@ -3486,9 +3551,7 @@ dialogue:
       SPIdle_02_01: |-
         どんなサービスをお望みですか、ご主人様？あれ以外なら何でもして差し上げますぅ。
         そこだけご理解ください？チョナはぁ…ご主人様がどんなことが好きなのか……ぜ～んぶ知ってますので♥
-      Oath: わお、エッチな服着てちょっと誘惑しただけなのにもう我慢できなくなっちゃった？カイロちゃん、見損なったぞ～？
-        ……くすっ。冗談だよ。そんなんじゃないって分かってるって。私のこと……
-        ここまで真剣に思ってくれてたなんて本当に…あぁ、もう恥ずかしくなってきた。また今度言ってあげるからさ。それよりも…マイハニー～？我慢するの大変だったでしょ？頑張った分…なっが～く楽しんじゃおっか…？
+      Oath: わお、エッチな服着てちょっと誘惑しただけなのにもう我慢できなくなっちゃった？カイロちゃん、見損なったぞ～？ ……くすっ。冗談だよ。そんなんじゃないって分かってるって。私のこと…… ここまで真剣に思ってくれてたなんて本当に…あぁ、もう恥ずかしくなってきた。また今度言ってあげるからさ。それよりも…マイハニー～？我慢するの大変だったでしょ？頑張った分…なっが～く楽しんじゃおっか…？
       OathIdle_01: |-
         ご主人様、何してもうすっかり癖になっちゃったよ。
         喜んでるみたいだしまあいっか。そうでしょ？未来の「パパ」？
@@ -3600,8 +3663,7 @@ dialogue:
       PresentGet: ""
       Login: こんにちはなの、司令官。どこを守ればいいの？
       Idle_01_01: 先に休める気になると思う？彼氏くんがまだ働いてるっていうのに。ほらちょうだい、どうしたらいいの？…う～ん。ぷぷっ、全っ然分かんない！手伝ってあげたかったけど無理みたい。その代わり、終わるまで隣で待ってるね～
-      Idle_01_02: よく考えたら二人でいる時はコート脱いでもいいかも。カイロのために着てたんだけど彼氏くんがいれば必要ないもん。何してるの？こっちおいで。
-        はぁ、あったかい…キミも冷たくて気持ちいいでしょ？体勢が苦しかったら変えていいから。キミの好きなようにして…
+      Idle_01_02: よく考えたら二人でいる時はコート脱いでもいいかも。カイロのために着てたんだけど彼氏くんがいれば必要ないもん。何してるの？こっちおいで。 はぁ、あったかい…キミも冷たくて気持ちいいでしょ？体勢が苦しかったら変えていいから。キミの好きなようにして…
       Idle_01_03: 舌でチェリーの茎を結ぶやつ？簡単簡単～ほら見てて。むにゅむにゅ…どう？もうできちゃった。…まさかチェリーの茎に嫉妬してる？ぷぷっ、大丈夫だって～♥彼氏くんのこと大好きだって証明したげる。こっちおいで。
       SPIdle_01_01: まあ、私は色々とあったかくなっていいんだけど…彼氏くんが無理してないか心配になっちゃう。じゃあ次は…短めに4時間くらいにしとこっか♥
       MVP: ""
@@ -3654,12 +3716,9 @@ dialogue:
         Well, it doesn’t take a great effort. I can do much more.
         Like ‘Darling’ or ‘Honey’? Or…
         ‘Daddy’?​
-      Idle_04_01: >-
-        Master, I’m cold- Oh, that’s more like it… Huh? Why am I dressed like
-        this when I’m cold?
-
+      Idle_04_01: |-
+        Master, I’m cold- Oh, that’s more like it… Huh? Why am I dressed like this when I’m cold?
         That’s because you, Master, likes revealing clothes… Are you trying to weasel out? What is this…?
-
         ‘I love it so much!’ What’s this all about?​
       SPIdle_02_01: |-
         What kind of service do you want, Master?
@@ -3667,12 +3726,9 @@ dialogue:
         That much, you can understand, can’t you? Cheona…
         know everything…
         as to what Master likes♥​
-      Oath: >-
-        Wow, just because I seduced you in promiscuous clothes, you can’t hold
-        it back anymore? Hot Pack, I’m so disappointed… Just kidding.
-
+      Oath: |-
+        Wow, just because I seduced you in promiscuous clothes, you can’t hold it back anymore? Hot Pack, I’m so disappointed… Just kidding.
         I know you’re not. Thank you for… like me… Oh, I’m too embarrassed, I can’t talk anymore.
-
         Some other time. By the way… Boyfriend, it must have been tough for you to hold back. Let’s do it… as much as you have held back.
       OathIdle_01: |-
         Master, what are you do- It’s become a habit.
@@ -3738,8 +3794,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Join: Ah~ So warm. That’s more like it. I am Cheona. I look forward towards
-        working with you, Hot Pack♥
+      Join: Ah~ So warm. That’s more like it. I am Cheona. I look forward towards working with you, Hot Pack♥
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -3757,13 +3812,10 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         Working for the Empress, I was usually in charge of  infiltration
-
         And assassination  missions.
-
         After we lost contact, I became a  wanderer for a while… Now I can finally live somewhere nice and warm.
-
         I look forward towards working with you, Hot Pack♥
       Idle_01_02: |-
         The origin of my name? You wouldn’t know even if I told you. … Heh.
@@ -3778,15 +3830,11 @@ dialogue:
       SPIdle_01_01: |-
         I told you, didn’t I?
         I didn’t know you were this dumb before.​
-      Idle_02_01: >-
+      Idle_02_01: |-
         It’s only a day or two when I’m happy with no work,
-
         Things are starting to get boring now… Don’t you have any missions for me? … What?
-
         Make myself at home, doing whatever I want?
-
         … You’re one of a kind, aren’t you?
-
         I dig that.​
       Idle_03_01: |-
         Wait wait~ Don’t pity me. I really like myself as I am.
@@ -3807,20 +3855,14 @@ dialogue:
         Why are you so down with something as minor as this?
         I’ll do something else for you, then.
         It’s what you’ve been longing for a loonnng time.​
-      Oath: >-
-        Hm… You seem to be fixated on the wrong idea, now that we’re closer, but
-        I’m not miss dainty at all.
-
+      Oath: |-
+        Hm… You seem to be fixated on the wrong idea, now that we’re closer, but I’m not miss dainty at all.
         I’ve seen things I shouldn’t have seen, all my life~ … Do you still like me now?
-
         … Look at how my little Hot Pack has grown~ Give it to me. Heh, it fits perfectly. All right. From now on, it’s not Hot Pack but Boyfriend, right?​
-      OathIdle_01: >-
+      OathIdle_01: |-
         What did I do  before I got here?
-
         Bull. That’s not what you wanted to ask, is it?
-
         … You’re the first to everything that we did. You saw it yourself, didn’t you?
-
         The only man I care about is you, Boyfriend.
       MVP: ""
     M:
@@ -3847,25 +3889,17 @@ dialogue:
         Give it to me, how do I do this? … Hmm.
         Heh, I give up. I wanted to help but I can’t.
         Instead, I’ll wait for you right here until you finish~
-      Idle_01_02: >-
+      Idle_01_02: |-
         Come to think of it, I don’t have to wear jumpers anymore when we’re
-
         alone. I wore it because of the heat packs, but now that I have a boyfriend,
-
         I won’t need it anymore. What are you waiting for? Get over here. Ah, so warm… Doesn’t it feel good to touch my cool body?
-
         If the position is uncomfortable, change however you please, Boyfriend~ I’m all yours…
-      Idle_01_03: >-
-        Tying cherry knots with my tongue? Easy~ Watch. Hmm… See? It’s easy. …
-        Don’t tell me you’re jealous of a single cherry.
-
+      Idle_01_03: |-
+        Tying cherry knots with my tongue? Easy~ Watch. Hmm… See? It’s easy. … Don’t tell me you’re jealous of a single cherry.
         Heh, I’ll show you that I like you better
-
         than that, Boyfriend. Come here.
-      SPIdle_01_01: >-
-        Well, I guess I’m all happy, now that I’m warm…
-        But aren’t you overworking yourself, Boyfriend?
-
+      SPIdle_01_01: |-
+        Well, I guess I’m all happy, now that I’m warm… But aren’t you overworking yourself, Boyfriend?
         Then this time… Let’s stay like this for only 4 hours♥
       MVP: ""
   TC:

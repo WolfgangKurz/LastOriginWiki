@@ -3703,6 +3703,27 @@ skills:
             base: -0.2
             per: -0.02
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 <dmg elem="physics" />를 입힙니다.
+        적중 시, 자신의 <sec typ="note">영휴</sec> 효과에 따라 3라운드 동안 자신에게 추가 효과를 부여합니다.
+        <sec typ="note">스콜</sec> : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> 증가 (최대 3중첩)
+        <sec typ="note">하티</sec> : <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="2" r /></sec> 증가 (최대 3중첩)
+      JP: |-
+        単一対象に <dmg elem="physics" />を与えます。
+        命中時、自身の<sec typ="note">英休</sec>効果に応じて3ラウンドの間、自身に追加効果を付与します。
+        <sec typ="note">スコール</sec> : <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>増加 (最大3重複)
+        <sec typ="note">ハティ</sec> : <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="2" r /></sec>増加 (最大3重複)
+      EN: |-
+        Deals <dmg elem="physics" /> to a single target.
+        <sec typ="cond">On hit</sec>, based on own <sec typ="note">Yingxiu</sec> effect, grants additional effects to self for 3 rounds.
+        <sec typ="note">Skoll</sec> : <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> increase (up to 3 stacks)
+        <sec typ="note">Hati</sec> : <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="2" r /></sec> increase (up to 3 stacks)
+      TC: |-
+        對單一目標造成 <dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，會依自身的 <sec typ="note">英休</sec>效果，在 3 回合內賦予自身額外效果。
+        <sec typ="note">斯科爾</sec>：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>增加（最多 3 層）
+        <sec typ="note">哈提</sec>：<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="2" r /></sec>增加（最多 3 層）
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -6897,6 +6918,27 @@ skills:
             base: -0.2
             per: -0.02
             chance: 1
+    desc:
+      KR: |-
+        스콜과 하티를 교차시켜 지정 범위 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 입힙니다.
+        적중 시, 자신의 <sec typ="note">영휴</sec> 효과에 따라 3라운드 동안 대상에게 추가 효과를 부여합니다.
+        <sec typ="note">스콜</sec> : <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> 감소 (최대 3중첩)
+        <sec typ="note">하티</sec> : <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="2" r /></sec> 감소 (최대 3중첩)
+      JP: |-
+        スコールとハティを交互に発動し、指定範囲の対象に<sec typ="attr">防護無視</sec> <dmg elem="physics" />を与えます。
+        命中時、自身の<sec typ="note">英休</sec>効果に応じて3ラウンドの間、対象に追加効果を付与します。
+        <sec typ="note">スコール</sec> : <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec>減少 (最大3重複)
+        <sec typ="note">ハティ</sec> : <sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="2" r /></sec>減少 (最大3重複)
+      EN: |-
+        Alternates Skoll and Hati to deal <sec typ="attr">ignore protection</sec> <dmg elem="physics" /> to targets in the designated area.
+        <sec typ="cond">On hit</sec>, based on own <sec typ="note">Yingxiu</sec> effect, grants additional effects to the target for 3 rounds.
+        <sec typ="note">Skoll</sec> : <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> reduction (up to 3 stacks)
+        <sec typ="note">Hati</sec> : <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="2" r /></sec> reduction (up to 3 stacks)
+      TC: |-
+        交替施放斯科爾與哈提，對指定範圍的目標造成 <sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，會依自身的 <sec typ="note">英休</sec>效果，在 3 回合內賦予目標額外效果。
+        <sec typ="note">斯科爾</sec>：<sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec>下降（最多 3 層）
+        <sec typ="note">哈提</sec>：<sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="2" r /></sec>下降（最多 3 層）
   "3":
     key: "3"
     icon: P.DefCounter
@@ -7290,6 +7332,31 @@ skills:
             base: 0.05
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, 자신은 2라운드 동안 <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 위력으로 반격</sec> / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="1" signless /></sec> 효과를 획득합니다.
+        <sec typ="note">라그나로크</sec> 사용 시, 3라운드 동안 <sec typ="buff"><buff typ="COUNTER" /> 반격</sec> / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막</sec> 효과를 다시 획득합니다.
+        라운드 개시 시, 자신이 <sec typ="cond"><buff typ="DAMAGE_ABSORB" /> 방어막</sec> 효과를 보유한 경우, 자신은 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> <sec typ="attr">강화 효과</sec>를 획득합니다.
+        <sec typ="cond">피격 시</sec>, 자신이 <sec typ="cond"><buff typ="DAMAGE_ABSORB" /> 방어막 효과를 보유하지 않은 경우</sec>, 자신의 모든 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 표식 효과를 해제</sec>합니다.
+        ※ 숨겨진 시너지 : <equip uid="Sub_LunchBox" /> 장착 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" r /></sec>가 증가합니다.
+      JP: |-
+        戦闘開始時、自身は2ラウンドの間<sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力で反撃</sec> / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="1" signless /></sec>効果を獲得します。
+        <sec typ="note">ラグナロク</sec>使用時、3ラウンドの間<sec typ="buff"><buff typ="COUNTER" /> 反撃</sec> / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア</sec>効果を再獲得します。
+        ラウンド開始時、自身が<sec typ="cond"><buff typ="DAMAGE_ABSORB" /> バリア</sec>効果を保有している場合、自身は<sec typ="buff"><buff typ="MARKING" /> マーク</sec>の<sec typ="attr">強化効果</sec>を獲得します。
+        <sec typ="cond">被弾時</sec>、自身が<sec typ="cond"><buff typ="DAMAGE_ABSORB" /> バリア効果を保有していない場合</sec>、自身のすべての<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> マーク効果を解除</sec>します。
+        ※ 隠しシナジー : <equip uid="Sub_LunchBox" />装備時、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>が増加します。
+      EN: |-
+        At battle start, self gains <sec typ="buff"><buff typ="COUNTER" /> counterattacks with <val idx="0" r signless /> power</sec> / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> barrier <val idx="1" signless /></sec> effects for 2 rounds.
+        On use of <sec typ="note">Ragnarok</sec>, regains <sec typ="buff"><buff typ="COUNTER" /> counterattack</sec> / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> barrier</sec> effects for 3 rounds.
+        At the start of the round, if self has a <sec typ="cond"><buff typ="DAMAGE_ABSORB" /> barrier</sec> effect, self gains the <sec typ="buff"><buff typ="MARKING" /> mark</sec> <sec typ="attr">enhancement effect</sec>.
+        <sec typ="cond">When hit</sec>, if self does <sec typ="cond">not have a <buff typ="DAMAGE_ABSORB" /> barrier effect</sec>, removes all of own <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> mark effects</sec>.
+        ※ Hidden synergy: When equipped with <equip uid="Sub_LunchBox" />, increases <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" r /></sec>.
+      TC: |-
+        戰鬥開始時，自身會獲得 2 回合的 <sec typ="buff"><buff typ="COUNTER" /> 以 <val idx="0" r signless /> 威力反擊</sec> / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 屏障 <val idx="1" signless /></sec>效果。
+        使用 <sec typ="note">諸神黃昏</sec>時，會再次獲得 3 回合的 <sec typ="buff"><buff typ="COUNTER" /> 反擊</sec> / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 屏障</sec>效果。
+        回合開始時，若自身持有 <sec typ="cond"><buff typ="DAMAGE_ABSORB" /> 屏障</sec>效果，則自身會獲得 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> <sec typ="attr">強化效果</sec>。
+        <sec typ="cond">受擊時</sec>，若自身<sec typ="cond">未持有 <buff typ="DAMAGE_ABSORB" /> 屏障效果</sec>，則會解除自身所有的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 標記效果</sec>。
+        ※ 隱藏協同：裝備 <equip uid="Sub_LunchBox" /> 時，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>會增加。
   "4":
     key: "4"
     icon: P.FormChange
@@ -7572,6 +7639,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        홀수 라운드 개시 시, <sec typ="note">스콜</sec>의 힘이 차올라 자신은 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 효과를 획득합니다.
+        짝수 라운드 개시 시, <sec typ="note">하티</sec>의 힘이 차올라 자신은 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 획득합니다.
+        적 처치 시, 2라운드 동안 <sec typ="note">스콜</sec>과 <sec typ="note">하티</sec>의 힘이 동시에 발현됩니다.
+        <sec typ="note">스콜</sec>과 <sec typ="note">하티</sec>의 힘이 동시에 발현될 때, <sec typ="dmg"><buff typ="PhyATK_UP" /> 액티브 스킬의 피해량 <val idx="3" slot="1" r /></sec>가 증가합니다.
+      JP: |-
+        奇数ラウンド開始時、<sec typ="note">スコール</sec>の力が満ちて自身は<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec>効果を獲得します。
+        偶数ラウンド開始時、<sec typ="note">ハティ</sec>の力が満ちて自身は<sec typ="buff"><buff typ="Guardpierce_Apply" /> 防護無視</sec>効果を獲得します。
+        敵を撃破時、2ラウンドの間<sec typ="note">スコール</sec>と<sec typ="note">ハティ</sec>の力が同時に発現します。
+        <sec typ="note">スコール</sec>と<sec typ="note">ハティ</sec>の力が同時に発現すると、<sec typ="dmg"><buff typ="PhyATK_UP" /> アクティブスキルのダメージ量 <val idx="3" slot="1" r /></sec>が増加します。
+      EN: |-
+        At the start of odd rounds, the power of <sec typ="note">Skoll</sec> rises and self gains <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec>.
+        At the start of even rounds, the power of <sec typ="note">Hati</sec> rises and self gains <sec typ="buff"><buff typ="Guardpierce_Apply" /> ignore protection</sec>.
+        On enemy kill, the powers of <sec typ="note">Skoll</sec> and <sec typ="note">Hati</sec> manifest simultaneously for 2 rounds.
+        When the powers of <sec typ="note">Skoll</sec> and <sec typ="note">Hati</sec> manifest simultaneously, <sec typ="dmg"><buff typ="PhyATK_UP" /> active skill damage <val idx="3" slot="1" r /></sec> increases.
+      TC: |-
+        在奇數回合開始時，<sec typ="note">斯科爾</sec>的力量上升，使自身獲得 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻擊</sec>效果。
+        在偶數回合開始時，<sec typ="note">哈提</sec>的力量上升，使自身獲得 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec>效果。
+        擊殺敵人時，<sec typ="note">斯科爾</sec>與<sec typ="note">哈提</sec>的力量會在 2 回合內同時顯現。
+        當<sec typ="note">斯科爾</sec>與<sec typ="note">哈提</sec>的力量同時顯現時，<sec typ="dmg"><buff typ="PhyATK_UP" /> 主動技能的傷害量 <val idx="3" slot="1" r /></sec>會增加。
   "5":
     key: "5"
     icon: P.EnemyDetect
@@ -7740,6 +7828,31 @@ skills:
             base: -0.2
             per: -0.02
             chance: 0
+    desc:
+      KR: |-
+        라운드 개시 시, 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">공격 적중 시</sec>, 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="4" slot="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">대상의 방어력이 자신보다 높을 경우</sec>, <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="5" slot="1" r /></sec>를 추가로 감소시킵니다.
+        <sec typ="cond">공격 적중 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="6" slot="1" /></sec>을(를) 감소시킵니다.
+        <sec typ="cond">대상의 행동력이 자신보다 높을 경우</sec>, <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" slot="1" /></sec>을(를) 추가로 감소시킵니다.
+      JP: |-
+        ラウンド開始時、自身の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">攻撃命中時</sec>、対象の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="4" slot="1" r /></sec>を減少させます。
+        <sec typ="cond">対象の防御力が自分より高い場合</sec>、<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="5" slot="1" r /></sec>をさらに減少させます。
+        <sec typ="cond">攻撃命中時</sec>、対象の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="6" slot="1" /></sec>を減少させます。
+        <sec typ="cond">対象の行動力が自分より高い場合</sec>、<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" slot="1" /></sec>をさらに減少させます。
+      EN: |-
+        At the start of the round, own <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="1" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, reduces the target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="4" slot="1" r /></sec>.
+        <sec typ="cond">If the target's Defense is higher than self</sec>, further reduces <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="5" slot="1" r /></sec>.
+        <sec typ="cond">On hit</sec>, reduces the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="6" slot="1" /></sec>.
+        <sec typ="cond">If the target's AP is higher than self</sec>, additionally reduces <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" slot="1" /></sec>.
+      TC: |-
+        回合開始時，自身的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="1" r /></sec>會增加。
+        <sec typ="cond">攻擊命中時</sec>，降低目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="4" slot="1" r /></sec>。
+        <sec typ="cond">若目標防禦力高於自身</sec>，則另外降低 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="5" slot="1" r /></sec>。
+        <sec typ="cond">攻擊命中時</sec>，降低目標的 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="6" slot="1" /></sec>。
+        <sec typ="cond">若目標行動力高於自身</sec>，則另外降低 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" slot="1" /></sec>。
 dialogue:
   KR:
     "0":
@@ -7799,9 +7912,7 @@ dialogue:
         주, 주인님을 위해… 여… 여러가지를
         배웠습니다… 미숙하겠지만…
         성심껏… 봉사하겠습니다.
-      Oath: 신하는 자신을 인정해주는 이를 위해 죽고, 여자는 자신을 사랑해주는 이를 위해 죽는다고 했습니다. 제 목숨은 하나 뿐인데, 신하인
-        저를 인정해주시고, 여자인 저를 사랑해주시니 이번 생만으로 모두 보은하기 힘들군요. 그러니 다시 태어나도 주인님을 위해 죽고 다시
-        태어나도 주인님을 사랑하겠습니다.
+      Oath: 신하는 자신을 인정해주는 이를 위해 죽고, 여자는 자신을 사랑해주는 이를 위해 죽는다고 했습니다. 제 목숨은 하나 뿐인데, 신하인 저를 인정해주시고, 여자인 저를 사랑해주시니 이번 생만으로 모두 보은하기 힘들군요. 그러니 다시 태어나도 주인님을 위해 죽고 다시 태어나도 주인님을 사랑하겠습니다.
       OathIdle_01: |-
         신하로서의 나인가. 여자로서의 나인가.
         주인님께서 반지를 주신 후 며칠 동안 갈피를
@@ -7871,9 +7982,7 @@ dialogue:
         위해서는 무녀를 바쳐야 한다고 했지요.
         주인님의 노여움을 가라 앉히는 것이
         저라서 무척 기뻐요.
-      Oath: 바라기만 하고 직접 움직이지 않는 자는 바라는 것을 얻지 못합니다. 그렇게 생각했습니다. 감히 주인님께 사랑받기를 원하면서 바라기만
-        하던 제 앞에 주인님이 서 계시니 이래서 다른 이들도 기원을 하는 거구나 하고 납득하게 되었습니다. 주인님? 좀 더 제가 바라도
-        될까요? 지금 보다 더욱 당신께 사랑 받고 싶어요.
+      Oath: 바라기만 하고 직접 움직이지 않는 자는 바라는 것을 얻지 못합니다. 그렇게 생각했습니다. 감히 주인님께 사랑받기를 원하면서 바라기만 하던 제 앞에 주인님이 서 계시니 이래서 다른 이들도 기원을 하는 거구나 하고 납득하게 되었습니다. 주인님? 좀 더 제가 바라도 될까요? 지금 보다 더욱 당신께 사랑 받고 싶어요.
       OathIdle_01: |-
         삼가 바라노니.
         이와 같은 오늘이 어제와 같기를.
@@ -7933,8 +8042,7 @@ dialogue:
         판매하고 있습니다.
         바… 바르그라는 메뉴인데...
         하, 한번 드셔보시지 않겠습니까…?
-      Oath: 메이드의 본분은 주인님을 모시는 것이며, 메이드의 기쁨은 주인님의 미소를 보는 것입니다. 그런데, 매일 주인님을 모시며 주인님을
-        기쁘게 해 드릴 수 있다니… 너무나도 영광스럽습니다. 앞으로는 메이드로서도 연인으로서도 전력을 다해…! 주인님을 사랑하겠습니다!
+      Oath: 메이드의 본분은 주인님을 모시는 것이며, 메이드의 기쁨은 주인님의 미소를 보는 것입니다. 그런데, 매일 주인님을 모시며 주인님을 기쁘게 해 드릴 수 있다니… 너무나도 영광스럽습니다. 앞으로는 메이드로서도 연인으로서도 전력을 다해…! 주인님을 사랑하겠습니다!
       OathIdle_01: |-
         예전에는 연인들끼리 집에 고양이를 보러
         오라는 식으로 서로를 유혹했다고 하는군요.
@@ -8019,10 +8127,8 @@ dialogue:
         주인님! 침대 위에서의 일은
         비밀로 지켜 주겠단 말씀을
         하지 않으셨습니까?!
-      Oath: >-
-        부대원들에게 미안… 했습니다. 모범을 보여야 할 제가 오히려 구멍이 되는 것이 싫어… 더 연습에 몰두하였습니다. 무엇보다…
-        프로듀서님께서 절 믿어 주고 계시기에 포기할 수 없었고요.
-
+      Oath: |-
+        부대원들에게 미안… 했습니다. 모범을 보여야 할 제가 오히려 구멍이 되는 것이 싫어… 더 연습에 몰두하였습니다. 무엇보다… 프로듀서님께서 절 믿어 주고 계시기에 포기할 수 없었고요.
         늘 응원해주신 것도 모자라, 주어진 공연 임무 수행을 착실히 했을 뿐인 제게 반해 반지까지 주시다니, 정말 몸 둘 바를 모르겠습니다…! 저도 많이 사랑합니다, 프로듀서님!
       OathIdle_01: |-
         저희 부대원들이
@@ -8209,8 +8315,7 @@ dialogue:
       SPIdle_01_01: あっ…あ、あるじさま…あの…も、物足りないかもしれませんが……がっかりしないで…ください……
       Idle_02_01: オルカの指揮官達に会ったり、昔の記録を調査したりして、立派なリーダーとは何なのか…日々考えています。今よりもっと主様のお役に立てるようになるためです。
       Idle_03_01: 薔花とチョナ…あの二人と話をしました。昔だったなら首を切り落としていたところですが……主様が悲しまれると思い我慢しました。……私にも二人の気持ちが解った気がします。
-      Idle_04_01: 主様に恋慕する者が多いのは存じております。主様の威厳を考えれば当然のことです。ですが主様に相応しくない者が身の程をわきまえずに出しゃばるのは不快です。えっ？嫉妬なんて……
-        していません…
+      Idle_04_01: 主様に恋慕する者が多いのは存じております。主様の威厳を考えれば当然のことです。ですが主様に相応しくない者が身の程をわきまえずに出しゃばるのは不快です。えっ？嫉妬なんて…… していません…
       SPIdle_02_01: あ、主様のために…い…色々勉強しました。…未熟者ですが…精一杯…ご奉仕いたします……
       Oath: 臣下は自らを認めてくれる方のために死に、女は自らを愛してくれる人のために死ぬと言います。…私の命は一つしかありませんのに、主様は臣下である私を認めてくださり、そして女の私を愛してくださるのですね。今の人生で全ての恩義に報いることは難しそうです。ですので…生まれ変わっても主様のために死に……また生まれ変わっても……主様を愛したい。
       OathIdle_01: 臣下としての私か、女としての私か。主様が指輪をくださった後、何日も考えていましたが、結局答えが出ませんでした。ですが、もう大丈夫です。どちらも主様を想う気持ちは同じですから。
@@ -8267,15 +8372,11 @@ dialogue:
       Idle_01_03: マーリンから聞きましたが、メイドといえばヴィクトリアンメイドなのだそうです。ご主人様にお仕えするのですから、常に定石通りにしなければならないと思い…ヴィクトリアンメイドを選びました。
       SPIdle_01_01: あ、まだ営業時間中です、ご主人様…
       Idle_02_01: ようこそ、ご主人様。ご主人様を最高の環境でお迎えするためにカフェを掃除しておきました。 約15時間ほどかけて…
-      Idle_03_01: ご主人様の身の回りだけでなく、お体を清潔に保つことも私の義務です。ご入浴も私が責任をもってお世話させていただきます。
-        はい？浴室に入ってはいけないのですか…？どうして…
+      Idle_03_01: ご主人様の身の回りだけでなく、お体を清潔に保つことも私の義務です。ご入浴も私が責任をもってお世話させていただきます。 はい？浴室に入ってはいけないのですか…？どうして…
       Idle_04_01: ご主人様、滅亡前は猫カフェというものがあったそうです。猫を好きなだけ撫でることができる場所とのことですが………い、犬カフェはいかがですか？
       SPIdle_02_01: 当カフェでは……メニューにはない秘密のスペシャルメニューをご用意しております。わ…ワーグというメニューでして…い、一度お召し上がりになってみませんか…？
-      Oath: メイドの本分はご主人様にお仕えすることであり、メイドの喜びはご主人様の笑顔を見ることです。
-        ですのでこれから毎日ご主人様にお仕えし、ご主人様を喜ばせることができるなんて…この上ない栄光です。
-        これからはメイド、そして恋人として全力で…！ご主人様を愛します！
-      OathIdle_01: 猫は尻尾の付け根を触られると気持ち良くて喜ぶらしいですが、触り過ぎると噛んだりするそうです……
-        私は噛んだりしません。甘噛みはするかもしれませんが…。た、試しに触ってみてください……
+      Oath: メイドの本分はご主人様にお仕えすることであり、メイドの喜びはご主人様の笑顔を見ることです。 ですのでこれから毎日ご主人様にお仕えし、ご主人様を喜ばせることができるなんて…この上ない栄光です。 これからはメイド、そして恋人として全力で…！ご主人様を愛します！
+      OathIdle_01: 猫は尻尾の付け根を触られると気持ち良くて喜ぶらしいですが、触り過ぎると噛んだりするそうです…… 私は噛んだりしません。甘噛みはするかもしれませんが…。た、試しに触ってみてください……
       MVP: ""
     "4":
       SquadJoin: ""
@@ -8405,21 +8506,15 @@ dialogue:
         … She's the reason I exist.
         I do not wish to talk further about the subject at hand.
         Right now, the master is all I have.
-      Idle_01_02: >-
+      Idle_01_02: |-
         There are many things in Orca
-
         that doesn't suit the master's authority. If you give me the authority to
-
         fix that, I'll make sure everything
-
         will suit you in no time.
-      Idle_01_03: >-
+      Idle_01_03: |-
         Oh, it's you, Master. I was arranging the
-
         stacks of canned goods. So that each stack would have
-
         the same number of cans… and to align
-
         them in a way that the logo would show in a single file. Haha, looks nice.
       SPIdle_01_01: |-
         Oh… M-Master… I don't wish to…
@@ -8445,11 +8540,7 @@ dialogue:
         I’ve learned many things… for you…
         I may not be good at them…
         but I’ll try my best to serve you.
-      Oath: They say subjects die for the one who acknowledges them, and women die for
-        those who love them. It’s difficult to repay you with this love because
-        I only have one life, but you have acknowledged me as your subject, and
-        loved me as a woman. So, I will die for you in my next life, and I will
-        also love you.
+      Oath: They say subjects die for the one who acknowledges them, and women die for those who love them. It’s difficult to repay you with this love because I only have one life, but you have acknowledged me as your subject, and loved me as a woman. So, I will die for you in my next life, and I will also love you.
       OathIdle_01: |-
         Me as a servant? Or me as a woman?
         I was torn between the two
@@ -8502,15 +8593,11 @@ dialogue:
         How can I reject you when you are 
         wishing for me? I will gladly work for you,
         Master.
-      Idle_03_01: >-
+      Idle_03_01: |-
         Technically, I’m closer to a wolf, but others
-
         tell me that I’m like a puppy.
-
         I can’t understand them… huh? You think I’m cute because I’m like a puppy?
-
         If you think about it, wolves and puppies are the same species.
-
         W-woof… woof? I’m sorry.
       Idle_04_01: |-
         I’m used to serving someone.
@@ -8523,11 +8610,7 @@ dialogue:
         offered to calm divine wrath.
         I am very happy that I am the one
         who calms your anger.
-      Oath: Those who only look without taking action themselves won’t be able to gain
-        what they want. That’s what I thought.  Now that you, the one I dared to
-        wish for and be loved by, are standing in front of me, I was able to
-        accept why others wished for it as well. Master? May I hope for more? I
-        want to be loved by you even more than now.
+      Oath: Those who only look without taking action themselves won’t be able to gain what they want. That’s what I thought.  Now that you, the one I dared to wish for and be loved by, are standing in front of me, I was able to accept why others wished for it as well. Master? May I hope for more? I want to be loved by you even more than now.
       OathIdle_01: |-
         I carefully wish.
         That today will be like yesterday.
@@ -8586,10 +8669,7 @@ dialogue:
         that’s not on the menu…
         It’s called Vargr…
         Do you want to try it?
-      Oath: The duty of a maid is to serve their master, and their happiness comes
-        from watching their master smile. But to be able to serve you every day
-        and make you happy… it’s such a huge honor. From now on, I will love you
-        with all my heart as a maid and as your lover! I love you, Master!
+      Oath: The duty of a maid is to serve their master, and their happiness comes from watching their master smile. But to be able to serve you every day and make you happy… it’s such a huge honor. From now on, I will love you with all my heart as a maid and as your lover! I love you, Master!
       OathIdle_01: |-
         Apparently, people used to ask their lovers
         to see their cat as a means of seducing them.
@@ -8653,13 +8733,10 @@ dialogue:
         I don’t expect everyone to follow my path,
         but I ask for your understanding when I
         discipline those who break the rules.​
-      Idle_01_03: >-
+      Idle_01_03: |-
         This? It’s called a recorder. Memories fade
-
         faster than thoughts, so I use this to remind myself
-
         of the old memories. In addition, it’s very effective against those who don’t keep their promises,
-
         and those who lie.​
       SPIdle_01_01: |-
         Choose what you like:
@@ -8685,12 +8762,9 @@ dialogue:
         Didn’t others teach you not to be so invasive with touching?
         What? Because I’m cute? Do you really think that excuse would work?
         …I will let you continue only for short.​
-      Oath: >-
-        I do not know… how to respond to this unexpected event. But I don’t mind
-        it. No… I don’t.
-
+      Oath: |-
+        I do not know… how to respond to this unexpected event. But I don’t mind it. No… I don’t.
         I do not know this “chemistry” between man and woman. My ignorance may not allow me to perform the role you expect of me. Even so,
-
         as long as your heart remains, I too shall devote myself to you. My apologies. I don’t know what to say in this kind of situation…
       OathIdle_01: |-
         I say again, I am ignorant to exchange between man and woman.
@@ -8721,23 +8795,16 @@ dialogue:
         why others follow you. I do not think it’s just because you are a human.
         But I have yet to discover the exact reason…
         I need to know you better.​
-      Idle_01_02: >-
+      Idle_01_02: |-
         Huh? Oh… It’s you. I’ve been listening
-
         to a recording which I recorded in the past. The recording of that conversation with you.
-
         But having you beside me here and now,
-
         I no longer have the reason to listen to it.​
-      Idle_01_03: >-
+      Idle_01_03: |-
         I like simple and straightforward things
-
         like command, law, rule, policy, symmetry, and straight line. All I have to do
-
         is to just follow it. Things become tiresome
-
         when emotions come into play. That’s when things get uncertain…
-
         I’m saying that it’s become quite tiresome because of you. Fufu,​
       SPIdle_01_01: |-
         Hngh! …Ignorant I may be to the exchange between man and woman,

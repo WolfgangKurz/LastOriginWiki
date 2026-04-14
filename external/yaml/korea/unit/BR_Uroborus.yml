@@ -2792,6 +2792,23 @@ skills:
               level: "0"
             value: Char_BR_Lindwurm_N
             chance: 1
+    desc:
+      KR: |-
+        조준 사격을 통해 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec> 증가 효과를 부여합니다.
+        <sec typ="cond">적중 대상이 지원기인 경우</sec>, 해당 라운드 동안 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 상태로 만듭니다.
+      JP: |-
+        照準射撃を通して単一対象に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象に<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>増加効果を付与します。
+        <sec typ="cond">命中対象が支援機の場合</sec>、そのラウンドの間<sec typ="buff"><buff typ="SEAL_SKILL" />スキル使用不可</sec>状態にします。
+      EN: |-
+        Uses Aimed Fire to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to a single target.
+        <sec typ="cond">On hit</sec>, applies <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="1" r /></sec> increase effects to the target for 2 rounds.
+        <sec typ="cond">If the hit target is a Supporter</sec>, they become <sec typ="buff"><buff typ="SEAL_SKILL" /> Skill Disabled</sec> for that round.
+      TC: |-
+        透過瞄準射擊對單一目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，在2回合內對目標施加<sec typ="buff"><buff typ="MARKING" />標記</sec>／<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="1" r /></sec>增加效果。
+        <sec typ="cond">若命中目標為支援機</sec>，則其在該回合內陷入<sec typ="buff"><buff typ="SEAL_SKILL" />無法使用技能</sec>狀態。
   "2":
     key: "2"
     icon: TeamAtkBuff
@@ -3031,6 +3048,19 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">스킬 사용 시</sec>, 기동형 바이오로이드 아군에게 출격 지시를 내려 3라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec>를 증가시킵니다. (최대 3중첩)
+        <sec typ="cond"><cmt t="스카이 나이츠">$$SkyKnight:?$</cmt> 소속 전투원인 경우</sec>, 추가로 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상 HP 반비례 피해량 <val idx="4" r /></sec>가 증가하는 효과를 부여합니다.
+      JP: |-
+        <sec typ="cond">スキル使用時</sec>、機動型バイオロイドの味方に出撃指示を出し、3ラウンドの間<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="3" r /></sec>を増加させます。(最大3スタック)
+        <sec typ="cond"><cmt t="スカイナイツ">$$SkyKnight:?$</cmt>所属戦闘員の場合</sec>、追加で<sec typ="dmg"><buff typ="DamageAmp_Opp" />対象HP反比例ダメージ<val idx="4" r /></sec>が増加する効果を付与します。
+      EN: |-
+        When using the skill, orders Air Bioroid allies to sortie, increasing <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="3" r /></sec> for 3 rounds. (Max 3 stacks)
+        <sec typ="cond">If the combatant belongs to <cmt t="Sky Knights">$$SkyKnight:?$</cmt></sec>, additionally grants a <sec typ="dmg"><buff typ="DamageAmp_Opp" /> damage that scales inversely with the target's HP <val idx="4" r /></sec> effect.
+      TC: |-
+        於<sec typ="cond">使用技能時</sec>，對機動型生化人我軍下達出擊指示，使其在3回合內<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>／<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="3" r /></sec>提升。(最多3層)
+        <sec typ="cond">若為<cmt t="蒼天騎士">$$SkyKnight:?$</cmt>所屬戰鬥員</sec>，則額外賦予<sec typ="dmg"><buff typ="DamageAmp_Opp" />與目標HP成反比的傷害<val idx="4" r /></sec>增加效果。
   "3":
     key: "3"
     icon: P.Command
@@ -3336,6 +3366,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 기동형 바이오로이드 아군의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>를 증가시킵니다.
+        <sec typ="cond">스킬 사용 시</sec>, 범위 내 기동형 바이오로이드 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>을(를) 증가시킵니다.
+        <sec><cmt t="스카이 나이츠">$$SkyKnight:?$</cmt> 소속 전투원에게는 효과가 두 배로 증폭됩니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の機動型バイオロイドの味方の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">スキル使用時</sec>、範囲内の機動型バイオロイドの味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="5" /></sec>を増加させます。
+        <sec><cmt t="スカイナイツ">$$SkyKnight:?$</cmt>所属戦闘員には効果が2倍に増幅されます。</sec>
+      EN: |-
+        At round start, increases <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="1" r /></sec> of allied Air Bioroids within range.
+        When using the skill, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> of allied Air Bioroids within range.
+        <sec>The effect is doubled for <cmt t="Sky Knights">$$SkyKnight:?$</cmt> combatants.</sec>
+      TC: |-
+        於<sec typ="cond">回合開始時</sec>，增加範圍內機動型生化人我軍的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec>／<sec typ="buff"><buff typ="AP_UP" />行動點數<val idx="1" r /></sec>。
+        於<sec typ="cond">使用技能時</sec>，增加範圍內機動型生化人我軍的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="5" /></sec>。
+        <sec><cmt t="蒼天騎士">$$SkyKnight:?$</cmt>所屬戰鬥員的效果會加倍。</sec>
   "4":
     key: "4"
     icon: P.Scan
@@ -3503,6 +3550,23 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">공격 적중 시</sec> <sec typ="cond">자신이 전/후열에 위치</sec>하고 <sec typ="cond">스쿼드 내 <char uid="BR_Lindwurm" />이 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 대 장갑 미사일</sec> 스킬 협동 공격을 유도</sec>합니다. 
+        <sec typ="cond">공격 적중 시</sec> <sec typ="cond">자신이 중열에 위치</sec>하고 <sec typ="cond">스쿼드 내 <char uid="BR_Harpy" />가 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">풀 버스트</sec> 스킬 협동 공격을 유도</sec>합니다. 
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間、自分の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="1" r /></sec>が増加します。
+        <sec typ="cond">攻撃命中時</sec>、<sec typ="cond">自分が前/後列に位置し</sec>、<sec typ="cond">分隊内に<char uid="BR_Lindwurm" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25対装甲ミサイル</sec>スキルの協同攻撃を誘導</sec>します。 
+        <sec typ="cond">攻撃命中時</sec>、<sec typ="cond">自分が中列に位置し</sec>、<sec typ="cond">分隊内に<char uid="BR_Harpy" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">フルバースト</sec>スキルの協同攻撃を誘導</sec>します。 
+      EN: |-
+        At round start, self’s <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="1" r /></sec> increases for 2 rounds.
+        <sec typ="cond">When attack hits</sec>, if <sec typ="cond">self is in the front/rear line</sec> and <sec typ="cond"><char uid="BR_Lindwurm" /> is in the squad</sec>, it triggers a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> co-op attack with the <sec typ="note">X-25 Anti-Armor Missile</sec> skill</sec>. 
+        <sec typ="cond">When attack hits</sec>, if <sec typ="cond">self is in the middle line</sec> and <sec typ="cond"><char uid="BR_Harpy" /> is in the squad</sec>, it triggers a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> co-op attack with the <sec typ="note">Full Burst</sec> skill</sec>. 
+      TC: |-
+        於<sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec>／<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="1" r /></sec>在2回合內提升。
+        <sec typ="cond">攻擊命中時</sec>，若<sec typ="cond">自身位於前／後列</sec>且<sec typ="cond">隊伍內有<char uid="BR_Lindwurm" /></sec>，則誘導進行<sec typ="buff"><buff typ="TOGETHER_ATTACK" />與<sec typ="note">X-25反裝甲導彈</sec>技能的協同攻擊</sec>。 
+        <sec typ="cond">攻擊命中時</sec>，若<sec typ="cond">自身位於中列</sec>且<sec typ="cond">隊伍內有<char uid="BR_Harpy" /></sec>，則誘導進行<sec typ="buff"><buff typ="TOGETHER_ATTACK" />與<sec typ="note">全爆</sec>技能的協同攻擊</sec>。 
   "5":
     key: "5"
     icon: P.ExpUp
@@ -3941,6 +4005,23 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 스쿼드 내 기동형 아군 수에 따라 바이오로이드 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">편대 출격!</sec>의 효과가 적용된 아군의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        <sec typ="cond">전투 개시 시</sec>, 기동형 바이오로이드 아군의 <sec typ="buff"><buff typ="EXP_UP" /> 획득 경험치 <val idx="8" r /></sec>를 증가시킵니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、分隊内の機動型の味方数に応じて、バイオロイドの味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">編隊出撃！</sec>の効果が適用された味方の<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害な効果を解除</sec>します。
+        <sec typ="cond">戦闘開始時</sec>、機動型バイオロイドの味方の<sec typ="buff"><buff typ="EXP_UP" />獲得経験値<val idx="8" r /></sec>を増加させます。
+      EN: |-
+        At battle start, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of allied Bioroids based on the number of allied Air units in the squad.
+        At round start, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes harmful effects</sec> from allies affected by <sec typ="note">Squad Dispatch!</sec>.
+        At battle start, increases <sec typ="buff"><buff typ="EXP_UP" /> EXP gain <val idx="8" r /></sec> for allied Air Bioroids.
+      TC: |-
+        於<sec typ="cond">戰鬥開始時</sec>，根據隊伍內機動型我軍的數量，增加我軍生化人的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>。
+        於<sec typ="cond">回合開始時</sec>，解除受到<sec typ="note">編隊出擊！</sec>效果影響的我軍<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害效果</sec>。
+        於<sec typ="cond">戰鬥開始時</sec>，增加機動型生化人我軍的<sec typ="buff"><buff typ="EXP_UP" />獲得經驗值<val idx="8" r /></sec>。
 dialogue:
   KR:
     "1":
@@ -4010,9 +4091,7 @@ dialogue:
         어서 옷을 벗고!
         …이 성난 교관을 진득히… 끌어 안아…
         오랜 시간 달래주게나…♥
-      Oath: 제자들은 내가 엄하게 대했던 시절이 떠올라 겁을 먹은 모양인데… 오히려 자네는 그런 내가 좋기라도 하단 겐가? 좋아, 하지만 실전을
-        위해서라도 엄히 가르침을 줄 걸세. 자네의 치기를 오늘, 이 검은 독사가 철저하게 길들여주도록 하겠네. 침대로 가서 대기 준비를
-        하고 있게나. 그 시절의 나를 온몸으로 똑똑히 받아주게…♥
+      Oath: 제자들은 내가 엄하게 대했던 시절이 떠올라 겁을 먹은 모양인데… 오히려 자네는 그런 내가 좋기라도 하단 겐가? 좋아, 하지만 실전을 위해서라도 엄히 가르침을 줄 걸세. 자네의 치기를 오늘, 이 검은 독사가 철저하게 길들여주도록 하겠네. 침대로 가서 대기 준비를 하고 있게나. 그 시절의 나를 온몸으로 똑똑히 받아주게…♥
       OathIdle_01: |-
         개인 특훈이 필요하다면,
         내 언제든지 가르쳐주도록 하지.
@@ -4072,8 +4151,7 @@ dialogue:
         저기… 미리 고백하니…
         실망하지 말아주게나…
         처, 처음이니… 어설퍼도... 이해해주게.
-      Oath: 진심에는 진심으로 답해야겠지. 죽어도 자네를 잊지 않겠네. 다시 살아나도 자네를 잊지 않겠네. 몇 번이나 삶과 죽음을 넘나들어도 결코
-        자네와 자네의 마음을 잊지 않겠네. 결코 잊지 말아야 할 것이 늘어났구만. 그러니 자네도 잊지 말게! 나도 자네를 사랑한다네!
+      Oath: 진심에는 진심으로 답해야겠지. 죽어도 자네를 잊지 않겠네. 다시 살아나도 자네를 잊지 않겠네. 몇 번이나 삶과 죽음을 넘나들어도 결코 자네와 자네의 마음을 잊지 않겠네. 결코 잊지 말아야 할 것이 늘어났구만. 그러니 자네도 잊지 말게! 나도 자네를 사랑한다네!
       OathIdle_01: |-
         나 때는 말일세. 전투와 공연, 부대 관리,
         훈련 등으로 눈코 뜰 새 없이 바빴다네.
@@ -4252,8 +4330,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Join: I am called the Ouroboros of Reincarnation. First of all, can you tell me
-        what year this is?
+      Join: I am called the Ouroboros of Reincarnation. First of all, can you tell me what year this is?
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -4293,21 +4370,15 @@ dialogue:
         The Black Viper P/A-4 Python of the battlefield was me.
         That nickname is childish?
         Well, technically, it was the me of the past that did that.
-      Idle_04_01: >-
-        I was truly glad to see that all my students were safe. It's all thanks
-        to my great teaching.
-
+      Idle_04_01: |-
+        I was truly glad to see that all my students were safe. It's all thanks to my great teaching.
         It's just a joke. Half of it is because they were capable.
-
         The other half was thanks to you. Thanks.
       SPIdle_02_01: |-
         Hey… don’t be disappointed that I’m confessing my feelings first…
         I-it’s my first time… so it might be awkward… But please understand.
-      Oath: >-
-        I’ll have to answer your sincerity with sincerity. I won’t forget you
-        even after I die. I won’t forget you even after I am resurrected. No
-        matter how many times I cross back and forth from life and death,
-
+      Oath: |-
+        I’ll have to answer your sincerity with sincerity. I won’t forget you even after I die. I won’t forget you even after I am resurrected. No matter how many times I cross back and forth from life and death,
         I won’t forget you or your heart. More things were added to the list of things I can never forget. So make sure you don't forget either! I love you too!
       OathIdle_01: |-
         Back in my day, I was so busy participating in battles,
@@ -4334,11 +4405,9 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         It’s the greatest joy when the student becomes the master…
-
         but it's a bit disappointing not to be able to see the growth of my students.
-
         But do not fret! I don't plan on losing to my students just yet! Not in battle! …Or in love.
       Idle_01_02: |-
         There are no enemies who do not fear death.

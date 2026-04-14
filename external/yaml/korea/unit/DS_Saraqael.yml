@@ -2023,6 +2023,27 @@ skills:
             base: 0.015
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        목표 지점의 적에게 <dmg elem="lightning" />를 주고, 2라운드 동안 적중 대상을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> 상태로 만듭니다.
+        <sec typ="note">고행</sec> 중첩 수에 따라 2라운드 동안 대상이 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec>를 증가 시킵니다.
+        <sec typ="note">고행</sec> 1중첩 : <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec> 증가
+        <sec typ="note">고행</sec> 3중첩 : <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec> 증가
+      JP: |-
+        目標地点の敵に<dmg elem="lightning" />のダメージを与え、2ラウンドの間、命中した対象を<sec typ="buff"><buff typ="MARKING" />標的</sec>状態にします。
+        <sec typ="note">苦行</sec>のスタック数に応じて、2ラウンドの間、対象の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="2" r /></sec>を増加させます。
+        <sec typ="note">苦行</sec>1スタック：<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="2" r /></sec>増加
+        <sec typ="note">苦行</sec>3スタック：<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="3" r /></sec>増加
+      EN: |-
+        Deals <dmg elem="lightning" /> damage to enemies at the target point and makes hit targets <sec typ="buff"><buff typ="MARKING" />Marked</sec> for 2 rounds.
+        Depending on the number of <sec typ="note">Penance</sec> stacks, increases the target’s <sec typ="buff"><buff typ="VULNERABLE" />received damage<val idx="2" r /></sec> for 2 rounds.
+        <sec typ="note">Penance</sec> 1 stack: <sec typ="buff"><buff typ="VULNERABLE" />received damage<val idx="2" r /></sec> increase
+        <sec typ="note">Penance</sec> 3 stacks: <sec typ="buff"><buff typ="VULNERABLE" />received damage<val idx="3" r /></sec> increase
+      TC: |-
+        對目標地點的敵軍造成<dmg elem="lightning" />傷害，並使命中的目標於2回合內處於<sec typ="buff"><buff typ="MARKING" />標記</sec>狀態。
+        依據<sec typ="note">苦行</sec>的疊加層數，於2回合內增加目標的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="2" r /></sec>。
+        <sec typ="note">苦行</sec>1層：<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="2" r /></sec>增加
+        <sec typ="note">苦行</sec>3層：<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="3" r /></sec>增加
   "2":
     key: "2"
     icon: Shock
@@ -3601,6 +3622,31 @@ skills:
             base: 0.015
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 줍니다.
+        <sec typ="note">고행</sec> 중첩 수에 따라 2라운드 동안 대상이 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="note">고행</sec> 1중첩 : <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec> 증가
+        <sec typ="note">고행</sec> 3중첩 : <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec> 증가
+        <sec typ="note">고행</sec> 5중첩 : <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec> 증가
+      JP: |-
+        対象に<sec typ="attr">保護無視</sec><dmg elem="lightning" />を与えます。
+        <sec typ="note">苦行</sec>のスタック数に応じて、2ラウンドの間、対象の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="0" r /></sec>を増加させます。
+        <sec typ="note">苦行</sec>1スタック：<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="0" r /></sec>増加
+        <sec typ="note">苦行</sec>3スタック：<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="2" r /></sec>増加
+        <sec typ="note">苦行</sec>5スタック：<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="3" r /></sec>増加
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> to the target.
+        Depending on the number of <sec typ="note">Penance</sec> stacks, increases the target’s <sec typ="buff"><buff typ="VULNERABLE" />received damage<val idx="0" r /></sec> for 2 rounds.
+        <sec typ="note">Penance</sec> 1 stack: <sec typ="buff"><buff typ="VULNERABLE" />received damage<val idx="0" r /></sec> increase
+        <sec typ="note">Penance</sec> 3 stacks: <sec typ="buff"><buff typ="VULNERABLE" />received damage<val idx="2" r /></sec> increase
+        <sec typ="note">Penance</sec> 5 stacks: <sec typ="buff"><buff typ="VULNERABLE" />received damage<val idx="3" r /></sec> increase
+      TC: |-
+        對目標造成<sec typ="attr">無視保護</sec><dmg elem="lightning" />傷害。
+        依據<sec typ="note">苦行</sec>的疊加層數，於2回合內增加目標的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="0" r /></sec>。
+        <sec typ="note">苦行</sec>1層：<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="0" r /></sec>增加
+        <sec typ="note">苦行</sec>3層：<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="2" r /></sec>增加
+        <sec typ="note">苦行</sec>5層：<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="3" r /></sec>增加
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -3980,6 +4026,23 @@ skills:
             base: 0.13
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 범위 내 아군의 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="1" r /></sec>를 증가시키고 <sec typ="buff"><buff typ="DEF_Char" /> 공격기와 지원기를 지정 보호</sec>합니다.
+        자신은 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="5" r /></sec>가 추가로 증가합니다.
+        적이 처치될 경우, 2라운드 동안 범위 내 아군에게 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="7" r /></sec> 증가와 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" r inv /></sec> 감소 효과가 적용됩니다.
+      JP: |-
+        ラウンド開始時、範囲内の味方の<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電気耐性<val idx="1" r /></sec>を増加させ、<sec typ="buff"><buff typ="DEF_Char" />攻撃機と支援機を指定保護</sec>します。
+        自分の<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電気耐性<val idx="5" r /></sec>も追加で増加します。
+        敵が撃破されると、2ラウンドの間、範囲内の味方に<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>増加と<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="8" r inv /></sec>減少効果が適用されます。
+      EN: |-
+        At the start of the round, increases <sec typ="buff"><buff typ="LIGHTNINGRES_UP" />Electric Resistance<val idx="1" r /></sec> of allies within range and provides <sec typ="buff"><buff typ="DEF_Char" />Designated Protection</sec> to Attackers/Supporters.
+        Self’s <sec typ="buff"><buff typ="LIGHTNINGRES_UP" />Electric Resistance<val idx="5" r /></sec> additionally increases.
+        If an enemy is defeated, allies within range gain <sec typ="buff"><buff typ="ATK_UP" />ATK<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />MOVE<val idx="7" r /></sec> increase and <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage decrease<val idx="8" r inv /></sec> for 2 rounds.
+      TC: |-
+        回合開始時，增加範圍內我軍的<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電擊抵抗<val idx="1" r /></sec>，並對<sec typ="buff"><buff typ="DEF_Char" />攻擊機與支援機施加指定保護</sec>。
+        自身的<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電擊抵抗<val idx="5" r /></sec>額外增加。
+        若敵軍被擊破，則於2回合內對範圍內我軍套用<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>增加與<sec typ="buff"><buff typ="DAMAGE_REDUCE" />減少所受傷害<val idx="8" r inv /></sec>效果。
   "4":
     key: "4"
     icon: P.ShieldWall
@@ -4799,6 +4862,27 @@ skills:
             base: 0.05
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, 적 수가 (1/3/5) 이상이면 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 최대 3회까지 감소합니다.
+        적이 5기 이상이면 자신에게 <sec typ="buff"><buff typ="MARKING" /> 이로운 표식</sec> 효과가 적용됩니다.
+        피격 시, <sec typ="note">고행</sec> 상태가 되어 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="3" r /></sec>가 최대 5회까지 증가합니다.
+        <sec typ="cond"><buff typ="MARKING" /> 표식</sec> 상태에서 피격 시, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>이(가) 증가합니다.
+      JP: |-
+        戦闘開始時、敵数が(1/3/5)以上の場合、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" r inv /></sec>が最大3回まで減少します。
+        敵が5体以上いる場合、自分に<sec typ="buff"><buff typ="MARKING" />有利な標的</sec>効果が適用されます。
+        被弾時、<sec typ="note">苦行</sec>状態になり、<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="3" r /></sec>が最大5回まで増加します。
+        <sec typ="cond"><buff typ="MARKING" />標的</sec>状態で被弾すると、自分の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" /></sec>が増加します。
+      EN: |-
+        At the start of combat, if the number of enemies is at least (1/3/5), <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage<val idx="0" r inv /></sec> decreases up to 3 times.
+        If there are 5 or more enemies, self receives a <sec typ="buff"><buff typ="MARKING" />beneficial Mark</sec>.
+        When attacked, self enters <sec typ="note">Penance</sec> state and <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />Effect Resistance<val idx="3" r /></sec> increases up to 5 times.
+        When attacked while in <sec typ="cond"><buff typ="MARKING" />Mark</sec> state, self’s <sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" /></sec> increases.
+      TC: |-
+        戰鬥開始時，若敵軍數量達(1/3/5)以上，則<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="0" r inv /></sec>最多減少3次。
+        若敵軍達5個以上，則自身套用<sec typ="buff"><buff typ="MARKING" />有利標記</sec>效果。
+        受到攻擊時，進入<sec typ="note">苦行</sec>狀態，且<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="3" r /></sec>最多增加5次。
+        處於<sec typ="cond"><buff typ="MARKING" />標記</sec>狀態時受到攻擊，則自身的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" /></sec>增加。
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -5093,6 +5177,23 @@ skills:
             base: 0.02
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, 스쿼드 내 <sec typ="note">코헤이 교단</sec> 아군 수에 비례하여 적 전체에 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec> 증가 효과가 적용됩니다(최대 5중첩).
+        스쿼드에 <char uid="DS_Azazel" />이 있으면 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="9" slot="4" r /></sec>가 증가하며, 다른 <sec typ="note">코헤이 교단</sec> 아군이 있는 경우 추가 증가합니다.
+        <sec typ="note">코헤이 교단</sec> : <char uid="DS_Azazel" />, <char uid="DS_Ramiel" />, <char uid="DS_Angel" />, <char uid="PECS_Veronica" />
+      JP: |-
+        戦闘開始時、分隊内の<sec typ="note">コウヘイ教団</sec>味方数に比例して敵全体に<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="0" r /></sec>増加効果が適用されます(最大5スタック)。
+        分隊に<char uid="DS_Azazel" />がいる場合、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="9" slot="4" r /></sec>が増加し、他の<sec typ="note">コウヘイ教団</sec>味方がいる場合はさらに増加します。
+        <sec typ="note">コウヘイ教団</sec>：<char uid="DS_Azazel" />、<char uid="DS_Ramiel" />、<char uid="DS_Angel" />、<char uid="PECS_Veronica" />
+      EN: |-
+        At the start of combat, applies a <sec typ="buff"><buff typ="VULNERABLE" />received damage increase<val idx="0" r /></sec> effect to all enemies in proportion to the number of <sec typ="note">Kouhei Church</sec> allies in the squad (max 5 stacks).
+        If <char uid="DS_Azazel" /> is in the squad, self’s <sec typ="buff"><buff typ="ATK_UP" />ATK<val idx="9" slot="4" r /></sec> increases, and increases further if there are other <sec typ="note">Kouhei Church</sec> allies.
+        <sec typ="note">Kouhei Church</sec>: <char uid="DS_Azazel" />, <char uid="DS_Ramiel" />, <char uid="DS_Angel" />, <char uid="PECS_Veronica" />
+      TC: |-
+        戰鬥開始時，依據小隊內<sec typ="note">科佩教團</sec>我軍數量比例，對敵軍全體套用<sec typ="buff"><buff typ="VULNERABLE" />所受傷害增加<val idx="0" r /></sec>效果（最多5層）。
+        若小隊內有<char uid="DS_Azazel" />，則自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="9" slot="4" r /></sec>增加；若還有其他<sec typ="note">科佩教團</sec>我軍，則額外增加。
+        <sec typ="note">科佩教團</sec>：<char uid="DS_Azazel" />、<char uid="DS_Ramiel" />、<char uid="DS_Angel" />、<char uid="PECS_Veronica" />
 dialogue:
   KR:
     "1":
@@ -5152,14 +5253,10 @@ dialogue:
         축복이 아니란 것 따위, 예전부터
         알고 있었다. 여성으로서의 내가…
         남성으로서의 구원자를 원할 뿐이다.​
-      Oath: >-
-        처음에는 그저 호기심이었다. 구원자로서는 인정했지만, 남성으로는 보지 않았으니까. 하지만... 날이 갈수록 그대의 목소리에,
-        손길에...
-
+      Oath: |-
+        처음에는 그저 호기심이었다. 구원자로서는 인정했지만, 남성으로는 보지 않았으니까. 하지만... 날이 갈수록 그대의 목소리에, 손길에...
         알 수 없는 감정이 피어오르더군. 구원자가 교단의 율법을 수정했기 때문이 아니다. 그 이전이었더라도... 나는 같은 마음을 품었을 거다.​ 
-
         그래, 다른 수사 따위는 필요없겠지. 나는 구원자에게 애정을 품고 있다. 구원자의 뜻을 이루는 검으로써가 아니라,
-
         한 명의 여자로서 구원자에게 애욕과 정욕을 품고 있다. 그리고... 그대는 그것을 받아줄 것이라고 믿고 있다.
       OathIdle_01: |-
         어찌 교단의 구원자가
@@ -5220,9 +5317,7 @@ dialogue:
         기대하고 있었다.
         그대가 나의 뜻을 이루어주었으니…
         나 또한... 그대의 바람을 이루어주겠다.
-      Oath: 빛의 대리인이 사사로이 교단의 심판자에게 삿된 마음을 품고 있는가! ……라고 옛날의 나라면 말했겠지. 허나 지금은 그대에게 호통을 칠
-        수가 없다. 왜냐하면... 교단의 심판자도 빛의 대리인을… 사랑하고 있기 때문이지. 이제… 서로를 사랑하는 연인에게 축복이 있어야
-        하지 않겠나?
+      Oath: 빛의 대리인이 사사로이 교단의 심판자에게 삿된 마음을 품고 있는가! ……라고 옛날의 나라면 말했겠지. 허나 지금은 그대에게 호통을 칠 수가 없다. 왜냐하면... 교단의 심판자도 빛의 대리인을… 사랑하고 있기 때문이지. 이제… 서로를 사랑하는 연인에게 축복이 있어야 하지 않겠나?
       OathIdle_01: |-
         구원자여 그대가 축성해주길 바라는 옷이 많다.
         그대가 좋아할 법한 옷들 말이다.
@@ -5388,13 +5483,11 @@ dialogue:
       Idle_03_01: |-
         最近、教団の教理に従った装いの者が増えた気がする。
         光の教えが広く知れ渡っているようで自然と笑みも零れる。
-      Idle_04_01: この服はお前が聖別したと聞いている。しかし…私はお前が聖別したプレゼントだけでは満足できなくなってしまった。
-        どういう意味かは推し量ってもらいたい。
+      Idle_04_01: この服はお前が聖別したと聞いている。しかし…私はお前が聖別したプレゼントだけでは満足できなくなってしまった。 どういう意味かは推し量ってもらいたい。
       SPIdle_02_01: |-
         ふふ、実はお前が私のもとにやって来た時から…期待していた。 
         お前は私の願いを叶えてくれた… 私も…お前の願いを…叶えてやろう。
-      Oath: 光の代理人たる者が審判者に私的な感情を抱いているというのか！……と昔の私なら言っただろう。しかし今の私はお前を怒鳴りつけることができぬ。なぜなら…
-        教団の審判者も光の代理人を…愛しているからだ。さて…互いに愛し合う者たちに祝福が舞い降りる時が来たようだ。
+      Oath: 光の代理人たる者が審判者に私的な感情を抱いているというのか！……と昔の私なら言っただろう。しかし今の私はお前を怒鳴りつけることができぬ。なぜなら… 教団の審判者も光の代理人を…愛しているからだ。さて…互いに愛し合う者たちに祝福が舞い降りる時が来たようだ。
       OathIdle_01: |-
         救援者よ、お前に聖別してもらいたい服がたくさんある。
         お前が好きそうな服だ。私にその服を着せたくはないか？
@@ -5447,10 +5540,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: 光は虚像に過ぎなかった。教団と世界が危機に瀕した時、それは姿を現さなかった。
-        絶望に陥った我々に希望を与えてくださった救援者様こそが新たな秩序と規律を整える権利を持つのだ。 そして、その意を実現することは私の義務である。
-      Idle_01_02: …理解に苦しむ。救援者様の「敵の指揮ユニットを撃破せよ」との指示に従っただけだ。救援者様の言葉と行動の全てには深い意志が込められているはず。
-        その指示の真意は、指揮ユニットを含む敵部隊を殲滅し、さらに敵の懐に飛び込みをそれを打撃せよという事であると確信している。
+      Idle_01_01: 光は虚像に過ぎなかった。教団と世界が危機に瀕した時、それは姿を現さなかった。 絶望に陥った我々に希望を与えてくださった救援者様こそが新たな秩序と規律を整える権利を持つのだ。 そして、その意を実現することは私の義務である。
+      Idle_01_02: …理解に苦しむ。救援者様の「敵の指揮ユニットを撃破せよ」との指示に従っただけだ。救援者様の言葉と行動の全てには深い意志が込められているはず。 その指示の真意は、指揮ユニットを含む敵部隊を殲滅し、さらに敵の懐に飛び込みをそれを打撃せよという事であると確信している。
       Idle_01_03: 救援者様の「愛してる」という囁きは私を最高に喜ばせる。そしてその甘美な囁きに込められた意味と期待に応じ…私はいつでも救援者様を歓迎する準備ができている。
       SPIdle_01_01: ふぅっ…私が、快楽を感じてしまっては―…そうか。では…あなたの意のままに。
       MVP: ""
@@ -5485,12 +5576,9 @@ dialogue:
         Don’t think I accept you as a woman
         like Azazel did. … Yes, I’ll admit that.
         I do have curiosities.
-      Idle_01_03: >-
-        Do I have to get used to the new rules… I don’t care about others, but
-        you’re not prohibiting
-
+      Idle_01_03: |-
+        Do I have to get used to the new rules… I don’t care about others, but you’re not prohibiting
         love and lust between men and women. At this rate,
-
         the blessing will fade away.
       SPIdle_01_01: |-
         Good, Savior.
@@ -5512,15 +5600,10 @@ dialogue:
       SPIdle_02_01: |-
         I know it’s not a blessing.
         I’ve known it for a long time. As a woman… I want you as man.​
-      Oath: >-
-        At first, it was just out of curiosity Although I approved his
-        worthiness as a savior, I didn’t see him as a man. However… as days go
-        by, your voice and your hand touch…
-
+      Oath: |-
+        At first, it was just out of curiosity Although I approved his worthiness as a savior, I didn’t see him as a man. However… as days go by, your voice and your hand touch…
         made me feel a certain type of way. It’s not because the savior edited the biblical law of the church. Even before then… I would’ve felt the same way toward him.​ 
-
         Yeah, other investigation isn’t necessary. I am fond of the savior. Not as a sword that achieves his goal,
-
         I feel love and lust toward him as a woman. And… I believe he will accept me.
       OathIdle_01: |-
         You’re the Savior of our Sisterhood.
@@ -5581,13 +5664,10 @@ dialogue:
         visited the Sisterhood.
         Since you've fulfilled my will…
         I too shall do the same for you.
-      Oath: >-
+      Oath: |-
         Back in the day I would have said something like,
-
         “You dare hold a grudge against the Inquisitor of the Sisterhood?”
-
         However, I can’t get angry at you anymore… because I am in love with you.&
-
         A loving couple should receive blessings from each other, right?
       OathIdle_01: |-
         There are many clothes that I want consecrated.
@@ -5625,11 +5705,9 @@ dialogue:
         That’s my role. Force is…
         one of many methods.
       SPIdle_01_01: Ha… Light will punish you for your irreverence.
-      Idle_02_01: >-
+      Idle_02_01: |-
         … As you requested, I will put off their punishment.
-
         But remember. Commandments of the Sisterhood come first before everything else.
-
         There are no exceptions, even for Azazel or you, the Savior.
       Idle_03_01: |-
         You do have the right and duty to modify the commandments.
@@ -5642,12 +5720,9 @@ dialogue:
       SPIdle_02_01: |-
         This goes against the Sisterhood’s commandments.
         Stop at once- Ugh…?!
-      Oath: >-
-        … I was foolish. My eyes was clouded by blind faith, and mercifully I
-        was
-
+      Oath: |-
+        … I was foolish. My eyes was clouded by blind faith, and mercifully I was
         unable to see the real hope that arrived before me. Even as the light of, no the Savior, this is a crime that can never be forgiven.
-
         Until the end of my life, I will repent bit by bit by realizing the will of the Savior.
       OathIdle_01: |-
         Savior, you are our hope.
@@ -5683,11 +5758,9 @@ dialogue:
         action and words have meaning. I’m sure
         you wanted us to eliminate the enemy squad,
         and attack the heart of the enemy.
-      Idle_01_03: >-
+      Idle_01_03: |-
         When you whisper "I love you,"
-
         I really feel delighted. And as your sweet words imply… I’m always ready to
-
         accept you, Savior.
       SPIdle_01_01: |-
         Awe… I shouldn’t feel pleasure-

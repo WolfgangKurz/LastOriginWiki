@@ -1001,6 +1001,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
+      JP: |-
+        対象に<sec typ="attr">防御無視</sec> <dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>します。
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the target.
+        <sec typ="cond">On critical hit</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> buff effects</sec>.
+      TC: |-
+        對目標造成<sec typ="attr">無視保護</sec>的<dmg elem="physics" />傷害。
+        <sec typ="cond">暴擊時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />強化效果</sec>。
   "2":
     key: "2"
     icon: Scan
@@ -3657,6 +3670,23 @@ skills:
             base: 0.092
             per: 0.012
             chance: 1
+    desc:
+      KR: |-
+        목표 지점에 <dmg elem="physics" />를 줍니다.
+        적중한 적의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>을(를) 감소시키고 <sec typ="cond">스쿼드 내 자신외의 <sec typ="note">오비탈 와쳐</sec>소속 전투원 혹은 <char uid="PECS_LemonadeGamma" />, <char uid="PECS_LemonadeBeta" />, <char uid="PECS_LemonadeAlpha" />가 있다면</sec> 전투원 수에 비례하여 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec> 증가를 줍니다.
+        <sec typ="note">오비탈 와쳐</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+      JP: |-
+        目標地点に<dmg elem="physics" />を与えます。
+        命中した敵の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>を減少させ、<sec typ="cond">分隊内に自分以外の<sec typ="note">オービタルウォッチャー</sec>所属戦闘員、または<char uid="PECS_LemonadeGamma" />、<char uid="PECS_LemonadeBeta" />、<char uid="PECS_LemonadeAlpha" />がいる場合</sec>、戦闘員数に応じて<sec typ="buff"><buff typ="VULNERABLE" />被ダメージ <val idx="2" r /></sec>増加を与えます。
+        <sec typ="note">オービタルウォッチャー</sec> : <char uid="AGS_Aeda" />、<char uid="PECS_CoCoWhiteShell" />、<char uid="PECS_Stinger" />、<char uid="PECS_Spartoia" />、<char uid="PECS_Hussar" />、<char uid="PECS_LemonadeEpsilon" />
+      EN: |-
+        Deals <dmg elem="physics" /> to the target location.
+        Decreases the hit enemy's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>, and <sec typ="cond">if there are any other <sec typ="note">Orbital Watcher</sec> combatants in the squad besides self, or <char uid="PECS_LemonadeGamma" />, <char uid="PECS_LemonadeBeta" />, or <char uid="PECS_LemonadeAlpha" /></sec>, grants a <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="2" r /></sec> increase proportional to the number of combatants.
+        <sec typ="note">Orbital Watcher</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+      TC: |-
+        對目標地點造成<dmg elem="physics" />傷害。
+        降低命中敵軍的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>，且<sec typ="cond">若小隊中除了自身以外還有<sec typ="note">軌道守望者</sec>所屬戰鬥員，或<char uid="PECS_LemonadeGamma" />、<char uid="PECS_LemonadeBeta" />、<char uid="PECS_LemonadeAlpha" /></sec>，則會依戰鬥員數量追加賦予<sec typ="buff"><buff typ="VULNERABLE" />所受傷害 <val idx="2" r /></sec>增加。
+        <sec typ="note">軌道守望者</sec> : <char uid="AGS_Aeda" />、<char uid="PECS_CoCoWhiteShell" />、<char uid="PECS_Stinger" />、<char uid="PECS_Spartoia" />、<char uid="PECS_Hussar" />、<char uid="PECS_LemonadeEpsilon" />
   "3":
     key: "3"
     icon: P.TeamAtkDeBuff
@@ -4214,6 +4244,75 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시시</sec>, 2라운드 동안 모든 아군의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec>를 증가시킵니다.
+        아군의 타입에 따라 아래 효과를 부여하고 자신을 제외한 <sec typ="note">오비탈 와쳐</sec>라면 일부 효과가 증가합니다.
+        <box t="공격기 ">
+        <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>가 증가합니다.
+        <sec typ="cond">대상이 <sec typ="note">오비탈 와쳐</sec>인 경우</sec>, 상기 효과가 2배로 적용됩니다.
+        </box>
+        <box t="보호기 ">
+        <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="7" r /></sec>를 획득합니다.
+        <sec typ="cond">대상이 <sec typ="note">오비탈 와쳐</sec>인 경우</sec>, 상기 효과가 2배로 적용됩니다.
+        1라운드 동안 <sec typ="attr">일반</sec> <sec typ="dmg"><buff typ="COUNTER" /> <val idx="9" r signless /> 위력으로 반격</sec> 효과가 적용됩니다.
+        <sec typ="cond"><sec typ="note">벨페고르: 인셉션</sec> 사용시</sec>, 1라운드 동안 <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="12" signless />회</sec> 효과가 적용됩니다. (최대 1중첩)
+        </box>
+        <box t="지원기 ">
+        <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="10" r /></sec>가 증가합니다.
+        <sec typ="cond">대상이 <sec typ="note">오비탈 와쳐</sec>인 경우</sec>, 상기 효과가 2배로 적용됩니다.
+        </box>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間すべての味方の<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="0" r /></sec>を増加させます。
+        味方のタイプに応じて以下の効果を付与し、自分を除く<sec typ="note">オービタルウォッチャー</sec>なら一部効果が増加します。
+        <box t="アタッカー">
+        <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec>が増加します。
+        <sec typ="cond">対象が<sec typ="note">オービタルウォッチャー</sec>の場合</sec>、上記効果が2倍適用されます。
+        </box>
+        <box t="ディフェンダー">
+        <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 被ダメージ減少 <val idx="7" r /></sec>を獲得します。
+        <sec typ="cond">対象が<sec typ="note">オービタルウォッチャー</sec>の場合</sec>、上記効果が2倍適用されます。
+        1ラウンドの間<sec typ="attr">Normal</sec> <sec typ="dmg"><buff typ="COUNTER" /> <val idx="9" r signless />威力で反撃</sec>効果が適用されます。
+        <sec typ="cond"><sec typ="note">ベルフェゴール: インセプション</sec>使用時</sec>、1ラウンドの間<sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="12" signless />回</sec>効果が適用されます。(最大1重複)
+        </box>
+        <box t="サポーター">
+        <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="10" r /></sec>が増加します。
+        <sec typ="cond">対象が<sec typ="note">オービタルウォッチャー</sec>の場合</sec>、上記効果が2倍適用されます。
+        </box>
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases all allies' <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> for 2 rounds.
+        Grants the following effects based on ally type, and if they are an <sec typ="note">Orbital Watcher</sec> other than self, some effects are increased.
+        <box t="Attacker">
+        <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> increases.
+        <sec typ="cond">If the target is an <sec typ="note">Orbital Watcher</sec></sec>, the above effect is doubled.
+        </box>
+        <box t="Defender">
+        <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage Reduction <val idx="7" r /></sec> is granted.
+        <sec typ="cond">If the target is an <sec typ="note">Orbital Watcher</sec></sec>, the above effect is doubled.
+        For 1 round, a <sec typ="attr">Normal</sec> <sec typ="dmg"><buff typ="COUNTER" /> counterattack at <val idx="9" r signless /> power</sec> effect is applied.
+        <sec typ="cond">When <sec typ="note">Belphegor: Inception</sec> is used</sec>, for 1 round, a <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="DEF_All" /> 1 damage nullification</sec> effect is applied. (up to 1 stack)
+        </box>
+        <box t="Supporter">
+        <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" r /></sec> increases.
+        <sec typ="cond">If the target is an <sec typ="note">Orbital Watcher</sec></sec>, the above effect is doubled.
+        </box>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，使所有我軍的<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="0" r /></sec>於2回合內提升。
+        依我軍類型賦予下列效果，若為除自身外的<sec typ="note">軌道守望者</sec>，部分效果會增幅。
+        <box t="攻擊者">
+        <sec typ="attr">一般</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec>提升。
+        <sec typ="cond">若目標為<sec typ="note">軌道守望者</sec></sec>，上述效果加倍套用。
+        </box>
+        <box t="防護者">
+        <sec typ="attr">一般</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害減少 <val idx="7" r /></sec>獲得。
+        <sec typ="cond">若目標為<sec typ="note">軌道守望者</sec></sec>，上述效果加倍套用。
+        於1回合內套用<sec typ="attr">一般</sec> <sec typ="dmg"><buff typ="COUNTER" /> 以 <val idx="9" r signless />威力反擊</sec>效果。
+        <sec typ="cond"><sec typ="note">貝爾芬格：啟始</sec>使用時</sec>，於1回合內套用<sec typ="attr">一般</sec> <sec typ="buff"><buff typ="DEF_All" /> 1次傷害無效化</sec>效果。(最多1層)
+        </box>
+        <box t="支援者">
+        <sec typ="attr">一般</sec> <sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="10" r /></sec>提升。
+        <sec typ="cond">若目標為<sec typ="note">軌道守望者</sec></sec>，上述效果加倍套用。
+        </box>
   "4":
     key: "4"
     icon: P.TeamDefDeBuff
@@ -4588,6 +4687,23 @@ skills:
             base: -0.11
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시시</sec> 2라운드 동안 모든 적의 <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>, <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" /> 모든 속성 저항 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond"><sec typ="note">벨페고르: 인셉션</sec> 사용시</sec> 2라운드 동안 모든 적의 <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="5" r inv /></sec>가 감소합니다.
+        <sec typ="cond"><sec typ="note">벨페고르: 라이카 최대 출력</sec> 사용시</sec> 2라운드 동안  모든 적의 <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>, <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> <buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" /> 모든 속성 저항 <val idx="7" r /></sec>가 추가로 감소합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間すべての敵の<sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>、<sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" /> 全属性耐性 <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond"><sec typ="note">ベルフェゴール: インセプション</sec>使用時</sec>、2ラウンドの間すべての敵の<sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果耐性 <val idx="5" r inv /></sec>が減少します。
+        <sec typ="cond"><sec typ="note">ベルフェゴール: ライカ最大出力</sec>使用時</sec>、2ラウンドの間さらにすべての敵の<sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>、<sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> <buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" /> 全属性耐性 <val idx="7" r /></sec>が減少します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, decreases all enemies' <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> and <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" /> All Attribute RES <val idx="1" r /></sec> for 2 rounds.
+        <sec typ="cond">When <sec typ="note">Belphegor: Inception</sec> is used</sec>, all enemies' <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect RES <val idx="5" r inv /></sec> is decreased for 2 rounds.
+        <sec typ="cond">When <sec typ="note">Belphegor: Laika Maximum Output</sec> is used</sec>, all enemies' <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> and <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> <buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" /> All Attribute RES <val idx="7" r /></sec> are additionally decreased for 2 rounds.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，於2回合內使所有敵軍的<sec typ="attr">一般</sec> <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>與<sec typ="attr">一般</sec> <sec typ="buff"><buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" /> 全屬性抗性 <val idx="1" r /></sec>下降。
+        <sec typ="cond"><sec typ="note">貝爾芬格：啟始</sec>使用時</sec>，於2回合內使所有敵軍的<sec typ="attr">一般</sec> <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="5" r inv /></sec>下降。
+        <sec typ="cond"><sec typ="note">貝爾芬格：萊卡最大輸出</sec>使用時</sec>，於2回合內額外使所有敵軍的<sec typ="attr">一般</sec> <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>與<sec typ="attr">一般</sec> <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> <buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" /> 全屬性抗性 <val idx="7" r /></sec>下降。
   "5":
     key: "5"
     icon: P.TeamSpdDeBuff
@@ -4821,6 +4937,27 @@ skills:
             base: -0.015
             per: -0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시시</sec> 2라운드 동안  모든 적의 <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>와 <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond"><sec typ="note">벨페고르: 인셉션</sec> 사용시</sec> 2라운드 동안 모든 적의 <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="3" r /></sec>가 추가로 감소합니다.
+        <sec typ="cond"><sec typ="note">벨페고르: 라이카 최대 출력</sec> 사용시</sec> 2라운드 동안 모든 적의 <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="4" r /></sec>가 감소합니다.
+        모두 일반 효과 입니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間すべての敵の<sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>と<sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond"><sec typ="note">ベルフェゴール: インセプション</sec>使用時</sec>、2ラウンドの間すべての敵の<sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="3" r /></sec>がさらに減少します。
+        <sec typ="cond"><sec typ="note">ベルフェゴール: ライカ最大出力</sec>使用時</sec>、2ラウンドの間すべての敵の<sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="4" r /></sec>が減少します。
+        すべて通常効果です。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, decreases all enemies' <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> and <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="1" r /></sec> for 2 rounds.
+        <sec typ="cond">When <sec typ="note">Belphegor: Inception</sec> is used</sec>, all enemies' <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="3" r /></sec> is additionally decreased for 2 rounds.
+        <sec typ="cond">When <sec typ="note">Belphegor: Laika Maximum Output</sec> is used</sec>, all enemies' <sec typ="attr">Normal</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" r /></sec> is decreased for 2 rounds.
+        All effects are normal effects.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，於2回合內使所有敵軍的<sec typ="attr">一般</sec> <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>與<sec typ="attr">一般</sec> <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec>下降。
+        <sec typ="cond"><sec typ="note">貝爾芬格：啟始</sec>使用時</sec>，於2回合內使所有敵軍的<sec typ="attr">一般</sec> <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="3" r /></sec>額外下降。
+        <sec typ="cond"><sec typ="note">貝爾芬格：萊卡最大輸出</sec>使用時</sec>，於2回合內使所有敵軍的<sec typ="attr">一般</sec> <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="4" r /></sec>下降。
+        皆為一般效果。
 dialogue:
   KR:
     "1":
@@ -4971,9 +5108,7 @@ dialogue:
         꿈속에서 느낀 감각은
         현실로 돌아갔을 때 한 번에 몰려오거든.
         사령관은 몇 배까지 견딜 수 있어? 후훗♥
-      Oath: …지금 한 말, 나랑… 마지막까지 같이 있어 달라, 고백한 거 맞지…?​ 후후, 그렇게 진지한 얼굴로 먼저 말해 버리면… 도망칠 곳이
-        없어지잖아.​ 앞으로는 내가 눈을 감을 때마다 제일 먼저 도착하는 사람, 그리고 눈을 떴을 때 제일 가까이에 있는 사람…​ 둘 다
-        사령관이었으면 좋겠어.​ 그러니까 앞으로도 계속, 내 꿈속에도… 현실의 내 곁에서도, 귀찮을 만큼 붙어 있어 줘, 내 사랑…
+      Oath: …지금 한 말, 나랑… 마지막까지 같이 있어 달라, 고백한 거 맞지…?​ 후후, 그렇게 진지한 얼굴로 먼저 말해 버리면… 도망칠 곳이 없어지잖아.​ 앞으로는 내가 눈을 감을 때마다 제일 먼저 도착하는 사람, 그리고 눈을 떴을 때 제일 가까이에 있는 사람…​ 둘 다 사령관이었으면 좋겠어.​ 그러니까 앞으로도 계속, 내 꿈속에도… 현실의 내 곁에서도, 귀찮을 만큼 붙어 있어 줘, 내 사랑…
       OathIdle_01: |-
         사령관…
         내가 할 말은 아니지만
@@ -5043,12 +5178,9 @@ dialogue:
         사령관,
         오늘도 듀오 해줄 수 있어?
         게임 듀오 말고… 숙면 듀오…?​
-      Oath: >-
-        잠에서 깨어나 눈을 떴을 때… 내 주변에 아무도 없는 것 쯤은 이제 괜찮다고 생각했어. 익숙해졌으니까, 이런 건 아무렇지도
-        않다고… 하지만 결국은… 외롭다는 사실을 인정하기 싫어서… 날 속이고 외면하고 있었을 뿐이야.
-
+      Oath: |-
+        잠에서 깨어나 눈을 떴을 때… 내 주변에 아무도 없는 것 쯤은 이제 괜찮다고 생각했어. 익숙해졌으니까, 이런 건 아무렇지도 않다고… 하지만 결국은… 외롭다는 사실을 인정하기 싫어서… 날 속이고 외면하고 있었을 뿐이야.
         내가 사실은… 그 누구보다도 누군갈 필요로 하고 있다는 걸…​ 그런데 지금은 사령관… 당신이 있어… 늘 나를 귀찮게 구는 사령관… 언제나 평소처럼 눈을 떴을 때… 당신은 곁에 있어 줬어…​
-
         그러니까 사령관, 앞으로도 계속… 내가 눈을 떴을 때 지금처럼 내 곁에 함께 있어줘…
       OathIdle_01: |-
         난 청결을 유지해주는

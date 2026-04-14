@@ -1775,6 +1775,23 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        대공 기관포를 발사해 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 해당 라운드 동안 자신의 <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 기동형 피해량 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 시 대상이 <buff typ="MARKING" /> 표식 / <buff typ="ACCURACY_DOWN" /> 적중 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: |-
+        対空機関砲を発射して<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、該当するラウンドで自分の<sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />対機動型ダメージ量<val idx="2" r /></sec>が増加します。
+        <sec typ="cond">命中時、対象が<buff typ="MARKING" />標的 / <buff typ="ACCURACY_DOWN" />命中減少状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+      EN: |-
+        Shoots an Anti-Aircraft Machine Cannon and deals <dmg elem="physics" /> damage.
+        <sec typ="cond">On hit</sec>, self’s <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> Anti-Mobility damage <val idx="2" r /></sec> increases for the round.
+        <sec typ="cond">When the hit target is Marked / ACU Decrease</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      TC: |-
+        發射防空機關砲，造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，該回合自身的<sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />對機動型傷害量<val idx="2" r /></sec>增加。
+        <sec typ="cond">命中時，若目標處於<buff typ="MARKING" />標記 / <buff typ="ACCURACY_DOWN" />命中減少狀態</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: Missile
@@ -3492,6 +3509,27 @@ skills:
             base: 0.3
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        공대지 대 장갑 미사일을 발사해 <dmg elem="physics" />를 줍니다.
+        대상의 방어력을 일정 비율 무시합니다. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /></sec>
+        <sec typ="cond">적중 시</sec>, 해당 라운드 동안 자신의 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 시 대상이 <buff typ="MARKING" /> 표식 / <buff typ="ACCURACY_DOWN" /> 적중 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: |-
+        対地対装甲ミサイルを発射して<dmg elem="physics" />を与えます。
+        対象の防御力を一定割合無視します。 <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="4" r /></sec>
+        <sec typ="cond">命中時</sec>、該当ラウンド中、自分の<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />対重装型ダメージ量<val idx="3" r /></sec>が増加します。
+        <sec typ="cond">命中時、対象が<buff typ="MARKING" />標的 / <buff typ="ACCURACY_DOWN" />命中減少状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+      EN: |-
+        Fires an air-to-ground anti-armor missile and deals <dmg elem="physics" /> damage.
+        Ignores a certain percentage of the target's DEF. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="4" r /></sec>
+        <sec typ="cond">On hit</sec>, self’s <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Heavy Armor damage <val idx="3" r /></sec> increases for the round.
+        <sec typ="cond">When the hit target is Marked / ACU Decrease</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      TC: |-
+        發射空對地反裝甲飛彈，造成<dmg elem="physics" />。
+        無視目標一定比例的防禦力。 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="4" r /></sec>
+        <sec typ="cond">命中時</sec>，該回合自身的<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型傷害量<val idx="3" r /></sec>增加。
+        <sec typ="cond">命中時，若目標處於<buff typ="MARKING" />標記 / <buff typ="ACCURACY_DOWN" />命中減少狀態</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4023,6 +4061,23 @@ skills:
             base: 0.6
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">회피 시</sec>, <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 위력으로 반격</sec>하며 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>가 영구히 증가합니다. (최대 3중첩)
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="8" r /></sec>가 증가합니다.
+        <sec typ="cond">자신이 전열인 경우</sec> <sec typ="buff"><buff typ="EVADE_UP" /> 회피</sec>, <sec typ="cond">중열인 경우</sec> <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타</sec>, <sec typ="cond">후열인 경우</sec> <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 증가</sec> 효과가 두 배로 증폭됩니다.
+      JP: |-
+        <sec typ="cond">回避時</sec>、<sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless />の威力で反撃</sec>し、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec>が永続的に増加します。(最大3スタック)
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="8" r /></sec>が増加します。
+        <sec typ="cond">自分が前列の場合</sec> <sec typ="buff"><buff typ="EVADE_UP" />回避</sec>、<sec typ="cond">中列の場合</sec> <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル</sec>、<sec typ="cond">後列の場合</sec> <sec typ="buff"><buff typ="ACCURACY_UP" />命中増加</sec>効果が2倍になります。
+      EN: |-
+        <sec typ="cond">When evading</sec>, counterattacks with <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> power</sec> and permanently increases own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec>. (up to 3 stacks)
+        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACU <val idx="8" r /></sec> increases.
+        <sec typ="cond">If self is in the front line</sec> the <sec typ="buff"><buff typ="EVADE_UP" /> EVA</sec> increase, <sec typ="cond">if in the middle line</sec> the <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT</sec> increase, <sec typ="cond">if in the rear line</sec> the <sec typ="buff"><buff typ="ACCURACY_UP" /> ACU increase</sec> is doubled.
+      TC: |-
+        <sec typ="cond">迴避時</sec>，以<sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless />威力反擊</sec>，且自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec>永久增加。(最多3層)
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="8" r /></sec>增加。
+        <sec typ="cond">自身位於前列時</sec> <sec typ="buff"><buff typ="EVADE_UP" />迴避</sec>、<sec typ="cond">位於中列時</sec> <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊</sec>、<sec typ="cond">位於後列時</sec> <sec typ="buff"><buff typ="ACCURACY_UP" />命中增加</sec>效果會加倍。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -4615,6 +4670,31 @@ skills:
             base: 1
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 획득합니다.
+        <sec typ="buff"><buff typ="MARKING" /> 표식</sec>은 대기를 통해 활성화 여부를 전환할 수 있습니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="8" r /></sec>가 크게 증가합니다.
+        <sec>해당 효과는 회피 시 해제됩니다.</sec>
+        <sec typ="cond">공격 받을 시</sec> <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>, <sec typ="cond">회피 시</sec> <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" /></sec>, <sec typ="cond">적 처치 시</sec> <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="11" /></sec>이(가) 증가합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自分は<sec typ="buff"><buff typ="MARKING" />標的</sec>を獲得します。
+        <sec typ="buff"><buff typ="MARKING" />標的</sec>は待機を通じて有効化の有無を切り替えられます。
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="8" r /></sec>が大きく増加します。
+        <sec>この効果は回避時に解除されます。</sec>
+        <sec typ="cond">攻撃を受けた時</sec> <sec typ="buff"><buff typ="AP_UP" />AP<val idx="9" /></sec>、<sec typ="cond">回避時</sec> <sec typ="buff"><buff typ="AP_UP" />AP<val idx="10" /></sec>、<sec typ="cond">敵を撃破時</sec> <sec typ="buff"><buff typ="AP_UP" />AP<val idx="11" /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self gains <sec typ="buff"><buff typ="MARKING" /> Mark</sec>.
+        The <sec typ="buff"><buff typ="MARKING" /> Mark</sec> can toggle its activation status through standby.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="8" r /></sec> increases greatly.
+        <sec>This effect is removed when evading.</sec>
+        <sec typ="cond">When attacked</sec> <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>, <sec typ="cond">when evading</sec> <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" /></sec>, <sec typ="cond">when an enemy is killed</sec> <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="11" /></sec> increases.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身獲得<sec typ="buff"><buff typ="MARKING" />標記</sec>。
+        <sec typ="buff"><buff typ="MARKING" />標記</sec>可透過待機切換啟用與否。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="8" r /></sec>大幅增加。
+        <sec>此效果會在迴避時解除。</sec>
+        <sec typ="cond">受攻擊時</sec> <sec typ="buff"><buff typ="AP_UP" /> AP<val idx="9" /></sec>、<sec typ="cond">迴避時</sec> <sec typ="buff"><buff typ="AP_UP" /> AP<val idx="10" /></sec>、<sec typ="cond">擊殺敵人時</sec> <sec typ="buff"><buff typ="AP_UP" /> AP<val idx="11" /></sec>增加。
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -4942,6 +5022,31 @@ skills:
             base: 0.2
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless />HP로 전투 속행</sec> 효과를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="3" /></sec>이(가) 증가합니다.
+        <sec typ="note">모두 주목해주세요-!</sec>에 의한 <sec typ="buff"><buff typ="AP_UP" /> AP 증가</sec> 효과가 아군 전체에 적용됩니다.
+        <sec>스킬 효과는 <sec typ="note">탑건</sec> 스킬 레벨에 비례합니다.</sec>
+        <sec typ="cond">적 처치 시</sec>, <sec typ="note">모두 주목해주세요-!</sec>에 의한 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 증가</sec> 효과가 재활성화됩니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自分は<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless />HPで戦闘継続</sec>効果を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動回数<val idx="3" /></sec>が増加します。
+        <sec typ="note">Attention, Everyone!</sec>による<sec typ="buff"><buff typ="AP_UP" />AP増加</sec>効果が味方全体に適用されます。
+        <sec>スキル効果は<sec typ="note">Top Gun</sec>のスキルレベルに比例します。</sec>
+        <sec typ="cond">敵を撃破時</sec>、<sec typ="note">Attention, Everyone!</sec>による<sec typ="buff"><buff typ="EVADE_UP" />回避増加</sec>効果が再活性化されます。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self gains a <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat with <val idx="0" r signless /> HP</sec> effect.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="Action_Number_Change_Up" /> max moves <val idx="3" /></sec> increases.
+        The <sec typ="buff"><buff typ="AP_UP" /> AP increase</sec> effect from <sec typ="note">Attention, Everyone!</sec> applies to all allies.
+        <sec>The skill effect is proportional to the skill level of <sec typ="note">Top Gun</sec>.</sec>
+        <sec typ="cond">When an enemy is killed</sec>, the <sec typ="note">Attention, Everyone!</sec>-granted <sec typ="buff"><buff typ="EVADE_UP" /> EVA increase</sec> effect is reactivated.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="0" r signless />HP戰鬥持續</sec>效果。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動次數<val idx="3" /></sec>增加。
+        <sec typ="note">Attention, Everyone!</sec>的<sec typ="buff"><buff typ="AP_UP" /> AP增加</sec>效果會套用至全體我軍。
+        <sec>技能效果與<sec typ="note">Top Gun</sec>的技能等級成正比。</sec>
+        <sec typ="cond">擊殺敵人時</sec>，由<sec typ="note">Attention, Everyone!</sec>帶來的<sec typ="buff"><buff typ="EVADE_UP" />迴避增加</sec>效果會重新啟用。
 dialogue:
   KR:
     "1":
@@ -5260,10 +5365,8 @@ dialogue:
       Idle_03_01: この格好、気に入りましたかぁ？えへへ、じゃあ…センパイって呼びましょうか？それともセンセイ？あはっ、何言わせるんですかぁ～！な～んかアブナイ感じがする～☆
       Idle_04_01: これは手遅れになる前にリンティの「プリティ成分」を補給しないとですね…？何をすればいいかわかってますよね？…そうです…リンティの…名前を呼んでください。
       SPIdle_02_01: 見るだけじゃ満足できないってことくらい、わかってますよ…
-      Oath: >-
-        ボクがどうして可愛くなりたいのか…やっとわかってくれたみたいですね？ちょっと時間がかかり過ぎですよ…。まぁ…グス…、大目にみてあげ…ます…
-        あ、これは…目にゴミが…！うえぇぇ…
-
+      Oath: |-
+        ボクがどうして可愛くなりたいのか…やっとわかってくれたみたいですね？ちょっと時間がかかり過ぎですよ…。まぁ…グス…、大目にみてあげ…ます… あ、これは…目にゴミが…！うえぇぇ…
         司令官。今日はもう…明日の朝までずっ～と…リンティの名前を呼んでくださいね？わかりましたか…？
       OathIdle_01: 可愛いって言ってください…。早くー！…えへへ、何度聞いても…いい気分です。
       MVP: ""
@@ -5450,9 +5553,7 @@ dialogue:
       SPIdle_02_01: |-
         I know watching isn’t
         enough to satisfy you…
-      Oath: I guess you realized… why I want to be cute. A-although I-I’m a little
-        late… I’ll, *Sniffles*, look at it… N-no, I’m not crying…! *Whines*
-        Commander. Today… You should call the name, Lindi, all night long, okay?
+      Oath: I guess you realized… why I want to be cute. A-although I-I’m a little late… I’ll, *Sniffles*, look at it… N-no, I’m not crying…! *Whines* Commander. Today… You should call the name, Lindi, all night long, okay?
       OathIdle_01: |-
         Please tell me I’m cute. Now!
         … Hehe, I never get bored with that.
@@ -5475,9 +5576,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         Cutie of SkyNights? Beauty?
-
         Oh dear… I have so many strengths… I’m not sure which one I should promote…
       Idle_01_02: |-
         The reason Lindi became an idol? It’s obvious.
@@ -5493,9 +5593,8 @@ dialogue:
         We are in a love ping pong match!
         I’m Lindi, the cute rapper of SkyNights!
         Ehehe, how was that? I’m good, aren’t I? I practiced hard.
-      Idle_03_01: >-
+      Idle_03_01: |-
         I have an enormous gift
-
         for my no.1 fan! Free hug- Oh?! … Umm… If you hold me so tight, Lindi feels shy…
       Idle_04_01: |-
         How was Lindi? I’m sure you couldn’t
@@ -5506,12 +5605,9 @@ dialogue:
         Ehehe, now there’s no turning back.
         We can’t get caught.
         BE GENTLE WITH ME. Okay?
-      Oath: >-
-        This is…? Are you giving this to me, the cutest person on earth? I mean…
-        you probably couldn’t help it
-
+      Oath: |-
+        This is…? Are you giving this to me, the cutest person on earth? I mean… you probably couldn’t help it
         since I’m too cute. W-wait a minute. Something went in my eye… I-I’m not crying! I successfully finished the Concert.
-
         Why would I cry on such an amazing day? … I, Linty, will keep singing for you!​
       OathIdle_01: |-
         Should I be a canary just for you?
@@ -5590,12 +5686,9 @@ dialogue:
         me, Commander.
         Okay?
       SPIdle_02_01: Isn’t my cute face enough…?
-      Oath: >-
-        I guess you realized… why I want to be cute. Although you're a bit
-        l-late…
-
+      Oath: |-
+        I guess you realized… why I want to be cute. Although you're a bit l-late…
         I'll e-excuse, *Sobs*, you… No, I'm not crying…! Pout…
-
         Mr. Commander. You have to call Lindi… all night long. OK?
       OathIdle_01: |-
         I’m sure you were drawn by

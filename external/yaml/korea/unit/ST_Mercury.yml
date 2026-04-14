@@ -2536,6 +2536,23 @@ skills:
             base: 36
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위의 적에게 MAV를 사출하여 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, <sec>적중 여부와 관계없이</sec> 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 회피 강화 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="5" r /></sec>가 감소합니다.
+        <sec typ="cond">적중 대상에게 <sec typ="note">콧대 꺾기</sec> 효과가 적용중인 경우</sec>, 추가로 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+      JP: |-
+        指定範囲の敵にMAVを射出して<sec typ="attr">防護無視</sec> <dmg elem="physics" />を与え、<sec>命中の有無にかかわらず</sec>対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 回避強化効果を解除</sec>します。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="5" r /></sec>が減少します。
+        <sec typ="cond">命中対象に<sec typ="note">鼻っ柱折り</sec>効果が適用中の場合</sec>、追加で<sec typ="buff"><buff typ="REMOVE_BUFF" /> 被ダメージ減少効果を解除</sec>します。
+      EN: |-
+        Launches MAVs at enemies in the designated area, dealing <sec typ="attr">ignore protection</sec> <dmg elem="physics" /> and <sec>regardless of whether it hits</sec> removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Evasion enhancement effects</sec>.
+        <sec typ="cond">On hit</sec>, for 2 rounds reduces the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="5" r /></sec>.
+        <sec typ="cond">If the hit target is under the effect of <sec typ="note">Taking Down the Nose</sec></sec>, additionally <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes damage reduction effects</sec>.
+      TC: |-
+        向指定範圍的敵人射出 MAV，造成 <sec typ="attr">無視保護</sec> <dmg elem="physics" />，並且<sec>不論是否命中</sec>都會解除目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 閃避強化效果</sec>。
+        <sec typ="cond">命中時</sec>，在 2 回合內降低目標的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 閃避 <val idx="5" r /></sec>。
+        <sec typ="cond">若命中目標正處於 <sec typ="note">壓低鼻樑</sec>效果時</sec>，則另外 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 解除受到傷害減少效果</sec>。
   "2":
     key: "2"
     icon: Command
@@ -2906,6 +2923,23 @@ skills:
             base: 0.05
             per: 0.0025
             chance: 1
+    desc:
+      KR: |-
+        모든 아군에게 MAV를 사출하여 대상의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시키고 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        또한 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 회피 <val idx="6" r signless />만큼 스킬 위력이 증가</sec>합니다.
+        <sec typ="cond">대상이 자신을 제외한 <cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원의 패시브 스킬 효과를 받는 상태인 경우</sec>, 상기 효과 수치가 50% 증폭됩니다.
+      JP: |-
+        すべての味方にMAVを射出して対象の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させ、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を解除</sec>します。
+        さらに2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 回避 <val idx="6" r signless />分だけスキル威力が増加</sec>します。
+        <sec typ="cond">対象が自分を除く<cmt t="ストライカーズ">$$Strikers:?$</cmt>部隊員のパッシブスキル効果を受けている場合</sec>、上記効果値が50%増幅されます。
+      EN: |-
+        Launches MAVs to all allies, increasing the target's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removing harmful effects</sec>.
+        Additionally, for 2 rounds increases the target's <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="2" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> skill power by Evasion <val idx="6" r signless /></sec>.
+        <sec typ="cond">If the target is receiving passive skill effects from a Strikers member other than self</sec>, the above effect values are amplified by 50%.
+      TC: |-
+        對全體隊友射出 MAV，提升目標的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>，並 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除有害效果</sec>。
+        此外，在 2 回合內提升目標的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="2" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 依閃避 <val idx="6" r signless /> 提升的技能威力</sec>。
+        <sec typ="cond">若目標正受到除自身以外的 <cmt t="스트라이커즈">$$Strikers:?$</cmt> 部隊員被動技能效果影響</sec>，則上述效果數值會放大 50%。
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -3118,6 +3152,27 @@ skills:
             base: 11
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
+        <sec>해당 효과는 자신이 피격되기 전까지 유지됩니다.</sec>
+        <sec typ="cond">전투 개시 시</sec>, <cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원에게 <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec> 정보를 공유하여 다음에 출현할 적을 확인할 수 있습니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><buff typ="SCOUTING" /> 정찰 상태인 아군</sec>에게 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 회피 감소 면역</sec> 효과를 부여합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自身の<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>が増加します。
+        <sec>この効果は自身が被弾するまで維持されます。</sec>
+        <sec typ="cond">戦闘開始時</sec>、<cmt t="ストライカーズ">$$Strikers:?$</cmt>部隊員に<sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec>情報を共有して次に出現する敵を確認できます。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond"><buff typ="SCOUTING" /> 偵察状態の味方</sec>に<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 回避減少免疫</sec>効果を付与します。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec> increases.
+        <sec>This effect lasts until self is hit.</sec>
+        <sec typ="cond">At battle start</sec>, shares <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> information with Strikers members, allowing the next enemy to be identified.
+        <sec typ="cond">At the start of the round</sec>, grants <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immunity to Evasion reduction</sec> to allies in <sec typ="cond"><buff typ="SCOUTING" /> Scouting state</sec>.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>會增加。
+        <sec>此效果會持續到自身被擊中前為止。</sec>
+        <sec typ="cond">戰鬥開始時</sec>，會與 <cmt t="스트라이커즈">$$Strikers:?$</cmt> 部隊員分享 <sec typ="buff"><buff typ="SCOUTING" /> 偵查</sec>情報，以確認下一個出現的敵人。
+        <sec typ="cond">回合開始時</sec>，會賦予處於 <sec typ="cond"><buff typ="SCOUTING" /> 偵查狀態</sec>的隊友 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 閃避下降免疫</sec>效果。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -3840,6 +3895,55 @@ skills:
             base: 0.3
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군 공격기 수에 비례하여 모든 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>가 증가합니다.
+        스쿼드 내 <cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원의 역할군에 따라, <sec typ="cond">라운드 개시 시</sec> 다음 효과를 <sec typ="buff">모든 아군에게 부여</sec>합니다.
+        <box t="공격기">
+        <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="15" r /></sec> 증가
+        </box>
+        <box t="보호기">
+        <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="16" r /></sec> 증가
+        </box>
+        <box t="지원기">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="17" r /></sec> 증가
+        </box>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、味方攻撃機の数に比例してすべての味方の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="6" r /></sec>が増加します。
+        分隊内の<cmt t="ストライカーズ">$$Strikers:?$</cmt>部隊員の役割群に応じて、<sec typ="cond">ラウンド開始時</sec>に次の効果を<sec typ="buff">すべての味方に付与</sec>します。
+        <box t="攻撃機">
+        <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="15" r /></sec>増加
+        </box>
+        <box t="保護機">
+        <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="16" r /></sec>増加
+        </box>
+        <box t="支援機">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="17" r /></sec>増加
+        </box>
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases all allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="6" r /></sec> in proportion to the number of allied Attackers.
+        Depending on the role group of Strikers members in the squad, <sec typ="cond">at the start of the round</sec> grants the following effects to <sec typ="buff">all allies</sec>.
+        <box t="Attacker">
+        <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="15" r /></sec> increase
+        </box>
+        <box t="Defender">
+        <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="16" r /></sec> increase
+        </box>
+        <box t="Supporter">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="17" r /></sec> increase
+        </box>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，會依隊友攻擊機的數量提升全體隊友的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="6" r /></sec>。
+        依據隊伍內 <cmt t="스트라이커즈">$$Strikers:?$</cmt> 部隊員的角色群，會在 <sec typ="cond">回合開始時</sec>將以下效果 <sec typ="buff">賦予全體隊友</sec>。
+        <box t="攻擊機">
+        <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="15" r /></sec>增加
+        </box>
+        <box t="保護機">
+        <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="16" r /></sec>增加
+        </box>
+        <box t="支援機">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="17" r /></sec>增加
+        </box>
   "5":
     key: "5"
     icon: P.TeamSpdDeBuff
@@ -4153,6 +4257,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec>자신보다 공격력이 높은 적</sec>의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec>가 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><buff typ="ATK_UP" /><buff typ="ATK_DOWN" /> 공격력 / <buff typ="CRITICAL_UP" /><buff typ="CRITICAL_DOWN" /> 치명타 / <buff typ="ACCURACY_UP" /><buff typ="ACCURACY_DOWN" /> 적중 / <buff typ="SKILL_UP" /><buff typ="SKILL_DOWN" /> 스킬 위력 증감 효과가 적용된 적</sec>의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>이(가) 감소하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec>가 증가합니다.
+        <sec>각 효과는 <sec typ="ref"><buff typ="BUFFEFFECTRATE_CHANGE" /><buff typ="DEBUFF_PERDOWN" /><buff typ="DEBUFF_RATEUP" /> 효과 저항</sec>의 영향을 받지는 않지만, <sec typ="ref"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec>로는 해제 가능합니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec>自分より攻撃力が高い敵</sec>の<sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec>が減少します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond"><buff typ="ATK_UP" /><buff typ="ATK_DOWN" /> 攻撃力 / <buff typ="CRITICAL_UP" /><buff typ="CRITICAL_DOWN" /> クリティカル / <buff typ="ACCURACY_UP" /><buff typ="ACCURACY_DOWN" /> 命中 / <buff typ="SKILL_UP" /><buff typ="SKILL_DOWN" /> スキル威力増減効果が適用された敵</sec>の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>が減少し、<sec typ="buff"><buff typ="VULNERABLE" /> 被ダメージ <val idx="4" r /></sec>が増加します。
+        <sec>各効果は<sec typ="ref"><buff typ="BUFFEFFECTRATE_CHANGE" /><buff typ="DEBUFF_PERDOWN" /><buff typ="DEBUFF_RATEUP" /> 効果抵抗</sec>の影響を受けませんが、<sec typ="ref"><buff typ="REMOVE_DEBUFF" /> 有害効果解除</sec>では解除可能です。</sec>
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, reduces the <sec>AP <val idx="0" r /></sec> of enemies with higher Attack than self.
+        <sec typ="cond">At the start of the round</sec>, decreases the <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec> of enemies affected by <sec typ="cond"><buff typ="ATK_UP" /><buff typ="ATK_DOWN" /> Attack / <buff typ="CRITICAL_UP" /><buff typ="CRITICAL_DOWN" /> Critical / <buff typ="ACCURACY_UP" /><buff typ="ACCURACY_DOWN" /> Accuracy / <buff typ="SKILL_UP" /><buff typ="SKILL_DOWN" /> skill power increase/decrease effects</sec> and increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec>.
+        <sec>Each effect is not affected by <sec typ="ref"><buff typ="BUFFEFFECTRATE_CHANGE" /><buff typ="DEBUFF_PERDOWN" /><buff typ="DEBUFF_RATEUP" /> effect resistance</sec>, but can be removed by <sec typ="ref"><buff typ="REMOVE_DEBUFF" /> harmful effect removal</sec>.</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，會降低 <sec>攻擊力高於自身的敵人</sec>的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，會降低受到 <sec typ="cond"><buff typ="ATK_UP" /><buff typ="ATK_DOWN" /> 攻擊力 / <buff typ="CRITICAL_UP" /><buff typ="CRITICAL_DOWN" /> 暴擊 / <buff typ="ACCURACY_UP" /><buff typ="ACCURACY_DOWN" /> 命中 / <buff typ="SKILL_UP" /><buff typ="SKILL_DOWN" /> 技能威力增減效果</sec>影響的敵人的 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>，並提升 <sec typ="buff"><buff typ="VULNERABLE" /> 受到傷害 <val idx="4" r /></sec>。
+        <sec>各效果不受 <sec typ="ref"><buff typ="BUFFEFFECTRATE_CHANGE" /><buff typ="DEBUFF_PERDOWN" /><buff typ="DEBUFF_RATEUP" /> 效果抵抗</sec>影響，但可透過 <sec typ="ref"><buff typ="REMOVE_DEBUFF" /> 有害效果解除</sec>移除。</sec>
 dialogue:
   KR:
     "1":
@@ -4281,9 +4402,7 @@ dialogue:
         으휴… 정말! 알았사와요.
         딱… 5분만…♥
         본녀를 허락 드리도록 하죠.
-      Oath: 파자마 파티가 시작되기 전, 행운의 왕달팽이에게 점쳐보왔사와요.​ 사령관이 본녀의 모습에 빠질까? 안 빠질까? 를 말이죠.
-        오호호...! 사령관의 답은… 역시나로군요?​ 자, 드림캐쳐에 단단히 매인 실처럼, 본녀를 꼭 안아주시겠어요? ​파자마 파티가
-        끝나면… 다시 시작되는 둘만의 파티를 준비하는 것이와요.
+      Oath: 파자마 파티가 시작되기 전, 행운의 왕달팽이에게 점쳐보왔사와요.​ 사령관이 본녀의 모습에 빠질까? 안 빠질까? 를 말이죠. 오호호...! 사령관의 답은… 역시나로군요?​ 자, 드림캐쳐에 단단히 매인 실처럼, 본녀를 꼭 안아주시겠어요? ​파자마 파티가 끝나면… 다시 시작되는 둘만의 파티를 준비하는 것이와요.
       OathIdle_01: |-
         사령관을 위해 육각수만 마시고 자란
         황새의 깃털을 모아 만든 이부자리랍니다.
@@ -4495,8 +4614,7 @@ dialogue:
         司令官を見ていると何でもいいので何かしてあげたくなってしまいますわ……！
         親友にもここまでではありませんのに……
       SPIdle_02_01: あぁっ！……油断してしまいましたわ…司令官にこんな恥ずかしい姿をお見せしてしまうなんて…か、可愛かったですって？つ、次は司令官の番ですわよ！
-      Oath: 司令官はわたくしにも予測できないお方ですわ。少年のように笑っていたかと思ったら、今みたいに急に真面目になられるんですもの…
-        知れば知るほどどんどん虜になってしまいますわ。では、真面目にお返事しませんとね。わたくし、プランクスター・マーキュリーは、この世の最後まで司令官にお仕えしますわ。
+      Oath: 司令官はわたくしにも予測できないお方ですわ。少年のように笑っていたかと思ったら、今みたいに急に真面目になられるんですもの… 知れば知るほどどんどん虜になってしまいますわ。では、真面目にお返事しませんとね。わたくし、プランクスター・マーキュリーは、この世の最後まで司令官にお仕えしますわ。
       OathIdle_01: 誰かの役に立つということがこんなにも嬉しいなんて……そして、わたくしがこんな気持ちになれるだなんて…あなたに出会うまで知りませんでしたわ。
       MVP: ""
     M:
@@ -4597,12 +4715,9 @@ dialogue:
         It’s a lie. But… The Commander, to myself.
         But I really do feel envigorated when you touch me. So…
         Can you stay with me for more?​
-      Oath: >-
-        It’s a confession event. The script… Huh? Ad-lib? Huh? Really? W-wait
-        please!
-
+      Oath: |-
+        It’s a confession event. The script… Huh? Ad-lib? Huh? Really? W-wait please!
         There are many things that strengthen this member. Pyramids, power stones, chickpeas… but the Commander is the one that strengthens me the most.
-
         Right! Let’s beat the enemies with the power of love and bring back peace! It’s not acting, but my genuine heart.
       OathIdle_01: |-
         This has a happy ending.
@@ -4691,15 +4806,11 @@ dialogue:
         Doesn’t Commander need anything?
         Anything to eat, to wear… I didn’t care this much for my friends,
         but whenever I look at Commander, I want to take care…!​
-      SPIdle_02_01: >-
+      SPIdle_02_01: |-
         I let my guard down… and let you see
-
         the embarrassing side of me… You still found me cute? T-this time, it’s your turn!​
-      Oath: >-
-        Even I cannot fathom Commander. He sometimes laughs like a boy and
-        sometimes acts so seriously… The more I get to know him, the more I fall
-        for him. Let me introduce myself again.
-
+      Oath: |-
+        Even I cannot fathom Commander. He sometimes laughs like a boy and sometimes acts so seriously… The more I get to know him, the more I fall for him. Let me introduce myself again.
         I, Prankster Mercury. Will assist Commander by his side until the end of time.
       OathIdle_01: |-
         I never knew until I met you
@@ -4725,15 +4836,11 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         The nickname Prankster
-
         was not called for. I just gave some good things
-
         to the people next to me, and… A giant squid?
-
         I prepared it while you were sleeping.
-
         I heard it clears your head… It’s because of things like this? Impossible! My good heart…!​
       Idle_01_02: |-
         To be more consummate than ever. That is my

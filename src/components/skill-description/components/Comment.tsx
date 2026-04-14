@@ -1,11 +1,11 @@
-import { createRef, Component, RenderableProps, FunctionalComponent } from "preact";
+import { FunctionalComponent } from "preact";
+import { useEffect, useRef, useState } from "preact/hooks";
 
 import * as Popper from "@popperjs/core";
 
 import Locale from "@/components/locale";
 
 import style from "./style.module.scss";
-import { useEffect, useRef, useState } from "preact/hooks";
 
 interface CommentProps {
 	display?: string;

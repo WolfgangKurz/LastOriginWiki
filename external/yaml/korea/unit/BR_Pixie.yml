@@ -1640,6 +1640,27 @@ skills:
             base: 3
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        중기관총을 조준사격하여 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>가 감소합니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가 효과를 해제</sec>합니다.
+        <sec typ="important">스킬 레벨 당 +8%의 적중 보정이 적용됩니다.</sec>
+      JP: |-
+        重機関銃で狙撃し、単一対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>, 2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>が減少します。
+        <sec typ="cond">クリティカル時</sec>, 対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 防御力増加効果を解除</sec>します。
+        <sec typ="important">スキルレベルごとに+8%の命中補正が適用されます。</sec>
+      EN: |-
+        Aimed fire from a heavy machine gun deals <dmg elem="physics" /> damage to a single target.
+        <sec typ="cond">On hit</sec>, the target’s <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> decreases for 2 rounds.
+        <sec typ="cond">On CRIT</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target’s DEF Increase effect</sec>.
+        <sec typ="important">+8% hit correction is applied per skill level.</sec>
+      TC: |-
+        以重機槍瞄準射擊，對單一目標造成<dmg elem="physics" />傷害。
+        <sec typ="cond">命中時</sec>，在2回合內減少目標的<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>。
+        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" /> 解除目標的防禦力增加效果</sec>。
+        <sec typ="important">每提升1級技能，命中修正增加8%。</sec>
   "2":
     key: "2"
     icon: MGWideShot
@@ -2749,6 +2770,27 @@ skills:
             base: -1
             per: -0.05
             chance: 1
+    desc:
+      KR: |-
+        중기관총을 난사하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="dmg">중행을 제외한 행에는 25% 감소한 피해를 입힙니다.</sec>
+        <sec typ="cond">적중 대상의 방어력이 자신보다 낮은 경우</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>가 감소합니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>이(가) 감소합니다.
+      JP: |-
+        重機関銃を乱射して指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
+        <sec typ="dmg">中列を除く列には25%減少したダメージを与えます。</sec>
+        <sec typ="cond">命中した対象の防御力が自分より低い場合</sec>, 2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>が減少します。
+        <sec typ="cond">クリティカル時</sec>, 対象の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>が減少します。
+      EN: |-
+        Sprays a heavy machine gun at the designated area, dealing <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage.
+        <sec typ="dmg">Deals 25% reduced damage to rows excluding the middle row.</sec>
+        <sec typ="cond">If the hit target’s DEF is lower than self’s</sec>, the target’s <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> decreases for 2 rounds.
+        <sec typ="cond">On CRIT</sec>, the target’s <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec> decreases.
+      TC: |-
+        以重機槍掃射指定範圍，造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害。
+        <sec typ="dmg">對除中列以外的列造成減少25%的傷害。</sec>
+        <sec typ="cond">若命中目標的防禦力低於自身</sec>，則在2回合內減少目標的<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="0" r /></sec>。
+        <sec typ="cond">暴擊時</sec>，減少目標的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -4163,6 +4205,19 @@ skills:
             base: 140
             per: 70
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 아군 / 적 수에 비례하여 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec>가 활성화됩니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>, 味方 / 敵の数に比例して自身の<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>, 自身は<sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec>が有効になります。
+      EN: |-
+        <sec typ="cond">At the start of combat</sec>, self’s <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="0" /></sec> increases in proportion to the number of allies/enemies.
+        <sec typ="cond">At the start of the round</sec>, self’s <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> is activated.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" /></sec>會隨我軍 / 敵軍數量成比例增加。
+        <sec typ="cond">回合開始時</sec>，自身會啟用<sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec>。
   "4":
     key: "4"
     icon: P.TeamAtkDeBuff
@@ -4394,6 +4449,27 @@ skills:
             base: -0.1
             per: -0.005
             chance: 1
+    desc:
+      KR: |-
+        자신의 기본 <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항</sec>이 75%로 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">피격 시</sec>, 2라운드 동안 적 전체의 <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="3" r /></sec>가 감소합니다.
+        <sec typ="cond">대상이 공격기인 경우</sec>, 효과가 두 배로 증폭됩니다.
+      JP: |-
+        自身の基本<sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性</sec>が75%に増加します。
+        <sec typ="cond">ラウンド開始時</sec>, 3ラウンドの間、自身の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">被撃時</sec>, 2ラウンドの間、敵全体の<sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="3" r /></sec>が減少します。
+        <sec typ="cond">対象が攻撃機の場合</sec>, 効果が2倍に増幅されます。
+      EN: |-
+        Self’s base <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance</sec> increases to 75%.
+        <sec typ="cond">At the start of the round</sec>, self’s <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> increases for 3 rounds.
+        <sec typ="cond">When hit</sec>, all enemies’ <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="3" r /></sec> decreases for 2 rounds.
+        <sec typ="cond">If the target is an Attacker</sec>, the effect is doubled.
+      TC: |-
+        自身的基本<sec typ="buff"><buff typ="ICERES_UP" /> 冰冷抗性</sec>增加至75%。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>在3回合內增加。
+        <sec typ="cond">受到攻擊時</sec>，敵軍全體的<sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="3" r /></sec>在2回合內減少。
+        <sec typ="cond">若目標為攻擊機</sec>，則效果加倍。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -5153,6 +5229,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 획득합니다.
+        <sec typ="cond"><char uid="BR_Leona" />의 <sec typ="note">공격 지휘</sec>가 활성화된 경우</sec>, <sec typ="cond">라운드 개시 시</sec> 자신은 <sec typ="buff"><buff typ="SKILL_UP" /> 방어력 <val idx="4" r signless />만큼 스킬 위력 증가</sec> 효과를 획득합니다.
+        <sec typ="cond"><char uid="BR_Leona" />의 <sec typ="note">방어 지휘</sec>가 활성화된 경우</sec>, <sec typ="cond">라운드 개시 시</sec> 자신은 <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>가 활성화됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>, 自身の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果耐性 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="MARKING" /> 標的</sec>を獲得します。
+        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">攻撃指揮</sec>が有効な場合</sec>, <sec typ="cond">ラウンド開始時</sec>自分は<sec typ="buff"><buff typ="SKILL_UP" /> 防御力 <val idx="4" r signless />分のスキル威力増加</sec>効果を獲得します。
+        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">防御指揮</sec>が有効な場合</sec>, <sec typ="cond">ラウンド開始時</sec>自分は<sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>が有効になります。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, self’s <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increases and self gains <sec typ="buff"><buff typ="MARKING" /> Marked</sec>.
+        <sec typ="cond">If <char uid="BR_Leona" />’s <sec typ="note">Attack Command</sec> is active</sec>, <sec typ="cond">at the start of the round</sec> self gains an effect that increases Skill Power by <sec typ="buff"><buff typ="SKILL_UP" /> the amount of DEF <val idx="4" r signless /></sec>.
+        <sec typ="cond">If <char uid="BR_Leona" />’s <sec typ="note">Defense Command</sec> is active</sec>, <sec typ="cond">at the start of the round</sec> self gains <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="0" r /></sec>增加，並獲得<sec typ="buff"><buff typ="MARKING" /> 標記</sec>。
+        <sec typ="cond">若<char uid="BR_Leona" />的<sec typ="note">攻擊指揮</sec>啟用</sec>，則<sec typ="cond">回合開始時</sec>自身獲得<sec typ="buff"><buff typ="SKILL_UP" /> 依防禦力 <val idx="4" r signless />增加技能威力</sec>效果。
+        <sec typ="cond">若<char uid="BR_Leona" />的<sec typ="note">防禦指揮</sec>啟用</sec>，則<sec typ="cond">回合開始時</sec>自身會啟用<sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>。
 dialogue:
   KR:
     "1":
@@ -5212,9 +5305,7 @@ dialogue:
         거친 말 쓰는 것도 보고 싶으시다고요?​
         …야, 입 두고 뭐하냐?
         …죄송해요. 그, 근데 어땠어요?​
-      Oath: 제게도 이런 날이 올 줄은 몰랐네요… 어떻게든 사령관님께 예뻐 보이고 싶어서…​ 사령관님께선 값지고 비싼 별의 별 선물을 많이 받아
-        보셨겠지만, ​제가 직접… 아무나 가질 수 없는 특별한 선물이 되어 드리고 싶어요. 라이언도 진짜… 그만 밀어…! 내가 알아서 할
-        테니까… ​어디 한 번… 포장… 풀어보시겠어요?
+      Oath: 제게도 이런 날이 올 줄은 몰랐네요… 어떻게든 사령관님께 예뻐 보이고 싶어서…​ 사령관님께선 값지고 비싼 별의 별 선물을 많이 받아 보셨겠지만, ​제가 직접… 아무나 가질 수 없는 특별한 선물이 되어 드리고 싶어요. 라이언도 진짜… 그만 밀어…! 내가 알아서 할 테니까… ​어디 한 번… 포장… 풀어보시겠어요?
       OathIdle_01: |-
         사령관님만의
         단단한 총을 더 조작해보고 싶은데…​
@@ -5277,9 +5368,7 @@ dialogue:
         계속 쓰다듬어 주시겠습니까?
         화나는 일이 계속 생겨서…
         네… 감사합니다…
-      Oath: 네? 그… 저기… 대원을 착각하신 건 아닌가요? 저는 제대로 임무도 수행하지 못하고… 성격도 나쁘고… 욕 많이 하고... 언니들처럼
-        멋지고 예쁘지도 않은데… 사, 사실 어리광도 많이 부려요. 그래도… 괜찮나요? 괜찮다면… 머리… 쓰다듬어주세요. 그리고…
-        안아주세요. 헤헤헤.
+      Oath: 네? 그… 저기… 대원을 착각하신 건 아닌가요? 저는 제대로 임무도 수행하지 못하고… 성격도 나쁘고… 욕 많이 하고... 언니들처럼 멋지고 예쁘지도 않은데… 사, 사실 어리광도 많이 부려요. 그래도… 괜찮나요? 괜찮다면… 머리… 쓰다듬어주세요. 그리고… 안아주세요. 헤헤헤.
       OathIdle_01: |-
         사령관님~ 아…
         죄, 죄송합니다. 저도 모르게…

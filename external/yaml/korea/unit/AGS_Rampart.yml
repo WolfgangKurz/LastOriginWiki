@@ -2930,6 +2930,19 @@ skills:
               level: "0"
             value: Char_PECS_MissSafety_N
             chance: 1
+    desc:
+      KR: |-
+        위협 사격으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="3" r /></sec>를 낮춥니다.
+        스쿼드 내에 <char uid="PECS_MissSafety" />가 있을 시, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 대상에게 <sec typ="note">고압 가스탄</sec> 스킬 협동 공격</sec>을 합니다.
+      JP: |-
+        威嚇射撃で<dmg elem="physics" />を与え、2ラウンドの間、対象の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="0" r /></sec>と<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="3" r /></sec>を減少させます。
+        分隊内に<char uid="PECS_MissSafety" />がいる場合、<sec typ="buff"><buff typ="TOGETHER_ATTACK" />対象に<sec typ="note">高圧ガス弾</sec>スキル協同攻撃</sec>を行います。
+      EN: |-
+        Uses Threatening Fire to deal <dmg elem="physics" /> damage and decrease the target’s <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="0" r /></sec> and <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACU <val idx="3" r /></sec> for 2 rounds.
+        If <char uid="PECS_MissSafety" /> is in the squad, launches a co-op attack against the target with the <sec typ="note">High-Pressure Gas Round</sec> skill.
+      TC: |-
+        以威脅射擊造成<dmg elem="physics" />，並於2回合內降低目標的<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="0" r /></sec>與<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="3" r /></sec>。
+        若小隊內有<char uid="PECS_MissSafety" />，則對目標發動<sec typ="buff"><buff typ="TOGETHER_ATTACK" />與<sec typ="note">高壓氣體彈</sec>的技能協力攻擊</sec>。
   "2":
     key: "2"
     icon: ShieldWall
@@ -3162,6 +3175,19 @@ skills:
             base: 1
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        3라운드 동안 <sec typ="buff"><buff typ="DEF_Char" /> 지정한 아군을 보호</sec>하며, 대상의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>을(를) 증가시킵니다.
+        아군을 보호하는 동안 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec>가 감소합니다.
+      JP: |-
+        3ラウンドの間、<sec typ="buff"><buff typ="DEF_Char" />指定した味方を保護</sec>し、対象の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>を増加させます。
+        味方を保護している間、自分の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="3" r inv /></sec>が減少します。
+      EN: |-
+        Protects the designated ally with <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> for 3 rounds and increases the target’s <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>.
+        While protecting an ally, own <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="3" r inv /></sec> decreases.
+      TC: |-
+        持續3回合以<sec typ="buff"><buff typ="DEF_Char" />指定目標保護</sec>保護指定我軍，並增加目標的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>。
+        在保護我軍期間，自身的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="3" r inv /></sec>會減少。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -3300,6 +3326,11 @@ skills:
             base: 0.05
             per: 0.0025
             chance: 1
+    desc:
+      KR: 라운드 개시 시, 자신과 같은 열 위쪽에 배치된 아군을 <sec typ="buff"><buff typ="DEF_Char" /> 지정 대상 보호</sec>하며 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>를 상승시킵니다.
+      JP: ラウンド開始時、自分と同じ列の上側に配置された味方を<sec typ="buff"><buff typ="DEF_Char" />指定対象保護</sec>し、<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>を上昇させます。
+      EN: At the start of the round, protects allies positioned above self on the same row with <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> and increases their <sec typ="buff"><buff typ="ACCURACY_UP" /> ACU <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec>.
+      TC: 回合開始時，會以<sec typ="buff"><buff typ="DEF_Char" />指定目標保護</sec>保護位於與自身相同列上方的我軍，並提升其<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3543,6 +3574,19 @@ skills:
             base: 0.67
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec>가 적용됩니다.
+        <equip uid="Sub_Overclock" /> 또는 <equip uid="Sub_ImOverclock" /> 장착 시, <sec typ="note">목표 견제</sec>의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량이 <val idx="4" slot="1" r /> 증가</sec>하고 공격 받으면 <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 위력으로 반격</sec>합니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="1" r /></sec>が増加し、<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>が適用されます。
+        <equip uid="Sub_Overclock" />または<equip uid="Sub_ImOverclock" />装着時、<sec typ="note">目標牽制</sec>の<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量が<val idx="4" slot="1" r />増加</sec>し、攻撃を受けると<sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless />の威力で反撃</sec>します。
+      EN: |-
+        At the start of the round, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="1" r /></sec> increases and <sec typ="buff"><buff typ="DEF_Line" /> Protect Row</sec> is granted.
+        If <equip uid="Sub_Overclock" /> or <equip uid="Sub_ImOverclock" /> is equipped, the <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt by <sec typ="note">Target Containment</sec> increases by <val idx="4" slot="1" r /></sec> and the unit retaliates when attacked with <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> power</sec>.
+      TC: |-
+        回合開始時，<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="1" r /></sec>增加，並施加<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>。
+        若裝備<equip uid="Sub_Overclock" />或<equip uid="Sub_ImOverclock" />，<sec typ="note">牽制目標</sec>的<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量會增加<val idx="4" slot="1" r /></sec>，且受到攻擊時會以<sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless />威力反擊</sec>。
   "5":
     key: "5"
     icon: P.FormChange
@@ -4553,6 +4597,23 @@ skills:
             base: 0.032
             per: 0.002
             chance: 1
+    desc:
+      KR: |-
+        <cmt t="시티 가드">$$CityGuard:?$</cmt> 출전수에 따라 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="cond"><equip uid="Sub_Overclock" /> 또는 <equip uid="Sub_ImOverclock" /> 착용 시</sec>, <sec typ="note">목표 견제</sec> 스킬이 강화됩니다.
+        <sec typ="cond"><equip uid="Sub_Barrier" /> 또는 <equip uid="Sub_ImBarrier" /> 장착 상태로 전투 시작 시</sec>, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="7" r signless /> HP로 전투 속행</sec> 효과와 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 방어막 <val idx="6" /></sec>이(가) 생성됩니다.
+      JP: |-
+        <cmt t="City Guard">$$CityGuard:?$</cmt>の出撃数に応じて、自分の<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="4" r /></sec>が増加します。
+        <sec typ="cond"><equip uid="Sub_Overclock" />または<equip uid="Sub_ImOverclock" />装着時</sec>、<sec typ="note">目標牽制</sec>スキルが強化されます。
+        <sec typ="cond"><equip uid="Sub_Barrier" />または<equip uid="Sub_ImBarrier" />装着状態で戦闘開始時</sec>、<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="7" r signless />HPで戦闘継続</sec>効果と<sec typ="buff"><buff typ="DAMAGE_REDUCE" />防御壁<val idx="6" /></sec>が生成されます。
+      EN: |-
+        <cmt t="City Guard">$$CityGuard:?$</cmt> deployment count increases own <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="4" r /></sec>.
+        <sec typ="cond">If <equip uid="Sub_Overclock" /> or <equip uid="Sub_ImOverclock" /> is equipped</sec>, the <sec typ="note">Target Containment</sec> skill is enhanced.
+        <sec typ="cond">If combat starts while <equip uid="Sub_Barrier" /> or <equip uid="Sub_ImBarrier" /> is equipped</sec>, gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat with <val idx="7" r signless /> HP</sec> and a <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Defensive Shield <val idx="6" /></sec> is generated.
+      TC: |-
+        依<cmt t="City Guard">$$CityGuard:?$</cmt>出場數量，自身的<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="4" r /></sec>增加。
+        <sec typ="cond">若裝備<equip uid="Sub_Overclock" />或<equip uid="Sub_ImOverclock" /></sec>，<sec typ="note">牽制目標</sec>技能會強化。
+        <sec typ="cond">若在裝備<equip uid="Sub_Barrier" />或<equip uid="Sub_ImBarrier" />的狀態下開始戰鬥</sec>，會生成<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="7" r signless />HP戰鬥持續</sec>效果與<sec typ="buff"><buff typ="DAMAGE_REDUCE" />防禦護盾<val idx="6" /></sec>。
   F1:
     key: F1
     icon: ARShot
@@ -6868,6 +6929,19 @@ skills:
               level: "0"
             value: Char_PECS_Sadius_N
             chance: 1
+    desc:
+      KR: |-
+        위협 사격으로 범위 내 대상에게 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="4" r /></sec>를 낮춥니다.
+        스쿼드 내에 <char uid="PECS_Sadius" />가 있을 시, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 대상에게 <sec typ="note">테이져 캐논</sec> 스킬 협동 공격</sec>을 합니다.
+      JP: |-
+        威嚇射撃で範囲内の対象に<dmg elem="physics" />を与え、2ラウンドの間、対象の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="0" r /></sec>と<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="4" r /></sec>を減少させます。
+        分隊内に<char uid="PECS_Sadius" />がいる場合、<sec typ="buff"><buff typ="TOGETHER_ATTACK" />対象に<sec typ="note">テーザーキャノン</sec>スキル協同攻撃</sec>を行います。
+      EN: |-
+        Uses Threatening Fire to deal <dmg elem="physics" /> damage to targets within range and decrease the target’s <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="0" r /></sec> and <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACU <val idx="4" r /></sec> for 2 rounds.
+        If <char uid="PECS_Sadius" /> is in the squad, launches a co-op attack against the target with the <sec typ="note">Taser Cannon</sec> skill.
+      TC: |-
+        以威脅射擊對範圍內目標造成<dmg elem="physics" />，並於2回合內降低目標的<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="0" r /></sec>與<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="4" r /></sec>。
+        若小隊內有<char uid="PECS_Sadius" />，則對目標發動<sec typ="buff"><buff typ="TOGETHER_ATTACK" />與<sec typ="note">泰瑟加農砲</sec>的技能協力攻擊</sec>。
 dialogue:
   KR:
     "1":
@@ -7011,8 +7085,7 @@ dialogue:
         I hope you will never lose it.
       MVP: ""
     "":
-      Join: I always provide omnipresent police service to all wholesome citizens and
-        bioroids. How can I help you?
+      Join: I always provide omnipresent police service to all wholesome citizens and bioroids. How can I help you?
       SquadJoin: ""
       Leader: ""
       SortiePick: ""

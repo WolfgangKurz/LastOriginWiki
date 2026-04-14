@@ -3261,6 +3261,23 @@ skills:
             base: 0.5
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        해머를 개틀링건으로 변형시켜 지정된 범위에 <dmg elem="fire" />를 입힙니다.
+        <sec typ="cond">스킬 적중 시</sec> 대상은 2라운드 동안 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 지속 화염 피해 <val idx="0" signless /></sec>를 부여하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>를 증가시키며 <sec typ="note">합선</sec> 상태로 만듭니다.
+        <sec typ="cond">치명타 시</sec> 자신에게 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+      JP: |-
+        ハンマーをガトリングガンに変形させ、指定範囲に <dmg elem="fire" />を与えます。
+        <sec typ="cond">スキル命中時</sec>、対象は2ラウンドの間 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 継続火炎ダメージ <val idx="0" signless /></sec>を受け、<sec typ="buff"><buff typ="VULNERABLE" /> 被ダメージ <val idx="3" r /></sec>が増加し、<sec typ="note">ショート</sec>状態になります。
+        <sec typ="cond">クリティカル時</sec>、自身の <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を解除</sec>します。
+      EN: |-
+        Transforms the hammer into a gatling gun and deals <dmg elem="fire" /> to the designated area.
+        <sec typ="cond">On skill hit</sec>, the target gains <sec typ="dmg"><buff typ="FireDMG_DOT" /> ongoing fire damage <val idx="0" signless /></sec> for 2 rounds, <sec typ="buff"><buff typ="VULNERABLE" /> increased damage taken <val idx="3" r /></sec>, and is put into <sec typ="note">Short Circuit</sec> status.
+        <sec typ="cond">On crit</sec>, removes own <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec>.
+      TC: |-
+        將鐵鎚變形成加特林槍，對指定範圍造成 <dmg elem="fire" />。
+        <sec typ="cond">技能命中時</sec>，使目標在 2 回合內獲得 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 持續火焰傷害 <val idx="0" signless /></sec>、<sec typ="buff"><buff typ="VULNERABLE" /> 受到傷害 <val idx="3" r /></sec>增加，並進入 <sec typ="note">短路</sec>狀態。
+        <sec typ="cond">暴擊時</sec>，解除自身的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>。
   "2":
     key: "2"
     icon: SetTurret
@@ -5851,6 +5868,39 @@ skills:
               level: "0"
             value: Char_LC_Lily_N
             chance: 1
+    desc:
+      KR: |-
+        주변에 다수의 에너지 포탈을 소환하고 강력한 에너지를 발사하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire" /> 발생시킵니다.
+        <sec typ="important">중행 제외</sec> <sec typ="important">전열 기준</sec> <sec typ="dmg">멀 수록 피해량이 최대 50%까지 감소합니다.</sec>
+        <sec typ="cond">스킬 적중 시</sec> 자신에게 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> 및 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>를 증가시킵니다.
+        <sec typ="cond">치명타 시</sec> <sec typ="dmg"><buff typ="FireATK_UP" /> <val idx="4" r signless /> 화염 추가 피해</sec>가 발생합니다.
+        <sec typ="cond">스쿼드에 <char uid="LC_Stella" />, <char uid="LC_Haru" />, <char uid="LC_Lily" />이 있는 경우</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">베이스 어택</sec>, <sec typ="note">블레이드 샤워</sec>, <sec typ="note">데스 길로틴</sec> 스킬로 협동 공격</sec>을 유도합니다.
+        <sec>협동 공격이 가능한 전투원이 여렷인 경우 위 표기된 순으로 우선권을 가집니다. (스텔라 유니벨 > 릴리 블룸메르헨 순)</sec>
+        <sec>다수의 적이 대상인 경우 사거리가 닿는 적을 우선 선택하고 사거리로 인해 협동 공격이 불가능할 경우 다음 순서의 전투원이 협동 공격을 실행합니다.</sec>
+      JP: |-
+        周囲に多数のエネルギーポータルを召喚し、強力なエネルギーを発射して指定範囲に <sec typ="attr">防護無視</sec> <dmg elem="fire" />を発生させます。
+        <sec typ="important">中列を除く</sec> <sec typ="important">前列基準</sec> <sec typ="dmg">遠いほどダメージ量が最大50%まで減少します。</sec>
+        <sec typ="cond">スキル命中時</sec>、自身に2ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> および <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="FireATK_UP" /> <val idx="4" r signless /> 火炎追加ダメージ</sec>が発生します。
+        <sec typ="cond">分隊に <char uid="LC_Stella" />、<char uid="LC_Haru" />、<char uid="LC_Lily" />がいる場合</sec>、<sec typ="chance">100%確率</sec>で <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">ベースアタック</sec>、<sec typ="note">ブレードシャワー</sec>、<sec typ="note">デスギロチン</sec> スキルによる協同攻撃を誘発します。
+        <sec>協同攻撃が可能な戦闘員が複数いる場合、上記の順で優先権を持ちます。（ステラ・ユニベル > リリー・ブロムメルヘンの順）</sec>
+        <sec>多数の敵が対象の場合、射程の届く敵を優先選択し、射程の都合で協同攻撃が不可能なら次の順番の戦闘員が協同攻撃を実行します。</sec>
+      EN: |-
+        Summons multiple energy portals nearby and fires powerful energy to create <sec typ="attr">ignore protection</sec> <dmg elem="fire" /> in the designated area.
+        <sec typ="important">Excluding middle row</sec>, <sec typ="important">based on the front row</sec>, <sec typ="dmg">the farther away, the damage decreases by up to 50%.</sec>
+        <sec typ="cond">On skill hit</sec>, increases own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> for 2 rounds.
+        <sec typ="cond">On crit</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> <val idx="4" r signless /> additional fire damage</sec> occurs.
+        <sec typ="cond">If the squad has <char uid="LC_Stella" />, <char uid="LC_Haru" />, and <char uid="LC_Lily" /></sec>, there is a <sec typ="chance">100% chance</sec> to trigger a joint attack with <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Base Attack</sec>, <sec typ="note">Blade Shower</sec>, and <sec typ="note">Death Guillotine</sec></sec>.
+        <sec>When multiple combatants can perform the joint attack, priority follows the order shown above. (Stella Unibel > Lily Bloommerchen)</sec>
+        <sec>If multiple enemies are targeted, the enemy within range is selected first, and if joint attack is impossible due to range, the next combatant in order performs the joint attack.</sec>
+      TC: |-
+        在周圍召喚大量能量傳送門並發射強大能量，對指定範圍造成 <sec typ="attr">無視保護</sec> <dmg elem="fire" />。
+        <sec typ="important">不含中列</sec>、<sec typ="important">以前列為基準</sec>，<sec typ="dmg">距離越遠，傷害量最多減少 50%。</sec>
+        <sec typ="cond">技能命中時</sec>，使自身在 2 回合內的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>與<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>增加。
+        <sec typ="cond">暴擊時</sec>，會產生 <sec typ="dmg"><buff typ="FireATK_UP" /> <val idx="4" r signless /> 額外火焰傷害</sec>。
+        <sec typ="cond">若隊伍中有 <char uid="LC_Stella" />、<char uid="LC_Haru" />、<char uid="LC_Lily" /></sec>，則 <sec typ="chance">100% 機率</sec>誘發以 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">基本攻擊</sec>、<sec typ="note">劍刃暴雨</sec>、<sec typ="note">死亡斷頭台</sec></sec> 的協同攻擊。
+        <sec>若可進行協同攻擊的戰鬥員有多名，則依上述順序優先。（史黛拉・尤尼貝爾 > 莉莉・布隆梅爾亨）</sec>
+        <sec>若目標為多名敵人，會優先選擇射程可及的敵人；若因射程無法進行協同攻擊，則由下一位順序的戰鬥員執行協同攻擊。</sec>
   "3":
     key: "3"
     icon: P.MeleeAttack
@@ -6110,6 +6160,23 @@ skills:
             base: 0.05
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> 및 <sec typ="dmg">대 중장 피해량 <val idx="1" r /></sec>을 증가시킵니다.
+        <sec typ="cond">공격 적중 시</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">적 처치 시</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>을(를) 추가로 증가시킵니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> および <sec typ="dmg">対重装型ダメージ量 <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">攻撃命中時</sec>、自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>を増加させます。
+        <sec typ="cond">敵撃破時</sec>、自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>をさらに増加させます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases own <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> and <sec typ="dmg">damage against Heavy units <val idx="1" r /></sec>.
+        <sec typ="cond">On hit</sec>, increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>.
+        <sec typ="cond">On enemy kill</sec>, further increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，提升自身的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> 及 <sec typ="dmg">對重裝型傷害量 <val idx="1" r /></sec>。
+        <sec typ="cond">攻擊命中時</sec>，提升自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>。
+        <sec typ="cond">擊殺敵人時</sec>，再額外提升自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -6419,6 +6486,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 아군 전체의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> 및 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec>를 증가 시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <char uid="BR_Shirayuri" />가 있는 경우</sec> 시라유리는 2배로 효과를 받습니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <char uid="BR_Shirayuri" />가 있는 경우</sec> <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 시라유리를 공격 지원</sec>합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、味方全体の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec> および <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">分隊に <char uid="BR_Shirayuri" />がいる場合</sec>、シラユリは2倍の効果を受けます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">分隊に <char uid="BR_Shirayuri" />がいる場合</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> シラユリの攻撃を支援</sec>します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases all allies' <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> and <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec>.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if the squad has <char uid="BR_Shirayuri" /></sec>, Shirayuri receives double effects.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if the squad has <char uid="BR_Shirayuri" /></sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports Shirayuri's attacks</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，提升友軍全體的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec>及<sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="1" r /></sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若隊伍中有 <char uid="BR_Shirayuri" /></sec>，白百合會獲得 2 倍效果。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若隊伍中有 <char uid="BR_Shirayuri" /></sec>，則會以 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 支援白百合攻擊</sec>。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -7044,6 +7128,67 @@ skills:
             base: 0.02
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">피격 시</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="dmg"><buff typ="COUNTER" /> <val idx="0" r signless /> 위력으로 반격</sec>하며 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> 및 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> 소속 전투원이 있을 경우</sec> 인원수에 따라 아군 전체에게 <sec typ="note">분노!</sec>를 부여합니다.
+        <box t="분노! 1">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec> 증가
+        </box>
+        <box t="분노! 2">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="9" r /></sec> 증가
+        </box>
+        <box t="분노! 3">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="10" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="12" r /></sec> 증가
+        </box>
+        <box t="분노! 4">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="14" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="15" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="16" r /></sec> 증가
+        </box>
+      JP: |-
+        <sec typ="cond">被弾時</sec>、<sec typ="chance">100%確率</sec>で <sec typ="dmg"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力で反撃</sec>し、2ラウンドの間自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> および <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="6" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">分隊に自分以外の <cmt t="ライオンコーポレーション">$$LionCooperation:?$</cmt> 所属戦闘員がいる場合</sec>、人数に応じて味方全体に <sec typ="note">怒り！</sec>を付与します。
+        <box t="怒り！ 1">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec> 増加
+        </box>
+        <box t="怒り！ 2">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="9" r /></sec> 増加
+        </box>
+        <box t="怒り！ 3">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="10" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="12" r /></sec> 増加
+        </box>
+        <box t="怒り！ 4">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="14" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="15" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="16" r /></sec> 増加
+        </box>
+      EN: |-
+        <sec typ="cond">When hit</sec>, <sec typ="chance">100% chance</sec> to counterattack with <sec typ="dmg"><buff typ="COUNTER" /> <val idx="0" r signless /> power</sec>, and for 2 rounds own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="6" r /></sec> increase.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if there are allied combatants from <cmt t="Lion Corporation">$$LionCooperation:?$</cmt> besides self in the squad</sec>, grants all allies <sec typ="note">Rage!</sec> based on the number of allies.
+        <box t="Rage! 1">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="7" r /></sec> increase
+        </box>
+        <box t="Rage! 2">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="9" r /></sec> increase
+        </box>
+        <box t="Rage! 3">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="10" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="12" r /></sec> increase
+        </box>
+        <box t="Rage! 4">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="13" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="14" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="15" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="16" r /></sec> increase
+        </box>
+      TC: |-
+        <sec typ="cond">受擊時</sec>，<sec typ="chance">100% 機率</sec>以 <sec typ="dmg"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力反擊</sec>，並在 2 回合內提升自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec>及<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="6" r /></sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若隊伍中有除自身以外來自 <cmt t="Lion Corporation">$$LionCooperation:?$</cmt> 的戰鬥員</sec>，則依人數賦予友軍全體 <sec typ="note">憤怒！</sec>。
+        <box t="憤怒！ 1">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="7" r /></sec>增加
+        </box>
+        <box t="憤怒！ 2">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="9" r /></sec>增加
+        </box>
+        <box t="憤怒！ 3">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="10" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="12" r /></sec>增加
+        </box>
+        <box t="憤怒！ 4">
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="14" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="15" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="16" r /></sec>增加
+        </box>
 dialogue:
   KR:
     "1":
@@ -7114,10 +7259,7 @@ dialogue:
         …하아, 무리야…
         이제 대련은 끝났으니까…
         히끅… 아, 안 돼엣…?!
-      Oath: 시라유리와 수련을 하면서 분노를 다스리는 법을 배우고 익힐 수 있었어. 아무래도 수련의 효과가 상당한 모양이네.
-        널 보고도 이렇게 침착할 수 있다니… 고맙다…! 덕분에 이렇게나 많이 성장할 수 있었으니까. …뭐야, 그 물건은, 날 인정하겠다는
-        증표 같은 건가? 좋아. 받아서 간직해두도록 할게. 오랜 고통을 견디고 단단하게 빛날 수 있게 된 이 보석처럼… 내가 눈부시게
-        빛나는 그날까지 계속해서 함께 해 줄거지?
+      Oath: 시라유리와 수련을 하면서 분노를 다스리는 법을 배우고 익힐 수 있었어. 아무래도 수련의 효과가 상당한 모양이네. 널 보고도 이렇게 침착할 수 있다니… 고맙다…! 덕분에 이렇게나 많이 성장할 수 있었으니까. …뭐야, 그 물건은, 날 인정하겠다는 증표 같은 건가? 좋아. 받아서 간직해두도록 할게. 오랜 고통을 견디고 단단하게 빛날 수 있게 된 이 보석처럼… 내가 눈부시게 빛나는 그날까지 계속해서 함께 해 줄거지?
       OathIdle_01: |-
         너 말이야, 그만 날 애처럼 다뤄!
         이번 대련에서 이기면 꼭
@@ -7185,8 +7327,7 @@ dialogue:
         으앗… 야!
         기, 기분 이상해!
         하지 마!!
-      Oath: 인정할 건 인정해야겠지… 넌 내가 봐왔던 다른 어른들과는 달랐어. 내가 틀렸어, 넌 내 생각보다 더 좋은 어른이란 걸 인정 할게.
-        서로 나눈 이 반지, 화해해 증표로 평생 간직하자. 자~ 악수! 그럼 이제부터 정식으로 잘 부탁해!
+      Oath: 인정할 건 인정해야겠지… 넌 내가 봐왔던 다른 어른들과는 달랐어. 내가 틀렸어, 넌 내 생각보다 더 좋은 어른이란 걸 인정 할게. 서로 나눈 이 반지, 화해해 증표로 평생 간직하자. 자~ 악수! 그럼 이제부터 정식으로 잘 부탁해!
       OathIdle_01: |-
         내가 많이 어른스러워진 것 같다고?
         기분 나쁜 건 아냐…

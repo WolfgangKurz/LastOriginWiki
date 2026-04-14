@@ -6,6 +6,28 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13117" date="2026-04-15"
+		site={ <>
+			<li>
+				모든 전투원의 스킬 설명이 이제 사이트에서 제공 중인 모든 언어로 지원됩니다.<br />
+				이제 각 전투원의 스킬 정보를 한국어를 포함한 사이트 지원 언어로 확인하실 수 있습니다.<br />
+				본 언어 지원은 한국어 데이터를 기반으로 AI 번역을 이용했습니다.
+				<hr />
+				Skill descriptions for all Units are now available in every language supported on the site.<br />
+				You can now view each Unit’s skill information in all site-supported languages, including English.<br />
+				Language support for this content was provided using AI translation based on Korean data.
+				<hr />
+				すべての戦闘員のスキル説明が、サイトで提供中のすべての対応言語で利用可能になりました。<br />
+				これにより、各戦闘員のスキル情報をサイト対応言語で確認できます。<br />
+				本言語サポートは、韓国語データを基にAI翻訳を利用しています。
+				<hr />
+				所有戰鬥員的技能說明現在已支援網站目前提供的所有語言。<br />
+				您現在可以使用網站支援的各種語言查看每位戰鬥員的技能資訊。<br />
+				本語言支援是以韓文資料為基礎，透過 AI 翻譯提供。
+			</li>
+			<li>Locale 파일 분리를 최적화했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13111" date="2026-04-11"
 		new={ <>
 			<li>신규 소모품 정보가 추가되었습니다.</li>

@@ -1673,6 +1673,19 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        단일 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        대상이 해로운 <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> / <sec typ="cond"><buff typ="ATK_DOWN" /> 공격력 감소</sec> 상태일 때 각각 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: |-
+        単一の敵に<sec typ="attr">保護無視</sec>の<dmg elem="physics" />を与えます。
+        対象が有害な<sec typ="cond"><buff typ="EVADE_DOWN" />回避減少</sec> / <sec typ="cond"><buff typ="ATK_DOWN" />攻撃力減少</sec>状態のとき、それぞれ<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+      EN: |-
+        Deals <sec typ="attr">ignores Protection</sec> <dmg elem="physics" /> damage to a single enemy.
+        When the target is in a harmful <sec typ="cond"><buff typ="EVADE_DOWN" /> EVADE reduction</sec> / <sec typ="cond"><buff typ="ATK_DOWN" /> ATK reduction</sec> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases for each.
+      TC: |-
+        對單一敵軍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害。
+        當目標處於有害的<sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避減少</sec> / <sec typ="cond"><buff typ="ATK_DOWN" /> 攻擊力減少</sec>狀態時，各自的<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量<val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: CruiseMissile
@@ -5473,6 +5486,39 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        무장을 전탄발사하여 지정 범위 적에게 <dmg elem="physics" />를 줍니다.
+        중행을 제외한 행에는 <sec typ="dmg">25% 감소한 피해</sec>를 입힙니다.
+        적중 시, <sec typ="cond">대상의 HP가 100%인 경우</sec> 이로운 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 무효화 효과를 해제</sec>하고, <sec typ="cond">대상의 HP가 50% 이상인 경우</sec> 이로운 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가 효과를 해제</sec>합니다.
+        <sec typ="note">감사히 받도록!</sec>에 의한 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 증가</sec> 효과가 <sec typ="cond">최대 중첩</sec> 상태일 때, 중첩을 모두 소모하고 <sec typ="note">길을 내어라!</sec>의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량이 <val idx="0" r /> 증가</sec>합니다.
+        스킬 사용 시, 자신은 2라운드 동안 해제 불가한 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="8" r /></sec> 감소 효과를 획득합니다.
+        스쿼드 내에 자신을 제외한 <sec typ="note">머메이드</sec> 전투원이 있으면 행동력 감소 수치가 경감됩니다. (<sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="7" r /></sec>)
+        <sec typ="note">머메이드</sec> 전투원 : <char uid="3P_Amphitrite" />, <char uid="3P_Salacia" />, <char uid="3P_Galatea" />
+      JP: |-
+        武装を全弾発射して指定範囲の敵に<dmg elem="physics" />を与えます。
+        中列を除く列には<sec typ="dmg">25%減少したダメージ</sec>を与えます。
+        命中時、<sec typ="cond">対象のHPが100%の場合</sec>は有利な<sec typ="buff"><buff typ="REMOVE_BUFF" />ダメージ無効化効果を解除</sec>し、<sec typ="cond">対象のHPが50%以上の場合</sec>は有利な<sec typ="buff"><buff typ="REMOVE_BUFF" />防御力増加効果を解除</sec>します。
+        <sec typ="note">Take It Gratefully!</sec>による<sec typ="buff"><buff typ="ACCURACY_UP" />命中増加</sec>効果が<sec typ="cond">最大スタック</sec>状態のとき、スタックをすべて消費し、<sec typ="note">Make Way!</sec>の<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量が<val idx="0" r />増加</sec>します。
+        スキル使用時、自分は2ラウンドの間解除不可の<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="8" r /></sec>減少効果を獲得します。
+        スコッド内に自分以外の<sec typ="note">マーメイデン</sec>戦闘員がいる場合、行動力減少量が軽減されます。(<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="7" r /></sec>)
+        <sec typ="note">マーメイデン</sec>戦闘員 : <char uid="3P_Amphitrite" />、<char uid="3P_Salacia" />、<char uid="3P_Galatea" />
+      EN: |-
+        Fires all weapons to deal <dmg elem="physics" /> damage to enemies in the designated area.
+        Rows other than the middle row take <sec typ="dmg">25% reduced damage</sec>.
+        On hit, <sec typ="cond">if the target's HP is 100%</sec>, removes the beneficial <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage immunity effect</sec>, and <sec typ="cond">if the target's HP is at least 50%</sec>, removes the beneficial <sec typ="buff"><buff typ="REMOVE_BUFF" /> DEF increase effect</sec>.
+        When the <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy increase</sec> effect from <sec typ="note">Take It Gratefully!</sec> is at <sec typ="cond">maximum stacks</sec>, consumes all stacks and increases <sec typ="note">Make Way!</sec>'s <sec typ="dmg"><buff typ="PhyATK_UP" /> damage by <val idx="0" r /></sec>.
+        When the skill is used, self gains an unremovable <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="8" r /></sec> reduction effect for 2 rounds.
+        If there is a <sec typ="note">Mermaid</sec> combatant other than self in the squad, the AP reduction amount is reduced. (<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" r /></sec>)
+        <sec typ="note">Mermaid</sec> combatants: <char uid="3P_Amphitrite" />, <char uid="3P_Salacia" />, <char uid="3P_Galatea" />
+      TC: |-
+        全彈發射武裝，對指定範圍敵軍造成<dmg elem="physics" />傷害。
+        中排以外的列將受到<sec typ="dmg">25%減少後的傷害</sec>。
+        命中時，<sec typ="cond">若目標HP為100%</sec>，則解除有益的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 傷害無效化效果</sec>；<sec typ="cond">若目標HP為50%以上</sec>，則解除有益的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 防禦力增加效果</sec>。
+        當<sec typ="note">感謝收下！</sec>帶來的<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中增加</sec>效果處於<sec typ="cond">最大疊加</sec>狀態時，會消耗全部疊加數並使<sec typ="note">讓路！</sec>的<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量增加<val idx="0" r /></sec>。
+        使用技能時，自身會獲得持續2回合且無法解除的<sec typ="buff"><buff typ="AP_DOWN" /> 行動力<val idx="8" r /></sec>減少效果。
+        若編成中存在除自身以外的<sec typ="note">美人魚</sec>戰鬥員，則行動力減少量會降低。（<sec typ="buff"><buff typ="AP_DOWN" /> 行動力<val idx="7" r /></sec>）
+        <sec typ="note">美人魚</sec>戰鬥員：<char uid="3P_Amphitrite" />、<char uid="3P_Salacia" />、<char uid="3P_Galatea" />
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -6016,6 +6062,27 @@ skills:
             base: 0.05
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="note">자신을 지켜주는 근위대(라고 주장하는 전투원)</sec>가 많을 수록 멜리테는 기세등등해집니다.
+        라운드 개시 시, 자신에게 적용된 이로운 방어 관련 효과 종류에 따라 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> 증가 효과를 획득합니다.
+        방어 관련 효과 : <sec typ="cond"><buff typ="DEF_UP" /> 방어력</sec> / <sec typ="cond"><buff typ="EVADE_UP" /> 회피</sec> / <sec typ="cond"><buff typ="BARRIER" /> 방어막</sec> / <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> / <sec typ="cond"><buff typ="DEF_Char" /> 지정 보호</sec> / <sec typ="cond"><buff typ="DEBUFF_PERDOWN" /> 효과 저항</sec>
+        라운드 개시 시, 본 스킬을 통해 획득한 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가 효과</sec>가 2중첩 이상일 때 자신의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="8" r /></sec>가 증가하고, 4중첩 이상일 때 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과가 활성화 됩니다.
+      JP: |-
+        <sec typ="note">自分を守る近衛隊（と主張する戦闘員）</sec>が多いほど、メリテは勢いづきます。
+        ラウンド開始時、自分に適用された有利な防御関連効果の種類に応じて<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>増加効果を獲得します。
+        防御関連効果 : <sec typ="cond"><buff typ="DEF_UP" />防御力</sec> / <sec typ="cond"><buff typ="EVADE_UP" />回避</sec> / <sec typ="cond"><buff typ="BARRIER" />バリア</sec> / <sec typ="cond"><buff typ="DAMAGE_REDUCE" />受けるダメージ減少</sec> / <sec typ="cond"><buff typ="DEF_Char" />指定保護</sec> / <sec typ="cond"><buff typ="DEBUFF_PERDOWN" />効果抵抗</sec>
+        ラウンド開始時、本スキルを通じて獲得した<sec typ="buff"><buff typ="ATK_UP" />攻撃力増加効果</sec>が2スタック以上のとき、自分の<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="8" r /></sec>が増加し、4スタック以上のとき<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視</sec>効果が有効になります。
+      EN: |-
+        The more <sec typ="note">bodyguards who claim to protect her</sec> there are, the more Melite bristles with confidence.
+        At round start, gains an <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> increase effect based on the types of beneficial defense-related effects applied to self.
+        Defense-related effects: <sec typ="cond"><buff typ="DEF_UP" /> DEF</sec> / <sec typ="cond"><buff typ="EVADE_UP" /> EVADE</sec> / <sec typ="cond"><buff typ="BARRIER" /> Barrier</sec> / <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> received damage reduction</sec> / <sec typ="cond"><buff typ="DEF_Char" /> designated protection</sec> / <sec typ="cond"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance</sec>
+        At round start, if the <sec typ="buff"><buff typ="ATK_UP" /> ATK increase effect</sec> gained through this skill has 2 or more stacks, self's <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="8" r /></sec> increases, and if it has 4 or more stacks, <sec typ="buff"><buff typ="Guardpierce_Apply" /> Protection Ignore</sec> is enabled.
+      TC: |-
+        越多<sec typ="note">自稱守護自己的近衛隊（戰鬥員）</sec>，멜리테就越趾高氣昂。
+        在回合開始時，依據自身所受有益防禦相關效果的種類，獲得<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力<val idx="0" r /></sec>增加效果。
+        防禦相關效果：<sec typ="cond"><buff typ="DEF_UP" /> 防禦力</sec> / <sec typ="cond"><buff typ="EVADE_UP" /> 迴避</sec> / <sec typ="cond"><buff typ="BARRIER" /> 防護罩</sec> / <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 所受傷害減少</sec> / <sec typ="cond"><buff typ="DEF_Char" /> 指定保護</sec> / <sec typ="cond"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗</sec>
+        在回合開始時，若透過本技能獲得的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力增加效果</sec>已達2層以上，自身的<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力<val idx="8" r /></sec>會增加；達4層以上時，則啟用<sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec>效果。
   "4":
     key: "4"
     icon: P.CannonShotDelay
@@ -6364,6 +6431,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격기를 제외한 아군 중장형 전투원의 공격을 지원</sec>합니다.
+        지원공격 시, 실시간으로 좌표를 수정하여 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec>가 증가합니다. (최대 3중첩)
+        자신이 <sec typ="note">길을 내어라!</sec> 효과에 의한 <sec typ="cond"><buff typ="AP_DOWN" /> 행동력 감소</sec> 상태일 때, 지원공격 시 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>이(가) 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃機を除く味方重装型戦闘員の攻撃を支援</sec>します。
+        支援攻撃時、リアルタイムで座標を修正し、自分の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec>が増加します。（最大3スタック）
+        自分が<sec typ="note">道を開けよ！</sec>効果による<sec typ="cond"><buff typ="AP_DOWN" />行動力減少</sec>状態のとき、支援攻撃時に自分の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="6" /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports the attacks of allied heavy-type combatants excluding attackers</sec>.
+        During support attacks, real-time coordinate adjustments increase self's <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec>. (Max 3 stacks)
+        When self is under the <sec typ="cond"><buff typ="AP_DOWN" /> AP reduction</sec> state caused by <sec typ="note">Make Way!</sec>, support attacks increase self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>.
+      TC: |-
+        <sec typ="cond">在回合開始時</sec>，<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援除攻擊機以外的我軍重裝型戰鬥員進行攻擊</sec>。
+        在支援攻擊時，會即時修正座標，使自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透<val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中<val idx="5" r /></sec>增加。（最多3層）
+        當自身處於因<sec typ="note">讓路！</sec>而造成的<sec typ="cond"><buff typ="AP_DOWN" /> 行動力減少</sec>狀態時，支援攻擊會使自身的<sec typ="buff"><buff typ="AP_UP" /> AP<val idx="6" /></sec>增加。
   "5":
     key: "5"
     icon: P.Command
@@ -6574,6 +6658,23 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시, 모든 적에게 피격 시 1회에 한하여 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec> 증가 효과를 적용합니다.
+        <sec>해당 효과는 효과 저항의 영향을 받지 않습니다.</sec>
+        웨이브 종료 시, 점령에 들뜬 마음을 안고 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" r /></sec>가 증가합니다. (해제 불가)
+      JP: |-
+        戦闘開始時、すべての敵に被弾時1回に限り<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="0" r /></sec>増加効果を適用します。
+        <sec>この効果は効果抵抗の影響を受けません。</sec>
+        ウェーブ終了時、占領に浮き立つ心を胸に自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="2" r /></sec>が増加します。（解除不可）
+      EN: |-
+        At battle start, applies a one-time-per-hit <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="0" r /></sec> increase effect to all enemies.
+        <sec>This effect is not affected by Effect Resistance.</sec>
+        At wave end, self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="2" r /></sec> increases, filled with excitement over the occupation. (Unremovable)
+      TC: |-
+        在戰鬥開始時，對全體敵軍套用於每次受擊時僅觸發1次的<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害<val idx="0" r /></sec>增加效果。
+        <sec>此效果不受效果抵抗影響。</sec>
+        在波次結束時，帶著對佔領的雀躍心情，自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力<val idx="2" r /></sec>增加。（無法解除）
 dialogue:
   KR:
     "1":
@@ -6859,11 +6960,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        They don't have candied floors or unlimited chocolate fountains… but
-        refreshing sweet drinks and cold bingsu are great too! Amazing! I shall
-        add soda and
-
+      Idle_01_01: |-
+        They don't have candied floors or unlimited chocolate fountains… but refreshing sweet drinks and cold bingsu are great too! Amazing! I shall add soda and
         bingsu to my Chocoland!
       Idle_01_02: |-
         Are you having fun, Admiral? No one else can have fun
@@ -6905,12 +7003,9 @@ dialogue:
         acting like a child in your arms…
         could it get any better? Stay beside me…
         until I wake up.
-      Oath: >-
-        A confession during the festival. You’re not doing this spur of the
-        moment, are you? I mean… it's even better if not!
-
+      Oath: |-
+        A confession during the festival. You’re not doing this spur of the moment, are you? I mean… it's even better if not!
         How would I be able to reject you, Admiral? Now, every day's going to feel like a festival!
-
         No, I just wanted to respond to your confession with one of my own. Each of my days has been a festival ever since I met you!
       OathIdle_01: |-
         Did you have a good time, dear? I know I did.
@@ -6920,8 +7015,7 @@ dialogue:
         to build a true Choco Land!
       MVP: ""
     "":
-      Join: We are on the same side. Glad to meet you, Admiral! Let’s have a feast to
-        commemorate today!
+      Join: We are on the same side. Glad to meet you, Admiral! Let’s have a feast to commemorate today!
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -6939,13 +7033,10 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         My name is Melite, the Queen of Chocoland!
-
         Does Chocoland really exist?
-
         Hmph. That I am Chocoland itself.
-
         Which means, as long as I present, the Kingdom of Chocoland also exists!​
       Idle_01_02: |-
         It takes vast territory to establish a country…
@@ -6959,13 +7050,10 @@ dialogue:
         Hmm…
         What you are doing feels like treating like a child,
         so stop it already.​
-      Idle_02_01: >-
+      Idle_02_01: |-
         Sweet candies on the floor, soaring
-
         chocolate fountain. Those all will become the specialty of Chocoland.
-
         What do you think, Admiral? You can be a contribution to the country's founding.
-
         I'll give you plenty of time to fonder, have a wise choice!​
       Idle_03_01: |-
         Tuna Can? The thing you get when you give
@@ -6983,20 +7071,14 @@ dialogue:
         Good, very good.
         To strengthen our trusting relationship
         Keep stroking, Admiral!​
-      Oath: >-
-        This is…..! Since when did you crush on me? From the beginning… Then,
-        the same as me.
-
+      Oath: |-
+        This is…..! Since when did you crush on me? From the beginning… Then, the same as me.
         I also thought that the only one who could be my husband, it was you, from the beginning. Fine! Let the feast begin!
-
         As splendidly and grandly as possible! Let the world know that the Queen and King of Chocoland have come!
-      OathIdle_01: >-
+      OathIdle_01: |-
         Dear, did you take my chocolate and candy again!
-
         I did promise to brush my teeth before going to bed.
-
         Why are you keep taking it away from me…! According to the national law of Chocoland!
-
         The tickling punishment!​
       MVP: ""
     M:

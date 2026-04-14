@@ -6316,6 +6316,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        기습 공격으로 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여합니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>하고 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="7" r /></sec>가 증가합니다.
+      JP: |-
+        奇襲攻撃で <dmg elem="physics" /> を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> を減少させ、<sec typ="buff"><buff typ="MARKING" /> マーク</sec> を付与します。
+        <sec typ="cond">クリティカル時</sec>、対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃効果を解除</sec>し、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="7" r /></sec> が増加します。
+      EN: |-
+        Deals <dmg elem="physics" /> with a surprise attack.
+        <sec typ="cond">On hit</sec>, reduces the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> accuracy <val idx="0" r /></sec> for 2 rounds and applies <sec typ="buff"><buff typ="MARKING" /> Mark</sec>.
+        <sec typ="cond">On critical hit</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> counterattack effects</sec> and increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt <val idx="7" r /></sec>.
+      TC: |-
+        以奇襲攻擊造成 <dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，在 2 回合內降低目標的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>，並施加 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>。
+        <sec typ="cond">暴擊時</sec>，解除目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊效果</sec>，並使 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="7" r /></sec> 提高。
   "2":
     key: "2"
     icon: BombActive
@@ -9969,6 +9986,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        점착 폭탄으로 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="0" r inv /></sec>가 감소합니다. <sec>(중첩 불가)</sec>
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
+      JP: |-
+        粘着爆弾で <dmg elem="physics" /> を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="0" r inv /></sec> が減少します。 <sec>(重複不可)</sec>
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="4" r /></sec> が増加します。
+      EN: |-
+        Deals <dmg elem="physics" /> with sticky bombs.
+        <sec typ="cond">On hit</sec>, reduces the target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> effect resistance <val idx="0" r inv /></sec> for 2 rounds. <sec>(Cannot stack)</sec>
+        <sec typ="cond">On critical hit</sec>, increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt <val idx="4" r /></sec>.
+      TC: |-
+        以黏著炸彈造成 <dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，使目標在 2 回合內的 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="0" r inv /></sec> 降低。 <sec>(不可疊加)</sec>
+        <sec typ="cond">暴擊時</sec>，使 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="4" r /></sec> 提高。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -10401,6 +10435,23 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="8" r /></sec>가 증가합니다.
+        <sec typ="cond"><sec typ="note">기습</sec>으로 적 처치 시</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">광학 미채</sec>를 재활성화</sec>합니다.
+        <sec typ="cond"><sec typ="note">점착 폭탄 투척</sec> 적중 시</sec>, 자신은 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 효과를 획득합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="8" r /></sec> が増加します。
+        <sec typ="cond"><sec typ="note">奇襲</sec>で敵を処理した時</sec>、<sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">光学迷彩</sec>を再起動</sec>します。
+        <sec typ="cond"><sec typ="note">粘着爆弾投擲</sec>命中時</sec>、自分は <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec> 効果を獲得します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases own <sec typ="buff"><buff typ="ATK_UP" /> attack <val idx="7" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="8" r /></sec>.
+        <sec typ="cond">When an enemy is killed by <sec typ="note">Ambush</sec></sec>, reactivates <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">Optical Camouflage</sec></sec>.
+        <sec typ="cond">On hit with <sec typ="note">Sticky Bomb Throw</sec></sec>, self gains <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> reattack</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，使自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="8" r /></sec> 提高。
+        <sec typ="cond">以 <sec typ="note">奇襲</sec> 擊殺敵人時</sec>，會重新啟動 <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">光學迷彩</sec></sec>。
+        <sec typ="cond">以 <sec typ="note">黏著炸彈投擲</sec> 命中時</sec>，自身獲得 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻擊</sec> 效果。
   "4":
     key: "4"
     icon: P.Barrier
@@ -11209,6 +11260,27 @@ skills:
             base: 1
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">광학 미채</sec>가 활성화</sec>되어 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="8" r /></sec>가 증가하고 <sec typ="buff"><buff typ="charge" /> 모든 공격에 반드시 치명타</sec>가 발생합니다.
+        <sec typ="cond">자신이 표식 상태인 경우</sec>, <sec typ="note">광학 미채</sec>는 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 공격 받을 시 해제</sec>되며 <sec>더 이상 활성화될 수 없습니다</sec>.
+        <sec typ="cond">대기 시</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">광학 미채</sec>를 재활성화</sec>할 수 있으며, <sec typ="cond"><sec typ="note">광학 미채</sec>가 활성화될 때마다</sec> 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="14" /></sec>이(가) 증가합니다.
+        <sec typ="cond"><sec typ="note">광학 미채</sec>가 아닌 상태에서 회피 시</sec>, 입막음을 위해 <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">광학 미채</sec>를 재활성화</sec>하고 <sec typ="buff"><buff typ="COUNTER" /> <val idx="11" r signless /> 위력으로 반격</sec>합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">光学迷彩</sec>が有効化</sec>され、<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="8" r /></sec> が増加し、<sec typ="buff"><buff typ="charge" /> すべての攻撃が必ずクリティカル</sec> になります。
+        <sec typ="cond">自分がマーク状態の場合</sec>、<sec typ="note">光学迷彩</sec>は <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 攻撃を受けた時に解除</sec> され、<sec>これ以上有効化できません</sec>。
+        <sec typ="cond">待機時</sec>、<sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">光学迷彩</sec>を再有効化</sec> できます。また、<sec typ="cond"><sec typ="note">光学迷彩</sec>が有効化されるたび</sec> 自分に付与された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害な効果を解除</sec> し、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="14" /></sec> が増加します。
+        <sec typ="cond"><sec typ="note">光学迷彩</sec>でない状態で回避した時</sec>、口封じのため <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">光学迷彩</sec>を再有効化</sec> し、<sec typ="buff"><buff typ="COUNTER" /> <val idx="11" r signless /> の威力で反撃</sec> します。
+      EN: |-
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">Optical Camouflage</sec> becomes active</sec>, increasing <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> defense pierce <val idx="8" r /></sec> and causing <sec typ="buff"><buff typ="charge" /> all attacks to always critically hit</sec>.
+        <sec typ="cond">If self is Marked</sec>, <sec typ="note">Optical Camouflage</sec> is <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removed when attacked</sec> and <sec>can no longer be activated</sec>.
+        <sec typ="cond">When waiting</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">Optical Camouflage</sec> can be reactivated</sec>, and <sec typ="cond">each time <sec typ="note">Optical Camouflage</sec> becomes active</sec>, removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec> applied to self and increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="14" /></sec>.
+        <sec typ="cond">When evading while not in <sec typ="note">Optical Camouflage</sec></sec>, reactivates <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">Optical Camouflage</sec></sec> to silence the target and counterattacks with <sec typ="buff"><buff typ="COUNTER" /> power <val idx="11" r signless /></sec>.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，<sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">光學迷彩</sec> 啟動</sec>，使 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="8" r /></sec> 提高，並使 <sec typ="buff"><buff typ="charge" /> 所有攻擊必定暴擊</sec>。
+        <sec typ="cond">若自身處於標記狀態</sec>，<sec typ="note">光學迷彩</sec>會在 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 受到攻擊時解除</sec>，且<sec>再也無法啟動</sec>。
+        <sec typ="cond">待機時</sec>，可以 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 重新啟動 <sec typ="note">光學迷彩</sec></sec>，且<sec typ="cond">每當 <sec typ="note">光學迷彩</sec> 啟動時</sec>，會解除自身所受的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>，並使 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="14" /></sec> 提高。
+        <sec typ="cond">在非 <sec typ="note">光學迷彩</sec> 狀態下閃避時</sec>，為了封口會 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 重新啟動 <sec typ="note">光學迷彩</sec></sec>，並以 <sec typ="buff"><buff typ="COUNTER" /> <val idx="11" r signless /> 威力反擊</sec>。
   "5":
     key: "5"
     icon: P.TeamAtkDeBuff
@@ -11601,6 +11673,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">적 처치 시</sec>, HP가 100%인 모든 적은 공포에 질려 해당 라운드 동안 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 상태가 되고 다음 라운드까지 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="4" r /></sec>가 감소합니다. <sec>(중첩 불가)</sec>
+        <sec typ="cond">공격 적중 대상의 HP가 50% 이상인 경우</sec> <sec typ="buff"><sec typ="cond">적중 시</sec> 효과 수치</sec>가, <sec typ="cond">HP가 50% 이하인 경우</sec> <sec typ="buff"><sec typ="cond">치명타 시</sec> 효과 수치</sec>가 50% 증폭됩니다.
+        자신이 부여한 표식 상태인 대상은 상기 HP 조건과 관계없이 효과가 적용됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大行動回数 <val idx="0" /></sec> が増加します。
+        <sec typ="cond">敵を処理した時</sec>、HPが100%のすべての敵は恐怖に陥り、そのラウンドの間 <sec typ="buff"><buff typ="SEAL_SKILL" /> スキル使用不可</sec> 状態になり、次のラウンドまで <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" r /></sec> が減少します。 <sec>(重複不可)</sec>
+        <sec typ="cond">攻撃命中対象のHPが50%以上の場合</sec> <sec typ="buff"><sec typ="cond">命中時</sec> 効果値</sec> が、<sec typ="cond">HPが50%以下の場合</sec> <sec typ="buff"><sec typ="cond">クリティカル時</sec> 効果値</sec> が50%増幅されます。
+        自分が付与したマーク状態の対象は、上記HP条件に関係なく効果が適用されます。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases own <sec typ="buff"><buff typ="Action_Number_Change_Up" /> maximum action count <val idx="0" /></sec>.
+        <sec typ="cond">On enemy kill</sec>, all enemies at 100% HP are struck with fear and become <sec typ="buff"><buff typ="SEAL_SKILL" /> unable to use skills</sec> for that round, and their <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" r /></sec> is reduced until the next round. <sec>(Cannot stack)</sec>
+        <sec typ="cond">If the HP of the hit target is 50% or higher</sec>, the <sec typ="buff"><sec typ="cond">on hit</sec> effect value</sec> is amplified by 50%, and <sec typ="cond">if HP is 50% or lower</sec>, the <sec typ="buff"><sec typ="cond">on critical hit</sec> effect value</sec> is amplified by 50%.
+        Targets marked by self's Mark effect receive the above effects regardless of the HP condition.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，使自身的 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大行動次數 <val idx="0" /></sec> 提高。
+        <sec typ="cond">敵人被擊殺時</sec>，所有 HP 為 100% 的敵人都會陷入恐懼，並在該回合內進入 <sec typ="buff"><buff typ="SEAL_SKILL" /> 無法使用技能</sec> 狀態，且直到下一回合前 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="4" r /></sec> 降低。 <sec>(不可疊加)</sec>
+        <sec typ="cond">若命中目標 HP 50% 以上</sec>，<sec typ="buff"><sec typ="cond">命中時</sec> 效果數值</sec> 提升 50%；<sec typ="cond">若 HP 50% 以下</sec>，則 <sec typ="buff"><sec typ="cond">暴擊時</sec> 效果數值</sec> 提升 50%。
+        自身施加標記狀態的目標，不受上述 HP 條件影響而直接套用效果。
   F1:
     key: F1
     icon: ARShot
@@ -16827,6 +16920,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여합니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>하고 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="10" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">命中時</sec>、対象の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="1" r /></sec> を減少させ、<sec typ="buff"><buff typ="MARKING" /> マーク</sec> を付与します。
+        <sec typ="cond">クリティカル時</sec>、対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃効果を解除</sec>し、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="10" r /></sec> が増加します。
+      EN: |-
+        <sec typ="cond">On hit</sec>, reduces the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> critical <val idx="1" r /></sec> and applies <sec typ="buff"><buff typ="MARKING" /> Mark</sec>.
+        <sec typ="cond">On critical hit</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> counterattack effects</sec> and increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt <val idx="10" r /></sec>.
+      TC: |-
+        <sec typ="cond">命中時</sec>，降低目標的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="1" r /></sec>，並施加 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>。
+        <sec typ="cond">暴擊時</sec>，解除目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊效果</sec>，並使 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="10" r /></sec> 提高。
   F2:
     key: F2
     icon: BombActive
@@ -22035,6 +22141,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="0" r inv /></sec>가 감소하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="6" r /></sec>가 증가합니다. <sec>(중첩 불가)</sec>
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>하고 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="10" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="0" r inv /></sec> が減少し、<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="6" r /></sec> が増加します。 <sec>(重複不可)</sec>
+        <sec typ="cond">クリティカル時</sec>、対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を解除</sec>し、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="10" r /></sec> が増加します。
+      EN: |-
+        <sec typ="cond">On hit</sec>, reduces the target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> effect resistance <val idx="0" r inv /></sec> for 2 rounds and increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="6" r /></sec>. <sec>(Cannot stack)</sec>
+        <sec typ="cond">On critical hit</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> buffs</sec> and increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt <val idx="10" r /></sec>.
+      TC: |-
+        <sec typ="cond">命中時</sec>，使目標在 2 回合內的 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="0" r inv /></sec> 降低，並使 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="6" r /></sec> 提高。 <sec>(不可疊加)</sec>
+        <sec typ="cond">暴擊時</sec>，解除目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果</sec>，並使 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="10" r /></sec> 提高。
   F3:
     key: F3
     icon: P.SelfAtkBuff
@@ -22375,6 +22494,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">적 처치 시</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">광학 미채</sec>를 재활성화</sec>합니다.
+        <sec typ="cond">공격 적중 시</sec>, 자신은 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 효과를 획득합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間、自分の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec> が増加します。
+        <sec typ="cond">敵を処理した時</sec>、<sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">光学迷彩</sec>を再起動</sec>します。
+        <sec typ="cond">攻撃命中時</sec>、自分は <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec> 効果を獲得します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases own <sec typ="buff"><buff typ="ATK_UP" /> attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="1" r /></sec> for 2 rounds.
+        <sec typ="cond">On enemy kill</sec>, reactivates <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">Optical Camouflage</sec></sec>.
+        <sec typ="cond">On hit</sec>, self gains <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> reattack</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，使自身在 2 回合內的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec> 提高。
+        <sec typ="cond">敵人被擊殺時</sec>，重新啟動 <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">光學迷彩</sec></sec>。
+        <sec typ="cond">攻擊命中時</sec>，自身獲得 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻擊</sec> 效果。
 dialogue:
   KR:
     "1":
@@ -22428,9 +22564,7 @@ dialogue:
         이제는... 세 번째 의식을 진행해도 괜찮을
         것 같아요. 아니, 오히려... 제 쪽에서 먼저
         부탁드리고 싶어요. 그래도... 괜찮을까요?
-      Oath: 사실... 제가 먼저 백토 선배에게 마법소녀로 만들어 달라고 부탁했어요. 평소와 다른 모습이 된다면 사령관님께 더 쉽게 다가갈 수
-        있을 것 같아서... 지금 사령관님과 맺어지게 된 걸 보니, 마법소녀가 되기로 한 건 정말 좋은 선택이었던 것 같아요. 사랑해요,
-        나의 젠틀맨.
+      Oath: 사실... 제가 먼저 백토 선배에게 마법소녀로 만들어 달라고 부탁했어요. 평소와 다른 모습이 된다면 사령관님께 더 쉽게 다가갈 수 있을 것 같아서... 지금 사령관님과 맺어지게 된 걸 보니, 마법소녀가 되기로 한 건 정말 좋은 선택이었던 것 같아요. 사랑해요, 나의 젠틀맨.
       OathIdle_01: |-
         이제는 사령관님을 젠틀맨이 아니라...
         남편이라고 부를 생각이에요.
@@ -22491,9 +22625,7 @@ dialogue:
         사령관님. 주변에 보는 눈도 많은데...
         정말, 알았어요. 자, 제 망토 안으로 들어와서
         계속하시죠.
-      Oath: ...제 마음을 이미 눈치채고 계셨군요, 사령관님. 하긴, 그럴 만도 하죠. 매일매일 사령관님을 향한 제 마음이, 이 사랑이 점점
-        커져서... 어느새 은폐장으로도 숨길 수 없을 정도로 커져버렸으니까요. 이대로는 임무에 지장이 갈 텐데... 이 마음을,
-        사령관님께서 보관해주시겠어요?
+      Oath: ...제 마음을 이미 눈치채고 계셨군요, 사령관님. 하긴, 그럴 만도 하죠. 매일매일 사령관님을 향한 제 마음이, 이 사랑이 점점 커져서... 어느새 은폐장으로도 숨길 수 없을 정도로 커져버렸으니까요. 이대로는 임무에 지장이 갈 텐데... 이 마음을, 사령관님께서 보관해주시겠어요?
       OathIdle_01: |-
         사령관님, 제 마음은 잘 간직하고 계신가요?
         오늘 밤, 확인하러 가도.... 괜찮을까요?
@@ -22673,9 +22805,7 @@ dialogue:
         (미번역)사령관님. 주변에 보는 눈도 많은데...
         정말, 알았어요. 자, 제 망토 안으로 들어와서
         계속하시죠.
-      Oath: (미번역)...제 마음을 이미 눈치채고 계셨군요, 사령관님. 하긴, 그럴 만도 하죠. 매일매일 사령관님을 향한 제 마음이, 이 사랑이
-        점점 커져서... 어느새 은폐장으로도 숨길 수 없을 정도로 커져버렸으니까요. 이대로는 임무에 지장이 갈 텐데... 이 마음을,
-        사령관님께서 보관해주시겠어요?
+      Oath: (미번역)...제 마음을 이미 눈치채고 계셨군요, 사령관님. 하긴, 그럴 만도 하죠. 매일매일 사령관님을 향한 제 마음이, 이 사랑이 점점 커져서... 어느새 은폐장으로도 숨길 수 없을 정도로 커져버렸으니까요. 이대로는 임무에 지장이 갈 텐데... 이 마음을, 사령관님께서 보관해주시겠어요?
       OathIdle_01: |-
         (미번역)사령관님, 제 마음은 잘 간직하고 계신가요?
         오늘 밤, 확인하러 가도.... 괜찮을까요?
@@ -22761,10 +22891,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        I'll work hard to protect the justice and safety of the Orca with Wraith
-        White!
-
+      Idle_01_01: |-
+        I'll work hard to protect the justice and safety of the Orca with Wraith White!
         Commander… No, Gentleman, please watch me!
       Idle_01_02: |-
         Phantom Black! And Wraith White!
@@ -22790,14 +22918,10 @@ dialogue:
         Of course, I was embarrassed at first.
         But, it's fine now. Because I know…
         that the commander--no, Magical Gentleman is always cheering for me…
-      SPIdle_02_01: Now… I think it's okay to go ahead with the third ritual. In fact…
-        I want to be the first one to ask you. So… would that be okay?
-      Oath: >-
-        Actually… I asked Moonbit to turn me into a magess first. I thought it
-        would be easier for me to get closer to you
-
+      SPIdle_02_01: Now… I think it's okay to go ahead with the third ritual. In fact… I want to be the first one to ask you. So… would that be okay?
+      Oath: |-
+        Actually… I asked Moonbit to turn me into a magess first. I thought it would be easier for me to get closer to you
         if I looked different from usual… Seeing how I was able to connect with you now,
-
         I think it was a great choice to become a magess. I love you, my gentleman.
       OathIdle_01: |-
         I don't plan to call you Commander or Gentleman…
@@ -22823,11 +22947,9 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         This is AL Phantom, Orca’s special agent in charge of covert missions
-
         such as assassinations, facility destruction, and infiltrating behind enemy lines.
-
         I look forward to working with you again.
       Idle_01_02: |-
         Why did I… change the way I speak? That's…
@@ -22843,26 +22965,18 @@ dialogue:
         I've gotten used to talking to others that I know now.
         But talking to someone that I don't know is a bit…
         difficult. But I will still try my best!
-      Idle_03_01: >-
+      Idle_03_01: |-
         I am the special agent Phantom that always finishes the mission,
-
         no matter how difficult. But please, reconsider sending me to Submarine to get sandwiches!
-
         That place is still hard for me!
-      Idle_04_01: >-
+      Idle_04_01: |-
         Wait, I can just relax if I'm not on a mission?
-
         Phew… Thank you. Actually, it was getting a bit exhausting. Not the mission…
-
         but trying to keep distance… from you, Commander.
       SPIdle_02_01: |-
         Commander. There are so many people watching…
         Seriously, I get it. Now, come into my cape and let’s continue.
-      Oath: I see you already know what I was thinking, Commander. Well, the reason is
-        obvious. My heart, my love for you grows bigger every day… to the point
-        it can't be concealed with any kind of cloaking field. It's going to
-        affect the mission at this rate… My heart… will you keep it for me,
-        Commander?
+      Oath: I see you already know what I was thinking, Commander. Well, the reason is obvious. My heart, my love for you grows bigger every day… to the point it can't be concealed with any kind of cloaking field. It's going to affect the mission at this rate… My heart… will you keep it for me, Commander?
       OathIdle_01: |-
         Are you keeping my heart safe, Commander?
         Tonight… do you mind if I go… and check on it?
@@ -22898,8 +23012,7 @@ dialogue:
         My expression?… I try to maintain
         stern expression to show that
         I’m a dependable person…
-      SPIdle_01_01: What is this? Is this… some kind of ritual of… closeness? Well, if
-        that’s the case…
+      SPIdle_01_01: What is this? Is this… some kind of ritual of… closeness? Well, if that’s the case…
       Idle_02_01: |-
         Yeah… being with you…
         is definitely better than playing with animals.
@@ -22915,10 +23028,8 @@ dialogue:
         Commander. Does this
         mean that you want to become
         closer with me?
-      Oath: >-
-        … Is it OK? For me to receive this? I'm clumsy… And a courage who hates
-        looking weak…
-
+      Oath: |-
+        … Is it OK? For me to receive this? I'm clumsy… And a courage who hates looking weak…
         But would it be OK for someone like me to be by your side?
       OathIdle_01: |-
         I don’t feel lonely recently

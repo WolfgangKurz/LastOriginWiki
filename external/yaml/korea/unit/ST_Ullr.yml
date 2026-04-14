@@ -2256,6 +2256,23 @@ skills:
             base: 0.15
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        여러 갈래로 빔을 발사하여 지정 범위에 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 자신의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> 대 경장형 / 기동형 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 대상이 <buff typ="DEF_DOWN" /> 방어력 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      JP: |-
+        複数の方向にビームを発射して指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、自分の<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" />対軽装型 / 機動型ダメージ <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">命中対象が<buff typ="DEF_DOWN" />防御力減少状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="3" r /></sec>が増加します。
+      EN: |-
+        Fires beams in multiple directions to deal <dmg elem="physics" /> to the designated area.
+        <sec typ="cond">On hit</sec>, self's <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> damage vs Light Armor / Mobile <val idx="0" r /></sec> increases.
+        <sec typ="cond">If the hit target is in <buff typ="DEF_DOWN" /> DEF decrease status</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
+      TC: |-
+        以多道光束射擊對指定範圍造成<dmg elem="physics" />傷害。
+        <sec typ="cond">命中時</sec>，自身對輕裝型 / 機動型的<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">若命中目標處於<buff typ="DEF_DOWN" /> 防禦力減少狀態</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>增加。
   "2":
     key: "2"
     icon: WideParticle
@@ -3754,6 +3771,23 @@ skills:
             base: 0.15
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        입자 릴레이를 통해 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다. 목표 지점 주변은 75% 피해만 적용됩니다.
+        <sec>적중 여부에 관계 없이</sec> 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 회피 강화 효과를 해제</sec>합니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      JP: |-
+        粒子リレーを通して指定範囲に<sec typ="attr">防御無視</sec> <dmg elem="physics" />を与えます。目標地点の周辺には75%のダメージのみ適用されます。
+        <sec>命中の有無に関係なく</sec>対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />回避強化効果を解除</sec>します。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="2" r /></sec>が増加します。
+      EN: |-
+        Uses a particle relay to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area. Only 75% damage applies around the target location.
+        <sec>Regardless of whether it hits</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> EVA increase effects</sec>.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+      TC: |-
+        透過粒子中繼對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害。目標地點周圍僅套用75%傷害。
+        <sec>無論是否命中</sec>，皆會解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 迴避強化效果</sec>。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4454,6 +4488,23 @@ skills:
             base: 0.15
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신과 인접한 아군 수에 비례하여 자신의 공격력이 증가합니다.
+        <sec typ="cond"><cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원 또는 <cmt t="X-계열 시험기">$$X_SERIES:?$</cmt> 전투원이 인접한 경우</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가 효과는 최대 효율로 발동</sec>합니다.
+        <sec typ="cond">라운드 개시 시 인접한 아군이 없을 경우</sec>, 해제 불가한 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="11" r /></sec> 감소 효과가 적용됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分に隣接した味方の数に比例して自分の攻撃力が増加します。
+        <sec typ="cond"><cmt t="ストライカーズ">$$Strikers:?$</cmt>隊員または<cmt t="X系列試験機">$$X_SERIES:?$</cmt>戦闘員が隣接している場合</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力増加効果は最大効率で発動</sec>します。
+        <sec typ="cond">ラウンド開始時に隣接した味方がいない場合</sec>、解除不可能な<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="11" r /></sec>減少効果が適用されます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, self's ATK increases in proportion to the number of allies adjacent to self.
+        <sec typ="cond">If a <cmt t="Strikers">$$Strikers:?$</cmt> unit or <cmt t="X-series test unit">$$X_SERIES:?$</cmt> combatant is adjacent</sec>, the <sec typ="buff"><buff typ="ATK_UP" /> ATK increase effect is triggered at maximum efficiency</sec>.
+        <sec typ="cond">If there are no adjacent allies at the start of the round</sec>, an unremovable <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="11" r /></sec> decrease effect is applied.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身攻擊力會依與自身相鄰的我軍數量成比例增加。
+        <sec typ="cond">若與<cmt t="先鋒">$$Strikers:?$</cmt>部隊成員或<cmt t="X系列試驗機">$$X_SERIES:?$</cmt>戰鬥員相鄰</sec>，則<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力增加效果會以最大效率發動</sec>。
+        <sec typ="cond">若回合開始時沒有相鄰我軍</sec>，將套用無法解除的<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="11" r /></sec>減少效果。
   "4":
     key: "4"
     icon: P.FormChange
@@ -4727,6 +4778,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec>가 활성화됩니다.
+        <sec typ="cond">적중 대상이 <buff typ="DEF_DOWN" /> 방어력 감소 상태인 경우</sec>, 2라운드 동안 대상이 <sec typ="important"><char uid="ST_Ullr" />에게서</sec> <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" slot="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시 자신이 후열에 위치한 경우</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">장거리 저격 모드</sec>로 변환</sec>됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア / ダメージ減少無視</sec>が有効になります。
+        <sec typ="cond">命中対象が<buff typ="DEF_DOWN" />防御力減少状態の場合</sec>、2ラウンドの間、その対象の<sec typ="important"><char uid="ST_Ullr" />からの</sec> <sec typ="buff"><buff typ="VULNERABLE" />被ダメージ <val idx="4" slot="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時、自分が後列にいる場合</sec>、<sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">長距離狙撃モード</sec>に変換</sec>されます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> becomes active.
+        <sec typ="cond">If the hit target is in <buff typ="DEF_DOWN" /> DEF decrease status</sec>, increases that target's <sec typ="important"><char uid="ST_Ullr" />-dealt</sec> <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="4" slot="1" r /></sec> for 2 rounds.
+        <sec typ="cond">At the start of the round, if self is in the rear line</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> changes to <sec typ="note">Long-Range Sniper Mode</sec></sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="0" r /></sec>增加，並啟用<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視防護罩 / 傷害減少</sec>。
+        <sec typ="cond">若命中目標處於<buff typ="DEF_DOWN" /> 防禦力減少狀態</sec>，則於2回合內提高該目標由<sec typ="important"><char uid="ST_Ullr" />造成的</sec> <sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="4" slot="1" r /></sec>。
+        <sec typ="cond">若回合開始時自身位於後列</sec>，則<sec typ="buff"><buff typ="CHANGE_CHAR" /> 變更為<sec typ="note">長距離狙擊模式</sec></sec>。
   "5":
     key: "5"
     icon: P.Barrier
@@ -5540,6 +5608,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원 또는 <cmt t="X-계열 시험기">$$X_SERIES:?$</cmt> 전투원에게 피해 무효화(1회)를 부여합니다.
+        <sec typ="cond">자신이 스킬을 4회 사용할 때마다</sec>, 피해 무효화(1회)를 재충전합니다. 지원 공격 또한 스킬 사용으로 취급합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신을 제외한 <cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원 또는 <cmt t="X-계열 시험기">$$X_SERIES:?$</cmt> 전투원의 공격을 지원합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 효과 저항 / 강화 해제 저항이 증가합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、<cmt t="ストライカーズ">$$Strikers:?$</cmt>隊員または<cmt t="X系列試験機">$$X_SERIES:?$</cmt>戦闘員にダメージ無効化(1回)を付与します。
+        <sec typ="cond">自分がスキルを4回使用するたび</sec>、ダメージ無効化(1回)を再充填します。支援攻撃もスキル使用として扱います。
+        <sec typ="cond">ラウンド開始時</sec>、自分を除く<cmt t="ストライカーズ">$$Strikers:?$</cmt>隊員または<cmt t="X系列試験機">$$X_SERIES:?$</cmt>戦闘員の攻撃を支援します。
+        <sec typ="cond">ラウンド開始時</sec>、自分の効果耐性 / 強化解除耐性が増加します。
+      EN: |-
+        <sec typ="cond">At the start of combat</sec>, grants damage nullification (1 time) to <cmt t="Strikers">$$Strikers:?$</cmt> members or <cmt t="X-series test unit">$$X_SERIES:?$</cmt> combatants.
+        <sec typ="cond">Each time self uses a skill 4 times</sec>, recharges damage nullification (1 time). Attack Support is also treated as skill use.
+        <sec typ="cond">At the start of the round</sec>, supports the attacks of <cmt t="Strikers">$$Strikers:?$</cmt> members or <cmt t="X-series test unit">$$X_SERIES:?$</cmt> combatants other than self.
+        <sec typ="cond">At the start of the round</sec>, self's Effect RES / buff removal RES increases.
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，對<cmt t="先鋒">$$Strikers:?$</cmt>部隊成員或<cmt t="X系列試驗機">$$X_SERIES:?$</cmt>戰鬥員賦予傷害無效化（1次）。
+        <sec typ="cond">每當自身使用技能4次時</sec>，便會重新充能1次傷害無效化。攻擊支援也會被視為技能使用。
+        <sec typ="cond">回合開始時</sec>，支援除自身以外的<cmt t="先鋒">$$Strikers:?$</cmt>部隊成員或<cmt t="X系列試驗機">$$X_SERIES:?$</cmt>戰鬥員的攻擊。
+        <sec typ="cond">回合開始時</sec>，自身的效果抗性 / 解除強化抗性增加。
   F1:
     key: F1
     icon: BeamShot
@@ -6599,6 +6688,23 @@ skills:
             base: 36
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        중계 드론으로 빔을 증폭하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다. 목표 지점 후방으로는 75% / 50% 피해만 적용됩니다.
+        <sec typ="cond">치명타 시</sec>, 피해량이 증가합니다.
+        <sec>스킬 레벨당 +20%의 적중 보정이 적용됩니다.</sec>
+      JP: |-
+        中継ドローンでビームを増幅し、指定範囲に<sec typ="attr">防御無視</sec> <dmg elem="physics" />を与えます。目標地点の後方には75% / 50%のダメージのみ適用されます。
+        <sec typ="cond">クリティカル時</sec>、ダメージ量が増加します。
+        <sec>スキルレベルごとに+20%の命中補正が適用されます。</sec>
+      EN: |-
+        Amplifies the beam with a relay drone to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area. Only 75% / 50% damage applies behind the target location.
+        <sec typ="cond">On critical hit</sec>, damage increases.
+        <sec>+20% hit compensation is applied per skill level.</sec>
+      TC: |-
+        以中繼無人機放大光束，對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害。目標地點後方僅套用75% / 50%傷害。
+        <sec typ="cond">暴擊時</sec>，傷害量增加。
+        <sec>每提升1級技能，套用+20%的命中補正。</sec>
   F2:
     key: F2
     icon: Particle
@@ -8256,6 +8362,27 @@ skills:
             base: 36
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        중계 드론으로 빔을 굴절시켜 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 대상이 <buff typ="EVADE_DOWN" /> 회피 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+        <sec>스킬 레벨당 +30%의 적중 보정이 적용됩니다.</sec>
+      JP: |-
+        中継ドローンでビームを屈折させ、単一対象に<sec typ="attr">防御無視</sec> <dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象が<buff typ="EVADE_DOWN" />回避減少状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="2" r /></sec>が増加します。
+        <sec>スキルレベルごとに+30%の命中補正が適用されます。</sec>
+      EN: |-
+        Refracts the beam with a relay drone to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to a single target.
+        <sec typ="cond">If the hit target is in <buff typ="EVADE_DOWN" /> EVA decrease status</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+        <sec>+30% hit compensation is applied per skill level.</sec>
+      TC: |-
+        以中繼無人機折射光束，對單一目標造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害。
+        <sec typ="cond">若命中目標處於<buff typ="EVADE_DOWN" /> 迴避減少狀態</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
+        <sec>每提升1級技能，套用+30%的命中補正。</sec>
   F4:
     key: F4
     icon: P.FormChange
@@ -8510,6 +8637,23 @@ skills:
             base: 63
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">치명타 발생 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 / 받는 피해 감소 효과를 해제</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 전열 / 중열에 위치한 경우</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">근거리 대응 모드</sec>로 변환</sec>됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間自分の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" />スキル威力 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">クリティカル発生時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />反撃 / 被ダメージ減少効果を解除</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自分が前列 / 中列に位置する場合</sec>、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">近距離対応モード</sec>に変換</sec>されます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, self's <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="1" r /></sec> increase for 3 rounds.
+        <sec typ="cond">On critical hit</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> retaliation / received damage decrease effects</sec>.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if self is in the front / middle line</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> transforms into <sec typ="note">Close-Range Response Mode</sec></sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，於3回合內提升自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="1" r /></sec>。
+        <sec typ="cond">暴擊發生時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊 / 所受傷害減少效果</sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若自身位於前列 / 中列</sec>，則<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 變更為<sec typ="note">近距離應對模式</sec></sec>。
 dialogue:
   KR:
     "1":
@@ -8636,11 +8780,9 @@ dialogue:
         사령관의 손길은 정말 상냥하고, 따뜻해서…
         닿을 때마다 행복하고 안심되는 기분이야.
         그러니까 내가 좀 더 안심할 수 있게 해줄래?​
-      Oath: >-
+      Oath: |-
         이걸 나한테? 대체 왜? 난 혼자 있지 못하고, 가까운 것도 잘 안 보여서 찡그리고 다니고, 귀찮기만 할 텐데… 싫은 건 아니야.
-
         나도 사령관이랑 같이 자면서, 악몽도 꾸지 않고 푹 잘 수 있게 됐는걸. 음… 사령관. 잠시 손 좀 줄래? …사령관의 손, 잘 보이지
-
         않아도 정말 크고 따뜻해. 매일 이렇게 사령관의 온기를 느끼고 싶어. 그러니까, 더는 나를 혼자 두지 않을 거지? 약속이야?
       OathIdle_01: |-
         사령관, 잠깐 어깨 좀 빌릴게.
@@ -8744,9 +8886,8 @@ dialogue:
       Idle_03_01: よく見えない……あ、ここか。私の前にいるのって司令官だよね？えいっ。こうやって抱きついちゃえば、見えなくても安心できるもんね。え？ちょっとどいて欲しい？何で―あっ！え、えっと…その…急に抱きついちゃってごめんだよ。あはは…
       Idle_04_01: 今日も司令官を抱いたまま寝てもいい？私って何か抱いてないと眠れなくて…それに、司令官といると気持ちが和らぐんだ…
       SPIdle_02_01: あっ、いいよ……好きにして……。司令官の触り方はすごく優しくて温かくて……触られる度に幸せな気持ちになって、安心するんだ。もっともっと私を安心させてほしいな。
-      Oath: >-
+      Oath: |-
         これを私に？どうして？私は一人でいられない、近くもよく見えない、だから目つきも悪いし、私なんて面倒なだけなのに…い、嫌ってわけじゃないよ。私も司令官と一緒に寝るようになって、悪夢も見なくなってよく眠れるようになったし。えっと…司令官、手、出して？…よく見えなくても、司令官の手はほんとにおっきくて、温かいってよく分かるよ。
-
         毎日こんな風に司令官の温もりを感じていたいな……。だから、もう私を一人にしないでね。約束だよ。
       OathIdle_01: 司令官、ちょっと肩借りるよ。はあ…他の子たちもいいけど、やっぱり司令官と一緒にいる時が一番落ち着くよ。こんな風にずっと…司令官のそばにいたいな。
       MVP: ""
@@ -8797,13 +8938,10 @@ dialogue:
         That is our duty as the P-Strikers, the funbringer squad!
         As a part of “funbringing,” I prepared a simple joke—
         Ah? You just smiled, right? I love it when someone smiles.
-      Idle_01_02: >-
+      Idle_01_02: |-
         I couldn't see the materials properly during the meeting
-
         because I forgot to bring my glasses. But I could see that you wanted the work to be fun
-
         and make it so that it brings smile to anyone that sees it.
-
         That said, I'm going to put harder work into mine as well.
       Idle_01_03: |-
         Wanna see what I’ve been practicing? Um… Commander?
@@ -8831,12 +8969,9 @@ dialogue:
         Do you mind if I…close my eyes? I’m not afraid even if it gets dark.
         I am connected to you, Commander.
         I want to feel you…a bit more…
-      Oath: >-
-        Pledge? That is indeed a sharp “edge.” Haha! I know this is supposed to
-        be romantic, but I couldn’t help it.
-
+      Oath: |-
+        Pledge? That is indeed a sharp “edge.” Haha! I know this is supposed to be romantic, but I couldn’t help it.
         Did you know, Commander? Whenever I’m with you, a smile blooms in my face without knowing. Hearing your voice, seeing your face, and just being with you…brings a smile to my face.
-
         As you made me smile so much, I will make you smile too, Commander. For eternity. I love you, Commander.
       OathIdle_01: |-
         Working together with everyone on this project,
@@ -8863,17 +8998,13 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         These drones? They’re En, Två and Tre.
-
         I met them after I got free from the freeze.
-
         They’re good friends who stayed with me.
-
         Though I have to control them with my brainwaves… Is this what it means to share your thoughts?​
-      Idle_01_02: >-
+      Idle_01_02: |-
         W-where are you going? Don’t… go.
-
         Don’t leave me alone. Please, please, please… I beg you. The bathroom? T-that’s…… I’ll wait for you by the door.​
       Idle_01_03: |-
         Umm… Commander. Are you there? I can see your silhouette,
@@ -8884,20 +9015,14 @@ dialogue:
         W-what are you doing?
         … It’s not that I don’t like it, but when I can’t see,
         other senses are heightened… So be gentle…​
-      Idle_02_01: >-
-        Girls. You’re all by Commander like that… I-I guess I can’t help it…
-        I’ll stay with you. Huh?
-
+      Idle_02_01: |-
+        Girls. You’re all by Commander like that… I-I guess I can’t help it… I’ll stay with you. Huh?
         Brainwaves? I-I don’t know what you’re talking about.​
-      Idle_03_01: >-
+      Idle_03_01: |-
         I can’t see… Oh, here you are.
-
         You are in front of me, right? There!
-
         If I wrap you around with my arms,
-
         I can feel relaxed, though I can’t see you. Huh? You want me to give room? Why-
-
         Ah! W-well… That was unexpected. Hahaha…​
       Idle_04_01: |-
         Can I hug you in bed again?
@@ -8907,18 +9032,13 @@ dialogue:
         Oh, yes… You can do whatever you want.
         Your hands are so gentle and warm… They relax me and make me happy.
         So will you help me feel even more relaxed?​
-      Oath: >-
-        For me? Why? I can’t stay alone, I can’t see what’s near me. I’ll be
-        nothing but a bother… It’s not that I don’t like it.
-
+      Oath: |-
+        For me? Why? I can’t stay alone, I can’t see what’s near me. I’ll be nothing but a bother… It’s not that I don’t like it.
         I got to sleep well without having a nightmare, thanks to you. Umm… Commander. Will you give me your hand? … Your hand, though I can’t see it right,
-
         but it’s big and warm. I want to feel your warmth everyday. You won’t… leave me alone anymore, right? Promise?
-      OathIdle_01: >-
+      OathIdle_01: |-
         Commander, let me lean on your shoulder.
-
         Yes… I like being with other girls, but… I like it best when I’m with you.
-
         I want to stay with you… forever.
       MVP: ""
     M:

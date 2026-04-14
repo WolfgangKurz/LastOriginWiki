@@ -2557,6 +2557,31 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        돌격 소총으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>으로 설정합니다.
+        <sec typ="cond"><buff typ="MARKING" /> 표식</sec> 상태인 대상은 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>가 증가하며 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>가 감소합니다.
+        치명타 시 <sec typ="note">S승급 패시브 : 전술 데이터 링크</sec> 중첩에 따라 추가 효과를 얻습니다.
+        <sec typ="note">데이터 링크</sec> 2중첩 : 적 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="4" r /></sec> 감소
+        <sec typ="note">데이터 링크</sec> 3중첩 : 적 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과 해제</sec>
+      JP: |-
+        アサルトライフルで<dmg elem="physics" />を与え、2ラウンドの間、対象を<sec typ="buff"><buff typ="MARKING" />標的</sec>に設定します。
+        <sec typ="cond"><buff typ="MARKING" />標的</sec>状態の対象は<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="3" r /></sec>が増加し、<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="1" r /></sec>が減少します。
+        クリティカル時、<sec typ="note">S昇級パッシブ : 戦術データリンク</sec>のスタックに応じて追加効果を得ます。
+        <sec typ="note">データリンク</sec> 2スタック : 敵の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="4" r /></sec>減少
+        <sec typ="note">データリンク</sec> 3スタック : 敵の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果解除</sec>
+      EN: |-
+        Shoots Assault Rifle and deals <dmg elem="physics" /> damage, and marks the target for 2 rounds.
+        <sec typ="cond">Marked</sec> targets have increased <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="3" r /></sec> and decreased <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="1" r /></sec>.
+        On CRIT, gains additional effects depending on the stack count of the <sec typ="note">S-rank Passive: Tactical Data Link</sec>.
+        <sec typ="note">Data Link</sec> 2 stacks: Decreases enemy's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACU <val idx="4" r /></sec>
+        <sec typ="note">Data Link</sec> 3 stacks: Removes enemy buffs
+      TC: |-
+        以突擊步槍造成<dmg elem="physics" />傷害，並於2回合內將目標設定為<sec typ="buff"><buff typ="MARKING" />標記</sec>。
+        <sec typ="cond"><buff typ="MARKING" />標記</sec>狀態的目標，其<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="3" r /></sec>增加，且<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="1" r /></sec>減少。
+        暴擊時，會依據<sec typ="note">S晉級被動：戰術數據鏈</sec>的層數獲得追加效果。
+        <sec typ="note">數據鏈</sec> 2層：減少敵方的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="4" r /></sec>
+        <sec typ="note">數據鏈</sec> 3層：解除敵方強化效果
   "2":
     key: "2"
     icon: SelfAtkBuff
@@ -2791,6 +2816,19 @@ skills:
             base: 0.15
             per: 0.0075
             chance: 1
+    desc:
+      KR: |-
+        2라운드 동안 지정 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>를 증가시킵니다.
+        대상이 <sec typ="cond">로봇</sec>인 경우, 효과가 1.5배 증가합니다.
+      JP: |-
+        2ラウンドの間、指定した味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>を増加させます。
+        対象が<sec typ="cond">ロボット</sec>の場合、効果が1.5倍になります。
+      EN: |-
+        Increases a designated ally's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="2" r /></sec> for 2 rounds.
+        If the target is a <sec typ="cond">Robot</sec>, the effect is increased by 1.5x.
+      TC: |-
+        於2回合內增加指定我軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>。
+        若目標為<sec typ="cond">機器人</sec>，效果增加1.5倍。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3062,6 +3100,23 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        스쿼드에 다른 <sec typ="note">스파르탄 타입 기체</sec>가 있는 경우, 대상들을 지휘하며 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>해줍니다.
+        지휘를 받는 <sec typ="note">스파르탄</sec>들은 해제 불가한 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> 증가 효과를 획득하고, <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec>가 감소합니다.
+        <sec typ="note">스파르탄 타입 기체</sec> : <char uid="AGS_SpartanA" />, <char uid="AGS_SpartanB" />
+      JP: |-
+        分隊に他の<sec typ="note">スパルタン型機体</sec>がいる場合、対象を指揮し、<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃を支援</sec>します。
+        指揮を受ける<sec typ="note">スパルタン</sec>たちは解除不可の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="3" r /></sec>増加効果を獲得し、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="4" r inv /></sec>が減少します。
+        <sec typ="note">スパルタン型機体</sec> : <char uid="AGS_SpartanA" />, <char uid="AGS_SpartanB" />
+      EN: |-
+        If there are other <sec typ="note">Spartan-type units</sec> in the squad, commands them and <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> provides Attack Support</sec>.
+        The commanded <sec typ="note">Spartans</sec> gain an unremovable <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="3" r /></sec> increase, <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="5" r /></sec> increases, and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="4" r inv /></sec> decreases.
+        <sec typ="note">Spartan-type units</sec> : <char uid="AGS_SpartanA" />, <char uid="AGS_SpartanB" />
+      TC: |-
+        若小隊中有其他<sec typ="note">斯巴達型機體</sec>，則會指揮目標並<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援攻擊</sec>。
+        受到指揮的<sec typ="note">斯巴達</sec>會獲得無法解除的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="3" r /></sec>增加效果，並且<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>增加，<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="4" r inv /></sec>減少。
+        <sec typ="note">斯巴達型機體</sec> : <char uid="AGS_SpartanA" />, <char uid="AGS_SpartanB" />
   "4":
     key: "4"
     icon: P.Scan
@@ -3152,6 +3207,27 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 데이터 링크를 통해 범위 내 아군의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="note">데이터 링크</sec>는 최대 3중첩까지 가능합니다.
+        아군이 <sec typ="note">어썰트 라이플</sec> 스킬 사용 시 모든 <sec typ="note">데이터 링크</sec> 중첩을 소모하며, 치명타 시 중첩 수에 따라 추가 효과를 얻습니다.
+        단, <char uid="AGS_SpartanC" />은 중첩을 소모하지 않습니다.
+      JP: |-
+        ラウンド開始時、データリンクを通して範囲内の味方の<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="0" r /></sec>を増加させます。
+        <sec typ="note">データリンク</sec>は最大3スタックまで可能です。
+        味方が<sec typ="note">アサルトライフル</sec>スキルを使用すると全ての<sec typ="note">データリンク</sec>スタックを消費し、クリティカル時、スタック数に応じて追加効果を得ます。
+        ただし、<char uid="AGS_SpartanC" />はスタックを消費しません。
+      EN: |-
+        At the start of the round, uses Data Link to increase the <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="0" r /></sec> of allies within range.
+        <sec typ="note">Data Link</sec> can be stacked up to 3 times.
+        When an ally uses the <sec typ="note">Assault Rifle</sec> skill, it consumes all <sec typ="note">Data Link</sec> stacks, and on CRIT, additional effects are granted depending on the stack count.
+        However, <char uid="AGS_SpartanC" /> does not consume stacks.
+      TC: |-
+        回合開始時，透過數據鏈增加範圍內我軍的<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="0" r /></sec>。
+        <sec typ="note">數據鏈</sec>最多可疊加3層。
+        我軍使用<sec typ="note">突擊步槍</sec>技能時，會消耗所有<sec typ="note">數據鏈</sec>層數，並在暴擊時依層數獲得追加效果。
+        但<char uid="AGS_SpartanC" />不會消耗層數。
 dialogue:
   KR:
     "":

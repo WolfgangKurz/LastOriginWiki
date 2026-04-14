@@ -1565,6 +1565,19 @@ skills:
             base: 0.025
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        라미아가 기관단총을 쉼없이 난사하여 지정 범위에 <dmg elem="physics" />를 발생시킵니다.
+        <sec typ="cond">스킬 적중 시</sec> 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec>가 증가합니다.
+      JP: |-
+        ラミアがサブマシンガンを絶え間なく乱射し、指定範囲に<dmg elem="physics" />を発生させます。
+        <sec typ="cond">スキル命中時</sec>、3ラウンドの間、自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>と<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="2" r /></sec>が増加します。
+      EN: |-
+        Lamia fires her submachine gun nonstop, dealing <dmg elem="physics" /> to the designated area.
+        <sec typ="cond">When the skill hits</sec>, self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="2" r /></sec> increase for 3 rounds.
+      TC: |-
+        拉米亞不停掃射衝鋒槍，對指定範圍造成<dmg elem="physics" />。
+        <sec typ="cond">技能命中時</sec>，持續3回合，自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>與<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: MeleeAttack
@@ -3151,6 +3164,23 @@ skills:
             base: 36
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        강철이가 기관포를 난사 후 라미아의 피니시 무브 발동으로 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 발생시킵니다.
+        <sec typ="cond">스킬 적중 시</sec> 2라운드 동안 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="1" r /></sec>가 감소합니다.
+        <sec typ="cond">치명타 시</sec> 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>이(가) 감소하고 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과가 해제</sec>됩니다.
+      JP: |-
+        鋼鉄が機関砲を乱射した後、ラミアのフィニッシュムーブ発動により、指定範囲に<sec typ="attr">保護無視</sec>の<dmg elem="physics" />を発生させます。
+        <sec typ="cond">スキル命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec>と<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="1" r /></sec>が減少します。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>が減少し、<sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ減少効果が解除</sec>されます。
+      EN: |-
+        After Steel unleashes a barrage from the machine gun, Lamia's finisher activates to deal <sec typ="attr">Ignore Protection</sec> physics damage to the designated area.
+        <sec typ="cond">When the skill hits</sec>, the target's <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="0" r /></sec> and <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="1" r /></sec> decrease for 2 rounds.
+        <sec typ="cond">On crit</sec>, the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec> decreases and its <sec typ="buff"><buff typ="REMOVE_BUFF" /> received damage decrease effect is removed</sec>.
+      TC: |-
+        鋼鐵連續掃射機關砲後，拉米亞的終結技發動，對指定範圍造成<sec typ="attr">保護無視</sec>的<dmg elem="physics" />。
+        <sec typ="cond">技能命中時</sec>，持續2回合，目標的<sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec>與<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="1" r /></sec>降低。
+        <sec typ="cond">暴擊時</sec>，目標的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>減少，且<sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害減少效果被解除</sec>。
   "3":
     key: "3"
     icon: P.Wave
@@ -3543,6 +3573,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원이 없으면</sec> 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원이 있으면</sec> 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec>과 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통</sec>이 <sec typ="buff">2배로 증가</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 포함한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원이 있으면</sec> <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원은 <sec typ="dmg"><buff typ="DamageAmp_Me" /> <char uid="3P_Lamia" />의 HP 반비례 피해 <val idx="8" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 포함한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 소속 전투원이 있는 경우</sec> <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원을 공격 지원</sec>합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">スコードに自分を除く<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戦闘員がいない場合</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>と<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>、<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">スコードに自分を除く<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戦闘員がいる場合</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力</sec>と<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中</sec>、<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通</sec>が<sec typ="buff">2倍に増加</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">スコードに自分を含む<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戦闘員がいる場合</sec>、<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戦闘員の<sec typ="dmg"><buff typ="DamageAmp_Me" /> <char uid="3P_Lamia" />のHP反比例ダメージ <val idx="8" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">スコードに自分を含む<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>所属戦闘員がいる場合</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戦闘員を攻撃支援</sec>します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if there are no <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> soldiers in the squad other than self</sec>, self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec>, <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec>, and <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="2" r /></sec> increase.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if there are <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> soldiers in the squad other than self</sec>, self's <sec typ="buff"><buff typ="ATK_UP" /> ATK</sec>, <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy</sec>, and <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration</sec> increase <sec typ="buff">2-fold</sec>.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if there are <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> soldiers in the squad including self</sec>, the <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> soldiers' <sec typ="dmg"><buff typ="DamageAmp_Me" /> damage dealt to enemies increases in proportion to <char uid="3P_Lamia" />'s remaining HP ratio <val idx="8" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if there are <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> soldiers in the squad including self</sec>, provides <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attack Support</sec> to <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> soldiers.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若隊伍中沒有除自身以外的<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戰鬥員</sec>，則自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>、<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>與<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="2" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若隊伍中有除自身以外的<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戰鬥員</sec>，則自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力</sec>、<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中</sec>與<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透</sec><sec typ="buff">提升2倍</sec>。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若隊伍中有包含自身的<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戰鬥員</sec>，則<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戰鬥員對敵人造成的<sec typ="dmg"><buff typ="DamageAmp_Me" /> 傷害會隨<char uid="3P_Lamia" />的剩餘HP比例越低而增加 <val idx="8" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若隊伍中有包含自身的<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>所屬戰鬥員</sec>，則<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 支援攻擊</sec><cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戰鬥員。
   "4":
     key: "4"
     icon: P.Vortex
@@ -4125,6 +4176,55 @@ skills:
             base: 0.04
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">피격 시</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="COUNTER" /> <val idx="8" r signless /> 위력으로 반격</sec>합니다.
+        아군 공격기는 <sec typ="cond">라운드 개시 시</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="9" r /></sec>가 증가합니다.
+        아군 공격기는 <sec typ="cond">라운드 개시 시</sec> HP 상태에 따라 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원이 없으면</sec> 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>와 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장 피해량 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원이 있으면</sec> 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec>와 대 경장 피해량, <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장 피해량 <val idx="7" r /></sec>가 증가합니다.
+        <box t="HP 상태에 따른 받는 피해 감소">
+        <sec typ="cond">체력이 70%이상, 89.99% 이하일 때</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="10" r /></sec>
+        <sec typ="cond">체력이 50%이상, 69.99% 이하일 때</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="11" r /></sec>
+        <sec typ="cond">체력이 30%이상, 49.99% 이하일 때</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="12" r /></sec>
+        <sec typ="cond">체력이 29.99% 이하일 때</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="13" r /></sec>
+        </box>
+      JP: |-
+        <sec typ="cond">被弾時</sec>、<sec typ="chance">100%の確率</sec>で<sec typ="buff"><buff typ="COUNTER" /> <val idx="8" r signless />の威力で反撃</sec>します。
+        味方アタッカーは<sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ減少 <val idx="9" r /></sec>が増加します。
+        味方アタッカーは<sec typ="cond">ラウンド開始時</sec>、HP状態に応じて<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ減少</sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">スコードに自分を除く<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戦闘員がいない場合</sec>、自身の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec>と<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装甲ダメージ <val idx="6" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">スコードに自分を除く<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戦闘員がいる場合</sec>、自身の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="5" r /></sec>と対軽装甲ダメージ、<sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装甲ダメージ <val idx="7" r /></sec>が増加します。
+        <box t="HP状態による受けるダメージ減少">
+        <sec typ="cond">HPが70%以上、89.99%以下の場合</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ減少 <val idx="10" r /></sec>
+        <sec typ="cond">HPが50%以上、69.99%以下の場合</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ減少 <val idx="11" r /></sec>
+        <sec typ="cond">HPが30%以上、49.99%以下の場合</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ減少 <val idx="12" r /></sec>
+        <sec typ="cond">HPが29.99%以下の場合</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ減少 <val idx="13" r /></sec>
+        </box>
+      EN: |-
+        <sec typ="cond">When hit</sec>, retaliates with <sec typ="chance">100% chance</sec> at <sec typ="buff"><buff typ="COUNTER" /> <val idx="8" r signless /> power</sec>.
+        Ally Attackers gain increased <sec typ="cond">received damage decrease at the start of the round</sec>.
+        Ally Attackers gain increased <sec typ="cond">received damage decrease at the start of the round</sec> based on HP status.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if there are no <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> soldiers in the squad other than self</sec>, self's <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="0" r /></sec> and <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage against light armor <val idx="6" r /></sec> increase.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if there are <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> soldiers in the squad other than self</sec>, self's <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="5" r /></sec>, damage against light armor, and <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage against heavy armor <val idx="7" r /></sec> increase.
+        <box t="Received Damage Decrease by HP Status">
+        <sec typ="cond">When HP is 70% or higher and 89.99% or lower</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage decrease <val idx="10" r /></sec>
+        <sec typ="cond">When HP is 50% or higher and 69.99% or lower</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage decrease <val idx="11" r /></sec>
+        <sec typ="cond">When HP is 30% or higher and 49.99% or lower</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage decrease <val idx="12" r /></sec>
+        <sec typ="cond">When HP is 29.99% or lower</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage decrease <val idx="13" r /></sec>
+        </box>
+      TC: |-
+        <sec typ="cond">被擊中時</sec>，以<sec typ="chance">100%機率</sec><sec typ="buff"><buff typ="COUNTER" /> 依<val idx="8" r signless />威力反擊</sec>。
+        我方攻擊者在<sec typ="cond">回合開始時</sec>會提升<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害減少 <val idx="9" r /></sec>。
+        我方攻擊者在<sec typ="cond">回合開始時</sec>，會依HP狀態提升<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害減少</sec>。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若隊伍中沒有除自身以外的<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戰鬥員</sec>，則自身的<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec>與<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝甲傷害 <val idx="6" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若隊伍中有除自身以外的<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戰鬥員</sec>，則自身的<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="5" r /></sec>、對輕裝甲傷害與<sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝甲傷害 <val idx="7" r /></sec>增加。
+        <box t="依HP狀態的受到的傷害減少">
+        <sec typ="cond">HP在70%以上、89.99%以下時</sec>：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害減少 <val idx="10" r /></sec>
+        <sec typ="cond">HP在50%以上、69.99%以下時</sec>：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害減少 <val idx="11" r /></sec>
+        <sec typ="cond">HP在30%以上、49.99%以下時</sec>：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害減少 <val idx="12" r /></sec>
+        <sec typ="cond">HP在29.99%以下時</sec>：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害減少 <val idx="13" r /></sec>
+        </box>
   "5":
     key: "5"
     icon: P.MeleeAttack
@@ -4501,6 +4601,31 @@ skills:
             base: 0.01
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">아군 전체의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> 및 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> 스쿼드의 자신을 포함한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원에게 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 받는 피해 감소 무시</sec> 효과를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원이 있으면</sec> 인원수에 따라 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <char uid="BR_Cheona" />가 있으면</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="7" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <char uid="PECS_Rena" />이 있으면</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">味方全体の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>および<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、スコードの自分を含む<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戦闘員に<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / 受けるダメージ減少無視</sec>効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">スコードに自分を除く<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戦闘員がいる場合</sec>、人数に応じて自身の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">スコードに<char uid="BR_Cheona" />がいる場合</sec>、自身の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="7" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">スコードに<char uid="PECS_Rena" />がいる場合</sec>、自身の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases all allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> and <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="1" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, grants <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier / Damage Reduction Ignore</sec> to Oceanides Project soldiers in the squad, including self.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if there are Oceanides Project soldiers in the squad other than self</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> increases based on the number of members.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if the squad contains <char uid="BR_Cheona" /></sec>, self's <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="7" r /></sec> increases.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if the squad contains <char uid="PECS_Rena" /></sec>, self's <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="8" r /></sec> increases.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，提升我方全體的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>與<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="1" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，對隊伍中包含自身在內的<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戰鬥員賦予<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 護盾 / 受傷害減少無視</sec>效果。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若隊伍中有除自身以外的<cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt>戰鬥員</sec>，則依人數提升自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若隊伍中有<char uid="BR_Cheona" /></sec>，則自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="7" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若隊伍中有<char uid="PECS_Rena" /></sec>，則自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -4561,9 +4686,7 @@ dialogue:
       SPIdle_02_01: |-
         후후…♥
         더 단단히 조여 줄까…?
-      Oath: 아름다운 아마조네스를 이런 식으로 굴복시키다니… 후훗… 많이 거칠어도 괜찮으니 어디 한 번 마음껏 활개쳐보라고. 강한 남자한테 당하는
-        것이야말로 아마조네스에게 어울리는 처분이지. 네가 가진 철퇴와 내가 가진 도끼 중 어느 쪽이 더 강한지 평생을 겨루어 보자!
-        아하하하하!
+      Oath: 아름다운 아마조네스를 이런 식으로 굴복시키다니… 후훗… 많이 거칠어도 괜찮으니 어디 한 번 마음껏 활개쳐보라고. 강한 남자한테 당하는 것이야말로 아마조네스에게 어울리는 처분이지. 네가 가진 철퇴와 내가 가진 도끼 중 어느 쪽이 더 강한지 평생을 겨루어 보자! 아하하하하!
       OathIdle_01: |-
         디어 마이 다이어리… 오늘은 그 남자가…
         날… 사랑한다고 속삭였다… 꺄아아앗!!
@@ -4634,9 +4757,7 @@ dialogue:
         이런 이런… 못 참겠는데?
         날 더 기분 좋게 만들어 봐…
         한 여덟 시간 정도?
-      Oath: 이미 볼 거 안 볼 거 다 본 사이에 이제 와서 무슨 반지냐…! 이젠 몸도 모자라 마음까지 하나가 되자는 거냐? …방금 뭐라고
-        그랬어? '여보오?!' 닭살 돋는 그런 호칭 말고… '선배'나 '형님'은 어떤데…? 무조건 '여보' 아니면 '오빠'라고
-        불러달라고…? 나한테 꼭 그런 호칭을 들어야 직성이 풀리겠다 이 말이지? 아하하… 연습해올 테니… 기다려봐…
+      Oath: 이미 볼 거 안 볼 거 다 본 사이에 이제 와서 무슨 반지냐…! 이젠 몸도 모자라 마음까지 하나가 되자는 거냐? …방금 뭐라고 그랬어? '여보오?!' 닭살 돋는 그런 호칭 말고… '선배'나 '형님'은 어떤데…? 무조건 '여보' 아니면 '오빠'라고 불러달라고…? 나한테 꼭 그런 호칭을 들어야 직성이 풀리겠다 이 말이지? 아하하… 연습해올 테니… 기다려봐…
       OathIdle_01: |-
         하~ 나도 이젠 유부녀구나~
         건포도 두 알보단

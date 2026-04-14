@@ -2266,6 +2266,11 @@ skills:
             base: -0.05
             per: -0.0025
             chance: 1
+    desc:
+      KR: 지정 범위에 <dmg elem="physics" />를 주고, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec> 증가 / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="3" r /></sec> 감소 효과를 줍니다.
+      JP: 指定範囲に<dmg elem="physics" />のダメージを与え、2ラウンドの間、対象に<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>増加 / <sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="3" r /></sec>減少効果を与えます。
+      EN: Deals <dmg elem="physics" /> damage to the designated area and inflicts the target with <sec typ="buff"><buff typ="MARKING" />Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" />received damage increase<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" />ATK decrease<val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />CRIT decrease<val idx="3" r /></sec> for 2 rounds.
+      TC: 對指定範圍造成<dmg elem="physics" />傷害，並在2回合內對目標施加<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" />所受傷害增加<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="3" r /></sec>減少效果。
   "2":
     key: "2"
     icon: TeamDefBuff
@@ -2569,6 +2574,11 @@ skills:
             base: 0.15
             per: 0.01
             chance: 1
+    desc:
+      KR: 2라운드 동안 주변 아군에게 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" /></sec>을 부여하며, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec>를 증가시킵니다.
+      JP: 2ラウンドの間、周辺の味方に<sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア<val idx="0" /></sec>を付与し、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="3" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="4" r /></sec>を増加させます。
+      EN: Grants nearby allies a <sec typ="buff"><buff typ="DAMAGE_ABSORB" />Barrier<val idx="0" /></sec> for 2 rounds, and increases <sec typ="buff"><buff typ="ATK_UP" />ATK<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" />DEF<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />ACU<val idx="3" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />EVA<val idx="4" r /></sec>.
+      TC: 賦予周圍我軍2回合的<sec typ="buff"><buff typ="DAMAGE_ABSORB" />防護罩<val idx="0" /></sec>，並增加<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="3" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="4" r /></sec>。
   "3":
     key: "3"
     icon: P.Barrier
@@ -2808,6 +2818,11 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: 라운드 개시 시, <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec> 감소 / <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec> 효과가 적용됩니다.
+      JP: ラウンド開始時、<sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア<val idx="0" /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="1" r inv /></sec>減少 / <sec typ="buff"><buff typ="DEF_Side" />Protect Line</sec>効果が適用されます。
+      EN: At the start of the round, <sec typ="buff"><buff typ="DAMAGE_ABSORB" />Barrier<val idx="0" /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage decrease<val idx="1" r inv /></sec> / <sec typ="buff"><buff typ="DEF_Side" />Protect Line</sec> effects are applied.
+      TC: 回合開始時，會套用<sec typ="buff"><buff typ="DAMAGE_ABSORB" />防護罩<val idx="0" /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />減少所受傷害<val idx="1" r inv /></sec> / <sec typ="buff"><buff typ="DEF_Side" />保護一列</sec>效果。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -3155,6 +3170,11 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: 전투 개시 시, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP로 전투 속행</sec> 효과가 적용됩니다.
+      JP: 戦闘開始時、<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="0" signless />HPで戦闘続行</sec>効果が適用されます。
+      EN: At the start of combat, <sec typ="buff"><buff typ="DEF_RESSURRECT" />Continue Combat with <val idx="0" signless /> HP</sec> is applied.
+      TC: 戰鬥開始時，套用<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="0" signless /> HP繼續戰鬥</sec>效果。
   "5":
     key: "5"
     icon: P.TeamDefBuff
@@ -3531,6 +3551,11 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: 전투 개시 시, 인접한 아군에게 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP로 전투 속행</sec> / <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="3" signless />회</sec> 효과를 부여합니다.
+      JP: 戦闘開始時、隣接した味方に<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="0" signless />HPで戦闘続行</sec> / <sec typ="buff"><buff typ="DEF_All" />ダメージ無効化<val idx="3" signless />回</sec>効果を付与します。
+      EN: At the start of combat, grants adjacent allies <sec typ="buff"><buff typ="DEF_RESSURRECT" />Continue Combat with <val idx="0" signless /> HP</sec> / <sec typ="buff"><buff typ="DEF_All" />Damage Invalidation <val idx="3" signless /> times</sec> effects.
+      TC: 戰鬥開始時，賦予鄰接我軍<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="0" signless /> HP繼續戰鬥</sec> / <sec typ="buff"><buff typ="DEF_All" />傷害無效化<val idx="3" signless />次</sec>效果。
 dialogue:
   KR:
     "1":
@@ -3649,13 +3674,10 @@ dialogue:
         제가 다 알아서- 꺅?! 이, 이러면
         평소처럼 또… 어쩔 수 없겠네요.
         평소처럼 저를... 사랑해줘요, 반려.
-      Oath: >-
+      Oath: |-
         미안해요. 모처럼의 데이트라 제가 다 준비하고 리드하려 했는데... 결국 평소처럼 구원자가 다 챙겨주고, 저는 받기만-
-
         수, 술 취했던 얘기는 하지 말아주세요...! ...혹시, 실망했나요? .....! 귀, 귀엽다뇨. 치, 치품천사에게 무례하군요.
-
         ...저는, 걱정이에요. 교단의 치품천사로서, 구원자에게 힘이 되어주어야 하는데... 구원자는 언제나 제게 듣기 좋은 말만 해주네요.
-
         ...네. 구원자, 아니 반려의 말대로... 평생 변함없는 사랑으로 보답할게요.
       OathIdle_01: |-
         반려, 이번 휴일에도 방에서 단 둘이
@@ -3872,13 +3894,10 @@ dialogue:
         제가 다 알아서- 꺅?! 이, 이러면
         평소처럼 또… 어쩔 수 없겠네요.
         평소처럼 저를... 사랑해줘요, 반려.
-      Oath: >-
+      Oath: |-
         (미번역)미안해요. 모처럼의 데이트라 제가 다 준비하고 리드하려 했는데... 결국 평소처럼 구원자가 다 챙겨주고, 저는 받기만-
-
         수, 술 취했던 얘기는 하지 말아주세요...! ...혹시, 실망했나요? .....! 귀, 귀엽다뇨. 치, 치품천사에게 무례하군요.
-
         ...저는, 걱정이에요. 교단의 치품천사로서, 구원자에게 힘이 되어주어야 하는데... 구원자는 언제나 제게 듣기 좋은 말만 해주네요.
-
         ...네. 구원자, 아니 반려의 말대로... 평생 변함없는 사랑으로 보답할게요.
       OathIdle_01: |-
         (미번역)반려, 이번 휴일에도 방에서 단 둘이
@@ -4005,12 +4024,9 @@ dialogue:
       SPIdle_02_01: |-
         Are you feeling like it?
         Now, I’ll embrace you with my wings…
-      Oath: >-
-        This whole time, I thought it was just a simple duty. But now that I
-        think about it, it’s a little different.
-
+      Oath: |-
+        This whole time, I thought it was just a simple duty. But now that I think about it, it’s a little different.
         This is… perhaps love. Toward a male human. and toward a new life that I will soon meet. Huma— no, dear.
-
         Please forget about all the duties I’ve mentioned. Instead… Give me a chance to show my love to you, dear.
       OathIdle_01: |-
         Are you going to corrupt me
@@ -4039,10 +4055,8 @@ dialogue:
         For your hard work,
         I prepared something to help you rest. Now,
         don’t be shy and come up here.
-      Idle_01_02: >-
-        Like I practiced, I’ll put on a composed look… And ask Dear to sit down,
-        and have a drink… Yes. I prepared for a long time…?
-
+      Idle_01_02: |-
+        Like I practiced, I’ll put on a composed look… And ask Dear to sit down, and have a drink… Yes. I prepared for a long time…?
         S-Savior? Since when…
       Idle_01_03: |-
         How about we drink together?
@@ -4065,18 +4079,10 @@ dialogue:
         … Because whenever I see a new aspect of you,
         I fall in love with you again.
         So I… Oh…​
-      SPIdle_02_01: >-
-        Savior, you stay still. Today… I’ll take the- Whaaaa? B-but… It’s the
-        same as usual… I can’t help it.
-
+      SPIdle_02_01: |-
+        Savior, you stay still. Today… I’ll take the- Whaaaa? B-but… It’s the same as usual… I can’t help it.
         Love me like you always do, dear.
-      Oath: I’m sorry. I was gonna prepare everything since we haven’t went on a date
-        in a while… But you ended up taking care of me today as usual… P-please
-        don’t talk about when I was drunk…! …were you disappointed? …! Wh-what
-        do you mean I’m cute? H-how rude! I’m a Seraphim… I’m a bit worried. I
-        always need to encourage you, as the Seraphim in the church… but you
-        always tell me what I like to hear… Yes. As you mentioned, Savio— no, My
-        Dear… I will pay you back with unchanging love.
+      Oath: I’m sorry. I was gonna prepare everything since we haven’t went on a date in a while… But you ended up taking care of me today as usual… P-please don’t talk about when I was drunk…! …were you disappointed? …! Wh-what do you mean I’m cute? H-how rude! I’m a Seraphim… I’m a bit worried. I always need to encourage you, as the Seraphim in the church… but you always tell me what I like to hear… Yes. As you mentioned, Savio— no, My Dear… I will pay you back with unchanging love.
       OathIdle_01: |-
         Dear, we should spend the holiday in our room,
         by ourselves. … Huh? Well… We’ll watch a movie,
@@ -4130,10 +4136,8 @@ dialogue:
       SPIdle_02_01: |-
         *Sighs*… Dear, since we are partners… this is not bad.
         Right? I’m pretty sure.
-      Oath: >-
-        … Now, I am finally qualified to call you Dear. I've been waiting for
-        this moment for a long time. 
-
+      Oath: |-
+        … Now, I am finally qualified to call you Dear. I've been waiting for this moment for a long time. 
         Dear, let's walk the right path together forever. You will be the only one I care…
       OathIdle_01: |-
         Dear… Dear… I can’t stop

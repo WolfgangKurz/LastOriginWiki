@@ -2984,6 +2984,31 @@ skills:
             base: 0.4
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        가벼운 인사를 겸해 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 모든 속성 저항 반전 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 자신의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="7" r inv /></sec>가 감소합니다.
+        <sec>해당 효과는 물리 공격 피격 시 해제됩니다.</sec>
+        <sec typ="cond">상기 효과가 이미 적용된 상태인 경우</sec>, 대신 해당 라운드 동안 아군 보호기에게 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화</sec>를 부여합니다.
+      JP: |-
+        軽い挨拶も兼ねて単一対象に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_DEBUFF" />すべての属性耐性反転効果を解除</sec>します。
+        <sec typ="cond">命中時</sec>、自分の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="7" r inv /></sec>が減少します。
+        <sec>この効果は物理攻撃被弾時に解除されます。</sec>
+        <sec typ="cond">上記効果がすでに適用されている場合</sec>、代わりにそのラウンドの間、味方保護機に<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化</sec>を付与します。
+      EN: |-
+        Sends a light greeting while dealing <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to a single target.
+        <sec typ="cond">On critical hit</sec>, removes all attribute resistance reversal effects from the target.
+        <sec typ="cond">On hit</sec>, decreases self's <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="7" r inv /></sec>.
+        <sec>This effect is removed when hit by physical attacks.</sec>
+        <sec typ="cond">If the above effect is already applied</sec>, instead grants ally defenders <sec typ="buff"><buff typ="DEF_All" /> damage nullification</sec> for that round.
+      TC: |-
+        帶著輕鬆的問候，對單一目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_DEBUFF" />所有屬性抗性反轉效果</sec>。
+        <sec typ="cond">命中時</sec>，自身的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="7" r inv /></sec>降低。
+        <sec>此效果會在受到物理攻擊時解除。</sec>
+        <sec typ="cond">若上述效果已套用</sec>，則改為在該回合內賦予友軍保護機<sec typ="buff"><buff typ="DEF_All" />傷害無效化</sec>。
   "2":
     key: "2"
     icon: WideBeamShot
@@ -5508,6 +5533,31 @@ skills:
             base: 0.4
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        자신의 감정을 발산하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 모든 속성 저항 하한 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="7" r /></sec>가 증가합니다.
+        <sec>해당 효과는 물리 공격 피격 시 해제됩니다.</sec>
+        <sec typ="cond">상기 효과가 이미 적용된 상태인 경우</sec>, 대신 아군 공격기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="3" /></sec>을(를) 증가시킵니다.
+      JP: |-
+        自分の感情を発散し、指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_DEBUFF" />すべての属性耐性下限効果を解除</sec>します。
+        <sec typ="cond">命中時</sec>、自分の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="7" r /></sec>が増加します。
+        <sec>この効果は物理攻撃被弾時に解除されます。</sec>
+        <sec typ="cond">上記効果がすでに適用されている場合</sec>、代わりに味方攻撃機の<sec typ="buff"><buff typ="AP_UP" /> AP<val idx="7" slot="3" /></sec>を増加させます。
+      EN: |-
+        Unleashes self's emotions and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area.
+        <sec typ="cond">On critical hit</sec>, removes all attribute resistance floor effects from the target.
+        <sec typ="cond">On hit</sec>, increases self's <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> effect resistance <val idx="7" r /></sec>.
+        <sec>This effect is removed when hit by physical attacks.</sec>
+        <sec typ="cond">If the above effect is already applied</sec>, instead increases ally attackers' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="3" /></sec>.
+      TC: |-
+        宣洩自身的情緒，對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>，解除目標所有屬性抗性下限效果。
+        <sec typ="cond">命中時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性<val idx="7" r /></sec>提升。
+        <sec>此效果會在受到物理攻擊時解除。</sec>
+        <sec typ="cond">若上述效果已套用</sec>，則改為提升友軍攻擊機的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="3" /></sec>。
   "3":
     key: "3"
     icon: P.Charm
@@ -5939,6 +5989,31 @@ skills:
             base: 3
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 적 전체의 <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="0" r /></sec>를 감소시킵니다.
+        아군 스쿼드의 경장형 수에 따라 다음 효과가 추가로 적용됩니다.
+        - <sec typ="cond">3기 이하</sec> : <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 감소</sec> 효과가 두 배로 증폭됩니다.
+        - <sec typ="cond">2기 이하</sec> : <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 감소</sec> 효과가 대상의 <sec typ="chance">효과 저항을 무시</sec>합니다.
+        - <sec typ="cond">1기 이하</sec> : <sec typ="cond">전투 개시 시</sec>, 2라운드 동안 적 공격기에게 <sec typ="buff"><buff typ="Disallow" /> 강화 불가</sec>를 적용합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、敵全体の<sec typ="buff"><buff typ="ICERES_DOWN" />冷気耐性<val idx="0" r /></sec>を減少させます。
+        味方スコードの軽装型の数に応じて、以下の効果が追加で適用されます。
+        - <sec typ="cond">3機以下</sec>：<sec typ="buff"><buff typ="ICERES_DOWN" />冷気耐性減少</sec>効果が2倍に増幅されます。
+        - <sec typ="cond">2機以下</sec>：<sec typ="buff"><buff typ="ICERES_DOWN" />冷気耐性減少</sec>効果が対象の<sec typ="chance">効果耐性を無視</sec>します。
+        - <sec typ="cond">1機以下</sec>：<sec typ="cond">戦闘開始時</sec>、2ラウンドの間、敵攻撃機に<sec typ="buff"><buff typ="Disallow" />強化不可</sec>を適用します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, decreases all enemies' <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="0" r /></sec>.
+        Depending on the number of light armor allies in the squad, the following effects are additionally applied.
+        - <sec typ="cond">3 or fewer</sec>: the <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance decrease</sec> effect is doubled.
+        - <sec typ="cond">2 or fewer</sec>: the <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance decrease</sec> effect <sec typ="chance">ignores the target's effect resistance</sec>.
+        - <sec typ="cond">1 or fewer</sec>: <sec typ="cond">at battle start</sec>, applies <sec typ="buff"><buff typ="Disallow" /> cannot gain buffs</sec> to enemy attackers for 2 rounds.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，降低全體敵人的<sec typ="buff"><buff typ="ICERES_DOWN" />冷氣抗性<val idx="0" r /></sec>。
+        依友軍小隊中的輕裝型數量，將另外套用以下效果。
+        - <sec typ="cond">3個以下</sec>：<sec typ="buff"><buff typ="ICERES_DOWN" />冷氣抗性減少</sec>效果加倍。
+        - <sec typ="cond">2個以下</sec>：<sec typ="buff"><buff typ="ICERES_DOWN" />冷氣抗性減少</sec>效果<sec typ="chance">無視目標的效果抗性</sec>。
+        - <sec typ="cond">1個以下</sec>：<sec typ="cond">戰鬥開始時</sec>，於2回合內對敵方攻擊機套用<sec typ="buff"><buff typ="Disallow" />無法獲得強化</sec>。
   "4":
     key: "4"
     icon: P.Beam
@@ -6226,6 +6301,31 @@ skills:
             base: -0.2
             per: -0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 적 전체의<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />  전기 저항 <val idx="0" r /></sec>를 감소시킵니다.
+        아군 스쿼드의 기동형 수에 따라 다음 효과가 추가로 적용됩니다.
+        - <sec typ="cond">3기 이하</sec> : <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 감소</sec> 효과가 두 배로 증폭됩니다.
+        - <sec typ="cond">2기 이하</sec> : <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 감소</sec> 효과가 대상의 <sec typ="chance">효과 저항을 무시</sec>합니다.
+        - <sec typ="cond">1기 이하</sec> : <sec typ="cond">전투 개시 시</sec>, 2라운드 동안 적 지원기의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="4" r /></sec>를 감소시킵니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、敵全体の<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性<val idx="0" r /></sec>を減少させます。
+        味方スコードの機動型の数に応じて、以下の効果が追加で適用されます。
+        - <sec typ="cond">3機以下</sec>：<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性減少</sec>効果が2倍に増幅されます。
+        - <sec typ="cond">2機以下</sec>：<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性減少</sec>効果が対象の<sec typ="chance">効果耐性を無視</sec>します。
+        - <sec typ="cond">1機以下</sec>：<sec typ="cond">戦闘開始時</sec>、2ラウンドの間、敵支援機の<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="4" r /></sec>を減少させます。
+      EN: |-
+        <sec typ="cond">At round start</sec>, decreases all enemies' <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="0" r /></sec>.
+        Depending on the number of mobile allies in the squad, the following effects are additionally applied.
+        - <sec typ="cond">3 or fewer</sec>: the <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance decrease</sec> effect is doubled.
+        - <sec typ="cond">2 or fewer</sec>: the <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance decrease</sec> effect <sec typ="chance">ignores the target's effect resistance</sec>.
+        - <sec typ="cond">1 or fewer</sec>: <sec typ="cond">at battle start</sec>, decreases enemy support units' <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" r /></sec> for 2 rounds.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，降低全體敵人的<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電擊抗性<val idx="0" r /></sec>。
+        依友軍小隊中的機動型數量，將另外套用以下效果。
+        - <sec typ="cond">3個以下</sec>：<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電擊抗性減少</sec>效果加倍。
+        - <sec typ="cond">2個以下</sec>：<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電擊抗性減少</sec>效果<sec typ="chance">無視目標的效果抗性</sec>。
+        - <sec typ="cond">1個以下</sec>：<sec typ="cond">戰鬥開始時</sec>，於2回合內降低敵方支援機的<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="4" r /></sec>。
   "5":
     key: "5"
     icon: P.Music
@@ -6513,6 +6613,31 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 적 전체의 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="0" r /></sec>를 감소시킵니다.
+        아군 스쿼드의 중장형 수에 따라 다음 효과가 추가로 적용됩니다.
+        - <sec typ="cond">3기 이하</sec> : <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 감소</sec> 효과가 두 배로 증폭됩니다.
+        - <sec typ="cond">2기 이하</sec> : <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 감소</sec> 효과가 대상의 <sec typ="chance">효과 저항을 무시</sec>합니다.
+        - <sec typ="cond">1기 이하</sec> : <sec typ="cond">전투 개시 시</sec>, 2라운드 동안 적 보호기의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec>를 증가시킵니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、敵全体の<sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性<val idx="0" r /></sec>を減少させます。
+        味方スコードの重装型の数に応じて、以下の効果が追加で適用されます。
+        - <sec typ="cond">3機以下</sec>：<sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性減少</sec>効果が2倍に増幅されます。
+        - <sec typ="cond">2機以下</sec>：<sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性減少</sec>効果が対象の<sec typ="chance">効果耐性を無視</sec>します。
+        - <sec typ="cond">1機以下</sec>：<sec typ="cond">戦闘開始時</sec>、2ラウンドの間、敵保護機の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="4" r /></sec>を増加させます。
+      EN: |-
+        <sec typ="cond">At round start</sec>, decreases all enemies' <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="0" r /></sec>.
+        Depending on the number of heavy armor allies in the squad, the following effects are additionally applied.
+        - <sec typ="cond">3 or fewer</sec>: the <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance decrease</sec> effect is doubled.
+        - <sec typ="cond">2 or fewer</sec>: the <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance decrease</sec> effect <sec typ="chance">ignores the target's effect resistance</sec>.
+        - <sec typ="cond">1 or fewer</sec>: <sec typ="cond">at battle start</sec>, increases enemy defenders' <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec> for 2 rounds.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，降低全體敵人的<sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性<val idx="0" r /></sec>。
+        依友軍小隊中的重裝型數量，將另外套用以下效果。
+        - <sec typ="cond">3個以下</sec>：<sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性減少</sec>效果加倍。
+        - <sec typ="cond">2個以下</sec>：<sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性減少</sec>效果<sec typ="chance">無視目標的效果抗性</sec>。
+        - <sec typ="cond">1個以下</sec>：<sec typ="cond">戰鬥開始時</sec>，於2回合內提升敵方保護機的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="4" r /></sec>。
 dialogue:
   KR:
     "1":
@@ -6620,12 +6745,9 @@ dialogue:
       SPIdle_02_01: |-
         주인님, 미천한 제게 이런 포상을 해주시다니…​ 기뻐요…
         어서 주인님도 제게 우람한 야구 배트를 주시겠어요…?​
-      Oath: >-
-        합류하기 전에는 늘 외로웠어요. 정신도… 마음도. 하지만 주인님을 만나고 나선 모든 게 바뀌었어요. 제 불행과 슬픔을 보듬어주신
-        건 주인님이에요.​
-
+      Oath: |-
+        합류하기 전에는 늘 외로웠어요. 정신도… 마음도. 하지만 주인님을 만나고 나선 모든 게 바뀌었어요. 제 불행과 슬픔을 보듬어주신 건 주인님이에요.​
         하지만… 저는 욕심이 많아요… 지금 당장 주인님께 안기고 싶어요. ​주인님을 원하는 이 욕심 많은 몸을… 어서… 어서 취해주세요.​
-
         제 머릿속이 온통 하얗게 될 때까지… 잔뜩 어루만지고 사랑해주세요 주인님…♥
       OathIdle_01: |-
         주인님, 정말 감사해요.
@@ -6691,9 +6813,7 @@ dialogue:
         저, 집착도 심하고, 자기 관리도 부족하고,
         그… 욕망도… 강한데…
         하지만 주인님께서 괜찮으시다면 얼마든지…
-      Oath: …예상하지 못했어요. 주인님은 저 하늘의 태양 같으신 분이라, 저는 그냥 옆에 있는 것 만으로도 행복했는데... 제게 이렇게 사랑을
-        내려주실 줄이야… 너무 큰 행복 때문에 가슴이 터질 것 같아요. 주인님… 나의 사랑하는 주인님. 오늘부터 저 베타가, 평생 곁에서
-        주인님을 모실게요...
+      Oath: …예상하지 못했어요. 주인님은 저 하늘의 태양 같으신 분이라, 저는 그냥 옆에 있는 것 만으로도 행복했는데... 제게 이렇게 사랑을 내려주실 줄이야… 너무 큰 행복 때문에 가슴이 터질 것 같아요. 주인님… 나의 사랑하는 주인님. 오늘부터 저 베타가, 평생 곁에서 주인님을 모실게요...
       OathIdle_01: |-
         제 모든 것은 주인님께서 소유하고 계세요.
         머리카락 한 올부터, 손톱 하나. 그리고…
@@ -6850,9 +6970,7 @@ dialogue:
         저, 집착도 심하고, 자기 관리도 부족하고,
         그… 욕망도… 강한데…
         하지만 주인님께서 괜찮으시다면 얼마든지…
-      Oath: "[미번역]…예상하지 못했어요. 주인님은 저 하늘의 태양 같으신 분이라, 저는 그냥 옆에 있는 것 만으로도 행복했는데... 제게
-        이렇게 사랑을 내려주실 줄이야… 너무 큰 행복 때문에 가슴이 터질 것 같아요. 주인님… 나의 사랑하는 주인님. 오늘부터 저
-        베타가, 평생 곁에서 주인님을 모실게요..."
+      Oath: "[미번역]…예상하지 못했어요. 주인님은 저 하늘의 태양 같으신 분이라, 저는 그냥 옆에 있는 것 만으로도 행복했는데... 제게 이렇게 사랑을 내려주실 줄이야… 너무 큰 행복 때문에 가슴이 터질 것 같아요. 주인님… 나의 사랑하는 주인님. 오늘부터 저 베타가, 평생 곁에서 주인님을 모실게요..."
       OathIdle_01: |-
         [미번역]제 모든 것은 주인님께서 소유하고 계세요.
         머리카락 한 올부터, 손톱 하나. 그리고…

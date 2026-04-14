@@ -1948,6 +1948,23 @@ skills:
             base: 3
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        적중 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가 효과를 해제</sec>합니다.
+        치명타 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>하며 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="1" r /></sec>가 증가합니다.
+      JP: |-
+        指定範囲に<sec typ="attr">防護無視</sec> <dmg elem="physics" />を与えます。
+        命中時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 防御力増加効果を解除</sec>します。
+        クリティカル時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 被ダメージ減少効果を解除</sec>し、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="1" r /></sec>が増加します。
+      EN: |-
+        Deals <sec typ="attr">ignore protection</sec> <dmg elem="physics" /> to the designated area.
+        On hit, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's Defense increase effect</sec>.
+        On crit, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's damage reduction effect</sec> and <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="1" r /></sec> increases.
+      TC: |-
+        對指定範圍造成 <sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+        命中時，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 防禦力增加效果</sec>。
+        暴擊時，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到傷害減少效果</sec>，並使 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="1" r /></sec>增加。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -4063,6 +4080,31 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        지정 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상의 현재 HP%가 낮을수록 피해량 <val idx="0" r /></sec>가 증가합니다.
+        적중 시, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="3" r /></sec>를 감소시키고, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec>를 증가시킵니다.
+        적중 대상이 <sec typ="cond"><buff typ="DEF_UP" /> 방어력 증가</sec> / <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 강화 효과를 <sec typ="cond">모두 보유하지 않은 경우</sec>, 효과가 증폭되어 증감 수치가 두 배로 적용됩니다.
+        증폭된 효과는 <sec>효과 저항의 영향을 받지 않으며, 해로운 효과 해제로 해제할 수 없습니다.</sec>
+      JP: |-
+        指定対象に <dmg elem="physics" />を与えます。
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 対象の現在HP%が低いほどダメージ量 <val idx="0" r /></sec>が増加します。
+        命中時、2ラウンドの間対象の<sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="3" r /></sec>を減少させ、<sec typ="buff"><buff typ="VULNERABLE" /> 被ダメージ <val idx="4" r /></sec>を増加させます。
+        命中対象が<sec typ="cond"><buff typ="DEF_UP" /> 防御力増加</sec> / <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 被ダメージ減少</sec>強化効果を<sec typ="cond">すべて保有していない場合</sec>、効果が増幅され、増減値が2倍で適用されます。
+        増幅された効果は<sec>効果抵抗の影響を受けず、有害効果解除では解除できません。</sec>
+      EN: |-
+        Deals <dmg elem="physics" /> to the designated target.
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> The lower the target's current HP%, the higher the damage <val idx="0" r /></sec>.
+        On hit, for 2 rounds, reduces the target's <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="3" r /></sec> and increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec>.
+        If the hit target does <sec typ="cond">not have both</sec> <sec typ="cond"><buff typ="DEF_UP" /> Defense increase</sec> / <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> damage reduction</sec> buffs, the effect is amplified and the increase/decrease values are doubled.
+        The amplified effect is <sec>not affected by Effect Resistance and cannot be removed by harmful effect removal.</sec>
+      TC: |-
+        對指定目標造成 <dmg elem="physics" />。
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 目標目前 HP% 越低，傷害量 <val idx="0" r /></sec>越高。
+        命中時，在 2 回合內降低目標的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="3" r /></sec>，並提升 <sec typ="buff"><buff typ="VULNERABLE" /> 受到傷害 <val idx="4" r /></sec>。
+        若命中目標未<sec typ="cond">同時持有</sec> <sec typ="cond"><buff typ="DEF_UP" /> 防禦力增加</sec> / <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 受到傷害減少</sec> 強化效果，則效果會被增幅，增減數值會以兩倍套用。
+        被增幅的效果<sec>不受效果抵抗影響，且無法透過解除有害效果來移除。</sec>
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4348,6 +4390,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 최대 3회까지 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="note">수신중…</sec> 버프 중첩이 2 이상인 경우, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="3" /></sec>가 증가합니다.
+        <sec typ="note">수신중…</sec> 버프 중첩이 최대치인 경우, <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="4" r /></sec>가 크게 증가합니다.
+      JP: |-
+        ラウンド開始時、最大3回まで<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>が増加します。
+        <sec typ="note">受信中…</sec>バフの重複が2以上の場合、自身の<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="3" /></sec>が増加します。
+        <sec typ="note">受信中…</sec>バフの重複が最大値の場合、<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="4" r /></sec>が大きく増加します。
+      EN: |-
+        At the start of the round, increases <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> up to 3 times.
+        If the <sec typ="note">Receiving...</sec> buff stack is 2 or higher, own <sec typ="buff"><buff typ="RANGE_UP" /> range <val idx="3" /></sec> increases.
+        If the <sec typ="note">Receiving...</sec> buff stack is at maximum, <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="4" r /></sec> increases greatly.
+      TC: |-
+        回合開始時，最多 3 次提升 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>。
+        若 <sec typ="note">接收中…</sec> 增益疊層達 2 以上，自身的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="3" /></sec>會增加。
+        若 <sec typ="note">接收中…</sec> 增益疊層達到最大值，<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="4" r /></sec>會大幅增加。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -4829,6 +4888,31 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec> 증가 / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 모든 저항 <val idx="4" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec> 감소 효과를 획득합니다.
+        매 라운드 자신의 첫 번째 공격에는 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec>가 크게 증가합니다.
+        이후의 공격에는 반감한 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="9" r /></sec>가 적용됩니다.
+        <sec>각 액티브 스킬 레벨에 따라 소모 AP가 감소합니다.</sec>
+        <equip uid="Sub_SPACE" /> 장착 시 일부 스킬을 변경합니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec>増加 / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 全耐性 <val idx="4" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 被ダメージ <val idx="1" r inv /></sec>減少効果を獲得します。
+        毎ラウンド、自身の最初の攻撃では<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec>が大きく増加します。
+        以後の攻撃には半減した<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="9" r /></sec>が適用されます。
+        <sec>各アクティブスキルレベルに応じて消費APが減少します。</sec>
+        <equip uid="Sub_SPACE" />装備時、一部スキルが変更されます。
+      EN: |-
+        At the start of the round, gains <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="0" r /></sec> increase / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> all resistance <val idx="4" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="1" r inv /></sec> reduction effects.
+        Every round, the first attack gains a large increase to <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="3" r /></sec>.
+        Subsequent attacks use half of that <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="9" r /></sec>.
+        <sec>The AP cost decreases according to each active skill level.</sec>
+        Changes some skills when <equip uid="Sub_SPACE" /> is equipped.
+      TC: |-
+        回合開始時，獲得 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec>增加 / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 全抗性 <val idx="4" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到傷害 <val idx="1" r inv /></sec>減少效果。
+        每回合自身的第一次攻擊中，<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec>會大幅增加。
+        後續攻擊則套用減半的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="9" r /></sec>。
+        <sec>各主動技能等級會降低 AP 消耗。</sec>
+        裝備 <equip uid="Sub_SPACE" /> 時會變更部分技能。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -5383,6 +5467,23 @@ skills:
             base: -0.1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        전투 개시 시, <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="5" r /></sec> 감소 <sec typ="attr">일반 효과</sec>를 영구 획득합니다.
+        대신 전투 개시 시 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>가 증가하고, <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 해로운 행동력 감소</sec> / <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> AP 감소 효과에 영구 면역</sec>이 됩니다.
+      JP: |-
+        ラウンド開始時、自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が増加します。
+        戦闘開始時、<sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="5" r /></sec>減少の<sec typ="attr">一般効果</sec>を永続的に獲得します。
+        代わりに戦闘開始時、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>が増加し、<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 有害な行動力減少</sec> / <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> AP減少効果に永続免疫</sec>になります。
+      EN: |-
+        At the start of the round, increases own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec>.
+        At battle start, permanently gains the <sec typ="attr">normal effect</sec> of <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" r /></sec> reduction.
+        Instead, at battle start, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> increases, and self becomes permanently immune to <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> harmful AP reduction</sec> / <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> AP reduction effects</sec>.
+      TC: |-
+        回合開始時，自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>會增加。
+        戰鬥開始時，會永久獲得 <sec typ="attr">一般效果</sec> 的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="5" r /></sec>下降。
+        反之，戰鬥開始時 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>會增加，並永久免疫 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 有害的行動力下降</sec> / <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> AP 下降效果</sec>。
   F1:
     key: F1
     icon: BeamShot
@@ -6621,6 +6722,23 @@ skills:
             base: 3
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가 효과를 해제</sec>합니다.
+        <sec typ="cond">치명타 시</sec>, 2라운드 동안 대상의 받는 피해 감소 효과를 약화시킵니다. <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>
+      JP: |-
+        指定範囲に<sec typ="attr">防護無視</sec> <dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 防御力増加効果を解除</sec>します。
+        <sec typ="cond">クリティカル時</sec>、2ラウンドの間対象の被ダメージ減少効果を弱めます。 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 被ダメージ <val idx="0" r inv /></sec>
+      EN: |-
+        Deals <sec typ="attr">ignore protection</sec> <dmg elem="physics" /> to the designated area.
+        <sec typ="cond">On hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's Defense increase effect</sec>.
+        <sec typ="cond">On crit</sec>, weakens the target's damage reduction effect for 2 rounds. <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec>
+      TC: |-
+        對指定範圍造成 <sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 防禦力增加效果</sec>。
+        <sec typ="cond">暴擊時</sec>，在 2 回合內削弱目標的受到傷害減少效果。 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到傷害 <val idx="0" r inv /></sec>
   F2:
     key: F2
     icon: AssaultAttack
@@ -8716,6 +8834,31 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        지정 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상의 현재 HP%가 낮을수록 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="3" r /></sec>를 감소시키고, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec>를 증가시킵니다.
+        <sec typ="cond">적중 대상이 <buff typ="DEF_UP" /> 방어력 증가</sec>, 효과가 증폭되어 증감 수치가 두 배로 적용됩니다.
+        <sec>증폭된 효과는 효과 저항의 영향을 받지 않으며, 해로운 효과 해제로 해제할 수 없습니다.</sec>
+      JP: |-
+        指定対象に <dmg elem="physics" />を与えます。
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 対象の現在HP%が低いほどダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="3" r /></sec>を減少させ、<sec typ="buff"><buff typ="VULNERABLE" /> 被ダメージ <val idx="4" r /></sec>を増加させます。
+        <sec typ="cond">命中対象が<buff typ="DEF_UP" /> 防御力増加</sec>の場合、効果が増幅され、増減値が2倍で適用されます。
+        <sec>増幅された効果は効果抵抗の影響を受けず、有害効果解除では解除できません。</sec>
+      EN: |-
+        Deals <dmg elem="physics" /> to the designated target.
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> The lower the target's current HP%, the higher the damage <val idx="0" r /></sec>.
+        <sec typ="cond">On hit</sec>, for 2 rounds, reduces the target's <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="3" r /></sec> and increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec>.
+        <sec typ="cond">If the hit target has <buff typ="DEF_UP" /> a Defense increase</sec>, the effect is amplified and the increase/decrease values are doubled.
+        <sec>The amplified effect is not affected by Effect Resistance and cannot be removed by harmful effect removal.</sec>
+      TC: |-
+        對指定目標造成 <dmg elem="physics" />。
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 目標目前 HP% 越低，傷害量 <val idx="0" r /></sec>越高。
+        <sec typ="cond">命中時</sec>，在 2 回合內降低目標的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="3" r /></sec>，並提升 <sec typ="buff"><buff typ="VULNERABLE" /> 受到傷害 <val idx="4" r /></sec>。
+        <sec typ="cond">若命中目標擁有 <buff typ="DEF_UP" /> 防禦力增加</sec>，則效果會被增幅，增減數值會以兩倍套用。
+        <sec>被增幅的效果不受效果抵抗影響，且無法透過解除有害效果來移除。</sec>
   F4:
     key: F4
     icon: P.SelfDefBuff
@@ -8833,6 +8976,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과를 획득합니다.
+        <sec>각 액티브 스킬 레벨에 따라 소모 AP가 감소합니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / 被ダメージ減少無視</sec>効果を獲得します。
+        <sec>各アクティブスキルレベルに応じて消費APが減少します。</sec>
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="0" r /></sec> and gains <sec typ="buff"><buff typ="BARRIER_PIERCE" /> barrier / damage reduction ignore</sec>.
+        <sec>The AP cost decreases according to each active skill level.</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec>會增加，並獲得 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視防護罩 / 傷害減少</sec>效果。
+        <sec>各主動技能等級會降低 AP 消耗。</sec>
   F5:
     key: F5
     icon: P.SelfSpdBuff
@@ -9186,6 +9342,23 @@ skills:
             base: 20
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="5" r /></sec> 감소 <sec typ="attr">일반 효과</sec>를 영구 획득합니다.
+        대신 <sec typ="cond">전투 개시 시</sec> <sec typ="buff"><buff typ="AP_UP" /> AP 증가</sec> 효과가 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>로 증가하고, <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 해로운 행동력 감소 영구 면역</sec> / <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> AP 감소 영구 면역</sec>이 됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="5" r /></sec>減少の<sec typ="attr">一般効果</sec>を永続的に獲得します。
+        代わりに<sec typ="cond">戦闘開始時</sec> <sec typ="buff"><buff typ="AP_UP" /> AP増加</sec>効果が<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>になり、<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 有害な行動力減少永続免疫</sec> / <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> AP減少永続免疫</sec>になります.
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec>.
+        <sec typ="cond">At battle start</sec>, permanently gains the <sec typ="attr">normal effect</sec> of <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="5" r /></sec> reduction.
+        Instead, <sec typ="cond">at battle start</sec> the <sec typ="buff"><buff typ="AP_UP" /> AP increase</sec> effect becomes <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>, and self becomes <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> permanently immune to harmful AP reduction</sec> / <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> AP reduction</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>會增加。
+        <sec typ="cond">戰鬥開始時</sec>，會永久獲得 <sec typ="attr">一般效果</sec> 的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="5" r /></sec>下降。
+        反之，<sec typ="cond">戰鬥開始時</sec> 的 <sec typ="buff"><buff typ="AP_UP" /> AP 增加</sec>效果會變為 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>，並永久免疫 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 有害的行動力下降</sec> / <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> AP 下降</sec>。
 dialogue:
   KR:
     "1":
@@ -9514,12 +9687,9 @@ dialogue:
         your patient. If it was like before, I wouldn’t wear
         this uncomfortable clothes… You want me to wear it again next time?
         Tell me if you want!​
-      Oath: >-
-        The rings… If you put two together like this, doesn’t it look like an
-        infinity sign? We often say that the universe is infinite.
-
+      Oath: |-
+        The rings… If you put two together like this, doesn’t it look like an infinity sign? We often say that the universe is infinite.
         In reality, it is just incredibly large and expands beyond the speed of light. But there are actually infinite things in the world.
-
         My heart for you. I, Spartoia, love you more than the universe!
       OathIdle_01: |-
         I'm proud to be a Spartoia myself.
@@ -9579,12 +9749,9 @@ dialogue:
         *Giggles* Do you like this so much? Okay.
         Wait until I take off my
         gear.
-      Oath: >-
-        Did you know that girls propose marriage first at Mars? So, give me to
-        me. Both of them.
-
+      Oath: |-
+        Did you know that girls propose marriage first at Mars? So, give me to me. Both of them.
         Hehehe… Hmm. OK, here. By this, you've earned my everlasting loyalty, General. Just say so
-
         if you need someone to smack! … Hehehe.
       OathIdle_01: |-
         I-I didn’t think you’d like me…
@@ -9622,9 +9789,8 @@ dialogue:
         I’ve been working out more than usual.
         Aren’t I already doing enough? If I’m to accept you,
         it’s still not enough…​
-      SPIdle_01_01: >-
+      SPIdle_01_01: |-
         Hehe, you never get exhausted, do you?
-
         Y-yeah? Again…? I am a little exhausted… But I can fight it with the power of love.​
       MVP: ""
   TC:

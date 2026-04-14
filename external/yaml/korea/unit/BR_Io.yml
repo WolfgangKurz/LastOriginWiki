@@ -2860,6 +2860,35 @@ skills:
               level: "0"
             value: Char_BR_Calista_N
             chance: 1
+    desc:
+      KR: |-
+        중 기관포를 발사해 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 자신의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 대상이 <buff typ="MARKING" /> 표식 또는 <buff typ="DEF_DOWN" /> 방어력 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">스쿼드에 자신을 포함한 <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 전투원이 5명 이상</sec>이고 <sec typ="cond"><char uid="BR_Spriggan" />, <char uid="BR_Calista" />가 있는 경우</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">2연장 대 장갑 미사일</sec>, <sec typ="note">조준 포격</sec> 스킬로 협동 공격</sec>을 유도합니다.
+        <sec>협동 공격이 가능한 전투원이 여렷인 경우 위 표기된 순으로 우선권을 가집니다. (A-14B 스프리건 > A-54 칼리스타 순)</sec>
+        <sec>다수의 적이 대상인 경우 사거리가 닿는 적을 우선 선택하고 사거리로 인해 협동 공격이 불가능할 경우 다음 순서의 전투원이 협동 공격을 실행합니다.</sec>
+      JP: |-
+        重機関砲を発射して<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、自分の<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />対軽装型ダメージ量<val idx="3" r /></sec>が増加します。
+        <sec typ="cond">命中対象が<buff typ="MARKING" />標的または<buff typ="DEF_DOWN" />防御力減少状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+        <sec typ="cond">スコード内に自分を含む<cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt>所属戦闘員が5人以上</sec>で、<sec typ="cond"><char uid="BR_Spriggan" />、<char uid="BR_Calista" />がいる場合</sec>、<sec typ="chance">100%の確率</sec>で<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">2連装対機動装甲ミサイル</sec>、<sec typ="note">照準砲撃</sec>スキルによる協同攻撃</sec>を誘導します。
+        <sec>協同攻撃が可能な戦闘員が複数いる場合、上記の順で優先権を持ちます。(A-14B スプリガン > A-54 カリスタ 順)</sec>
+        <sec>複数の敵が対象の場合、射程に届く敵を優先選択し、射程の都合で協同攻撃が不可能な場合は次の順の戦闘員が協同攻撃を実行します。</sec>
+      EN: |-
+        Fires a Heavy Machine Cannon and deals <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, increases own <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage dealt to light-armor units <val idx="3" r /></sec>.
+        <sec typ="cond">If the hit target is <buff typ="MARKING" /> Marked or in <buff typ="DEF_DOWN" /> Defense Down state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt <val idx="0" r /></sec> increases.
+        <sec typ="cond">If there are 5 or more squad members from <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt>, including self</sec> and <sec typ="cond"><char uid="BR_Spriggan" /> and <char uid="BR_Calista" /> are present</sec>, there is a <sec typ="chance">100% chance</sec> to trigger a co-op attack with the <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Twin-Barrel Anti-Armor Missile</sec> and <sec typ="note">Aimed Bombardment</sec></sec> skills.
+        <sec>When multiple units can co-op attack, they take priority in the order shown above. (A-14B Spriggan > A-54 Calista)</sec>
+        <sec>When multiple enemies are targeted, enemies within range are chosen first; if a co-op attack is impossible due to range, the next unit in order performs it.</sec>
+      TC: |-
+        發射重機關砲，造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，提升自身的<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />對輕裝型傷害量<val idx="3" r /></sec>。
+        <sec typ="cond">若命中目標處於<buff typ="MARKING" />標記或<buff typ="DEF_DOWN" />防禦力減少狀態</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>會增加。
+        <sec typ="cond">若隊伍內包含自身在內有來自<cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt>的戰鬥員5名以上</sec>，且<sec typ="cond"><char uid="BR_Spriggan" />、<char uid="BR_Calista" />都在場</sec>，則以<sec typ="chance">100%機率</sec>誘導以<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">2連裝反裝甲導彈</sec>、<sec typ="note">瞄準砲擊</sec>技能進行協力攻擊</sec>。
+        <sec>若有多名可進行協力攻擊的戰鬥員，優先順序依上方標示。(A-14B 스프리건 > A-54 칼리스타 順)</sec>
+        <sec>若目標為多名敵人，會優先選擇射程可及的敵人；若因射程無法進行協力攻擊，則由下一順位的戰鬥員執行協力攻擊。</sec>
   "2":
     key: "2"
     icon: MultiMissile
@@ -5013,6 +5042,39 @@ skills:
               level: "0"
             value: Char_BR_Spriggan_N
             chance: 1
+    desc:
+      KR: |-
+        모든 무장을 발사해 지정 위치에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>을(를) 감소시킵니다.
+        <sec typ="important">해당 효과는 대상의 효과 저항을 무시합니다.</sec>
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond">스쿼드에 자신을 포함한 <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 전투원이 5명 이상</sec>이고 <sec typ="cond"><char uid="BR_Spriggan" />, <char uid="BR_Calista" />가 있는 경우</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">90mm HEAT탄 연사</sec>, <sec typ="note">BFG1000 저격용 캐논포</sec> 스킬로 협동 공격</sec>을 유도합니다.
+        <sec>협동 공격이 가능한 전투원이 여렷인 경우 위 표기된 순으로 우선권을 가집니다. (A-54 칼리스타 > A-14B 스프리건 순)</sec>
+        <sec>다수의 적이 대상인 경우 사거리가 닿는 적을 우선 선택하고 사거리로 인해 협동 공격이 불가능할 경우 다음 순서의 전투원이 협동 공격을 실행합니다.</sec>
+      JP: |-
+        全武装を発射して指定位置に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、対象の<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>を減少させます。
+        <sec typ="important">この効果は対象の効果抵抗を無視します。</sec>
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="3" r /></sec>が増加します。
+        <sec typ="cond">スコード内に自分を含む<cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt>所属戦闘員が5人以上</sec>で、<sec typ="cond"><char uid="BR_Spriggan" />、<char uid="BR_Calista" />がいる場合</sec>、<sec typ="chance">100%の確率</sec>で<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">90mm HEAT弾連射</sec>、<sec typ="note">BFG1000狙撃用キャノン砲</sec>スキルによる協同攻撃</sec>を誘導します。
+        <sec>協同攻撃が可能な戦闘員が複数いる場合、上記の順で優先権を持ちます。(A-54 カリスタ > A-14B スプリガン 順)</sec>
+        <sec>複数の敵が対象の場合、射程に届く敵を優先選択し、射程の都合で協同攻撃が不可能な場合は次の順の戦闘員が協同攻撃を実行します。</sec>
+      EN: |-
+        Fires all weapons and deals <sec typ="attr">ignore protection</sec> <dmg elem="physics" /> to the designated location.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>.
+        <sec typ="important">This effect ignores the target's Effect Resistance.</sec>
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt <val idx="3" r /></sec> increases.
+        <sec typ="cond">If there are 5 or more squad members from <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt>, including self</sec> and <sec typ="cond"><char uid="BR_Spriggan" /> and <char uid="BR_Calista" /> are present</sec>, there is a <sec typ="chance">100% chance</sec> to trigger a co-op attack with the <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">90mm HEAT Round Continuous Fire</sec> and <sec typ="note">BFG1000 Sniper Cannon Gun</sec></sec> skills.
+        <sec>When multiple units can co-op attack, they take priority in the order shown above. (A-54 Calista > A-14B Spriggan)</sec>
+        <sec>When multiple enemies are targeted, enemies within range are chosen first; if a co-op attack is impossible due to range, the next unit in order performs it.</sec>
+      TC: |-
+        發射所有武裝，對指定位置造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，減少目標的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>。
+        <sec typ="important">此效果無視目標的效果抗性。</sec>
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="3" r /></sec>會增加。
+        <sec typ="cond">若隊伍內包含自身在內有來自<cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt>的戰鬥員5名以上</sec>，且<sec typ="cond"><char uid="BR_Spriggan" />、<char uid="BR_Calista" />都在場</sec>，則以<sec typ="chance">100%機率</sec>誘導以<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">90mm HEAT彈連射</sec>、<sec typ="note">BFG1000狙擊用加農砲</sec>技能進行協力攻擊</sec>。
+        <sec>若有多名可進行協力攻擊的戰鬥員，優先順序依上方標示。(A-54 卡里斯塔 > A-14B 斯普里根 順)</sec>
+        <sec>若目標為多名敵人，會優先選擇射程可及的敵人；若因射程無法進行協力攻擊，則由下一順位的戰鬥員執行協力攻擊。</sec>
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -5302,6 +5364,19 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond"><buff typ="DEF_Char" /> 자신이 지정 보호를 받고 있을 경우</sec>, 효과가 두 배로 증폭됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond"><buff typ="DEF_Char" />自分が指定保護を受けている場合</sec>、効果が2倍に増幅されます。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" r /></sec>.
+        <sec typ="cond">At round start</sec>, <sec typ="cond"><buff typ="DEF_Char" />if self is under Designated Protection</sec>, the effect is doubled.
+      TC: |-
+        <sec typ="cond">於回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>增加。
+        <sec typ="cond">於回合開始時</sec> <sec typ="cond"><buff typ="DEF_Char" />若自身受到指定保護</sec>，效果會變為2倍。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -5692,6 +5767,31 @@ skills:
             base: -0.02
             per: -0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 적군 전체의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">대상이 중장형인 경우</sec> 효과가 2배로 부여됩니다.
+        <sec typ="cond">라운드 개시 시</sec> 적군 전체의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="6" r inv /></sec>를 감소시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 포함한 <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 전투원이 5명 이상</sec>이면 적군 전체의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="7" r /></sec>를 감소시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">대상이 경장형인 경우</sec> 효과가 2배로 부여됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、敵軍全体の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="0" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">対象が重装型の場合</sec>、効果は2倍になります。
+        <sec typ="cond">ラウンド開始時</sec>、敵軍全体の<sec typ="buff"><buff typ="DEBUFF_RATEUP" />効果抵抗<val idx="6" r inv /></sec>を減少させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スコード内に自分を含む<cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt>所属戦闘員が5人以上</sec>なら、敵軍全体の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="7" r /></sec>を減少させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">対象が軽装型の場合</sec>、効果は2倍になります。
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="0" r /></sec> for all enemies.
+        <sec typ="cond">At round start</sec>, <sec typ="cond">if the target is Heavy Armor</sec>, the effect is doubled.
+        <sec typ="cond">At round start</sec>, decreases <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> effect resistance <val idx="6" r inv /></sec> for all enemies.
+        <sec typ="cond">At round start</sec> <sec typ="cond">if there are 5 or more squad members from <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt>, including self</sec>, decreases <sec typ="buff"><buff typ="DEF_DOWN" /> defense <val idx="7" r /></sec> for all enemies.
+        <sec typ="cond">At round start</sec> <sec typ="cond">if the target is Light Armor</sec>, the effect is doubled.
+      TC: |-
+        <sec typ="cond">於回合開始時</sec>，增加敵軍全體的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="0" r /></sec>。
+        <sec typ="cond">於回合開始時</sec> <sec typ="cond">若目標為重裝型</sec>，效果會變為2倍。
+        <sec typ="cond">於回合開始時</sec>，減少敵軍全體的<sec typ="buff"><buff typ="DEBUFF_RATEUP" />效果抗性<val idx="6" r inv /></sec>。
+        <sec typ="cond">於回合開始時</sec> <sec typ="cond">若隊伍內包含自身在內有來自<cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt>的戰鬥員5名以上</sec>，則減少敵軍全體的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="7" r /></sec>。
+        <sec typ="cond">於回合開始時</sec> <sec typ="cond">若目標為輕裝型</sec>，效果會變為2倍。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -6121,6 +6221,19 @@ skills:
             base: 0.4
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec>가 증가합니다.
+        <sec>자신이 후열에 가까울수록 효과가 최대 두 배로 증폭됩니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="2" r /></sec>が増加します。
+        <sec>自分が後列に近いほど効果は最大2倍まで増幅されます。</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, increases own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="2" r /></sec>.
+        <sec>The closer self is to the rear line, the more the effect is amplified, up to 2x.</sec>
+      TC: |-
+        <sec typ="cond">於回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="2" r /></sec>增加。
+        <sec>自身越接近後列，效果最多可增幅至2倍。</sec>
 dialogue:
   KR:
     "1":
@@ -6415,9 +6528,8 @@ dialogue:
         Umm… Commander. Do you not like…
         what I’m wearing…? I-If I offended you,
         I’ll go get changed right away.
-      Idle_01_03: >-
+      Idle_01_03: |-
         Calista helped me with the make-up, and Spriggan helped me
-
         with the accessory. Captain laughed out loud… T-then told me to bring this drink to you.
       SPIdle_01_01: I-If I could be of help to Commander…
       Idle_02_01: |-
@@ -6431,12 +6543,9 @@ dialogue:
         You’re the first person who told me…
         that I’m pretty, and that you like me. You’re doing everything
         for the first time to me… You have to be my last.
-      SPIdle_02_01: Ugh, *Moans*… It’s alright. I’m a little scared, but… Please don’t
-        let go of my hand.
-      Oath: >-
-        Commander… Why would you give this to a worthless person like— Right… I
-        promised I won’t say things like this.
-
+      SPIdle_02_01: Ugh, *Moans*… It’s alright. I’m a little scared, but… Please don’t let go of my hand.
+      Oath: |-
+        Commander… Why would you give this to a worthless person like— Right… I promised I won’t say things like this.
         I will try by best to not disappoint you, commander. I really, really like you.​
       OathIdle_01: |-
         I didn’t know you’d indulge in me so much.

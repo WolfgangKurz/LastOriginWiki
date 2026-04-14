@@ -3302,6 +3302,47 @@ skills:
               level: "0"
             value: Char_BR_Spriggan_N
             chance: 1
+    desc:
+      KR: |-
+        조준 포격으로 <dmg elem="physics" />를 줍니다.
+        <sec typ="dmg">적중 대상이 전열에 가까울수록 피해량이 증가합니다.</sec>
+        <box t="전열 대상"><sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec></box>
+        <box t="중열 대상"><sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec></box>
+        <box t="후열 대상"><sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" r /></sec></box>
+        <sec typ="important">스킬 레벨 당 +4%의 적중 보정이 적용됩니다.</sec>
+        <sec typ="cond">스쿼드에 자신을 포함한 <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 전투원이 5명 이상</sec>이고 <sec typ="cond"><char uid="BR_Io" />, <char uid="BR_Spriggan" />이 있는 경우</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">중 기관포 사격</sec>, <sec typ="note">2연장 대 장갑 미사일</sec> 스킬로 협동 공격</sec>을 유도합니다.
+        <sec>협동 공격이 가능한 전투원이 여렷인 경우 위 표기된 순으로 우선권을 가집니다. (A-6 이오 > A-14B 스프리건 순)</sec>
+        <sec>다수의 적이 대상인 경우 사거리가 닿는 적을 우선 선택하고 사거리로 인해 협동 공격이 불가능할 경우 다음 순서의 전투원이 협동 공격을 실행합니다.</sec>
+      JP: |-
+        照準砲撃で<dmg elem="physics" />を与えます。
+        <sec typ="dmg">命中対象が前列に近いほど、ダメージ量が増加します。</sec>
+        <box t="前列対象"><sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec></box>
+        <box t="中列対象"><sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="4" r /></sec></box>
+        <box t="後列対象"><sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="5" r /></sec></box>
+        <sec typ="important">スキルレベルごとに+4%の命中率補正が適用されます。</sec>
+        <sec typ="cond">自分を含む<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>所属戦闘員が5人以上</sec>で、<sec typ="cond"><char uid="BR_Io" />, <char uid="BR_Spriggan" />がいる場合</sec>、<sec typ="chance">100%の確率</sec>で<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">重機関砲射撃</sec>, <sec typ="note">2連装対装甲ミサイル</sec>スキルで協同攻撃を誘導します。
+        <sec>協同攻撃可能な戦闘員が複数いる場合、上記の順で優先権を持ちます。(A-6 イオ > A-14B スプリガンの順)</sec>
+        <sec>複数の敵が対象の場合、射程が届く敵を優先して選択し、射程の都合で協同攻撃できない場合は次の順番の戦闘員が協同攻撃を実行します。</sec>
+      EN: |-
+        Deals <dmg elem="physics" /> with Aimed Bombardment.
+        <sec typ="dmg">The closer the target is to the front line, the higher the damage.</sec>
+        <box t="Front Line Target"><sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec></box>
+        <box t="Mid Line Target"><sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec></box>
+        <box t="Back Line Target"><sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec></box>
+        <sec typ="important">Gains a +4% accuracy correction per skill level.</sec>
+        <sec typ="cond">If the squad has 5 or more <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants including self</sec> and <sec typ="cond"><char uid="BR_Io" />, <char uid="BR_Spriggan" /> are present</sec>, it triggers a <sec typ="chance">100% chance</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> cooperative attack with <sec typ="note">Heavy Machine Cannon Fire</sec> and <sec typ="note">2-Barreled Anti-Armor Missile</sec>.</sec>
+        <sec>If multiple combatants can perform the cooperative attack, priority is given in the order shown above. (A-6 Io > A-14B Spriggan)</sec>
+        <sec>If multiple enemies are targeted, the enemy within range is selected first, and if cooperative attacks are not possible due to range, the next combatant in order performs the cooperative attack.</sec>
+      TC: |-
+        以瞄準砲擊造成<dmg elem="physics" />。
+        <sec typ="dmg">命中目標越接近前排，傷害越高。</sec>
+        <box t="前排目標"><sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="0" r /></sec></box>
+        <box t="中排目標"><sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="4" r /></sec></box>
+        <box t="後排目標"><sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="5" r /></sec></box>
+        <sec typ="important">每個技能等級額外套用+4%命中修正。</sec>
+        <sec typ="cond">若隊伍中包含5名以上包含自身在內的<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>戰鬥員</sec>，且<sec typ="cond"><char uid="BR_Io" />, <char uid="BR_Spriggan" />存在</sec>，則以<sec typ="chance">100%機率</sec>誘導<sec typ="buff"><buff typ="TOGETHER_ATTACK" />透過<sec typ="note">重機關砲射擊</sec>、<sec typ="note">2聯裝反裝甲導彈</sec>進行協同攻擊。</sec>
+        <sec>若可進行協同攻擊的戰鬥員有多位，則依上方標示順序優先。(A-6 伊歐 > A-14B 斯普里根順序)</sec>
+        <sec>若目標為多數敵人，會優先選擇射程可達的敵人；若因射程無法進行協同攻擊，則由下一順位的戰鬥員執行協同攻擊。</sec>
   "2":
     key: "2"
     icon: CannonShotWide
@@ -5415,6 +5456,35 @@ skills:
               level: "0"
             value: Char_BR_Io_N
             chance: 1
+    desc:
+      KR: |-
+        HEAT탄을 연사해 목표 범위에 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 대상이 보호기인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="dmg">적중 대상이 적을수록 피해량이 증가합니다.</sec> <sec typ="buff"><buff typ="ATK_UP" /> 광역 피해 집중 <val idx="3" r /></sec>
+        <sec typ="cond">스쿼드에 자신을 포함 <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 전투원이 5명 이상</sec>이고 <sec typ="cond"><char uid="BR_Spriggan" />, <char uid="BR_Io" />가 있는 경우</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">BFG1000 저격용 캐논포</sec>, <sec typ="note">전탄 방출</sec> 스킬로 협동 공격</sec>을 유도합니다.
+        <sec>협동 공격이 가능한 전투원이 여렷인 경우 위 표기된 순으로 우선권을 가집니다. (A-14B 스프리건 > A-6 이오 순)</sec>
+        <sec>다수의 적이 대상인 경우 사거리가 닿는 적을 우선 선택하고 사거리로 인해 협동 공격이 불가능할 경우 다음 순서의 전투원이 협동 공격을 실행합니다.</sec>
+      JP: |-
+        HEAT弾を連射して目標範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象が保護機の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
+        <sec typ="dmg">命中対象が少ないほどダメージ量が増加します。</sec> <sec typ="buff"><buff typ="ATK_UP" />広域ダメージ集中<val idx="3" r /></sec>
+        <sec typ="cond">自分を含む<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>所属戦闘員が5人以上</sec>で、<sec typ="cond"><char uid="BR_Spriggan" />, <char uid="BR_Io" />がいる場合</sec>、<sec typ="chance">100%の確率</sec>で<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">BFG1000狙撃用キャノン砲</sec>, <sec typ="note">全弾放出</sec>スキルで協同攻撃を誘導します。
+        <sec>協同攻撃可能な戦闘員が複数いる場合、上記の順で優先権を持ちます。(A-14B スプリガン > A-6 イオの順)</sec>
+        <sec>複数の敵が対象の場合、射程が届く敵を優先して選択し、射程の都合で協同攻撃できない場合は次の順番の戦闘員が協同攻撃を実行します。</sec>
+      EN: |-
+        Fires HEAT rounds in rapid succession and deals <dmg elem="physics" /> to the target area.
+        <sec typ="cond">If the hit target is a protector</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="dmg">The fewer targets hit, the higher the damage.</sec> <sec typ="buff"><buff typ="ATK_UP" /> AoE damage focus <val idx="3" r /></sec>
+        <sec typ="cond">If the squad has 5 or more <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants including self</sec> and <sec typ="cond"><char uid="BR_Spriggan" />, <char uid="BR_Io" /> are present</sec>, it triggers a <sec typ="chance">100% chance</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> cooperative attack with <sec typ="note">BFG1000 Sniper Cannon</sec> and <sec typ="note">Full Barrage</sec>.</sec>
+        <sec>If multiple combatants can perform the cooperative attack, priority is given in the order shown above. (A-14B Spriggan > A-6 Io)</sec>
+        <sec>If multiple enemies are targeted, the enemy within range is selected first, and if cooperative attacks are not possible due to range, the next combatant in order performs the cooperative attack.</sec>
+      TC: |-
+        連射HEAT彈對目標範圍造成<dmg elem="physics" />。
+        <sec typ="cond">若命中目標為保護機</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="0" r /></sec>提升。
+        <sec typ="dmg">命中目標越少，傷害越高。</sec> <sec typ="buff"><buff typ="ATK_UP" />廣域傷害集中<val idx="3" r /></sec>
+        <sec typ="cond">若隊伍中包含5名以上包含自身在內的<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>戰鬥員</sec>，且<sec typ="cond"><char uid="BR_Spriggan" />, <char uid="BR_Io" />存在</sec>，則以<sec typ="chance">100%機率</sec>誘導<sec typ="buff"><buff typ="TOGETHER_ATTACK" />透過<sec typ="note">BFG1000狙擊用加農炮</sec>、<sec typ="note">全彈釋放</sec>進行協同攻擊。</sec>
+        <sec>若可進行協同攻擊的戰鬥員有多位，則依上方標示順序優先。(A-14B 斯普里根 > A-6 伊歐順序)</sec>
+        <sec>若目標為多數敵人，會優先選擇射程可達的敵人；若因射程無法進行協同攻擊，則由下一順位的戰鬥員執行協同攻擊。</sec>
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -5893,6 +5963,31 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, 2라운드 동안 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec>이 활성화됩니다.
+        <sec typ="cond">적 처치 시</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 효과가 2라운드 동안 <sec>재활성화</sec>됩니다.
+        <sec typ="cond"><sec typ="note">조준 포격90mm</sec> 사용 시</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="7" r /></sec>가 증가됩니다. <sec>(최대 2중첩)</sec>
+        <sec typ="cond"><sec typ="note">HEAT탄 연사</sec> 사용 시</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec>가 증가됩니다. <sec>(최대 2중첩)</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>が増加します。
+        <sec typ="cond">戦闘開始時</sec>、2ラウンドの間<sec typ="buff"><buff typ="SUPPORT_ATTACK" />再攻撃</sec>が有効になります。
+        <sec typ="cond">敵を撃破時</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" />再攻撃</sec>効果が2ラウンドの間<sec>再有効化</sec>されます。
+        <sec typ="cond"><sec typ="note">照準砲撃90mm</sec>使用時</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="7" r /></sec>が増加します。<sec>(最大2スタック)</sec>
+        <sec typ="cond"><sec typ="note">HEAT弾連射</sec>使用時</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="8" r /></sec>が増加します。<sec>(最大2スタック)</sec>
+      EN: |-
+        At round start, increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" r /></sec>.
+        At battle start, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> re-attack</sec> is enabled for 2 rounds.
+        When an enemy is killed, the <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> re-attack</sec> effect is <sec>reactivated</sec> for 2 rounds.
+        When using <sec typ="cond"><sec typ="note">Aimed Bombardment 90mm</sec></sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="7" r /></sec> increases. <sec>(Up to 2 stacks)</sec>
+        When using <sec typ="cond"><sec typ="note">HEAT Round Continuous Fire</sec></sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="8" r /></sec> increases. <sec>(Up to 2 stacks)</sec>
+      TC: |-
+        於<sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>提升。
+        於<sec typ="cond">戰鬥開始時</sec>，2回合內啟用<sec typ="buff"><buff typ="SUPPORT_ATTACK" />再攻擊</sec>。
+        於<sec typ="cond">擊殺敵人時</sec>，<sec typ="buff"><buff typ="SUPPORT_ATTACK" />再攻擊</sec>效果會在2回合內<sec>重新啟用</sec>。
+        於<sec typ="cond"><sec typ="note">瞄準砲擊90mm</sec>使用時</sec>，<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="7" r /></sec>提升。<sec>(最多2層)</sec>
+        於<sec typ="cond"><sec typ="note">HEAT彈連射</sec>使用時</sec>，<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="8" r /></sec>提升。<sec>(最多2層)</sec>
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -6157,6 +6252,19 @@ skills:
             base: 76
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond"><buff typ="DEF_Char" /> 자신이 지정 보호 상태인 경우</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="5" r inv /></sec>가 감소하고 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 지정 보호를 해제</sec>합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="2" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond"><buff typ="DEF_Char" />自分が指定保護状態の場合</sec>、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="5" r inv /></sec>が減少し、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />指定保護を解除</sec>します。
+      EN: |-
+        At round start, increases own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="2" r /></sec>.
+        At round start, if self is under <sec typ="cond"><buff typ="DEF_Char" /> designated protection</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="5" r inv /></sec> decreases and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> designated protection is removed</sec>.
+      TC: |-
+        於<sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>／<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>／<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="2" r /></sec>提升。
+        於<sec typ="cond">回合開始時</sec>，若自身處於<sec typ="cond"><buff typ="DEF_Char" />指定保護</sec>狀態，則<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="5" r inv /></sec>降低，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除指定保護</sec>。
   "5":
     key: "5"
     icon: P.MGShot
@@ -6532,6 +6640,27 @@ skills:
             base: 0.4
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 소속 전투원의 공격을 지원합니다.
+        <sec typ="note">자동 장전 장치</sec>의 재공격 효과가 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" slot="3" /></sec> 증가 효과로 변경됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="4" r /></sec>가 증가합니다.
+        <sec>자신이 전열에 가까울 수록 효과가 최대 두 배까지 증폭됩니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>所属戦闘員の攻撃を支援します。
+        <sec typ="note">自動装填装置</sec>の再攻撃効果が<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" slot="3" /></sec>増加効果に変更されます。
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="4" r /></sec>が増加します。
+        <sec>自分が前列に近いほど効果は最大2倍まで増幅します。</sec>
+      EN: |-
+        At round start, supports the attacks of <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants.
+        <sec typ="note">Auto Loader</sec>'s re-attack effect is changed into an <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" slot="3" /></sec> increase effect.
+        At round start, increases own <sec typ="buff"><buff typ="SKILL_UP" /> skill power <val idx="4" r /></sec>.
+        The closer self is to the front line, the more the effect is amplified, up to 2x.
+      TC: |-
+        於<sec typ="cond">回合開始時</sec>，支援<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>所屬戰鬥員的攻擊。
+        <sec typ="note">自動裝填裝置</sec>的再攻擊效果改為<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" slot="3" /></sec>增加效果。
+        於<sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="4" r /></sec>提升。
+        自身越接近前排，效果最多會放大2倍。
 dialogue:
   KR:
     "1":
@@ -6856,12 +6985,9 @@ dialogue:
         T-this is thinner than a swimsuit.
         I can feel you touching me…
         Be more gentle…
-      Oath: >-
-        Wh-what? This is so embarrassing… Pft, at least talk to me when I’m
-        fully dressed!
-
+      Oath: |-
+        Wh-what? This is so embarrassing… Pft, at least talk to me when I’m fully dressed!
         Then I’d gladly accept it… Well… It doesn’t necessarily mean that I’m rejecting you right now.
-
         Please tell me again properly later! Later, okay?
       OathIdle_01: |-
         You like this better than a swimsuit? B-but I can’t
@@ -6911,12 +7037,9 @@ dialogue:
       SPIdle_02_01: |-
         What should I do now?
         Do you want me to… just lay still?
-      Oath: >-
-        T-this is too sudden… Oh~ I knew this would happen eventually… Don't
-        just stand there. Give it to me… 
-
+      Oath: |-
+        T-this is too sudden… Oh~ I knew this would happen eventually… Don't just stand there. Give it to me… 
         Hmm… I mean… I'll do my best to you… So from now on
-
         let's live happily ever after, Commander… Sir.
       OathIdle_01: |-
         Please get along with my friends.
@@ -6946,11 +7069,9 @@ dialogue:
         But now we have you, Commander.
         I guess we can loosen up a bit.
         Commander~ Let’s loaf around all day.
-      Idle_01_02: >-
+      Idle_01_02: |-
         It’s nice that you get along with the members,
-
         but now, I want you to focus on me.
-
         I-I didn’t mean you should stare at me like that… Geez… I meant you shouldn’t look elsewhere.
       Idle_01_03: |-
         He he. If I can have you comb my hair like now,

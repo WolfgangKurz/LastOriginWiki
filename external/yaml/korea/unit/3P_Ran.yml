@@ -2341,6 +2341,23 @@ skills:
             base: -0.5
             per: -0.05
             chance: 1
+    desc:
+      KR: |-
+        찰나의 순간을 베어내어 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하며 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="2" r /></sec>를 감소시킵니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+      JP: |-
+        刹那の瞬間を斬り捨て、単一対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象を<sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>し、<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="2" r /></sec>を減少させます。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ減少効果を解除</sec>します。
+      EN: |-
+        Cuts down the fleeting moment to deal <dmg elem="physics" /> to a single target.
+        <sec typ="cond">On hit</sec>, provokes the target for 2 rounds and decreases <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACC <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" r /></sec>.
+        <sec typ="cond">On critical hit</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> received damage reduction effect</sec>.
+      TC: |-
+        斬落剎那瞬間，對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，使目標在2回合內<sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>，並降低<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="2" r /></sec>。
+        <sec typ="cond">暴擊時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 所受傷害減少效果</sec>。
   "2":
     key: "2"
     icon: DefCounter
@@ -2740,6 +2757,19 @@ skills:
             base: 48
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">스킬 사용 시</sec>, 마음을 가다듬으며 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff">적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="6" /></sec>가 증가합니다. (중첩 불가)
+        추가로 자신이 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="7" r /></sec>가 증가하며, <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 받는 피해 증가 면역</sec> 효과를 획득합니다.
+      JP: |-
+        <sec typ="cond">スキル使用時</sec>、心を落ち着けて3ラウンドの間、自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff">命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="6" /></sec>が増加します。(重複不可)
+        さらに自分の<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="7" r /></sec>が増加し、<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 受けるダメージ増加免疫</sec>効果を獲得します。
+      EN: |-
+        <sec typ="cond">When using the skill</sec>, steadies the mind and increases self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff">ACC <val idx="5" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="6" /></sec> for 3 rounds. (Cannot stack)
+        Additionally, self's <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="7" r /></sec> increases, and self gains <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immunity to received damage increase</sec>.
+      TC: |-
+        <sec typ="cond">使用技能時</sec>，沉心靜氣，使自身在3回合內增加<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff">命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="6" /></sec>。(不可疊加)
+        另外，自身的<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="7" r /></sec>增加，並獲得<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 受傷害增加免疫</sec>效果。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -3043,6 +3073,23 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="important">전열에 위치한</sec> 아군의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 아군을 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 지정 보호 중인 아군이 있을 경우</sec>, 후열에 위치한 적의 <sec typ="buff"><buff typ="Guardpierce_No_Apply" /> 보호 무시를 비활성화</sec>합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="important">前列に位置する</sec>味方の<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の<sec typ="buff"><buff typ="DEF_Char" /> 保護機を除く味方を指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec><sec typ="cond">自分が指定保護中の味方がいる場合</sec>、後列に位置する敵の<sec typ="buff"><buff typ="Guardpierce_No_Apply" /> 保護無視を無効化</sec>します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases <sec typ="important">allies positioned in the front line</sec> with <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, applies designated protection to allies within range except protectors.
+        <sec typ="cond">At the start of the round</sec><sec typ="cond">if self has an ally under designated protection</sec>, disables <sec typ="buff"><buff typ="Guardpierce_No_Apply" /> Ignore Protection</sec> for enemies in the rear line.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加<sec typ="important">位於前排</sec>的我軍之<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，對範圍內除保護機外的我軍施加指定保護。
+        <sec typ="cond">回合開始時</sec><sec typ="cond">若自身有正處於指定保護中的我軍</sec>，則使位於後排的敵人<sec typ="buff"><buff typ="Guardpierce_No_Apply" /> 無視保護失效</sec>。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3431,6 +3478,23 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">자신이 전열</sec>이거나 <sec typ="cond"><sec typ="note">명경지수</sec> 상태인 경우</sec>, 상기 효과가 50% 증폭됩니다.
+        <sec typ="cond">회피 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="9" r /></sec>가 추가로 증가하며 <sec typ="buff"><buff typ="COUNTER" /> <val idx="8" r signless /> 위력으로 반격</sec>합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">自分が前列</sec>であるか<sec typ="cond"><sec typ="note">明鏡止水</sec>状態の場合</sec>、上記効果が50%増幅されます。
+        <sec typ="cond">回避時</sec>、2ラウンドの間、自分の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="9" r /></sec>がさらに増加し、<sec typ="buff"><buff typ="COUNTER" /> <val idx="8" r signless /> 威力で反撃</sec>します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases self's <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="2" r /></sec>.
+        <sec typ="cond">If self is in the front line</sec> or in <sec typ="cond"><sec typ="note">Calm and Tranquil</sec> state</sec>, the above effects are amplified by 50%.
+        <sec typ="cond">On evade</sec>, increases self's <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="9" r /></sec> for 2 rounds and counters with <sec typ="buff"><buff typ="COUNTER" /> <val idx="8" r signless /> power</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加自身的<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="2" r /></sec>。
+        <sec typ="cond">若自身位於前排</sec>或處於<sec typ="cond"><sec typ="note">明鏡止水</sec>狀態</sec>，則上述效果增幅50%。
+        <sec typ="cond">迴避時</sec>，在2回合內自身的<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="9" r /></sec>會額外增加，並以<sec typ="buff"><buff typ="COUNTER" /> <val idx="8" r signless /> 威力</sec>反擊。
   "5":
     key: "5"
     icon: P.SelfDefDeBuff
@@ -3837,6 +3901,31 @@ skills:
             base: 4
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="note">명경지수</sec>의 효과를 모두 획득합니다.
+        <sec>스킬 효과는 <sec typ="note">경화수월</sec>의 스킬 레벨에 비례합니다.</sec>
+        <sec typ="cond"><sec typ="note">명경지수</sec> 사용 시</sec>, <sec typ="important">기존 효과 대신</sec> 다음 1라운드 동안 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="9" r /></sec>가 증가합니다.
+        <sec>해당 효과는 라운드를 연속하여 사용할 수 없습니다.</sec>
+        <sec typ="cond">상기 효과가 적용된 상태에서 <sec typ="note">찰나 베기</sec> 치명타 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="5" slot="1" r /></sec>를 감소시킵니다. (중첩 불가)
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分は<sec typ="note">明鏡止水</sec>の効果をすべて獲得します。
+        <sec>スキル効果は<sec typ="note">鏡花水月</sec>のスキルレベルに比例します。</sec>
+        <sec typ="cond"><sec typ="note">明鏡止水</sec>使用時</sec>、<sec typ="important">既存効果の代わりに</sec>次の1ラウンドの間、自分の<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="9" r /></sec>が増加します。
+        <sec>この効果はラウンドを連続して使用できません。</sec>
+        <sec typ="cond">上記効果が適用された状態で<sec typ="note">刹那斬り</sec>がクリティカルした時</sec>、3ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="5" slot="1" r /></sec>を減少させます。(重複不可)
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, self gains all effects of <sec typ="note">Calm and Tranquil</sec>.
+        <sec>The skill effects are proportional to the skill level of <sec typ="note">Mirror Flower Water Moon</sec>.</sec>
+        <sec typ="cond">When using <sec typ="note">Calm and Tranquil</sec></sec>, <sec typ="important">instead of the existing effect</sec>, self's <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="9" r /></sec> increases for the next 1 round.
+        <sec>This effect cannot be used in consecutive rounds.</sec>
+        <sec typ="cond">When <sec typ="note">Flash Cut</sec> crits while the above effect is applied</sec>, decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="5" slot="1" r /></sec> for 3 rounds. (Cannot stack)
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身會獲得<sec typ="note">明鏡止水</sec>的所有效果。
+        <sec>技能效果依照<sec typ="note">鏡花水月</sec>的技能等級而定。</sec>
+        <sec typ="cond">使用<sec typ="note">明鏡止水</sec>時</sec>，<sec typ="important">改為既有效果之外</sec>，在下一回合內增加自身的<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="9" r /></sec>。
+        <sec>此效果不能連續回合使用。</sec>
+        <sec typ="cond">在套用上述效果的狀態下，<sec typ="note">斬瞬</sec>暴擊時</sec>，在3回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="5" slot="1" r /></sec>。(不可疊加)
 dialogue:
   KR:
     "1":
@@ -3976,9 +4065,7 @@ dialogue:
         신선하군요.
         좀 더 이 신선함을 느끼게
         해 주시겠습니까...?
-      Oath: 그렇군요. 주인님께서는 소첩과 함께 하고 싶으신 것이었군요. 소첩 또한 같은 마음입니다. 그러니, 이제부터는... 비가 내리면 같은
-        우산을 쓰고, 또 햇살이 너무 따가우면 같은 양산 아래에서 볕을 피하듯이... 사랑하는 두 사람이 함께, 서로를 위하며 살아가도록
-        하지요.
+      Oath: 그렇군요. 주인님께서는 소첩과 함께 하고 싶으신 것이었군요. 소첩 또한 같은 마음입니다. 그러니, 이제부터는... 비가 내리면 같은 우산을 쓰고, 또 햇살이 너무 따가우면 같은 양산 아래에서 볕을 피하듯이... 사랑하는 두 사람이 함께, 서로를 위하며 살아가도록 하지요.
       OathIdle_01: |-
         양산 안으로 들어오시지요,
         주인님.
@@ -4029,10 +4116,8 @@ dialogue:
       SPIdle_02_01: |-
         흣... 아, 아닙니다. 괴로운 것은
         아니니, 그대로…
-      Oath: >-
-        ...사실은 몇 번이고 소첩이 먼저 말씀드리고 싶었습니다. 하오나 주인님의 호위인 몸으로 그럴 수는 없다고 생각했기에, 떨리는
-        마음을... 홀로 삭였습니다.
-
+      Oath: |-
+        ...사실은 몇 번이고 소첩이 먼저 말씀드리고 싶었습니다. 하오나 주인님의 호위인 몸으로 그럴 수는 없다고 생각했기에, 떨리는 마음을... 홀로 삭였습니다.
         주인님. 소첩, 아니 신첩이 마음을 놓을 수 있는 곳은 오직 주인님의 곁 뿐입니다. 이 보잘것 없는 목숨이 다하는 그날까지… 부디, 곁에 두어 주세요.
       OathIdle_01: |-
         이젠 말씀드릴 수 있습니다.
@@ -4106,13 +4191,10 @@ dialogue:
         香り、音、色、そして… うっ、感触…すべてが主様で満たされています。
         最後のひとつも…満たしてくださいますか…？
       SPIdle_02_01: うっ、くっ…せ、拙は大丈夫でございます…。ただ、主様まで濡れてしまうのではないかと…
-      Oath: >-
+      Oath: |-
         あ…。このために拙に外出を勧められたのでございますね。
-
         こんな日に拙は愚かにも…　逆によかった…？どうしてそのような意地悪なことを仰るのでございますか…？拙が恥ずかしがる姿をそんなにも見たいのでございますか…？
-
         そういう主様も…こんなに心臓が激しく…鳴っております…。
-
         主様？水の音と草木のざわめきで拙の声はかき消されることでございましょう…どうかこのまま…
       OathIdle_01: 拙は…途中で頭の中が真っ白になってしまいましたが、確かに夢のような時間でございました。もしよろしければまた次も…お願いいたします。
       MVP: ""
@@ -4176,9 +4258,8 @@ dialogue:
       Idle_03_01: 拙の目をご覧になりたいだなんて……。では……ふ、不快にさせてしまったようでございますね…。今日はこれで失礼させて…え？…そ、そうでございますか…？
       Idle_04_01: やっと主様のぬくもりに慣れてきたようでございます。試しに… 一度、抱き締めてみていただけますか…？あっ…
       SPIdle_02_01: くっ…あ…、何でもございません。苦しいわけではございませんので、そのまま続きを…
-      Oath: >-
+      Oath: |-
         …実は何度も…何度も…拙から申し上げたいと思っておりました。しかし護衛の身でありながらそんなことは叶わないと思い、揺れる気持ちを…一人で処理しておりました。
-
         主様、拙が安心できる場所は主様のお傍だけでございます。この取るに足らない命が尽きるまで…どうか、お傍に置いてくださいませ…。
       OathIdle_01: 今なら正直に…申し上げることができそうでございます…。拙は…主様をずっと想っておりました…。
       MVP: ""
@@ -4275,10 +4356,8 @@ dialogue:
         Oh, ah… I-I’m okay.
         But I’m worried
         you might get as well…
-      Oath: >-
-        Oh, this is why you suggested me take a picnic. Even on this day, I…
-        What do you mean it’s even better?
-
+      Oath: |-
+        Oh, this is why you suggested me take a picnic. Even on this day, I… What do you mean it’s even better?
         How could you say something so mean? Do you want to see me being shy that bad…? Master, even your heart is pounding while saying that.
          Master, the sound of water and trees will hide my voice… so please…
       OathIdle_01: |-
@@ -4304,57 +4383,41 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         They say you should never underestimate your enemy,
-
         so even if it’s just a simple stroll, I shouldn’t take protecting you so lightly.
-
         I, Ran, will always protect you.
-      Idle_01_02: >-
-        I was going to only prepare a parasol at first. However, the designer
-        heard about it
-
+      Idle_01_02: |-
+        I was going to only prepare a parasol at first. However, the designer heard about it
         and offered to prepare an outfit to go along with it.
       Idle_01_03: |-
         I don’t have any weapons, but this parasol should suffice.
         …I’m kidding.
         Actually, I hid a sword inside it for protection.
-      SPIdle_01_01: Urgh… Ah, no, it's not bothering me. It's just, when my clothes
-        changed, your touch felt unfamiliar…
-      Idle_02_01: >-
+      SPIdle_01_01: Urgh… Ah, no, it's not bothering me. It's just, when my clothes changed, your touch felt unfamiliar…
+      Idle_02_01: |-
         Master, won’t you go on a walk with me on this fine day?
-
         The wind is cool and the sunlight is warm… I think we could have a great time.
       Idle_03_01: |-
         If I block the sunlight like this,
         I can open my eyes no matter how bright the sun is.
         I can also look at your face longer.
         I’m afraid I was a bit too straightforward.
-      Idle_04_01: >-
+      Idle_04_01: |-
         According to Hirume… foreigners have a custom
-
         where they write their names together under an umbrella.
-
         Then their love comes true… A parasol should certainly have the same effect, right?
-      SPIdle_02_01: >-
+      SPIdle_02_01: |-
         There shouldn't be anything different about your touch…
-
         Maybe it's because your touch feels different… but it's kind of refreshing.
-
         Would you let me feel this refreshing sensation a bit longer?
-      Oath: >-
-        I see… I see you wanted to be with me as well, master. I also feel the
-        same way. So from now on… let’s share an umbrella when it rains, and if
-        the sunlight gets too hot,
-
+      Oath: |-
+        I see… I see you wanted to be with me as well, master. I also feel the same way. So from now on… let’s share an umbrella when it rains, and if the sunlight gets too hot,
         we can hide from it in the shade together… Let’s live for each other as two people who love one another.
-      OathIdle_01: >-
+      OathIdle_01: |-
         Please come under the parasol, Master.
-
         I’m afraid the sunshine is so strong you'll get burned.
-
         It's okay for you to come a little closer. One step closer… and another from there…
-
         Close enough so that our bodies are glued to each other…
       MVP: ""
     "":
@@ -4397,10 +4460,8 @@ dialogue:
       SPIdle_02_01: |-
         Oh… N-no. I’m
         not in pain…
-      Oath: >-
-        … To be frank, I wanted to express my love first. However, I couldn't
-        bring myself to say so, being your guard… So, I just calmed myself down.
-
+      Oath: |-
+        … To be frank, I wanted to express my love first. However, I couldn't bring myself to say so, being your guard… So, I just calmed myself down.
         Master. Being your guard, I mean wife, you are the only one I feel safe with, my Master. Until the day my humble life ends… please let me be by your side.
       OathIdle_01: |-
         I can tell you now.

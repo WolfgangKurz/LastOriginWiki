@@ -1656,6 +1656,23 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        미사일을 발사하여 지정 범위에 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 대상이 <buff typ="MARKING" /> 표식 / <buff typ="SNARE" /> 이동 불가 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+        적중 여부에 관계 없이 2라운드 동안 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시킵니다.
+      JP: |-
+        ミサイルを発射して指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象が<buff typ="MARKING" />標的 / <buff typ="SNARE" />移動不可状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="2" r /></sec>が増加します。
+        命中の有無に関係なく、2ラウンドの間、対象の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="1" r /></sec>を減少させます。
+      EN: |-
+        Shoots missiles and deals <dmg elem="physics" /> to the designated area.
+        <sec typ="cond">If the hit target is <buff typ="MARKING" /> Marked / <buff typ="SNARE" /> Immobilized</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+        Regardless of whether the attack hits, the target’s <sec typ="buff"><buff typ="EVADE_DOWN" /> evasion <val idx="1" r /></sec> decreases for 2 rounds.
+      TC: |-
+        發射導彈，對指定範圍造成<dmg elem="physics" />。
+        <sec typ="cond">若命中目標處於<buff typ="MARKING" />標記／<buff typ="SNARE" />無法移動狀態</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="2" r /></sec>提升。
+        無論是否命中，目標的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="1" r /></sec>在2回合內降低。
   "2":
     key: "2"
     icon: AirStrike
@@ -2993,6 +3010,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전탄발사를 통해 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
+        <sec>스킬 레벨 당 +9%의 적중 보정이 적용됩니다.</sec>
+      JP: |-
+        全弾発射により単一対象に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態にします。
+        <sec>スキルレベルごとに+9%の命中補正が適用されます。</sec>
+      EN: |-
+        Uses full-burst fire to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to a single target.
+        <sec typ="cond">On crit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, marks the target and makes them <sec typ="buff"><buff typ="MARKING" /> Marked</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> for 2 rounds.
+        <sec>Gains +9% accuracy compensation per skill level.</sec>
+      TC: |-
+        透過全彈發射對單一目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="0" r /></sec>提升。
+        <sec typ="cond">命中時</sec>，在2回合內使目標處於<sec typ="buff"><buff typ="MARKING" />標記</sec>／<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態。
+        <sec>每個技能等級額外套用+9%命中修正。</sec>
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3304,6 +3342,23 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 기동형 피해량 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="note">스텔스 위장</sec> 상태가 되어 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 (2회)</sec> 효과를 획득합니다. <sec typ="cond">대기 시</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 (2회)</sec> 효과를 재활성화할 수 있습니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신이 <sec typ="note">스텔스 위장</sec> 상태인 경우, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />対機動型ダメージ<val idx="1" r /></sec>が増加します。
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="note">ステルス偽装</sec>状態になり、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />ダメージ最小化 (2回)</sec>効果を獲得します。<sec typ="cond">待機時</sec>、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />ダメージ最小化 (2回)</sec>効果を再有効化できます。
+        <sec typ="cond">ラウンド開始時</sec>、自分が<sec typ="note">ステルス偽装</sec>状態の場合、2ラウンドの間、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="6" r /></sec>が増加します。
+      EN: |-
+        At round start, increases self’s <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> damage against Air units <val idx="1" r /></sec>.
+        At battle start, enters <sec typ="note">Stealth Camouflage</sec> state and gains <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Minimize Damage (2 times)</sec>. <sec typ="cond">On standby</sec>, the <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Minimize Damage (2 times)</sec> effect can be reactivated.
+        <sec typ="cond">At round start</sec>, if self is in <sec typ="note">Stealth Camouflage</sec> state, self’s <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="6" r /></sec> increases for 2 rounds.
+      TC: |-
+        於<sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="0" r /></sec>／<sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />對機動型造成的傷害<val idx="1" r /></sec>提升。
+        於<sec typ="cond">戰鬥開始時</sec>，進入<sec typ="note">隱形偽裝</sec>狀態，獲得<sec typ="buff"><buff typ="DAMAGE_REDUCE" />傷害最小化 (2次)</sec>效果。<sec typ="cond">待機時</sec>，可重新啟用<sec typ="buff"><buff typ="DAMAGE_REDUCE" />傷害最小化 (2次)</sec>效果。
+        於<sec typ="cond">回合開始時</sec>，若自身處於<sec typ="note">隱形偽裝</sec>狀態，則自身<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="6" r /></sec>在2回合內提升。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -3657,6 +3712,23 @@ skills:
             base: 0.075
             per: 0.0075
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 범위 내 기동형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec>를 증가시킵니다.
+        <sec typ="cond">대상이 기동형이 아닐 경우</sec>, 지속 효과가 50% 감소합니다.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、範囲内の機動型の味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec>を増加させます。
+        <sec typ="cond">対象が機動型でない場合</sec>、持続効果が50%減少します。
+      EN: |-
+        At battle start, increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of allied Air units within range.
+        At round start, increases allies’ <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="6" r /></sec> within range.
+        <sec typ="cond">If the target is not an Air unit</sec>, the duration effect is reduced by 50%.
+      TC: |-
+        於<sec typ="cond">戰鬥開始時</sec>，增加範圍內機動型我軍的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>。
+        於<sec typ="cond">回合開始時</sec>，增加範圍內我軍的<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="4" r /></sec>／<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec>／<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec>。
+        <sec typ="cond">若目標非機動型</sec>，則持續效果減少50%。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -4162,6 +4234,19 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가하며 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 사거리 감소 효과를 해제</sec>합니다.
+        <sec typ="cond">공격 적중 / <buff typ="TOGETHER_ATTACK" /> 협동 공격 시</sec>, 해당 라운드 동안 자신이 장착한 대 타입 피해량 증가 장비 효과가 증폭됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="2" r /></sec>が増加し、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />射程距離減少効果を解除</sec>します。
+        <sec typ="cond">攻撃命中 / <buff typ="TOGETHER_ATTACK" />協同攻撃時</sec>、そのラウンドの間、自分が装備している対タイプダメージ量増加装備の効果が増幅します。
+      EN: |-
+        At round start, increases self’s <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="2" r /></sec> and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes Range Decrease</sec>.
+        <sec typ="cond">When attack hits / when in <buff typ="TOGETHER_ATTACK" /> co-op attack</sec>, gear effects equipped by self that increase damage against specific unit types are amplified for that round.
+      TC: |-
+        於<sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>／<sec typ="buff"><buff typ="AP_UP" />行動點數<val idx="1" r /></sec>／<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="2" r /></sec>提升，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除射程降低效果</sec>。
+        <sec typ="cond">攻擊命中／<buff typ="TOGETHER_ATTACK" />協同攻擊時</sec>，當回合內自身裝備的對類型傷害增加裝備效果會被增幅。
 dialogue:
   KR:
     "1":
@@ -4591,9 +4676,7 @@ dialogue:
         *Squeals*! N-no. It’s…different from
         what I studied. … I want to get better.
         You have to teach me.
-      Oath: Yes… It is a lot different than what I read in the books… This is much
-        more desirable and sweeter than I imagined… Commander, thank you for
-        teaching me this amazing feeling. And… I love you, too.
+      Oath: Yes… It is a lot different than what I read in the books… This is much more desirable and sweeter than I imagined… Commander, thank you for teaching me this amazing feeling. And… I love you, too.
       OathIdle_01: |-
         Okay. No more book talk today.
         I just want to hang out with you.
@@ -4633,11 +4716,9 @@ dialogue:
         I’m Harpyia, the sweet voice of SkyNights!
         Applaud~ Now I really feel natural.
         Didn’t I look like a real idol, Producer?
-      Idle_03_01: >-
+      Idle_03_01: |-
         How was it? It was worth the practice!
-
         Hoo hoo, I’m not clumsy anymore-
-
         … You’ll give me a massage as a reward? You’re sly… T-then… should I enjoy the massage?
       Idle_04_01: |-
         Great job to you too, Producer.
@@ -4648,12 +4729,8 @@ dialogue:
         *Moans*… Oh! Oh no, I have to go up to stage soon.
         You won’t let me go…? … Okay.
         Just a little more…
-      Oath: >-
-        Oh…! I’m startled since I just finished the Concert. To think I’ll
-        become a wife as soon as I debuted as an idol… Am I the first celebrity
-        and a wife of a producer in the history of Orca Sub? Now what should I
-        call you…?
-
+      Oath: |-
+        Oh…! I’m startled since I just finished the Concert. To think I’ll become a wife as soon as I debuted as an idol… Am I the first celebrity and a wife of a producer in the history of Orca Sub? Now what should I call you…?
         Commander? Producer? Or… honey?
       OathIdle_01: |-
         Choose one between book and idol…?
@@ -4711,12 +4788,9 @@ dialogue:
         Y-you stay still. I’ll take care
         of everything. I prac- I-I’m good
         at this.
-      Oath: >-
-        Y-you're giving this to me…? I saw this in a book before, but I never
-        thought… 
-
+      Oath: |-
+        Y-you're giving this to me…? I saw this in a book before, but I never thought… 
         N-no. I'm so happy… You didn't judge me by my cover… 
-
         Here. This book is my answer. Read it thoroughly, OK? I'm gonna check later.♥
       OathIdle_01: |-
         Did you finish the book I lend you? Then…
@@ -4755,9 +4829,8 @@ dialogue:
         If our story were written in a book, what genre would it be?
         Thriller? Horror? Or… romance? Journal? Why?
         You’re right. We have to keep on writing it.
-      SPIdle_01_01: >-
+      SPIdle_01_01: |-
         I studied a lot of things for you.
-
         But I never got the change to use it… Can I try… what I’ve been practicing?
       MVP: ""
   TC:

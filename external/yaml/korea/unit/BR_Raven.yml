@@ -3928,6 +3928,23 @@ skills:
               level: "0"
             value: Char_BR_BeastHunter_N
             chance: 1
+    desc:
+      KR: |-
+        디스크 봄으로 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다.
+        적중 대상이 <sec typ="cond">경장/중장형</sec>인 경우, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 강화 효과를 해제</sec>합니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 보호 효과를 해제</sec>합니다.
+      JP: |-
+        ディスクボムで<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与え、対象の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を減少させます。
+        命中した対象が<sec typ="cond">軽装/重装型</sec>の場合、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 防御力増加効果を解除</sec>します。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 保護効果を解除</sec>します。
+      EN: |-
+        Uses Disk Bomb to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> and decrease the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec>.
+        If the hit target is <sec typ="cond">Light/Heavy Armor</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> DEF Increase</sec> effect.
+        <sec typ="cond">On critical hit</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Protection</sec> effect.
+      TC: |-
+        以磁碟炸彈造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />，並降低目標的<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>。
+        若命中的目標為<sec typ="cond">輕裝型／重裝型</sec>，則解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 防禦力增加</sec>效果。
+        <sec typ="cond">暴擊時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 保護</sec>效果。
   "2":
     key: "2"
     icon: Scan
@@ -6919,6 +6936,23 @@ skills:
               level: "0"
             value: Char_BR_Pani_N
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec> 증가 상태로 만듭니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 회피 강화 / 피해 감소 효과를 해제</sec>합니다.
+        <sec>스킬 레벨 당 +30%의 적중 보정이 적용됩니다.</sec>
+      JP: |-
+        対象に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与え、2ラウンドの間<sec typ="buff"><buff typ="MARKING" /> マーク</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec>増加状態にします。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="buff"><buff typ="REMOVE_BUFF" /> 回避強化 / ダメージ軽減効果を解除</sec>します。
+        <sec>スキルレベルごとに+30%の命中補正が適用されます。</sec>
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the target and puts them into <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="4" r /></sec> Increase for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, removes <sec typ="buff"><buff typ="REMOVE_BUFF" /> EVA Increase / Damage Reduction</sec> effects.
+        <sec>+30% hit correction is applied per skill level.</sec>
+      TC: |-
+        對目標造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />，並使其進入持續2回合的<sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="4" r /></sec>增加狀態。
+        <sec typ="cond">暴擊時</sec>，解除<sec typ="buff"><buff typ="REMOVE_BUFF" /> 迴避強化 / 傷害減少</sec>效果。
+        <sec>每提升1級技能，命中修正增加30%。</sec>
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -7591,6 +7625,23 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">공격 적중 시</sec>, 범위 내 중장형 공격기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시키고, 3라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec>를 증가시킵니다. (최대 2중첩)
+        자신은 동일한 수치의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중</sec> 증가 효과를 획득합니다.
+        <sec>스킬 레벨 10에서 자신의 위치와 관계없이 전체 적용됩니다.</sec>
+      JP: |-
+        <sec typ="cond">攻撃命中時</sec>、範囲内の重装型攻撃機の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させ、3ラウンドの間<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>を増加させます。(最大2スタック)
+        自分は同じ数値の<sec typ="buff"><buff typ="EVADE_UP" /> 回避</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中</sec>増加効果を獲得します。
+        <sec>スキルレベル10で自分の位置に関係なく全体適用されます。</sec>
+      EN: |-
+        <sec typ="cond">On attack hit</sec>, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of heavy-armor attackers within range and increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="5" r /></sec> for 3 rounds. (Max 2 stacks)
+        Self gains an increase to <sec typ="buff"><buff typ="EVADE_UP" /> EVA</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC</sec> by the same amount.
+        <sec>At Skill Lv. 10, this applies to all regardless of self's position.</sec>
+      TC: |-
+        <sec typ="cond">攻擊命中時</sec>，會增加範圍內重裝型攻擊器的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>，並在3回合內增加<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>。（最多2層）
+        自身會獲得同等數值的<sec typ="buff"><buff typ="EVADE_UP" /> 迴避</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中</sec>增加效果。
+        <sec>技能等級10時，無論自身位置如何都會套用至全體。</sec>
   "4":
     key: "4"
     icon: P.CannonShotDelay
@@ -7756,6 +7807,27 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가하고 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 적중 감소 효과에 면역</sec> 상태가 됩니다.
+        <sec typ="note">디스크 봄</sec> 적중 시, 스쿼드 내에 <char uid="BR_BeastHunter" />가 있을 경우 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">157mm HEAT탄</sec> 협동 공격</sec>을 유도합니다.
+        <sec typ="note">표적 스캔</sec> 적중 시, 스쿼드 내에 <char uid="BR_Pani" />가 있을 경우 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">183mm HVAP탄</sec> 협동 공격</sec>을 유도합니다.
+        스쿼드 내에 협동 공격을 유도할 대상이 없을 경우, <sec typ="note">포격 관측</sec>의 AP 증가 효과가 자신에게도 적용됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加し、<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 命中減少効果に免疫</sec>状態になります。
+        <sec typ="note">ディスクボム</sec>命中時、分隊内に<char uid="BR_BeastHunter" />がいる場合、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">157mm HEAT弾</sec>協同攻撃</sec>を誘導します。
+        <sec typ="note">標的スキャン</sec>命中時、分隊内に<char uid="BR_Pani" />がいる場合、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">183mm HVAP弾</sec>協同攻撃</sec>を誘導します。
+        分隊内に協同攻撃を誘導する対象がいない場合、<sec typ="note">砲撃観測</sec>のAP増加効果が自分にも適用されます。
+      EN: |-
+        At the start of the round, increases self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> and gains <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immunity to Hit Decrease effects</sec>.
+        On hit with <sec typ="note">Disk Bomb</sec>, if <char uid="BR_BeastHunter" /> is in the squad, induces a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> cooperative attack with <sec typ="note">157mm HEAT Round</sec></sec>.
+        On hit with <sec typ="note">Target Scan</sec>, if <char uid="BR_Pani" /> is in the squad, induces a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> cooperative attack with <sec typ="note">183mm HVAP Round</sec></sec>.
+        If there is no target in the squad to induce a cooperative attack, the AP increase effect of <sec typ="note">Bombardment Observation</sec> also applies to self.
+      TC: |-
+        回合開始時，增加自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>，並進入<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 命中降低效果免疫</sec>狀態。
+        <sec typ="note">磁碟炸彈</sec>命中時，若小隊內有<char uid="BR_BeastHunter" />，則會引導與<sec typ="note">157mm HEAT彈</sec>的<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 協同攻擊</sec>。
+        <sec typ="note">標的掃描</sec>命中時，若小隊內有<char uid="BR_Pani" />，則會引導與<sec typ="note">183mm HVAP彈</sec>的<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 協同攻擊</sec>。
+        若小隊內沒有可引導協同攻擊的對象，<sec typ="note">砲擊觀測</sec>的AP增加效果也會套用到自身。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -8401,6 +8473,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격 / <buff typ="DEF_Char" /> 지정 보호를 받고 있을 경우</sec>, <sec typ="note">디스크 봄</sec> / <sec typ="note">표적 스캔</sec>의 부가 효과 발동 조건을 '치명타 시'에서 '적중 시'로 완화합니다.
+        <sec typ="cond">전투 개시 시</sec>, <cmt t="AA 캐노니어">$$AACannonier:?$</cmt> 소속 공격기에게 1라운드 동안 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 일반 효과를 부여합니다. 해당 효과는 적 보호기 수만큼 지속 라운드가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻撃 / <buff typ="DEF_Char" /> 指定保護を受けている場合</sec>、<sec typ="note">ディスクボム</sec> / <sec typ="note">標的スキャン</sec>の追加効果発動条件を「クリティカル時」から「命中時」へ緩和します。
+        <sec typ="cond">戦闘開始時</sec>、<cmt t="AA キャノニア">$$AACannonier:?$</cmt>所属の攻撃機に1ラウンドの間<sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視</sec>一般効果を付与します。この効果は敵保護機数に応じて持続ラウンドが増加します。
+      EN: |-
+        At the start of the round, increases self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="1" r /></sec>.
+        If under <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Support Attack / <buff typ="DEF_Char" /> Designated Protection</sec>, relaxes the activation condition for the additional effects of <sec typ="note">Disk Bomb</sec> / <sec typ="note">Target Scan</sec> from 'on critical hit' to 'on hit'.
+        <sec typ="cond">At combat start</sec>, grants <cmt t="AA Cannoneer">$$AACannonier:?$</cmt> attackers a 1-round <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> normal effect. The duration increases by the number of enemy protectors.
+      TC: |-
+        回合開始時，增加自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec>。
+        <sec typ="cond">若處於<buff typ="SUPPORT_ATTACK" /> 支援攻擊 / <buff typ="DEF_Char" /> 指定保護狀態</sec>，則將<sec typ="note">磁碟炸彈</sec> / <sec typ="note">標的掃描</sec>的附加效果觸發條件由「暴擊時」放寬為「命中時」。
+        <sec typ="cond">戰鬥開始時</sec>，會賦予<cmt t="AA Cannoneer">$$AACannonier:?$</cmt>所屬攻擊器持續1回合的<sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec>一般效果。此效果的持續回合會依敵方保護機數量增加。
 dialogue:
   KR:
     "1":
@@ -8717,12 +8806,9 @@ dialogue:
         Our kiddo, the Commander
         Is it time to have fun with your sis? Come here,
         This sis will now teach you the world of adults.​
-      Oath: >-
-        Does this contract mean that you’ll obey me? Huh? No? Then are you
-        trying to make me obey you?
-
+      Oath: |-
+        Does this contract mean that you’ll obey me? Huh? No? Then are you trying to make me obey you?
         A kiddo's proposal… That's brave for you. My answer to it is… YES!
-
         Then, due to this contract, you and I are subordinated to each other. Don't! You! Ever! Forget!
       OathIdle_01: |-
         Who’s this?
@@ -8781,11 +8867,9 @@ dialogue:
         with me? Well? There’s
         only you and me, anyway.
       SPIdle_02_01: Ha, ha… you like me that much?
-      Oath: >-
+      Oath: |-
         Oohㅡ I realized it by your glance, you kiddo… Sigh… What do I do? Haha…
-
         Just kidding, Commander. Your confession makes me so so happy. All you need to do is grab my hand
-
         and follow me. Leave it to me, since I'll show you EVERYTHING else.
       OathIdle_01: |-
         What if…we had to do
@@ -8814,14 +8898,10 @@ dialogue:
         Hm? When did you turn around? When did you learn
         to express your emotions like this? Let's get one
         thing straight. Who do you think is better at these things?
-      Idle_01_02: >-
-        Like an occasional older sister? Hehe, what's that supposed to mean? You
-        were acting like an older sister
-
+      Idle_01_02: |-
+        Like an occasional older sister? Hehe, what's that supposed to mean? You were acting like an older sister
         so many times today! She sat and watched
-
         until the commander woke up! So,
-
         just like an older sister, no?
       Idle_01_03: |-
         Everyone has their downs. However, it’s difficult for the commander

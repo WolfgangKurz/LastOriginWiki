@@ -1794,6 +1794,23 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        청소를 겸해 잡동사니를 내던져 지정 범위에 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">스킬 사용 후</sec>, 한결 가뿐해져 2라운드 동안 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가합니다.
+      JP: |-
+        掃除を兼ねてガラクタを投げつけ、指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">スキル使用後</sec>、身軽になって2ラウンドの間自分の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が増加します。
+      EN: |-
+        Throws junk while cleaning, dealing <dmg elem="physics" /> to the designated area.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="1" r /></sec> for 2 rounds.
+        <sec typ="cond">After using the skill</sec>, feels lighter and increases self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" r /></sec> for 2 rounds.
+      TC: |-
+        兼顧打掃將雜物丟出，對指定範圍造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，在2回合內降低目標的<sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec>。
+        <sec typ="cond">使用技能後</sec>，變得輕鬆許多，並在2回合內增加自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>。
   "2":
     key: "2"
     icon: SelfAtkBuff
@@ -2022,6 +2039,27 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        대상 아군에게 걸작을 선사하여 역할군에 따라 2라운드 동안 다음 효과를 부여합니다.
+        - 공격기 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> 증가
+        - 보호기 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec> 감소
+        - 지원기 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec> 증가
+      JP: |-
+        対象の味方に傑作を贈り、役職に応じて2ラウンドの間以下の効果を付与します。
+        - 攻撃機: <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>増加
+        - 保護機: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="3" r inv /></sec>減少
+        - 支援機: <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>増加
+      EN: |-
+        Presents a masterpiece to the allied target and grants the following effects for 2 rounds depending on role.
+        - Attacker: increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec>
+        - Protector: decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="3" r inv /></sec>
+        - Supporter: increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" r /></sec>
+      TC: |-
+        將傑作贈予目標我軍，並依角色在2回合內賦予以下效果。
+        - 攻擊器：增加<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>
+        - 保護機：降低<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="3" r inv /></sec>
+        - 支援器：增加<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -2453,6 +2491,19 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 공격기의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>를 증가시킵니다.
+        <sec typ="cond">대상이 HP 95% 이상인 기동/경장형인 경우</sec>, 추가로 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과를 부여합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方攻撃機の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">対象がHP95%以上の機動/軽装型の場合</sec>、さらに<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / ダメージ減少無視</sec>効果を付与します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases the <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec> of allied attackers within range.
+        <sec typ="cond">If the target is a Mobile/Light Armor unit with HP at 95% or higher</sec>, additionally grants <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加範圍內我軍攻擊器的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>。
+        <sec typ="cond">若目標為HP95%以上的機動/輕裝型</sec>，則另外賦予<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減少</sec>效果。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -2791,6 +2842,19 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 보호기에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여하고 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec>를 증가시킵니다.
+        <sec typ="cond">자신이 피격 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>이(가) 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方保護機に<sec typ="buff"><buff typ="MARKING" /> マーク</sec>を付与し、<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">自分が被弾時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>が増加します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, grants allies' protectors within range a <sec typ="buff"><buff typ="MARKING" /> Mark</sec> and increases <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="1" r /></sec>.
+        <sec typ="cond">When self is hit</sec>, increases self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，向範圍內我軍保護機賦予<sec typ="buff"><buff typ="MARKING" /> 標記</sec>，並增加<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" r /></sec>。
+        <sec typ="cond">自身被擊中時</sec>，增加自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -2978,6 +3042,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec>가 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 활성화된 <sec typ="note">맞춤형 걸작</sec> 지속 효과의 50%를 자신의 패시브 스킬 효과 대상에게 부여합니다.
+        <sec typ="note">아틀리에의 소녀</sec>에 의한 추가 효과가, <sec>조건 중 어느 한 쪽만 충족되어도 발동할 수 있게 됩니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec>が減少します。
+        <sec typ="cond">ラウンド開始時</sec>、有効化された<sec typ="note">カスタム傑作</sec>持続効果の50%を自分のパッシブスキル効果対象に付与します。
+        <sec typ="note">アトリエの少女</sec>による追加効果が、<sec>条件のどちらか一方だけを満たしても発動できるようになります。</sec>
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases self's <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> and decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="1" r inv /></sec>.
+        <sec typ="cond">At the start of the round</sec>, grants 50% of the active <sec typ="note">Custom Masterpiece</sec> persistent effect to the targets of self's passive skill.
+        The additional effect from <sec typ="note">Girl of the Atelier</sec> can now trigger when only one of the conditions is met.</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，增加自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="0" r /></sec>，並降低<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="1" r inv /></sec>。
+        <sec typ="cond">回合開始時</sec>，將啟用中的<sec typ="note">客製傑作</sec>持續效果的50%賦予自身被動技能效果目標。
+        <sec typ="note">工坊少女</sec>造成的額外效果，現在只要滿足其中一項條件也能發動。</sec>
 dialogue:
   KR:
     "1":
@@ -3029,9 +3110,7 @@ dialogue:
       SPIdle_02_01: |-
         …네, 오라버니. 저라는 종이를…
         오라버니의 색으로 물들여주세요.
-      Oath: 동양화는 화가의 감정을 중시하는 그림이에요. 그래서 그런가, 오라버니를 그린 그림은 항상 비슷한 느낌이 들어요. 왜냐하면… 오라버니를
-        생각하면 마음 속에서 사랑스러운 감정만 마구 샘솟거든요. 그러니까, 제 대답은 이거에요. 네, 사랑하는 오라버니. 저희 함께
-        행복하게 살아요!
+      Oath: 동양화는 화가의 감정을 중시하는 그림이에요. 그래서 그런가, 오라버니를 그린 그림은 항상 비슷한 느낌이 들어요. 왜냐하면… 오라버니를 생각하면 마음 속에서 사랑스러운 감정만 마구 샘솟거든요. 그러니까, 제 대답은 이거에요. 네, 사랑하는 오라버니. 저희 함께 행복하게 살아요!
       OathIdle_01: |-
         그림의 소재들에는 다 뜻이 있답니다.
         예를 들어 제가 그린 이 그림의 학은…
@@ -3171,9 +3250,7 @@ dialogue:
       SPIdle_02_01: |-
         [미번역]…네, 오라버니. 저라는 종이를…
         오라버니의 색으로 물들여주세요.
-      Oath: "[미번역]동양화는 화가의 감정을 중시하는 그림이에요. 그래서 그런가, 오라버니를 그린 그림은 항상 비슷한 느낌이 들어요. 왜냐하면…
-        오라버니를 생각하면 마음 속에서 사랑스러운 감정만 마구 샘솟거든요. 그러니까, 제 대답은 이거에요. 네, 사랑하는 오라버니. 저희
-        함께 행복하게 살아요!"
+      Oath: "[미번역]동양화는 화가의 감정을 중시하는 그림이에요. 그래서 그런가, 오라버니를 그린 그림은 항상 비슷한 느낌이 들어요. 왜냐하면… 오라버니를 생각하면 마음 속에서 사랑스러운 감정만 마구 샘솟거든요. 그러니까, 제 대답은 이거에요. 네, 사랑하는 오라버니. 저희 함께 행복하게 살아요!"
       OathIdle_01: |-
         [미번역]그림의 소재들에는 다 뜻이 있답니다.
         예를 들어 제가 그린 이 그림의 학은…
@@ -3285,10 +3362,7 @@ dialogue:
       SPIdle_02_01: |-
         Yes, Big Brother, think of me as paper…
         and dye me with your colors…
-      Oath: The emotions of the artist is valued in Eastern paintings. Probably why it
-        has similar vibes when I paint you. Because when I think of you, my love
-        for you overflows. Hence, my answer is yes. I love you, and let’s be
-        happy together.
+      Oath: The emotions of the artist is valued in Eastern paintings. Probably why it has similar vibes when I paint you. Because when I think of you, my love for you overflows. Hence, my answer is yes. I love you, and let’s be happy together.
       OathIdle_01: |-
         The subject matter of each drawing has meaning.
         For example… the crane in my drawing…
@@ -3313,14 +3387,12 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: I had so many requests while I stayed here… They were all thinking
-        about you.
+      Idle_01_01: I had so many requests while I stayed here… They were all thinking about you.
       Idle_01_02: |-
         Umm, should I draw something to make you feel better?
         Don’t worry. I’m good at drawing.
-      Idle_01_03: >-
+      Idle_01_03: |-
         In the past… I kept on painting in my room.
-
         No. I wasn’t depressed. Drawing people’s dreams… I really enjoyed doing that.
       SPIdle_01_01: |-
         Whoa!! W-well… This is…
@@ -3337,9 +3409,8 @@ dialogue:
         make a guess? A clue?
         I-is this enough?
       SPIdle_02_01: I-I need to get ready…
-      Oath: >-
+      Oath: |-
         I know you’ve been longing for me. I’ve been looking at you too.
-
         Still… I didn’t think I’d receive a ring. Thank you for fulfilling my wish. And… I love you.
       OathIdle_01: |-
         I can’t satisfy your hunger

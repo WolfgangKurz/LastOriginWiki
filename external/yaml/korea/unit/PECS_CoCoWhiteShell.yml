@@ -3713,6 +3713,27 @@ skills:
               level: "0"
             value: Char_PECS_Stinger_N
             chance: 1
+    desc:
+      KR: |-
+        운석 파쇄 드릴로 장갑을 부숴, <dmg elem="physics" />를 주고 3라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val base="-0.45" per="-0.045" r /></sec>를 감소시킵니다.
+        <sec>해당 효과는 라운드 경과에 따라 점감합니다.</sec>
+        <sec typ="cond">적중 대상이 중장형 또는 보호기</sec>인 경우, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec> 스쿼드 내에 <sec typ="cond"><char uid="PECS_Stinger" />가 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">파쇄 돌격</sec> 협동 공격을 유도</sec>합니다.
+      JP: |-
+        隕石粉砕ドリルで装甲を砕き、<dmg elem="physics" />を与え、3ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val base="-0.45" per="-0.045" r /></sec>を減少させます。
+        <sec>この効果はラウンド経過に伴い徐々に弱まります。</sec>
+        <sec typ="cond">命中対象が重装型または保護機</sec>の場合、<sec typ="buff"><buff typ="REMOVE_BUFF" /> 被ダメージ減少効果を解除</sec>します。
+        <sec typ="cond">命中時</sec>、分隊内に<sec typ="cond"><char uid="PECS_Stinger" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">破砕突撃</sec>の協同攻撃を誘発</sec>します。
+      EN: |-
+        Crushes armor with a meteor-shattering drill, dealing <dmg elem="physics" /> and reducing the target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val base="-0.45" per="-0.045" r /></sec> for 3 rounds.
+        <sec>This effect weakens as rounds pass.</sec>
+        <sec typ="cond">If the hit target is Heavy-type or a Defender</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the damage reduction effect</sec>.
+        <sec typ="cond">On hit</sec>, if <sec typ="cond"><char uid="PECS_Stinger" /> is in the squad</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> triggers a joint attack with <sec typ="note">Shattering Charge</sec></sec>.
+      TC: |-
+        以隕石粉碎鑽擊碎裝甲，造成 <dmg elem="physics" />，並在 3 回合內使目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val base="-0.45" per="-0.045" r /></sec>下降。
+        <sec>此效果會隨回合經過而逐漸衰減。</sec>
+        <sec typ="cond">若命中目標為重裝型或保護機</sec>，則<sec typ="buff"><buff typ="REMOVE_BUFF" /> 解除受到傷害減少效果</sec>。
+        <sec typ="cond">命中時</sec>，若隊伍中有<sec typ="cond"><char uid="PECS_Stinger" />存在</sec>，則<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 觸發與<sec typ="note">粉碎突擊</sec>的協同攻擊</sec>。
   "2":
     key: "2"
     icon: Barrier
@@ -4089,6 +4110,27 @@ skills:
               level: "0"
             value: Effect_AGS_Aeda_N_2
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">스킬 사용 시</sec>, 보호기를 제외한 대상의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>을(를) 증가시키고, 3라운드 동안 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>하며 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" signless /></sec>을(를) 부여합니다.
+        대상이 <sec typ="note">오비탈 와쳐</sec> 소속 전투원인 경우, <sec typ="buff"><buff typ="AP_UP" /> AP</sec> 증가량이 두 배로 증폭되고 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        대상이 <char uid="AGS_Aeda" />인 경우, <sec typ="note">연산 과부하</sec> 효과를 해제할 수 있습니다.
+        <sec typ="note">오비탈 와쳐</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+      JP: |-
+        <sec typ="cond">スキル使用時</sec>、保護機を除いた対象の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>を増加させ、3ラウンドの間<sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>し、<sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="0" signless /></sec>を付与します。
+        対象が<sec typ="note">オービタル・ウォッチャー</sec>所属の戦闘員である場合、<sec typ="buff"><buff typ="AP_UP" /> AP</sec>増加量が2倍になり、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を解除</sec>します。
+        対象が<char uid="AGS_Aeda" />の場合、<sec typ="note">演算過負荷</sec>効果を解除できます。
+        <sec typ="note">オービタル・ウォッチャー</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+      EN: |-
+        <sec typ="cond">On skill use</sec>, increases the target's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>, excluding Defenders, grants <sec typ="buff"><buff typ="DEF_Char" /> designated protection</sec> for 3 rounds, and applies <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> a barrier <val idx="0" signless /></sec>.
+        If the target is a member of <sec typ="note">Orbital Watcher</sec>, the <sec typ="buff"><buff typ="AP_UP" /> AP</sec> increase is doubled and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes harmful effects</sec>.
+        If the target is <char uid="AGS_Aeda" />, <sec typ="note">Computation Overload</sec> can be removed.
+        <sec typ="note">Orbital Watcher</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+      TC: |-
+        <sec typ="cond">使用技能時</sec>，使除保護機以外的目標的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>增加，並在 3 回合內賦予 <sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>，以及 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 屏障 <val idx="0" signless /></sec>。
+        若目標為 <sec typ="note">軌道監視者</sec> 所屬戰鬥員，則 <sec typ="buff"><buff typ="AP_UP" /> AP</sec> 增加量變為兩倍，並會 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除有害效果</sec>。
+        若目標為 <char uid="AGS_Aeda" />，則可解除 <sec typ="note">演算過載</sec>效果。
+        <sec typ="note">軌道監視者</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -4711,6 +4753,27 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 아군을 지정 보호</sec>하고 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신을 제외한 아군 1기당 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec>가 감소합니다.
+        <sec typ="note">오비탈 와쳐</sec> 소속 전투원은 2기로 취급하여 계산됩니다.
+        <sec typ="note">오비탈 와쳐</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の<sec typ="buff"><buff typ="DEF_Char" /> 保護機を除く味方を指定保護</sec>し、<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、自分を除く味方1体ごとに、自身の<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 被ダメージ <val idx="3" r inv /></sec>が減少します。
+        <sec typ="note">オービタル・ウォッチャー</sec>所属の戦闘員は2体として扱って計算されます。
+        <sec typ="note">オービタル・ウォッチャー</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, grants <sec typ="buff"><buff typ="DEF_Char" /> designated protection to allies in range excluding Defenders</sec> and increases <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, for each ally other than self, the user's <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="3" r inv /></sec> is reduced.
+        <sec typ="note">Orbital Watcher</sec> members are counted as 2 units.
+        <sec typ="note">Orbital Watcher</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，對範圍內<sec typ="buff"><buff typ="DEF_Char" /> 除保護機以外的隊友賦予指定保護</sec>，並提升 <sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="0" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，每當除自身以外每有 1 名隊友，自身的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到傷害 <val idx="3" r inv /></sec>就會減少。
+        <sec typ="note">軌道監視者</sec> 所屬戰鬥員會以 2 名計算。
+        <sec typ="note">軌道監視者</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -5090,6 +5153,23 @@ skills:
             base: 17
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 행 / 열 보호</sec>가 활성화됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 우주용 특수 장갑으로 인해 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 모든 속성 저항 <val idx="6" r /></sec>이 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 냉기 저항 감소 효과에 면역</sec> 상태가 됩니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身は<sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 行 / 列保護</sec>が有効になります。
+        <sec typ="cond">ラウンド開始時</sec>、自身は宇宙用特殊装甲により<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 全属性抵抗 <val idx="6" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、自身は<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 冷気抵抗減少効果に免疫</sec>状態になります。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, grants self <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> row / column protection</sec>.
+        <sec typ="cond">At the start of the round</sec>, self gains increased <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> all elemental resistance <val idx="6" r /></sec> due to special space armor.
+        <sec typ="cond">At the start of the round</sec>, self becomes <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immune to cold resistance reduction effects</sec>.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 行 / 列保護</sec>會啟動。
+        <sec typ="cond">回合開始時</sec>，由於宇宙用特殊裝甲，自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 全屬性抗性 <val idx="6" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，自身會進入 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 免疫冷氣抗性下降效果</sec> 狀態。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -5416,6 +5496,23 @@ skills:
             base: 0.1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="IceRes_Value_Min" /> 냉기 저항 하한 <val idx="0" r signless /></sec>를 생성합니다.
+        <sec typ="cond">냉기 속성 피격 시</sec> 또는 <sec typ="cond"><cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt> 상태로 라운드 개시 시</sec>, 자신은 해당 라운드 동안 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> <val idx="3" signless /> 이하의 피해를 최소화</sec>하는 효과를 획득합니다.
+        <sec typ="cond"><sec typ="note">응축</sec> 상태에서 피격 시</sec>, 2라운드 동안 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>를 증가시킵니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="IceRes_Value_Min" /> 冷気抵抗下限 <val idx="0" r signless /></sec>を生成します。
+        <sec typ="cond">冷気属性被弾時</sec>、または<sec typ="cond"><cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>状態でラウンド開始時</sec>、自身はそのラウンドの間<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> <val idx="3" signless />以下の被害を最小化</sec>する効果を獲得します。
+        <sec typ="cond"><sec typ="note">凝縮</sec>状態で被弾時</sec>、2ラウンドの間、範囲内の味方の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>を増加させます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, creates a minimum cold resistance for allies in range: <sec typ="buff"><buff typ="IceRes_Value_Min" /> Cold Resistance floor <val idx="0" r signless /></sec>.
+        <sec typ="cond">When hit by a cold attribute attack</sec>, or <sec typ="cond">at the start of the round while in <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt> status</sec>, self gains an effect for that round that <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> minimizes damage of <val idx="3" signless /> or less</sec>.
+        <sec typ="cond">When hit while in <sec typ="note">Condensation</sec></sec>, increases allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" r /></sec> in range for 2 rounds.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，會為範圍內隊友生成 <sec typ="buff"><buff typ="IceRes_Value_Min" /> 冷氣抗性下限 <val idx="0" r signless /></sec>。
+        <sec typ="cond">受到冷氣屬性攻擊時</sec>，或<sec typ="cond">在 <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt> 狀態下回合開始時</sec>，自身會在該回合獲得 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 將 <val idx="3" signless /> 以下的傷害最小化</sec> 的效果。
+        <sec typ="cond">在 <sec typ="note">凝縮</sec> 狀態下受擊時</sec>，會在 2 回合內提升範圍內隊友的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>。
 dialogue:
   KR:
     "1":
@@ -5484,8 +5581,7 @@ dialogue:
         이건 분명,
         제가 사령관님을 누구보다
         믿고 좋아하게 됐다는 증거일 거예요.
-      Oath: 에헤헤~ 정말 오랜 기다림이었지만, 이날이 꼭 올 거라고 사령관님을 믿고 있었어요. 저는 아직 작지만… 언젠가 어른이 돼서
-        사령관님이랑 같은 높이에서 별을 보고 싶어요. 그러니까 그때까지는, 화이트 셸이랑 같이 별들을 지키는 수호자가 될게요.
+      Oath: 에헤헤~ 정말 오랜 기다림이었지만, 이날이 꼭 올 거라고 사령관님을 믿고 있었어요. 저는 아직 작지만… 언젠가 어른이 돼서 사령관님이랑 같은 높이에서 별을 보고 싶어요. 그러니까 그때까지는, 화이트 셸이랑 같이 별들을 지키는 수호자가 될게요.
       OathIdle_01: |-
         사령관님의 손길이랑 품이 예전보다
         더 따뜻하게 느껴지는 것 같아요.
@@ -5762,9 +5858,8 @@ dialogue:
       SPIdle_02_01: |-
         If I grow up, you’ll stroke me
         less often, won’t you? Then please stroke me a lot before I grow up.
-      Oath: >-
+      Oath: |-
         Huh??? Are you giving it to White Shell? Or… me?
-
         Too bad… If I was just a bit older, it'd be OK… For now, all I can do is see how you feel…
       OathIdle_01: He he. This token is pretty.
       MVP: ""

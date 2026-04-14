@@ -2324,6 +2324,19 @@ skills:
               level: "0"
             value: Char_PECS_PuppHead_N
             chance: 1
+    desc:
+      KR: |-
+        리볼버를 발사해 <dmg elem="physics" />를 주고, 대상을 2라운드 동안 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하며 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="3" r /></sec>를 낮춥니다.
+        스쿼드 내에 <char uid="PECS_PuppHead" />가 있을 시, 대상에게 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">테이저 건</sec> 스킬 협동 공격</sec>을 합니다.
+      JP: |-
+        リボルバーを発射して<dmg elem="physics" />のダメージを与え、対象を2ラウンドの間<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>し、<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="3" r /></sec>を減少させます。
+        分隊内に<char uid="PECS_PuppHead" />がいる場合、対象に<sec typ="buff"><buff typ="TOGETHER_ATTACK" /><sec typ="note">テイザーガン</sec>スキル協同攻撃</sec>を行います。
+      EN: |-
+        Fires a Revolver and deals <dmg elem="physics" /> damage, <sec typ="buff"><buff typ="PROVOKE" />Provoking</sec> the target for 2 rounds and decreasing their <sec typ="buff"><buff typ="ACCURACY_DOWN" />ACU<val idx="3" r /></sec>.
+        If <char uid="PECS_PuppHead" /> is in the squad, launch a co-op attack at the target with the <sec typ="note">Taser Gun</sec> skill.
+      TC: |-
+        發射左輪手槍造成<dmg elem="physics" />傷害，並使目標於2回合內受到<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>，同時減少其<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="3" r /></sec>。
+        若小隊內有<char uid="PECS_PuppHead" />，則對目標使用<sec typ="note">電擊槍</sec>技能進行協力攻擊。
   "2":
     key: "2"
     icon: SelfAtkDeBuff
@@ -3014,6 +3027,11 @@ skills:
             base: -0.15
             per: -0.005
             chance: 1
+    desc:
+      KR: 고압 가스탄을 발사해 목표 대상들에게 <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="1" r /></sec>를 감소시킵니다.
+      JP: 高圧ガス弾を発射して目標対象に<dmg elem="physics" />のダメージを与え、2ラウンドの間、<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="0" r /></sec>と<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="1" r /></sec>を減少させます。
+      EN: Fires a high-pressure gas shell and deals <dmg elem="physics" /> damage to the designated enemies, decreasing their <sec typ="buff"><buff typ="ATK_DOWN" />ATK<val idx="0" r /></sec> and <sec typ="buff"><buff typ="DEF_DOWN" />DEF<val idx="1" r /></sec> for 2 rounds.
+      TC: 發射高壓瓦斯彈，對目標敵軍造成<dmg elem="physics" />傷害，並於2回合內減少其<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="0" r /></sec>與<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="1" r /></sec>。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -3281,6 +3299,11 @@ skills:
             base: 0.06
             per: 0.01
             chance: 1
+    desc:
+      KR: 라운드 개시 시, 자신에게 <sec typ="buff"><buff typ="MARKING" /> 이로운 표식</sec>을 지정하고 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec>와 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 모든 속성 저항 <val idx="4" r /></sec>를 증가시키며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec>를 감소시킵니다.
+      JP: ラウンド開始時、自分に<sec typ="buff"><buff typ="MARKING" />有利な標的</sec>を指定し、自分の<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="1" r /></sec>と<sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" />全属性耐性<val idx="4" r /></sec>を増加させ、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="2" r inv /></sec>を減少させます。
+      EN: At the start of the round, grants a <sec typ="buff"><buff typ="MARKING" />beneficial Mark</sec> to self, increases self’s <sec typ="buff"><buff typ="DEF_UP" />DEF<val idx="1" r /></sec> and <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" />All Element Resistance<val idx="4" r /></sec>, and decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage<val idx="2" r inv /></sec>.
+      TC: 回合開始時，為自身指定<sec typ="buff"><buff typ="MARKING" />有利標記</sec>，增加自身的<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="1" r /></sec>與<sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" />所有屬性抵抗<val idx="4" r /></sec>，並減少<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="2" r inv /></sec>。
 dialogue:
   KR:
     "1":
@@ -3397,8 +3420,7 @@ dialogue:
         오늘도 제대로 착용하고 있답니다.
         이곳은 사령관님 말고는…
         그 누구도 손댈 수 없는 곳이니까요.
-      Oath: 이건… 제가 사령관님의 것이라는 서약의 증표입니다.​ 지금부터는 스스로의 위로조차 사령관님의 허가 없이는 할 수 없겠네요.​ 열쇠도,
-        규칙도… 제가 가진 모든 걸 평생 사령관님께 맡기겠습니다.​ 사령관님의 관리에 저는 기꺼이… 따르겠습니다.
+      Oath: 이건… 제가 사령관님의 것이라는 서약의 증표입니다.​ 지금부터는 스스로의 위로조차 사령관님의 허가 없이는 할 수 없겠네요.​ 열쇠도, 규칙도… 제가 가진 모든 걸 평생 사령관님께 맡기겠습니다.​ 사령관님의 관리에 저는 기꺼이… 따르겠습니다.
       OathIdle_01: |-
         최근 자물쇠를 푸는 횟수가
         부쩍 늘어난 것 같은데… 기분 탓일까요?
@@ -3644,8 +3666,7 @@ dialogue:
         I’ll be your maid from today.
         I’m Miss Safety. Call me anytime
         if you need anything.
-      Idle_01_02: Orca is peaceful under your command… As the security officer, I’m
-        looking for a side job.
+      Idle_01_02: Orca is peaceful under your command… As the security officer, I’m looking for a side job.
       Idle_01_03: |-
         According to research, maids always
         wore this uniform. Don’t I look like
@@ -3658,19 +3679,15 @@ dialogue:
       Idle_03_01: |-
         The outfit had another purpose?
         B-but if you say it’s okay… I’ll… wear it. J-just in case…
-      Idle_04_01: >-
+      Idle_04_01: |-
         If I didn’t become a maid, I would have never knew
-
         that your room was in such a mess. But luckily… I can help you. I’ll clean up soon.
       SPIdle_02_01: |-
         I think we all got wet… I think I should clean you up first
         before cleaning up this place.
-      Oath: >-
-        I can’t believe you proposed to me while I’m working as a housekeeper.
-        Do you perhaps like me this way even more? I’ll be fine either way
-
+      Oath: |-
+        I can’t believe you proposed to me while I’m working as a housekeeper. Do you perhaps like me this way even more? I’ll be fine either way
         as long as I can be with you, master… But looking back on what you did to me while I was doing chores… I think I know the answer.
-
         I’ll guard the house perfectly, but I’ll try hard to get better at doing housework. So we can spend more enjoyable time together. Both master and I.
       OathIdle_01: You prepared a cane here… Should I try and make some mistakes?
       MVP: ""
@@ -3745,10 +3762,8 @@ dialogue:
       SPIdle_02_01: |-
         Don't worry. I'll only use the police baton.
         I will not use a gun.
-      Oath: >-
-        Huh? This… doesn't suit a public servicer like me. But… since the public
-        is gone…
-
+      Oath: |-
+        Huh? This… doesn't suit a public servicer like me. But… since the public is gone…
         I guess it'd be OK to consider my personal profits a bit more. Thank you. This means a lot to me.
       OathIdle_01: |-
         Sometimes I feel like
@@ -3784,10 +3799,8 @@ dialogue:
       Idle_01_03: |-
         A police baton again…? I’ll have it ready if you need it.
         It might be a good idea to come up with various uses.
-      SPIdle_01_01: >-
-        From now on, the place is lawless. So… Let’s do some bad things we
-        shouldn’t normally be doing.
-
+      SPIdle_01_01: |-
+        From now on, the place is lawless. So… Let’s do some bad things we shouldn’t normally be doing.
         No one will hold us accountable.
       MVP: ""
   TC:

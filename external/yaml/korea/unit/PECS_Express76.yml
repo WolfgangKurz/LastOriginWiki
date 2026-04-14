@@ -3147,6 +3147,19 @@ skills:
             base: -1
             per: -0.05
             chance: 1
+    desc:
+      KR: |-
+        주변의 잔해물을 던져 <dmg elem="physics" />를 주고, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" /></sec>을(를) 낮추며 <sec typ="buff"><buff typ="Push" /> 뒤로 <val idx="1" signless />칸 밀어냅니다</sec>.
+        <sec typ="buff">워커 홀릭</sec> 중첩 수에 비례해 2라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec> 증가 효과를 주며, <sec typ="chance"><chance idx="2" /> 확률</sec>로 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만듭니다.
+      JP: |-
+        周辺の残骸物を投げて<dmg elem="physics" />を与え、対象の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" /></sec>を減少させ、<sec typ="buff"><buff typ="Push" />後方へ<val idx="1" signless />マス押し出します</sec>。
+        <sec typ="buff">Workaholic</sec>のスタック数に比例して2ラウンドの間<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="4" r /></sec>増加効果を与え、<sec typ="chance"><chance idx="2" />の確率</sec>で<sec typ="buff"><buff typ="STUN" />行動不可</sec>状態にします。
+      EN: |-
+        Throws debris in the area and deals <dmg elem="physics" /> damage, decreasing the target’s <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" /></sec> and pushing them back <sec typ="buff"><buff typ="Push" /> <val idx="1" signless /> spaces</sec>.
+        In proportion to the number of <sec typ="buff">Workaholic</sec> stacks, inflicts a 2-round <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="4" r /></sec> increase effect, and has a <sec typ="chance"><chance idx="2" /> chance</sec> to make the target <sec typ="buff"><buff typ="STUN" /> unable to act</sec>.
+      TC: |-
+        投擲周圍殘骸，造成<dmg elem="physics" />，並降低目標的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" /></sec>，同時以<sec typ="buff"><buff typ="Push" />後推<val idx="1" signless />格</sec>。
+        依<sec typ="buff">工作狂</sec>疊加數比例，賦予2回合的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="4" r /></sec>增加效果，並有<sec typ="chance"><chance idx="2" />機率</sec>使其進入<sec typ="buff"><buff typ="STUN" />無法行動</sec>狀態。
   "2":
     key: "2"
     icon: SelfSpdBuff
@@ -3660,6 +3673,19 @@ skills:
             base: 0.15
             per: 0.0075
             chance: 0.1
+    desc:
+      KR: |-
+        아군에게 택배를 전달해 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>을(를) 올려주고, 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="3" r /></sec>를 증가시킵니다.
+        <sec typ="buff">워커 홀릭</sec> 중첩 수에 비례해 효과가 증가하며, <sec typ="chance"><chance idx="11" /> 확률</sec>로 기본 효과가 2배로 적용됩니다.
+      JP: |-
+        味方に宅配便を届けて<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>を上げ、2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="3" r /></sec>を増加させます。
+        <sec typ="buff">Workaholic</sec>のスタック数に比例して効果が増加し、<sec typ="chance"><chance idx="11" />の確率</sec>で基本効果が2倍で適用されます。
+      EN: |-
+        Delivers packages to allies, increasing <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> and increasing <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACU <val idx="3" r /></sec> for 2 rounds.
+        Effect increases in proportion to the number of <sec typ="buff">Workaholic</sec> stacks, and there is a <sec typ="chance"><chance idx="11" /> chance</sec> the basic effect is applied twice.
+      TC: |-
+        向我軍傳遞包裹，提升<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>，並於2回合內提升<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="3" r /></sec>。
+        效果會依<sec typ="buff">工作狂</sec>疊加數增加，且有<sec typ="chance"><chance idx="11" />機率</sec>使基本效果套用2次。
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -3820,6 +3846,19 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        스킬이 적중할 때마다 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 증가하며, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec>가 감소합니다.
+        해당 효과는 최대 3번까지 중첩됩니다.
+      JP: |-
+        スキルが命中するたびに<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="2" r inv /></sec>が減少します。
+        この効果は最大3回までスタックします。
+      EN: |-
+        Every time the skill hits, <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="2" r inv /></sec> decreases.
+        This effect stacks up to 3 times.
+      TC: |-
+        每當技能命中時，<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>增加，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="2" r inv /></sec>減少。
+        此效果最多可疊加3次。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -3964,6 +4003,19 @@ skills:
             base: 1
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="buff">워커 홀릭</sec> 상태에서 라운드 개시 시, 주변의 아군 바이오로이드들을 설레게 해 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec>스킬 레벨 10에서 범위가 증가</sec>합니다.
+      JP: |-
+        <sec typ="buff">Workaholic</sec>状態でラウンド開始時、周辺の味方バイオロイドをわくわくさせて<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        <sec>スキルレベル10で範囲が増加</sec>します。
+      EN: |-
+        If the round starts while <sec typ="buff">Workaholic</sec> is active, nearby allied Bioroids become excited and their <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec>Effective range increases at Skill Lv. 10</sec>.
+      TC: |-
+        處於<sec typ="buff">工作狂</sec>狀態下開始回合時，會使周圍我方生化人偶興奮，並增加其<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>。
+        <sec>技能等級10時範圍增加</sec>。
 dialogue:
   KR:
     "1":
@@ -4067,9 +4119,7 @@ dialogue:
         고객님의 상품
         '끝없이 인간이 나오는 방'
         당일 배송이 완료되었습니다♥
-      Oath: 특송 서비스가 오픈 된 후로 물류량이 급증 했어. 광고 촬영이 끝나자마자 바로 다음 물류 허브로 가려고 했더니… 나 참~ 사령관의
-        당일 특송 요청은 그냥 지나칠 수 없단 말이지. 사령관의 데이트 신청은 내 평생 위시리스트인걸… 수령인 사인 할게. 입술 위에
-        할까? 아님… 사령관 위에서 할까?
+      Oath: 특송 서비스가 오픈 된 후로 물류량이 급증 했어. 광고 촬영이 끝나자마자 바로 다음 물류 허브로 가려고 했더니… 나 참~ 사령관의 당일 특송 요청은 그냥 지나칠 수 없단 말이지. 사령관의 데이트 신청은 내 평생 위시리스트인걸… 수령인 사인 할게. 입술 위에 할까? 아님… 사령관 위에서 할까?
       OathIdle_01: |-
         고객님의 소중한 상품
         '익스프레스 76'이 배송 시작되었습니다♥
@@ -4335,10 +4385,8 @@ dialogue:
         It’s a crime, bit. If we don’t report it,
         no one will know.
         Hey… no need to worry…
-      Oath: >-
-        Commander. Are you… being serious? You’re not just saying that because
-        we are at the beach, are you? 
-
+      Oath: |-
+        Commander. Are you… being serious? You’re not just saying that because we are at the beach, are you? 
         … I’d love that, commander! I’ll… always be with you.
       OathIdle_01: |-
         Shall we go live in the ocean? Then you’ll
@@ -4414,12 +4462,9 @@ dialogue:
         I will always be there when you need me…
         I promise. Commander?
       SPIdle_02_01: Commander!? Ah-! you are… bad…
-      Oath: >-
-        Since I… was always busy… I couldn't even be with you. Did you hate me
-        for that? 
-
+      Oath: |-
+        Since I… was always busy… I couldn't even be with you. Did you hate me for that? 
         Y-you fool! Now… Hug me…
-
         If you do, I'll be by your side only. Forever… Thank you… Commander.
       OathIdle_01: |-
         I want to go out with you…

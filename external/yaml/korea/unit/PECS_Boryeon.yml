@@ -2664,6 +2664,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <dmg elem="physics" />를 입힙니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상을 <sec typ="note">싹둑싹둑~</sec> 상태로 만들어 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>를 감소시킵니다. (중첩 불가)
+        <sec typ="cond">적중 대상이 <sec typ="note">매끈매끈~</sec> 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      JP: |-
+        指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、3ラウンドの間対象を<sec typ="note">チョキチョキ~</sec>状態にし、<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="0" r /></sec>を減少させます。（重複不可）
+        <sec typ="cond">命中対象が<sec typ="note">つるつる~</sec>状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="2" r /></sec>が増加します。
+      EN: |-
+        Deals <dmg elem="physics" /> damage to the designated area.
+        <sec typ="cond">On hit</sec>, turns the target into <sec typ="note">Snip-snip~</sec> for 3 rounds and decreases <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="0" r /></sec>. (Does not stack)
+        <sec typ="cond">If the hit target is in the <sec typ="note">Smooth-smooth~</sec> state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+      TC: |-
+        對指定範圍造成<dmg elem="physics" />傷害。
+        <sec typ="cond">命中時</sec>，使目標在3回合內處於<sec typ="note">咔嚓咔嚓~</sec>狀態，並減少<sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力<val idx="0" r /></sec>。（不可疊加）
+        <sec typ="cond">若命中目標處於<sec typ="note">滑溜溜~</sec>狀態</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: TeamDefDeBuff
@@ -4780,6 +4797,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <dmg elem="physics" />를 입힙니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상을 <sec typ="note">매끈매끈~</sec> 상태로 만들어 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다. (중첩 불가)
+        <sec typ="cond">적중 대상이 <sec typ="note">싹둑싹둑~</sec> 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      JP: |-
+        指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、3ラウンドの間対象を<sec typ="note">つるつる~</sec>状態にし、<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>を減少させます。（重複不可）
+        <sec typ="cond">命中対象が<sec typ="note">チョキチョキ~</sec>状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="2" r /></sec>が増加します。
+      EN: |-
+        Deals <dmg elem="physics" /> damage to the designated area.
+        <sec typ="cond">On hit</sec>, turns the target into <sec typ="note">Smooth-smooth~</sec> for 3 rounds and decreases <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec>. (Does not stack)
+        <sec typ="cond">If the hit target is in the <sec typ="note">Snip-snip~</sec> state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+      TC: |-
+        對指定範圍造成<dmg elem="physics" />傷害。
+        <sec typ="cond">命中時</sec>，使目標在3回合內處於<sec typ="note">滑溜溜~</sec>狀態，並減少<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力<val idx="0" r /></sec>。（不可疊加）
+        <sec typ="cond">若命中目標處於<sec typ="note">咔嚓咔嚓~</sec>狀態</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="2" r /></sec>增加。
   "3":
     key: "3"
     icon: P.Beam
@@ -4947,6 +4981,19 @@ skills:
             base: 0.2
             per: 0.02
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff">적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">액티브 스킬 치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>하고 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" slot="1" r /></sec>가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff">命中<val idx="0" r /></sec>/<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec>が増加します。
+        <sec typ="cond">アクティブスキルがクリティカルした時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ減少効果を解除</sec>し、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="5" slot="1" r /></sec>が増加します。
+      EN: |-
+        At round start, self's <sec typ="buff">Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increase.
+        When an active skill crits, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> received damage reduction effect</sec> and increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" slot="1" r /></sec>.
+      TC: |-
+        在回合開始時，自身的<sec typ="buff">命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>增加。
+        <sec typ="cond">主動技能暴擊時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />所受傷害減少效果</sec>，並提升<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="5" slot="1" r /></sec>。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -5130,6 +5177,19 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 바이오로이드의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
+        <sec>자신은 상기 효과가 두 배로 증폭됩니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方バイオロイドの<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>/<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>が増加します。
+        <sec>自分には上記効果が2倍に増幅されます。</sec>
+      EN: |-
+        At round start, increases the <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec> of allied Biroids in the area.
+        <sec>Self receives double the above effect.</sec>
+      TC: |-
+        在回合開始時，提升範圍內我軍生化人的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力<val idx="1" r /></sec>。
+        <sec>自身會受到上述效果的雙倍增幅。</sec>
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -5289,6 +5349,23 @@ skills:
             base: 1
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시가 활성화</sec>됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>이(가) 증가합니다.
+        <sec>자신의 액티브 스킬의 피해량 증가 효과가 두 배로 증폭됩니다.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視が有効化</sec>されます。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>が増加します。
+        <sec>自分のアクティブスキルのダメージ増加効果が2倍に増幅されます。</sec>
+      EN: |-
+        At round start, self's <sec typ="buff"><buff typ="Guardpierce_Apply" /> Protection Ignore</sec> is enabled.
+        At round start, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> of allies in the area.
+        <sec>The damage increase effect of self's active skills is doubled.</sec>
+      TC: |-
+        在回合開始時，自身的<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>啟用。
+        在回合開始時，提升範圍內我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>。
+        <sec>自身主動技能的傷害增加效果會增幅為雙倍。</sec>
 dialogue:
   KR:
     "1":
@@ -5399,8 +5476,7 @@ dialogue:
       SPIdle_02_01: |-
         에헤헷, 이제부터 특별 서비스?
         기다린 만큼… 잔뜩잔뜩... 서비스해드릴게요.
-      Oath: 오늘은 어떤 서비스를 받으시려고 여기까지 부르셨을… 꺄악! 좋아해요, 사랑해요, 손님! 왜 이제 고백하시나요! 제가 맨날맨날
-        기다렸는데. 이제는 손님이라고 안 부를거예요. 알겠지? 오빠? 이제 매일매일 사랑해주기다? 알겠지?
+      Oath: 오늘은 어떤 서비스를 받으시려고 여기까지 부르셨을… 꺄악! 좋아해요, 사랑해요, 손님! 왜 이제 고백하시나요! 제가 맨날맨날 기다렸는데. 이제는 손님이라고 안 부를거예요. 알겠지? 오빠? 이제 매일매일 사랑해주기다? 알겠지?
       OathIdle_01: |-
         오빠, 내가 차린 아침은 어땠어?
         맛있었어? 에헤헷, 그러면 다행이다.
@@ -5658,18 +5734,14 @@ dialogue:
         Did Audrey give it to you? … Huh? Saliva?
         H-huh? *Drools* I-I couldn’t help it
         when I saw your body… Haha…
-      Idle_04_01: >-
+      Idle_04_01: |-
         Sir, it’s over- Sir? Are you asleep? …… I can’t take it anymore.
-
         I won’t! How can I stop myself when I’m seeing all this… I’ll just have a taste… Please don’t wake up, okay?
       SPIdle_02_01: |-
         Oh… Umm… I-I’m done with the massage!
         I’m done! I’m done for the day… G-go on with what you want to do.
-      Oath: >-
-        I always wanted to be close to you. So, hoping that you lay your eyes on
-        me… I worked hard at a barbershop even wearing a swimsuit… I’m so
-        delighted to be proposed.
-
+      Oath: |-
+        I always wanted to be close to you. So, hoping that you lay your eyes on me… I worked hard at a barbershop even wearing a swimsuit… I’m so delighted to be proposed.
         Hehe. Was I being too serious? I was also waiting for you to say you love me! I love you too, Honey!
       OathIdle_01: |-
         I want to do something with you… Eh? Can I do it now?
@@ -5728,13 +5800,10 @@ dialogue:
         not to threat a customer.
         I use blade weapons. Hehe, but actually,
         I don’t really care about it.
-      Idle_01_02: >-
+      Idle_01_02: |-
         Aqua Land is a health-care and entertainment
-
         facility. And I’m in charge of
-
         beauty treatment and massage. You can get your first treatment free of charge.
-
         Would you like to give it a try?
       Idle_01_03: |-
         Oh, did someone tell you about my taste?
@@ -5755,12 +5824,9 @@ dialogue:
         You’re giving me a massage?
         N-no. No one’s ever done that… Ugh, ah… It feels strange…
       SPIdle_02_01: Umm… Y-you don’t have to pay…… Can I visit you personally, after hours?
-      Oath: >-
-        I am quite good at what I do, so exclusive access is going to cost you a
-        fortune~ I’m not sure if you can afford it~
-
+      Oath: |-
+        I am quite good at what I do, so exclusive access is going to cost you a fortune~ I’m not sure if you can afford it~
         Hmmm… alright. I’m going to give you a quote anyway. Are you ready for it?
-
         …… From now on, you have to tell me you like me 100 times a day. Forever! Honey♥
       OathIdle_01: |-
         You know~ I want to have something-
@@ -5788,15 +5854,12 @@ dialogue:
         Hello~
         If you keep touching me during a massage-
         Oh?! … S-still… Where’s my professional spirit?! …… Can I surrender?
-      Idle_01_02: >-
+      Idle_01_02: |-
         Do you plan to grow them? Your hair,
-
         or elsewhere. I can take good care of you.
-
         And you know. I want you to get paunchy, and your age should be… Umm, I guess not… Huh? You’ll try?
-      Idle_01_03: >-
+      Idle_01_03: |-
         I’m good at house chores.
-
         Hehe, I don’t know why. I was always good… Oh! Maybe I was meant to become your wife.
       SPIdle_01_01: |-
         *Moans*… Hehe.

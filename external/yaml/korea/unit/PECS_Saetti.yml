@@ -1597,6 +1597,11 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: 센서 교란용 가스탄으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="2" r /></sec> 감소 / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec> 증가 상태로 만듭니다.
+      JP: センサー攪乱用ガス弾で<dmg elem="physics" />のダメージを与え、2ラウンドの間対象を<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="2" r /></sec>減少 / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="3" r /></sec>増加状態にします。
+      EN: Uses a sensor-disrupting gas shell to deal <dmg elem="physics" /> damage and puts the target in <sec typ="buff"><buff typ="ATK_DOWN" />ATK decrease<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />ACU decrease<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />CRIT decrease<val idx="2" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" />received damage increase<val idx="3" r /></sec> state for 2 rounds.
+      TC: 使用感應干擾瓦斯彈造成<dmg elem="physics" />傷害，並使目標於2回合內處於<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="2" r /></sec>減少 / <sec typ="buff"><buff typ="VULNERABLE" />所受傷害增加<val idx="3" r /></sec>狀態。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -3752,6 +3757,11 @@ skills:
             base: 0.25
             per: 0.02
             chance: 1
+    desc:
+      KR: 대상에게 돌진해 <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>을(를) 감소시키고 2라운드 동안 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> 상태로 만듭니다.
+      JP: 対象に突進して<dmg elem="physics" />のダメージを与え、<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="4" /></sec>を減少させ、2ラウンドの間<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>状態にします。
+      EN: Rushes the target, dealing <dmg elem="physics" /> damage, decreasing their <sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="4" /></sec>, and putting them in <sec typ="buff"><buff typ="PROVOKE" />Provoke</sec> state for 2 rounds.
+      TC: 衝向目標並造成<dmg elem="physics" />傷害，減少其<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="4" /></sec>，並使其於2回合內處於<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>狀態。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -4011,6 +4021,11 @@ skills:
             base: 0.1
             per: 0.0135
             chance: 1
+    desc:
+      KR: 전투 개시 시, 자신과 양 옆에 있는 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>이(가) 증가합니다.
+      JP: 戦闘開始時、自分と両隣の味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="3" /></sec>が増加します。
+      EN: At the start of combat, increases self’s and allies on both sides’ <sec typ="buff"><buff typ="AP_UP" />AP<val idx="3" /></sec>.
+      TC: 戰鬥開始時，增加自身與左右兩側我軍的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="3" /></sec>。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -4172,6 +4187,11 @@ skills:
             base: 0.19
             per: 0.016
             chance: 1
+    desc:
+      KR: 라운드 개시 시, <sec typ="buff"><buff typ="DEF_Char" /> 후열의 공격기 / 지원기를 지정 보호</sec>합니다.
+      JP: ラウンド開始時、<sec typ="buff"><buff typ="DEF_Char" />後列の攻撃機/支援機を指定保護</sec>します。
+      EN: At the start of the round, provides <sec typ="buff"><buff typ="DEF_Char" />Designated Protection to rear-line Attackers/Supporters</sec>.
+      TC: 回合開始時，對<sec typ="buff"><buff typ="DEF_Char" />後列的攻擊機 / 支援機施加指定保護</sec>。
 dialogue:
   KR:
     "1":
@@ -4287,11 +4307,9 @@ dialogue:
         다 같이 온 여름 휴가지만 항상 제 옆에는
         사령관님이 계시잖아요.
       SPIdle_02_01: 아…안돼요 거긴 아…아니… 돼요…
-      Oath: >-
+      Oath: |-
         겁이 많은 제가 보호복을 벗는 것은 무척이나 큰 용기가 필요했어요. 특히 수영복을 입는 건 더 큰 용기가 필요했죠. 
-
         그..그래도 사령관님과 함께 이, 있기 위해 용기를 냈어요. 만약 저 혼자였다면 무서워서 아무 것도 시도해 보지 못했을 거예요.
-
         그치만 사령관님을 위해서라면 뭐든지 할 수 있는 용기가 생겨요. 그러니까 사령관님. 겁쟁이인 제가 많은 걸 경험할 수 있게 앞으로도 제 곁에 같이 있어 주실 거죠?
       OathIdle_01: |-
         사령관님 곁에 있으면 마음이 안정되고
@@ -4354,10 +4372,8 @@ dialogue:
         꺅?! 저, 저기 이건… 충격을
         흡수하기 위해… 으햣?! 배, 배는
         안돼요…!
-      Oath: >-
-        저는 겁쟁이인데다가 다른 아이들을 지켜야해서… 태어나서 한 번도 긴장을 풀어본 적이 없어요. 그런데 오르카에 오고, 사령관님을
-        만나고 나서…
-
+      Oath: |-
+        저는 겁쟁이인데다가 다른 아이들을 지켜야해서… 태어나서 한 번도 긴장을 풀어본 적이 없어요. 그런데 오르카에 오고, 사령관님을 만나고 나서…
         처음으로 보호받는다는 느낌을 받았어요. 우으, 눈물이 날 것 같아… 사령관님, 제 안식처가 되어주셔서 정말로 고마워요.
       OathIdle_01: |-
         사령관님도 들어오실래요?
@@ -4475,8 +4491,7 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: ど…どうされましたか？あ、タイガーですか？タイガーなら部屋にいますよ。暑いところより涼しいところが好きなんです。プールゾーンはどこも暑いですからね。
-      Idle_01_02: みんなが水着を着ていたので私も勇気を出して着てみましたが、暑さは変わりませんね。あ！わ…分かってます。ここは気温が高いって…。
-        あはは…お、おかしいですね。水着の方がさらに暑い気がします。
+      Idle_01_02: みんなが水着を着ていたので私も勇気を出して着てみましたが、暑さは変わりませんね。あ！わ…分かってます。ここは気温が高いって…。 あはは…お、おかしいですね。水着の方がさらに暑い気がします。
       Idle_01_03: ビーチバレーですか？面白いですよ。司令官様も一緒にやってみませんか？2人でもできますし、チームを組んでやっても楽しいですよ。はい？何人でやるのが一番楽しいのか、ですか？おそらく…司令官様と2人きりでやるのが一番楽しいと思います。
       SPIdle_01_01: あう！？急に触られて…びっくりしてしまいました。
       Idle_02_01: 司令官様。…タオルを見かけませんでしたか？汗を拭いた後そのままにしておいたのですが、なくなってしまいまして。はい？司令官様がお使いになったのですか！？あうぅ…すみません。私がちゃんと片付けなかったせいで……ま、まさか匂いを嗅いだりはしていませんよね？
@@ -4632,11 +4647,9 @@ dialogue:
         Tiger's in the room. Tiger prefers
         cold places to hot ones.
         The inside of the water park is rather hot.
-      Idle_01_02: >-
+      Idle_01_02: |-
         I saw that everyone was wearing a swimsuit,
-
         so I mustered the courage to do the same, but it's still hot. Oh! I-I know… I know it's the weather…
-
         Strange that it's hotter when I'm in my swimsuit.
       Idle_01_03: |-
         Beach volleyball? It’s fun. Commander,
@@ -4645,24 +4658,16 @@ dialogue:
         I think… It’d be more fun to play
         one on one with you, Commander.
       SPIdle_01_01: I was shocked that you touched me so suddenly.
-      Idle_02_01: >-
-        Commander. Umm… Have you seen my towel? I hung it up here after I wiped
-        off my sweat.
-
+      Idle_02_01: |-
+        Commander. Umm… Have you seen my towel? I hung it up here after I wiped off my sweat.
         Now it's gone. What?
-
         You used it? Oh… I'm sorry.
-
         I should have looked after it better…
-
         Did you smell it by any chance?
-      Idle_03_01: >-
+      Idle_03_01: |-
         I feel so defenseless right now…
-
         Are we going to be okay? Is that so? If you say there won't be any trouble,
-
         I'm sure you're right.
-
         But I… I'm completely defenseless right now…
       Idle_04_01: |-
         I've spent a lot of time with you,
@@ -4672,12 +4677,9 @@ dialogue:
         It's a vacation for everyone,
         but you're always by my side.
       SPIdle_02_01: N-no… not there… Oh… no…
-      Oath: >-
-        As a timid person, I needed a lot of courage to remove my protective
-        clothing. Even more to wear a swimsuit. 
-
+      Oath: |-
+        As a timid person, I needed a lot of courage to remove my protective clothing. Even more to wear a swimsuit. 
         But… I pushed on in order to be with you… Without you… I wouldn't have had the courage to try anything by myself.
-
         Now, I'm brave enough to do anything for you. So, Commander. You're staying by my side so that I can experience many things, right?
       OathIdle_01: |-
         When I’m beside you I feel safe,
@@ -4739,10 +4741,8 @@ dialogue:
         Oh!! T-this is… to absorb
         the shock… Yikes?! N-not
         the belly…
-      Oath: >-
-        I'm a coward who has to protect the others… So I've never been able to
-        loosen up my whole life. But after boarding the Orca and meeting you…
-
+      Oath: |-
+        I'm a coward who has to protect the others… So I've never been able to loosen up my whole life. But after boarding the Orca and meeting you…
         I felt safe for the first time in my life. Oh. I'm getting all teary… Mr. Commander, thank you for being my haven.
       OathIdle_01: |-
         Will you come in?

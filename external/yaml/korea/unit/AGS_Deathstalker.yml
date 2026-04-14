@@ -1055,6 +1055,19 @@ skills:
             base: -0.2
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        특수 제작된 탄환을 발사하여 <dmg elem="lightning" />를 입힙니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="0" r /></sec>를 감소시킵니다.
+      JP: |-
+        特殊製作された弾丸を発射して<dmg elem="lightning" />を与えます。
+        <sec typ="cond">命中時</sec>、3ラウンドの間、対象の<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性<val idx="0" r /></sec>を減少させます。
+      EN: |-
+        Fires a specially crafted bullet and deals <dmg elem="lightning" /> damage.
+        <sec typ="cond">On Hit</sec>, decreases the target's <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance <val idx="0" r /></sec> for 3 rounds.
+      TC: |-
+        發射特製的子彈，造成<dmg elem="lightning" />傷害。
+        <sec typ="cond">命中時</sec>，於3回合內減少目標的<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電擊抗性<val idx="0" r /></sec>。
   "2":
     key: "2"
     icon: WideLightning
@@ -2502,6 +2515,23 @@ skills:
             base: 0.3
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        레일건을 충전하여 일직선상의 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 입힙니다.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 행 / 열 / 지정 보호를 해제</sec>합니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
+      JP: |-
+        レールガンを充電し、一直線上の敵に<sec typ="attr">保護無視</sec><dmg elem="lightning" />を与えます。
+        <sec typ="cond">命中時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />行 / 列 / 指定保護を解除</sec>します。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="LightningATK_UP" />ダメージ<val idx="4" r /></sec>が増加します。
+      EN: |-
+        Charges the Railgun and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> to enemies in a straight line.
+        <sec typ="cond">On Hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" />removes row / column / designated protection</sec> from the target.
+        <sec typ="cond">On CRIT</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> damage <val idx="4" r /></sec> increases.
+      TC: |-
+        充能軌道砲，對直線上的敵人造成<sec typ="attr">無視保護</sec><dmg elem="lightning" />傷害。
+        <sec typ="cond">命中時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的行 / 列 / 指定保護</sec>。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="LightningATK_UP" />傷害<val idx="4" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -2809,6 +2839,19 @@ skills:
             base: 1
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 대 경장형 피해량이 증가합니다.
+        <sec typ="cond">전투 개시 시</sec> 경장형 적이 4기 이상 있을 경우, 자신의 AP가 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の対軽装型ダメージ量が増加します。
+        <sec typ="cond">戦闘開始時</sec>、軽装型の敵が4機以上いる場合、自分のAPが増加します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases self's Anti-Light Armor Damage.
+        <sec typ="cond">At the start of combat</sec>, if there are 4 or more Light enemies, increases self's AP.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的對輕裝型傷害量增加。
+        <sec typ="cond">戰鬥開始時</sec>，若有4個以上輕裝型敵軍，自身的AP增加。
   "4":
     key: "4"
     icon: P.Scan
@@ -2976,6 +3019,19 @@ skills:
             base: -0.15
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 공격력이 증가합니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격 / 공격 지원 시</sec>, 2라운드 동안<sec typ="note"> 지정 보호 상태가 아닌</sec> 모든 적의 회피를 감소시킵니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間、自分の攻撃力が増加します。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃 / 攻撃支援時</sec>、2ラウンドの間、<sec typ="note">指定保護状態でない</sec>全ての敵の回避を減少させます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases self's ATK for 3 rounds.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> When Re-Attack / Attack Support is active</sec>, decreases the EVA of all enemies that are not under <sec typ="note">Designated Protection</sec> for 2 rounds.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，於3回合內增加自身的攻擊力。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊 / 支援攻擊時</sec>，於2回合內降低所有<sec typ="note">非指定保護狀態</sec>的敵軍迴避。
   "5":
     key: "5"
     icon: P.MGWideShot
@@ -3250,6 +3306,23 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 행동력이 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 중장형 공격기 / 보호기의 공격을 지원합니다.
+        <sec typ="cond">자신 외의 AGS가 있을 경우</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격 지원의 대상이 '아군 공격기 / 보호기'로 완화</sec>되고 추가로 적중을 증가시킵니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の行動力が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方重装型攻撃機 / 保護機の攻撃を支援します。
+        <sec typ="cond">自分以外のAGSがいる場合</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃支援の対象が「味方攻撃機 / 保護機」に緩和</sec>され、さらに命中を増加させます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, increases self's MOVE.
+        <sec typ="cond">At the start of the round</sec>, provides Attack Support to ally Heavy Attackers / Defenders within range.
+        <sec typ="cond">If there are AGS units other than self</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> the target of Attack Support is widened to 'ally Attackers / Defenders'</sec> and additionally increases ACU.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的行動力增加。
+        <sec typ="cond">回合開始時</sec>，支援範圍內我軍重裝型攻擊機 / 保護機的攻擊。
+        <sec typ="cond">若有除自身以外的AGS</sec>，<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 支援攻擊的對象放寬為「我軍攻擊機 / 保護機」</sec>，並額外增加命中。
 dialogue:
   KR:
     "1":
@@ -3315,8 +3388,7 @@ dialogue:
         외피의 장갑을 해제하겠습니다.
         과열된 본 유닛의 내피를 부드럽게
         마사지 해주시길 요청드립니다.
-      Oath: 본 유닛이 새 소체를 바랐던 이유는, 병기가 되기 위해서가 아니라… 사령관님의 여성이 되고 싶었기 때문이었습니다. 회로와 소체 모두가
-        과열되고 있습니다. 본 유닛, 데스스토커, 애정이란 맹독에 걸린 것으로 판단됩니다. 사령관님만의 세심한 치료가 조속히 필요합니다.
+      Oath: 본 유닛이 새 소체를 바랐던 이유는, 병기가 되기 위해서가 아니라… 사령관님의 여성이 되고 싶었기 때문이었습니다. 회로와 소체 모두가 과열되고 있습니다. 본 유닛, 데스스토커, 애정이란 맹독에 걸린 것으로 판단됩니다. 사령관님만의 세심한 치료가 조속히 필요합니다.
       OathIdle_01: |-
         본 유닛의 맨 얼굴 말씀입니까?
         원하신다면 기꺼이 보여드릴 수 있습니다.
@@ -3383,8 +3455,7 @@ dialogue:
       SPIdle_02_01: |-
         그 부분은 민감한 부분입니다만,
         …조금 더 만져 주셔도 괜찮습니다.
-      Oath: 사령관과 오르카의 질서를 지키는 것이 본 유닛에게 주어진 임무지만, 본 유닛은 사령관님께 더 큰 도움이 되고 싶습니다. 부디
-        사령관님의 특별한 임무에 알맞게 써 주시길 바랍니다.
+      Oath: 사령관과 오르카의 질서를 지키는 것이 본 유닛에게 주어진 임무지만, 본 유닛은 사령관님께 더 큰 도움이 되고 싶습니다. 부디 사령관님의 특별한 임무에 알맞게 써 주시길 바랍니다.
       OathIdle_01: |-
         사령관님,
         이 춤을 한 번

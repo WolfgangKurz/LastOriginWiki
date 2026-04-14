@@ -1430,6 +1430,19 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        서브 머신건으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec>를 낮추며 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>를 증가시킵니다.
+        각 효과는 중첩 가능합니다.
+      JP: |-
+        サブマシンガンで<dmg elem="physics" />を与え、2ラウンドの間対象の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="0" r /></sec>を下げ、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>を増加させます。
+        各効果は重複可能です。
+      EN: |-
+        Deals <dmg elem="physics" /> with a submachine gun, lowering the target's <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="0" r /></sec> and increasing <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> for 2 rounds.
+        Each effect can stack.
+      TC: |-
+        以衝鋒槍造成<dmg elem="physics" />，並在2回合內降低目標的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="0" r /></sec>，提高<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="1" r /></sec>。
+        各效果皆可疊加。
   "2":
     key: "2"
     icon: GrenadeAttack_1
@@ -2041,6 +2054,19 @@ skills:
             base: 0.3
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        고폭 수류탄을 던져 <dmg elem="fire" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 또는 <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 상태인 경우, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: |-
+        対人手榴弾を投げて<dmg elem="fire" />を与えます。
+        対象が<sec typ="cond"><buff typ="EVADE_DOWN" />回避減少</sec>または<sec typ="cond"><buff typ="SNARE" />移動不可</sec>状態の場合、<sec typ="dmg"><buff typ="FireATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+      EN: |-
+        Throws a high-explosive grenade and deals <dmg elem="fire" />.
+        If the target is in <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down</sec> or <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="0" r /></sec> increases.
+      TC: |-
+        投擲高爆手榴彈，造成<dmg elem="fire" />。
+        若目標處於<sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec>或<sec typ="cond"><buff typ="SNARE" />無法移動</sec>狀態，<sec typ="dmg"><buff typ="FireATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -2780,6 +2806,19 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 같은 스쿼드 내의 <char uid="BR_WarWolf" />, <char uid="BR_Brownie" />, <char uid="BR_AS12TurtleDragon" />, <char uid="DS_Charlotte" /> 1기 당 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가하며 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 해당 대원들의 공격을 지원</sec>합니다.
+        해당 효과는 중첩 적용됩니다.
+      JP: |-
+        ラウンド開始時、同じスコード内の<char uid="BR_WarWolf" />、<char uid="BR_Brownie" />、<char uid="BR_AS12TurtleDragon" />、<char uid="DS_Charlotte" />1機ごとに<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>が増加し、<sec typ="buff"><buff typ="SUPPORT_ATTACK" />該当隊員の攻撃を支援</sec>します。
+        該当効果は重複適用されます。
+      EN: |-
+        At round start, for each <char uid="BR_WarWolf" />, <char uid="BR_Brownie" />, <char uid="BR_AS12TurtleDragon" />, and <char uid="DS_Charlotte" /> in the same squad, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" r /></sec> and <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports those members' attacks</sec>.
+        This effect stacks.
+      TC: |-
+        回合開始時，同一小隊內的<char uid="BR_WarWolf" />、<char uid="BR_Brownie" />、<char uid="BR_AS12TurtleDragon" />、<char uid="DS_Charlotte" />每1機都會增加<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>，並<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援那些隊員的攻擊</sec>。
+        該效果可疊加。
 dialogue:
   KR:
     "2":
@@ -2834,8 +2873,7 @@ dialogue:
         슈퍼스파이 토모님의 미인계에 걸렸구나?
         독 먹은 쥐가 된 사령관을 어떻게 할까…
         히히, 못 도망가게 꼭 끌어안고 있어야지.
-      Oath: 헤헤, 언젠가는 이런 날이 올 거라고 생각했어. 스파이가 주인공으로 나오는 영화나 게임을 보면, 엔딩 장면에서 스파이는 항상 사랑하는
-        사람과 이어지게 되잖아? 그러니까 이렇게 우리 둘이 맺어지는 건 당연한 일이지. 난 사령관을 계속 좋아하고 있었으니까.
+      Oath: 헤헤, 언젠가는 이런 날이 올 거라고 생각했어. 스파이가 주인공으로 나오는 영화나 게임을 보면, 엔딩 장면에서 스파이는 항상 사랑하는 사람과 이어지게 되잖아? 그러니까 이렇게 우리 둘이 맺어지는 건 당연한 일이지. 난 사령관을 계속 좋아하고 있었으니까.
       OathIdle_01: |-
         스파이는 가끔 가짜 가족을 만들기도 한대.
         하지만 걱정하지 마!
@@ -3111,12 +3149,9 @@ dialogue:
       SPIdle_02_01: |-
         Commander, this is…
         You want me to eat noodles?
-      Oath: >-
-        A ring of vow… Commander, are you OK? I mean… ethically. For you to give
-        this to me…
-
+      Oath: |-
+        A ring of vow… Commander, are you OK? I mean… ethically. For you to give this to me…
         Of course, I'm not a real high school student, but… Alright! It'll be OK if we have a clean and healthy relationship.
-
         We'll just hold hands… I've seen it before. Oh! Let's sleep while holding hands. Commander!
       OathIdle_01: |-
         Oh, I almost forgot something.
@@ -3146,22 +3181,15 @@ dialogue:
         Umm… Guess I’ll have to help! Allow me, an intellectual,
         and a ‘star-stunning beauty,’ to show you what I’ve learned.
         It's called a lap pillow! Y-You gotta lie down the opposite way!
-      Idle_01_02: >-
-        Sometimes, I wonder how it would’ve been if I attended the academy with
-        you.
-
+      Idle_01_02: |-
+        Sometimes, I wonder how it would’ve been if I attended the academy with you.
         I would’ve sat beside you, listened to lectures with you,
-
         shared textbook with you, and held hands with you on the way back… I’m happy right now,
-
         but that kind of academy life would’ve been awesome. Right?
-      Idle_01_03: >-
+      Idle_01_03: |-
         Get me off the supplementary classes, Commander.
-
         I have to keep returning to them because I keep failing the exams… What am I going to do if I don’t take classes?
-
         Play? of course! Steel Line Online added
-
         a new 2-player mode in their newest update! Let’s play it together until tomorrow!
       SPIdle_01_01: |-
         I researched a lot of stuff… But I forgot all of them, again.

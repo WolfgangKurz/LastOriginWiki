@@ -2162,6 +2162,23 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        매지컬 핑크 문 라이트로 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 대상은 2라운드 동안 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="2" r /></sec>이 감소하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r /></sec>가 증가합니다.
+        적중 대상이 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 상태인 경우 피해량이 증가합니다.
+      JP: |-
+        マジカルピンクムーンライトで<dmg elem="physics" />のダメージを与え、2ラウンドの間対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>します。
+        <sec typ="cond">命中時</sec>、対象は2ラウンドの間<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="2" r /></sec>が減少し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="3" r /></sec>が増加します。
+        命中対象が<sec typ="buff"><buff typ="DEF_DOWN" />防御力減少</sec>状態の場合、ダメージ量が増加します。
+      EN: |-
+        Uses Magical Pink Moonlight to deal <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="PROVOKE" />Provoke</sec> the target for 2 rounds.
+        <sec typ="cond">When attack hits</sec>, the target’s <sec typ="buff"><buff typ="ATK_DOWN" />ATK<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />ACU<val idx="2" r /></sec> decreases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage<val idx="3" r /></sec> increases for 2 rounds.
+        Damage is increased if the hit target has <sec typ="buff"><buff typ="DEF_DOWN" />decreased DEF</sec>.
+      TC: |-
+        以魔法粉紅月光造成<dmg elem="physics" />傷害，並使目標於2回合內受到<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>。
+        <sec typ="cond">命中時</sec>，目標於2回合內<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="2" r /></sec>減少，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="3" r /></sec>增加。
+        若命中目標處於<sec typ="buff"><buff typ="DEF_DOWN" />防禦力減少</sec>狀態，則傷害量增加。
   "2":
     key: "2"
     icon: SwordAttk
@@ -4305,6 +4322,23 @@ skills:
               level: "0"
             value: Char_DS_MoMo_N
             chance: 1
+    desc:
+      KR: |-
+        매지컬 파워를 해방해 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 대폭 감소시킵니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 증가</sec> 효과를 해제하고 피해량이 증가합니다.
+        <sec typ="cond">적중 시</sec>, 스쿼드 내에 <char uid="PECS_MoMo" />가 있을 경우 <sec typ="note">모모찬바라</sec> 협동 공격을 유도합니다.
+      JP: |-
+        マジカルパワーを解放して<dmg elem="physics" />のダメージを与え、2ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>を大幅に減少させます。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="DEF_UP" />防御力増加</sec>効果を解除し、ダメージ量が増加します。
+        <sec typ="cond">命中時</sec>、分隊内に<char uid="PECS_MoMo" />がいる場合、<sec typ="note">モモチャンバラ</sec>協同攻撃を誘導します。
+      EN: |-
+        Unlocks Magical Power and deals <dmg elem="physics" /> damage, significantly decreasing the target’s <sec typ="buff"><buff typ="DEF_DOWN" />DEF<val idx="0" r /></sec> for 2 rounds.
+        <sec typ="cond">When CRIT hit</sec>, removes the target’s <sec typ="buff"><buff typ="DEF_UP" />DEF Increase</sec> and increases damage.
+        <sec typ="cond">When attack hits</sec>, if <char uid="PECS_MoMo" /> is in the squad, initiates a co-op attack with <sec typ="note">Momo Chanbara</sec>.
+      TC: |-
+        釋放魔法力量，造成<dmg elem="physics" />傷害，並於2回合內大幅減少目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>。
+        <sec typ="cond">暴擊時</sec>，解除目標的<sec typ="buff"><buff typ="DEF_UP" />防禦力增加</sec>效果，並增加傷害量。
+        <sec typ="cond">命中時</sec>，若小隊內有<char uid="PECS_MoMo" />，則引發<sec typ="note">莫莫斬霸</sec>協力攻擊。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -4720,6 +4754,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 해당 라운드에 처음 받는 공격은 피해가 <val idx="5" r inv /> 감소</sec>합니다.
+        <sec typ="cond">회피 시</sec>, 해당 라운드 동안 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec>이 증가합니다.
+        <sec typ="cond">피격 시</sec>, 해당 라운드 동안 <sec typ="buff"><buff typ="DEF_IGNORE" /> 방어막</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 감소</sec> 효과를 무시하고 <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec>이 증가합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />そのラウンドで最初に受ける攻撃のダメージが<val idx="5" r inv />減少</sec>します。
+        <sec typ="cond">回避時</sec>、そのラウンドの間<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル</sec> / <sec typ="buff"><buff typ="ATK_UP" />攻撃力</sec>が増加します。
+        <sec typ="cond">被弾時</sec>、そのラウンドの間<sec typ="buff"><buff typ="DEF_IGNORE" />バリア</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />ダメージ減少</sec>効果を無視し、<sec typ="buff"><buff typ="ATK_UP" />攻撃力</sec>が増加します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, <sec typ="buff"><buff typ="EVADE_UP" />EVA<val idx="0" r /></sec> increases and the damage of the first attack received that round <sec typ="buff"><buff typ="DAMAGE_REDUCE" /><val idx="5" r inv />decreases</sec>.
+        <sec typ="cond">Upon evade</sec>, <sec typ="buff"><buff typ="CRITICAL_UP" />CRIT</sec> / <sec typ="buff"><buff typ="ATK_UP" />ATK</sec> increases for that round.
+        <sec typ="cond">When attacked</sec>, <sec typ="buff"><buff typ="DEF_IGNORE" />Barriers</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />Damage Decrease</sec> effects are ignored and <sec typ="buff"><buff typ="ATK_UP" />ATK</sec> increases for that round.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="0" r /></sec>增加，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />本回合首次受到的攻擊傷害<val idx="5" r inv />減少</sec>。
+        <sec typ="cond">迴避時</sec>，該回合內<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊</sec> / <sec typ="buff"><buff typ="ATK_UP" />攻擊力</sec>增加。
+        <sec typ="cond">受到攻擊時</sec>，該回合內會無視<sec typ="buff"><buff typ="DEF_IGNORE" />防護罩</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />傷害減少</sec>效果，並增加<sec typ="buff"><buff typ="ATK_UP" />攻擊力</sec>。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -5204,6 +5255,19 @@ skills:
             base: 0.03
             per: 0.003
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_Char" /> 자신보다 회피가 낮은</sec> 공격기 / 지원기를 지정 보호합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신과 지정 보호 대상이 <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중</sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec> 증가 상태면 각 효과를 증폭시킵니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="DEF_Char" />自分より回避が低い</sec>攻撃機/支援機を指定保護します。
+        <sec typ="cond">ラウンド開始時</sec>、自分と指定保護対象が<sec typ="buff"><buff typ="ATK_UP" />攻撃力</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中</sec> / <sec typ="buff"><buff typ="AP_UP" />行動力</sec>増加状態の場合、各効果を増幅させます。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, provides <sec typ="buff"><buff typ="DEF_Char" />Designated Protection</sec> to Attackers/Supporters with lower EVA than self.
+        <sec typ="cond">At the start of the round</sec>, if self and the targets of the Designated Protection effect have increased <sec typ="buff"><buff typ="ATK_UP" />ATK</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />ACU</sec> / <sec typ="buff"><buff typ="AP_UP" />MOVE</sec>, each effect is amplified.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，對<sec typ="buff"><buff typ="DEF_Char" />迴避低於自身</sec>的攻擊機 / 支援機進行指定保護。
+        <sec typ="cond">回合開始時</sec>，若自身與指定保護對象處於<sec typ="buff"><buff typ="ATK_UP" />攻擊力</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中</sec> / <sec typ="buff"><buff typ="AP_UP" />行動力</sec>增加狀態，則各效果會被放大。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -6921,6 +6985,27 @@ skills:
             base: 0.03
             per: 0.003
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> 회피 비례 스킬 위력 <val idx="0" r /> 증가</sec> 효과를 획득합니다.
+        <sec typ="cond">공격 받을 시</sec>, 반격 효과를 획득합니다.
+        내키진 않지만 <sec typ="note">달의 가호</sec>에 의한 능력치 증폭 효과를 <sec typ="note">대마왕의 수하</sec>에게도 부여합니다.
+        <sec typ="cond"><sec typ="note">달의 마력이 담긴 송편</sec> 장착 시</sec>, 확률적 능력치 증가 효과가 확정적로도 추가 발동합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="SKILL_UP" />回避に比例したスキル威力<val idx="0" r />増加</sec>効果を獲得します。
+        <sec typ="cond">攻撃を受けると</sec>、反撃効果を獲得します。
+        気は進みませんが、<sec typ="note">月の加護</sec>による能力値増幅効果を<sec typ="note">大魔王の手下</sec>にも付与します。
+        <sec typ="cond"><sec typ="note">月の魔力が込められたソンピョン</sec>装着時</sec>、確率的な能力値増加効果がさらに確定で追加発動します。
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, gains a <sec typ="buff"><buff typ="SKILL_UP" />Skill Power Increase proportionate to EVA<val idx="0" r /></sec> effect.
+        <sec typ="cond">When attacked</sec>, gains Retaliation.
+        Although not desired, the stat amplification effect from <sec typ="note">Moon's Grace</sec> is also granted to <sec typ="note">The Evil Overlord’s Servant</sec>.
+        <sec typ="cond">When <sec typ="note">Lunar-Magic-Filled Rice Cake</sec> is equipped</sec>, the chance-based stat increase effect additionally triggers deterministically as well.
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，獲得<sec typ="buff"><buff typ="SKILL_UP" />與迴避成正比的技能威力<val idx="0" r />增加</sec>效果。
+        <sec typ="cond">受到攻擊時</sec>，獲得反擊效果。
+        雖然不情願，但也會將<sec typ="note">月之加護</sec>的能力值增幅效果施加給<sec typ="note">大魔王的手下</sec>。
+        <sec typ="cond">配戴<sec typ="note">充滿月之魔力的松糕</sec>時</sec>，機率性能力值增加效果也會額外以確定形式發動。
 dialogue:
   KR:
     "1":
@@ -7030,8 +7115,7 @@ dialogue:
         정절을 지켜야 하는데...
         하지만... 제가 사랑하는 사람이 명했으니...
         따라야겠네요.
-      Oath: 신사에게 받은, 달처럼 둥근 반지에 맹세하나니. 달은 어느 곳, 어느 시간에도 여전히 달인 것처럼, 저는 어느 곳을 가도, 어느
-        시간이든 저예요. 어느 곳, 어느 시간이든... 변치 않고 신사를 사랑하겠어요.
+      Oath: 신사에게 받은, 달처럼 둥근 반지에 맹세하나니. 달은 어느 곳, 어느 시간에도 여전히 달인 것처럼, 저는 어느 곳을 가도, 어느 시간이든 저예요. 어느 곳, 어느 시간이든... 변치 않고 신사를 사랑하겠어요.
       OathIdle_01: |-
         토끼는 외로우면 죽는다는 말이 있지만
         그건 미신이에요. 토끼는 외로워도 죽거나
@@ -7094,8 +7178,7 @@ dialogue:
         달맞이꽃은 밤일 때 가장 아름답게 꽃피죠.
         제가 가장 아름다운 모습을 보여드릴테니…
         오늘 밤은 저와 함께 해주세요.
-      Oath: 달맞이꽃의 전설을 아시나요, 젠틀맨? 서로를 사랑하는 남자와 여자의 마음이 엇갈려서, 작은 오해 때문에, 작은 실수 때문에 맺어지지
-        못하게 되죠. 하지만 저희에겐 그런 일이 일어나지 않을 것 같네요. 왜냐하면… 지금 이렇게, 서로에 대한 사랑을 확인했으니까요.
+      Oath: 달맞이꽃의 전설을 아시나요, 젠틀맨? 서로를 사랑하는 남자와 여자의 마음이 엇갈려서, 작은 오해 때문에, 작은 실수 때문에 맺어지지 못하게 되죠. 하지만 저희에겐 그런 일이 일어나지 않을 것 같네요. 왜냐하면… 지금 이렇게, 서로에 대한 사랑을 확인했으니까요.
       OathIdle_01: |-
         이 모습이 되어버린 저는…
         더 이상 마법소녀라고 불릴 수 없겠죠.
@@ -7103,21 +7186,16 @@ dialogue:
         당신만의 소녀니까.
       MVP: 밝게 빛나는 저 달처럼 영광스러운 승리를.
     "":
-      Intro: >-
+      Intro: |-
         악한 자들에게 달의 징벌을. 만나서 반가워요.
-
 
         제 이름은 백토. 평범한 지구인인 당신은 믿기 힘드시겠지만, 저는 사실 지구에 퍼져가는 악을 막기 위해 달에서 온 마법 소녀에요. 달에 사는 모든 월인 들과 선조 백토를 대신하여 정식으로 인사드리죠.
 
-
         저는 세계정복을 꿈꾸는 사악한 뽀끄루 대마왕을 저지하기 위해 비밀리에 활동하고 있어요. 간악한 그녀는 달의 힘이 닿지 않는 어둡고 축축한 곳에서 지금도 천천히 그 세력을 늘려가고 있는 상황이죠. 아마 이대로 가다가는 이 푸른 지구마저 그녀의 손아귀에 떨어지고 말거에요.
-
 
         제가 수적으로 불리한 만큼. 상황이 그리 밝지만은 않다는 건 저도 인정하죠. 하지만 저는 절대 포기하지 않아요. 왜냐하면 제 손엔 매지컬 핑크 문 라이트가 있고, 이렇게 저를 믿고 응원해줄 선량한 지구인도 만났으니까요.
 
-
         저는 마법 소녀로써 언제나 당신 곁에서 싸워줄 것을 약속할게요. 그러니, 당신도 약속해주세요.
-
 
         절대 악에 굴복하지 않기로!
       Join: 악한 자들에게 징벌을. 백토 합류했습니다.
@@ -7348,8 +7426,7 @@ dialogue:
         [미번역]달맞이꽃은 밤일 때 가장 아름답게 꽃피죠.
         제가 가장 아름다운 모습을 보여드릴테니…
         오늘 밤은 저와 함께 해주세요.
-      Oath: "[미번역]헤헤, 이왕 이런 모습을 했으니 정말로 같이 학교를 다녔으면 더 좋았을 텐데. 같이 등하교하고, 수업을 듣고, 부활동하고,
-        데이트하고. 하지만… 지금이 나쁘다는 건 아냐. 사령관이랑 같이 있다는 게 제일 중요하니까. 헤헤. 앞으로도 쭉 잘 부탁해."
+      Oath: "[미번역]헤헤, 이왕 이런 모습을 했으니 정말로 같이 학교를 다녔으면 더 좋았을 텐데. 같이 등하교하고, 수업을 듣고, 부활동하고, 데이트하고. 하지만… 지금이 나쁘다는 건 아냐. 사령관이랑 같이 있다는 게 제일 중요하니까. 헤헤. 앞으로도 쭉 잘 부탁해."
       OathIdle_01: |-
         [미번역]이 모습이 되어버린 저는…
         더 이상 마법소녀라고 불릴 수 없겠죠.
@@ -7357,21 +7434,16 @@ dialogue:
         당신만의 소녀니까.
       MVP: ""
     "":
-      Intro: >-
+      Intro: |-
         悪者たちに月の懲罰を。お会いできて光栄です。
-
 
         私の名前は白兎。平凡な地球人のあなたには理解しがたいでしょうが、実は私、地球に迫り来る悪を退治するために月から来た魔法少女なんです。月に住むすべての月人たちと先代の白兎に代わり、正式にご挨拶いたします。
 
-
         みんなには内緒なのですが、私は邪悪なポックル大魔王が目論む世界征服を阻むため、日々戦っています。邪まな彼女は月の力が届かない暗くてじめじめした場所で、今この瞬間にも着々とその勢力を拡大させています。このままだとこの青い地球までもが彼女の手中に落ちてしまうでしょう…。
-
 
         私は数的不利な状況であるため、前途多難であることは十分承知しています。でも何があっても諦めません。何故なら私にはマジカルピンクムーンライトがありますから！それに今もこうして私を信じて応援してくれる善良な地球人にも会えましたからね。
 
-
         私は魔法少女としていつでもあなたの傍で戦うことを約束します…。ですのであなたも約束してください。
-
 
         悪には屈しないと！
       Join: 悪者たちに月の懲罰を。白兎、合流しました。
@@ -7488,10 +7560,7 @@ dialogue:
       SPIdle_02_01: |-
         Awee! … I can’t refuse your hands
         … We’ve come too far now…
-      Oath: Ugh… If I take this… I will no longer become a Magical Girl… My new power
-        is getting weak… Now what do I do? I’m nothing… other than a Magical
-        Girl… Wait… you’ll marry me, even though I’m just an ordinary person? …
-        Ohh… Thank you… My… love…
+      Oath: Ugh… If I take this… I will no longer become a Magical Girl… My new power is getting weak… Now what do I do? I’m nothing… other than a Magical Girl… Wait… you’ll marry me, even though I’m just an ordinary person? … Ohh… Thank you… My… love…
       OathIdle_01: |-
         I can still maintain the power
         of the moon… But I feel bad for
@@ -7515,17 +7584,12 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        Playing the Korean lute? It's pretty simple. Hold it with two hands like
-        this.
-
+      Idle_01_01: |-
+        Playing the Korean lute? It's pretty simple. Hold it with two hands like this.
         When the blade pops out, swing it at the enemy.
-
         Then you'll hear some form of sound.
-      Idle_01_02: >-
-        Momo told me the rules about wearing these clothes. There are a couple
-        strange ones…
-
+      Idle_01_02: |-
+        Momo told me the rules about wearing these clothes. There are a couple strange ones…
         But I doubt she’d trick me. So, I’m following those rules.
       Idle_01_03: |-
         I don't know why, but I feel so strong when I wear this.
@@ -7550,17 +7614,12 @@ dialogue:
         I need to remain chaste…
         But… if it’s an order from someone I love…
         I guess I should obey…
-      Oath: >-
-        I swear on this ring that I received from a gentleman. The moon always
-        remains no matter the place or time.
-
+      Oath: |-
+        I swear on this ring that I received from a gentleman. The moon always remains no matter the place or time.
         I too remain as myself wherever and whenever. No matter the place or time… my love for you will not change.
-      OathIdle_01: >-
-        They say rabbits die when they're lonely… but that's just a myth.
-        Rabbits don't die from loneliness.
-
+      OathIdle_01: |-
+        They say rabbits die when they're lonely… but that's just a myth. Rabbits don't die from loneliness.
         But… I would die without you, gentleman.
-
         So, don't leave me by myself.
       MVP: ""
     "3":
@@ -7593,19 +7652,16 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Intro: >-
+      Intro: |-
         The Punishment of the Moon to evil ones. Nice to meet you.
 
          My name is BaekTo. Since you're an ordinary Earthling, I know this is hard to believe. But I'm actually a Magical Sorceress who came from the moon to stop evil from spreading Earth. On behalf of all people on the moon and Ancestor BaekTo, I officially greet you.
 
         To stop evil Faucre the Evil Overlord who dreams of world conquest, I'm working undercover. The evil devil is slowly increasing force in a dark and damp place where the moon's power is out of reach. If we keep on like this, the blue Earth will be in her grip.
 
-
         When it comes to numbers, I'm at a disadvantage. So, I also admit that the situation isn't that bright. But I will never give up. Because I have the Magical Pink Moon Light in my hands. And I've met you, a nice Earthling who will trust and root for me.
 
-
         As a Magical Sorceress, I promise to always fight by your side. So, promise me, too.
-
 
         That you'll never surrender to evil!
       Join: Punishment to the evil doers! Moonbit is here!
@@ -7655,9 +7711,8 @@ dialogue:
       SPIdle_02_01: |-
         We shouldn’t… is this what all other do?
         This is how they become the bad witch?
-      Oath: >-
+      Oath: |-
         N-no! I'm a Magical Girl… I can't be lured… by something like love……
-
         The Moonlight Power is fading away little by little… *Sobs*… Then… I'll can no longer be a magical sorceress…
       OathIdle_01: |-
         Moonlight Magical Power is still good…
@@ -7835,21 +7890,16 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Intro: >-
+      Intro: |-
         向惡人降下月之懲罰。見到你很高興。
-
 
         我叫白兔。雖然身為平凡地球人的你可能難以置信，但事實上我是來自月球的魔法少女，來到地球是為了阻止地球上蔓延的惡。容我代表生活在月球上的所有月人與先祖白兔正式向你問候。
 
-
         我為了阻止夢想征服世界的邪惡波格魯大魔王，正在秘密進行活動。奸惡的她，正在月亮無法觸及的陰暗、潮濕的地方，培養著其勢力。如果再放任下去，可能連這個藍色的地球也會落在她的手中。
-
 
         因為我人數不多，所以情況並不是很明朗，這一點我也承認。但我絕對不會放棄。因為我的手上有魔法粉紅月光，還有願意相信我、支持我的善良的地球人。
 
-
         我，魔法少女向你保證，無論何時我都會在你身邊戰鬥。希望你也能向我保證。
-
 
         絕不向惡勢力屈服。
       Join: 懲罰弱者。白兔來加入了。

@@ -3914,6 +3914,23 @@ skills:
             base: 0.4
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        기관포를 발사해 <dmg elem="physics" />를 주고, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 공격력 관련 <sec typ="attr">강화 효과</sec>를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하며 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="8" r /></sec>를 감소시킵니다.
+        <sec typ="cond">대상이 <buff typ="MARKING" />표식 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="9" r /></sec>가 증가합니다.
+      JP: |-
+        機関砲を発射して<dmg elem="physics" />を与え、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />攻撃力関連の<sec typ="attr">強化効果</sec>を解除</sec>します。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>し、<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="8" r /></sec>を減少させます。
+        <sec typ="cond">対象が<buff typ="MARKING" />標的状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="9" r /></sec>が増加します。
+      EN: |-
+        Fires an autocannon, dealing <dmg elem="physics" /> and removing the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> attack-related <sec typ="attr">buff effects</sec></sec>.
+        <sec typ="cond">On hit</sec>, taunts the target for 2 rounds and reduces <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="8" r /></sec>.
+        <sec typ="cond">If the target is in <buff typ="MARKING" /> Marked state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt <val idx="9" r /></sec> increases.
+      TC: |-
+        發射機關砲，造成<dmg elem="physics" />，並解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />與攻擊力相關的<sec typ="attr">強化效果</sec></sec>。
+        <sec typ="cond">命中時</sec>，使目標在2回合內受到<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>，並降低<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="8" r /></sec>。
+        <sec typ="cond">若目標處於<buff typ="MARKING" />標記狀態</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="9" r /></sec>會增加。
   "2":
     key: "2"
     icon: AntiArmorShot
@@ -6787,6 +6804,23 @@ skills:
             base: 0.4
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        기관포와 AT 미사일을 발사해 <dmg elem="physics" />를 주고, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 관련 <sec typ="attr">강화 효과</sec>를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">대상의 공격력이 자신보다 낮은 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="7" r /></sec>가 증가합니다.
+      JP: |-
+        機関砲とATミサイルを発射して<dmg elem="physics" />を与え、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />防御力関連の<sec typ="attr">強化効果</sec>を解除</sec>します。
+        <sec typ="cond">命中時</sec>、自分の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="5" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />対重装型ダメージ量<val idx="6" r /></sec>が増加します。
+        <sec typ="cond">対象の攻撃力が自分より低い場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="7" r /></sec>が増加します。
+      EN: |-
+        Fires an autocannon and AT missiles, dealing <dmg elem="physics" /> and removing the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> defense-related <sec typ="attr">buff effects</sec></sec>.
+        <sec typ="cond">On hit</sec>, increases own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> defense pierce <val idx="5" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage dealt to heavy-type enemies <val idx="6" r /></sec>.
+        <sec typ="cond">If the target's Attack is lower than self's</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt <val idx="7" r /></sec> increases.
+      TC: |-
+        發射機關砲與AT飛彈，造成<dmg elem="physics" />，並解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />與防禦力相關的<sec typ="attr">強化效果</sec></sec>。
+        <sec typ="cond">命中時</sec>，自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="5" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型傷害量<val idx="6" r /></sec>增加。
+        <sec typ="cond">若目標的攻擊力低於自身</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="7" r /></sec>會增加。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -7089,6 +7123,23 @@ skills:
             base: 1
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" signless /></sec>을(를) 획득하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec>가 감소합니다.
+        <sec typ="cond">공격 시</sec>, 3라운드 동안 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="5" r inv /></sec>가 추가로 감소합니다. <sec>(중첩 불가)</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 경장 / 중장형 아군을 지정 보호</sec>하며 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>을(를) 증가시킵니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分は<sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア<val idx="0" signless /></sec>を獲得し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="1" r inv /></sec>が減少します。
+        <sec typ="cond">攻撃時</sec>、3ラウンドの間、自分が<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="5" r inv /></sec>がさらに減少します。 <sec>(重複不可)</sec>
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の<sec typ="buff"><buff typ="DEF_Char" />保護機を除く軽装 / 重装型の味方を指定保護</sec>し、<sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" /></sec>を増加させます。
+      EN: |-
+        <sec typ="cond">At round start</sec>, self gains <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> barrier <val idx="0" signless /></sec> and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="1" r inv /></sec> decreases.
+        <sec typ="cond">On attack</sec>, for 3 rounds, the amount of <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="5" r inv /></sec> by self decreases further. <sec>(non-stackable)</sec>
+        <sec typ="cond">At round start</sec>, grants <sec typ="buff"><buff typ="DEF_Char" /> designated protection</sec> to light / heavy-type allies in range excluding defenders, and increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>.
+      TC: |-
+        <sec typ="cond">於回合開始時</sec>，自身獲得<sec typ="buff"><buff typ="DAMAGE_ABSORB" />護盾<val idx="0" signless /></sec>，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="1" r inv /></sec>減少。
+        <sec typ="cond">攻擊時</sec>，3回合內自身<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="5" r inv /></sec>進一步減少。 <sec>(不可疊加)</sec>
+        <sec typ="cond">於回合開始時</sec>，對範圍內除防護者外的輕裝 / 重裝型友軍施加<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>，並增加<sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" /></sec>。
   "4":
     key: "4"
     icon: P.DefCounter
@@ -7368,6 +7419,23 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP로 전투 속행</sec> 효과를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec>가 증가하고 <sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 위력으로 반격</sec> 효과를 획득합니다.
+        <sec typ="cond">피격 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec>가 증가합니다. <sec>(최대 5중첩)</sec>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自分は<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless />HPで戦闘続行</sec>効果を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="4" r /></sec>が増加し、<sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless />の威力で反撃</sec>効果を獲得します。
+        <sec typ="cond">被撃時</sec>、2ラウンドの間、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="6" r /></sec>が増加します。 <sec>(最大5重複)</sec>
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> battle continuation with <val idx="0" r signless /> HP</sec>.
+        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" r /></sec> increases and gains <sec typ="buff"><buff typ="COUNTER" /> counterattack with <val idx="5" r signless /> power</sec>.
+        <sec typ="cond">On being hit</sec>, for 2 rounds, self's <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="6" r /></sec> increases. <sec>(up to 5 stacks)</sec>
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="0" r signless /> HP戰鬥續行</sec>效果。
+        <sec typ="cond">於回合開始時</sec>，自身的<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="4" r /></sec>增加，並獲得<sec typ="buff"><buff typ="COUNTER" />以<val idx="5" r signless />威力反擊</sec>效果。
+        <sec typ="cond">被擊時</sec>，在2回合內自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="6" r /></sec>增加。 <sec>(最多5層)</sec>
   "5":
     key: "5"
     icon: P.WideFireShot
@@ -7614,6 +7682,23 @@ skills:
             base: 150
             per: 15
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond"><char uid="BR_Leona" />의 <sec typ="note">공격 지휘</sec>가 활성화된 경우</sec>, 액티브 스킬의 피해량 증가 효과가 두 배로 증폭되고 발동 조건을 무시합니다.
+        <sec typ="cond"><char uid="BR_Leona" />의 <sec typ="note">방어 지휘</sec>가 활성화된 경우</sec>, <sec typ="cond">라운드 개시 시</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="4" signless /> HP로 전투 속행</sec> 효과를 획득합니다.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除抵抗<val idx="0" r /></sec>が増加します。
+        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">攻撃指揮</sec>が有効化されている場合</sec>、アクティブスキルのダメージ量増加効果が2倍になり、発動条件を無視します。
+        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">防御指揮</sec>が有効化されている場合</sec>、<sec typ="cond">ラウンド開始時</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="4" signless />HPで戦闘続行</sec>効果を獲得します。
+      EN: |-
+        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="Remove_Buff_Resist" /> buff removal resistance <val idx="0" r /></sec> increases.
+        <sec typ="cond">If <char uid="BR_Leona" />'s <sec typ="note">Attack Command</sec> is active</sec>, the active skill damage increase effect is doubled and its activation conditions are ignored.
+        <sec typ="cond">If <char uid="BR_Leona" />'s <sec typ="note">Defense Command</sec> is active</sec>, <sec typ="cond">at round start</sec> gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> battle continuation with <val idx="4" signless /> HP</sec>.
+      TC: |-
+        <sec typ="cond">於回合開始時</sec>，自身的<sec typ="buff"><buff typ="Remove_Buff_Resist" />解除強化抗性<val idx="0" r /></sec>增加。
+        <sec typ="cond"><char uid="BR_Leona" />的<sec typ="note">攻擊指揮</sec>啟動時</sec>，主動技能的傷害量增加效果變為2倍，並無視發動條件。
+        <sec typ="cond"><char uid="BR_Leona" />的<sec typ="note">防禦指揮</sec>啟動時</sec>，<sec typ="cond">於回合開始時</sec>獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="4" signless /> HP戰鬥續行</sec>效果。
 dialogue:
   KR:
     "1":
@@ -7720,9 +7805,7 @@ dialogue:
       SPIdle_02_01: |-
         각하께서 원하신다면, 꿈처럼 황홀한
         시간을 선사해 드리겠어요.
-      Oath: 꿈의 요정 샌드맨은 사람들에게 달콤한 꿈을 꿀 수 있게 해 주죠. 제게는 사령관 각하가 그런 존재에요. 제가 내일을 꿈꿀 수 있게 해
-        주시거든요. 그 미래에 함께 해 달라니… 제가 거절할 수 있을 리가요. 네, 제게 꿈을 꿀 수 있게 해 주세요, 각하. 사랑과
-        희망이 가득한 꿈을.
+      Oath: 꿈의 요정 샌드맨은 사람들에게 달콤한 꿈을 꿀 수 있게 해 주죠. 제게는 사령관 각하가 그런 존재에요. 제가 내일을 꿈꿀 수 있게 해 주시거든요. 그 미래에 함께 해 달라니… 제가 거절할 수 있을 리가요. 네, 제게 꿈을 꿀 수 있게 해 주세요, 각하. 사랑과 희망이 가득한 꿈을.
       OathIdle_01: |-
         제가 꾸는 꿈이 궁금하신가요?
         후후, 저는 매일 밤 각하를 닮은 아이에게
@@ -8025,12 +8108,9 @@ dialogue:
         Let’s not do this here. Will you give me
         your room number? … I’ll visit you…
         after the party.
-      Oath: >-
-        What I wanna give? Commander? Would an item like that would help to
-        survive in the war?
-
+      Oath: |-
+        What I wanna give? Commander? Would an item like that would help to survive in the war?
         …well, still. It’s not a bad feeling. I get that this is a very precious item.
-
         Now that I’ve received this, I shouldn’t die so easily. No, I promise you that I’ll stay alive as long as possible.
       OathIdle_01: |-
         Yes, I plan to survive as long as I can.
@@ -8081,10 +8161,7 @@ dialogue:
       SPIdle_02_01: |-
         Your Excellency, if you want,
         I can give you the time of your dreams.
-      Oath: Sandman, the spirit of dreams, allows people to have sweet dreams. To me,
-        Your Excellency is that kind of person. You make me dream of tomorrow. I
-        want to be with you in that future. I would never refuse. Make me dream.
-        A dream full of love and hope.
+      Oath: Sandman, the spirit of dreams, allows people to have sweet dreams. To me, Your Excellency is that kind of person. You make me dream of tomorrow. I want to be with you in that future. I would never refuse. Make me dream. A dream full of love and hope.
       OathIdle_01: |-
         Do you wonder what I dream about?
         I dream of kissing a child
@@ -8092,8 +8169,7 @@ dialogue:
         Can you make my dreams come true?
       MVP: ""
     "":
-      Join: So this is where everyone was hanging out. GS-10 alive and reporting to
-        duty!
+      Join: So this is where everyone was hanging out. GS-10 alive and reporting to duty!
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -8135,12 +8211,9 @@ dialogue:
         for me, you are the meaning
         of life.
       SPIdle_02_01: What is it? Hmm… You’re finished?
-      Oath: >-
-        You're giving this present… Because? I'm delighted. It means that… even
-        if I die in war,
-
+      Oath: |-
+        You're giving this present… Because? I'm delighted. It means that… even if I die in war,
         you'll remember me. And… I'll take this memory with me to heaven
-
         after closing my eyes in peace.
       OathIdle_01: |-
         I’ve never been like this… But I feel happy
@@ -8164,11 +8237,9 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         Lord, you are special to me.
-
         I feel happy just by looking at you.
-
         I feel delighted all day when I get to talk to you… You are my everything.​
       Idle_01_02: |-
         It’s amazing. Everything looked grey to me,

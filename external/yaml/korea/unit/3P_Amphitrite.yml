@@ -3561,6 +3561,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위 적에게 <dmg elem="physics" />를 주고, 대상의 피해 감소 / 행 보호 / 열 보호 효과를 해제합니다.
+        대상이 보호기일 경우, 2라운드 동안 <sec typ="buff"><buff typ="Disallow" /> 강화 불가 상태</sec>로 만듭니다.
+        대상이 행 보호 상태가 아닐 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="8" r /></sec>가 증가합니다.
+      JP: |-
+        指定範囲の敵に<dmg elem="physics" />を与え、対象の受けるダメージ減少 / 行保護 / 列保護効果を解除します。
+        対象が保護機の場合、2ラウンドの間<sec typ="buff"><buff typ="Disallow" />強化不可状態</sec>にします。
+        対象が行保護状態でない場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="8" r /></sec>が増加します。
+      EN: |-
+        Deals <dmg elem="physics" /> damage to enemies in the designated area and removes the target's damage reduction / row protection / column protection effects.
+        If the target is a Protector, turns it into a <sec typ="buff"><buff typ="Disallow" /> Cannot Be Buffed state</sec> for 2 rounds.
+        If the target is not in Row Protection, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="8" r /></sec> increases.
+      TC: |-
+        對指定範圍敵軍造成<dmg elem="physics" />傷害，並解除目標的所受傷害減少 / 行保護 / 열保護效果。
+        若目標為保護機，則使其在2回合內進入<sec typ="buff"><buff typ="Disallow" /> 無法被強化狀態</sec>。
+        若目標不處於行保護狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量<val idx="8" r /></sec>增加。
   "2":
     key: "2"
     icon: MGWideShot
@@ -5965,6 +5982,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 대상의 행동력 증가 / 지정 보호 효과를 해제합니다.
+        대상이 <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 또는 <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 상태일 경우, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec>을(를) 감소시키고 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="6" r /></sec>가 증가합니다.
+      JP: |-
+        指定範囲の敵に<sec typ="attr">保護無視</sec>の<dmg elem="physics" />を与え、対象の行動力増加 / 指定保護効果を解除します。
+        対象が<sec typ="cond"><buff typ="SNARE" />移動不可</sec>または<sec typ="cond"><buff typ="EVADE_DOWN" />回避減少</sec>状態の場合、対象の<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="5" /></sec>を減少させ、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="6" r /></sec>が増加します。
+      EN: |-
+        Deals <sec typ="attr">ignores Protection</sec> <dmg elem="physics" /> damage to enemies in the designated area and removes their AP increase / designated protection effects.
+        If the target is in <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> or <sec typ="cond"><buff typ="EVADE_DOWN" /> EVADE reduction</sec> state, decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec> and increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="6" r /></sec>.
+      TC: |-
+        對指定範圍敵軍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害，並解除其行動力增加 / 指定保護效果。
+        若目標處於<sec typ="cond"><buff typ="SNARE" /> 無法移動</sec>或<sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避減少</sec>狀態，則降低目標的<sec typ="buff"><buff typ="AP_DOWN" /> AP<val idx="5" /></sec>，並提升<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量<val idx="6" r /></sec>。
   "3":
     key: "3"
     icon: P.Command
@@ -6433,6 +6463,27 @@ skills:
             base: 0.4
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 방어 관통 <val idx="5" r /></sec>가 증가하며 자신을 제외한 아군 전투원 수에 비례하여 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec>가 증가합니다.
+        1스킬 사용 시 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>가 증가하며 <sec typ="note">돌격 진형</sec> 버프가 적용됩니다.
+        2스킬 사용 시 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>가 증가하며 <sec typ="note">우회 진형</sec> 버프가 적용됩니다.
+        각각의 효과는 3라운드 동안 지속되며, 최대 3번까지 중첩됩니다.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" />防御貫通<val idx="5" r /></sec>が増加し、自分を除く味方戦闘員数に応じて<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>が増加します。
+        1スキル使用時、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>が増加し、<sec typ="note">突撃陣形</sec>バフが適用されます。
+        2スキル使用時、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>が増加し、<sec typ="note">迂回陣形</sec>バフが適用されます。
+        それぞれの効果は3ラウンドの間持続し、最大3回まで重複します。
+      EN: |-
+        At round start, <sec typ="buff"><buff typ="ATK_UP" /> DEF Pierce <val idx="5" r /></sec> increases, and <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> increases in proportion to the number of allied combatants excluding self.
+        When Skill 1 is used, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> increases and the <sec typ="note">Assault Formation</sec> buff is applied.
+        When Skill 2 is used, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" r /></sec> increases and the <sec typ="note">Bypass Formation</sec> buff is applied.
+        Each effect lasts for 3 rounds and stacks up to 3 times.
+      TC: |-
+        在回合開始時，<sec typ="buff"><buff typ="ATK_UP" /> 防禦穿透<val idx="5" r /></sec>增加，並依自身以外的我軍戰鬥員數量提升<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中<val idx="6" r /></sec>。
+        使用1技能時，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力<val idx="0" r /></sec>增加，並套用<sec typ="note">突擊陣形</sec>增益。
+        使用2技能時，<sec typ="buff"><buff typ="AP_UP" /> 行動力<val idx="4" r /></sec>增加，並套用<sec typ="note">迂迴陣形</sec>增益。
+        各效果持續3回合，最多可疊加3次。
   "4":
     key: "4"
     icon: P.Move
@@ -7059,6 +7110,23 @@ skills:
             base: 0.1
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 범위 내 아군 공격기의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec>를 증가시키고 아군 보호기와 <sec typ="note">머메이드</sec> 부대원의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="7" r inv /></sec>를 감소시키며 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="8" r /></sec>를 증가시킵니다.
+        돌격 진형 활성 상태면 <sec typ="note">돌격 진형 : 공격력 증가</sec> 기본 효과가, 우회 진형 활성 상태면 <sec typ="note">우회 진형 : 행동력 증가</sec> 기본 효과가 범위 내 아군에게 적용됩니다.
+        <sec typ="note">머메이드</sec> 부대원 : <char uid="3P_Salacia" />, <char uid="3P_Melite" />
+      JP: |-
+        ラウンド開始時、範囲内の味方攻撃機の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="5" r /></sec>を増加させ、味方保護機と<sec typ="note">マーメイデン</sec>部隊員の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="7" r inv /></sec>を減少させ、<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗<val idx="8" r /></sec>を増加させます。
+        突撃陣形が有効な状態なら<sec typ="note">突撃陣形 : 攻撃力増加</sec>の基本効果が、迂回陣形が有効な状態なら<sec typ="note">迂回陣形 : 行動力増加</sec>の基本効果が範囲内の味方に適用されます。
+        <sec typ="note">マーメイデン</sec>部隊員 : <char uid="3P_Salacia" />、<char uid="3P_Melite" />
+      EN: |-
+        At round start, increases the <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="5" r /></sec> of allied attackers in the area, reduces the <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="7" r inv /></sec> of allied Protectors and <sec typ="note">Mermaid</sec> squad members, and increases <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="8" r /></sec>.
+        If Assault Formation is active, the basic effect <sec typ="note">Assault Formation: ATK Increase</sec> is applied to allies in the area; if Bypass Formation is active, the basic effect <sec typ="note">Bypass Formation: AP Increase</sec> is applied.
+        <sec typ="note">Mermaid</sec> squad members: <char uid="3P_Salacia" />, <char uid="3P_Melite" />
+      TC: |-
+        在回合開始時，提升範圍內我軍攻擊機的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透<val idx="5" r /></sec>，降低我軍保護機與<sec typ="note">美人魚</sec>部隊員的<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害<val idx="7" r inv /></sec>，並提升<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗<val idx="8" r /></sec>。
+        若突擊陣形啟動中，則會對範圍內我軍套用<sec typ="note">突擊陣形：攻擊力增加</sec>基本效果；若迂迴陣形啟動中，則會套用<sec typ="note">迂迴陣形：行動力增加</sec>基本效果。
+        <sec typ="note">美人魚</sec>部隊員：<char uid="3P_Salacia" />、<char uid="3P_Melite" />
   "5":
     key: "5"
     icon: P.AWACS
@@ -7647,6 +7715,23 @@ skills:
             base: -0.15
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        전투 시작 시, 모든 적의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>를 증가시킵니다.
+        스쿼드에 <char uid="3P_Salacia" />가 있으면 효과는 2배가 되고, 2라운드 동안 적의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="8" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="Guardpierce_No_Apply" /> 보호 무시 효과를 비활성화</sec> 합니다.
+        라운드 개시 시, <char uid="3P_Salacia" />의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>합니다.
+      JP: |-
+        戦闘開始時、すべての敵の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="0" r /></sec>を減少させ、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>を増加させます。
+        スコッドに<char uid="3P_Salacia" />がいる場合、効果は2倍になり、2ラウンドの間敵の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="8" r /></sec>を減少させ、<sec typ="buff"><buff typ="Guardpierce_No_Apply" />保護無視効果を無効化</sec>します。
+        ラウンド開始時、<char uid="3P_Salacia" />の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃を支援</sec>します。
+      EN: |-
+        At battle start, decreases all enemies' <sec typ="buff"><buff typ="EVADE_DOWN" /> EVADE <val idx="0" r /></sec> and increases <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="1" r /></sec>.
+        If <char uid="3P_Salacia" /> is in the squad, the effect is doubled, and for 2 rounds decreases enemies' <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="8" r /></sec> while <sec typ="buff"><buff typ="Guardpierce_No_Apply" /> disabling Protection Ignore effects</sec>.
+        At round start, supports <char uid="3P_Salacia" />'s <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> attacks</sec>.
+      TC: |-
+        在戰鬥開始時，降低全體敵軍的<sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避<val idx="0" r /></sec>並提升<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害<val idx="1" r /></sec>。
+        若編成中有<char uid="3P_Salacia" />，則效果變為2倍，並於2回合內降低敵軍的<sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力<val idx="8" r /></sec>，且<sec typ="buff"><buff typ="Guardpierce_No_Apply" /> 停用無視保護效果</sec>。
+        在回合開始時，支援<char uid="3P_Salacia" />的<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻擊</sec>。
 dialogue:
   KR:
     "1":
@@ -7698,9 +7783,7 @@ dialogue:
         사령관님의 마음에 들었다는 의미죠?
         후후, 그러면 저도 마음에 들어요.
         그럼… 전에 못했던 것을 이어서해볼까요?
-      Oath: 사령관님을 만나기 전에는 다시는 행복할 수 없을 거라고 생각했습니다. 그리고 사령관님을 만난 이후 이보다 더 행복할 수 없을 거라고
-        생각했습니다. 그러나 전부 틀렸습니다. 사령관님을 만나 행복해졌고, 사령관님께 고백을 받아 더욱 행복해졌으니까요. 감사합니다.
-        그리고… 사랑해요.
+      Oath: 사령관님을 만나기 전에는 다시는 행복할 수 없을 거라고 생각했습니다. 그리고 사령관님을 만난 이후 이보다 더 행복할 수 없을 거라고 생각했습니다. 그러나 전부 틀렸습니다. 사령관님을 만나 행복해졌고, 사령관님께 고백을 받아 더욱 행복해졌으니까요. 감사합니다. 그리고… 사랑해요.
       OathIdle_01: |-
         모두와 다시는 이렇게 즐거운 시간을 보낼 수
         없을 거라고 생각했어요.
@@ -7939,9 +8022,7 @@ dialogue:
         [미번역]사령관님의 마음에 들었다는 의미죠?
         후후, 그러면 저도 마음에 들어요.
         그럼… 전에 못했던 것을 이어서해볼까요?
-      Oath: "[미번역]사령관님을 만나기 전에는 다시는 행복할 수 없을 거라고 생각했습니다. 그리고 사령관님을 만난 이후 이보다 더 행복할 수
-        없을 거라고 생각했습니다. 그러나 전부 틀렸습니다. 사령관님을 만나 행복해졌고, 사령관님께 고백을 받아 더욱 행복해졌으니까요.
-        감사합니다. 그리고… 사랑해요."
+      Oath: "[미번역]사령관님을 만나기 전에는 다시는 행복할 수 없을 거라고 생각했습니다. 그리고 사령관님을 만난 이후 이보다 더 행복할 수 없을 거라고 생각했습니다. 그러나 전부 틀렸습니다. 사령관님을 만나 행복해졌고, 사령관님께 고백을 받아 더욱 행복해졌으니까요. 감사합니다. 그리고… 사랑해요."
       OathIdle_01: |-
         [미번역]모두와 다시는 이렇게 즐거운 시간을 보낼 수
         없을 거라고 생각했어요.
@@ -8076,11 +8157,9 @@ dialogue:
         You mean you liked it, don't you, Commander?
         Hehe, then I like it too.
         Then… shall we continue the conversation we couldn't finish?
-      SPIdle_02_01: >-
+      SPIdle_02_01: |-
         Olivia made me a swimsuit.
-
         Hehe, I like it because it’s easier to put on than the clothes I used to wear.
-
         Do you want to try it on, Admiral?
       Oath: |-
         This swimsuit?
@@ -8140,63 +8219,43 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         I started from the Mediterranean, went around the Cape of Good Hope,
-
         until I finally got here. I went through a lot… But I held up with everything for my twin sister,
-
         Cia. … Yes. Hence my habit of
-
         saving everything. I was never well-off
-
         when I wandered around, or when I was in Malta.
-      Idle_01_02: >-
+      Idle_01_02: |-
         Commander. Are you trying to execute
-
         a large-scale operation? I haven’t heard anything.
-
         What? Last night, you gave out meat,
-
         and snacks and drinks.
-
         So I thought you were comforting the soldiers before sending them to dangerous… Y-you do that often?!
-      Idle_01_03: >-
+      Idle_01_03: |-
         Amphitrite from the Mermaid faction’s Black Sea fleet,
-
         reporting for duty. As you ordered,
-
         I’ve been assigned to the Resistance Army’s patrol ship, I’ll…… Umm, can I ask you one thing?
-
         Well, I was wondering about… the wages.
       SPIdle_01_01: For Cia, I can… N-no…? Then…?​
       Idle_02_01: |-
         Commander. Have you seen Cia?
         We were playing hide and seek together,
         but I can’t find her…
-      Idle_03_01: >-
+      Idle_03_01: |-
         Snacks… You want me to share them with Cia?
-
         W-well… N-no! It’s not that I don’t want to… I just want to give you something in return,
-
         but then it might look like I’m paying price for them… Would it be okay if it’s not a material thing?
-
         Then could you give me a minute? Thank you.​
-      Idle_04_01: I wanted to express my gratitude and affection… I prepared a letter
-        and sweater… I made it myself. I-it’s nothing much, but… I hope this can
-        show you how I feel.​
+      Idle_04_01: I wanted to express my gratitude and affection… I prepared a letter and sweater… I made it myself. I-it’s nothing much, but… I hope this can show you how I feel.​
       SPIdle_02_01: |-
         I’m sorry. Not now… N-no.
         It’s not that I don’t want to… But I’m wearing…
         a plain lingerie today…​
-      Oath: >-
-        This whole time, my only goal was to survive with Cia. But… I really
-        didn’t expect to meet my fate in the destroyed world, let alone on the
-        other side of the Earth.​ Commander.
-
+      Oath: |-
+        This whole time, my only goal was to survive with Cia. But… I really didn’t expect to meet my fate in the destroyed world, let alone on the other side of the Earth.​ Commander.
         Like I said, thank you for taking us in. And thank you for loving me. … I really love you, too.
-      OathIdle_01: >-
+      OathIdle_01: |-
         Thank you for letting Cia be happy.
-
         Thank you, Commander. And more than that… Cia’s really glad that she met you.
       MVP: ""
     M:
@@ -8217,26 +8276,21 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         Uniform, okay.
-
         Underwear and home-dress need mending… For Commander… I should buy him one.
-
         I can save on some money…
       Idle_01_02: |-
         You have all the letters that I sent you?
         I wrote most of them late at night… thinking about you.
         They must be embarrassing-
         W-wait! Please don’t read it out loud!
-      Idle_01_03: >-
+      Idle_01_03: |-
         If you’re not using the panel, I’ll put it to sleep mode. And…
-
         the lights… Oh. Well, if it gets dark,
-
         you always get in the mood… So I kind of grew a habit… A-anyway, I’ll leave the lights on.
-      SPIdle_01_01: >-
+      SPIdle_01_01: |-
         Umm… Do you remember the present
-
         I gave you last time? … Yes. When I got it from the supply outlet… I saw a pretty lingerie… I bought because I heard you liked that… I-I’m wearing it right now.
       MVP: ""
   TC:

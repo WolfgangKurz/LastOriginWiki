@@ -2225,6 +2225,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        돌격 소총으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec>를 낮추며 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec>를 증가시킵니다.
+        치명타 시 <sec typ="note">스파르탄 캡틴 : 전술 데이터 링크</sec> 중첩에 따라 추가 효과를 얻습니다.
+        <sec typ="note">데이터 링크</sec> 1중첩 : 적 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="3" r /></sec> 감소
+        <sec typ="note">데이터 링크</sec> 2중첩 : 적 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과 해제</sec>
+      JP: |-
+        アサルトライフルで<dmg elem="physics" />を与え、2ラウンドの間、対象の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="0" r /></sec>と<sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="1" r /></sec>を低下させ、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="2" r /></sec>を増加させます。
+        クリティカル時、<sec typ="note">スパルタンキャプテン : 戦術データリンク</sec>のスタックに応じて追加効果を得ます。
+        <sec typ="note">データリンク</sec> 1スタック : 敵の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="3" r /></sec>減少
+        <sec typ="note">データリンク</sec> 2スタック : 敵の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果解除</sec>
+      EN: |-
+        Shoots Assault Rifle and deals <dmg elem="physics" /> damage, and for 2 rounds decreases the target's <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="0" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="1" r /></sec>, while increasing <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="2" r /></sec>.
+        On CRIT, gains additional effects depending on the stack count of the <sec typ="note">Spartan Captain: Tactical Data Link</sec>.
+        <sec typ="note">Data Link</sec> 1 stack : Decreases enemy's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="3" r /></sec>
+        <sec typ="note">Data Link</sec> 2 stacks : Removes enemy buffs
+      TC: |-
+        以突擊步槍造成<dmg elem="physics" />傷害，並於2回合內降低目標的<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="0" r /></sec>與<sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="1" r /></sec>，同時增加其<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="2" r /></sec>。
+        暴擊時，會依據<sec typ="note">斯巴達隊長：戰術數據鏈</sec>的層數獲得追加效果。
+        <sec typ="note">數據鏈</sec> 1層：減少敵方的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="3" r /></sec>
+        <sec typ="note">數據鏈</sec> 2層：解除敵方強化效果
   "2":
     key: "2"
     icon: TeamAtkDeBuff
@@ -2458,6 +2479,11 @@ skills:
             base: 7
             per: 0
             chance: 1
+    desc:
+      KR: 섬광탄을 발사해 지정 범위에 <dmg elem="physics" />를 주고, 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec>와 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>을(를) 낮추며 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 적중 강화 효과를 해제</sec>합니다.
+      JP: 閃光弾を発射し、指定範囲に<dmg elem="physics" />を与え、対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="1" r /></sec>と<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>を低下させ、<sec typ="buff"><buff typ="REMOVE_BUFF" />命中強化効果を解除</sec>します。
+      EN: Fires a Flash Bang and deals <dmg elem="physics" /> damage to the designated area, decreasing the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACU <val idx="1" r /></sec> and <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>, and <sec typ="buff"><buff typ="REMOVE_BUFF" />removing hit enhancement effects</sec>.
+      TC: 發射閃光彈，對指定範圍造成<dmg elem="physics" />傷害，並降低目標的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="1" r /></sec>與<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>，且<sec typ="buff"><buff typ="REMOVE_BUFF" />解除命中強化效果</sec>。
   "3":
     key: "3"
     icon: P.AWACS
@@ -2864,6 +2890,23 @@ skills:
             base: 0.06
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신과 지정 범위 로봇들의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>가 증가합니다.
+        해당 효과는 <char uid="AGS_SpartanA" />가 적을 공격할 때마다 추가 적용됩니다.
+        <sec typ="note">플래시 뱅</sec> 스킬 사용 시, 지정 타깃 대상으로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" />  <sec typ="note">다연장 미사일</sec> 스킬 협동 공격</sec>을 합니다.
+      JP: |-
+        ラウンド開始時、自分と指定範囲のロボットの<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>が増加します。
+        この効果は<char uid="AGS_SpartanA" />が敵を攻撃するたびに追加で適用されます。
+        <sec typ="note">フラッシュバン</sec>スキル使用時、指定ターゲットを対象に<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">多連装ミサイル</sec>スキルの協同攻撃</sec>を行います。
+      EN: |-
+        At the start of the round, increases the <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="5" r /></sec> of self and robots within the designated area.
+        This effect is additionally applied each time <char uid="AGS_SpartanA" /> attacks an enemy.
+        When the <sec typ="note">Flash Bang</sec> skill is used, launches a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> co-op attack with the <sec typ="note">Multi-Launch Missiles</sec> skill</sec> against the designated target.
+      TC: |-
+        回合開始時，增加自身與指定範圍內機器人的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>。
+        每當<char uid="AGS_SpartanA" />攻擊敵人時，會額外套用此效果。
+        使用<sec typ="note">閃光彈</sec>技能時，會對指定目標發動<sec typ="buff"><buff typ="TOGETHER_ATTACK" />與<sec typ="note">多重飛彈</sec>技能的協同攻擊</sec>。
   "7":
     key: "7"
     icon: P.SelfAtkBuff
@@ -2954,6 +2997,11 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: 스쿼드에 <char uid="AGS_SpartanC" />이 있는 경우, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec>이 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해</sec>가 감소합니다.
+      JP: 分隊に<char uid="AGS_SpartanC" />がいる場合、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>と<sec typ="buff"><buff typ="AP_UP" />行動力</sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ</sec>が減少します。
+      EN: If <char uid="AGS_SpartanC" /> is in the squad, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> and <sec typ="buff"><buff typ="AP_UP" /> MOVE</sec>, and decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage</sec>.
+      TC: 若小隊中有<char uid="AGS_SpartanC" />，則<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>與<sec typ="buff"><buff typ="AP_UP" />行動力</sec>增加，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害</sec>減少。
 dialogue:
   KR:
     "":
