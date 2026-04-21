@@ -6977,20 +6977,20 @@ skills:
     desc:
       KR: |-
         거대한 낫으로 지정 범위에 <dmg elem="physics" /> 피해를 줍니다.
-        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 방어력이 감소하고 받는 피해가 증가합니다.
-        스킬 사용 후, 3라운드 동안 자신의 공격력 / 행동력이 증가합니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>이 감소하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">스킬 사용 후</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>이 증가합니다.
       JP: |-
         巨大な鎌で指定範囲に<dmg elem="physics" />ダメージを与えます。
-        <sec typ="cond">命中時</sec>、3ラウンドの間、対象の防御力が減少し、受けるダメージが増加します。
-        スキル使用後、3ラウンドの間、自分の攻撃力 / 行動力が増加します。
+        <sec typ="cond">命中時</sec>、3ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>が減少し、<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">スキル使用後</sec>、3ラウンドの間、自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>が増加します。
       EN: |-
         Swings a giant scythe to deal <dmg elem="physics" /> damage to the designated area.
-        <sec typ="cond">On hit</sec>, the target’s DEF decreases and received damage increases for 3 rounds.
-        After using the skill, own ATK / MOVE increases for 3 rounds.
+        <sec typ="cond">On hit</sec>, for 3 rounds, the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> decreases and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increases.
+        <sec typ="cond">After using the skill</sec>, for 3 rounds, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="5" r /></sec> increases.
       TC: |-
-        以巨大鐮刀對指定範圍造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，目標的防禦力會降低且所受傷害增加，持續3回合。
-        使用技能後，自身攻擊力 / 行動力增加，持續3回合。
+        揮動巨大鐮刀，對指定範圍造成<dmg elem="physics" />傷害。
+        <sec typ="cond">命中時</sec>，在3回合內使目標的<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>降低，並使<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="1" r /></sec>增加。
+        <sec typ="cond">使用技能後</sec>，在3回合內使自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>增加。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -12404,23 +12404,23 @@ skills:
     desc:
       KR: |-
         거대한 낫으로 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" /> 피해를 줍니다.
-        <sec typ="cond">치명타 시</sec>, 피해량이 증가합니다.
-        스킬 사용 후, 탈진하여 2라운드 동안 자신의 행동력이 크게 감소합니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>이 증가합니다.
+        <sec typ="cond">스킬 사용 후</sec>, 탈진하여 2라운드 동안 자신의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="2" r /></sec>이 크게 감소합니다.
         스킬 레벨당 10%의 적중 보정이 적용됩니다.
       JP: |-
-        巨大な鎌で単一対象に<sec typ="attr">保護無視</sec><dmg elem="physics" />ダメージを与えます。
-        <sec typ="cond">クリティカル時</sec>、ダメージ量が増加します。
-        スキル使用後、疲労して2ラウンドの間、自分の行動力が大きく減少します。
+        巨大な鎌で単一対象に<sec typ="attr">保護無視</sec> <dmg elem="physics" />ダメージを与えます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">スキル使用後</sec>、疲労して2ラウンドの間、自分の<sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="2" r /></sec>が大きく減少します。
         スキルレベルごとに10%の命中補正が適用されます。
       EN: |-
         Swings a giant scythe to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage to a single target.
-        <sec typ="cond">On critical hit</sec>, damage increases.
-        After using the skill, becomes exhausted and own MOVE decreases greatly for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">After using the skill</sec>, becomes exhausted, and own <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="2" r /></sec> decreases greatly for 2 rounds.
         A 10% accuracy bonus is applied per skill level.
       TC: |-
-        以巨大鐮刀對單一目標造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
-        <sec typ="cond">暴擊時</sec>，傷害量增加。
-        使用技能後會進入疲勞狀態，自身行動力大幅降低，持續2回合。
+        揮動巨大鐮刀，對單一目標造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">使用技能後</sec>，會陷入疲勞狀態，在2回合內使自身的<sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="2" r /></sec>大幅降低。
         每提升1級技能，會套用10%的命中修正。
   "3":
     key: "3"
@@ -12592,17 +12592,17 @@ skills:
             chance: 0
     desc:
       KR: |-
-        라운드 개시 시, 자신의 치명타 / 방어 관통 / 대 중장형 피해량이 증가합니다.
-        자신보다 행동력이 낮은 적에 대해, 자신의 스킬 피해량이 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="2" r /></sec>이 증가합니다.
+        <sec typ="cond">자신보다 행동력이 낮은 적에 대해</sec>, 자신의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 스킬 피해량 <val idx="3" r /></sec>이 증가합니다.
       JP: |-
-        ラウンド開始時、自分のクリティカル / 防御貫通 / 対重装型ダメージ量が増加します。
-        自分より行動力が低い敵に対して、自分のスキルダメージ量が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">自分より行動力が低い敵に対して</sec>、自分の<sec typ="dmg"><buff typ="PhyATK_UP" /> スキルダメージ量 <val idx="3" r /></sec>が増加します。
       EN: |-
-        At the start of the round, own CRIT / Defense Pierce / Anti-Heavy Armor damage increases.
-        Against enemies with lower MOVE than self, own skill damage increases.
+        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> damage against Heavy units <val idx="2" r /></sec> increases.
+        <sec typ="cond">Against enemies with lower MOVE than self</sec>, own <sec typ="dmg"><buff typ="PhyATK_UP" /> skill damage <val idx="3" r /></sec> increases.
       TC: |-
-        回合開始時，自身的暴擊 / 防禦貫穿 / 對重裝型傷害量增加。
-        對於行動力低於自身的敵人，自身的技能傷害量增加。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害量 <val idx="2" r /></sec>增加。
+        <sec typ="cond">面對行動力低於自身的敵人時</sec>，自身的<sec typ="dmg"><buff typ="PhyATK_UP" /> 技能傷害量 <val idx="3" r /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -13036,25 +13036,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        공격 적중 시, 자신의 AP가 증가합니다.
-        라운드 개시 시, 자신의 AP가 증가합니다.
-        적 처치 시, 자신의 AP가 증가합니다.
-        스쿼드 내에 <페어리 시리즈> 자매들이 있을 경우, 상기 AP 증가 효과를 50%만큼 공유합니다.
+        <sec typ="cond">공격 적중 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 증가합니다.
+        <sec typ="cond">적 처치 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>이(가) 증가합니다.
+        <sec typ="cond">스쿼드 내에 <cmt t="페어리 시리즈">$$3PFairy:?$</cmt> 자매들이 있을 경우</sec>, 상기 <sec typ="ref"><buff typ="AP_UP" /> AP 증가 효과</sec>를 50%만큼 공유합니다.
       JP: |-
-        攻撃命中時、自分のAPが増加します。
-        ラウンド開始時、自分のAPが増加します。
-        敵を撃破時、自分のAPが増加します。
-        分隊内に<フェアリーシリーズ>の姉妹たちがいる場合、上記のAP増加効果を50%共有します。
+        <sec typ="cond">攻撃命中時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が増加します。
+        <sec typ="cond">敵を撃破時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>が増加します。
+        <sec typ="cond">分隊内に<cmt t="フェアリーシリーズ">$$3PFairy:?$</cmt>の姉妹たちがいる場合</sec>、上記の<sec typ="ref"><buff typ="AP_UP" /> AP増加効果</sec>を50%共有します。
       EN: |-
-        On attack hit, own AP increases.
-        At round start, own AP increases.
-        On enemy kill, own AP increases.
-        If the <Fairy Series> sisters are in the squad, the above AP increase effects are shared by 50%.
+        <sec typ="cond">On attack hit</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec> increases.
+        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increases.
+        <sec typ="cond">On enemy kill</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> increases.
+        <sec typ="cond">If the <cmt t="Fairy Series">$$3PFairy:?$</cmt> sisters are in the squad</sec>, shares the above <sec typ="ref"><buff typ="AP_UP" /> AP increase effect</sec> by 50%.
       TC: |-
-        攻擊命中時，自身AP增加。
-        回合開始時，自身AP增加。
-        擊殺敵人時，自身AP增加。
-        若小隊內有<Fairy Series>姊妹們，則上述AP增加效果會共享50%。
+        <sec typ="cond">攻擊命中時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>增加。
+        <sec typ="cond">擊殺敵軍時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>增加。
+        <sec typ="cond">若小隊內有<cmt t="仙女系列">$$3PFairy:?$</cmt>姊妹們</sec>，則會共享上述<sec typ="ref"><buff typ="AP_UP" /> AP增加效果</sec>的50%。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -13246,25 +13246,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, 자신은 재공격 효과를 획득합니다. <수확의 낫>의 공격력 / 행동력 증가 효과는 재공격 시에도 적용됩니다.
-        라운드 개시 시, 기동형 아군의 대 중장형 피해량이 증가합니다.
-        공격 적중 시, 대상을 <부식> 상태로 만듭니다. 효과 수치는 액티브 스킬 레벨에 비례합니다.
-        적중 대상이 이미 <부식> 상태인 경우, 추가로 자신의 공격력에 비례한 고정 피해를 줍니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 효과를 획득합니다. <sec typ="note">수확의 낫</sec>의 <sec typ="ref"><buff typ="ATK_UP" /> 공격력 증가 효과</sec> / <sec typ="ref"><buff typ="AP_UP" /> 행동력 증가 효과</sec>는 재공격 시에도 적용됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, 기동형 아군의 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="3" r /></sec>이 증가합니다.
+        <sec typ="cond">공격 적중 시</sec>, 대상을 <sec typ="note">부식</sec> 상태로 만듭니다. <sec>효과 수치는 액티브 스킬 레벨에 비례합니다.</sec>
+        <sec typ="cond">적중 대상이 이미 <sec typ="note">부식</sec> 상태인 경우</sec>, 추가로 <sec typ="dmg"><buff typ="PhyATK_UP" /> 자신의 공격력에 비례한 고정 피해</sec>를 줍니다.
       JP: |-
-        ラウンド開始時、自分は再攻撃効果を獲得します。<収穫の鎌>の攻撃力 / 行動力増加効果は再攻撃時にも適用されます。
-        ラウンド開始時、機動型の味方の対重装型ダメージ量が増加します。
-        攻撃命中時、対象を<腐食>状態にします。効果数値はアクティブスキルレベルに比例します。
-        命中対象がすでに<腐食>状態の場合、追加で自分の攻撃力に比例した固定ダメージを与えます。
+        <sec typ="cond">ラウンド開始時</sec>、自分は<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec>効果を獲得します。<sec typ="note">収穫の鎌</sec>の<sec typ="ref"><buff typ="ATK_UP" /> 攻撃力増加効果</sec> / <sec typ="ref"><buff typ="AP_UP" /> 行動力増加効果</sec>は再攻撃時にも適用されます。
+        <sec typ="cond">ラウンド開始時</sec>、機動型の味方の<sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="3" r /></sec>が増加します。
+        <sec typ="cond">攻撃命中時</sec>、対象を<sec typ="note">腐食</sec>状態にします。<sec>効果数値はアクティブスキルレベルに比例します。</sec>
+        <sec typ="cond">命中対象がすでに<sec typ="note">腐食</sec>状態の場合</sec>、追加で<sec typ="dmg"><buff typ="PhyATK_UP" /> 自分の攻撃力に比例した固定ダメージ</sec>を与えます。
       EN: |-
-        At the start of the round, gains a Retaliation effect. The ATK / MOVE increase effects of <Harvest Scythe> also apply on Retaliation.
-        At the start of the round, anti-heavy-armor damage of allied Mobility units increases.
-        On attack hit, inflicts the target with <Corrosion>. Effect values are proportional to the active skill level.
-        If the hit target is already <Corrosion>, additionally deals fixed damage proportional to own ATK.
+        <sec typ="cond">At the start of the round</sec>, self gains <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Re-Attack</sec>. The <sec typ="ref"><buff typ="ATK_UP" /> ATK increase effect</sec> / <sec typ="ref"><buff typ="AP_UP" /> MOVE increase effect</sec> of <sec typ="note">Harvest's Scythe</sec> also applies on Re-Attack.
+        <sec typ="cond">At the start of the round</sec>, allied Mobility units' <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> damage against Heavy units <val idx="3" r /></sec> increases.
+        <sec typ="cond">On attack hit</sec>, inflicts the target with <sec typ="note">Corrosion</sec>. <sec>The effect values scale with the active skill level.</sec>
+        <sec typ="cond">If the hit target is already in <sec typ="note">Corrosion</sec> state</sec>, additionally deals <sec typ="dmg"><buff typ="PhyATK_UP" /> fixed damage proportional to own ATK</sec>.
       TC: |-
-        回合開始時，自身獲得再次攻擊效果。<收穫之鐮>的攻擊力 / 行動力增加效果在再次攻擊時也會套用。
-        回合開始時，機動型我軍的對重裝型傷害量增加。
-        攻擊命中時，使目標進入<腐蝕>狀態。效果數值與主動技能等級成正比。
-        若命中目標已處於<腐蝕>狀態，則另外依自身攻擊力造成固定傷害。
+        <sec typ="cond">回合開始時</sec>，自身獲得<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec>效果。<sec typ="note">收割之鐮</sec>的<sec typ="ref"><buff typ="ATK_UP" /> 攻擊力增加效果</sec> / <sec typ="ref"><buff typ="AP_UP" /> 行動力增加效果</sec>在再次攻擊時也會套用。
+        <sec typ="cond">回合開始時</sec>，機動型我軍的<sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害量 <val idx="3" r /></sec>增加。
+        <sec typ="cond">攻擊命中時</sec>，使目標進入<sec typ="note">腐蝕</sec>狀態。<sec>效果數值會依主動技能等級而提升。</sec>
+        <sec typ="cond">若命中目標已處於<sec typ="note">腐蝕</sec>狀態</sec>，則額外造成<sec typ="dmg"><buff typ="PhyATK_UP" /> 與自身攻擊力成比例的固定傷害</sec>。
 dialogue:
   KR:
     "1":

@@ -3950,7 +3950,7 @@ skills:
     desc:
       KR: |-
         철충을 재단해 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다.
-        <sec typ="cond">치명타 시</sec>, 2라운드 동안 대상에게 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 지속 물리 피해 <val idx="5" signless /></sec>를 입히고 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 효과가 두 배로 증폭됩니다. (중첩 불가)
+        <sec typ="cond">치명타 시</sec>, 2라운드 동안 대상에게 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 지속 물리 피해 <val idx="5" signless /></sec>을(를) 입히고 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 효과가 두 배로 증폭됩니다. (중첩 불가)
         현재 적용 중인 <cmt t="탐미주의">$$AESTHETISM:0$</cmt> 상태에 따라 추가 효과를 적용합니다.
         <sec typ="cond">cousette (전열)</sec> : <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="6" r inv /></sec> 감소
         <sec typ="cond">midinette (중열)</sec> : <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec> 감소
@@ -6234,30 +6234,30 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, <cmt t="<PECS> 의상 디자이너">$$PECS_CLOTHES_DESIGNER:0$</cmt>의 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시를 활성화</sec>합니다.
-        <sec typ="cond">라운드 개시 시</sec>, <cmt t="<PECS> 의상 디자이너">$$PECS_CLOTHES_DESIGNER:0$</cmt>의 액티브 스킬 효과를 받는 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>을(를) 증가시킵니다.
-        <sec typ="cond">라운드 개시 시</sec>, <cmt t="<PECS> 의상 디자이너">$$PECS_CLOTHES_DESIGNER:0$</cmt>의 액티브 스킬 효과를 받는 적의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>을(를) 감소시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, <cmt t="PECS 의상 디자이너">$$PECS_CLOTHES_DESIGNER:0$</cmt>의 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시를 활성화</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <cmt t="PECS 의상 디자이너">$$PECS_CLOTHES_DESIGNER:0$</cmt>의 액티브 스킬 효과를 받는 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, <cmt t="PECS 의상 디자이너">$$PECS_CLOTHES_DESIGNER:0$</cmt>의 액티브 스킬 효과를 받는 적의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>을(를) 감소시킵니다.
         $$PECS_CLOTHES_DESIGNER~
         <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
         ~$$PECS_CLOTHES_DESIGNER
       JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、<cmt t="<PECS> 衣装デザイナー">$$PECS_CLOTHES_DESIGNER:0$</cmt>の<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視を有効化</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>、<cmt t="<PECS> 衣装デザイナー">$$PECS_CLOTHES_DESIGNER:0$</cmt>のアクティブスキル効果を受ける味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>を増加させます。
-        <sec typ="cond">ラウンド開始時</sec>、<cmt t="<PECS> 衣装デザイナー">$$PECS_CLOTHES_DESIGNER:0$</cmt>のアクティブスキル効果を受ける敵の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>を減少させます。
+        <sec typ="cond">ラウンド開始時</sec>、<cmt t="PECS 衣装デザイナー">$$PECS_CLOTHES_DESIGNER:0$</cmt>の<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視を有効化</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、<cmt t="PECS 衣装デザイナー">$$PECS_CLOTHES_DESIGNER:0$</cmt>のアクティブスキル効果を受ける味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、<cmt t="PECS 衣装デザイナー">$$PECS_CLOTHES_DESIGNER:0$</cmt>のアクティブスキル効果を受ける敵の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>を減少させます。
         $$PECS_CLOTHES_DESIGNER~
         <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
         ~$$PECS_CLOTHES_DESIGNER
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, activates the <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> effect of the <cmt t="<PECS> Costume Designers">$$PECS_CLOTHES_DESIGNER:0$</cmt>.
-        <sec typ="cond">At the start of the round</sec>, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec> of allies receiving the Active Skill effects of the <cmt t="<PECS> Costume Designers">$$PECS_CLOTHES_DESIGNER:0$</cmt>.
-        <sec typ="cond">At the start of the round</sec>, decreases the <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec> of enemies receiving the Active Skill effects of the <cmt t="<PECS> Costume Designers">$$PECS_CLOTHES_DESIGNER:0$</cmt>.
+        <sec typ="cond">At the start of the round</sec>, activates the <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> effect of the <cmt t="PECS Costume Designers">$$PECS_CLOTHES_DESIGNER:0$</cmt>.
+        <sec typ="cond">At the start of the round</sec>, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec> of allies receiving the Active Skill effects of the <cmt t="PECS Costume Designers">$$PECS_CLOTHES_DESIGNER:0$</cmt>.
+        <sec typ="cond">At the start of the round</sec>, decreases the <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec> of enemies receiving the Active Skill effects of the <cmt t="PECS Costume Designers">$$PECS_CLOTHES_DESIGNER:0$</cmt>.
         $$PECS_CLOTHES_DESIGNER~
         <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
         ~$$PECS_CLOTHES_DESIGNER
       TC: |-
-        <sec typ="cond">回合開始時</sec>，啟用<cmt t="<PECS>服裝設計師">$$PECS_CLOTHES_DESIGNER:0$</cmt>的<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>。
-        <sec typ="cond">回合開始時</sec>，增加獲得<cmt t="<PECS>服裝設計師">$$PECS_CLOTHES_DESIGNER:0$</cmt>主動技能效果的我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>。
-        <sec typ="cond">回合開始時</sec>，減少獲得<cmt t="<PECS>服裝設計師">$$PECS_CLOTHES_DESIGNER:0$</cmt>主動技能效果的敵軍的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>。
+        <sec typ="cond">回合開始時</sec>，啟用<cmt t="PECS服裝設計師">$$PECS_CLOTHES_DESIGNER:0$</cmt>的<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>。
+        <sec typ="cond">回合開始時</sec>，增加獲得<cmt t="PECS服裝設計師">$$PECS_CLOTHES_DESIGNER:0$</cmt>主動技能效果的我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>。
+        <sec typ="cond">回合開始時</sec>，減少獲得<cmt t="PECS服裝設計師">$$PECS_CLOTHES_DESIGNER:0$</cmt>主動技能效果的敵軍的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>。
         $$PECS_CLOTHES_DESIGNER~
         <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
         ~$$PECS_CLOTHES_DESIGNER

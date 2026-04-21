@@ -2519,25 +2519,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        빔 포트를 발사하여 지정 범위에 <dmg elem="physics" />를 줍니다.
-        적중 시, 2라운드 동안 대상이 받는 피해를 증가시킵니다. 대상이 중장형인 경우 효과가 두 배로 증폭됩니다. (중첩 불가)
-        치명타 시, 대상의 받는 피해 감소 효과를 해제합니다.
-        스쿼드 내 <P-22 하르페이아>가 있을 경우, <sec typ="note">풀 버스트</sec> 스킬 협동 공격을 유도합니다.
+        빔 포트를 발사하여 지정 범위에 <dmg elem="physics" /> 피해를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>가 증가합니다. <sec typ="cond">대상이 중장형인 경우</sec>, 효과가 두 배로 증폭됩니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+        <sec typ="cond">스쿼드 내에 <char uid="BR_Harpy" />가 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">풀 버스트</sec> 협동 공격</sec>을 유도합니다.
       JP: |-
-        ビームポートを発射して指定範囲に<dmg elem="physics" />のダメージを与えます。
-        命中時、2ラウンドの間対象が受けるダメージを増加させます。対象が重装型の場合は効果が2倍に増幅されます。(スタック不可)
-        クリティカル時、対象の受けるダメージ減少効果を解除します。
-        分隊内に<P-22ハルピュイア>がいる場合、<sec typ="note">フルバースト</sec>スキル協同攻撃を誘導します。
+        ビームポートを発射して指定範囲に<dmg elem="physics" />ダメージを与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="0" r /></sec>が増加します。<sec typ="cond">対象が重装型の場合</sec>、効果が2倍に増幅されます。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 被ダメージ減少効果を解除</sec>します。
+        <sec typ="cond">分隊内に<char uid="BR_Harpy" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">フルバースト</sec>協同攻撃</sec>を誘導します。
       EN: |-
-        Shoots a beam port and deals <dmg elem="physics" /> damage to the designated area.
-        When attack hits, increases the target’s received damage for 2 rounds. If the target is a Heavy Armor unit, the effect doubles (cannot stack).
-        When CRIT hit, the target’s Received Damage Decrease effect is removed.
-        If <P-22 Harpyia> is in the squad, initiates a co-op attack with the <sec typ="note">Full Burst</sec> skill.
+        Fires a beam port to deal <dmg elem="physics" /> damage to the targeted area.
+        <sec typ="cond">On hit</sec>, for 2 rounds, the target's <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> increases. <sec typ="cond">If the target is a Heavy unit</sec>, the effect is doubled.
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's received damage decrease effect</sec>.
+        <sec typ="cond">If <char uid="BR_Harpy" /> is in the squad</sec>, triggers <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> a co-op attack with <sec typ="note">Full Burst</sec></sec>.
       TC: |-
         發射光束埠，對指定範圍造成<dmg elem="physics" />傷害。
-        命中時，於2回合內增加目標所受傷害。若目標為重裝型，效果增幅2倍。（無法疊加）
-        暴擊時，解除目標的所受傷害減少效果。
-        若小隊內有<P-22 哈比亞>，則引發<sec typ="note">全爆發</sec>技能協力攻擊。
+        <sec typ="cond">命中時</sec>，於2回合內使目標的<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="0" r /></sec>增加。<sec typ="cond">若目標為重裝型</sec>，則效果增幅為2倍。
+        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" /> 解除目標的所受傷害減少效果</sec>。
+        <sec typ="cond">若小隊內有<char uid="BR_Harpy" /></sec>，則會誘導<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">全爆發</sec>協同攻擊</sec>。
   "2":
     key: "2"
     icon: AirStrike
@@ -6660,21 +6660,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고 <sec typ="dmg"><buff typ="REMOVE_BUFF" />  대 기동형 피해량 / 적중 증가 효과를 해제</sec>합니다.
-        적중 시, 2라운드 동안 대상의 대 기동형 피해량 / 적중을 감소시키고 이동 불가 상태로 만듭니다. (중첩 불가)
-        아군이 기동형만으로 구성되어 있을 경우, 해당 라운드 동안 지속 효과가 50% 증폭됩니다.
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" /> 피해를 주고, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 대 기동형 피해량 증가 / 적중 증가 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> 대 기동형 피해량 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="8" r /></sec>이 감소하고 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태가 됩니다. (중첩 불가)
+        <sec typ="cond">아군이 기동형만으로 구성되어 있을 경우</sec>, 해당 라운드 동안 위 지속 효과 수치가 50% 증폭됩니다.
       JP: |-
-        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、<sec typ="dmg"><buff typ="REMOVE_BUFF" />対機動型ダメージ量/命中増加効果を解除</sec>します。
-        命中時、2ラウンドの間対象の対機動型ダメージ量/命中を減少させ、移動不可状態にします。(スタック不可)
-        味方が機動型のみで構成されている場合、該当ラウンドの持続効果が50%増幅されます。
+        指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="physics" />ダメージを与え、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 対機動型ダメージ増加 / 命中増加効果を解除</sec>します。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> 対機動型ダメージ <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="8" r /></sec>が減少し、<sec typ="buff"><buff typ="SNARE" /> 移動不可</sec>状態になります。(スタック不可)
+        <sec typ="cond">味方が機動型のみで構成されている場合</sec>、そのラウンドの間、上記の持続効果数値が50%増幅されます。
       EN: |-
-        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area and <sec typ="dmg"><buff typ="REMOVE_BUFF" />removes Anti-Air Damage/ACU Increase effects</sec>.
-        When attack hits, decreases the target’s Anti-Air Damage/ACU for 2 rounds and Immobilizes them. (cannot stack)
-        If the squad is composed only of Air allies, duration effects are amplified by 50% for that round.
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage to the targeted area and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes Anti-Mobility damage increase / Accuracy increase effects</sec> from the target.
+        <sec typ="cond">On hit</sec>, for 2 rounds, the target's <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> damage against Mobile units <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="8" r /></sec> decreases, and the target becomes <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec>. (Cannot stack)
+        <sec typ="cond">If all allies are Mobile units</sec>, the values of the above duration effects are amplified by 50% for that round.
       TC: |-
-        對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害，並<sec typ="dmg"><buff typ="REMOVE_BUFF" />解除對機動型傷害量/命中增加效果</sec>。
-        命中時，於2回合內減少目標的對機動型傷害量/命中，並使其無法移動。（無法疊加）
-        若我軍僅由機動型組成，則該回合的持續效果增幅50%。
+        對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的對機動型傷害增加 / 命中增加效果</sec>。
+        <sec typ="cond">命中時</sec>，於2回合內使目標的<sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> 對機動型傷害量 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="8" r /></sec>降低，並進入<sec typ="buff"><buff typ="SNARE" /> 無法移動</sec>狀態。（無法疊加）
+        <sec typ="cond">若我軍僅由機動型構成</sec>，則該回合內上述持續效果數值會增幅50%。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -7068,17 +7068,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="1" r /></sec>를 증가시킵니다.
-        라운드 개시 시, 범위 내 <sec typ="note">스카이 나이츠</sec> 소속 전투원의 회피 / 사거리를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="1" r /></sec>이 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <cmt t="스카이 나이츠">$$SkyKnight:?$</cmt> 소속 전투원의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="5" /></sec>가 증가합니다.
       JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />対軽装型ダメージ量<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />対重装型ダメージ量<val idx="1" r /></sec>を増加させます。
-        ラウンド開始時、範囲内の<sec typ="note">スカイナイツ</sec>所属戦闘員の回避/射程を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の<cmt t="スカイナイツ">$$SkyKnight:?$</cmt>所属戦闘員の<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="5" /></sec>が増加します。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, increases allies’ <sec typ="dmg"><buff typ="TROOPER_DMG_UP" />Anti-Light Armor Damage<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />Anti-Heavy Armor Damage<val idx="1" r /></sec> within range.
-        At the start of the round, increases the EVA/Range of <sec typ="note">Sky Knights</sec> soldiers within range.
+        <sec typ="cond">At the start of the round</sec>, allies within range gain <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage against Light units <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage against Heavy units <val idx="1" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, <cmt t="Sky Knights">$$SkyKnight:?$</cmt> combatants within range gain <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="4" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="5" /></sec>.
       TC: |-
-        <sec typ="cond">回合開始時</sec>，增加範圍內我軍的<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />對輕裝型傷害量<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型傷害量<val idx="1" r /></sec>。
-        回合開始時，增加範圍內<sec typ="note">天空騎士</sec>所屬戰鬥員的迴避/射程。
+        <sec typ="cond">回合開始時</sec>，使範圍內我軍的<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害量 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害量 <val idx="1" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，使範圍內<cmt t="蒼天騎士">$$SkyKnight:?$</cmt>所屬戰鬥員的<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="5" /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -7462,20 +7462,20 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">전투 개시 시</sec>, 1라운드 동안 자신은 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시 효과</sec>를 획득합니다.
-        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 자신의 행동력이 증가합니다.
-        자신 외의 <sec typ="note">스카이 나이츠</sec> 소속 전투원이 있을 경우, <sec typ="note">간섭 대응 유닛</sec>의 효과 지속이 각각 1라운드씩 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>이 증가합니다.
+        <sec typ="cond">자신 외의 <cmt t="스카이 나이츠">$$SkyKnight:?$</cmt> 소속 전투원이 있을 경우</sec>, <sec typ="note">간섭 대응 유닛</sec>의 <sec typ="ref"><buff typ="AP_UP" /> 행동력 증가 효과</sec> 지속이 각각 1라운드씩 증가합니다.
       JP: |-
-        <sec typ="cond">戦闘開始時</sec>、1ラウンドの間自分は<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視効果</sec>を獲得します。
-        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間自分の行動力が増加します。
-        自分以外の<sec typ="note">スカイナイツ</sec>所属戦闘員がいる場合、<sec typ="note">干渉対応ユニット</sec>の効果持続がそれぞれ1ラウンドずつ増加します。
+        <sec typ="cond">戦闘開始時</sec>、1ラウンドの間、自分は<sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視効果</sec>を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間、自分の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>が増加します。
+        <sec typ="cond">自分以外の<cmt t="スカイナイツ">$$SkyKnight:?$</cmt>所属戦闘員がいる場合</sec>、<sec typ="note">干渉対応ユニット</sec>の<sec typ="ref"><buff typ="AP_UP" /> 行動力増加効果</sec>の持続がそれぞれ1ラウンドずつ増加します。
       EN: |-
-        At the start of combat, self gains <sec typ="buff"><buff typ="DEF_All" />Damage Invalidation</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" />Ignore Protection</sec> for 1 round.
-        <sec typ="cond">At the start of the round</sec>, self’s MOVE increases for 2 rounds.
-        If there is another <sec typ="note">Sky Knights</sec> soldier apart from self, the duration of <sec typ="note">Interference Response Unit</sec> effects each increase by 1 round.
+        <sec typ="cond">At the start of combat</sec>, for 1 round, self gains <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec>.
+        <sec typ="cond">At the start of the round</sec>, for 2 rounds, own <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="6" r /></sec> increases.
+        <sec typ="cond">If there is another <cmt t="Sky Knights">$$SkyKnight:?$</cmt> combatant besides self</sec>, the duration of the <sec typ="ref"><buff typ="AP_UP" /> MOVE increase effect</sec> from <sec typ="note">Interference Response Unit</sec> is each extended by 1 round.
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，自身於1回合內獲得<sec typ="buff"><buff typ="DEF_All" />傷害無效化</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護效果</sec>。
-        <sec typ="cond">回合開始時</sec>，自身的行動力於2回合內增加。
-        若除了自身以外還有<sec typ="note">天空騎士</sec>所屬戰鬥員，則<sec typ="note">干涉應對單位</sec>的效果持續時間各增加1回合。
+        <sec typ="cond">戰鬥開始時</sec>，於1回合內使自身獲得<sec typ="buff"><buff typ="DEF_All" /> 傷害無效化</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護效果</sec>。
+        <sec typ="cond">回合開始時</sec>，於2回合內使自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>增加。
+        <sec typ="cond">若有除了自身以外的<cmt t="蒼天騎士">$$SkyKnight:?$</cmt>所屬戰鬥員</sec>，則<sec typ="note">干涉應對單位</sec>的<sec typ="ref"><buff typ="AP_UP" /> 行動力增加效果</sec>持續時間各增加1回合。
   "5":
     key: "5"
     icon: P.AWACS
@@ -7623,20 +7623,20 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
-        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">지휘 통제</sec> 범위 내 기동형 아군에게 <sec typ="note">강제 이동 면역</sec> 효과를 부여합니다.
-        <sec typ="cond"><sec typ="note">대공 무력화</sec> 치명타 시</sec>, 해당 라운드 동안 대상의 효과 저항을 감소시킵니다. 효과는 <sec typ="note">대공 무력화</sec>의 스킬 레벨에 비례합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">지휘 통제</sec> 범위 내 기동형 아군에게 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 강제 이동 면역</sec> 효과를 부여합니다.
+        <sec typ="cond"><sec typ="note">대공 무력화</sec> 치명타 시</sec>, 해당 라운드 동안 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="2" r /></sec>을 감소시킵니다. <sec>효과는 <sec typ="note">대공 무력화</sec>의 스킬 레벨에 비례합니다.</sec>
       JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="0" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">指揮統制</sec>範囲内の機動型の味方に<sec typ="note">強制移動免疫</sec>効果を付与します。
-        <sec typ="cond"><sec typ="note">対空無力化</sec>クリティカル時</sec>、そのラウンドの間対象の効果耐性を減少させます。効果は<sec typ="note">対空無力化</sec>のスキルレベルに比例します。
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">指揮統制</sec>範囲内の機動型の味方に<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 強制移動免疫</sec>効果を付与します。
+        <sec typ="cond"><sec typ="note">対空無力化</sec>クリティカル時</sec>、そのラウンドの間、対象の<sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="2" r /></sec>を減少させます。<sec>効果は<sec typ="note">対空無力化</sec>のスキルレベルに比例します。</sec>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, self’s <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />Effect Resistance<val idx="0" r /></sec> increases.
-        <sec typ="cond">At the start of the round</sec>, grants <sec typ="note">Forced Move Immunity</sec> to Air allies within <sec typ="note">Command Control</sec>’s range.
-        <sec typ="cond">When <sec typ="note">Anti-Aircraft Neutralization</sec> lands as a CRIT hit</sec>, the target’s Effect Resistance is decreased for that round. This effect is proportional to <sec typ="note">Anti-Aircraft Neutralization</sec>’s skill level.
+        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increases.
+        <sec typ="cond">At the start of the round</sec>, grants allied Mobile units within the range of <sec typ="note">Command Control</sec> <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> Forced Move Immunity</sec>.
+        <sec typ="cond">On critical hit with <sec typ="note">Anti-Aircraft Neutralization</sec></sec>, for that round, decreases the target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="2" r /></sec>. <sec>The effect scales with the skill level of <sec typ="note">Anti-Aircraft Neutralization</sec>.</sec>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="0" r /></sec>增加。
-        <sec typ="cond">回合開始時</sec>，對<sec typ="note">指揮管制</sec>範圍內機動型我軍賦予<sec typ="note">強制移動免疫</sec>效果。
-        <sec typ="cond">當<sec typ="note">防空無力化</sec>發生暴擊時</sec>，於該回合內減少目標的效果抵抗。效果與<sec typ="note">防空無力化</sec>的技能等級成正比。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="0" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，對<sec typ="note">指揮管制</sec>範圍內的機動型我軍賦予<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 強制移動免疫</sec>效果。
+        <sec typ="cond"><sec typ="note">防空無力化</sec>暴擊時</sec>，於該回合內使目標的<sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抵抗 <val idx="2" r /></sec>降低。<sec>效果會依<sec typ="note">防空無力化</sec>的技能等級而提升。</sec>
 dialogue:
   KR:
     "1":

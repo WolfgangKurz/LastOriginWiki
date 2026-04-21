@@ -3267,29 +3267,29 @@ skills:
             chance: 1
     desc:
       KR: |-
-        캐리어에서 향수를 꺼내 적을 향해 투척하여 단일 대상에게 <dmg elem="physics" /> 피해를 주고, 적중 여부와 관계없이 대상의 이로운 회피 증가 효과를 해제합니다.
-        <sec typ="cond">적중 시</sec> 대상은 2라운드 동안 적중이 감소합니다.
-        스쿼드에 <char uid="BR_Vargr" />, <char uid="BR_Fafnir" />, <char uid="BR_Cheona" />, <char uid="BR_Janghwa" />가 있는 경우 100%로 [라그나로크], [뇌정벽력], [단검 투척], [IED 설치] 스킬로 협동 공격을 유도합니다.
+        캐리어에서 향수를 꺼내 적을 향해 투척하여 단일 대상에게 <dmg elem="physics" /> 피해를 주고, 적중 여부와 관계없이 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 이로운 회피 증가 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="3" r /></sec>이 감소합니다.
+        <sec typ="cond">스쿼드에 <char uid="BR_Vargr" />, <char uid="BR_Fafnir" />, <char uid="BR_Cheona" />, <char uid="BR_Janghwa" />가 있는 경우</sec>, 100% 확률로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> [라그나로크] / [뇌정벽력] / [단검 투척] / [IED 설치] 협동 공격</sec>을 유도합니다.
         협동 공격이 가능한 전투원이 여러 명인 경우 위 표기된 순으로 우선권을 가집니다. (바르그 > 장화 순)
         다수의 적이 대상인 경우 사거리가 닿는 적을 우선 선택하고 사거리로 인해 협동 공격이 불가능할 경우 다음 순서의 전투원이 협동 공격을 실행합니다.
       JP: |-
-        キャリーケースから香水を取り出して敵に投げつけ、単一対象に<dmg elem="physics" />ダメージを与え、命中の有無にかかわらず対象の有利な回避増加効果を解除します。
-        <sec typ="cond">命中時</sec>、対象は2ラウンドの間、命中が減少します。
-        分隊に<char uid="BR_Vargr" />、<char uid="BR_Fafnir" />、<char uid="BR_Cheona" />、<char uid="BR_Janghwa" />がいる場合、100%で[ラグナロク]、[雷霆霹靂]、[短剣投擲]、[IED設置]スキルによる協同攻撃を誘導します。
+        キャリーケースから香水を取り出して敵に投げつけ、単一対象に<dmg elem="physics" />ダメージを与え、命中の有無にかかわらず対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 有利な回避増加効果を解除</sec>します。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="3" r /></sec>が減少します。
+        <sec typ="cond">分隊に<char uid="BR_Vargr" />、<char uid="BR_Fafnir" />、<char uid="BR_Cheona" />、<char uid="BR_Janghwa" />がいる場合</sec>、100%の確率で<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> [ラグナロク] / [雷霆霹靂] / [短剣投擲] / [IED設置]協同攻撃</sec>を誘導します。
         協同攻撃が可能な戦闘員が複数いる場合、上記の順で優先権を持ちます。(バルグ > ジャンファの順)
         複数の敵が対象の場合、射程が届く敵を優先選択し、射程の都合で協同攻撃が不可能な場合は次の順番の戦闘員が協同攻撃を実行します。
       EN: |-
-        Takes perfume out of the carrier and throws it at the enemy, dealing <dmg elem="physics" /> damage to a single target and removing the target’s beneficial EVA increase effects regardless of whether it hits.
-        <sec typ="cond">On hit</sec>, the target’s ACU decreases for 2 rounds.
-        If <char uid="BR_Vargr" />, <char uid="BR_Fafnir" />, <char uid="BR_Cheona" />, and <char uid="BR_Janghwa" /> are in the squad, launches co-op attacks with [Ragnarok], [Thunderclap], [Throwing Dagger], and [IED Deployment] skills at 100% chance.
-        If multiple combatants can perform co-op attacks, priority follows the order shown above. (Vargr > Janghwa)
-        If multiple enemies are targeted, the enemy within range is chosen first, and if co-op attacks are impossible due to range, the combatant next in order will perform the co-op attack.
+        Takes perfume from the carrier and throws it at the enemy, dealing <dmg elem="physics" /> damage to a single target and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removing the target's beneficial EVA increase effect</sec> regardless of hit.
+        <sec typ="cond">On hit</sec>, for 2 rounds, the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="3" r /></sec> decreases.
+        <sec typ="cond">If <char uid="BR_Vargr" />, <char uid="BR_Fafnir" />, <char uid="BR_Cheona" />, and <char uid="BR_Janghwa" /> are in the squad</sec>, triggers <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> a [Ragnarok] / [Thunderclap] / [Throwing Dagger] / [IED Installation] co-op attack</sec> at 100% chance.
+        If multiple combatants can perform a co-op attack, priority follows the order above. (Vargr > Janghwa)
+        If multiple enemies are targeted, the enemy within range is selected first, and if a co-op attack is impossible due to range, the next combatant in order performs it.
       TC: |-
-        從攜帶箱中取出香水投擲向敵人，對單一目標造成<dmg elem="physics" />傷害，無論是否命中都會解除目標的有益迴避增加效果。
-        <sec typ="cond">命中時</sec>，目標2回合內命中下降。
-        若小隊中有<char uid="BR_Vargr" />、<char uid="BR_Fafnir" />、<char uid="BR_Cheona" />、<char uid="BR_Janghwa" />，則會以100%機率發動[拉格納洛克]、[雷霆霹靂]、[短劍投擲]、[IED設置]技能協力攻擊。
-        若可發動協力攻擊的戰鬥員有多名，則依上述順序優先。(巴爾格 > 長花)
-        若目標為多名敵人，會優先選擇射程可及的敵人；若因射程無法進行協力攻擊，則由下一順位的戰鬥員執行協力攻擊。
+        從攜帶箱中取出香水投向敵人，對單一目標造成<dmg elem="physics" />傷害，並且無論是否命中，都會<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的有益迴避增加效果</sec>。
+        <sec typ="cond">命中時</sec>，於2回合內使目標的<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="3" r /></sec>降低。
+        <sec typ="cond">若小隊內有<char uid="BR_Vargr" />、<char uid="BR_Fafnir" />、<char uid="BR_Cheona" />、<char uid="BR_Janghwa" /></sec>，則會以100%機率誘導<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> [拉格納洛克] / [雷霆霹靂] / [短劍投擲] / [IED設置]協同攻擊</sec>。
+        若可進行協同攻擊的戰鬥員有多名，則依上述順序取得優先權。（巴爾格 > 長花）
+        若目標為多名敵人，會優先選擇射程可及的敵人；若因射程無法進行協同攻擊，則由下一順位的戰鬥員執行。
   "2":
     key: "2"
     icon: SelfSpdBuff
@@ -3870,53 +3870,41 @@ skills:
             chance: 1
     desc:
       KR: |-
-        마리아 그레이스가 변장하여 연기를 선보인 후 스킬 사용 시 아군 공격기에게 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>을(를) 증가시키고 2라운드 동안 <sec typ="note">여제의 연기</sec> 효과를 부여합니다.
-        스킬 사용 시 스쿼드에 자신을 제외한 <엠프레시스 하운드> 전투원은 <sec typ="note">여제의 연기</sec> 효과를 2배로 받습니다.
-        스킬 사용 시 스쿼드에 <char uid="BR_Vargr" />가 있는 경우 바르그에게 2라운드 동안 <sec typ="note">여제의 친위대장</sec>을 부여합니다.
-        스킬 사용 시 스쿼드에 <char uid="BR_Cheona" />가 있는 경우 천아에게 2라운드 동안 <sec typ="note">여제의 암살자</sec>를 부여합니다.
-        스킬 사용 시 스쿼드에 <char uid="BR_Janghwa" />가 있는 경우 장화에게 2라운드 동안 <sec typ="note">여제의 테러리스트</sec>를 부여합니다.
-        스킬 사용 시 스쿼드에 <char uid="BR_Fafnir" />가 있는 경우 파프니르에게 <sec typ="note">여제의 배터리</sec>를 부여합니다.
-        ※ <sec typ="note">여제의 연기</sec> : 공격력 / 치명타 / 방어 관통 증가
-        ※ <sec typ="note">여제의 친위대장</sec> : 대 경장형 피해량 / 대 기동형 피해량 / 대 중장형 피해량 증가
-        ※ <sec typ="note">여제의 암살자</sec> : 스킬 위력 증가
+        마리아 그레이스가 변장하여 연기를 선보인 후 <sec typ="cond">스킬 사용 시</sec>, 아군 공격기에게 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>을(를) 증가시키고 2라운드 동안 <sec typ="note">여제의 연기</sec> 효과를 부여합니다.
+        <sec typ="cond">스킬 사용 시</sec>, 스쿼드에 자신을 제외한 <cmt t="엠프레시스 하운드">$$EmpressHound:?$</cmt> 전투원이 있을 경우 <sec typ="note">여제의 연기</sec> 효과를 2배로 받습니다.
+        <sec typ="cond">스킬 사용 시</sec>, <char uid="BR_Vargr" />에게 2라운드 동안 <sec typ="note">여제의 친위대장</sec>을, <char uid="BR_Cheona" />에게 2라운드 동안 <sec typ="note">여제의 암살자</sec>를, <char uid="BR_Janghwa" />에게 2라운드 동안 <sec typ="note">여제의 테러리스트</sec>를, <char uid="BR_Fafnir" />에게 <sec typ="note">여제의 배터리</sec>를 부여합니다.
+        ※ <sec typ="note">여제의 연기</sec> : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec> 증가
+        ※ <sec typ="note">여제의 친위대장</sec> : <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="9" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 기동형 피해량 <val idx="10" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="11" r /></sec> 증가
+        ※ <sec typ="note">여제의 암살자</sec> : <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="12" r /></sec> 증가
         ※ <sec typ="note">여제의 테러리스트</sec> : 광역 피해 집중 증가
-        ※ <sec typ="note">여제의 배터리</sec> : AP 증가
+        ※ <sec typ="note">여제의 배터리</sec> : <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="14" /></sec> 증가
       JP: |-
-        マリア・グレースが変装して演技を披露した後、スキル使用時に味方アタッカーの<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>を増加させ、2ラウンドの間<sec typ="note">女帝の演技</sec>効果を付与します。
-        スキル使用時、分隊内の自分を除く<エンプレスハウンド>戦闘員は<sec typ="note">女帝の演技</sec>効果を2倍で受けます。
-        スキル使用時、分隊に<char uid="BR_Vargr" />がいる場合、バルグに2ラウンドの間<sec typ="note">女帝の親衛隊長</sec>を付与します。
-        スキル使用時、分隊に<char uid="BR_Cheona" />がいる場合、チョナに2ラウンドの間<sec typ="note">女帝の暗殺者</sec>を付与します。
-        スキル使用時、分隊に<char uid="BR_Janghwa" />がいる場合、ジャンファに2ラウンドの間<sec typ="note">女帝のテロリスト</sec>を付与します。
-        スキル使用時、分隊に<char uid="BR_Fafnir" />がいる場合、ファフニールに<sec typ="note">女帝のバッテリー</sec>を付与します。
-        ※ <sec typ="note">女帝の演技</sec> : 攻撃力 / クリティカル率 / 防御貫通増加
-        ※ <sec typ="note">女帝の親衛隊長</sec> : 対軽装型ダメージ / 対機動型ダメージ / 対重装型ダメージ増加
-        ※ <sec typ="note">女帝の暗殺者</sec> : スキル威力増加
+        マリア・グレースが変装して演技を披露した後、<sec typ="cond">スキル使用時</sec>、味方攻撃機の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>を増加させ、2ラウンドの間<sec typ="note">女帝の演技</sec>効果を付与します。
+        <sec typ="cond">スキル使用時</sec>、自分を除く<cmt t="エンプレシスハウンド">$$EmpressHound:?$</cmt>戦闘員が分隊にいる場合、<sec typ="note">女帝の演技</sec>効果を2倍で受けます。
+        <sec typ="cond">スキル使用時</sec>、<char uid="BR_Vargr" />には2ラウンドの間<sec typ="note">女帝の親衛隊長</sec>を、<char uid="BR_Cheona" />には2ラウンドの間<sec typ="note">女帝の暗殺者</sec>を、<char uid="BR_Janghwa" />には2ラウンドの間<sec typ="note">女帝のテロリスト</sec>を、<char uid="BR_Fafnir" />には<sec typ="note">女帝のバッテリー</sec>を付与します。
+        ※ <sec typ="note">女帝の演技</sec> : <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec>増加
+        ※ <sec typ="note">女帝の親衛隊長</sec> : <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ <val idx="9" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 対機動型ダメージ <val idx="10" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="11" r /></sec>増加
+        ※ <sec typ="note">女帝の暗殺者</sec> : <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="12" r /></sec>増加
         ※ <sec typ="note">女帝のテロリスト</sec> : 広域ダメージ集中増加
-        ※ <sec typ="note">女帝のバッテリー</sec> : AP増加
+        ※ <sec typ="note">女帝のバッテリー</sec> : <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="14" /></sec>増加
       EN: |-
-        After Maria Grace disguises herself and puts on a performance, using the skill increases allied Attackers’ <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> and grants <sec typ="note">Empress’s Acting</sec> for 2 rounds.
-        When the skill is used, combatants in the squad with the <Empress Hound> tag other than self receive <sec typ="note">Empress’s Acting</sec> at double strength.
-        When the skill is used, if <char uid="BR_Vargr" /> is in the squad, grants Vargr <sec typ="note">Empress’s Captain of the Guard</sec> for 2 rounds.
-        When the skill is used, if <char uid="BR_Cheona" /> is in the squad, grants Cheona <sec typ="note">Empress’s Assassin</sec> for 2 rounds.
-        When the skill is used, if <char uid="BR_Janghwa" /> is in the squad, grants Janghwa <sec typ="note">Empress’s Terrorist</sec> for 2 rounds.
-        When the skill is used, if <char uid="BR_Fafnir" /> is in the squad, grants Fafnir <sec typ="note">Empress’s Battery</sec>.
-        ※ <sec typ="note">Empress’s Acting</sec>: increases ATK / CRIT / Defense Pierce
-        ※ <sec typ="note">Empress’s Captain of the Guard</sec>: increases Anti-Light Armor / Anti-Mobility / Anti-Heavy Armor damage
-        ※ <sec typ="note">Empress’s Assassin</sec>: increases skill power
-        ※ <sec typ="note">Empress’s Terrorist</sec>: increases wide-area damage focus
-        ※ <sec typ="note">Empress’s Battery</sec>: increases AP
+        After Maria Grace disguises herself and performs, <sec typ="cond">when using a skill</sec>, allied Attackers gain <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> and are given the <sec typ="note">Empress's Acting</sec> effect for 2 rounds.
+        <sec typ="cond">When using a skill</sec>, if there is an allied <cmt t="Empress Hounds">$$EmpressHound:?$</cmt> combatant other than self in the squad, that combatant receives the <sec typ="note">Empress's Acting</sec> effect at double strength.
+        <sec typ="cond">When using a skill</sec>, grants <char uid="BR_Vargr" /> <sec typ="note">Empress's Captain of the Guard</sec> for 2 rounds, <char uid="BR_Cheona" /> <sec typ="note">Empress's Assassin</sec> for 2 rounds, <char uid="BR_Janghwa" /> <sec typ="note">Empress's Terrorist</sec> for 2 rounds, and <char uid="BR_Fafnir" /> <sec typ="note">Empress's Battery</sec>.
+        ※ <sec typ="note">Empress's Acting</sec> : increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="7" r /></sec>
+        ※ <sec typ="note">Empress's Captain of the Guard</sec> : increases <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage against Light units <val idx="9" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> damage against Mobile units <val idx="10" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage against Heavy units <val idx="11" r /></sec>
+        ※ <sec typ="note">Empress's Assassin</sec> : increases <sec typ="dmg"><buff typ="SKILL_UP" /> skill power <val idx="12" r /></sec>
+        ※ <sec typ="note">Empress's Terrorist</sec> : increases wide-area damage focus
+        ※ <sec typ="note">Empress's Battery</sec> : increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="14" /></sec>
       TC: |-
-        瑪麗亞・葛雷斯偽裝後表演，在使用技能時提升我方攻擊機的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>，並賦予2回合的<sec typ="note">女皇的演技</sec>效果。
-        使用技能時，小隊內除自身外的<艾姆普雷西斯獵犬>戰鬥員會以2倍效果獲得<sec typ="note">女皇的演技</sec>。
-        使用技能時，若小隊內有<char uid="BR_Vargr" />，則賦予巴爾格持續2回合的<sec typ="note">女皇的親衛隊長</sec>。
-        使用技能時，若小隊內有<char uid="BR_Cheona" />，則賦予天雅持續2回合的<sec typ="note">女皇的暗殺者</sec>。
-        使用技能時，若小隊內有<char uid="BR_Janghwa" />，則賦予長花持續2回合的<sec typ="note">女皇的恐怖分子</sec>。
-        使用技能時，若小隊內有<char uid="BR_Fafnir" />，則賦予法芙妮爾<sec typ="note">女皇的電池</sec>。
-        ※ <sec typ="note">女皇的演技</sec>：攻擊力 / 暴擊 / 防禦貫穿增加
-        ※ <sec typ="note">女皇的親衛隊長</sec>：對輕裝型傷害 / 對機動型傷害 / 對重裝型傷害增加
-        ※ <sec typ="note">女皇的暗殺者</sec>：技能威力增加
+        瑪麗亞・葛雷斯偽裝演出後，<sec typ="cond">使用技能時</sec>，會使我方攻擊機的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>增加，並賦予2回合的<sec typ="note">女皇的演技</sec>效果。
+        <sec typ="cond">使用技能時</sec>，若小隊內存在除自身外的<cmt t="女皇獵犬">$$EmpressHound:?$</cmt>戰鬥員，則其獲得的<sec typ="note">女皇的演技</sec>效果會變為2倍。
+        <sec typ="cond">使用技能時</sec>，會賦予<char uid="BR_Vargr" /> 2回合的<sec typ="note">女皇的親衛隊長</sec>、<char uid="BR_Cheona" /> 2回合的<sec typ="note">女皇的暗殺者</sec>、<char uid="BR_Janghwa" /> 2回合的<sec typ="note">女皇的恐怖分子</sec>，以及賦予<char uid="BR_Fafnir" /> <sec typ="note">女皇的電池</sec>。
+        ※ <sec typ="note">女皇的演技</sec>：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="7" r /></sec>增加
+        ※ <sec typ="note">女皇的親衛隊長</sec>：<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害量 <val idx="9" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 對機動型傷害量 <val idx="10" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害量 <val idx="11" r /></sec>增加
+        ※ <sec typ="note">女皇的暗殺者</sec>：<sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="12" r /></sec>增加
         ※ <sec typ="note">女皇的恐怖分子</sec>：廣域傷害集中增加
-        ※ <sec typ="note">女皇的電池</sec>：AP增加
+        ※ <sec typ="note">女皇的電池</sec>：<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="14" /></sec>增加
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -4236,29 +4224,29 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">홀수 라운드인 경우</sec> 적 공격기에게 <sec typ="note">여제의 분노</sec>를 부여합니다.
-        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">짝수 라운드인 경우</sec> 아군 공격기에게 <sec typ="note">여제의 은혜</sec>를 부여합니다.
-        <sec typ="cond">라운드 개시 시</sec> 스쿼드에 자신을 제외한 <엠프레시스 하운드> 전투원이 1명 이상 있는 경우 자신의 AP를 증가시킵니다.
-        ※ <sec typ="note">여제의 분노</sec> : 받는 피해 증가, 효과 저항 감소
-        ※ <sec typ="note">여제의 은혜</sec> : 받는 피해 감소, 효과 저항 증가
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">홀수 라운드인 경우</sec>, 적 공격기에게 <sec typ="note">여제의 분노</sec>를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">짝수 라운드인 경우</sec>, 아군 공격기에게 <sec typ="note">여제의 은혜</sec>를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 스쿼드에 자신을 제외한 <cmt t="엠프레시스 하운드">$$EmpressHound:?$</cmt> 전투원이 1명 이상 있는 경우 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>이(가) 증가합니다.
+        ※ <sec typ="note">여제의 분노</sec> : <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec> 증가 / <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="1" r /></sec> 감소
+        ※ <sec typ="note">여제의 은혜</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="5" r inv /></sec> 감소 / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="6" r /></sec> 증가
       JP: |-
-        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">奇数ラウンドの場合</sec>、敵アタッカーに<sec typ="note">女帝の怒り</sec>を付与します。
-        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">偶数ラウンドの場合</sec>、味方アタッカーに<sec typ="note">女帝の恩恵</sec>を付与します。
-        <sec typ="cond">ラウンド開始時</sec>、分隊に自分を除く<エンプレスハウンド>戦闘員が1名以上いる場合、自分のAPを増加させます。
-        ※ <sec typ="note">女帝の怒り</sec> : 受けるダメージ増加、効果抵抗減少
-        ※ <sec typ="note">女帝の恩恵</sec> : 受けるダメージ減少、効果抵抗増加
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">奇数ラウンドの場合</sec>、敵攻撃機に<sec typ="note">女帝の怒り</sec>を付与します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">偶数ラウンドの場合</sec>、味方攻撃機に<sec typ="note">女帝の恩恵</sec>を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、自分を除く<cmt t="エンプレシスハウンド">$$EmpressHound:?$</cmt>戦闘員が分隊に1名以上いる場合、自分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>が増加します。
+        ※ <sec typ="note">女帝の怒り</sec> : <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="0" r /></sec>増加 / <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="1" r /></sec>減少
+        ※ <sec typ="note">女帝の恩恵</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="5" r inv /></sec>減少 / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="6" r /></sec>増加
       EN: |-
-        <sec typ="cond">At round start</sec>, if it is an odd-numbered round, grants enemy Attackers <sec typ="note">Empress’s Wrath</sec>.
-        <sec typ="cond">At round start</sec>, if it is an even-numbered round, grants allied Attackers <sec typ="note">Empress’s Grace</sec>.
-        <sec typ="cond">At round start</sec>, if there is at least one <Empress Hound> combatant in the squad other than self, increases self’s AP.
-        ※ <sec typ="note">Empress’s Wrath</sec>: increases received damage, decreases Effect Resistance
-        ※ <sec typ="note">Empress’s Grace</sec>: decreases received damage, increases Effect Resistance
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if it is an odd-numbered round</sec>, grants enemy Attackers <sec typ="note">Empress's Wrath</sec>.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if it is an even-numbered round</sec>, grants allied Attackers <sec typ="note">Empress's Grace</sec>.
+        <sec typ="cond">At the start of the round</sec>, if there is at least one <cmt t="Empress Hounds">$$EmpressHound:?$</cmt> combatant in the squad other than self, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec> increases.
+        ※ <sec typ="note">Empress's Wrath</sec> : increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> / decreases <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="1" r /></sec>
+        ※ <sec typ="note">Empress's Grace</sec> : decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="5" r inv /></sec> / increases <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="6" r /></sec>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，若為<sec typ="cond">奇數回合</sec>，會賦予敵方攻擊機<sec typ="note">女皇之怒</sec>。
-        <sec typ="cond">回合開始時</sec>，若為<sec typ="cond">偶數回合</sec>，會賦予我方攻擊機<sec typ="note">女皇之恩</sec>。
-        <sec typ="cond">回合開始時</sec>，若小隊內除自身外至少有1名<艾姆普雷西斯獵犬>戰鬥員，則會提升自身AP。
-        ※ <sec typ="note">女皇之怒</sec>：所受傷害增加、效果抵抗降低
-        ※ <sec typ="note">女皇之恩</sec>：所受傷害減少、效果抵抗增加
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若為奇數回合</sec>，則賦予敵方攻擊機<sec typ="note">女皇之怒</sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若為偶數回合</sec>，則賦予我方攻擊機<sec typ="note">女皇之恩</sec>。
+        <sec typ="cond">回合開始時</sec>，若小隊內至少有1名除自身外的<cmt t="女皇獵犬">$$EmpressHound:?$</cmt>戰鬥員，則自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>增加。
+        ※ <sec typ="note">女皇之怒</sec>：<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="0" r /></sec>增加 / <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抵抗 <val idx="1" r /></sec>降低
+        ※ <sec typ="note">女皇之恩</sec>：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="5" r inv /></sec>減少 / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="6" r /></sec>增加
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -4711,25 +4699,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시</sec> 아군 바이오로이드 공격기의 AP를 증가시킵니다.
-        <sec typ="cond">라운드 개시 시</sec> 아군 바이오로이드 공격기의 공격력 / 적중 / 스킬 위력 증가를 부여합니다.
-        <sec typ="cond">라운드 개시 시</sec> <엠프레시스 하운드> 전투원은 효과를 2배로 받습니다.
-        <sec typ="cond">스쿼드 내에 <char uid="BR_Vargr" />가 존재할 경우</sec>, 바르그에게 받는 피해 감소 / 피해 최소화를 부여합니다.
+        <sec typ="cond">전투 개시 시</sec>, 아군 바이오로이드 공격기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 아군 바이오로이드 공격기에게 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="7" r /></sec> 증가 효과를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <cmt t="엠프레시스 하운드">$$EmpressHound:?$</cmt> 전투원은 위 효과를 2배로 받습니다.
+        <sec typ="cond">스쿼드 내에 <char uid="BR_Vargr" />가 존재할 경우</sec>, <char uid="BR_Vargr" />에게 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="11" r inv /></sec> 감소 / <sec typ="buff">피해 최소화</sec>를 부여합니다.
       JP: |-
-        <sec typ="cond">戦闘開始時</sec>、味方バイオロイドのアタッカーのAPを増加させます。
-        <sec typ="cond">ラウンド開始時</sec>、味方バイオロイドのアタッカーに攻撃力 / 命中 / スキル威力増加を付与します。
-        <sec typ="cond">ラウンド開始時</sec>、<エンプレスハウンド>戦闘員は効果を2倍で受けます。
-        <sec typ="cond">分隊内に<char uid="BR_Vargr" />が存在する場合</sec>、バルグに受けるダメージ減少 / ダメージ最小化を付与します。
+        <sec typ="cond">戦闘開始時</sec>、味方バイオロイド攻撃機の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、味方バイオロイド攻撃機に<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="7" r /></sec>増加効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、<cmt t="エンプレシスハウンド">$$EmpressHound:?$</cmt>戦闘員は上記効果を2倍で受けます。
+        <sec typ="cond">分隊内に<char uid="BR_Vargr" />が存在する場合</sec>、<char uid="BR_Vargr" />に<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="11" r inv /></sec>減少 / <sec typ="buff">ダメージ最小化</sec>を付与します。
       EN: |-
-        At battle start, increases allied Bioroids' Attacker AP.
-        At round start, grants allied Bioroid Attackers increases to ATK / ACU / skill power.
-        At round start, <Empress Hound> combatants receive the effect at double strength.
-        <sec typ="cond">If <char uid="BR_Vargr" /> is in the squad</sec>, grants Vargr received damage decrease / Minimize Damage.
+        <sec typ="cond">At the start of combat</sec>, increases allied Bioroid Attackers' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>.
+        <sec typ="cond">At the start of the round</sec>, grants allied Bioroid Attackers <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="7" r /></sec> increase effects.
+        <sec typ="cond">At the start of the round</sec>, <cmt t="Empress Hounds">$$EmpressHound:?$</cmt> combatants receive the above effects at double strength.
+        <sec typ="cond">If <char uid="BR_Vargr" /> is in the squad</sec>, grants <char uid="BR_Vargr" /> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="11" r inv /></sec> decrease / <sec typ="buff">Minimize Damage</sec>.
       TC: |-
-        戰鬥開始時，提升我方生化人偶攻擊機的AP。
-        回合開始時，賦予我方生化人偶攻擊機攻擊力 / 命中 / 技能威力增加。
-        回合開始時，<艾姆普雷西斯獵犬>戰鬥員會以2倍效果獲得。
-        <sec typ="cond">若小隊內存在<char uid="BR_Vargr" /></sec>，則賦予巴爾格所受傷害減少 / 傷害最小化。
+        <sec typ="cond">戰鬥開始時</sec>，提升我方生化人偶攻擊機的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>。
+        <sec typ="cond">回合開始時</sec>，賦予我方生化人偶攻擊機<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="7" r /></sec>增加效果。
+        <sec typ="cond">回合開始時</sec>，<cmt t="女皇獵犬">$$EmpressHound:?$</cmt>戰鬥員會以2倍效果獲得上述效果。
+        <sec typ="cond">若小隊內存在<char uid="BR_Vargr" /></sec>，則賦予<char uid="BR_Vargr" /><sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="11" r inv /></sec>減少 / <sec typ="buff">傷害最小化</sec>。
   "5":
     key: "5"
     icon: P.EnemyDetect
@@ -5191,37 +5179,61 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시</sec> 2라운드 동안 적군 공격기의 행동력을 감소시킵니다.
-        <sec typ="cond">라운드 개시 시</sec> 적군의 스킬 위력을 감소 시킵니다.
-        <sec typ="cond">라운드 개시 시</sec> 스쿼드에 보호기가 없으면 적군의 스킬 위력을 감소 시킵니다.
-        <sec typ="cond">라운드 개시 시</sec> 스쿼드에 보호기가 없고 <char uid="BR_Fafnir" />, <char uid="BR_Janghwa" />, <char uid="BR_Cheona" />가 있는 경우 적군 분류에 따라 아래 효과를 부여합니다.
-        [불을 꺼라!] : <char uid="BR_Fafnir" />가 있는 경우 적군 보호기 전기 저항 감소
-        [폭파 해라!] : <char uid="BR_Janghwa" />가 있는 경우 적군 공격기 받는 피해 증가
-        [암살 해라!] : <char uid="BR_Cheona" />가 있는 경우 적군 공격기 스킬 위력 감소
+        <sec typ="cond">전투 개시 시</sec>, 2라운드 동안 적군 공격기의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec>을 감소시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 적군의 <sec typ="dmg"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="5" r /></sec>을 감소시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 보호기가 없을 경우</sec>, 적군의 <sec typ="dmg"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="6" r /></sec>이 추가로 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 보호기가 없고 <char uid="BR_Fafnir" />, <char uid="BR_Janghwa" />, <char uid="BR_Cheona" />가 있는 경우</sec>, 적군 분류에 따라 아래 효과를 부여합니다.
+        <box t="불을 꺼라!">
+        <sec typ="cond"><char uid="BR_Fafnir" />가 있는 경우</sec> : 적군 보호기의 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="7" r /></sec> 감소
+        </box>
+        <box t="폭파 해라!">
+        <sec typ="cond"><char uid="BR_Janghwa" />가 있는 경우</sec> : 적군 공격기의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="8" r /></sec> 증가
+        </box>
+        <box t="암살 해라!">
+        <sec typ="cond"><char uid="BR_Cheona" />가 있는 경우</sec> : 적군 공격기의 <sec typ="dmg"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="9" r /></sec> 감소
+        </box>
       JP: |-
-        <sec typ="cond">戦闘開始時</sec>、2ラウンドの間、敵アタッカーの行動力を減少させます。
-        <sec typ="cond">ラウンド開始時</sec>、敵のスキル威力を減少させます。
-        <sec typ="cond">ラウンド開始時</sec>、分隊にディフェンダーがいない場合は敵のスキル威力を減少させます。
-        <sec typ="cond">ラウンド開始時</sec>、分隊にディフェンダーがおらず、<char uid="BR_Fafnir" />、<char uid="BR_Janghwa" />、<char uid="BR_Cheona" />がいる場合、敵の分類に応じて以下の効果を付与します。
-        [火を消せ!] : <char uid="BR_Fafnir" />がいる場合、敵ディフェンダーの電気耐性を減少
-        [爆破しろ!] : <char uid="BR_Janghwa" />がいる場合、敵アタッカーの受けるダメージ増加
-        [暗殺しろ!] : <char uid="BR_Cheona" />がいる場合、敵アタッカーのスキル威力減少
+        <sec typ="cond">戦闘開始時</sec>、2ラウンドの間、敵攻撃機の<sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec>を減少させます。
+        <sec typ="cond">ラウンド開始時</sec>、敵軍の<sec typ="dmg"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="5" r /></sec>を減少させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">分隊に保護機がいない場合</sec>、敵軍の<sec typ="dmg"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="6" r /></sec>がさらに減少します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">分隊に保護機がおらず、<char uid="BR_Fafnir" />、<char uid="BR_Janghwa" />、<char uid="BR_Cheona" />がいる場合</sec>、敵の分類に応じて以下の効果を付与します。
+        <box t="火を消せ!">
+        <sec typ="cond"><char uid="BR_Fafnir" />がいる場合</sec> : 敵保護機の<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="7" r /></sec>減少
+        </box>
+        <box t="爆破しろ!">
+        <sec typ="cond"><char uid="BR_Janghwa" />がいる場合</sec> : 敵攻撃機の<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="8" r /></sec>増加
+        </box>
+        <box t="暗殺しろ!">
+        <sec typ="cond"><char uid="BR_Cheona" />がいる場合</sec> : 敵攻撃機の<sec typ="dmg"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="9" r /></sec>減少
+        </box>
       EN: |-
-        At battle start, decreases enemy Attackers' AP for 2 rounds.
-        At round start, decreases enemy skill power.
-        At round start, if there is no Defender in the squad, decreases enemy skill power.
-        At round start, if there is no Defender in the squad and <char uid="BR_Fafnir" />, <char uid="BR_Janghwa" />, and <char uid="BR_Cheona" /> are present, grants the following effects according to enemy type.
-        [Put Out the Fire!] : If <char uid="BR_Fafnir" /> is present, decreases enemy Defenders' Electric Resistance
-        [Blow Them Up!] : If <char uid="BR_Janghwa" /> is present, increases enemy Attackers' received damage
-        [Assassinate Them!] : If <char uid="BR_Cheona" /> is present, decreases enemy Attackers' skill power
+        <sec typ="cond">At the start of combat</sec>, for 2 rounds, decreases enemy Attackers' <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="0" r /></sec>.
+        <sec typ="cond">At the start of the round</sec>, decreases enemy <sec typ="dmg"><buff typ="SKILL_DOWN" /> skill power <val idx="5" r /></sec>.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if there is no Defender in the squad</sec>, enemy <sec typ="dmg"><buff typ="SKILL_DOWN" /> skill power <val idx="6" r /></sec> decreases further.
+        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if there is no Defender in the squad and <char uid="BR_Fafnir" />, <char uid="BR_Janghwa" />, and <char uid="BR_Cheona" /> are present</sec>, applies the following effects by enemy type.
+        <box t="Put Out the Fire!">
+        <sec typ="cond">If <char uid="BR_Fafnir" /> is present</sec> : enemy Defenders' <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance <val idx="7" r /></sec> decreases
+        </box>
+        <box t="Blow Them Up!">
+        <sec typ="cond">If <char uid="BR_Janghwa" /> is present</sec> : enemy Attackers' <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="8" r /></sec> increases
+        </box>
+        <box t="Assassinate Them!">
+        <sec typ="cond">If <char uid="BR_Cheona" /> is present</sec> : enemy Attackers' <sec typ="dmg"><buff typ="SKILL_DOWN" /> skill power <val idx="9" r /></sec> decreases
+        </box>
       TC: |-
-        戰鬥開始時，於2回合內降低敵方攻擊機的行動力。
-        回合開始時，降低敵方的技能威力。
-        回合開始時，若小隊內沒有保護機，則降低敵方的技能威力。
-        回合開始時，若小隊內沒有保護機且有<char uid="BR_Fafnir" />、<char uid="BR_Janghwa" />、<char uid="BR_Cheona" />，則依敵方分類套用以下效果。
-        [把火滅了！]：若有<char uid="BR_Fafnir" />，則降低敵方保護機電擊抵抗
-        [炸掉它！]：若有<char uid="BR_Janghwa" />，則增加敵方攻擊機所受傷害
-        [刺殺它！]：若有<char uid="BR_Cheona" />，則降低敵方攻擊機技能威力
+        <sec typ="cond">戰鬥開始時</sec>，於2回合內降低敵方攻擊機的<sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，降低敵方的<sec typ="dmg"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="5" r /></sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若小隊內沒有保護機</sec>，則敵方的<sec typ="dmg"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="6" r /></sec>會進一步降低。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若小隊內沒有保護機且有<char uid="BR_Fafnir" />、<char uid="BR_Janghwa" />、<char uid="BR_Cheona" /></sec>，則會依敵方分類套用以下效果。
+        <box t="把火滅了！">
+        <sec typ="cond">若有<char uid="BR_Fafnir" /></sec>：敵方保護機的<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抵抗 <val idx="7" r /></sec>降低
+        </box>
+        <box t="炸掉它！">
+        <sec typ="cond">若有<char uid="BR_Janghwa" /></sec>：敵方攻擊機的<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="8" r /></sec>增加
+        </box>
+        <box t="刺殺它！">
+        <sec typ="cond">若有<char uid="BR_Cheona" /></sec>：敵方攻擊機的<sec typ="dmg"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="9" r /></sec>降低
+        </box>
 dialogue:
   KR:
     "1":

@@ -3158,16 +3158,16 @@ skills:
     desc:
       KR: |-
         지정 범위에 <dmg elem="ice" />를 주고, 2라운드 동안 적중 대상의 <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="1" r /></sec>를 감소시킵니다.
-        대상이 <침수> 상태일 경우, 이동 불가 상태로 만들고 받는 피해가 증가하는 <빙결> 상태를 2라운드 동안 부여합니다.
+        <sec typ="cond">대상이 침수 상태일 경우</sec>, 이동 불가 상태로 만들고 받는 피해가 증가하는 빙결 상태를 2라운드 동안 부여합니다.
       JP: |-
         指定範囲に<dmg elem="ice" />を与え、2ラウンドの間、命中対象の<sec typ="buff"><buff typ="ICERES_DOWN" />冷気耐性<val idx="0" r /></sec>と<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="1" r /></sec>を減少させます。
-        対象が<浸水>状態の場合、移動不可状態にし、受けるダメージが増加する<氷結>状態を2ラウンドの間付与します。
+        <sec typ="cond">対象が浸水状態の場合</sec>、移動不可状態にし、受けるダメージが増加する氷結状態を2ラウンドの間付与します。
       EN: |-
         Deals <dmg elem="ice" /> damage to the designated area and decreases the hit targets' <sec typ="buff"><buff typ="ICERES_DOWN" /> Cold Resistance <val idx="0" r /></sec> and <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="1" r /></sec> for 2 rounds.
-        If the target is <Submerged>, they are made Immobile and are inflicted with <Freeze> for 2 rounds, which increases received damage.
+        <sec typ="cond">If the target is Submerged</sec>, they are made Immobile and are inflicted with Freeze for 2 rounds, which increases received damage.
       TC: |-
         對指定範圍造成<dmg elem="ice" />，並於2回合內降低命中目標的<sec typ="buff"><buff typ="ICERES_DOWN" />冰冷抗性<val idx="0" r /></sec>與<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="1" r /></sec>。
-        若目標處於<浸水>狀態，則使其無法移動，並賦予會提升所受傷害的<冰凍>狀態，持續2回合。
+        <sec typ="cond">若目標處於浸水狀態</sec>，則使其無法移動，並賦予會提升所受傷害的冰凍狀態，持續2回合。
   "2":
     key: "2"
     icon: SuicideBomb
@@ -6418,19 +6418,19 @@ skills:
       KR: |-
         단일 대상에게 <dmg elem="ice" />를 줍니다.
         치명타 시, 피해량이 증가합니다.
-        대상이 <침수> 상태일 경우, 행동 불가 상태로 만들고 받는 피해가 증가하는 <빙결> 상태를 2라운드 동안 부여합니다.
+        <sec typ="cond">대상이 침수 상태일 경우</sec>, 행동 불가 상태로 만들고 받는 피해가 증가하는 빙결 상태를 2라운드 동안 부여합니다.
       JP: |-
         単一対象に<dmg elem="ice" />を与えます。
         クリティカル時、ダメージ量が増加します。
-        対象が<浸水>状態の場合、行動不可状態にし、受けるダメージが増加する<氷結>状態を2ラウンドの間付与します。
+        <sec typ="cond">対象が浸水状態の場合</sec>、行動不可状態にし、受けるダメージが増加する氷結状態を2ラウンドの間付与します。
       EN: |-
         Deals <dmg elem="ice" /> damage to a single target.
         Damage increases on critical hit.
-        If the target is <Submerged>, they become Action Disabled and are inflicted with <Freeze> for 2 rounds, which increases received damage.
+        <sec typ="cond">If the target is Submerged</sec>, they become Action Disabled and are inflicted with Freeze for 2 rounds, which increases received damage.
       TC: |-
         對單一目標造成<dmg elem="ice" />。
         暴擊時，傷害量增加。
-        若目標處於<浸水>狀態，則使其進入無法行動狀態，並賦予會提升所受傷害的<冰凍>狀態，持續2回合。
+        <sec typ="cond">若目標處於浸水狀態</sec>，則使其進入無法行動狀態，並賦予會提升所受傷害的冰凍狀態，持續2回合。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -7345,23 +7345,23 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 증가합니다.
         <sec typ="cond">라운드 개시 시 <sec typ="note">의태</sec>에 의한 피해 최소화를 보유한 경우</sec>, 자신은 보호 무시 효과가 활성화됩니다.
-        <sec typ="cond"><sec typ="note">펭귄 서프라이즈!</sec> 적중 대상이 <침수> 상태인 경우</sec>, 대상의 강화 효과를 해제합니다.
-        <sec typ="cond">라운드 개시 시</sec>, <빙결> 상태의 적의 냉기 저항을 감소시킵니다.
+        <sec typ="cond"><sec typ="note">펭귄 서프라이즈!</sec> 적중 대상이 침수 상태인 경우</sec>, 대상의 강화 효과를 해제합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 빙결 상태의 적의 냉기 저항을 감소시킵니다.
       JP: |-
         <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>が増加します。
         <sec typ="cond"><sec typ="note">擬態</sec>によるダメージ最小化を保有している場合、ラウンド開始時</sec>、自分は保護無視効果が有効になります。
-        <sec typ="cond"><sec typ="note">ペンギンサプライズ!</sec>の命中対象が<浸水>状態の場合</sec>、対象の強化効果を解除します。
-        <sec typ="cond">ラウンド開始時</sec>、<氷結>状態の敵の冷気耐性を減少させます。
+        <sec typ="cond"><sec typ="note">ペンギンサプライズ!</sec>の命中対象が浸水状態の場合</sec>、対象の強化効果を解除します。
+        <sec typ="cond">ラウンド開始時</sec>、氷結状態の敵の冷気耐性を減少させます。
       EN: |-
         <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="0" r /></sec> increases.
         <sec typ="cond">If self has Minimize Damage from <sec typ="note">Mimic</sec> at round start</sec>, Ignore Protection is activated.
-        <sec typ="cond">If the hit target of <sec typ="note">Penguin Surprise!</sec> is <Submerged></sec>, removes the target's upgrade effects.
-        <sec typ="cond">At the start of the round</sec>, decreases the Cold Resistance of <Frozen> enemies.
+        <sec typ="cond">If the hit target of <sec typ="note">Penguin Surprise!</sec> is Submerged</sec>, removes the target's upgrade effects.
+        <sec typ="cond">At the start of the round</sec>, decreases the Cold Resistance of enemies in Freeze status.
       TC: |-
         <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>增加。
         <sec typ="cond">若在回合開始時因<sec typ="note">擬態</sec>而持有傷害最小化</sec>，則啟用無視保護效果。
-        <sec typ="cond">若<sec typ="note">企鵝驚喜！</sec>命中的目標處於<浸水>狀態</sec>，則解除目標的強化效果。
-        <sec typ="cond">回合開始時</sec>，降低<冰凍>狀態敵人的冰冷抗性。
+        <sec typ="cond">若<sec typ="note">企鵝驚喜！</sec>命中的目標處於浸水狀態</sec>，則解除目標的強化效果。
+        <sec typ="cond">回合開始時</sec>，降低冰凍狀態敵人的冰冷抗性。
 dialogue:
   KR:
     "1":

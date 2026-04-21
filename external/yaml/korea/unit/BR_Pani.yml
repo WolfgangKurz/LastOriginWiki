@@ -3828,19 +3828,19 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">자신이 중열/후열에 위치</sec>한 경우 포격 대열을 전개해 중열/후열에 위치한 중장형 공격기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
-        <sec typ="cond">대상이 자신과 같은 열에 위치</sec>한 경우, 상기 조건에 의한 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>이(가) 추가로 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">자신이 중열에 위치한 경우</sec> / <sec typ="cond">후열에 위치한 경우</sec> 포격 대열을 전개해 중열/후열에 위치한 중장형 공격기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">대상이 자신과 같은 열에 위치한 경우</sec>, 상기 조건에 의한 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>이(가) 추가로 증가합니다.
         <sec typ="cond">자신이 적 공격 시</sec>, 중열/후열에 위치한 중장형 공격기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>을(를) 증가시킵니다.
       JP: |-
-        <sec typ="cond">戦闘開始時</sec><sec typ="cond">自分が中列/後列に位置している場合</sec>、砲撃隊列を展開して中列/後列に位置する重装型攻撃機の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="cond">自分が中列に位置している場合</sec> / <sec typ="cond">後列に位置している場合</sec>、砲撃隊列を展開して中列/後列に位置する重装型攻撃機の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
         <sec typ="cond">対象が自分と同じ列に位置する場合</sec>、上記条件による<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>がさらに増加します。
         <sec typ="cond">自分が敵を攻撃する時</sec>、中列/後列に位置する重装型攻撃機の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>を増加させます。
       EN: |-
-        <sec typ="cond">At combat start</sec>, <sec typ="cond">if self is in the middle/rear line</sec>, deploys Bombardment Line and increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of heavy-armor attackers in the middle/rear line.
+        <sec typ="cond">At combat start</sec>, <sec typ="cond">if self is in the middle line</sec> / <sec typ="cond">if self is in the rear line</sec>, deploys Bombardment Line and increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of heavy-armor attackers in the middle/rear line.
         <sec typ="cond">If the target is in the same line as self</sec>, the above-condition AP increase is further increased by <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>.
         <sec typ="cond">When self attacks an enemy</sec>, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> of heavy-armor attackers in the middle/rear line.
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，<sec typ="cond">若自身位於中排/後排</sec>，則展開砲擊隊列並增加位於中排/後排的重裝型攻擊器的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>。
+        <sec typ="cond">戰鬥開始時</sec>，<sec typ="cond">若自身位於中排</sec> / <sec typ="cond">若自身位於後排</sec>，則展開砲擊隊列並增加位於中排/後排的重裝型攻擊器的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>。
         <sec typ="cond">若目標與自身位於同一列</sec>，則上述條件所致的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>會進一步增加。
         <sec typ="cond">當自身攻擊敵軍時</sec>，會增加位於中排/後排的重裝型攻擊器的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>。
   "4":
@@ -4950,7 +4950,7 @@ skills:
         <sec typ="cond">전투 개시 시</sec>, 스쿼드 내 중장형 전투원 수에 따라 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec>씩 영구 증가합니다.
         <sec typ="cond">전투 개시 시</sec>, 스쿼드 내 공격기 전투원 수에 따라 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="8" r /></sec>씩 영구 증가합니다.
         <sec typ="cond">라운드 개시 시</sec>, <cmt t="AA 캐노니어 소속 지원기">$$AACannonier_Supporter:0$</cmt>를 공격 지원합니다.
-        <sec typ="note">포격 대열</sec> 효과 중 공격 시 증가하는 AP의 50%만큼 <sec typ="cond">자신이 지원/협동 공격 시</sec>에도 대상의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="3" /></sec>이(가) 증가합니다.
+        <sec typ="note">포격 대열</sec> 효과 중 공격 시 증가하는 AP의 50%만큼 <sec typ="cond">자신이 지원 공격 시</sec> / <sec typ="cond">자신이 협동 공격 시</sec>에도 대상의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="3" /></sec>이(가) 증가합니다.
       JP: |-
         <sec typ="cond">戦闘開始時</sec>、分隊内の重装型戦闘員数に応じて、自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec>が永続的に増加します。
         <sec typ="cond">戦闘開始時</sec>、分隊内の攻撃機戦闘員数に応じて、自分の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="8" r /></sec>が永続的に増加します。
