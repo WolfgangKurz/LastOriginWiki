@@ -2940,10 +2940,22 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: 전투 개시 시, 스쿼드 내 자신을 제외한 아군 바이오로이드 1기당 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가 시키고 라운드 개시 시, <sec typ="note">회심의 디저트</sec> 효과가 적용 중인 아군에게 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="10" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 효과 해제 저항 <val idx="11" r /></sec>를 부여하고 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시를 활성화</sec> 시킵니다. <sec typ="note">밑준비</sec> 효과가 적용 중인 적군의 강화 효과를 해제하고 강화 불가 상태를 부여합니다. (일반 효과)
-      JP: 戦闘開始時、分隊内に自分を除く味方バイオロイド1機ごとに自分の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>を増加させ、ラウンド開始時、<sec typ="note">会心のデザート</sec>効果が適用中の味方に<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="10" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化効果解除耐性<val idx="11" r /></sec>を付与し、<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視を有効化</sec>します。<sec typ="note">下準備</sec>効果が適用中の敵の強化効果を解除し、強化不可状態を付与します。(一般効果)
-      EN: At the start of combat, increases self’s <sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec> for every 1 ally Bioroid in the squad aside from self. At the start of the round, grants allies affected by <sec typ="note">Critical Dessert</sec> <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />Effect Resistance<val idx="10" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />Remove Upgrade Resistance<val idx="11" r /></sec> and activates <sec typ="buff"><buff typ="Guardpierce_Apply" />Ignore Protection</sec>. Removes upgrade effects of enemies affected by <sec typ="note">Pre-Prepare</sec> and inflicts Disable Upgrade (normal effect).
-      TC: 戰鬥開始時，依照小隊內除自身以外每1個我軍生化人，增加自身的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>。回合開始時，對處於<sec typ="note">會心甜點</sec>效果中的我軍賦予<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="10" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化效果解除抵抗<val idx="11" r /></sec>，並<sec typ="buff"><buff typ="Guardpierce_Apply" />啟用無視保護</sec>。解除處於<sec typ="note">準備工作</sec>效果中的敵軍強化效果，並施加無法強化狀態。（普通效果）
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 스쿼드 내 자신을 제외한 아군 바이오로이드 1기당 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가 시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><sec typ="note">회심의 디저트</sec> 효과가 적용 중인 아군에게</sec> <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="10" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 효과 해제 저항 <val idx="11" r /></sec>를 부여하고 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시를 활성화</sec> 시킵니다.
+        <sec typ="cond"><sec typ="note">밑준비</sec> 효과가 적용 중인 적군에게</sec> 강화 효과를 해제하고 강화 불가 상태를 부여합니다. (일반 효과)
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、分隊内に自分を除く味方バイオロイド1機ごとに自分の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond"><sec typ="note">会心のデザート</sec>効果が適用中の味方に</sec><sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="10" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化効果解除耐性<val idx="11" r /></sec>を付与し、<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視を有効化</sec>します。
+        <sec typ="cond"><sec typ="note">下準備</sec>効果が適用中の敵に</sec>強化効果を解除し、強化不可状態を付与します。(一般効果)
+      EN: |-
+        <sec typ="cond">At the start of combat</sec>, increases self’s <sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec> for every ally Bioroid in the squad aside from self.
+        <sec typ="cond">At the start of the round</sec>, grants <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />Effect Resistance<val idx="10" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />Remove Upgrade Resistance<val idx="11" r /></sec> to <sec typ="cond">allies affected by <sec typ="note">Critical Dessert</sec></sec> and activates <sec typ="buff"><buff typ="Guardpierce_Apply" />Ignore Protection</sec>.
+        Removes buffs and inflicts Disable Upgrade on <sec typ="cond">enemies affected by <sec typ="note">Pre-Prepare</sec></sec>. (Normal effect)
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，依照小隊內除自身以外每1個我軍生化人，增加自身的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>。
+        <sec typ="cond">回合開始時</sec>，對<sec typ="cond"><sec typ="note">會心甜點</sec>效果中的我軍</sec>賦予<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="10" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化效果解除抵抗<val idx="11" r /></sec>，並<sec typ="buff"><buff typ="Guardpierce_Apply" />啟用無視保護</sec>。
+        對<sec typ="cond"><sec typ="note">準備工作</sec>效果中的敵軍</sec>解除強化效果，並施加無法強化狀態。（普通效果）
 dialogue:
   KR:
     "1":

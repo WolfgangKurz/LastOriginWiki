@@ -1604,10 +1604,10 @@ skills:
             per: 0.05
             chance: 1
     desc:
-      KR: 적에게 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> <dmg elem="physics" />를 주고, <sec typ="note">과흥분</sec> 상태일 시 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
-      JP: 敵に<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / ダメージ減少無視</sec> <dmg elem="physics" />を与え、<sec typ="note">過興奮</sec>状態の場合は<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="2" r /></sec>が増加します。
-      EN: Deals <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> <dmg elem="physics" /> to enemies, and if in <sec typ="note">Overexcited</sec> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
-      TC: 對敵人造成<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減少</sec> <dmg elem="physics" />，若處於<sec typ="note">過興奮</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="2" r /></sec>增加。
+      KR: 적에게 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> <dmg elem="physics" />를 주고, <sec typ="cond"><sec typ="note">과흥분</sec> 상태일 시</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      JP: 敵に<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / ダメージ減少無視</sec> <dmg elem="physics" />を与え、<sec typ="cond"><sec typ="note">過興奮</sec>状態の場合</sec>は<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="2" r /></sec>が増加します。
+      EN: Deals <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> <dmg elem="physics" /> to enemies, and <sec typ="cond">if in <sec typ="note">Overexcited</sec> state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+      TC: 對敵人造成<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減少</sec> <dmg elem="physics" />，<sec typ="cond">若處於<sec typ="note">過興奮</sec>狀態</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -3268,16 +3268,16 @@ skills:
     desc:
       KR: |-
         지정 범위 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="3" r /></sec>를 감소시킵니다.
-        <sec typ="note">과흥분</sec> 상태일 시 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="cond"><sec typ="note">과흥분</sec> 상태일 시</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
       JP: |-
         指定範囲の敵に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与え、<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="3" r /></sec>を減少させます。
-        <sec typ="note">過興奮</sec>状態の場合は<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="4" r /></sec>が増加します。
+        <sec typ="cond"><sec typ="note">過興奮</sec>状態の場合</sec>は<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="4" r /></sec>が増加します。
       EN: |-
         Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to enemies in the designated area and decreases <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACC <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="3" r /></sec>.
-        If in <sec typ="note">Overexcited</sec> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec> increases.
+        <sec typ="cond">If in <sec typ="note">Overexcited</sec> state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec> increases.
       TC: |-
         對指定範圍敵人造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />，並降低<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="3" r /></sec>。
-        若處於<sec typ="note">過興奮</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="4" r /></sec>增加。
+        <sec typ="cond">若處於<sec typ="note">過興奮</sec>狀態</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="4" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3860,19 +3860,19 @@ skills:
       KR: |-
         <sec typ="cond">라운드 시작 시</sec> <sec typ="note">과흥분</sec> 상태가 됩니다.
         피격 시 <sec typ="note">과흥분</sec> 상태가 해제되고, 2회 공격 후 라운드 시작 시 <sec typ="note">과흥분</sec> 상태가 재활성화 됩니다.
-        자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec>가 증가하며 <sec typ="note">과흥분</sec> 상태일 시 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="9" r /></sec>가 추가로 증가합니다.
+        자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec>가 증가하며 <sec typ="cond"><sec typ="note">과흥분</sec> 상태일 시</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="9" r /></sec>가 추가로 증가합니다.
       JP: |-
         <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">過興奮</sec>状態になります。
         被弾時に<sec typ="note">過興奮</sec>状態が解除され、2回攻撃後のラウンド開始時に<sec typ="note">過興奮</sec>状態が再活性化されます。
-        自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" r /></sec>が増加し、<sec typ="note">過興奮</sec>状態の時は<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="9" r /></sec>がさらに増加します。
+        自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" r /></sec>が増加し、<sec typ="cond"><sec typ="note">過興奮</sec>状態の時</sec>は<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="9" r /></sec>がさらに増加します。
       EN: |-
         <sec typ="cond">At the start of the round</sec>, enters <sec typ="note">Overexcited</sec> state.
         When hit, <sec typ="note">Overexcited</sec> state is removed, and after 2 attacks, it reactivates at the start of the round.
-        Increases self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="8" r /></sec>, and if in <sec typ="note">Overexcited</sec> state, additionally increases <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="9" r /></sec>.
+        Increases self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="8" r /></sec>, and <sec typ="cond">if in <sec typ="note">Overexcited</sec> state</sec>, additionally increases <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="9" r /></sec>.
       TC: |-
         <sec typ="cond">回合開始時</sec>進入<sec typ="note">過興奮</sec>狀態。
         被擊時，<sec typ="note">過興奮</sec>狀態會解除，且在攻擊2次後的回合開始時重新啟用<sec typ="note">過興奮</sec>狀態。
-        增加自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" r /></sec>，若處於<sec typ="note">過興奮</sec>狀態，則另外增加<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="9" r /></sec>。
+        增加自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" r /></sec>，<sec typ="cond">若處於<sec typ="note">過興奮</sec>狀態</sec>，則另外增加<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="9" r /></sec>。
   "4":
     key: "4"
     icon: P.SelfSpdBuff

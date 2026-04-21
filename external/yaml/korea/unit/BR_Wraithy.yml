@@ -6553,20 +6553,20 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 적 전체의 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="2" r /></sec>를 감소시킵니다.
-        <sec typ="note">침수</sec> 상태인 적에게는 <sec typ="chance">효과 저항을 무시하고 적용</sec>되며, 추가로 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 효과를 부여합니다.
-        <sec typ="cond">공격 적중 시</sec>, 전류가 <sec typ="note">침수</sec> 상태인 모든 적에게 퍼져 나가 <sec typ="dmg"><buff typ="LightningATK_UP" /> 자신의 공격력 <val idx="9" r signless />만큼 고정 전기 피해</sec>를 가합니다.
+        <sec typ="cond"><sec typ="note">침수</sec> 상태인 적에게는</sec> <sec typ="chance">효과 저항을 무시하고 적용</sec>되며, 추가로 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 효과를 부여합니다.
+        <sec typ="cond">공격 적중 시</sec>, 전류가 <sec typ="cond"><sec typ="note">침수</sec> 상태인 모든 적에게</sec> 퍼져 나가 <sec typ="dmg"><buff typ="LightningATK_UP" /> 자신의 공격력 <val idx="9" r signless />만큼 고정 전기 피해</sec>를 가합니다.
       JP: |-
         <sec typ="cond">ラウンド開始時</sec>、敵全体の<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性<val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="2" r /></sec>を減少させます。
-        <sec typ="note">浸水</sec>状態の敵には<sec typ="chance">効果抵抗を無視して適用</sec>され、追加で<sec typ="buff"><buff typ="SNARE" />移動不可</sec>効果を付与します。
-        <sec typ="cond">攻撃命中時</sec>、電流が<sec typ="note">浸水</sec>状態の全ての敵に広がり、<sec typ="dmg"><buff typ="LightningATK_UP" />自分の攻撃力<val idx="9" r signless />分の固定電気ダメージ</sec>を与えます。
+        <sec typ="cond"><sec typ="note">浸水</sec>状態の敵には</sec><sec typ="chance">効果抵抗を無視して適用</sec>され、追加で<sec typ="buff"><buff typ="SNARE" />移動不可</sec>効果を付与します。
+        <sec typ="cond">攻撃命中時</sec>、電流が<sec typ="cond"><sec typ="note">浸水</sec>状態の全ての敵に</sec>広がり、<sec typ="dmg"><buff typ="LightningATK_UP" />自分の攻撃力<val idx="9" r signless />分の固定電気ダメージ</sec>を与えます。
       EN: |-
         <sec typ="cond">At round start</sec>, decreases all enemies' <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="2" r /></sec>.
-        For enemies in <sec typ="note">Flooded</sec> state, <sec typ="chance">applies while ignoring Effect Resistance</sec>, and additionally inflicts <sec typ="buff"><buff typ="SNARE" /> Immobilize</sec>.
-        <sec typ="cond">On attack hit</sec>, currents spread to all enemies in <sec typ="note">Flooded</sec> state, dealing <sec typ="dmg"><buff typ="LightningATK_UP" /> fixed electric damage equal to self's Attack <val idx="9" r signless /></sec>.
+        <sec typ="cond">For enemies in <sec typ="note">Flooded</sec> state</sec>, <sec typ="chance">applies while ignoring Effect Resistance</sec>, and additionally inflicts <sec typ="buff"><buff typ="SNARE" /> Immobilize</sec>.
+        <sec typ="cond">On attack hit</sec>, currents spread <sec typ="cond">to all enemies in <sec typ="note">Flooded</sec> state</sec>, dealing <sec typ="dmg"><buff typ="LightningATK_UP" /> fixed electric damage equal to self's Attack <val idx="9" r signless /></sec>.
       TC: |-
         <sec typ="cond">於回合開始時</sec>，減少敵全體的<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電擊抗性<val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="2" r /></sec>。
-        對<sec typ="note">浸水</sec>狀態的敵人會以<sec typ="chance">無視效果抗性而套用</sec>，並額外施加<sec typ="buff"><buff typ="SNARE" />無法移動</sec>效果。
-        <sec typ="cond">攻擊命中時</sec>，電流會擴散到所有處於<sec typ="note">浸水</sec>狀態的敵人，造成<sec typ="dmg"><buff typ="LightningATK_UP" />等同自身攻擊力<val idx="9" r signless />的固定電擊傷害</sec>。
+        <sec typ="cond">對<sec typ="note">浸水</sec>狀態的敵人</sec>會以<sec typ="chance">無視效果抗性而套用</sec>，並額外施加<sec typ="buff"><buff typ="SNARE" />無法移動</sec>效果。
+        <sec typ="cond">攻擊命中時</sec>，電流會擴散<sec typ="cond">到所有處於<sec typ="note">浸水</sec>狀態的敵人</sec>，造成<sec typ="dmg"><buff typ="LightningATK_UP" />等同自身攻擊力<val idx="9" r signless />的固定電擊傷害</sec>。
 dialogue:
   KR:
     "1":

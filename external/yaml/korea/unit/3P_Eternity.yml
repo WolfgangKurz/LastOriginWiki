@@ -2868,16 +2868,16 @@ skills:
     desc:
       KR: |-
         대상에게 <dmg elem="physics" />를 주고, 3라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다.
-        <sec typ="note">헌신</sec> 상태일 경우, 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="4" r /></sec>를 증가시키고 <sec typ="note">분노</sec> 상태일 경우, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>하고 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="6" r /></sec>를 대폭 감소시킵니다.
+        <sec typ="cond"><sec typ="note">헌신</sec> 상태일 경우</sec>, 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="4" r /></sec>를 증가시키고 <sec typ="cond"><sec typ="note">분노</sec> 상태일 경우</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>하고 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="6" r /></sec>를 대폭 감소시킵니다.
       JP: |-
         対象に<dmg elem="physics" />を与え、3ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を減少させます。
-        <sec typ="note">献身</sec>状態の場合、自分の<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="4" r /></sec>を増加させ、<sec typ="note">怒り</sec>状態の場合、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ減少効果を解除</sec>し、<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="6" r /></sec>を大幅に減少させます。
+        <sec typ="cond"><sec typ="note">献身</sec>状態の場合</sec>、自分の<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="4" r /></sec>を増加させ、<sec typ="cond"><sec typ="note">怒り</sec>状態の場合</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ減少効果を解除</sec>し、<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="6" r /></sec>を大幅に減少させます。
       EN: |-
         Deals <dmg elem="physics" /> to the target and decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> for 3 rounds.
-        If in <sec typ="note">Devotion</sec> state, increases self's <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="4" r /></sec>; if in <sec typ="note">Rage</sec> state, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> received damage reduction effect</sec> and greatly decreases <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="6" r /></sec>.
+        <sec typ="cond">If in <sec typ="note">Devotion</sec> state</sec>, increases self's <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="4" r /></sec>; <sec typ="cond">if in <sec typ="note">Rage</sec> state</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> received damage reduction effect</sec> and greatly decreases <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="6" r /></sec>.
       TC: |-
         對目標造成<dmg elem="physics" />，並在3回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>。
-        若處於<sec typ="note">奉獻</sec>狀態，則增加自身的<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="4" r /></sec>；若處於<sec typ="note">憤怒</sec>狀態，則解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 所受傷害減少效果</sec>，並大幅降低<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="6" r /></sec>。
+        <sec typ="cond">若處於<sec typ="note">奉獻</sec>狀態</sec>，則增加自身的<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="4" r /></sec>；<sec typ="cond">若處於<sec typ="note">憤怒</sec>狀態</sec>，則解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 所受傷害減少效果</sec>，並大幅降低<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="6" r /></sec>。
   "2":
     key: "2"
     icon: MGShot
@@ -3440,10 +3440,10 @@ skills:
             per: 0.06
             chance: 1
     desc:
-      KR: 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, <sec typ="note">분노</sec> 상태일 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: 指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与え、<sec typ="note">怒り</sec>状態の場合は、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="0" r /></sec>が増加します。
-      EN: Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area, and if in <sec typ="note">Rage</sec> state, increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec>.
-      TC: 對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />，若處於<sec typ="note">憤怒</sec>狀態，則增加<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="0" r /></sec>。
+      KR: 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, <sec typ="cond"><sec typ="note">분노</sec> 상태일 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      JP: 指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与え、<sec typ="cond"><sec typ="note">怒り</sec>状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="0" r /></sec>が増加します。
+      EN: Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area, and <sec typ="cond">if in <sec typ="note">Rage</sec> state</sec>, increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec>.
+      TC: 對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />，<sec typ="cond">若處於<sec typ="note">憤怒</sec>狀態</sec>，則增加<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="0" r /></sec>。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -4281,16 +4281,16 @@ skills:
     desc:
       KR: |-
         전투 개시 시, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="4" r signless /> HP로 전투 속행</sec> 효과가 부여되고 라운드 개시 시, <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec> 감소가 부여됩니다.
-        라운드 개시 시, <sec typ="note">헌신</sec> 상태일 경우, 해제 불가의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="7" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" r inv /></sec> 감소 효과가 추가적으로 적용됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><sec typ="note">헌신</sec> 상태일 경우</sec>, 해제 불가의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="7" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" r inv /></sec> 감소 효과가 추가적으로 적용됩니다.
       JP: |-
         戦闘開始時、<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="4" r signless /> HPで戦闘継続</sec>効果が付与され、ラウンド開始時に<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec>減少が付与されます。
-        ラウンド開始時、<sec typ="note">献身</sec>状態の場合、解除不能の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="7" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="8" r inv /></sec>減少効果が追加で適用されます。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond"><sec typ="note">献身</sec>状態の場合</sec>、解除不能の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="7" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="8" r inv /></sec>減少効果が追加で適用されます。
       EN: |-
         At combat start, grants <sec typ="buff"><buff typ="DEF_RESSURRECT" /> battle continuation with <val idx="4" r signless /> HP</sec>, and at the start of the round grants <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="0" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="1" r inv /></sec> decrease.
-        At the start of the round, if in <sec typ="note">Devotion</sec> state, additionally applies unremovable <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="7" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="8" r inv /></sec> decrease effects.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if in <sec typ="note">Devotion</sec> state</sec>, additionally applies unremovable <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="7" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="8" r inv /></sec> decrease effects.
       TC: |-
         戰鬥開始時，賦予<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以<val idx="4" r signless /> HP繼續戰鬥</sec>效果，且在回合開始時賦予<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="1" r inv /></sec>減少。
-        回合開始時，若處於<sec typ="note">奉獻</sec>狀態，則另外套用無法解除的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="7" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="8" r inv /></sec>減少效果。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若處於<sec typ="note">奉獻</sec>狀態</sec>，則另外套用無法解除的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="7" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="8" r inv /></sec>減少效果。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -4586,16 +4586,16 @@ skills:
     desc:
       KR: |-
         라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec>가 증가합니다.
-        <sec typ="note">분노</sec> 상태일 경우, 해제 불가의 <sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 위력으로 반격</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec>가 추가적으로 부여됩니다.
+        <sec typ="cond"><sec typ="note">분노</sec> 상태일 경우</sec>, 해제 불가의 <sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 위력으로 반격</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec>가 추가적으로 부여됩니다.
       JP: |-
         ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec>が増加します。
-        <sec typ="note">怒り</sec>状態の場合、解除不能な<sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 威力で反撃</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec>が追加で付与されます。
+        <sec typ="cond"><sec typ="note">怒り</sec>状態の場合</sec>、解除不能な<sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 威力で反撃</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec>が追加で付与されます。
       EN: |-
         At the start of the round, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="1" r /></sec>.
-        If in <sec typ="note">Rage</sec> state, additionally grants unremovable <sec typ="buff"><buff typ="COUNTER" /> counterattack with <val idx="5" r signless /> power</sec> / <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="7" r /></sec>.
+        <sec typ="cond">If in <sec typ="note">Rage</sec> state</sec>, additionally grants unremovable <sec typ="buff"><buff typ="COUNTER" /> counterattack with <val idx="5" r signless /> power</sec> / <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="7" r /></sec>.
       TC: |-
         回合開始時，增加<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="1" r /></sec>。
-        若處於<sec typ="note">憤怒</sec>狀態，則另外賦予無法解除的<sec typ="buff"><buff typ="COUNTER" /> 以<val idx="5" r signless /> 威力反擊</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="7" r /></sec>。
+        <sec typ="cond">若處於<sec typ="note">憤怒</sec>狀態</sec>，則另外賦予無法解除的<sec typ="buff"><buff typ="COUNTER" /> 以<val idx="5" r signless /> 威力反擊</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="7" r /></sec>。
 dialogue:
   KR:
     "1":
