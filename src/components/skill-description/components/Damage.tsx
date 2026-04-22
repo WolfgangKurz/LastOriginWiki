@@ -8,6 +8,7 @@ import ElemIcon from "@/components/elem-icon";
 import { Section } from "./Section";
 
 import style from "./style.module.scss";
+import { useMemo } from "preact/hooks";
 
 interface DamageProps {
 	multiplier: number;
@@ -38,37 +39,53 @@ const elDisp = {
 };
 
 export const Damage: FunctionalComponent<DamageProps> = (props) => {
-	const bonus = Decimal.div(props.bonus || 0, 100);
+	const bonus = useMemo(() => Decimal.div(props.bonus || 0, 100), [props.bonus]);
+	const numBonus = useMemo(() => bonus.toNumber(), [bonus]);
 
-	const v = Decimal.add(props.multiplier, bonus)
-		.toFixed(10)
-		.replace(/\.?0+$/, "");
-	const valueHelp = !bonus.isZero()
-		? <span class="badge bg-success ms-1">
-			▲ { bonus.toNumber() }
-		</span>
-		: undefined;
+	const v = useMemo(
+		() => Decimal.add(props.multiplier, bonus)
+			.toFixed(10)
+			.replace(/\.?0+$/, ""),
+		[props.multiplier, bonus],
+	);
+	const valueHelp = useMemo(
+		() => !bonus.isZero()
+			? <span class="badge bg-success ms-1">
+				▲ { bonus.toNumber() }
+			</span>
+			: undefined,
+		[bonus],
+	);
 
-	const els = !props.elem
-		? [elemTable[""]]
-		: (Array.isArray(props.elem) ? props.elem : [props.elem])
-			.map(r => elemTable[r]);
-
-	const elNodes: preact.VNode[] = els
-		.map(v => elDisp[v])
-		.gap(<>・</>);
+	const normEls = useMemo(() => Array.isArray(props.elem) && props.elem.length === 1 ? props.elem[0] : props.elem, [props.elem]);
+	const els = useMemo(
+		() => !props.elem
+			? [elemTable[""]]
+			: (Array.isArray(props.elem) ? props.elem : [props.elem])
+				.map(r => elemTable[r]),
+		[props.elem],
+	);
+	const elNodes = useMemo(
+		() => els
+			.map(v => elDisp[v])
+			.gap(<>・</>),
+		[els],
+	);
+	const elIcons = useMemo(
+		() => els
+			.map(el => el && <ElemIcon elem={ el } inline />)
+			.filter(el => el),
+		[els],
+	);
 
 	return <Section typ="dmg">
-		{ els
-			.map(el => el && <ElemIcon elem={ el } inline />)
-			.filter(el => el)
-		}
+		{ elIcons }
 
 		<Locale
-			k={ Array.isArray(props.elem) ? "skill_description_adaptive_damage" : "skill_description_damage" }
+			k={ Array.isArray(normEls) ? "skill_description_adaptive_damage" : "skill_description_damage" }
 			p={ [
 				<span class={ style.Damage }>
-					<span data-bonus={ bonus.toNumber() }>{ v }</span>
+					<span data-bonus={ numBonus }>{ v }</span>
 					{ valueHelp }
 				</span>,
 				<>{ elNodes }</>,
