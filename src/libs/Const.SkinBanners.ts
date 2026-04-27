@@ -168,6 +168,7 @@ export const SkinBanners: string[] = [
     "PECS_Express76_2",
     "PECS_Fortune_2",
     "PECS_Hathor_1",
+    "PECS_Hestia_1",
     "PECS_HighElven_2",
     "PECS_Hussar_2",
     "PECS_Ignis_2",
@@ -214,9 +215,11 @@ export const SkinBanners: string[] = [
     "PECS_Tiequan_2",
     "PECS_Yimir_1",
     "ST_Lancer_2",
+    "ST_Lancer_3",
     "ST_Mercury_1",
     "ST_Mercury_2",
     "ST_Tiamat_2",
     "ST_Tiamat_3",
-    "ST_Ullr_1"
+    "ST_Ullr_1",
+    "ST_Ullr_2"
 ];

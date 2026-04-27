@@ -490,6 +490,7 @@ chart:
 cv:
   "1":
     ko: 김성희
+  "2": {}
   "":
     ko: 김성희
     jp: 春村奈々
@@ -5424,6 +5425,58 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_ST_Ullr_N_311
+              on: round
+              if:
+                - on:
+                    target: self
+                    select:
+                      - Effect_ST_Ullr_N_35
+                      - Effect_ST_Ullr_N_36
+                      - Effect_ST_Ullr_N_37
+                      - Effect_ST_Ullr_N_38
+                      - Effect_ST_Ullr_N_39
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_ST_Lancer_N_53
+                      - Effect_ST_Lancer_N_55
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ACCURACY_DOWN
+                  desc:
+                    desc: Effect_ST_Ullr_N_311_1
+                    type: 1
+                    value: "-3"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: -300%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -5606,6 +5659,15 @@ skills:
               value: "1"
               level: "0"
             base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ACCURACY_DOWN
+            desc:
+              desc: Effect_ST_Ullr_N_311_1
+              type: 1
+              value: "-3"
+              level: "0"
+            base: -3
             per: 0
             chance: 1
     desc:
@@ -8720,6 +8782,65 @@ dialogue:
         물론 완전히 극복한 것은 아니지만…
         이 추억과… 사령관이 있으면 극복할 수 있어.
       MVP: 잠깐만! 기다려... 뭔가 위트 있는 소감이 나올 거 같아.
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        사령관, 준비됐지?​
+        오늘 밤은 우르가 그동안 갈고 닦은​
+        새로운 개그들을 전부 들려 줄게.​​
+        으음… 안경을 끼고 오지 않아서 제대로 보이진 않지만…​
+        지금 사령관 얼굴, 분명 기대에 가득 차 있는 표정이겠지?​
+      Idle_01_02: |-
+        몸풀기로 가볍게 시작해볼까…​
+        고양이를 싫어하는 동물이 뭐게?​
+        '미어…캣' 킥!
+      Idle_01_03: |-
+        사령관, 설마 파티 중에 조는 거야?
+        그럼 양 대신 우르를 세보면 어때?
+        사령관 머릿속에서 우르들이
+        '우르르~' 지나가면 잠이 확 깰 테니까!
+      SPIdle_01_01: |-
+        사령관, 민감하니까…
+        상냥하게 대해줘…
+      Idle_02_01: |-
+        사령관이랑 지내다 보니,
+        이젠 혼자 있어도 예전만큼 무섭지 않아.
+        내가 조금이라도 눈을 찡그리면 얼른 다가와 안아주니까.
+      Idle_03_01: |-
+        야식 먹으면서 대원들이랑 괴담 얘기를 했어…
+        나 진짜 진짜 무서웠어.​ 사령관, 뭐라고?
+        '무가 서운하다'는 개그 아니야! 나 진지하니까…
+        무서워지지 않을 때 까지 안겨있어도 돼?​
+      Idle_04_01: |-
+        사령관, 내 파자마 '포'근해 보여?
+        …응? '파이브'근하다고? 히히히ㅡ
+        ​사령관도 제법 꿀잼인 걸? 날 웃게 해줬으니까…
+        사령관은 내가 '불'근'불'근… 하게 해줄까?
+      SPIdle_02_01: |-
+        …사령관, 이제 안 무서우니까…
+        오늘은 불 끄고 해도 돼…
+      Oath: …응? 갑자기 왜 농담을 안 하냐고? 히히… 왜냐면, 지금 사령관의 고백은 진심이잖아.​ 자꾸 웃음이 나오려고 하는데, 오해하지 말아줘. 행복하다는 걸 숨길 수가 없어서 그래.​ 늘 혼자 있던 밤에는, 우르와 함께 해주지 않는 사령관을 생각하며 외로웠어. 오늘은 파티가 끝나도… 밤새도록 꼬옥… 안고 있어 줘… 꿈 속에서도 계속 웃을 수 있게 말이야. 사랑해, 사령관…
+      OathIdle_01: |-
+        사령관이랑 함께 있다보니…
+        칠흑 같은 어둠이 로맨틱할 수 있다는 것도 알게 됐어…
+        히히…
+      MVP: ""
     "":
       Join: X-02 우르, 합류했어. 음… 내 드론들이랑 우르르 몰려다녀도 되지?​
       SquadJoin: 호, 혼자 보내지 않을 거... 지... 요...?
@@ -8859,6 +8980,35 @@ dialogue:
       Oath: 誓約？どんな制約があるのかな？ぷふっ！……こんな時までギャグ言ってごめん。ねぇ、知ってた？司令官といると…自然と笑顔になれるんだ。声を聞いても、顔を見ても…、ただ隣にいるだけでも……私が司令官のおかげで笑った分、私も司令官を笑わせてあげるね。一生…ずっと。司令官、愛してるよ。
       OathIdle_01: みんなと一緒に準備をしてたら、私はひとりぼっちなんかじゃないって、はっきり分かったんだ。もちろん完全に克服したわけじゃないけど……この思い出と司令官がいれば…乗り越えられると思う。
       MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: ウル、合流したよ。えっと…じゃあドローン達と一緒にお先にドロンということで。
       SquadJoin: ""
@@ -8978,6 +9128,35 @@ dialogue:
         I’ve come to realize that I am not alone.
         I haven’t overcome my feelings completely of course,
         but with you and this memory…I am sure to overcome it.
+      MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: X-02 Ullr, joined the team. Umm… I can come along with my drone, right?​
@@ -9144,6 +9323,35 @@ dialogue:
         我終於明白了自己不是孤身一人。
         雖然目前還沒有完全克服…
         但只要有這份回憶…還有司令官在我身邊就可以克服。
+      MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: X-02烏爾，來匯合了。嗯…我可以和我無人機一起結群行動吧？​
@@ -9316,3 +9524,38 @@ skins:
         dflags: 0
         2dmodel: 2DModel_ST_Ullr_NS1
         consumableKey: Skin_ST_Ullr_1
+    - sid: 2
+      artist: TeddYellow
+      price: 192
+      Spine: true
+      SpineDamaged: false
+      parts: 78
+      stage: false
+      subset:
+        O:
+          - _
+          - D
+          - S
+        G:
+          - _
+          - D
+          - S
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Lingerie
+      facelist: []
+      releaseDate: 1776902400000
+      metadata:
+        imageId: 2
+        iconId: 2
+        tbarId: 2
+        voiceId: 2
+        flags: 2
+        dflags: 1
+        2dmodel_dam: 2DModel_ST_Ullr_NS2_Dam
+        consumableKey: Skin_ST_Ullr_2

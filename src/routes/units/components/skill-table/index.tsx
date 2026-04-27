@@ -191,7 +191,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 						class="form-check-input"
 						type="checkbox"
 						checked={ favorBonus }
-						disabled={ unit.body === ACTOR_BODY_TYPE.AGS }
+						// disabled={ unit.body === ACTOR_BODY_TYPE.AGS }
 						onChange={ (): void => {
 							const v = !favorBonus;
 							setFavorBonus(v);
