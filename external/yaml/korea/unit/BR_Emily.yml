@@ -1083,16 +1083,16 @@ skills:
     desc:
       KR: |-
         레일건을 발사해 단일 대상에게 <dmg elem="physics" />를 줍니다.
-        적중 대상이 표식 상태인 경우, 피해량이 증가합니다.
-      JP: |-
-        レールガンを発射して単体対象に<dmg elem="physics" />を与えます。
-        命中した対象がマーク状態の場合、ダメージが増加します。
+        <sec typ="cond">적중 대상이 <buff typ="MARKING" /> 표식 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
       EN: |-
-        Fires a railgun and deals <dmg elem="physics" /> to a single target.
-        If the target is Marked, damage increases.
+        railgun fires to a single target <dmg elem="physics" />.
+        <sec typ="cond">Hit target <buff typ="MARKING" /> Mark if in the state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        レールガンを 発射して 単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象が <buff typ="MARKING" /> 標的 状態の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
       TC: |-
-        發射軌道砲對單一目標造成<dmg elem="physics" />。
-        若命中目標處於標記狀態，則傷害增加。
+        軌道炮 發射 單一目標給 造成<dmg elem="physics" />。
+        <sec typ="cond">命中目標為 <buff typ="MARKING" /> 標記 若為狀態</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: BeamShot
@@ -1786,16 +1786,16 @@ skills:
     desc:
       KR: |-
         고출력 빔을 발사해 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
-        치명타 시, 피해량이 증가하고 대상의 받는 피해 감소 효과를 해제합니다.
-      JP: |-
-        高出力ビームを発射して指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
-        クリティカル時、ダメージが増加し、対象の受けるダメージ減少効果を解除します。
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="1" r /></sec>가 증가하고 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
       EN: |-
-        Fires a high-output beam and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area.
-        On critical hit, damage increases and the target's Received Damage Decrease effect is removed.
+        high-output beam fires to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="1" r /></sec> increases and target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken decrease removes the effect</sec>.
+      JP: |-
+        高出力ビームを 発射して 指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="1" r /></sec>が 増加し、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ 減少 効果を 解除</sec>します。
       TC: |-
-        發射高輸出光束，對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
-        暴擊時，傷害增加，並解除目標的所受傷害減少效果。
+        高輸出光束 發射 指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="1" r /></sec> 增加，並 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害 減少 效果 解除</sec>。
   "3":
     key: "3"
     icon: P.AntiArmorShot
@@ -2206,18 +2206,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec>가 증가합니다.
         <sec typ="cond">대기 시</sec>, 레일건 출력을 강화하여 2라운드 동안 <sec typ="buff">효과 수치가 두 배로 증폭</sec>되며 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec>가 활성화됩니다.
         <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 후열에 위치한 경우</sec>, <sec typ="buff"><buff typ="CRITICAL_UP" /><buff typ="DEF_PIERCE_UP" /><buff typ="BARRIER_PIERCE" /> 레일건 출력을 자동으로 강화</sec>합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec>が増加します。
-        <sec typ="cond">待機時</sec>、レールガン出力を強化し、2ラウンドの間<sec typ="buff">効果数値が2倍に増幅</sec>され、<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / ダメージ軽減無視</sec>が有効になります。
-        <sec typ="cond">ラウンド開始時</sec><sec typ="cond">自分が後列に位置している場合</sec>、<sec typ="buff"><buff typ="CRITICAL_UP" /><buff typ="DEF_PIERCE_UP" /><buff typ="BARRIER_PIERCE" /> レールガン出力を自動で強化</sec>します。
       EN: |-
-        At the start of the round, increases self's <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="1" r /></sec>.
-        <sec typ="cond">When waiting</sec>, boosts railgun output so that for 2 rounds the <sec typ="buff">effect values are doubled</sec> and <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier / Damage Reduction Ignore</sec> is activated.
-        <sec typ="cond">At the start of the round</sec><sec typ="cond">if self is in the rear line</sec>, <sec typ="buff"><buff typ="CRITICAL_UP" /><buff typ="DEF_PIERCE_UP" /><buff typ="BARRIER_PIERCE" /> automatically boosts railgun output</sec>.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="1" r /></sec> increases.
+        <sec typ="cond">On standby</sec>, railgun output enhances 2 rounds <sec typ="buff">effect and value doubled</sec>becomes and <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> is activated.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self back row to if positioned</sec>, <sec typ="buff"><buff typ="CRITICAL_UP" /><buff typ="DEF_PIERCE_UP" /><buff typ="BARRIER_PIERCE" /> railgun output automatically as buff</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">待機時</sec>、 レールガン 出力を 強化して 2ラウンドの間 <sec typ="buff">効果 数値が 2倍に増幅</sec>になり、 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec>が 有効化されます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身が 後列に 位置している場合</sec>、 <sec typ="buff"><buff typ="CRITICAL_UP" /><buff typ="DEF_PIERCE_UP" /><buff typ="BARRIER_PIERCE" /> レールガン 出力を ジアドオンで 強化</sec>します。
       TC: |-
-        回合開始時，增加自身的<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="1" r /></sec>。
-        <sec typ="cond">待機時</sec>，強化軌道砲輸出，持續2回合使<sec typ="buff">效果數值加倍</sec>，並啟用<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視防護罩 / 傷害減少</sec>。
-        <sec typ="cond">回合開始時</sec><sec typ="cond">若自身位於後排</sec>，則會<sec typ="buff"><buff typ="CRITICAL_UP" /><buff typ="DEF_PIERCE_UP" /><buff typ="BARRIER_PIERCE" /> 自動強化軌道砲輸出</sec>。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="1" r /></sec>增加。
+        <sec typ="cond">待機時</sec>， 軌道炮 輸出 強化並 2回合內 <sec typ="buff">效果 數值 增幅為2倍</sec>變為，且 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec> 啟用。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身 後排於 位於時</sec>， <sec typ="buff"><buff typ="CRITICAL_UP" /><buff typ="DEF_PIERCE_UP" /><buff typ="BARRIER_PIERCE" /> 軌道炮 輸出 自動以 強化</sec>。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -2391,15 +2391,15 @@ skills:
       KR: |-
         <sec typ="cond">적 공격 시</sec> <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격 / <buff typ="DEF_Char" /> 지정 보호를 받고 있을 경우</sec>, 급속 충전을 개시해 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
         <sec>각 효과는 중첩 적용됩니다.</sec>
-      JP: |-
-        <sec typ="cond">敵から攻撃を受けた時</sec><sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻撃 / <buff typ="DEF_Char" /> 指定保護を受けている場合</sec>、急速充電を開始して自分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
-        <sec>各効果は重複して適用されます。</sec>
       EN: |-
-        <sec typ="cond">When attacked</sec><sec typ="cond">while under <buff typ="SUPPORT_ATTACK" /> Support Attack / <buff typ="DEF_Char" /> Designated Protection</sec>, initiates rapid charging and increases self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>.
-        <sec>Each effect stacks.</sec>
+        <sec typ="cond">When attacking an enemy</sec> <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> support attack / <buff typ="DEF_Char" /> Designated Protection receiving if present</sec>, rapid Charge units when remove own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec>each effect stack is applied.</sec>
+      JP: |-
+        <sec typ="cond">敵攻撃時</sec> <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻撃 / <buff typ="DEF_Char" /> 指定保護を 受けて 存在する場合</sec>、 グウプスオク チャージを 個時して 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec>各 効果は 重複 適用されます。</sec>
       TC: |-
-        <sec typ="cond">受到敵軍攻擊時</sec><sec typ="cond">若處於<buff typ="SUPPORT_ATTACK" /> 支援攻擊 / <buff typ="DEF_Char" /> 指定保護狀態</sec>，則啟動快速充能並增加自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>。
-        <sec>各效果會疊加套用。</sec>
+        <sec typ="cond">攻擊敵人時</sec> <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻擊 / <buff typ="DEF_Char" /> 指定保護 受到 存在時</sec>， 開始快速充能 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        <sec>各 效果 疊加 套用。</sec>
   "5":
     key: "5"
     icon: P.FormChange
@@ -2959,24 +2959,24 @@ skills:
         <sec>해당 효과로는 전투 불능에 이르지 않습니다.</sec>
         <sec typ="cond">자신의 HP가 5% 이하인 경우</sec>, 에너지가 임계점에 이르러 추가로 <sec typ="dmg"><buff typ="DamageAmp_Me" /> 자신 HP 반비례 피해량 <val idx="9" r signless /></sec> 증가 효과를 획득합니다.
         <sec typ="cond">상기 효과 상태에서는</sec> <sec typ="cond">매 라운드 1회 이상 <sec typ="note">버스터 캐논</sec>으로 에너지를 방출하지 않으면</sec> 과부하로 인한 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="10" signless /> 지속 물리 피해</sec>를 입습니다.
-      JP: |-
-        <sec typ="cond">自分のHPが33%以下の場合</sec>、<sec typ="buff"><buff typ="CHANGE_CHAR" /> リミッターを解除</sec>して自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="7" r /></sec>が増加し、<sec typ="note">Buster Cannon</sec>の威力が増加します。
-        <sec typ="cond">上記効果中に攻撃した場合</sec>、<sec typ="dmg"><buff typ="HP_DOWN" /> 自分の現在HP <val idx="8" r signless />分のダメージ</sec>を受けます。
-        <sec>この効果で戦闘不能にはなりません。</sec>
-        <sec typ="cond">自分のHPが5%以下の場合</sec>、エネルギーが臨界点に達し、追加で<sec typ="dmg"><buff typ="DamageAmp_Me" /> 自分HP反比例ダメージ量 <val idx="9" r signless /></sec>増加効果を獲得します。
-        <sec typ="cond">上記効果中は</sec><sec typ="cond">毎ラウンド1回以上<sec typ="note">Buster Cannon</sec>でエネルギーを放出しないと</sec>、過負荷による<sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="10" signless /> 継続物理ダメージ</sec>を受けます。
       EN: |-
-        <sec typ="cond">If self's HP is 33% or lower</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> removes the limiter</sec>, increasing self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" r /></sec>, and boosting the power of <sec typ="note">Buster Cannon</sec>.
-        <sec typ="cond">When attacking while under the above effect</sec>, self takes <sec typ="dmg"><buff typ="HP_DOWN" /> damage equal to <val idx="8" r signless /> of current HP</sec>.
-        <sec>Self does not become incapacitated from this effect.</sec>
-        <sec typ="cond">If self's HP is 5% or lower</sec>, energy reaches a critical point and additionally gains <sec typ="dmg"><buff typ="DamageAmp_Me" /> damage inversely proportional to self HP <val idx="9" r signless /></sec> increase.
-        <sec typ="cond">While under the above effects</sec>, if <sec typ="cond">Buster Cannon does not release energy at least once per round</sec>, self suffers <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="10" signless /> continuous Physical Damage</sec> from overload.
+        <sec typ="cond">own HP 33% or lessif</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> limiter remove</sec>remove own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="7" r /></sec> increases and <sec typ="note">Buster Cannon</sec> of power increases.
+        <sec typ="cond">above effect and while in the state When attacking</sec>, <sec typ="dmg"><buff typ="HP_DOWN" /> own current HP <val idx="8" r signless /> by damage</sec> takes.
+        <sec>the effect and as battle disabled to reach does not.</sec>
+        <sec typ="cond">own HP 5% or lessif</sec>, energy critical point to reaches additionally <sec typ="dmg"><buff typ="DamageAmp_Me" /> damage inversely proportional to own HP <val idx="9" r signless /></sec> increase effect.
+        <sec typ="cond">above effect and while in the state</sec> <sec typ="cond">every round 1times or more <sec typ="note">Buster Cannon</sec> as energy does not release if not</sec> and overload as caused by <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="10" signless /> Physical damage over time</sec> takes.
+      JP: |-
+        <sec typ="cond">自身の HPが 33% 以下の場合</sec>、 <sec typ="buff"><buff typ="CHANGE_CHAR" /> リミッターを 解除</sec>して 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="7" r /></sec>が 増加し、 <sec typ="note">バスターキャノン</sec>の 威力が増加します。
+        <sec typ="cond">上記 効果 状態で 攻撃時</sec>、 <sec typ="dmg"><buff typ="HP_DOWN" /> 自身の 現在 HP <val idx="8" r signless />分 ダメージ</sec>を 受けます。
+        <sec>該当 効果では 戦闘 不能に がルウジイ しません。</sec>
+        <sec typ="cond">自身の HPが 5% 以下の場合</sec>、 エネルギーが 臨界点に がルウルオ 追加で <sec typ="dmg"><buff typ="DamageAmp_Me" /> 自身HPに反比例するダメージ量 <val idx="9" r signless /></sec> 増加 効果を獲得します。
+        <sec typ="cond">上記 効果 状態では</sec> <sec typ="cond">ムエ ラウンド 1回 以上 <sec typ="note">バスターキャノン</sec>で エネルギーを ブアンチウルハアジイ アなら</sec> 過負荷で であるした <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="10" signless /> 持続物理ダメージ</sec>を 受けます。
       TC: |-
-        <sec typ="cond">若自身HP在33%以下</sec>，則<sec typ="buff"><buff typ="CHANGE_CHAR" /> 解除限制器</sec>，使自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" r /></sec>增加，並提升<sec typ="note">Buster Cannon</sec>的威力。
-        <sec typ="cond">在上述效果狀態下攻擊時</sec>，會受到等同於<sec typ="dmg"><buff typ="HP_DOWN" /> 自身目前HP <val idx="8" r signless /></sec>的傷害。
-        <sec>此效果不會導致戰鬥不能。</sec>
-        <sec typ="cond">若自身HP在5%以下</sec>，能量到達臨界點，並額外獲得<sec typ="dmg"><buff typ="DamageAmp_Me" /> 與自身HP成反比的傷害量 <val idx="9" r signless /></sec>增加效果。
-        <sec typ="cond">在上述效果狀態下</sec><sec typ="cond">若每回合未至少1次以<sec typ="note">Buster Cannon</sec>釋放能量</sec>，則會因過載而受到<sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="10" signless /> 持續物理傷害</sec>。
+        <sec typ="cond">自身的 HP 33% 以下若為</sec>， <sec typ="buff"><buff typ="CHANGE_CHAR" /> 限制器 解除</sec> 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="7" r /></sec> 增加，並 <sec typ="note">破壞加農炮</sec>的 威力增加。
+        <sec typ="cond">上述 效果 在狀態下 攻擊時</sec>， <sec typ="dmg"><buff typ="HP_DOWN" /> 自身的 目前 HP <val idx="8" r signless />等量 傷害</sec> 受到。
+        <sec>該 效果以 戰鬥 無法於 至 不會。</sec>
+        <sec typ="cond">自身的 HP 5% 以下若為</sec>， 能量 臨界點於 達到 額外 <sec typ="dmg"><buff typ="DamageAmp_Me" /> 與自身HP成反比的傷害量 <val idx="9" r signless /></sec> 增加 獲得效果。
+        <sec typ="cond">上述 效果 在狀態下</sec> <sec typ="cond">每 回合 1次 以上 <sec typ="note">破壞加農炮</sec>以 能量 防並釋放至 不若</sec> 過載以 為 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="10" signless /> 持續物理傷害</sec> 受到。
   F2:
     key: F2
     icon: BeamShot
@@ -4218,20 +4218,20 @@ skills:
     desc:
       KR: |-
         초고출력 빔을 발사해 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
-        적중 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" />받는 피해 감소 효과를 해제</sec>합니다.
-        치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
-      JP: |-
-        超高出力ビームを発射して指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
-        命中時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 防御力増加</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ減少効果を解除</sec>します。
-        クリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" />받는 피해 감소 효과를 해제</sec>합니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
       EN: |-
-        Fires an ultra-high-output beam and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area.
-        On hit, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> DEF Increase</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> Received Damage Decrease</sec> effects.
-        On critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="3" r /></sec> increases.
+        ultra-high-output beam fires to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Defense increase</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" />damage taken decrease removes the effect</sec>.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
+      JP: |-
+        超高出力ビームを 発射して 指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防御力 増加</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ 減少 効果を 解除</sec>します。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
       TC: |-
-        發射超高輸出光束，對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
-        命中時，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 防禦力增加</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 所受傷害減少效果</sec>。
-        暴擊時，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>增加。
+        超高輸出光束 發射 指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防禦力 增加</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" />受到的傷害 減少 效果 解除</sec>。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>增加。
 dialogue:
   KR:
     "1":

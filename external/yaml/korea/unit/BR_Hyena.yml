@@ -8779,20 +8779,20 @@ skills:
     desc:
       KR: |-
         수류탄을 던져 지정 범위에 <dmg elem="physics" />를 줍니다.
-        <sec typ="cond">적중 시</sec>, 아군 수에 비례하여 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>를 증가시킵니다.
-        적중 대상이 지속 화염 피해 상태인 경우, 피해량이 증가합니다.
-      JP: |-
-        手榴弾を投げて指定範囲に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、味方の数に比例して2ラウンドの間対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="0" r /></sec>を減少させ、<sec typ="buff"><buff typ="VULNERABLE" />被ダメージ<val idx="1" r /></sec>を増加させます。
-        命中対象が継続火炎ダメージ状態の場合、ダメージ量が増加します。
+        <sec typ="cond">적중 시</sec>, 아군 수에 비례하여 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>가 감소하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 대상이 <buff typ="FireDMG_DOT" /> 지속 화염 피해 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="19" r /></sec>가 증가합니다.
       EN: |-
-        Throws a grenade and deals <dmg elem="physics" /> to the designated area.
-        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> and increases their <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> for 2 rounds, proportional to the number of allies.
-        If the hit target is suffering persistent fire damage, damage dealt increases.
+        grenade throws to the designated area <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, allies in proportion to the number of 2 rounds, target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> decreases and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increases.
+        <sec typ="cond">Hit target <buff typ="FireDMG_DOT" /> Fire damage over time if in the state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="19" r /></sec> increases.
+      JP: |-
+        手榴弾を ドオンジヨ 指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 味方 数に比例して 2ラウンドの間 対象の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>が 減少し、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">命中対象が <buff typ="FireDMG_DOT" /> 持続火炎ダメージ 状態の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="19" r /></sec>が増加します。
       TC: |-
-        投擲手榴彈，對指定範圍造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，依我軍數量在2回合內降低目標的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="0" r /></sec>，並增加<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="1" r /></sec>。
-        若命中的目標處於持續火焰傷害狀態，則傷害量會增加。
+        手榴彈 更多投擲 指定範圍於 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 我方 依數量成比例 2回合內 目標的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> 減少，並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec>增加。
+        <sec typ="cond">命中目標為 <buff typ="FireDMG_DOT" /> 持續火焰傷害 若為狀態</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="19" r /></sec>增加。
   "2":
     key: "2"
     icon: ShotGun
@@ -19286,19 +19286,19 @@ skills:
       KR: |-
         샷건으로 단일 대상에게 <dmg elem="physics" />를 입힙니다.
         <sec typ="cond">적중 시</sec>, 아군 수에 비례하여 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다. (중첩 불가)
-        <sec typ="cond">치명타 시</sec>, 피해량이 증가합니다.
-      JP: |-
-        ショットガンで単体対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、味方の数に比例して2ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>を減少させます。(重複不可)
-        <sec typ="cond">クリティカル時</sec>、ダメージ量が増加します。
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="10" r /></sec>가 증가합니다.
       EN: |-
-        Uses a shotgun to deal <dmg elem="physics" /> to a single target.
-        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> for 2 rounds, proportional to the number of allies. (does not stack)
-        <sec typ="cond">On critical hit</sec>, damage dealt increases.
+        by shotgun as to a single target <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, allies in proportion to the number of 2 rounds, target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> decreases. (Cannot stack)
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="10" r /></sec> increases.
+      JP: |-
+        ショットガンで 単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 味方 数に比例して 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を減少させます。 (重複不可)
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="10" r /></sec>が増加します。
       TC: |-
-        以霰彈槍對單一目標造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，依我軍數量在2回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>。(不可重疊)
-        <sec typ="cond">暴擊時</sec>，傷害量會增加。
+        霰彈槍以 單一目標給 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 我方 依數量成比例 2回合內 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>使其減少。 (不可疊加)
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="10" r /></sec>增加。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -20096,16 +20096,16 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 아군 수에 비례하여 아군 전체의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
-        자신의 스킬 효과 중 '인원 수에 비례하는 효과'는, 자신 외의 <sec typ="note">앵거 오브 호드</sec> 소속 전투원이 있을 경우 효과가 50% 증폭됩니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、味方の数に比例して味方全体の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>が増加します。
-        自分のスキル効果のうち「人数に比例する効果」は、自分以外の<sec typ="note">アンガー・オブ・ホード</sec>所属戦闘員がいる場合、効果が50%増幅されます。
+        자신의 스킬 효과 중 <sec typ="buff">인원 수에 비례하는 효과</sec>는, 자신 외의 <cmt t="앵거 오브 호드"><import name="AngerOfTheHorde" /></cmt> 소속 전투원이 있을 경우 효과가 50% 증폭됩니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, increases all allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec> in proportion to the number of allies.
-        Among self's skill effects, the 'effects proportional to the number of members' are amplified by 50% if there is any <sec typ="note">Anger of Horde</sec> combatant other than self.
+        <sec typ="cond">At round start</sec>, allies in proportion to the number of all allies of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> increases.
+        own skill effect and during <sec typ="buff">members number to proportional do effect and</sec>, self other than of <cmt t="Anger of the Horde"><import name="AngerOfTheHorde" /></cmt> affiliated combatant if present effect and increased by 50%.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 味方 数に比例して 味方全体の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>が増加します。
+        自身の スキル 効果 中 <sec typ="buff">であるウォン 数に 比例する 効果</sec>は、 自身 外の <cmt t="アンガー・オブ・ホード"><import name="AngerOfTheHorde" /></cmt> 所属 戦闘員が 存在する場合 効果が 50%増幅されます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，依我軍數量提升我軍全體的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>。
-        自身技能效果中的「依人數比例的效果」，若有自身以外的<sec typ="note">憤怒之群</sec>所屬戰鬥員在場，則效果會增幅50%。
+        <sec typ="cond">回合開始時</sec>， 我方 依數量成比例 全體我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>增加。
+        自身的 技能 效果 中 <sec typ="buff">為人員 數於 成比例 效果</sec>， 自身 外的 <cmt t="憤怒部落"><import name="AngerOfTheHorde" /></cmt> 所屬 戰鬥員 存在時 效果 增幅50%。
   "4":
     key: "4"
     icon: SetBomb
@@ -29612,21 +29612,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="0" /></sec>이(가) 증가합니다. 해당 효과는 3회 공격 적중 시 해제됩니다.
-        <sec typ="cond">공격 적중 시</sec> <sec typ="cond"><sec typ="note">짧은 도화선</sec>에 의한 사거리 증가 효과가 없을 경우</sec>, 아군 / 적 수에 비례하여 자신의 스킬 위력이 증가합니다.
-        스킬 위력 증가 효과는 적 처치 시까지 유지되며, 효과 해제 후 다시 사거리 증가 효과를 획득합니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、自分の<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="0" /></sec>が増加します。この効果は3回攻撃が命中すると解除されます。
-        <sec typ="cond">攻撃命中時</sec> <sec typ="cond"><sec typ="note">短い導火線</sec>による射程増加効果がない場合</sec>、味方 / 敵の数に比例して自分のスキル威力が増加します。
-        スキル威力増加効果は敵を撃破するまで維持され、効果解除後は再び射程増加効果を獲得します。
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="0" /></sec>가 증가합니다.
+        <sec>해당 효과는 3회 공격 적중 시 해제됩니다.</sec>
+        <sec typ="cond">공격 적중 시</sec> <sec typ="cond"><sec typ="note">짧은 도화선</sec>에 의한 <buff typ="RANGE_UP" /> 사거리 증가 효과가 없을 경우</sec>, 아군 / 적 수에 비례하여 자신의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 증가</sec> 효과는 적 처치 시까지 유지되며, <sec typ="cond">효과 해제 후</sec> 다시 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 증가</sec> 효과를 획득합니다.
       EN: |-
-        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="0" /></sec> increases. This effect is removed after 3 attack hits.
-        <sec typ="cond">On attack hit</sec> <sec typ="cond">if there is no Range increase effect from <sec typ="note">Short Fuse</sec></sec>, own skill power increases in proportion to the number of allies / enemies.
-        The skill power increase effect lasts until an enemy is defeated, and after the effect ends, the Range increase effect is obtained again.
+        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="0" /></sec> increases.
+        <sec>the effect 3times On hit is removed.</sec>
+        <sec typ="cond">On hit</sec> <sec typ="cond"><sec typ="note">Jjalb also Hwa line</sec> to by <buff typ="RANGE_UP" /> Range increase effect and if absent</sec>, allies / own <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="1" r /></sec> increases.
+        <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power increase</sec> effect When killing an enemy up to maintained and, <sec typ="cond">effect removal after</sec> all when <sec typ="buff"><buff typ="RANGE_UP" /> Range increase</sec> gains the effect.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 自身の <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>が増加します。
+        <sec>該当 効果は 3回 攻撃命中時 解除されます。</sec>
+        <sec typ="cond">攻撃命中時</sec> <sec typ="cond"><sec typ="note">ッジアは もハワ宣</sec>に よる <buff typ="RANGE_UP" /> 射程 増加 効果が 存在しない場合</sec>、 味方 / 敵 数に比例して 自身の <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="1" r /></sec>が増加します。
+        <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 増加</sec> 効果は 敵撃破時まで ユジイになり、、 <sec typ="cond">効果解除 後</sec> ドア時 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 増加</sec> 効果を獲得します。
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="0" /></sec>增加。此效果會在命中3次攻擊後解除。
-        <sec typ="cond">攻擊命中時</sec> <sec typ="cond">若沒有來自<sec typ="note">短引信</sec>的射程增加效果</sec>，則自身技能威力會依我軍 / 敵軍數量增加。
-        技能威力增加效果會持續至擊殺敵人為止，效果解除後會再次獲得射程增加效果。
+        <sec typ="cond">戰鬥開始時</sec>， 自身的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>增加。
+        <sec>該 效果 3次 攻擊命中時 解除。</sec>
+        <sec typ="cond">攻擊命中時</sec> <sec typ="cond"><sec typ="note">Jjalb 也火seon</sec>於 的 <buff typ="RANGE_UP" /> 射程 增加 效果 不存在時</sec>， 我方 / 敵人 依數量成比例 自身的 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="1" r /></sec>增加。
+        <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 增加</sec> 效果 擊殺敵人時至 維持變為，且 <sec typ="cond">效果解除 後</sec> 全部時 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 增加</sec> 獲得效果。
   "5":
     key: "5"
     icon: P.SuicideBomb
@@ -30353,16 +30357,28 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">전투 개시 시</sec>, 아군 수에 비례하여 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
-        <sec typ="cond"><sec typ="note">죽여주는 수류탄</sec> 적중 시</sec>, 2라운드 동안 기폭제를 추가 부착하여 다음 <sec typ="note">죽여주는 수류탄</sec>의 피해량이 증가합니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、味方の数に比例して自分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
-        <sec typ="cond"><sec typ="note">殺してくれる手榴弾</sec>命中時</sec>、2ラウンドの間起爆剤を追加で取り付け、次の<sec typ="note">殺してくれる手榴弾</sec>のダメージ量が増加します。
+        <sec typ="cond"><sec typ="note">죽여주는 수류탄</sec> 적중 시</sec>, 2라운드 동안 기폭제를 추가 부착하여 다음 <sec typ="note">죽여주는 수류탄</sec>의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="20" slot="1" r /></sec>가 증가합니다.
+        <sec>상기 효과는 <char uid="BR_Salamander" />의 액티브 스킬로도 기폭시킬 수 있습니다.</sec>
+        <sec typ="buff"><buff typ="PhyATK_UP" /> <sec typ="note">샷건 연사</sec>의 피해량 증가</sec> 효과가 <sec typ="note">아군 수에 비례하는 효과</sec>로 변경됩니다.
+        <sec>스킬 효과는 <sec typ="note">샷건 연사</sec> 스킬 레벨에 비례합니다.</sec>
       EN: |-
-        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases in proportion to the number of allies.
-        <sec typ="cond">When <sec typ="note">Awesome Grenade</sec> hits</sec>, adds extra detonators for 2 rounds, increasing the damage dealt by the next <sec typ="note">Awesome Grenade</sec>.
+        <sec typ="cond">At battle start</sec>, allies in proportion to the number of own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond"><sec typ="note">killer grenade</sec> On hit</sec>, 2 rounds unit Pok. additional part Chak by doing next <sec typ="note">killer grenade</sec> of <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="20" slot="1" r /></sec> increases.
+        <sec>above effect <char uid="BR_Salamander" /> of active skill also as unit Pok when kill number exists.</sec>
+        <sec typ="buff"><buff typ="PhyATK_UP" /> <sec typ="note">Shotgun Rapid Fire</sec> of damage increase</sec> effect and <sec typ="note">number of allies to proportional do effect and</sec> as is changed.
+        <sec>Skill effects <sec typ="note">Shotgun Rapid Fire</sec> skill level.</sec>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 味方 数に比例して 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond"><sec typ="note">ジウクヨジウは 手榴弾</sec> 命中時</sec>、 2ラウンドの間 機プオクジエを 追加 ブウチアクして 次 <sec typ="note">ジウクヨジウは 手榴弾</sec>の <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="20" slot="1" r /></sec>が増加します。
+        <sec>上記 効果は <char uid="BR_Salamander" />の アクティブ スキルでも 機プオク時クイル 数 あります。</sec>
+        <sec typ="buff"><buff typ="PhyATK_UP" /> <sec typ="note">ショットガン連射</sec>の ダメージ量 増加</sec> 効果が <sec typ="note">味方数に 比例する 効果</sec>で 変更されます。
+        <sec>スキル 効果は <sec typ="note">ショットガン連射</sec> スキル レベルに 比例します。</sec>
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>會依我軍數量增加。
-        <sec typ="cond">當<sec typ="note">超讚手榴彈</sec>命中時</sec>，會在2回合內額外裝上起爆器，使下一次<sec typ="note">超讚手榴彈</sec>的傷害量增加。
+        <sec typ="cond">戰鬥開始時</sec>， 我方 依數量成比例 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        <sec typ="cond"><sec typ="note">主kyeoju 手榴彈</sec> 命中時</sec>， 2回合內 台Pokje 額外 附加chak並 下次 <sec typ="note">主kyeoju 手榴彈</sec>的 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="20" slot="1" r /></sec>增加。
+        <sec>上述 效果 <char uid="BR_Salamander" />的 主動 技能以也 台Pok時台l 數 存在。</sec>
+        <sec typ="buff"><buff typ="PhyATK_UP" /> <sec typ="note">霰彈槍連射</sec>的 傷害量 增加</sec> 效果 <sec typ="note">我方數量於 成比例 效果</sec>以 變更。
+        <sec>技能 效果 <sec typ="note">霰彈槍連射</sec> 技能 等級於 成比例。</sec>
 dialogue:
   KR:
     "1":

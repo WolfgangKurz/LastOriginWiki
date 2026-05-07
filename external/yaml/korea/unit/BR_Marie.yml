@@ -512,6 +512,7 @@ source:
   - - Ev:Ev14:EV2-4Ex
   - - Ev:Ev17:EV3-1Ex
   - - Ev:Ev26:EV1-1Ex
+  - - Ev:Ev38:EV1-2EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2805,16 +2806,16 @@ skills:
     desc:
       KR: |-
         빔 공격으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="2" r /></sec> 감소 상태로 만듭니다.
-        <sec typ="note">역습 준비</sec> 활성화 상태면 2라운드 동안 대상의 방어력을 감소시킵니다.
-      JP: |-
-        ビーム攻撃で<dmg elem="physics" />を与え、2ラウンドの間、対象を<sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="2" r /></sec>減少状態にします。
-        <sec typ="note">逆襲準備</sec>有効化状態なら2ラウンドの間、対象の防御力を減少させます。
+        <sec typ="note">역습 준비</sec> 활성화 상태면 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="6" r /></sec>를 감소시킵니다.
       EN: |-
-        Uses a beam attack and deals <dmg elem="physics" /> to the target, inflicting <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="2" r /></sec> Decrease for 2 rounds.
-        If <sec typ="note">Prepare for Counterattack</sec> is active, the target's DEF is decreased for 2 rounds.
+        Deals <dmg elem="physics" /> with a beam attack and makes the target <sec typ="buff"><buff typ="PROVOKE" /> Provoked</sec> / decreases <sec typ="buff"><buff typ="ATK_DOWN" /> ATK by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical by <val idx="2" r /></sec> for 2 rounds.
+        If <sec typ="note">Counterattack Preparation</sec> is active, decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF by <val idx="6" r /></sec> for 2 rounds.
+      JP: |-
+        ビーム攻撃で<dmg elem="physics" />を与え、2ラウンドの間、対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="2" r /></sec>減少状態にします。
+        <sec typ="note">逆襲準備</sec>活性化状態なら、2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="6" r /></sec>を減少させます。
       TC: |-
-        使用光束攻擊造成<dmg elem="physics" />，並使目標陷入<sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="2" r /></sec>降低狀態，持續2回合。
-        若<sec typ="note">逆襲準備</sec>處於啟用狀態，則降低目標的防禦力，持續2回合。
+        以光束攻擊造成<dmg elem="physics" />，並在2回合內使目標進入<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="2" r /></sec>降低狀態。
+        若<sec typ="note">反擊準備</sec>處於啟用狀態，2回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="6" r /></sec>。
   "2":
     key: "2"
     icon: WideParticle
@@ -5086,15 +5087,15 @@ skills:
       KR: |-
         빔을 난사해 목표 지점에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
         대상에게 적용된 <sec typ="note">화망 구축</sec> <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 효과 중첩에 비례해 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        ビームを乱射して目標地点に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
-        対象に適用された<sec typ="note">火網構築</sec>の<sec typ="buff"><buff typ="EVADE_DOWN" /> 回避減少</sec>効果スタックに比例して、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
       EN: |-
-        Randomly fires beams and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the target point.
-        <sec typ="note">Firenet Establishment</sec> <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA Decrease</sec> stacks applied to the target increase <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="0" r /></sec> proportionally.
+        Fires a beam barrage to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> at the target point.
+        <sec typ="note"></sec> Damage dealt increases by <sec typ="buff"><buff typ="EVADE_DOWN" /> in proportion to the stacks of </sec>Establish Fire Net<sec typ="dmg"> <buff typ="PhyATK_UP" /><val idx="0" r /> Evasion Down</sec> applied to the target.
+      JP: |-
+        ビームを乱射して目標地点に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        対象に適用された<sec typ="note">火網構築</sec><sec typ="buff"><buff typ="EVADE_DOWN" />回避低下</sec>効果の重複に比例して、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       TC: |-
-        亂射光束，對目標地點造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
-        目標套用的<sec typ="note">構建火網</sec><sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避降低</sec>效果疊加層數越多，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>越高。
+        亂射光束，對目標地點造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        依照套用於目標的<sec typ="note">建構火網</sec><sec typ="buff"><buff typ="EVADE_DOWN" />迴避降低</sec>效果層數，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -5372,18 +5373,18 @@ skills:
         라운드 개시 시, <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec>가 감소합니다.
         피격 시, 3라운드 동안 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="4" r /></sec>가 증가하는 <sec typ="note">역습 준비</sec> 상태가 됩니다. (최대 3중첩)
         피격 시, <sec typ="note">역습 준비</sec> 중첩이 최대인 경우, 해당 라운드 동안 <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> 자신의 현재 HP의 <val idx="5" r signless /> 만큼 공격자의 방어 관통이 감소</sec>합니다. (방어 관통 저항)
-      JP: |-
-        ラウンド開始時、<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec>が減少します。
-        被撃時、3ラウンドの間、<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="4" r /></sec>が増加する<sec typ="note">逆襲準備</sec>状態になります。(最大3スタック)
-        被撃時、<sec typ="note">逆襲準備</sec>のスタックが最大の場合、そのラウンドの間、<sec typ="buff"><buff typ="Current_Hp_Piercedown" /> 自分の現在HPの <val idx="5" r signless /> だけ攻撃者の防御貫通が減少</sec>します。(防御貫通抵抗)
       EN: |-
-        At the start of the round, <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="1" r inv /></sec> decreases.
-        When attacked, self enters <sec typ="note">Prepare for Counterattack</sec> state for 3 rounds, increasing <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="4" r /></sec>. (Max 3 stacks)
-        When attacked, if <sec typ="note">Prepare for Counterattack</sec> is at max stacks, the attacker's Defense Penetration decreases by <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> <val idx="5" r signless /> of self's current HP</sec> for that round. (Defense Penetration Resistance)
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_UP" /> DEF increases by <val idx="0" r /></sec> and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decreases by <val idx="1" r inv /></sec>.
+        When hit, enters <sec typ="note">Counterattack Preparation</sec> state for 3 rounds, increasing <sec typ="buff"><buff typ="DEF_UP" /> DEF by <val idx="4" r /></sec>. (Stacks up to 3 times)
+        When hit, if <sec typ="note">Counterattack Preparation</sec> is at max stacks, during that round <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> the attacker's Defense Penetration decreases by <val idx="5" r signless /> of her current HP</sec>. (Defense Penetration Resistance)
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="1" r inv /></sec>が減少します。
+        被撃時、3ラウンドの間<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="4" r /></sec>が増加する<sec typ="note">逆襲準備</sec>状態になります。(最大3重複)
+        被撃時、<sec typ="note">逆襲準備</sec>重複が最大の場合、そのラウンドの間<sec typ="buff"><buff typ="Current_Hp_Piercedown" />自身の現在HPの<val idx="5" r signless />分、攻撃者の防御貫通が減少</sec>します。(防御貫通耐性)
       TC: |-
-        回合開始時，<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec>增加，<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="1" r inv /></sec>減少。
-        受到攻擊時，進入持續3回合、<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="4" r /></sec>增加的<sec typ="note">逆襲準備</sec>狀態。(最多3層)
-        受到攻擊時，若<sec typ="note">逆襲準備</sec>疊加層數達到最大，則在該回合內使攻擊者的防禦貫穿減少<sec typ="buff"><buff typ="Current_Hp_Piercedown" /> 等同於自身目前生命力<val idx="5" r signless />的數值</sec>。(防禦貫穿抗性)
+        回合開始時，<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="0" r /></sec>增加，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到傷害<val idx="1" r inv /></sec>降低。
+        被擊時，3回合內進入<sec typ="buff">反擊準備<buff typ="DEF_UP" />狀態，<val idx="4" r /></sec>防禦力<sec typ="note"></sec>增加。（最多重疊3次）
+        被擊時，若<sec typ="note">反擊準備</sec>層數達最大，該回合內<sec typ="buff"><buff typ="Current_Hp_Piercedown" />依自身目前HP的<val idx="5" r signless />降低攻擊者的防禦貫通</sec>。（防禦貫通抗性）
   "4":
     key: "4"
     icon: P.Command
@@ -5883,21 +5884,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, 스쿼드 내 경장형 아군 및 스틸라인 계열 전투원을 지정 보호합니다.
-        라운드 개시 시, 모든 아군에게 대 기동형 피해량 / 적중 / 행동력 증가 효과를 부여합니다. 대상이 스틸라인 계열 전투원인 경우 효과가 50% 증가합니다.
-        전투 개시 시, 스쿼드 내에 휘하 스틸라인 계열 전투원이 한 명이라도 존재할 경우 자신은 전투 속행 일반 효과를 획득합니다.
-      JP: |-
-        ラウンド開始時、分隊内の軽装型の味方およびスチールライン系列の戦闘員を指定保護します。
-        ラウンド開始時、全ての味方に対機動型ダメージ量/命中/行動力増加効果を付与します。対象がスチールライン系列の戦闘員の場合、効果が50%増加します。
-        戦闘開始時、分隊内に配下のスチールライン系列の戦闘員が1人でもいる場合、自分は戦闘続行一般効果を獲得します。
+        라운드 개시 시, 스쿼드 내 경장형 아군 및 스틸라인 계열 전투원을 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>합니다.
+        라운드 개시 시, 모든 아군에게 <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 기동형 피해량 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="7" r /></sec> 증가 효과를 부여합니다.
+        <sec type="cond">대상이 <cmt t="스틸라인 계열"><import name="SteelLine" /></cmt> 전투원인 경우</sec> 효과가 50% 증가합니다.
+        <sec type="cond">전투 개시 시</sec>, <sec type="cond">스쿼드 내에 휘하 <cmt t="스틸라인 계열"><import name="SteelLine" /></cmt> 전투원이 한 명이라도 존재할 경우</sec> 자신은 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="12" r signless /> HP로 전투 속행</sec> <sec typ="attr">일반 효과</sec>를 획득합니다.
       EN: |-
-        At the start of the round, provides Designated Protection to Light Armor allies and Steel Line soldiers in the squad.
-        At the start of the round, grants Anti-Air Damage / ACU / MOVE Increase effects to all allies. The effects are increased by 50% if the target is a Steel Line soldier.
-        At the start of combat, if there is at least one subordinate Steel Line soldier in the squad, self gains a Continue Combat normal effect.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_Char" /> protects Light allies and Steel Line combatants in the squad with Designated Protection</sec>.
+        <sec typ="cond">At round start</sec>, grants all allies <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> damage against Flying units by <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power by <val idx="7" r /></sec>.
+        <sec type="cond">If the target is a <cmt t="Steel Line"><import name="SteelLine" /></cmt> combatant</sec>, the effects increase by 50%.
+        <sec type="cond">At battle start</sec>, <sec type="cond">if there is at least one subordinate <cmt t="Steel Line"><import name="SteelLine" /></cmt> combatant in the squad</sec>, she gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Battle with <val idx="12" r signless /> HP</sec> <sec typ="attr">General Effect</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、スクワッド内の軽装型味方およびスチールライン系戦闘員を<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>します。
+        ラウンド開始時、すべての味方に<sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />対機動型ダメージ量<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>増加効果を付与します。
+        <sec type="cond">対象が<cmt t="スチールライン系統"><import name="SteelLine" /></cmt>戦闘員の場合</sec>、効果が50%増加します。
+        <sec type="cond">戦闘開始時</sec>、<sec type="cond">スクワッド内に配下の<cmt t="スチールライン系統"><import name="SteelLine" /></cmt>戦闘員が1名でも存在する場合</sec>、自身は<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="12" r signless />HPで戦闘続行</sec><sec typ="attr">一般効果</sec>を獲得します。
       TC: |-
-        回合開始時，指定保護小隊內輕裝型我軍及鋼線系列戰鬥員。
-        回合開始時，對所有我軍施加反機動型傷害量 / 命中 / 行動力增加效果。若目標為鋼線系列戰鬥員，則效果增加50%。
-        開始戰鬥時，若小隊內至少有一名隸屬的鋼線系列戰鬥員，自身將獲得繼續戰鬥普通效果。
+        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>小隊內輕裝型我方及鋼鐵防線系列戰鬥員。
+        回合開始時，賦予所有我方<sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />對機動型傷害量<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>增加效果。
+        <sec type="cond">若目標為<cmt t="鋼鐵防線系統"><import name="SteelLine" /></cmt>戰鬥員</sec>，效果增加50%。
+        <sec type="cond">戰鬥開始時</sec>，<sec type="cond">若小隊內至少存在一名麾下<cmt t="鋼鐵防線系統"><import name="SteelLine" /></cmt>戰鬥員</sec>，自身獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="12" r signless />HP戰鬥續行</sec><sec typ="attr">一般效果</sec>。
   "5":
     key: "5"
     icon: P.Particle
@@ -6044,21 +6049,21 @@ skills:
         해당 효과는 <sec typ="important">효과 저항의 영향을 받지 않지만, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec>로 해제할 수 있습니다.</sec>
         <sec typ="note">화망 구축</sec>이 2중첩 이상인 대상에게 공격 시, <sec typ="buff"><buff typ="VULNERABLE" /> 회피 증가 효과를 해제</sec>합니다.
         <sec typ="note">화망 구축</sec> 중첩 수가 최대인 대상에게 공격 시, 2라운드 동안 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 <val idx="5" slot="1" r /></sec>를 증가시킵니다.
-      JP: |-
-        ラウンド開始時、最大3回まで全ての敵に<sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="0" r /></sec>減少効果を適用します。
-        この効果は<sec typ="important">効果耐性の影響を受けませんが、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害な効果解除</sec>で解除できます。</sec>
-        <sec typ="note">火網構築</sec>が2スタック以上の対象に攻撃時、<sec typ="buff"><buff typ="VULNERABLE" /> 回避増加効果を解除</sec>します。
-        <sec typ="note">火網構築</sec>のスタック数が最大の対象に攻撃時、2ラウンドの間、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ <val idx="5" slot="1" r /></sec>を増加させます。
       EN: |-
-        At the start of the round, applies <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="0" r /></sec> Decrease to all enemies up to 3 times.
-        This effect is <sec typ="important">not affected by Effect Resistance, but can be removed by <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Remove Malign Effect</sec>.</sec>
-        When attacking targets with 2 or more <sec typ="note">Firenet Establishment</sec> stacks, removes their <sec typ="buff"><buff typ="VULNERABLE" /> EVA Increase</sec> effect.
-        When attacking targets with max <sec typ="note">Firenet Establishment</sec> stacks, increases the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Received Damage <val idx="5" slot="1" r /></sec> for 2 rounds.
+        <sec typ="cond">At round start</sec>, applies <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion decrease by <val idx="0" r /></sec> to all enemies up to 3 times.
+        <sec typ="important">This effect is not affected by Effect Resistance, but can be removed by <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effect removal</sec>.</sec>
+        When attacking a target with 2 or more stacks of <sec typ="note">Establish Fire Net</sec>, <sec typ="buff"><buff typ="VULNERABLE" /> removes Evasion increase effects</sec>.
+        When attacking a target with max stacks of <sec typ="note">Establish Fire Net</sec>, increases the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken by <val idx="5" slot="1" r /></sec> for 2 rounds.
+      JP: |-
+        ラウンド開始時、最大3回まですべての敵に<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="0" r /></sec>減少効果を適用します。
+        この効果は<sec typ="important">効果耐性の影響を受けませんが、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害効果解除</sec>で解除できます。</sec>
+        <sec typ="note">火網構築</sec>が2重複以上の対象を攻撃時、<sec typ="buff"><buff typ="VULNERABLE" />回避増加効果を解除</sec>します。
+        <sec typ="note">火網構築</sec>の重複数が最大の対象を攻撃時、2ラウンドの間、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ<val idx="5" slot="1" r /></sec>を増加させます。
       TC: |-
-        回合開始時，最多3次對所有敵軍施加<sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="0" r /></sec>降低效果。
-        此效果<sec typ="important">不受效果抵抗影響，但可透過<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除減益效果</sec>來解除。</sec>
-        攻擊<sec typ="note">構建火網</sec>疊加2層以上的目標時，<sec typ="buff"><buff typ="VULNERABLE" /> 解除迴避增加效果</sec>。
-        攻擊<sec typ="note">構建火網</sec>疊加層數達到最大值的目標時，在2回合內增加目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 所受傷害 <val idx="5" slot="1" r /></sec>。
+        回合開始時，最多3次對所有敵人套用<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="0" r /></sec>降低效果。
+        該效果<sec typ="important">不受效果抗性影響，但可被<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除有害效果</sec>解除。</sec>
+        攻擊<sec typ="note">建構火網</sec>2層以上的目標時，<sec typ="buff"><buff typ="VULNERABLE" />解除迴避增加效果</sec>。
+        攻擊<sec typ="note">建構火網</sec>層數達最大的目標時，2回合內使目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />受到傷害<val idx="5" slot="1" r /></sec>增加。
 dialogue:
   KR:
     "1":

@@ -1929,9 +1929,9 @@ skills:
             chance: 1
     desc:
       KR: 서브 머신건으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec>를 낮추며 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>으로 설정해 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>가 증가하는 상태로 만듭니다.
-      JP: サブマシンガンで<dmg elem="physics" />を与え、2ラウンドの間、対象の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="0" r /></sec>を下げ、<sec typ="buff"><buff typ="MARKING" />標的</sec>に設定して<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="3" r /></sec>が増加する状態にします。
-      EN: Deals <dmg elem="physics" /> with a submachine gun, lowers the target's <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="0" r /></sec> for 2 rounds, marks the target, and makes it enter a state in which <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="3" r /></sec> increases.
-      TC: 以衝鋒槍造成<dmg elem="physics" />，在2回合內降低目標的<sec typ="buff"><buff typ="EVADE_DOWN" />閃避<val idx="0" r /></sec>，並將其設為<sec typ="buff"><buff typ="MARKING" />標記</sec>，使<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="3" r /></sec>增加。
+      EN: Deals <dmg elem="physics" /> with a submachine gun, lowers the target's <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="0" r /></sec> for 2 rounds, and sets them as <sec typ="buff"><buff typ="MARKING" /> Marked</sec>, causing <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="3" r /></sec> to increase.
+      JP: サブマシンガンで<dmg elem="physics" />を与え、2ラウンドの間、対象の<sec typ="buff"><buff typ="EVADE_DOWN" />回避 <val idx="0" r /></sec>を低下させ、<sec typ="buff"><buff typ="MARKING" />標的</sec>に設定して<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="3" r /></sec>が増加する状態にします。
+      TC: 以衝鋒槍造成<dmg elem="physics" />，在2回合內降低目標的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避 <val idx="0" r /></sec>，並設定為<sec typ="buff"><buff typ="MARKING" />標記</sec>，使其進入<sec typ="buff"><buff typ="VULNERABLE" />所受傷害 <val idx="3" r /></sec>增加狀態。
   "2":
     key: "2"
     icon: SetTurret
@@ -2321,21 +2321,21 @@ skills:
         터렛은 자동으로 적을 공격하며, 1개만 설치할 수 있습니다.
         <sec>스킬 레벨 5부터는 최대 2개 까지 설치할 수 있으며, 스킬 레벨이 높아질수록 소모 AP가 감소합니다.</sec>
         <sec>소환 스킬은 <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 감소</sec> 효과에 영향받지 않습니다.</sec>
-      JP: |-
-        味方陣営の空き位置に、最大射程4で挑発機能を持つ<sec>AMG-11タレット</sec>を設置します。
-        タレットは自動で敵を攻撃し、1基まで設置できます。
-        <sec>スキルレベル5からは最大2基まで設置でき、スキルレベルが高いほど消費APが減少します。</sec>
-        <sec>召喚スキルは<sec typ="buff"><buff typ="RANGE_DOWN" />射程減少</sec>効果の影響を受けません。</sec>
       EN: |-
-        Places an <sec>AMG-11 turret</sec> with a max range of 4 and taunt in an empty spot on the ally side.
-        The turret automatically attacks enemies, and only one can be deployed.
-        <sec>Starting at skill level 5, up to 2 can be deployed, and AP cost decreases as skill level rises.</sec>
-        <sec>Summon skills are not affected by <sec typ="buff"><buff typ="RANGE_DOWN" /> range reduction</sec> effects.</sec>
+        Installs an <sec>AMG-11 Turret</sec> with maximum range 4 and a provoke function on an empty tile in the allied field.
+        The turret automatically attacks enemies, and only 1 can be installed.
+        <sec>From Skill Level 5, up to 2 can be installed, and AP cost decreases as skill level increases.</sec>
+        <sec>Summon skills are not affected by <sec typ="buff"><buff typ="RANGE_DOWN" /> Range Decrease</sec> effects.</sec>
+      JP: |-
+        味方陣営の空き地点に、最大射程が4で挑発機能を持つ<sec>AMG-11タレット</sec>を設置します。
+        タレットは自動で敵を攻撃し、1個だけ設置できます。
+        <sec>スキルレベル5からは最大2個まで設置でき、スキルレベルが上がるほど消費APが減少します。</sec>
+        <sec>召喚スキルは<sec typ="buff"><buff typ="RANGE_DOWN" />射程減少</sec>効果の影響を受けません。</sec>
       TC: |-
-        在友軍陣營的空位上設置最大射程為4且具挑釁功能的<sec>AMG-11砲塔</sec>。
-        砲塔會自動攻擊敵人，最多只能設置1個。
-        <sec>從技能等級5開始可最多設置2個，且技能等級越高，消耗AP越低。</sec>
-        <sec>召喚技能不受<sec typ="buff"><buff typ="RANGE_DOWN" />射程減少</sec>效果影響。</sec>
+        在友軍陣地的空位設置最大射程為4、具挑釁功能的<sec>AMG-11砲塔</sec>。
+        砲塔會自動攻擊敵人，且只能設置1個。
+        <sec>技能等級5起最多可設置2個，技能等級越高消耗AP越少。</sec>
+        <sec>召喚技能不受<sec typ="buff"><buff typ="RANGE_DOWN" />射程降低</sec>效果影響。</sec>
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -2641,20 +2641,20 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, 주변 아군의 화기를 개조해 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>를 증가시키지만 <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="2" /></sec>을(를) 감소시킵니다.
+        라운드 개시 시, 주변 아군의 화기를 개조해 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>를 증가시키지만 <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="2" /></sec>를 감소시킵니다.
         <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 감소</sec> 효과는 <sec typ="note">기타 효과</sec>로 분류됩니다.
         <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+      EN: |-
+        At round start, modifies nearby allies' firearms to increase <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec>, but decreases <sec typ="buff"><buff typ="RANGE_DOWN" /> Range <val idx="2" /></sec>.
+        The <sec typ="buff"><buff typ="RANGE_DOWN" /> Range Decrease</sec> effect is classified as an <sec typ="note">Other Effects</sec>.
+        <sec>At Skill Level 10, the range increases.</sec>
       JP: |-
-        ラウンド開始時、周囲の味方の銃器を改造し<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec>を増加させますが、<sec typ="buff"><buff typ="RANGE_DOWN" />射程<val idx="2" /></sec>を減少させます。
+        ラウンド開始時、周辺の味方の火器を改造して<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="1" r /></sec>を増加させますが、<sec typ="buff"><buff typ="RANGE_DOWN" />射程 <val idx="2" /></sec>を減少させます。
         <sec typ="buff"><buff typ="RANGE_DOWN" />射程減少</sec>効果は<sec typ="note">その他効果</sec>に分類されます。
         <sec>スキルレベル10で範囲が増加します。</sec>
-      EN: |-
-        At round start, retrofits nearby allies' firearms, increasing <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> but decreasing <sec typ="buff"><buff typ="RANGE_DOWN" /> range <val idx="2" /></sec>.
-        The <sec typ="buff"><buff typ="RANGE_DOWN" /> range reduction</sec> effect is classified as <sec typ="note">miscellaneous effects</sec>.
-        <sec>Range increases at skill level 10.</sec>
       TC: |-
-        於回合開始時，改造周圍友軍的槍械，使<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>增加，但<sec typ="buff"><buff typ="RANGE_DOWN" />射程<val idx="2" /></sec>減少。
-        <sec typ="buff"><buff typ="RANGE_DOWN" />射程減少</sec>效果被歸類為<sec typ="note">其他效果</sec>。
+        回合開始時，改造周圍友軍的火器，使<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊 <val idx="1" r /></sec>增加，但使<sec typ="buff"><buff typ="RANGE_DOWN" />射程 <val idx="2" /></sec>降低。
+        <sec typ="buff"><buff typ="RANGE_DOWN" />射程降低</sec>效果分類為<sec typ="note">其他效果</sec>。
         <sec>技能等級10時，範圍增加。</sec>
 dialogue:
   KR:

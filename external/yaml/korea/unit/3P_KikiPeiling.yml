@@ -2248,18 +2248,18 @@ skills:
         봉으로 세게 내리쳐 단일 대상에게 <dmg elem="lightning" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하고 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="1" r /></sec>를 감소시킵니다.
         <sec typ="cond">치명타 시</sec>, 움직임을 간파하여 대상의 다음 공격에 대한 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="3" r /></sec>가 크게 감소합니다.
-      JP: |-
-        棒で強く叩きつけ、単一対象に<dmg elem="lightning" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>し<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="1" r /></sec>を減少させます。
-        <sec typ="cond">クリティカル時</sec>、動きを見切り、対象の次の攻撃に対する<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="3" r /></sec>が大きく減少します。
       EN: |-
-        Brutally slams with a staff and deals <dmg elem="lightning" /> to a single target.
-        <sec typ="cond">When attack hits</sec>, provokes the target for 2 rounds and decreases their <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance <val idx="1" r /></sec>.
-        <sec typ="cond">When CRIT hits</sec>, sees through the target's movements and greatly decreases their <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACU <val idx="3" r /></sec> against the target's next attack.
+        Strikes down hard with her staff, dealing <dmg elem="lightning" /> to a single target.
+        <sec typ="cond">On hit</sec>, <sec typ="buff"><buff typ="PROVOKE" /> Provokes</sec> the target and decreases <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance by <val idx="1" r /></sec> for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, reads the target's movement and greatly decreases <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy by <val idx="3" r /></sec> for the target's next attack.
+      JP: |-
+        棒で強く振り下ろし、単一対象へ<dmg elem="lightning" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>し、<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性<val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">クリティカル時</sec>、動きを見抜き、対象の次の攻撃に対する<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="3" r /></sec>が大きく減少します。
       TC: |-
-        以棍棒重擊，對單一目標造成<dmg elem="lightning" />。
-        <sec typ="cond">命中時</sec>，使目標在2回合內陷入<sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>並減少其<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抵抗 <val idx="1" r /></sec>。
-        <sec typ="cond">暴擊時</sec>，看穿其動作，並大幅減少目標對下一次攻擊的<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="3" r /></sec>。
+        用棍棒用力下劈，對單一目標造成<dmg elem="lightning" />。
+        <sec typ="cond">命中時</sec>，2回合內<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>目標，並降低<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電屬性抗性<val idx="1" r /></sec>。
+        <sec typ="cond">暴擊時</sec>，看穿動作，使目標下一次攻擊的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="3" r /></sec>大幅降低。
   "2":
     key: "2"
     icon: WideLightning
@@ -5396,40 +5396,40 @@ skills:
     desc:
       KR: |-
         빠른 연속 찌르기로 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 줍니다.
-        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="note"><cmt t="회로 과열">$$CIRCUIT_OVERHEAT:?$</cmt></sec> 상태로 만듭니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="note"><cmt t="회로 과열"><import name="CIRCUIT_OVERHIT" /></cmt></sec> 상태로 만듭니다.
         <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
-        $$CIRCUIT_OVERHEAT~
+        <define name="CIRCUIT_OVERHIT">
         <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="6" r /></sec>
         <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="7" r /></sec>
         <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="8" r /></sec>
-        ~$$CIRCUIT_OVERHEAT
-      JP: |-
-        素早い連続突きで指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="lightning" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="note"><cmt t="回路過熱">$$CIRCUIT_OVERHEAT:?$</cmt></sec>状態にします。
-        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="LightningATK_UP" /> ダメージ量 <val idx="4" r /></sec>が増加します。
-        $$CIRCUIT_OVERHEAT~
-        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="6" r /></sec>
-        <sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性 <val idx="7" r /></sec>
-        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="8" r /></sec>
-        ~$$CIRCUIT_OVERHEAT
+        </define>
       EN: |-
-        Strikes with rapid consecutive thrusts and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> to the designated area.
-        <sec typ="cond">When attack hits</sec>, inflicts the target with <sec typ="note"><cmt t="Circuit Overheat">$$CIRCUIT_OVERHEAT:?$</cmt></sec> for 2 rounds.
-        <sec typ="cond">When CRIT hits</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> Damage <val idx="4" r /></sec> increases.
-        $$CIRCUIT_OVERHEAT~
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> to the designated area with rapid consecutive thrusts.
+        <sec typ="cond">On hit</sec>, inflicts <sec typ="note"><cmt t="Circuit Overheat"><import name="CIRCUIT_OVERHIT" /></cmt></sec> on the target for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> damage dealt increases by <val idx="4" r /></sec>.
+        <define name="CIRCUIT_OVERHIT">
         <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="6" r /></sec>
-        <sec typ="buff"><buff typ="ICERES_UP" /> Cold Resistance <val idx="7" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance <val idx="7" r /></sec>
         <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance <val idx="8" r /></sec>
-        ~$$CIRCUIT_OVERHEAT
+        </define>
+      JP: |-
+        素早い連続突きで指定範囲に<sec typ="attr">保護無視</sec><dmg elem="lightning" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="note"><cmt t="回路過熱"><import name="CIRCUIT_OVERHIT" /></cmt></sec>状態にします。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="LightningATK_UP" />ダメージ量<val idx="4" r /></sec>が増加します。
+        <define name="CIRCUIT_OVERHIT">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性<val idx="6" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_UP" />冷気耐性<val idx="7" r /></sec>
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性<val idx="8" r /></sec>
+        </define>
       TC: |-
-        以快速連續刺擊對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="lightning" />。
-        <sec typ="cond">命中時</sec>，使目標在2回合內陷入<sec typ="note"><cmt t="回路過熱">$$CIRCUIT_OVERHEAT:?$</cmt></sec>狀態。
-        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="LightningATK_UP" /> 傷害量 <val idx="4" r /></sec>增加。
-        $$CIRCUIT_OVERHEAT~
-        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抵抗 <val idx="6" r /></sec>
-        <sec typ="buff"><buff typ="ICERES_UP" /> 冰霜抵抗 <val idx="7" r /></sec>
-        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抵抗 <val idx="8" r /></sec>
-        ~$$CIRCUIT_OVERHEAT
+        以快速連續突刺對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="lightning" />。
+        <sec typ="cond">命中時</sec>，2回合內使目標進入<sec typ="note"><cmt t="迴路過熱"><import name="CIRCUIT_OVERHIT" /></cmt></sec>狀態。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="LightningATK_UP" />傷害量<val idx="4" r /></sec>增加。
+        <define name="CIRCUIT_OVERHIT">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性<val idx="6" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_UP" />冰屬性抗性<val idx="7" r /></sec>
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電屬性抗性<val idx="8" r /></sec>
+        </define>
   "3":
     key: "3"
     icon: P.DefCounter
@@ -5782,18 +5782,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 보호기의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>합니다.
         <sec typ="cond">라운드 개시 시</sec>, 자신이 지원 공격 중인 아군의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec>가 증가합니다.
         <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격 시</sec>, 2라운드 동안 <sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 감소 상태</sec>인 적의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="7" r /></sec>가 감소합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方保護機の<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃を支援</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>、自分が支援攻撃中の味方の<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec>が増加します。
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻撃時</sec>、2ラウンドの間、<sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性減少状態</sec>の敵の<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec>が減少します。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, provides <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attack Support</sec> to ally Defenders within range.
-        <sec typ="cond">At the start of the round</sec>, the <sec typ="buff"><buff typ="ACCURACY_UP" /> ACU <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="6" r /></sec> of allies self is supporting increases.
-        <sec typ="cond">When providing <buff typ="SUPPORT_ATTACK" /> Attack Support</sec>, the <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACU <val idx="7" r /></sec> of enemies in <sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance Decrease</sec> decreases for 2 rounds.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports attacks by allied Protectors</sec> within range.
+        <sec typ="cond">At round start</sec>, increases <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion by <val idx="6" r /></sec> for allies she is support attacking with.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> On support attack</sec>, decreases <sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> Accuracy by </sec><sec typ="buff"> for enemies under <buff typ="ACCURACY_DOWN" /><val idx="7" r /> Electric Resistance Down</sec> for 2 rounds.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方保護機の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃を支援</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、自身が支援攻撃中の味方の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec>が増加します。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />支援攻撃時</sec>、2ラウンドの間、<sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" />電気耐性低下状態</sec>の敵の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="7" r /></sec>が減少します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，給予範圍內我軍保護機<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻擊支援</sec>。
-        <sec typ="cond">回合開始時</sec>，提升自身支援攻擊中的我軍之<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec>。
-        <sec typ="cond">進行<buff typ="SUPPORT_ATTACK" /> 支援攻擊時</sec>，使<sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抵抗降低狀態</sec>敵軍的<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec>在2回合內降低。
+        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援範圍內我方保護機的攻擊</sec>。
+        <sec typ="cond">回合開始時</sec>，自身正在支援攻擊的我方的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec>增加。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />支援攻擊時</sec>，2回合內使處於<sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" />電屬性抗性降低狀態</sec>的敵人<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="7" r /></sec>降低。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -6528,18 +6528,18 @@ skills:
         <sec typ="cond">전투 개시 시</sec>, 3라운드 동안 모든 적을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>합니다.
         <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" r /></sec>가 증가합니다.
         <sec typ="cond">회피 시</sec>, 2라운드 동안 자신은 <sec typ="buff"><buff typ="COUNTER" /> <val idx="11" r signless /> 위력으로 반격</sec>이 활성화되고, <sec typ="cond"><buff typ="COUNTER" /> 반격 활성화 상태</sec>인 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="13" /></sec>이(가) 증가합니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、3ラウンドの間、全ての敵を<sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間、自分の<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>が増加します。
-        <sec typ="cond">回避時</sec>、2ラウンドの間、自分は<sec typ="buff"><buff typ="COUNTER" /> <val idx="11" r signless /> の威力で反撃</sec>が有効化され、<sec typ="cond"><buff typ="COUNTER" /> 反撃有効化状態</sec>の味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="13" /></sec>が増加します。
       EN: |-
-        <sec typ="cond">At the start of combat</sec>, provokes all enemies for 3 rounds.
-        <sec typ="cond">At the start of the round</sec>, self’s <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="8" r /></sec> increases for 3 rounds.
-        <sec typ="cond">When evading</sec>, self gains retaliation with <sec typ="buff"><buff typ="COUNTER" /> <val idx="11" r signless /> power</sec> for 2 rounds, and allies in <sec typ="cond"><buff typ="COUNTER" /> Retaliation active</sec> state gain <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="13" /></sec>.
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="PROVOKE" /> Provokes</sec> all enemies for 3 rounds.
+        <sec typ="cond">At round start</sec>, increases her <sec typ="buff"><buff typ="EVADE_UP" /> Evasion by <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power by <val idx="8" r /></sec> for 3 rounds.
+        <sec typ="cond">On evasion</sec>, she activates <sec typ="buff"><buff typ="COUNTER" /> Counterattack with <val idx="11" r signless /> power</sec> for 2 rounds, and <sec typ="cond"><buff typ="COUNTER" /> AP increases by </sec><sec typ="buff"> for allies under <buff typ="AP_UP" /><val idx="13" /> Counterattack active</sec>.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、3ラウンドの間、すべての敵を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間、自身の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="8" r /></sec>が増加します。
+        <sec typ="cond">回避時</sec>、2ラウンドの間、自身は<sec typ="buff"><buff typ="COUNTER" /><val idx="11" r signless />威力で反撃</sec>が活性化され、<sec typ="cond"><buff typ="COUNTER" />反撃活性化状態</sec>の味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="13" /></sec>が増加します。
       TC: |-
-        <sec typ="cond">開始戰鬥時</sec>，挑釁所有敵軍，持續3回合。
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>在3回合內增加。
-        <sec typ="cond">迴避時</sec>，自身在2回合內啟用以<sec typ="buff"><buff typ="COUNTER" /> <val idx="11" r signless /> 威力</sec>進行反擊，且<sec typ="cond"><buff typ="COUNTER" /> 反擊啟用狀態</sec>的我軍<sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="13" /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec>，3回合內<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>所有敵人。
+        <sec typ="cond">回合開始時</sec>，3回合內自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="8" r /></sec>增加。
+        <sec typ="cond">迴避時</sec>，2回合內自身啟用<sec typ="buff"><buff typ="COUNTER" />以<val idx="11" r signless />威力反擊</sec>，且處於<sec typ="cond"><buff typ="COUNTER" />反擊啟用狀態</sec>的我方<sec typ="buff"><buff typ="AP_UP" />AP<val idx="13" /></sec>增加。
   "5":
     key: "5"
     icon: P.Scan
@@ -7006,45 +7006,45 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SCOUTING" /> 정찰 활성화</sec> 상태가 되고, 2라운드 동안 모든 적을 <sec typ="note"><cmt t="회로 과열">$$CIRCUIT_OVERHEAT:?$</cmt></sec> 상태로 만듭니다.
-        <sec typ="note">호법</sec>의 지원 공격 대상 제한이 사라지고, 추가로 공격 지원 대상의 치명타가 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SCOUTING" /> 정찰 활성화</sec> 상태가 되고, 2라운드 동안 모든 적을 <sec typ="note"><cmt t="회로 과열"><import name="CIRCUIT_OVERHIT" /></cmt></sec> 상태로 만듭니다.
+        <sec typ="note">호법</sec>의 지원 공격 대상 제한이 사라지고, 추가로 공격 지원 대상의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec>가 증가합니다.
         <sec typ="cond">공격 적중 시</sec> <sec typ="cond">대상의 회피가 자신보다 낮을 경우</sec>, 2라운드 동안 대상은 <sec typ="buff"><buff typ="Disallow" /> 강화 불가</sec> 상태가 됩니다.
         <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격 시</sec>, 자신에 의한 <sec typ="ref"><buff typ="Disallow" /> 강화 불가</sec> 효과의 지속 라운드를 갱신합니다.
-        $$CIRCUIT_OVERHEAT~
+        <define name="CIRCUIT_OVERHIT">
         <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="7" r /></sec>
         <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="8" r /></sec>
         <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="9" r /></sec>
-        ~$$CIRCUIT_OVERHEAT
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、自分は<sec typ="buff"><buff typ="SCOUTING" /> 偵察有効化</sec>状態になり、2ラウンドの間、全ての敵を<sec typ="note"><cmt t="回路過熱">$$CIRCUIT_OVERHEAT:?$</cmt></sec>状態にします。
-        <sec typ="note">護法</sec>の支援攻撃対象制限がなくなり、さらに支援攻撃対象のクリティカル率が増加します。
-        <sec typ="cond">攻撃命中時</sec> <sec typ="cond">対象の回避が自分より低い場合</sec>、2ラウンドの間、対象は<sec typ="buff"><buff typ="Disallow" /> 強化不可</sec>状態になります。
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻撃時</sec>、自分による<sec typ="ref"><buff typ="Disallow" /> 強化不可</sec>効果の持続ラウンドを更新します。
-        $$CIRCUIT_OVERHEAT~
-        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="7" r /></sec>
-        <sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性 <val idx="8" r /></sec>
-        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="9" r /></sec>
-        ~$$CIRCUIT_OVERHEAT
+        </define>
       EN: |-
-        <sec typ="cond">At the start of combat</sec>, self becomes <sec typ="buff"><buff typ="SCOUTING" /> Recon active</sec>, and for 2 rounds, turns all enemies into <sec typ="note"><cmt t="Circuit Overheat">$$CIRCUIT_OVERHEAT:?$</cmt></sec>.
-        The support attack target restriction of <sec typ="note">Guardian</sec> is removed, and the CRIT of allies receiving Attack Support is additionally increased.
-        <sec typ="cond">When attack hits</sec> <sec typ="cond">if the target's EVA is lower than self's</sec>, the target becomes <sec typ="buff"><buff typ="Disallow" /> Disable Upgrade</sec> for 2 rounds.
-        <sec typ="cond">When providing <buff typ="SUPPORT_ATTACK" /> Attack Support</sec>, refreshes the duration of the <sec typ="ref"><buff typ="Disallow" /> Disable Upgrade</sec> effect caused by self.
-        $$CIRCUIT_OVERHEAT~
+        <sec typ="cond">At battle start</sec>, she enters <sec typ="buff"><buff typ="SCOUTING" /> Scouting active</sec> state, and inflicts <sec typ="note"><cmt t="Circuit Overheat"><import name="CIRCUIT_OVERHIT" /></cmt></sec> on all enemies for 2 rounds.
+        The support attack target restriction of <sec typ="note">Guardian Law</sec> is removed, and the support attack target's <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical additionally increases by <val idx="4" r /></sec>.
+        <sec typ="cond">On attack hit</sec>, <sec typ="cond">if the target's Evasion is lower than hers</sec>, the target becomes <sec typ="buff"><buff typ="Disallow" /> Unable to be Buffed</sec> for 2 rounds.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> On support attack</sec>, refreshes the duration of the <sec typ="ref"><buff typ="Disallow" /> Unable to be Buffed</sec> effect caused by her.
+        <define name="CIRCUIT_OVERHIT">
         <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="7" r /></sec>
-        <sec typ="buff"><buff typ="ICERES_UP" /> Cold Resistance <val idx="8" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance <val idx="8" r /></sec>
         <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance <val idx="9" r /></sec>
-        ~$$CIRCUIT_OVERHEAT
+        </define>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自身は<sec typ="buff"><buff typ="SCOUTING" />偵察活性化</sec>状態になり、2ラウンドの間、すべての敵を<sec typ="note"><cmt t="回路過熱"><import name="CIRCUIT_OVERHIT" /></cmt></sec>状態にします。
+        <sec typ="note">護法</sec>の支援攻撃対象制限がなくなり、追加で攻撃支援対象の<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="4" r /></sec>が増加します。
+        <sec typ="cond">攻撃命中時</sec>、<sec typ="cond">対象の回避が自身より低い場合</sec>、2ラウンドの間、対象は<sec typ="buff"><buff typ="Disallow" />強化不可</sec>状態になります。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />支援攻撃時</sec>、自身による<sec typ="ref"><buff typ="Disallow" />強化不可</sec>効果の持続ラウンドを更新します。
+        <define name="CIRCUIT_OVERHIT">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性<val idx="7" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_UP" />冷気耐性<val idx="8" r /></sec>
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性<val idx="9" r /></sec>
+        </define>
       TC: |-
-        <sec typ="cond">開始戰鬥時</sec>，自身變為<sec typ="buff"><buff typ="SCOUTING" /> 偵察啟用</sec>狀態，並在2回合內使所有敵軍陷入<sec typ="note"><cmt t="回路過熱">$$CIRCUIT_OVERHEAT:?$</cmt></sec>狀態。
-        <sec typ="note">護法</sec>的支援攻擊目標限制消失，並額外增加接受支援攻擊目標的暴擊。
-        <sec typ="cond">攻擊命中時</sec> <sec typ="cond">若目標迴避低於自身</sec>，使目標在2回合內陷入<sec typ="buff"><buff typ="Disallow" /> 無法強化</sec>狀態。
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻擊時</sec>，更新自身施加的<sec typ="ref"><buff typ="Disallow" /> 無法強化</sec>效果持續回合。
-        $$CIRCUIT_OVERHEAT~
-        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抵抗 <val idx="7" r /></sec>
-        <sec typ="buff"><buff typ="ICERES_UP" /> 冰霜抵抗 <val idx="8" r /></sec>
-        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抵抗 <val idx="9" r /></sec>
-        ~$$CIRCUIT_OVERHEAT
+        <sec typ="cond">戰鬥開始時</sec>，自身進入<sec typ="buff"><buff typ="SCOUTING" />偵察啟用</sec>狀態，並在2回合內使所有敵人進入<sec typ="note"><cmt t="迴路過熱"><import name="CIRCUIT_OVERHIT" /></cmt></sec>狀態。
+        <sec typ="note">護法</sec>的支援攻擊目標限制消失，且攻擊支援目標的<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="4" r /></sec>額外增加。
+        <sec typ="cond">攻擊命中時</sec>，<sec typ="cond">若目標迴避低於自身</sec>，2回合內目標進入<sec typ="buff"><buff typ="Disallow" />無法強化</sec>狀態。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />支援攻擊時</sec>，刷新自身造成的<sec typ="ref"><buff typ="Disallow" />無法強化</sec>效果持續回合。
+        <define name="CIRCUIT_OVERHIT">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性<val idx="7" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_UP" />冰屬性抗性<val idx="8" r /></sec>
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電屬性抗性<val idx="9" r /></sec>
+        </define>
 dialogue:
   KR:
     "1":

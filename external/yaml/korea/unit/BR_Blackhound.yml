@@ -3007,18 +3007,18 @@ skills:
         기총 사격으로 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하고 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="4" r /></sec>를 감소시킵니다. (중첩 불가)
         <sec typ="cond">스쿼드 내 <char uid="BR_Lindwurm" />이 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 대 장갑 미사일</sec> 스킬 협동 공격</sec>을 유도합니다.
+      EN: |-
+        machine gun by firing as <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 2 rounds target <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> and <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="4" r /></sec> decreases. (Cannot stack)
+        <sec typ="cond">in squad <char uid="BR_Lindwurm" /> if present</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 anti armor missile</sec> skill coordinated attack</sec> triggers.
       JP: |-
         機銃射撃で<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>し、<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="4" r /></sec>を減少させます。(スタック不可)
-        <sec typ="cond">分隊内に<char uid="BR_Lindwurm" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25対装甲ミサイル</sec>スキル協同攻撃</sec>を誘導します。
-      EN: |-
-        Fires machine gun bursts and deals <dmg elem="physics" />.
-        <sec typ="cond">On hit</sec>, provokes the target and decreases their <sec typ="buff"><buff typ="ACCURACY_DOWN" /> accuracy <val idx="4" r /></sec> for 2 rounds. (Cannot stack)
-        <sec typ="cond">If <char uid="BR_Lindwurm" /> is in the squad</sec>, triggers a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> co-op attack with the <sec typ="note">X-25 Anti-Armor Missile</sec> skill</sec>.
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象を <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>し、 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="4" r /></sec>を減少させます。 (重複不可)
+        <sec typ="cond">スクワッド 内 <char uid="BR_Lindwurm" />が 存在する場合</sec>、 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 ドエ ジアングアプ ミサイル</sec> スキル 協同攻撃</sec>を 誘導します。
       TC: |-
-        以機槍射擊造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，在2回合內使目標<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>，並降低其<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="4" r /></sec>。(無法疊加)
-        <sec typ="cond">若隊伍內有<char uid="BR_Lindwurm" /></sec>，則誘導進行<sec typ="buff"><buff typ="TOGETHER_ATTACK" />與<sec typ="note">X-25反裝甲導彈</sec>技能的協同攻擊</sec>。
+        機槍射擊以 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>並 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="4" r /></sec>使其減少。 (不可疊加)
+        <sec typ="cond">小隊 內 <char uid="BR_Lindwurm" /> 存在時</sec>， <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 對 裝甲 飛彈</sec> 技能 協同攻擊</sec> 誘發。
   "2":
     key: "2"
     icon: MultiMissile
@@ -5915,15 +5915,15 @@ skills:
       KR: |-
         EMP 미사일을 발사해 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 / 적중 증가 효과를 해제</sec>합니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="7" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다. (중첩 불가)
-      JP: |-
-        EMPミサイルを発射して<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />反撃 / 命中増加効果を解除</sec>します。
-        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="7" r /></sec>を減少させ、<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態にします。(スタック不可)
       EN: |-
-        Fires an EMP Missile and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />, removing the target’s <sec typ="buff"><buff typ="REMOVE_BUFF" /> Retaliation / Accuracy Increase effects</sec>.
-        <sec typ="cond">On hit</sec>, decreases the target’s <sec typ="buff"><buff typ="ACCURACY_DOWN" /> accuracy <val idx="7" r /></sec> and puts them in <sec typ="buff"><buff typ="MARKING" /> Marked</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> state for 2 rounds. (Cannot stack)
+        EMP missile fires <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Counterattack / Accuracy increase removes the effect</sec>.
+        <sec typ="cond">On hit</sec>, 2 rounds, target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="7" r /></sec> decreases and <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> inflicts. (cannot stack)
+      JP: |-
+        EMPミサイルを 発射して <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃 / 命中 増加 効果を 解除</sec>します。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec>を 減少時クイし <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態にします。 (重複不可)
       TC: |-
-        發射EMP導彈，造成<sec typ="attr">無視保護</sec><dmg elem="physics" />，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的反擊／命中增加效果</sec>。
-        <sec typ="cond">命中時</sec>，在2回合內減少目標的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="7" r /></sec>，並使其進入<sec typ="buff"><buff typ="MARKING" />標記</sec>／<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態。(無法疊加)
+        EMP飛彈 發射 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊 / 命中 增加 效果 解除</sec>。
+        <sec typ="cond">命中時</sec>， 2回合內 目標的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec> 減少時台並 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 使其進入狀態。 (不可疊加)
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -6470,21 +6470,21 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 자신이 지정 보호 중인 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>을(를) 증가시킵니다.
         <sec typ="cond">회피 시</sec>, 범위 내 기동형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>을(를) 증가시킵니다.
         <sec>스킬 레벨 5 / 10에서 범위가 증가합니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の<sec typ="buff"><buff typ="DEF_Char" />保護機を除く味方を指定保護</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>、自分が指定保護中の味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="3" /></sec>を増加させます。
-        <sec typ="cond">回避時</sec>、範囲内の機動型の味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="4" /></sec>を増加させます。
-        <sec>スキルレベル5/10で範囲が増加します。</sec>
       EN: |-
-        At round start, provides designated protection to allies within range, excluding <sec typ="buff"><buff typ="DEF_Char" /> protectors</sec>.
-        At round start, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec> of allies under self’s designated protection.
-        <sec typ="cond">Upon evade</sec>, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> of allied Air units within range.
-        <sec>Range increases at Skill Lv. 5/10.</sec>
+        <sec typ="cond">At round start</sec>, within range <sec typ="buff"><buff typ="DEF_Char" /> Defender excluding Designated Protection for allies</sec>.
+        <sec typ="cond">At round start</sec>, self Designated Protection in progress allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec> increases.
+        <sec typ="cond">When evading</sec>, within range Mobile-type allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increases.
+        <sec>At skill levels 5 / 10, range increases.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 <sec typ="buff"><buff typ="DEF_Char" /> 保護機を ジエ外した 味方を 指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身が 指定保護 中の 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>を増加させます。
+        <sec typ="cond">回避時</sec>、 範囲内 機動型 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>を増加させます。
+        <sec>スキルレベル5／10で 範囲が増加します。</sec>
       TC: |-
-        於<sec typ="cond">回合開始時</sec>，對範圍內排除<sec typ="buff"><buff typ="DEF_Char" />保護機</sec>的我軍指定保護。
-        於<sec typ="cond">回合開始時</sec>，增加自身指定保護中的我軍<sec typ="buff"><buff typ="AP_UP" />AP<val idx="3" /></sec>。
-        於<sec typ="cond">迴避時</sec>，增加範圍內機動型我軍的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="4" /></sec>。
-        <sec>技能等級5／10時，範圍增加。</sec>
+        <sec typ="cond">回合開始時</sec>， 範圍內 <sec typ="buff"><buff typ="DEF_Char" /> 保護機 解除外 我方 指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>， 自身 指定保護 中的 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>使其增加。
+        <sec typ="cond">迴避時</sec>， 範圍內 機動型 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>使其增加。
+        <sec>技能等級5／10時 範圍增加。</sec>
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -6629,18 +6629,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec>가 활성화되고 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec>가 증가합니다.
         <sec typ="cond">공격 적중 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" slot="1" r /></sec>가 증가합니다. (최대 3중첩)
         <sec>자신은 스킬 레벨 당 +9%의 적중 보정이 적용됩니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分は<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>が有効になり、<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="0" r /></sec>が増加します。
-        <sec typ="cond">攻撃命中時</sec>、2ラウンドの間、自分の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" slot="1" r /></sec>が増加します。(最大3スタック)
-        <sec>自分にはスキルレベルごとに+9%の命中補正が適用されます。</sec>
       EN: |-
-        <sec typ="cond">At round start</sec>, self gains <sec typ="buff"><buff typ="DEF_Line" /> Protect Row</sec> and increases <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="0" r /></sec>.
-        <sec typ="cond">When attack hits</sec>, self’s <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="6" slot="1" r /></sec> increases for 2 rounds. (Max 3 stacks)
-        <sec>Self gains +9% accuracy compensation per skill level.</sec>
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> activated and <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, 2 rounds own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" slot="1" r /></sec> increases. (up to 3stack)
+        <sec>self per skill level +9% of accuracy correction is applied.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec>が 有効化になり、 <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">攻撃命中時</sec>、 2ラウンドの間 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" slot="1" r /></sec>が増加します。 (最大 3重複)
+        <sec>自身は スキルレベルごとに +9%の 命中補正が適用されます。</sec>
       TC: |-
-        <sec typ="cond">於回合開始時</sec>，自身啟用<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>，並增加<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="0" r /></sec>。
-        <sec typ="cond">攻擊命中時</sec>，自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" slot="1" r /></sec>在2回合內提升。(最多3層)
-        <sec>自身每個技能等級套用+9%命中修正。</sec>
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="DEF_Line" /> 列保護</sec> 啟用變為，且 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec>增加。
+        <sec typ="cond">攻擊命中時</sec>， 2回合內 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" slot="1" r /></sec>增加。 (最大 3疊加)
+        <sec>自身 每技能等級 +9%的 套用命中補正。</sec>
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -7037,24 +7037,24 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 (1회)</sec>  효과를 획득합니다.
-        <sec typ="cond">자신 외의 <cmt t="스카이 나이츠">$$SkyKnight:?$</cmt> 소속 전투원이 있을 경우</sec>, 효과가 추가로 적용됩니다.
-        <sec typ="cond">공격 받을 시</sec>, 2라운드 동안 <cmt t="스카이 나이츠">$$SkyKnight:?$</cmt> 소속 전투원의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec>를 증가시킵니다. (최대 5중첩)
+        <sec typ="cond">자신 외의 <cmt t="스카이 나이츠"><import name="SkyKnight" /></cmt> 소속 전투원이 있을 경우</sec>, 효과가 추가로 적용됩니다.
+        <sec typ="cond">공격 받을 시</sec>, 2라운드 동안 <cmt t="스카이 나이츠"><import name="SkyKnight" /></cmt> 소속 전투원의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec>를 증가시킵니다. (최대 5중첩)
         <sec typ="cond"><equip uid="Sub_AESARadar" /> 장착 시</sec>, 액티브 스킬의 적중 감소 효과가 두 배로 증폭되고 대상의 효과 저항을 무시합니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、自分は<sec typ="buff"><buff typ="DAMAGE_REDUCE" />ダメージ最小化 (1回)</sec>効果を獲得します。
-        <sec typ="cond">自分以外の<cmt t="スカイナイツ">$$SkyKnight:?$</cmt>所属戦闘員がいる場合</sec>、効果が追加で適用されます。
-        <sec typ="cond">攻撃を受けた時</sec>、2ラウンドの間、<cmt t="スカイナイツ">$$SkyKnight:?$</cmt>所属戦闘員の<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>を増加させます。(最大5スタック)
-        <sec typ="cond"><equip uid="Sub_AESARadar" />装着時</sec>、アクティブスキルの命中減少効果が2倍に増幅され、対象の効果耐性を無視します。
       EN: |-
-        At battle start, self gains <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Minimize Damage (1 Time)</sec>.
-        <sec typ="cond">If there is a <cmt t="Sky Knights">$$SkyKnight:?$</cmt> combatant other than self</sec>, the effect is additionally applied.
-        <sec typ="cond">When attacked</sec>, increases <cmt t="Sky Knights">$$SkyKnight:?$</cmt> combatants' <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="6" r /></sec> for 2 rounds. (Max 5 stacks)
-        <sec typ="cond">When <equip uid="Sub_AESARadar" /> is equipped</sec>, the Active Skill's accuracy decrease effect is doubled and ignores the target's Effect Resistance.
+        <sec typ="cond">At battle start</sec>, self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Damage Minimization (1times)</sec> gains the effect.
+        <sec typ="cond">self other than of <cmt t="Sky Knights"><import name="SkyKnight" /></cmt> affiliated combatant if present</sec>, effect and additionally is applied.
+        <sec typ="cond">When attacked</sec>, 2 rounds <cmt t="Sky Knights"><import name="SkyKnight" /></cmt> affiliated combatant of <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> increases. (up to 5stack)
+        <sec typ="cond"><equip uid="Sub_AESARadar" /> when equipped</sec>, active skill of Accuracy decrease the effect is doubled amplified and ignores the target's Effect Resistance.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 自身は <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージ最小化 (1回)</sec> 効果を獲得します。
+        <sec typ="cond">自身 外の <cmt t="スカイナイツ"><import name="SkyKnight" /></cmt> 所属 戦闘員が 存在する場合</sec>、 効果が 追加で 適用されます。
+        <sec typ="cond">攻撃を受ける時</sec>、 2ラウンドの間 <cmt t="スカイナイツ"><import name="SkyKnight" /></cmt> 所属 戦闘員の <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>を増加させます。 (最大 5重複)
+        <sec typ="cond"><equip uid="Sub_AESARadar" /> ジアンチアク 時</sec>、 アクティブ スキルの 命中 減少 効果が2倍で 増幅になり、 対象の 効果抵抗を無視します。
       TC: |-
-        於<sec typ="cond">戰鬥開始時</sec>，自身獲得<sec typ="buff"><buff typ="DAMAGE_REDUCE" />傷害最小化 (1次)</sec>效果。
-        <sec typ="cond">若有除自身以外的<cmt t="蒼天騎士">$$SkyKnight:?$</cmt>所屬戰鬥員</sec>，則額外套用該效果。
-        <sec typ="cond">受到攻擊時</sec>，在2回合內提升<cmt t="蒼天騎士">$$SkyKnight:?$</cmt>所屬戰鬥員的<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="5" r /></sec>／<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>。(最多5層)
-        <sec typ="cond"><equip uid="Sub_AESARadar" />裝備時</sec>，主動技能的命中降低效果會加倍，且無視目標效果抵抗。
+        <sec typ="cond">戰鬥開始時</sec>， 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 傷害最小化 (1次)</sec> 獲得效果。
+        <sec typ="cond">自身 外的 <cmt t="天空騎士"><import name="SkyKnight" /></cmt> 所屬 戰鬥員 存在時</sec>， 效果 額外 套用。
+        <sec typ="cond">受到攻擊時</sec>， 2回合內 <cmt t="天空騎士"><import name="SkyKnight" /></cmt> 所屬 戰鬥員的 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>使其增加。 (最大 5疊加)
+        <sec typ="cond"><equip uid="Sub_AESARadar" /> 裝備 時</sec>， 主動 技能的 命中 減少 效果變為2倍以 增幅變為，且 目標的 無視效果抗性。
 dialogue:
   KR:
     "1":

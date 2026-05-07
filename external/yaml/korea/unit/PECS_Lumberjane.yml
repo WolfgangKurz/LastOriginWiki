@@ -1878,20 +1878,20 @@ skills:
     desc:
       KR: |-
         톱날을 발사하여 목표 지점에 <dmg elem="physics" />를 줍니다.
-        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="1" r /></sec>를 감소시킵니다.
-        <sec typ="cond">적중 대상이 중장형인 경우</sec>, <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 중장형 대상 피해량 <val idx="2" r /></sec>가 증가합니다.
-      JP: |-
-        鋸刃を発射して目標地点に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、3ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="1" r /></sec>を減少させます。
-        <sec typ="cond">命中対象が重装型の場合</sec>、<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />重装型対象へのダメージ量<val idx="2" r /></sec>が増加します。
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>  / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">적중 대상이 중장형</sec>인 경우 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
       EN: |-
-        Fires a saw blade and deals <dmg elem="physics" /> to the target location.
-        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" r /></sec> for 3 rounds.
-        <sec typ="cond">If the hit target is Heavy Armor</sec>, <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage dealt to Heavy Armor <val idx="2" r /></sec> increases.
+        Topnal fires target point to <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 3 rounds, target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="1" r /></sec> decreases.
+        <sec typ="cond">Hit target Heavy-type</sec> if <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage <val idx="3" r /></sec> increases.
+      JP: |-
+        トオプンアルを 発射して 目標地点に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 3ラウンドの間 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">命中対象が 重装型</sec>の場合 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
       TC: |-
-        發射鋸刃，對目標地點造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，在3回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="1" r /></sec>。
-        <sec typ="cond">若命中的目標為重裝型</sec>，則<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型目標的傷害量<val idx="2" r /></sec>增加。
+        Topnal 發射並 目標地點於 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 3回合內 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="1" r /></sec>使其減少。
+        <sec typ="cond">命中目標為 重裝型</sec>若為 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 傷害量 <val idx="3" r /></sec>增加。
   "2":
     key: "2"
     icon: CannonShot
@@ -3693,16 +3693,16 @@ skills:
     desc:
       KR: |-
         지정 대상에게 1:1 대화를 시도하여 <dmg elem="physics" />를 줍니다.
-        <sec typ="cond">적중 대상이 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 감소</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 감소</sec> 상태인 경우</sec>, 각각 피해량이 증가합니다.
-      JP: |-
-        指定対象に1対1の対話を試みて<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中対象が<sec typ="buff"><buff typ="DEF_DOWN" />防御力減少</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力減少</sec>状態の場合</sec>、それぞれダメージ量が増加します。
+        적중 대상이 <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> / <sec typ="cond"><buff typ="AP_DOWN" /> 행동력 감소</sec> 상태인 경우 각각 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
       EN: |-
-        Attempts a 1-on-1 conversation with the designated target and deals <dmg elem="physics" />.
-        <sec typ="cond">If the hit target is in <sec typ="buff"><buff typ="DEF_DOWN" /> DEF down</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP down</sec> status</sec>, damage dealt increases respectively.
+        designated to the target 1:1 conversation when also by doing <dmg elem="physics" />.
+        Hit target <sec typ="cond"><buff typ="DEF_DOWN" /> Defense decrease</sec> / <sec typ="cond"><buff typ="AP_DOWN" /> Action Speed decrease</sec> if in the state respectively <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        指定対象に 1:1 会話を 時もして<dmg elem="physics" />を与えます。
+        命中対象が <sec typ="cond"><buff typ="DEF_DOWN" /> 防御力 減少</sec> / <sec typ="cond"><buff typ="AP_DOWN" /> 行動力 減少</sec> 状態の場合 それぞれ <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
       TC: |-
-        對指定目標嘗試1對1對話，造成<dmg elem="physics" />。
-        <sec typ="cond">若命中的目標處於<sec typ="buff"><buff typ="DEF_DOWN" />防禦力減少</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力減少</sec>狀態</sec>，則各自的傷害量會增加。
+        指定目標給 1:1 對話 時也並 造成<dmg elem="physics" />。
+        命中目標為 <sec typ="cond"><buff typ="DEF_DOWN" /> 防禦力 減少</sec> / <sec typ="cond"><buff typ="AP_DOWN" /> 行動力 減少</sec> 若為狀態 各自 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4351,17 +4351,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec>가 영구적으로 증가합니다. (최대 4중첩)
-        <sec typ="cond">공격 적중 시</sec>, <sec typ="note">화끈하게 가보자고!</sec> 중첩 수에 비례하여 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" /></sec>이(가) 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="1" r /></sec>が永続的に増加します。(最大4スタック)
-        <sec typ="cond">攻撃命中時</sec>、<sec typ="note">思い切りやろうぜ！</sec>のスタック数に比例して自分の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" /></sec>が増加します。
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec>가 영구적으로 증가합니다. (최대 4중첩)
+        <sec typ="cond">공격 적중 시</sec>, <sec typ="note">화끈하게 가보자고!</sec> 중첩 수에 비례하여 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 증가합니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="1" r /></sec> permanently increases. (max 4 stacks)
-        <sec typ="cond">On attack hit</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> increases in proportion to the stack count of <sec typ="note">Let’s Move Out in Style!</sec>.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="3" r /></sec> permanently increases. (up to 4stack)
+        <sec typ="cond">On hit</sec>, <sec typ="note">flashily let us see!</sec> stack in proportion to the number of own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec>が 永久に 増加します。 (最大 4重複)
+        <sec typ="cond">攻撃命中時</sec>、 <sec typ="note">ハワックウンするよう がブオジアし!</sec> 重複 数に比例して 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="1" r /></sec>永久增加。(最多4層)
-        <sec typ="cond">攻擊命中時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" /></sec>會依<sec typ="note">轟轟烈烈幹一場！</sec>的疊加層數而增加。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec> 永久 增加。 (最大 4疊加)
+        <sec typ="cond">攻擊命中時</sec>， <sec typ="note">火kkeun使 Boja並!</sec> 疊加 依數量成比例 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfDefDeBuff
@@ -4534,20 +4534,20 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 적 전체의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>를 증가시킵니다.
-        <sec typ="note">입목등기</sec> 효과는 효과 저항의 영향을 받지 않지만 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec>로 해제할 수 있습니다.
-        <sec typ="cond"><sec typ="note">입목등기</sec> 중첩이 3 이상인 대상에게 <sec typ="note">대화 시도</sec> 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과</sec>를 해제합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間敵全体の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="0" r /></sec>を増加させます。
-        <sec typ="note">立木登記</sec>効果は効果抵抗の影響を受けませんが、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害効果の解除</sec>で解除できます。
-        <sec typ="cond"><sec typ="note">立木登記</sec>のスタックが3以上の対象に<sec typ="note">話し合いの試み</sec>を行う時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果</sec>を解除します。
+        <sec typ="note">입목등기</sec> 효과는 <sec>효과 저항의 영향을 받지 않지만</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec>로 해제할 수 있습니다.
+        <sec typ="cond"><sec typ="note">입목등기</sec> 중첩이 3 이상인 대상</sec>에게 <sec typ="note">대화 시도</sec> 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, increases all enemies' <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> for 3 rounds.
-        The <sec typ="note">Tree Ownership</sec> effect is not affected by Effect Resistance, but it can be removed by <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Remove harmful effects</sec>.
-        <sec typ="cond">When using <sec typ="note">Communication Attempt</sec> on a target with 3 or more <sec typ="note">Tree Ownership</sec> stacks</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> buff effects</sec>.
+        <sec typ="cond">At round start</sec>, 3 rounds all enemies of <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> increases.
+        <sec typ="note">Tree Registration</sec> effect <sec> is not affected by Effect Resistance although not</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> debuff removal</sec> as can be removed.
+        <sec typ="cond"><sec typ="note">Tree Registration</sec> stack 3 or more is target</sec> to <sec typ="note">Attempt Conversation</sec> when, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 3ラウンドの間 敵全体の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="0" r /></sec>を増加させます。
+        <sec typ="note">イプムオクドウン機</sec> 効果は <sec>効果抵抗の影響を受けない アジイだけ</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果解除</sec>で 解除できます。
+        <sec typ="cond"><sec typ="note">イプムオクドウン機</sec> 重複が 3 以上である 対象</sec>に <sec typ="note">対話試行</sec> 時、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，在3回合內使所有敵軍的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="0" r /></sec>增加。
-        <sec typ="note">立木登記</sec>效果不受效果抗性影響，但可透過<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除有害效果</sec>解除。
-        <sec typ="cond">對<sec typ="note">立木登記</sec>疊加數3以上的目標使用<sec typ="note">嘗試對話</sec>時</sec>，會解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />強化效果</sec>。
+        <sec typ="cond">回合開始時</sec>， 3回合內 全體敵人的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="0" r /></sec>使其增加。
+        <sec typ="note">入木等台</sec> 效果 <sec>不受效果抗性影響 不至僅</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除負面效果</sec>以 可以解除。
+        <sec typ="cond"><sec typ="note">入木等台</sec> 疊加 3 以上為 目標</sec>給 <sec typ="note">嘗試對話</sec> 時， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -4666,15 +4666,19 @@ skills:
       KR: |-
         <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> 증가 일반 효과를 획득합니다.
         <sec typ="note">화끈하게 가보자고!</sec>의 중첩 누적 속도가 두 배로 증폭되고 최대 중첩 수가 50% 증폭됩니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、自分は<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="0" r /></sec>増加の通常効果を獲得します。
-        <sec typ="note">思い切りやろうぜ！</sec>のスタック蓄積速度が2倍に増幅され、最大スタック数が50%増幅されます。
+        <sec typ="note">입목등기</sec> 효과 중, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과 해제</sec>에 필요한 <sec typ="note">입목등기</sec> 중첩이 1 감소하고 <sec typ="attr">일반 효과</sec>로 변경됩니다.
       EN: |-
-        <sec typ="cond">At battle start</sec>, self gains a normal effect that increases <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="0" r /></sec>.
-        The stack accumulation speed of <sec typ="note">Let’s Move Out in Style!</sec> is doubled, and the maximum stack count is increased by 50%.
+        <sec typ="cond">At battle start</sec>, self <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> increase normal gains the effect.
+        <sec typ="note">flashily let us see!</sec> of stack who enemy speed doubled becomes and up to stack number increased by 50%.
+        <sec typ="note">Tree Registration</sec> effect and during, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec> to needed <sec typ="note">Tree Registration</sec> stack 1 decreases and <sec typ="attr">normal effect</sec> as is changed.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 自身は <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec> 増加 一般 効果を獲得します。
+        <sec typ="note">ハワックウンするよう がブオジアし!</sec>の 重複 ンウ敵 スオクもが 2倍に増幅になり、 最大 重複 数が 50%増幅されます。
+        <sec typ="note">イプムオクドウン機</sec> 効果 中、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果 解除</sec>に プイルヨした <sec typ="note">イプムオクドウン機</sec> 重複が 1 減少し、 <sec typ="attr">一般効果</sec>で 変更されます。
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，自身獲得<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="0" r /></sec>增加的一般效果。
-        <sec typ="note">轟轟烈烈幹一場！</sec>的疊加累積速度提升2倍，最大疊加數提升50%。
+        <sec typ="cond">戰鬥開始時</sec>， 自身 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec> 增加 一般 獲得效果。
+        <sec typ="note">火kkeun使 Boja並!</sec>的 疊加 Nu敵人 屬也 增幅為2倍變為，且 最大 疊加 數 增幅50%。
+        <sec typ="note">入木等台</sec> 效果 中， <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>於 Pilyo <sec typ="note">入木等台</sec> 疊加 1 減少，並 <sec typ="attr">一般效果</sec>以 變更。
 dialogue:
   KR:
     "1":

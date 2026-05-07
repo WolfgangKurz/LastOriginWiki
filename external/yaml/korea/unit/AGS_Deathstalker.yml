@@ -1059,15 +1059,15 @@ skills:
       KR: |-
         특수 제작된 탄환을 발사하여 <dmg elem="lightning" />를 입힙니다.
         <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="0" r /></sec>를 감소시킵니다.
-      JP: |-
-        特殊製作された弾丸を発射して<dmg elem="lightning" />を与えます。
-        <sec typ="cond">命中時</sec>、3ラウンドの間、対象の<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性<val idx="0" r /></sec>を減少させます。
       EN: |-
-        Fires a specially crafted bullet and deals <dmg elem="lightning" /> damage.
-        <sec typ="cond">On Hit</sec>, decreases the target's <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance <val idx="0" r /></sec> for 3 rounds.
+        special. operation applied round Hwan fires <dmg elem="lightning" />.
+        <sec typ="cond">On hit</sec>, 3 rounds, target's <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="0" r /></sec> decreases.
+      JP: |-
+        トウク数 ジエジアクされた トアンハワンを 発射して<dmg elem="lightning" />を与えます。
+        <sec typ="cond">命中時</sec>、 3ラウンドの間 対象の <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="0" r /></sec>を減少させます。
       TC: |-
-        發射特製的子彈，造成<dmg elem="lightning" />傷害。
-        <sec typ="cond">命中時</sec>，於3回合內減少目標的<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電擊抗性<val idx="0" r /></sec>。
+        特殊數 解除製作已 彈hwan 發射並 造成<dmg elem="lightning" />。
+        <sec typ="cond">命中時</sec>， 3回合內 目標的 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="0" r /></sec>使其減少。
   "2":
     key: "2"
     icon: WideLightning
@@ -2520,18 +2520,18 @@ skills:
         레일건을 충전하여 일직선상의 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 입힙니다.
         <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 행 / 열 / 지정 보호를 해제</sec>합니다.
         <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
-      JP: |-
-        レールガンを充電し、一直線上の敵に<sec typ="attr">保護無視</sec><dmg elem="lightning" />を与えます。
-        <sec typ="cond">命中時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />行 / 列 / 指定保護を解除</sec>します。
-        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="LightningATK_UP" />ダメージ<val idx="4" r /></sec>が増加します。
       EN: |-
-        Charges the Railgun and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> to enemies in a straight line.
-        <sec typ="cond">On Hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" />removes row / column / designated protection</sec> from the target.
-        <sec typ="cond">On CRIT</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> damage <val idx="4" r /></sec> increases.
+        railgun Charge by doing in a straight line of to the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" />.
+        <sec typ="cond">On hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Row / Column / Designated Protection remove</sec>.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> damage <val idx="4" r /></sec> increases.
+      JP: |-
+        レールガンを チャージして イルジイク宣スアンの 敵に <sec typ="attr">保護無視</sec><dmg elem="lightning" />を与えます。
+        <sec typ="cond">命中時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 行 / 列 / 指定保護を 解除</sec>します。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="LightningATK_UP" /> ダメージ量 <val idx="4" r /></sec>が増加します。
       TC: |-
-        充能軌道砲，對直線上的敵人造成<sec typ="attr">無視保護</sec><dmg elem="lightning" />傷害。
-        <sec typ="cond">命中時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的行 / 列 / 指定保護</sec>。
-        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="LightningATK_UP" />傷害<val idx="4" r /></sec>增加。
+        軌道炮 充能並 一至kseonsang的 敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="lightning" />。
+        <sec typ="cond">命中時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 列 / 行 / 指定保護 解除</sec>。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="LightningATK_UP" /> 傷害量 <val idx="4" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -2841,17 +2841,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 자신의 대 경장형 피해량이 증가합니다.
-        <sec typ="cond">전투 개시 시</sec> 경장형 적이 4기 이상 있을 경우, 자신의 AP가 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の対軽装型ダメージ量が増加します。
-        <sec typ="cond">戦闘開始時</sec>、軽装型の敵が4機以上いる場合、自分のAPが増加します。
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">전투 개시 시</sec> <sec typ="cond">경장형 적이 4기 이상 있을 경우</sec>, 자신의<sec typ="buff"><buff typ="AP_UP" />  AP <val idx="2" /></sec> 이(가) 증가합니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, increases self's Anti-Light Armor Damage.
-        <sec typ="cond">At the start of combat</sec>, if there are 4 or more Light enemies, increases self's AP.
+        <sec typ="cond">At round start</sec>, own <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">At battle start</sec> <sec typ="cond">Light-type enemy 4 unit or more if present</sec>, own<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">戦闘開始時</sec> <sec typ="cond">軽装型 敵が 4機 以上 存在する場合</sec>、 自身の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的對輕裝型傷害量增加。
-        <sec typ="cond">戰鬥開始時</sec>，若有4個以上輕裝型敵軍，自身的AP增加。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害 <val idx="0" r /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec> <sec typ="cond">輕裝型 敵人 4台 以上 存在時</sec>， 自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> 增加。
   "4":
     key: "4"
     icon: P.Scan
@@ -3021,17 +3021,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 공격력이 증가합니다.
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격 / 공격 지원 시</sec>, 2라운드 동안<sec typ="note"> 지정 보호 상태가 아닌</sec> 모든 적의 회피를 감소시킵니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間、自分の攻撃力が増加します。
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃 / 攻撃支援時</sec>、2ラウンドの間、<sec typ="note">指定保護状態でない</sec>全ての敵の回避を減少させます。
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격 / 공격 지원 시</sec>, 2라운드 동안<sec typ="note"> 지정 보호 상태가 아닌</sec> 모든 적의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" r /></sec>를 감소시킵니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, increases self's ATK for 3 rounds.
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> When Re-Attack / Attack Support is active</sec>, decreases the EVA of all enemies that are not under <sec typ="note">Designated Protection</sec> for 2 rounds.
+        <sec typ="cond">At round start</sec>, 3 rounds own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> increases.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> follow-up attack / Attack Support when</sec>, 2 rounds<sec typ="note"> Designated Protection state not</sec> all enemies of <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="2" r /></sec> decreases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 3ラウンドの間 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃 / 攻撃支援 時</sec>、 2ラウンドの間<sec typ="note"> 指定保護 状態が ではない</sec> すべての敵の <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="2" r /></sec>を減少させます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，於3回合內增加自身的攻擊力。
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊 / 支援攻擊時</sec>，於2回合內降低所有<sec typ="note">非指定保護狀態</sec>的敵軍迴避。
+        <sec typ="cond">回合開始時</sec>， 3回合內 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>增加。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊 / 攻擊支援 時</sec>， 2回合內<sec typ="note"> 指定保護 狀態 非</sec> 所有敵人的 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="2" r /></sec>使其減少。
   "5":
     key: "5"
     icon: P.MGWideShot
@@ -3308,21 +3308,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 자신의 행동력이 증가합니다.
-        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 중장형 공격기 / 보호기의 공격을 지원합니다.
-        <sec typ="cond">자신 외의 AGS가 있을 경우</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격 지원의 대상이 '아군 공격기 / 보호기'로 완화</sec>되고 추가로 적중을 증가시킵니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の行動力が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方重装型攻撃機 / 保護機の攻撃を支援します。
-        <sec typ="cond">自分以外のAGSがいる場合</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃支援の対象が「味方攻撃機 / 保護機」に緩和</sec>され、さらに命中を増加させます。
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 중장형 공격기 / 보호기의 공격을 지원</sec>합니다.
+        <sec typ="cond">자신 외의 AGS가 있을 경우</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격 지원의 대상이 '아군 공격기 / 보호기'로 완화</sec>되고 추가로 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec>를 증가시킵니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, increases self's MOVE.
-        <sec typ="cond">At the start of the round</sec>, provides Attack Support to ally Heavy Attackers / Defenders within range.
-        <sec typ="cond">If there are AGS units other than self</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> the target of Attack Support is widened to 'ally Attackers / Defenders'</sec> and additionally increases ACU.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, within range allies <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Heavy-type Attacker / Defender of supports the attack</sec>.
+        <sec typ="cond">self other than of AGS if present</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attack Support of target 'allies Attacker / Defender'as relaxation</sec>becomes and additionally <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 重装型 攻撃機 / 保護機の 攻撃を 支援</sec>します。
+        <sec typ="cond">自身 外の AGSが 存在する場合</sec>、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃支援の 対象が '味方 攻撃機 / 保護機'で ワンハワ</sec>になり、 追加で <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>を増加させます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的行動力增加。
-        <sec typ="cond">回合開始時</sec>，支援範圍內我軍重裝型攻擊機 / 保護機的攻擊。
-        <sec typ="cond">若有除自身以外的AGS</sec>，<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 支援攻擊的對象放寬為「我軍攻擊機 / 保護機」</sec>，並額外增加命中。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 重裝型 攻擊機 / 保護機的 攻擊 支援</sec>。
+        <sec typ="cond">自身 外的 AGS 存在時</sec>， <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻擊支援的 目標 '我方 攻擊機 / 保護機'以 緩和</sec>變為，且 額外 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>使其增加。
 dialogue:
   KR:
     "1":

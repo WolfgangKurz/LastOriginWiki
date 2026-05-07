@@ -722,6 +722,7 @@ source:
     - Ev:Ev35:EV2-5
   - - Ev:Ev36:EV2-7
   - - Ev:Ev37:EV2-4EX
+  - - Ev:Ev38:EV1-1EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2629,18 +2630,18 @@ skills:
         유탄을 차 날려 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
         <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 강화 효과를 해제</sec>합니다.
-      JP: |-
-        榴弾を蹴り飛ばして <dmg elem="physics" />を与えます。
-        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
-        <sec typ="cond">命中時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃強化効果を解除</sec>します。
       EN: |-
-        Kicks a grenade away, dealing <dmg elem="physics" />.
-        <sec typ="cond">On crit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
-        <sec typ="cond">On hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's counterattack enhancement effect</sec>.
+        grenade kick kicks away <dmg elem="physics" />.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Counterattack removes buffs</sec>.
+      JP: |-
+        榴弾を チア ンアルルヨ<dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">命中時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃 強化効果を 解除</sec>します。
       TC: |-
-        踢飛手榴彈並造成 <dmg elem="physics" />。
-        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>會增加。
-        <sec typ="cond">命中時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊強化效果</sec>。
+        榴彈 Cha Na害怕 造成<dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">命中時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊 強化效果 解除</sec>。
   "2":
     key: "2"
     icon: MeleeAttack
@@ -5782,24 +5783,24 @@ skills:
         대상 전열 : <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>
         대상 중열 : <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>
         대상 후열 : <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>
-      JP: |-
-        正拳突きで <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec> <dmg elem="physics" />ダメージを与えます。
-        <sec typ="dmg"><buff typ="PhyATK_UP" /> 対象が前列に近いほどダメージ量が増加</sec>します。
-        対象前列 : <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>
-        対象中列 : <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>
-        対象後列 : <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="4" r /></sec>
       EN: |-
-        Delivers a straight punch that deals <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="0" r /></sec> <dmg elem="physics" /> damage.
-        <sec typ="dmg"><buff typ="PhyATK_UP" /> The closer the target is to the front line, the higher the damage</sec>.
-        Target front line: <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec>
-        Target middle line: <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec>
-        Target back line: <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec>
+        Deals <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> <dmg elem="physics" /> damage with a straight punch.
+        <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage increases the closer the target is to the front row</sec>.
+        Target in front row: <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="2" r /></sec>
+        Target in middle row: <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="3" r /></sec>
+        Target in back row: <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="4" r /></sec>
+      JP: |-
+        正拳突きで<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="0" r /></sec><dmg elem="physics" />ダメージを与えます。
+        <sec typ="dmg"><buff typ="PhyATK_UP" />対象が前列に近いほどダメージ量が増加</sec>します。
+        対象前列：<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="2" r /></sec>
+        対象中列：<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="3" r /></sec>
+        対象後列：<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="4" r /></sec>
       TC: |-
-        以正拳造成 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec> <dmg elem="physics" /> 傷害。
-        <sec typ="dmg"><buff typ="PhyATK_UP" /> 目標越接近前排，傷害量越高</sec>。
-        目標前排：<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>
-        目標中排：<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>
-        目標後排：<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="4" r /></sec>
+        以正拳突刺造成<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透 <val idx="0" r /></sec><dmg elem="physics" />傷害。
+        <sec typ="dmg"><buff typ="PhyATK_UP" />目標越靠近前排，傷害量越高</sec>。
+        目標在前排：<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="2" r /></sec>
+        目標在中排：<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="3" r /></sec>
+        目標在後排：<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="4" r /></sec>
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -6120,6 +6121,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_1
+                      - Effect_BUFF_MiniTiequan_N_1
                     attr: 6
                 - false
               body:
@@ -6159,6 +6161,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_2
+                      - Effect_BUFF_MiniTiequan_N_2
                     attr: 6
                 - false
               body:
@@ -6198,6 +6201,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_3
+                      - Effect_BUFF_MiniTiequan_N_3
                     attr: 6
                 - false
               body:
@@ -6237,6 +6241,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_4
+                      - Effect_BUFF_MiniTiequan_N_4
                     attr: 6
                 - false
               body:
@@ -6276,6 +6281,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_5
+                      - Effect_BUFF_MiniTiequan_N_5
                     attr: 6
                 - false
               body:
@@ -6315,6 +6321,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_6
+                      - Effect_BUFF_MiniTiequan_N_6
                     attr: 6
                 - false
               body:
@@ -6354,6 +6361,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_7
+                      - Effect_BUFF_MiniTiequan_N_7
                     attr: 6
                 - false
               body:
@@ -6393,6 +6401,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_8
+                      - Effect_BUFF_MiniTiequan_N_8
                     attr: 6
                 - false
               body:
@@ -6432,6 +6441,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_9
+                      - Effect_BUFF_MiniTiequan_N_9
                     attr: 6
                 - false
               body:
@@ -6471,6 +6481,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_10
+                      - Effect_BUFF_MiniTiequan_N_10
                     attr: 6
                 - false
               body:
@@ -6510,6 +6521,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_11
+                      - Effect_BUFF_MiniTiequan_N_11
                     attr: 6
                 - false
               body:
@@ -6742,24 +6754,24 @@ skills:
         <sec typ="cond">적 공격 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec>이(가) 증가합니다.
         <sec typ="cond">치명타 시</sec>, 추가로 해당 수치의 50% 만큼 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP가 증가</sec>합니다.
         <sec typ="buff"><buff typ="AP_UP" /> AP 증가 효과</sec>는 각 <sec>액티브 스킬 레벨에 비례</sec>합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>が増加します。
-        <sec typ="cond">敵攻撃時</sec>、<sec typ="cond">敵を撃破時</sec>、<sec typ="cond">攻撃を受けた時</sec>ごとに、その数値の50%分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>増加効果を永続的に獲得します。 (各最大3重複)
-        <sec typ="cond">敵攻撃時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec>が増加します。
-        <sec typ="cond">クリティカル時</sec>、さらにその数値の50%分だけ自身の<sec typ="buff"><buff typ="AP_UP" /> APが増加</sec>します。
-        <sec typ="buff"><buff typ="AP_UP" /> AP増加効果</sec>は各<sec>アクティブスキルレベルに比例</sec>します。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, increases own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec>.
-        <sec typ="cond">When attacking enemies</sec>, <sec typ="cond">when killing an enemy</sec>, and <sec typ="cond">when taking attacks</sec>, permanently gains Attack <sec typ="buff"><buff typ="ATK_UP" /> <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> increase effects equal to 50% of that value. (Up to 3 stacks each)
-        <sec typ="cond">When attacking enemies</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec> increases.
-        <sec typ="cond">On crit</sec>, additionally increases own <sec typ="buff"><buff typ="AP_UP" /> AP</sec> by 50% of that value.
-        The <sec typ="buff"><buff typ="AP_UP" /> AP increase effect</sec> scales with each <sec>active skill level</sec>.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> increases.
+        <sec typ="cond">When attacking an enemy</sec>, <sec typ="cond">When killing an enemy</sec>, <sec typ="cond">attack per can when</sec>each the value of 50% by of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> increase effect and permanent gains. (each up to 3stack)
+        <sec typ="cond">When attacking an enemy</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec> increases.
+        <sec typ="cond">On critical hit</sec>, additionally the value of 50% by own <sec typ="buff"><buff typ="AP_UP" /> AP increase</sec>.
+        <sec typ="buff"><buff typ="AP_UP" /> AP increase effect and</sec> each <sec>active skill level</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">敵攻撃時</sec>、 <sec typ="cond">敵撃破時</sec>、 <sec typ="cond">攻撃 ごとできる 時</sec>ごとに 該当 数値の 50% 分の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> 増加 効果を 永久 獲得します。 (各 最大 3重複)
+        <sec typ="cond">敵攻撃時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec>、 追加で 該当 数値の 50% 分 自身の <sec typ="buff"><buff typ="AP_UP" /> APが 増加</sec>します。
+        <sec typ="buff"><buff typ="AP_UP" /> AP 増加 効果</sec>は 各 <sec>アクティブ スキル レベルに 比例</sec>します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>會增加。
-        <sec typ="cond">敵人攻擊時</sec>、<sec typ="cond">擊殺敵人時</sec>、<sec typ="cond">受到攻擊時</sec>，每次都會永久獲得相當於該數值 50% 的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>增加效果。（各最多 3 層）
-        <sec typ="cond">敵人攻擊時</sec>，自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec>會增加。
-        <sec typ="cond">暴擊時</sec>，另外使自身的 <sec typ="buff"><buff typ="AP_UP" /> AP</sec>增加相當於該數值 50% 的量。
-        <sec typ="buff"><buff typ="AP_UP" /> AP 增加效果</sec>會依各<sec>主動技能等級</sec>而提升。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>增加。
+        <sec typ="cond">攻擊敵人時</sec>， <sec typ="cond">擊殺敵人時</sec>， <sec typ="cond">攻擊 每可 時</sec>每 該 數值的 50% 等量的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> 增加 效果 永久 獲得。 (各 最大 3疊加)
+        <sec typ="cond">攻擊敵人時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec>增加。
+        <sec typ="cond">暴擊時</sec>， 額外 該 數值的 50% 等量 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP 增加</sec>。
+        <sec typ="buff"><buff typ="AP_UP" /> AP 增加 效果</sec> 各 <sec>主動 技能 等級於 成比例</sec>。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -7185,25 +7197,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="0" /></sec>가 증가합니다.
         <sec>스킬 레벨 10에서 사거리가 추가로 증가합니다.</sec>
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가합니다.
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="4" /></sec>이(가) 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>が増加します。
-        <sec>スキルレベル10で射程がさらに増加します。</sec>
-        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大行動回数 <val idx="4" /></sec>が増加します。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, increases own <sec typ="buff"><buff typ="RANGE_UP" /> range <val idx="0" /></sec>.
-        <sec>Range increases further at skill level 10.</sec>
-        <sec typ="cond">At the start of the round</sec>, increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" r /></sec>.
-        <sec typ="cond">At the start of the round</sec>, increases own <sec typ="buff"><buff typ="Action_Number_Change_Up" /> maximum action count <val idx="4" /></sec>.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="0" /></sec> increases.
+        <sec>At skill level 10, Range additionally increases.</sec>
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="3" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="Action_Number_Change_Up" /> up to number of actions <val idx="4" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>が増加します。
+        <sec>スキルレベル10で 射程が追加で増加します。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大 行ドオン 回数 <val idx="4" /></sec>が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>會增加。
-        <sec>在技能等級 10 時射程會再次增加。</sec>
-        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>會增加。
-        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大行動次數 <val idx="4" /></sec>會增加。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>增加。
+        <sec>技能等級10時 射程會額外增加。</sec>
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大 列同 次數 <val idx="4" /></sec>增加。
   "5":
     key: "5"
     icon: P.AssaultAttack
@@ -7398,18 +7410,18 @@ skills:
         깨달음을 얻은 티에치엔의 모든 공격은 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 대상의 방어력을 무시</sec>합니다.
         <sec typ="note">백보신권</sec>의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통</sec> 효과가 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막/받는 피해 감소 무시</sec> 효과로 변환됩니다.
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="3" r /></sec>가 증가합니다.
-      JP: |-
-        悟りを得たティエチエンのすべての攻撃は<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 対象の防御力を無視</sec>します。
-        <sec typ="note">Hundred-Step Divine Fist</sec>の<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通</sec>効果が<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア/被ダメージ減少無視</sec>効果に変換されます。
-        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ量 <val idx="3" r /></sec>が増加します。
       EN: |-
-        All attacks by the awakened Tiequan <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> ignore the target's Defense</sec>.
-        The <sec typ="note">Hundred-Step Divine Fist</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce</sec> effect is converted into <sec typ="buff"><buff typ="BARRIER_PIERCE" /> barrier / damage reduction ignore</sec>.
-        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> damage to Heavy-type <val idx="3" r /></sec> increases.
+        enlightenment gain Tieh Chuan of all attack <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> target's Defense ignore</sec>.
+        <sec typ="note">Hundred-Step Divine Fist</sec> of <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration</sec> effect and <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier/damage taken decrease ignore</sec> effect andas transforms.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy damage <val idx="3" r /></sec> increases.
+      JP: |-
+        ックエドアルウムを オトは トイにチイエンの すべての 攻撃は <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 対象の 防御力を 無視</sec>します。
+        <sec typ="note">百歩神拳</sec>の <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通</sec> 効果が <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア/受けるダメージ 減少 無視</sec> 効果で 変換されます。
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="3" r /></sec>が増加します。
       TC: |-
-        覺醒後的提乾所有攻擊都會 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 無視目標的防禦力</sec>。
-        <sec typ="note">百步神拳</sec>的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透</sec>效果會轉換為 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視防護罩/受到傷害減少</sec>效果。
-        <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害量 <val idx="3" r /></sec>會增加。
+        Kkaedaleum 獲得 Ti於值en的 所有 攻擊 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 目標的 防禦力 無視</sec>。
+        <sec typ="note">百步神拳</sec>的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透</sec> 效果 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 護盾/受到的傷害 減少 無視</sec> 效果以 轉換。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害 <val idx="3" r /></sec>增加。
 dialogue:
   KR:
     "1":

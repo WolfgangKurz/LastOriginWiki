@@ -3294,16 +3294,20 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">대상 HP가 100%</sec>일 경우 5라운드 동안 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="8" r inv /></sec>를 감소시킵니다.
-        대상에게 <sec typ="attr">보호 무시</sec> 피해와 고정 피해를 입히며, 대상은 50% 확률로 추가 피해를 입고, 40% 확률로 2라운드 동안 받는 피해가 증가하고, 30% 확률로 해당 라운드 동안 스킬을 사용할 수 없습니다. 해당 효과 적용 확률은 효과 저항의 영향을 받습니다.
-      JP: |-
-        <sec typ="cond">対象HPが100%</sec>の場合、5ラウンドの間対象の<sec typ="buff"><buff typ="DEBUFF_RATEUP" />効果抵抗<val idx="8" r inv /></sec>を減少させます。
-        対象に<sec typ="attr">保護無視</sec>ダメージと固定ダメージを与え、対象は50%の確率で追加ダメージを受け、40%の確率で2ラウンドの間被ダメージが増加し、30%の確率でそのラウンド中スキルを使用できません。これらの効果適用確率は効果抵抗の影響を受けます。
+        대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />와 <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력 <val idx="0" r signless /> 고정 물리 피해</sec>를 입히며, 대상은 <sec typ="chance"><chance idx="5" /> 확률</sec>로 <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="5" r signless /> 추가 물리 피해</sec>를 입고, <sec typ="chance"><chance idx="6" /> 확률</sec>로 2라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="6" r /></sec>가 증가하고, <sec typ="chance"><chance idx="7" /> 확률</sec>로 해당 라운드 동안 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬을 사용할 수 없습니다</sec>.
+        해당 효과 적용 확률은 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" /> 효과 저항</sec>의 영향을 받습니다.
       EN: |-
-        If <sec typ="cond">the target's HP is 100%</sec>, decreases the target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="8" r inv /></sec> for 5 rounds.
-        Deals <sec typ="attr">Ignore Protection</sec> damage and fixed damage to the target. The target has a 50% chance to take additional damage, a 40% chance for damage taken to increase for 2 rounds, and a 30% chance to be unable to use skills for that round. The application rates of these effects are affected by Effect Resistance.
+        <sec typ="cond">target HP 100%</sec> if 5 rounds, target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="8" r inv /></sec> decreases.
+        to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> and <sec typ="dmg"><buff typ="PhyATK_UP" /> Attack <val idx="0" r signless /> fixed Physical damage</sec> deals and, the target <sec typ="chance"><chance idx="5" /> chance</sec> as <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="5" r signless /> additional Physical damage</sec> Ipgo, <sec typ="chance"><chance idx="6" /> chance</sec> as 2 rounds <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="6" r /></sec> increases and <sec typ="chance"><chance idx="7" /> chance</sec> as each round <sec typ="buff"><buff typ="SEAL_SKILL" /> skill can use cannot</sec>.
+        the effect and applies chance <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" /> Effect Resistance</sec> of effect receives.
+      JP: |-
+        <sec typ="cond">対象 HPが 100%</sec>の場合 5ラウンド間 対象の <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="8" r inv /></sec>を減少させます。
+        対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />と <sec typ="dmg"><buff typ="PhyATK_UP" /> 攻撃力 <val idx="0" r signless /> 固定物理ダメージ</sec>を 与えし、 対象は <sec typ="chance"><chance idx="5" /> 確率</sec>で <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="5" r signless /> 追加 物理 ダメージ</sec>を イプし、 <sec typ="chance"><chance idx="6" /> 確率</sec>で 2ラウンドの間 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="6" r /></sec>が 増加し、 <sec typ="chance"><chance idx="7" /> 確率</sec>で 該当 ラウンド間 <sec typ="buff"><buff typ="SEAL_SKILL" /> スキルを スアヨンできません</sec>。
+        該当 効果 適用 確率は <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" /> 効果抵抗</sec>の ヨンハヤンを 受けます。
       TC: |-
-        <sec typ="cond">若目標HP為100%</sec>，則在5回合內降低目標的<sec typ="buff"><buff typ="DEBUFF_RATEUP" />效果抗性<val idx="8" r inv /></sec>。
-        對目標造成<sec typ="attr">無視保護</sec>傷害與固定傷害，並使目標有50%機率受到額外傷害、40%機率在2回合內所受傷害增加、30%機率在該回合內無法使用技能。這些效果的套用機率會受到效果抗性的影響。
+        <sec typ="cond">目標 HP 100%</sec>若為 5回合內 目標的 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="8" r inv /></sec>使其減少。
+        對目標 <sec typ="attr">無視保護</sec> <dmg elem="physics" />與 <sec typ="dmg"><buff typ="PhyATK_UP" /> 攻擊力 <val idx="0" r signless /> 固定物理傷害</sec> 造成並， 目標 <sec typ="chance"><chance idx="5" /> 機率</sec>以 <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="5" r signless /> 額外 物理 傷害</sec> Ip並， <sec typ="chance"><chance idx="6" /> 機率</sec>以 2回合內 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="6" r /></sec> 增加，並 <sec typ="chance"><chance idx="7" /> 機率</sec>以 該 回合內 <sec typ="buff"><buff typ="SEAL_SKILL" /> 技能 使用無法</sec>。
+        該 效果 套用 機率 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" /> 效果抗性</sec>的 影響 受到。
   "2":
     key: "2"
     icon: SatelliteBeam
@@ -6797,17 +6801,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        지정 범위에 <sec typ="attr">보호 무시</sec> 피해와 고정 피해를 주고 대상을 뒤로 밀어냅니다.
-        <sec typ="cond">적중 시</sec>, 대상에게 걸려있는 모든 보호 효과를 해제하고 2라운드 동안 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피</sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리</sec>를 감소시킵니다.
-      JP: |-
-        指定範囲に<sec typ="attr">保護無視</sec>ダメージと固定ダメージを与え、対象を後方へ押し出します。
-        <sec typ="cond">命中時</sec>、対象にかかっているすべての保護効果を解除し、2ラウンドの間<sec typ="buff"><buff typ="EVADE_DOWN" />回避</sec> / <sec typ="buff"><buff typ="RANGE_DOWN" />射程</sec>を減少させます。
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />와 <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력 <val idx="0" r signless /> 고정 물리 피해</sec>를 주고 대상을 <sec typ="buff"><buff typ="Push" /> 뒤로 <val idx="5" signless />칸 밀어냅니다</sec>.
+        적중 시, 대상에게 걸려있는 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 모든 보호 효과를 해제</sec>하고 2라운드 동안 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="10" /></sec>을(를) 감소시킵니다.
       EN: |-
-        Deals <sec typ="attr">Ignore Protection</sec> damage and fixed damage to the designated area, and pushes the target back.
-        <sec typ="cond">On hit</sec>, removes all protection effects applied to the target and decreases their <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion</sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> Range</sec> for 2 rounds.
+        to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> and <sec typ="dmg"><buff typ="PhyATK_UP" /> Attack <val idx="0" r signless /> fixed Physical damage</sec> deals and target <sec typ="buff"><buff typ="Push" /> back <val idx="5" signless />tiles pushes back</sec>.
+        On hit, to the target applied <sec typ="buff"><buff typ="REMOVE_BUFF" /> all protection effects remove</sec> and 2 rounds <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="9" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> Range <val idx="10" /></sec> decreases.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />と <sec typ="dmg"><buff typ="PhyATK_UP" /> 攻撃力 <val idx="0" r signless /> 固定物理ダメージ</sec>を 与え、 対象を <sec typ="buff"><buff typ="Push" /> 後方へ <val idx="5" signless />マス ムイルオンエプンイドア</sec>。
+        命中時、 対象に グオルルヨある <sec typ="buff"><buff typ="REMOVE_BUFF" /> すべての 保護効果を 解除</sec>し、 2ラウンドの間 <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="10" /></sec>を減少させます。
       TC: |-
-        對指定範圍造成<sec typ="attr">無視保護</sec>傷害與固定傷害，並將目標擊退。
-        <sec typ="cond">命中時</sec>，解除目標身上所有保護效果，並在2回合內降低其<sec typ="buff"><buff typ="EVADE_DOWN" />迴避</sec> / <sec typ="buff"><buff typ="RANGE_DOWN" />射程</sec>。
+        指定範圍於 <sec typ="attr">無視保護</sec> <dmg elem="physics" />與 <sec typ="dmg"><buff typ="PhyATK_UP" /> 攻擊力 <val idx="0" r signless /> 固定物理傷害</sec> 造成，並 目標 <sec typ="buff"><buff typ="Push" /> 向後 <val idx="5" signless />格 推開nae</sec>。
+        命中時， 對目標 附加有 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 所有 保護效果 解除</sec>並 2回合內 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="10" /></sec>使其減少。
   "3":
     key: "3"
     icon: P.AntiArmorShot
@@ -6988,17 +6992,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시 스쿼드에 경장형 아군 수가 2 이상</sec>일 경우, 경장형 아군의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>를 증가시키고, 기동 / 중장형 적의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec>를 증가시킵니다.
+        전투 개시 시 스쿼드에 <sec typ="cond">경장형 아군 수가 2 이상</sec>일 경우, 경장형 아군의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>를 증가시키고, 기동 / 중장형 적의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec>를 증가시킵니다.
         해당 효과는 해제할 수 없습니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時、分隊の軽装型味方数が2以上の場合</sec>、軽装型味方の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec>を増加させ、機動 / 重装型敵の<sec typ="buff"><buff typ="VULNERABLE" />被ダメージ<val idx="2" r /></sec>を増加させます。
-        この効果は解除できません。
       EN: |-
-        <sec typ="cond">At battle start, if there are 2 or more Light Armor allies in the squad</sec>, increases Light Armor allies' <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="0" r /></sec> and increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="2" r /></sec> by Mobile / Heavy Armor enemies.
-        This effect cannot be removed.
+        At battle start squad <sec typ="cond">Light-type number of allies 2 or more</sec> if, Light-type allies' <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> increases and Mobile / Heavy-type enemy's <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="2" r /></sec> increases.
+        the effect cannot be removed.
+      JP: |-
+        戦闘開始時 スクワッドに <sec typ="cond">軽装型 味方数が 2 以上</sec>の場合、 軽装型 味方の <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>を 増加時クイし、 機動 / 重装型 敵の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="2" r /></sec>を増加させます。
+        該当 効果は 解除できません。
       TC: |-
-        <sec typ="cond">若戰鬥開始時小隊中輕裝型我軍數量達2以上</sec>，則提升輕裝型我軍的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="0" r /></sec>，並增加機動 / 重裝型敵人的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="2" r /></sec>。
-        該效果無法解除。
+        戰鬥開始時 小隊於 <sec typ="cond">輕裝型 我方數量 2 以上</sec>若為， 輕裝型 我方的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec> 增加時台並， 機動 / 重裝型 敵人的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="2" r /></sec>使其增加。
+        該 效果 無法解除。
   "4":
     key: "4"
     icon: P.Snipe
@@ -7392,17 +7396,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시 스쿼드에 기동형 아군 수가 2 이상</sec>일 경우, 기동형 아군의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="4" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec>를 증가시키고, 경장 / 중장형 적의 <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="6" /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="7" r /></sec>를 감소시킵니다.
+        전투 개시 시 스쿼드에 <sec typ="cond">기동형 아군 수가 2 이상</sec>일 경우, 기동형 아군의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="4" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec>를 증가시키고, 경장 / 중장형 적의 <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="6" /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="7" r /></sec>를 감소시킵니다.
         해당 효과는 해제할 수 없습니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時、分隊の機動型味方数が2以上の場合</sec>、機動型味方の<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="4" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec>を増加させ、軽装 / 重装型敵の<sec typ="buff"><buff typ="RANGE_DOWN" />射程<val idx="6" /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="7" r /></sec>を減少させます。
-        この効果は解除できません。
       EN: |-
-        <sec typ="cond">At battle start, if there are 2 or more Mobile allies in the squad</sec>, increases Mobile allies' <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="4" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec>, and decreases Light / Heavy Armor enemies' <sec typ="buff"><buff typ="RANGE_DOWN" /> Range <val idx="6" /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="7" r /></sec>.
-        This effect cannot be removed.
+        At battle start squad <sec typ="cond">Mobile-type number of allies 2 or more</sec> if, Mobile-type allies' <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="4" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec> increases and Light / Heavy-type enemy's <sec typ="buff"><buff typ="RANGE_DOWN" /> Range <val idx="6" /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="7" r /></sec> decreases.
+        the effect cannot be removed.
+      JP: |-
+        戦闘開始時 スクワッドに <sec typ="cond">機動型 味方数が 2 以上</sec>の場合、 機動型 味方の <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="4" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>を 増加時クイし、 軽装 / 重装型 敵の <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="6" /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec>を減少させます。
+        該当 効果は 解除できません。
       TC: |-
-        <sec typ="cond">若戰鬥開始時小隊中機動型我軍數量達2以上</sec>，則提升機動型我軍的<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="4" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec>，並降低輕裝 / 重裝型敵人的<sec typ="buff"><buff typ="RANGE_DOWN" />射程<val idx="6" /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="7" r /></sec>。
-        該效果無法解除。
+        戰鬥開始時 小隊於 <sec typ="cond">機動型 我方數量 2 以上</sec>若為， 機動型 我方的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="4" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> 增加時台並， 輕裝 / 重裝型 敵人的 <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="6" /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec>使其減少。
+        該 效果 無法解除。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -7858,17 +7862,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시 스쿼드에 중장형 아군 수가 2 이상</sec>일 경우, 중장형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>를 증가시키고, 경장 / 기동형 적의 <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 모든 속성 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="8" r /></sec>를 감소시킵니다.
+        전투 개시 시 스쿼드에 <sec typ="cond">중장형 아군 수가 2 이상</sec>일 경우, 중장형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>를 증가시키고, 경장 / 기동형 적의 <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 모든 속성 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="8" r /></sec>를 감소시킵니다.
         해당 효과는 해제할 수 없습니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時、分隊の重装型味方数が2以上の場合</sec>、重装型味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>を増加させ、軽装 / 機動型敵の<sec typ="buff"><buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" />全属性耐性<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="8" r /></sec>を減少させます。
-        この効果は解除できません。
       EN: |-
-        <sec typ="cond">At battle start, if there are 2 or more Heavy Armor allies in the squad</sec>, increases Heavy Armor allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" r /></sec>, and decreases Light / Mobile Armor enemies' <sec typ="buff"><buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" /> All Attribute RES <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="8" r /></sec>.
-        This effect cannot be removed.
+        At battle start squad <sec typ="cond">Heavy-type number of allies 2 or more</sec> if, Heavy-type allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="4" r /></sec> increases and Light / Mobile-type enemy's <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> all Elemental Resistances <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="8" r /></sec> decreases.
+        the effect cannot be removed.
+      JP: |-
+        戦闘開始時 スクワッドに <sec typ="cond">重装型 味方数が 2 以上</sec>の場合、 重装型 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>を 増加時クイし、 軽装 / 機動型 敵の <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 全属性耐性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="8" r /></sec>を減少させます。
+        該当 効果は 解除できません。
       TC: |-
-        <sec typ="cond">若戰鬥開始時小隊中重裝型我軍數量達2以上</sec>，則提升重裝型我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>，並降低輕裝 / 機動型敵人的<sec typ="buff"><buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" />全屬性抗性<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="8" r /></sec>。
-        該效果無法解除。
+        戰鬥開始時 小隊於 <sec typ="cond">重裝型 我方數量 2 以上</sec>若為， 重裝型 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> 增加時台並， 輕裝 / 機動型 敵人的 <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 所有屬性抗性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="8" r /></sec>使其減少。
+        該 效果 無法解除。
 dialogue:
   KR:
     "1":

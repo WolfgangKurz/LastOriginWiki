@@ -496,6 +496,7 @@ cv:
 source:
   - - Ev:Ev20:EV1-4B
   - - Ev:Ev33:EV1-3EX
+  - - Ev:Ev38:EV1-1EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -5169,18 +5170,18 @@ skills:
         지정 범위 내 적에게 유탄을 발사하여 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r signless /></sec> <dmg elem="physics" />를 줍니다.
         적중 시, 대상이 <sec typ="cond">침수</sec> 상태인 경우 침수로 인한 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 화염 저항 증가 효과를 해제</sec>하고 3라운드 동안 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="3" r inv /></sec>를 감소시킵니다.
         대상이 <sec typ="cond">경장형</sec>일 경우 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 피해량 <val idx="1" r /></sec>가 증가합니다.
-      JP: |-
-        指定範囲内の敵に榴弾を発射し、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r signless /></sec>の<dmg elem="physics" />を与えます。
-        命中時、対象が<sec typ="cond">浸水</sec>状態の場合、浸水による<sec typ="buff"><buff typ="REMOVE_BUFF" />火炎耐性増加効果を解除</sec>し、3ラウンドの間<sec typ="buff"><buff typ="DEBUFF_RATEUP" />効果抵抗<val idx="3" r inv /></sec>を減少させます。
-        対象が<sec typ="cond">軽装型</sec>の場合、<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />ダメージ量<val idx="1" r /></sec>が増加します。
       EN: |-
-        Fires a grenade at enemies in the designated area, dealing <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="0" r signless /></sec> <dmg elem="physics" /> damage.
-        On hit, if the target is <sec typ="cond">Flooded</sec>, removes the <sec typ="buff"><buff typ="REMOVE_BUFF" /> Fire Resistance increase effect</sec> caused by Flooding and decreases <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="3" r inv /></sec> for 3 rounds.
-        If the target is <sec typ="cond">Light Armor</sec>, <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage <val idx="1" r /></sec> increases.
+        designated area within to the enemy grenade fires <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r signless /></sec> <dmg elem="physics" />.
+        On hit, target <sec typ="cond">Flooded</sec> if in the state Floodedas caused by <sec typ="buff"><buff typ="REMOVE_BUFF" /> Fire Resistance increase removes the effect</sec> and 3 rounds <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="3" r inv /></sec> decreases.
+        target <sec typ="cond">Light-type</sec> if <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage <val idx="1" r /></sec> increases.
+      JP: |-
+        指定範囲 内 敵に 榴弾を 発射して <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r signless /></sec><dmg elem="physics" />を与えます。
+        命中時、 対象が <sec typ="cond">浸水</sec> 状態の場合 浸水で であるした <sec typ="buff"><buff typ="REMOVE_BUFF" /> 火炎耐性 増加 効果を 解除</sec>し、 3ラウンドの間 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="3" r inv /></sec>を減少させます。
+        対象が <sec typ="cond">軽装型</sec>の場合 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> ダメージ量 <val idx="1" r /></sec>が増加します。
       TC: |-
-        向指定範圍內敵軍發射榴彈，造成<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透<val idx="0" r signless /></sec><dmg elem="physics" />傷害。
-        命中時，若目標處於<sec typ="cond">浸水</sec>狀態，則會<sec typ="buff"><buff typ="REMOVE_BUFF" />解除因浸水而獲得的火炎抗性增加效果</sec>，並在3回合內降低<sec typ="buff"><buff typ="DEBUFF_RATEUP" />效果抵抗<val idx="3" r inv /></sec>。
-        若目標為<sec typ="cond">輕裝型</sec>，則<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />傷害量<val idx="1" r /></sec>增加。
+        指定範圍 內 敵人給 榴彈 發射並 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r signless /></sec> 造成<dmg elem="physics" />。
+        命中時， 目標 <sec typ="cond">浸水</sec> 若為狀態 浸水以 為 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 火焰抗性 增加 效果 解除</sec>並 3回合內 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="3" r inv /></sec>使其減少。
+        目標 <sec typ="cond">輕裝型</sec>若為 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 傷害量 <val idx="1" r /></sec>增加。
   "2":
     key: "2"
     icon: SuicideBomb
@@ -7391,21 +7392,21 @@ skills:
         치명타 시, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
         적중 여부에 관계없이 2라운드 동안 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="4" r /></sec>를 감소시키고, 적중 시 추가로 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec>를 감소시킵니다.
         스쿼드 내에 <char uid="PECS_Sadius" />가 있을 시, 지정 대상에게 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">일렉트릭 펜스</sec> 스킬 협동 공격</sec>을 합니다.
-      JP: |-
-        両手にMGLをそれぞれ構え、指定範囲内の敵に熱圧力弾を掃射して<sec typ="attr">保護無視</sec>の<dmg elem="fire" />を与えます。
-        クリティカル時、<sec typ="dmg"><buff typ="FireATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
-        命中の有無に関係なく2ラウンドの間、対象の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="4" r /></sec>を減少させ、命中時は追加で対象の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="2" r /></sec>を減少させます。
-        スコッド内に<char uid="PECS_Sadius" />がいる場合、指定対象に<sec typ="buff"><buff typ="TOGETHER_ATTACK" /><sec typ="note">エレクトリックフェンス</sec>スキル協同攻撃</sec>を行います。
       EN: |-
-        Wields an MGL in each hand and sprays thermobaric rounds at enemies in the designated area, dealing <sec typ="attr">ignores Protection</sec> <dmg elem="fire" /> damage.
-        On crit, <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="0" r /></sec> increases.
-        Regardless of whether it hits, decreases the target's <sec typ="buff"><buff typ="EVADE_DOWN" /> EVADE <val idx="4" r /></sec> for 2 rounds, and on hit additionally decreases the target's <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="2" r /></sec>.
-        If <char uid="PECS_Sadius" /> is in the squad, performs a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Electric Fence</sec> cooperative attack</sec> on the designated target.
+        amount Son as respectively MGL Jwigo designated area within to the enemy column Ap power round fires rapidly <sec typ="attr">Ignore Protection</sec> <dmg elem="fire" />.
+        On critical hit, <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="0" r /></sec> increases.
+        Accuracy whether to regardless 2 rounds, target's <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="4" r /></sec> decreases and On hit additionally target's <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="2" r /></sec> decreases.
+        in squad to <char uid="PECS_Sadius" /> if present, designated to the target <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Electric Fence</sec> skill coordinated attack</sec>.
+      JP: |-
+        ヤン宣で それぞれ MGLを ジウィし 指定範囲 内 敵に 列アプルヨクトアンを 乱射して <sec typ="attr">保護無視</sec><dmg elem="fire" />を与えます。
+        クリティカル時、 <sec typ="dmg"><buff typ="FireATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        命中 ヨブウに グワングイェオが 2ラウンドの間 対象の <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="4" r /></sec>を 減少時クイし、 命中時 追加で 対象の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="2" r /></sec>を減少させます。
+        スクワッド 内に <char uid="PECS_Sadius" />が ある 時、 指定対象に <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">エレクトリックフェンス</sec> スキル 協同攻撃</sec>をします。
       TC: |-
-        雙手各持一把MGL，向指定範圍內敵軍掃射熱壓力彈，造成<sec typ="attr">無視保護</sec><dmg elem="fire" />傷害。
-        暴擊時，<sec typ="dmg"><buff typ="FireATK_UP" />傷害量<val idx="0" r /></sec>增加。
-        不論是否命中，皆會於2回合內降低目標的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="4" r /></sec>，且命中時會額外降低目標的<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="2" r /></sec>。
-        若編成中有<char uid="PECS_Sadius" />，則會對指定目標發動<sec typ="buff"><buff typ="TOGETHER_ATTACK" /><sec typ="note">電圍欄</sec>技能協同攻擊</sec>。
+        Yangson以 各自 MGL Jwi並 指定範圍 內 敵人給 行前ryeoktan 掃射並 <sec typ="attr">無視保護</sec> 造成<dmg elem="fire" />。
+        暴擊時， <sec typ="dmg"><buff typ="FireATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        命中 是否於 關係無關 2回合內 目標的 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="4" r /></sec> 減少時台並， 命中時 額外 目標的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="2" r /></sec>使其減少。
+        小隊 內於 <char uid="PECS_Sadius" /> 有 時， 指定目標給 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">電氣圍欄</sec> 技能 協同攻擊</sec>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -7739,22 +7740,22 @@ skills:
         적 사망 시, 범위 내 아군에게 3라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" /></sec> 증가 효과를 부여합니다.
         자신은 공격력 증가 효과가 두 배로 증가합니다. (최대 3중첩)
         웨이브 종료 시, 범위 내 아군에게 <sec typ="buff"><buff typ="SCOUTING" /> 정찰 효과를 부여</sec>합니다.
-        라운드 개시 시, <sec typ="cond"><buff typ="SCOUTING" /> 정찰</sec> 상태인 범위 내 아군에게 1라운드 동안 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="7" r /></sec> 증가 효과를 부여합니다.
-      JP: |-
-        敵死亡時、範囲内の味方に3ラウンドの間<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" /></sec>増加効果を付与します。
-        自分は攻撃力増加効果が2倍になります。（最大3スタック）
-        ウェーブ終了時、範囲内の味方に<sec typ="buff"><buff typ="SCOUTING" />偵察効果を付与</sec>します。
-        ラウンド開始時、<sec typ="cond"><buff typ="SCOUTING" />偵察</sec>状態の範囲内の味方に1ラウンドの間<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>/<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="7" r /></sec>増加効果を付与します。
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><buff typ="SCOUTING" /> 정찰</sec> 상태인 범위 내 아군에게 1라운드 동안 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="7" r /></sec> 증가 효과를 부여합니다.
       EN: |-
-        When an enemy dies, grants allies in the area an <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" /></sec> increase effect for 3 rounds.
-        Self's ATK increase effect is doubled. (Up to 3 stacks)
-        At wave end, grants allies in the area a <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> effect.
-        At round start, grants allies in the area who are in <sec typ="cond"><buff typ="SCOUTING" /> Scouting</sec> state an <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="7" r /></sec> increase effect for 1 round.
+        When an enemy dies, within range to allies 3 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" /></sec> increase grants the effect.
+        self Attack increase the effect is doubled increases. (up to 3stack)
+        At the end of the wave, within range to allies <sec typ="buff"><buff typ="SCOUTING" /> Scouting effect and grant</sec>.
+        <sec typ="cond">At round start</sec>, <sec typ="cond"><buff typ="SCOUTING" /> Scouting</sec> in the state within range to allies 1 round <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="7" r /></sec> increase grants the effect.
+      JP: |-
+        敵死亡時、 範囲内 味方に 3ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" /></sec> 増加 効果を付与します。
+        自身は 攻撃力 増加 効果が2倍で 増加します。 (最大 3重複)
+        ウェーブ終了時、 範囲内 味方に <sec typ="buff"><buff typ="SCOUTING" /> 偵察 効果を ブウヨ</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 状態の 範囲内 味方に 1ラウンドの間 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="7" r /></sec> 増加 効果を付与します。
       TC: |-
-        敵軍死亡時，對範圍內我軍賦予持續3回合的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力<val idx="0" /></sec>增加效果。
-        自身的攻擊力增加效果會變為兩倍。（最多3層）
-        波次結束時，對範圍內我軍賦予<sec typ="buff"><buff typ="SCOUTING" />偵察效果</sec>。
-        在回合開始時，對範圍內處於<sec typ="cond"><buff typ="SCOUTING" />偵察</sec>狀態的我軍賦予持續1回合的<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中<val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊<val idx="7" r /></sec>增加效果。
+        敵人死亡時， 範圍內 我方給 3回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" /></sec> 增加 賦予效果。
+        自身 攻擊力 增加 效果變為2倍以 增加。 (最大 3疊加)
+        波次結束時， 範圍內 我方給 <sec typ="buff"><buff typ="SCOUTING" /> 偵察 效果 賦予</sec>。
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 處於狀態的 範圍內 我方給 1回合內 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="7" r /></sec> 增加 賦予效果。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -8461,29 +8462,29 @@ skills:
             chance: 1
     desc:
       KR: |-
-        전투 개시 시, <sec typ="cond">적 개체 수가 6 이상</sec>일 경우 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가하고 영구적으로 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec>가 증가합니다.
-        라운드 개시 시, 적 개체 수에 비례하여 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec>이 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">적 개체 수가 6 이상</sec>일 경우 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가하고 영구적으로 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 적 개체 수에 비례하여 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec>이 증가합니다.
         적 1체 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val base="0.06" per="0" r /></sec> 증가
         적 2체 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val base="0.09" per="0" r /></sec> 증가
         적 3체 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val base="0.12" per="0" r /></sec> 증가... 등
-      JP: |-
-        戦闘開始時、<sec typ="cond">敵の数が6体以上</sec>の場合、自分の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>が増加し、永続的に<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec>が増加します。
-        ラウンド開始時、敵数に応じて自分の<sec typ="buff"><buff typ="AP_UP" />行動力</sec>が増加します。
-        敵1体 : <sec typ="buff"><buff typ="AP_UP" />行動力<val base="0.06" per="0" r /></sec>増加
-        敵2体 : <sec typ="buff"><buff typ="AP_UP" />行動力<val base="0.09" per="0" r /></sec>増加
-        敵3体 : <sec typ="buff"><buff typ="AP_UP" />行動力<val base="0.12" per="0" r /></sec>増加... など
       EN: |-
-        At battle start, if there are <sec typ="cond">6 or more enemy units</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases and <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> increases permanently.
-        At round start, self's <sec typ="buff"><buff typ="AP_UP" /> AP</sec> increases in proportion to the number of enemies.
-        1 enemy: <sec typ="buff"><buff typ="AP_UP" /> AP <val base="0.06" per="0" r /></sec> increase
-        2 enemies: <sec typ="buff"><buff typ="AP_UP" /> AP <val base="0.09" per="0" r /></sec> increase
-        3 enemies: <sec typ="buff"><buff typ="AP_UP" /> AP <val base="0.12" per="0" r /></sec> increase... etc.
+        <sec typ="cond">At battle start</sec>, <sec typ="cond">enemy unit number 6 or more</sec> if own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>() increases and permanently <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, enemy unit in proportion to the number of own <sec typ="buff"><buff typ="AP_UP" /> Action Speed</sec> increases.
+        enemy 1 unit: <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val base="0.06" per="0" r /></sec> increase
+        enemy 2 unit: <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val base="0.09" per="0" r /></sec> increase
+        enemy 3 unit: <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val base="0.12" per="0" r /></sec> increases... Deung
+      JP: |-
+        戦闘開始時、 <sec typ="cond">敵 個体 数が 6 以上</sec>の場合 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が 増加し、 永久に <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 敵 個体 数に比例して 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>が増加します。
+        敵 1体：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val base="0.06" per="0" r /></sec> 増加
+        敵 2体：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val base="0.09" per="0" r /></sec> 増加
+        敵 3体：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val base="0.12" per="0" r /></sec> 増加。。。 ドウン
       TC: |-
-        在戰鬥開始時，若<sec typ="cond">敵方數量達6以上</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> AP<val idx="0" /></sec>會增加，且<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力<val idx="4" r /></sec>會永久增加。
-        在回合開始時，自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>會依敵方數量增加。
-        敵1體：<sec typ="buff"><buff typ="AP_UP" /> 行動力<val base="0.06" per="0" r /></sec>增加
-        敵2體：<sec typ="buff"><buff typ="AP_UP" /> 行動力<val base="0.09" per="0" r /></sec>增加
-        敵3體：<sec typ="buff"><buff typ="AP_UP" /> 行動力<val base="0.12" per="0" r /></sec>增加... 等
+        戰鬥開始時， <sec typ="cond">敵人 單位 數 6 以上</sec>若為 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 增加，並 永久 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 敵人 單位 依數量成比例 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>增加。
+        敵人 1個：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val base="0.06" per="0" r /></sec> 增加
+        敵人 2個：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val base="0.09" per="0" r /></sec> 增加
+        敵人 3個：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val base="0.12" per="0" r /></sec> 增加。。。 獲得g
   "5":
     key: "5"
     icon: P.Hang
@@ -8762,21 +8763,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, <sec typ="cond"><buff typ="COUNTER" /> 반격 상태</sec>인 적의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec>를 감소시킵니다.
-        라운드 개시 시, <sec typ="cond"><buff typ="SNARE" /> 이동 불가 상태</sec>인 적의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="4" r inv /></sec>를 감소시킵니다.
-        라운드 개시 시, <sec typ="cond"><buff typ="STUN" /> 행동 불능 상태</sec>인 적의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>를 증가시킵니다.
-      JP: |-
-        ラウンド開始時、<sec typ="cond"><buff typ="COUNTER" />反撃状態</sec>の敵の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="0" r /></sec>/<sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="1" r /></sec>を減少させます。
-        ラウンド開始時、<sec typ="cond"><buff typ="SNARE" />移動不可状態</sec>の敵の<sec typ="buff"><buff typ="DEBUFF_RATEUP" />効果抵抗<val idx="4" r inv /></sec>を減少させます。
-        ラウンド開始時、<sec typ="cond"><buff typ="STUN" />行動不能状態</sec>の敵の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="5" r /></sec>を増加させます。
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><buff typ="COUNTER" /> 반격 상태</sec>인 적의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><buff typ="SNARE" /> 이동 불가 상태</sec>인 적의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="4" r inv /></sec>를 감소시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><buff typ="STUN" /> 행동 불능 상태</sec>인 적의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>를 증가시킵니다.
       EN: |-
-        At round start, decreases the <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="1" r /></sec> of enemies in <sec typ="cond"><buff typ="COUNTER" /> Counter</sec> state.
-        At round start, decreases the <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="4" r inv /></sec> of enemies in <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> state.
-        At round start, increases <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="5" r /></sec> of enemies in <sec typ="cond"><buff typ="STUN" /> Stunned</sec> state.
+        <sec typ="cond">At round start</sec>, <sec typ="cond"><buff typ="COUNTER" /> Counterattack state</sec> is enemy's <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="1" r /></sec> decreases.
+        <sec typ="cond">At round start</sec>, <sec typ="cond"><buff typ="SNARE" /> Immobilized state</sec> is enemy's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="4" r inv /></sec> decreases.
+        <sec typ="cond">At round start</sec>, <sec typ="cond"><buff typ="STUN" /> Stunned state</sec> is enemy's <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond"><buff typ="COUNTER" /> 反撃 状態</sec>である 敵の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond"><buff typ="SNARE" /> 移動不可 状態</sec>である 敵の <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="4" r inv /></sec>を減少させます。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond"><buff typ="STUN" /> 行動不能 状態</sec>である 敵の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="5" r /></sec>を増加させます。
       TC: |-
-        在回合開始時，降低處於<sec typ="cond"><buff typ="COUNTER" /> 反擊狀態</sec>敵軍的<sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊<val idx="1" r /></sec>。
-        在回合開始時，降低處於<sec typ="cond"><buff typ="SNARE" /> 無法移動狀態</sec>敵軍的<sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抵抗<val idx="4" r inv /></sec>。
-        在回合開始時，增加處於<sec typ="cond"><buff typ="STUN" /> 行動不能狀態</sec>敵軍的<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害<val idx="5" r /></sec>。
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond"><buff typ="COUNTER" /> 反擊 狀態</sec>為 敵人的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="1" r /></sec>使其減少。
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond"><buff typ="SNARE" /> 無法移動 狀態</sec>為 敵人的 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="4" r inv /></sec>使其減少。
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond"><buff typ="STUN" /> 無法行動 狀態</sec>為 敵人的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="5" r /></sec>使其增加。
 dialogue:
   KR:
     "1":

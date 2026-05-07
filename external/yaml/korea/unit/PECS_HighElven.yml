@@ -1941,10 +1941,18 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: 나노봇으로 목표 지점에 <dmg elem="physics" />를 주고, 3라운드 동안 대상을 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
-      JP: ナノボットで目標地点に <dmg elem="physics" />を与え、3ラウンドの間対象を<sec typ="buff"><buff typ="SNARE" /> 移動不可</sec>状態にします。
-      EN: Uses nanobots to deal <dmg elem="physics" /> at the target point and puts the target into <sec typ="buff"><buff typ="SNARE" /> Immobilize</sec> for 3 rounds.
-      TC: 以奈米機器人對目標點造成 <dmg elem="physics" />，並使目標在 3 回合內處於 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec>狀態。
+      KR: |-
+        나노봇으로 목표 지점에 <dmg elem="physics" />를 주고, 3라운드 동안 대상을 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
+        대상이 <sec typ="note">침수</sec> 상태인 경우, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
+      EN: |-
+        nano Bot as target point to <dmg elem="physics" /> damage and 3 rounds target <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> inflicts.
+        target <sec typ="note">Flooded</sec> if in the state, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec>.
+      JP: |-
+        ンアンオブオトで 目標地点に<dmg elem="physics" />を与え、、 3ラウンドの間 対象を <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態にします。
+        対象が <sec typ="note">浸水</sec> 状態の場合、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>します。
+      TC: |-
+        奈米bot以 目標地點於 造成<dmg elem="physics" />，並 3回合內 目標 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 使其進入狀態。
+        目標 <sec typ="note">浸水</sec> 若為狀態， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>。
   "2":
     key: "2"
     icon: TeamSpdBuff
@@ -2547,10 +2555,18 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: <char uid="PECS_ElvenForestmaker" />, <char uid="PECS_DarkElf" />, 경장형 아군의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 모두 해제</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시키며, 3라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /></sec>를 증가시킵니다.
-      JP: <char uid="PECS_ElvenForestmaker" />、<char uid="PECS_DarkElf" />、軽装型の味方の <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果をすべて解除</sec>し、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させ、3ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="4" r /></sec>を増加させます。
-      EN: Removes all harmful effects from <char uid="PECS_ElvenForestmaker" />, <char uid="PECS_DarkElf" />, and Light-type allies, increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>, and for 3 rounds increases <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="4" r /></sec>.
-      TC: 解除 <char uid="PECS_ElvenForestmaker" />、<char uid="PECS_DarkElf" />、輕裝型友軍的所有 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>，使 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加，並在 3 回合內提升 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="4" r /></sec>。
+      KR: |-
+        <char uid="PECS_ElvenForestmaker" />, <char uid="PECS_DarkElf" />, 경장형 아군의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 모두 해제</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시키며, 3라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /></sec>를 증가시킵니다.
+        스킬 사용 시, 대상은 <sec typ="dmg"><buff typ="PhyATK_UP" /> 기본 공격력 <val idx="10" r signless /> 고정 물리 피해</sec>를 입습니다.
+      EN: |-
+        <char uid="PECS_ElvenForestmaker" />, <char uid="PECS_DarkElf" />, Light-type allies' <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects all remove</sec> and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases and 3 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="4" r /></sec> increases.
+        When using the skill, the target <sec typ="dmg"><buff typ="PhyATK_UP" /> base Attack <val idx="10" r signless /> fixed Physical damage</sec> takes.
+      JP: |-
+        <char uid="PECS_ElvenForestmaker" />、 <char uid="PECS_DarkElf" />、 軽装型 味方の <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を ムオドウ 解除</sec>し、 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を 増加させ、、 3ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="4" r /></sec>を増加させます。
+        スキル使用時、 対象は <sec typ="dmg"><buff typ="PhyATK_UP" /> 基本 攻撃力 <val idx="10" r signless /> 固定物理ダメージ</sec>を 受けます。
+      TC: |-
+        <char uid="PECS_ElvenForestmaker" />， <char uid="PECS_DarkElf" />， 輕裝型 我方的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 全部 解除</sec>並 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 使其增加，並 3回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="4" r /></sec>使其增加。
+        使用技能時， 目標 <sec typ="dmg"><buff typ="PhyATK_UP" /> 基礎 攻擊力 <val idx="10" r signless /> 固定物理傷害</sec> 受到。
   "3":
     key: "3"
     icon: P.Barrier
@@ -2897,10 +2913,18 @@ skills:
             per: 0.005
             chance: 1
     desc:
-      KR: 라운드 시작 시 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가하며, 전투 시작 시 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" /></sec>을(를) 전개합니다.
-      JP: ラウンド開始時 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加し、戦闘開始時 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="0" /></sec>を展開します。
-      EN: At the start of the round, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec> increases, and at battle start, deploys a <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> barrier <val idx="0" /></sec>.
-      TC: 回合開始時，<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>會增加；戰鬥開始時，則展開 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 屏障 <val idx="0" /></sec>。
+      KR: |-
+        라운드 시작 시 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가하며, 전투 시작 시 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" /></sec>을(를) 전개합니다.
+        스쿼드에 <char uid="PECS_ElvenForestmaker" />, <char uid="PECS_DarkElf" />가 있으면 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 추가로 증가합니다.
+      EN: |-
+        round when operation when <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increases and At battle start <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="0" /></sec> deploy.
+        squad <char uid="PECS_ElvenForestmaker" />, <char uid="PECS_DarkElf" /> if present <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="3" r /></sec>additionally increases.
+      JP: |-
+        ラウンド 時ジアク 時 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が 増加し、 戦闘開始時 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="0" /></sec>を 展開します。
+        スクワッドに <char uid="PECS_ElvenForestmaker" />、 <char uid="PECS_DarkElf" />が ある場合 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が追加で増加します。
+      TC: |-
+        回合 時作 時 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec> 增加，並 戰鬥開始時 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾 <val idx="0" /></sec> 展開。
+        小隊於 <char uid="PECS_ElvenForestmaker" />， <char uid="PECS_DarkElf" /> 若有 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>會額外增加。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -3610,10 +3634,18 @@ skills:
             per: 0.01
             chance: 1
     desc:
-      KR: <char uid="PECS_ElvenForestmaker" />, <char uid="PECS_DarkElf" />, <char uid="PECS_Hathor" />, 경장형 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec>를 증가시킵니다.
-      JP: <char uid="PECS_ElvenForestmaker" />、<char uid="PECS_DarkElf" />、<char uid="PECS_Hathor" />、軽装型の味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="5" r /></sec>を増加させます。
-      EN: Increases <char uid="PECS_ElvenForestmaker" />, <char uid="PECS_DarkElf" />, <char uid="PECS_Hathor" />, and Light-type allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="5" r /></sec>.
-      TC: 提升 <char uid="PECS_ElvenForestmaker" />、<char uid="PECS_DarkElf" />、<char uid="PECS_Hathor" />、輕裝型友軍的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="5" r /></sec>。
+      KR: |-
+        <char uid="PECS_ElvenForestmaker" />, <char uid="PECS_DarkElf" />, <char uid="PECS_Hathor" />, 경장형 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec>를 증가시킵니다.
+        <char uid="PECS_ElvenForestmaker" />, <char uid="PECS_DarkElf" />, <char uid="PECS_Hathor" />가 있으면 경장형 아군이 받는 효과가 증가합니다.
+      EN: |-
+        <char uid="PECS_ElvenForestmaker" />, <char uid="PECS_DarkElf" />, <char uid="PECS_Hathor" />, Light-type allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="5" r /></sec> increases.
+        <char uid="PECS_ElvenForestmaker" />, <char uid="PECS_DarkElf" />, <char uid="PECS_Hathor" /> if present Light-type allies receives effect increases.
+      JP: |-
+        <char uid="PECS_ElvenForestmaker" />、 <char uid="PECS_DarkElf" />、 <char uid="PECS_Hathor" />、 軽装型 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="5" r /></sec>を増加させます。
+        <char uid="PECS_ElvenForestmaker" />、 <char uid="PECS_DarkElf" />、 <char uid="PECS_Hathor" />が ある場合 軽装型 味方が 受ける 効果が増加します。
+      TC: |-
+        <char uid="PECS_ElvenForestmaker" />， <char uid="PECS_DarkElf" />， <char uid="PECS_Hathor" />， 輕裝型 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="5" r /></sec>使其增加。
+        <char uid="PECS_ElvenForestmaker" />， <char uid="PECS_DarkElf" />， <char uid="PECS_Hathor" /> 若有 輕裝型 我方 受到 效果增加。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -3711,9 +3743,9 @@ skills:
             chance: 1
     desc:
       KR: 같은 열에 배치된 <sec typ="cond"><sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>가 활성화된 대상</sec>의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>를 감소시킵니다.
-      JP: 同じ列に配置された <sec typ="cond"><sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>が有効化された対象</sec>の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 被ダメージ <val idx="0" r inv /></sec>を減少させます。
-      EN: Reduces <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> of targets deployed in the same column with <sec typ="cond"><sec typ="buff"><buff typ="DEF_Side" /> column protection</sec> active.
-      TC: 降低部署在同一列且 <sec typ="cond"><sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>已啟動之目標的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到傷害 <val idx="0" r inv /></sec>。
+      EN: same column to placed <sec typ="cond"><sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> activated target</sec> of <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decreases.
+      JP: 同じ列に 配置された <sec typ="cond"><sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>が 有効化された 対象</sec>の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec>を減少させます。
+      TC: 同一行於 配置於 <sec typ="cond"><sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec> 啟用已 目標</sec>的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="0" r inv /></sec>使其減少。
 dialogue:
   KR:
     "1":

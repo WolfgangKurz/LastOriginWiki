@@ -2527,16 +2527,16 @@ skills:
     desc:
       KR: |-
         단분자 클로로 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소 시키고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec>를 증가시킵니다.
-        <sec typ="cond">대상이 <sec typ="note">견제 개시</sec> 상태일 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 물리 고정 피해 <val idx="3" r /></sec>를 주며 <sec typ="cond">해당 상태에서 치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 물리 고정 피해가 2배로 적용</sec>됩니다.
+        대상이 <sec typ="note">견제 개시</sec>상태일 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 물리 고정 피해 <val idx="3" r /></sec>를 주며 해당 상태에서 치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 물리 고정 피해가 2배로 적용</sec>됩니다.
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> with a monomolecular claw, decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF by <val idx="0" r /></sec>, and increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken by <val idx="2" r /></sec>.
+        If the target is under <sec typ="note">Suppression Start</sec>, deals <sec typ="dmg"><buff typ="PhyATK_UP" /> Physical fixed damage by <val idx="3" r /></sec>, and on critical hit in that state, <sec typ="dmg"><buff typ="PhyATK_UP" /> Physical fixed damage is applied at double value</sec>.
       JP: |-
         単分子クローで<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>を減少させ、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="2" r /></sec>を増加させます。
-        <sec typ="cond">対象が<sec typ="note">牽制開始</sec>状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />物理固定ダメージ<val idx="3" r /></sec>を与え、<sec typ="cond">その状態でクリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />物理固定ダメージが2倍で適用</sec>されます。
-      EN: |-
-        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> with a Monomolecular Claw, decreasing the target’s <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> and increasing their <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="2" r /></sec>.
-        <sec typ="cond">If the target is in <sec typ="note">Commence Containment</sec> state</sec>, deals <sec typ="dmg"><buff typ="PhyATK_UP" /> Fixed Physical Damage <val idx="3" r /></sec>, and <sec typ="cond">if it CRITs while in that state</sec>, the <sec typ="dmg"><buff typ="PhyATK_UP" /> Fixed Physical Damage is doubled</sec>.
+        対象が<sec typ="note">牽制開始</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />物理固定ダメージ<val idx="3" r /></sec>を与え、その状態でクリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" />物理固定ダメージが2倍で適用</sec>されます。
       TC: |-
-        以單分子爪造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />，降低目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>，並增加<sec typ="buff"><buff typ="VULNERABLE" />受到的傷害<val idx="2" r /></sec>。
-        <sec typ="cond">若目標處於<sec typ="note">開始牽制</sec>狀態</sec>，則會造成<sec typ="dmg"><buff typ="PhyATK_UP" />物理固定傷害<val idx="3" r /></sec>；<sec typ="cond">若在該狀態下發生暴擊</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" />物理固定傷害會以2倍套用</sec>。
+        以單分子爪造成<sec typ="attr">無視保護</sec><dmg elem="physics" />，降低目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>，並增加<sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="2" r /></sec>。
+        若目標處於<sec typ="note">牽制開始</sec>狀態，造成<sec typ="dmg"><buff typ="PhyATK_UP" />物理固定傷害<val idx="3" r /></sec>，且在該狀態暴擊時，<sec typ="dmg"><buff typ="PhyATK_UP" />物理固定傷害以兩倍套用</sec>。
   "2":
     key: "2"
     icon: TeamSpdDeBuff
@@ -6113,18 +6113,18 @@ skills:
         범위 내 적에게 <dmg elem="physics" />를 주고 적을 견제해 대상에게 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="7" r /></sec> 감소 효과가 적용되며 각각 최대 3중첩까지 가능합니다.
         해당 스킬은 <sec typ="attr">보호 무시</sec>의 효과를 가지고 있으며 회피 할 수 없습니다.
         자신은 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="9" r /></sec>가 적용됩니다.
-      JP: |-
-        範囲内の敵に<dmg elem="physics" />を与え敵を牽制し、対象に<sec typ="buff"><buff typ="PROVOKE" />挑発</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="7" r /></sec>減少効果が適用され、それぞれ最大3スタックまで可能です。
-        このスキルは<sec typ="attr">保護無視</sec>の効果を持っており回避できません。
-        自分は<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗<val idx="8" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除耐性<val idx="9" r /></sec>が適用されます。
       EN: |-
-        Deals <dmg elem="physics" /> to enemies in range and contains them, inflicting <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACU <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="7" r /></sec> decrease effects on the target. Each can stack up to 3 times.
+        Deals <dmg elem="physics" /> to enemies within range and suppresses them, applying <sec typ="buff"><buff typ="PROVOKE" /> Provoked</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy decrease by <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion decrease by <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical decrease by <val idx="7" r /></sec> to targets, each stacking up to 3 times.
         This skill has <sec typ="attr">Ignore Protection</sec> and cannot be evaded.
-        Self gains <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="8" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Upgrade Removal Resistance <val idx="9" r /></sec>.
+        She gains <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance by <val idx="8" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Buff Removal Resistance by <val idx="9" r /></sec>.
+      JP: |-
+        範囲内の敵に<dmg elem="physics" />を与えて敵を牽制し、対象に<sec typ="buff"><buff typ="PROVOKE" />挑発</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="7" r /></sec>減少効果が適用され、それぞれ最大3重複まで可能です。
+        このスキルは<sec typ="attr">保護無視</sec>効果を持ち、回避できません。
+        自身には<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="8" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除耐性<val idx="9" r /></sec>が適用されます。
       TC: |-
-        對範圍內敵軍造成<dmg elem="physics" />並進行牽制，使目標套用<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="7" r /></sec>減少效果，各自最多可疊加3層。
-        此技能具有<sec typ="attr">無視保護</sec>效果，且無法迴避。
-        自身獲得<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="8" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />解除強化抵抗<val idx="9" r /></sec>。
+        對範圍內敵人造成<dmg elem="physics" />並牽制敵人，對目標套用<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="7" r /></sec>降低效果，各自最多可重疊3次。
+        該技能具有<sec typ="attr">無視保護</sec>效果，且無法迴避。
+        自身套用<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性<val idx="8" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除抗性<val idx="9" r /></sec>。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -6372,18 +6372,18 @@ skills:
         유연한 몸놀림 덕에 라운드 개시 시, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" inv r /></sec> 감소 / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> 증가 효과가 적용됩니다.
         자신에게 <sec typ="buff"><buff typ="AP_UP" /> 행동력 증가</sec> 효과가 적용되어 있을 경우 기본 효과가 추가적으로 적용되며 추가 효과는 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 강화 효과 해제</sec>로 해제할 수 없습니다.
         <sec>(장비로 인한 행동력 증가 효과에는 적용되지 않습니다.)</sec>
-      JP: |-
-        柔軟な身のこなしのおかげでラウンド開始時、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" inv r /></sec>減少 / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="1" r /></sec>増加効果が適用されます。
-        自分に<sec typ="buff"><buff typ="AP_UP" />行動力増加</sec>効果が適用されている場合、基本効果が追加で適用され、追加効果は<sec typ="buff"><buff typ="REMOVE_DEBUFF" />強化効果解除</sec>では解除できません。
-        <sec>(装備による行動力増加効果には適用されません。)</sec>
       EN: |-
-        Thanks to flexible movement, at the start of the round <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" inv r /></sec> decreases / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="1" r /></sec> increases.
-        If a <sec typ="buff"><buff typ="AP_UP" /> MOVE Increase</sec> effect is active on self, the basic effect is additionally applied and the additional effect cannot be removed with <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Remove Upgrade</sec>.
-        <sec>(This does not apply to MOVE increase effects from gear.)</sec>
+        Thanks to her flexible movements, at round start she gains <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease by <val idx="0" inv r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion increase by <val idx="1" r /></sec>.
+        If a <sec typ="buff"><buff typ="AP_UP" /> Action Power increase</sec> effect is applied to her, the base effect is additionally applied, and the additional effect cannot be removed by <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> buff effect removal</sec>.
+        <sec>(Does not apply to Action Power increase effects from equipment.)</sec>
+      JP: |-
+        柔軟な身のこなしにより、ラウンド開始時、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" inv r /></sec>減少 / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="1" r /></sec>増加効果が適用されます。
+        自身に<sec typ="buff"><buff typ="AP_UP" />行動力増加</sec>効果が適用されている場合、基本効果が追加で適用され、追加効果は<sec typ="buff"><buff typ="REMOVE_DEBUFF" />強化効果解除</sec>で解除できません。
+        <sec>(装備による行動力増加効果には適用されません。)</sec>
       TC: |-
-        憑藉靈活身手，回合開始時會套用<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到的傷害<val idx="0" inv r /></sec>減少 / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="1" r /></sec>增加效果。
-        若自身已套用<sec typ="buff"><buff typ="AP_UP" />行動力增加</sec>效果，則會額外套用基本效果，且該額外效果無法透過<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除強化</sec>解除。
-        <sec>(不適用於裝備所帶來的行動力增加效果。)</sec>
+        多虧靈活的身手，回合開始時套用<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到傷害<val idx="0" inv r /></sec>降低 / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="1" r /></sec>增加效果。
+        若自身套用<sec typ="buff"><buff typ="AP_UP" />行動力增加</sec>效果，基本效果會額外套用，且追加效果無法被<sec typ="buff"><buff typ="REMOVE_DEBUFF" />強化效果解除</sec>解除。
+        <sec>（不適用於裝備造成的行動力增加效果。）</sec>
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -6677,15 +6677,15 @@ skills:
       KR: |-
         라운드 개시 시, <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 공격 대상의 HP가 낮을 수록 피해량 <val idx="0" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="COUNTER" /> <val idx="2" r signless /> 위력으로 반격</sec> 효과가 적용됩니다.
         <sec typ="cond">적에게 공격을 받은 후</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> 증가가 최대 5중첩까지 적용되며 최대 중첩인 상태로 라운드 개시 시, <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>가 증가합니다.
-      JP: |-
-        ラウンド開始時、<sec typ="dmg"><buff typ="DamageAmp_Opp" />攻撃対象のHPが低いほどダメージ量<val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="1" r /></sec> / <sec typ="buff"><buff typ="COUNTER" /> <val idx="2" r signless />威力で反撃</sec>効果が適用されます。
-        <sec typ="cond">敵に攻撃を受けた後</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec>増加が最大5スタックまで適用され、最大スタックの状態でラウンド開始時、<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="6" r /></sec>が増加します。
       EN: |-
-        At the start of the round, <sec typ="dmg"><buff typ="DamageAmp_Opp" /> damage <val idx="0" r /></sec> increases the lower the attack target’s HP is, and <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="1" r /></sec> / <sec typ="buff"><buff typ="COUNTER" /> retaliate with <val idx="2" r signless /> power</sec> effects are applied.
-        <sec typ="cond">After being attacked by an enemy</sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> increase can stack up to 5 times, and if the round starts at max stacks, <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="6" r /></sec> increases.
+        At round start, <sec typ="dmg"><buff typ="DamageAmp_Opp" /> damage dealt increases by <val idx="0" r /> as the attack target's HP decreases</sec>, and she gains <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="COUNTER" /> Counterattack with <val idx="2" r signless /> power</sec>.
+        <sec typ="cond">After being attacked by an enemy</sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK increase by <val idx="5" r /></sec> is applied up to 5 stacks, and at round start while at max stacks, <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical increases by <val idx="6" r /></sec>.
+      JP: |-
+        ラウンド開始時、<sec typ="dmg"><buff typ="DamageAmp_Opp" />攻撃対象のHPが低いほどダメージ量<val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="1" r /></sec> / <sec typ="buff"><buff typ="COUNTER" /><val idx="2" r signless />威力で反撃</sec>効果が適用されます。
+        <sec typ="cond">敵に攻撃された後</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec>増加が最大5重複まで適用され、最大重複状態でラウンド開始時、<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="6" r /></sec>が増加します。
       TC: |-
-        回合開始時，<sec typ="dmg"><buff typ="DamageAmp_Opp" />當攻擊目標的HP越低時傷害量<val idx="0" r /></sec>越高，並套用<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="1" r /></sec> / <sec typ="buff"><buff typ="COUNTER" />以<val idx="2" r signless />威力反擊</sec>效果。
-        <sec typ="cond">在被敵人攻擊後</sec>，<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec>增加最多可疊加5層；若在最大疊加狀態下開始回合，則<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="6" r /></sec>增加。
+        回合開始時，<sec typ="dmg"><buff typ="DamageAmp_Opp" />攻擊目標HP越低，傷害量<val idx="0" r /></sec>增加，並套用<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="1" r /></sec> / <sec typ="buff"><buff typ="COUNTER" />以<val idx="2" r signless />威力反擊</sec>效果。
+        <sec typ="cond">受到敵人攻擊後</sec>，<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec>增加最多可套用5層，達最大層數狀態下回合開始時，<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="6" r /></sec>增加。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -6992,25 +6992,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        전투 개시 시, 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가하며 <sec typ="cond">자신이 액티브 스킬을 사용 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 추가로 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가하며 <sec typ="cond">자신이 액티브 스킬을 사용 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 추가로 증가합니다.
         라운드 개시 시, <sec typ="buff"><buff typ="DEF_Char" /> 보호기가 아닌 아군을 지정 보호</sec>하며 범위 내 <sec typ="buff"><buff typ="AP_UP" /> <buff typ="AP_DOWN" /> 행동력 증감</sec> 효과가 적용된 아군의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>합니다.
-        <sec typ="cond">자신이 <sec typ="note">손 빌려주기 : 공격 지원</sec> 상태일 시</sec>, <sec typ="note">견제 개시</sec>의 도발 효과는 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> <buff typ="DEBUFF_PERDOWN" /> 효과 저항</sec>에 영향을 받지 않고 적용됩니다.
+        자신이 <sec typ="note">손 빌려주기 : 공격 지원</sec> 상태일 시, <sec typ="note">견제 개시</sec>의 도발 효과는 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> <buff typ="DEBUFF_PERDOWN" /> 효과 저항</sec>에 영향을 받지 않고 적용됩니다.
         <sec>(장비로 인한 행동력 증감 효과에는 적용되지 않습니다.)</sec>
-      JP: |-
-        戦闘開始時、範囲内の味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>が増加し、<sec typ="cond">自分がアクティブスキルを使用時</sec>、範囲内の味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="4" /></sec>がさらに増加します。
-        ラウンド開始時、<sec typ="buff"><buff typ="DEF_Char" />保護機ではない味方を指定保護</sec>し、範囲内で<sec typ="buff"><buff typ="AP_UP" /><buff typ="AP_DOWN" />行動力増減</sec>効果が適用されている味方の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃を支援</sec>します。
-        <sec typ="cond">自分が<sec typ="note">支援の手：攻撃支援</sec>状態の場合</sec>、<sec typ="note">牽制開始</sec>の挑発効果は対象の<sec typ="buff"><buff typ="DEBUFF_RATEUP" /><buff typ="DEBUFF_PERDOWN" />効果抵抗</sec>の影響を受けずに適用されます。
-        <sec>(装備による行動力増減効果には適用されません。)</sec>
       EN: |-
-        At the start of combat, allies within range gain <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>, and <sec typ="cond">when self uses an Active Skill</sec>, allies within range gain additional <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>.
-        At the start of the round, <sec typ="buff"><buff typ="DEF_Char" /> allies that are not Defenders are given Designated Protection</sec>, and allies within range affected by <sec typ="buff"><buff typ="AP_UP" /><buff typ="AP_DOWN" /> MOVE increase/decrease</sec> effects are granted <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attack Support</sec>.
-        <sec typ="cond">If self is in <sec typ="note">Lend a Hand: Attack Support</sec> state</sec>, the Provoke effect of <sec typ="note">Commence Containment</sec> is applied without being affected by the target’s <sec typ="buff"><buff typ="DEBUFF_RATEUP" /><buff typ="DEBUFF_PERDOWN" /> Effect Resistance</sec>.
-        <sec>(This does not apply to MOVE increase/decrease effects from gear.)</sec>
+        At battle start, increases <sec typ="buff"><buff typ="AP_UP" /> AP by <val idx="0" /></sec> for allies within range, and <sec typ="cond">when she uses an active skill</sec>, additionally increases <sec typ="buff"><buff typ="AP_UP" /> AP by <val idx="4" /></sec> for allies within range.
+        At round start, <sec typ="buff"><buff typ="DEF_Char" /> protects non-Protector allies with Designated Protection</sec>, and <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports attacks</sec> of allies within range who have <sec typ="buff"><buff typ="AP_UP" /> <buff typ="AP_DOWN" /> Action Power increase/decrease</sec> effects.
+        If she is under <sec typ="note">Lend a Hand: Attack Support</sec>, the Provoked effect of <sec typ="note">Suppression Start</sec> is applied without being affected by the target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> <buff typ="DEBUFF_PERDOWN" /> Effect Resistance</sec>.
+        <sec>(Does not apply to Action Power increase/decrease effects from equipment.)</sec>
+      JP: |-
+        戦闘開始時、範囲内の味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>が増加し、<sec typ="cond">自身がアクティブスキルを使用時</sec>、範囲内の味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="4" /></sec>が追加で増加します。
+        ラウンド開始時、<sec typ="buff"><buff typ="DEF_Char" />保護機でない味方を指定保護</sec>し、範囲内の<sec typ="buff"><buff typ="AP_UP" /> <buff typ="AP_DOWN" />行動力増減</sec>効果が適用された味方の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃を支援</sec>します。
+        自身が<sec typ="note">手を貸す：攻撃支援</sec>状態の場合、<sec typ="note">牽制開始</sec>の挑発効果は対象の<sec typ="buff"><buff typ="DEBUFF_RATEUP" /> <buff typ="DEBUFF_PERDOWN" />効果耐性</sec>に影響されず適用されます。
+        <sec>(装備による行動力増減効果には適用されません。)</sec>
       TC: |-
-        戰鬥開始時，範圍內我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加，且<sec typ="cond">當自身使用主動技能時</sec>，範圍內我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>會額外增加。
-        回合開始時，對<sec typ="buff"><buff typ="DEF_Char" />非保護機的我軍施加指定保護</sec>，並支援範圍內套用<sec typ="buff"><buff typ="AP_UP" /><buff typ="AP_DOWN" />行動力增減</sec>效果的我軍進行<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻擊支援</sec>。
-        <sec typ="cond">若自身處於<sec typ="note">提供幫助：支援攻擊</sec>狀態</sec>，則<sec typ="note">開始牽制</sec>的挑釁效果不會受到目標的<sec typ="buff"><buff typ="DEBUFF_RATEUP" /><buff typ="DEBUFF_PERDOWN" />效果抵抗</sec>影響而套用。
-        <sec>(不適用於裝備帶來的行動力增減效果。)</sec>
+        戰鬥開始時，範圍內我方的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>增加，且<sec typ="cond">自身使用主動技能時</sec>，範圍內我方的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="4" /></sec>額外增加。
+        回合開始時，<sec typ="buff"><buff typ="DEF_Char" />指定保護非保護機我方</sec>，並<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援攻擊</sec>範圍內套用<sec typ="buff"><buff typ="AP_UP" /> <buff typ="AP_DOWN" />行動力增減</sec>效果的我方。
+        若自身處於<sec typ="note">幫忙：攻擊支援</sec>狀態，<sec typ="note">牽制開始</sec>的挑釁效果不受目標的<sec typ="buff"><buff typ="DEBUFF_RATEUP" /> <buff typ="DEBUFF_PERDOWN" />效果抗性</sec>影響並套用。
+        <sec>（不適用於裝備造成的行動力增減效果。）</sec>
 dialogue:
   KR:
     "2":

@@ -3442,17 +3442,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        빙결 볼트로 대상에게 <dmg elem="ice" />를 주고, 2라운드 동안 <cmt loc t="FLOOD">$$FLOOD:6,7,8$</cmt> / <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="1" r /></sec> 감소 / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec> 증가 효과를 부여합니다.
+        빙결 볼트로 대상에게 <dmg elem="ice" />를 주고, 2라운드 동안 <cmt loc t="FLOOD"><import name="FLOOD" p="6,7,8" /></cmt> / <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="1" r /></sec> 감소 / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec> 증가 효과를 부여합니다.
         <sec typ="cond">스쿼드 내 <char uid="BR_Bulgasari" />가 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">배터링 램</sec> / <sec typ="note">벙커 버스터</sec> 스킬 협동 공격</sec>을 유도합니다.
-      JP: |-
-        氷結ボルトで対象に<dmg elem="ice" />を与え、2ラウンドの間<cmt loc t="FLOOD">$$FLOOD:6,7,8$</cmt> / <sec typ="buff"><buff typ="MARKING" /> マーク</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="1" r /></sec>減少 / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="2" r /></sec>増加効果を付与します。
-        <sec typ="cond">分隊内に<char uid="BR_Bulgasari" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Battering Ram</sec> / <sec typ="note">Bunker Buster</sec>スキルの協同攻撃</sec>を誘導します。
       EN: |-
-        Uses an Ice Bolt to deal <dmg elem="ice" /> to the target and applies <cmt loc t="FLOOD">$$FLOOD:6,7,8$</cmt> / <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" r /></sec> Decrease / <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="2" r /></sec> Increase for 2 rounds.
-        <sec typ="cond">If <char uid="BR_Bulgasari" /> is in the squad</sec>, induces a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> cooperative attack with <sec typ="note">Battering Ram</sec> / <sec typ="note">Bunker Buster</sec></sec>.
+        Fires a Freezing Bolt at the target to deal <dmg elem="ice" /> and, for 2 rounds, grants <cmt loc t="FLOOD"><import name="FLOOD" p="6,7,8" /></cmt> / <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="1" r /></sec> decrease / <sec typ="buff"><buff typ="VULNERABLE" /> Damage Taken <val idx="2" r /></sec> increase.
+        <sec typ="cond">If <char uid="BR_Bulgasari" /> is in the squad</sec>, triggers a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> coordinated attack with the <sec typ="note">Battering Ram</sec> / <sec typ="note">Bunker Buster</sec> skill</sec>.
+      JP: |-
+        凍結ボルトで対象に<dmg elem="ice" />を与え、2ラウンドの間<cmt loc t="FLOOD"><import name="FLOOD" p="6,7,8" /></cmt> / <sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="1" r /></sec>減少 / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="2" r /></sec>増加効果を付与します。
+        <sec typ="cond">部隊内に<char uid="BR_Bulgasari" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">バッタリングラム</sec> / <sec typ="note">バンカーバスター</sec>スキルによる協同攻撃</sec>を誘発します。
       TC: |-
-        以冰結電荷對目標造成<dmg elem="ice" />，並在2回合內賦予<cmt loc t="FLOOD">$$FLOOD:6,7,8$</cmt> / <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="1" r /></sec>降低 / <sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="2" r /></sec>增加效果。
-        <sec typ="cond">若小隊內有<char uid="BR_Bulgasari" /></sec>，則引導與<sec typ="note">Battering Ram</sec> / <sec typ="note">Bunker Buster</sec>技能的<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 協同攻擊</sec>。
+        以凍結弩箭對目標造成<dmg elem="ice" />，並在2回合內賦予<cmt loc t="FLOOD"><import name="FLOOD" p="6,7,8" /></cmt> / <sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="1" r /></sec>減少 / <sec typ="buff"><buff typ="VULNERABLE" />受到的傷害 <val idx="2" r /></sec>增加效果。
+        <sec typ="cond">若小隊內有<char uid="BR_Bulgasari" /></sec>，誘發<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">攻城槌</sec> / <sec typ="note">碉堡破壞者</sec>技能協同攻擊</sec>。
   "2":
     key: "2"
     icon: Scan
@@ -5441,19 +5441,19 @@ skills:
       KR: |-
         면밀한 전황 예측을 통해 <sec typ="cond">스킬 사용 시</sec>, 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시키고 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec>를 증가시킵니다.
         스쿼드 내 보호기 1기 당, 지속 라운드가 1 증가하고 지속 효과가 50% 증폭됩니다.
-        <sec typ="cond"><cmt t="몽구스 팀">$$TeamMongus:0$</cmt> 소속 보호기가 있을 경우</sec>, 추가로 아군 전체의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
-      JP: |-
-        綿密な戦況予測により、<sec typ="cond">スキル使用時</sec>、味方全体の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させ、2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec>を増加させます。
-        分隊内の保護機1機ごとに持続ラウンドが1増加し、持続効果が50%増幅されます。
-        <sec typ="cond"><cmt t="マングースチーム">$$TeamMongus:0$</cmt>所属の保護機がいる場合</sec>、追加で味方全体の<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害な効果を解除</sec>します。
+        <sec typ="cond"><cmt t="몽구스 팀"><import name="TeamMongus" p="0" /></cmt> 소속 보호기가 있을 경우</sec>, 추가로 아군 전체의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
       EN: |-
-        Through careful battlefield prediction, <sec typ="cond">when using the skill</sec>, increases all allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> and increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="7" r /></sec> for 2 rounds.
-        For each protector in the squad, the duration increases by 1 round and the ongoing effect is amplified by 50%.
-        <sec typ="cond">If there is a <cmt t="Team Mongoose">$$TeamMongus:0$</cmt> protector in the squad</sec>, additionally removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> all malign effects</sec> from all allies.
+        thorough battle situation prediction through <sec typ="cond">When using the skill</sec>, all allies of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases and 2 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="7" r /></sec> increases.
+        in squad Defender 1 unit per, continuous round 1 increases and continuous effect and increased by 50%.
+        <sec typ="cond"><cmt t="Mongoose Team"><import name="TeamMongus" p="0" /></cmt> affiliated Defender if present</sec>, additionally all allies of <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec>.
+      JP: |-
+        ならムイルした 前ハワン 予測を 通じて <sec typ="cond">スキル使用時</sec>、 味方全体の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を 増加時クイし 2ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec>を増加させます。
+        スクワッド 内 保護機 1機 ごと、 持続 ラウンドが 1 増加し、 持続 効果が 50%増幅されます。
+        <sec typ="cond"><cmt t="マングースチーム"><import name="TeamMongus" p="0" /></cmt> 所属 保護機が 存在する場合</sec>、 追加で 味方全体の <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>します。
       TC: |-
-        透過精準戰況預判，在<sec typ="cond">使用技能時</sec>，增加我軍全體的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>，並在2回合內增加<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="7" r /></sec>。
-        小隊內每1名保護機，持續回合數增加1回合，且持續效果增幅50%。
-        <sec typ="cond">若小隊內有<cmt t="貓鼬隊">$$TeamMongus:0$</cmt>所屬保護機</sec>，則另外解除我軍全體的<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>。
+        若未l 戰況 預測 透過 <sec typ="cond">使用技能時</sec>， 全體我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 增加時台並 2回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="7" r /></sec>使其增加。
+        小隊 內 保護機 1台 每， 持續 回合 1 增加，並 持續 效果 增幅50%。
+        <sec typ="cond"><cmt t="貓鼬小隊"><import name="TeamMongus" p="0" /></cmt> 所屬 保護機 存在時</sec>， 額外 全體我方的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>。
   "3":
     key: "3"
     icon: P.Command
@@ -5885,19 +5885,19 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 아군 전체의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>를 증가시킵니다.
         <sec typ="cond">라운드 개시 시</sec>, 적 전체의 <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="7" r /></sec>를 감소시킵니다.
-        상기 효과의 대상이 <sec typ="cond">자신을 제외한 <cmt t="몽구스 팀">$$TeamMongus:0$</cmt> 소속 전투원의 스킬 효과를 받고 있을 경우</sec>, 효과가 두 배로 증폭됩니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、味方全体の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>を増加させます。
-        <sec typ="cond">ラウンド開始時</sec>、敵全体の<sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec>を減少させます。
-        上記効果の対象が<sec typ="cond">自分を除く<cmt t="マングースチーム">$$TeamMongus:0$</cmt>所属戦闘員のスキル効果を受けている場合</sec>、効果が2倍に増幅されます。
+        상기 효과의 대상이 <sec typ="cond">자신을 제외한 <cmt t="몽구스 팀"><import name="TeamMongus" p="0" /></cmt> 소속 전투원의 스킬 효과를 받고 있을 경우</sec>, 효과가 두 배로 증폭됩니다.
       EN: |-
-        At the start of the round, increases all allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec>.
-        At the start of the round, decreases all enemies' <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACC <val idx="7" r /></sec>.
-        If the targets of the above effects are <sec typ="cond">receiving skill effects from <cmt t="Team Mongoose">$$TeamMongus:0$</cmt> combatants other than self</sec>, the effect is doubled.
+        <sec typ="cond">At round start</sec>, all allies of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, all enemies of <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="7" r /></sec> decreases.
+        above effect and of target <sec typ="cond">self excluding <cmt t="Mongoose Team"><import name="TeamMongus" p="0" /></cmt> affiliated combatant of skill effect and receiving if present</sec>, the effect is doubled amplification.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 味方全体の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、 敵全体の <sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec>を減少させます。
+        上記 効果の 対象が <sec typ="cond">自身を ジエ外した <cmt t="マングースチーム"><import name="TeamMongus" p="0" /></cmt> 所属 戦闘員の スキル 効果を 受けて 存在する場合</sec>、 効果が2倍で 増幅されます。
       TC: |-
-        回合開始時，增加我軍全體的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>。
-        回合開始時，降低敵軍全體的<sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec>。
-        若上述效果的目標<sec typ="cond">正受到除自身以外<cmt t="貓鼬隊">$$TeamMongus:0$</cmt>所屬戰鬥員的技能效果</sec>，則效果會加倍。
+        <sec typ="cond">回合開始時</sec>， 全體我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec>， 全體敵人的 <sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec>使其減少。
+        上述 效果的 目標 <sec typ="cond">自身 解除外 <cmt t="貓鼬小隊"><import name="TeamMongus" p="0" /></cmt> 所屬 戰鬥員的 技能 效果 受到 存在時</sec>， 效果變為2倍以 增幅。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -6622,24 +6622,24 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 보호기에게 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec> 감소 / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> 증가 효과를 부여합니다.
-        상기 효과의 대상이 <sec typ="cond"><cmt t="몽구스 팀">$$TeamMongus:0$</cmt> 소속 보호기인 경우</sec>, 효과가 50% 증폭됩니다.
+        상기 효과의 대상이 <sec typ="cond"><cmt t="몽구스 팀"><import name="TeamMongus" p="0" /></cmt> 소속 보호기인 경우</sec>, 효과가 50% 증폭됩니다.
         <sec typ="cond">전투 개시 시</sec>, 범위 내 아군 보호기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>을(를) 증가시킵니다.
         <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方保護機に<sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec>減少 / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec>増加効果を付与します。
-        上記効果の対象が<sec typ="cond"><cmt t="マングースチーム">$$TeamMongus:0$</cmt>所属保護機の場合</sec>、効果が50%増幅されます。
-        <sec typ="cond">戦闘開始時</sec>、範囲内の味方保護機の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>を増加させます。
-        <sec>スキルレベル10で範囲が増加します。</sec>
       EN: |-
-        At the start of the round, grants allies' protectors within range <sec typ="buff"><buff typ="DEF_Line" /> Protect Line</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="0" r inv /></sec> Decrease / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="1" r /></sec> Increase.
-        If the target of the above effect is a <sec typ="cond"><cmt t="Team Mongoose">$$TeamMongus:0$</cmt> protector</sec>, the effect is amplified by 50%.
-        <sec typ="cond">At combat start</sec>, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> of allies' protectors within range.
-        <sec>Range increases at Skill Lv. 10.</sec>
+        <sec typ="cond">At round start</sec>, within range allies Defenderto <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decrease / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> increase grants the effect.
+        above effect and of target <sec typ="cond"><cmt t="Mongoose Team"><import name="TeamMongus" p="0" /></cmt> affiliated Defenderif</sec>, effect and increased by 50%.
+        <sec typ="cond">At battle start</sec>, within range allies Defender of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> increases.
+        <sec>At skill level 10, range increases.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方 保護機に <sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec> 減少 / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec> 増加 効果を付与します。
+        上記 効果の 対象が <sec typ="cond"><cmt t="マングースチーム"><import name="TeamMongus" p="0" /></cmt> 所属 保護機の場合</sec>、 効果が 50%増幅されます。
+        <sec typ="cond">戦闘開始時</sec>、 範囲内 味方 保護機の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>を増加させます。
+        <sec>スキルレベル10で 範囲が増加します。</sec>
       TC: |-
-        回合開始時，對範圍內我軍保護機賦予<sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="0" r inv /></sec>減少 / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec>增加效果。
-        若上述效果的目標為<sec typ="cond"><cmt t="貓鼬隊">$$TeamMongus:0$</cmt>所屬保護機</sec>，則效果會增幅50%。
-        <sec typ="cond">戰鬥開始時</sec>，增加範圍內我軍保護機的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>。
-        <sec>技能等級10時，範圍會增加。</sec>
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方 保護機給 <sec typ="buff"><buff typ="DEF_Line" /> 列保護</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="0" r inv /></sec> 減少 / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec> 增加 賦予效果。
+        上述 效果的 目標 <sec typ="cond"><cmt t="貓鼬小隊"><import name="TeamMongus" p="0" /></cmt> 所屬 保護機若為</sec>， 效果 增幅50%。
+        <sec typ="cond">戰鬥開始時</sec>， 範圍內 我方 保護機的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>使其增加。
+        <sec>技能等級10時 範圍增加。</sec>
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -7242,20 +7242,20 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 경장형 공격기 / 지원기의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec>를 증가시킵니다.
-        <cmt t="몽구스 팀">$$TeamMongus:0$</cmt> 소속 전투원은 역할군 조건을 무시하고 적용되며, 추가로 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="9" /></sec>이(가) 증가합니다.
+        <cmt t="몽구스 팀"><import name="TeamMongus" p="0" /></cmt> 소속 전투원은 역할군 조건을 무시하고 적용되며, 추가로 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="9" /></sec>이(가) 증가합니다.
         <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方軽装型攻撃機 / 支援機の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec>を増加させます。
-        <cmt t="マングースチーム">$$TeamMongus:0$</cmt>所属の戦闘員は役職条件を無視して適用され、さらに<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="9" /></sec>が増加します。
-        <sec>スキルレベル10で範囲が増加します。</sec>
       EN: |-
-        At the start of the round, increases allies' Light Armor attackers / supporters within range with <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="3" r /></sec>.
-        <cmt t="Team Mongoose">$$TeamMongus:0$</cmt> combatants apply regardless of role conditions, and additionally gain <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="9" /></sec>.
-        <sec>Range increases at Skill Lv. 10.</sec>
+        <sec typ="cond">At round start</sec>, within range allies Light-type Attacker / Supporter of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="3" r /></sec> increases.
+        <cmt t="Mongoose Team"><import name="TeamMongus" p="0" /></cmt> affiliated combatant role condition ignoreand is applied and, additionally <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="9" /></sec> increases.
+        <sec>At skill level 10, range increases.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方 軽装型 攻撃機 / 支援機の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec>を増加させます。
+        <cmt t="マングースチーム"><import name="TeamMongus" p="0" /></cmt> 所属 戦闘員は 役割条件を 無視し、 適用され、、 追加で <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="9" /></sec>が増加します。
+        <sec>スキルレベル10で 範囲が増加します。</sec>
       TC: |-
-        回合開始時，增加範圍內我軍輕裝型攻擊器／支援器的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="3" r /></sec>。
-        <cmt t="貓鼬隊">$$TeamMongus:0$</cmt>所屬戰鬥員會無視職能條件套用，且另外增加<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="9" /></sec>。
-        <sec>技能等級10時，範圍會增加。</sec>
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方 輕裝型 攻擊機 / 支援機的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec>使其增加。
+        <cmt t="貓鼬小隊"><import name="TeamMongus" p="0" /></cmt> 所屬 戰鬥員 職能條件 無視並 套用，並 額外 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="9" /></sec>增加。
+        <sec>技能等級10時 範圍增加。</sec>
 dialogue:
   KR:
     "1":

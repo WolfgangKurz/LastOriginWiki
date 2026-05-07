@@ -2019,9 +2019,9 @@ skills:
             chance: 1
     desc:
       KR: 빔 공격으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" r /></sec>를 감소시킵니다.
-      JP: ビーム攻撃で<dmg elem="physics" />のダメージを与え、2ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>と<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="2" r /></sec>を減少させます。
-      EN: Uses a beam attack to deal <dmg elem="physics" /> damage, decreasing the target’s <sec typ="buff"><buff typ="DEF_DOWN" />DEF<val idx="0" r /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" />EVA<val idx="2" r /></sec> for 2 rounds.
-      TC: 使用光束攻擊，造成<dmg elem="physics" />傷害，並於2回合內減少目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>與<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="2" r /></sec>。
+      EN: beam attack as <dmg elem="physics" /> damage and 2 rounds, target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="2" r /></sec> decreases.
+      JP: ビーム 攻撃で<dmg elem="physics" />を与え、、 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>と <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="2" r /></sec>を減少させます。
+      TC: 光束 攻擊以 造成<dmg elem="physics" />，並 2回合內 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>與 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="2" r /></sec>使其減少。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -3053,10 +3053,18 @@ skills:
             per: 0.01
             chance: 1
     desc:
-      KR: 마검을 휘둘러 목표 지점에 <dmg elem="physics" />를 줍니다. 대상이 방어력 / 회피 감소 상태인 경우 피해량이 증가합니다.
-      JP: 魔剣を振るって目標地点に<dmg elem="physics" />のダメージを与えます。対象が防御力/回避減少状態の場合、ダメージ量が増加します。
-      EN: Swings a Magical Sword and deals <dmg elem="physics" /> damage to the target point. Damage is increased if the target has decreased DEF/EVA.
-      TC: 揮動魔劍，對目標地點造成<dmg elem="physics" />傷害。若目標處於防禦力/迴避減少狀態，則傷害量增加。
+      KR: |-
+        마검을 휘둘러 목표 지점에 <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 상태인 경우 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        magic sword swings target point to <dmg elem="physics" />.
+        target <sec typ="cond"><buff typ="DEF_DOWN" /> Defense decrease</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion decrease</sec> if in the state <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        魔剣を ハウィドウルルオ 目標地点に<dmg elem="physics" />を与えます。
+        対象が <sec typ="cond"><buff typ="DEF_DOWN" /> 防御力 減少</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避 減少</sec> 状態の場合 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+      TC: |-
+        魔劍 揮舞 目標地點於 造成<dmg elem="physics" />。
+        目標 <sec typ="cond"><buff typ="DEF_DOWN" /> 防禦力 減少</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避 減少</sec> 若為狀態 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -3513,21 +3521,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">스쿼드 내 자신을 제외한 AGS 수가 3 이상일 때</sec>, <sec typ="cond">자신의 HP가 90% 이상</sec>인 경우 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP로 전투 속행</sec> 효과가 적용됩니다.
-        <sec typ="cond">자신의 HP가 90% 이하</sec>인 경우 전투 속행 효과가 사라집니다. 해당 효과는 강화 효과 해제로 해제할 수 없습니다.
+        스쿼드 내 자신을 제외한 <sec typ="cond">AGS 수가 3 이상일 때</sec>, <sec typ="cond">자신의 HP가 90% 이상</sec>인 경우 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP로 전투 속행</sec> 효과가 적용됩니다.
+        <sec typ="cond">자신의 HP가 90% 이하</sec>인 경우 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 전투 속행</sec> 효과가 사라집니다.
+        해당 효과는 강화 효과 해제로 해제할 수 없습니다.
         자신의 레벨에 비례하여 최대 HP가 감소합니다.
-      JP: |-
-        <sec typ="cond">分隊内で自分を除いたAGS数が3以上のとき</sec>、<sec typ="cond">自分のHPが90%以上</sec>の場合、<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="0" signless />HPで戦闘続行</sec>効果が適用されます。
-        <sec typ="cond">自分のHPが90%以下</sec>の場合、戦闘続行効果が消えます。この効果は強化効果解除で解除できません。
-        自分のレベルに比例して最大HPが減少します。
       EN: |-
-        <sec typ="cond">If there are 3 or more AGS units aside from self in the squad</sec>, and <sec typ="cond">if self’s HP is at 90% or above</sec>, the <sec typ="buff"><buff typ="DEF_RESSURRECT" />Continue Combat with <val idx="0" signless /> HP</sec> effect is applied.
-        <sec typ="cond">If self’s HP is at 90% or below</sec>, the Continue Combat effect disappears. This effect cannot be removed by Remove Upgrade.
-        Max HP decreases in proportion to self’s level.
+        in squad self excluding <sec typ="cond">AGS number 3 or morewhen</sec>, <sec typ="cond">own HP 90% or more</sec> if <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP and Continue Combat</sec> the effect is applied.
+        <sec typ="cond">own HP 90% or less</sec> if <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat</sec> effect and disappears.
+        the effect removes buffs as cannot be removed.
+        own level in proportion to up to HPdecreases.
+      JP: |-
+        スクワッド 内 自身を ジエ外した <sec typ="cond">AGS 数が 3 以上イル 時</sec>、 <sec typ="cond">自身の HPが 90% 以上</sec>の場合 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HPで 戦闘続行</sec> 効果が適用されます。
+        <sec typ="cond">自身の HPが 90% 以下</sec>の場合 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 戦闘続行</sec> 効果が 消滅します。
+        該当 効果は 強化効果 解除で 解除できません。
+        自身の レベルに比例して 最大 HPが減少します。
       TC: |-
-        <sec typ="cond">若小隊中除自身外的AGS數量為3以上</sec>，且<sec typ="cond">自身HP為90%以上</sec>時，會套用<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="0" signless /> HP繼續戰鬥</sec>效果。
-        <sec typ="cond">若自身HP為90%以下</sec>，則繼續戰鬥效果會消失。此效果無法透過解除強化效果解除。
-        最大HP會依照自身等級成比例減少。
+        小隊 內 自身 解除外 <sec typ="cond">AGS 數 3 以上一 時</sec>， <sec typ="cond">自身的 HP 90% 以上</sec>若為 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP以 戰鬥續行</sec> 效果套用。
+        <sec typ="cond">自身的 HP 90% 以下</sec>若為 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 戰鬥續行</sec> 效果 消失。
+        該 效果 強化效果 解除以 無法解除。
+        自身的 等級依比例 最大 HP減少。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -4686,20 +4698,32 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 경장형 아군을 지정 보호</sec>합니다.
-        적을 공격할 때마다 2라운드 동안 보호 대상에게 효과 저항/모든 속성 저항 증가 효과를 부여합니다.
-        <sec typ="note">대마왕</sec>님이 어수로 친히 지목하신 표식을 보유한 대상에게 가하는 피해량이 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の<sec typ="buff"><buff typ="DEF_Char" />Defenderを除く軽装型の味方に指定保護</sec>を付与します。
-        敵を攻撃するたびに2ラウンドの間、保護対象に効果耐性/全属性耐性増加効果を付与します。
-        <sec typ="note">大魔王</sec>様が自ら指名した標的を持つ対象に与えるダメージ量が増加します。
+        <sec typ="cond">적을 공격할 때마다</sec> 2라운드 동안 보호 대상 (및 <cmt t="일부 바이오로이드"><import name="TARGET_UNITS" /></cmt>)에게 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 모든 속성 저항 <val idx="6" r /></sec> 증가 효과를 부여합니다.
+        <cmt t="대마왕님"><char uid="DS_Faucre" /></cmt>이 어수로 친히 지목하신 <sec typ="cond"><buff typ="MARKING" /> 표식</sec>을 보유한 대상에게 가하는 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" slot="1" r /></sec>가 증가합니다.
+        <define name="TARGET_UNITS">
+        <char uid="DS_MoMo" />, <char uid="DS_Baekto" />, <char uid="DS_Sarena" />
+        </define>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, provides <sec typ="buff"><buff typ="DEF_Char" />Designated Protection</sec> to Light Armor allies within range, excluding Defenders.
-        Whenever self attacks an enemy, grants protected targets Effect Resistance/All Element Resistance Increase for 2 rounds.
-        Increases damage dealt to targets carrying the Mark personally designated by the <sec typ="note">Evil Overlord</sec>.
+        <sec typ="cond">At round start</sec>, within range <sec typ="buff"><buff typ="DEF_Char" /> Defender excluding Light-type Designated Protection for allies</sec>.
+        <sec typ="cond">enemy attack can when each</sec> 2 rounds protect target (and <cmt t="some Bioroid"><import name="TARGET_UNITS" /></cmt>)to <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="5" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> all Elemental Resistances <val idx="6" r /></sec> increase grants the effect.
+        <cmt t="Demon Lord"><char uid="DS_Faucre" /></cmt> uh number as personally whether Mok do Sin <sec typ="cond"><buff typ="MARKING" /> Mark</sec> has to the target do <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" slot="1" r /></sec> increases.
+        <define name="TARGET_UNITS">
+        <char uid="DS_MoMo" />, <char uid="DS_Baekto" />, <char uid="DS_Sarena" />
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 <sec typ="buff"><buff typ="DEF_Char" /> 保護機を ジエ外した 軽装型 味方を 指定保護</sec>します。
+        <sec typ="cond">敵を 攻撃できる 時ごとに</sec> 2ラウンドの間 保護 対象 (および <cmt t="一部 バイオロイド"><import name="TARGET_UNITS" /></cmt>)に <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 全属性耐性 <val idx="6" r /></sec> 増加 効果を付与します。
+        <cmt t="大魔王様"><char uid="DS_Faucre" /></cmt>が 御手で チインハイ ジイムオクハアスイン <sec typ="cond"><buff typ="MARKING" /> 標的</sec>を 保有する 対象に がする <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" slot="1" r /></sec>が増加します。
+        <define name="TARGET_UNITS">
+        <char uid="DS_MoMo" />、 <char uid="DS_Baekto" />、 <char uid="DS_Sarena" />
+        </define>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，對範圍內<sec typ="buff"><buff typ="DEF_Char" />排除保護機的輕裝型我軍</sec>施加指定保護。
-        每次攻擊敵軍時，會對保護目標施加效果抵抗/所有屬性抵抗增加效果，持續2回合。
-        對持有<sec typ="note">大魔王</sec>親自指定標記之目標造成的傷害量增加。
+        <sec typ="cond">回合開始時</sec>， 範圍內 <sec typ="buff"><buff typ="DEF_Char" /> 保護機 解除外 輕裝型 我方 指定保護</sec>。
+        <sec typ="cond">敵人 攻擊可 時每</sec> 2回合內 保護 目標 (以及 <cmt t="部分 生化人"><import name="TARGET_UNITS" /></cmt>)給 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 所有屬性抗性 <val idx="6" r /></sec> 增加 賦予效果。
+        <cmt t="大魔王大人"><char uid="DS_Faucre" /></cmt> 御手以 值nhi 支mokhasin <sec typ="cond"><buff typ="MARKING" /> 標記</sec> 持有的 對目標 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" slot="1" r /></sec>增加。
+        <define name="TARGET_UNITS">
+        <char uid="DS_MoMo" />， <char uid="DS_Baekto" />， <char uid="DS_Sarena" />
+        </define>
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -5166,25 +5190,49 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 보호기를 제외한 <cmt t="마법소녀">$$MAGICAL_GIRLS:?$</cmt>를 지정 보호합니다.
-        스쿼드에 <sec typ="note">대마왕</sec>님, <cmt t="마법소녀">$$MAGICAL_GIRLS:?$</cmt>가 있으면 해제 불가의 각각 다른 특수 효과를 얻습니다.
-        <sec typ="note">대마왕</sec>님이 스쿼드 내에 계실 경우, 조건을 무시하고 <sec typ="note">불사의 장갑</sec>이 활성화됩니다.
-        <sec typ="note">마왕님, 조심하십시오!</sec>에 의한 저항 증가 효과를 이번만 <cmt t="마법소녀">$$MAGICAL_GIRLS:?$</cmt>에게도 부여하고, 자신은 효과 저항이 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、Defenderを除く<cmt t="마법소녀">$$MAGICAL_GIRLS:?$</cmt>に指定保護を付与します。
-        分隊に<sec typ="note">大魔王</sec>様、<cmt t="마법소녀">$$MAGICAL_GIRLS:?$</cmt>がいる場合、解除不能のそれぞれ異なる特殊効果を獲得します。
-        <sec typ="note">大魔王</sec>様が分隊内にいる場合、条件を無視して<sec typ="note">不死の装甲</sec>が有効になります。
-        <sec typ="note">魔王様、気をつけてください！</sec>による耐性増加効果を今回だけ<cmt t="마법소녀">$$MAGICAL_GIRLS:?$</cmt>にも付与し、自分は効果耐性が増加します。
+        <sec typ="cond">라운드 개시 시</sec>, 보호기를 제외한 <cmt t="마법소녀"><import name="MAGICAL_GIRLS" /></cmt>를 지정 보호합니다.
+        스쿼드에 <cmt t="대마왕님"><char uid="DS_Faucre" /></cmt>, <cmt t="마법소녀"><import name="MAGICAL_GIRLS" /></cmt>가 있으면 해제 불가의 각각 다른 특수 효과를 얻습니다.
+        <sec typ="cond"><cmt t="대마왕님"><char uid="DS_Faucre" /></cmt>이 스쿼드 내에 계실 경우</sec>, 조건을 무시하고 <sec typ="note">불사의 장갑</sec>이 활성화됩니다.
+        <sec typ="note">마왕님, 조심하십시오!</sec>에 의한 저항 증가 효과를 이번만 <cmt t="마법소녀"><import name="MAGICAL_GIRLS" /></cmt>에게도 부여하고, 자신은 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="4" slot="3" r /></sec>가 증가합니다.
+        <char uid="DS_Faucre" /> : <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec> 증가
+        <char uid="DS_MoMo" /> : <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="7" r /></sec> 증가
+        <char uid="DS_Baekto" />, <char uid="DS_Sarena" /> : <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec>
+        <define name="MAGICAL_GIRLS">
+        <char uid="DS_MoMo" />, <char uid="DS_Baekto" />, <char uid="DS_Sarena" />
+        </define>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, provides Designated Protection to <cmt t="마법소녀">$$MAGICAL_GIRLS:?$</cmt> excluding Defenders.
-        If the squad has the <sec typ="note">Evil Overlord</sec> and <cmt t="마법소녀">$$MAGICAL_GIRLS:?$</cmt>, they each gain different special effects that cannot be removed.
-        If the <sec typ="note">Evil Overlord</sec> is in the squad, conditions are ignored and <sec typ="note">Immortal Armor</sec> is activated.
-        The Resistance Increase effect from <sec typ="note">Watch out, Overlord!</sec> is also granted to <cmt t="마법소녀">$$MAGICAL_GIRLS:?$</cmt> this one time only, and self’s Effect Resistance increases.
+        <sec typ="cond">At round start</sec>, Defender excluding <cmt t="Magical Girl"><import name="MAGICAL_GIRLS" /></cmt> Designated Protection.
+        squad <cmt t="Demon Lord"><char uid="DS_Faucre" /></cmt>, <cmt t="Magical Girl"><import name="MAGICAL_GIRLS" /></cmt> if present cannot be removed of respectively other special effect and gains.
+        <sec typ="cond"><cmt t="Demon Lord"><char uid="DS_Faucre" /></cmt> in squad to is present</sec>, condition ignoreand <sec typ="note">Immortal Armor</sec> is activated.
+        <sec typ="note">My Lord, Be Careful!</sec> to by resistance increase effect and time only <cmt t="Magical Girl"><import name="MAGICAL_GIRLS" /></cmt> to also grants and, self <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="4" slot="3" r /></sec> increases.
+        <char uid="DS_Faucre" />: <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="6" r /></sec> increase
+        <char uid="DS_MoMo" />: <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="7" r /></sec> increase
+        <char uid="DS_Baekto" />, <char uid="DS_Sarena" />: <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec>
+        <define name="MAGICAL_GIRLS">
+        <char uid="DS_MoMo" />, <char uid="DS_Baekto" />, <char uid="DS_Sarena" />
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 保護機を ジエ外した <cmt t="魔法少女"><import name="MAGICAL_GIRLS" /></cmt>を 指定保護します。
+        スクワッドに <cmt t="大魔王様"><char uid="DS_Faucre" /></cmt>、 <cmt t="魔法少女"><import name="MAGICAL_GIRLS" /></cmt>が ある場合 解除不可の それぞれ 異なる トウク数 効果を オトます。
+        <sec typ="cond"><cmt t="大魔王様"><char uid="DS_Faucre" /></cmt>が スクワッド 内に グイェスイル 場合</sec>、 条件を 無視し、 <sec typ="note">不死の装甲</sec>が 有効化されます。
+        <sec typ="note">魔王様、お気をつけください！</sec>に よる 耐性 増加 効果を が回だけ <cmt t="魔法少女"><import name="MAGICAL_GIRLS" /></cmt>にも 付与し、 自身は <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="4" slot="3" r /></sec>が増加します。
+        <char uid="DS_Faucre" />：<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec> 増加
+        <char uid="DS_MoMo" />：<sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="7" r /></sec> 増加
+        <char uid="DS_Baekto" />、 <char uid="DS_Sarena" />：<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec>
+        <define name="MAGICAL_GIRLS">
+        <char uid="DS_MoMo" />、 <char uid="DS_Baekto" />、 <char uid="DS_Sarena" />
+        </define>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，對排除保護機的<cmt t="마법소녀">$$MAGICAL_GIRLS:?$</cmt>施加指定保護。
-        若小隊內有<sec typ="note">大魔王</sec>大人與<cmt t="마법소녀">$$MAGICAL_GIRLS:?$</cmt>，則會分別獲得無法解除的不同特殊效果。
-        若<sec typ="note">大魔王</sec>大人在小隊內，則會無視條件並啟用<sec typ="note">不死裝甲</sec>。
-        僅這一次，將<sec typ="note">魔王大人，請您小心！</sec>的抵抗增加效果也賦予<cmt t="마법소녀">$$MAGICAL_GIRLS:?$</cmt>，且自身的效果抵抗增加。
+        <sec typ="cond">回合開始時</sec>， 保護機 解除外 <cmt t="魔法少女"><import name="MAGICAL_GIRLS" /></cmt> 指定保護。
+        小隊於 <cmt t="大魔王大人"><char uid="DS_Faucre" /></cmt>， <cmt t="魔法少女"><import name="MAGICAL_GIRLS" /></cmt> 若有 無法解除的 各自 全部不同 特殊數 效果 獲得。
+        <sec typ="cond"><cmt t="大魔王大人"><char uid="DS_Faucre" /></cmt> 小隊 內於 Gyesil 情況</sec>， 條件 無視並 <sec typ="note">不死裝甲</sec> 啟用。
+        <sec typ="note">魔王大人，請小心！</sec>於 的 抗性 增加 效果 次僅 <cmt t="魔法少女"><import name="MAGICAL_GIRLS" /></cmt>給也 賦予，並 自身 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="4" slot="3" r /></sec>增加。
+        <char uid="DS_Faucre" />：<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec> 增加
+        <char uid="DS_MoMo" />：<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="7" r /></sec> 增加
+        <char uid="DS_Baekto" />， <char uid="DS_Sarena" />：<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec>
+        <define name="MAGICAL_GIRLS">
+        <char uid="DS_MoMo" />， <char uid="DS_Baekto" />， <char uid="DS_Sarena" />
+        </define>
 dialogue:
   KR:
     "1":

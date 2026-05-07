@@ -25,8 +25,6 @@ interface ResearchTreeProps {
 }
 
 const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
-	const update = useUpdate();
-
 	const [display, setDisplay] = useState(false);
 	const [curResearch, setCurResearch] = useState("");
 	const [svg, setSVG] = useState<preact.VNode | undefined>(undefined);

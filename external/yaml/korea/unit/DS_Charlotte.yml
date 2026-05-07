@@ -4370,15 +4370,15 @@ skills:
       KR: |-
         찌르기로 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="8" r /></sec> 감소 효과를 줍니다.
         <sec typ="cond">대상의 행동력 또는 회피가 자신보다 낮을 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="9" r /></sec>가 증가합니다.
-      JP: |-
-        突きで<sec typ="attr">防御無視</sec> <dmg elem="physics" />を与え、2ラウンドの間対象に<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="PROVOKE" />挑発</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="8" r /></sec>減少効果を与えます。
-        <sec typ="cond">対象の行動力または回避が自分より低い場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="9" r /></sec>が増加します。
       EN: |-
-        Stabs with <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />, and for 2 rounds applies <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="8" r /></sec> decrease effects to the target.
-        <sec typ="cond">If the target's AP or EVA is lower than self's</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="9" r /></sec> increases.
+        Stabs to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> and, for 2 rounds, inflicts <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="7" r /></sec> decrease / <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="8" r /></sec> decrease.
+        <sec typ="cond">If the target’s Action Speed or Evasion is lower than self’s</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="9" r /></sec> increases.
+      JP: |-
+        突きで<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、2ラウンドの間対象に<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="PROVOKE" />挑発</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="8" r /></sec>減少効果を与えます。
+        <sec typ="cond">対象の行動力または回避が自身より低い場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="9" r /></sec>が増加します。
       TC: |-
-        以刺擊造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害，並於2回合內對目標施加<sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動點數 <val idx="8" r /></sec>減少效果。
-        <sec typ="cond">若目標的行動點數或迴避低於自身</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="9" r /></sec>增加。
+        以刺擊造成<sec typ="attr">無視保護</sec><dmg elem="physics" />，並在2回合內對目標賦予<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="PROVOKE" />挑釁</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="8" r /></sec>減少效果。
+        <sec typ="cond">若目標的行動力或迴避低於自身</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="9" r /></sec>增加。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -7167,18 +7167,18 @@ skills:
         연속 공격으로 <dmg elem="physics" />를 주며, 치명타 시 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
         대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태면 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>하며, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="7" r /></sec>가 추가로 증가합니다.
         해당 스킬로 적 처치 시, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>이(가) 증가합니다.
-      JP: |-
-        連続攻撃で<dmg elem="physics" />を与え、クリティカル時は<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="4" r /></sec>が増加します。
-        対象が<sec typ="cond"><buff typ="MARKING" />標的</sec> / <sec typ="cond"><buff typ="PROVOKE" />挑発</sec>状態なら、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>し、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="7" r /></sec>がさらに増加します。
-        このスキルで敵を倒した場合、自分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>が増加します。
       EN: |-
-        Deals <dmg elem="physics" /> with a series of attacks, and on critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec> increases.
-        If the target is in <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="PROVOKE" /> Provoke</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> buffs</sec> and <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="7" r /></sec> increases further.
-        When an enemy is defeated with this skill, self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> increases.
+        consecutive attack as <dmg elem="physics" /> deals and, On critical hit <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec> increases.
+        target <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="PROVOKE" /> Provoke</sec> if in the state target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec> and, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="7" r /></sec>additionally increases.
+        the skill as When killing an enemy, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> increases.
+      JP: |-
+        連続攻撃で<dmg elem="physics" />を 与え、、 クリティカル時 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="4" r /></sec>が増加します。
+        対象が <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="PROVOKE" /> 挑発</sec> 状態なら 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>し、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="7" r /></sec>が追加で増加します。
+        該当 スキルで 敵撃破時、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>が増加します。
       TC: |-
-        以連續攻擊造成<dmg elem="physics" />傷害，且暴擊時<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="4" r /></sec>增加。
-        若目標處於<sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="PROVOKE" /> 挑釁</sec>狀態，則解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />強化效果</sec>，並使<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="7" r /></sec>進一步增加。
-        以此技能擊殺敵軍時，自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>增加。
+        連續攻擊以 <dmg elem="physics" /> 造成，並 暴擊時 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="4" r /></sec>增加。
+        目標 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="PROVOKE" /> 挑釁</sec> 若處於狀態 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>並， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="7" r /></sec>會額外增加。
+        該 技能以 擊殺敵人時， 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -8200,33 +8200,33 @@ skills:
             chance: 1
     desc:
       KR: |-
-        전투 시작 시, <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>가 증가하고 아군 / 적 수에 비례하여 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">전투 시작 시</sec>, <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>가 증가하고 아군 / 적 수에 비례하여 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec>가 증가합니다.
         <sec typ="note">듀얼리스트</sec>의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 증가</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가</sec> 효과는 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 해제</sec> 효과의 영향을 받지 않습니다.
         <sec typ="note">듀얼리스트</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가</sec> 중첩 수에 비례해 라운드 개시 시 추가 효과를 얻습니다.
         <sec typ="note">3 중첩</sec> : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="18" r /></sec> 증가
         <sec typ="note">6 중첩</sec> : <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec>
         <sec typ="note">9 중첩</sec> : <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec>
-      JP: |-
-        戦闘開始時、<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="0" r /></sec>が増加し、味方/敵の数に比例して<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="1" r /></sec>が増加します。
-        <sec typ="note">デュエリスト</sec>の<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル増加</sec> / <sec typ="buff"><buff typ="ATK_UP" />攻撃力増加</sec>効果は、<sec typ="buff"><buff typ="REMOVE_BUFF" />強化解除</sec>効果の影響を受けません。
-        <sec typ="note">デュエリスト</sec>の<sec typ="buff"><buff typ="ATK_UP" />攻撃力増加</sec>のスタック数に応じて、ラウンド開始時に追加効果を得ます。
-        <sec typ="note">3スタック</sec> : <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="18" r /></sec>増加
-        <sec typ="note">6スタック</sec> : <sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア / 被ダメージ無視</sec>
-        <sec typ="note">9スタック</sec> : <sec typ="buff"><buff typ="SUPPORT_ATTACK" />再攻撃</sec>
       EN: |-
-        At the start of combat, <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="0" r /></sec> increases, and <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="1" r /></sec> increases proportionally to the number of allies/enemies.
-        The <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT increase</sec> / <sec typ="buff"><buff typ="ATK_UP" /> ATK increase</sec> effects of <sec typ="note">Duelist</sec> are not affected by <sec typ="buff"><buff typ="REMOVE_BUFF" /> buff removal</sec> effects.
-        Gains additional effects at the start of the round proportional to the number of <sec typ="note">Duelist</sec> <sec typ="buff"><buff typ="ATK_UP" /> ATK increase</sec> stacks.
-        <sec typ="note">3 stacks</sec> : <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="18" r /></sec> increase
-        <sec typ="note">6 stacks</sec> : <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Received Damage Decrease</sec>
-        <sec typ="note">9 stacks</sec> : <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Reattack</sec>
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> increases and allies / enemy in proportion to the number of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r /></sec> increases.
+        <sec typ="note">Duelist</sec> of <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical increase</sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack increase</sec> effect <sec typ="buff"><buff typ="REMOVE_BUFF" /> buff removal</sec> effect and of effect not affected does not.
+        <sec typ="note">Duelist</sec> <sec typ="buff"><buff typ="ATK_UP" /> Attack increase</sec> stack number in proportion to At round start additional effect and gains.
+        <sec typ="note">3 stack</sec>: <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="18" r /></sec> increase
+        <sec typ="note">6 stack</sec>: <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec>
+        <sec typ="note">9 stack</sec>: <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec>
+      JP: |-
+        戦闘開始時、 <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec>が 増加し、 味方 / 敵 数に比例して <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r /></sec>が増加します。
+        <sec typ="note">デュエリスト</sec>の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル 増加</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 増加</sec> 効果は <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化解除</sec> 効果の ヨンハヤンを ブアトジイ しません。
+        <sec typ="note">デュエリスト</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 増加</sec> 重複 数に比例して ラウンド開始時 追加 効果を オトます。
+        <sec typ="note">3 重複</sec>：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="18" r /></sec> 増加
+        <sec typ="note">6 重複</sec>：<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec>
+        <sec typ="note">9 重複</sec>：<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec>
       TC: |-
-        戰鬥開始時，<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec>增加，並依我軍/敵軍數量成比例增加<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r /></sec>。
-        <sec typ="note">決鬥者</sec>的<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊增加</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力增加</sec>效果不受<sec typ="buff"><buff typ="REMOVE_BUFF" />解除強化</sec>效果影響。
-        依<sec typ="note">決鬥者</sec>的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力增加</sec>疊加數量，於回合開始時獲得額外效果。
-        <sec typ="note">3層</sec>：<sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="18" r /></sec>增加
-        <sec typ="note">6層</sec>：<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視防護罩 / 所受傷害減少</sec>
-        <sec typ="note">9層</sec>：<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻擊</sec>
+        戰鬥開始時， <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec> 增加，並 我方 / 敵人 依數量成比例 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r /></sec>增加。
+        <sec typ="note">決鬥者</sec>的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 增加</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 增加</sec> 效果 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化解除</sec> 效果的 影響 受到 不會。
+        <sec typ="note">決鬥者</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 增加</sec> 疊加 數依比例 回合開始時 額外 效果 獲得。
+        <sec typ="note">3 疊加</sec>：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="18" r /></sec> 增加
+        <sec typ="note">6 疊加</sec>：<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec>
+        <sec typ="note">9 疊加</sec>：<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec>
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -8585,21 +8585,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        공격 적중 시, 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">공격 적중 시</sec>, 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
         적 처치 시, 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>을(를) 추가로 증가시킵니다.
-        대상이 <cmt t="D-엔터">$$Dentertainment:0$</cmt> 소속이면 효과가 25% 추가 적용되며, <cmt t="D-엔터 보호기">$$Dentertainment_Defender:0$</cmt> / <cmt t="지원기">$$Dentertainment_Supporter:0$</cmt>인 경우 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 대상의 공격을 지원</sec>합니다.
-      JP: |-
-        攻撃命中時、味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
-        敵を倒した時、味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>をさらに増加させます。
-        対象が<cmt t="D-エンターテインメント">$$Dentertainment:0$</cmt>所属なら効果が25%追加適用され、<cmt t="D-エンターテインメント・ディフェンダー">$$Dentertainment_Defender:0$</cmt> / <cmt t="サポーター">$$Dentertainment_Supporter:0$</cmt>の場合は<sec typ="buff"><buff typ="SUPPORT_ATTACK" />対象の攻撃を支援</sec>します。
+        대상이 <cmt t="D-엔터"><import name="Dentertainment" p="0" /></cmt> 소속이면 효과가 25% 추가 적용되며, <cmt t="D-엔터 보호기"><import name="Dentertainment_Defender" p="0" /></cmt> / <cmt t="지원기"><import name="Dentertainment_Supporter" p="0" /></cmt>인 경우 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 대상의 공격을 지원</sec>합니다.
       EN: |-
-        On attack hit, increases allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>.
-        When an enemy is defeated, additionally increases allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>.
-        If the target belongs to <cmt t="D-Entertainment">$$Dentertainment:0$</cmt>, the effect is additionally applied by 25%, and if it is a <cmt t="D-Entertainment Defender">$$Dentertainment_Defender:0$</cmt> / <cmt t="Supporter">$$Dentertainment_Supporter:0$</cmt>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports the target's attack</sec>.
+        <sec typ="cond">On hit</sec>, allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        When killing an enemy, allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec> additionally increases.
+        target <cmt t="D-Enter"><import name="Dentertainment" p="0" /></cmt> affiliatedif effect and 25% additionally applied becomes and, <cmt t="D-Enter Defender"><import name="Dentertainment_Defender" p="0" /></cmt> / <cmt t="Supporter"><import name="Dentertainment_Supporter" p="0" /></cmt> if <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> target's supports the attack</sec>.
+      JP: |-
+        <sec typ="cond">攻撃命中時</sec>、 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        敵撃破時、 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>を 追加で 増加させます。
+        対象が <cmt t="D-エンター"><import name="Dentertainment" p="0" /></cmt> 所属なら 効果が 25% 追加適用になり、、 <cmt t="D-エンター 保護機"><import name="Dentertainment_Defender" p="0" /></cmt> / <cmt t="支援機"><import name="Dentertainment_Supporter" p="0" /></cmt>の場合 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 対象の 攻撃を 支援</sec>します。
       TC: |-
-        攻擊命中時，增加我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>。
-        擊殺敵軍時，額外增加我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>。
-        若目標所屬為<cmt t="D-娛樂">$$Dentertainment:0$</cmt>，效果會額外套用25%；若其為<cmt t="D-娛樂防護者">$$Dentertainment_Defender:0$</cmt> / <cmt t="支援者">$$Dentertainment_Supporter:0$</cmt>，則會<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援目標的攻擊</sec>。
+        <sec typ="cond">攻擊命中時</sec>， 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>使其增加。
+        擊殺敵人時， 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec> 額外 增加。
+        目標 <cmt t="D-娛樂"><import name="Dentertainment" p="0" /></cmt> 所屬若 效果 25% 額外套用變為，且 <cmt t="D-娛樂 保護機"><import name="Dentertainment_Defender" p="0" /></cmt> / <cmt t="支援機"><import name="Dentertainment_Supporter" p="0" /></cmt>若為 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 目標的 攻擊 支援</sec>。
   "5":
     key: "5"
     icon: P.DefCounter
@@ -8768,21 +8768,21 @@ skills:
             chance: 0
     desc:
       KR: |-
-        라운드 개시 시, <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec> 감소 / <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 위력으로 반격</sec> 효과가 발동합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec> 감소 / <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 위력으로 반격</sec> 효과가 발동합니다.
         <sec typ="note">앙 가르드</sec> 사용 시, 2라운드 동안 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 효과가 기본 수치의 50%만큼 추가 적용되는 <sec typ="note">반격 준비</sec> 상태가 됩니다.
         <sec typ="note">반격 준비</sec> 상태에선 액티브 스킬에 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="12" slot="1" r /></sec> 증가가 적용됩니다.
-      JP: |-
-        ラウンド開始時、<sec typ="buff"><buff typ="EVADE_UP" />回避 <val idx="1" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />被ダメージ <val idx="2" r inv /></sec>減少 / <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless />威力で反撃</sec>効果が発動します。
-        <sec typ="note">アンガルド</sec>使用時、2ラウンドの間<sec typ="buff"><buff typ="DAMAGE_REDUCE" />被ダメージ減少</sec>効果が基本数値の50%分追加適用される<sec typ="note">反撃準備</sec>状態になります。
-        <sec typ="note">反撃準備</sec>状態ではアクティブスキルに<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="12" slot="1" r /></sec>増加が適用されます。
       EN: |-
-        At the start of the round, <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="1" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="2" r inv /></sec> decrease / <sec typ="buff"><buff typ="COUNTER" /> counterattack at <val idx="0" r signless /> power</sec> effects are triggered.
-        When <sec typ="note">En Garde</sec> is used, self enters a <sec typ="note">Ready to Retaliate</sec> state for 2 rounds, where the <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage Decrease</sec> effect is additionally applied at 50% of its base value.
-        While in <sec typ="note">Ready to Retaliate</sec> state, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="12" slot="1" r /></sec> increase is applied to Active Skills.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="2" r inv /></sec> decrease / <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> power as Counterattack</sec> effect and triggers.
+        <sec typ="note">Ang Reudeu</sec> When used, 2 rounds <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease</sec> effect and base value of 50%by additionally applied becomes <sec typ="note">Counterattack Ready</sec> state.
+        <sec typ="note">Counterattack Ready</sec> in the state active skill to <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="12" slot="1" r /></sec> increase is applied.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec> 増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="2" r inv /></sec> 減少 / <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力で 反撃</sec> 効果が 発動します。
+        <sec typ="note">アン がルウドウ</sec> 使用時、 2ラウンドの間 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少</sec> 効果が 基本 数値の 50%分 追加適用ドウェは <sec typ="note">反撃準備</sec> 状態になります。
+        <sec typ="note">反撃準備</sec> 状態に宣 アクティブ スキルに <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="12" slot="1" r /></sec> 増加が 適用されます。
       TC: |-
-        回合開始時，<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="2" r inv /></sec>減少 / <sec typ="buff"><buff typ="COUNTER" /> 以 <val idx="0" r signless />威力反擊</sec>效果發動。
-        使用<sec typ="note">預備</sec>時，會進入持續2回合的<sec typ="note">準備反擊</sec>狀態，其中<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害減少</sec>效果會以基本數值的50%額外套用。
-        在<sec typ="note">準備反擊</sec>狀態下，主動技能將套用<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="12" slot="1" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec> 增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="2" r inv /></sec> 減少 / <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力以 反擊</sec> 效果 發動。
+        <sec typ="note">內g deu</sec> 使用時， 2回合內 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少</sec> 效果 基礎 數值的 50%等量 額外套用變為 <sec typ="note">反擊準備</sec> 變為狀態。
+        <sec typ="note">反擊準備</sec> 狀態於先 主動 技能於 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="12" slot="1" r /></sec> 增加 套用。
 dialogue:
   KR:
     "1":

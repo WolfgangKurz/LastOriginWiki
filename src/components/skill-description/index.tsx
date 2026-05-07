@@ -69,6 +69,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 		}
 
 		const tags: Record<string, preact.FunctionalComponent<unknown>> = buildDefaultSection(units);
+
 		text = text.replace(/\$\$([A-Za-z0-9\-_]+)((:?([?F0-9,@]+))\$|\$?)/g, (p0, p1, p2, p3, p4) => {
 			tags[`SECTION_${p1}`] ??= (): preact.VNode => <>{
 				(_sections[p1] || [])
@@ -202,6 +203,10 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 		};
 
 		try {
+			interface ImportNode {
+				name: string;
+				p?: string;
+			}
 			return parseVNode(text, [], {
 				...tags,
 
@@ -240,6 +245,16 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 				cmt: Components.Comment,
 
 				box: Components.Box,
+
+				import (p: preact.RenderableProps<ImportNode>) {
+					return <>{
+						(_sections[p.name] || [])
+							.map((r, i) => <div
+								key={ `SKILL_DESCRIPTION_COMMENT_SECTION_${p.name}_LINE_${i}` }
+								class={ style.CommentLine }
+							>{ createElement(r, { params: parseParams(p.p ?? "?") }) }</div>)
+					}</>;
+				},
 			} as unknown as ComponentTable<any>);
 		} catch (e) {
 			// eslint-disable-next-line react/jsx-key

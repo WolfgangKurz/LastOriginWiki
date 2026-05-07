@@ -7923,21 +7923,21 @@ skills:
         <sec typ="cond">적중 시</sec>, 3라운드 동안 대상을 <sec typ="note">부식</sec> 상태로 만들어 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="7" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="8" r /></sec>를 증가시킵니다. (최대 3중첩)
         <sec typ="cond">대상이 이미 <sec typ="note">부식</sec> 상태인 경우</sec>, 추가로 자신의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력의 <val idx="5" r signless /> 만큼 고정 피해</sec>를 줍니다.
         <sec typ="cond">치명타 시</sec>, <sec typ="buff"><sec typ="note">부식</sec>을 1중첩 추가로 부여</sec>합니다.
-      JP: |-
-        マイクロフェアリーで単一対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>, 3ラウンドの間、対象を<sec typ="note">腐食</sec>状態にして<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="7" r /></sec>を減少させ、<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="8" r /></sec>を増加させます。(最大3スタック)
-        <sec typ="cond">対象がすでに<sec typ="note">腐食</sec>状態の場合</sec>, 追加で自身の<sec typ="dmg"><buff typ="PhyATK_UP" /> 攻撃力の<val idx="5" r signless />分の固定ダメージ</sec>を与えます。
-        <sec typ="cond">クリティカル時</sec>, <sec typ="buff"><sec typ="note">腐食</sec>を1スタック追加で付与</sec>します。
       EN: |-
-        Deals <dmg elem="physics" /> damage to a single target with Micro Fairy.
-        <sec typ="cond">On hit</sec>, for 3 rounds inflicts the target with <sec typ="note">Corrosion</sec>, decreasing <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="7" r /></sec> and increasing <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="8" r /></sec>. (max 3 stacks)
-        <sec typ="cond">If the target is already in <sec typ="note">Corrosion</sec></sec>, additionally deals fixed damage equal to <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="5" r signless /> of self’s ATK</sec>.
-        <sec typ="cond">On CRIT</sec>, additionally inflicts 1 stack of <sec typ="buff"><sec typ="note">Corrosion</sec></sec>.
+        Deals <dmg elem="physics" /> to a single target with Micro Fairies.
+        <sec typ="cond">On hit</sec>, inflicts <sec typ="note">Corrosion</sec> on the target for 3 rounds, decreasing <sec typ="buff"><buff typ="DEF_DOWN" /> DEF by <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Power by <val idx="7" r /></sec> and increasing <sec typ="buff"><buff typ="VULNERABLE" /> damage taken by <val idx="8" r /></sec>. (Stacks up to 3 times)
+        <sec typ="cond">If the target is already under <sec typ="note">Corrosion</sec></sec>, additionally deals <sec typ="dmg">fixed damage equal to <buff typ="PhyATK_UP" /> of her <val idx="5" r signless /> ATK</sec>.
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff">adds 1 additional stack of <sec typ="note">Corrosion</sec></sec>.
+      JP: |-
+        マイクロフェアリーで単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、3ラウンドの間、対象を<sec typ="note">腐食</sec>状態にして<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="7" r /></sec>を減少させ、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="8" r /></sec>を増加させます。(最大3重複)
+        <sec typ="cond">対象がすでに<sec typ="note">腐食</sec>状態の場合</sec>、追加で自身の<sec typ="dmg"><buff typ="PhyATK_UP" />攻撃力の<val idx="5" r signless />分の固定ダメージ</sec>を与えます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="buff"><sec typ="note">腐食</sec>を1重複追加で付与</sec>します。
       TC: |-
-        以微型妖精對單一目標造成<dmg elem="physics" />傷害。
-        <sec typ="cond">命中時</sec>，在3回合內使目標進入<sec typ="note">腐蝕</sec>狀態，減少<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="7" r /></sec>並增加<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="8" r /></sec>。(最多3層)
-        <sec typ="cond">若目標已處於<sec typ="note">腐蝕</sec>狀態</sec>，則額外造成相當於自身<sec typ="dmg"><buff typ="PhyATK_UP" /> 攻擊力 <val idx="5" r signless /></sec>的固定傷害。
-        <sec typ="cond">暴擊時</sec>，額外施加1層<sec typ="buff"><sec typ="note">腐蝕</sec></sec>。
+        用微型妖精對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，3回合內使目標進入<sec typ="note">腐蝕</sec>狀態，使<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="7" r /></sec>降低，並使<sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="8" r /></sec>增加。（最多重疊3次）
+        <sec typ="cond">若目標已處於<sec typ="note">腐蝕</sec>狀態</sec>，額外造成相當於自身<sec typ="dmg"><buff typ="PhyATK_UP" />攻擊力的<val idx="5" r signless />固定傷害</sec>。
+        <sec typ="cond">暴擊時</sec>，<sec typ="buff">額外賦予1層<sec typ="note">腐蝕</sec></sec>。
   "2":
     key: "2"
     icon: TeamDefDeBuff
@@ -13073,24 +13073,24 @@ skills:
         <sec typ="cond">대상이 이미 <sec typ="note">부식</sec> 상태인 경우</sec>, 추가로 자신의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력의 <val idx="5" r signless /> 만큼 고정 피해</sec>를 줍니다.
         <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec>이(가) 감소합니다.
         <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
-      JP: |-
-        指定範囲に腐食溶液を散布し<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>, 3ラウンドの間、対象を<sec typ="note">腐食</sec>状態にして<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="8" r /></sec>を減少させ、<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="9" r /></sec>を増加させます。(最大3スタック)
-        <sec typ="cond">対象がすでに<sec typ="note">腐食</sec>状態の場合</sec>, 追加で自身の<sec typ="dmg"><buff typ="PhyATK_UP" /> 攻撃力の<val idx="5" r signless />分の固定ダメージ</sec>を与えます。
-        <sec typ="cond">クリティカル時</sec>, 対象の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec>が減少します。
-        <sec>スキルレベル10で範囲が増加します。</sec>
       EN: |-
-        Sprays corrosion solution at the designated area, dealing <dmg elem="physics" /> damage.
-        <sec typ="cond">On hit</sec>, for 3 rounds inflicts the target with <sec typ="note">Corrosion</sec>, decreasing <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="8" r /></sec> and increasing <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="9" r /></sec>. (max 3 stacks)
-        <sec typ="cond">If the target is already in <sec typ="note">Corrosion</sec></sec>, additionally deals fixed damage equal to <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="5" r signless /> of self’s ATK</sec>.
-        <sec typ="cond">On CRIT</sec>, the target’s <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec> decreases.
-        <sec>Range increases at Skill Lv. 10.</sec>
+        Sprays corrosive solution over the designated area, dealing <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, inflicts <sec typ="note">Corrosion</sec> on targets for 3 rounds, decreasing <sec typ="buff"><buff typ="DEF_DOWN" /> DEF by <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Power by <val idx="8" r /></sec> and increasing <sec typ="buff"><buff typ="VULNERABLE" /> damage taken by <val idx="9" r /></sec>. (Stacks up to 3 times)
+        <sec typ="cond">If a target is already under <sec typ="note">Corrosion</sec></sec>, additionally deals <sec typ="dmg">fixed damage equal to <buff typ="PhyATK_UP" /> of her <val idx="5" r signless /> ATK</sec>.
+        <sec typ="cond">On critical hit</sec>, decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP by <val idx="5" /></sec>.
+        <sec>At skill level 10, the range increases.</sec>
+      JP: |-
+        指定範囲に腐食溶液を噴射して<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、3ラウンドの間、対象を<sec typ="note">腐食</sec>状態にして<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="8" r /></sec>を減少させ、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="9" r /></sec>を増加させます。(最大3重複)
+        <sec typ="cond">対象がすでに<sec typ="note">腐食</sec>状態の場合</sec>、追加で自身の<sec typ="dmg"><buff typ="PhyATK_UP" />攻撃力の<val idx="5" r signless />分の固定ダメージ</sec>を与えます。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="5" /></sec>が減少します。
+        <sec>スキルレベル10で範囲が増加します。</sec>
       TC: |-
-        向指定範圍噴灑腐蝕溶液，造成<dmg elem="physics" />傷害。
-        <sec typ="cond">命中時</sec>，在3回合內使目標進入<sec typ="note">腐蝕</sec>狀態，減少<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="8" r /></sec>並增加<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="9" r /></sec>。(最多3層)
-        <sec typ="cond">若目標已處於<sec typ="note">腐蝕</sec>狀態</sec>，則額外造成相當於自身<sec typ="dmg"><buff typ="PhyATK_UP" /> 攻擊力 <val idx="5" r signless /></sec>的固定傷害。
-        <sec typ="cond">暴擊時</sec>，目標的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec>減少。
-        <sec>技能等級10時，增加範圍。</sec>
+        向指定範圍噴灑腐蝕溶液，造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，3回合內使目標進入<sec typ="note">腐蝕</sec>狀態，使<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="8" r /></sec>降低，並使<sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="9" r /></sec>增加。（最多重疊3次）
+        <sec typ="cond">若目標已處於<sec typ="note">腐蝕</sec>狀態</sec>，額外造成相當於自身<sec typ="dmg"><buff typ="PhyATK_UP" />攻擊力的<val idx="5" r signless />固定傷害</sec>。
+        <sec typ="cond">暴擊時</sec>，目標的<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="5" /></sec>降低。
+        <sec>技能等級10時，範圍增加。</sec>
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -13440,18 +13440,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="4" /></sec>이(가) 증가합니다.
         <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>, 範囲内の味方の<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>, 自身の<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="4" /></sec>が増加します。
-        <sec>スキルレベル10で範囲が増加します。</sec>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, allies within range gain <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec>.
-        <sec typ="cond">At the start of the round</sec>, self’s <sec typ="buff"><buff typ="RANGE_UP" /> range <val idx="4" /></sec> increases.
-        <sec>Range increases at Skill Lv. 10.</sec>
+        <sec typ="cond">At round start</sec>, increases <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration by <val idx="2" r /></sec> for allies within range.
+        <sec typ="cond">At round start</sec>, her <sec typ="buff"><buff typ="RANGE_UP" /> Range increases by <val idx="4" /></sec>.
+        <sec>At skill level 10, the range increases.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="2" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="4" /></sec>が増加します。
+        <sec>スキルレベル10で範囲が増加します。</sec>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，範圍內我軍的<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="2" r /></sec>增加。
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="4" /></sec>增加。
-        <sec>技能等級10時，增加範圍。</sec>
+        <sec typ="cond">回合開始時</sec>，範圍內我方的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="2" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="4" /></sec>增加。
+        <sec>技能等級10時，範圍增加。</sec>
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -13815,21 +13815,21 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 아군 기동형 지원기의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="4" /></sec>이(가) 증가합니다.
         <sec><sec typ="note">민감한 눈</sec>의 효과가 이제 자신의 위치와 관계 없이 전체 적용됩니다.</sec>
         <sec typ="cond">이러한 경우</sec>, <sec>상기 효과 수치는 <sec typ="note">대사 촉진</sec>의 스킬 레벨에 비례합니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>, マイクロフェアリーで代謝を促進し、味方バイオロイドの<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>, 味方機動型支援機の<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="4" /></sec>が増加します。
-        <sec><sec typ="note">敏感な目</sec>の効果が、これ以後は自分の位置に関係なく全体適用されます。</sec>
-        <sec typ="cond">この場合</sec>, <sec>上記効果数値は<sec typ="note">代謝促進</sec>のスキルレベルに比例します。</sec>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, Micro Fairy accelerates metabolism, increasing ally Bioroids’ <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="2" r /></sec>.
-        <sec typ="cond">At the start of the round</sec>, the <sec typ="buff"><buff typ="RANGE_UP" /> range <val idx="4" /></sec> of ally Mobile Support units increases.
-        <sec><sec typ="note">Sensitive Eyes</sec> now applies globally regardless of self’s position.</sec>
+        <sec typ="cond">At round start</sec>, stimulates metabolism with Micro Fairies, increasing allied Bioroids' <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power by <val idx="2" r /></sec>.
+        <sec typ="cond">At round start</sec>, allied Flying Supports' <sec typ="buff"><buff typ="RANGE_UP" /> Range increases by <val idx="4" /></sec>.
+        <sec>The effect of <sec typ="note">Sensitive Eyes</sec> now applies to all targets regardless of her position.</sec>
         <sec typ="cond">In this case</sec>, <sec>the above effect values are proportional to the skill level of <sec typ="note">Metabolism Boost</sec>.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、マイクロフェアリーで新陳代謝を促進し、味方バイオロイドの<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、味方機動型支援機の<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="4" /></sec>が増加します。
+        <sec><sec typ="note">敏感な目</sec>の効果が、現在は自身の位置に関係なく全体に適用されます。</sec>
+        <sec typ="cond">この場合</sec>、<sec>上記効果の数値は<sec typ="note">代謝促進</sec>のスキルレベルに比例します。</sec>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，透過微型妖精促進新陳代謝，使我軍生化人的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
-        <sec typ="cond">回合開始時</sec>，我軍機動型支援機的<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="4" /></sec>增加。
-        <sec><sec typ="note">敏感之眼</sec>的效果現在會不受自身位置影響而全體套用。</sec>
-        <sec typ="cond">在此情況下</sec>，<sec>上述效果數值與<sec typ="note">代謝促進</sec>的技能等級成正比。</sec>
+        <sec typ="cond">回合開始時</sec>，以微型妖精促進新陳代謝，使我方生化人的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，我方機動型支援機的<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="4" /></sec>增加。
+        <sec><sec typ="note">敏感的眼睛</sec>的效果現在無論自身位置如何都會套用全體。</sec>
+        <sec typ="cond">在此情況下</sec>，<sec>上述效果數值與<sec typ="note">代謝促進</sec>的技能等級成比例。</sec>
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -14273,24 +14273,24 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시 효과</sec>를 획득합니다.
-        <sec typ="cond">자신을 제외한 <cmt t="페어리 시리즈">$$3PFairy:?$</cmt> 소속 지원기가 있을 경우</sec>, <sec typ="buff">상기 효과를 <cmt t="페어리 시리즈">$$3PFairy:?$</cmt> 자매들에게도 공유</sec>합니다.
-        자신이 있는 한, <cmt t="페어리 시리즈">$$3PFairy:?$</cmt> 자매들이 부여하는 <sec typ="note">부식</sec>은 <sec>대상의 효과 저항을 무시</sec>합니다.
+        <sec typ="cond">자신을 제외한 <cmt t="페어리 시리즈"><import name="3PFairy" /></cmt> 소속 지원기가 있을 경우</sec>, <sec typ="buff">상기 효과를 <cmt t="페어리 시리즈"><import name="3PFairy" /></cmt> 자매들에게도 공유</sec>합니다.
+        자신이 있는 한, <cmt t="페어리 시리즈"><import name="3PFairy" /></cmt> 자매들이 부여하는 <sec typ="note">부식</sec>은 <sec>대상의 효과 저항을 무시</sec>합니다.
         <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><sec typ="note">부식</sec> 상태인 적</sec>의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> 대 기동형 피해량 <val idx="6" r /></sec>가 감소합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>, 自身は<sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視効果</sec>を獲得します。
-        <sec typ="cond">自分を除く<cmt t="フェアリーシリーズ">$$3PFairy:?$</cmt>所属の支援機がいる場合</sec>, <sec typ="buff">上記効果を<cmt t="フェアリーシリーズ">$$3PFairy:?$</cmt>姉妹にも共有</sec>します。
-        自分がいる限り、<cmt t="フェアリーシリーズ">$$3PFairy:?$</cmt>姉妹が付与する<sec typ="note">腐食</sec>は<sec>対象の効果耐性を無視</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>, <sec typ="cond"><sec typ="note">腐食</sec>状態の敵</sec>の<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> 対機動型ダメージ <val idx="6" r /></sec>が減少します。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, self gains <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec>.
-        <sec typ="cond">If there is a support unit belonging to <cmt t="Fairy Series">$$3PFairy:?$</cmt> other than self</sec>, <sec typ="buff">the above effect is also shared with the <cmt t="Fairy Series">$$3PFairy:?$</cmt> sisters</sec>.
-        As long as self is present, <sec typ="note">Corrosion</sec> inflicted by the <cmt t="Fairy Series">$$3PFairy:?$</cmt> sisters <sec>ignores the target’s Effect Resistance</sec>.
-        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">enemies in <sec typ="note">Corrosion</sec></sec> have decreased <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACC <val idx="5" r /></sec> / <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> damage against Mobile targets <val idx="6" r /></sec>.
+        <sec typ="cond">At round start</sec>, she gains <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection effect</sec>.
+        <sec typ="cond">If there is a <cmt t="Fairy Series"><import name="3PFairy" /></cmt> Support unit other than herself</sec>, <sec typ="buff">shares the above effect with the <cmt t="Fairy Series"><import name="3PFairy" /></cmt> sisters as well</sec>.
+        While she is present, <cmt t="Fairy Series">Corrosion<import name="3PFairy" /> inflicted by the </cmt><sec typ="note"></sec> sisters <sec>ignores the target's Effect Resistance</sec>.
+        <sec typ="cond">At round start</sec>, decreases <sec typ="cond"><sec typ="note"> Accuracy by </sec></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> damage against Flying units by <val idx="5" r /></sec> of <sec typ="buff">enemies under <buff typ="MOBILITY_DMG_DOWN" />Corrosion<val idx="6" r /></sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身は<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視効果</sec>を獲得します。
+        <sec typ="cond">自身を除く<cmt t="フェアリーシリーズ"><import name="3PFairy" /></cmt>所属支援機がいる場合</sec>、<sec typ="buff">上記効果を<cmt t="フェアリーシリーズ"><import name="3PFairy" /></cmt>姉妹にも共有</sec>します。
+        自身がいる限り、<cmt t="フェアリーシリーズ"><import name="3PFairy" /></cmt>姉妹が付与する<sec typ="note">腐食</sec>は<sec>対象の効果耐性を無視</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond"><sec typ="note">腐食</sec>状態の敵</sec>の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" />対機動型ダメージ量<val idx="6" r /></sec>が減少します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身獲得<sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護效果</sec>。
-        <sec typ="cond">若存在除了自身以外屬於<cmt t="妖精系列">$$3PFairy:?$</cmt>的支援機</sec>，則<sec typ="buff">將上述效果也共享給<cmt t="妖精系列">$$3PFairy:?$</cmt>姊妹</sec>。
-        只要自身存在，<cmt t="妖精系列">$$3PFairy:?$</cmt>姊妹施加的<sec typ="note">腐蝕</sec>會<sec>無視目標的效果抵抗</sec>。
-        <sec typ="cond">回合開始時</sec>，<sec typ="cond">處於<sec typ="note">腐蝕</sec>狀態的敵軍</sec>的<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> 對機動型傷害 <val idx="6" r /></sec>減少。
+        <sec typ="cond">回合開始時</sec>，自身獲得<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護效果</sec>。
+        <sec typ="cond">若有自身以外的<cmt t="妖精系列"><import name="3PFairy" /></cmt>所屬支援機</sec>，<sec typ="buff">也會將上述效果共享給<cmt t="妖精系列"><import name="3PFairy" /></cmt>姊妹們</sec>。
+        只要自身存在，<cmt t="妖精系列"><import name="3PFairy" /></cmt>姊妹們賦予的<sec typ="note">腐蝕</sec>會<sec>無視目標的效果抗性</sec>。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">處於<sec typ="note">腐蝕</sec>狀態的敵人</sec>的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" />對機動型傷害量<val idx="6" r /></sec>降低。
 dialogue:
   KR:
     "1":

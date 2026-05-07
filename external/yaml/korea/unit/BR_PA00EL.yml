@@ -2162,18 +2162,18 @@ skills:
         미사일을 발사해 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 대상이 <buff typ="MARKING" /> 표식 / <buff typ="SNARE" /> 이동 불가 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
         <sec typ="cond">스쿼드 내 <char uid="BR_Lindwurm" />이 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 대 장갑 미사일</sec> 스킬 협동 공격을 유도</sec>합니다.
-      JP: |-
-        ミサイルを発射して<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中対象が<buff typ="MARKING" />標的 / <buff typ="SNARE" />移動不可状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
-        <sec typ="cond">スコード内に<char uid="BR_Lindwurm" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25対装甲ミサイル</sec>スキル協同攻撃を誘導</sec>します。
       EN: |-
-        Shoots missiles and deals <dmg elem="physics" />.
-        <sec typ="cond">If the hit target is <buff typ="MARKING" /> Marked / <buff typ="SNARE" /> Immobilized</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
-        <sec typ="cond">If <char uid="BR_Lindwurm" /> is in the squad</sec>, induces a co-op attack with the <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 Anti-Armor Missile</sec> skill</sec>.
+        missile fires <dmg elem="physics" />.
+        <sec typ="cond">Hit target <buff typ="MARKING" /> Mark / <buff typ="SNARE" /> Immobilized if in the state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">in squad <char uid="BR_Lindwurm" /> if present</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 anti armor missile</sec> skill coordinated attack trigger</sec>.
+      JP: |-
+        ミサイルを 発射して<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象が <buff typ="MARKING" /> 標的 / <buff typ="SNARE" /> 移動不可 状態の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">スクワッド 内 <char uid="BR_Lindwurm" />が 存在する場合</sec>、 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 ドエ ジアングアプ ミサイル</sec> スキル 協同攻撃を 誘導</sec>します。
       TC: |-
-        發射導彈，造成<dmg elem="physics" />。
-        <sec typ="cond">若命中目標處於<buff typ="MARKING" />標記 / <buff typ="SNARE" />無法移動狀態</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
-        <sec typ="cond">若小隊內有<char uid="BR_Lindwurm" /></sec>，將引導<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25反裝甲導彈</sec>技能協同攻擊</sec>。
+        飛彈 發射 造成<dmg elem="physics" />。
+        <sec typ="cond">命中目標為 <buff typ="MARKING" /> 標記 / <buff typ="SNARE" /> 無法移動 若為狀態</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">小隊 內 <char uid="BR_Lindwurm" /> 存在時</sec>， <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 對 裝甲 飛彈</sec> 技能 協同攻擊 誘發</sec>。
   "2":
     key: "2"
     icon: MultiMissile
@@ -3598,24 +3598,24 @@ skills:
         <sec>스킬 레벨 10에서 위치에 관계 없이 온전한 피해를 입힙니다.</sec>
         <sec typ="cond">적중 시</sec>, 대상에게 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여하고 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="4" signless /> 지속 화염 피해</sec>를 입힙니다.
         <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        ナパームミサイルで目標地点に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
-        <sec typ="dmg">目標地点周辺のダメージは25%減少します。</sec>
-        <sec>スキルレベル10で位置に関係なく完全なダメージを与えます。</sec>
-        <sec typ="cond">命中時</sec>、対象に2ラウンドの間<sec typ="buff"><buff typ="MARKING" />標的</sec>を付与し、<sec typ="dmg"><buff typ="FireDMG_DOT" /><val idx="4" signless />継続火炎ダメージ</sec>を与えます。
-        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       EN: |-
-        Napalm missiles deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the target point.
-        <sec typ="dmg">Damage around the target point is reduced by 25%.</sec>
-        <sec>At skill level 10, full damage is dealt regardless of position.</sec>
-        <sec typ="cond">On hit</sec>, inflicts <sec typ="buff"><buff typ="MARKING" /> Marking</sec> for 2 rounds and deals <sec typ="dmg"><buff typ="FireDMG_DOT" /><val idx="4" signless /> continuous Fire damage</sec>.
+        napalm missile as target point to <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="dmg">target point nearby damage 25% decreases.</sec>
+        <sec>At skill level 10, position to relation none full damage.</sec>
+        <sec typ="cond">On hit</sec>, to the target 2 rounds <sec typ="buff"><buff typ="MARKING" /> Mark</sec> grants and <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="4" signless /> Fire damage over time</sec> deals.
         <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        ナパームミサイルで 目標地点に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="dmg">目標地点 周辺は ダメージが 25% 減少します。</sec>
+        <sec>スキルレベル10で 位置に グワングイェ オが オン前した ダメージを 与えます。</sec>
+        <sec typ="cond">命中時</sec>、 対象に 2ラウンドの間 <sec typ="buff"><buff typ="MARKING" /> 標的</sec>を 付与し、 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="4" signless /> 持続火炎ダメージ</sec>を 与えます。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
       TC: |-
-        以凝固汽油導彈對目標地點造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
-        <sec typ="dmg">目標地點周圍的傷害減少25%。</sec>
-        <sec>技能等級10時，無論位置如何都會造成完整傷害。</sec>
-        <sec typ="cond">命中時</sec>，對目標施加2回合的<sec typ="buff"><buff typ="MARKING" />標記</sec>，並造成<sec typ="dmg"><buff typ="FireDMG_DOT" /><val idx="4" signless />持續火焰傷害</sec>。
-        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
+        凝固汽油彈飛彈以 目標地點於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="dmg">目標地點 周圍 傷害 25% 減少。</sec>
+        <sec>技能等級10時 位置於 關係 無 On前 傷害 造成。</sec>
+        <sec typ="cond">命中時</sec>， 對目標 2回合內 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> 賦予，並 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="4" signless /> 持續火焰傷害</sec> 造成。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.EnemyDetect
@@ -3952,18 +3952,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 적의 진형과 상태를 정찰해 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec>가 증가합니다.
         <sec typ="cond">전투 종료 시</sec>, <sec typ="buff"><buff typ="SCOUTING" /> 다음에 출현할 적 정보를 획득 (정찰)</sec>합니다.
         <sec typ="cond">전투 개시 시</sec> <sec typ="cond">자신이 <buff typ="SCOUTING" /> 정찰 활성화 상태인 경우</sec>, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>이(가) 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、敵の陣形と状態を偵察し、自身の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="7" r /></sec>が増加します。
-        <sec typ="cond">戦闘終了時</sec>、<sec typ="buff"><buff typ="SCOUTING" />次に出現する敵情報を獲得（偵察）</sec>します。
-        <sec typ="cond">戦闘開始時</sec> <sec typ="cond">自分が<buff typ="SCOUTING" />偵察有効化状態の場合</sec>、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>が増加します。
       EN: |-
-        <sec typ="cond">At round start</sec>, scouts the enemy's formation and status to increase self's <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="7" r /></sec>.
-        <sec typ="cond">At combat end</sec>, <sec typ="buff"><buff typ="SCOUTING" /> obtains information on the next enemy to appear (Recon)</sec>.
-        <sec typ="cond">At battle start</sec> <sec typ="cond">if self's <buff typ="SCOUTING" /> Recon is active</sec>, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> increases.
+        <sec typ="cond">At round start</sec>, enemy's formation and state Scouting remove own <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="7" r /></sec> increases.
+        <sec typ="cond">At the end of battle</sec>, <sec typ="buff"><buff typ="SCOUTING" /> next to appearing next enemy information gain (Scouting)</sec>.
+        <sec typ="cond">At battle start</sec> <sec typ="cond">self <buff typ="SCOUTING" /> Scouting active stateif</sec>, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 敵の 陣形と 状態を 偵察して 自身の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec>が増加します。
+        <sec typ="cond">戦闘終了時</sec>、 <sec typ="buff"><buff typ="SCOUTING" /> 次に チウルハヨンできる 敵 情報を 獲得 (偵察)</sec>します。
+        <sec typ="cond">戦闘開始時</sec> <sec typ="cond">自身が <buff typ="SCOUTING" /> 偵察 有効状態の場合</sec>、 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，偵察敵軍的陣型與狀態，使自身的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="7" r /></sec>增加。
-        <sec typ="cond">戰鬥結束時</sec>，<sec typ="buff"><buff typ="SCOUTING" />獲得下一個出現敵人的資訊（偵察）</sec>。
-        <sec typ="cond">開始戰鬥時</sec> <sec typ="cond">若自身的<buff typ="SCOUTING" />偵察處於啟用狀態</sec>，<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 敵人的 陣形與 狀態 偵察 自身的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="7" r /></sec>增加。
+        <sec typ="cond">戰鬥結束時</sec>， <sec typ="buff"><buff typ="SCOUTING" /> 下次於 出現可 敵人 資訊 獲得 (偵察)</sec>。
+        <sec typ="cond">戰鬥開始時</sec> <sec typ="cond">自身 <buff typ="SCOUTING" /> 偵察 啟用狀態若為</sec>， <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -4253,20 +4253,20 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 기동형 아군의 공격을 지원</sec>합니다.
-        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <cmt t="스카이 나이츠">$$SkyKnight:?$</cmt> 소속 전투원의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <cmt t="스카이 나이츠"><import name="SkyKnight" /></cmt> 소속 전투원의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec>를 증가시킵니다.
         자신은 효과가 두 배로 증폭됩니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />機動型の味方の攻撃を支援</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の<cmt t="スカイナイツ">$$SkyKnight:?$</cmt>所属戦闘員の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率<val idx="4" r /></sec>を増加させます。
-        自分は効果が2倍に増幅されます。
       EN: |-
-        <sec typ="cond">At round start</sec>, provides <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attack Support to Mobile allies within range</sec>.
-        <sec typ="cond">At round start</sec>, increases the <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="4" r /></sec> of <cmt t="Sky Knights">$$SkyKnight:?$</cmt> combatants within range.
-        The effect is doubled for self.
+        <sec typ="cond">At round start</sec>, within range <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Mobile-type allies' supports the attack</sec>.
+        <sec typ="cond">At round start</sec>, within range <cmt t="Sky Knights"><import name="SkyKnight" /></cmt> affiliated combatant of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" r /></sec> increases.
+        self the effect is doubled amplification.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 機動型 味方の 攻撃を 支援</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 <cmt t="スカイナイツ"><import name="SkyKnight" /></cmt> 所属 戦闘員の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="4" r /></sec>を増加させます。
+        自身は 効果が2倍で 増幅されます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，支援範圍內<sec typ="buff"><buff typ="SUPPORT_ATTACK" />機動型我軍的攻擊</sec>。
-        <sec typ="cond">回合開始時</sec>，增加範圍內<cmt t="天空騎士">$$SkyKnight:?$</cmt>所屬戰鬥員的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="4" r /></sec>。
-        自身效果會增幅2倍。
+        <sec typ="cond">回合開始時</sec>， 範圍內 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 機動型 我方的 攻擊 支援</sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 <cmt t="天空騎士"><import name="SkyKnight" /></cmt> 所屬 戰鬥員的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" r /></sec>使其增加。
+        自身 效果變為2倍以 增幅。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -4858,21 +4858,21 @@ skills:
         <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격 / 공격 지원 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 증가합니다.
         <sec typ="cond"><sec typ="note">인페르노 미사일</sec> 적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
         <sec typ="cond"><sec typ="note">화염 폭격</sec> 적중 시</sec>, <sec typ="dmg"><buff typ="ATK_UP" /> 대상이 적을 수록 피해량 <val idx="6" r /></sec>가 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="0" /></sec>が増加します。
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />再攻撃 / 攻撃支援時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が増加します。
-        <sec typ="cond"><sec typ="note">インフェルノミサイル</sec>命中時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ減少効果を解除</sec>します。
-        <sec typ="cond"><sec typ="note">火炎爆撃</sec>命中時</sec>、<sec typ="dmg"><buff typ="ATK_UP" />対象が少ないほどダメージ量<val idx="6" r /></sec>が増加します。
       EN: |-
-        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="0" /></sec> increases.
-        <sec typ="cond">When <buff typ="SUPPORT_ATTACK" /> re-attacking / providing Attack Support</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increases.
-        <sec typ="cond">On hit with <sec typ="note">Inferno Missile</sec></sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's damage taken decrease effects</sec>.
-        <sec typ="cond">On hit with <sec typ="note">Fire Explosive Bombardment</sec></sec>, <sec typ="dmg"><buff typ="ATK_UP" /> damage <val idx="6" r /></sec> increases the fewer targets there are.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="0" /></sec> increases.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> follow-up attack / Attack Support when</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increases.
+        <sec typ="cond"><sec typ="note">Inferno Missile</sec> On hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken decrease removes the effect</sec>.
+        <sec typ="cond"><sec typ="note">Fire bombardment</sec> On hit</sec>, <sec typ="dmg"><buff typ="ATK_UP" /> target enemy as damage <val idx="6" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>が増加します。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃 / 攻撃支援 時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が増加します。
+        <sec typ="cond"><sec typ="note">インフェルノミサイル</sec> 命中時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ 減少 効果を 解除</sec>します。
+        <sec typ="cond"><sec typ="note">火炎 爆撃</sec> 命中時</sec>、 <sec typ="dmg"><buff typ="ATK_UP" /> 対象が 少ないほど ダメージ量 <val idx="6" r /></sec>が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="0" /></sec>增加。
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />再次攻擊 / 支援攻擊時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>增加。
-        <sec typ="cond">被<sec typ="note">地獄導彈</sec>命中時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的所受傷害減少效果</sec>。
-        <sec typ="cond">被<sec typ="note">火焰轟炸</sec>命中時</sec>，<sec typ="dmg"><buff typ="ATK_UP" />目標越少時傷害量<val idx="6" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>增加。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊 / 攻擊支援 時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>增加。
+        <sec typ="cond"><sec typ="note">地獄火飛彈</sec> 命中時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害 減少 效果 解除</sec>。
+        <sec typ="cond"><sec typ="note">火焰 轟炸</sec> 命中時</sec>， <sec typ="dmg"><buff typ="ATK_UP" /> 目標 敵人 數越 傷害量 <val idx="6" r /></sec>增加。
 dialogue:
   KR:
     "2":

@@ -2165,20 +2165,20 @@ skills:
     desc:
       KR: |-
         매지컬 핑크 문 라이트로 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>합니다.
-        <sec typ="cond">적중 시</sec>, 대상은 2라운드 동안 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="2" r /></sec>가 감소하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r /></sec>가 증가합니다.
-        적중 대상이 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 상태인 경우 피해량이 증가합니다.
-      JP: |-
-        マジカルピンクムーンライトで<dmg elem="physics" />のダメージを与え、2ラウンドの間対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>します。
-        <sec typ="cond">命中時</sec>、対象は2ラウンドの間<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="2" r /></sec>が減少し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="3" r /></sec>が増加します。
-        命中対象が<sec typ="buff"><buff typ="DEF_DOWN" />防御力減少</sec>状態の場合、ダメージ量が増加します。
+        <sec typ="cond">적중 시</sec>, 대상은 2라운드 동안 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="2" r /></sec>가 감소하며 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>가 증가합니다.
+        적중 대상이 <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 상태인 경우 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" r /></sec>가 증가합니다.
       EN: |-
-        Uses Magical Pink Moonlight to deal <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="PROVOKE" />Provoke</sec> the target for 2 rounds.
-        <sec typ="cond">When attack hits</sec>, the target’s <sec typ="buff"><buff typ="ATK_DOWN" />ATK<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />ACU<val idx="2" r /></sec> decreases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage<val idx="3" r /></sec> increases for 2 rounds.
-        Damage is increased if the hit target has <sec typ="buff"><buff typ="DEF_DOWN" />decreased DEF</sec>.
+        magical Pingkeu Mun Rateu as <dmg elem="physics" /> damage and 2 rounds target <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec>.
+        <sec typ="cond">On hit</sec>, the target 2 rounds <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="2" r /></sec> decreases and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec> increases.
+        Hit target <sec typ="cond"><buff typ="DEF_DOWN" /> Defense decrease</sec> if in the state <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec> increases.
+      JP: |-
+        ムエジイクオル プインクウ ムウン ルアがトウで<dmg elem="physics" />を与え、、 2ラウンドの間 対象を <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>します。
+        <sec typ="cond">命中時</sec>、 対象は 2ラウンドの間 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec>が 減少し、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="3" r /></sec>が増加します。
+        命中対象が <sec typ="cond"><buff typ="DEF_DOWN" /> 防御力 減少</sec> 状態の場合 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="5" r /></sec>が増加します。
       TC: |-
-        以魔法粉紅月光造成<dmg elem="physics" />傷害，並使目標於2回合內受到<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>。
-        <sec typ="cond">命中時</sec>，目標於2回合內<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="2" r /></sec>減少，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="3" r /></sec>增加。
-        若命中目標處於<sec typ="buff"><buff typ="DEF_DOWN" />防禦力減少</sec>狀態，則傷害量增加。
+        每至keol Pingkeu 無n 時teu以 造成<dmg elem="physics" />，並 2回合內 目標 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>。
+        <sec typ="cond">命中時</sec>， 目標 2回合內 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec> 減少，並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="3" r /></sec>增加。
+        命中目標為 <sec typ="cond"><buff typ="DEF_DOWN" /> 防禦力 減少</sec> 若為狀態 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="5" r /></sec>增加。
   "2":
     key: "2"
     icon: SwordAttk
@@ -4325,20 +4325,20 @@ skills:
     desc:
       KR: |-
         매지컬 파워를 해방해 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 대폭 감소시킵니다.
-        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 증가</sec> 효과를 해제하고 피해량이 증가합니다.
-        <sec typ="cond">적중 시</sec>, 스쿼드 내에 <char uid="PECS_MoMo" />가 있을 경우 <sec typ="note">모모찬바라</sec> 협동 공격을 유도합니다.
-      JP: |-
-        マジカルパワーを解放して<dmg elem="physics" />のダメージを与え、2ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>を大幅に減少させます。
-        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="DEF_UP" />防御力増加</sec>効果を解除し、ダメージ量が増加します。
-        <sec typ="cond">命中時</sec>、分隊内に<char uid="PECS_MoMo" />がいる場合、<sec typ="note">モモチャンバラ</sec>協同攻撃を誘導します。
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가 효과를 해제</sec>하고 <sec typ="buff"><buff typ="PhyATK_UP" /> 피해량 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 시</sec>, <sec typ="cond">스쿼드 내에 <char uid="DS_MoMo" />가 있을 경우</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">모모찬바라</sec> 협동 공격</sec>을 유도합니다.
       EN: |-
-        Unlocks Magical Power and deals <dmg elem="physics" /> damage, significantly decreasing the target’s <sec typ="buff"><buff typ="DEF_DOWN" />DEF<val idx="0" r /></sec> for 2 rounds.
-        <sec typ="cond">When CRIT hit</sec>, removes the target’s <sec typ="buff"><buff typ="DEF_UP" />DEF Increase</sec> and increases damage.
-        <sec typ="cond">When attack hits</sec>, if <char uid="PECS_MoMo" /> is in the squad, initiates a co-op attack with <sec typ="note">Momo Chanbara</sec>.
+        magical power liberate remove <dmg elem="physics" /> damage and 2 rounds, target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> greatly decreasescauses.
+        <sec typ="cond">On critical hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Defense increase removes the effect</sec> and <sec typ="buff"><buff typ="PhyATK_UP" /> damage <val idx="6" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, <sec typ="cond">in squad to <char uid="DS_MoMo" /> if present</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Momochanbara</sec> coordinated attack</sec> triggers.
+      JP: |-
+        ムエジイクオル プアウォを 解放して<dmg elem="physics" />を与え、、 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を 大きく減少させます。
+        <sec typ="cond">クリティカル時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防御力 増加 効果を 解除</sec>し、 <sec typ="buff"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="6" r /></sec>が増加します。
+        <sec typ="cond">命中時</sec>、 <sec typ="cond">スクワッド 内に <char uid="DS_MoMo" />が 存在する場合</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">ムオムオチアンブアルア</sec> 協同攻撃</sec>を 誘導します。
       TC: |-
-        釋放魔法力量，造成<dmg elem="physics" />傷害，並於2回合內大幅減少目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>。
-        <sec typ="cond">暴擊時</sec>，解除目標的<sec typ="buff"><buff typ="DEF_UP" />防禦力增加</sec>效果，並增加傷害量。
-        <sec typ="cond">命中時</sec>，若小隊內有<char uid="PECS_MoMo" />，則引發<sec typ="note">莫莫斬霸</sec>協力攻擊。
+        每至keol 破wo 解放 造成<dmg elem="physics" />，並 2回合內 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> 大幅減少。
+        <sec typ="cond">暴擊時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防禦力 增加 效果 解除</sec>並 <sec typ="buff"><buff typ="PhyATK_UP" /> 傷害量 <val idx="6" r /></sec>增加。
+        <sec typ="cond">命中時</sec>， <sec typ="cond">小隊 內於 <char uid="DS_MoMo" /> 存在時</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Momochanbara</sec> 協同攻擊</sec> 誘發。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -4757,20 +4757,20 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 해당 라운드에 처음 받는 공격은 피해가 <val idx="5" r inv /> 감소</sec>합니다.
-        <sec typ="cond">회피 시</sec>, 해당 라운드 동안 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타</sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec>이 증가합니다.
-        <sec typ="cond">피격 시</sec>, 해당 라운드 동안 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 감소</sec> 효과를 무시하고 <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec>이 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />そのラウンドで最初に受ける攻撃のダメージが<val idx="5" r inv />減少</sec>します。
-        <sec typ="cond">回避時</sec>、そのラウンドの間<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル</sec> / <sec typ="buff"><buff typ="ATK_UP" />攻撃力</sec>が増加します。
-        <sec typ="cond">被弾時</sec>、そのラウンドの間<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />ダメージ減少</sec>効果を無視し、<sec typ="buff"><buff typ="ATK_UP" />攻撃力</sec>が増加します。
+        <sec typ="cond">회피 시</sec>, 해당 라운드 동안 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">피격 시</sec>, 해당 라운드 동안 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 효과를 무시</sec>하고 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec>가 증가합니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, <sec typ="buff"><buff typ="EVADE_UP" />EVA<val idx="0" r /></sec> increases and the damage of the first attack received that round <sec typ="buff"><buff typ="DAMAGE_REDUCE" /><val idx="5" r inv />decreases</sec>.
-        <sec typ="cond">Upon evade</sec>, <sec typ="buff"><buff typ="CRITICAL_UP" />CRIT</sec> / <sec typ="buff"><buff typ="ATK_UP" />ATK</sec> increases for that round.
-        <sec typ="cond">When attacked</sec>, <sec typ="buff"><buff typ="BARRIER_PIERCE" />Barriers</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />Damage Decrease</sec> effects are ignored and <sec typ="buff"><buff typ="ATK_UP" />ATK</sec> increases for that round.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> the round to first receives attack damage <val idx="5" r inv /> decrease</sec>.
+        <sec typ="cond">When evading</sec>, each round <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="6" r /></sec> increases.
+        <sec typ="cond">When hit</sec>, each round <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier / Damage Reduction effect and ignore</sec> and <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="8" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 該当 ラウンドに チオウム 受ける 攻撃は ダメージが <val idx="5" r inv /> 減少</sec>します。
+        <sec typ="cond">回避時</sec>、 該当 ラウンド間 <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec>が増加します。
+        <sec typ="cond">被弾時</sec>、 該当 ラウンド間 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / ダメージ 減少 効果を 無視</sec>し、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" r /></sec>が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="0" r /></sec>增加，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />本回合首次受到的攻擊傷害<val idx="5" r inv />減少</sec>。
-        <sec typ="cond">迴避時</sec>，該回合內<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊</sec> / <sec typ="buff"><buff typ="ATK_UP" />攻擊力</sec>增加。
-        <sec typ="cond">受到攻擊時</sec>，該回合內會無視<sec typ="buff"><buff typ="BARRIER_PIERCE" />防護罩</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />傷害減少</sec>效果，並增加<sec typ="buff"><buff typ="ATK_UP" />攻擊力</sec>。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> 增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 該 回合於 Cheoeum 受到 攻擊 傷害 <val idx="5" r inv /> 減少</sec>。
+        <sec typ="cond">迴避時</sec>， 該 回合內 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec>增加。
+        <sec typ="cond">被擊時</sec>， 該 回合內 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 護盾 / 傷害 減少 效果 無視</sec>並 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -5257,17 +5257,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_Char" /> 자신보다 회피가 낮은</sec> 공격기 / 지원기를 지정 보호합니다.
-        <sec typ="cond">라운드 개시 시</sec>, 자신과 지정 보호 대상이 <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중</sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec> 증가 상태면 각 효과를 증폭시킵니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="DEF_Char" />自分より回避が低い</sec>攻撃機/支援機を指定保護します。
-        <sec typ="cond">ラウンド開始時</sec>、自分と指定保護対象が<sec typ="buff"><buff typ="ATK_UP" />攻撃力</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中</sec> / <sec typ="buff"><buff typ="AP_UP" />行動力</sec>増加状態の場合、各効果を増幅させます。
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_Char" /> <i>자신보다 회피가 낮은</i> 공격기 / 지원기를 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신과 지정 보호 대상이 <sec typ="cond"><buff typ="AP_UP" /> 공격력 증가</sec> / <sec typ="cond"><buff typ="ACCURACY_UP" /> 적중 증가</sec> / <sec typ="cond"><buff typ="AP_UP" /> 행동력 증가</sec> 상태면 각 효과를 증폭시킵니다.
+        증폭 수치 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec>, <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec>, <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, provides <sec typ="buff"><buff typ="DEF_Char" />Designated Protection</sec> to Attackers/Supporters with lower EVA than self.
-        <sec typ="cond">At the start of the round</sec>, if self and the targets of the Designated Protection effect have increased <sec typ="buff"><buff typ="ATK_UP" />ATK</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />ACU</sec> / <sec typ="buff"><buff typ="AP_UP" />MOVE</sec>, each effect is amplified.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_Char" /> <i>self than Evasion low</i> Attacker / Supporter Designated Protection</sec>.
+        <sec typ="cond">At round start</sec>, self and Designated Protection target <sec typ="cond"><buff typ="AP_UP" /> Attack increase</sec> / <sec typ="cond"><buff typ="ACCURACY_UP" /> Accuracy increase</sec> / <sec typ="cond"><buff typ="AP_UP" /> Action Speed increase</sec> if in the state each effect and amplification causes.
+        amplification value: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec>, <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec>, <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="6" r /></sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_Char" /> <i>自身より 回避が ンアトは</i> 攻撃機 / 支援機を 指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身と 指定保護 対象が <sec typ="cond"><buff typ="AP_UP" /> 攻撃力 増加</sec> / <sec typ="cond"><buff typ="ACCURACY_UP" /> 命中 増加</sec> / <sec typ="cond"><buff typ="AP_UP" /> 行動力 増加</sec> 状態なら 各 効果を 増幅させます。
+        増幅 数値：<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec>、 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>、 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，對<sec typ="buff"><buff typ="DEF_Char" />迴避低於自身</sec>的攻擊機 / 支援機進行指定保護。
-        <sec typ="cond">回合開始時</sec>，若自身與指定保護對象處於<sec typ="buff"><buff typ="ATK_UP" />攻擊力</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中</sec> / <sec typ="buff"><buff typ="AP_UP" />行動力</sec>增加狀態，則各效果會被放大。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_Char" /> <i>自身比 迴避 降低</i> 攻擊機 / 支援機 指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>， 自身與 指定保護 目標 <sec typ="cond"><buff typ="AP_UP" /> 攻擊力 增加</sec> / <sec typ="cond"><buff typ="ACCURACY_UP" /> 命中 增加</sec> / <sec typ="cond"><buff typ="AP_UP" /> 行動力 增加</sec> 若處於狀態 各 效果 增幅。
+        增幅 數值：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec>， <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>， <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -6988,24 +6992,24 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> 회피 비례 스킬 위력 <val idx="0" r /> 증가</sec> 효과를 획득합니다.
-        <sec typ="cond">공격 받을 시</sec>, 반격 효과를 획득합니다.
-        내키진 않지만 <sec typ="note">달의 가호</sec>에 의한 능력치 증폭 효과를 <sec typ="note">대마왕의 수하</sec>에게도 부여합니다.
-        <sec typ="cond"><sec typ="note">달의 마력이 담긴 송편</sec> 장착 시</sec>, 확률적 능력치 증가 효과가 확정적로도 추가 발동합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="SKILL_UP" />回避に比例したスキル威力<val idx="0" r />増加</sec>効果を獲得します。
-        <sec typ="cond">攻撃を受けると</sec>、反撃効果を獲得します。
-        気は進みませんが、<sec typ="note">月の加護</sec>による能力値増幅効果を<sec typ="note">大魔王の手下</sec>にも付与します。
-        <sec typ="cond"><sec typ="note">月の魔力が込められたソンピョン</sec>装着時</sec>、確率的な能力値増加効果がさらに確定で追加発動します。
+        <sec typ="cond">공격 받을 시</sec>, <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 위력으로 반격</sec> 효과를 획득합니다.
+        내키진 않지만 <sec typ="note">달의 가호</sec>에 의한 능력치 증폭 효과를 <sec typ="note">대마왕의 수하</sec>(<char uid="AGS_Goltarion" />)에게도 부여합니다.
+        <equip uid="Sub_MoonCake" /> 장착 시, 확률적 능력치 증가 효과가 확정적로도 추가 발동합니다. <sec>수치는 장비 레벨에 따릅니다.</sec>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, gains a <sec typ="buff"><buff typ="SKILL_UP" />Skill Power Increase proportionate to EVA<val idx="0" r /></sec> effect.
-        <sec typ="cond">When attacked</sec>, gains Retaliation.
-        Although not desired, the stat amplification effect from <sec typ="note">Moon's Grace</sec> is also granted to <sec typ="note">The Evil Overlord’s Servant</sec>.
-        <sec typ="cond">When <sec typ="note">Lunar-Magic-Filled Rice Cake</sec> is equipped</sec>, the chance-based stat increase effect additionally triggers deterministically as well.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> Evasion proportional Skill Power <val idx="0" r /> increase</sec> gains the effect.
+        <sec typ="cond">When attacked</sec>, <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> power as Counterattack</sec> gains the effect.
+        within height/key formation although not <sec typ="note">Dal of protection</sec> to by stats amplification effect and <sec typ="note">Demon Lord's Servant</sec>(<char uid="AGS_Goltarion" />)to also grant.
+        <equip uid="Sub_MoonCake" /> when equipped, chanceenemy stats increase effect and Hwakjeong enemy also as additional triggers. <sec>value equipment level to follows.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="SKILL_UP" /> 回避 比例 スキル威力 <val idx="0" r /> 増加</sec> 効果を獲得します。
+        <sec typ="cond">攻撃を受ける時</sec>、 <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 威力で 反撃</sec> 効果を獲得します。
+        内クイジイン アジイだけ <sec typ="note">月の加護</sec>に よる 能力値 増幅 効果を <sec typ="note">大魔王の配下</sec>(<char uid="AGS_Goltarion" />)にも ブウヨします。
+        <equip uid="Sub_MoonCake" /> ジアンチアク 時、 確率敵 能力値 増加 効果が ハワクジオン敵でも 追加 発動します。 <sec>数値は 装備 レベルに ットアルウプンイドア。</sec>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，獲得<sec typ="buff"><buff typ="SKILL_UP" />與迴避成正比的技能威力<val idx="0" r />增加</sec>效果。
-        <sec typ="cond">受到攻擊時</sec>，獲得反擊效果。
-        雖然不情願，但也會將<sec typ="note">月之加護</sec>的能力值增幅效果施加給<sec typ="note">大魔王的手下</sec>。
-        <sec typ="cond">配戴<sec typ="note">充滿月之魔力的松糕</sec>時</sec>，機率性能力值增加效果也會額外以確定形式發動。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="SKILL_UP" /> 迴避 成比例 技能威力 <val idx="0" r /> 增加</sec> 獲得效果。
+        <sec typ="cond">受到攻擊時</sec>， <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 威力以 反擊</sec> 獲得效果。
+        內台至n 不至僅 <sec typ="note">月之加護</sec>於 的 能力值 增幅 效果 <sec typ="note">大魔王的手下</sec>(<char uid="AGS_Goltarion" />)給也 賦予。
+        <equip uid="Sub_MoonCake" /> 裝備 時， 機率敵人 能力值 增加 效果 火k特定敵人以也 額外 發動。 <sec>數值 裝備 等級於 Ttareu。</sec>
 dialogue:
   KR:
     "1":

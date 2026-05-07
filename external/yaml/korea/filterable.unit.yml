@@ -22813,6 +22813,41 @@
           2dmodel: 2DModel_BR_Habetrot_NS1
           2dmodel_dam: 2DModel_BR_Habetrot_NS1_Dam
           consumableKey: Skin_BR_Habetrot_1
+      - sid: 2
+        artist: WOW
+        price: 192
+        Spine: true
+        SpineDamaged: false
+        parts: 78
+        stage: false
+        subset:
+          O:
+            - _
+            - D
+            - S
+          G:
+            - _
+            - D
+            - S
+        anim:
+          - false
+          - false
+          - false
+          - false
+        category:
+          - ALL
+          - Everday_Dress
+        facelist: []
+        releaseDate: null
+        metadata:
+          imageId: 2
+          iconId: 2
+          tbarId: 2
+          voiceId: 2
+          flags: 2
+          dflags: 1
+          2dmodel_dam: 2DModel_BR_Habetrot_NS2_Dam
+          consumableKey: Skin_BR_Habetrot_2
   stat:
     - HP:
         - 188
@@ -52059,6 +52094,10 @@
             - attr: 1
               erase: 0
               overlap: 4
+              type: 52
+            - attr: 1
+              erase: 0
+              overlap: 4
               type: 3
             - attr: 1
               erase: 0
@@ -52066,8 +52105,8 @@
               type: 48
             - attr: 1
               erase: 0
-              overlap: 4
-              type: 52
+              overlap: 1
+              type: 22
         - key: Effect_BR_DrM_N_11
           on:
             type: 2
@@ -52087,12 +52126,75 @@
           buffs:
             - attr: 1
               erase: 0
-              overlap: 1
-              type: 22
+              overlap: 4
+              type: 3
             - attr: 1
               erase: 0
               overlap: 4
               type: 48
+        - key: Effect_BR_DrM_N_12
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+        - key: Effect_BR_DrM_N_13
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 1
+              type: 22
+        - key: Effect_BR_DrM_N_14
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 1
+              type: 22
     "2":
       target: enemy
       delayed: false
@@ -52119,19 +52221,69 @@
           buffs:
             - attr: 1
               erase: 0
-              overlap: 0
+              overlap: 4
               type: 53
             - attr: 1
               erase: 0
-              overlap: 1
+              overlap: 4
+              type: 20
+            - attr: 1
+              erase: 0
+              overlap: 4
               type: 78
             - attr: 1
               erase: 0
               overlap: 4
               type: 99
-        - key: Effect_BR_DrM_N_20
+        - key: Effect_BR_DrM_N_21
           on:
             type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 20
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 78
+        - key: Effect_BR_DrM_N_22
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 20
+        - key: Effect_BR_DrM_N_23
+          on:
+            type: 31
             value: "0"
           body:
             - 0
@@ -52150,30 +52302,9 @@
               erase: 0
               overlap: 4
               type: 99
-        - key: Effect_BR_DrM_N_14
+        - key: Effect_BR_DrM_N_24
           on:
-            type: 2
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 3
-          buffs:
-            - attr: 1
-              erase: 0
-              overlap: 0
-              type: 20
-        - key: Effect_BR_DrM_N_12
-          on:
-            type: 2
+            type: 31
             value: "0"
           body:
             - 0
@@ -52219,7 +52350,7 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 1
+              type: 7
             - attr: 0
               erase: 0
               overlap: 4
@@ -52227,37 +52358,16 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 13
+              type: 11
             - attr: 0
               erase: 0
               overlap: 4
-              type: 7
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 36
-        - key: Effect_BR_DrM_N_15
-          on:
-            type: 30
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 2
-          buffs:
+              type: 130
             - attr: 0
               erase: 0
               overlap: 4
               type: 9
-        - key: Effect_BR_DrM_N_17
+        - key: Effect_BR_DrM_N_31
           on:
             type: 30
             value: "0"
@@ -52274,11 +52384,15 @@
             - 2
           target: 2
           buffs:
-            - attr: 0
-              erase: 0
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 55
+            - attr: 3
+              erase: 3
               overlap: 4
               type: 7
-        - key: Effect_BR_DrM_N_18
+        - key: Effect_BR_DrM_N_32
           on:
             type: 30
             value: "0"
@@ -52295,11 +52409,15 @@
             - 2
           target: 2
           buffs:
-            - attr: 0
-              erase: 0
+            - attr: 3
+              erase: 3
               overlap: 4
-              type: 13
-        - key: Effect_BR_DrM_N_19
+              type: 58
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 9
+        - key: Effect_BR_DrM_N_33
           on:
             type: 30
             value: "0"
@@ -52316,20 +52434,34 @@
             - 2
           target: 2
           buffs:
-            - attr: 0
-              erase: 0
+            - attr: 3
+              erase: 1
               overlap: 4
-              type: 36
-    "4":
-      target: team
-      delayed: false
-      grid: false
-      elem: 0
-      guard: false
-      buffs:
-        - key: Effect_BR_DrM_N_4
+              type: 34
+        - key: Effect_BR_DrM_N_34
           on:
-            type: 17
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 11
+        - key: Effect_BR_DrM_N_35
+          on:
+            type: 30
             value: "0"
           body:
             - 0
@@ -52347,16 +52479,19 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 1
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 13
+              type: 130
             - attr: 0
               erase: 0
               overlap: 4
               type: 9
-        - key: Effect_BR_DrM_N_13
+    "4":
+      target: team
+      delayed: false
+      grid: false
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_BR_DrM_N_4
           on:
             type: 13
             value: "0"
@@ -52368,18 +52503,24 @@
             - 1
             - 2
           role:
-            - 0
-            - 1
             - 2
-          target: 0
+          target: 2
           buffs:
             - attr: 0
-              erase: 0
-              overlap: 0
-              type: 20
-        - key: Effect_BR_DrM_N_21
+              erase: 1
+              overlap: 4
+              type: 149
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 1
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 13
+        - key: Effect_BR_DrM_N_41
           on:
-            type: 20
+            type: 24
             value: "0"
           body:
             - 0
@@ -52389,18 +52530,16 @@
             - 1
             - 2
           role:
-            - 0
-            - 1
             - 2
-          target: 0
+          target: 2
           buffs:
             - attr: 0
-              erase: 3
+              erase: 1
               overlap: 4
-              type: 23
-        - key: Effect_BR_DrM_N_16
+              type: 149
+        - key: Effect_BR_DrM_N_42
           on:
-            type: 17
+            type: 30
             value: "0"
           body:
             - 0
@@ -52419,14 +52558,27 @@
               erase: 0
               overlap: 4
               type: 1
+        - key: Effect_BR_DrM_N_43
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
             - attr: 0
               erase: 0
               overlap: 4
               type: 13
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 9
     "5":
       target: enemy
       delayed: false
@@ -52449,22 +52601,68 @@
             - 0
             - 1
             - 2
-          target: 4
+          target: 0
           buffs:
-            - attr: 1
-              erase: 3
+            - attr: 0
+              erase: 0
               overlap: 4
               type: 20
-            - attr: 1
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 23
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 1
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 9
+        - key: Effect_BR_DrM_N_51
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
               erase: 3
               overlap: 4
               type: 23
+        - key: Effect_BR_DrM_N_52
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
             - attr: 1
-              erase: 3
+              erase: 0
               overlap: 4
               type: 1
             - attr: 1
-              erase: 3
+              erase: 0
               overlap: 4
               type: 9
   skins:
@@ -53167,6 +53365,8 @@
   rarity: 2
   promo:
     - 3
+    - 4
+    - 5
   group: 080_1
   releaseDate: 1548288000000
   marriageVoice: true
@@ -53209,6 +53409,27 @@
               erase: 0
               overlap: 4
               type: 48
+        - key: Effect_BR_Tomoe_N_45
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 79
     "2":
       target: enemy
       delayed: false
@@ -53237,10 +53458,31 @@
               erase: 0
               overlap: 4
               type: 84
+        - key: Effect_BR_Tomoe_N_45
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 79
     "3":
       target: team
       delayed: false
-      grid: false
+      grid: true
       elem: 0
       guard: false
       buffs:
@@ -53259,29 +53501,290 @@
             - 0
             - 1
             - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 95
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 1
+        - key: Effect_BR_Tomoe_N_31
+          on:
+            type: 15
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 0
+        - key: Effect_BR_Tomoe_N_32
+          on:
+            type: 36
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 3
+              overlap: 4
+              type: 1
+        - key: Effect_BR_Tomoe_N_33
+          on:
+            type: 36
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 69
+              value:
+                type: 0
+        - key: Effect_BR_Tomoe_N_34
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 6
+        - key: Effect_BR_Tomoe_N_35
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 6
+        - key: Effect_BR_Tomoe_N_36
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 6
+        - key: Effect_BR_Tomoe_N_37
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 6
+        - key: Effect_BR_Tomoe_N_38
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 6
+        - key: Effect_BR_Tomoe_N_39
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 6
+        - key: Effect_BR_Tomoe_N_310
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 6
+    "4":
+      target: team
+      delayed: false
+      grid: true
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_BR_Tomoe_N_4
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
           target: 0
           buffs:
             - attr: 0
               erase: 0
               overlap: 4
-              type: 1
+              type: 20
             - attr: 0
               erase: 0
               overlap: 4
-              type: 9
+              type: 20
             - attr: 0
               erase: 0
               overlap: 4
-              type: 7
+              type: 20
             - attr: 0
               erase: 0
               overlap: 4
-              type: 13
+              type: 79
+        - key: Effect_BR_Tomoe_N_41
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
             - attr: 0
               erase: 0
               overlap: 4
-              type: 77
-        - key: Effect_BR_Tomoe_N_11
+              type: 20
+        - key: Effect_BR_Tomoe_N_42
           on:
             type: 30
             value: "0"
@@ -53301,88 +53804,10 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 1
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 9
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 7
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 13
-        - key: Effect_BR_Tomoe_N_12
+              type: 20
+        - key: Effect_BR_Tomoe_N_43
           on:
-            type: 30
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 1
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 9
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 7
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 13
-        - key: Effect_BR_Tomoe_N_13
-          on:
-            type: 30
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 1
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 9
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 7
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 13
-        - key: Effect_BR_Tomoe_N_14
-          on:
-            type: 30
+            type: 36
             value: "0"
           body:
             - 0
@@ -53400,8 +53825,8 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 77
-        - key: Effect_BR_Tomoe_N_15
+              type: 20
+        - key: Effect_BR_Tomoe_N_44
           on:
             type: 30
             value: "0"
@@ -53416,13 +53841,20 @@
             - 0
             - 1
             - 2
-          target: 2
+          target: 0
           buffs:
-            - attr: 0
+            - attr: 3
               erase: 0
               overlap: 4
-              type: 77
-        - key: Effect_BR_Tomoe_N_16
+              type: 8
+    "5":
+      target: team
+      delayed: false
+      grid: false
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_BR_Tomoe_N_5
           on:
             type: 30
             value: "0"
@@ -53437,15 +53869,27 @@
             - 0
             - 1
             - 2
-          target: 2
+          target: 0
           buffs:
             - attr: 0
               erase: 0
               overlap: 4
-              type: 77
-        - key: Effect_BR_Tomoe_N_17
+              type: 9
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 90
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 78
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 141
+        - key: Effect_BR_Tomoe_N_51
           on:
-            type: 30
+            type: 13
             value: "0"
           body:
             - 0
@@ -53458,12 +53902,201 @@
             - 0
             - 1
             - 2
-          target: 2
+          target: 0
           buffs:
-            - attr: 0
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 63
+    F1:
+      target: enemy
+      delayed: false
+      grid: false
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_BR_Tomoe_CH_1
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 3
+              overlap: 4
+              type: 78
+            - attr: 1
+              erase: 3
+              overlap: 4
+              type: 11
+            - attr: 1
+              erase: 3
+              overlap: 4
+              type: 48
+        - key: Effect_BR_Tomoe_CH_11
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
               erase: 0
               overlap: 4
-              type: 77
+              type: 11
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+        - key: Effect_BR_Tomoe_N_1
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 11
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+        - key: Effect_BR_Tomoe_N_45
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 79
+    F2:
+      target: enemy
+      delayed: false
+      grid: false
+      elem: 1
+      guard: true
+      buffs:
+        - key: Effect_BR_Tomoe_CH_2
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 141
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 141
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 84
+        - key: Effect_BR_Tomoe_CH_21
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 84
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 86
+        - key: Effect_BR_Tomoe_N_45
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 79
   skins:
     sid: null
     artist: PaintAle
@@ -53696,15 +54329,15 @@
             - attr: 1
               erase: 0
               overlap: 4
-              type: 15
-            - attr: 1
-              erase: 0
-              overlap: 4
               type: 3
             - attr: 1
               erase: 0
               overlap: 4
-              type: 83
+              type: 15
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 84
         - key: Effect_BR_Shirayuri_N_11
           on:
             type: 2
@@ -53725,7 +54358,7 @@
             - attr: 3
               erase: 0
               overlap: 4
-              type: 83
+              type: 84
     "2":
       target: enemy
       delayed: false
@@ -53752,21 +54385,17 @@
           buffs:
             - attr: 1
               erase: 0
-              overlap: 3
+              overlap: 4
               type: 20
             - attr: 1
               erase: 0
-              overlap: 4
+              overlap: 1
               type: 78
             - attr: 1
               erase: 0
               overlap: 4
               type: 83
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 58
-        - key: Effect_BR_Shirayuri_N_12
+        - key: Effect_BR_Shirayuri_N_21
           on:
             type: 2
             value: "0"
@@ -53787,7 +54416,7 @@
               erase: 0
               overlap: 1
               type: 78
-        - key: Effect_BR_Shirayuri_N_13
+        - key: Effect_BR_Shirayuri_N_22
           on:
             type: 31
             value: "0"
@@ -53808,7 +54437,7 @@
               erase: 0
               overlap: 4
               type: 83
-        - key: Effect_BR_Shirayuri_N_14
+        - key: Effect_BR_Shirayuri_N_23
           on:
             type: 2
             value: "0"
@@ -53829,6 +54458,150 @@
               erase: 0
               overlap: 4
               type: 58
+        - key: Effect_BR_Shirayuri_N_24
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 1
+                target: 0
+        - key: Effect_BR_Shirayuri_N_25
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 11
+                target: 0
+        - key: Effect_BR_Shirayuri_N_26
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 15
+                target: 0
+        - key: Effect_BR_Shirayuri_N_27
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 17
+                target: 0
+        - key: Effect_BR_Shirayuri_N_28
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 19
+                target: 0
+        - key: Effect_BR_Shirayuri_N_29
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 36
+                target: 0
     "3":
       target: team
       delayed: false
@@ -53872,8 +54645,29 @@
             - attr: 0
               erase: 0
               overlap: 4
+              type: 106
+        - key: Effect_BR_Shirayuri_N_31
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 3
+              overlap: 4
               type: 23
-        - key: Effect_BR_Shirayuri_N_15
+        - key: Effect_BR_Shirayuri_N_32
           on:
             type: 20
             value: "0"
@@ -53893,28 +54687,7 @@
             - attr: 0
               erase: 3
               overlap: 4
-              type: 23
-        - key: Effect_BR_Shirayuri_N_31
-          on:
-            type: 30
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 1
+              type: 106
     "4":
       target: team
       delayed: false
@@ -53942,10 +54715,6 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 13
-            - attr: 0
-              erase: 0
-              overlap: 4
               type: 7
             - attr: 0
               erase: 0
@@ -53954,8 +54723,54 @@
             - attr: 0
               erase: 0
               overlap: 4
+              type: 13
+            - attr: 0
+              erase: 0
+              overlap: 4
               type: 77
-        - key: Effect_BR_Shirayuri_N_16
+        - key: Effect_BR_Shirayuri_N_41
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 11
+        - key: Effect_BR_Shirayuri_N_42
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BR_Shirayuri_N_43
           on:
             type: 30
             value: "0"
@@ -53976,15 +54791,49 @@
               erase: 0
               overlap: 4
               type: 7
+        - key: Effect_BR_Shirayuri_N_44
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
             - attr: 0
               erase: 0
               overlap: 4
               type: 11
+        - key: Effect_BR_Shirayuri_N_45
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
             - attr: 0
               erase: 0
               overlap: 4
               type: 13
-        - key: Effect_BR_Shirayuri_N_17
+        - key: Effect_BR_Shirayuri_N_46
           on:
             type: 30
             value: "0"
@@ -54045,7 +54894,35 @@
               erase: 0
               overlap: 4
               type: 48
-        - key: Effect_BR_Shirayuri_N_19
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 1
+                target: 0
+        - key: Effect_BR_Shirayuri_N_51
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 1
+        - key: Effect_BR_Shirayuri_N_52
           on:
             type: 30
             value: "0"
@@ -54066,7 +54943,7 @@
               erase: 0
               overlap: 4
               type: 11
-        - key: Effect_BR_Shirayuri_N_20
+        - key: Effect_BR_Shirayuri_N_53
           on:
             type: 30
             value: "0"
@@ -54087,7 +54964,7 @@
               erase: 0
               overlap: 4
               type: 15
-        - key: Effect_BR_Shirayuri_N_21
+        - key: Effect_BR_Shirayuri_N_54
           on:
             type: 30
             value: "0"
@@ -54108,7 +54985,7 @@
               erase: 0
               overlap: 4
               type: 17
-        - key: Effect_BR_Shirayuri_N_22
+        - key: Effect_BR_Shirayuri_N_55
           on:
             type: 30
             value: "0"
@@ -54129,7 +55006,7 @@
               erase: 0
               overlap: 4
               type: 19
-        - key: Effect_BR_Shirayuri_N_23
+        - key: Effect_BR_Shirayuri_N_56
           on:
             type: 30
             value: "0"
@@ -54150,6 +55027,321 @@
               erase: 0
               overlap: 4
               type: 48
+        - key: Effect_BR_Shirayuri_N_57
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+        - key: Effect_BR_Shirayuri_N_58
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 1
+        - key: Effect_BR_Shirayuri_N_59
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 11
+        - key: Effect_BR_Shirayuri_N_510
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 15
+        - key: Effect_BR_Shirayuri_N_511
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 17
+        - key: Effect_BR_Shirayuri_N_512
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 19
+        - key: Effect_BR_Shirayuri_N_513
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+        - key: Effect_BR_Shirayuri_N_514
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+        - key: Effect_BR_Shirayuri_N_47
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 7
+        - key: Effect_BR_Shirayuri_N_48
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 11
+        - key: Effect_BR_Shirayuri_N_49
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BR_Shirayuri_N_410
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 7
+        - key: Effect_BR_Shirayuri_N_411
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 11
+        - key: Effect_BR_Shirayuri_N_412
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BR_Shirayuri_N_413
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 77
   skins:
     sid: null
     artist: Kakiman
@@ -63634,7 +64826,7 @@
           2dmodel: 2DModel_BR_Sleipnir_NS3
       - sid: 4
         artist: ??
-        priceEx: ""
+        price: 4
         Spine: false
         SpineDamaged: false
         parts: 4
@@ -143226,7 +144418,7 @@
           consumableKey: Skin_PECS_Orangeade_1
       - sid: 2
         artist: ??
-        priceEx: ""
+        price: 41
         Spine: true
         SpineDamaged: false
         parts: 78
@@ -154208,6 +155400,186 @@
       buffs:
         - key: Effect_BR_NickyTracy_N_1
           on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 15
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 17
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 19
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 21
+        - key: Effect_BR_NickyTracy_N_11
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 8
+        - key: Effect_BR_NickyTracy_N_12
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BR_NickyTracy_N_13
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 130
+        - key: Effect_BR_NickyTracy_N_14
+          on:
+            type: 22
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 130
+        - key: Effect_BR_NickyTracy_N_15
+          on:
+            type: 22
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 20
+        - key: Effect_BUFF_Overheat_N_1
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 15
+        - key: Effect_BUFF_Overheat_N_2
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 17
+        - key: Effect_BUFF_Overheat_N_3
+          on:
             type: 2
             value: "0"
           body:
@@ -154227,35 +155599,6 @@
               erase: 0
               overlap: 4
               type: 19
-            - attr: 1
-              erase: 0
-              overlap: 0
-              type: 20
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 1
-        - key: Effect_BR_NickyTracy_N_11
-          on:
-            type: 2
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - attr: 3
-              erase: 0
-              overlap: 4
-              type: 1
     "2":
       target: enemy
       delayed: false
@@ -154286,50 +155629,13 @@
               type: 19
             - attr: 1
               erase: 0
-              overlap: 0
-              type: 20
+              overlap: 4
+              type: 78
             - attr: 1
               erase: 0
               overlap: 4
-              type: 1
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 68
+              type: 86
         - key: Effect_BR_NickyTracy_N_21
-          on:
-            type: 0
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - attr: 3
-              erase: 0
-              overlap: 4
-              type: 1
-            - attr: 3
-              erase: 0
-              overlap: 0
-              type: 20
-            - attr: 3
-              erase: 0
-              overlap: 4
-              type: 1
-            - attr: 3
-              erase: 0
-              overlap: 4
-              type: 68
-        - key: Effect_BR_NickyTracy_N_11
           on:
             type: 2
             value: "0"
@@ -154344,12 +155650,96 @@
             - 0
             - 1
             - 2
-          target: 0
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 19
+        - key: Effect_BR_NickyTracy_N_22
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 19
+        - key: Effect_BR_NickyTracy_N_23
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 19
+        - key: Effect_BR_NickyTracy_N_24
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 19
+        - key: Effect_BR_NickyTracy_N_25
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
           buffs:
             - attr: 3
               erase: 0
               overlap: 4
-              type: 1
+              type: 86
     "3":
       target: team
       delayed: false
@@ -154385,7 +155775,15 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 13
+              type: 60
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 130
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 20
     "4":
       target: enemy
       delayed: false
@@ -154395,7 +155793,7 @@
       buffs:
         - key: Effect_BR_NickyTracy_N_4
           on:
-            type: 36
+            type: 30
             value: "0"
           body:
             - 0
@@ -154410,17 +155808,17 @@
             - 2
           target: 4
           buffs:
-            - attr: 1
+            - attr: 0
               erase: 0
               overlap: 4
-              type: 68
-            - attr: 1
+              type: 13
+            - attr: 0
               erase: 0
               overlap: 4
               type: 68
         - key: Effect_BR_NickyTracy_N_41
           on:
-            type: 36
+            type: 30
             value: "0"
           body:
             - 0
@@ -154441,7 +155839,7 @@
               type: 68
         - key: Effect_BR_NickyTracy_N_42
           on:
-            type: 36
+            type: 30
             value: "0"
           body:
             - 0
@@ -154462,7 +155860,7 @@
               type: 68
         - key: Effect_BR_NickyTracy_N_43
           on:
-            type: 36
+            type: 30
             value: "0"
           body:
             - 0
@@ -154483,7 +155881,7 @@
               type: 68
         - key: Effect_BR_NickyTracy_N_44
           on:
-            type: 36
+            type: 30
             value: "0"
           body:
             - 0
@@ -154504,7 +155902,28 @@
               type: 68
         - key: Effect_BR_NickyTracy_N_45
           on:
-            type: 36
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 68
+        - key: Effect_BR_NickyTracy_N_46
+          on:
+            type: 30
             value: "0"
           body:
             - 0
@@ -154550,15 +155969,15 @@
             - attr: 1
               erase: 0
               overlap: 4
-              type: 7
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 9
+              type: 19
             - attr: 1
               erase: 0
               overlap: 4
               type: 48
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 11
         - key: Effect_BR_NickyTracy_N_51
           on:
             type: 30
@@ -154579,15 +155998,70 @@
             - attr: 1
               erase: 0
               overlap: 4
-              type: 7
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 9
+              type: 48
+        - key: Effect_BR_NickyTracy_N_52
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
             - attr: 1
               erase: 0
               overlap: 4
               type: 48
+        - key: Effect_BR_NickyTracy_N_53
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 11
+        - key: Effect_BR_NickyTracy_N_54
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 11
   skins:
     sid: null
     artist: Jam
@@ -173646,7 +175120,7 @@
   type: 2
   role: 1
   body: 1
-  craft: false
+  craft: 46800
   oneoff: false
   oathable: true
   skills:
@@ -174388,7 +175862,7 @@
     skins:
       - sid: 1
         artist: Yura Unni
-        price: 352
+        price: 192
         Spine: true
         SpineDamaged: false
         parts: 78

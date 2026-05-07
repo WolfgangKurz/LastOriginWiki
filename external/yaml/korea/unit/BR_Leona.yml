@@ -2110,15 +2110,15 @@ skills:
       KR: |-
         권총을 발사해 <dmg elem="physics" />를 주고, <sec>적중 여부에 관계 없이</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 회피 관련 <sec typ="attr">강화 효과</sec>를 해제</sec>합니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec>를 증가시킵니다. <sec>(중첩 불가)</sec>
-      JP: |-
-        拳銃を発射して <dmg elem="physics" /> を与え、<sec>命中の有無にかかわらず</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 回避関連の <sec typ="attr">強化効果</sec> を解除</sec>します。
-        <sec typ="cond">命中時</sec>、2ラウンドの間、対象に <sec typ="buff"><buff typ="MARKING" /> マーク</sec> を付与し、<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec> を増加させます。 <sec>(重複不可)</sec>
       EN: |-
-        Fires a pistol, dealing <dmg elem="physics" /> and, <sec>regardless of whether it hits</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes evasion-related <sec typ="attr">buffs</sec></sec>.
-        <sec typ="cond">On hit</sec>, marks the target for 2 rounds and increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec>. <sec>(Cannot stack)</sec>
+        Fires a pistol to deal <dmg elem="physics" /> and, <sec>regardless of hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes EVA-related <sec typ="attr">buffs</sec></sec>.
+        <sec typ="cond">On hit</sec>, grants the target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> and increases <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="4" r /></sec> for 2 rounds. <sec>(Cannot stack)</sec>
+      JP: |-
+        拳銃を発射して<dmg elem="physics" />を与え、<sec>命中の有無に関係なく</sec><sec typ="buff"><buff typ="REMOVE_BUFF" />回避関連の<sec typ="attr">強化効果</sec>を解除</sec>します。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象に<sec typ="buff"><buff typ="MARKING" />標的</sec>を付与し、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="4" r /></sec>を増加させます。<sec>(重複不可)</sec>
       TC: |-
-        發射手槍，造成 <dmg elem="physics" />，且不論是否命中都會解除 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 迴避相關的 <sec typ="attr">強化效果</sec></sec>。
-        <sec typ="cond">命中時</sec>，使目標獲得 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>，並提高 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" r /></sec>，持續 2 回合。 <sec>(不可疊加)</sec>
+        發射手槍造成<dmg elem="physics" />，並且<sec>不論是否命中</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除迴避相關<sec typ="attr">強化效果</sec></sec>。
+        <sec typ="cond">命中時</sec>，在2回合內賦予目標<sec typ="buff"><buff typ="MARKING" />標記</sec>，並使<sec typ="buff"><buff typ="VULNERABLE" />所受傷害 <val idx="4" r /></sec>增加。<sec>（不可疊加）</sec>
   "2":
     key: "2"
     icon: SelfSpdBuff
@@ -2600,18 +2600,18 @@ skills:
         지정한 아군의 현재 <sec typ="buff"><buff typ="AP_UP" /> AP를 <val idx="0" signless />로 변경</sec>시키며, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
         현재 활성화된 자신의 <sec typ="note">지휘</sec> 스킬에 따라, 2라운드 동안 해당 <sec typ="note">지휘</sec> 효과를 추가로 부여합니다.
         <sec>스킬 레벨이 높아질수록 소모 AP가 감소합니다.</sec>
-      JP: |-
-        指定した味方の現在の <sec typ="buff"><buff typ="AP_UP" /> AP を <val idx="0" signless /> に変更</sec>し、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害な効果を解除</sec>します。
-        現在有効な自分の <sec typ="note">指揮</sec> スキルに応じて、2ラウンドの間、該当する <sec typ="note">指揮</sec> 効果を追加で付与します。
-        <sec>スキルレベルが上がるほど消費APが減少します。</sec>
       EN: |-
-        Sets the chosen ally's current <sec typ="buff"><buff typ="AP_UP" /> AP</sec> to <val idx="0" signless /> and removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec>.
-        According to your currently active <sec typ="note">command</sec> skill, grants that <sec typ="note">command</sec> effect for 2 rounds.
-        <sec>AP cost decreases as skill level increases.</sec>
+        Changes the designated ally's current <sec typ="buff"><buff typ="AP_UP" /> AP to <val idx="0" signless /></sec> and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes harmful effects</sec>.
+        Depending on her currently active <sec typ="note">Command</sec> skill, additionally grants the corresponding <sec typ="note">Command</sec> effect for 2 rounds.
+        <sec>As skill level increases, AP cost decreases.</sec>
+      JP: |-
+        指定した味方の現在の<sec typ="buff"><buff typ="AP_UP" />APを<val idx="0" signless />に変更</sec>し、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害な効果を解除</sec>します。
+        現在活性化している自分の<sec typ="note">指揮</sec>スキルに応じて、2ラウンドの間、該当する<sec typ="note">指揮</sec>効果を追加で付与します。
+        <sec>スキルレベルが上がるほど消費APが減少します。</sec>
       TC: |-
-        將指定友軍目前的 <sec typ="buff"><buff typ="AP_UP" /> AP</sec> 變更為 <val idx="0" signless />，並解除 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>。
-        依照目前啟用中的 <sec typ="note">指揮</sec> 技能，額外賦予該 <sec typ="note">指揮</sec> 效果，持續 2 回合。
-        <sec>技能等級越高，消耗 AP 越低。</sec>
+        將指定友軍目前的<sec typ="buff"><buff typ="AP_UP" />AP變更為<val idx="0" signless /></sec>，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除有害效果</sec>。
+        根據目前啟用的自身<sec typ="note">指揮</sec>技能，在2回合內額外賦予對應的<sec typ="note">指揮</sec>效果。
+        <sec>技能等級越高，消耗AP越少。</sec>
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -2853,15 +2853,15 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>가 증가합니다.
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 공격기의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="3" r /></sec>가 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間、範囲内の味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方攻撃機の <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="3" r /></sec> が増加します。
       EN: |-
-        <sec typ="cond">At round start</sec>, increases allies within range's <sec typ="buff"><buff typ="ATK_UP" /> attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="1" r /></sec> for 3 rounds.
-        <sec typ="cond">At round start</sec>, increases the <sec typ="buff"><buff typ="SKILL_UP" /> skill power <val idx="3" r /></sec> of allied attackers within range.
+        <sec typ="cond">At round start</sec>, increases allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> within range for 3 rounds.
+        <sec typ="cond">At round start</sec>, increases Attacker allies' <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="3" r /></sec> within range.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方攻撃機の<sec typ="buff"><buff typ="SKILL_UP" />スキル威力 <val idx="3" r /></sec>が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，使範圍內友軍的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> 提高，持續 3 回合。
-        <sec typ="cond">回合開始時</sec>，使範圍內友軍攻擊機的 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="3" r /></sec> 提高。
+        <sec typ="cond">回合開始時</sec>，在3回合內使範圍內友軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="1" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，使範圍內友軍攻擊機的<sec typ="buff"><buff typ="SKILL_UP" />技能威力 <val idx="3" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -3091,18 +3091,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec>가 감소합니다.
         <sec typ="cond">대기 시</sec>, <sec typ="note">방어 지휘</sec>로 전환하며 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
         <sec typ="cond"><equip uid="Sub_QMObserver" /> 장착 시</sec>, <sec typ="note">방어 지휘</sec> 상태로 취급하여 <sec typ="note">시스터즈 오브 발할라</sec> 소속 전투원의 스킬 효과를 발동시킬 수 있습니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec> が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec> が減少します。
-        <sec typ="cond">待機時</sec>、<sec typ="note">防御指揮</sec> に切り替え、自分に付与されている <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害な効果を解除</sec>します。
-        <sec typ="cond"><equip uid="Sub_QMObserver" /> 装備時</sec>、<sec typ="note">防御指揮</sec> 状態として扱い、<sec typ="note">シスターズ・オブ・ヴァルハラ</sec> 所属戦闘員のスキル効果を発動できます。
       EN: |-
-        <sec typ="cond">At round start</sec>, increases allies within range's <sec typ="buff"><buff typ="DEF_UP" /> defense <val idx="0" r /></sec> and reduces <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="1" r inv /></sec>.
-        <sec typ="cond">When waiting</sec>, switches to <sec typ="note">Defense Command</sec> and removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec> applied to self.
-        <sec typ="cond">When equipped with <equip uid="Sub_QMObserver" /></sec>, treats self as being in <sec typ="note">Defense Command</sec> and can trigger the skill effects of <sec typ="note">Sisters of Valhalla</sec> members.
+        <sec typ="cond">At round start</sec>, allies' <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="0" r /></sec> within range increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="1" r inv /></sec> decreases.
+        <sec typ="cond">On Standby</sec>, switches to <sec typ="note">Defensive Command</sec> and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes harmful effects</sec> applied to herself.
+        <sec typ="cond">When <equip uid="Sub_QMObserver" /> is equipped</sec>, she is treated as being under <sec typ="note">Defensive Command</sec>, allowing skill effects of <sec typ="note">Sisters of Valhalla</sec> combatants to activate.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="DEF_UP" />防御力 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ <val idx="1" r inv /></sec>が減少します。
+        <sec typ="cond">待機時</sec>、<sec typ="note">防御指揮</sec>に切り替え、自分に適用された<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害な効果を解除</sec>します。
+        <sec typ="cond"><equip uid="Sub_QMObserver" />装備時</sec>、<sec typ="note">防御指揮</sec>状態として扱われ、<sec typ="note">シスターズ・オブ・ヴァルハラ</sec>所属戦闘員のスキル効果を発動できます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，使範圍內友軍的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec> 提高，並降低 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="1" r inv /></sec>。
-        <sec typ="cond">待機時</sec>，切換為 <sec typ="note">防禦指揮</sec>，並解除自身所受的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>。
-        <sec typ="cond"><equip uid="Sub_QMObserver" /> 裝備時</sec>，視為處於 <sec typ="note">防禦指揮</sec> 狀態，並可發動 <sec typ="note">瓦爾哈拉姊妹會</sec> 所屬戰鬥員的技能效果。
+        <sec typ="cond">回合開始時</sec>，範圍內友軍的<sec typ="buff"><buff typ="DEF_UP" />防禦力 <val idx="0" r /></sec>增加，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害 <val idx="1" r inv /></sec>減少。
+        <sec typ="cond">待機時</sec>，切換為<sec typ="note">防禦指揮</sec>，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除套用於自身的有害效果</sec>。
+        <sec typ="cond">裝備<equip uid="Sub_QMObserver" />時</sec>，視為處於<sec typ="note">防禦指揮</sec>狀態，可發動<sec typ="note">英靈殿姊妹</sec>所屬戰鬥員的技能效果。
   "5":
     key: "5"
     icon: P.EnemyDetect
@@ -3436,21 +3436,21 @@ skills:
         <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><buff typ="SCOUTING" /> 다음에 출현할 적 정보를 획득</sec>할 수 있습니다.
         <sec typ="cond">라운드 개시 시</sec>, 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>가 증가합니다.
         <sec typ="cond">자신이 <buff typ="SCOUTING" />정찰 상태인 경우</sec>, 효과가 50% 증폭됩니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、味方攻撃機の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> が増加します。
-        <sec typ="cond">戦闘開始時</sec>、<sec typ="buff"><buff typ="SCOUTING" /> 次に出現する敵の情報を取得</sec>できます。
-        <sec typ="cond">ラウンド開始時</sec>、味方全体の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" r /></sec> が増加します。
-        <sec typ="cond">自分が <buff typ="SCOUTING" />偵察状態の場合</sec>、効果が50%増幅されます。
       EN: |-
-        <sec typ="cond">At battle start</sec>, increases allied attackers' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>.
-        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="SCOUTING" /> obtains information on enemies that will appear next</sec>.
-        <sec typ="cond">At round start</sec>, increases all allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" r /></sec>.
-        <sec typ="cond">If self is in <buff typ="SCOUTING" />scouting state</sec>, the effect is amplified by 50%.
+        <sec typ="cond">At battle start</sec>, allied Attackers' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="SCOUTING" /> can obtain information on enemies that will appear next</sec>.
+        <sec typ="cond">At round start</sec>, all allies' <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="5" r /></sec> increases.
+        <sec typ="cond">If she is in <buff typ="SCOUTING" /> Scouting status</sec>, the effect is amplified by 50%.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、味方攻撃機の<sec typ="buff"><buff typ="AP_UP" />AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="buff"><buff typ="SCOUTING" />次に出現する敵情報を獲得</sec>できます。
+        <sec typ="cond">ラウンド開始時</sec>、味方全体の<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="5" r /></sec>が増加します。
+        <sec typ="cond">自分が<buff typ="SCOUTING" />偵察状態の場合</sec>、効果が50%増幅されます。
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，使友軍攻擊機的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 提高。
-        <sec typ="cond">戰鬥開始時</sec>，可 <sec typ="buff"><buff typ="SCOUTING" /> 獲得下一個出現敵人的情報</sec>。
-        <sec typ="cond">回合開始時</sec>，使友軍全體的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" r /></sec> 提高。
-        <sec typ="cond">若自身處於 <buff typ="SCOUTING" />偵查狀態</sec>，效果提升 50%。
+        <sec typ="cond">戰鬥開始時</sec>，友軍攻擊機的<sec typ="buff"><buff typ="AP_UP" />AP <val idx="0" /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec>，<sec typ="buff"><buff typ="SCOUTING" />可獲得接下來出現的敵人情報</sec>。
+        <sec typ="cond">回合開始時</sec>，全體友軍的<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="5" r /></sec>增加。
+        <sec typ="cond">若自身處於<buff typ="SCOUTING" />偵察狀態</sec>，效果增幅50%。
   F2:
     key: F2
     icon: P.SelfSpdBuff
@@ -3932,18 +3932,18 @@ skills:
         지정한 아군의 현재 <sec typ="buff"><buff typ="AP_UP" /> AP를 <val idx="0" signless />로 변경</sec>시키며, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
         현재 활성화된 자신의 <sec typ="note">지휘</sec> 스킬에 따라, 2라운드 동안 해당 <sec typ="note">지휘</sec> 효과를 추가로 부여합니다.
         <sec>스킬 레벨이 높아질수록 소모 AP가 감소합니다.</sec>
-      JP: |-
-        指定した味方の現在の <sec typ="buff"><buff typ="AP_UP" /> AP を <val idx="0" signless /> に変更</sec>し、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害な効果を解除</sec>します。
-        現在有効な自分の <sec typ="note">指揮</sec> スキルに応じて、2ラウンドの間、該当する <sec typ="note">指揮</sec> 効果を追加で付与します。
-        <sec>スキルレベルが上がるほど消費APが減少します。</sec>
       EN: |-
-        Sets the chosen ally's current <sec typ="buff"><buff typ="AP_UP" /> AP</sec> to <val idx="0" signless /> and removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec>.
-        According to your currently active <sec typ="note">command</sec> skill, grants that <sec typ="note">command</sec> effect for 2 rounds.
-        <sec>AP cost decreases as skill level increases.</sec>
+        Changes the designated ally's current <sec typ="buff"><buff typ="AP_UP" /> AP to <val idx="0" signless /></sec> and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes harmful effects</sec>.
+        Depending on her currently active <sec typ="note">Command</sec> skill, additionally grants the corresponding <sec typ="note">Command</sec> effect for 2 rounds.
+        <sec>As skill level increases, AP cost decreases.</sec>
+      JP: |-
+        指定した味方の現在の<sec typ="buff"><buff typ="AP_UP" />APを<val idx="0" signless />に変更</sec>し、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害な効果を解除</sec>します。
+        現在活性化している自分の<sec typ="note">指揮</sec>スキルに応じて、2ラウンドの間、該当する<sec typ="note">指揮</sec>効果を追加で付与します。
+        <sec>スキルレベルが上がるほど消費APが減少します。</sec>
       TC: |-
-        將指定友軍目前的 <sec typ="buff"><buff typ="AP_UP" /> AP</sec> 變更為 <val idx="0" signless />，並解除 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>。
-        依照目前啟用中的 <sec typ="note">指揮</sec> 技能，額外賦予該 <sec typ="note">指揮</sec> 效果，持續 2 回合。
-        <sec>技能等級越高，消耗 AP 越低。</sec>
+        將指定友軍目前的<sec typ="buff"><buff typ="AP_UP" />AP變更為<val idx="0" signless /></sec>，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除有害效果</sec>。
+        根據目前啟用的自身<sec typ="note">指揮</sec>技能，在2回合內額外賦予對應的<sec typ="note">指揮</sec>效果。
+        <sec>技能等級越高，消耗AP越少。</sec>
   F3:
     key: F3
     icon: P.TeamDefBuff
@@ -4187,18 +4187,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 범위 내 아군의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec>가 감소합니다.
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 보호기의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec>가 추가로 감소합니다.
         <sec>해당 효과는 피격 시 해제됩니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間、範囲内の味方の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec> が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec> が減少します。
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方保護機の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="3" r inv /></sec> がさらに減少します。
-        <sec>この効果は被弾時に解除されます。</sec>
       EN: |-
-        <sec typ="cond">At round start</sec>, increases allies within range's <sec typ="buff"><buff typ="DEF_UP" /> defense <val idx="0" r /></sec> for 3 rounds and reduces <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="1" r inv /></sec>.
-        <sec typ="cond">At round start</sec>, further reduces <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="3" r inv /></sec> for allied protectors within range.
+        <sec typ="cond">At round start</sec>, allies' <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="0" r /></sec> within range increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="1" r inv /></sec> decreases for 3 rounds.
+        <sec typ="cond">At round start</sec>, Defender allies within range additionally have <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="3" r inv /></sec> reduced.
         <sec>This effect is removed when hit.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間、範囲内の味方の<sec typ="buff"><buff typ="DEF_UP" />防御力 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ <val idx="1" r inv /></sec>が減少します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方保護機の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ <val idx="3" r inv /></sec>が追加で減少します。
+        <sec>この効果は被撃時に解除されます。</sec>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，使範圍內友軍的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec> 提高，持續 3 回合，並降低 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="1" r inv /></sec>。
-        <sec typ="cond">回合開始時</sec>，使範圍內友軍保護機的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="3" r inv /></sec> 額外降低。
-        <sec>此效果會在被擊中時解除。</sec>
+        <sec typ="cond">回合開始時</sec>，在3回合內使範圍內友軍的<sec typ="buff"><buff typ="DEF_UP" />防禦力 <val idx="0" r /></sec>增加，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害 <val idx="1" r inv /></sec>減少。
+        <sec typ="cond">回合開始時</sec>，範圍內友軍保護機的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害 <val idx="3" r inv /></sec>額外減少。
+        <sec>此效果會在受到攻擊時解除。</sec>
   F4:
     key: F4
     icon: P.TeamAtkBuff
@@ -4430,18 +4430,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>가 증가합니다.
         <sec typ="cond">대기 시</sec>, <sec typ="note">공격 지휘</sec>로 전환하며 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
         <sec typ="cond"><equip uid="Sub_QMObserver" /> 장착 시</sec>, <sec typ="note">공격 지휘</sec> 상태로 취급하여 <sec typ="note">시스터즈 오브 발할라</sec> 소속 전투원의 스킬 효과를 발동시킬 수 있습니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> が増加します。
-        <sec typ="cond">待機時</sec>、<sec typ="note">攻撃指揮</sec> に切り替え、自分に付与されている <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害な効果を解除</sec>します。
-        <sec typ="cond"><equip uid="Sub_QMObserver" /> 装備時</sec>、<sec typ="note">攻撃指揮</sec> 状態として扱い、<sec typ="note">シスターズ・オブ・ヴァルハラ</sec> 所属戦闘員のスキル効果を発動できます。
       EN: |-
-        <sec typ="cond">At round start</sec>, increases allies within range's <sec typ="buff"><buff typ="ATK_UP" /> attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="1" r /></sec>.
-        <sec typ="cond">When waiting</sec>, switches to <sec typ="note">Attack Command</sec> and removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec> applied to self.
-        <sec typ="cond">When equipped with <equip uid="Sub_QMObserver" /></sec>, treats self as being in <sec typ="note">Attack Command</sec> and can trigger the skill effects of <sec typ="note">Sisters of Valhalla</sec> members.
+        <sec typ="cond">At round start</sec>, allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> within range increases.
+        <sec typ="cond">On Standby</sec>, switches to <sec typ="note">Offensive Command</sec> and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes harmful effects</sec> applied to herself.
+        <sec typ="cond">When <equip uid="Sub_QMObserver" /> is equipped</sec>, she is treated as being under <sec typ="note">Offensive Command</sec>, allowing skill effects of <sec typ="note">Sisters of Valhalla</sec> combatants to activate.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">待機時</sec>、<sec typ="note">攻撃指揮</sec>に切り替え、自分に適用された<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害な効果を解除</sec>します。
+        <sec typ="cond"><equip uid="Sub_QMObserver" />装備時</sec>、<sec typ="note">攻撃指揮</sec>状態として扱われ、<sec typ="note">シスターズ・オブ・ヴァルハラ</sec>所属戦闘員のスキル効果を発動できます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，使範圍內友軍的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> 提高。
-        <sec typ="cond">待機時</sec>，切換為 <sec typ="note">攻擊指揮</sec>，並解除自身所受的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>。
-        <sec typ="cond"><equip uid="Sub_QMObserver" /> 裝備時</sec>，視為處於 <sec typ="note">攻擊指揮</sec> 狀態，並可發動 <sec typ="note">瓦爾哈拉姊妹會</sec> 所屬戰鬥員的技能效果。
+        <sec typ="cond">回合開始時</sec>，範圍內友軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="1" r /></sec>增加。
+        <sec typ="cond">待機時</sec>，切換為<sec typ="note">攻擊指揮</sec>，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除套用於自身的有害效果</sec>。
+        <sec typ="cond">裝備<equip uid="Sub_QMObserver" />時</sec>，視為處於<sec typ="note">攻擊指揮</sec>狀態，可發動<sec typ="note">英靈殿姊妹</sec>所屬戰鬥員的技能效果。
 dialogue:
   KR:
     "1":

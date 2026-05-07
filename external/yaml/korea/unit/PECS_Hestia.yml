@@ -429,7 +429,7 @@ fullLinkBonus:
   - Range_1
   - Cri_20
   - SPD_10
-craft: false
+craft: 46800
 equips:
   - Sub_Thymus_T4
 stat:
@@ -465,7 +465,20 @@ source: []
 oneoff: false
 oathable: true
 entryReqMap: []
-research: false
+cost:
+  res:
+    - 1200
+    - 700
+    - 4000
+  aicore: 1
+  items:
+    - item: Black_Module
+      count: 300
+    - item: Consumable_RefinedMineral
+      count: 450
+    - item: IW_Consumable_Altite
+      count: 600
+research: true
 skills:
   "1":
     key: "1"
@@ -3519,23 +3532,6 @@ skills:
             base: 0.5
             per: 0.025
             chance: 1
-    desc:
-      KR: |-
-        극열을 휘감은 발톱으로 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 줍니다.
-        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="note">합선</sec> 상태로 만듭니다.
-        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>하고 <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="6" r /></sec>이 증가합니다.
-      JP: |-
-        極熱を纏った爪で指定範囲に<sec typ="attr">保護無視</sec><dmg elem="fire" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="note">ショートサーキット</sec>状態にします。
-        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ減少効果を解除</sec>し、<sec typ="dmg"><buff typ="FireATK_UP" />ダメージ量 <val idx="6" r /></sec>が増加します。
-      EN: |-
-        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="fire" /> to the designated area with superheated claws.
-        <sec typ="cond">On Hit</sec>, inflicts the target with <sec typ="note">Short Circuit</sec> for 2 rounds.
-        <sec typ="cond">On CRIT</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's received damage decrease effect</sec>, and <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="6" r /></sec> increases.
-      TC: |-
-        以纏繞極熱的利爪對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="fire" />。
-        <sec typ="cond">命中時</sec>，使目標陷入<sec typ="note">短路</sec>狀態，持續2回合。
-        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的所受傷害減少效果</sec>，並使<sec typ="dmg"><buff typ="FireATK_UP" />傷害量 <val idx="6" r /></sec>增加。
   "2":
     key: "2"
     icon: WideFireShot
@@ -6740,27 +6736,6 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
-    desc:
-      KR: |-
-        소각포를 방출하여 고정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 줍니다.
-        <sec typ="dmg">중행을 제외한 행에는 피해가 25%만 적용됩니다.</sec>
-        <sec typ="cond">대상이 중열에 위치하거나 <sec typ="note">합선</sec> 상태인 경우</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="2" r /></sec>이 증가합니다.
-        <sec typ="cond">치명타 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>가 증가합니다.
-      JP: |-
-        焼却砲を放って固定範囲に<sec typ="attr">保護無視</sec><dmg elem="fire" />を与えます。
-        <sec typ="dmg">中列を除く列にはダメージが25%だけ適用されます。</sec>
-        <sec typ="cond">対象が中列に位置しているか<sec typ="note">ショートサーキット</sec>状態の場合</sec>、<sec typ="dmg"><buff typ="FireATK_UP" />ダメージ量 <val idx="2" r /></sec>が増加します。
-        <sec typ="cond">クリティカル時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="5" r /></sec>が増加します。
-      EN: |-
-        Fires an incineration cannon to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="fire" /> to a fixed area.
-        <sec typ="dmg">Rows other than the middle row only take 25% damage.</sec>
-        <sec typ="cond">If the target is in the middle row or under <sec typ="note">Short Circuit</sec></sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="2" r /></sec> increases.
-        <sec typ="cond">On CRIT</sec>, increases the target's <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="5" r /></sec> for 2 rounds.
-      TC: |-
-        放射焚燒砲，對固定範圍造成<sec typ="attr">無視保護</sec><dmg elem="fire" />。
-        <sec typ="dmg">除中列外的列只會套用25%的傷害。</sec>
-        <sec typ="cond">若目標位於中列或處於<sec typ="note">短路</sec>狀態</sec>，則<sec typ="dmg"><buff typ="FireATK_UP" />傷害量 <val idx="2" r /></sec>增加。
-        <sec typ="cond">暴擊時</sec>，目標的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害 <val idx="5" r /></sec>增加，持續2回合。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -7130,27 +7105,6 @@ skills:
             base: 20
             per: 0
             chance: 1
-    desc:
-      KR: |-
-        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" /></sec>이 증가합니다.
-        <sec>라운드 경과에 따라 효과 수치가 점감합니다.</sec>
-        <sec typ="cond">적 처치 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec>이 증가하고 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 상기 점감 효과를 포함한 공격력 감소 효과를 해제</sec>합니다.
-        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> AP 감소 효과 면역</sec> / <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 행동력 감소 효과 면역</sec> 상태가 됩니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" /></sec>が増加します。
-        <sec>ラウンド経過に応じて効果量が減衰します。</sec>
-        <sec typ="cond">敵処置時</sec>、3ラウンドの間、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="6" r /></sec>が増加し、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />上記の減衰効果を含む攻撃力減少効果を解除</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>、自分は<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />AP減少効果免疫</sec> / <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />行動力減少効果免疫</sec>状態になります。
-      EN: |-
-        <sec typ="cond">At the start of combat</sec>, self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" /></sec> increases.
-        <sec>The effect value decays as rounds pass.</sec>
-        <sec typ="cond">When defeating an enemy</sec>, self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="6" r /></sec> increases for 3 rounds, and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes ATK decrease effects including the decay effect above</sec>.
-        <sec typ="cond">At the start of the round</sec>, self becomes immune to <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> AP decrease effects</sec> / <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> MOVE decrease effects</sec>.
-      TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="0" /></sec>增加。
-        <sec>隨著回合經過，效果數值會逐漸遞減。</sec>
-        <sec typ="cond">擊殺敵人時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="6" r /></sec>增加，持續3回合，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除包含上述遞減效果在內的攻擊力降低效果</sec>。
-        <sec typ="cond">回合開始時</sec>，自身會進入<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />免疫AP降低效果</sec> / <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />免疫行動力降低效果</sec>狀態。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -7562,27 +7516,6 @@ skills:
             base: 2
             per: 0.1
             chance: 1
-    desc:
-      KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="0" /></sec>가 증가합니다.
-        <sec typ="cond"><sec typ="note">분멸</sec> 사용 시</sec>, 범위 내 아군에게 <sec typ="dmg"><buff typ="FireATK_UP" /> 자신의 공격력에 비례한 화염 피해 <val idx="5" r /></sec>를 주고 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
-        <sec typ="cond">화염 저항 증가 상태가 아닌 아군인 경우</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="6" r /></sec>으로 세 배 증폭됩니다.
-        <sec typ="cond"><sec typ="note">분멸</sec>을 사용한 다음 라운드에는</sec> 추가로 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>가 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動回数 <val idx="0" /></sec>が増加します。
-        <sec typ="cond"><sec typ="note">焚滅</sec>使用時</sec>、範囲内の味方に<sec typ="dmg"><buff typ="FireATK_UP" />自分の攻撃力に比例した火炎ダメージ <val idx="5" r /></sec>を与え、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害な効果を解除</sec>します。
-        <sec typ="cond">火炎耐性増加状態ではない味方の場合</sec>、<sec typ="dmg"><buff typ="FireATK_UP" />ダメージ量 <val idx="6" r /></sec>へ3倍に増幅されます。
-        <sec typ="cond"><sec typ="note">焚滅</sec>を使用した次のラウンドには</sec>、追加で範囲内の味方の<sec typ="buff"><buff typ="AP_UP" />AP <val idx="8" /></sec>が増加します。
-      EN: |-
-        <sec typ="cond">At the start of the round</sec>, allies within range gain <sec typ="buff"><buff typ="Action_Number_Change_Up" /> Max Action Count <val idx="0" /></sec>.
-        <sec typ="cond">When using <sec typ="note">Incineration</sec></sec>, deals <sec typ="dmg"><buff typ="FireATK_UP" /> fire damage proportional to self's ATK <val idx="5" r /></sec> to allies within range and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes harmful effects</sec>.
-        <sec typ="cond">If the ally is not under Fire Resistance Increase</sec>, it is amplified threefold to <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="6" r /></sec>.
-        <sec typ="cond">On the round after using <sec typ="note">Incineration</sec></sec>, allies within range additionally gain <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>.
-      TC: |-
-        <sec typ="cond">回合開始時</sec>，增加範圍內我軍的<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動次數 <val idx="0" /></sec>。
-        <sec typ="cond">使用<sec typ="note">焚滅</sec>時</sec>，對範圍內我軍造成<sec typ="dmg"><buff typ="FireATK_UP" />與自身攻擊力成正比的火焰傷害 <val idx="5" r /></sec>，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除有害效果</sec>。
-        <sec typ="cond">若我軍未處於火焰抗性增加狀態</sec>，則會增幅為三倍的<sec typ="dmg"><buff typ="FireATK_UP" />傷害量 <val idx="6" r /></sec>。
-        <sec typ="cond">在使用<sec typ="note">焚滅</sec>後的下一回合</sec>，範圍內我軍會額外增加<sec typ="buff"><buff typ="AP_UP" />AP <val idx="8" /></sec>。
   "5":
     key: "5"
     icon: P.SuicideBomb
@@ -8030,27 +7963,6 @@ skills:
             base: 0
             per: 0
             chance: 1
-    desc:
-      KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 모든 적의 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="0" r /></sec>이 감소합니다.
-        해당 효과는 <sec typ="cond">화염 속성 피격 시</sec> 해제됩니다.
-        <sec typ="cond"><sec typ="note">분멸</sec>로 적 처치 시</sec>, 연쇄 폭발로 대상 주변에 <sec typ="dmg"><buff typ="FireATK_UP" /> 자신의 공격력에 비례한 화염 피해 <val idx="2" r /></sec>를 주고 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
-        <sec typ="cond">적 사망 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>이 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、全ての敵の<sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性 <val idx="0" r /></sec>が減少します。
-        この効果は<sec typ="cond">火炎属性攻撃を受けた時</sec>に解除されます。
-        <sec typ="cond"><sec typ="note">焚滅</sec>で敵を処置した時</sec>、連鎖爆発で対象の周囲に<sec typ="dmg"><buff typ="FireATK_UP" />自分の攻撃力に比例した火炎ダメージ <val idx="2" r /></sec>を与え、<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>します。
-        <sec typ="cond">敵死亡時</sec>、3ラウンドの間、自分の<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="5" r /></sec>が増加します。
-      EN: |-
-        <sec typ="cond">At the start of the round</sec>, all enemies' <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="0" r /></sec> decreases.
-        This effect is removed <sec typ="cond">when hit by Fire attacks</sec>.
-        <sec typ="cond">When defeating an enemy with <sec typ="note">Incineration</sec></sec>, a chain explosion deals <sec typ="dmg"><buff typ="FireATK_UP" /> fire damage proportional to self's ATK <val idx="2" r /></sec> around the target and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec>.
-        <sec typ="cond">On enemy death</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="5" r /></sec> increases for 3 rounds.
-      TC: |-
-        <sec typ="cond">回合開始時</sec>，所有敵軍的<sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性 <val idx="0" r /></sec>降低。
-        此效果會在<sec typ="cond">受到火焰屬性攻擊時</sec>解除。
-        <sec typ="cond">以<sec typ="note">焚滅</sec>擊殺敵人時</sec>，會引發連鎖爆炸，對目標周圍造成<sec typ="dmg"><buff typ="FireATK_UP" />與自身攻擊力成正比的火焰傷害 <val idx="2" r /></sec>，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除強化效果</sec>。
-        <sec typ="cond">敵人死亡時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="5" r /></sec>增加，持續3回合。
 dialogue:
   KR:
     "1":
@@ -8522,7 +8434,7 @@ skins:
   skins:
     - sid: 1
       artist: Yura Unni
-      price: 352
+      price: 192
       Spine: true
       SpineDamaged: false
       parts: 78

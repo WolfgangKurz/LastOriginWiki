@@ -541,6 +541,7 @@ source:
   - - Ev:Ev35:EV1-1EX
     - Ev:Ev35:EV2-4EX
   - - Ev:Ev36:EV2-4EX
+  - - Ev:Ev38:EV1-4EX
 oneoff: false
 oathable: false
 entryReqMap: []
@@ -1480,10 +1481,18 @@ skills:
             per: 0.01
             chance: 1
     desc:
-      KR: 직사 포격으로 목표 대상이 있는 열에 <dmg elem="physics" />를 줍니다.
-      JP: 直射砲撃で、目標対象がいる列に <dmg elem="physics" />を与えます。
-      EN: Delivers direct-fire bombardment to the column containing the target and deals <dmg elem="physics" />.
-      TC: 以直射砲擊對目標所在的那一列造成 <dmg elem="physics" />。
+      KR: |-
+        직사 포격으로 목표 대상이 있는 열에 <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 상태인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        direct fire by bombardment as target exists column to <dmg elem="physics" />.
+        target <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> if in the state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        ジイクスア 砲撃で 目標対象が ある 列に<dmg elem="physics" />を与えます。
+        対象が <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> 状態の場合、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+      TC: |-
+        直射 砲擊以 目標對象 有 行於 造成<dmg elem="physics" />。
+        目標 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> 若為狀態， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: CannonShotDelay
@@ -2354,10 +2363,26 @@ skills:
             per: 0
             chance: 0
     desc:
-      KR: 다음 라운드에 착탄하는 곡사 포격으로 목표 지점에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
-      JP: 次のラウンドで着弾する曲射砲撃で、目標地点に <sec typ="attr">防護無視</sec> <dmg elem="physics" />を与えます。
-      EN: Uses indirect-fire bombardment that lands on the next round to deal <sec typ="attr">ignore protection</sec> <dmg elem="physics" /> at the target point.
-      TC: 以次回合著彈的曲射砲擊對目標點造成 <sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+      KR: |-
+        다음 라운드에 착탄하는 곡사 포격으로 목표 지점에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        목표 지점 주변에는 <sec typ="dmg">피해가 25% 감소</sec>합니다.
+        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 상태인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">착탄 시</sec>, 대상의 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 효과를 무시</sec>하며 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>합니다.
+      EN: |-
+        next round to impacts curved fire by bombardment as target point to <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        target point nearbyin <sec typ="dmg">damage 25% decrease</sec>.
+        target <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> if in the state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">On impact</sec>, target's <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier / Damage Reduction effect and ignore</sec> and <sec typ="buff"><buff typ="REMOVE_BUFF" /> Counterattack removes the effect</sec>.
+      JP: |-
+        次 ラウンドに チアクトアンする グオクスア 砲撃で 目標地点に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        目標地点 周辺には <sec typ="dmg">ダメージが 25% 減少</sec>します。
+        対象が <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> 状態の場合、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">着弾時</sec>、 対象の <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / ダメージ 減少 効果を 無視</sec>し、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃 効果を 解除</sec>します。
+      TC: |-
+        下次 回合於 著彈 曲射 砲擊以 目標地點於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        目標地點 周圍於 <sec typ="dmg">傷害 25% 減少</sec>。
+        目標 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> 若為狀態， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">著彈時</sec>， 目標的 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 護盾 / 傷害 減少 效果 無視</sec>並 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊 效果 解除</sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3449,10 +3474,22 @@ skills:
             per: 0.036
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 대 보병 고폭탄을 장전해 자신의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、対歩兵榴弾を装填し、自身の <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ量 <val idx="0" r /></sec>が増加します。
-      EN: <sec typ="cond">At the start of the round</sec>, loads anti-infantry high-explosive shells and increases own <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage against Light units <val idx="0" r /></sec>.
-      TC: <sec typ="cond">回合開始時</sec>，裝填反步兵高爆彈，使自身的 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害量 <val idx="0" r /></sec>增加。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 대 보병 고폭탄을 장전해 자신의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, 경장형 적 수에 따라 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" r /></sec>가 영구히 증가합니다.
+        <sec><sec typ="cond">경장형 적</sec>에 대해, 액티브 스킬의 <sec typ="note">피해량 증가 효과 발동 조건</sec>을 무시할 수 있습니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, anti infantry high-explosive shell loading remove own <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">At battle start</sec>, Light-type enemy depending on the number of own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="2" r /></sec> permanent hit increases.
+        <sec><sec typ="cond">Light-type enemy</sec> to against, active skill of <sec typ="note">damage increase effect and trigger condition</sec> ignore can number exists.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 ドエ ブオブヨン 高爆弾を 装填して 自身の <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">戦闘開始時</sec>、 軽装型 敵 数に応じて 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="2" r /></sec>が 永久ハイ 増加します。
+        <sec><sec typ="cond">軽装型 敵</sec>に ドエして、 アクティブ スキルの <sec typ="note">ダメージ量 増加 効果 ブアルドオン 条件</sec>を 無視できます。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 對 Bobyeong 高爆彈 裝填 自身的 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害 <val idx="0" r /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec>， 輕裝型 敵人 依數量 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="2" r /></sec> 永久命中 增加。
+        <sec><sec typ="cond">輕裝型 敵人</sec>於 對， 主動 技能的 <sec typ="note">傷害量 增加 效果 發動 條件</sec> 無視可以。</sec>
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -3806,10 +3843,22 @@ skills:
             per: 0.01
             chance: 1
     desc:
-      KR: 초반 압도를 목적으로 <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
-      JP: 序盤を圧倒することを目的に、<sec typ="cond">戦闘開始時</sec>、自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
-      EN: To dominate early, <sec typ="cond">at battle start</sec> own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
-      TC: 為了在前期取得壓制，<sec typ="cond">戰鬥開始時</sec>自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>會增加。
+      KR: |-
+        초반 압도를 목적으로 <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond"><equip uid="Sub_FCS" /> 장착 시</sec>, 상기 효과가 <sec typ="buff"><buff typ="AP_UP" /> 2라운드 개시 시에도 발동</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec>가 증가합니다.
+      EN: |-
+        super Ban Ap also Mok enemy as <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond"><equip uid="Sub_FCS" /> when equipped</sec>, above effect and <sec typ="buff"><buff typ="AP_UP" /> 2At round start also trigger</sec>.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="5" r /></sec> increases.
+      JP: |-
+        チオブアン アプもを ムオク敵で <sec typ="cond">戦闘開始時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond"><equip uid="Sub_FCS" /> ジアンチアク 時</sec>、 上記 効果が <sec typ="buff"><buff typ="AP_UP" /> 2ラウンド開始時にも ブアルドオン</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="5" r /></sec>が増加します。
+      TC: |-
+        Choban 前也 Mok敵人以 <sec typ="cond">戰鬥開始時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        <sec typ="cond"><equip uid="Sub_FCS" /> 裝備 時</sec>， 上述 效果 <sec typ="buff"><buff typ="AP_UP" /> 2回合開始時於也 發動</sec>。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="5" r /></sec>增加。
   "5":
     key: "5"
     icon: P.CannonShotDelay
@@ -4338,10 +4387,30 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: <sec typ="cond">전투 개시 시</sec>, 1라운드 동안 <sec typ="note">대 보병 고폭탄</sec> / <sec typ="note">속전 준비</sec>로 인한 지속 효과 수치가 <sec typ="buff">두 배로 증폭</sec>됩니다.
-      JP: <sec typ="cond">戦闘開始時</sec>、1ラウンドの間 <sec typ="note">対歩兵榴弾</sec> / <sec typ="note">速戦準備</sec>による持続効果数値が <sec typ="buff">2倍に増幅</sec>されます。
-      EN: <sec typ="cond">At battle start</sec>, for 1 round the ongoing effect values from <sec typ="note">Anti-Infantry High-Explosive Bomb</sec> / <sec typ="note">Prepare for Blitz Attack</sec> are <sec typ="buff">doubled</sec>.
-      TC: <sec typ="cond">戰鬥開始時</sec>，在 1 回合內，<sec typ="note">反步兵高爆彈</sec> / <sec typ="note">速戰準備</sec>造成的持續效果數值會 <sec typ="buff">變為 2 倍</sec>。
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 1라운드 동안 <sec typ="note">대 보병 고폭탄</sec> / <sec typ="note">속전 준비</sec>로 인한 지속 효과 수치가 <sec typ="buff">두 배로 증폭</sec>됩니다.
+        <sec>해당 효과는 아군 AGS 수에 따라 지속 라운드가 증가합니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">상기 효과가 있을 경우</sec>, 자신의 <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="9" r /></sec>가 영구히 증가합니다.
+        <sec typ="note">175mm 직사포</sec>의 소모 AP가 2 감소합니다.
+        <sec typ="note">175mm 곡사포</sec>가 더 이상 위치에 따라 <sec typ="dmg">피해량이 감소하지 않고</sec>, <sec typ="note">발사한 라운드 종료 즉시 착탄</sec>합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, 1 round <sec typ="note">anti infantry high-explosive shell</sec> / <sec typ="note">inside wire ready</sec> as caused by continuous effect and value <sec typ="buff">doubled</sec>.
+        <sec>the effect allies AGS depending on the number of duration increases.</sec>
+        <sec typ="cond">At round start</sec> <sec typ="cond">above effect and if present</sec>, own <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="9" r /></sec> permanent hit increases.
+        <sec typ="note">175mm direct fire Po</sec> of consume AP 2 decreases.
+        <sec typ="note">175mm curved fire Po</sec> more or more depending on position <sec typ="dmg">damage decrease whether without</sec>, <sec typ="note">launch one round end immediately when Chak round</sec>.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 1ラウンドの間 <sec typ="note">ドエ ブオブヨン 高爆弾</sec> / <sec typ="note">スオク前 ジウンブイ</sec>で であるした 持続 効果 数値が <sec typ="buff">2倍に増幅</sec>されます。
+        <sec>該当 効果は 味方 AGS 数に応じて 持続 ラウンドが増加します。</sec>
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">上記 効果が 存在する場合</sec>、 自身の <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="9" r /></sec>が 永久ハイ 増加します。
+        <sec typ="note">175mm ジイクスアプオ</sec>の 消費 APが 2 減少します。
+        <sec typ="note">175mm グオクスアプオ</sec>が ドオ 以上 位置に応じて <sec typ="dmg">ダメージ量が 減少ハアジイ アし</sec>、 <sec typ="note">発射した ラウンド ジオンルヨ ジウク時 チアクトアン</sec>します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 1回合內 <sec typ="note">對 Bobyeong 高爆彈</sec> / <sec typ="note">屬前 準備</sec>以 為 持續 效果 數值 <sec typ="buff">增幅為2倍</sec>。
+        <sec>該 效果 我方 AGS 依數量 持續 回合增加。</sec>
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">上述 效果 存在時</sec>， 自身的 <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="9" r /></sec> 永久命中 增加。
+        <sec typ="note">175mm 直射炮</sec>的 消耗 AP 2 減少。
+        <sec typ="note">175mm 曲射炮</sec> 更多 以上 依位置 <sec typ="dmg">傷害量 減少下至 不並</sec>， <sec typ="note">發射 回合 結束 解除uk時 著彈</sec>。
   "7":
     key: "7"
     icon: CannonShotDelay
@@ -5982,10 +6051,26 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: 다음 라운드에 착탄하는 곡사 포격으로 목표 지점에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
-      JP: 次のラウンドで着弾する曲射砲撃で、目標地点に <sec typ="attr">防護無視</sec> <dmg elem="physics" />を与えます。
-      EN: Uses indirect-fire bombardment that lands on the next round to deal <sec typ="attr">ignore protection</sec> <dmg elem="physics" /> at the target point.
-      TC: 以次回合著彈的曲射砲擊對目標點造成 <sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+      KR: |-
+        다음 라운드에 착탄하는 곡사 포격으로 목표 지점에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        목표 지점 주변에는 <sec typ="dmg">피해가 25% 감소</sec>합니다.
+        <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 상태인 대상에게는 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가하며, 대상의 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 효과를 무시</sec>합니다.
+        <sec typ="cond">착탄 시</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 대상의 반격 효과를 해제</sec>합니다.
+      EN: |-
+        next round to impacts curved fire by bombardment as target point to <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        target point nearbyin <sec typ="dmg">damage 25% decrease</sec>.
+        <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> in the state to the target <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases and target's <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier / Damage Reduction effect and ignore</sec>.
+        <sec typ="cond">On impact</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> target's Counterattack removes the effect</sec>.
+      JP: |-
+        次 ラウンドに チアクトアンする グオクスア 砲撃で 目標地点に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        目標地点 周辺には <sec typ="dmg">ダメージが 25% 減少</sec>します。
+        <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> 状態の 対象には <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が 増加し、 対象の <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / ダメージ 減少 効果を 無視</sec>します。
+        <sec typ="cond">着弾時</sec>、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 対象の 反撃 効果を 解除</sec>します。
+      TC: |-
+        下次 回合於 著彈 曲射 砲擊以 目標地點於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        目標地點 周圍於 <sec typ="dmg">傷害 25% 減少</sec>。
+        <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> 處於狀態的 對目標 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec> 增加，並 目標的 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 護盾 / 傷害 減少 效果 無視</sec>。
+        <sec typ="cond">著彈時</sec>， <sec typ="buff"><buff typ="REMOVE_BUFF" /> 目標的 反擊 效果 解除</sec>。
   F1:
     key: F1
     icon: CannonShotWide
@@ -6907,10 +6992,18 @@ skills:
             per: 0.01
             chance: 1
     desc:
-      KR: 직사 포격으로 목표 대상이 있는 열에 <dmg elem="physics" />를 줍니다.
-      JP: 直射砲撃で、目標対象がいる列に <dmg elem="physics" />を与えます。
-      EN: Delivers direct-fire bombardment to the column containing the target and deals <dmg elem="physics" />.
-      TC: 以直射砲擊對目標所在的那一列造成 <dmg elem="physics" />。
+      KR: |-
+        직사 포격으로 목표 대상이 있는 열에 <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 상태인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        direct fire by bombardment as target exists column to <dmg elem="physics" />.
+        target <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> if in the state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        ジイクスア 砲撃で 目標対象が ある 列に<dmg elem="physics" />を与えます。
+        対象が <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> 状態の場合、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+      TC: |-
+        直射 砲擊以 目標對象 有 行於 造成<dmg elem="physics" />。
+        目標 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> 若為狀態， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   F2:
     key: F2
     icon: CannonShotDelay
@@ -7781,10 +7874,22 @@ skills:
             per: 0
             chance: 0
     desc:
-      KR: <sec typ="cond">라운드 종료 시</sec> 착탄하는 곡사 포격으로 목표 지점에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
-      JP: <sec typ="cond">ラウンド終了時</sec>に着弾する曲射砲撃で、目標地点に <sec typ="attr">防護無視</sec> <dmg elem="physics" />を与えます。
-      EN: Uses indirect-fire bombardment that lands at the end of the round to deal <sec typ="attr">ignore protection</sec> <dmg elem="physics" /> at the target point.
-      TC: <sec typ="cond">回合結束時</sec>著彈的曲射砲擊對目標點造成 <sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+      KR: |-
+        <sec typ="cond">라운드 종료 시</sec> 착탄하는 곡사 포격으로 목표 지점에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 상태인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        착탄 시, 대상의 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 효과를 무시</sec>하며 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>합니다.
+      EN: |-
+        <sec typ="cond">round end when</sec> impacts curved fire by bombardment as target point to <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        target <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> if in the state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        On impact, target's <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier / Damage Reduction effect and ignore</sec> and <sec typ="buff"><buff typ="REMOVE_BUFF" /> Counterattack removes the effect</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド ジオンルヨ 時</sec> チアクトアンする グオクスア 砲撃で 目標地点に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        対象が <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> 状態の場合、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        着弾時、 対象の <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / ダメージ 減少 効果を 無視</sec>し、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃 効果を 解除</sec>します。
+      TC: |-
+        <sec typ="cond">回合 結束 時</sec> 著彈 曲射 砲擊以 目標地點於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        目標 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> 若為狀態， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        著彈時， 目標的 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 護盾 / 傷害 減少 效果 無視</sec>並 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊 效果 解除</sec>。
   F7:
     key: F7
     icon: CannonShotDelay
@@ -9426,8 +9531,8 @@ skills:
             chance: 1
     desc:
       KR: "0"
-      JP: "0"
       EN: "0"
+      JP: "0"
       TC: "0"
 dialogue:
   KR:

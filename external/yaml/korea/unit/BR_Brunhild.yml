@@ -6160,10 +6160,22 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: 적에게 불길을 쏟아내어 대상에게 <dmg elem="fire" />를 줍니다.
-      JP: 敵に炎を浴びせて対象に <dmg elem="fire" />を与えます。
-      EN: Unleashes flames on the enemy and deals <dmg elem="fire" /> to the target.
-      TC: 向敵人傾瀉烈焰，對目標造成 <dmg elem="fire" />。
+      KR: |-
+        적에게 불길을 쏟아내어 대상에게 <dmg elem="fire" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상이 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 증가하고 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여합니다
+        <sec typ="cond">치명타 시</sec>, 자신의 <sec typ="dmg"><buff typ="FireATK_UP" /> 공격력 <val idx="3" r signless /> 고정 화염 피해</sec>를 주고 대상에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 지속 화염 피해 효과를 해제</sec>합니다.
+      EN: |-
+        to the enemy no road/path Ssota within uh to the target with <dmg elem="fire" />.
+        <sec typ="cond">On hit</sec>, 2 rounds target <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increases and <sec typ="buff"><buff typ="MARKING" /> Mark</sec> grants
+        <sec typ="cond">On critical hit</sec>, own <sec typ="dmg"><buff typ="FireATK_UP" /> Attack <val idx="3" r signless /> fixed Fire damage</sec> deals and to the target enemy applied <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Fire damage over time removes the effect</sec>.
+      JP: |-
+        敵に ブウルグイルを ッスオトア内オ 対象に<dmg elem="fire" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象が <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec>が 増加し、 <sec typ="buff"><buff typ="MARKING" /> 標的</sec>を付与します
+        <sec typ="cond">クリティカル時</sec>、 自身の <sec typ="dmg"><buff typ="FireATK_UP" /> 攻撃力 <val idx="3" r signless /> 固定火炎ダメージ</sec>を 与え、 対象に 適用された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 持続火炎ダメージ 効果を 解除</sec>します。
+      TC: |-
+        敵人給 附加lgil Ssota內語 對目標 造成<dmg elem="fire" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec> 增加，並 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>賦予
+        <sec typ="cond">暴擊時</sec>， 自身的 <sec typ="dmg"><buff typ="FireATK_UP" /> 攻擊力 <val idx="3" r signless /> 固定火焰傷害</sec> 造成，並 對目標 套用已 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 持續火焰傷害 效果 解除</sec>。
   "2":
     key: "2"
     icon: Vortex
@@ -12282,10 +12294,22 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: 곁에 있는 늑대를 보내 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 줍니다.
-      JP: そばにいる狼を送り、指定範囲に <sec typ="attr">防護無視</sec> <dmg elem="fire" />を与えます。
-      EN: Sends the wolf beside her to deal <sec typ="attr">ignore protection</sec> <dmg elem="fire" /> to the designated area.
-      TC: 派遣身旁的狼，對指定範圍造成 <sec typ="attr">無視保護</sec> <dmg elem="fire" />。
+      KR: |-
+        곁에 있는 늑대를 보내 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="0" r inv /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="3" r /></sec>가 감소합니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가하고 대상에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 지속 화염 피해 효과를 해제</sec>합니다.
+      EN: |-
+        Gyeot to exists Neuk anti Bo within to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="fire" />.
+        <sec typ="cond">On hit</sec>, 2 rounds, target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="0" r inv /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="3" r /></sec> decreases.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="4" r /></sec> increases and to the target enemy applied <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Fire damage over time removes the effect</sec>.
+      JP: |-
+        グヨトに ある ンウクドエを ブオ内 指定範囲に<sec typ="attr">保護無視</sec><dmg elem="fire" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="0" r inv /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="3" r /></sec>が減少します。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="FireATK_UP" /> ダメージ量 <val idx="4" r /></sec>が 増加し、 対象に 適用された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 持続火炎ダメージ 効果を 解除</sec>します。
+      TC: |-
+        Gyeot於 有 Neuk帶 Bo內 指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="fire" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標的 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="0" r inv /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="3" r /></sec>減少。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="FireATK_UP" /> 傷害量 <val idx="4" r /></sec> 增加，並 對目標 套用已 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 持續火焰傷害 效果 解除</sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -12909,10 +12933,38 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が増加します。
-      EN: <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increases.
-      TC: <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>會增加。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 기동형 아군의 공격을 지원</sec>합니다.
+        <sec typ="cond"><buff typ="FireDMG_DOT" /> 지속 화염 피해 상태</sec>인 아군은 <sec>조건을 무시</sec>하고 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec>가 증가하고 모든 적에게 <sec typ="buff"><cmt t="바프로기"><import name="BRUNHILD_3" p="7" /></cmt>를 1중첩 누적</sec>합니다.
+        <define name="BRUNHILD_3">
+        <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val param="$1" signless /> 지속 화염 피해</sec>
+        </define>
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Mobile-type allies' supports the attack</sec>.
+        <sec typ="cond"><buff typ="FireDMG_DOT" /> Fire damage over time state</sec> is allies <sec>condition ignore</sec> and <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports the attack</sec>.
+        <sec typ="cond">At round start</sec>, 3 rounds own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="6" r /></sec> increases and all enemiesto <sec typ="buff"><cmt t="Vafrogi"><import name="BRUNHILD_3" p="7" /></cmt> 1stack who enemy</sec>.
+        <define name="BRUNHILD_3">
+        <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val param="$1" signless /> Fire damage over time</sec>
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 機動型 味方の 攻撃を 支援</sec>します。
+        <sec typ="cond"><buff typ="FireDMG_DOT" /> 持続火炎ダメージ 状態</sec>である 味方は <sec>条件を 無視</sec>し、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃を 支援</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 3ラウンドの間 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec>が 増加し、 すべての敵に <sec typ="buff"><cmt t="ブアプウで機"><import name="BRUNHILD_3" p="7" /></cmt>を 1重複 ンウ敵</sec>します。
+        <define name="BRUNHILD_3">
+        <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val param="$1" signless /> 持続火炎ダメージ</sec>
+        </define>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 機動型 我方的 攻擊 支援</sec>。
+        <sec typ="cond"><buff typ="FireDMG_DOT" /> 持續火焰傷害 狀態</sec>為 我方 <sec>條件 無視</sec>並 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻擊 支援</sec>。
+        <sec typ="cond">回合開始時</sec>， 3回合內 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec> 增加，並 所有敵人給 <sec typ="buff"><cmt t="Bapeu以台"><import name="BRUNHILD_3" p="7" /></cmt> 1疊加 Nu敵人</sec>。
+        <define name="BRUNHILD_3">
+        <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val param="$1" signless /> 持續火焰傷害</sec>
+        </define>
   "4":
     key: "4"
     icon: P.SetBarricade
@@ -13347,10 +13399,22 @@ skills:
             per: 0.005
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군에게 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 지속 화염 피해</sec>를 입히고 <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="5" r /></sec>를 증가시킵니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、範囲内の味方に <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 継続火炎ダメージ</sec>を与え、<sec typ="buff"><buff typ="ICERES_UP" /> 冷気抵抗 <val idx="5" r /></sec>を増加させます。
-      EN: <sec typ="cond">At the start of the round</sec>, deals <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> ongoing fire damage</sec> to allies in range and increases <sec typ="buff"><buff typ="ICERES_UP" /> Cold Resistance <val idx="5" r /></sec>.
-      TC: <sec typ="cond">回合開始時</sec>，對範圍內友軍施加 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 持續火焰傷害</sec>，並提升 <sec typ="buff"><buff typ="ICERES_UP" /> 冷氣抗性 <val idx="5" r /></sec>。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군에게 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 지속 화염 피해</sec>를 입히고 <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="5" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신과 인접한 아군이 없을 경우</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" slot="3" /></sec>이(가) 증가하고 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec>가 활성화됩니다.
+        <sec typ="cond">라운드 개시 시</sec> 자신과 인접한 아군 1기당, 자신의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="10" slot="3" r /></sec>가 감소하고 범위 내 기동형 아군의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="9" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range to allies <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> Fire damage over time</sec> deals and <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance <val idx="5" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self and adjacent allies if absent</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" slot="3" /></sec>() increases and <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> is activated.
+        <sec typ="cond">At round start</sec> self and adjacent allies 1 unit per, own <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="10" slot="3" r /></sec> decreases and within range Mobile-type allies' <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="9" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方に <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 持続火炎ダメージ</sec>を 与えし <sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性 <val idx="5" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身と 隣接する 味方が 存在しない場合</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" slot="3" /></sec>が 増加し、 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視</sec>が 有効化されます。
+        <sec typ="cond">ラウンド開始時</sec> 自身と 隣接する 味方 1機ごと、 自身の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="10" slot="3" r /></sec>が 減少し、 範囲内 機動型 味方の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="9" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方給 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 持續火焰傷害</sec> 造成並 <sec typ="buff"><buff typ="ICERES_UP" /> 冰冷抗性 <val idx="5" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身與 相鄰的 我方 不存在時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" slot="3" /></sec> 增加，並 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec> 啟用。
+        <sec typ="cond">回合開始時</sec> 自身與 相鄰的 我方 1台每， 自身的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="10" slot="3" r /></sec> 減少，並 範圍內 機動型 我方的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="9" r /></sec>增加。
   "5":
     key: "5"
     icon: P.Wave
@@ -13444,10 +13508,18 @@ skills:
             per: 50
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 모든 적에게 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 지속 화염 피해</sec>를 부여합니다. <sec>(최대 5중첩)</sec>
-      JP: <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間すべての敵に <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 継続火炎ダメージ</sec>を付与します。<sec>(最大5重複)</sec>
-      EN: <sec typ="cond">At the start of the round</sec>, applies <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> ongoing fire damage</sec> to all enemies for 3 rounds. <sec>(up to 5 stacks)</sec>
-      TC: <sec typ="cond">回合開始時</sec>，在 3 回合內對所有敵人施加 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 持續火焰傷害</sec>。<sec>（最多 5 層）</sec>
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 모든 적에게 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 지속 화염 피해</sec>를 부여합니다. <sec>(최대 5중첩)</sec>
+        액티브 스킬의 <sec typ="cond">치명타 시</sec> 효과 수치는 적중 대상에게 적용된 <sec typ="note">바프로기</sec> 중첩당 10% 증폭되며, 5중첩 시에는 50% 추가로 가산되어 최대 두 배로 증폭됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, 3 rounds all enemiesto <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> Fire damage over time</sec> grants. <sec>(up to 5stack)</sec>
+        active skill of <sec typ="cond">On critical hit</sec> effect and value Accuracy to the target enemy applied <sec typ="note">Vafrogi</sec> stackper 10% amplified and, 5stack whenin 50% additionally San becomes up to doubled.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 3ラウンドの間 すべての敵に <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 持続火炎ダメージ</sec>を付与します。 <sec>(最大 5重複)</sec>
+        アクティブ スキルの <sec typ="cond">クリティカル時</sec> 効果 数値は 命中対象に 適用された <sec typ="note">ブアプウで機</sec> 重複ごと 10% 増幅になり、、 5重複 時には 50% 追加で がスアンになり 最大 2倍に増幅されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 3回合內 所有敵人給 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 持續火焰傷害</sec>賦予。 <sec>(最大 5疊加)</sec>
+        主動 技能的 <sec typ="cond">暴擊時</sec> 效果 數值 對命中目標 套用已 <sec typ="note">Bapeu以台</sec> 疊加每 10% 增幅變為，且 5疊加 時於 50% 額外 San變為 最大 增幅為2倍。
 dialogue:
   KR:
     "1":

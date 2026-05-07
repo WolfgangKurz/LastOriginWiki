@@ -2797,18 +2797,18 @@ skills:
         조준 사격을 통해 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec> 증가 효과를 부여합니다.
         <sec typ="cond">적중 대상이 지원기인 경우</sec>, 해당 라운드 동안 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 상태로 만듭니다.
-      JP: |-
-        照準射撃を通して単一対象に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間、対象に<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>増加効果を付与します。
-        <sec typ="cond">命中対象が支援機の場合</sec>、そのラウンドの間<sec typ="buff"><buff typ="SEAL_SKILL" />スキル使用不可</sec>状態にします。
       EN: |-
-        Uses Aimed Fire to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to a single target.
-        <sec typ="cond">On hit</sec>, applies <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="1" r /></sec> increase effects to the target for 2 rounds.
-        <sec typ="cond">If the hit target is a Supporter</sec>, they become <sec typ="buff"><buff typ="SEAL_SKILL" /> Skill Disabled</sec> for that round.
+        aimed shooting through to a single target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 2 rounds to the target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increase grants the effect.
+        <sec typ="cond">Hit target Supporterif</sec>, each round <sec typ="buff"><buff typ="SEAL_SKILL" /> skill cannot use</sec> inflicts.
+      JP: |-
+        照準 射撃を 通じて 単一対象へ <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象に <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec> 増加 効果を付与します。
+        <sec typ="cond">命中対象が 支援機の場合</sec>、 該当 ラウンド間 <sec typ="buff"><buff typ="SEAL_SKILL" /> スキル スアヨン 不可</sec> 状態にします。
       TC: |-
-        透過瞄準射擊對單一目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，在2回合內對目標施加<sec typ="buff"><buff typ="MARKING" />標記</sec>／<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="1" r /></sec>增加效果。
-        <sec typ="cond">若命中目標為支援機</sec>，則其在該回合內陷入<sec typ="buff"><buff typ="SEAL_SKILL" />無法使用技能</sec>狀態。
+        瞄準 射擊 透過 單一目標給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 2回合內 對目標 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec> 增加 賦予效果。
+        <sec typ="cond">命中目標為 支援機若為</sec>， 該 回合內 <sec typ="buff"><buff typ="SEAL_SKILL" /> 技能 使用 不可</sec> 使其進入狀態。
   "2":
     key: "2"
     icon: TeamAtkBuff
@@ -3051,16 +3051,16 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">스킬 사용 시</sec>, 기동형 바이오로이드 아군에게 출격 지시를 내려 3라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec>를 증가시킵니다. (최대 3중첩)
-        <sec typ="cond"><cmt t="스카이 나이츠">$$SkyKnight:?$</cmt> 소속 전투원인 경우</sec>, 추가로 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상 HP 반비례 피해량 <val idx="4" r /></sec>가 증가하는 효과를 부여합니다.
-      JP: |-
-        <sec typ="cond">スキル使用時</sec>、機動型バイオロイドの味方に出撃指示を出し、3ラウンドの間<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="3" r /></sec>を増加させます。(最大3スタック)
-        <sec typ="cond"><cmt t="スカイナイツ">$$SkyKnight:?$</cmt>所属戦闘員の場合</sec>、追加で<sec typ="dmg"><buff typ="DamageAmp_Opp" />対象HP反比例ダメージ<val idx="4" r /></sec>が増加する効果を付与します。
+        <sec typ="cond"><cmt t="스카이 나이츠"><import name="SkyKnight" /></cmt> 소속 전투원인 경우</sec>, 추가로 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상 HP 반비례 피해량 <val idx="4" r /></sec>가 증가하는 효과를 부여합니다.
       EN: |-
-        When using the skill, orders Air Bioroid allies to sortie, increasing <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="3" r /></sec> for 3 rounds. (Max 3 stacks)
-        <sec typ="cond">If the combatant belongs to <cmt t="Sky Knights">$$SkyKnight:?$</cmt></sec>, additionally grants a <sec typ="dmg"><buff typ="DamageAmp_Opp" /> damage that scales inversely with the target's HP <val idx="4" r /></sec> effect.
+        <sec typ="cond">When using the skill</sec>, Mobile-type Bioroid to allies sortie whether when issues 3 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="3" r /></sec> increases. (up to 3stack)
+        <sec typ="cond"><cmt t="Sky Knights"><import name="SkyKnight" /></cmt> affiliated combatantif</sec>, additionally <sec typ="dmg"><buff typ="DamageAmp_Opp" /> damage inversely proportional to target HP <val idx="4" r /></sec> increase grants the effect.
+      JP: |-
+        <sec typ="cond">スキル使用時</sec>、 機動型 バイオロイド 味方に 出撃指示を下し 3ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec>を増加させます。 (最大 3重複)
+        <sec typ="cond"><cmt t="スカイナイツ"><import name="SkyKnight" /></cmt> 所属 戦闘員の場合</sec>、 追加で <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 対象HPに反比例するダメージ量 <val idx="4" r /></sec>が 増加する 効果を付与します。
       TC: |-
-        於<sec typ="cond">使用技能時</sec>，對機動型生化人我軍下達出擊指示，使其在3回合內<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>／<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="3" r /></sec>提升。(最多3層)
-        <sec typ="cond">若為<cmt t="蒼天騎士">$$SkyKnight:?$</cmt>所屬戰鬥員</sec>，則額外賦予<sec typ="dmg"><buff typ="DamageAmp_Opp" />與目標HP成反比的傷害<val idx="4" r /></sec>增加效果。
+        <sec typ="cond">使用技能時</sec>， 機動型 生化人 我方給 下達出擊指示，使 3回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec>使其增加。 (最大 3疊加)
+        <sec typ="cond"><cmt t="天空騎士"><import name="SkyKnight" /></cmt> 所屬 戰鬥員若為</sec>， 額外 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 與目標HP成反比的傷害量 <val idx="4" r /></sec> 增加 賦予效果。
   "3":
     key: "3"
     icon: P.Command
@@ -3370,19 +3370,19 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 기동형 바이오로이드 아군의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>를 증가시킵니다.
         <sec typ="cond">스킬 사용 시</sec>, 범위 내 기동형 바이오로이드 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>을(를) 증가시킵니다.
-        <sec><cmt t="스카이 나이츠">$$SkyKnight:?$</cmt> 소속 전투원에게는 효과가 두 배로 증폭됩니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の機動型バイオロイドの味方の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>を増加させます。
-        <sec typ="cond">スキル使用時</sec>、範囲内の機動型バイオロイドの味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="5" /></sec>を増加させます。
-        <sec><cmt t="スカイナイツ">$$SkyKnight:?$</cmt>所属戦闘員には効果が2倍に増幅されます。</sec>
+        <sec><cmt t="스카이 나이츠"><import name="SkyKnight" /></cmt> 소속 전투원에게는 효과가 두 배로 증폭됩니다.</sec>
       EN: |-
-        At round start, increases <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="1" r /></sec> of allied Air Bioroids within range.
-        When using the skill, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> of allied Air Bioroids within range.
-        <sec>The effect is doubled for <cmt t="Sky Knights">$$SkyKnight:?$</cmt> combatants.</sec>
+        <sec typ="cond">At round start</sec>, within range Mobile-type Bioroid allies' <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> increases.
+        <sec typ="cond">When using the skill</sec>, within range Mobile-type Bioroid allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> increases.
+        <sec><cmt t="Sky Knights"><import name="SkyKnight" /></cmt> affiliated combatantto the effect is doubled amplification.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 機動型 バイオロイド 味方の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">スキル使用時</sec>、 範囲内 機動型 バイオロイド 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>を増加させます。
+        <sec><cmt t="スカイナイツ"><import name="SkyKnight" /></cmt> 所属 戦闘員には 効果が2倍で 増幅されます。</sec>
       TC: |-
-        於<sec typ="cond">回合開始時</sec>，增加範圍內機動型生化人我軍的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec>／<sec typ="buff"><buff typ="AP_UP" />行動點數<val idx="1" r /></sec>。
-        於<sec typ="cond">使用技能時</sec>，增加範圍內機動型生化人我軍的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="5" /></sec>。
-        <sec><cmt t="蒼天騎士">$$SkyKnight:?$</cmt>所屬戰鬥員的效果會加倍。</sec>
+        <sec typ="cond">回合開始時</sec>， 範圍內 機動型 生化人 我方的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>使其增加。
+        <sec typ="cond">使用技能時</sec>， 範圍內 機動型 生化人 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>使其增加。
+        <sec><cmt t="天空騎士"><import name="SkyKnight" /></cmt> 所屬 戰鬥員給 效果變為2倍以 增幅。</sec>
   "4":
     key: "4"
     icon: P.Scan
@@ -3553,20 +3553,20 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec>가 증가합니다.
-        <sec typ="cond">공격 적중 시</sec>, <sec typ="cond">자신이 전열에 위치</sec> / <sec typ="cond">자신이 후열에 위치</sec>하고 <sec typ="cond">스쿼드 내 <char uid="BR_Lindwurm" />이 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 대 장갑 미사일</sec> 스킬 협동 공격을 유도</sec>합니다. 
-        <sec typ="cond">공격 적중 시</sec>, <sec typ="cond">자신이 중열에 위치</sec>하고 <sec typ="cond">스쿼드 내 <char uid="BR_Harpy" />가 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">풀 버스트</sec> 스킬 협동 공격을 유도</sec>합니다. 
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間、自分の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="1" r /></sec>が増加します。
-        <sec typ="cond">攻撃命中時</sec>、<sec typ="cond">自分が前列に位置し</sec> / <sec typ="cond">自分が後列に位置し</sec>、<sec typ="cond">分隊内に<char uid="BR_Lindwurm" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25対装甲ミサイル</sec>スキルの協同攻撃を誘導</sec>します。 
-        <sec typ="cond">攻撃命中時</sec>、<sec typ="cond">自分が中列に位置し</sec>、<sec typ="cond">分隊内に<char uid="BR_Harpy" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">フルバースト</sec>スキルの協同攻撃を誘導</sec>します。 
+        <sec typ="cond">공격 적중 시</sec> <sec typ="cond">자신이 전/후열에 위치</sec>하고 <sec typ="cond">스쿼드 내 <char uid="BR_Lindwurm" />이 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 대 장갑 미사일</sec> 스킬 협동 공격을 유도</sec>합니다.
+        <sec typ="cond">공격 적중 시</sec> <sec typ="cond">자신이 중열에 위치</sec>하고 <sec typ="cond">스쿼드 내 <char uid="BR_Harpy" />가 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">풀 버스트</sec> 스킬 협동 공격을 유도</sec>합니다.
       EN: |-
-        At round start, self’s <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="1" r /></sec> increases for 2 rounds.
-        <sec typ="cond">When attack hits</sec>, if <sec typ="cond">self is in the front line</sec> / <sec typ="cond">if self is in the rear line</sec> and <sec typ="cond"><char uid="BR_Lindwurm" /> is in the squad</sec>, it triggers a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> co-op attack with the <sec typ="note">X-25 Anti-Armor Missile</sec> skill</sec>. 
-        <sec typ="cond">When attack hits</sec>, if <sec typ="cond">self is in the middle line</sec> and <sec typ="cond"><char uid="BR_Harpy" /> is in the squad</sec>, it triggers a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> co-op attack with the <sec typ="note">Full Burst</sec> skill</sec>. 
+        <sec typ="cond">At round start</sec>, 2 rounds own <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> increases.
+        <sec typ="cond">On hit</sec> <sec typ="cond">self wire/back row to position</sec> and <sec typ="cond">in squad <char uid="BR_Lindwurm" /> if present</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 anti armor missile</sec> skill coordinated attack trigger</sec>.
+        <sec typ="cond">On hit</sec> <sec typ="cond">self middle row to position</sec> and <sec typ="cond">in squad <char uid="BR_Harpy" /> if present</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Full Burst</sec> skill coordinated attack trigger</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 2ラウンドの間 自身の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">攻撃命中時</sec> <sec typ="cond">自身が 前/後列に 位置</sec>し、 <sec typ="cond">スクワッド 内 <char uid="BR_Lindwurm" />が 存在する場合</sec>、 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 ドエ ジアングアプ ミサイル</sec> スキル 協同攻撃を 誘導</sec>します。
+        <sec typ="cond">攻撃命中時</sec> <sec typ="cond">自身が 中列に 位置</sec>し、 <sec typ="cond">スクワッド 内 <char uid="BR_Harpy" />が 存在する場合</sec>、 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">フルバースト</sec> スキル 協同攻撃を 誘導</sec>します。
       TC: |-
-        於<sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec>／<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="1" r /></sec>在2回合內提升。
-        <sec typ="cond">攻擊命中時</sec>，若<sec typ="cond">自身位於前列</sec> / <sec typ="cond">自身位於後列</sec>且<sec typ="cond">隊伍內有<char uid="BR_Lindwurm" /></sec>，則誘導進行<sec typ="buff"><buff typ="TOGETHER_ATTACK" />與<sec typ="note">X-25反裝甲導彈</sec>技能的協同攻擊</sec>。 
-        <sec typ="cond">攻擊命中時</sec>，若<sec typ="cond">自身位於中列</sec>且<sec typ="cond">隊伍內有<char uid="BR_Harpy" /></sec>，則誘導進行<sec typ="buff"><buff typ="TOGETHER_ATTACK" />與<sec typ="note">全爆</sec>技能的協同攻擊</sec>。 
+        <sec typ="cond">回合開始時</sec>， 2回合內 自身的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec>增加。
+        <sec typ="cond">攻擊命中時</sec> <sec typ="cond">自身 前/後排於 位置</sec>並 <sec typ="cond">小隊 內 <char uid="BR_Lindwurm" /> 存在時</sec>， <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">X-25 對 裝甲 飛彈</sec> 技能 協同攻擊 誘發</sec>。
+        <sec typ="cond">攻擊命中時</sec> <sec typ="cond">自身 中排於 位置</sec>並 <sec typ="cond">小隊 內 <char uid="BR_Harpy" /> 存在時</sec>， <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">全火力爆發</sec> 技能 協同攻擊 誘發</sec>。
   "5":
     key: "5"
     icon: P.ExpUp
@@ -4010,18 +4010,18 @@ skills:
         <sec typ="cond">전투 개시 시</sec>, 스쿼드 내 기동형 아군 수에 따라 바이오로이드 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
         <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">편대 출격!</sec>의 효과가 적용된 아군의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
         <sec typ="cond">전투 개시 시</sec>, 기동형 바이오로이드 아군의 <sec typ="buff"><buff typ="EXP_UP" /> 획득 경험치 <val idx="8" r /></sec>를 증가시킵니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、分隊内の機動型の味方数に応じて、バイオロイドの味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>を増加させます。
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">編隊出撃！</sec>の効果が適用された味方の<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害な効果を解除</sec>します。
-        <sec typ="cond">戦闘開始時</sec>、機動型バイオロイドの味方の<sec typ="buff"><buff typ="EXP_UP" />獲得経験値<val idx="8" r /></sec>を増加させます。
       EN: |-
-        At battle start, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of allied Bioroids based on the number of allied Air units in the squad.
-        At round start, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes harmful effects</sec> from allies affected by <sec typ="note">Squad Dispatch!</sec>.
-        At battle start, increases <sec typ="buff"><buff typ="EXP_UP" /> EXP gain <val idx="8" r /></sec> for allied Air Bioroids.
+        <sec typ="cond">At battle start</sec>, in squad Mobile-type allies depending on the number of Bioroid allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="note">Squadron Sortie!</sec> of affected by allies' <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec>.
+        <sec typ="cond">At battle start</sec>, Mobile-type Bioroid allies' <sec typ="buff"><buff typ="EXP_UP" /> gain EXP <val idx="8" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 スクワッド 内 機動型 味方 数に応じて バイオロイド 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="note">編隊出撃！</sec>の 効果が適用された 味方の <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>します。
+        <sec typ="cond">戦闘開始時</sec>、 機動型 バイオロイド 味方の <sec typ="buff"><buff typ="EXP_UP" /> 獲得 経験値 <val idx="8" r /></sec>を増加させます。
       TC: |-
-        於<sec typ="cond">戰鬥開始時</sec>，根據隊伍內機動型我軍的數量，增加我軍生化人的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>。
-        於<sec typ="cond">回合開始時</sec>，解除受到<sec typ="note">編隊出擊！</sec>效果影響的我軍<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害效果</sec>。
-        於<sec typ="cond">戰鬥開始時</sec>，增加機動型生化人我軍的<sec typ="buff"><buff typ="EXP_UP" />獲得經驗值<val idx="8" r /></sec>。
+        <sec typ="cond">戰鬥開始時</sec>， 小隊 內 機動型 我方 依數量 生化人 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="note">編隊出擊！</sec>的 已套用效果的 我方的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>。
+        <sec typ="cond">戰鬥開始時</sec>， 機動型 生化人 我方的 <sec typ="buff"><buff typ="EXP_UP" /> 獲得 經驗值 <val idx="8" r /></sec>使其增加。
 dialogue:
   KR:
     "1":

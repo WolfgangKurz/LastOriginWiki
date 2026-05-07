@@ -3599,18 +3599,18 @@ skills:
         빔 사격으로 대상에게 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 도발하며 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="7" r /></sec>를 감소시킵니다. (중첩 불가)
         <sec typ="cond">스쿼드 내 <char uid="BR_Harpy" />가 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">풀 버스트</sec> 스킬 협동 공격을 유도</sec>합니다.
-      JP: |-
-        ビーム射撃で対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間対象を挑発し、<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル率<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="7" r /></sec>を減少させます。(スタック不可)
-        <sec typ="cond">スコード内に<char uid="BR_Harpy" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">フルバースト</sec>スキル協同攻撃を誘導</sec>します。
       EN: |-
-        Fires a beam and deals <dmg elem="physics" /> to the target.
-        <sec typ="cond">On hit</sec>, provokes the target for 2 rounds and decreases their <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACC <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="7" r /></sec>. (cannot stack)
-        <sec typ="cond">If <char uid="BR_Harpy" /> is in the squad</sec>, induces a co-op attack with the <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Full Burst</sec> skill</sec>.
+        beam by firing as to the target with <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 2 rounds target Provokeand <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="7" r /></sec> decreases. (Cannot stack)
+        <sec typ="cond">in squad <char uid="BR_Harpy" /> if present</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Full Burst</sec> skill coordinated attack trigger</sec>.
+      JP: |-
+        ビーム 射撃で 対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象を 挑発し、 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="7" r /></sec>を減少させます。 (重複不可)
+        <sec typ="cond">スクワッド 内 <char uid="BR_Harpy" />が 存在する場合</sec>、 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">フルバースト</sec> スキル 協同攻撃を 誘導</sec>します。
       TC: |-
-        以光束射擊對目標造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，使目標在2回合內陷入挑釁，並減少其<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="7" r /></sec>。（不可疊加）
-        <sec typ="cond">若小隊內有<char uid="BR_Harpy" /></sec>，則引導以<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">全彈發射</sec>技能</sec>進行協同攻擊。
+        光束 射擊以 對目標 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 挑釁並 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="7" r /></sec>使其減少。 (不可疊加)
+        <sec typ="cond">小隊 內 <char uid="BR_Harpy" /> 存在時</sec>， <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">全火力爆發</sec> 技能 協同攻擊 誘發</sec>。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -6698,21 +6698,21 @@ skills:
         대상의 방어력을 일정 비율 무시합니다. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="8" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
         <sec typ="cond">공격 시</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> 자신 회피의 <val idx="1" r signless />만큼 스킬 위력이 증가</sec>합니다.
-      JP: |-
-        目標地点に突進して<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与え、<sec typ="buff"><buff typ="REMOVE_BUFF" />反撃効果を解除</sec>します。
-        対象の防御力を一定比率無視します。<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec>
-        <sec typ="cond">命中時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="8" r /></sec>を減少させ、<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態にします。
-        <sec typ="cond">攻撃時</sec>、<sec typ="buff"><buff typ="SKILL_UP" />自分の回避の<val idx="1" r signless />だけスキル威力が増加</sec>します。
       EN: |-
-        Charges toward the target point, dealing <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removing counterattack effects</sec>.
-        Ignores a certain percentage of the target's DEF. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec>
-        <sec typ="cond">On hit</sec>, for 2 rounds decreases the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACC <val idx="8" r /></sec> and makes them <sec typ="buff"><buff typ="MARKING" /> Marked</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec>.
-        <sec typ="cond">On attack</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> skill power increases by <val idx="1" r signless /> based on self's EVA</sec>.
+        target point to charges <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="REMOVE_BUFF" /> Counterattack removes the effect</sec>.
+        target's Defense fixed ratio ignore. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec>
+        <sec typ="cond">On hit</sec>, 2 rounds, target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="8" r /></sec> decreases and <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> inflicts.
+        <sec typ="cond">When attacking</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> self Evasion of <val idx="1" r signless /> by Skill Power increase</sec>.
+      JP: |-
+        目標地点に 突撃して <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃 効果を 解除</sec>します。
+        対象の 防御力を 一定 ブイユル 無視します。 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="8" r /></sec>を 減少時クイし <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態にします。
+        <sec typ="cond">攻撃時</sec>、 <sec typ="buff"><buff typ="SKILL_UP" /> 自身 回避の <val idx="1" r signless />分 スキル威力が 増加</sec>します。
       TC: |-
-        衝向目標地點，造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除反擊效果</sec>。
-        無視目標一定比例的防禦力。<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="0" r /></sec>
-        <sec typ="cond">命中時</sec>，在2回合內減少目標的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="8" r /></sec>，並使其陷入<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態。
-        <sec typ="cond">攻擊時</sec>，<sec typ="buff"><buff typ="SKILL_UP" />依自身迴避的<val idx="1" r signless />而增加技能威力</sec>。
+        目標地點於 衝鋒 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊 效果 解除</sec>。
+        目標的 防禦力 一定 比例 無視。 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec>
+        <sec typ="cond">命中時</sec>， 2回合內 目標的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="8" r /></sec> 減少時台並 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 使其進入狀態。
+        <sec typ="cond">攻擊時</sec>， <sec typ="buff"><buff typ="SKILL_UP" /> 自身 迴避的 <val idx="1" r signless />等量 技能威力 增加</sec>。
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -7270,18 +7270,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>를 증가시키고 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 보호기를 제외한 기동형 아군을 보호</sec>합니다.
         <sec>스킬 레벨 10에서 자신의 위치와 관계없이 전체 적용됩니다.</sec>
         <sec>자신은 스킬 레벨 당 +9%의 적중 보정이 적용됩니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>を増加させ、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />保護機を除く機動型の味方を保護</sec>します。
-        <sec>スキルレベル10で自分の位置に関係なく全体に適用されます。</sec>
-        <sec>自分にはスキルレベルごとに+9%の命中補正が適用されます。</sec>
       EN: |-
-        <sec typ="cond">At round start</sec>, increases allies within range's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="6" r /></sec> and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> protects Mobile allies excluding Protectors</sec>.
-        <sec>At skill level 10, the effect applies to all regardless of self's position.</sec>
-        <sec>Self receives a +9% hit compensation per skill level.</sec>
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="6" r /></sec> increases and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Defender excluding Mobile-type allies protect</sec>.
+        <sec>At skill level 10, regardless of own position all is applied.</sec>
+        <sec>self per skill level +9% of accuracy correction is applied.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>を 増加時クイし <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 保護機を ジエ外した 機動型 味方を 保護</sec>します。
+        <sec>スキルレベル10で 自身の位置に関係なく 全体 適用されます。</sec>
+        <sec>自身は スキルレベルごとに +9%の 命中補正が適用されます。</sec>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，增加範圍內我軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />保護除外的機動型我軍</sec>。
-        <sec>技能等級10時，無論自身位置如何，皆套用至全體。</sec>
-        <sec>自身每1個技能等級套用+9%的命中校正。</sec>
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec> 增加時台並 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 保護機 解除外 機動型 我方 保護</sec>。
+        <sec>技能等級10時 無論自身位置 全體 套用。</sec>
+        <sec>自身 每技能等級 +9%的 套用命中補正。</sec>
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -7424,20 +7424,20 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">회피 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 영구히 증가합니다. (최대 3중첩)
-        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond"><sec typ="note">어딜 보는거야?</sec> 중첩이 최대치인경우</sec>, 아군 전체의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 행동력 / 회피 감소 효과를 해제</sec>합니다. 
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond"><sec typ="note">어딜 보는거야?</sec> 중첩이 최대치인경우</sec>, 아군 전체의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 행동력 / 회피 감소 효과를 해제</sec>합니다.
         <sec typ="cond"><sec typ="note">어딜 보는거야?</sec> 중첩이 최대치인경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> <sec typ="note">한계돌파</sec>의 피해량 <val idx="9" slot="2" r /></sec>가 증가합니다.
-      JP: |-
-        <sec typ="cond">回避時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>が永続的に増加します。(最大3スタック)
-        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond"><sec typ="note">どこ見てるの？</sec>のスタックが最大値の場合</sec>、味方全体の<sec typ="buff"><buff typ="REMOVE_DEBUFF" />行動力 / 回避減少効果を解除</sec>します。
-        <sec typ="cond"><sec typ="note">どこ見てるの？</sec>のスタックが最大値の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" /><sec typ="note">限界突破</sec>のダメージ量<val idx="9" slot="2" r /></sec>が増加します。
       EN: |-
-        <sec typ="cond">On evade</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="0" r /></sec> permanently increases. (Max 3 stacks)
-        <sec typ="cond">At round start</sec> <sec typ="cond">if <sec typ="note">What You Looking At?</sec> is at max stacks</sec>, removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> MOVE / EVA Decrease effects</sec> from all allies.
-        <sec typ="cond">If <sec typ="note">What You Looking At?</sec> is at max stacks</sec>, increases the damage of <sec typ="dmg"><buff typ="PhyATK_UP" /><sec typ="note">Limit Breakthrough</sec> <val idx="9" slot="2" r /></sec>.
+        <sec typ="cond">When evading</sec>, own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> permanent hit increases. (up to 3stack)
+        <sec typ="cond">At round start</sec> <sec typ="cond"><sec typ="note">Where Are You Looking?</sec> stack up to hit case</sec>, all allies of <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Action Speed / Evasion decrease removes the effect</sec>.
+        <sec typ="cond"><sec typ="note">Where Are You Looking?</sec> stack up to hit case</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> <sec typ="note">Limit Break</sec> of damage <val idx="9" slot="2" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">回避時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>が 永久ハイ 増加します。 (最大 3重複)
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond"><sec typ="note">どこを見ているの？</sec> 重複が 最大チイである場合</sec>、 味方全体の <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 行動力 / 回避 減少 効果を 解除</sec>します。
+        <sec typ="cond"><sec typ="note">どこを見ているの？</sec> 重複が 最大チイである場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> <sec typ="note">限界突破</sec>の ダメージ量 <val idx="9" slot="2" r /></sec>が増加します。
       TC: |-
-        <sec typ="cond">迴避時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>會永久增加。（最多3層）
-        <sec typ="cond">回合開始時</sec> <sec typ="cond">若<sec typ="note">你在看哪裡？</sec>疊加達最大值</sec>，解除我軍全體的<sec typ="buff"><buff typ="REMOVE_DEBUFF" />行動力 / 迴避降低效果</sec>。
-        <sec typ="cond">若<sec typ="note">你在看哪裡？</sec>疊加達最大值</sec>，會增加<sec typ="dmg"><buff typ="PhyATK_UP" /><sec typ="note">突破極限</sec>造成的傷害量<val idx="9" slot="2" r /></sec>。
+        <sec typ="cond">迴避時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> 永久命中 增加。 (最大 3疊加)
+        <sec typ="cond">回合開始時</sec> <sec typ="cond"><sec typ="note">你在看哪裡？</sec> 疊加 最大值為情況</sec>， 全體我方的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 行動力 / 迴避 減少 效果 解除</sec>。
+        <sec typ="cond"><sec typ="note">你在看哪裡？</sec> 疊加 最大值為情況</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> <sec typ="note">突破極限</sec>的 傷害量 <val idx="9" slot="2" r /></sec>增加。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -7726,18 +7726,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="5" r /></sec>가 증가합니다.
         <sec typ="cond">공격 시</sec>, 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 회피 / 행동력 감소 효과를 해제</sec>하며 2라운드 동안 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="9" slot="1" r /></sec>가 증가합니다. (최대 3중첩)
         <sec typ="cond">공격 받을 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec>가 증가합니다. (최대 2중첩)
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="5" r /></sec>が増加します。
-        <sec typ="cond">攻撃時</sec>、自分に適用された<sec typ="buff"><buff typ="REMOVE_DEBUFF" />回避 / 行動力減少効果を解除</sec>し、2ラウンドの間自分の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="9" slot="1" r /></sec>が増加します。(最大3スタック)
-        <sec typ="cond">攻撃を受けた時</sec>、2ラウンドの間自分の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec>が増加します。(最大2スタック)
       EN: |-
-        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="5" r /></sec> increases.
-        <sec typ="cond">On attack</sec>, removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> EVA / MOVE decrease effects</sec> applied to self, and increases self's <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="9" slot="1" r /></sec> for 2 rounds. (Max 3 stacks)
-        <sec typ="cond">When attacked</sec>, self's <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="6" r /></sec> increases for 2 rounds. (Max 2 stacks)
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="5" r /></sec> increases.
+        <sec typ="cond">When attacking</sec>, applied to self <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Evasion / Action Speed decrease removes the effect</sec> and 2 rounds own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="9" slot="1" r /></sec> increases. (up to 3stack)
+        <sec typ="cond">When attacked</sec>, 2 rounds own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> increases. (up to 2stack)
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="5" r /></sec>が増加します。
+        <sec typ="cond">攻撃時</sec>、 自身に 適用された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 回避 / 行動力 減少 効果を 解除</sec>し、 2ラウンドの間 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="9" slot="1" r /></sec>が増加します。 (最大 3重複)
+        <sec typ="cond">攻撃を受ける時</sec>、 2ラウンドの間 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec>が増加します。 (最大 2重複)
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="5" r /></sec>增加。
-        <sec typ="cond">攻擊時</sec>，解除套用於自身的<sec typ="buff"><buff typ="REMOVE_DEBUFF" />迴避 / 行動力降低效果</sec>，並使自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="9" slot="1" r /></sec>在2回合內增加。（最多3層）
-        <sec typ="cond">受到攻擊時</sec>，自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec>在2回合內增加。（最多2層）
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="5" r /></sec>增加。
+        <sec typ="cond">攻擊時</sec>， 自身給 套用已 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 迴避 / 行動力 減少 效果 解除</sec>並 2回合內 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="9" slot="1" r /></sec>增加。 (最大 3疊加)
+        <sec typ="cond">受到攻擊時</sec>， 2回合內 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec>增加。 (最大 2疊加)
 dialogue:
   KR:
     "1":
@@ -8946,7 +8946,7 @@ skins:
         2dmodel: 2DModel_BR_Sleipnir_NS3
     - sid: 4
       artist: ??
-      priceEx: ""
+      price: 4
       Spine: false
       SpineDamaged: false
       parts: 4

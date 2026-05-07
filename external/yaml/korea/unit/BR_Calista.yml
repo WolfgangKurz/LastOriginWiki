@@ -3310,39 +3310,39 @@ skills:
         <box t="중열 대상"><sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec></box>
         <box t="후열 대상"><sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" r /></sec></box>
         <sec typ="important">스킬 레벨 당 +4%의 적중 보정이 적용됩니다.</sec>
-        <sec typ="cond">스쿼드에 자신을 포함한 <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 전투원이 5명 이상</sec>이고 <sec typ="cond"><char uid="BR_Io" />, <char uid="BR_Spriggan" />이 있는 경우</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">중 기관포 사격</sec>, <sec typ="note">2연장 대 장갑 미사일</sec> 스킬로 협동 공격</sec>을 유도합니다.
+        <sec typ="cond">스쿼드에 자신을 포함한 <cmt t="아머드 메이든"><import name="ArmoredMaiden" /></cmt> 전투원이 5명 이상</sec>이고 <sec typ="cond"><char uid="BR_Io" />, <char uid="BR_Spriggan" />이 있는 경우</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">중 기관포 사격</sec>, <sec typ="note">2연장 대 장갑 미사일</sec> 스킬로 협동 공격</sec>을 유도합니다.
         <sec>협동 공격이 가능한 전투원이 여렷인 경우 위 표기된 순으로 우선권을 가집니다. (A-6 이오 > A-14B 스프리건 순)</sec>
         <sec>다수의 적이 대상인 경우 사거리가 닿는 적을 우선 선택하고 사거리로 인해 협동 공격이 불가능할 경우 다음 순서의 전투원이 협동 공격을 실행합니다.</sec>
-      JP: |-
-        照準砲撃で<dmg elem="physics" />を与えます。
-        <sec typ="dmg">命中対象が前列に近いほど、ダメージ量が増加します。</sec>
-        <box t="前列対象"><sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec></box>
-        <box t="中列対象"><sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="4" r /></sec></box>
-        <box t="後列対象"><sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="5" r /></sec></box>
-        <sec typ="important">スキルレベルごとに+4%の命中率補正が適用されます。</sec>
-        <sec typ="cond">自分を含む<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>所属戦闘員が5人以上</sec>で、<sec typ="cond"><char uid="BR_Io" />, <char uid="BR_Spriggan" />がいる場合</sec>、<sec typ="chance">100%の確率</sec>で<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">重機関砲射撃</sec>, <sec typ="note">2連装対装甲ミサイル</sec>スキルで協同攻撃を誘導します。
-        <sec>協同攻撃可能な戦闘員が複数いる場合、上記の順で優先権を持ちます。(A-6 イオ > A-14B スプリガンの順)</sec>
-        <sec>複数の敵が対象の場合、射程が届く敵を優先して選択し、射程の都合で協同攻撃できない場合は次の順番の戦闘員が協同攻撃を実行します。</sec>
       EN: |-
-        Deals <dmg elem="physics" /> with Aimed Bombardment.
-        <sec typ="dmg">The closer the target is to the front line, the higher the damage.</sec>
-        <box t="Front Line Target"><sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec></box>
-        <box t="Mid Line Target"><sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec></box>
-        <box t="Back Line Target"><sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec></box>
-        <sec typ="important">Gains a +4% accuracy correction per skill level.</sec>
-        <sec typ="cond">If the squad has 5 or more <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants including self</sec> and <sec typ="cond"><char uid="BR_Io" />, <char uid="BR_Spriggan" /> are present</sec>, it triggers a <sec typ="chance">100% chance</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> cooperative attack with <sec typ="note">Heavy Machine Cannon Fire</sec> and <sec typ="note">2-Barreled Anti-Armor Missile</sec>.</sec>
-        <sec>If multiple combatants can perform the cooperative attack, priority is given in the order shown above. (A-6 Io > A-14B Spriggan)</sec>
-        <sec>If multiple enemies are targeted, the enemy within range is selected first, and if cooperative attacks are not possible due to range, the next combatant in order performs the cooperative attack.</sec>
+        aimed by bombardment as <dmg elem="physics" />.
+        <sec typ="dmg">Hit target front rowthe closer to damage increases.</sec>
+        <box t="front row target"><sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec></box>
+        <box t="middle row target"><sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec></box>
+        <box t="back row target"><sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec></box>
+        <sec typ="important">per skill level +4% of accuracy correction is applied.</sec>
+        <sec typ="cond">squad self including <cmt t="Armored Maiden"><import name="ArmoredMaiden" /></cmt> combatant 5 or more members</sec> and <sec typ="cond"><char uid="BR_Io" />, <char uid="BR_Spriggan" /> if present</sec> <sec typ="chance">100% chance</sec> as <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">during machine cannon shooting</sec>, <sec typ="note">Twin Anti-Armor Missile</sec> skill as coordinated attack</sec> triggers.
+        <sec>coordinated attack possible combatant multiple if above listed in order as priority has. (A-6 O > A-14B Spriggan order)</sec>
+        <sec>If there are multiple targets, priority is given to an enemy within range; if a coordinated attack cannot be performed due to range, the next combatant in order performs the coordinated attack.</sec>
+      JP: |-
+        照準 砲撃で<dmg elem="physics" />を与えます。
+        <sec typ="dmg">命中対象が 前列に近いほど ダメージ量が増加します。</sec>
+        <box t="前列 対象"><sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec></box>
+        <box t="中列 対象"><sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="4" r /></sec></box>
+        <box t="後列 対象"><sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="5" r /></sec></box>
+        <sec typ="important">スキルレベルごとに +4%の 命中補正が適用されます。</sec>
+        <sec typ="cond">スクワッドに 自身を 含むした <cmt t="アーマードメイデン"><import name="ArmoredMaiden" /></cmt> 戦闘員が5名以上</sec>であり <sec typ="cond"><char uid="BR_Io" />、 <char uid="BR_Spriggan" />が ある 場合</sec> <sec typ="chance">100% 確率</sec>で <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">中 機関砲 射撃</sec>、 <sec typ="note">2連装対装甲ミサイル</sec> スキルで 協同攻撃</sec>を 誘導します。
+        <sec>協同攻撃が 可能した 戦闘員が ヨルヨトの場合 ウィ プヨ機された スウンで 優先権を がジイプンイドア。 (A-6 がオ > A-14B スウプウルイグオン スウン)</sec>
+        <sec>ドア数の 敵が 対象の場合 射程が ドアフは 敵を ウ宣 選択し、 射程により 協同攻撃が 不可能できる 場合 次 順序の 戦闘員が 協同攻撃を 実行します。</sec>
       TC: |-
-        以瞄準砲擊造成<dmg elem="physics" />。
-        <sec typ="dmg">命中目標越接近前排，傷害越高。</sec>
-        <box t="前排目標"><sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="0" r /></sec></box>
-        <box t="中排目標"><sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="4" r /></sec></box>
-        <box t="後排目標"><sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="5" r /></sec></box>
-        <sec typ="important">每個技能等級額外套用+4%命中修正。</sec>
-        <sec typ="cond">若隊伍中包含5名以上包含自身在內的<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>戰鬥員</sec>，且<sec typ="cond"><char uid="BR_Io" />, <char uid="BR_Spriggan" />存在</sec>，則以<sec typ="chance">100%機率</sec>誘導<sec typ="buff"><buff typ="TOGETHER_ATTACK" />透過<sec typ="note">重機關砲射擊</sec>、<sec typ="note">2聯裝反裝甲導彈</sec>進行協同攻擊。</sec>
-        <sec>若可進行協同攻擊的戰鬥員有多位，則依上方標示順序優先。(A-6 伊歐 > A-14B 斯普里根順序)</sec>
-        <sec>若目標為多數敵人，會優先選擇射程可達的敵人；若因射程無法進行協同攻擊，則由下一順位的戰鬥員執行協同攻擊。</sec>
+        瞄準 砲擊以 造成<dmg elem="physics" />。
+        <sec typ="dmg">命中目標為 前排越接近 傷害量增加。</sec>
+        <box t="前排 目標"><sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec></box>
+        <box t="中排 目標"><sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="4" r /></sec></box>
+        <box t="後排 目標"><sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="5" r /></sec></box>
+        <sec typ="important">每技能等級 +4%的 套用命中補正。</sec>
+        <sec typ="cond">小隊於 自身 包含 <cmt t="裝甲少女"><import name="ArmoredMaiden" /></cmt> 戰鬥員 5名 以上</sec>且 <sec typ="cond"><char uid="BR_Io" />， <char uid="BR_Spriggan" /> 有 情況</sec> <sec typ="chance">100% 機率</sec>以 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">中 機砲 射擊</sec>， <sec typ="note">雙聯裝反裝甲飛彈</sec> 技能以 協同攻擊</sec> 誘發。
+        <sec>協同攻擊 可能 戰鬥員 多個若為 上 標記台已 順序以 優先權。 (A-6 O > A-14B 斯普里根 順序)</sec>
+        <sec>全部數的 敵人 目標若為 射程 全部h 敵人 優先 選擇並 射程因 協同攻擊 不可能可 情況 下次 順序的 戰鬥員 協同攻擊 執行。</sec>
   "2":
     key: "2"
     icon: CannonShotWide
@@ -5461,30 +5461,30 @@ skills:
         HEAT탄을 연사해 목표 범위에 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 대상이 보호기인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
         <sec typ="dmg">적중 대상이 적을수록 피해량이 증가합니다.</sec> <sec typ="buff"><buff typ="ATK_UP" /> 광역 피해 집중 <val idx="3" r /></sec>
-        <sec typ="cond">스쿼드에 자신을 포함 <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 전투원이 5명 이상</sec>이고 <sec typ="cond"><char uid="BR_Spriggan" />, <char uid="BR_Io" />가 있는 경우</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">BFG1000 저격용 캐논포</sec>, <sec typ="note">전탄 방출</sec> 스킬로 협동 공격</sec>을 유도합니다.
+        <sec typ="cond">스쿼드에 자신을 포함 <cmt t="아머드 메이든"><import name="ArmoredMaiden" /></cmt> 전투원이 5명 이상</sec>이고 <sec typ="cond"><char uid="BR_Spriggan" />, <char uid="BR_Io" />가 있는 경우</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">BFG1000 저격용 캐논포</sec>, <sec typ="note">전탄 방출</sec> 스킬로 협동 공격</sec>을 유도합니다.
         <sec>협동 공격이 가능한 전투원이 여렷인 경우 위 표기된 순으로 우선권을 가집니다. (A-14B 스프리건 > A-6 이오 순)</sec>
         <sec>다수의 적이 대상인 경우 사거리가 닿는 적을 우선 선택하고 사거리로 인해 협동 공격이 불가능할 경우 다음 순서의 전투원이 협동 공격을 실행합니다.</sec>
-      JP: |-
-        HEAT弾を連射して目標範囲に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中対象が保護機の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
-        <sec typ="dmg">命中対象が少ないほどダメージ量が増加します。</sec> <sec typ="buff"><buff typ="ATK_UP" />広域ダメージ集中<val idx="3" r /></sec>
-        <sec typ="cond">自分を含む<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>所属戦闘員が5人以上</sec>で、<sec typ="cond"><char uid="BR_Spriggan" />, <char uid="BR_Io" />がいる場合</sec>、<sec typ="chance">100%の確率</sec>で<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">BFG1000狙撃用キャノン砲</sec>, <sec typ="note">全弾放出</sec>スキルで協同攻撃を誘導します。
-        <sec>協同攻撃可能な戦闘員が複数いる場合、上記の順で優先権を持ちます。(A-14B スプリガン > A-6 イオの順)</sec>
-        <sec>複数の敵が対象の場合、射程が届く敵を優先して選択し、射程の都合で協同攻撃できない場合は次の順番の戦闘員が協同攻撃を実行します。</sec>
       EN: |-
-        Fires HEAT rounds in rapid succession and deals <dmg elem="physics" /> to the target area.
-        <sec typ="cond">If the hit target is a protector</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
-        <sec typ="dmg">The fewer targets hit, the higher the damage.</sec> <sec typ="buff"><buff typ="ATK_UP" /> AoE damage focus <val idx="3" r /></sec>
-        <sec typ="cond">If the squad has 5 or more <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants including self</sec> and <sec typ="cond"><char uid="BR_Spriggan" />, <char uid="BR_Io" /> are present</sec>, it triggers a <sec typ="chance">100% chance</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> cooperative attack with <sec typ="note">BFG1000 Sniper Cannon</sec> and <sec typ="note">Full Barrage</sec>.</sec>
-        <sec>If multiple combatants can perform the cooperative attack, priority is given in the order shown above. (A-14B Spriggan > A-6 Io)</sec>
-        <sec>If multiple enemies are targeted, the enemy within range is selected first, and if cooperative attacks are not possible due to range, the next combatant in order performs the cooperative attack.</sec>
+        HEAT round fires rapidly target range to <dmg elem="physics" />.
+        <sec typ="cond">Hit target Defenderif</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="dmg">Hit target the fewer damage increases.</sec> <sec typ="buff"><buff typ="ATK_UP" /> area damage concentration <val idx="3" r /></sec>
+        <sec typ="cond">squad self include <cmt t="Armored Maiden"><import name="ArmoredMaiden" /></cmt> combatant 5 or more members</sec> and <sec typ="cond"><char uid="BR_Spriggan" />, <char uid="BR_Io" /> if present</sec> <sec typ="chance">100% chance</sec> as <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">BFG1000 Sniper Cannon</sec>, <sec typ="note">Full Salvo</sec> skill as coordinated attack</sec> triggers.
+        <sec>coordinated attack possible combatant multiple if above listed in order as priority has. (A-14B Spriggan > A-6 O order)</sec>
+        <sec>If there are multiple targets, priority is given to an enemy within range; if a coordinated attack cannot be performed due to range, the next combatant in order performs the coordinated attack.</sec>
+      JP: |-
+        HEAT弾を ヨンスアして 目標 範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象が 保護機の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="dmg">命中対象が 少ないほど ダメージ量が増加します。</sec> <sec typ="buff"><buff typ="ATK_UP" /> 広域ダメージ集中 <val idx="3" r /></sec>
+        <sec typ="cond">スクワッドに 自身を 含む <cmt t="アーマードメイデン"><import name="ArmoredMaiden" /></cmt> 戦闘員が5名以上</sec>であり <sec typ="cond"><char uid="BR_Spriggan" />、 <char uid="BR_Io" />が ある 場合</sec> <sec typ="chance">100% 確率</sec>で <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">BFG1000狙撃用キャノン砲</sec>、 <sec typ="note">全弾放出</sec> スキルで 協同攻撃</sec>を 誘導します。
+        <sec>協同攻撃が 可能した 戦闘員が ヨルヨトの場合 ウィ プヨ機された スウンで 優先権を がジイプンイドア。 (A-14B スウプウルイグオン > A-6 がオ スウン)</sec>
+        <sec>ドア数の 敵が 対象の場合 射程が ドアフは 敵を ウ宣 選択し、 射程により 協同攻撃が 不可能できる 場合 次 順序の 戦闘員が 協同攻撃を 実行します。</sec>
       TC: |-
-        連射HEAT彈對目標範圍造成<dmg elem="physics" />。
-        <sec typ="cond">若命中目標為保護機</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="0" r /></sec>提升。
-        <sec typ="dmg">命中目標越少，傷害越高。</sec> <sec typ="buff"><buff typ="ATK_UP" />廣域傷害集中<val idx="3" r /></sec>
-        <sec typ="cond">若隊伍中包含5名以上包含自身在內的<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>戰鬥員</sec>，且<sec typ="cond"><char uid="BR_Spriggan" />, <char uid="BR_Io" />存在</sec>，則以<sec typ="chance">100%機率</sec>誘導<sec typ="buff"><buff typ="TOGETHER_ATTACK" />透過<sec typ="note">BFG1000狙擊用加農炮</sec>、<sec typ="note">全彈釋放</sec>進行協同攻擊。</sec>
-        <sec>若可進行協同攻擊的戰鬥員有多位，則依上方標示順序優先。(A-14B 斯普里根 > A-6 伊歐順序)</sec>
-        <sec>若目標為多數敵人，會優先選擇射程可達的敵人；若因射程無法進行協同攻擊，則由下一順位的戰鬥員執行協同攻擊。</sec>
+        HEAT彈 連射 目標 範圍於 造成<dmg elem="physics" />。
+        <sec typ="cond">命中目標為 保護機若為</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="dmg">命中目標為 越少 傷害量增加。</sec> <sec typ="buff"><buff typ="ATK_UP" /> 範圍傷害集中 <val idx="3" r /></sec>
+        <sec typ="cond">小隊於 自身 包含 <cmt t="裝甲少女"><import name="ArmoredMaiden" /></cmt> 戰鬥員 5名 以上</sec>且 <sec typ="cond"><char uid="BR_Spriggan" />， <char uid="BR_Io" /> 有 情況</sec> <sec typ="chance">100% 機率</sec>以 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">BFG1000狙擊用加農炮</sec>， <sec typ="note">全彈發射</sec> 技能以 協同攻擊</sec> 誘發。
+        <sec>協同攻擊 可能 戰鬥員 多個若為 上 標記台已 順序以 優先權。 (A-14B 斯普里根 > A-6 O 順序)</sec>
+        <sec>全部數的 敵人 目標若為 射程 全部h 敵人 優先 選擇並 射程因 協同攻擊 不可能可 情況 下次 順序的 戰鬥員 協同攻擊 執行。</sec>
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -5970,24 +5970,24 @@ skills:
         <sec typ="cond">적 처치 시</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 효과가 2라운드 동안 <sec>재활성화</sec>됩니다.
         <sec typ="cond"><sec typ="note">조준 포격90mm</sec> 사용 시</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="7" r /></sec>가 증가됩니다. <sec>(최대 2중첩)</sec>
         <sec typ="cond"><sec typ="note">HEAT탄 연사</sec> 사용 시</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec>가 증가됩니다. <sec>(최대 2중첩)</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>が増加します。
-        <sec typ="cond">戦闘開始時</sec>、2ラウンドの間<sec typ="buff"><buff typ="SUPPORT_ATTACK" />再攻撃</sec>が有効になります。
-        <sec typ="cond">敵を撃破時</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" />再攻撃</sec>効果が2ラウンドの間<sec>再有効化</sec>されます。
-        <sec typ="cond"><sec typ="note">照準砲撃90mm</sec>使用時</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="7" r /></sec>が増加します。<sec>(最大2スタック)</sec>
-        <sec typ="cond"><sec typ="note">HEAT弾連射</sec>使用時</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="8" r /></sec>が増加します。<sec>(最大2スタック)</sec>
       EN: |-
-        At round start, increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" r /></sec>.
-        At battle start, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> re-attack</sec> is enabled for 2 rounds.
-        When an enemy is killed, the <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> re-attack</sec> effect is <sec>reactivated</sec> for 2 rounds.
-        When using <sec typ="cond"><sec typ="note">Aimed Bombardment 90mm</sec></sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="7" r /></sec> increases. <sec>(Up to 2 stacks)</sec>
-        When using <sec typ="cond"><sec typ="note">HEAT Round Continuous Fire</sec></sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="8" r /></sec> increases. <sec>(Up to 2 stacks)</sec>
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="6" r /></sec> increases.
+        <sec typ="cond">At battle start</sec>, 2 rounds <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec> is activated.
+        <sec typ="cond">When killing an enemy</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec> effect and 2 rounds <sec>reactivate</sec>.
+        <sec typ="cond"><sec typ="note">aimed bombardment 90mm</sec> When used</sec> <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="7" r /></sec> increases. <sec>(up to 2stack)</sec>
+        <sec typ="cond"><sec typ="note">HEAT Round Rapid Fire</sec> When used</sec> <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="8" r /></sec> increases. <sec>(up to 2stack)</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>が増加します。
+        <sec typ="cond">戦闘開始時</sec>、 2ラウンドの間 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec>が 有効化されます。
+        <sec typ="cond">敵撃破時</sec>、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec> 効果が 2ラウンドの間 <sec>再有効化</sec>されます。
+        <sec typ="cond"><sec typ="note">照準 砲撃90mm</sec> 使用時</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="7" r /></sec>が 増加されます。 <sec>(最大 2重複)</sec>
+        <sec typ="cond"><sec typ="note">HEAT弾連射</sec> 使用時</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" r /></sec>が 増加されます。 <sec>(最大 2重複)</sec>
       TC: |-
-        於<sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>提升。
-        於<sec typ="cond">戰鬥開始時</sec>，2回合內啟用<sec typ="buff"><buff typ="SUPPORT_ATTACK" />再攻擊</sec>。
-        於<sec typ="cond">擊殺敵人時</sec>，<sec typ="buff"><buff typ="SUPPORT_ATTACK" />再攻擊</sec>效果會在2回合內<sec>重新啟用</sec>。
-        於<sec typ="cond"><sec typ="note">瞄準砲擊90mm</sec>使用時</sec>，<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="7" r /></sec>提升。<sec>(最多2層)</sec>
-        於<sec typ="cond"><sec typ="note">HEAT彈連射</sec>使用時</sec>，<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="8" r /></sec>提升。<sec>(最多2層)</sec>
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec>， 2回合內 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec> 啟用。
+        <sec typ="cond">擊殺敵人時</sec>， <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec> 效果 2回合內 <sec>重新啟用</sec>。
+        <sec typ="cond"><sec typ="note">瞄準 砲擊90mm</sec> 使用時</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="7" r /></sec> 增加。 <sec>(最大 2疊加)</sec>
+        <sec typ="cond"><sec typ="note">HEAT彈連射</sec> 使用時</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" r /></sec> 增加。 <sec>(最大 2疊加)</sec>
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -6256,15 +6256,15 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
         <sec typ="cond">라운드 개시 시</sec> <sec typ="cond"><buff typ="DEF_Char" /> 자신이 지정 보호 상태인 경우</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="5" r inv /></sec>가 감소하고 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 지정 보호를 해제</sec>합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="2" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond"><buff typ="DEF_Char" />自分が指定保護状態の場合</sec>、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="5" r inv /></sec>が減少し、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />指定保護を解除</sec>します。
       EN: |-
-        At round start, increases own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="2" r /></sec>.
-        At round start, if self is under <sec typ="cond"><buff typ="DEF_Char" /> designated protection</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="5" r inv /></sec> decreases and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> designated protection is removed</sec>.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond"><buff typ="DEF_Char" /> self Designated Protection if in the state</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="5" r inv /></sec> decreases and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Designated Protection remove</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond"><buff typ="DEF_Char" /> 自身が 指定保護 状態の場合</sec>、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="5" r inv /></sec>が 減少し、 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 指定保護を 解除</sec>します。
       TC: |-
-        於<sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>／<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>／<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="2" r /></sec>提升。
-        於<sec typ="cond">回合開始時</sec>，若自身處於<sec typ="cond"><buff typ="DEF_Char" />指定保護</sec>狀態，則<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="5" r inv /></sec>降低，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="2" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond"><buff typ="DEF_Char" /> 自身 指定保護 若為狀態</sec>， <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="5" r inv /></sec> 減少，並 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 指定保護 解除</sec>。
   "5":
     key: "5"
     icon: P.MGShot
@@ -6642,25 +6642,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 소속 전투원의 공격을 지원합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <cmt t="아머드 메이든"><import name="ArmoredMaiden" /></cmt> 소속 전투원의 공격을 지원합니다.
         <sec typ="note">자동 장전 장치</sec>의 재공격 효과가 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" slot="3" /></sec> 증가 효과로 변경됩니다.
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="4" r /></sec>가 증가합니다.
         <sec>자신이 전열에 가까울 수록 효과가 최대 두 배까지 증폭됩니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>所属戦闘員の攻撃を支援します。
-        <sec typ="note">自動装填装置</sec>の再攻撃効果が<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" slot="3" /></sec>増加効果に変更されます。
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="4" r /></sec>が増加します。
-        <sec>自分が前列に近いほど効果は最大2倍まで増幅します。</sec>
       EN: |-
-        At round start, supports the attacks of <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants.
-        <sec typ="note">Auto Loader</sec>'s re-attack effect is changed into an <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" slot="3" /></sec> increase effect.
-        At round start, increases own <sec typ="buff"><buff typ="SKILL_UP" /> skill power <val idx="4" r /></sec>.
-        The closer self is to the front line, the more the effect is amplified, up to 2x.
+        <sec typ="cond">At round start</sec>, <cmt t="Armored Maiden"><import name="ArmoredMaiden" /></cmt> affiliated combatant of attack supports.
+        <sec typ="note">Auto-Loader</sec> of follow-up attack effect and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" slot="3" /></sec> increase effect andas is changed.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="4" r /></sec> increases.
+        <sec>self front row to close as effect and up to two up to times amplification.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <cmt t="アーマードメイデン"><import name="ArmoredMaiden" /></cmt> 所属 戦闘員の 攻撃を 支援します。
+        <sec typ="note">自動装填装置</sec>の 再攻撃 効果が <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" slot="3" /></sec> 増加 効果で 変更されます。
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="4" r /></sec>が増加します。
+        <sec>自身が 前列に がックアウル 少ないほど 効果が 最大 ドウ ブエまで 増幅されます。</sec>
       TC: |-
-        於<sec typ="cond">回合開始時</sec>，支援<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>所屬戰鬥員的攻擊。
-        <sec typ="note">自動裝填裝置</sec>的再攻擊效果改為<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" slot="3" /></sec>增加效果。
-        於<sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="4" r /></sec>提升。
-        自身越接近前排，效果最多會放大2倍。
+        <sec typ="cond">回合開始時</sec>， <cmt t="裝甲少女"><import name="ArmoredMaiden" /></cmt> 所屬 戰鬥員的 攻擊 支援。
+        <sec typ="note">自動裝填裝置</sec>的 再次攻擊 效果 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" slot="3" /></sec> 增加 效果以 變更。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="4" r /></sec>增加。
+        <sec>自身 前排於 靠近 數越 效果 最大 二 倍至 增幅。</sec>
 dialogue:
   KR:
     "1":

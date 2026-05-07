@@ -3384,20 +3384,20 @@ skills:
     desc:
       KR: |-
         소울에너지 탄을 장전 한 뒤 전방에 발사하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 발생시킵니다.
-        <sec typ="cond">스킬 적중 시</sec> 2라운드 동안 자신에게 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장 공격력 <val idx="0" r /></sec>를 증가시키고 대상을 <cmt t="침수">$$FLOOD:5,6,7$</cmt> 상태로 만듭니다.
+        <sec typ="cond">스킬 적중 시</sec> 2라운드 동안 자신에게 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장 공격력 <val idx="0" r /></sec>를 증가시키고 대상을 <cmt t="침수"><import name="FLOOD" p="5,6,7" /></cmt> 상태로 만듭니다.
         <sec typ="cond">치명타 시</sec> <sec typ="dmg"><buff typ="IceATK_UP" /> <val idx="3" r signless /> 추가 냉기 피해</sec>를 입히고 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="4" r inv /></sec>가 감소합니다.
-      JP: |-
-        ソウルエネルギー弾を装填した後、前方に発射して指定範囲に<sec typ="attr">保護無視</sec><dmg elem="ice" />を発生させます。
-        <sec typ="cond">スキル命中時</sec>、2ラウンドの間、自分の<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />対重装攻撃力<val idx="0" r /></sec>を増加させ、対象を<cmt t="침수">$$FLOOD:5,6,7$</cmt>状態にします。
-        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="IceATK_UP" /><val idx="3" r signless />の追加冷気ダメージ</sec>を与え、2ラウンドの間、対象の<sec typ="buff"><buff typ="DEBUFF_RATEUP" />効果耐性<val idx="4" r inv /></sec>が減少します。
       EN: |-
-        Loads a Soul Energy round, then fires it forward to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="ice" /> damage to the designated area.
-        <sec typ="cond">On Skill Hit</sec>, increases self's <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy Armor damage <val idx="0" r /></sec> for 2 rounds and puts the target into <cmt t="침수">$$FLOOD:5,6,7$</cmt> state.
-        <sec typ="cond">On CRIT</sec>, deals <sec typ="dmg"><buff typ="IceATK_UP" /> additional Cold Damage <val idx="3" r signless /></sec> and decreases the target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="4" r inv /></sec> for 2 rounds.
+        soul energy round loading one behind front to fires to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="ice" /> causes.
+        <sec typ="cond">When the skill hits</sec> 2 rounds self <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> anti Heavy Attack <val idx="0" r /></sec> increases and target <cmt t="Flooded"><import name="FLOOD" p="5,6,7" /></cmt> inflicts.
+        <sec typ="cond">On critical hit</sec> <sec typ="dmg"><buff typ="IceATK_UP" /> <val idx="3" r signless /> additional Ice damage</sec> deals and 2 rounds, target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="4" r inv /></sec> decreases.
+      JP: |-
+        スオウルエネルギー トアンを 装填 した ドウィ 前方に 発射して 指定範囲に<sec typ="attr">保護無視</sec><dmg elem="ice" />を ブアルスエンさせます。
+        <sec typ="cond">スキル命中時</sec> 2ラウンドの間 自身に <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> ドエ 重装 攻撃力 <val idx="0" r /></sec>を 増加時クイし 対象を <cmt t="浸水"><import name="FLOOD" p="5,6,7" /></cmt> 状態にします。
+        <sec typ="cond">クリティカル時</sec> <sec typ="dmg"><buff typ="IceATK_UP" /> <val idx="3" r signless /> 追加 冷気 ダメージ</sec>を 与えし 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="4" r inv /></sec>が減少します。
       TC: |-
-        裝填靈魂能量彈後向前發射，對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="ice" />傷害。
-        <sec typ="cond">技能命中時</sec>，於2回合內增加自身的<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型攻擊力<val idx="0" r /></sec>，並使目標進入<cmt t="침수">$$FLOOD:5,6,7$</cmt>狀態。
-        <sec typ="cond">暴擊時</sec>，造成<sec typ="dmg"><buff typ="IceATK_UP" />額外冷氣傷害<val idx="3" r signless /></sec>，並於2回合內降低目標的<sec typ="buff"><buff typ="DEBUFF_RATEUP" />效果抵抗<val idx="4" r inv /></sec>。
+        Soul能量 彈 裝填 後 前方於 發射並 指定範圍於 <sec typ="attr">無視保護</sec> <dmg elem="ice" /> 發生。
+        <sec typ="cond">技能命中時</sec> 2回合內 自身給 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對 重裝 攻擊力 <val idx="0" r /></sec> 增加時台並 目標 <cmt t="浸水"><import name="FLOOD" p="5,6,7" /></cmt> 使其進入狀態。
+        <sec typ="cond">暴擊時</sec> <sec typ="dmg"><buff typ="IceATK_UP" /> <val idx="3" r signless /> 額外 冰冷 傷害</sec> 造成並 2回合內 目標的 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="4" r inv /></sec>減少。
   "2":
     key: "2"
     icon: BombActive
@@ -6544,27 +6544,18 @@ skills:
         <sec typ="cond">스쿼드에 <char uid="LC_Chii" />, <char uid="LC_Dhana" />, <char uid="LC_Ephnel" />이 있는 경우</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">포식자가 부르는 종말</sec>, <sec typ="note">래쉬 임페일</sec>, <sec typ="note">슈퍼 노바</sec> 스킬로 협동 공격</sec>을 유도합니다.
         <sec>협동 공격이 가능한 전투원이 여렷인 경우 위 표기된 순으로 우선권을 가집니다. (치이 아루엘 > 에프넬 순)</sec>
         <sec>다수의 적이 대상인 경우 사거리가 닿는 적을 우선 선택하고 사거리로 인해 협동 공격이 불가능할 경우 다음 순서의 전투원이 협동 공격을 실행합니다.</sec>
-      JP: |-
-        無線で空爆した後、重火器で指定範囲に<dmg elem="ice" />を発生させます。
-        <sec typ="cond">スキル命中時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />行保護 / 列保護効果を解除</sec>し、2ラウンドの間<sec typ="dmg"><buff typ="IceDMG_DOT" />持続冷気ダメージ<val idx="5" signless /></sec>を発生させます。
-        <sec typ="cond">クリティカル時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="6" r /></sec>を減少させます。
-        <sec typ="cond">分隊に<char uid="LC_Chii" />、<char uid="LC_Dhana" />、<char uid="LC_Ephnel" />がいる場合</sec>、<sec typ="chance">100%確率</sec>で<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">捕食者が呼ぶ終末</sec>、<sec typ="note">ラッシュ・インペイル</sec>、<sec typ="note">スーパーノヴァ</sec>スキルによる協同攻撃</sec>を誘発します。
-        <sec>協同攻撃が可能な戦闘員が複数いる場合、上記の順で優先権を持ちます。(チイ・アルエル > エフネル順)</sec>
-        <sec>多くの敵が対象の場合、射程が届く敵を優先して選択し、射程の都合で協同攻撃が不可能な場合は次の順の戦闘員が協同攻撃を実行します。</sec>
       EN: |-
-        Calls in aerial bombardment over radio and fires heavy weapons to deal <dmg elem="ice" /> damage to the designated area.
-        <sec typ="cond">On Skill Hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes row protection / column protection effects</sec> from the target and inflicts <sec typ="dmg"><buff typ="IceDMG_DOT" /> Cold DoT <val idx="5" signless /></sec> for 2 rounds.
-        <sec typ="cond">On CRIT</sec>, decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="6" r /></sec> for 2 rounds.
-        <sec typ="cond">If <char uid="LC_Chii" />, <char uid="LC_Dhana" />, and <char uid="LC_Ephnel" /> are in the squad</sec>, triggers a co-op attack with the skills <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">End of the World Called by the Predator</sec>, <sec typ="note">Lash Impale</sec>, and <sec typ="note">Supernova</sec></sec> at 100% chance.
-        <sec>When multiple units can perform the co-op attack, they take priority in the order listed above. (Chii Aruel > Ephnel)</sec>
-        <sec>If multiple enemies are targeted, enemies within range are prioritized, and if a co-op attack is impossible due to range, the next unit in order performs the co-op attack.</sec>
+        After calling in an air bombardment by radio, uses heavy weapons to generate <dmg elem="ice" /> in the designated area.
+        <sec typ="cond">When the skill hits</sec>, removes the target’s <sec typ="buff"><buff typ="REMOVE_BUFF" /> Row Protection / Column Protection effects</sec> and inflicts <sec typ="dmg"><buff typ="IceDMG_DOT" /> Ice damage over time <val idx="5" signless /></sec> for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, decreases the target’s <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="6" r /></sec> for 2 rounds.
+      JP: |-
+        無線で空中爆撃を要請した後、重火器で指定範囲に<dmg elem="ice" />を発生させます。
+        <sec typ="cond">スキル命中時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />行保護 / 列保護効果を解除</sec>し、2ラウンドの間<sec typ="dmg"><buff typ="IceDMG_DOT" />持続冷気ダメージ <val idx="5" signless /></sec>を発生させます。
+        <sec typ="cond">クリティカル時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="6" r /></sec>を減少させます。
       TC: |-
-        透過無線電引導空襲後，以重火器對指定範圍造成<dmg elem="ice" />傷害。
-        <sec typ="cond">技能命中時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的行保護 / 列保護效果</sec>，並於2回合內施加<sec typ="dmg"><buff typ="IceDMG_DOT" />持續冷氣傷害<val idx="5" signless /></sec>。
-        <sec typ="cond">暴擊時</sec>，於2回合內降低目標的<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="6" r /></sec>。
-        <sec typ="cond">若小隊中有<char uid="LC_Chii" />、<char uid="LC_Dhana" />、<char uid="LC_Ephnel" /></sec>，則會以<sec typ="chance">100%機率</sec>誘發與<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">捕食者所呼喚的終末</sec>、<sec typ="note">撕裂貫穿</sec>、<sec typ="note">超新星</sec></sec>技能的協同攻擊。
-        <sec>若可進行協同攻擊的戰鬥員有多名，則依上述順序取得優先權。（치이 아루엘 > 에프넬 順）</sec>
-        <sec>若目標為多名敵人，則優先選擇射程可及的敵人，若因射程無法進行協同攻擊，則由下一順位的戰鬥員執行協同攻擊。</sec>
+        以無線呼叫空中轟炸後，用重火器在指定範圍產生<dmg elem="ice" />。
+        <sec typ="cond">技能命中時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />列保護 / 行保護效果</sec>，並在2回合內造成<sec typ="dmg"><buff typ="IceDMG_DOT" />持續冰冷傷害 <val idx="5" signless /></sec>。
+        <sec typ="cond">暴擊時</sec>，2回合內降低目標的<sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="6" r /></sec>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -7048,20 +7039,28 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec> 아군 전체의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> 및 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>, <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="2" r /></sec>를 증가시킵니다.
-        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, <char uid="3P_ScissorsLise" />가 있는 경우</sec> <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, <char uid="3P_ScissorsLise" />는 2배로 효과를 받습니다.
-        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, <char uid="3P_ScissorsLise" />가 있는 경우</sec> <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, <char uid="3P_ScissorsLise" />를 공격 지원</sec>합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、味方全体の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>および<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec>、<sec typ="dmg"><buff typ="SKILL_UP" />スキル威力<val idx="2" r /></sec>を増加させます。
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">分隊に<char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" />がいる場合</sec>、<char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" />は2倍の効果を受けます。
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">分隊に<char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" />がいる場合</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" />を攻撃支援</sec>します。
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <cmt t="스틸라인"><import name="SteelLine" /></cmt> 소속 전투원이 있을 경우</sec> <cmt t="스틸라인"><import name="SteelLine" /></cmt> 전투원은 2배로 효과를 받습니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <cmt t="라이언 코퍼레이션"><import name="LionCooperation" /></cmt> 소속 전투원이 있을 경우</sec> 자신을 포함한 <cmt t="라이언 코퍼레이션"><import name="LionCooperation" /></cmt> 전투원은 2배로 효과를 받습니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <cmt t="스틸라인"><import name="SteelLine" /></cmt> 소속 전투원이 있는 경우</sec> <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="스틸라인"><import name="SteelLine" /></cmt> 전투원을 공격 지원</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <cmt t="라이언 코퍼레이션"><import name="LionCooperation" /></cmt> 소속 전투원이 있는 경우</sec> 자신을 제외한 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="라이언 코퍼레이션"><import name="LionCooperation" /></cmt> 전투원을 공격 지원</sec>합니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, increases all allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="2" r /></sec>.
-        <sec typ="cond">At the start of the round</sec>, if <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, and <char uid="3P_ScissorsLise" /> are in the squad, <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, and <char uid="3P_ScissorsLise" /> receive double effects.
-        <sec typ="cond">At the start of the round</sec>, if <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, and <char uid="3P_ScissorsLise" /> are in the squad, provides <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attack Support to <char uid="3P_Alcyone" />, <char uid="3P_Merope" />, and <char uid="3P_ScissorsLise" /></sec>.
+        <sec typ="cond">At round start</sec> all allies of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec>, <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="2" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">squad <cmt t="Steel Line"><import name="SteelLine" /></cmt> affiliated combatant if present</sec> <cmt t="Steel Line"><import name="SteelLine" /></cmt> combatant 2 times as effect and receives.
+        <sec typ="cond">At round start</sec> <sec typ="cond">squad <cmt t="Ryan Corporation"><import name="LionCooperation" /></cmt> affiliated combatant if present</sec> self including <cmt t="Ryan Corporation"><import name="LionCooperation" /></cmt> combatant 2 times as effect and receives.
+        <sec typ="cond">At round start</sec> <sec typ="cond">squad <cmt t="Steel Line"><import name="SteelLine" /></cmt> affiliated combatant if present</sec> <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="Steel Line"><import name="SteelLine" /></cmt> combatant Attack Support</sec>.
+        <sec typ="cond">At round start</sec> <sec typ="cond">squad <cmt t="Ryan Corporation"><import name="LionCooperation" /></cmt> affiliated combatant if present</sec> self excluding <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="Ryan Corporation"><import name="LionCooperation" /></cmt> combatant Attack Support</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 味方全体の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> および <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>、 <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="2" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スクワッドに <cmt t="スウトイルルアである"><import name="SteelLine" /></cmt> 所属 戦闘員が 存在する場合</sec> <cmt t="スウトイルルアである"><import name="SteelLine" /></cmt> 戦闘員は 2ブエで 効果を 受けます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スクワッドに <cmt t="ルアがオン クオプオルエがスヨン"><import name="LionCooperation" /></cmt> 所属 戦闘員が 存在する場合</sec> 自身を 含むした <cmt t="ルアがオン クオプオルエがスヨン"><import name="LionCooperation" /></cmt> 戦闘員は 2ブエで 効果を 受けます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スクワッドに <cmt t="スウトイルルアである"><import name="SteelLine" /></cmt> 所属 戦闘員が ある 場合</sec> <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="スウトイルルアである"><import name="SteelLine" /></cmt> 戦闘員を 攻撃支援</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スクワッドに <cmt t="ルアがオン クオプオルエがスヨン"><import name="LionCooperation" /></cmt> 所属 戦闘員が ある 場合</sec> 自身を ジエ外した <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="ルアがオン クオプオルエがスヨン"><import name="LionCooperation" /></cmt> 戦闘員を 攻撃支援</sec>します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，增加所有我軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>及<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>、<sec typ="dmg"><buff typ="SKILL_UP" />技能威力<val idx="2" r /></sec>。
-        <sec typ="cond">回合開始時</sec>，若小隊中有<char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" />，則<char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" />會以2倍效果受益。
-        <sec typ="cond">回合開始時</sec>，若小隊中有<char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" />，則會<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援攻擊<char uid="3P_Alcyone" />、<char uid="3P_Merope" />、<char uid="3P_ScissorsLise" /></sec>。
+        <sec typ="cond">回合開始時</sec> 全體我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> 以及 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>， <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="2" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">小隊於 <cmt t="三utilra為"><import name="SteelLine" /></cmt> 所屬 戰鬥員 存在時</sec> <cmt t="三utilra為"><import name="SteelLine" /></cmt> 戰鬥員 2倍以 效果 受到。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">小隊於 <cmt t="時eon 公司"><import name="LionCooperation" /></cmt> 所屬 戰鬥員 存在時</sec> 自身 包含 <cmt t="時eon 公司"><import name="LionCooperation" /></cmt> 戰鬥員 2倍以 效果 受到。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">小隊於 <cmt t="三utilra為"><import name="SteelLine" /></cmt> 所屬 戰鬥員 有 情況</sec> <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="三utilra為"><import name="SteelLine" /></cmt> 戰鬥員 攻擊支援</sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">小隊於 <cmt t="時eon 公司"><import name="LionCooperation" /></cmt> 所屬 戰鬥員 有 情況</sec> 自身 解除外 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="時eon 公司"><import name="LionCooperation" /></cmt> 戰鬥員 攻擊支援</sec>。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -7399,21 +7398,49 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">피격 시</sec> 자신의 모든 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
-        <sec typ="cond">라운드 개시 시</sec> 적군 전체의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="5" r /></sec> 및 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="6" r /></sec>, <sec typ="dmg"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="7" r /></sec>를 감소시킵니다.
-        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">기동형 적군</sec>은 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="8" r /></sec> 및 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="9" r /></sec>가 감소합니다.
-      JP: |-
-        <sec typ="cond">被撃時</sec>、自分の全ての<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害な効果を解除</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>、敵軍全体の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="5" r /></sec>および<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="6" r /></sec>、<sec typ="dmg"><buff typ="SKILL_DOWN" />スキル威力<val idx="7" r /></sec>を減少させます。
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">機動型の敵軍</sec>は<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="8" r /></sec>および<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="9" r /></sec>が減少します。
+        <sec typ="cond">피격 시</sec> <sec typ="chance">100% 확률</sec> <sec typ="dmg"><buff typ="COUNTER" /> <val idx="0" r signless /> 위력으로 반격</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">홀수 라운드인 경우</sec> 적군 전체에 <sec typ="note">폭격!</sec>을 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">짝수 라운드인 경우</sec> 아군 전체에 <sec typ="note">지원!</sec>을 부여합니다.
+        <strike><sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="라이언 코퍼레이션"><import name="LionCooperation" /></cmt> 소속 전투원이 1명 이상 있는 경우</sec> 자신의 AP 을(를) 증가시킵니다.</strike>
+        <box t="폭격!">
+        <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec> 증가, <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="6" r /></sec> 감소
+        </box>
+        <box t="지원!">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="7" r inv /></sec> 감소, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec> 증가
+        </box>
       EN: |-
-        <sec typ="cond">When attacked</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes all Malign Effects from self</sec>.
-        <sec typ="cond">At the start of the round</sec>, decreases all enemies' <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACU <val idx="6" r /></sec> / <sec typ="dmg"><buff typ="SKILL_DOWN" /> Skill Power <val idx="7" r /></sec>.
-        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">enemy Mobile units</sec> have their <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="8" r /></sec> and <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="9" r /></sec> decreased.
+        <sec typ="cond">When hit</sec> <sec typ="chance">100% chance</sec> <sec typ="dmg"><buff typ="COUNTER" /> <val idx="0" r signless /> power as Counterattack</sec>.
+        <sec typ="cond">At round start</sec> <sec typ="cond">odd roundif</sec> all enemies to <sec typ="note">Bombard!</sec> grants.
+        <sec typ="cond">At round start</sec> <sec typ="cond">even roundif</sec> all allies to <sec typ="note">Support!</sec> grants.
+        <strike><sec typ="cond">At round start</sec> <sec typ="cond">squad self excluding <cmt t="Ryan Corporation"><import name="LionCooperation" /></cmt> affiliated combatant 1 or more member if present</sec> own AP increases.</strike>
+        <box t="Bombard!">
+        <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec> increase, <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="6" r /></sec> decrease
+        </box>
+        <box t="Support!">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="7" r inv /></sec> decrease, <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="8" r /></sec> increase
+        </box>
+      JP: |-
+        <sec typ="cond">被弾時</sec> <sec typ="chance">100% 確率</sec> <sec typ="dmg"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力で 反撃</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">奇数 ラウンドの場合</sec> 敵全体に <sec typ="note">爆撃！</sec>を付与します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">偶数 ラウンドの場合</sec> 味方全体に <sec typ="note">支援！</sec>を付与します。
+        <strike><sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スクワッドに 自身を ジエ外した <cmt t="ルアがオン クオプオルエがスヨン"><import name="LionCooperation" /></cmt> 所属 戦闘員が 1名 以上 ある 場合</sec> 自身の AP を増加させます。</strike>
+        <box t="爆撃！">
+        <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="5" r /></sec> 増加、 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="6" r /></sec> 減少
+        </box>
+        <box t="支援！">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="7" r inv /></sec> 減少、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" r /></sec> 増加
+        </box>
       TC: |-
-        <sec typ="cond">被擊時</sec>，解除自身所有的<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害效果</sec>。
-        <sec typ="cond">回合開始時</sec>，降低敵軍全體的<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="5" r /></sec>及<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="6" r /></sec>、<sec typ="dmg"><buff typ="SKILL_DOWN" />技能威力<val idx="7" r /></sec>。
-        <sec typ="cond">回合開始時</sec>，<sec typ="cond">機動型敵軍</sec>的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="8" r /></sec>及<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="9" r /></sec>降低。
+        <sec typ="cond">被擊時</sec> <sec typ="chance">100% 機率</sec> <sec typ="dmg"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力以 反擊</sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">奇數 回合若為</sec> 全體敵方於 <sec typ="note">轟炸！</sec>賦予。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">偶數 回合若為</sec> 全體我方於 <sec typ="note">支援！</sec>賦予。
+        <strike><sec typ="cond">回合開始時</sec> <sec typ="cond">小隊於 自身 解除外 <cmt t="時eon 公司"><import name="LionCooperation" /></cmt> 所屬 戰鬥員 1名 以上 有 情況</sec> 自身的 AP 使其增加。</strike>
+        <box t="轟炸！">
+        <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="5" r /></sec> 增加， <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="6" r /></sec> 減少
+        </box>
+        <box t="支援！">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="7" r inv /></sec> 減少， <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" r /></sec> 增加
+        </box>
   "5":
     key: "5"
     icon: P.Snipe
@@ -7978,21 +8005,65 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec> 아군 전체의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> 및 <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec>가 증가합니다.
-        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> 전투원이 있는 경우</sec> 자신을 포함한 <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> 전투원은 2배로 효과를 받습니다.
-        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> 전투원이 있는 경우</sec> 자신을 제외한 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> 전투원을 공격 지원</sec>합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、味方全体の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec>および<sec typ="dmg"><buff typ="SKILL_UP" />スキル威力<val idx="1" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">分隊に<cmt t="라이언 コ퍼레이션">$$LionCooperation:?$</cmt>戦闘員がいる場合</sec>、自分を含む<cmt t="라이언 コ퍼레이션">$$LionCooperation:?$</cmt>戦闘員は2倍の効果を受けます。
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">分隊に<cmt t="라이언 コ퍼레이션">$$LionCooperation:?$</cmt>戦闘員がいる場合</sec>、自分を除く<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="라이언 コ퍼레이션">$$LionCooperation:?$</cmt>戦闘員を攻撃支援</sec>します。
+        <sec typ="cond">라운드 개시 시</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 및 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="라이언 코퍼레이션"><import name="LionCooperation" /></cmt> 소속 전투원이 있을 경우</sec> 인원수에 따라 아군 전체에게 <sec typ="note">조준</sec>을 부여합니다.
+        <box t="조준 1">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec> 증가
+        </box>
+        <box t="조준 2">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="7" r /></sec> 증가
+        </box>
+        <box t="조준 3">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="8" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="10" r /></sec> 증가
+        </box>
+        <box t="조준 4">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="11" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="14" r /></sec> 증가
+        </box>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, increases all allies' <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> and <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="1" r /></sec>.
-        <sec typ="cond">At the start of the round</sec>, if there are <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> units in the squad, <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> units including self receive double effects.
-        <sec typ="cond">At the start of the round</sec>, if there are <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> units in the squad, provides <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attack Support to <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> units other than self</sec>.
+        <sec typ="cond">At round start</sec> own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> and <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">squad self excluding <cmt t="Ryan Corporation"><import name="LionCooperation" /></cmt> affiliated combatant if present</sec> members depending on the number of all to allies <sec typ="note">aimed</sec> grants.
+        <box t="aimed 1">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec> increase
+        </box>
+        <box t="aimed 2">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="7" r /></sec> increase
+        </box>
+        <box t="aimed 3">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="8" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="9" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="10" r /></sec> increase
+        </box>
+        <box t="aimed 4">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="11" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="12" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="13" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="14" r /></sec> increase
+        </box>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> および <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スクワッドに 自身を ジエ外した <cmt t="ルアがオン クオプオルエがスヨン"><import name="LionCooperation" /></cmt> 所属 戦闘員が 存在する場合</sec> であるウォン数に応じて 味方全体に <sec typ="note">照準</sec>を付与します。
+        <box t="照準 1">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> 増加
+        </box>
+        <box t="照準 2">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="7" r /></sec> 増加
+        </box>
+        <box t="照準 3">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="8" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="10" r /></sec> 増加
+        </box>
+        <box t="照準 4">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="11" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="14" r /></sec> 増加
+        </box>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，增加我軍全體的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="0" r /></sec>及<sec typ="dmg"><buff typ="SKILL_UP" />技能威力<val idx="1" r /></sec>。
-        <sec typ="cond">回合開始時</sec>，若小隊中有<cmt t="라이언 コ퍼레이션">$$LionCooperation:?$</cmt>戰鬥員，則包含自身在內的<cmt t="라이언 コ퍼레이션">$$LionCooperation:?$</cmt>戰鬥員會以2倍效果受益。
-        <sec typ="cond">回合開始時</sec>，若小隊中有<cmt t="라이언 コ퍼레이션">$$LionCooperation:?$</cmt>戰鬥員，則會<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援攻擊除自身外的<cmt t="라이언 コ퍼레이션">$$LionCooperation:?$</cmt>戰鬥員</sec>。
+        <sec typ="cond">回合開始時</sec> 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 以及 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">小隊於 自身 解除外 <cmt t="時eon 公司"><import name="LionCooperation" /></cmt> 所屬 戰鬥員 存在時</sec> 為人員依數量 全體我方給 <sec typ="note">瞄準</sec>賦予。
+        <box t="瞄準 1">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> 增加
+        </box>
+        <box t="瞄準 2">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="7" r /></sec> 增加
+        </box>
+        <box t="瞄準 3">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="8" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="10" r /></sec> 增加
+        </box>
+        <box t="瞄準 4">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="11" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="14" r /></sec> 增加
+        </box>
 dialogue:
   KR:
     "1":

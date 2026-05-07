@@ -79,9 +79,9 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 				width: 1,
 				height: 1,
-				// resolution: window.devicePixelRatio || 1,
+				resolution: window.devicePixelRatio || 1,
 				autoDensity: true,
-				powerPreference: "low-power",
+				powerPreference: "default",
 
 				// eventMode: "passive",
 				eventFeatures: {

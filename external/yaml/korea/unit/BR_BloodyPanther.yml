@@ -2191,17 +2191,15 @@ skills:
       KR: |-
         기관포로 <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="4" r /></sec>를 낮춥니다.
         대상이 <sec typ="cond"><buff typ="DEF_DOWN" /> 방어 감소</sec> 상태인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        機関砲で<dmg elem="physics" />を与え、2ラウンドの間、<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="4" r /></sec>を減少させます。
-        対象が<sec typ="cond"><buff typ="DEF_DOWN" />防御減少</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
       EN: |-
-        Fires a machine cannon and deals <dmg elem="physics" />.
-        For 2 rounds, lowers <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="4" r /></sec>.
-        If the target is <sec typ="cond"><buff typ="DEF_DOWN" /> Defense Down</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        machine cannon as <dmg elem="physics" /> damage and 2 rounds <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="4" r /></sec>reduces.
+        target <sec typ="cond"><buff typ="DEF_DOWN" /> defense decrease</sec> if in the state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        機関砲で<dmg elem="physics" />を与え、、 2ラウンドの間 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="4" r /></sec>を低下させます。
+        対象が <sec typ="cond"><buff typ="DEF_DOWN" /> 防御 減少</sec> 状態の場合、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
       TC: |-
-        以機關砲造成<dmg elem="physics" />。
-        使<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="4" r /></sec>在2回合內下降。
-        若目標處於<sec typ="cond"><buff typ="DEF_DOWN" />防禦力降低</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="0" r /></sec>提升。
+        機砲以 造成<dmg elem="physics" />，並 2回合內 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="4" r /></sec>降低。
+        目標 <sec typ="cond"><buff typ="DEF_DOWN" /> 防禦 減少</sec> 若為狀態， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: CannonShot
@@ -3105,15 +3103,15 @@ skills:
       KR: |-
         주포를 발사해 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> <dmg elem="physics" />를 줍니다.
         대상의 방어력을 일정 비율 무시하며, <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 경장형이거나 <buff typ="ARMORED_DMG_UP" /> 중장형인 경우 피해량 <val idx="1" r /></sec>가 증가합니다.
-      JP: |-
-        主砲を発射し、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec>の<dmg elem="physics" />を与えます。
-        対象の防御力を一定比率無視し、<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />軽装型または<buff typ="ARMORED_DMG_UP" />重装型の場合、ダメージ<val idx="1" r /></sec>が増加します。
       EN: |-
-        Fires the main gun and deals <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="0" r /></sec> <dmg elem="physics" />.
-        Ignores a fixed percentage of the target's DEF, and <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage <val idx="1" r /></sec> increases against light-armored or <buff typ="ARMORED_DMG_UP" /> heavy-armored targets.
+        main gun fires <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> <dmg elem="physics" />.
+        target's Defense fixed ratio ignoreand, <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Light-type or <buff typ="ARMORED_DMG_UP" /> Heavy-typeif damage <val idx="1" r /></sec> increases.
+      JP: |-
+        主砲を 発射して <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec><dmg elem="physics" />を与えます。
+        対象の 防御力を 一定 ブイユル 無視し、 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 軽装型がまたは <buff typ="ARMORED_DMG_UP" /> 重装型の場合 ダメージ量 <val idx="1" r /></sec>が増加します。
       TC: |-
-        發射主砲造成<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="0" r /></sec><dmg elem="physics" />。
-        無視目標一定比例的防禦力，若<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />目標為輕裝型</sec>或<buff typ="ARMORED_DMG_UP" />重裝型，傷害<val idx="1" r /></sec>提升。
+        主砲 發射 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec> 造成<dmg elem="physics" />。
+        目標的 防禦力 一定 比例 無視並， <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 輕裝型或 <buff typ="ARMORED_DMG_UP" /> 重裝型若為 傷害量 <val idx="1" r /></sec>增加。
   "3":
     key: "3"
     icon: P.FormChange
@@ -3494,30 +3492,30 @@ skills:
         <sec typ="cond">라운드 개시 시</sec> 자신에게 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec> 감소 효과를 부여합니다.
         <sec typ="cond">라운드 개시 시</sec> 자신에게 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> 및 <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec> 효과를 부여합니다.
         <sec typ="cond">라운드 개시 시</sec> 아군 전체의 <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="5" r /></sec>가 증가합니다.
-        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신을 포함한 <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 소속 전투원이 있을 경우</sec> <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 전투원은 효과를 2배로 받습니다.
-        <sec typ="cond">전투 개시 시</sec> <sec typ="cond">자신을 포함한 <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 소속 전투원이 있을 경우</sec> <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 전투원은 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신을 포함한 <cmt t="아머드 메이든"><import name="ArmoredMaiden" /></cmt> 소속 전투원이 있을 경우</sec> <cmt t="아머드 메이든"><import name="ArmoredMaiden" /></cmt> 전투원은 효과를 2배로 받습니다.
+        <sec typ="cond">전투 개시 시</sec> <sec typ="cond">자신을 포함한 <cmt t="아머드 메이든"><import name="ArmoredMaiden" /></cmt> 소속 전투원이 있을 경우</sec> <cmt t="아머드 메이든"><import name="ArmoredMaiden" /></cmt> 전투원은 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>이(가) 증가합니다.
         <sec typ="cond">대기 시</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">장갑 전개 모드</sec>로 변형</sec>됩니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分に<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="2" r inv /></sec>減少効果を付与します。
-        <sec typ="cond">ラウンド開始時</sec>、自分に<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>および<sec typ="buff"><buff typ="DEF_Side" />列保護</sec>効果を付与します。
-        <sec typ="cond">ラウンド開始時</sec>、味方全体の<sec typ="dmg"><buff typ="SKILL_UP" />スキル威力<val idx="5" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">自分を含む<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>所属戦闘員がいる場合</sec>、<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>戦闘員は効果を2倍で受けます。
-        <sec typ="cond">戦闘開始時</sec>、<sec typ="cond">自分を含む<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>所属戦闘員がいる場合</sec>、<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>戦闘員は<sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" /></sec>が増加します。
-        <sec typ="cond">待機時</sec>、<sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">装甲展開モード</sec>に転換</sec>されます。
       EN: |-
-        At round start, grants self a <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="2" r inv /></sec> reduction effect.
-        At round start, grants self <sec typ="buff"><buff typ="DEF_Line" /> row protection</sec> and <sec typ="buff"><buff typ="DEF_Side" /> column protection</sec>.
-        At round start, increases the whole squad's <sec typ="dmg"><buff typ="SKILL_UP" /> skill power <val idx="5" r /></sec>.
-        At round start, if there are <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants including self, those <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants receive double effect.
-        At battle start, if there are <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants including self, those <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants gain <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>.
-        On standby, <sec typ="buff"><buff typ="CHANGE_CHAR" /> transforms into <sec typ="note">Armor Deployment Mode</sec></sec>.
+        <sec typ="cond">At round start</sec> self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="2" r inv /></sec> decrease grants the effect.
+        <sec typ="cond">At round start</sec> self <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> and <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> grants the effect.
+        <sec typ="cond">At round start</sec> all allies of <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="5" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self including <cmt t="Armored Maiden"><import name="ArmoredMaiden" /></cmt> affiliated combatant if present</sec> <cmt t="Armored Maiden"><import name="ArmoredMaiden" /></cmt> combatant effect and 2 times as receives.
+        <sec typ="cond">At battle start</sec> <sec typ="cond">self including <cmt t="Armored Maiden"><import name="ArmoredMaiden" /></cmt> affiliated combatant if present</sec> <cmt t="Armored Maiden"><import name="ArmoredMaiden" /></cmt> combatant <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec> increases.
+        <sec typ="cond">On standby</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">Armor Deployment Mode</sec> as transform</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 自身に <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="2" r inv /></sec> 減少 効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec> 自身に <sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec> および <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec> 効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec> 味方全体の <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="5" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身を 含むした <cmt t="アーマードメイデン"><import name="ArmoredMaiden" /></cmt> 所属 戦闘員が 存在する場合</sec> <cmt t="アーマードメイデン"><import name="ArmoredMaiden" /></cmt> 戦闘員は 効果を 2ブエで 受けます。
+        <sec typ="cond">戦闘開始時</sec> <sec typ="cond">自身を 含むした <cmt t="アーマードメイデン"><import name="ArmoredMaiden" /></cmt> 所属 戦闘員が 存在する場合</sec> <cmt t="アーマードメイデン"><import name="ArmoredMaiden" /></cmt> 戦闘員は <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>が増加します。
+        <sec typ="cond">待機時</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">装甲展開モード</sec>で 変形</sec>されます。
       TC: |-
-        於<sec typ="cond">回合開始時</sec>，賦予自身<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="2" r inv /></sec>降低效果。
-        於<sec typ="cond">回合開始時</sec>，賦予自身<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>與<sec typ="buff"><buff typ="DEF_Side" />列保護</sec>效果。
-        於<sec typ="cond">回合開始時</sec>，我方全體的<sec typ="dmg"><buff typ="SKILL_UP" />技能威力<val idx="5" r /></sec>提升。
-        於<sec typ="cond">回合開始時</sec>，<sec typ="cond">若包含自身在內有<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>所屬戰鬥員</sec>，則<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>戰鬥員獲得2倍效果。
-        於<sec typ="cond">戰鬥開始時</sec>，<sec typ="cond">若包含自身在內有<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>所屬戰鬥員</sec>，則<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>戰鬥員的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" /></sec>提升。
-        待機時，<sec typ="buff"><buff typ="CHANGE_CHAR" />變形為<sec typ="note">展開裝甲模式</sec></sec>。
+        <sec typ="cond">回合開始時</sec> 自身給 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="2" r inv /></sec> 減少 賦予效果。
+        <sec typ="cond">回合開始時</sec> 自身給 <sec typ="buff"><buff typ="DEF_Line" /> 列保護</sec> 以及 <sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec> 賦予效果。
+        <sec typ="cond">回合開始時</sec> 全體我方的 <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="5" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身 包含 <cmt t="裝甲少女"><import name="ArmoredMaiden" /></cmt> 所屬 戰鬥員 存在時</sec> <cmt t="裝甲少女"><import name="ArmoredMaiden" /></cmt> 戰鬥員 效果 2倍以 受到。
+        <sec typ="cond">戰鬥開始時</sec> <sec typ="cond">自身 包含 <cmt t="裝甲少女"><import name="ArmoredMaiden" /></cmt> 所屬 戰鬥員 存在時</sec> <cmt t="裝甲少女"><import name="ArmoredMaiden" /></cmt> 戰鬥員 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>增加。
+        <sec typ="cond">待機時</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">裝甲展開模式</sec>以 變形</sec>。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -4013,17 +4011,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, 특수 코팅 장갑으로 인해 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="4" r /></sec>과 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" /> 모든 저항력 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 특수 코팅 장갑으로 인해 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="4" r /></sec>과 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" /> 모든 저항력 <val idx="1" r /></sec>가 증가합니다.
         <sec typ="ref">장갑 전개 모드</sec>에서는 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" /> 저항 증가</sec> 효과가 두 배로 증가하며, 자신이 지정 보호중인 아군에게도 증가한 만큼의 동일한 효과를 부여합니다.
-      JP: |-
-        ラウンド開始時、特殊コーティング装甲により<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="4" r /></sec>と<sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" />全ての耐性<val idx="1" r /></sec>が増加します。
-        <sec typ="ref">装甲展開モード</sec>では<sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" />耐性増加</sec>効果が2倍になり、自分が指定保護中の味方にも増加した分と同じ効果を付与します。
       EN: |-
-        At round start, Special Coated Armor increases <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="4" r /></sec> and <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" /> all resistances <val idx="1" r /></sec>.
-        In <sec typ="ref">Armor Deployment Mode</sec>, the <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" /> resistance increase</sec> effect is doubled, and the same increased effect is also applied to allies you are designated-protecting.
+        <sec typ="cond">At round start</sec>, special coating by armor due to <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="4" r /></sec> and <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" /> all Resistances <val idx="1" r /></sec> increases.
+        <sec typ="ref">Armor Deployment Mode</sec>from/in <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" /> resistance increase</sec> the effect is doubled increases and self Designated Protection in progress to allies also increased by of same grants the effect.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 トウク数 クオトイン ジアングアプウにより <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="4" r /></sec>と <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" /> 全耐性 <val idx="1" r /></sec>が増加します。
+        <sec typ="ref">装甲展開モード</sec>では <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" /> 耐性 増加</sec> 効果が2倍で 増加し、 自身が 指定保護中の 味方にも 増加した 分の 同一の 効果を付与します。
       TC: |-
-        於回合開始時，因特殊塗層裝甲，使<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="4" r /></sec>與<sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" />所有抗性<val idx="1" r /></sec>提升。
-        在<sec typ="ref">展開裝甲模式</sec>中，<sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" />抗性提升</sec>效果會變為2倍，並對自身正在指定保護的我軍也賦予同等的增幅效果。
+        <sec typ="cond">回合開始時</sec>， 特殊數 塗層 裝甲而 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="4" r /></sec>與 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" /> 所有抗性 <val idx="1" r /></sec>增加。
+        <sec typ="ref">裝甲展開模式</sec>在 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" /> 抗性 增加</sec> 效果變為2倍以 增加，並 自身 指定保護中的 我方給也 增加 等量的 相同 賦予效果。
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -4235,18 +4233,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 보호기를 제외한 <sec typ="buff"><buff typ="DEF_Char" /> 경장형 / 중장형 아군을 지정 대상 보호</sec>합니다.
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 중장형 아군에게 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> /<sec typ="buff"><buff typ="AP_UP" />  행동력 <val idx="4" r /></sec> 증가 효과를 부여합니다.
         <sec typ="ref">장갑 전개 모드</sec>에서는 <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec> 대신 <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec>이 추가로 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の保護機を除く<sec typ="buff"><buff typ="DEF_Char" />軽装型/重装型の味方を指定保護</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の重装型の味方に<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力<val idx="4" r /></sec>増加効果を付与します。
-        <sec typ="ref">装甲展開モード</sec>では<sec typ="buff"><buff typ="AP_UP" />行動力</sec>の代わりに<sec typ="buff"><buff typ="ATK_UP" />攻撃力</sec>が追加で増加します。
       EN: |-
-        At round start, grants designated protection to <sec typ="buff"><buff typ="DEF_Char" /> light-armored / heavy-armored allies</sec> in range, excluding protectors.
-        At round start, grants heavy-armored allies in range <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" r /></sec> increase effects.
-        In <sec typ="ref">Armor Deployment Mode</sec>, <sec typ="buff"><buff typ="AP_UP" /> AP</sec> increases additionally instead of <sec typ="buff"><buff typ="ATK_UP" /> ATK</sec>.
+        <sec typ="cond">At round start</sec>, within range Defender excluding <sec typ="buff"><buff typ="DEF_Char" /> Light-type / Heavy-type allies Designated Target Protection</sec>.
+        <sec typ="cond">At round start</sec>, within range Heavy-type to allies <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> /<sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="4" r /></sec> increase grants the effect.
+        <sec typ="ref">Armor Deployment Mode</sec>from/in <sec typ="buff"><buff typ="AP_UP" /> Action Speed</sec> instead <sec typ="buff"><buff typ="ATK_UP" /> Attack</sec> additionally increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 保護機を ジエ外した <sec typ="buff"><buff typ="DEF_Char" /> 軽装型 / 重装型 味方を 指定対象保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 重装型 味方に <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec> /<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> 増加 効果を付与します。
+        <sec typ="ref">装甲展開モード</sec>では <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec> 代わりに <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力</sec>が 追加で 増加します。
       TC: |-
-        於<sec typ="cond">回合開始時</sec>，對範圍內排除保護機的<sec typ="buff"><buff typ="DEF_Char" />輕裝型／重裝型我軍指定保護</sec>。
-        於<sec typ="cond">回合開始時</sec>，賦予範圍內重裝型我軍<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="3" r /></sec>／<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>增加效果。
-        在<sec typ="ref">展開裝甲模式</sec>中，會改為額外增加<sec typ="buff"><buff typ="ATK_UP" />攻擊力</sec>，而不是<sec typ="buff"><buff typ="AP_UP" />行動力</sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 保護機 解除外 <sec typ="buff"><buff typ="DEF_Char" /> 輕裝型 / 重裝型 我方 指定目標保護</sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 重裝型 我方給 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> /<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> 增加 賦予效果。
+        <sec typ="ref">裝甲展開模式</sec>在 <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec> 改為 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力</sec> 額外 增加。
   F1:
     key: F1
     icon: CannonShot
@@ -5151,18 +5149,18 @@ skills:
         주포 조준 사격으로 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r signless /></sec> <dmg elem="physics" />를 줍니다.
         대상이 <sec typ="cond">경장형</sec>이거나 <sec typ="cond">중장형</sec>인 경우 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" /> 피해량 <val idx="1" r /></sec>가 증가합니다.
         <sec>스킬 레벨 당 +10%의 추가 적중이 적용됩니다.</sec>
-      JP: |-
-        主砲照準射撃で<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r signless /></sec>の<dmg elem="physics" />を与えます。
-        対象が<sec typ="cond">軽装型</sec>または<sec typ="cond">重装型</sec>の場合、<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" />ダメージ<val idx="1" r /></sec>が増加します。
-        <sec>スキルレベルごとに+10%の追加命中が適用されます。</sec>
       EN: |-
-        Fires a main-gun aimed shot and deals <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="0" r signless /></sec> <dmg elem="physics" />.
-        If the target is <sec typ="cond">light-armored</sec> or <sec typ="cond">heavy-armored</sec>, <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" /> damage <val idx="1" r /></sec> increases.
-        <sec>Gains an additional +10% accuracy per skill level.</sec>
+        main gun aimed by firing as <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r signless /></sec> <dmg elem="physics" />.
+        target <sec typ="cond">Light-type</sec>or <sec typ="cond">Heavy-type</sec> if <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" /> damage <val idx="1" r /></sec> increases.
+        <sec>per skill level +10% of additional accuracy is applied.</sec>
+      JP: |-
+        主砲 照準 射撃で <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r signless /></sec><dmg elem="physics" />を与えます。
+        対象が <sec typ="cond">軽装型</sec>がまたは <sec typ="cond">重装型</sec>の場合 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" /> ダメージ量 <val idx="1" r /></sec>が増加します。
+        <sec>スキルレベルごとに +10%の 追加命中が適用されます。</sec>
       TC: |-
-        以主砲瞄準射擊造成<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="0" r signless /></sec><dmg elem="physics" />。
-        若目標為<sec typ="cond">輕裝型</sec>或<sec typ="cond">重裝型</sec>，則<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" />傷害<val idx="1" r /></sec>提升。
-        <sec>每個技能等級額外套用+10%命中。</sec>
+        主砲 瞄準 射擊以 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r signless /></sec> 造成<dmg elem="physics" />。
+        目標 <sec typ="cond">輕裝型</sec>或 <sec typ="cond">重裝型</sec>若為 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" /> 傷害量 <val idx="1" r /></sec>增加。
+        <sec>每技能等級 +10%的 套用額外命中。</sec>
   F2:
     key: F2
     icon: FormChange
@@ -5279,15 +5277,15 @@ skills:
       KR: |-
         <sec typ="note">장갑 전개 모드</sec>를 해제하고 <sec typ="note">순항 모드</sec>로 변형합니다.
         <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 모든 해로운 효과가 제거</sec>됩니다.
-      JP: |-
-        <sec typ="note">装甲展開モード</sec>を解除し、<sec typ="note">巡航モード</sec>に転換します。
-        <sec typ="buff"><buff typ="REMOVE_DEBUFF" />全ての有害な効果が除去</sec>されます。
       EN: |-
-        Removes <sec typ="note">Armor Deployment Mode</sec> and transforms into <sec typ="note">Cruise Mode</sec>.
-        <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> All harmful effects are removed</sec>.
+        <sec typ="note">Armor Deployment Mode</sec> remove and <sec typ="note">Cruise Mode</sec> as transform.
+        <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes all harmful effects</sec>.
+      JP: |-
+        <sec typ="note">装甲展開モード</sec>を 解除し、 <sec typ="note">巡航モード</sec>で 変形します。
+        <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> すべての 有害効果が 除去</sec>されます。
       TC: |-
-        解除<sec typ="note">展開裝甲模式</sec>並變形為<sec typ="note">巡航模式</sec>。
-        <sec typ="buff"><buff typ="REMOVE_DEBUFF" />所有有害效果皆被移除</sec>。
+        <sec typ="note">裝甲展開模式</sec> 解除並 <sec typ="note">巡航模式</sec>以 變形。
+        <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 所有 負面效果 移除</sec>。
   F3:
     key: F3
     icon: P.SelfDefBuff
@@ -5668,28 +5666,28 @@ skills:
         <sec typ="cond">라운드 개시 시</sec> 자신에게 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec> 감소 효과를 부여합니다.
         <sec typ="cond">라운드 개시 시</sec> 자신에게 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> 및 <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec> 효과를 부여합니다.
         <sec typ="cond">라운드 개시 시</sec> 아군 전체의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="7" r /></sec>가 증가합니다.
-        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신을 포함한 <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 소속 전투원이 있을 경우</sec> <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 전투원에게 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="8" signless />회</sec>를 부여합니다.
-      JP: |-
-        <sec typ="cond">被撃時</sec>、自分の<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="5" r /></sec>が増加します。<sec>(最大3スタック)</sec>
-        <sec typ="cond">被撃時</sec>、<sec typ="chance">100%の確率</sec><sec typ="dmg"><buff typ="COUNTER" /> <val idx="6" r signless />威力</sec>で反撃します。
-        <sec typ="cond">ラウンド開始時</sec>、自分に<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="2" r inv /></sec>減少効果を付与します。
-        <sec typ="cond">ラウンド開始時</sec>、自分に<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>および<sec typ="buff"><buff typ="DEF_Side" />列保護</sec>効果を付与します。
-        <sec typ="cond">ラウンド開始時</sec>、味方全体の<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="7" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">自分を含む<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>所属戦闘員がいる場合</sec>、<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>戦闘員に<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化<val idx="8" signless />回</sec>を付与します。
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신을 포함한 <cmt t="아머드 메이든"><import name="ArmoredMaiden" /></cmt> 소속 전투원이 있을 경우</sec> <cmt t="아머드 메이든"><import name="ArmoredMaiden" /></cmt> 전투원에게 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="8" signless />회</sec>를 부여합니다.
       EN: |-
-        When hit, increases own <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="5" r /></sec>. <sec>(Up to 3 stacks)</sec>
-        When hit, counterattacks with <sec typ="chance">100% chance</sec> and <sec typ="dmg"><buff typ="COUNTER" /> <val idx="6" r signless /> power</sec>.
-        At round start, grants self a <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="2" r inv /></sec> reduction effect.
-        At round start, grants self <sec typ="buff"><buff typ="DEF_Line" /> row protection</sec> and <sec typ="buff"><buff typ="DEF_Side" /> column protection</sec>.
-        At round start, increases the whole squad's <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="7" r /></sec>.
-        At round start, if there are <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants including self, grants those <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants <sec typ="buff"><buff typ="DEF_All" /> 1 damage nullification</sec>.
+        <sec typ="cond">When hit</sec> own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="5" r /></sec> increases. <sec>(up to 3stack)</sec>
+        <sec typ="cond">When hit</sec> <sec typ="chance">100% chance</sec> <sec typ="dmg"><buff typ="COUNTER" /> <val idx="6" r signless /> power</sec> as Counterattack.
+        <sec typ="cond">At round start</sec> self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="2" r inv /></sec> decrease grants the effect.
+        <sec typ="cond">At round start</sec> self <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> and <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> grants the effect.
+        <sec typ="cond">At round start</sec> all allies of <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="7" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self including <cmt t="Armored Maiden"><import name="ArmoredMaiden" /></cmt> affiliated combatant if present</sec> <cmt t="Armored Maiden"><import name="ArmoredMaiden" /></cmt> combatantto <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification <val idx="8" signless />times</sec> grants.
+      JP: |-
+        <sec typ="cond">被弾時</sec> 自身の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="5" r /></sec>が増加します。 <sec>(最大 3重複)</sec>
+        <sec typ="cond">被弾時</sec> <sec typ="chance">100% 確率</sec> <sec typ="dmg"><buff typ="COUNTER" /> <val idx="6" r signless /> 威力</sec>で 反撃します。
+        <sec typ="cond">ラウンド開始時</sec> 自身に <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="2" r inv /></sec> 減少 効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec> 自身に <sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec> および <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec> 効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec> 味方全体の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="7" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身を 含むした <cmt t="アーマードメイデン"><import name="ArmoredMaiden" /></cmt> 所属 戦闘員が 存在する場合</sec> <cmt t="アーマードメイデン"><import name="ArmoredMaiden" /></cmt> 戦闘員に <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="8" signless />回</sec>を付与します。
       TC: |-
-        於<sec typ="cond">被擊時</sec>，自身的<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="5" r /></sec>提升。<sec>(最多3層)</sec>
-        於<sec typ="cond">被擊時</sec>，以<sec typ="chance">100%機率</sec><sec typ="dmg"><buff typ="COUNTER" /> <val idx="6" r signless />威力</sec>進行反擊。
-        於<sec typ="cond">回合開始時</sec>，賦予自身<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="2" r inv /></sec>降低效果。
-        於<sec typ="cond">回合開始時</sec>，賦予自身<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>與<sec typ="buff"><buff typ="DEF_Side" />列保護</sec>效果。
-        於<sec typ="cond">回合開始時</sec>，我方全體的<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="7" r /></sec>提升。
-        於<sec typ="cond">回合開始時</sec>，<sec typ="cond">若包含自身在內有<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>所屬戰鬥員</sec>，則賦予該<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>戰鬥員<sec typ="buff"><buff typ="DEF_All" />1次傷害無效化</sec>。
+        <sec typ="cond">被擊時</sec> 自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="5" r /></sec>增加。 <sec>(最大 3疊加)</sec>
+        <sec typ="cond">被擊時</sec> <sec typ="chance">100% 機率</sec> <sec typ="dmg"><buff typ="COUNTER" /> <val idx="6" r signless /> 威力</sec>以 反擊。
+        <sec typ="cond">回合開始時</sec> 自身給 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="2" r inv /></sec> 減少 賦予效果。
+        <sec typ="cond">回合開始時</sec> 自身給 <sec typ="buff"><buff typ="DEF_Line" /> 列保護</sec> 以及 <sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec> 賦予效果。
+        <sec typ="cond">回合開始時</sec> 全體我方的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="7" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身 包含 <cmt t="裝甲少女"><import name="ArmoredMaiden" /></cmt> 所屬 戰鬥員 存在時</sec> <cmt t="裝甲少女"><import name="ArmoredMaiden" /></cmt> 戰鬥員給 <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 <val idx="8" signless />次</sec>賦予。
   F5:
     key: F5
     icon: P.FormChange
@@ -6033,18 +6031,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 보호기를 제외한 <sec typ="buff"><buff typ="DEF_Char" /> 경장형 / 중장형 아군을 지정 대상 보호</sec>합니다.
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 중장형 아군에게 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec> 증가 효과를 부여합니다.
         <sec typ="ref">순항 모드</sec>에서는 <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec> 대신 <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec>이 추가로 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の保護機を除く<sec typ="buff"><buff typ="DEF_Char" />軽装型/重装型の味方を指定保護</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の重装型の味方に<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>増加効果を付与します。
-        <sec typ="ref">巡航モード</sec>では<sec typ="buff"><buff typ="ATK_UP" />攻撃力</sec>の代わりに<sec typ="buff"><buff typ="AP_UP" />行動力</sec>が追加で増加します。
       EN: |-
-        At round start, grants designated protection to <sec typ="buff"><buff typ="DEF_Char" /> light-armored / heavy-armored allies</sec> in range, excluding protectors.
-        At round start, grants heavy-armored allies in range <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" r /></sec> increase effects.
-        In <sec typ="ref">Cruise Mode</sec>, <sec typ="buff"><buff typ="AP_UP" /> AP</sec> increases additionally instead of <sec typ="buff"><buff typ="ATK_UP" /> ATK</sec>.
+        <sec typ="cond">At round start</sec>, within range Defender excluding <sec typ="buff"><buff typ="DEF_Char" /> Light-type / Heavy-type allies Designated Target Protection</sec>.
+        <sec typ="cond">At round start</sec>, within range Heavy-type to allies <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="4" r /></sec> increase grants the effect.
+        <sec typ="ref">Cruise Mode</sec>from/in <sec typ="buff"><buff typ="ATK_UP" /> Attack</sec> instead <sec typ="buff"><buff typ="AP_UP" /> Action Speed</sec> additionally increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 保護機を ジエ外した <sec typ="buff"><buff typ="DEF_Char" /> 軽装型 / 重装型 味方を 指定対象保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 重装型 味方に <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> 増加 効果を付与します。
+        <sec typ="ref">巡航モード</sec>では <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力</sec> 代わりに <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>が 追加で 増加します。
       TC: |-
-        於<sec typ="cond">回合開始時</sec>，對範圍內排除保護機的<sec typ="buff"><buff typ="DEF_Char" />輕裝型／重裝型我軍指定保護</sec>。
-        於<sec typ="cond">回合開始時</sec>，賦予範圍內重裝型我軍<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="3" r /></sec>／<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>增加效果。
-        在<sec typ="ref">巡航模式</sec>中，會改為額外增加<sec typ="buff"><buff typ="AP_UP" />行動力</sec>，而不是<sec typ="buff"><buff typ="ATK_UP" />攻擊力</sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 保護機 解除外 <sec typ="buff"><buff typ="DEF_Char" /> 輕裝型 / 重裝型 我方 指定目標保護</sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 重裝型 我方給 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> 增加 賦予效果。
+        <sec typ="ref">巡航模式</sec>在 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力</sec> 改為 <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec> 額外 增加。
 dialogue:
   KR:
     "1":

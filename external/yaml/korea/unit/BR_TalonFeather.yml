@@ -3260,18 +3260,18 @@ skills:
         오토 터렛으로 단일 대상에게 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec> 증가 상태로 만듭니다. (중첩 불가)
         <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 행 / 열 보호 효과를 해제</sec>합니다.
-      JP: |-
-        オートタレットで単一対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 被ダメージ <val idx="3" r /></sec>増加状態にします。(重複不可)
-        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 行 / 列保護効果を解除</sec>します。
       EN: |-
-        Fires an auto turret to deal <dmg elem="physics" /> to a single target.
-        <sec typ="cond">On hit</sec>, for 2 rounds, makes the target enter a <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec> increase state. (Does not stack)
-        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's row / column protection effects</sec>.
+        Deals <dmg elem="physics" /> to a single target with an auto turret.
+        <sec typ="cond">On hit</sec>, for 2 rounds, inflicts <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec> increase on the target. (Cannot stack)
+        <sec typ="cond">On Critical</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's row / column protection effects</sec>.
+      JP: |-
+        オートタレットで単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="3" r /></sec>増加状態にします。(重複不可)
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />行 / 列保護効果を解除</sec>します。
       TC: |-
         以自動砲塔對單一目標造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，使目標在2回合內進入<sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受傷害 <val idx="3" r /></sec>增加狀態。(不可疊加)
-        <sec typ="cond">暴擊時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 行 / 列保護效果</sec>。
+        <sec typ="cond">命中時</sec>，使目標於2回合內進入<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="3" r /></sec>增加狀態。（不可重疊）
+        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的行 / 列保護效果</sec>。
   "2":
     key: "2"
     icon: TeamAtkDeBuff
@@ -5870,18 +5870,18 @@ skills:
         재밍 장치를 가동해 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="3" /></sec>을(를) 감소시킵니다.
         <sec>스킬 레벨 당 +30%의 적중 보정이 적용됩니다.</sec>
-      JP: |-
-        ジャミング装置を起動し、指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="3" /></sec>を減少させます。
-        <sec>スキルレベルごとに+30%の命中補正が適用されます。</sec>
       EN: |-
-        Activates the jamming device and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area.
-        <sec typ="cond">On hit</sec>, for 2 rounds, decreases the target's <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> Range <val idx="3" /></sec>.
-        <sec>A +30% accuracy correction is applied per skill level.</sec>
+        Activates a jamming device to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> in the designated area.
+        <sec typ="cond">On hit</sec>, for 2 rounds, reduces the target's <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical Rate <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> Range <val idx="3" /></sec>.
+        <sec>Applies +30% Accuracy correction per skill level.</sec>
+      JP: |-
+        ジャミング装置を稼働し、指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" />射程<val idx="3" /></sec>を減少させます。
+        <sec>スキルレベルごとに+30%の命中補正が適用されます。</sec>
       TC: |-
         啟動干擾裝置，對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，在2回合內降低目標的<sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="3" /></sec>。
-        <sec>每個技能等級套用+30%的命中修正。</sec>
+        <sec typ="cond">命中時</sec>，於2回合內降低目標的<sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" />射程<val idx="3" /></sec>。
+        <sec>每技能等級套用+30%命中補正。</sec>
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -6095,17 +6095,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        전투 개시 시, 전열에 위치한 경장 / 중장형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
-        <sec typ="cond">라운드 개시 시</sec> 자신이 <sec typ="cond"><buff typ="SCOUTING" /> 정찰 활성화</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원 상태인 경우</sec>, 각 효과마다 전열에 위치한 경장 / 중장형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec>가 증가합니다.
-      JP: |-
-        戦闘開始時、前列にいる軽装 / 重装型味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、自身が<sec typ="cond"><buff typ="SCOUTING" /> 偵察有効化</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻撃支援状態の場合</sec>、各効果ごとに前列にいる軽装 / 重装型味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">전열</sec>에 위치한 경장 / 중장형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> 자신이 <sec typ="cond"><buff typ="SCOUTING" /> 정찰 활성화</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원 상태인 경우</sec>, 각 효과마다 전열에 위치한 경장 / 중장형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec>이(가) 증가합니다.
       EN: |-
-        At battle start, the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of Light / Heavy Armor allies in the front line increases.
-        <sec typ="cond">At round start</sec>, if self is in <sec typ="cond"><buff typ="SCOUTING" /> Recon active</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> support attack state</sec>, the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec> of front-line Light / Heavy Armor allies increases for each effect.
+        <sec typ="cond">At battle start</sec>, increases <sec typ="cond"></sec> AP <sec typ="buff"><buff typ="AP_UP" /> of Light / Heavy allies positioned in the <val idx="0" />front row</sec>.
+        <sec typ="cond">At round start</sec>, if self has <sec typ="cond"><buff typ="SCOUTING" /> Recon activated</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> Attack Support</sec>, for each effect, increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec> of Light / Heavy allies positioned in the front row.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="cond">前列</sec>に位置する軽装 / 重装型味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、自身が<sec typ="cond"><buff typ="SCOUTING" />偵察有効化</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" />攻撃支援状態の場合</sec>、各効果ごとに前列に位置する軽装 / 重装型味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="2" r /></sec>が増加します。
       TC: |-
-        戰鬥開始時，前排輕裝 / 重裝型我方的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
-        <sec typ="cond">回合開始時</sec>，若自身處於<sec typ="cond"><buff typ="SCOUTING" /> 偵察啟用</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻擊支援狀態</sec>，則每個效果都會使前排輕裝 / 重裝型我方的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec>，位於<sec typ="cond">前列</sec>的輕裝 / 重裝型友軍<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，若自身處於<sec typ="cond"><buff typ="SCOUTING" />偵察啟用</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" />攻擊支援狀態</sec>，每個效果都會使位於前列的輕裝 / 重裝型友軍<sec typ="buff"><buff typ="AP_UP" />AP<val idx="2" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -6591,19 +6591,19 @@ skills:
       KR: |-
         <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec>이 활성화되며 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec>가 증가합니다.
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 경장 / 중장형 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / 치명타 / 행동력이 증가합니다.
-        <sec typ="cond">대상이 <cmt t="앵거 오브 호드">$$AngerOfTheHorde:?$</cmt> 소속 전투원인 경우</sec>, 효과가 50% 증폭되며 자신도 동일한 효과가 적용됩니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、自分は<sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec>が有効化され、<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の軽装 / 重装型味方の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / クリティカル / 行動力が増加します。
-        <sec typ="cond">対象が<cmt t="アンガーオブホード">$$AngerOfTheHorde:?$</cmt>所属の戦闘員の場合</sec>、効果が50%増幅され、自分にも同じ効果が適用されます。
+        <sec typ="cond">대상이 <cmt t="앵거 오브 호드"><import name="AngerOfTheHorde" /></cmt> 소속 전투원인 경우</sec>, 효과가 50% 증폭되며 자신도 동일한 효과가 적용됩니다.
       EN: |-
-        <sec typ="cond">At battle start</sec>, self gains <sec typ="buff"><buff typ="SCOUTING" /> Recon</sec> and <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> increases.
-        <sec typ="cond">At round start</sec>, the <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / Critical / AP of Light / Heavy Armor allies in range increases.
-        <sec typ="cond">If the target is a combatant belonging to <cmt t="Anger of Horde">$$AngerOfTheHorde:?$</cmt></sec>, the effect is amplified by 50%, and the same effect also applies to self.
+        <sec typ="cond">At battle start</sec>, self activates <sec typ="buff"><buff typ="SCOUTING" /> Recon</sec> and gains increased <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec>.
+        <sec typ="cond">At round start</sec>, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / Critical Rate / Action Power of Light / Heavy allies within range.
+        <sec typ="cond">If the target is a combatant belonging to <cmt t="Anger of the Horde"><import name="AngerOfTheHorde" /></cmt></sec>, the effect is amplified by 50%, and self also receives the same effect.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自身は<sec typ="buff"><buff typ="SCOUTING" />偵察</sec>が有効化され、<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の軽装 / 重装型味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec> / クリティカル / 行動力が増加します。
+        <sec typ="cond">対象が<cmt t="アンガー・オブ・ホード"><import name="AngerOfTheHorde" /></cmt>所属戦闘員の場合</sec>、効果が50%増幅され、自身にも同じ効果が適用されます。
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，自身啟用<sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec>，並增加<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec>。
-        <sec typ="cond">回合開始時</sec>，範圍內輕裝 / 重裝型我方的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / 暴擊 / 行動力增加。
-        <sec typ="cond">若目標為<cmt t="部落之怒">$$AngerOfTheHorde:?$</cmt>所屬戰鬥員</sec>，則效果將提升50%，且自身也會套用相同效果。
+        <sec typ="cond">戰鬥開始時</sec>，自身啟用<sec typ="buff"><buff typ="SCOUTING" />偵察</sec>，且<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="1" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，範圍內輕裝 / 重裝型友軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec> / 暴擊 / 行動力增加。
+        <sec typ="cond">若目標為隸屬於<cmt t="憤怒部落"><import name="AngerOfTheHorde" /></cmt>的戰鬥員</sec>，效果增幅50%，自身也套用相同效果。
   "5":
     key: "5"
     icon: P.AWACS
@@ -7447,21 +7447,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>이(가) 증가합니다. 기동형 적 1기당 효과가 50% 증폭됩니다.
-        <sec typ="cond"><buff typ="MARKING" /> 표식</sec>이 지정된 대상의 약점을 분석하여 <sec typ="cond"><cmt t="앵거 오브 호드">$$AngerOfTheHorde:?$</cmt> 소속 전투원이 공격 시</sec>, 액티브 스킬의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="7" slot="1" r /></sec>가 증가합니다.
-        <sec typ="cond"><sec typ="note">레이더 재머</sec> 치명타 시</sec>, 감소 능력치에 해당하는 강화 효과를 해제합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>が増加します。機動型の敵1体ごとに効果が50%増幅されます。
-        <sec typ="cond"><buff typ="MARKING" /> 標的</sec>が指定された対象の弱点を分析し、<sec typ="cond"><cmt t="アンガーオブホード">$$AngerOfTheHorde:?$</cmt>所属の戦闘員が攻撃する場合</sec>、アクティブスキルの<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="7" slot="1" r /></sec>が増加します。
-        <sec typ="cond"><sec typ="note">レーダージャマー</sec>でクリティカル時</sec>、低下した能力値に対応する強化効果を解除します。
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>이(가) 증가합니다.
+        <sec>기동형 적 1기당 효과가 50% 증폭됩니다.</sec>
+        <sec typ="cond"><buff typ="MARKING" /> 표식</sec>이 지정된 대상의 약점을 분석하여 <sec typ="cond"><cmt t="앵거 오브 호드"><import name="AngerOfTheHorde" /></cmt> 소속 전투원이 공격 시</sec>, 액티브 스킬의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="7" slot="1" r /></sec>가 증가합니다.
+        <sec typ="cond"><sec typ="note">레이더 재머</sec> 치명타 시</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 감소 능력치에 해당하는 강화 효과를 해제</sec>합니다.
       EN: |-
-        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec> increases. The effect is amplified by 50% for each Mobile enemy.
-        Analyzes the weak points of the target designated with <sec typ="buff"><buff typ="MARKING" /> Mark</sec>; <sec typ="cond">when a combatant belonging to <cmt t="Anger of Horde">$$AngerOfTheHorde:?$</cmt> attacks</sec>, the <sec typ="dmg"><buff typ="PhyATK_UP" /> damage of active skills <val idx="7" slot="1" r /></sec> increases.
-        <sec typ="cond">On critical hit with <sec typ="note">Radar Jammer</sec></sec>, removes buff effects corresponding to reduced stats.
+        <sec typ="cond">At round start</sec>, self gains increased <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>.
+        <sec>The effect is amplified by 50% for each Mobile enemy.</sec>
+        Analyzes the weakness of the target designated with <sec typ="cond"><buff typ="MARKING" /> Mark</sec>, and <sec typ="cond">when a combatant belonging to <cmt t="Anger of the Horde"><import name="AngerOfTheHorde" /></cmt> attacks</sec>, increases active skill <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="7" slot="1" r /></sec>.
+        <sec typ="cond">On Critical with <sec typ="note">Radar Jammer</sec></sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes enhancement effects corresponding to reduced stats</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />AP<val idx="1" /></sec>が増加します。
+        <sec>機動型の敵1体につき効果が50%増幅されます。</sec>
+        <sec typ="cond"><buff typ="MARKING" />標的</sec>が指定された対象の弱点を分析し、<sec typ="cond"><cmt t="アンガー・オブ・ホード"><import name="AngerOfTheHorde" /></cmt>所属戦闘員が攻撃時</sec>、アクティブスキルの<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="7" slot="1" r /></sec>が増加します。
+        <sec typ="cond"><sec typ="note">レーダージャマー</sec>クリティカル時</sec>、<sec typ="buff"><buff typ="REMOVE_BUFF" />減少能力値に該当する強化効果を解除</sec>します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>增加。每有1名機動型敵人，效果就會提升50%。
-        分析以<sec typ="buff"><buff typ="MARKING" /> 標記</sec>指定的目標弱點後，<sec typ="cond">若<cmt t="部落之怒">$$AngerOfTheHorde:?$</cmt>所屬戰鬥員攻擊</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 主動技能傷害 <val idx="7" slot="1" r /></sec>增加。
-        <sec typ="cond">以<sec typ="note">雷達干擾器</sec>造成暴擊時</sec>，解除對應下降能力值的強化效果。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />AP<val idx="1" /></sec>增加。
+        <sec>每有1名機動型敵人，效果增幅50%。</sec>
+        分析指定為<sec typ="cond"><buff typ="MARKING" />標記</sec>目標的弱點，<sec typ="cond">當隸屬於<cmt t="憤怒部落"><import name="AngerOfTheHorde" /></cmt>的戰鬥員攻擊時</sec>，主動技能的<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="7" slot="1" r /></sec>增加。
+        <sec typ="cond"><sec typ="note">雷達干擾器</sec>暴擊時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除與降低能力值相對應的強化效果</sec>。
 dialogue:
   KR:
     "1":

@@ -1979,20 +1979,16 @@ skills:
     desc:
       KR: |-
         대상에게 <dmg elem="physics" />를 줍니다.
-        <sec typ="cond">정찰 활성화 상태에서 전투 시작 시</sec> <sec typ="note">정보 수집 중</sec> 버프가 활성화되고, 이 상태로 <sec typ="cond">대기 시</sec> <sec typ="note">정보 획득 완료</sec> 버프가 활성화됩니다.
-        <sec typ="cond"><sec typ="note">정보 획득 완료</sec> 버프 활성화 시</sec>, 피격된 적은 저항 불가한 행동 불능 상태(전투 1회 한정)가 됩니다.
+        <sec typ="cond"><buff typ="SCOUTING" /> 정찰 활성화</sec> 상태에서 전투 시작 시 <sec typ="note">정보 수집 중</sec> 버프가 활성화 되고 이 상태로 대기시 <sec typ="note">정보 획득 완료</sec> 버프가 활성화 되며, <sec typ="note">정보 획득 완료</sec> 버프 활성화 시 피격된 적은 저항 불가한 <sec typ="important">웨이브 당 1회 한정</sec> <sec typ="buff"><buff typ="STUN" /> 행동 불능</sec> 상태가 됩니다
+      EN: |-
+        to the target with <dmg elem="physics" />.
+        <sec typ="cond"><buff typ="SCOUTING" /> Scouting activation</sec> while in the state At battle start <sec typ="note">information number Jip during</sec> buff activation becomes and to the state wait when <sec typ="note">Information Acquired</sec> buff activation becomes and, <sec typ="note">Information Acquired</sec> buff activation when hit enemy resistance no one <sec typ="important">We b per 1times one removeong</sec> <sec typ="buff"><buff typ="STUN" /> Stunned</sec> state
       JP: |-
         対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">偵察有効化状態で戦闘開始時</sec>、<sec typ="note">情報収集中</sec>バフが有効化され、この状態で<sec typ="cond">待機時</sec>、<sec typ="note">情報取得完了</sec>バフが有効化されます。
-        <sec typ="cond"><sec typ="note">情報取得完了</sec>バフ有効化時</sec>、被撃した敵は抵抗不可能な行動不能状態(戦闘1回限り)になります。
-      EN: |-
-        Deals <dmg elem="physics" /> to the target.
-        <sec typ="cond">At battle start while Recon is active</sec>, the <sec typ="note">Information Gathering</sec> buff is activated, and while in this state, <sec typ="cond">on standby</sec>, the <sec typ="note">Information Acquired</sec> buff is activated.
-        <sec typ="cond">When the <sec typ="note">Information Acquired</sec> buff is activated</sec>, hit enemies become unable to act in an unresistable way (once per battle).
+        <sec typ="cond"><buff typ="SCOUTING" /> 偵察 有効化</sec> 状態で 戦闘開始時 <sec typ="note">情報 収集 中</sec> バフが 有効化 になり、 が 状態に 待機時 <sec typ="note">情報取得完了</sec> バフが 有効化 になり、、 <sec typ="note">情報取得完了</sec> バフ 有効化 時 被弾された 敵は 耐性 不可した <sec typ="important">ウェーブ ごと 1回 したジオン</sec> <sec typ="buff"><buff typ="STUN" /> 行動不能</sec> 状態になります
       TC: |-
-        對目標造成<dmg elem="physics" />。
-        <sec typ="cond">在偵察啟用狀態下戰鬥開始時</sec>，會啟動<sec typ="note">情報蒐集中</sec>增益；處於此狀態時，<sec typ="cond">待機時</sec>會啟動<sec typ="note">情報取得完成</sec>增益。
-        <sec typ="cond">當<sec typ="note">情報取得完成</sec>增益啟動時</sec>，被擊中的敵人會進入無法抵抗的無法行動狀態(僅限戰鬥1次)。
+        對目標 造成<dmg elem="physics" />。
+        <sec typ="cond"><buff typ="SCOUTING" /> 偵察 啟用</sec> 在狀態下 戰鬥開始時 <sec typ="note">資訊 收集 中</sec> 增益 啟用 變為，且 成為狀態 待機時 <sec typ="note">資訊取得完成</sec> 增益 啟用 變為，且 <sec typ="note">資訊取得完成</sec> 增益 啟用 時 被擊已 敵人 抗性 不可 <sec typ="important">波次 每 1次 解除ong</sec> <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 變為狀態
   "2":
     key: "2"
     icon: Barrier
@@ -2557,20 +2553,20 @@ skills:
     desc:
       KR: |-
         아군 진영에 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="9" slot="5" /></sec> 생성, 공격기, 보호기 대상 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" slot="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="10" slot="5" r /></sec> 증가, <char uid="PECS_Azaz" />의 <sec typ="note">부품 확보</sec> 버프 적용 기능이 있는 <sec typ="buff">골든 팩토리</sec>를 설치합니다.
-        <sec typ="cond">[부품 확보] 상태에서 대기시</sec> 아자즈에게 1라운드 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 피해 무시</sec> / <sec typ="buff"><buff typ="MARKING" /> 이로운 표식</sec> 버프가 부여 됩니다.
-        소환 스킬은 사거리 감소 효과에 영향받지 않습니다.
-      JP: |-
-        味方陣営に<sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア <val idx="9" slot="5" /></sec>を生成し、アタッカー・ディフェンダーに対して<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="8" slot="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="10" slot="5" r /></sec>を増加させ、<char uid="PECS_Azaz" />の<sec typ="note">パーツ確保</sec>バフ適用機能を持つ<sec typ="buff">ゴールデン・ファクトリー</sec>を設置します。
-        <sec typ="cond">[パーツ確保]状態で待機時</sec>、アザズに1ラウンドの<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />ダメージ無効化</sec> / <sec typ="buff"><buff typ="MARKING" />有益なマーク</sec>バフが付与されます。
-        召喚スキルは射程減少効果の影響を受けません。
+        <sec typ="note">부품 확보</sec> 상태에서 대기시 <char uid="PECS_Azaz" />에게 1라운드 <sec typ="buff"><buff typ="DEF_All" /> 피해 무시</sec> / <sec typ="buff"><buff typ="MARKING" /> 이로운 표식</sec> 버프가 부여 됩니다.
+        <sec>소환 스킬은 <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 감소</sec> 효과에 영향받지 않습니다.</sec>
       EN: |-
-        Creates a <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> barrier <val idx="9" slot="5" /></sec> for the allied side, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="8" slot="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="10" slot="5" r /></sec> for Attackers and Defenders, and installs a <sec typ="buff">Golden Factory</sec> with the ability to apply the <sec typ="note">Parts Secured</sec> buff to <char uid="PECS_Azaz" />.
-        <sec typ="cond">When on standby while in [Parts Secured] state</sec>, Azaz is granted 1 round of <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> damage nullification</sec> / <sec typ="buff"><buff typ="MARKING" /> beneficial marking</sec> buffs.
-        Summon skills are not affected by range reduction effects.
+        allies formation/camp to <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="9" slot="5" /></sec> create, Attacker, Defender target <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="8" slot="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="10" slot="5" r /></sec> increase, <char uid="PECS_Azaz" /> of <sec typ="note">Parts Secured</sec> buff applies function exists <sec typ="buff">Golden Paektori</sec> install.
+        <sec typ="note">Parts Secured</sec> while in the state wait when <char uid="PECS_Azaz" /> to 1round <sec typ="buff"><buff typ="DEF_All" /> damage ignore</sec> / <sec typ="buff"><buff typ="MARKING" /> beneficial Mark</sec> buff grant.
+        <sec>summon skill <sec typ="buff"><buff typ="RANGE_DOWN" /> Range decrease</sec> effect and to not affected does not.</sec>
+      JP: |-
+        味方 ジインヨンに <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="9" slot="5" /></sec> 生成、 攻撃機、 保護機 対象 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" slot="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="10" slot="5" r /></sec> 増加、 <char uid="PECS_Azaz" />の <sec typ="note">部品確保</sec> バフ 適用 機ンウンが ある <sec typ="buff">グオルドウン プエクトオルイ</sec>を スオルチイします。
+        <sec typ="note">部品確保</sec> 状態で 待機時 <char uid="PECS_Azaz" />に 1ラウンド <sec typ="buff"><buff typ="DEF_All" /> ダメージ 無視</sec> / <sec typ="buff"><buff typ="MARKING" /> 有益な 標的</sec> バフが ブウヨ されます。
+        <sec>スオハワン スキルは <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 減少</sec> 効果に ヨンハヤンブアトジイ しません。</sec>
       TC: |-
-        在我軍陣營中生成<sec typ="buff"><buff typ="DAMAGE_ABSORB" />防護罩 <val idx="9" slot="5" /></sec>，使攻擊者、保護者的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="8" slot="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="10" slot="5" r /></sec>增加，並設置具備可對<char uid="PECS_Azaz" />套用<sec typ="note">部件確保</sec>增益功能的<sec typ="buff">黃金工廠</sec>。
-        <sec typ="cond">在[部件確保]狀態下待命時</sec>，會賦予亞扎茲1回合的<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />傷害無效化</sec> / <sec typ="buff"><buff typ="MARKING" />有益標記</sec>增益。
-        召喚技能不受射程減少效果影響。
+        我方 陣營於 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾 <val idx="9" slot="5" /></sec> 生成， 攻擊機， 保護機 目標 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" slot="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="10" slot="5" r /></sec> 增加， <char uid="PECS_Azaz" />的 <sec typ="note">零件確保</sec> 增益 套用 台能力 有 <sec typ="buff">Goldeun 破ektori</sec> 三設置。
+        <sec typ="note">零件確保</sec> 在狀態下 待機時 <char uid="PECS_Azaz" />給 1回合 <sec typ="buff"><buff typ="DEF_All" /> 傷害 無視</sec> / <sec typ="buff"><buff typ="MARKING" /> 有益 標記</sec> 增益 賦予。
+        <sec>召喚 技能 <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 減少</sec> 效果於 影響bat至 不會。</sec>
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -2889,16 +2885,16 @@ skills:
     desc:
       KR: |-
         라운드 시작 시 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>를 증가 시킵니다.
-        <sec typ="cond">[방어 역장] 장착 상태에서는 전투 시작시</sec> 자신의 AP 가 증가 합니다.
-      JP: |-
-        ラウンド開始時、自分の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>を増加させます。
-        <sec typ="cond">[防御バリア]装備状態では戦闘開始時</sec>、自分のAPが増加します。
+        <sec typ="cond"><equip uid="Sub_Barrier" /> 또는 <equip uid="Sub_ImBarrier" /> 장착</sec> 상태에서는 전투 시작시 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>이(가) 증가 합니다.
       EN: |-
-        At the start of the round, increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec>.
-        <sec typ="cond">While [Defense Field] is equipped, at battle start</sec>, own AP increases.
+        round when operation when own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> increase causes.
+        <sec typ="cond"><equip uid="Sub_Barrier" /> or <equip uid="Sub_ImBarrier" /> equip</sec> while in the state battle when operation when own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>() increase.
+      JP: |-
+        ラウンド 時ジアク 時 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>を 増加 させます。
+        <sec typ="cond"><equip uid="Sub_Barrier" /> または <equip uid="Sub_ImBarrier" /> ジアンチアク</sec> 状態では 戦闘 時ジアク時 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>が 増加します。
       TC: |-
-        回合開始時，提升自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>。
-        <sec typ="cond">在裝備[防禦力場]狀態下，戰鬥開始時</sec>，自身AP會增加。
+        回合 時作 時 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> 增加。
+        <sec typ="cond"><equip uid="Sub_Barrier" /> 或 <equip uid="Sub_ImBarrier" /> 裝備</sec> 在狀態下 戰鬥 時作時 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> 增加。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -3414,9 +3410,9 @@ skills:
             chance: 1
     desc:
       KR: 적의 수에 비례하여 적의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>를 중첩하여 감소 시킵니다.
-      JP: 敵の数に応じて、敵の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="0" r /></sec>を重複して減少させます。
-      EN: Decreases enemies' <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="0" r /></sec> cumulatively in proportion to the number of enemies.
-      TC: 依敵人數量，疊加降低敵軍的<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="0" r /></sec>。
+      EN: enemy's in proportion to the number of enemy's <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> stack by doing decrease causes.
+      JP: 敵の 数に比例して 敵の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec>を 重複して 減少 させます。
+      TC: 敵人的 依數量成比例 敵人的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec> 疊加並 減少。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -3971,20 +3967,32 @@ skills:
     desc:
       KR: |-
         같은 스쿼드에 있는 로봇 캐릭터의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>, <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec>, <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
-        스쿼드에 포츈이 있을 시 각 버프가 추가로 증가 합니다.
-        <sec typ="cond">대기 시</sec> 아군 전체 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해</sec>가 감소 합니다.
-      JP: |-
-        同じ分隊にいるロボットキャラクターの<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>、<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="1" r /></sec>、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>が増加します。
-        分隊にフォーチュンがいる場合、各バフがさらに増加します。
-        <sec typ="cond">待機時</sec>、味方全体の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ</sec>が減少します。
+        <sec typ="cond">스쿼드에 <char uid="PECS_Fortune" />이 있을 시</sec> 각 버프가 추가로 증가 합니다.
+        <box t="추가 증가분">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec>, <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="4" r /></sec>, <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec> 증가
+        </box>
+        <sec typ="cond">대기 시</sec> 아군 전체의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="10" r inv /></sec>가 감소 합니다.
       EN: |-
-        Increases the <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec>, <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="1" r /></sec>, and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec> of robot characters in the same squad.
-        If Fortune is in the squad, each buff is additionally increased.
-        <sec typ="cond">On standby</sec>, all allies' <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken</sec> decreases.
+        same squad exists Robot character of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec>, <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" r /></sec>, <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increases.
+        <sec typ="cond">squad <char uid="PECS_Fortune" /> if present</sec> each buff additionally increase.
+        <box t="additional increase Bun">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec>, <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="4" r /></sec>, <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="5" r /></sec> increase
+        </box>
+        <sec typ="cond">On standby</sec> all allies of <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="10" r inv /></sec> decrease.
+      JP: |-
+        グアトは スクワッドに ある ロボット クエルイクトオの <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>、 <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" r /></sec>、 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">スクワッドに <char uid="PECS_Fortune" />が ある 時</sec> 各 バフが 追加で 増加します。
+        <box t="追加 増加ブウン">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec>、 <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="4" r /></sec>、 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec> 増加
+        </box>
+        <sec typ="cond">待機時</sec> 味方全体の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="10" r inv /></sec>が 減少します。
       TC: |-
-        同一小隊中的機器人角色的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>、<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="1" r /></sec>、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>增加。
-        若小隊中有福爾圖娜，則各增益效果會額外提升。
-        <sec typ="cond">待命時</sec>，使我軍全體的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到的傷害</sec>降低。
+        相同 小隊於 有 機器人 角色的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>， <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" r /></sec>， <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
+        <sec typ="cond">小隊於 <char uid="PECS_Fortune" /> 有 時</sec> 各 增益 額外 增加。
+        <box t="額外 增加分配">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec>， <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="4" r /></sec>， <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec> 增加
+        </box>
+        <sec typ="cond">待機時</sec> 全體我方的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="10" r inv /></sec> 減少。
 dialogue:
   KR:
     "1":

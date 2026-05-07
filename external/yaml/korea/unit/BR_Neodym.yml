@@ -2492,18 +2492,18 @@ skills:
         금속 잔해를 투척해 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>이(가) 감소하고 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
         <sec typ="cond">치명타 시</sec>, 2라운드 동안 대상이 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec>가 증가하고 자신은 <sec typ="buff"><sec typ="note">잔해</sec>를 1중첩 획득</sec>합니다.
-      JP: |-
-        金属の残骸を投げつけて <dmg elem="physics" /> を与えます。
-        <sec typ="cond">命中時</sec>、対象の <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> が減少し、<sec typ="buff"><buff typ="REMOVE_BUFF" /> 被ダメージ減少効果を解除</sec>します。
-        <sec typ="cond">クリティカル時</sec>、2ラウンドの間、対象の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec> が増加し、自分は <sec typ="buff"><sec typ="note">残骸</sec>を1スタック獲得</sec>します。
       EN: |-
-        Throws metal debris to deal <dmg elem="physics" />.
-        <sec typ="cond">On hit</sec>, reduces the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> and removes <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage reduction effects</sec>.
-        <sec typ="cond">On critical hit</sec>, increases the target's <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec> for 2 rounds, and self gains 1 stack of <sec typ="note">Debris</sec>.
+        metal Debris throws <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>() decreases and <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken decrease removes the effect</sec>.
+        <sec typ="cond">On critical hit</sec>, 2 rounds target <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec> increases and self <sec typ="buff"><sec typ="note">Debris</sec> 1stack gain</sec>.
+      JP: |-
+        グウムスオク 残骸を 投擲して<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 対象の <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>が 減少し、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ 減少 効果を 解除</sec>します。
+        <sec typ="cond">クリティカル時</sec>、 2ラウンドの間 対象が <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec>が 増加し、 自身は <sec typ="buff"><sec typ="note">残骸</sec>を 1重複 獲得</sec>します。
       TC: |-
-        投擲金屬殘骸，造成 <dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，使目標的 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> 降低，並解除 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害降低效果</sec>。
-        <sec typ="cond">暴擊時</sec>，使目標在 2 回合內的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" r /></sec> 提高，且自身獲得 1 層 <sec typ="note">殘骸</sec>。
+        金屬 殘骸 投擲 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 目標的 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> 減少，並 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害 減少 效果 解除</sec>。
+        <sec typ="cond">暴擊時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" r /></sec> 增加，並 自身 <sec typ="buff"><sec typ="note">殘骸</sec> 1疊加 獲得</sec>。
   "2":
     key: "2"
     icon: WideBeamShot
@@ -7707,27 +7707,27 @@ skills:
         <box t="잔해 1중첩"><sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="5" /></sec> 감소</box>
         <box t="잔해 2중첩"><sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="6" r /></sec> 감소</box>
         <box t="잔해 3중첩"><sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과 해제</sec></box>
-      JP: |-
-        金属製の牢獄に敵を閉じ込めて <sec typ="attr">保護無視</sec> <dmg elem="physics" /> を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="0" r /></sec> が減少し、<sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態になります。
-        <sec typ="cond">スキル使用後</sec> <sec typ="buff"><sec typ="note">残骸</sec>をすべて消費</sec>し、消費した <sec typ="note">残骸</sec> のスタック数に応じて次の効果が追加で適用されます。
-        <box t="残骸1スタック"><sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="5" /></sec> 減少</box>
-        <box t="残骸2スタック"><sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="6" r /></sec> 減少</box>
-        <box t="残骸3スタック"><sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を解除</sec></box>
       EN: |-
-        Traps the enemy in a metal prison and deals <sec typ="attr">ignore protection</sec> <dmg elem="physics" />.
-        <sec typ="cond">On hit</sec>, reduces the target's <sec typ="buff"><buff typ="EVADE_DOWN" /> evasion <val idx="0" r /></sec> for 2 rounds and inflicts <sec typ="buff"><buff typ="SNARE" /> immobility</sec>.
-        <sec typ="cond">After using the skill</sec>, <sec typ="buff"><sec typ="note">Debris</sec> is fully consumed</sec>, and the following effects are additionally applied based on the number of <sec typ="note">Debris</sec> stacks consumed.
-        <box t="1 Debris stack"><sec typ="buff"><buff typ="RANGE_DOWN" /> range <val idx="5" /></sec> decrease</box>
-        <box t="2 Debris stacks"><sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="6" r /></sec> decrease</box>
-        <box t="3 Debris stacks"><sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec></box>
+        with metal as applied prison to enemy puts <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 2 rounds the target <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="0" r /></sec> decreases and <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> state.
+        <sec typ="cond">After using the skill</sec> <sec typ="buff"><sec typ="note">Debris</sec> all consume</sec> and, consumed <sec typ="note">Debris</sec> stack depending on the number of next effect and additionally is applied.
+        <box t="Debris 1stack"><sec typ="buff"><buff typ="RANGE_DOWN" /> Range <val idx="5" /></sec> decrease</box>
+        <box t="Debris 2stack"><sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="6" r /></sec> decrease</box>
+        <box t="Debris 3stack"><sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec></box>
+      JP: |-
+        グウムスオクで された グアムオクに 敵を がドウオ <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象は <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="0" r /></sec>が 減少し、 <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態になります。
+        <sec typ="cond">スキル使用後</sec> <sec typ="buff"><sec typ="note">残骸</sec>を ムオドウ 消費</sec>し、 消費した <sec typ="note">残骸</sec> 重複 数に応じて 次 効果が 追加で 適用されます。
+        <box t="残骸 1重複"><sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="5" /></sec> 減少</box>
+        <box t="残骸 2重複"><sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="6" r /></sec> 減少</box>
+        <box t="残骸 3重複"><sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果 解除</sec></box>
       TC: |-
-        將敵人關入金屬牢籠，造成 <sec typ="attr">無視保護</sec> 的 <dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，使目標在 2 回合內的 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="0" r /></sec> 降低，並進入 <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 狀態。
-        <sec typ="cond">技能使用後</sec>會<sec typ="buff"><sec typ="note">殘骸</sec>全部消耗</sec>，並依消耗的 <sec typ="note">殘骸</sec> 層數追加以下效果。
-        <box t="殘骸 1 層"><sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="5" /></sec> 降低</box>
-        <box t="殘骸 2 層"><sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="6" r /></sec> 降低</box>
-        <box t="殘骸 3 層"><sec typ="buff"><buff typ="REMOVE_BUFF" /> 解除強化效果</sec></box>
+        金屬以 已 牢獄於 敵人 二eo <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="0" r /></sec> 減少，並 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 變為狀態。
+        <sec typ="cond">使用技能後</sec> <sec typ="buff"><sec typ="note">殘骸</sec> 全部 消耗</sec>並， 消耗 <sec typ="note">殘骸</sec> 疊加 依數量 下次 效果 額外 套用。
+        <box t="殘骸 1疊加"><sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="5" /></sec> 減少</box>
+        <box t="殘骸 2疊加"><sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="6" r /></sec> 減少</box>
+        <box t="殘骸 3疊加"><sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec></box>
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -8304,21 +8304,21 @@ skills:
         <sec typ="cond">대상의 HP가 50% 이상인 경우</sec>, 상기 효과 수치가 50% 증폭됩니다.
         <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신의 HP가 50% 이상인 경우</sec>, 범위 내 아군 보호기는 추가로 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="13" /></sec>이(가) 증가합니다.
         <sec typ="cond">상기 효과를 보유한 아군이 있을 경우</sec>, 자신도 동일한 효과를 획득합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="4" r inv /></sec> が減少し、<sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 全属性耐性 <val idx="5" r /></sec> が増加します。
-        <sec typ="cond">対象のHPが50%以上の場合</sec>、上記効果値が50%増幅されます。
-        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自分のHPが50%以上の場合</sec>、範囲内の味方保護機はさらに <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="13" /></sec> が増加します。
-        <sec typ="cond">上記効果を持つ味方がいる場合</sec>、自分も同じ効果を獲得します。
       EN: |-
-        <sec typ="cond">At round start</sec>, reduces allies within range's <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="4" r inv /></sec> and increases <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> all-element resistance <val idx="5" r /></sec>.
-        <sec typ="cond">If the target's HP is 50% or higher</sec>, the above effect values are amplified by 50%.
-        <sec typ="cond">At round start</sec> <sec typ="cond">if own HP is 50% or higher</sec>, allied protectors within range additionally gain <sec typ="buff"><buff typ="DEF_UP" /> defense <val idx="12" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="13" /></sec>.
-        <sec typ="cond">If there are allies with the above effects</sec>, self also gains the same effects.
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="4" r inv /></sec> decreases and <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> all Elemental Resistances <val idx="5" r /></sec> increases.
+        <sec typ="cond">target's HP 50% or moreif</sec>, above effect and value increased by 50%.
+        <sec typ="cond">At round start</sec> <sec typ="cond">own HP 50% or moreif</sec>, within range allies Defender additionally <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="12" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="13" /></sec> increases.
+        <sec typ="cond">above effect and has allies if present</sec>, self also same gains the effect.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="4" r inv /></sec>が 減少し、 <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 全属性耐性 <val idx="5" r /></sec>が増加します。
+        <sec typ="cond">対象の HPが 50% 以上の場合</sec>、 上記 効果 数値が 50%増幅されます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身の HPが 50% 以上の場合</sec>、 範囲内 味方 保護機は 追加で <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="13" /></sec>が増加します。
+        <sec typ="cond">上記 効果を 保有する 味方が 存在する場合</sec>、 自身も 同一の 効果を獲得します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，使範圍內友軍的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="4" r inv /></sec> 降低，並使 <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 全屬性抗性 <val idx="5" r /></sec> 提高。
-        <sec typ="cond">若目標 HP 50% 以上</sec>，上述效果數值提升 50%。
-        <sec typ="cond">回合開始時</sec> <sec typ="cond">若自身 HP 50% 以上</sec>，範圍內友軍保護機額外獲得 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="13" /></sec> 提高。
-        <sec typ="cond">若有友軍持有上述效果</sec>，自身也會獲得相同效果。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="4" r inv /></sec> 減少，並 <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 所有屬性抗性 <val idx="5" r /></sec>增加。
+        <sec typ="cond">目標的 HP 50% 以上若為</sec>， 上述 效果 數值 增幅50%。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身的 HP 50% 以上若為</sec>， 範圍內 我方 保護機 額外 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="13" /></sec>增加。
+        <sec typ="cond">上述 效果 持有的 我方 存在時</sec>， 自身也 相同 獲得效果。
   "4":
     key: "4"
     icon: P.Barrier
@@ -8662,21 +8662,21 @@ skills:
         <sec typ="cond">공격 받을 시</sec> <sec typ="cond">자신에게 방어막이 없을 경우</sec>, 범위 내 아군에게 1라운드 동안 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="4" signless /></sec>을(를) 부여합니다.
         <sec typ="cond"><sec typ="note">잔해</sec>를 보유한 경우</sec>, <sec typ="note">반응 방벽</sec>으로 인한 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막</sec>이 두 배로 증폭됩니다.
         <sec>자신의 액티브 스킬은 레벨당 20%의 적중 보정이 적용됩니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分は <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="2" signless /></sec> を獲得します。
-        <sec typ="cond">攻撃を受けた時</sec> <sec typ="cond">自分にバリアがない場合</sec>、範囲内の味方に1ラウンドの間 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="4" signless /></sec> を付与します。
-        <sec typ="cond"><sec typ="note">残骸</sec>を保有している場合</sec>、<sec typ="note">反応障壁</sec>による <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア</sec> が2倍に増幅されます。
-        <sec>自分のアクティブスキルには、レベルごとに20%の命中補正が適用されます。</sec>
       EN: |-
-        <sec typ="cond">At round start</sec>, self gains <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> a shield of <val idx="2" signless /></sec>.
-        <sec typ="cond">When attacked</sec> <sec typ="cond">if self has no shield</sec>, grants allies within range <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> a shield of <val idx="4" signless /></sec> for 1 round.
-        <sec typ="cond">If <sec typ="note">Debris</sec> is held</sec>, the <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> shield</sec> from <sec typ="note">Reaction Barrier</sec> is doubled.
-        <sec>Self's active skills gain 20% accuracy correction per level.</sec>
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="2" signless /></sec> gains.
+        <sec typ="cond">When attacked</sec> <sec typ="cond">self Barrier if absent</sec>, within range to allies 1 round <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="4" signless /></sec> grants.
+        <sec typ="cond"><sec typ="note">Debris</sec> if having</sec>, <sec typ="note">Reactive Barrier</sec> as caused by <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier</sec> doubled.
+        <sec>own active skill level per 20% of accuracy correction is applied.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="2" signless /></sec>を 獲得します。
+        <sec typ="cond">攻撃を受ける時</sec> <sec typ="cond">自身に バリアが 存在しない場合</sec>、 範囲内 味方に 1ラウンドの間 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="4" signless /></sec>を付与します。
+        <sec typ="cond"><sec typ="note">残骸</sec>を 保有している場合</sec>、 <sec typ="note">反応障壁</sec>で であるした <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア</sec>が 2倍に増幅されます。
+        <sec>自身の アクティブ スキルは レベルごと 20%の 命中補正が適用されます。</sec>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身獲得 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> <val idx="2" signless /></sec> 的護盾。
-        <sec typ="cond">受到攻擊時</sec> <sec typ="cond">若自身沒有護盾</sec>，則在 1 回合內賦予範圍內友軍 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> <val idx="4" signless /></sec> 的護盾。
-        <sec typ="cond">若持有 <sec typ="note">殘骸</sec></sec>，則由 <sec typ="note">反應防壁</sec> 產生的 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾</sec> 會變為 2 倍。
-        <sec>自身的主動技能每級都會套用 20% 命中補正。</sec>
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾 <val idx="2" signless /></sec> 獲得。
+        <sec typ="cond">受到攻擊時</sec> <sec typ="cond">自身給 護盾 不存在時</sec>， 範圍內 我方給 1回合內 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾 <val idx="4" signless /></sec>賦予。
+        <sec typ="cond"><sec typ="note">殘骸</sec> 持有時</sec>， <sec typ="note">反應屏障</sec>以 為 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾</sec> 增幅為2倍。
+        <sec>自身的 主動 技能 等級每 20%的 套用命中補正。</sec>
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -9100,21 +9100,21 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">잔해</sec> 1 중첩당 범위 내 아군 보호기의 <sec typ="dmg"><buff typ="SKILL_UP" /> 방어력 <val idx="6" r />만큼 스킬 위력</sec>이 증가합니다.
         <sec typ="cond"><sec typ="note">마그넷 프리즌</sec>으로 <sec typ="note">잔해</sec> 중첩을 소모하면</sec>, 2라운드 동안 상기 효과가 추가로 적용됩니다.
         <sec typ="cond">라운드 개시 시</sec> <sec typ="cond"><sec typ="note">잔해</sec>를 보유하지 않은 경우</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>이(가) 증가합니다.
-      JP: |-
-        <sec typ="cond">待機時</sec> または <sec typ="cond">敵死亡時</sec>、周囲の金属の残骸を回収して自分の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" /></sec> が増加します。 <sec>(最大3スタック)</sec>
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">残骸</sec>1スタックごとに範囲内の味方保護機の <sec typ="dmg"><buff typ="SKILL_UP" /> 防御力 <val idx="6" r />分のスキル威力</sec> が増加します。
-        <sec typ="cond"><sec typ="note">マグネットプリズン</sec>で <sec typ="note">残骸</sec> のスタックを消費した場合</sec>、2ラウンドの間、上記効果がさらに適用されます。
-        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond"><sec typ="note">残骸</sec>を所持していない場合</sec>、自分の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec> が増加します。
       EN: |-
-        <sec typ="cond">When waiting</sec> or <sec typ="cond">when an enemy dies</sec>, collects nearby metal debris and increases own <sec typ="buff"><buff typ="DEF_UP" /> defense <val idx="0" /></sec>. <sec>(Up to 3 stacks)</sec>
-        <sec typ="cond">At round start</sec>, each <sec typ="note">Debris</sec> stack increases allied protectors within range's <sec typ="dmg"><buff typ="SKILL_UP" /> skill power equal to defense <val idx="6" r /></sec>.
-        <sec typ="cond">If <sec typ="note">Debris</sec> stacks are consumed by <sec typ="note">Magnet Prison</sec></sec>, the above effect is additionally applied for 2 rounds.
-        <sec typ="cond">At round start</sec> <sec typ="cond">if no <sec typ="note">Debris</sec> is held</sec>, increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>.
+        <sec typ="cond">wait</sec> or <sec typ="cond">When an enemy dies</sec>, nearby of metal Debris collects own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="0" /></sec> increases. <sec>(up to 3stack)</sec>
+        <sec typ="cond">At round start</sec>, <sec typ="note">Debris</sec> 1 stackper within range allies Defender of <sec typ="dmg"><buff typ="SKILL_UP" /> Defense <val idx="6" r /> by Skill Power</sec> increases.
+        <sec typ="cond"><sec typ="note">Magnet Prison</sec> as <sec typ="note">Debris</sec> stack if consumes</sec>, 2 rounds above effect and additionally is applied.
+        <sec typ="cond">At round start</sec> <sec typ="cond"><sec typ="note">Debris</sec> does not have case</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec> increases.
+      JP: |-
+        <sec typ="cond">待機</sec> または <sec typ="cond">敵死亡時</sec>、 周辺の グウムスオク 残骸を 収集して 自身の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" /></sec>が増加します。 <sec>(最大 3重複)</sec>
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="note">残骸</sec> 1 重複ごと 範囲内 味方 保護機の <sec typ="dmg"><buff typ="SKILL_UP" /> 防御力 <val idx="6" r />分 スキル威力</sec>が増加します。
+        <sec typ="cond"><sec typ="note">マグネットプリズン</sec>で <sec typ="note">残骸</sec> 重複を 消費ハアなら</sec>、 2ラウンドの間 上記 効果が 追加で 適用されます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond"><sec typ="note">残骸</sec>を 保有していない 場合</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>が増加します。
       TC: |-
-        <sec typ="cond">待機</sec> 或 <sec typ="cond">敵人死亡時</sec>，收集周圍的金屬殘骸，使自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" /></sec> 提高。 <sec>(最多 3 層)</sec>
-        <sec typ="cond">回合開始時</sec>，每 1 層 <sec typ="note">殘骸</sec> 會使範圍內友軍保護機的 <sec typ="dmg"><buff typ="SKILL_UP" /> 等同於防禦力 <val idx="6" r /> 的技能威力</sec> 提高。
-        <sec typ="cond">若以 <sec typ="note">Magnet Prison</sec> 消耗 <sec typ="note">殘骸</sec> 層數</sec>，則上述效果會額外套用 2 回合。
-        <sec typ="cond">回合開始時</sec> <sec typ="cond">若未持有 <sec typ="note">殘骸</sec></sec>，則自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec> 提高。
+        <sec typ="cond">待機</sec> 或 <sec typ="cond">敵人死亡時</sec>， 周圍的 金屬 殘骸 收集並 自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" /></sec>增加。 <sec>(最大 3疊加)</sec>
+        <sec typ="cond">回合開始時</sec>， <sec typ="note">殘骸</sec> 1 疊加每 範圍內 我方 保護機的 <sec typ="dmg"><buff typ="SKILL_UP" /> 防禦力 <val idx="6" r />等量 技能威力</sec>增加。
+        <sec typ="cond"><sec typ="note">磁力監牢</sec>以 <sec typ="note">殘骸</sec> 疊加 消耗下若</sec>， 2回合內 上述 效果 額外 套用。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond"><sec typ="note">殘骸</sec> 未持有 情況</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>增加。
 dialogue:
   KR:
     "1":

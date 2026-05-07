@@ -2377,10 +2377,26 @@ skills:
             per: 0.01
             chance: 1
     desc:
-      KR: 팔츠 레이저를 조사하여 단일 대상에게 <dmg elem="physics" />를 줍니다.
-      JP: パルツレーザーを照射して単一対象に <dmg elem="physics" />を与えます。
-      EN: Fires the Palz laser and deals <dmg elem="physics" /> to a single target.
-      TC: 照射帕爾茨雷射，對單一目標造成 <dmg elem="physics" />。
+      KR: |-
+        팔츠 레이저를 조사하여 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>가 증가합니다.
+        <sec>해당 효과는 지원 공격 시에도 발동합니다. (최대 5중첩)</sec>
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      EN: |-
+        Palcheu laser Josa by doing to a single target <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 3 rounds own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> increases.
+        <sec>the effect support attack when also triggers. (up to 5stack)</sec>
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+      JP: |-
+        プアルチウ ルエがジオを ジオスアして 単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 3ラウンドの間 自身の <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>が増加します。
+        <sec>該当 効果は 支援攻撃 時にも 発動します。 (最大 5重複)</sec>
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
+      TC: |-
+        破lcheu Rejeo Josa並 單一目標給 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 3回合內 自身的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec>增加。
+        <sec>該 效果 支援攻擊 時於也 發動。 (最大 5疊加)</sec>
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: CannonShotWide
@@ -9733,10 +9749,26 @@ skills:
             value: Effect_AGS_RheinRitter_N_57
             chance: 1
     desc:
-      KR: 란체 포격으로 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
-      JP: ランツェ砲撃で指定範囲に <sec typ="attr">防護無視</sec> <dmg elem="physics" />を与えます。
-      EN: Bombards the designated area with Lanze fire and deals <sec typ="attr">ignore protection</sec> <dmg elem="physics" />.
-      TC: 以蘭策砲擊對指定範圍造成 <sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+      KR: |-
+        란체 포격으로 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 자신은 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상의 HP 반비례 피해량 <val idx="0" r /></sec> 증가 효과를 획득합니다.
+        <sec>해당 효과는 협동 공격시에도 발동합니다. (최대 5중첩)</sec>
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> <strike>방어막 /</strike> 피해 감소 효과를 해제</sec>하고 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="6" r /></sec>가 증가합니다.
+      EN: |-
+        Ran unit by bombardment as to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 3 rounds self <sec typ="dmg"><buff typ="DamageAmp_Opp" /> target's HP inversely proportional damage <val idx="0" r /></sec> increase effect.
+        <sec>the effect coordinated attackwhen also triggers. (up to 5stack)</sec>
+        <sec typ="cond">On critical hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> <strike>Barrier /</strike> Damage Reduction removes the effect</sec> and <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="6" r /></sec> increases.
+      JP: |-
+        ルアン体 砲撃で 指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 3ラウンドの間 自身は <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 対象の HP 反比例 ダメージ量 <val idx="0" r /></sec> 増加 効果を獲得します。
+        <sec>該当 効果は 協同攻撃時にも 発動します。 (最大 5重複)</sec>
+        <sec typ="cond">クリティカル時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> <strike>バリア /</strike> ダメージ 減少 効果を 解除</sec>し、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="6" r /></sec>が増加します。
+      TC: |-
+        時n個 砲擊以 指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 3回合內 自身 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 目標的 HP 成反比 傷害量 <val idx="0" r /></sec> 增加 獲得效果。
+        <sec>該 效果 協同攻擊時於也 發動。 (最大 5疊加)</sec>
+        <sec typ="cond">暴擊時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> <strike>護盾 /</strike> 傷害 減少 效果 解除</sec>並 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="6" r /></sec>增加。
   "3":
     key: "3"
     icon: P.Command
@@ -10288,10 +10320,22 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 범위 내 경장형 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、範囲内の軽装型の味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>が増加します。
-      EN: <sec typ="cond">At the start of the round</sec>, increases light-type allies in range's <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec>.
-      TC: <sec typ="cond">回合開始時</sec>，提升範圍內輕裝型友軍的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 경장형 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 전열에 위치한 경장형 아군은 <sec typ="buff"><buff typ="MARKING" /> 표식 </sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 <val base="1" per="0" signless />회</sec>를 획득합니다.
+        <sec typ="cond">자신이 후열에 위치한 경우</sec>, 경장형 아군에게 적용되는 자신의 패시브 스킬 효과 대상에 중장형 아군을 추가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range Light-type allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, within range front row to positioned Light-type allies <sec typ="buff"><buff typ="MARKING" /> Mark </sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Damage Minimization <val base="1" per="0" signless />times</sec> gains.
+        <sec typ="cond">self back row to if positioned</sec>, Light-type to allies enemy applied own pass when b skill effect and target to Heavy-type allies additional.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 軽装型 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 前列に 位置した 軽装型 味方は <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージ最小化 <val base="1" per="0" signless />回</sec>を獲得します。
+        <sec typ="cond">自身が 後列に 位置している場合</sec>、 軽装型 味方に 適用ドウェは 自身の パッシブ スキル 効果 対象に 重装型 味方を 追加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 輕裝型 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 範圍內 前排於 位置 輕裝型 我方 <sec typ="buff"><buff typ="MARKING" /> 標記 </sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 傷害最小化 <val base="1" per="0" signless />次</sec>獲得。
+        <sec typ="cond">自身 後排於 位於時</sec>， 輕裝型 我方給 套用變為 自身的 被動 技能 效果 目標於 重裝型 我方 額外。
   "4":
     key: "4"
     icon: P.CannonShotWide
@@ -10951,10 +10995,26 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 경장형 아군의 공격을 지원</sec>합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、範囲内の <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 軽装型の味方の攻撃を支援</sec>します。
-      EN: <sec typ="cond">At the start of the round</sec>, supports the attacks of light-type allies in range with <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec>.
-      TC: <sec typ="cond">回合開始時</sec>，會以 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 支援攻擊</sec>輔助範圍內輕裝型友軍的攻擊。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 경장형 아군의 공격을 지원</sec>합니다.
+        <sec typ="cond">자신이 공격 지원하는 보호기 / 지원기</sec>는 추가로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">용기병의 화창</sec> 협동 공격</sec>을 유도할 수 있습니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /><buff typ="TOGETHER_ATTACK" /> 지원 / 협동 공격 시</sec>, 범위 내 경장형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>이(가) 증가합니다.
+        <sec typ="cond">대상이 자신에 의한 <buff typ="MARKING" /> 표식 상태인 경우</sec>, 효과가 두 배로 증폭됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Light-type allies' supports the attack</sec>.
+        <sec typ="cond">self Attack Support do Defender / Supporter</sec> additionally <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Dragoon's Fire Spear</sec> coordinated attack</sec> to trigger number exists.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /><buff typ="TOGETHER_ATTACK" /> support / coordinated attack when</sec>, within range Light-type allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> increases.
+        <sec typ="cond">target self to by <buff typ="MARKING" /> Mark if in the state</sec>, the effect is doubled amplification.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 軽装型 味方の 攻撃を 支援</sec>します。
+        <sec typ="cond">自身が 攻撃支援する 保護機 / 支援機</sec>は 追加で <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">竜騎兵の火槍</sec> 協同攻撃</sec>を 誘導できます。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /><buff typ="TOGETHER_ATTACK" /> 支援 / 協同攻撃 時</sec>、 範囲内 軽装型 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>が増加します。
+        <sec typ="cond">対象が 自身に よる <buff typ="MARKING" /> 標的 状態の場合</sec>、 効果が2倍で 増幅されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 輕裝型 我方的 攻擊 支援</sec>。
+        <sec typ="cond">自身 攻擊支援 保護機 / 支援機</sec> 額外 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">龍騎兵的火槍</sec> 協同攻擊</sec> 誘發可以。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /><buff typ="TOGETHER_ATTACK" /> 支援 / 協同攻擊 時</sec>， 範圍內 輕裝型 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>增加。
+        <sec typ="cond">目標 自身於 的 <buff typ="MARKING" /> 標記 若為狀態</sec>， 效果變為2倍以 增幅。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -11638,10 +11698,30 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="0" /></sec>이(가) 증가하고 액티브 스킬의 <sec typ="cond">적중 시</sec> 효과를 <sec typ="buff">1중첩씩 획득</sec>합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、自身の <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>が増加し、アクティブスキルの <sec typ="cond">命中時</sec>効果を <sec typ="buff">1重複ずつ獲得</sec>します。
-      EN: <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="RANGE_UP" /> range <val idx="0" /></sec> increases, and gains the active skill's <sec typ="cond">on hit</sec> effect one stack at a time.
-      TC: <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>會增加，並使主動技能的 <sec typ="cond">命中時</sec>效果可 <sec typ="buff">逐層獲得 1 層</sec>。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="0" /></sec>이(가) 증가하고 액티브 스킬의 <sec typ="cond">적중 시</sec> 효과를 <sec typ="buff">1중첩씩 획득</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 경장형 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">대상이 <sec typ="note">쐐기 진형 형성</sec> 범위 내에 있을 경우</sec>, 효과가 두 배로 증폭됩니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /><buff typ="TOGETHER_ATTACK" /> 지원 / 협동 공격 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="13" /></sec>이(가) 증가합니다. <sec>(최대 10중첩)</sec>
+        <sec typ="cond"><sec typ="note">용기병의 화창</sec> 치명타 시</sec>, <sec typ="buff"><sec typ="note">무게중심</sec> 중첩을 모두 소모</sec>하고 소모한 중첩 수에 비례하여 <sec typ="buff"><buff typ="PhyATK_UP" /> 피해량 증가 효과가 증폭</sec>됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="0" /></sec>() increases and active skill of <sec typ="cond">On hit</sec> effect and <sec typ="buff">1stack each gain</sec>.
+        <sec typ="cond">At round start</sec>, Light-type allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="6" r /></sec> increases.
+        <sec typ="cond">target <sec typ="note">Sswae unit formation Hyeongseong</sec> within range to if present</sec>, the effect is doubled amplification.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /><buff typ="TOGETHER_ATTACK" /> support / coordinated attack when</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="13" /></sec> increases. <sec>(up to 10stack)</sec>
+        <sec typ="cond"><sec typ="note">Dragoon's Fire Spear</sec> On critical hit</sec>, <sec typ="buff"><sec typ="note">Muge during Sim</sec> stack all consume</sec> and consumed stack in proportion to the number of <sec typ="buff"><buff typ="PhyATK_UP" /> damage increase effect and amplification</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>が 増加し、 アクティブ スキルの <sec typ="cond">命中時</sec> 効果を <sec typ="buff">1重複ッスイク 獲得</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 軽装型 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="6" r /></sec>が増加します。
+        <sec typ="cond">対象が <sec typ="note">ッスウェ機 陣形 ハヨン宣</sec> 範囲内に 存在する場合</sec>、 効果が2倍で 増幅されます。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /><buff typ="TOGETHER_ATTACK" /> 支援 / 協同攻撃 時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="13" /></sec>が増加します。 <sec>(最大 10重複)</sec>
+        <sec typ="cond"><sec typ="note">竜騎兵の火槍</sec> クリティカル時</sec>、 <sec typ="buff"><sec typ="note">ムウく中スイム</sec> 重複を ムオドウ 消費</sec>し、 消費した 重複 数に比例して <sec typ="buff"><buff typ="PhyATK_UP" /> ダメージ量 増加 効果が 増幅</sec>されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec> 增加，並 主動 技能的 <sec typ="cond">命中時</sec> 效果 <sec typ="buff">1疊加各 獲得</sec>。
+        <sec typ="cond">回合開始時</sec>， 輕裝型 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="6" r /></sec>增加。
+        <sec typ="cond">目標 <sec typ="note">Sswae台 陣形 Hyeongseong</sec> 範圍內於 存在時</sec>， 效果變為2倍以 增幅。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /><buff typ="TOGETHER_ATTACK" /> 支援 / 協同攻擊 時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="13" /></sec>增加。 <sec>(最大 10疊加)</sec>
+        <sec typ="cond"><sec typ="note">龍騎兵的火槍</sec> 暴擊時</sec>， <sec typ="buff"><sec typ="note">無中心</sec> 疊加 全部 消耗</sec>並 消耗 疊加 依數量成比例 <sec typ="buff"><buff typ="PhyATK_UP" /> 傷害量 增加 效果 增幅</sec>。
 dialogue:
   KR:
     "1":

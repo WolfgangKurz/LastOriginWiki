@@ -2174,10 +2174,18 @@ skills:
             per: -0.02
             chance: 1
     desc:
-      KR: 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 치명타 시 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: 敵に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、クリティカル時に<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
-      EN: Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage to enemies, and when CRIT hit, <sec typ="dmg"><buff typ="PhyATK_UP" />damage amount<val idx="0" r /></sec> increases.
-      TC: 對敵軍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害，且暴擊時<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
+      KR: |-
+        적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 치명타 시 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        적 적중 시 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" r /></sec>를 감소시킵니다.
+      EN: |-
+        to the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and On critical hit <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        enemy On hit <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="2" r /></sec> decreases.
+      JP: |-
+        敵に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、、 クリティカル時 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        敵 命中時 <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="2" r /></sec>を減少させます。
+      TC: |-
+        敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 暴擊時 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        敵人 命中時 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="2" r /></sec>使其減少。
   "2":
     key: "2"
     icon: AirStrike
@@ -3247,10 +3255,22 @@ skills:
             per: 0.03
             chance: 1
     desc:
-      KR: 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>를 증가시킵니다.
-      JP: 指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>を増加させます。
-      EN: Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area and increases <sec typ="buff"><buff typ="VULNERABLE" />received damage<val idx="1" r /></sec>.
-      TC: 對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害，並增加<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="1" r /></sec>。
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>를 증가시킵니다.
+        스쿼드 내 <char uid="BR_May" />가 있을 시 지정 타깃 대상으로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">석기 시대로!</sec> 스킬 협동 공격</sec>을 합니다.
+        공격 적중 시 자신의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="2" r /></sec>가 감소합니다.
+      EN: |-
+        to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increases.
+        in squad <char uid="BR_May" /> if present designated target target as <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Back to the Stone Age!</sec> skill coordinated attack</sec>.
+        On hit own <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="2" r /></sec> decreases.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec>を増加させます。
+        スクワッド 内 <char uid="BR_May" />が ある 時 指定 トアグイト 対象で <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">石器時代へ！</sec> スキル 協同攻撃</sec>をします。
+        攻撃命中時 自身の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="2" r /></sec>が減少します。
+      TC: |-
+        指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec>使其增加。
+        小隊 內 <char uid="BR_May" /> 有 時 指定 目標 目標以 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">回到石器時代！</sec> 技能 協同攻擊</sec>。
+        攻擊命中時 自身的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="2" r /></sec>減少。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3418,9 +3438,9 @@ skills:
             chance: 1
     desc:
       KR: 라운드 개시 시 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff">치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec>를 증가시킵니다.
-      JP: ラウンド開始時、自分の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff">クリティカル<val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="3" r /></sec>を増加させます。
-      EN: At the start of the round, increases self’s <sec typ="buff"><buff typ="ACCURACY_UP" />ACU<val idx="0" r /></sec> / <sec typ="buff">CRIT<val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />EVA<val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />Defense Penetration<val idx="3" r /></sec>.
-      TC: 回合開始時，增加自身的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff">暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="3" r /></sec>。
+      EN: At round start own <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff">Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="3" r /></sec> increases.
+      JP: ラウンド開始時 自身の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff">クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec>を増加させます。
+      TC: 回合開始時 自身的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff">暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec>使其增加。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3692,10 +3712,18 @@ skills:
             per: 0.01
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec> 지정 범위 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec>를 증가시킵니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、指定範囲の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="2" r /></sec>を増加させます。
-      EN: <sec typ="cond">At the start of the round</sec>, increases <sec typ="buff"><buff typ="ATK_UP" />ATK<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />ACU<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />CRIT<val idx="2" r /></sec> of allies in the designated area.
-      TC: <sec typ="cond">回合開始時</sec>，增加指定範圍內我軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="2" r /></sec>。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 지정 범위 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec>를 증가시킵니다.
+        <sec typ="cond"><cmt t="둠 브링어"><import name="DoomBringer" /></cmt> 소속</sec>은 <sec typ="buff">100% 증가된 효과</sec>를 받습니다.
+      EN: |-
+        <sec typ="cond">At round start</sec> designated area allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="2" r /></sec> increases.
+        <sec typ="cond"><cmt t="Doom Bringer"><import name="DoomBringer" /></cmt> affiliated</sec> <sec typ="buff">100% increase applied effect and</sec> receives.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 指定範囲 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="2" r /></sec>を増加させます。
+        <sec typ="cond"><cmt t="ドゥームブリンガー"><import name="DoomBringer" /></cmt> 所属</sec>は <sec typ="buff">100% 増加された 効果</sec>を 受けます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec> 指定範圍 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec>使其增加。
+        <sec typ="cond"><cmt t="毀滅使者"><import name="DoomBringer" /></cmt> 所屬</sec> <sec typ="buff">100% 增加已 效果</sec> 受到。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -3865,9 +3893,9 @@ skills:
             chance: 1
     desc:
       KR: <sec typ="cond">자신이 공격을 적중시키거나</sec> <sec typ="cond">자신을 제외한 아군이 공격을 성공시키면</sec> 자신과 <char uid="BR_May" />의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
-      JP: <sec typ="cond">自分が攻撃を命中させると</sec> <sec typ="cond">自分を除く味方が攻撃を成功させると</sec>自分と<char uid="BR_May" />の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>が増加します。
-      EN: <sec typ="cond">When self lands an attack</sec> or <sec typ="cond">when an ally other than self lands an attack</sec>, self and <char uid="BR_May" />’s <sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec> increase.
-      TC: <sec typ="cond">當自身攻擊命中時</sec>或<sec typ="cond">自身以外的我軍攻擊成功時</sec>，自身與<char uid="BR_May" />的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>增加。
+      EN: <sec typ="cond">self attack Accuracywhen height/key or</sec> <sec typ="cond">self excluding allies attack success when if activates</sec> self and <char uid="BR_May" /> of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+      JP: <sec typ="cond">自身が 攻撃を 命中時クイまたは</sec> <sec typ="cond">自身を ジエ外した 味方が 攻撃を 宣グオン時クイなら</sec> 自身と <char uid="BR_May" />の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+      TC: <sec typ="cond">自身 攻擊 命中時台或</sec> <sec typ="cond">自身 解除外 我方 攻擊 先g防空時台若</sec> 自身與 <char uid="BR_May" />的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
 dialogue:
   KR:
     "1":

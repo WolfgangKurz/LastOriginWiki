@@ -2721,20 +2721,20 @@ skills:
     desc:
       KR: |-
         마계의 화염을 던져 <dmg elem="fire" />를 줍니다.
-        <sec typ="cond">적중 시</sec>, 대상을 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> 상태로 만들고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec> 증가 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="2" r /></sec> 감소 / <sec typ="dmg"><buff typ="FireDMG_DOT" /> 지속 화염 피해 <val idx="1" signless /></sec>을(를) 부여합니다.
-        <sec typ="cond">대상이 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 지속 화염 피해</sec> 상태인 경우</sec>, 해당 라운드 동안 동일 효과가 추가 적용됩니다.
-      JP: |-
-        魔界の炎を投げ、<dmg elem="fire" />を与えます。
-        <sec typ="cond">命中時</sec>、対象を2ラウンドの間<sec typ="buff"><buff typ="MARKING" />マーキング</sec>状態にし、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="0" r /></sec>増加 / <sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性<val idx="2" r /></sec>減少 / <sec typ="dmg"><buff typ="FireDMG_DOT" />継続火炎ダメージ<val idx="1" signless /></sec>を付与します。
-        <sec typ="cond">対象が<sec typ="dmg"><buff typ="FireDMG_DOT" />継続火炎ダメージ</sec>状態の場合</sec>、そのラウンド中に同一効果が追加適用されます。
+        <sec typ="cond">적중 시</sec>, 대상을 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>으로 지정하여, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec> 증가 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="2" r /></sec> 감소 / <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> 지속 화염 피해</sec>를 부여합니다.
+        대상이 <sec typ="cond"><buff typ="FireDMG_DOT" /> 지속 화염 피해</sec> 상태인 경우, 해당 라운드 동안 동일 효과가 추가 적용됩니다.
       EN: |-
-        Throws a flame of the demon realm and deals <dmg elem="fire" />.
-        <sec typ="cond">On hit</sec>, turns the target into <sec typ="buff"><buff typ="MARKING" /> Marked</sec> for 2 rounds and inflicts <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> up / <sec typ="buff"><buff typ="FIRERES_DOWN" /> fire resistance <val idx="2" r /></sec> down / <sec typ="dmg"><buff typ="FireDMG_DOT" /> persistent fire damage <val idx="1" signless /></sec>.
-        <sec typ="cond">If the target is already suffering <sec typ="dmg"><buff typ="FireDMG_DOT" /> persistent fire damage</sec></sec>, the same effects are additionally applied during that round.
+        Magye of Fire throws <dmg elem="fire" />.
+        <sec typ="cond">On hit</sec>, target 2 rounds <sec typ="buff"><buff typ="MARKING" /> Mark</sec> as designates, <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> increase / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="2" r /></sec> decrease / <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> Fire damage over time</sec> grants.
+        target <sec typ="cond"><buff typ="FireDMG_DOT" /> Fire damage over time</sec> if in the state, each round same effect and additionally applied.
+      JP: |-
+        ムアグイェの 火炎を ドオンジヨ<dmg elem="fire" />を与えます。
+        <sec typ="cond">命中時</sec>、 対象を 2ラウンドの間 <sec typ="buff"><buff typ="MARKING" /> 標的</sec>で 指定して、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="0" r /></sec> 増加 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="2" r /></sec> 減少 / <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> 持続火炎ダメージ</sec>を付与します。
+        対象が <sec typ="cond"><buff typ="FireDMG_DOT" /> 持続火炎ダメージ</sec> 状態の場合、 該当 ラウンド間 ドオンイル 効果が 追加適用されます。
       TC: |-
-        投擲魔界之炎，造成<dmg elem="fire" />。
-        <sec typ="cond">命中時</sec>，使目標在2回合內變為<sec typ="buff"><buff typ="MARKING" />標記</sec>狀態，並施加<sec typ="buff"><buff typ="VULNERABLE" />受到的傷害<val idx="0" r /></sec>增加 / <sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性<val idx="2" r /></sec>減少 / <sec typ="dmg"><buff typ="FireDMG_DOT" />持續火焰傷害<val idx="1" signless /></sec>。
-        <sec typ="cond">若目標已處於<sec typ="dmg"><buff typ="FireDMG_DOT" />持續火焰傷害</sec>狀態</sec>，則該回合內會額外套用相同效果。
+        魔界的 火焰 更多投擲 造成<dmg elem="fire" />。
+        <sec typ="cond">命中時</sec>， 目標 2回合內 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>以 指定並， <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="0" r /></sec> 增加 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="2" r /></sec> 減少 / <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> 持續火焰傷害</sec>賦予。
+        目標 <sec typ="cond"><buff typ="FireDMG_DOT" /> 持續火焰傷害</sec> 若為狀態， 該 回合內 同il 效果 額外套用。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -4672,20 +4672,20 @@ skills:
     desc:
       KR: |-
         채찍 연타로 범위 내 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 줍니다.
-        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>을(를) 감소시키고 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> 상태로 만들며 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 지속 화염 피해 <val idx="3" signless /></sec>을(를) 부여합니다.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec>을(를) 감소시키고 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>으로 지정하여 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="6" signless /> 지속 화염 피해</sec>를 부여합니다.
         <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="1" r /></sec>가 증가하며 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
-      JP: |-
-        鞭の連打で範囲内の敵に<sec typ="attr">保護無視</sec> <dmg elem="fire" />を与えます。
-        <sec typ="cond">命中時</sec>、対象の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>を減少させ、2ラウンドの間<sec typ="buff"><buff typ="MARKING" />マーキング</sec>状態にし、<sec typ="dmg"><buff typ="FireDMG_DOT" />継続火炎ダメージ<val idx="3" signless /></sec>を付与します。
-        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="FireATK_UP" />ダメージ量<val idx="1" r /></sec>が増加し、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>します。
       EN: |-
-        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="fire" /> to enemies within range with a rapid whip barrage.
-        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>, turns them into <sec typ="buff"><buff typ="MARKING" /> Marked</sec> for 2 rounds, and inflicts <sec typ="dmg"><buff typ="FireDMG_DOT" /> persistent fire damage <val idx="3" signless /></sec>.
-        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> damage dealt <val idx="1" r /></sec> increases and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's buff effects</sec>.
+        Chaejjik Yeonta as within range to the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="fire" />.
+        <sec typ="cond">On hit</sec>, target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec> decreases and 2 rounds <sec typ="buff"><buff typ="MARKING" /> Mark</sec> as designates <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="6" signless /> Fire damage over time</sec> grants.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="1" r /></sec> increases and target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec>.
+      JP: |-
+        チエッジイク ヨントアで 範囲内 敵に <sec typ="attr">保護無視</sec><dmg elem="fire" />を与えます。
+        <sec typ="cond">命中時</sec>、 対象の <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec>を 減少時クイし 2ラウンドの間 <sec typ="buff"><buff typ="MARKING" /> 標的</sec>で 指定して <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="6" signless /> 持続火炎ダメージ</sec>を付与します。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="FireATK_UP" /> ダメージ量 <val idx="1" r /></sec>が 増加し、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>します。
       TC: |-
-        以連續鞭擊對範圍內敵人造成<sec typ="attr">無視保護</sec> <dmg elem="fire" />。
-        <sec typ="cond">命中時</sec>，降低目標的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>，並使其在2回合內變為<sec typ="buff"><buff typ="MARKING" />標記</sec>狀態，施加<sec typ="dmg"><buff typ="FireDMG_DOT" />持續火焰傷害<val idx="3" signless /></sec>。
-        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="FireATK_UP" />傷害量<val idx="1" r /></sec>增加，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的強化效果</sec>。
+        Chaej至k Yeonta以 範圍內 敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="fire" />。
+        <sec typ="cond">命中時</sec>， 目標的 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec> 減少時台並 2回合內 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>以 指定並 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="6" signless /> 持續火焰傷害</sec>賦予。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="FireATK_UP" /> 傷害量 <val idx="1" r /></sec> 增加，並 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -5115,24 +5115,28 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 주변에 있는 바이오로이드들을 세뇌해 능력 이상의 힘을 끌어냅니다. (<sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec>)
-        <sec typ="cond">대기 시</sec>, 동일한 효과가 2라운드 동안 추가 적용되지만 <sec typ="dmg"><buff typ="PhyATK_UP" /> 고정 물리 피해 <val idx="4" signless /></sec>을(를) 줍니다. (중첩 불가)
-        <equip uid="Sub_HornOfBADK" /> 장착 시 부작용 발생을 억제하고, 지속 효과를 두 배로 증폭시킵니다. 또한 <sec typ="cond">대기 시</sec> 발생하는 <sec typ="note">세뇌의 파동</sec>에 의한 <sec typ="dmg"><buff typ="PhyATK_UP" /> 고정 물리 피해</sec>를 제거합니다.
-        비록 바이오로이드가 아닐지언정, 배하의 <sec typ="note">군단장</sec>에게도 친히 마력을 하사합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、周囲のバイオロイドを洗脳して能力以上の力を引き出します。 (<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec>)
-        <sec typ="cond">待機時</sec>、同じ効果が2ラウンドの間追加適用されますが、<sec typ="dmg"><buff typ="PhyATK_UP" />固定物理ダメージ <val idx="4" signless /></sec>を与えます。(重複不可)
-        <equip uid="Sub_HornOfBADK" />装備時、副作用の発生を抑え、持続効果を2倍に増幅します。また、<sec typ="cond">待機時</sec>に発生する<sec typ="note">洗脳の波動</sec>による<sec typ="dmg"><buff typ="PhyATK_UP" />固定物理ダメージ</sec>を除去します。
-        たとえバイオロイドでなくとも、配下の<sec typ="note">軍団長</sec>にも自ら魔力を授けます。
+        <sec typ="cond">대기 시</sec>, 동일한 효과가 2라운드 동안 추가 적용되지만 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="9" signless /> 고정 물리 피해</sec>를 줍니다. (중첩 불가)
+        <equip uid="Sub_HornOfBADK" /> 장착 시 부작용 발생을 억제하고, 지속 효과를 두 배로 증폭시킵니다.
+        또한 대기 시 발생하는 <sec typ="note">세뇌의 파동</sec>에 의한 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 고정 물리 피해</sec>를 제거합니다.
+        비록 바이오로이드가 아닐지언정, 배하의 <sec typ="note">군단장</sec>(<char uid="AGS_Goltarion" />)에게도 친히 마력을 하사합니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, brainwashes nearby bioroids and draws out power beyond their limits. (<sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="3" r /></sec>)
-        <sec typ="cond">On standby</sec>, the same effect is additionally applied for 2 rounds, but it deals <sec typ="dmg"><buff typ="PhyATK_UP" /> fixed physical damage <val idx="4" signless /></sec>. (does not stack)
-        When <equip uid="Sub_HornOfBADK" /> is equipped, suppresses side effects and doubles the persistent effect. It also removes the <sec typ="dmg"><buff typ="PhyATK_UP" /> fixed physical damage</sec> caused by the <sec typ="cond">on standby</sec>-triggered <sec typ="note">Brainwashing Wave</sec>.
-        Even if they are not a bioroid, also personally bestows mana upon the <sec typ="note">legion commander</sec> under them.
+        <sec typ="cond">At round start</sec>, nearby to exists Bioroid three Noe remove ability or more of power Kkeul uh Naepni all. (<sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="3" r /></sec>)
+        <sec typ="cond">On standby</sec>, same effect and 2 rounds additionally applied but becomes <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="9" signless /> fixed Physical damage</sec> deals. (cannot stack)
+        <equip uid="Sub_HornOfBADK" /> when equipped side effect occurs Eok.and, continuous effect and doubledcauses.
+        also On standby occurs do <sec typ="note">Brainwashing Wave</sec> to by <sec typ="dmg"><buff typ="phyDMG_DOT" /> fixed Physical damage</sec> removes.
+        Birok Bioroid if not whether Eonjeong, times of <sec typ="note">Corps Commander</sec>(<char uid="AGS_Goltarion" />)to also personally Ma power do Sa.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 周辺に ある バイオロイドたちを スエンウェして ンウンルヨク 以上の ハイムを ックウルオンエプンイドア。 (<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec>)
+        <sec typ="cond">待機時</sec>、 同一の 効果が 2ラウンドの間 追加適用ドウェジイだけ <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="9" signless /> 固定物理ダメージ</sec>を 与えます。 (重複不可)
+        <equip uid="Sub_HornOfBADK" /> ジアンチアク 時 ブウジアクヨン ブアルスエンを オクジエし、 持続 効果を 2倍に増幅させます。
+        ットオした 待機時 ブアルスエンする <sec typ="note">洗脳の波動</sec>に よる <sec typ="dmg"><buff typ="phyDMG_DOT" /> 固定物理ダメージ</sec>を 除去します。
+        ブイルオク バイオロイドが アンイルジイオンジオン、 ブエハアの <sec typ="note">軍団長</sec>(<char uid="AGS_Goltarion" />)にも チインハイ ムアルヨクを ハアスアします。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，會洗腦周遭的生化人偶，榨取超出能力的力量。 (<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫通 <val idx="3" r /></sec>)
-        <sec typ="cond">待機時</sec>，會額外套用相同效果2回合，但會造成<sec typ="dmg"><buff typ="PhyATK_UP" />固定物理傷害 <val idx="4" signless /></sec>。(不可重疊)
-        裝備<equip uid="Sub_HornOfBADK" />時，抑制副作用發生，並使持續效果加倍增幅。另外，會移除因<sec typ="cond">待機時</sec>發動的<sec typ="note">洗腦波動</sec>所造成的<sec typ="dmg"><buff typ="PhyATK_UP" />固定物理傷害</sec>。
-        即使不是生化人偶，也會親自將魔力賜予旗下的<sec typ="note">軍團長</sec>。
+        <sec typ="cond">回合開始時</sec>， 周圍於 有 生化人們 三noe 能力ryeok 以上的 命中m Kkeuleonae。 (<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec>)
+        <sec typ="cond">待機時</sec>， 相同 效果 2回合內 額外套用不會僅 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="9" signless /> 固定物理傷害</sec> 造成。 (不可疊加)
+        <equip uid="Sub_HornOfBADK" /> 裝備 時 附加製作yong 發生 語kje並， 持續 效果 增幅為2倍。
+        又 待機時 發生 <sec typ="note">洗腦波動</sec>於 的 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 固定物理傷害</sec> 移除。
+        Birok 生化人 不是至eon特定， 倍ha的 <sec typ="note">軍團長</sec>(<char uid="AGS_Goltarion" />)給也 值nhi Maryeok 下sa。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -6552,19 +6556,19 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
         <sec typ="cond">자신의 HP가 50% 이상인 경우</sec>, 기세등등해져 효과가 50% 증폭됩니다.
-        <sec typ="cond">자신의 HP가 50% 이하인 경우</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="3" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec>가 감소합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>が増加します。
-        <sec typ="cond">自分のHPが50%以上の場合</sec>、勢いづいて効果が50%増幅されます。
-        <sec typ="cond">自分のHPが50%以下の場合</sec>、<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="3" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="4" r inv /></sec>が減少します。
+        <sec typ="cond">자신의 HP가 50% 이하인 경우</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="8" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="9" r inv /></sec>가 감소합니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec> increases.
-        <sec typ="cond">If own HP is 50% or higher</sec>, becomes emboldened and the effect is amplified by 50%.
-        <sec typ="cond">If own HP is 50% or lower</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="3" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="4" r inv /></sec> decreases.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increases.
+        <sec typ="cond">own HP 50% or moreif</sec>, unit three Deungdeung remove Jyeo effect and increased by 50%.
+        <sec typ="cond">own HP 50% or lessif</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="8" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="9" r inv /></sec> decreases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">自身の HPが 50% 以上の場合</sec>、 機スエドウンドウンしてジヨ 効果が 50%増幅されます。
+        <sec typ="cond">自身の HPが 50% 以下の場合</sec>、 <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="8" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="9" r inv /></sec>が減少します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>增加。
-        <sec typ="cond">若自身HP為50%以上</sec>，則氣勢高漲，效果會增幅50%。
-        <sec typ="cond">若自身HP為50%以下</sec>，<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="3" r /></sec>增加，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到的傷害<val idx="4" r inv /></sec>減少。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
+        <sec typ="cond">自身的 HP 50% 以上若為</sec>， 台三deungdeung變得 效果 增幅50%。
+        <sec typ="cond">自身的 HP 50% 以下若為</sec>， <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="8" r /></sec> 增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="9" r inv /></sec>減少。
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -6975,25 +6979,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 아군 전체에 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 해로운 표식 지정 면역</sec> 효과를 부여합니다.
-        <sec typ="cond">라운드 개시 시</sec>, 아군 전체의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해</sec>를 증가시키지만 대신 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력</sec>을 증가시킵니다.
-        배하의 <sec typ="note">군단장</sec>은 받는 피해가 더욱 가혹하게 증가하며, 스킬 위력 또한 더욱 증가합니다.
-        해당 효과는 강화 효과로 분류됩니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、味方全体に<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />有害なマーキング指定免疫</sec>効果を付与します。
-        <sec typ="cond">ラウンド開始時</sec>、味方全体の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ</sec>を増加させますが、その代わり<sec typ="buff"><buff typ="SKILL_UP" />スキル威力</sec>を増加させます。
-        配下の<sec typ="note">軍団長</sec>は受けるダメージがさらに過酷に増加し、スキル威力もさらに増加します。
-        この効果は強化効果に分類されます。
+        <sec typ="cond">라운드 개시 시</sec>, 아군 전체에 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> <sec typ="attr">해로운</sec> 표식 지정 면역</sec> 효과를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 아군 전체의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>를 증가시키지만 대신 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="6" r /></sec>를 증가시킵니다.
+        <sec typ="cond">배하의 <sec typ="note">군단장</sec>(<char uid="AGS_Goltarion" />)</sec>에게는 위 수치 대신 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>를 증가시키지만 대신 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="4" r /></sec>를 증가시킵니다.
+        해당 효과는 <sec typ="attr">강화 효과</sec>로 분류됩니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, grants all allies <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immunity to harmful marking designation</sec>.
-        <sec typ="cond">At the start of the round</sec>, increases all allies' <sec typ="buff"><buff typ="VULNERABLE" /> damage taken</sec>, but also increases <sec typ="buff"><buff typ="SKILL_UP" /> skill power</sec> instead.
-        The <sec typ="note">legion commander</sec> under them suffers an even harsher increase to damage taken, and skill power increases even more.
-        This effect is classified as a buff.
+        <sec typ="cond">At round start</sec>, all allies to <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> <sec typ="attr">harmful</sec> Mark designated immunity</sec> grants the effect.
+        <sec typ="cond">At round start</sec>, all allies of <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec> increase when but increases instead <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="6" r /></sec> increases.
+        <sec typ="cond">times of <sec typ="note">Corps Commander</sec>(<char uid="AGS_Goltarion" />)</sec> to above value instead <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec> increase when but increases instead <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="4" r /></sec> increases.
+        the effect <sec typ="attr">buffs</sec> as category.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 味方全体に <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> <sec typ="attr">有害な</sec> 標的 指定 免疫</sec> 効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、 味方全体の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="5" r /></sec>を 増加時クイジイだけ 代わりに <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="6" r /></sec>を増加させます。
+        <sec typ="cond">ブエハアの <sec typ="note">軍団長</sec>(<char uid="AGS_Goltarion" />)</sec>には ウィ 数値 代わりに <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="3" r /></sec>を 増加時クイジイだけ 代わりに <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="4" r /></sec>を増加させます。
+        該当 効果は <sec typ="attr">強化効果</sec>で ブウンルユされます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，使我軍全體獲得<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />有害標記指定免疫</sec>效果。
-        <sec typ="cond">回合開始時</sec>，會提高我軍全體的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害</sec>，但作為代價也會提高<sec typ="buff"><buff typ="SKILL_UP" />技能威力</sec>。
-        旗下的<sec typ="note">軍團長</sec>所受傷害會更加嚴苛地提高，技能威力也會更加提高。
-        此效果被分類為強化效果。
+        <sec typ="cond">回合開始時</sec>， 全體我方於 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> <sec typ="attr">有害</sec> 標記 指定 免疫</sec> 賦予效果。
+        <sec typ="cond">回合開始時</sec>， 全體我方的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="5" r /></sec> 增加時台至僅 改為 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="6" r /></sec>使其增加。
+        <sec typ="cond">倍ha的 <sec typ="note">軍團長</sec>(<char uid="AGS_Goltarion" />)</sec>給 上 數值 改為 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="3" r /></sec> 增加時台至僅 改為 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="4" r /></sec>使其增加。
+        該 效果 <sec typ="attr">強化效果</sec>以 分類。
 dialogue:
   KR:
     "1":

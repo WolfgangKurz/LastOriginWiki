@@ -3087,10 +3087,18 @@ skills:
             per: -0.005
             chance: 1
     desc:
-      KR: 약점을 관찰하여 지정 범위에 <dmg elem="physics" />를 줍니다.
-      JP: 弱点を観察して指定範囲に <dmg elem="physics" />を与えます。
-      EN: Observes weaknesses and deals <dmg elem="physics" /> to the designated area.
-      TC: 觀察弱點，對指定範圍造成 <dmg elem="physics" />。
+      KR: |-
+        약점을 관찰하여 지정 범위에 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상은 <sec typ="buff"><buff typ="SNARE" />  이동 불가</sec> 상태가 되고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r ></sec>가 증가하며 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="2" r /></sec>가 감소합니다.
+      EN: |-
+        weakness Gwanchal by doing to the designated area <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 2 rounds the target <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> state and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r ></sec> increases and <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="2" r /></sec> decreases.
+      JP: |-
+        ヤクジオムを グワンチアルして 指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象は <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態が になり、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r ></sec>が 増加し、 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="2" r /></sec>が減少します。
+      TC: |-
+        弱點 Gwanchal並 指定範圍於 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 狀態 變為，且 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r ></sec> 增加，並 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="2" r /></sec>減少。
   "2":
     key: "2"
     icon: Beam
@@ -6284,10 +6292,22 @@ skills:
             per: -0.005
             chance: 1
     desc:
-      KR: 즉석에서 가젯을 조립하여 지정 범위에 <dmg elem="physics" />를 주고, 적중 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>을(를) 감소시킵니다.
-      JP: 即席でガジェットを組み立てて指定範囲に <dmg elem="physics" />を与え、命中対象の <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>を減少させます。
-      EN: Assembles a gadget on the spot to deal <dmg elem="physics" /> to the designated area and reduces the hit target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>.
-      TC: 即席組裝小工具，對指定範圍造成 <dmg elem="physics" />，並降低命中目標的 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>。
+      KR: |-
+        즉석에서 가젯을 조립하여 지정 범위에 <dmg elem="physics" />를 주고, 적중 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>을(를) 감소시킵니다.
+        <sec typ="cond">적중 시</sec>, <sec typ="chance">25% 확률</sec>로 해당 라운드 동안 대상은 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 상태가 됩니다.
+        <sec typ="cond">대상이 <buff typ="SNARE" /> 이동 불가 상태인 경우</sec>, 상기 효과의 적용 확률이 <sec typ="chance">100%로 증가</sec>합니다.
+      EN: |-
+        instant in removet Jorip by doing to the designated area <dmg elem="physics" /> damage and Hit target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> decreases.
+        <sec typ="cond">On hit</sec>, <sec typ="chance">25% chance</sec> as each round the target <sec typ="buff"><buff typ="SEAL_SKILL" /> skill cannot use</sec> state.
+        <sec typ="cond">target <buff typ="SNARE" /> Immobilized if in the state</sec>, above effect and of applies chance <sec typ="chance">100%as increase</sec>.
+      JP: |-
+        ジウクスオクで がジエトを ジオルイプして 指定範囲に<dmg elem="physics" />を与え、、 命中対象の <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>を減少させます。
+        <sec typ="cond">命中時</sec>、 <sec typ="chance">25% 確率</sec>で 該当 ラウンド間 対象は <sec typ="buff"><buff typ="SEAL_SKILL" /> スキル スアヨン 不可</sec> 状態になります。
+        <sec typ="cond">対象が <buff typ="SNARE" /> 移動不可 状態の場合</sec>、 上記 効果の 適用 確率が <sec typ="chance">100%で 増加</sec>します。
+      TC: |-
+        即席在 解除t Jorip並 指定範圍於 造成<dmg elem="physics" />，並 命中目標的 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>使其減少。
+        <sec typ="cond">命中時</sec>， <sec typ="chance">25% 機率</sec>以 該 回合內 目標 <sec typ="buff"><buff typ="SEAL_SKILL" /> 技能 使用 不可</sec> 變為狀態。
+        <sec typ="cond">目標 <buff typ="SNARE" /> 無法移動 若為狀態</sec>， 上述 效果的 套用 機率 <sec typ="chance">100%以 增加</sec>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -7608,10 +7628,30 @@ skills:
             per: 0.02
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 경장형 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="4" r /></sec>가 증가합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、軽装型の味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="4" r /></sec>が増加します。
-      EN: <sec typ="cond">At the start of the round</sec>, light-type allies gain <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="4" r /></sec>.
-      TC: <sec typ="cond">回合開始時</sec>，輕裝型友軍的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="4" r /></sec>會增加。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 경장형 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 기동형 아군의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 중장형 아군의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="8" r /></sec>가 증가합니다.
+        <sec typ="cond">세 효과가 모두 활성화됐을 때</sec>, <sec>조건을 무시</sec>하고 <sec typ="buff">모든 아군에게 모든 효과가 적용</sec>됩니다.
+        <sec><sec typ="cond">AGS</sec>에게는 효과 레벨이 3만큼 추가로 적용됩니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, Light-type allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="4" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, Mobile-type allies' <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, Heavy-type allies' <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="7" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="8" r /></sec> increases.
+        <sec typ="cond">three effect and all activation Dwaet when</sec>, <sec>condition ignore</sec> and <sec typ="buff">all to allies all effect and applies</sec>.
+        <sec><sec typ="cond">AGS</sec> to effect and level 3 by additionally is applied.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 軽装型 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="4" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 機動型 味方の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 重装型 味方の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="7" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="8" r /></sec>が増加します。
+        <sec typ="cond">スエ 効果が ムオドウ 有効化ドウェトを 時</sec>、 <sec>条件を 無視</sec>し、 <sec typ="buff">すべての味方に すべての 効果が 適用</sec>されます。
+        <sec><sec typ="cond">AGS</sec>には 効果 レベルが 3分 追加で 適用されます。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 輕裝型 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="4" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 機動型 我方的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 重裝型 我方的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="8" r /></sec>增加。
+        <sec typ="cond">三 效果 全部 啟用Dwaet 時</sec>， <sec>條件 無視</sec>並 <sec typ="buff">所有我方給 所有 效果 套用</sec>。
+        <sec><sec typ="cond">AGS</sec>給 效果 等級 3等量 額外 套用。</sec>
   "4":
     key: "4"
     icon: P.Barrier
@@ -8186,10 +8226,26 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" signless /></sec>을(를) 획득합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、自身は <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="0" signless /></sec>を獲得します。
-      EN: <sec typ="cond">At the start of the round</sec>, self gains a <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> barrier <val idx="0" signless /></sec>.
-      TC: <sec typ="cond">回合開始時</sec>，自身會獲得 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 屏障 <val idx="0" signless /></sec>。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" signless /></sec>을(를) 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 아군 공격기의 <sec typ="buff"><buff typ="AP_SHIFT" /> 액티브 1스킬 소모 AP <val idx="3" /></sec>이(가) 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 적 공격기의 <sec typ="buff"><buff typ="AP_SHIFT" /> 액티브 1스킬 소모 AP <val idx="4" /></sec>이(가) 증가합니다.
+        <sec>스킬 소모 AP는 1 이상 10 이하의 값을 벗어날 수 없습니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="0" signless /></sec> gains.
+        <sec typ="cond">At round start</sec>, allies Attacker of <sec typ="buff"><buff typ="AP_SHIFT" /> active 1skill consume AP <val idx="3" /></sec> decreases.
+        <sec typ="cond">At round start</sec>, enemy Attacker of <sec typ="buff"><buff typ="AP_SHIFT" /> active 1skill consume AP <val idx="4" /></sec> increases.
+        <sec>skill consume AP 1 or more 10 or less of value Beot uh Nal cannot.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="0" signless /></sec>を 獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、 味方 攻撃機の <sec typ="buff"><buff typ="AP_SHIFT" /> アクティブ 1スキル 消費 AP <val idx="3" /></sec>が減少します。
+        <sec typ="cond">ラウンド開始時</sec>、 敵 攻撃機の <sec typ="buff"><buff typ="AP_SHIFT" /> アクティブ 1スキル 消費 AP <val idx="4" /></sec>が増加します。
+        <sec>スキル 消費 APは 1 以上 10 以下の グアを ブオトオンアル 数 ありません。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾 <val idx="0" signless /></sec> 獲得。
+        <sec typ="cond">回合開始時</sec>， 我方 攻擊機的 <sec typ="buff"><buff typ="AP_SHIFT" /> 主動 1技能 消耗 AP <val idx="3" /></sec>減少。
+        <sec typ="cond">回合開始時</sec>， 敵人 攻擊機的 <sec typ="buff"><buff typ="AP_SHIFT" /> 主動 1技能 消耗 AP <val idx="4" /></sec>增加。
+        <sec>技能 消耗 AP 1 以上 10 以下的 Gaps Beoteonal 數 不存在。</sec>
   "5":
     key: "5"
     icon: P.TeamAtkDeBuff
@@ -8538,10 +8594,26 @@ skills:
             per: -0.005
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 경장형 적의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="4" r /></sec>가 감소합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、軽装型の敵の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="4" r /></sec>が減少します。
-      EN: <sec typ="cond">At the start of the round</sec>, light-type enemies have reduced <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="4" r /></sec>.
-      TC: <sec typ="cond">回合開始時</sec>，輕裝型敵人的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="4" r /></sec>會降低。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 경장형 적의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="4" r /></sec>가 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 기동형 적의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="6" r /></sec>가 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 중장형 적의 <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="8" r /></sec>가 감소합니다.
+        <sec typ="cond">공격 적중 시</sec>, 상기 효과 중 대상에게 적용된 효과가 2라운드 동안 추가로 적용됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, Light-type enemy's <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="4" r /></sec> decreases.
+        <sec typ="cond">At round start</sec>, Mobile-type enemy's <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="6" r /></sec> decreases.
+        <sec typ="cond">At round start</sec>, Heavy-type enemy's <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="7" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="8" r /></sec> decreases.
+        <sec typ="cond">On hit</sec>, above effect and during to the target enemy applied effect and 2 rounds additionally is applied.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 軽装型 敵の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="4" r /></sec>が減少します。
+        <sec typ="cond">ラウンド開始時</sec>、 機動型 敵の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="6" r /></sec>が減少します。
+        <sec typ="cond">ラウンド開始時</sec>、 重装型 敵の <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="7" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="8" r /></sec>が減少します。
+        <sec typ="cond">攻撃命中時</sec>、 上記 効果 中 対象に 適用された 効果が 2ラウンドの間 追加で 適用されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 輕裝型 敵人的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="4" r /></sec>減少。
+        <sec typ="cond">回合開始時</sec>， 機動型 敵人的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="6" r /></sec>減少。
+        <sec typ="cond">回合開始時</sec>， 重裝型 敵人的 <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="8" r /></sec>減少。
+        <sec typ="cond">攻擊命中時</sec>， 上述 效果 中 對目標 套用已 效果 2回合內 額外 套用。
 dialogue:
   KR:
     "":

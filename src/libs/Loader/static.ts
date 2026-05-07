@@ -24,6 +24,7 @@ export const StaticDB = {
 	Mission: "mission",
 	SkillFrom: "skill-from",
 	IWSeason: "iw/seasons",
+	Anomaly: "anomaly",
 	Story2DModel: "story.2dmodel",
 	StoryMap: "story.map",
 

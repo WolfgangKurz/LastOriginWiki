@@ -2251,18 +2251,18 @@ skills:
         말 안듣는 기관포를 발사하여 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 효과를 부여합니다.
         <sec typ="cond">치명타 시</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" r /></sec>가 증가하고 2라운드 동안 대상에게 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec> 증가 효과를 부여합니다.
-      JP: |-
-        言うことを聞かない機関砲を発射して<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間、対象に<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="SNARE" />移動不可</sec>効果を付与します。
-        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="5" r /></sec>が増加し、2ラウンドの間、対象に<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="4" r /></sec>増加効果を付与します。
       EN: |-
-        Fires the unruly machine cannon and deals <dmg elem="physics" />.
-        <sec typ="cond">On hit</sec>, applies <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobile</sec> to the target for 2 rounds.
-        <sec typ="cond">On crit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec> increases, and the target gains <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="4" r /></sec> up for 2 rounds.
+        words disobedient machine cannon fires <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 2 rounds to the target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> grants the effect.
+        <sec typ="cond">On critical hit</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec> increases and 2 rounds to the target <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec> increase grants the effect.
+      JP: |-
+        ムアル アンドウトは 機関砲を 発射して<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象に <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 効果を付与します。
+        <sec typ="cond">クリティカル時</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="5" r /></sec>が 増加し、 2ラウンドの間 対象に <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec> 増加 効果を付与します。
       TC: |-
-        發射不聽話的機關砲造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，使目標在2回合內獲得<sec typ="buff"><buff typ="MARKING" />標記</sec>／<sec typ="buff"><buff typ="SNARE" />無法移動</sec>效果。
-        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="5" r /></sec>提升，並使目標在2回合內獲得<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="4" r /></sec>增加效果。
+        不聽話的 機砲 發射並 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 2回合內 對目標 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 賦予效果。
+        <sec typ="cond">暴擊時</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="5" r /></sec> 增加，並 2回合內 對目標 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" r /></sec> 增加 賦予效果。
   "2":
     key: "2"
     icon: TeamAtkBuff
@@ -2716,17 +2716,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        무전으로 범위 내 아군 공격기 또는 <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 소속 전투원에게 상황을 전파하여 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec>를 증가시킵니다.
+        무전으로 범위 내 아군 공격기 또는 <cmt t="아머드 메이든"><import name="ArmoredMaiden" /></cmt> 소속 전투원에게 상황을 전파하여 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec>를 증가시킵니다.
         <sec typ="cond">대상이 중장형인 경우</sec>, 효과가 두 배로 증폭됩니다.
-      JP: |-
-        無線で範囲内の味方攻撃機または<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>所属戦闘員に状況を伝達し、2ラウンドの間、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="1" r /></sec>を増加させます。
-        <sec typ="cond">対象が重装型の場合</sec>、効果が2倍に増幅されます。
       EN: |-
-        Relays the battlefield situation by radio to allied attackers in range or <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants, increasing <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> skill power <val idx="1" r /></sec> for 2 rounds.
-        <sec typ="cond">If the target is heavy-armored</sec>, the effect is doubled.
+        by radio as within range allies Attacker or <cmt t="Armored Maiden"><import name="ArmoredMaiden" /></cmt> affiliated combatantto situation relays 2 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="1" r /></sec> increases.
+        <sec typ="cond">target Heavy-typeif</sec>, the effect is doubled amplification.
+      JP: |-
+        ムウ前で 範囲内 味方 攻撃機 または <cmt t="アーマードメイデン"><import name="ArmoredMaiden" /></cmt> 所属 戦闘員に スアンハワンを 前プアして 2ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">対象が 重装型の場合</sec>、 効果が2倍で 増幅されます。
       TC: |-
-        以無線電向範圍內我軍攻擊機或<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>所屬戰鬥員傳達戰況，使<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>／<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="1" r /></sec>在2回合內提升。
-        <sec typ="cond">若目標為重裝型</sec>，效果會加倍。
+        無前以 範圍內 我方 攻擊機 或 <cmt t="裝甲少女"><import name="ArmoredMaiden" /></cmt> 所屬 戰鬥員給 傳達戰況並 2回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="1" r /></sec>使其增加。
+        <sec typ="cond">目標 重裝型若為</sec>， 效果變為2倍以 增幅。
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -3169,15 +3169,15 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 중장형 공격기의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>이(가) 증가합니다.
         <sec typ="cond">자신이 스쿼드 내 유일한 지원기인 경우</sec>, 대상이 중장형 전투원으로 확장되며 효과가 50% 증폭됩니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の重装型攻撃機の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />AP<val idx="2" /></sec>が増加します。
-        <sec typ="cond">自分が分隊内で唯一の支援機の場合</sec>、対象が重装型戦闘員へ拡大され、効果が50%増幅されます。
       EN: |-
-        At round start, increases <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> of heavy-armored attackers in range.
-        <sec typ="cond">If self is the only support unit in the squad</sec>, the target expands to heavy-armored combatants and the effect is amplified by 50%.
+        <sec typ="cond">At round start</sec>, within range Heavy-type Attacker of <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> increases.
+        <sec typ="cond">self in squad only Supporterif</sec>, target Heavy-type combatant as expanded and effect and increased by 50%.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 重装型 攻撃機の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>が増加します。
+        <sec typ="cond">自身が スクワッド 内 ユイルした 支援機の場合</sec>、 対象が 重装型 戦闘員で ハワクジアンになり、 効果が 50%増幅されます。
       TC: |-
-        於<sec typ="cond">回合開始時</sec>，範圍內重裝型攻擊機的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec>／<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>／<sec typ="buff"><buff typ="AP_UP" />AP<val idx="2" /></sec>提升。
-        <sec typ="cond">若自身是隊伍中唯一的支援機</sec>，目標會擴展為重裝型戰鬥員，且效果放大50%。
+        <sec typ="cond">回合開始時</sec>， 範圍內 重裝型 攻擊機的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>增加。
+        <sec typ="cond">自身 小隊 內 唯一 支援機若為</sec>， 目標 重裝型 戰鬥員以 火擴張變為，且 效果 增幅50%。
   "4":
     key: "4"
     icon: P.FormChange
@@ -3550,23 +3550,23 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 증가합니다.
         <sec typ="cond">라운드 개시 시</sec> 아군 전체의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>가 증가합니다.
-        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신을 포함한 <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 소속 전투원이 있을 경우</sec> <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 전투원은 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장 피해량 <val idx="6" r /></sec> 및 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장 피해량 <val idx="7" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신을 포함한 <cmt t="아머드 메이든"><import name="ArmoredMaiden" /></cmt> 소속 전투원이 있을 경우</sec> <cmt t="아머드 메이든"><import name="ArmoredMaiden" /></cmt> 전투원은 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장 피해량 <val idx="6" r /></sec> 및 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장 피해량 <val idx="7" r /></sec>가 증가합니다.
         <sec typ="cond">대기 시</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">주포 조립</sec> 상태가 활성화</sec>됩니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、味方全体の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">自分を含む<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>所属戦闘員がいる場合</sec>、<cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>戦闘員の<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />対軽装ダメージ<val idx="6" r /></sec>および<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />対重装ダメージ<val idx="7" r /></sec>が増加します。
-        <sec typ="cond">待機時</sec>、<sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">主砲組み立て</sec>状態が有効化</sec>されます。
       EN: |-
-        At round start, increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec>.
-        At round start, increases the whole squad's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec>.
-        At round start, if there are <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants including self, those <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants increase <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage dealt to light-armored targets <val idx="6" r /></sec> and <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage dealt to heavy-armored targets <val idx="7" r /></sec>.
-        On standby, <sec typ="buff"><buff typ="CHANGE_CHAR" /> activates the <sec typ="note">Main Gun Assembly</sec> state</sec>.
+        <sec typ="cond">At round start</sec> own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> increases.
+        <sec typ="cond">At round start</sec> all allies of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self including <cmt t="Armored Maiden"><import name="ArmoredMaiden" /></cmt> affiliated combatant if present</sec> <cmt t="Armored Maiden"><import name="ArmoredMaiden" /></cmt> combatant <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> anti Light damage <val idx="6" r /></sec> and <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> anti Heavy damage <val idx="7" r /></sec> increases.
+        <sec typ="cond">On standby</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">Main Gun Assembly</sec> state activation</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> 味方全体の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身を 含むした <cmt t="アーマードメイデン"><import name="ArmoredMaiden" /></cmt> 所属 戦闘員が 存在する場合</sec> <cmt t="アーマードメイデン"><import name="ArmoredMaiden" /></cmt> 戦闘員は <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> ドエ 軽装 ダメージ量 <val idx="6" r /></sec> および <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> ドエ 重装 ダメージ量 <val idx="7" r /></sec>が増加します。
+        <sec typ="cond">待機時</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">主砲組立</sec> 状態が 有効化</sec>されます。
       TC: |-
-        於<sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>提升。
-        於<sec typ="cond">回合開始時</sec>，我方全體的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec>提升。
-        於<sec typ="cond">回合開始時</sec>，<sec typ="cond">若包含自身在內有<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>所屬戰鬥員</sec>，則<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>戰鬥員對<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />輕裝目標造成的傷害<val idx="6" r /></sec>及對<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />重裝目標造成的傷害<val idx="7" r /></sec>提升。
-        待機時，<sec typ="buff"><buff typ="CHANGE_CHAR" />啟用<sec typ="note">主砲組裝</sec>狀態</sec>。
+        <sec typ="cond">回合開始時</sec> 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec> 全體我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身 包含 <cmt t="裝甲少女"><import name="ArmoredMaiden" /></cmt> 所屬 戰鬥員 存在時</sec> <cmt t="裝甲少女"><import name="ArmoredMaiden" /></cmt> 戰鬥員 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對 輕裝 傷害量 <val idx="6" r /></sec> 以及 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對 重裝 傷害量 <val idx="7" r /></sec>增加。
+        <sec typ="cond">待機時</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">主砲組裝</sec> 狀態 啟用</sec>。
   "5":
     key: "5"
     icon: P.Scan
@@ -3761,19 +3761,19 @@ skills:
       KR: |-
         <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">2회 피격 시까지</sec> 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>가 크게 증가합니다.
         <sec typ="cond">라운드 개시 시</sec> <sec typ="cond"><buff typ="DEBUFF_PERDOWN" /> 자신이 효과 저항 증가 상태인 경우</sec>, 자신은 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 획득합니다.
-        <cmt t="아머드 메이든">$$ArmoredMaiden:?$</cmt> 소속 전투원의 <sec typ="note">자신 위치에 따른 스킬 효과</sec>가 항상 최대 효율로 발동하도록 합니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、<sec typ="cond">2回被撃するまで</sec>自分の<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="0" r /></sec>が大幅に増加します。
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond"><buff typ="DEBUFF_PERDOWN" />自分が効果耐性増加状態の場合</sec>、自分は<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視</sec>効果を獲得します。
-        <cmt t="アーマードメイデン">$$ArmoredMaiden:?$</cmt>所属戦闘員の<sec typ="note">自分の位置によるスキル効果</sec>が常に最大効率で発動するようにします。
+        <cmt t="아머드 메이든"><import name="ArmoredMaiden" /></cmt> 소속 전투원의 <sec typ="note">자신 위치에 따른 스킬 효과</sec>가 항상 최대 효율로 발동하도록 합니다.
       EN: |-
-        At battle start, until hit 2 times, greatly increases own <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="0" r /></sec>.
-        At round start, if self is in a <sec typ="cond"><buff typ="DEBUFF_PERDOWN" /> effect resistance increase</sec> state, self gains <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec>.
-        Makes <cmt t="Armored Maiden">$$ArmoredMaiden:?$</cmt> combatants' <sec typ="note">skill effects based on their position</sec> always trigger at maximum efficiency.
+        <sec typ="cond">At battle start</sec>, <sec typ="cond">2times When hit up to</sec> own <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> greatly increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond"><buff typ="DEBUFF_PERDOWN" /> self Effect Resistance increase if in the state</sec>, self <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> gains the effect.
+        <cmt t="Armored Maiden"><import name="ArmoredMaiden" /></cmt> affiliated combatant of <sec typ="note">Skill effects based on own position</sec> always up to efficiency as to trigger.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 <sec typ="cond">2回 被弾時まで</sec> 自身の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec>が 大きく増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond"><buff typ="DEBUFF_PERDOWN" /> 自身が 効果抵抗 増加 状態の場合</sec>、 自身は <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視</sec> 効果を獲得します。
+        <cmt t="アーマードメイデン"><import name="ArmoredMaiden" /></cmt> 所属 戦闘員の <sec typ="note">自身の位置に応じたスキル効果</sec>が 常に 最大 効率で ブアルドオンハアもルオクします。
       TC: |-
-        於<sec typ="cond">戰鬥開始時</sec>，在<sec typ="cond">被擊2次前</sec>自身的<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="0" r /></sec>大幅提升。
-        於<sec typ="cond">回合開始時</sec>，若自身處於<sec typ="cond"><buff typ="DEBUFF_PERDOWN" />效果抵抗提升</sec>狀態，則自身獲得<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>效果。
-        使<cmt t="裝甲少女">$$ArmoredMaiden:?$</cmt>所屬戰鬥員的<sec typ="note">依自身位置發動的技能效果</sec>始終以最大效率觸發。
+        <sec typ="cond">戰鬥開始時</sec>， <sec typ="cond">2次 被擊時至</sec> 自身的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec> 大幅增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond"><buff typ="DEBUFF_PERDOWN" /> 自身 效果抗性 增加 若為狀態</sec>， 自身 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec> 獲得效果。
+        <cmt t="裝甲少女"><import name="ArmoredMaiden" /></cmt> 所屬 戰鬥員的 <sec typ="note">依自身位置而定的技能效果</sec> 總是 最大 效率以 發動ha也越。
   F1:
     key: F1
     icon: AntiArmorShot
@@ -6055,21 +6055,21 @@ skills:
         <sec typ="cond">치명타 시</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 대상의 강화 효과를 해제</sec>하고 <strike>2라운드 동안 지속 피해를 발생시킵니다</strike> <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
         <sec typ="cond">적중 대상이 보호기인 경우</sec>, 2라운드 동안 <sec typ="buff"><buff typ="Disallow" /> 강화 불가</sec> 효과를 부여합니다.
         <sec typ="cond">스킬 사용 후</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">주포 조립</sec> 상태를 해제</sec>합니다.
-      JP: |-
-        電熱化学砲を発射して指定範囲に<dmg elem="physics" />を与えます。
-        <sec typ="cond">クリティカル時</sec>、<sec typ="buff"><buff typ="REMOVE_BUFF" />対象の強化効果を解除</sec>し、<strike>2ラウンドの間持続ダメージを発生させます</strike><sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="4" r /></sec>が増加します。
-        <sec typ="cond">命中対象が保護機の場合</sec>、2ラウンドの間<sec typ="buff"><buff typ="Disallow" />強化不可</sec>効果を付与します。
-        <sec typ="cond">スキル使用後</sec>、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">主砲組み立て</sec>状態を解除</sec>します。
       EN: |-
-        Fires the electro-chemical cannon and deals <dmg elem="physics" /> to the designated area.
-        <sec typ="cond">On crit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's buffs</sec> and <strike>inflicts sustained damage for 2 rounds</strike> <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec> increases.
-        <sec typ="cond">If the hit target is a protector</sec>, applies <sec typ="buff"><buff typ="Disallow" /> Enhancement Block</sec> for 2 rounds.
-        <sec typ="cond">After using the skill</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes the <sec typ="note">Main Gun Assembly</sec> state</sec>.
+        front row chemical cannon fires to the designated area <dmg elem="physics" />.
+        <sec typ="cond">On critical hit</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> target's removes buffs</sec> and <strike>2 rounds continuous damage causes</strike> <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec> increases.
+        <sec typ="cond">Hit target Defenderif</sec>, 2 rounds <sec typ="buff"><buff typ="Disallow" /> Cannot be Buffed</sec> grants the effect.
+        <sec typ="cond">After using the skill</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">Main Gun Assembly</sec> state remove</sec>.
+      JP: |-
+        前列化学砲を 発射して 指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 対象の 強化効果を 解除</sec>し、 <strike>2ラウンドの間 持続 ダメージを ブアルスエンさせます</strike> <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="4" r /></sec>が増加します。
+        <sec typ="cond">命中対象が 保護機の場合</sec>、 2ラウンドの間 <sec typ="buff"><buff typ="Disallow" /> 強化不可</sec> 効果を付与します。
+        <sec typ="cond">スキル使用後</sec>、 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">主砲組立</sec> 状態を 解除</sec>します。
       TC: |-
-        發射電熱化學砲，對指定範圍造成<dmg elem="physics" />。
-        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的強化效果</sec>，並<strike>在2回合內造成持續傷害</strike><sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="4" r /></sec>提升。
-        <sec typ="cond">若命中目標為保護機</sec>，則賦予2回合的<sec typ="buff"><buff typ="Disallow" />無法強化</sec>效果。
-        <sec typ="cond">技能使用後</sec>，<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除<sec typ="note">主砲組裝</sec>狀態</sec>。
+        前排化學砲 發射並 指定範圍於 造成<dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 目標的 強化效果 解除</sec>並 <strike>2回合內 持續 傷害 發生</strike> <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="4" r /></sec>增加。
+        <sec typ="cond">命中目標為 保護機若為</sec>， 2回合內 <sec typ="buff"><buff typ="Disallow" /> 無法強化</sec> 賦予效果。
+        <sec typ="cond">使用技能後</sec>， <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">主砲組裝</sec> 狀態 解除</sec>。
   F2:
     key: F2
     icon: CannonShotWide
@@ -8499,23 +8499,23 @@ skills:
       KR: |-
         고폭탄을 장전하여 지정 범위에 <dmg elem="physics" />를 주고 받는 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 감소 효과를 해제</sec>합니다.
         <sec typ="cond">적중 시</sec> <sec typ="cond">대상이 <buff typ="DEF_Line" /> 행 / <buff typ="DEF_Side" /> 열 / <buff typ="DEF_Char" /> 지정 보호 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
-        <sec typ="cond">치명타 시</sec> <strike>대상의 모든 강화 효과를 해제합니다</strike> 대상에게 2라운드 동안 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 지속 물리 피해 <val idx="4" signless /></sec>을(를) 발생시킵니다.
+        <sec typ="cond">치명타 시</sec> <strike>대상의 모든 강화 효과를 해제합니다</strike> 대상에게 2라운드 동안 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 지속 물리 피해 <val idx="4" signless /></sec>를 발생시킵니다.
         <sec typ="cond">스킬 사용 후</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">주포 조립</sec> 상태를 해제</sec>합니다.
-      JP: |-
-        榴弾を装填して指定範囲に<dmg elem="physics" />を与え、受ける<sec typ="buff"><buff typ="REMOVE_BUFF" />ダメージ減少効果を解除</sec>します。
-        <sec typ="cond">命中時</sec>、<sec typ="cond">対象が<buff typ="DEF_Line" />行 / <buff typ="DEF_Side" />列 / <buff typ="DEF_Char" />指定保護状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="3" r /></sec>が増加します。
-        <sec typ="cond">クリティカル時</sec>、<strike>対象の全ての強化効果を解除します</strike>対象に2ラウンドの間<sec typ="dmg"><buff typ="phyDMG_DOT" />持続物理ダメージ<val idx="4" signless /></sec>を発生させます。
-        <sec typ="cond">スキル使用後</sec>、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">主砲組み立て</sec>状態を解除</sec>します。
       EN: |-
-        Loads high-explosive rounds and deals <dmg elem="physics" /> to the designated area, removing <sec typ="buff"><buff typ="REMOVE_BUFF" /> received damage reduction effects</sec>.
-        <sec typ="cond">On hit</sec>, if the target is under <buff typ="DEF_Line" /> row / <buff typ="DEF_Side" /> column / <buff typ="DEF_Char" /> designated protection, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
-        <sec typ="cond">On crit</sec>, <strike>removes all buffs from the target</strike> inflicts <sec typ="dmg"><buff typ="phyDMG_DOT" /> sustained physical damage <val idx="4" signless /></sec> on the target for 2 rounds.
-        <sec typ="cond">After using the skill</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes the <sec typ="note">Main Gun Assembly</sec> state</sec>.
+        high-explosive shell loads to the designated area <dmg elem="physics" /> damage and receives <sec typ="buff"><buff typ="REMOVE_BUFF" /> Damage Reduction removes the effect</sec>.
+        <sec typ="cond">On hit</sec> <sec typ="cond">target <buff typ="DEF_Line" /> row / <buff typ="DEF_Side" /> column / <buff typ="DEF_Char" /> Designated Protection if in the state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
+        <sec typ="cond">On critical hit</sec> <strike>target's all removes buffss</strike> to the target 2 rounds <sec typ="dmg"><buff typ="phyDMG_DOT" /> Physical damage over time <val idx="4" signless /></sec> causes.
+        <sec typ="cond">After using the skill</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">Main Gun Assembly</sec> state remove</sec>.
+      JP: |-
+        高爆弾を 装填して 指定範囲に<dmg elem="physics" />を与え、 受ける <sec typ="buff"><buff typ="REMOVE_BUFF" /> ダメージ 減少 効果を 解除</sec>します。
+        <sec typ="cond">命中時</sec> <sec typ="cond">対象が <buff typ="DEF_Line" /> 行 / <buff typ="DEF_Side" /> 列 / <buff typ="DEF_Char" /> 指定保護 状態の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec> <strike>対象の すべての 強化効果を 解除します</strike> 対象に 2ラウンドの間 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 持続物理ダメージ <val idx="4" signless /></sec>を ブアルスエンさせます。
+        <sec typ="cond">スキル使用後</sec>、 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">主砲組立</sec> 状態を 解除</sec>します。
       TC: |-
-        裝填高爆彈，對指定範圍造成<dmg elem="physics" />，並解除所受<sec typ="buff"><buff typ="REMOVE_BUFF" />傷害降低效果</sec>。
-        <sec typ="cond">命中時</sec>，若目標處於<buff typ="DEF_Line" />行／<buff typ="DEF_Side" />列／<buff typ="DEF_Char" />指定保護狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="3" r /></sec>提升。
-        <sec typ="cond">暴擊時</sec>，<strike>解除目標的所有強化效果</strike>對目標在2回合內造成<sec typ="dmg"><buff typ="phyDMG_DOT" />持續物理傷害<val idx="4" signless /></sec>。
-        <sec typ="cond">技能使用後</sec>，<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除<sec typ="note">主砲組裝</sec>狀態</sec>。
+        高爆彈 裝填並 指定範圍於 造成<dmg elem="physics" />，並 受到 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 傷害 減少 效果 解除</sec>。
+        <sec typ="cond">命中時</sec> <sec typ="cond">目標 <buff typ="DEF_Line" /> 列 / <buff typ="DEF_Side" /> 行 / <buff typ="DEF_Char" /> 指定保護 若為狀態</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>增加。
+        <sec typ="cond">暴擊時</sec> <strike>目標的 所有 強化效果 解除</strike> 對目標 2回合內 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 持續物理傷害 <val idx="4" signless /></sec> 發生。
+        <sec typ="cond">使用技能後</sec>， <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">主砲組裝</sec> 狀態 解除</sec>。
 dialogue:
   KR:
     "1":

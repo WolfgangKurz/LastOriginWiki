@@ -548,6 +548,7 @@ source:
     - Ev:Ev32:EV1-3EX
   - - Ev:Ev34:EV1-4
   - - Ev:Ev36:EV2-4EX
+  - - Ev:Ev38:EV1-4EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2135,18 +2136,18 @@ skills:
         공대지 미사일을 발사해 <dmg elem="physics" />를 줍니다.
         대상이 <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> / <sec typ="cond"><buff typ="AP_DOWN" /> 행동력 감소</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
         <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장/중장형 피해량 <val idx="3" r /></sec> 증가가 적용됩니다.
-      JP: |-
-        空対地ミサイルを発射し、<dmg elem="physics" />を与えます。
-        対象が<sec typ="cond"><buff typ="EVADE_DOWN" />回避減少</sec> / <sec typ="cond"><buff typ="AP_DOWN" />行動力減少</sec>状態なら、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
-        <sec typ="dmg"><buff typ="TROOPER_DMG_UP" />対軽装/重装型ダメージ量<val idx="3" r /></sec>増加が適用されます。
       EN: |-
-        Fires an air-to-ground missile and deals <dmg elem="physics" />.
-        If the target is <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down</sec> / <sec typ="cond"><buff typ="AP_DOWN" /> MOVE Down</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
-        <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light/Heavy Armor Damage <val idx="3" r /></sec> increase is applied.
+        air-to-ground missile fires <dmg elem="physics" />.
+        target <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion decrease</sec> / <sec typ="cond"><buff typ="AP_DOWN" /> Action Speed decrease</sec> if in the state <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light/Heavy damage <val idx="3" r /></sec> increase is applied.
+      JP: |-
+        空対地ミサイルを 発射して<dmg elem="physics" />を与えます。
+        対象が <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避 減少</sec> / <sec typ="cond"><buff typ="AP_DOWN" /> 行動力 減少</sec> 状態なら <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装／重装型ダメージ <val idx="3" r /></sec> 増加が 適用されます。
       TC: |-
-        發射空對地導彈，造成<dmg elem="physics" />。
-        若目標處於<sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec> / <sec typ="cond"><buff typ="AP_DOWN" />行動力降低</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
-        套用<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />對輕裝 / 重裝型傷害量<val idx="3" r /></sec>增加效果。
+        空對地飛彈 發射 造成<dmg elem="physics" />。
+        目標 <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避 減少</sec> / <sec typ="cond"><buff typ="AP_DOWN" /> 行動力 減少</sec> 若處於狀態 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝／重裝型傷害 <val idx="3" r /></sec> 增加 套用。
   "2":
     key: "2"
     icon: AirStrike
@@ -3280,18 +3281,18 @@ skills:
         미사일 폭격으로 대상 지점에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
         대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 디버프를 가지고 있으면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
         <sec typ="cond">스쿼드에 <char uid="BR_StratoAngel" />이 있다면</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">고고도 폭격</sec> 협동 공격</sec>을 유도합니다.
-      JP: |-
-        ミサイル爆撃で対象地点に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
-        対象が<sec typ="cond"><buff typ="MARKING" />標的</sec> / <sec typ="cond"><buff typ="SNARE" />移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />回避減少</sec>デバフを持っている場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
-        <sec typ="cond">スコードに<char uid="BR_StratoAngel" />がいるなら</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">高高度爆撃</sec>協同攻撃</sec>を誘導します。
       EN: |-
-        Attacks the target point with missile bombardment and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
-        If the target has <sec typ="cond"><buff typ="MARKING" /> Marking</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down</sec> debuffs, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
-        <sec typ="cond">If <char uid="BR_StratoAngel" /> is in the squad</sec>, induces a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Extreme Altitude Explosive Bombardment</sec> co-op attack</sec>.
+        missile by bombardment as target point to <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        target <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion decrease</sec> debuff and if present <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">squad <char uid="BR_StratoAngel" /> if present</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">High-Altitude Bombing</sec> coordinated attack</sec> triggers.
+      JP: |-
+        ミサイル爆撃で 対象 地点に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        対象が <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避 減少</sec> デバフを 持って ある場合 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">スクワッドに <char uid="BR_StratoAngel" />が 存在するなら</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">高高度爆撃</sec> 協同攻撃</sec>を 誘導します。
       TC: |-
-        以導彈轟炸對目標地點造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
-        若目標擁有<sec typ="cond"><buff typ="MARKING" />標記</sec> / <sec typ="cond"><buff typ="SNARE" />無法移動</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec>減益，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>會增加。
-        <sec typ="cond">若小隊內有<char uid="BR_StratoAngel" /></sec>，將引導<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">超高空轟炸</sec>協同攻擊</sec>。
+        以飛彈轟炸 目標 地點於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        目標 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避 減少</sec> 減益 持有 若有 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">小隊於 <char uid="BR_StratoAngel" /> 若存在</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">高空轟炸</sec> 協同攻擊</sec> 誘發。
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -3600,21 +3601,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec>가 증가합니다.
         <sec typ="cond">중열</sec> 또는 <sec typ="cond">후열</sec>에 있는 경우, 레이더 드론으로 주변을 감지하며 스텔스 기능을 발동합니다.
         해당 상태에선 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="1" /></sec>이(가) 증가합니다.
-      JP: |-
-        ラウンド開始時、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="7" r /></sec>が増加します。
-        <sec typ="cond">中列</sec>または<sec typ="cond">後列</sec>にいる場合、レーダードローンで周囲を感知しステルス機能を発動します。
-        この状態では<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="1" /></sec>が増加します。
       EN: |-
-        At round start, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="7" r /></sec> increases.
-        If in the <sec typ="cond">middle line</sec> or <sec typ="cond">rear line</sec>, scouts the area with a Radar Drone and activates Stealth.
-        In this state, <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="1" /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="7" r /></sec> increases.
+        <sec typ="cond">middle row</sec> or <sec typ="cond">back row</sec> to if present, radar by drone as nearby detects and stealth function triggers.
+        the in the state <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="1" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec>が増加します。
+        <sec typ="cond">中列</sec> または <sec typ="cond">後列</sec>に ある 場合、 ルエがドオ ドローンで 周辺を 感知し、 ステルス 機ンウンを 発動します。
+        該当 状態に宣 <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="1" /></sec>が増加します。
       TC: |-
-        回合開始時，<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="7" r /></sec>增加。
-        若位於<sec typ="cond">中列</sec>或<sec typ="cond">後列</sec>，會用雷達無人機探測周圍並啟動隱形功能。
-        在此狀態下，<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="1" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="7" r /></sec>增加。
+        <sec typ="cond">中排</sec> 或 <sec typ="cond">後排</sec>於 有 情況， 雷達 無人機以 周圍 感測並 隱形 台能力 發動。
+        該 狀態於先 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="1" /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3856,15 +3857,15 @@ skills:
       KR: |-
         <sec typ="attr">특정 사실</sec> 때문에 언제나 불편한 상태라 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
         <sec typ="cond">스쿼드에 <char uid="BR_May" /> 혹은 <char uid="BR_StratoAngel" />이 있으면</sec> 더 크게 불편해져, <sec typ="buff">해당 효과가 추가 적용</sec>됩니다.
-      JP: |-
-        <sec typ="attr">特定の事実</sec>のせいで常に不快な状態なので、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>が増加します。
-        <sec typ="cond">スコードに<char uid="BR_May" />または<char uid="BR_StratoAngel" />がいるなら</sec>さらに不快になり、<sec typ="buff">この効果が追加適用</sec>されます。
       EN: |-
-        Because of a <sec typ="attr">certain fact</sec>, self is always uncomfortable, so <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="2" r /></sec> increases.
-        <sec typ="cond">If <char uid="BR_May" /> or <char uid="BR_StratoAngel" /> is in the squad</sec>, self becomes even more uncomfortable and <sec typ="buff">the effect is additionally applied</sec>.
+        <sec typ="attr">specific fact</sec> because to always uncomfortable state so <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increases.
+        <sec typ="cond">squad <char uid="BR_May" /> or <char uid="BR_StratoAngel" /> if present</sec> more greatly becomes uncomfortable, <sec typ="buff">the effect and additionally applied</sec>.
+      JP: |-
+        <sec typ="attr">トウクジオン 事実</sec> 時ムウンに オンジエンア ブウルプヨンした 状態ルア <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">スクワッドに <char uid="BR_May" /> または <char uid="BR_StratoAngel" />が ある場合</sec> ドオ クウく ブウルプヨンしてジヨ、 <sec typ="buff">該当 効果が 追加適用</sec>されます。
       TC: |-
-        因為<sec typ="attr">特定事實</sec>而總是不舒服，因此<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>增加。
-        <sec typ="cond">若小隊內有<char uid="BR_May" />或<char uid="BR_StratoAngel" /></sec>，則會更加不舒服，並<sec typ="buff">額外套用此效果</sec>。
+        <sec typ="attr">特殊特定 事實</sec> 始終 總是 不適 狀態時 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
+        <sec typ="cond">小隊於 <char uid="BR_May" /> 或 <char uid="BR_StratoAngel" /> 若有</sec> 更多 大 不適變得， <sec typ="buff">該 效果 額外套用</sec>。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -4164,18 +4165,18 @@ skills:
         <sec typ="cond">전투 개시 시</sec>, 일정 횟수 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 최소화 <val base="1.1" per="0.1" floor signless />회</sec>가 적용됩니다.
         <sec typ="cond">라운드 개시 시</sec>, <sec typ="dmg"><buff typ="SKILL_UP" /> 자신의 회피 수치의 <val idx="3" r signless />만큼 스킬 위력이 증가</sec>하며 <sec typ="cond"><sec typ="note">스텔스 모드 : 피해 최소화</sec> 적용 중이면</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>가 증가합니다.
         <sec>스킬 레벨 10에서 받는 피해 최소화 횟수가 늘어납니다.</sec>
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、一定回数の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ最小化<val base="1.1" per="0.1" floor signless />回</sec>が適用されます。
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="dmg"><buff typ="SKILL_UP" />自身の回避数値の<val idx="3" r signless />だけスキル威力が増加</sec>し、<sec typ="cond"><sec typ="note">ステルスモード : ダメージ最小化</sec>適用中なら</sec> <sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec>が増加します。
-        <sec>スキルレベル10で受けるダメージ最小化回数が増えます。</sec>
       EN: |-
-        <sec typ="cond">At combat start</sec>, grants Minimize Damage for a certain number of <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage minimization <val base="1.1" per="0.1" floor signless /> times</sec>.
-        <sec typ="cond">At round start</sec>, <sec typ="dmg"><buff typ="SKILL_UP" /> skill power increases by <val idx="3" r signless /> based on self's EVA</sec>, and if <sec typ="cond"><sec typ="note">Stealth Mode : Minimize Damage</sec> is active</sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> increases.
-        <sec>At skill level 10, the number of Minimize Damage stacks increases.</sec>
+        <sec typ="cond">At battle start</sec>, fixed count <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> receives Damage Minimization <val base="1.1" per="0.1" floor signless />times</sec> is applied.
+        <sec typ="cond">At round start</sec>, <sec typ="dmg"><buff typ="SKILL_UP" /> own Evasion value of <val idx="3" r signless /> by Skill Power increase</sec> and <sec typ="cond"><sec typ="note">stealth mode: Damage Minimization</sec> is activeif</sec> <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> increases.
+        <sec>At skill level 10, receives Damage Minimization count increases.</sec>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 一定 回数 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受ける ダメージ最小化 <val base="1.1" per="0.1" floor signless />回</sec>が 適用されます。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="dmg"><buff typ="SKILL_UP" /> 自身の 回避 数値の <val idx="3" r signless />分 スキル威力が 増加</sec>し、 <sec typ="cond"><sec typ="note">ステルス モード：ダメージ最小化</sec> 適用中なら</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec>が増加します。
+        <sec>スキルレベル10で 受ける ダメージ最小化 回数が 増加します。</sec>
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，會套用一定次數的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害最小化<val base="1.1" per="0.1" floor signless />次</sec>。
-        <sec typ="cond">回合開始時</sec>，<sec typ="dmg"><buff typ="SKILL_UP" />依自身迴避數值的<val idx="3" r signless />而增加技能威力</sec>；若<sec typ="cond"><sec typ="note">隱形模式：傷害最小化</sec>生效中</sec>，則<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec>增加。
-        <sec>技能等級10時，所受傷害最小化次數增加。</sec>
+        <sec typ="cond">戰鬥開始時</sec>， 一定 次數 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到 傷害最小化 <val base="1.1" per="0.1" floor signless />次</sec> 套用。
+        <sec typ="cond">回合開始時</sec>， <sec typ="dmg"><buff typ="SKILL_UP" /> 自身的 迴避 數值的 <val idx="3" r signless />等量 技能威力 增加</sec>並 <sec typ="cond"><sec typ="note">隱形 模式：傷害最小化</sec> 套用中若</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec>增加。
+        <sec>技能等級10時 受到 傷害最小化 次數 增加。</sec>
 dialogue:
   KR:
     "2":

@@ -3284,40 +3284,40 @@ skills:
     desc:
       KR: |-
         전방의 적들을 빠르게 베어 밀어내며 광속베기로 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 발생시킵니다.
-        <sec typ="cond">스킬 적중 시</sec> 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>를 감소시키고 <cmt t="합선">$$_CHII_SHORT:5,6,7$</cmt> 상태로 만듭니다.
+        <sec typ="cond">스킬 적중 시</sec> 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>를 감소시키고 <cmt t="합선"><import name="_CHII_SHORT" p="5,6,7" /></cmt> 상태로 만듭니다.
         <sec typ="cond">치명타 시</sec> 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 모든 강화 효과를 해제</sec>하고 <sec typ="dmg"><buff typ="FireATK_UP" /> <val idx="3" r signless /> 추가 화염 피해</sec>를 입힙니다.
-        <sec typ="note">$$_CHII_SHORT~</sec>
+        <define name="_CHII_SHORT">
         <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val param="$1" r /></sec>
         <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val param="$2" r /></sec>
         <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val param="$3" r /></sec>
-        ~$$_CHII_SHORT
-      JP: |-
-        前方の敵を素早く斬り払い押しのけ、光速斬りで指定範囲に <sec typ="attr">防護無視</sec> <dmg elem="fire" />を発生させます。
-        <sec typ="cond">スキル命中時</sec>、2ラウンドの間対象の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>を減少させ、<cmt t="ショート">$$_CHII_SHORT:5,6,7$</cmt>状態にします。
-        <sec typ="cond">クリティカル時</sec>、対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> すべての強化効果を解除</sec>し、<sec typ="dmg"><buff typ="FireATK_UP" /> <val idx="3" r signless /> 追加火炎ダメージ</sec>を与えます。
-        <sec typ="note">$$_CHII_SHORT~</sec>
-        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎抵抗 <val param="$1" r /></sec>
-        <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気抵抗 <val param="$2" r /></sec>
-        <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電気抵抗 <val param="$3" r /></sec>
-        ~$$_CHII_SHORT
+        </define>
       EN: |-
-        Quickly slices through and pushes back enemies in front, causing <sec typ="attr">ignore protection</sec> <dmg elem="fire" /> in the designated area with a flash slash.
-        <sec typ="cond">On skill hit</sec>, reduces the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> for 2 rounds and puts it into <cmt t="Short Circuit">$$_CHII_SHORT:5,6,7$</cmt> status.
-        <sec typ="cond">On crit</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> all buffs</sec> and deals <sec typ="dmg"><buff typ="FireATK_UP" /> <val idx="3" r signless /> additional fire damage</sec>.
-        <sec typ="note">$$_CHII_SHORT~</sec>
+        front of enemy quickly Be uh pushes back and Gwang inside Be unit as to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="fire" /> causes.
+        <sec typ="cond">When the skill hits</sec> 2 rounds, target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> decreases and <cmt t="Short Circuit"><import name="_CHII_SHORT" p="5,6,7" /></cmt> inflicts.
+        <sec typ="cond">On critical hit</sec> target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> all removes buffs</sec> and <sec typ="dmg"><buff typ="FireATK_UP" /> <val idx="3" r signless /> additional Fire damage</sec> deals.
+        <define name="_CHII_SHORT">
         <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val param="$1" r /></sec>
-        <sec typ="buff"><buff typ="ICERES_DOWN" /> Cold Resistance <val param="$2" r /></sec>
-        <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Electric Resistance <val param="$3" r /></sec>
-        ~$$_CHII_SHORT
+        <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val param="$2" r /></sec>
+        <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Lightning Resistance <val param="$3" r /></sec>
+        </define>
+      JP: |-
+        前方の 敵たちを ップアルウく ブエオ ムイルオ内し グワンスオクブエ機で 指定範囲に<sec typ="attr">保護無視</sec><dmg elem="fire" />を ブアルスエンさせます。
+        <sec typ="cond">スキル命中時</sec> 2ラウンドの間 対象の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>を 減少時クイし <cmt t="短絡"><import name="_CHII_SHORT" p="5,6,7" /></cmt> 状態にします。
+        <sec typ="cond">クリティカル時</sec> 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> すべての 強化効果を 解除</sec>し、 <sec typ="dmg"><buff typ="FireATK_UP" /> <val idx="3" r signless /> 追加火炎ダメージ</sec>を 与えます。
+        <define name="_CHII_SHORT">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val param="$1" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val param="$2" r /></sec>
+        <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電気耐性 <val param="$3" r /></sec>
+        </define>
       TC: |-
-        迅速斬擊並擊退前方敵人，以光速斬對指定範圍造成 <sec typ="attr">無視保護</sec> <dmg elem="fire" />。
-        <sec typ="cond">技能命中時</sec>，在 2 回合內降低目標的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>，並使其進入 <cmt t="短路">$$_CHII_SHORT:5,6,7$</cmt>狀態。
-        <sec typ="cond">暴擊時</sec>，解除目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 所有增益效果</sec>，並造成 <sec typ="dmg"><buff typ="FireATK_UP" /> <val idx="3" r signless /> 額外火焰傷害</sec>。
-        <sec typ="note">$$_CHII_SHORT~</sec>
+        前方的 敵人們 迅速 Beeo 推開內並 Gwangsokbe台以 指定範圍於 <sec typ="attr">無視保護</sec> <dmg elem="fire" /> 發生。
+        <sec typ="cond">技能命中時</sec> 2回合內 目標的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> 減少時台並 <cmt t="短路"><import name="_CHII_SHORT" p="5,6,7" /></cmt> 使其進入狀態。
+        <sec typ="cond">暴擊時</sec> 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 所有 強化效果 解除</sec>並 <sec typ="dmg"><buff typ="FireATK_UP" /> <val idx="3" r signless /> 追加火焰傷害</sec> 造成。
+        <define name="_CHII_SHORT">
         <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val param="$1" r /></sec>
-        <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷氣抗性 <val param="$2" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val param="$2" r /></sec>
         <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電擊抗性 <val param="$3" r /></sec>
-        ~$$_CHII_SHORT
+        </define>
   "2":
     key: "2"
     icon: Vortex
@@ -6295,27 +6295,27 @@ skills:
         <sec typ="cond">스쿼드에 <char uid="LC_Ephnel" />, <char uid="LC_Nabi" />, <char uid="LC_Dhana" />가 있는 경우</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">슈퍼 노바</sec>, <sec typ="note">택티컬 에어스트라이크</sec>, <sec typ="note">래쉬 임페일</sec> 스킬로 협동 공격</sec>을 유도합니다.
         <sec>협동 공격이 가능한 전투원이 여렷인 경우 위 표기된 순으로 우선권을 가집니다. (에프넬 > 다나 오피니 순)</sec>
         <sec>다수의 적이 대상인 경우 사거리가 닿는 적을 우선 선택하고 사거리로 인해 협동 공격이 불가능할 경우 다음 순서의 전투원이 협동 공격을 실행합니다.</sec>
-      JP: |-
-        右手を鬼手へ変化させた後、武器を抜いてソウル・ジャンク化し、指定範囲に <dmg elem="fire" />を発生させます。
-        <sec typ="cond">スキル命中時</sec>、自身に <sec typ="buff"><buff typ="ATK_UP" /> 広域ダメージ集中 <val idx="0" r /></sec>効果を付与します。
-        <sec typ="cond">クリティカル時</sec>、対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> バリアを解除</sec>し、2ラウンドの間 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 継続火炎ダメージ <val idx="5" signless /></sec>を発生させます。
-        <sec typ="cond">分隊に <char uid="LC_Ephnel" />、<char uid="LC_Nabi" />、<char uid="LC_Dhana" />がいる場合</sec>、<sec typ="chance">100%確率</sec>で <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">スーパーノヴァ</sec>、<sec typ="note">タクティカル・エアストライク</sec>、<sec typ="note">ラッシュ・インペイル</sec> スキルによる協同攻撃を誘発します。
-        <sec>協同攻撃が可能な戦闘員が複数いる場合、上記の順で優先権を持ちます。（エフネル > ダナ・オピーニの順）</sec>
-        <sec>多数の敵が対象の場合、射程の届く敵を優先選択し、射程の都合で協同攻撃が不可能なら次の順番の戦闘員が協同攻撃を実行します。</sec>
       EN: |-
-        Transforms the right hand into a demonic arm, pulls out the weapon, and converts it into soul junk to create <dmg elem="fire" /> in the designated area.
-        <sec typ="cond">On skill hit</sec>, grants self <sec typ="buff"><buff typ="ATK_UP" /> area damage focus <val idx="0" r /></sec>.
-        <sec typ="cond">On crit</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> barrier</sec> and creates <sec typ="dmg"><buff typ="FireDMG_DOT" /> ongoing fire damage <val idx="5" signless /></sec> for 2 rounds.
-        <sec typ="cond">If the squad has <char uid="LC_Ephnel" />, <char uid="LC_Nabi" />, and <char uid="LC_Dhana" /></sec>, there is a <sec typ="chance">100% chance</sec> to trigger a joint attack with <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Super Nova</sec>, <sec typ="note">Tactical Airstrike</sec>, and <sec typ="note">Rush Impale</sec></sec>.
-        <sec>When multiple combatants can perform the joint attack, priority follows the order shown above. (Ephnel > Dana Opini)</sec>
-        <sec>If multiple enemies are targeted, the enemy within range is selected first, and if joint attack is impossible due to range, the next combatant in order performs the joint attack.</sec>
+        O Reunson Gwi number as Byeonhwa after weapon draws out soul removeongkeuhwa when activate to the designated area <dmg elem="fire" /> causes.
+        <sec typ="cond">When the skill hits</sec> self <sec typ="buff"><buff typ="ATK_UP" /> area damage concentration <val idx="0" r /></sec> grants the effect.
+        <sec typ="cond">On critical hit</sec> target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Barrier remove</sec> and 2 rounds <sec typ="dmg"><buff typ="FireDMG_DOT" /> Fire damage over time <val idx="5" signless /></sec> causes.
+        <sec typ="cond">squad <char uid="LC_Ephnel" />, <char uid="LC_Nabi" />, <char uid="LC_Dhana" /> if present</sec> <sec typ="chance">100% chance</sec> as <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Supernova</sec>, <sec typ="note">Taektikeol E uh rod Teurakeu</sec>, <sec typ="note">Lash Impale</sec> skill as coordinated attack</sec> triggers.
+        <sec>coordinated attack possible combatant multiple if above listed in order as priority has. (Efnell > all or O Pini order)</sec>
+        <sec>If there are multiple targets, priority is given to an enemy within range; if a coordinated attack cannot be performed due to range, the next combatant in order performs the coordinated attack.</sec>
+      JP: |-
+        オルウン宣を グウィ数で ブヨンハワ 後 ムウ機を ップオプア スオウル ジオンクウハワ時クヨ 指定範囲に<dmg elem="fire" />を ブアルスエンさせます。
+        <sec typ="cond">スキル命中時</sec> 自身に <sec typ="buff"><buff typ="ATK_UP" /> 広域ダメージ集中 <val idx="0" r /></sec> 効果を付与します。
+        <sec typ="cond">クリティカル時</sec> 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> バリアを 解除</sec>し、 2ラウンドの間 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 持続火炎ダメージ <val idx="5" signless /></sec>を ブアルスエンさせます。
+        <sec typ="cond">スクワッドに <char uid="LC_Ephnel" />、 <char uid="LC_Nabi" />、 <char uid="LC_Dhana" />が ある 場合</sec> <sec typ="chance">100% 確率</sec>で <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">スーパーノヴァ</sec>、 <sec typ="note">トエクトイクオル にオスウトウルアがクウ</sec>、 <sec typ="note">ラッシュインペイル</sec> スキルで 協同攻撃</sec>を 誘導します。
+        <sec>協同攻撃が 可能した 戦闘員が ヨルヨトの場合 ウィ プヨ機された スウンで 優先権を がジイプンイドア。 (にプウンエル > ドアンア オプインイ スウン)</sec>
+        <sec>ドア数の 敵が 対象の場合 射程が ドアフは 敵を ウ宣 選択し、 射程により 協同攻撃が 不可能できる 場合 次 順序の 戦闘員が 協同攻撃を 実行します。</sec>
       TC: |-
-        將右手變成鬼手後拔出武器，化為靈魂廢料並對指定範圍造成 <dmg elem="fire" />。
-        <sec typ="cond">技能命中時</sec>，賦予自身 <sec typ="buff"><buff typ="ATK_UP" /> 範圍傷害集中 <val idx="0" r /></sec>效果。
-        <sec typ="cond">暴擊時</sec>，解除目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 屏障</sec>，並在 2 回合內造成 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 持續火焰傷害 <val idx="5" signless /></sec>。
-        <sec typ="cond">若隊伍中有 <char uid="LC_Ephnel" />、<char uid="LC_Nabi" />、<char uid="LC_Dhana" /></sec>，則 <sec typ="chance">100% 機率</sec>誘發以 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">超新星</sec>、<sec typ="note">戰術空襲</sec>、<sec typ="note">突襲穿刺</sec></sec>的協同攻擊。
-        <sec>若可進行協同攻擊的戰鬥員有多名，則依上述順序優先。（Ephnel > Dana Opini）</sec>
-        <sec>若目標為多名敵人，會優先選擇射程可及的敵人；若因射程無法進行協同攻擊，則由下一位順序的戰鬥員執行協同攻擊。</sec>
+        O不同son Gwi數以 Byeonhwa 後 無台 P炮pa Soul 解除垃圾化時啟動 指定範圍於 <dmg elem="fire" /> 發生。
+        <sec typ="cond">技能命中時</sec> 自身給 <sec typ="buff"><buff typ="ATK_UP" /> 範圍傷害集中 <val idx="0" r /></sec> 賦予效果。
+        <sec typ="cond">暴擊時</sec> 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 護盾 解除</sec>並 2回合內 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 持續火焰傷害 <val idx="5" signless /></sec> 發生。
+        <sec typ="cond">小隊於 <char uid="LC_Ephnel" />， <char uid="LC_Nabi" />， <char uid="LC_Dhana" /> 有 情況</sec> <sec typ="chance">100% 機率</sec>以 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">超新星</sec>， <sec typ="note">戰術 於語se打擊</sec>， <sec typ="note">鞭擊穿刺</sec> 技能以 協同攻擊</sec> 誘發。
+        <sec>協同攻擊 可能 戰鬥員 多個若為 上 標記台已 順序以 優先權。 (於Peunel > 全部na Opini 順序)</sec>
+        <sec>全部數的 敵人 目標若為 射程 全部h 敵人 優先 選擇並 射程因 協同攻擊 不可能可 情況 下次 順序的 戰鬥員 協同攻擊 執行。</sec>
   "3":
     key: "3"
     icon: P.WideSwordAttk
@@ -6603,18 +6603,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec> 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec> 및 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec>, <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>를 증가시킵니다.
         <sec typ="cond">공격 적중 시</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>을(를) 증가시킵니다.
         <sec typ="cond">적 처치 시</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>을(를) 추가로 증가시킵니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自身の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec> および <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec>、<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>を増加させます。
-        <sec typ="cond">攻撃命中時</sec>、自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>を増加させます。
-        <sec typ="cond">敵撃破時</sec>、自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>をさらに増加させます。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, increases own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="0" r /></sec>, <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec>, and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec>.
-        <sec typ="cond">On hit</sec>, increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>.
-        <sec typ="cond">On enemy kill</sec>, further increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>.
+        <sec typ="cond">At round start</sec> own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="0" r /></sec> and <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec>, <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increases.
+        <sec typ="cond">On hit</sec> own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> increases.
+        <sec typ="cond">When killing an enemy</sec> own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> additionally increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 自身の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec> および <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec>、 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>を増加させます。
+        <sec typ="cond">攻撃命中時</sec> 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>を増加させます。
+        <sec typ="cond">敵撃破時</sec> 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>を 追加で 増加させます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，提升自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec>、<sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="1" r /></sec>與<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>。
-        <sec typ="cond">攻擊命中時</sec>，提升自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>。
-        <sec typ="cond">擊殺敵人時</sec>，再額外提升自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>。
+        <sec typ="cond">回合開始時</sec> 自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec> 以及 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec>， <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>使其增加。
+        <sec typ="cond">攻擊命中時</sec> 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>使其增加。
+        <sec typ="cond">擊殺敵人時</sec> 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> 額外 增加。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -7001,18 +7001,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec> 아군 전체의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec> 및 <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec>를 증가시킵니다.
         <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <char uid="3P_CSPerrault" />, <char uid="3P_Poi" />가 있는 경우</sec> <char uid="3P_CSPerrault" /> 및 <char uid="3P_Poi" />는 2배로 효과를 받습니다.
         <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <char uid="3P_CSPerrault" />, <char uid="3P_Poi" />가 있는 경우</sec> <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <char uid="3P_CSPerrault" /> 및 <char uid="3P_Poi" />를 공격 지원</sec>합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、味方全体の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec> および <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="1" r /></sec>を増加させます。
-        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">分隊に <char uid="3P_CSPerrault" />、<char uid="3P_Poi" />がいる場合</sec>、<char uid="3P_CSPerrault" /> および <char uid="3P_Poi" />は2倍の効果を受けます。
-        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">分隊に <char uid="3P_CSPerrault" />、<char uid="3P_Poi" />がいる場合</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <char uid="3P_CSPerrault" /> および <char uid="3P_Poi" />の攻撃を支援</sec>します。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, increases all allies' <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> and <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="1" r /></sec>.
-        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if the squad has <char uid="3P_CSPerrault" /> and <char uid="3P_Poi" /></sec>, <char uid="3P_CSPerrault" /> and <char uid="3P_Poi" /> receive double effects.
-        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if the squad has <char uid="3P_CSPerrault" /> and <char uid="3P_Poi" /></sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports <char uid="3P_CSPerrault" /> and <char uid="3P_Poi" />'s attacks</sec>.
+        <sec typ="cond">At round start</sec> all allies of <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> and <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">squad <char uid="3P_CSPerrault" />, <char uid="3P_Poi" /> if present</sec> <char uid="3P_CSPerrault" /> and <char uid="3P_Poi" /> 2 times as effect and receives.
+        <sec typ="cond">At round start</sec> <sec typ="cond">squad <char uid="3P_CSPerrault" />, <char uid="3P_Poi" /> if present</sec> <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <char uid="3P_CSPerrault" /> and <char uid="3P_Poi" /> Attack Support</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 味方全体の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec> および <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スクワッドに <char uid="3P_CSPerrault" />、 <char uid="3P_Poi" />が ある 場合</sec> <char uid="3P_CSPerrault" /> および <char uid="3P_Poi" />は 2ブエで 効果を 受けます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スクワッドに <char uid="3P_CSPerrault" />、 <char uid="3P_Poi" />が ある 場合</sec> <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <char uid="3P_CSPerrault" /> および <char uid="3P_Poi" />を 攻撃支援</sec>します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，提升友軍全體的 <sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="0" r /></sec>及<sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="1" r /></sec>。
-        <sec typ="cond">回合開始時</sec> <sec typ="cond">若隊伍中有 <char uid="3P_CSPerrault" />、<char uid="3P_Poi" /></sec>，則 <char uid="3P_CSPerrault" />及<char uid="3P_Poi" />會獲得 2 倍效果。
-        <sec typ="cond">回合開始時</sec> <sec typ="cond">若隊伍中有 <char uid="3P_CSPerrault" />、<char uid="3P_Poi" /></sec>，則以 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 支援 <char uid="3P_CSPerrault" /> 及 <char uid="3P_Poi" /> 的攻擊</sec>。
+        <sec typ="cond">回合開始時</sec> 全體我方的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> 以及 <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="1" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">小隊於 <char uid="3P_CSPerrault" />， <char uid="3P_Poi" /> 有 情況</sec> <char uid="3P_CSPerrault" /> 以及 <char uid="3P_Poi" /> 2倍以 效果 受到。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">小隊於 <char uid="3P_CSPerrault" />， <char uid="3P_Poi" /> 有 情況</sec> <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <char uid="3P_CSPerrault" /> 以及 <char uid="3P_Poi" /> 攻擊支援</sec>。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -7577,64 +7577,64 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">피격 시</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="dmg"><buff typ="COUNTER" /> <val idx="0" r signless /> 위력으로 반격</sec>하며 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> 및 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>가 증가합니다.
-        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="라이언 코퍼레이션">$$LionCooperation:?$</cmt> 소속 전투원이 있을 경우</sec> 인원수에 따라 아군 전체에게 <sec typ="note">분노!</sec>를 부여합니다.
-        <box t="분노! 1">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec> 증가
+        <sec typ="cond">피격 시</sec> 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="라이언 코퍼레이션"><import name="LionCooperation" /></cmt> 소속 전투원이 있을 경우</sec> 인원수에 따라 아군 전체에게 <sec typ="note">야옹~</sec>을 부여합니다.
+        <box t="야옹~ 1">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> 증가
         </box>
-        <box t="분노! 2">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="9" r /></sec> 증가
+        <box t="야옹~ 2">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="7" r /></sec> 증가
         </box>
-        <box t="분노! 3">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="10" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="12" r /></sec> 증가
+        <box t="야옹~ 3">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="10" r /></sec> 증가
         </box>
-        <box t="분노! 4">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="14" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="15" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="16" r /></sec> 증가
-        </box>
-      JP: |-
-        <sec typ="cond">被弾時</sec>、<sec typ="chance">100%確率</sec>で <sec typ="dmg"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力で反撃</sec>し、2ラウンドの間自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> および <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="6" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">分隊に自分以外の <cmt t="ライオンコーポレーション">$$LionCooperation:?$</cmt> 所属戦闘員がいる場合</sec>、人数に応じて味方全体に <sec typ="note">怒り！</sec>を付与します。
-        <box t="怒り！ 1">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec> 増加
-        </box>
-        <box t="怒り！ 2">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="9" r /></sec> 増加
-        </box>
-        <box t="怒り！ 3">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="10" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="12" r /></sec>増加
-        </box>
-        <box t="怒り！ 4">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="14" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="15" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="16" r /></sec>増加
+        <box t="야옹~ 4">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="14" r /></sec> 증가
         </box>
       EN: |-
-        <sec typ="cond">When hit</sec>, <sec typ="chance">100% chance</sec> to counterattack with <sec typ="dmg"><buff typ="COUNTER" /> <val idx="0" r signless /> power</sec>, and for 2 rounds own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="6" r /></sec> increase.
-        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if there are allied combatants from <cmt t="Lion Corporation">$$LionCooperation:?$</cmt> besides self in the squad</sec>, grants all allies <sec typ="note">Rage!</sec> based on the number of allies.
-        <box t="Rage! 1">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="7" r /></sec> increase
+        <sec typ="cond">When hit</sec> 2 rounds own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> and <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">squad self excluding <cmt t="Ryan Corporation"><import name="LionCooperation" /></cmt> affiliated combatant if present</sec> members depending on the number of all to allies <sec typ="note">meow~</sec> grants.
+        <box t="meow~ 1">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> increase
         </box>
-        <box t="Rage! 2">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="9" r /></sec> increase
+        <box t="meow~ 2">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="6" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="7" r /></sec> increase
         </box>
-        <box t="Rage! 3">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="10" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="12" r /></sec> increase
+        <box t="meow~ 3">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="9" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="10" r /></sec> increase
         </box>
-        <box t="Rage! 4">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="13" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="14" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="15" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="16" r /></sec> increase
+        <box t="meow~ 4">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="11" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="12" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="13" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="14" r /></sec> increase
+        </box>
+      JP: |-
+        <sec typ="cond">被弾時</sec> 2ラウンドの間 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>と <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スクワッドに 自身を ジエ外した <cmt t="ルアがオン クオプオルエがスヨン"><import name="LionCooperation" /></cmt> 所属 戦闘員が 存在する場合</sec> であるウォン数に応じて 味方全体に <sec typ="note">ヤオン~</sec>を付与します。
+        <box t="ヤオン~ 1">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> 増加
+        </box>
+        <box t="ヤオン~ 2">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="7" r /></sec> 増加
+        </box>
+        <box t="ヤオン~ 3">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="10" r /></sec> 増加
+        </box>
+        <box t="ヤオン~ 4">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="13" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="14" r /></sec> 増加
         </box>
       TC: |-
-        <sec typ="cond">受擊時</sec>，<sec typ="chance">100% 機率</sec>以 <sec typ="dmg"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力反擊</sec>，並在 2 回合內提升自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec>及<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="6" r /></sec>。
-        <sec typ="cond">回合開始時</sec> <sec typ="cond">若隊伍中有除自身以外來自 <cmt t="Lion Corporation">$$LionCooperation:?$</cmt> 的戰鬥員</sec>，則依人數賦予友軍全體 <sec typ="note">憤怒！</sec>。
-        <box t="憤怒！ 1">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="7" r /></sec>增加
+        <sec typ="cond">被擊時</sec> 2回合內 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>與 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">小隊於 自身 解除外 <cmt t="時eon 公司"><import name="LionCooperation" /></cmt> 所屬 戰鬥員 存在時</sec> 為人員依數量 全體我方給 <sec typ="note">喵~</sec>賦予。
+        <box t="喵~ 1">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> 增加
         </box>
-        <box t="憤怒！ 2">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="9" r /></sec>增加
+        <box t="喵~ 2">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="7" r /></sec> 增加
         </box>
-        <box t="憤怒！ 3">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="10" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="12" r /></sec>增加
+        <box t="喵~ 3">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="10" r /></sec> 增加
         </box>
-        <box t="憤怒！ 4">
-        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="14" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="15" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="16" r /></sec>增加
+        <box t="喵~ 4">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="14" r /></sec> 增加
         </box>
 dialogue:
   KR:

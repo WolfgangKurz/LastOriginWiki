@@ -1326,18 +1326,18 @@ skills:
         호밍 레이저를 발사해 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 대상에게 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec> 증가 / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" r /></sec> 감소 효과를 부여합니다.
         <sec>스킬 레벨 당 +6%의 적중 보정이 적용됩니다.</sec>
-      JP: |-
-        ホーミングレーザーを発射して<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、対象に2ラウンドの間<sec typ="buff"><buff typ="MARKING" /> マーク</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec>増加 / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="2" r /></sec>減少効果を付与します。
-        <sec>スキルレベルごとに+6%の命中補正が適用されます。</sec>
       EN: |-
-        Fires a homing laser to deal <dmg elem="physics" />.
-        <sec typ="cond">On hit</sec>, applies <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="1" r /></sec> Increase / <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="2" r /></sec> Decrease for 2 rounds.
-        <sec>+6% hit correction is applied per skill level.</sec>
+        homing laser fires <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, to the target 2 rounds <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increase / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="2" r /></sec> decrease grants the effect.
+        <sec>per skill level +6% of accuracy correction is applied.</sec>
+      JP: |-
+        ホーミングレーザーを 発射して<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 対象に 2ラウンドの間 <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec> 増加 / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="2" r /></sec> 減少 効果を付与します。
+        <sec>スキルレベルごとに +6%の 命中補正が適用されます。</sec>
       TC: |-
-        發射追蹤雷射，造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，向目標賦予2回合的<sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="1" r /></sec>增加 / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="2" r /></sec>降低效果。
-        <sec>每提升1級技能，命中修正+6%。</sec>
+        導引雷射 發射 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 對目標 2回合內 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec> 增加 / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="2" r /></sec> 減少 賦予效果。
+        <sec>每技能等級 +6%的 套用命中補正。</sec>
   "2":
     key: "2"
     icon: SatelliteBeam
@@ -3148,22 +3148,22 @@ skills:
         위성 포격을 요청해 목표 지점에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
         <sec typ="dmg">목표 지점에서 멀수록 피해량이 최대 50%까지 감소합니다.</sec>
         <sec typ="cond">적중 시</sec> 자신이 <sec typ="cond"><buff typ="SCOUTING" /> 정찰 활성화 상태</sec>인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가하고 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 행 / 열 / 지정 보호 효과를 해제</sec>합니다.
-        <sec typ="cond">스킬 사용 시</sec>, <sec typ="note">연산 과부하</sec> 상태가 되어 다음 2라운드 동안 <sec typ="note">고고도 스캐닝</sec>에 의한 <sec typ="buff"><buff typ="SCOUTING" /> 정찰 활성화</sec>가 발동하지 않습니다.
-      JP: |-
-        衛星砲撃を要請し、目標地点に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
-        <sec typ="dmg">目標地点から遠いほどダメージは最大50%まで減少します。</sec>
-        <sec typ="cond">命中時</sec>、自分が<sec typ="cond"><buff typ="SCOUTING" /> 偵察有効化状態</sec>の場合、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="3" r /></sec>が増加し、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 行 / 列 / 指定保護効果を解除</sec>します。
-        <sec typ="cond">スキル使用時</sec>、<sec typ="note">演算過負荷</sec>状態となり、次の2ラウンドの間<sec typ="note">高高度スキャニング</sec>による<sec typ="buff"><buff typ="SCOUTING" /> 偵察有効化</sec>が発動しません。
+        <sec typ="cond">스킬 사용 시</sec>, <sec typ="note">연산 과부하</sec> 상태가 되어 다음 2라운드 동안 <sec typ="note">고고도 스캐닝</sec>에 의한 <sec typ="buff"><buff typ="SCOUTING" /> 정찰 활성화</sec>가 <b>발동하지 않습니다</b>.
       EN: |-
-        Requests satellite bombardment to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the target location.
-        <sec typ="dmg">Damage decreases by up to 50% the farther the target location is from the impact point.</sec>
-        <sec typ="cond">On hit</sec>, if self is in <sec typ="cond"><buff typ="SCOUTING" /> Recon Activated</sec> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases and removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> line / column / designated protection effects</sec>.
-        <sec typ="cond">When using the skill</sec>, enters <sec typ="note">Computation Overload</sec> state, and for the next 2 rounds, <sec typ="note">High-Altitude Scanning</sec> does not trigger <sec typ="buff"><buff typ="SCOUTING" /> Recon Activated</sec>.
+        satellite bombardment requests target point to <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="dmg">target point in the farther damage up to 50%up to decreases.</sec>
+        <sec typ="cond">On hit</sec> self <sec typ="cond"><buff typ="SCOUTING" /> Scouting active state</sec> if, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases and target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Row / Column / Designated Protection removes the effect</sec>.
+        <sec typ="cond">When using the skill</sec>, <sec typ="note">calculation and overload</sec> enters the state and next 2 rounds <sec typ="note">High-Altitude Scanning</sec> to by <sec typ="buff"><buff typ="SCOUTING" /> Scouting activation</sec> <b>does not trigger</b>.
+      JP: |-
+        衛星砲撃を 要請して 目標地点に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="dmg">目標地点で 遠いほど ダメージ量が 最大 50%まで 減少します。</sec>
+        <sec typ="cond">命中時</sec> 自身が <sec typ="cond"><buff typ="SCOUTING" /> 偵察 有効状態</sec>の場合、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が 増加し、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 行 / 列 / 指定保護 効果を 解除</sec>します。
+        <sec typ="cond">スキル使用時</sec>、 <sec typ="note">演算 過負荷</sec> 状態になり 次 2ラウンドの間 <sec typ="note">高高度スキャン</sec>に よる <sec typ="buff"><buff typ="SCOUTING" /> 偵察 有効化</sec>が <b>発動しません</b>。
       TC: |-
-        請求衛星砲擊，對目標地點造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
-        <sec typ="dmg">目標地點越遠，傷害最多會降低50%。</sec>
-        <sec typ="cond">命中時</sec>，若自身處於<sec typ="cond"><buff typ="SCOUTING" /> 偵察啟用狀態</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="3" r /></sec>增加，並解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 行／列／指定保護效果</sec>。
-        <sec typ="cond">使用技能時</sec>，進入<sec typ="note">運算過載</sec>狀態，接下來2回合內，<sec typ="note">高空掃描</sec>不會觸發<sec typ="buff"><buff typ="SCOUTING" /> 偵察啟用</sec>。
+        衛星砲擊 請求 目標地點於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="dmg">目標地點在 遠數越 傷害量 最大 50%至 減少。</sec>
+        <sec typ="cond">命中時</sec> 自身 <sec typ="cond"><buff typ="SCOUTING" /> 偵察 啟用狀態</sec>若為， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec> 增加，並 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 列 / 行 / 指定保護 效果 解除</sec>。
+        <sec typ="cond">使用技能時</sec>， <sec typ="note">運算 過載</sec> 進入狀態並 下次 2回合內 <sec typ="note">高高度掃描</sec>於 的 <sec typ="buff"><buff typ="SCOUTING" /> 偵察 啟用</sec> <b>不會發動</b>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -3415,21 +3415,21 @@ skills:
         대상이 <sec typ="note">AGS</sec> 또는 <sec typ="note">오비탈 와쳐</sec> 소속일 경우, 효과가 두 배로 증폭됩니다.
         스쿼드 내에 자신 외의 <sec typ="note">오비탈 와쳐</sec> 소속 전투원이 있을 경우, 자신의 위치에 관계 없이 전체 적용됩니다.
         <sec typ="note">오비탈 와쳐</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>を増加させます。
-        対象が<sec typ="note">AGS</sec>または<sec typ="note">オービタルウォッチャー</sec>所属の場合、効果が2倍に増幅されます。
-        分隊内に自分以外の<sec typ="note">オービタルウォッチャー</sec>所属戦闘員がいる場合、自分の位置に関係なく全体に適用されます。
-        <sec typ="note">オービタルウォッチャー</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, increases allies within range with <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="2" r /></sec>.
-        If the target belongs to <sec typ="note">AGS</sec> or <sec typ="note">Orbital Watcher</sec>, the effect is doubled.
-        If there is another <sec typ="note">Orbital Watcher</sec> combatant in the squad besides self, the effect applies to all regardless of position.
-        <sec typ="note">Orbital Watcher</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec> increases.
+        target <sec typ="note">AGS</sec> or <sec typ="note">Orbital Watcher</sec> affiliatedif, the effect is doubled amplification.
+        in squad to self other than of <sec typ="note">Orbital Watcher</sec> affiliated combatant if present, own position to relation none all is applied.
+        <sec typ="note">Orbital Watcher</sec>: <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>を増加させます。
+        対象が <sec typ="note">AGS</sec> または <sec typ="note">オービタルウォッチャー</sec> 所属の場合、 効果が2倍で 増幅されます。
+        スクワッド 内に 自身 外の <sec typ="note">オービタルウォッチャー</sec> 所属 戦闘員が 存在する場合、 自身の 位置に グワングイェ オが 全体 適用されます。
+        <sec typ="note">オービタルウォッチャー</sec>：<char uid="AGS_Aeda" />、 <char uid="PECS_CoCoWhiteShell" />、 <char uid="PECS_Stinger" />、 <char uid="PECS_Spartoia" />、 <char uid="PECS_Hussar" />、 <char uid="PECS_LemonadeEpsilon" />
       TC: |-
-        <sec typ="cond">回合開始時</sec>，增加範圍內我軍的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="2" r /></sec>。
-        若目標所屬為<sec typ="note">AGS</sec>或<sec typ="note">軌道守望者</sec>，則效果增幅2倍。
-        若小隊內除自身外還有其他<sec typ="note">軌道守望者</sec>所屬戰鬥員，則無視位置套用至全體。
-        <sec typ="note">軌道守望者</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="2" r /></sec>使其增加。
+        目標 <sec typ="note">AGS</sec> 或 <sec typ="note">軌道觀測者</sec> 所屬若為， 效果變為2倍以 增幅。
+        小隊 內於 自身 外的 <sec typ="note">軌道觀測者</sec> 所屬 戰鬥員 存在時， 自身的 位置於 關係 無 全體 套用。
+        <sec typ="note">軌道觀測者</sec>：<char uid="AGS_Aeda" />， <char uid="PECS_CoCoWhiteShell" />， <char uid="PECS_Stinger" />， <char uid="PECS_Spartoia" />， <char uid="PECS_Hussar" />， <char uid="PECS_LemonadeEpsilon" />
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -3721,21 +3721,21 @@ skills:
         대상이 <sec typ="note">AGS</sec> 또는 <sec typ="note">오비탈 와쳐</sec> 소속일 경우, 효과가 두 배로 증폭됩니다.
         스쿼드 내에 자신 외의 <sec typ="note">AGS</sec>가 있을 경우, 병렬 연산을 통해 자신의 위치에 관계 없이 전체 적용됩니다.
         <sec typ="note">오비탈 와쳐</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の演算を補助し<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>を増加させます。
-        対象が<sec typ="note">AGS</sec>または<sec typ="note">オービタルウォッチャー</sec>所属の場合、効果が2倍に増幅されます。
-        分隊内に自分以外の<sec typ="note">AGS</sec>がいる場合、並列演算により自分の位置に関係なく全体に適用されます。
-        <sec typ="note">オービタルウォッチャー</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, assists allies' computation within range to increase <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>.
-        If the target belongs to <sec typ="note">AGS</sec> or <sec typ="note">Orbital Watcher</sec>, the effect is doubled.
-        If there is another <sec typ="note">AGS</sec> in the squad besides self, parallel computation applies the effect to all regardless of position.
-        <sec typ="note">Orbital Watcher</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+        <sec typ="cond">At round start</sec>, within range allies' calculation assists <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec> increases.
+        target <sec typ="note">AGS</sec> or <sec typ="note">Orbital Watcher</sec> affiliatedif, the effect is doubled amplification.
+        in squad to self other than of <sec typ="note">AGS</sec> if present, parallel calculation through own position to relation none all is applied.
+        <sec typ="note">Orbital Watcher</sec>: <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の 演算を 補助して <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>を増加させます。
+        対象が <sec typ="note">AGS</sec> または <sec typ="note">オービタルウォッチャー</sec> 所属の場合、 効果が2倍で 増幅されます。
+        スクワッド 内に 自身 外の <sec typ="note">AGS</sec>が 存在する場合、 ブヨンルヨル 演算を 通じて 自身の 位置に グワングイェ オが 全体 適用されます。
+        <sec typ="note">オービタルウォッチャー</sec>：<char uid="AGS_Aeda" />、 <char uid="PECS_CoCoWhiteShell" />、 <char uid="PECS_Stinger" />、 <char uid="PECS_Spartoia" />、 <char uid="PECS_Hussar" />、 <char uid="PECS_LemonadeEpsilon" />
       TC: |-
-        <sec typ="cond">回合開始時</sec>，支援範圍內我軍的運算，使<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>增加。
-        若目標所屬為<sec typ="note">AGS</sec>或<sec typ="note">軌道守望者</sec>，則效果增幅2倍。
-        若小隊內除自身外還有其他<sec typ="note">AGS</sec>，則透過平行運算無視位置套用至全體。
-        <sec typ="note">軌道守望者</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 運算 輔助 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>使其增加。
+        目標 <sec typ="note">AGS</sec> 或 <sec typ="note">軌道觀測者</sec> 所屬若為， 效果變為2倍以 增幅。
+        小隊 內於 自身 外的 <sec typ="note">AGS</sec> 存在時， 並列 運算 透過 自身的 位置於 關係 無 全體 套用。
+        <sec typ="note">軌道觀測者</sec>：<char uid="AGS_Aeda" />， <char uid="PECS_CoCoWhiteShell" />， <char uid="PECS_Stinger" />， <char uid="PECS_Spartoia" />， <char uid="PECS_Hussar" />， <char uid="PECS_LemonadeEpsilon" />
   "5":
     key: "5"
     icon: P.EnemyDetect
@@ -4594,18 +4594,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SCOUTING" /> 정찰 활성화</sec> 상태가 됩니다.
         <sec typ="cond">라운드 개시 시</sec> 자신이 <sec typ="cond"><buff typ="SCOUTING" /> 정찰 활성화 상태</sec>인 경우, 적의 행동을 포착하여 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="3" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
         <sec>각 액티브 스킬 레벨에 따라 소모 AP가 감소합니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分は<sec typ="buff"><buff typ="SCOUTING" /> 偵察有効化</sec>状態になります。
-        <sec typ="cond">ラウンド開始時</sec>、自分が<sec typ="cond"><buff typ="SCOUTING" /> 偵察有効化状態</sec>の場合、敵の行動を捕捉して<sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>を減少させ、<sec typ="buff"><buff typ="SNARE" /> 移動不可</sec>状態にします。
-        <sec>各アクティブスキルレベルに応じて消費APが減少します。</sec>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, self becomes <sec typ="buff"><buff typ="SCOUTING" /> Recon Activated</sec>.
-        <sec typ="cond">At the start of the round</sec>, if self is in <sec typ="cond"><buff typ="SCOUTING" /> Recon Activated</sec> state, captures enemy actions to decrease <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" r /></sec> and make them <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec>.
-        <sec>Consumed AP decreases according to each active skill level.</sec>
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="SCOUTING" /> Scouting activation</sec> state.
+        <sec typ="cond">At round start</sec> self <sec typ="cond"><buff typ="SCOUTING" /> Scouting active state</sec> if, enemy's action detects and <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="3" r /></sec> decreases and <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> inflicts.
+        <sec>each active skill level depending on AP cost decreases.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="SCOUTING" /> 偵察 有効化</sec> 状態になります。
+        <sec typ="cond">ラウンド開始時</sec> 自身が <sec typ="cond"><buff typ="SCOUTING" /> 偵察 有効状態</sec>の場合、 敵の 行ドオンを プオチアクして <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>を 減少時クイし <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態にします。
+        <sec>各 アクティブ スキル レベルに応じて 消費APが減少します。</sec>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身進入<sec typ="buff"><buff typ="SCOUTING" /> 偵察啟用</sec>狀態。
-        <sec typ="cond">回合開始時</sec>，若自身處於<sec typ="cond"><buff typ="SCOUTING" /> 偵察啟用狀態</sec>，則捕捉敵人的行動，降低<sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>，並使其進入<sec typ="buff"><buff typ="SNARE" /> 無法移動</sec>狀態。
-        <sec>各主動技能等級越高，消耗AP越少。</sec>
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="SCOUTING" /> 偵察 啟用</sec> 變為狀態。
+        <sec typ="cond">回合開始時</sec> 自身 <sec typ="cond"><buff typ="SCOUTING" /> 偵察 啟用狀態</sec>若為， 敵人的 列同 捕捉並 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec> 減少時台並 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 使其進入狀態。
+        <sec>各 主動 技能 等級依 消耗AP減少。</sec>
 dialogue:
   KR:
     "1":

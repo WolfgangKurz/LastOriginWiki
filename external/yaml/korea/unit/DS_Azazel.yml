@@ -2268,9 +2268,9 @@ skills:
             chance: 1
     desc:
       KR: 지정 범위에 <dmg elem="physics" />를 주고, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec> 증가 / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="3" r /></sec> 감소 효과를 줍니다.
-      JP: 指定範囲に<dmg elem="physics" />のダメージを与え、2ラウンドの間、対象に<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>増加 / <sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="3" r /></sec>減少効果を与えます。
-      EN: Deals <dmg elem="physics" /> damage to the designated area and inflicts the target with <sec typ="buff"><buff typ="MARKING" />Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" />received damage increase<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" />ATK decrease<val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />CRIT decrease<val idx="3" r /></sec> for 2 rounds.
-      TC: 對指定範圍造成<dmg elem="physics" />傷害，並在2回合內對目標施加<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" />所受傷害增加<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="3" r /></sec>減少效果。
+      EN: to the designated area <dmg elem="physics" /> damage and 2 rounds to the target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increase / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="3" r /></sec> decrease effect and deals.
+      JP: 指定範囲に<dmg elem="physics" />を与え、、 2ラウンドの間 対象に <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec> 増加 / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="3" r /></sec> 減少 効果を 与えます。
+      TC: 指定範圍於 造成<dmg elem="physics" />，並 2回合內 對目標 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec> 增加 / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="3" r /></sec> 減少 效果 造成。
   "2":
     key: "2"
     icon: TeamDefBuff
@@ -2575,10 +2575,18 @@ skills:
             per: 0.01
             chance: 1
     desc:
-      KR: 2라운드 동안 주변 아군에게 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" /></sec>을(를) 부여하며, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec>를 증가시킵니다.
-      JP: 2ラウンドの間、周辺の味方に<sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア<val idx="0" /></sec>を付与し、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="3" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="4" r /></sec>を増加させます。
-      EN: Grants nearby allies a <sec typ="buff"><buff typ="DAMAGE_ABSORB" />Barrier<val idx="0" /></sec> for 2 rounds, and increases <sec typ="buff"><buff typ="ATK_UP" />ATK<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" />DEF<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />ACU<val idx="3" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />EVA<val idx="4" r /></sec>.
-      TC: 賦予周圍我軍2回合的<sec typ="buff"><buff typ="DAMAGE_ABSORB" />防護罩<val idx="0" /></sec>，並增加<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="3" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="4" r /></sec>。
+      KR: |-
+        2라운드 동안 주변 아군에게 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" /></sec>을 부여하며, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec>를 증가시킵니다.
+        <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+      EN: |-
+        2 rounds nearby to allies <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="0" /></sec> grantand, <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="3" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="4" r /></sec> increases.
+        <sec>At skill level 10, range increases.</sec>
+      JP: |-
+        2ラウンドの間 周辺 味方に <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="0" /></sec>を ブウヨし、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="4" r /></sec>を増加させます。
+        <sec>スキルレベル10で 範囲が増加します。</sec>
+      TC: |-
+        2回合內 周圍 我方給 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾 <val idx="0" /></sec> 賦予並， <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="4" r /></sec>使其增加。
+        <sec>技能等級10時 範圍增加。</sec>
   "3":
     key: "3"
     icon: P.Barrier
@@ -2819,10 +2827,22 @@ skills:
             per: 0.01
             chance: 1
     desc:
-      KR: 라운드 개시 시, <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec> 감소 / <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec> 효과가 적용됩니다.
-      JP: ラウンド開始時、<sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア<val idx="0" /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="1" r inv /></sec>減少 / <sec typ="buff"><buff typ="DEF_Side" />Protect Line</sec>効果が適用されます。
-      EN: At the start of the round, <sec typ="buff"><buff typ="DAMAGE_ABSORB" />Barrier<val idx="0" /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage decrease<val idx="1" r inv /></sec> / <sec typ="buff"><buff typ="DEF_Side" />Protect Line</sec> effects are applied.
-      TC: 回合開始時，會套用<sec typ="buff"><buff typ="DAMAGE_ABSORB" />防護罩<val idx="0" /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />減少所受傷害<val idx="1" r inv /></sec> / <sec typ="buff"><buff typ="DEF_Side" />保護一列</sec>效果。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec> 감소 / <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec> 효과가 적용됩니다.
+        <sec typ="note">재림</sec> 상태인 경우, 효과가 50% 증가합니다.
+        <sec typ="dmg"><buff typ="DamageAmp_Me" /> 자신의 HP%가 낮을수록 적에게 주는 피해량 <val idx="3" r /></sec>이 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="0" /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="1" r inv /></sec> decrease / <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> the effect is applied.
+        <sec typ="note">Second Coming</sec> if in the state, effect and 50% increases.
+        <sec typ="dmg"><buff typ="DamageAmp_Me" /> damage dealt increases as own HP% decreases <val idx="3" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="0" /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec> 減少 / <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec> 効果が適用されます。
+        <sec typ="note">再臨</sec> 状態の場合、 効果が 50% 増加します。
+        <sec typ="dmg"><buff typ="DamageAmp_Me" /> 自身のHP%が低いほど敵に与えるダメージ量 <val idx="3" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾 <val idx="0" /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="1" r inv /></sec> 減少 / <sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec> 效果套用。
+        <sec typ="note">再臨</sec> 若為狀態， 效果 50% 增加。
+        <sec typ="dmg"><buff typ="DamageAmp_Me" /> 自身HP%越低對敵人造成的傷害量 <val idx="3" r /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -3171,10 +3191,22 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: 전투 개시 시, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP로 전투 속행</sec> 효과가 적용됩니다.
-      JP: 戦闘開始時、<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="0" signless />HPで戦闘続行</sec>効果が適用されます。
-      EN: At the start of combat, <sec typ="buff"><buff typ="DEF_RESSURRECT" />Continue Combat with <val idx="0" signless /> HP</sec> is applied.
-      TC: 戰鬥開始時，套用<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="0" signless /> HP繼續戰鬥</sec>效果。
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP로 전투 속행</sec> 효과가 적용됩니다.
+        전투 속행 발동 시, <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="7" r /></sec>가 증가하며 <sec typ="note">심판</sec>과 <sec typ="note">신의 가호</sec> 효과가 50% 증가합니다.
+        <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 전투 속행</sec>이 발동한 라운드에는 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 최소 피해</sec>만 입으며, 모든 아군을 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP and Continue Combat</sec> the effect is applied.
+        Continue Combat trigger when, <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="7" r /></sec> increases and <sec typ="note">Judgment</sec> and <sec typ="note">God's Blessing</sec> effect and 50% increases.
+        <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat</sec> triggered roundin <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> minimum damage</sec>only takes, all allies <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec>.
+      JP: |-
+        戦闘開始時、 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HPで 戦闘続行</sec> 効果が適用されます。
+        戦闘続行 ブアルドオン 時、 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="7" r /></sec>が 増加し、 <sec typ="note">審判</sec>と <sec typ="note">神の加護</sec> 効果が 50% 増加します。
+        <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 戦闘続行</sec>が ブアルドオンした ラウンドには <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 最小 ダメージ</sec>だけ イプウし、 すべての味方を <sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>します。
+      TC: |-
+        戰鬥開始時， <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP以 戰鬥續行</sec> 效果套用。
+        戰鬥續行 發動 時， <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="7" r /></sec> 增加，並 <sec typ="note">審判</sec>與 <sec typ="note">神的庇護</sec> 效果 50% 增加。
+        <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 戰鬥續行</sec> 發動 回合於 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 最小 傷害</sec>僅 Ipeu並， 所有我方 <sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>。
   "5":
     key: "5"
     icon: P.TeamDefBuff
@@ -3552,10 +3584,22 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: 전투 개시 시, 인접한 아군에게 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP로 전투 속행</sec> / <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="3" signless />회</sec> 효과를 부여합니다.
-      JP: 戦闘開始時、隣接した味方に<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="0" signless />HPで戦闘続行</sec> / <sec typ="buff"><buff typ="DEF_All" />ダメージ無効化<val idx="3" signless />回</sec>効果を付与します。
-      EN: At the start of combat, grants adjacent allies <sec typ="buff"><buff typ="DEF_RESSURRECT" />Continue Combat with <val idx="0" signless /> HP</sec> / <sec typ="buff"><buff typ="DEF_All" />Damage Invalidation <val idx="3" signless /> times</sec> effects.
-      TC: 戰鬥開始時，賦予鄰接我軍<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="0" signless /> HP繼續戰鬥</sec> / <sec typ="buff"><buff typ="DEF_All" />傷害無效化<val idx="3" signless />次</sec>效果。
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 인접한 아군에게 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP로 전투 속행</sec> / <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="3" signless />회</sec> 효과를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec>, HP가 50% 이하인 대상을 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>합니다.
+        <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+      EN: |-
+        <sec typ="cond">At battle start</sec>, adjacent to allies <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP and Continue Combat</sec> / <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification <val idx="3" signless />times</sec> grants the effect.
+        <sec typ="cond">At round start</sec>, HP 50% or less is target <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec>.
+        <sec>At skill level 10, range increases.</sec>
+      JP: |-
+        戦闘開始時、 隣接する 味方に <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HPで 戦闘続行</sec> / <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="3" signless />回</sec> 効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、 HPが 50% 以下である 対象を <sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>します。
+        <sec>スキルレベル10で 範囲が増加します。</sec>
+      TC: |-
+        戰鬥開始時， 相鄰的 我方給 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP以 戰鬥續行</sec> / <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 <val idx="3" signless />次</sec> 賦予效果。
+        <sec typ="cond">回合開始時</sec>， HP 50% 以下為 目標 <sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>。
+        <sec>技能等級10時 範圍增加。</sec>
 dialogue:
   KR:
     "1":

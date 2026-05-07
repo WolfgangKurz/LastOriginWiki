@@ -1870,18 +1870,18 @@ skills:
         랜스 돌격으로 지정 범위에 <dmg elem="fire" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="1" r /></sec>가 감소합니다.
         <sec typ="cond">치명타 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="3" r /></sec>가 증가합니다.
-      JP: |-
-        ランス突撃で指定範囲に<dmg elem="fire" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性 <val idx="1" r /></sec>が減少します。
-        <sec typ="cond">クリティカル時</sec>、3ラウンドの間自分の<sec typ="buff"><buff typ="EVADE_UP" />回避 <val idx="3" r /></sec>が増加します。
       EN: |-
-        Deals <dmg elem="fire" /> to the designated area with a lance charge.
-        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire RES <val idx="1" r /></sec> for 2 rounds.
-        <sec typ="cond">On critical hit</sec>, increases self's <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="3" r /></sec> for 3 rounds.
+        lance charge as to the designated area <dmg elem="fire" />.
+        <sec typ="cond">On hit</sec>, 2 rounds, target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="1" r /></sec> decreases.
+        <sec typ="cond">On critical hit</sec>, 3 rounds own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="3" r /></sec> increases.
+      JP: |-
+        ルエンスウ ドオルグヨクで 指定範囲に<dmg elem="fire" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="1" r /></sec>が減少します。
+        <sec typ="cond">クリティカル時</sec>、 3ラウンドの間 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="3" r /></sec>が増加します。
       TC: |-
-        以長矛衝鋒對指定範圍造成<dmg elem="fire" />傷害。
-        <sec typ="cond">命中時</sec>，於2回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="1" r /></sec>。
-        <sec typ="cond">暴擊時</sec>，於3回合內提升自身的<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="3" r /></sec>。
+        時enseu 突擊以 指定範圍於 造成<dmg elem="fire" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="1" r /></sec>減少。
+        <sec typ="cond">暴擊時</sec>， 3回合內 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="3" r /></sec>增加。
   "2":
     key: "2"
     icon: ShieldWall
@@ -2358,21 +2358,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        무장을 재정비하여 <sec typ="note">예리함</sec> 효과를 획득하고 자신의 치명타가 증가합니다. 해당 효과는 3회 공격 적중 시까지 유지됩니다.
-        <sec typ="note">예리함</sec> 효과가 유지되는 동안, 자신의 회피가 증가하고 받는 피해가 감소합니다.
-        <sec typ="note">예리함</sec> 효과를 획득할 때마다, 다음 1회 적중에 한하여 방어막 / 피해 감소 무시 효과가 적용됩니다.
-      JP: |-
-        武装を再整備して<sec typ="note">鋭さ</sec>効果を獲得し、自分のクリティカルが増加します。この効果は3回攻撃が命中するまで持続します。
-        <sec typ="note">鋭さ</sec>効果が持続している間、自分の回避が増加し、受けるダメージが減少します。
-        <sec typ="note">鋭さ</sec>効果を獲得するたび、次の1回の命中に限りバリア / ダメージ減少無視効果が適用されます。
+        무장을 재정비하여 <sec typ="note">예리함</sec> 효과를 획득하고 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>가 증가합니다.
+        <sec>해당 효과는 3회 공격 적중 시까지 유지됩니다.</sec>
+        <sec typ="cond"><sec typ="note">예리함</sec> 효과가 유지되는 동안</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="5" r inv /></sec>가 감소합니다.
+        <sec typ="cond"><sec typ="note">예리함</sec> 효과를 획득할 때마다</sec>, 다음 1회 적중에 한하여 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과가 적용됩니다.
       EN: |-
-        Reorganizes armament to gain the <sec typ="note">Sharpness</sec> effect and increase self's CRIT. This effect lasts until 3 attacks land.
-        While the <sec typ="note">Sharpness</sec> effect is active, self's EVA increases and received damage decreases.
-        Each time <sec typ="note">Sharpness</sec> is gained, the next hit only gains Ignore Barrier / Ignore Damage Reduction effects.
+        armament re- removeongbi by doing <sec typ="note">Sharpness</sec> effect and gains and own <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> increases.
+        <sec>the effect 3times On hit up to maintain.</sec>
+        <sec typ="cond"><sec typ="note">Sharpness</sec> effect and maintained for</sec>, own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="4" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="5" r inv /></sec> decreases.
+        <sec typ="cond"><sec typ="note">Sharpness</sec> effect and can gain when each</sec>, next 1times Accuracy to limited to <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> the effect is applied.
+      JP: |-
+        武装を ジエジオンブイして <sec typ="note">鋭さ</sec> 効果を 獲得し、 自身の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec>が増加します。
+        <sec>該当 効果は 3回 攻撃命中時まで ユジイされます。</sec>
+        <sec typ="cond"><sec typ="note">鋭さ</sec> 効果が ユジイドウェは 間</sec>、 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="4" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="5" r inv /></sec>が減少します。
+        <sec typ="cond"><sec typ="note">鋭さ</sec> 効果を 獲得できる 時ごとに</sec>、 次 1回 命中に したして <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec> 効果が適用されます。
       TC: |-
-        重新整備武裝以獲得<sec typ="note">銳利</sec>效果，並提升自身暴擊。此效果會持續至3次攻擊命中為止。
-        在<sec typ="note">銳利</sec>效果持續期間，自身迴避增加，所受傷害減少。
-        每獲得一次<sec typ="note">銳利</sec>效果，下一次命中將僅套用一次無視防護罩 / 無視傷害減少效果。
+        武裝 再特定bi並 <sec typ="note">銳利</sec> 效果 獲得，並 自身的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec>增加。
+        <sec>該 效果 3次 攻擊命中時至 維持。</sec>
+        <sec typ="cond"><sec typ="note">銳利</sec> 效果 維持doe 期間</sec>， 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="4" r /></sec> 增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="5" r inv /></sec>減少。
+        <sec typ="cond"><sec typ="note">銳利</sec> 效果 獲得可 時每</sec>， 下次 1次 命中於 並 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec> 效果套用。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -2732,24 +2736,24 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 아군을 지정 보호</sec>합니다.
         <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신과 인접한 아군이 있을 경우</sec>, 자신은 <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>가 활성화됩니다.
         <sec typ="cond"><sec typ="note">랜스 차지</sec> 사용 시</sec>, 2라운드 동안 자신과 자신이 지정 보호 중인 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>가 증가합니다.
-      JP: |-
-        自分の<strong>基本</strong><sec typ="buff"><buff typ="FIRERES_UP" />火炎耐性</sec>と<sec typ="buff"><buff typ="ICERES_UP" />冷気耐性</sec>が増加します。
-        <sec>昇級に応じて耐性値が増加します。</sec>
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の<sec typ="buff"><buff typ="DEF_Char" />保護機を除いた味方を指定保護</sec>します。
-        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自分と隣接した味方がいる場合</sec>、自分の<sec typ="buff"><buff typ="DEF_Side" />列保護</sec>が有効になります。
-        <sec typ="cond"><sec typ="note">ランスチャージ</sec>使用時</sec>、2ラウンドの間、自分と自分が指定保護中の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="6" r /></sec>が増加します。
       EN: |-
-        Increases self's <strong>base</strong> <sec typ="buff"><buff typ="FIRERES_UP" /> Fire RES</sec> and <sec typ="buff"><buff typ="ICERES_UP" /> Ice RES</sec>.
-        <sec>The resistance values increase according to rank up.</sec>
-        <sec typ="cond">At the start of the round</sec>, provides <sec typ="buff"><buff typ="DEF_Char" /> designated protection to allies within range, excluding defenders</sec>.
-        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if there are allies adjacent to self</sec>, self's <sec typ="buff"><buff typ="DEF_Side" /> row protection</sec> is activated.
-        <sec typ="cond">When <sec typ="note">Lance Charge</sec> is used</sec>, increases self and allies self is designated protecting's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" r /></sec> for 2 rounds.
+        own <strong>base</strong> <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance</sec> and <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance</sec> increases.
+        <sec>promotion depending on resistance value increases.</sec>
+        <sec typ="cond">At round start</sec>, within range <sec typ="buff"><buff typ="DEF_Char" /> Defender excluding Designated Protection for allies</sec>.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self and adjacent allies if present</sec>, self <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> is activated.
+        <sec typ="cond"><sec typ="note">Lance Charge</sec> When used</sec>, 2 rounds self and self Designated Protection in progress allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="6" r /></sec> increases.
+      JP: |-
+        自身の <strong>基本</strong> <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性</sec>と <sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性</sec>が増加します。
+        <sec>スウングウプに応じて 耐性 数値が増加します。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 <sec typ="buff"><buff typ="DEF_Char" /> 保護機を ジエ外した 味方を 指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身と 隣接する 味方が 存在する場合</sec>、 自身は <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>が 有効化されます。
+        <sec typ="cond"><sec typ="note">ランスチャージ</sec> 使用時</sec>、 2ラウンドの間 自身と 自身が 指定保護 中の 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>が増加します。
       TC: |-
-        自身的<strong>基本</strong><sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性</sec>與<sec typ="buff"><buff typ="ICERES_UP" /> 冷氣抗性</sec>增加。
-        <sec>隨晉級提升抗性數值。</sec>
-        <sec typ="cond">回合開始時</sec>，對範圍內<sec typ="buff"><buff typ="DEF_Char" /> 除防護機以外的我軍施加指定保護</sec>。
-        <sec typ="cond">回合開始時</sec> <sec typ="cond">若自身周圍有相鄰我軍</sec>，則啟用自身的<sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec>。
-        <sec typ="cond"><sec typ="note">長矛衝鋒</sec>使用時</sec>，於2回合內提升自身與被自身指定保護的我軍的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="6" r /></sec>。
+        自身的 <strong>基礎</strong> <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性</sec>與 <sec typ="buff"><buff typ="ICERES_UP" /> 冰冷抗性</sec>增加。
+        <sec>三unggeup依 抗性 數值增加。</sec>
+        <sec typ="cond">回合開始時</sec>， 範圍內 <sec typ="buff"><buff typ="DEF_Char" /> 保護機 解除外 我方 指定保護</sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身與 相鄰的 我方 存在時</sec>， 自身 <sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec> 啟用。
+        <sec typ="cond"><sec typ="note">長槍衝鋒</sec> 使用時</sec>， 2回合內 自身與 自身 指定保護 中的 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3541,57 +3545,57 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><cmt t="예리함">$$SHARPEN:?$</cmt> 효과를 획득</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
-        <sec typ="cond">적 처치 시</sec>, <sec typ="buff"><cmt t="예리함">$$SHARPEN:?$</cmt> 효과를 획득</sec>합니다.
-        <sec typ="cond"><cmt t="예리함">$$SHARPEN:?$</cmt> 효과를 획득할 때마다</sec>, 다음 1회 피격에 한하여 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="12" r inv /></sec>가 감소하고 <sec typ="buff"><buff typ="COUNTER" /> <val idx="15" r signless /> 위력으로 반격</sec>합니다.
-        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 화염 / 냉기 저항이 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><cmt t="예리함"><import name="SHARPEN" /></cmt> 효과를 획득</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">적 처치 시</sec>, <sec typ="buff"><cmt t="예리함"><import name="SHARPEN" /></cmt> 효과를 획득</sec>하고 합니다.
+        <sec typ="cond"><cmt t="예리함"><import name="SHARPEN" /></cmt> 효과를 획득할 때마다</sec>, 다음 1회 피격에 한하여 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="12" r inv /></sec>가 감소하고 <sec typ="buff"><buff typ="COUNTER" /> <val idx="15" r signless /> 위력으로 반격</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /> 화염 / 냉기 저항 <val idx="16" r /></sec>가 증가합니다.
         <box t="스킬 설명과 실제 버프 동작이 다른 것으로 보이며, 문제가 있을 수도 있습니다">
         <sec typ="buff"><buff typ="EVADE_UP" /> 회피 증가</sec> 효과 설명이 누락되어있습니다.
         <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과 설명이 누락되어있습니다.
         <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 효과가 같은 시점에 두 종류 이상 발생하며, 서로 다른 중첩으로 <sec typ="attr">갱신</sec> 타입으로 획득합니다.
         </box>
-        $$SHARPEN~
+        <define name="SHARPEN">
         <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec>
-        ~$$SHARPEN
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、<sec typ="buff"><cmt t="鋭さ">$$SHARPEN:?$</cmt>効果を獲得</sec>し、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
-        <sec typ="cond">敵を倒した時</sec>、<sec typ="buff"><cmt t="鋭さ">$$SHARPEN:?$</cmt>効果を獲得</sec>します。
-        <sec typ="cond"><cmt t="鋭さ">$$SHARPEN:?$</cmt>効果を獲得するたび</sec>、次の1回の被弾に限り自分の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />被ダメージ <val idx="12" r inv /></sec>が減少し、<sec typ="buff"><buff typ="COUNTER" /> <val idx="15" r signless />威力で反撃</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の火炎 / 冷気耐性が増加します。
-        <box t="スキル説明と実際のバフ挙動が異なるようで、問題がある可能性があります">
-        <sec typ="buff"><buff typ="EVADE_UP" />回避増加</sec>効果の説明が抜けています。
-        <sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア / ダメージ減少無視</sec>効果の説明が抜けています。
-        <sec typ="buff"><buff typ="DAMAGE_REDUCE" />被ダメージ減少</sec>効果が同時点に2種類以上発生し、別々の重複として<sec typ="attr">更新</sec>タイプで獲得します。
-        </box>
-        $$SHARPEN~
-        <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="5" r /></sec>
-        ~$$SHARPEN
+        </define>
       EN: |-
-        <sec typ="cond">At the start of combat</sec>, <sec typ="buff">gains the <cmt t="Sharpness">$$SHARPEN:?$</cmt> effect</sec> and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
-        <sec typ="cond">When an enemy is killed</sec>, <sec typ="buff">gains the <cmt t="Sharpness">$$SHARPEN:?$</cmt> effect</sec>.
-        <sec typ="cond">Each time the <cmt t="Sharpness">$$SHARPEN:?$</cmt> effect is gained</sec>, on the next single hit, self's <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="12" r inv /></sec> decreases and self <sec typ="buff"><buff typ="COUNTER" /> counters with <val idx="15" r signless /> power</sec>.
-        <sec typ="cond">At the start of the round</sec>, increases allies' fire / ice RES within range.
-        <box t="The skill description and actual buff behavior appear to differ, so there may be an issue">
-        The description for the <sec typ="buff"><buff typ="EVADE_UP" /> EVA increase</sec> effect is missing.
-        The description for the <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> effect is missing.
-        The <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage Decrease</sec> effect occurs in multiple types at the same timing and is acquired as a <sec typ="attr">refresh</sec> type with different stacks.
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><cmt t="Sharpness"><import name="SHARPEN" /></cmt> effect and gain</sec> and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">When killing an enemy</sec>, <sec typ="buff"><cmt t="Sharpness"><import name="SHARPEN" /></cmt> effect and gain</sec> and.
+        <sec typ="cond"><cmt t="Sharpness"><import name="SHARPEN" /></cmt> effect and can gain when each</sec>, next 1times hit to limited to self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="12" r inv /></sec> decreases and <sec typ="buff"><buff typ="COUNTER" /> <val idx="15" r signless /> power as Counterattack</sec>.
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /> Fire / Ice Resistance <val idx="16" r /></sec> increases.
+        <box t="skill description and Sil. buff same operation other Geot as Bo and, Mun. exists number also exists">
+        <sec typ="buff"><buff typ="EVADE_UP" /> Evasion increase</sec> effect and description is missing.
+        <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> effect and description is missing.
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease</sec> effect and same when removeom to two type or more occurs and, from as other stack as <sec typ="attr">refresh</sec> type as gains.
         </box>
-        $$SHARPEN~
-        <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="5" r /></sec>
-        ~$$SHARPEN
+        <define name="SHARPEN">
+        <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="5" r /></sec>
+        </define>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 <sec typ="buff"><cmt t="鋭さ"><import name="SHARPEN" /></cmt> 効果を 獲得</sec>し、 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond">敵撃破時</sec>、 <sec typ="buff"><cmt t="鋭さ"><import name="SHARPEN" /></cmt> 効果を 獲得</sec>し、します。
+        <sec typ="cond"><cmt t="鋭さ"><import name="SHARPEN" /></cmt> 効果を 獲得できる 時ごとに</sec>、 次 1回 被弾に したして 自身が <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="12" r inv /></sec>が 減少し、 <sec typ="buff"><buff typ="COUNTER" /> <val idx="15" r signless /> 威力で 反撃</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /> 火炎 / 冷気耐性 <val idx="16" r /></sec>が増加します。
+        <box t="スキル スオル名と スイルジエ バフ ドオンジアクが 異なる グオトで ブオであり, ムウンジエが ある 数も あります">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 回避 増加</sec> 効果 スオル名が ンウルアクになりあります。
+        <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec> 効果 スオル名が ンウルアクになりあります。
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少</sec> 効果が グアトは 時ジオムに ドウ ジオンルユ 以上 ブアルスエンし、 してで 異なる 重複で <sec typ="attr">更新</sec> トアイプで 獲得します。
+        </box>
+        <define name="SHARPEN">
+        <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="5" r /></sec>
+        </define>
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，<sec typ="buff"><cmt t="銳利">$$SHARPEN:?$</cmt>效果被獲得</sec>，並使<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
-        <sec typ="cond">擊殺敵軍時</sec>，<sec typ="buff"><cmt t="銳利">$$SHARPEN:?$</cmt>效果被獲得</sec>。
-        <sec typ="cond">每獲得一次<cmt t="銳利">$$SHARPEN:?$</cmt>效果時</sec>，下一次命中僅限1次，自身的<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="12" r inv /></sec>減少，並以<sec typ="buff"><buff typ="COUNTER" /> <val idx="15" r signless />威力反擊</sec>。
-        <sec typ="cond">回合開始時</sec>，提升範圍內我軍的火焰 / 冷氣抗性。
-        <box t="技能說明與實際增益行為似乎不同，可能存在問題">
-        <sec typ="buff"><buff typ="EVADE_UP" /> 迴避增加</sec>效果說明缺失。
-        <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視防護罩 / 傷害減少</sec>效果說明缺失。
-        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害減少</sec>效果在同一時間點出現兩種類型以上，並以不同疊加作為<sec typ="attr">更新</sec>類型獲得。
+        <sec typ="cond">戰鬥開始時</sec>， <sec typ="buff"><cmt t="銳利"><import name="SHARPEN" /></cmt> 效果 獲得</sec>並 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        <sec typ="cond">擊殺敵人時</sec>， <sec typ="buff"><cmt t="銳利"><import name="SHARPEN" /></cmt> 效果 獲得</sec>並。
+        <sec typ="cond"><cmt t="銳利"><import name="SHARPEN" /></cmt> 效果 獲得可 時每</sec>， 下次 1次 被擊於 並 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="12" r inv /></sec> 減少，並 <sec typ="buff"><buff typ="COUNTER" /> <val idx="15" r signless /> 威力以 反擊</sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /> 火焰 / 冰冷抗性 <val idx="16" r /></sec>增加。
+        <box t="技能 三ol名與 Silje 增益 同製作 全部不同 Geot以 Bo且， 無nje 有 數也 存在">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 增加</sec> 效果 三ol名 Nurak變為存在。
+        <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec> 效果 三ol名 Nurak變為存在。
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少</sec> 效果 相同 時解除om於 二 存在gryu 以上 發生並， 以 全部不同 疊加以 <sec typ="attr">更新</sec> 類型以 獲得。
         </box>
-        $$SHARPEN~
+        <define name="SHARPEN">
         <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="5" r /></sec>
-        ~$$SHARPEN
+        </define>
   "5":
     key: "5"
     icon: P.AWACS
@@ -4101,25 +4105,41 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 자신의 행동력 / 회피 비례 스킬 위력이 증가합니다.
-        <sec typ="cond">라운드 개시 시 자신에게 <sec typ="note">최상의 시간</sec> 효과가 적용된 경우</sec>, 회피 비례 스킬 위력 감쇄 효과를 획득합니다.
-        <sec typ="cond"><sec typ="note">무장 재정비</sec> 사용 시</sec>, 3라운드 동안 자신의 효과 저항 / 강화 해제 저항이 증가합니다.
-        <sec><cmt t="X-계열 실험기">$$X_SERIES:?$</cmt>가 스스로의 스킬로 인해 받는 일부 부작용을 자신이 대신 짊어질 수 있습니다. 이러한 경우 해로운 효과로 적용됩니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の行動力 / 回避に比例してスキル威力が増加します。
-        <sec typ="cond">ラウンド開始時、自分に<sec typ="note">最良の時間</sec>効果が適用されている場合</sec>、回避比例のスキル威力減衰効果を獲得します。
-        <sec typ="cond"><sec typ="note">武装再整備</sec>使用時</sec>、3ラウンドの間、自分の効果耐性 / 強化解除耐性が増加します。
-        <sec><cmt t="X系列試験機">$$X_SERIES:?$</cmt>が自分のスキルによって受ける一部の副作用を自分が代わりに引き受けることがあります。この場合、有害効果として適用されます。</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 회피 <val idx="5" r signless />만큼 스킬 위력이 증가</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신에게 <sec typ="note">최상의 시간</sec> 효과가 적용된 경우</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> 회피 <val idx="6" r signless />만큼 스킬 위력 감쇄</sec> 효과를 획득합니다.
+        <sec typ="cond"><sec typ="note">무장 재정비</sec> 사용 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="8" slot="2" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="9" slot="2" r /></sec>이 증가합니다.
+        <sec><cmt t="X-계열 실험기"><import name="X_SERIES" /></cmt>가 스스로의 스킬로 인해 받는 일부 부작용을 자신이 대신 짊어질 수 있습니다.</sec>
+        <sec>이러한 경우 <sec typ="attr">해로운 효과</sec>로 적용됩니다.</sec>
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+        </define>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, skill power increases in proportion to self's AP / EVA.
-        <sec typ="cond">If the <sec typ="note">Best Time</sec> effect is applied to self at the start of the round</sec>, gains a skill-power reduction effect proportional to EVA.
-        <sec typ="cond">When using <sec typ="note">Rearmament</sec></sec>, self's Effect RES / buff removal RES increases for 3 rounds.
-        <sec><cmt t="X-series test unit">$$X_SERIES:?$</cmt> can take on some of the side effects that would otherwise be inflicted on itself by its own skills. In such cases, it is applied as a harmful effect.</sec>
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power proportional to Evasion by <val idx="5" r signless /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="cond">if self is affected by <sec typ="note">Best Time</sec></sec>, gains <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power reduction proportional to Evasion by <val idx="6" r signless /></sec>.
+        <sec typ="cond">When using <sec typ="note">Rearmament</sec></sec>, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="8" slot="2" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Buff Removal Resistance <val idx="9" slot="2" r /></sec> increases for 3 rounds.
+        <sec><cmt t="X-series Experimental Unit"><import name="X_SERIES" /></cmt> can have some side effects caused by their own skills borne by self instead.</sec>
+        <sec>In these cases, they are applied as <sec typ="attr">harmful effects</sec>.</sec>
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" />回避 <val idx="5" r signless />分スキル威力が増加</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">自身に<sec typ="note">最良の時間</sec>効果が適用されている場合</sec>、<sec typ="buff"><buff typ="SKILL_UP" />回避 <val idx="6" r signless />分スキル威力減衰</sec>効果を獲得します。
+        <sec typ="cond"><sec typ="note">武装再整備</sec>使用時</sec>、3ラウンドの間自身の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗 <val idx="8" slot="2" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除抵抗 <val idx="9" slot="2" r /></sec>が増加します。
+        <sec><cmt t="X系列実験機"><import name="X_SERIES" /></cmt>が自身のスキルによって受ける一部の副作用を、自身が代わりに引き受けられます。</sec>
+        <sec>この場合、<sec typ="attr">有害効果</sec>として適用されます。</sec>
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+        </define>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的技能威力會依行動點數 / 迴避成比例增加。
-        <sec typ="cond">若回合開始時自身套用<sec typ="note">最佳時機</sec>效果</sec>，則獲得依迴避成比例的技能威力衰減效果。
-        <sec typ="cond">使用<sec typ="note">武裝再整備</sec>時</sec>，於3回合內提升自身的效果抗性 / 解除強化抗性。
-        <sec><cmt t="X系列試驗機">$$X_SERIES:?$</cmt>可代替自身承擔由其自身技能所造成的部分副作用。此時將作為有害效果套用。</sec>
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" />依迴避 <val idx="5" r signless />增加技能威力</sec>。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若自身套用<sec typ="note">最佳時機</sec>效果</sec>，獲得<sec typ="buff"><buff typ="SKILL_UP" />依迴避 <val idx="6" r signless />降低技能威力</sec>效果。
+        <sec typ="cond">使用<sec typ="note">重新整備武裝</sec>時</sec>，3回合內自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性 <val idx="8" slot="2" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除抗性 <val idx="9" slot="2" r /></sec>增加。
+        <sec><cmt t="X系列實驗機"><import name="X_SERIES" /></cmt>因自身技能承受的部分副作用，可由自身代為承受。</sec>
+        <sec>此時會以<sec typ="attr">負面效果</sec>套用。</sec>
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+        </define>
 dialogue:
   KR:
     "1":

@@ -2102,9 +2102,9 @@ skills:
             chance: 1
     desc:
       KR: 적에게 은밀하게 접근하여 <dmg elem="lightning" />를 주고, <sec typ="cond">치명타 시</sec> <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가하며 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 대 중장 피해량 <val idx="2" r /></sec>가 증가합니다.
-      JP: 敵に密かに接近して <dmg elem="lightning" />を与え、<sec typ="cond">クリティカル時</sec> <sec typ="dmg"><buff typ="LightningATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 対重装ダメージ量 <val idx="2" r /></sec>が増加します。
-      EN: Sneaks up on the enemy and deals <dmg elem="lightning" />. <sec typ="cond">On crit</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> damage <val idx="0" r /></sec> increases, and <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> damage against Heavy units <val idx="2" r /></sec> increases.
-      TC: 悄悄接近敵人，造成 <dmg elem="lightning" />。<sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="LightningATK_UP" /> 傷害量 <val idx="0" r /></sec>會增加，且 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 對重裝型的傷害量 <val idx="2" r /></sec>會增加。
+      EN: to the enemy push approaches <dmg elem="lightning" /> damage and <sec typ="cond">On critical hit</sec> <sec typ="dmg"><buff typ="LightningATK_UP" /> damage <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> anti Heavy damage <val idx="2" r /></sec> increases.
+      JP: 敵に はムイルするよう ジオプグウンして<dmg elem="lightning" />を与え、、 <sec typ="cond">クリティカル時</sec> <sec typ="dmg"><buff typ="LightningATK_UP" /> ダメージ量 <val idx="0" r /></sec>が 増加し、 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> ドエ 重装 ダメージ量 <val idx="2" r /></sec>が増加します。
+      TC: 敵人給 未l使 解除opgeun並 造成<dmg elem="lightning" />，並 <sec typ="cond">暴擊時</sec> <sec typ="dmg"><buff typ="LightningATK_UP" /> 傷害量 <val idx="0" r /></sec> 增加，並 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 對 重裝 傷害量 <val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: WideLightning
@@ -3653,10 +3653,18 @@ skills:
             per: 0.02
             chance: 1
     desc:
-      KR: 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 주고, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="2" r /></sec>를 감소시킵니다.
-      JP: 指定範囲に <sec typ="attr">防護無視</sec> <dmg elem="lightning" />を与え、対象の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気抵抗 <val idx="2" r /></sec>を減少させます。
-      EN: Deals <sec typ="attr">ignore protection</sec> <dmg elem="lightning" /> to the designated area, and reduces the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance <val idx="2" r /></sec>.
-      TC: 對指定範圍造成 <sec typ="attr">無視保護</sec> <dmg elem="lightning" />，並降低目標的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 閃避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="2" r /></sec>。
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 주고, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="2" r /></sec>를 감소시킵니다.
+        대상이 <sec typ="cond"><buff typ="FIRERES_DOWN" /> 화염 저항 감소</sec> / <sec typ="cond"><buff typ="ICERES_DOWN" /> 냉기 저항 감소</sec> 상태일 시 <sec typ="dmg"><buff typ="LightningATK_UP" /> 전기 속성 피해량 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> damage and target's <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="2" r /></sec> decreases.
+        target <sec typ="cond"><buff typ="FIRERES_DOWN" /> Fire Resistance decrease</sec> / <sec typ="cond"><buff typ="ICERES_DOWN" /> Ice Resistance decrease</sec> if in the state <sec typ="dmg"><buff typ="LightningATK_UP" /> Lightning elemental damage <val idx="4" r /></sec> increases.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="lightning" />を与え、、 対象の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="2" r /></sec>を減少させます。
+        対象が <sec typ="cond"><buff typ="FIRERES_DOWN" /> 火炎耐性 減少</sec> / <sec typ="cond"><buff typ="ICERES_DOWN" /> 冷気耐性 減少</sec> 状態イル 時 <sec typ="dmg"><buff typ="LightningATK_UP" /> 電気 属性 ダメージ量 <val idx="4" r /></sec>が増加します。
+      TC: |-
+        指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="lightning" />，並 目標的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="2" r /></sec>使其減少。
+        目標 <sec typ="cond"><buff typ="FIRERES_DOWN" /> 火焰抗性 減少</sec> / <sec typ="cond"><buff typ="ICERES_DOWN" /> 冰冷抗性 減少</sec> 狀態一 時 <sec typ="dmg"><buff typ="LightningATK_UP" /> 電擊 屬性 傷害量 <val idx="4" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -3916,9 +3924,9 @@ skills:
             chance: 1
     desc:
       KR: <sec typ="cond">라운드 개시 시</sec>, 자신과 지정 범위 아군의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec>가 증가하고, <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>가 중첩 증가합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、自身と指定範囲の味方の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="4" r /></sec>が増加し、<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>が重複して増加します。
-      EN: <sec typ="cond">At the start of the round</sec>, own and allies in the designated area gain <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" r /></sec>, and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" r /></sec> increases cumulatively.
-      TC: <sec typ="cond">回合開始時</sec>，自身與指定範圍友軍的 <sec typ="buff"><buff typ="EVADE_UP" /> 閃避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" r /></sec>會增加，且 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>會疊加增加。
+      EN: <sec typ="cond">At round start</sec>, self and designated area allies' <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" r /></sec> increases and <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="5" r /></sec> stack increases.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 自身と 指定範囲 味方の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="4" r /></sec>が 増加し、 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>が 重複 増加します。
+      TC: <sec typ="cond">回合開始時</sec>， 自身與 指定範圍 我方的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" r /></sec> 增加，並 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec> 疊加 增加。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -4155,9 +4163,9 @@ skills:
             chance: 1
     desc:
       KR: <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="0" r /></sec>를 증가시키고, 적 처치 시 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 회복되고 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec>가 중첩되어 증가합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、自身の <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電気抵抗 <val idx="0" r /></sec>を増加させ、敵を撃破時、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が回復し、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec>が重複して増加します。
-      EN: <sec typ="cond">At the start of the round</sec>, increases own <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Electric Resistance <val idx="0" r /></sec>. <sec typ="cond">On enemy kill</sec>, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> is restored, and <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> increases cumulatively.
-      TC: <sec typ="cond">回合開始時</sec>，會提升自身的 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電擊抗性 <val idx="0" r /></sec>，且<sec typ="cond">擊殺敵人時</sec>，<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>會恢復，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec>會疊加增加。
+      EN: <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Lightning Resistance <val idx="0" r /></sec> increases and When killing an enemy <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>() times Bok becomes and <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> stack becomes increases.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電気耐性 <val idx="0" r /></sec>を 増加時クイし、 敵撃破時 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が 回ブオクになり、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec>が 重複になり 増加します。
+      TC: <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電擊抗性 <val idx="0" r /></sec> 增加時台並， 擊殺敵人時 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> 次復變為，且 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> 疊加變為 增加。
   "5":
     key: "5"
     icon: P.Beam
@@ -4600,10 +4608,38 @@ skills:
             per: 0.1
             chance: 1
     desc:
-      KR: <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: <sec typ="cond">戦闘開始時</sec>、自身の <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ量 <val idx="0" r /></sec>が増加します。
-      EN: <sec typ="cond">At battle start</sec>, own <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage against Light units <val idx="0" r /></sec> increases.
-      TC: <sec typ="cond">戰鬥開始時</sec>，自身的 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害量 <val idx="0" r /></sec>會增加。
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">허공 둔</sec> 효과를 <cmt t="쿠노이치"><import name="KUNOICHI" p="0" /></cmt>에게 추가로 부여합니다.
+        스킬 효과는 <sec typ="note">면허개전</sec>의 스킬 레벨에 비례하고, 행동력을 제외한 기존 <sec typ="note">허공 둔</sec> 효과와 중첩됩니다.
+        <sec typ="note">은밀</sec> 사용 시, 스쿼드 내에 <char uid="DS_KunoichiEnrai" />가 있을 경우 <sec typ="note">이카즈치</sec> 협동공격을 유도합니다.
+        <define name="KUNOICHI">
+        <char uid="DS_KunoichiZero" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiEnrai" />
+        </define>
+      EN: |-
+        <sec typ="cond">At battle start</sec>, own <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="note">air dull</sec> effect and <cmt t="Kunoichi"><import name="KUNOICHI" p="0" /></cmt> to additionally grant.
+        Skill effects <sec typ="note">Menkyo Kaiden</sec> of skill leveland, Action Speed excluding existing <sec typ="note">air dull</sec> effect and stack.
+        <sec typ="note">push</sec> When used, in squad to <char uid="DS_KunoichiEnrai" /> if present <sec typ="note">Kazuchi</sec> cooperation attack triggers.
+        <define name="KUNOICHI">
+        <char uid="DS_KunoichiZero" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiEnrai" />
+        </define>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 自身の <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="note">ハオグオン ドウン</sec> 効果を <cmt t="くノ一"><import name="KUNOICHI" p="0" /></cmt>に 追加で ブウヨします。
+        スキル 効果は <sec typ="note">免許皆伝</sec>の スキル レベルに 比例し、 行動力を ジエ外した 機ジオン <sec typ="note">ハオグオン ドウン</sec> 効果と 重複されます。
+        <sec typ="note">はムイル</sec> 使用時、 スクワッド 内に <char uid="DS_KunoichiEnrai" />が 存在する場合 <sec typ="note">がクアジウチイ</sec> ハヨプドオン攻撃を 誘導します。
+        <define name="KUNOICHI">
+        <char uid="DS_KunoichiZero" />、 <char uid="DS_KunoichiKaen" />、 <char uid="DS_KunoichiEnrai" />
+        </define>
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 自身的 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害 <val idx="0" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="note">虛防空 二n</sec> 效果 <cmt t="女忍者"><import name="KUNOICHI" p="0" /></cmt>給 額外 賦予。
+        技能 效果 <sec typ="note">免許皆傳</sec>的 技能 等級於 成比例並， 行動力 解除外 台存在 <sec typ="note">虛防空 二n</sec> 效果與 疊加。
+        <sec typ="note">未l</sec> 使用時， 小隊 內於 <char uid="DS_KunoichiEnrai" /> 存在時 <sec typ="note">Kajeuchi</sec> Hyeopdong攻擊 誘發。
+        <define name="KUNOICHI">
+        <char uid="DS_KunoichiZero" />， <char uid="DS_KunoichiKaen" />， <char uid="DS_KunoichiEnrai" />
+        </define>
 dialogue:
   KR:
     "1":

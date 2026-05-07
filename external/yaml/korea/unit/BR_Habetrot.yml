@@ -594,6 +594,7 @@ source:
   - - Ev:Ev34:EV1-4
   - - Ev:Ev35:EV2-4
   - - Ev:Ev36:EV1-3EX
+  - - Ev:Ev38:EV1-2EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -3010,21 +3011,21 @@ skills:
         <sec typ="chance"><chance idx="2" /> 확률</sec>로 약점을 타격하여 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량<val idx="2" r /></sec>가 크게 증가합니다.
         적중 여부와 관계없이 2라운드 동안 범위 내 적군의 <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val base="-0.1" per="-0.01" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val base="-0.2" per="-0.02" r /></sec>가 크게 감소합니다.
         해당 효과는 라운드 경과에 따라 점감하며, 스킬 재사용 시 최대 효과로 갱신됩니다.
+      EN: |-
+        Fires weapons wildly with eyes shut, dealing <dmg elem="physics" /> to enemies within range.
+        Has a <sec typ="chance"><chance idx="2" /> chance</sec> to strike a weak point, greatly increasing <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec>.
+        Regardless of hit, greatly reduces enemies' <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val base="-0.1" per="-0.01" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val base="-0.2" per="-0.02" r /></sec> within range for 2 rounds.
+        This effect diminishes as rounds pass and is refreshed to the maximum effect when the skill is used again.
       JP: |-
         目をぎゅっと閉じて武装を乱射し、範囲内の敵に<dmg elem="physics" />を与えます。
-        <sec typ="chance"><chance idx="2" /> 確率</sec>で弱点を突き、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量<val idx="2" r /></sec>が大きく増加します。
-        命中の有無に関係なく、2ラウンドの間、範囲内の敵軍の<sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val base="-0.1" per="-0.01" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val base="-0.2" per="-0.02" r /></sec>が大きく減少します。
-        この効果はラウンド経過に応じて減衰し、スキル再使用時に最大効果で更新されます。
-      EN: |-
-        Closes her eyes and sprays fire with her weapons, dealing <dmg elem="physics" /> to enemies within range.
-        With a <sec typ="chance"><chance idx="2" /> chance</sec>, hits a weak point and greatly increases <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="2" r /></sec>.
-        Regardless of whether it hits, greatly decreases enemies within range's <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val base="-0.1" per="-0.01" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACC <val base="-0.2" per="-0.02" r /></sec> for 2 rounds.
-        This effect decays over time each round and is refreshed to its maximum value when the skill is reused.
+        <sec typ="chance"><chance idx="2" />の確率</sec>で弱点を打撃し、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="2" r /></sec>が大きく増加します。
+        命中の有無に関係なく、2ラウンドの間、範囲内の敵の<sec typ="buff"><buff typ="SKILL_DOWN" />スキル威力 <val base="-0.1" per="-0.01" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val base="-0.2" per="-0.02" r /></sec>が大きく減少します。
+        この効果はラウンド経過に応じて減衰し、スキル再使用時に最大効果へ更新されます。
       TC: |-
-        閉上眼睛猛烈掃射武裝，對範圍內敵軍造成<dmg elem="physics" />。
-        以<sec typ="chance"><chance idx="2" /> 機率</sec>擊中弱點，使<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量<val idx="2" r /></sec>大幅增加。
-        無論是否命中，範圍內敵軍的<sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val base="-0.1" per="-0.01" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val base="-0.2" per="-0.02" r /></sec>在2回合內大幅降低。
-        此效果會隨回合經過而逐漸衰減，重複使用技能時會以最大效果重新刷新。
+        閉上眼睛亂射武裝，對範圍內敵人造成<dmg elem="physics" />。
+        有<sec typ="chance"><chance idx="2" />機率</sec>攻擊弱點，使<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="2" r /></sec>大幅增加。
+        不論是否命中，在2回合內大幅降低範圍內敵軍的<sec typ="buff"><buff typ="SKILL_DOWN" />技能威力 <val base="-0.1" per="-0.01" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val base="-0.2" per="-0.02" r /></sec>。
+        此效果會隨回合經過遞減，並在再次使用技能時刷新為最大效果。
   "2":
     key: "2"
     icon: SelfDefBuff
@@ -3732,20 +3733,20 @@ skills:
         해당 효과는 라운드 경과에 따라 점감하며, 스킬 재사용 시 최대 효과로 갱신됩니다.
         또한 스킬 사용 시, <sec typ="cond">자신보다 회피가 낮은 아군</sec>에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">해로운</sec> 표식 효과를 해제</sec>하며, <sec typ="cond">자신보다 회피가 높은 아군</sec>에게 3라운드 동안 <sec typ="buff"><buff typ="MARKING" /> <sec typ="attr">이로운</sec> 표식</sec>을 부여합니다.
         <sec>스킬 레벨 10에서 범위가 크게 증가합니다.</sec>
-      JP: |-
-        3ラウンドの間、自分と周囲の味方の<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val base="0.4" per="0.02" r /></sec>を増加させ、各自の<sec typ="buff"><buff typ="SKILL_UP" /> 回避数値 <val idx="0" r signless /> に応じたスキル威力減衰</sec>効果を適用します。
-        この効果はラウンド経過に応じて減衰し、スキル再使用時に最大効果で更新されます。
-        またスキル使用時、<sec typ="cond">自分より回避が低い味方</sec>に適用された<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">有害な</sec>マーク効果を解除</sec>し、<sec typ="cond">自分より回避が高い味方</sec>には3ラウンドの間<sec typ="buff"><buff typ="MARKING" /> <sec typ="attr">有益な</sec>マーク</sec>を付与します。
-        <sec>スキルレベル10で範囲が大きく増加します。</sec>
       EN: |-
-        For 3 rounds, increases self and nearby allies' <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val base="0.4" per="0.02" r /></sec> and applies <sec typ="buff"><buff typ="SKILL_UP" /> skill power attenuation based on each unit's EVA score <val idx="0" r signless /></sec>.
-        This effect decays over time each round and is refreshed to its maximum value when the skill is reused.
-        Also, when using the skill, removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">malign</sec> Mark</sec> effects applied to <sec typ="cond">allies with lower EVA than self</sec>, and grants <sec typ="buff"><buff typ="MARKING" /> <sec typ="attr">beneficial</sec> Mark</sec> to <sec typ="cond">allies with higher EVA than self</sec> for 3 rounds.
-        <sec>Range increases significantly at Skill Lv. 10.</sec>
+        For 3 rounds, increases self and nearby allies' <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val base="0.4" per="0.02" r /></sec>, and applies <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power reduction equal to each target's EVA value <val idx="0" r signless /></sec>.
+        This effect diminishes as rounds pass and is refreshed to the maximum effect when the skill is used again.
+        Also, when using the skill, <sec typ="cond"></sec> removes <sec typ="buff">harmful<buff typ="REMOVE_DEBUFF" /> Mark effects<sec typ="attr"> applied to </sec>allies with lower EVA than herself</sec>, and grants <sec typ="cond"></sec> <sec typ="buff">beneficial<buff typ="MARKING" /> Mark<sec typ="attr"> to </sec>allies with higher EVA than herself</sec> for 3 rounds.
+        <sec>At Skill Level 10, the range greatly increases.</sec>
+      JP: |-
+        3ラウンドの間、自分と周辺の味方の<sec typ="buff"><buff typ="EVADE_UP" />回避 <val base="0.4" per="0.02" r /></sec>を増加させ、それぞれの<sec typ="buff"><buff typ="SKILL_UP" />回避数値 <val idx="0" r signless />分のスキル威力減衰</sec>効果を適用します。
+        この効果はラウンド経過に応じて減衰し、スキル再使用時に最大効果へ更新されます。
+        また、スキル使用時、<sec typ="cond">自分より回避が低い味方</sec>に適用された<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">有害な</sec>標的効果を解除</sec>し、<sec typ="cond">自分より回避が高い味方</sec>に3ラウンドの間<sec typ="buff"><buff typ="MARKING" /> <sec typ="attr">有益な</sec>標的</sec>を付与します。
+        <sec>スキルレベル10で範囲が大きく増加します。</sec>
       TC: |-
-        持續3回合，增加自身與周圍我軍的<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val base="0.4" per="0.02" r /></sec>，並套用依各自<sec typ="buff"><buff typ="SKILL_UP" /> 迴避數值 <val idx="0" r signless /></sec>而定的技能威力衰減效果。
-        此效果會隨回合經過而逐漸衰減，重複使用技能時會以最大效果重新刷新。
-        此外，使用技能時會解除套用於<sec typ="cond">迴避低於自身的我軍</sec>的<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">有害</sec>標記效果</sec>，並對<sec typ="cond">迴避高於自身的我軍</sec>賦予持續3回合的<sec typ="buff"><buff typ="MARKING" /> <sec typ="attr">有益</sec>標記</sec>。
+        在3回合內，使自身與周圍友軍的<sec typ="buff"><buff typ="EVADE_UP" />迴避 <val base="0.4" per="0.02" r /></sec>增加，並套用<sec typ="buff"><buff typ="SKILL_UP" />等同各自迴避數值 <val idx="0" r signless />的技能威力衰減</sec>效果。
+        此效果會隨回合經過遞減，並在再次使用技能時刷新為最大效果。
+        此外，使用技能時，會<sec typ="cond"></sec>解除<sec typ="buff">迴避低於自身的友軍<buff typ="REMOVE_DEBUFF" />身上的<sec typ="attr">有害</sec>標記效果</sec>，並在3回合內賦予<sec typ="cond">迴避高於自身的友軍</sec><sec typ="buff"><buff typ="MARKING" /> <sec typ="attr">有益</sec>標記</sec>。
         <sec>技能等級10時，範圍大幅增加。</sec>
   "3":
     key: "3"
@@ -4102,18 +4103,18 @@ skills:
         라운드 개시 시, 자신은 1라운드 동안 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec> 감소 효과를 획득합니다.
         라운드 개시 시 지정 범위 내 보호기를 제외한, 표식이 없는 아군을 1라운드 동안 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>합니다.
         <sec>스킬 레벨 10에서 자신의 위치와 관계없이 전체 적용됩니다.</sec>
-      JP: |-
-        ラウンド開始時、自分は1ラウンドの間<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="4" r inv /></sec>減少効果を獲得します。
-        ラウンド開始時、指定範囲内の保護機を除く、マークのない味方を1ラウンドの間<sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>します。
-        <sec>スキルレベル10では自分の位置に関係なく全体適用されます。</sec>
       EN: |-
-        At the start of the round, self gains <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="4" r inv /></sec> Decrease effects for 1 round.
-        At the start of the round, grants <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> for 1 round to allies without Mark within the designated area, excluding protectors.
-        <sec>At Skill Lv. 10, this applies to all allies regardless of self's position.</sec>
+        At round start, gains <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="4" r inv /></sec> reduction for 1 round.
+        At round start, <sec typ="buff"><buff typ="DEF_Char" /> Designated Protects allies without Mark, excluding Defenders, within the designated range</sec> for 1 round.
+        <sec>At Skill Level 10, applies to the whole field regardless of her position.</sec>
+      JP: |-
+        ラウンド開始時、自分は1ラウンドの間<sec typ="buff"><buff typ="EVADE_UP" />回避 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ <val idx="4" r inv /></sec>減少効果を獲得します。
+        ラウンド開始時、指定範囲内の保護機を除く、標的がない味方を1ラウンドの間<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>します。
+        <sec>スキルレベル10で自分の位置に関係なく全体に適用されます。</sec>
       TC: |-
-        回合開始時，自身獲得持續1回合的<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="4" r inv /></sec>降低效果。
-        回合開始時，對指定範圍內除保護機外的無標記我軍施加持續1回合的<sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>。
-        <sec>技能等級10時，無論自身位置如何都會套用至全體。</sec>
+        回合開始時，自身在1回合內獲得<sec typ="buff"><buff typ="EVADE_UP" />迴避 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害 <val idx="4" r inv /></sec>減少效果。
+        回合開始時，在1回合內<sec typ="buff"><buff typ="DEF_Char" />指定保護指定範圍內除保護機以外、沒有標記的友軍</sec>。
+        <sec>技能等級10時，無論自身位置都會套用至全體。</sec>
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -4718,24 +4719,24 @@ skills:
         경장형 및 중장형 : <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> 증가
         공격기 및 지원기 : <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> 증가
         라운드 개시 시, 자신은 활성화된 효과 종류 수에 비례하여 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" r /></sec>가 증가합니다.
-      JP: |-
-        ラウンド開始時、味方分隊に含まれる戦闘員の分類に応じて、1ラウンドの間味方全体に以下の効果を付与します。
-        同じ条件による効果は重複しません。
-        軽装型及び重装型 : <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>増加
-        攻撃機及び支援機 : <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>増加
-        ラウンド開始時、自分は有効化されている効果種類数に比例して<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>が増加します。
       EN: |-
-        At the start of the round, grants the following effects to all allies for 1 round based on the combatant types in the allied squad.
+        At round start, grants all allies the following effects for 1 round according to the combatant classifications included in the allied squad.
         Effects from the same condition do not stack.
-        Light and Heavy Armor: <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="0" r /></sec> increase
-        Attacker and Supporter: <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="6" r /></sec> increase
-        At the start of the round, self's <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="8" r /></sec> increases in proportion to the number of active effect types.
+        Light and Heavy: increased <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec>
+        Attackers and Supporters: increased <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec>
+        At round start, her <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="8" r /></sec> increases in proportion to the number of activated effect types.
+      JP: |-
+        ラウンド開始時、味方スクワッドに含まれる戦闘員分類に応じて、1ラウンドの間、味方全体に以下の効果を付与します。
+        同じ条件による効果は重複しません。
+        軽装型および重装型：<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="0" r /></sec>増加
+        攻撃機および支援機：<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="6" r /></sec>増加
+        ラウンド開始時、自分は活性化した効果種類数に比例して<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="8" r /></sec>が増加します。
       TC: |-
-        回合開始時，會依據我方小隊中包含的戰鬥員分類，在1回合內對所有我軍賦予以下效果。
-        相同條件所造成的效果不會疊加。
-        輕裝型及重裝型：<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="0" r /></sec>增加
-        攻擊型及支援型：<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>增加
-        回合開始時，自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>會依啟用中的效果種類數量比例增加。
+        回合開始時，根據友軍小隊內包含的戰鬥員分類，在1回合內賦予全體友軍以下效果。
+        相同條件造成的效果不會疊加。
+        輕裝型及重裝型：<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿 <val idx="0" r /></sec>增加
+        攻擊機及支援機：<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="6" r /></sec>增加
+        回合開始時，自身的<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="8" r /></sec>會依已啟用效果種類數增加。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -5480,27 +5481,27 @@ skills:
         스쿼드 내의 <sec typ="cond">자신보다 계급이 낮은 스틸라인 전투원 수</sec>에 비례하여 라운드 개시 시 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="11" r /></sec>가 증가합니다.
         자신보다 계급이 높은 스틸라인 전투원 : <char uid="BR_Marie" />, <char uid="BR_RedHood" />, <char uid="BR_Phoenix" />
         자신보다 계급이 낮은 스틸라인 전투원 : <char uid="BR_Efreeti" />, <char uid="BR_PXSilky" />, <char uid="BR_Gnome" />, <char uid="BR_Leprechaun" />, <char uid="BR_Brownie" />
-      JP: |-
-        ラウンド開始時、<sec typ="cond">自分</sec>と<sec typ="cond">自分より回避が低い範囲内の味方</sec>に<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果耐性 <val idx="0" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec>減少効果を付与します。
-        分隊内に<sec typ="cond">保護機が2機以上</sec>いる場合、自分の攻撃スキルに<sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視効果</sec>が追加されます。
-        分隊内の<sec typ="cond">自分より階級が高いスチールライン戦闘員数</sec>に比例して、ラウンド開始時に味方の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>が増加します。
-        分隊内の<sec typ="cond">自分より階級が低いスチールライン戦闘員数</sec>に比例して、ラウンド開始時に味方の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="11" r /></sec>が増加します。
-        自分より階級が高いスチールライン戦闘員 : <char uid="BR_Marie" />, <char uid="BR_RedHood" />, <char uid="BR_Phoenix" />
-        自分より階級が低いスチールライン戦闘員 : <char uid="BR_Efreeti" />, <char uid="BR_PXSilky" />, <char uid="BR_Gnome" />, <char uid="BR_Leprechaun" />, <char uid="BR_Brownie" />
       EN: |-
-        At the start of the round, grants <sec typ="cond">self</sec> and <sec typ="cond">allies within range with lower EVA than self</sec> <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> Increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="1" r inv /></sec> Decrease effects.
-        If there are <sec typ="cond">2 or more protectors</sec> in the squad, adds <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection effect</sec> to self's attack skills.
-        Proportional to the number of <sec typ="cond">Steel Line units of higher rank than self</sec> in the squad, all allies' <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="8" r /></sec> increases at the start of the round.
-        Proportional to the number of <sec typ="cond">Steel Line units of lower rank than self</sec> in the squad, all allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="11" r /></sec> increases at the start of the round.
-        Steel Line units of higher rank than self: <char uid="BR_Marie" />, <char uid="BR_RedHood" />, <char uid="BR_Phoenix" />
-        Steel Line units of lower rank than self: <char uid="BR_Efreeti" />, <char uid="BR_PXSilky" />, <char uid="BR_Gnome" />, <char uid="BR_Leprechaun" />, <char uid="BR_Brownie" />
+        At round start, grants <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="1" r inv /></sec> reduction to <sec typ="cond">herself</sec> and <sec typ="cond">allies within range with lower EVA than herself</sec>.
+        If there are <sec typ="cond">2 or more Defenders</sec> in the squad, her attack skills gain <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec>.
+        At round start, allies' <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="8" r /></sec> increases in proportion to the number of Steel Line combatants in the squad with a higher rank than herself.
+        At round start, allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="11" r /></sec> increases in proportion to the number of Steel Line combatants in the squad with a lower rank than herself.
+        Steel Line combatants with a higher rank than herself: <char uid="BR_Marie" />, <char uid="BR_RedHood" />, <char uid="BR_Phoenix" />
+        Steel Line combatants with a lower rank than herself: <char uid="BR_Efreeti" />, <char uid="BR_PXSilky" />, <char uid="BR_Gnome" />, <char uid="BR_Leprechaun" />, <char uid="BR_Brownie" />
+      JP: |-
+        ラウンド開始時、<sec typ="cond">自分</sec>と<sec typ="cond">自分より回避が低い範囲内の味方</sec>に<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗 <val idx="0" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ <val idx="1" r inv /></sec>減少効果を付与します。
+        スクワッド内に<sec typ="cond">保護機が2機以上</sec>いる場合、自分の攻撃スキルに<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視効果</sec>が追加されます。
+        スクワッド内の<sec typ="cond">自分より階級が高いスチールライン戦闘員数</sec>に比例して、ラウンド開始時、味方の<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="8" r /></sec>が増加します。
+        スクワッド内の<sec typ="cond">自分より階級が低いスチールライン戦闘員数</sec>に比例して、ラウンド開始時、味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="11" r /></sec>が増加します。
+        自分より階級が高いスチールライン戦闘員：<char uid="BR_Marie" />、 <char uid="BR_RedHood" />、 <char uid="BR_Phoenix" />
+        自分より階級が低いスチールライン戦闘員：<char uid="BR_Efreeti" />、 <char uid="BR_PXSilky" />、 <char uid="BR_Gnome" />、 <char uid="BR_Leprechaun" />、 <char uid="BR_Brownie" />
       TC: |-
-        回合開始時，對<sec typ="cond">自身</sec>與<sec typ="cond">迴避低於自身的範圍內我軍</sec>賦予<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="0" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="1" r inv /></sec>減少效果。
-        若小隊內有<sec typ="cond">2名以上保護機</sec>，則自身的攻擊技能會追加<sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護效果</sec>。
-        依小隊內<sec typ="cond">階級高於自身的鋼線戰鬥員數量</sec>比例，回合開始時所有我軍的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>增加。
-        依小隊內<sec typ="cond">階級低於自身的鋼線戰鬥員數量</sec>比例，回合開始時所有我軍的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="11" r /></sec>增加。
-        階級高於自身的鋼線戰鬥員：<char uid="BR_Marie" />, <char uid="BR_RedHood" />, <char uid="BR_Phoenix" />
-        階級低於自身的鋼線戰鬥員：<char uid="BR_Efreeti" />, <char uid="BR_PXSilky" />, <char uid="BR_Gnome" />, <char uid="BR_Leprechaun" />, <char uid="BR_Brownie" />
+        回合開始時，賦予<sec typ="cond">自身</sec>與<sec typ="cond">範圍內迴避低於自身的友軍</sec><sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗 <val idx="0" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害 <val idx="1" r inv /></sec>減少效果。
+        若小隊內有<sec typ="cond">2名以上保護機</sec>，自身攻擊技能會追加<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護效果</sec>。
+        依小隊內<sec typ="cond">階級高於自身的鋼鐵防線戰鬥員數量</sec>，回合開始時友軍的<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="8" r /></sec>增加。
+        依小隊內<sec typ="cond">階級低於自身的鋼鐵防線戰鬥員數量</sec>，回合開始時友軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="11" r /></sec>增加。
+        階級高於自身的鋼鐵防線戰鬥員：<char uid="BR_Marie" />， <char uid="BR_RedHood" />， <char uid="BR_Phoenix" />
+        階級低於自身的鋼鐵防線戰鬥員：<char uid="BR_Efreeti" />， <char uid="BR_PXSilky" />， <char uid="BR_Gnome" />， <char uid="BR_Leprechaun" />， <char uid="BR_Brownie" />
 dialogue:
   KR:
     "1":
@@ -6179,3 +6180,38 @@ skins:
         2dmodel: 2DModel_BR_Habetrot_NS1
         2dmodel_dam: 2DModel_BR_Habetrot_NS1_Dam
         consumableKey: Skin_BR_Habetrot_1
+    - sid: 2
+      artist: WOW
+      price: 192
+      Spine: true
+      SpineDamaged: false
+      parts: 78
+      stage: false
+      subset:
+        O:
+          - _
+          - D
+          - S
+        G:
+          - _
+          - D
+          - S
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Everday_Dress
+      facelist: []
+      releaseDate: null
+      metadata:
+        imageId: 2
+        iconId: 2
+        tbarId: 2
+        voiceId: 2
+        flags: 2
+        dflags: 1
+        2dmodel_dam: 2DModel_BR_Habetrot_NS2_Dam
+        consumableKey: Skin_BR_Habetrot_2

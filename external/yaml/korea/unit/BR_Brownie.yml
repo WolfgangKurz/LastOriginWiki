@@ -866,6 +866,7 @@ source:
     - Ev:Ev35:EV2-2
   - - Ev:Ev36:EV1-4EX
   - - Ev:Ev37:EV1-3EX
+  - - Ev:Ev38:EV1-2EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2113,15 +2114,15 @@ skills:
       KR: |-
         돌격 소총을 발사해 <dmg elem="physics" />를 줍니다.
         2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="3" r /></sec>와 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec>를 낮추고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec>를 증가시킵니다.
-      JP: |-
-        アサルトライフルを発射して<dmg elem="physics" />を与えます。
-        2ラウンドの間、対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="3" r /></sec>と<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="0" r /></sec>を下げ、<sec typ="buff"><buff typ="VULNERABLE" />被ダメージ<val idx="2" r /></sec>を増加させます。
       EN: |-
         Fires an assault rifle to deal <dmg elem="physics" />.
-        For 2 rounds, lowers the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="3" r /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="0" r /></sec>, and increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="2" r /></sec>.
+        For 2 rounds, decreases the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy by <val idx="3" r /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion by <val idx="0" r /></sec>, and increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken by <val idx="2" r /></sec>.
+      JP: |-
+        アサルトライフルを発射して<dmg elem="physics" />を与えます。
+        2ラウンドの間、対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="3" r /></sec>と<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="0" r /></sec>を低下させ、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="2" r /></sec>を増加させます。
       TC: |-
         發射突擊步槍造成<dmg elem="physics" />。
-        在2回合內降低目標的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="3" r /></sec>與<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="0" r /></sec>，並增加<sec typ="buff"><buff typ="VULNERABLE" />受傷害<val idx="2" r /></sec>。
+        2回合內降低目標的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="3" r /></sec>和<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="0" r /></sec>，並增加<sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="2" r /></sec>。
   "2":
     key: "2"
     icon: Shot
@@ -2727,15 +2728,15 @@ skills:
       KR: |-
         돌격 소총 조준 사격으로 <dmg elem="physics" />를 줍니다.
         목표가 <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 상태인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        アサルトライフルの狙撃で<dmg elem="physics" />を与えます。
-        対象が<sec typ="cond"><buff typ="EVADE_DOWN" />回避低下</sec> / <sec typ="cond"><buff typ="DEF_DOWN" />防御力低下</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
       EN: |-
-        Fires a aimed assault-rifle shot to deal <dmg elem="physics" />.
-        If the target is in <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> Defense Down</sec> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        Deals <dmg elem="physics" /> with aimed assault-rifle fire.
+        If the target is under <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> DEF Down</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt increases by <val idx="0" r /></sec>.
+      JP: |-
+        アサルトライフルの照準射撃で<dmg elem="physics" />を与えます。
+        目標が<sec typ="cond"><buff typ="EVADE_DOWN" />回避低下</sec> / <sec typ="cond"><buff typ="DEF_DOWN" />防御力低下</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       TC: |-
         以突擊步槍瞄準射擊造成<dmg elem="physics" />。
-        若目標處於<sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec> / <sec typ="cond"><buff typ="DEF_DOWN" />防禦力降低</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="0" r /></sec>增加。
+        若目標處於<sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec> / <sec typ="cond"><buff typ="DEF_DOWN" />防禦力降低</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -3023,17 +3024,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        전투 개시 시, 자신이 <sec typ="cond">전열</sec>에 있으면 전열에 있는 모든 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>가 증가하지만 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="7" r /></sec>도 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, 자신이 <sec typ="cond">전열</sec>에 있으면 전열에 있는 모든 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>가 증가하지만 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="7" r /></sec>도 증가합니다.
         해당 효과들은 모두 <sec typ="attr">강화 효과</sec>로 취급됩니다.
-      JP: |-
-        戦闘開始時、自身が<sec typ="cond">前列</sec>にいる場合、前列にいる全ての味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="6" r /></sec>が増加しますが、<sec typ="buff"><buff typ="VULNERABLE" />被ダメージ<val idx="7" r /></sec>も増加します。
-        これらの効果はすべて<sec typ="attr">強化効果</sec>として扱われます。
       EN: |-
-        At battle start, if self is in the <sec typ="cond">front line</sec>, the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="6" r /></sec> of all allies in the front line increases, but <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="7" r /></sec> also increases.
-        All of these effects are treated as <sec typ="attr">buffs</sec>.
+        <sec typ="cond">At battle start</sec>, if she is in the <sec typ="cond">front row</sec>, all allies in the front row gain increased <sec typ="buff"><buff typ="AP_UP" /> AP by <val idx="0" /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical by <val idx="6" r /></sec>, but <sec typ="buff"><buff typ="VULNERABLE" /> damage taken also increases by <val idx="7" r /></sec>.
+        All of these effects are treated as <sec typ="attr">buff effects</sec>.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自身が<sec typ="cond">前列</sec>にいると、前列にいるすべての味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec> / <sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="6" r /></sec>が増加しますが、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="7" r /></sec>も増加します。
+        これらの効果はすべて<sec typ="attr">強化効果</sec>として扱われます。
       TC: |-
-        戰鬥開始時，若自身位於<sec typ="cond">前排</sec>，則前排所有我方的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="6" r /></sec>增加，但<sec typ="buff"><buff typ="VULNERABLE" />受傷害<val idx="7" r /></sec>也會增加。
-        上述效果皆被視為<sec typ="attr">強化效果</sec>。
+        <sec typ="cond">戰鬥開始時</sec>，若自身位於<sec typ="cond">前列</sec>，前列所有我方的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec> / <sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="6" r /></sec>增加，但<sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="7" r /></sec>也增加。
+        該效果全部視為<sec typ="attr">強化效果</sec>。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3282,15 +3283,15 @@ skills:
       KR: |-
         라운드 개시 시, 자신이 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원</sec> 또는 <sec typ="cond"><buff typ="DEF_Char" /> 지정 대상 보호</sec>를 받는 상태면 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
         공격 지원을 해주는 대상이 <char uid="BR_Leprechaun" />인 경우, 효과가 50% 증가합니다.
-      JP: |-
-        ラウンド開始時、自身が<sec typ="cond"><buff typ="SUPPORT_ATTACK" />攻撃支援</sec>または<sec typ="cond"><buff typ="DEF_Char" />指定対象保護</sec>を受けている状態なら、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>が増加します。
-        攻撃支援を行う対象が<char uid="BR_Leprechaun" />の場合、効果が50%増加します。
       EN: |-
-        At round start, if self is under <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> support attack</sec> or <sec typ="cond"><buff typ="DEF_Char" /> designated target protection</sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec> increases.
-        If the target providing support attack is <char uid="BR_Leprechaun" />, the effect increases by 50%.
+        <sec typ="cond">At round start</sec>, if she is under <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> Attack Support</sec> or <sec typ="cond"><buff typ="DEF_Char" /> Designated Protection</sec>, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power by <val idx="2" r /></sec>.
+        If the unit providing attack support is <char uid="BR_Leprechaun" />, the effects increase by 50%.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身が<sec typ="cond"><buff typ="SUPPORT_ATTACK" />攻撃支援</sec>または<sec typ="cond"><buff typ="DEF_Char" />指定対象保護</sec>を受けている状態なら、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>が増加します。
+        攻撃支援を行う対象が<char uid="BR_Leprechaun" />の場合、効果が50%増加します。
       TC: |-
-        回合開始時，若自身處於<sec typ="cond"><buff typ="SUPPORT_ATTACK" />攻擊支援</sec>或<sec typ="cond"><buff typ="DEF_Char" />指定目標保護</sec>狀態，則<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>增加。
-        若提供攻擊支援的目標是<char uid="BR_Leprechaun" />，則效果增加50%。
+        <sec typ="cond">回合開始時</sec>，若自身處於受到<sec typ="cond"><buff typ="SUPPORT_ATTACK" />攻擊支援</sec>或<sec typ="cond"><buff typ="DEF_Char" />指定目標保護</sec>的狀態，<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>增加。
+        若提供攻擊支援的目標為<char uid="BR_Leprechaun" />，效果增加50%。
 dialogue:
   KR:
     "":

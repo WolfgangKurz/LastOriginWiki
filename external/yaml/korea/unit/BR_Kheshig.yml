@@ -3290,18 +3290,18 @@ skills:
         단일 대상에게 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">자신이 전열인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
         적중 대상에게 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec> 증가 효과를 부여합니다.
-      JP: |-
-        単一対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">自分が前列の場合</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
-        命中した対象に2ラウンドの間、<sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="5" r /></sec>増加効果を付与します。
       EN: |-
-        Deals <dmg elem="physics" /> damage to a single target.
-        <sec typ="cond">If self is in the front line</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
-        Inflicts hit targets with <sec typ="buff"><buff typ="MARKING" /> Marked</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="5" r /></sec> increase effects for 2 rounds.
+        Deals <dmg elem="physics" /> to a single target.
+        <sec typ="cond">If self is in the front row</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        Grants the hit target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="5" r /></sec> increase effects for 2 rounds.
+      JP: |-
+        単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">自身が前列の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+        命中した対象に2ラウンドの間、<sec typ="buff"><buff typ="MARKING" />標識</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="5" r /></sec>増加効果を付与します。
       TC: |-
-        對單一目標造成<dmg elem="physics" />傷害。
-        <sec typ="cond">若自身位於前列</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
-        對命中目標施加持續2回合的<sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="5" r /></sec>增加效果。
+        對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">自身位於前列時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
+        賦予命中目標持續2回合的<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="5" r /></sec>增加效果。
   "2":
     key: "2"
     icon: Move
@@ -3828,21 +3828,21 @@ skills:
         대상이 전열에 위치한 <sec typ="note">앵거 오브 호드</sec>인 경우, 2라운드 동안 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 부여합니다.
         대상에게 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> 증가 / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="6" r inv /></sec> 감소 효과를 부여합니다.
         대상이 <sec typ="cond">전열</sec>에 위치한 경우 효과가 증가합니다.
-      JP: |-
-        指定範囲に位置する味方に戦術的配置指示を下します。
-        対象が前列に位置する<sec typ="note">アンガー・オブ・ホード</sec>の場合、2ラウンドの間、<sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視</sec>効果を付与します。
-        対象に2ラウンドの間、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec>増加 / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="6" r inv /></sec>減少効果を付与します。
-        対象が<sec typ="cond">前列</sec>に位置する場合、効果が増加します。
       EN: |-
-        Issues tactical deployment instructions to allies in the designated area.
-        If the target is an <sec typ="note">Anger of the Horde</sec> unit positioned in the front line, grants <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> for 2 rounds.
-        Grants the target <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> increase / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="5" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="6" r inv /></sec> decrease for 2 rounds.
-        The effect increases if the target is in the <sec typ="cond">front line</sec>.
+        Issues tactical deployment orders to allies in the designated area.
+        If the target is <sec typ="note">Anger of the Horde</sec> in the front row, grants <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> for 2 rounds.
+        Grants the target <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> increase / <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="5" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="6" r inv /></sec> reduction effects for 2 rounds.
+        Effects increase if the target is in the <sec typ="cond">front row</sec>.
+      JP: |-
+        指定範囲にいる味方に戦術的配置指示を出します。
+        対象が前列にいる<sec typ="note">アンガー・オブ・ホード</sec>の場合、2ラウンドの間、<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視</sec>効果を付与します。
+        対象に2ラウンドの間、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec>増加 / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="6" r inv /></sec>減少効果を付与します。
+        対象が<sec typ="cond">前列</sec>にいる場合、効果が増加します。
       TC: |-
-        對位於指定範圍內的我軍下達戰術部署指示。
-        若目標為位於前列的<sec typ="note">部落之怒</sec>，則在2回合內賦予<sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec>效果。
-        對目標施加持續2回合的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec>增加 / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="6" r inv /></sec>減少效果。
-        若目標位於<sec typ="cond">前列</sec>，則效果增加。
+        對位於指定範圍內的我方下達戰術部署指令。
+        若目標為位於前列的<sec typ="note">憤怒部落</sec>，賦予其持續2回合的<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>效果。
+        賦予目標持續2回合的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec>增加 / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到傷害<val idx="6" r inv /></sec>減少效果。
+        若目標位於<sec typ="cond">前列</sec>，效果增加。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -4952,18 +4952,18 @@ skills:
         첫 라운드 개시 시, <sec typ="cond"><buff typ="DEF_RESSURRECT" /> 전투 속행 효과를 가지지 않은 아군 바이오로이드</sec>에게 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP로 전투 속행</sec> 효과를 부여합니다.
         <sec typ="note">응급 처치</sec>를 통해 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 전투 속행</sec>한 아군이 다음 라운드까지 생존 시, 추가 처치를 통해 아군의 생존성을 향상시킵니다.
         라운드 개시 시, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 </sec> 일반 효과를 부여하고, <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항<val idx="7" r /></sec>를 증가시키며, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 모든 해로운 효과를 해제</sec>합니다.
-      JP: |-
-        最初のラウンド開始時、<sec typ="cond"><buff typ="DEF_RESSURRECT" /> 戦闘続行効果を持たない味方バイオロイド</sec>に<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HPで戦闘続行</sec>効果を付与します。
-        <sec typ="note">応急処置</sec>を通じて<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 戦闘続行</sec>した味方が次のラウンドまで生存した場合、追加処置を通じて味方の生存性を向上させます。
-        ラウンド開始時、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージ最小化</sec>の一般効果を付与し、<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果耐性 <val idx="7" r /></sec>を増加させ、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 全ての有害な効果を解除</sec>します。
       EN: |-
-        At the start of the first round, grants <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat with <val idx="0" signless /> HP</sec> to ally Bioroids that do not have a Continue Combat effect.
-        If an ally that was continued through <sec typ="note">Emergency Treatment</sec> survives until the next round, their survivability is improved through additional treatment.
-        At the start of the round, grants a <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Minimize Damage</sec> normal effect, increases <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="7" r /></sec>, and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes all harmful effects</sec>.
+        At the start of the first round, grants allied Bioroids <sec typ="cond">without the <buff typ="DEF_RESSURRECT" /> battle continuation effect</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Battle Continuation with <val idx="0" signless /> HP</sec>.
+        If an ally who <sec typ="note"></sec> continued battle<sec typ="buff"> through <buff typ="DEF_RESSURRECT" />First Aid</sec> survives until the next round, additional treatment improves ally survivability.
+        At round start, grants the general effect <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Damage Minimization </sec>, increases <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> effect resistance <val idx="7" r /></sec>, and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes all harmful effects</sec>.
+      JP: |-
+        最初のラウンド開始時、<sec typ="cond"><buff typ="DEF_RESSURRECT" />戦闘続行効果を持たない味方バイオロイド</sec>に<sec typ="buff"><buff typ="DEF_RESSURRECT" />HP<val idx="0" signless />で戦闘続行</sec>効果を付与します。
+        <sec typ="note">応急処置</sec>によって<sec typ="buff"><buff typ="DEF_RESSURRECT" />戦闘続行</sec>した味方が次のラウンドまで生存した場合、追加処置によって味方の生存性を向上させます。
+        ラウンド開始時、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />ダメージ最小化</sec>一般効果を付与し、<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="7" r /></sec>を増加させ、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />すべての有害効果を解除</sec>します。
       TC: |-
-        在第一回合開始時，對沒有<sec typ="cond"><buff typ="DEF_RESSURRECT" /> 繼續戰鬥效果</sec>的我軍生化人賦予<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以<val idx="0" signless /> HP繼續戰鬥</sec>效果。
-        若透過<sec typ="note">急救處置</sec>而<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 繼續戰鬥</sec>的我軍生存到下一回合，則透過額外處置提升我軍的生存性。
-        回合開始時，賦予<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 傷害最小化</sec>普通效果，增加<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="7" r /></sec>，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除所有有害效果</sec>。
+        第1回合開始時，賦予<sec typ="cond">未持有<buff typ="DEF_RESSURRECT" />戰鬥續行效果的我方生化人</sec><sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="0" signless /> HP戰鬥續行</sec>效果。
+        透過<sec typ="note">急救</sec><sec typ="buff"><buff typ="DEF_RESSURRECT" />戰鬥續行</sec>的我方若存活至下一回合，將透過追加處置提升我方的生存能力。
+        回合開始時，賦予<sec typ="buff"><buff typ="DAMAGE_REDUCE" />傷害最小化</sec>一般效果，增加<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性<val idx="7" r /></sec>，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除所有有害效果</sec>。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -5432,25 +5432,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        전투 개시 시, <sec typ="cond">자신보다 <buff typ="ATK_UP" /> 공격력 / <buff typ="DEF_UP" /> 방어력 / <buff typ="EVADE_UP" /> 회피가 높은 아군</sec>에게 경외심을 품습니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">자신보다 <buff typ="ATK_UP" /> 공격력 / <buff typ="DEF_UP" /> 방어력 / <buff typ="EVADE_UP" /> 회피가 높은 아군</sec>에게 경외심을 품습니다.
         라운드 개시 시, 자신이 경외심을 품은 대상이 존재할 때 각 효과별 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>가 증가합니다.
         각기 다른 세 조건이 충족된 경우, 스킬 사용 시 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="1" /></sec>이(가) 증가합니다.
         스쿼드 내에 <char uid="BR_Khan" />이 존재하는 경우, 상기 조건을 무시하고 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec> 증가 / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="1" /></sec> 증가 효과를 획득합니다.
-      JP: |-
-        戦闘開始時、<sec typ="cond">自分より<buff typ="ATK_UP" /> 攻撃力 / <buff typ="DEF_UP" /> 防御力 / <buff typ="EVADE_UP" /> 回避が高い味方</sec>に畏敬の念を抱きます。
-        ラウンド開始時、自分が畏敬の念を抱いた対象が存在する場合、各効果ごとの自分の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>が増加します。
-        それぞれ異なる3つの条件が満たされた場合、スキル使用時に<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="1" /></sec>が増加します。
-        分隊内に<char uid="BR_Khan" />が存在する場合、上記の条件を無視して<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>増加 / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="1" /></sec>増加効果を獲得します。
       EN: |-
-        At the start of combat, self feels awe toward allies with higher <buff typ="ATK_UP" /> ATK / <buff typ="DEF_UP" /> DEF / <buff typ="EVADE_UP" /> EVA than self.
-        At the start of the round, when such targets exist, self’s <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="5" r /></sec> increases for each effect.
-        When three different conditions are met, AP increases when using a skill.
-        If <char uid="BR_Khan" /> is in the squad, ignores the above conditions and gains <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="0" r /></sec> increase / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="1" /></sec> increase effects.
+        At battle start, feels awe toward <sec typ="cond">allies with higher <buff typ="ATK_UP" /> ATK / <buff typ="DEF_UP" /> DEF / <buff typ="EVADE_UP" /> EVA than self</sec>.
+        At round start, when a target self feels awe toward exists, self's <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="5" r /></sec> increases for each effect.
+        If all three different conditions are met, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="1" /></sec> increases when using a skill.
+        If <char uid="BR_Khan" /> is present in the squad, ignores the above conditions and gains <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="0" r /></sec> increase / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="1" /></sec> increase effects.
+      JP: |-
+        戦闘開始時、<sec typ="cond">自身より<buff typ="ATK_UP" />攻撃力 / <buff typ="DEF_UP" />防御力 / <buff typ="EVADE_UP" />回避が高い味方</sec>に畏敬の念を抱きます。
+        ラウンド開始時、自身が畏敬の念を抱く対象が存在する場合、各効果ごとに自身の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>が増加します。
+        異なる3つの条件がすべて満たされた場合、スキル使用時に<sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" slot="1" /></sec>が増加します。
+        スクワッド内に<char uid="BR_Khan" />が存在する場合、上記条件を無視し、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>増加 / <sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" slot="1" /></sec>増加効果を獲得します。
       TC: |-
-        戰鬥開始時，對比自身<buff typ="ATK_UP" /> 攻擊力 / <buff typ="DEF_UP" /> 防禦力 / <buff typ="EVADE_UP" /> 迴避更高的我軍懷有敬畏之心。
-        回合開始時，若存在自身敬畏的目標，則自身每個效果的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>增加。
-        若滿足三個不同條件，使用技能時會增加AP。
-        若小隊內有<char uid="BR_Khan" />，則無視上述條件，並獲得<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>增加 / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="1" /></sec>增加效果。
+        戰鬥開始時，對<sec typ="cond">比自身<buff typ="ATK_UP" />攻擊力 / <buff typ="DEF_UP" />防禦力 / <buff typ="EVADE_UP" />迴避更高的我方</sec>心生敬畏。
+        回合開始時，若存在自身敬畏的目標，依各效果增加自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>。
+        若三個不同條件皆達成，使用技能時<sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" slot="1" /></sec>增加。
+        若小隊內存在<char uid="BR_Khan" />，則無視上述條件，獲得<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>增加 / <sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" slot="1" /></sec>增加效果。
   "5":
     key: "5"
     icon: P.Command
@@ -5623,15 +5623,15 @@ skills:
       KR: |-
         라운드 개시 시, 자신은 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수가 <val idx="0" /></sec> 증가합니다.
         라운드 개시 시, <sec typ="note">응급 처치</sec>에 의한 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 피해 최소화</sec> 효과를 보유한 아군에게 <sec typ="dmg"><buff typ="DamageAmp_Me" /> 현재 HP에 반비례하여 가하는 피해량 증가</sec> 일반 효과를 부여합니다. → <sec typ="dmg"><buff typ="DamageAmp_Me" /> 잃은 HP 비례 피해량 <val idx="2" r /></sec>
-      JP: |-
-        ラウンド開始時、自身は<sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大行動回数が <val idx="0" /></sec>増加します。
-        ラウンド開始時、<sec typ="note">応急処置</sec>による<sec typ="cond"><buff typ="DAMAGE_REDUCE" /> ダメージ最小化</sec>効果を持つ味方に<sec typ="dmg"><buff typ="DamageAmp_Me" /> 現在HPに反比例して与えるダメージ量増加</sec>の一般効果を付与します。→ <sec typ="dmg"><buff typ="DamageAmp_Me" /> 失ったHP比例ダメージ量 <val idx="2" r /></sec>
       EN: |-
-        At the start of the round, self’s <sec typ="buff"><buff typ="Action_Number_Change_Up" /> max moves <val idx="0" /></sec> increase.
-        At the start of the round, grants allies with the <sec typ="note">Emergency Treatment</sec>-based <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> Minimize Damage</sec> effect a normal effect that <sec typ="dmg"><buff typ="DamageAmp_Me" /> increases damage dealt inversely proportional to current HP</sec>. -> <sec typ="dmg"><buff typ="DamageAmp_Me" /> damage proportional to lost HP <val idx="2" r /></sec>
+        At round start, self's <sec typ="buff"><buff typ="Action_Number_Change_Up" /> maximum number of actions increases by <val idx="0" /></sec>.
+        At round start, grants allies with the <sec typ="note"></sec> Damage Minimization<sec typ="cond"> effect from <buff typ="DAMAGE_REDUCE" />First Aid</sec> the general effect <sec typ="dmg"><buff typ="DamageAmp_Me" /> increases damage dealt in inverse proportion to current HP</sec>. → <sec typ="dmg"><buff typ="DamageAmp_Me" /> damage proportional to lost HP <val idx="2" r /></sec>
+      JP: |-
+        ラウンド開始時、自身は<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動回数が<val idx="0" /></sec>増加します。
+        ラウンド開始時、<sec typ="note">応急処置</sec>による<sec typ="cond"><buff typ="DAMAGE_REDUCE" />ダメージ最小化</sec>効果を持つ味方に、<sec typ="dmg"><buff typ="DamageAmp_Me" />現在HPに反比例して与えるダメージ量増加</sec>一般効果を付与します。 → <sec typ="dmg"><buff typ="DamageAmp_Me" />失ったHP比例ダメージ量<val idx="2" r /></sec>
       TC: |-
-        回合開始時，自身的<sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大行動次數 <val idx="0" /></sec>增加。
-        回合開始時，對擁有由<sec typ="note">急救處置</sec>帶來的<sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 傷害最小化</sec>效果之我軍，賦予<sec typ="dmg"><buff typ="DamageAmp_Me" /> 與目前生命力成反比地增加所造成傷害量</sec>的普通效果。→ <sec typ="dmg"><buff typ="DamageAmp_Me" /> 與失去生命力成正比的傷害量 <val idx="2" r /></sec>
+        回合開始時，自身的<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動次數增加<val idx="0" /></sec>。
+        回合開始時，賦予持有由<sec typ="note">急救</sec>產生的<sec typ="cond"><buff typ="DAMAGE_REDUCE" />傷害最小化</sec>效果的我方<sec typ="dmg"><buff typ="DamageAmp_Me" />依目前HP反比例增加造成傷害量</sec>一般效果。 → <sec typ="dmg"><buff typ="DamageAmp_Me" />依損失HP比例的傷害量<val idx="2" r /></sec>
 dialogue:
   KR:
     "1":

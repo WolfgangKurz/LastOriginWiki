@@ -1660,10 +1660,22 @@ skills:
             per: 70
             chance: 1
     desc:
-      KR: 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
-      JP: 単一対象に <sec typ="attr">防護無視</sec> <dmg elem="physics" />を与えます。
-      EN: Deals <sec typ="attr">ignore protection</sec> <dmg elem="physics" /> to a single target.
-      TC: 對單一目標造成 <sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+      KR: |-
+        단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec> <sec typ="cond">대상의 공격력이 자신보다 낮을 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" slot="1" r /></sec>가 증가합니다.
+        <sec typ="cond">치명타 시</sec>, 3라운드 동안 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="2" slot="1" signless /> 지속 물리 피해</sec>를 입힙니다.
+      EN: |-
+        to a single target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec> <sec typ="cond">target's Attack self than low case</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" slot="1" r /></sec> increases.
+        <sec typ="cond">On critical hit</sec>, 3 rounds <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="2" slot="1" signless /> Physical damage over time</sec> deals.
+      JP: |-
+        単一対象へ <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec> <sec typ="cond">対象の 攻撃力が 自身より ンアトを 場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" slot="1" r /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec>、 3ラウンドの間 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="2" slot="1" signless /> 持続物理ダメージ</sec>を 与えます。
+      TC: |-
+        單一目標給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec> <sec typ="cond">目標的 攻擊力 自身比 降低 情況</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" slot="1" r /></sec>增加。
+        <sec typ="cond">暴擊時</sec>， 3回合內 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="2" slot="1" signless /> 持續物理傷害</sec> 造成。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -3481,10 +3493,30 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: 지정 범위에 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
-      JP: 指定範囲に <dmg elem="physics" />を与え、2ラウンドの間対象を <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec>状態にします。
-      EN: Deals <dmg elem="physics" /> to the designated area and puts the target into <sec typ="buff"><buff typ="SNARE" /> Immobilize</sec> for 2 rounds.
-      TC: 對指定範圍造成 <dmg elem="physics" />，並使目標在 2 回合內處於 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec>狀態。
+      KR: |-
+        지정 범위에 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
+        <sec typ="cond">치명타 시</sec>, 해당 라운드 동안 대상을 <sec typ="buff"><buff typ="STUN" /> 행동 불능</sec> 상태로 만듭니다.
+        <sec typ="cond">대상에게 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 지속 물리 피해</sec>가 적용중인 경우</sec>, <sec typ="buff"><buff typ="STUN" /> 행동 불능</sec>이 2라운드 동안 지속됩니다.
+        <sec typ="cond">스킬 사용 시</sec>, 2라운드 동안 <sec typ="note">무리짓기</sec> 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="7" slot="4" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="8" slot="4" r /></sec>를 증가시킵니다.
+        <sec><sec typ="buff"><buff typ="ATK_UP" /><buff typ="DEF_UP" /> 공격력 / 방어력</sec> 증가 효과는 <sec typ="note">무리짓기</sec> 레벨에 비례합니다.</sec>
+      EN: |-
+        to the designated area <dmg elem="physics" /> damage and 2 rounds target <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> inflicts.
+        <sec typ="cond">On critical hit</sec>, each round target <sec typ="buff"><buff typ="STUN" /> Stunned</sec> inflicts.
+        <sec typ="cond"> to the target <sec typ="dmg"><buff typ="phyDMG_DOT" /> Physical damage over time</sec> enemy in use if</sec>, <sec typ="buff"><buff typ="STUN" /> Stunned</sec> 2 rounds continuous.
+        <sec typ="cond">When using the skill</sec>, 2 rounds <sec typ="note">Pack Formation</sec> within range allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="7" slot="4" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="8" slot="4" r /></sec> increases.
+        <sec><sec typ="buff"><buff typ="ATK_UP" /><buff typ="DEF_UP" /> Attack / Defense</sec> increase effect <sec typ="note">Pack Formation</sec> level.</sec>
+      JP: |-
+        指定範囲に<dmg elem="physics" />を与え、、 2ラウンドの間 対象を <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態にします。
+        <sec typ="cond">クリティカル時</sec>、 該当 ラウンド間 対象を <sec typ="buff"><buff typ="STUN" /> 行動不能</sec> 状態にします。
+        <sec typ="cond">対象に <sec typ="dmg"><buff typ="phyDMG_DOT" /> 持続物理ダメージ</sec>が 適用中の場合</sec>、 <sec typ="buff"><buff typ="STUN" /> 行動不能</sec>が 2ラウンドの間 持続されます。
+        <sec typ="cond">スキル使用時</sec>、 2ラウンドの間 <sec typ="note">群れ形成</sec> 範囲内 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="7" slot="4" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="8" slot="4" r /></sec>を増加させます。
+        <sec><sec typ="buff"><buff typ="ATK_UP" /><buff typ="DEF_UP" /> 攻撃力 / 防御力</sec> 増加 効果は <sec typ="note">群れ形成</sec> レベルに 比例します。</sec>
+      TC: |-
+        指定範圍於 造成<dmg elem="physics" />，並 2回合內 目標 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 使其進入狀態。
+        <sec typ="cond">暴擊時</sec>， 該 回合內 目標 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 使其進入狀態。
+        <sec typ="cond">對目標 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 持續物理傷害</sec> 套用中若為</sec>， <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 2回合內 持續。
+        <sec typ="cond">使用技能時</sec>， 2回合內 <sec typ="note">群聚</sec> 範圍內 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="7" slot="4" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="8" slot="4" r /></sec>使其增加。
+        <sec><sec typ="buff"><buff typ="ATK_UP" /><buff typ="DEF_UP" /> 攻擊力 / 防禦力</sec> 增加 效果 <sec typ="note">群聚</sec> 等級於 成比例。</sec>
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3868,10 +3900,26 @@ skills:
             per: 0.01
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が増加します。
-      EN: <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increases.
-      TC: <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>會增加。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">대기 시</sec>, 자신은 <sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 위력으로 반격</sec> 효과를 획득합니다.
+        해당 효과는 대기를 통해 임의로 해제할 수 있습니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신에게 <sec typ="buff"><buff typ="COUNTER" /> 반격</sec> 효과가 적용된 경우</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="9" r /></sec>가 증가하고 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="7" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increases.
+        <sec typ="cond">On standby</sec>, self <sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> power as Counterattack</sec> gains the effect.
+        the effect wait through Imui as can be removed.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self <sec typ="buff"><buff typ="COUNTER" /> Counterattack</sec> affected by case</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="9" r /></sec> increases and <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="7" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">待機時</sec>、 自身は <sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 威力で 反撃</sec> 効果を獲得します。
+        該当 効果は 待機を通じて イムので 解除できます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身に <sec typ="buff"><buff typ="COUNTER" /> 反撃</sec> 効果が適用された 場合</sec>、 <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="9" r /></sec>が 増加し、 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="7" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>增加。
+        <sec typ="cond">待機時</sec>， 自身 <sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 威力以 反擊</sec> 獲得效果。
+        該 效果 待機透過 Im的以 可以解除。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身給 <sec typ="buff"><buff typ="COUNTER" /> 反擊</sec> 已套用效果的 情況</sec>， <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="9" r /></sec> 增加，並 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="7" /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -4278,10 +4326,22 @@ skills:
             per: 0.05
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 / 경장형 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装型 / 軽装型ダメージ量 <val idx="0" r /></sec>が増加します。
-      EN: <sec typ="cond">At the start of the round</sec>, allies in range gain increased <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage against Heavy / Light units <val idx="0" r /></sec>.
-      TC: <sec typ="cond">回合開始時</sec>，提升範圍內友軍的 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝型 / 輕裝型傷害量 <val idx="0" r /></sec>。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 / 경장형 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">5인 스쿼드 구성 시</sec> 효과가 50% 증폭됩니다.
+        <sec typ="cond">전투 개시 시</sec> <sec typ="cond">자신이 스쿼드 내 유일한 공격기인 경우</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> anti Heavy-type / Light-type damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">5 is squad composition when</sec> effect and increased by 50%.
+        <sec typ="cond">At battle start</sec> <sec typ="cond">self in squad only Attackerif</sec>, within range allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> ドエ 重装型 / 軽装型 ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">5である スクワッド 構成 時</sec> 効果が 50%増幅されます。
+        <sec typ="cond">戦闘開始時</sec> <sec typ="cond">自身が スクワッド 内 ユイルした 攻撃機の場合</sec>、 範囲内 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對 重裝型 / 輕裝型 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">5為 小隊 組成 時</sec> 效果 增幅50%。
+        <sec typ="cond">戰鬥開始時</sec> <sec typ="cond">自身 小隊 內 唯一 攻擊機若為</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>增加。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -4933,10 +4993,22 @@ skills:
             per: 0.018
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 기본 공격력 <val idx="0" /></sec>이(가) 증가합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間自身の <sec typ="buff"><buff typ="ATK_UP" /> 基本攻撃力 <val idx="0" /></sec>が増加します。
-      EN: <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> base Attack <val idx="0" /></sec> increases for 3 rounds.
-      TC: <sec typ="cond">回合開始時</sec>，在 3 回合內自身的 <sec typ="buff"><buff typ="ATK_UP" /> 基礎攻擊力 <val idx="0" /></sec>會增加。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 기본 공격력 <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 위압적인 포효로 <sec typ="buff">자신보다 공격력이 낮은 모든 적의 <buff typ="AP_DOWN" /> 행동력 <val idx="3" r /></sec>를 감소시킵니다.
+        <sec typ="cond">전투 개시 시</sec>, 사냥감 수에 비례하여 자신은 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec> 증가 <sec typ="attr">일반 효과</sec>를 획득합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, 3 rounds own <sec typ="buff"><buff typ="ATK_UP" /> base Attack <val idx="0" /></sec> increases.
+        <sec typ="cond">At round start</sec>, above Ap enemy is Po effect as <sec typ="buff">self than Attack low all enemies of <buff typ="AP_DOWN" /> Action Speed <val idx="3" r /></sec> decreases.
+        <sec typ="cond">At battle start</sec>, Sanyanggam in proportion to the number of self <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="4" r /></sec> increase <sec typ="attr">normal effect</sec> gains.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 3ラウンドの間 自身の <sec typ="buff"><buff typ="ATK_UP" /> 基本 攻撃力 <val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 ウィアプ敵である プオハヨで <sec typ="buff">自身より 攻撃力が ンアトは すべての敵の <buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>を減少させます。
+        <sec typ="cond">戦闘開始時</sec>、 スアンヤングアム 数に比例して 自身は <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> 増加 <sec typ="attr">一般効果</sec>を獲得します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 3回合內 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 基礎 攻擊力 <val idx="0" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 上ap敵人為 Pohyo以 <sec typ="buff">自身比 攻擊力 降低 所有敵人的 <buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>使其減少。
+        <sec typ="cond">戰鬥開始時</sec>， Sanyanggam 依數量成比例 自身 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> 增加 <sec typ="attr">一般效果</sec>獲得。
 dialogue:
   KR:
     "1":

@@ -4615,10 +4615,26 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: 나노 입자-신호 증폭으로 폐기 부품을 형상화하여 대상을 붙잡고 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
-      JP: ナノ粒子-信号増幅で廃棄部品を具現化して対象を捕らえ、<sec typ="attr">防護無視</sec> <dmg elem="physics" />を与えます。
-      EN: Forms discarded parts through nanoparticle-signal amplification to seize the target and deal <sec typ="attr">ignore protection</sec> <dmg elem="physics" />.
-      TC: 以奈米粒子-訊號增幅具現化廢棄零件抓住目標，並造成 <sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+      KR: |-
+        나노 입자-신호 증폭으로 폐기 부품을 형상화하여 대상을 붙잡고 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec>를 감소시키고 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>가 증가합니다.
+        자신의 <sec typ="note">손톱</sec> 중첩 수에 따라 효과가 증폭됩니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">모든</sec> 광역 피해 분산 효과를 해제</sec>합니다.
+      EN: |-
+        nano particle-Sin protection amplification as discard part Hyeongsanghwa by doing target Butjapgo <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 3 rounds, target's <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="0" r /></sec> decreases and own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="6" r /></sec> increases.
+        own <sec typ="note">Claw</sec> stack depending on the number of effect and amplification.
+        <sec typ="cond">On critical hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">all</sec> area damage dispersion removes the effect</sec>.
+      JP: |-
+        ンアンオ イプジア-スインハオ 増幅で プイェ機 ブウプウムを ハヨンスアンハワして 対象を ブウトジアプし <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 3ラウンドの間 対象の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec>を 減少時クイし 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>が増加します。
+        自身の <sec typ="note">宣トオプ</sec> 重複 数に応じて 効果が 増幅されます。
+        <sec typ="cond">クリティカル時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">すべての</sec> 広域ダメージ分散 効果を 解除</sec>します。
+      TC: |-
+        奈米 粒子-Sinho 增幅以 Pye台 零件 Hyeongsanghwa並 目標 附加tjap並 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 3回合內 目標的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> 減少時台並 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>增加。
+        自身的 <sec typ="note">爪</sec> 疊加 依數量 效果 增幅。
+        <sec typ="cond">暴擊時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">所有</sec> 範圍傷害分散 效果 解除</sec>。
   "2":
     key: "2"
     icon: SelfDefBuff
@@ -4986,10 +5002,30 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: 폐기 처리된 부품을 재활용하여 대상 아군의 방호 능력을 강화합니다.
-      JP: 廃棄処理された部品を再利用して、対象の味方の防護能力を強化します。
-      EN: Recycles discarded parts to strengthen the target ally's defensive capability.
-      TC: 重複利用已廢棄處理的零件，強化目標友軍的防護能力。
+      KR: |-
+        폐기 처리된 부품을 재활용하여 대상 아군의 방호 능력을 강화합니다.
+        <sec>효과는 헬라가 생존한 동안 유지됩니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 대상은 무거운 부품으로 인해 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">모든</sec> 회피 증감 효과가 해제</sec>되지만, <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" /></sec>이(가) 증가하고 <sec typ="buff"><buff typ="CRITICAL_UP" /> 방어력 <val idx="4" slot="3" signless />만큼 치명타 저항이 증가</sec>합니다.
+        이미 <sec typ="note">나노 입자 증폭</sec> 상태인 대상으로 재사용 시, 3라운드 동안 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="6" r /></sec> 효과를 부여합니다.
+        <sec typ="cond"><sec typ="note">나노 입자 증폭</sec>에 의한 지속 효과를 가진 아군이 존재할 경우</sec>, 라운드 개시 시 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="3" /></sec>이(가) 증가합니다.
+      EN: |-
+        discard Cheori applied part recycling by doing target allies' protection ability buff.
+        <sec>effect Hela Saengjon one for maintain.</sec>
+        <sec typ="cond">At round start</sec>, the target Mugeo luck part as due to <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">all</sec> Evasion increase /decrease removes the effect</sec>but becomes, <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="0" /></sec>() increases and <sec typ="buff"><buff typ="CRITICAL_UP" /> Defense <val idx="4" slot="3" signless /> by Critical resistance increase</sec>.
+        un- <sec typ="note">nano particle amplification</sec> in the state target as re- When used, 3 rounds <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Buff Removal Resistance <val idx="6" r /></sec> grants the effect.
+        <sec typ="cond"><sec typ="note">nano particle amplification</sec> to by continuous effect and formation allies if present</sec>, At round start own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="3" /></sec> increases.
+      JP: |-
+        プイェ機 チオルイされた ブウプウムを ジエハワルヨンして 対象 味方の ブアンハオ ンウンルヨクを 強化します。
+        <sec>効果は ハエルルアが スエンジオンした 間 ユジイされます。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、 対象は ムウグオウン ブウプウムウにより <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">すべての</sec> 回避 ジウングアム 効果が 解除</sec>ドウェジイだけ、 <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" /></sec>が 増加し、 <sec typ="buff"><buff typ="CRITICAL_UP" /> 防御力 <val idx="4" slot="3" signless />分 クリティカル 耐性が 増加</sec>します。
+        がムイ <sec typ="note">ンアンオ イプジア 増幅</sec> 状態の 対象で ジエ使用時、 3ラウンドの間 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抵抗 <val idx="6" r /></sec> 効果を付与します。
+        <sec typ="cond"><sec typ="note">ンアンオ イプジア 増幅</sec>に よる 持続 効果を 持つ 味方が ジオンジエできる 場合</sec>、 ラウンド開始時 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="3" /></sec>が増加します。
+      TC: |-
+        Pye台 Cheori已 零件 再hwalyong並 目標 我方的 防ho 能力ryeok 強化。
+        <sec>效果 Helra 想法jon 期間 維持。</sec>
+        <sec typ="cond">回合開始時</sec>， 目標 無geoun 零件而 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">所有</sec> 迴避 解除增減 效果 解除</sec>不會僅， <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" /></sec> 增加，並 <sec typ="buff"><buff typ="CRITICAL_UP" /> 防禦力 <val idx="4" slot="3" signless />等量 暴擊 抗性 增加</sec>。
+        未 <sec typ="note">奈米 粒子 增幅</sec> 處於狀態的 目標以 再使用時， 3回合內 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抗性 <val idx="6" r /></sec> 賦予效果。
+        <sec typ="cond"><sec typ="note">奈米 粒子 增幅</sec>於 的 持續 效果 持有 我方 存在可 情況</sec>， 回合開始時 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="3" /></sec>增加。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -5430,10 +5466,22 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: <sec typ="cond">적 사망 시</sec>, 잔해를 그러모아 자신의 치명타 를 증가시킵니다. (최대 3중첩)
-      JP: <sec typ="cond">敵死亡時</sec>、残骸をかき集めて自身のクリティカルを増加させます。<sec>(最大3重複)</sec>
-      EN: <sec typ="cond">On enemy death</sec>, gathers scraps to increase own Critical. <sec>(up to 3 stacks)</sec>
-      TC: <sec typ="cond">敵人死亡時</sec>，會聚集殘骸提升自身的暴擊。<sec>（最多 3 層）</sec>
+      KR: |-
+        <sec typ="cond">적 사망 시</sec>, 잔해를 그러모아 자신의 치명타 를 증가시킵니다. (최대 3중첩)
+        <sec typ="cond">적 사망 시</sec>, 아군 AGS에게 <sec typ="note">손톱</sec>을 부착시켜 3라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">나노 입자 증폭</sec>이 적용된 대상의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec>를 크게 증가시킵니다.
+      EN: |-
+        <sec typ="cond">When an enemy dies</sec>, Debris the Reomoa own Critical increases. (up to 3stack)
+        <sec typ="cond">When an enemy dies</sec>, allies AGSto <sec typ="note">Claw</sec> part Chak when activate 3 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="note">nano particle amplification</sec> enemy applied target's <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> greatly increasescauses.
+      JP: |-
+        <sec typ="cond">敵死亡時</sec>、 残骸を グウルオムオア 自身の クリティカル を増加させます。 (最大 3重複)
+        <sec typ="cond">敵死亡時</sec>、 味方 AGSに <sec typ="note">宣トオプ</sec>を ブウチアク時クヨ 3ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="note">ンアンオ イプジア 増幅</sec>が 適用された 対象の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>を 大きく増加させます。
+      TC: |-
+        <sec typ="cond">敵人死亡時</sec>， 殘骸 Geu達到moa 自身的 暴擊 使其增加。 (最大 3疊加)
+        <sec typ="cond">敵人死亡時</sec>， 我方 AGS給 <sec typ="note">爪</sec> 附加chak時啟動 3回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="note">奈米 粒子 增幅</sec> 套用已 目標的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> 大幅增加。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -5939,10 +5987,22 @@ skills:
             value: Effect_BR_Hela_N_3
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 자신이 받는 피해 <val idx="0" r inv /></sec>가 감소하고 <sec typ="note">손톱</sec> 중첩 수에 따라 추가로 감소합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 自身が受けるダメージ <val idx="0" r inv /></sec>が減少し、<sec typ="note">爪</sec>の重複数に応じてさらに減少します。
-      EN: <sec typ="cond">At the start of the round</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decreases, and decreases further based on the number of <sec typ="note">Claw</sec> stacks.
-      TC: <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 自身受到傷害 <val idx="0" r inv /></sec>會降低，並依 <sec typ="note">爪子</sec>疊加數量進一步降低。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 자신이 받는 피해 <val idx="0" r inv /></sec>가 감소하고 <sec typ="note">손톱</sec> 중첩 수에 따라 추가로 감소합니다.
+        <sec typ="cond">대기 시</sec>, <sec typ="buff"><buff typ="AP_UP" /> 아군 AGS의 AP <val idx="5" /></sec>을(를) 증가시킵니다.
+        자신이 <sec typ="note">손톱</sec> 중첩을 보유한 경우, 중첩을 소모하여 그 수만큼 <sec typ="buff"><buff typ="AP_UP" /> AP</sec>를 추가로 증가시킵니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> self damage taken <val idx="0" r inv /></sec> decreases and <sec typ="note">Claw</sec> stack depending on the number of additionally decreases.
+        <sec typ="cond">On standby</sec>, <sec typ="buff"><buff typ="AP_UP" /> allies AGS of AP <val idx="5" /></sec> increases.
+        self <sec typ="note">Claw</sec> stack if having, stack consumes the by the amount of <sec typ="buff"><buff typ="AP_UP" /> AP</sec>additionally increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 自身が 受けるダメージ <val idx="0" r inv /></sec>が 減少し、 <sec typ="note">宣トオプ</sec> 重複 数に応じて 追加で 減少します。
+        <sec typ="cond">待機時</sec>、 <sec typ="buff"><buff typ="AP_UP" /> 味方 AGSの AP <val idx="5" /></sec>を増加させます。
+        自身が <sec typ="note">宣トオプ</sec> 重複を 保有している場合、 重複を 消費して グウ 数だけ <sec typ="buff"><buff typ="AP_UP" /> AP</sec>を追加で増加させます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 自身 受到的傷害 <val idx="0" r inv /></sec> 減少，並 <sec typ="note">爪</sec> 疊加 依數量 額外 減少。
+        <sec typ="cond">待機時</sec>， <sec typ="buff"><buff typ="AP_UP" /> 我方 AGS的 AP <val idx="5" /></sec>使其增加。
+        自身 <sec typ="note">爪</sec> 疊加 持有時， 疊加 消耗並 Geu 依數量 <sec typ="buff"><buff typ="AP_UP" /> AP</sec>會額外增加。
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -6133,10 +6193,22 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 적 전체를 침식시켜 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 점진적으로 감소시킵니다. <sec>(최대 5중첩)</sec>
-      JP: <sec typ="cond">ラウンド開始時</sec>、敵全体を侵食し、<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を段階的に減少させます。<sec>(最大5重複)</sec>
-      EN: <sec typ="cond">At the start of the round</sec>, corrodes all enemies and gradually reduces <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec>. <sec>(up to 5 stacks)</sec>
-      TC: <sec typ="cond">回合開始時</sec>，侵蝕全體敵人，逐步降低 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>。<sec>（最多 5 層）</sec>
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 적 전체를 침식시켜 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 점진적으로 감소시킵니다. (최대 5중첩)
+        <sec typ="cond">라운드 개시 시</sec>, 자신이 <sec typ="note">손톱</sec>을 보유한 경우 적 전체의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 강화 효과를 해제</sec>합니다.
+        <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 효과는 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /><buff typ="DEBUFF_RATEUP" /> 효과 저항</sec>에 영향을 받지 않지만, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec>로 해제할 수 있습니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, all enemies Chimsik when activate <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> removeom formation enemy as decreases. (up to 5stack)
+        <sec typ="cond">At round start</sec>, self <sec typ="note">Claw</sec> if having all enemies of <sec typ="buff"><buff typ="REMOVE_BUFF" /> Defense removes buffs</sec>.
+        <sec typ="buff"><buff typ="DEF_DOWN" /> Defense decrease</sec> effect <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /><buff typ="DEBUFF_RATEUP" /> Effect Resistance</sec> to effect not affected although not, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> debuff removal</sec> as can be removed.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 敵全体を チイムスイク時クヨ <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を ジオムジイン敵で 減少させます。 (最大 5重複)
+        <sec typ="cond">ラウンド開始時</sec>、 自身が <sec typ="note">宣トオプ</sec>を 保有している場合 敵全体の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防御力 強化効果を 解除</sec>します。
+        <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 減少</sec> 効果は <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /><buff typ="DEBUFF_RATEUP" /> 効果抵抗</sec>に ヨンハヤンを ブアトジイ アジイだけ、 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果解除</sec>で 解除できます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 全體敵人 值msik時啟動 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> 解除om至n敵人以 減少。 (最大 5疊加)
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="note">爪</sec> 持有時 全體敵人的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防禦力 強化效果 解除</sec>。
+        <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 減少</sec> 效果 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /><buff typ="DEBUFF_RATEUP" /> 效果抗性</sec>於 影響 受到 不至僅， <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除負面效果</sec>以 可以解除。
 dialogue:
   KR:
     "1":

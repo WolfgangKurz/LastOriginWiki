@@ -2262,18 +2262,18 @@ skills:
         여러 갈래로 빔을 발사하여 지정 범위에 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 자신의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> 대 경장형 / 기동형 피해량 <val idx="0" r /></sec>가 증가합니다.
         <sec typ="cond">적중 대상이 <buff typ="DEF_DOWN" /> 방어력 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
-      JP: |-
-        複数の方向にビームを発射して指定範囲に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、自分の<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" />対軽装型 / 機動型ダメージ <val idx="0" r /></sec>が増加します。
-        <sec typ="cond">命中対象が<buff typ="DEF_DOWN" />防御力減少状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="3" r /></sec>が増加します。
       EN: |-
-        Fires beams in multiple directions to deal <dmg elem="physics" /> to the designated area.
-        <sec typ="cond">On hit</sec>, self's <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> damage vs Light Armor / Mobile <val idx="0" r /></sec> increases.
-        <sec typ="cond">If the hit target is in <buff typ="DEF_DOWN" /> DEF decrease status</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
+        Yeoreo Galrae as beam fires to the designated area <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, own <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> anti Light-type / Mobile-type damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">Hit target <buff typ="DEF_DOWN" /> Defense decrease if in the state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
+      JP: |-
+        ヨルオ グアルルエで ビームを 発射して 指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 自身の <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> ドエ 軽装型 / 機動型 ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">命中対象が <buff typ="DEF_DOWN" /> 防御力 減少 状態の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
       TC: |-
-        以多道光束射擊對指定範圍造成<dmg elem="physics" />傷害。
-        <sec typ="cond">命中時</sec>，自身對輕裝型 / 機動型的<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> 傷害量 <val idx="0" r /></sec>增加。
-        <sec typ="cond">若命中目標處於<buff typ="DEF_DOWN" /> 防禦力減少狀態</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>增加。
+        Yeo達到 Galrae以 光束 發射並 指定範圍於 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 自身的 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> 對 輕裝型 / 機動型 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">命中目標為 <buff typ="DEF_DOWN" /> 防禦力 減少 若為狀態</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>增加。
   "2":
     key: "2"
     icon: WideParticle
@@ -3774,21 +3774,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        입자 릴레이를 통해 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다. 목표 지점 주변은 75% 피해만 적용됩니다.
+        입자 릴레이를 통해 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="dmg">목표 지점 주변은 75% 피해만 적용됩니다.</sec>
         <sec>적중 여부에 관계 없이</sec> 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 회피 강화 효과를 해제</sec>합니다.
         <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
-      JP: |-
-        粒子リレーを通して指定範囲に<sec typ="attr">防御無視</sec> <dmg elem="physics" />を与えます。目標地点の周辺には75%のダメージのみ適用されます。
-        <sec>命中の有無に関係なく</sec>対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />回避強化効果を解除</sec>します。
-        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="2" r /></sec>が増加します。
       EN: |-
-        Uses a particle relay to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area. Only 75% damage applies around the target location.
-        <sec>Regardless of whether it hits</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> EVA increase effects</sec>.
+        particle Rilre through to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="dmg">target point nearby 75% damage only is applied.</sec>
+        <sec>regardless of whether it hits</sec> target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Evasion removes buffs</sec>.
         <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+      JP: |-
+        イプジア ルイルルエがを通じて 指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="dmg">目標地点 周辺は 75% ダメージだけ 適用されます。</sec>
+        <sec>命中 ヨブウに関係なく</sec> 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 回避 強化効果を 解除</sec>します。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
       TC: |-
-        透過粒子中繼對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害。目標地點周圍僅套用75%傷害。
-        <sec>無論是否命中</sec>，皆會解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 迴避強化效果</sec>。
-        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
+        粒子 利lre透過 指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="dmg">目標地點 周圍 75% 傷害僅 套用。</sec>
+        <sec>無論是否命中</sec> 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 迴避 強化效果 解除</sec>。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4491,21 +4495,33 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 자신과 인접한 아군 수에 비례하여 자신의 공격력이 증가합니다.
-        <sec typ="cond"><cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원 또는 <cmt t="X-계열 시험기">$$X_SERIES:?$</cmt> 전투원이 인접한 경우</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가 효과는 최대 효율로 발동</sec>합니다.
-        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">인접한 아군이 없을 경우</sec>, 해제 불가한 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="11" r /></sec> 감소 효과가 적용됩니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分に隣接した味方の数に比例して自分の攻撃力が増加します。
-        <sec typ="cond"><cmt t="ストライカーズ">$$Strikers:?$</cmt>隊員または<cmt t="X系列試験機">$$X_SERIES:?$</cmt>戦闘員が隣接している場合</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力増加効果は最大効率で発動</sec>します。
-        <sec typ="cond">ラウンド開始時に隣接した味方がいない場合</sec>、解除不可能な<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="11" r /></sec>減少効果が適用されます。
+        <sec typ="cond">라운드 개시 시</sec>, 자신과 인접한 아군 수에 비례하여 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="7" r /></sec>가 증가합니다.
+        <sec typ="cond"><cmt t="스트라이커즈"><import name="Strikers" /></cmt> 부대원 또는 <cmt t="X-계열 시험기"><import name="X_SERIES" /></cmt> 전투원이 인접한 경우</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가 효과는 최대 효율 (<val idx="6" r />)로 발동</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">인접한 아군이 없을 경우</sec>, <sec typ="attr">해제 불가</sec>한 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="11" r /></sec> 감소 효과가 적용됩니다.
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+        </define>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, self's ATK increases in proportion to the number of allies adjacent to self.
-        <sec typ="cond">If a <cmt t="Strikers">$$Strikers:?$</cmt> unit or <cmt t="X-series test unit">$$X_SERIES:?$</cmt> combatant is adjacent</sec>, the <sec typ="buff"><buff typ="ATK_UP" /> ATK increase effect is triggered at maximum efficiency</sec>.
-        <sec typ="cond">If there are no adjacent allies at the start of the round</sec>, an unremovable <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="11" r /></sec> decrease effect is applied.
+        <sec typ="cond">At round start</sec>, self and adjacent allies in proportion to the number of own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="7" r /></sec> increases.
+        <sec typ="cond"><cmt t="Strikers"><import name="Strikers" /></cmt> part member or <cmt t="X-series when test machine"><import name="X_SERIES" /></cmt> combatant adjacent case</sec>, <sec typ="buff"><buff typ="ATK_UP" /> Attack increase effect up to efficiency (<val idx="6" r />)as trigger</sec>.
+        <sec typ="cond">At round start</sec> <sec typ="cond">adjacent allies if absent</sec>, <sec typ="attr">cannot be removed</sec>one <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="11" r /></sec> decrease the effect is applied.
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身と 隣接する 味方 数に比例して 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="7" r /></sec>が増加します。
+        <sec typ="cond"><cmt t="ストライカーズ"><import name="Strikers" /></cmt> ブウ隊員 または <cmt t="X-グイェ列 時ハオム機"><import name="X_SERIES" /></cmt> 戦闘員が 隣接する 場合</sec>、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 増加 効果は 最大 効率 (<val idx="6" r />)で ブアルドオン</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">隣接する 味方が 存在しない場合</sec>、 <sec typ="attr">解除不可</sec>した <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="11" r /></sec> 減少 効果が適用されます。
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />、 <char uid="ST_Tiamat" />、 <char uid="ST_Ullr" />
+        </define>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身攻擊力會依與自身相鄰的我軍數量成比例增加。
-        <sec typ="cond">若與<cmt t="先鋒">$$Strikers:?$</cmt>部隊成員或<cmt t="X系列試驗機">$$X_SERIES:?$</cmt>戰鬥員相鄰</sec>，則<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力增加效果會以最大效率發動</sec>。
-        <sec typ="cond">若回合開始時沒有相鄰我軍</sec>，將套用無法解除的<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="11" r /></sec>減少效果。
+        <sec typ="cond">回合開始時</sec>， 自身與 相鄰的 我方 依數量成比例 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="7" r /></sec>增加。
+        <sec typ="cond"><cmt t="打擊者"><import name="Strikers" /></cmt> 附加隊員 或 <cmt t="X-Gye行 時虛m台"><import name="X_SERIES" /></cmt> 戰鬥員 相鄰的 情況</sec>， <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 增加 效果 最大 效率 (<val idx="6" r />)以 發動</sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">相鄰的 我方 不存在時</sec>， <sec typ="attr">無法解除</sec> <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="11" r /></sec> 減少 效果套用。
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />， <char uid="ST_Tiamat" />， <char uid="ST_Ullr" />
+        </define>
   "4":
     key: "4"
     icon: P.FormChange
@@ -4783,19 +4799,19 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec>가 활성화됩니다.
         <sec typ="cond">적중 대상이 <buff typ="DEF_DOWN" /> 방어력 감소 상태인 경우</sec>, 2라운드 동안 대상이 <sec typ="important"><char uid="ST_Ullr" />에게서</sec> <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" slot="1" r /></sec>가 증가합니다.
-        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">자신이 후열에 위치한 경우</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">장거리 저격 모드</sec>로 변환</sec>됩니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア / ダメージ減少無視</sec>が有効になります。
-        <sec typ="cond">命中対象が<buff typ="DEF_DOWN" />防御力減少状態の場合</sec>、2ラウンドの間、その対象の<sec typ="important"><char uid="ST_Ullr" />からの</sec> <sec typ="buff"><buff typ="VULNERABLE" />被ダメージ <val idx="4" slot="1" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時、自分が後列にいる場合</sec>、<sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">長距離狙撃モード</sec>に変換</sec>されます。
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 후열에 위치한 경우</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">장거리 저격 모드</sec>로 변환</sec>됩니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> becomes active.
-        <sec typ="cond">If the hit target is in <buff typ="DEF_DOWN" /> DEF decrease status</sec>, increases that target's <sec typ="important"><char uid="ST_Ullr" />-dealt</sec> <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="4" slot="1" r /></sec> for 2 rounds.
-        <sec typ="cond">At the start of the round, if self is in the rear line</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> changes to <sec typ="note">Long-Range Sniper Mode</sec></sec>.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> is activated.
+        <sec typ="cond">Hit target <buff typ="DEF_DOWN" /> Defense decrease if in the state</sec>, 2 rounds target <sec typ="important"><char uid="ST_Ullr" /> to from</sec> <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" slot="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self back row to if positioned</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">Long-Range Sniping Mode</sec> as conversion</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>が 増加し、 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec>が 有効化されます。
+        <sec typ="cond">命中対象が <buff typ="DEF_DOWN" /> 防御力 減少 状態の場合</sec>、 2ラウンドの間 対象が <sec typ="important"><char uid="ST_Ullr" />にして</sec> <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" slot="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身が 後列に 位置している場合</sec>、 <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">長距離狙撃モード</sec>で 変換</sec>されます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="0" r /></sec>增加，並啟用<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視防護罩 / 傷害減少</sec>。
-        <sec typ="cond">若命中目標處於<buff typ="DEF_DOWN" /> 防禦力減少狀態</sec>，則於2回合內提高該目標由<sec typ="important"><char uid="ST_Ullr" />造成的</sec> <sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="4" slot="1" r /></sec>。
-        <sec typ="cond">若回合開始時自身位於後列</sec>，則<sec typ="buff"><buff typ="CHANGE_CHAR" /> 變更為<sec typ="note">長距離狙擊模式</sec></sec>。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> 增加，並 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec> 啟用。
+        <sec typ="cond">命中目標為 <buff typ="DEF_DOWN" /> 防禦力 減少 若為狀態</sec>， 2回合內 目標 <sec typ="important"><char uid="ST_Ullr" />給</sec> <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" slot="1" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身 後排於 位於時</sec>， <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">長距離狙擊模式</sec>以 轉換</sec>。
   "5":
     key: "5"
     icon: P.Barrier
@@ -5672,25 +5688,41 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시</sec>, <cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원 또는 <cmt t="X-계열 시험기">$$X_SERIES:?$</cmt> 전투원에게 피해 무효화(1회)를 부여합니다.
-        <sec typ="cond">자신이 스킬을 4회 사용할 때마다</sec>, 피해 무효화(1회)를 재충전합니다. 지원 공격 또한 스킬 사용으로 취급합니다.
-        <sec typ="cond">라운드 개시 시</sec>, 자신을 제외한 <cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원 또는 <cmt t="X-계열 시험기">$$X_SERIES:?$</cmt> 전투원의 공격을 지원합니다.
-        <sec typ="cond">라운드 개시 시</sec>, 자신의 효과 저항 / 강화 해제 저항이 증가합니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、<cmt t="ストライカーズ">$$Strikers:?$</cmt>隊員または<cmt t="X系列試験機">$$X_SERIES:?$</cmt>戦闘員にダメージ無効化(1回)を付与します。
-        <sec typ="cond">自分がスキルを4回使用するたび</sec>、ダメージ無効化(1回)を再充填します。支援攻撃もスキル使用として扱います。
-        <sec typ="cond">ラウンド開始時</sec>、自分を除く<cmt t="ストライカーズ">$$Strikers:?$</cmt>隊員または<cmt t="X系列試験機">$$X_SERIES:?$</cmt>戦闘員の攻撃を支援します。
-        <sec typ="cond">ラウンド開始時</sec>、自分の効果耐性 / 強化解除耐性が増加します。
+        <sec typ="cond">전투 개시 시</sec>, <cmt t="스트라이커즈"><import name="Strikers" /></cmt> 부대원 또는 <cmt t="X-계열 시험기"><import name="X_SERIES" /></cmt> 전투원에게 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="0" signless />회</sec>를 부여합니다.
+        <sec typ="cond">자신이 스킬을 4회 사용할 때마다</sec>, <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="5" signless />회</sec>를 재충전합니다.
+        <sec><buff typ="SUPPORT_ATTACK" /> 지원 공격 또한 스킬 사용으로 취급합니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 자신을 제외한 <cmt t="스트라이커즈"><import name="Strikers" /></cmt> 부대원 또는 <cmt t="X-계열 시험기"><import name="X_SERIES" /></cmt> 전투원의 공격을 지원</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="12" slot="3" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="13" slot="3" r /></sec>가 증가합니다.
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+        </define>
       EN: |-
-        <sec typ="cond">At the start of combat</sec>, grants damage nullification (1 time) to <cmt t="Strikers">$$Strikers:?$</cmt> members or <cmt t="X-series test unit">$$X_SERIES:?$</cmt> combatants.
-        <sec typ="cond">Each time self uses a skill 4 times</sec>, recharges damage nullification (1 time). Attack Support is also treated as skill use.
-        <sec typ="cond">At the start of the round</sec>, supports the attacks of <cmt t="Strikers">$$Strikers:?$</cmt> members or <cmt t="X-series test unit">$$X_SERIES:?$</cmt> combatants other than self.
-        <sec typ="cond">At the start of the round</sec>, self's Effect RES / buff removal RES increases.
+        <sec typ="cond">At battle start</sec>, <cmt t="Strikers"><import name="Strikers" /></cmt> part member or <cmt t="X-series when test machine"><import name="X_SERIES" /></cmt> combatantto <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification <val idx="0" signless />times</sec> grants.
+        <sec typ="cond">self skill 4times can use when each</sec>, <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification <val idx="5" signless />times</sec> re- Charge.
+        <sec><buff typ="SUPPORT_ATTACK" /> support attack also skill by use as treat.</sec>
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> self excluding <cmt t="Strikers"><import name="Strikers" /></cmt> part member or <cmt t="X-series when test machine"><import name="X_SERIES" /></cmt> combatant of supports the attack</sec>.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="12" slot="3" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Buff Removal Resistance <val idx="13" slot="3" r /></sec> increases.
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+        </define>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 <cmt t="ストライカーズ"><import name="Strikers" /></cmt> ブウ隊員 または <cmt t="X-グイェ列 時ハオム機"><import name="X_SERIES" /></cmt> 戦闘員に <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="0" signless />回</sec>を付与します。
+        <sec typ="cond">自身が スキルを 4回 スアヨンできる 時ごとに</sec>、 <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="5" signless />回</sec>を 再チャージします。
+        <sec><buff typ="SUPPORT_ATTACK" /> 支援攻撃 ットオした スキル スアヨンで チウィグウプします。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 自身を ジエ外した <cmt t="ストライカーズ"><import name="Strikers" /></cmt> ブウ隊員 または <cmt t="X-グイェ列 時ハオム機"><import name="X_SERIES" /></cmt> 戦闘員の 攻撃を 支援</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="12" slot="3" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抵抗 <val idx="13" slot="3" r /></sec>が増加します。
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />、 <char uid="ST_Tiamat" />、 <char uid="ST_Ullr" />
+        </define>
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，對<cmt t="先鋒">$$Strikers:?$</cmt>部隊成員或<cmt t="X系列試驗機">$$X_SERIES:?$</cmt>戰鬥員賦予傷害無效化（1次）。
-        <sec typ="cond">每當自身使用技能4次時</sec>，便會重新充能1次傷害無效化。攻擊支援也會被視為技能使用。
-        <sec typ="cond">回合開始時</sec>，支援除自身以外的<cmt t="先鋒">$$Strikers:?$</cmt>部隊成員或<cmt t="X系列試驗機">$$X_SERIES:?$</cmt>戰鬥員的攻擊。
-        <sec typ="cond">回合開始時</sec>，自身的效果抗性 / 解除強化抗性增加。
+        <sec typ="cond">戰鬥開始時</sec>， <cmt t="打擊者"><import name="Strikers" /></cmt> 附加隊員 或 <cmt t="X-Gye行 時虛m台"><import name="X_SERIES" /></cmt> 戰鬥員給 <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 <val idx="0" signless />次</sec>賦予。
+        <sec typ="cond">自身 技能 4次 使用可 時每</sec>， <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 <val idx="5" signless />次</sec> 重新充能。
+        <sec><buff typ="SUPPORT_ATTACK" /> 支援攻擊 又 技能 使用以 視為。</sec>
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 自身 解除外 <cmt t="打擊者"><import name="Strikers" /></cmt> 附加隊員 或 <cmt t="X-Gye行 時虛m台"><import name="X_SERIES" /></cmt> 戰鬥員的 攻擊 支援</sec>。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="12" slot="3" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抗性 <val idx="13" slot="3" r /></sec>增加。
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />， <char uid="ST_Tiamat" />， <char uid="ST_Ullr" />
+        </define>
   F1:
     key: F1
     icon: BeamShot
@@ -6752,21 +6784,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        중계 드론으로 빔을 증폭하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다. 목표 지점 후방으로는 75% / 50% 피해만 적용됩니다.
-        <sec typ="cond">치명타 시</sec>, 피해량이 증가합니다.
+        중계 드론으로 빔을 증폭하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="dmg">목표 지점 후방으로는 75% / 50% 피해만 적용됩니다.</sec>
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
         <sec>스킬 레벨당 +20%의 적중 보정이 적용됩니다.</sec>
-      JP: |-
-        中継ドローンでビームを増幅し、指定範囲に<sec typ="attr">防御無視</sec> <dmg elem="physics" />を与えます。目標地点の後方には75% / 50%のダメージのみ適用されます。
-        <sec typ="cond">クリティカル時</sec>、ダメージ量が増加します。
-        <sec>スキルレベルごとに+20%の命中補正が適用されます。</sec>
       EN: |-
-        Amplifies the beam with a relay drone to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area. Only 75% / 50% damage applies behind the target location.
-        <sec typ="cond">On critical hit</sec>, damage increases.
-        <sec>+20% hit compensation is applied per skill level.</sec>
+        relay by drone as beam amplification by doing to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="dmg">target point rear as 75% / 50% damage only is applied.</sec>
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec>per skill level +20% of accuracy correction is applied.</sec>
+      JP: |-
+        中グイェ ドローンで ビームを 増幅して 指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="dmg">目標地点 後方では 75% / 50% ダメージだけ 適用されます。</sec>
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec>スキルレベルごとに +20%の 命中補正が適用されます。</sec>
       TC: |-
-        以中繼無人機放大光束，對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害。目標地點後方僅套用75% / 50%傷害。
-        <sec typ="cond">暴擊時</sec>，傷害量增加。
-        <sec>每提升1級技能，套用+20%的命中補正。</sec>
+        中Gye 無人機以 光束 增幅並 指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="dmg">目標地點 後方以 75% / 50% 傷害僅 套用。</sec>
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec>每技能等級 +20%的 套用命中補正。</sec>
   F2:
     key: F2
     icon: Particle
@@ -8430,21 +8466,21 @@ skills:
         <sec typ="cond">적중 대상이 <buff typ="EVADE_DOWN" /> 회피 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
         <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
         <sec>스킬 레벨당 +30%의 적중 보정이 적용됩니다.</sec>
-      JP: |-
-        中継ドローンでビームを屈折させ、単一対象に<sec typ="attr">防御無視</sec> <dmg elem="physics" />を与えます。
-        <sec typ="cond">命中対象が<buff typ="EVADE_DOWN" />回避減少状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="0" r /></sec>が増加します。
-        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="2" r /></sec>が増加します。
-        <sec>スキルレベルごとに+30%の命中補正が適用されます。</sec>
       EN: |-
-        Refracts the beam with a relay drone to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to a single target.
-        <sec typ="cond">If the hit target is in <buff typ="EVADE_DOWN" /> EVA decrease status</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        relay by drone as beam Guljeol when activate to a single target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">Hit target <buff typ="EVADE_DOWN" /> Evasion decrease if in the state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
         <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
-        <sec>+30% hit compensation is applied per skill level.</sec>
+        <sec>per skill level +30% of accuracy correction is applied.</sec>
+      JP: |-
+        中グイェ ドローンで ビームを グウルジオル時クヨ 単一対象へ <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象が <buff typ="EVADE_DOWN" /> 回避 減少 状態の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
+        <sec>スキルレベルごとに +30%の 命中補正が適用されます。</sec>
       TC: |-
-        以中繼無人機折射光束，對單一目標造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害。
-        <sec typ="cond">若命中目標處於<buff typ="EVADE_DOWN" /> 迴避減少狀態</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
-        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
-        <sec>每提升1級技能，套用+30%的命中補正。</sec>
+        中Gye 無人機以 光束 Guljeol時啟動 單一目標給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">命中目標為 <buff typ="EVADE_DOWN" /> 迴避 減少 若為狀態</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
+        <sec>每技能等級 +30%的 套用命中補正。</sec>
   F4:
     key: F4
     icon: P.FormChange
@@ -8703,19 +8739,19 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec>가 증가합니다.
         <sec typ="cond">치명타 발생 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 / 받는 피해 감소 효과를 해제</sec>합니다.
-        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 전열에 위치한 경우</sec> / <sec typ="cond">자신이 중열에 위치한 경우</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">근거리 대응 모드</sec>로 변환</sec>됩니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間自分の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" />スキル威力 <val idx="1" r /></sec>が増加します。
-        <sec typ="cond">クリティカル発生時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />反撃 / 被ダメージ減少効果を解除</sec>します。
-        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自分が前列 / 中列に位置する場合</sec>、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">近距離対応モード</sec>に変換</sec>されます。
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 전열 / 중열에 위치한 경우</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">근거리 대응 모드</sec>로 변환</sec>됩니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, self's <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="1" r /></sec> increase for 3 rounds.
-        <sec typ="cond">On critical hit</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> retaliation / received damage decrease effects</sec>.
-        <sec typ="cond">At the start of the round</sec> <sec typ="cond">if self is in the front / middle line</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> transforms into <sec typ="note">Close-Range Response Mode</sec></sec>.
+        <sec typ="cond">At round start</sec>, 3 rounds own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="1" r /></sec> increases.
+        <sec typ="cond">When a critical hit occurs</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Counterattack / damage taken decrease removes the effect</sec>.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self front row / middle row to if positioned</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">Close-Range Response Mode</sec> as conversion</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 3ラウンドの間 自身の <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">クリティカル発生時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃 / 受けるダメージ 減少 効果を 解除</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身が 前列 / 中列に 位置している場合</sec>、 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">近距離対応モード</sec>で 変換</sec>されます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，於3回合內提升自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="1" r /></sec>。
-        <sec typ="cond">暴擊發生時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊 / 所受傷害減少效果</sec>。
-        <sec typ="cond">回合開始時</sec> <sec typ="cond">若自身位於前列 / 中列</sec>，則<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 變更為<sec typ="note">近距離應對模式</sec></sec>。
+        <sec typ="cond">回合開始時</sec>， 3回合內 自身的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="1" r /></sec>增加。
+        <sec typ="cond">發生暴擊時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊 / 受到的傷害 減少 效果 解除</sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身 前排 / 中排於 位於時</sec>， <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">近距離應對模式</sec>以 轉換</sec>。
 dialogue:
   KR:
     "1":

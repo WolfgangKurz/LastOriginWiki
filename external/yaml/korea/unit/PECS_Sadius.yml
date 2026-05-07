@@ -2183,20 +2183,20 @@ skills:
     desc:
       KR: |-
         지정 범위에 <dmg elem="lightning" />를 주고 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="0" r /></sec>를 감소시킵니다.
-        <sec typ="cond"><sec typ="note">고전압</sec> 상태에서는 대상의 전기 속성 저항을 크게 감소시키고 1라운드 동안 행동 불가 상태로 만듭니다.</sec>
+        <sec typ="note">고전압</sec> 상태에서는 대상의 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="3" r /></sec>를 크게 감소시키고 1라운드 동안 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만듭니다.
         스킬 사용 후 <sec typ="note">고전압</sec> 상태는 해제됩니다.
-      JP: |-
-        指定範囲に<dmg elem="lightning" />を与え、<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性<val idx="0" r /></sec>を減少させます。
-        <sec typ="cond"><sec typ="note">高電圧</sec>状態では対象の電気属性耐性を大きく減少させ、1ラウンドの間、行動不可状態にします。</sec>
-        スキル使用後、<sec typ="note">高電圧</sec>状態は解除されます。
       EN: |-
-        Deals <dmg elem="lightning" /> damage to the designated area and decreases <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance <val idx="0" r /></sec>.
-        <sec typ="cond">In the <sec typ="note">High Voltage</sec> state</sec>, greatly decreases the target's Electric Resistance and makes them Action Disabled for 1 round.
-        After using the skill, the <sec typ="note">High Voltage</sec> state is removed.
+        to the designated area <dmg elem="lightning" /> damage and <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="0" r /></sec> decreases.
+        <sec typ="note">high voltage</sec> while in the state target's <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="3" r /></sec> greatly decreases and 1 round <sec typ="buff"><buff typ="STUN" /> Stunned</sec> inflicts.
+        After using the skill <sec typ="note">high voltage</sec> state is removed.
+      JP: |-
+        指定範囲に<dmg elem="lightning" />を与え、 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="0" r /></sec>を減少させます。
+        <sec typ="note">し前アプ</sec> 状態では 対象の <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="3" r /></sec>を クウく 減少時クイし 1ラウンドの間 <sec typ="buff"><buff typ="STUN" /> 行動不可</sec> 状態にします。
+        スキル使用後 <sec typ="note">し前アプ</sec> 状態は 解除されます。
       TC: |-
-        對指定範圍造成<dmg elem="lightning" />，並降低<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電擊抗性<val idx="0" r /></sec>。
-        <sec typ="cond">處於<sec typ="note">高電壓</sec>狀態時</sec>，會大幅降低目標的電擊屬性抗性，並使其在1回合內進入無法行動狀態。
-        使用技能後，<sec typ="note">高電壓</sec>狀態會解除。
+        指定範圍於 造成<dmg elem="lightning" />，並 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="0" r /></sec>使其減少。
+        <sec typ="note">並前前</sec> 在狀態下 目標的 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="3" r /></sec> 大 減少時台並 1回合內 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 使其進入狀態。
+        使用技能後 <sec typ="note">並前前</sec> 狀態 解除。
   "2":
     key: "2"
     icon: WideLightning
@@ -3359,16 +3359,16 @@ skills:
     desc:
       KR: |-
         지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 주고 적이 <sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> 전기 속성 저항 감소</sec> 상태일 시 적 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec>를 감소시킵니다.
-        <sec typ="cond">치명타 시</sec>, 피해량이 증가합니다.
-      JP: |-
-        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="lightning" />を与え、敵が<sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" />電気属性耐性減少</sec>状態なら敵の<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="0" r /></sec>を減少させます。
-        <sec typ="cond">クリティカル時</sec>、ダメージ量が増加します。
+        치명타 시, <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="1" r /></sec>가 증가합니다.
       EN: |-
-        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> damage to the designated area, and if the enemy is in a <sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance decrease</sec> state, decreases the enemy's <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="0" r /></sec>.
-        <sec typ="cond">On critical hit</sec>, damage increases.
+        to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> damage and enemy <sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Elemental Resistance decrease</sec> if in the state enemy <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="0" r /></sec> decreases.
+        On critical hit, <sec typ="dmg"><buff typ="LightningATK_UP" /> damage <val idx="1" r /></sec> increases.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="lightning" />を与え、 敵が <sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> 電気 属性耐性 減少</sec> 状態イル 時 敵 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec>を減少させます。
+        クリティカル時、 <sec typ="dmg"><buff typ="LightningATK_UP" /> ダメージ量 <val idx="1" r /></sec>が増加します。
       TC: |-
-        對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="lightning" />，若敵人處於<sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" />電擊屬性抗性降低</sec>狀態，則降低敵人的<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="0" r /></sec>。
-        <sec typ="cond">暴擊時</sec>，傷害量增加。
+        指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="lightning" />，並 敵人 <sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> 電擊 屬性抗性 減少</sec> 狀態一 時 敵人 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec>使其減少。
+        暴擊時， <sec typ="dmg"><buff typ="LightningATK_UP" /> 傷害量 <val idx="1" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3887,17 +3887,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가하며, <sec typ="cond">아군 인원이 3명</sec>일 시 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>, <sec typ="cond">아군 인원이 5명</sec>일 시 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>가 추가 증가합니다.
-        지정 범위 아군 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="8" r /></sec>를 증가시킵니다.
-      JP: |-
-        ラウンド開始時、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec>が増加し、<sec typ="cond">味方人数が3人</sec>なら<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec>、<sec typ="cond">味方人数が5人</sec>なら<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="6" r /></sec>がさらに増加します。
-        指定範囲の味方の<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電気耐性<val idx="8" r /></sec>を増加させます。
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가하며, <sec typ="cond">아군 인원이 3명</sec>일 시 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>, <sec typ="cond">아군 인원이 5명</sec>일 시 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>가 추가 증가합니다.
+        지정 범위 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="시티가드"><import name="CityGuard" /></cmt> 소속 / 경장 보호기를 공격 지원</sec>하며, 전투 시작 시 <sec typ="note">충전</sec> 상태가 되고 <sec typ="note">충전</sec> 상태에서 대기 시 <sec typ="note">고전압</sec> 상태로 전환합니다.
       EN: |-
-        At the start of the round, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> increases, and if <sec typ="cond">allied count is 3</sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> increases further; if <sec typ="cond">allied count is 5</sec>, <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="6" r /></sec> increases further.
-        Increases allies in the designated area’s <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Electric Resistance <val idx="8" r /></sec>.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increases and <sec typ="cond">allies members 3 members</sec>when when <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec>, <sec typ="cond">allies members 5 members</sec>when when <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="6" r /></sec> additional increases.
+        designated area <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="City Guard"><import name="CityGuard" /></cmt> affiliated / Light Defender Attack Support</sec> and, At battle start <sec typ="note">Charge</sec> state and <sec typ="note">Charge</sec> while in the state On standby <sec typ="note">high voltage</sec> switches to the state.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が 増加し、 <sec typ="cond">味方 であるウォンが 3名</sec>イル 時 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec>、 <sec typ="cond">味方 であるウォンが 5名</sec>イル 時 <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="6" r /></sec>が チウが増加します。
+        指定範囲 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="シティガード"><import name="CityGuard" /></cmt> 所属 / 軽装 保護機を 攻撃支援</sec>し、 戦闘開始時 <sec typ="note">チャージ</sec> 状態が になり、 <sec typ="note">チャージ</sec> 状態で 待機時 <sec typ="note">し前アプ</sec> 状態へ切り替えします。
       TC: |-
-        回合開始時，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>增加；若<sec typ="cond">我軍人數為3名</sec>，則<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec>額外增加；若<sec typ="cond">我軍人數為5名</sec>，則<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="6" r /></sec>額外增加。
-        提升指定範圍內我軍的<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電擊抗性<val idx="8" r /></sec>。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> 增加，並 <sec typ="cond">我方 為人員 3名</sec>一 時 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec>， <sec typ="cond">我方 為人員 5名</sec>一 時 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="6" r /></sec> Chu增加。
+        指定範圍 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="城市警衛"><import name="CityGuard" /></cmt> 所屬 / 輕裝 保護機 攻擊支援</sec>並， 戰鬥開始時 <sec typ="note">充能</sec> 狀態 變為，且 <sec typ="note">充能</sec> 在狀態下 待機時 <sec typ="note">並前前</sec> 切換為狀態。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -4063,9 +4063,9 @@ skills:
             chance: 1
     desc:
       KR: 공격 적중 시 지정 범위 아군 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 최대 3중첩하여 증가합니다.
-      JP: 攻撃命中時、指定範囲の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>が最大3スタックまで増加します。
-      EN: On attack hit, allies in the designated area's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="0" r /></sec> increases, up to 3 stacks.
-      TC: 攻擊命中時，指定範圍內我軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>會增加，最多3層。
+      EN: On hit designated area allies <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> up to 3stack by doing increases.
+      JP: 攻撃命中時 指定範囲 味方 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>が 最大 3重複して 増加します。
+      TC: 攻擊命中時 指定範圍 我方 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> 最大 3疊加並 增加。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -4851,17 +4851,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">스쿼드 내 <cmt t="시티가드">$$CityGuard:?$</cmt> 소속 전투원 수에 따라</sec> 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec>가 추가로 증가합니다.
+        스쿼드 내 <cmt t="시티가드"><import name="CityGuard" /></cmt> 소속 전투원 수에 따라 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec>가 추가로 증가합니다.
         지정 범위 아군 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        <sec typ="cond">分隊内の<cmt t="City Guard">$$CityGuard:?$</cmt>所属戦闘員数に応じて</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="2" r /></sec>がさらに増加します。
-        指定範囲の味方の<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電気耐性<val idx="0" r /></sec>が増加します。
       EN: |-
-        <sec typ="cond">According to the number of <cmt t="City Guard">$$CityGuard:?$</cmt> combatants in the squad</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="2" r /></sec> increases further.
-        Increases allies in the designated area’s <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Electric Resistance <val idx="0" r /></sec>.
+        in squad <cmt t="City Guard"><import name="CityGuard" /></cmt> affiliated number of combatantsdepending on own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="2" r /></sec>additionally increases.
+        designated area allies <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Lightning Resistance <val idx="0" r /></sec> increases.
+      JP: |-
+        スクワッド 内 <cmt t="シティガード"><import name="CityGuard" /></cmt> 所属 戦闘員数に応じて 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="2" r /></sec>が追加で増加します。
+        指定範囲 味方 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電気耐性 <val idx="0" r /></sec>が増加します。
       TC: |-
-        <sec typ="cond">依小隊內<cmt t="City Guard">$$CityGuard:?$</cmt>所屬戰鬥員數量</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="2" r /></sec>會額外增加。
-        提升指定範圍內我軍的<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電擊抗性<val idx="0" r /></sec>。
+        小隊 內 <cmt t="城市警衛"><import name="CityGuard" /></cmt> 所屬 戰鬥員數量依 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec>會額外增加。
+        指定範圍 我方 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電擊抗性 <val idx="0" r /></sec>增加。
 dialogue:
   KR:
     "1":

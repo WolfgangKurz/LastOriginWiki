@@ -2287,10 +2287,22 @@ skills:
             per: 0.015
             chance: 1
     desc:
-      KR: 단일 대상을 강타해 <dmg elem="physics" />를 줍니다.
-      JP: 単一対象を強打して <dmg elem="physics" />を与えます。
-      EN: Smashes a single target and deals <dmg elem="physics" />.
-      TC: 強擊單一目標，造成 <dmg elem="physics" />。
+      KR: |-
+        단일 대상을 강타해 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, <sec typ="chance">25% 확률</sec>로 해당 라운드 동안 대상을 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만듭니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> <sec typ="chance">확률이 2배</sec>로 증가하고 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" r /></sec>가 증가하며 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+      EN: |-
+        single target smashes <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, <sec typ="chance">25% chance</sec> as each round target <sec typ="buff"><buff typ="STUN" /> Stunned</sec> inflicts.
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="STUN" /> Stunned</sec> <sec typ="chance">chance 2 times</sec> as increases and <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec> increases and target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken decrease removes the effect</sec>.
+      JP: |-
+        単一対象を グアントアして<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 <sec typ="chance">25% 確率</sec>で 該当 ラウンド間 対象を <sec typ="buff"><buff typ="STUN" /> 行動不可</sec> 状態にします。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="buff"><buff typ="STUN" /> 行動不可</sec> <sec typ="chance">確率が 2ブエ</sec>で 増加し、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="5" r /></sec>が 増加し、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ 減少 効果を 解除</sec>します。
+      TC: |-
+        單一目標 強打 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， <sec typ="chance">25% 機率</sec>以 該 回合內 目標 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 使其進入狀態。
+        <sec typ="cond">暴擊時</sec>， <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> <sec typ="chance">機率 2倍</sec>以 增加，並 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="5" r /></sec> 增加，並 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害 減少 效果 解除</sec>。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -4716,10 +4728,18 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: 단일 대상에게 돌진해 <dmg elem="physics" />를 주고, 대상을 <sec typ="buff"><buff typ="Push" /> 뒤로 <val idx="0" signless />칸 밀어내며</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 행 보호 / 열 보호를 해제</sec>합니다.
-      JP: 単一対象へ突進して <dmg elem="physics" />を与え、対象を <sec typ="buff"><buff typ="Push" /> 後方へ <val idx="0" signless />マス押し出し</sec>、<sec typ="buff"><buff typ="REMOVE_BUFF" /> 行保護 / 列保護を解除</sec>します。
-      EN: Charges at a single target, deals <dmg elem="physics" />, pushes the target back by <val idx="0" signless /> tiles, and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes row / column protection</sec>.
-      TC: 衝向單一目標造成 <dmg elem="physics" />，並將目標向後推 <val idx="0" signless /> 格，且 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 解除行保護 / 列保護</sec>。
+      KR: |-
+        단일 대상에게 돌진해 <dmg elem="physics" />를 주고, 대상을 <sec typ="buff"><buff typ="Push" /> 뒤로 <val idx="0" signless />칸 밀어내며</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 행 보호 / 열 보호를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="3" r /></sec>가 감소합니다.
+      EN: |-
+        to a single target charges <dmg elem="physics" /> damage and target <sec typ="buff"><buff typ="Push" /> back <val idx="0" signless />tiles pushes back and</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> Row Protection / Column Protection remove</sec>.
+        <sec typ="cond">On hit</sec>, 2 rounds, target's <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="3" r /></sec> decreases.
+      JP: |-
+        単一対象へ 突撃して<dmg elem="physics" />を与え、、 対象を <sec typ="buff"><buff typ="Push" /> 後方へ <val idx="0" signless />マス ムイルオ内し</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 行保護 / 列保護を 解除</sec>します。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>が減少します。
+      TC: |-
+        單一目標給 衝鋒 造成<dmg elem="physics" />，並 目標 <sec typ="buff"><buff typ="Push" /> 向後 <val idx="0" signless />格 推開內並</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 列保護 / 行保護 解除</sec>。
+        <sec typ="cond">命中時</sec>， 2回合內 目標的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>減少。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -5077,10 +5097,22 @@ skills:
             per: 0.01
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="2" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 행 / 열 보호</sec> 효과를 획득합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、自身の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="2" r /></sec>が増加し、<sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 行 / 列保護</sec>効果を獲得します。
-      EN: <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="2" r /></sec> increases, and gains <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> row / column protection</sec>.
-      TC: <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="2" r /></sec>會增加，並獲得 <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 行 / 列保護</sec>效果。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="2" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 행 / 열 보호</sec> 효과를 획득합니다.
+        <sec typ="cond">공격 시</sec>, 2라운드 동안 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="7" r inv /></sec>가 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 스쿼드 내 유일한 보호기인 경우</sec>, 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" r inv /></sec>가 감소합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="2" r /></sec> increases and <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> Row / Column Protection</sec> gains the effect.
+        <sec typ="cond">When attacking</sec>, 2 rounds self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="7" r inv /></sec> decreases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self in squad only Defenderif</sec>, self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="8" r inv /></sec> decreases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="2" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 行 / 列保護</sec> 効果を獲得します。
+        <sec typ="cond">攻撃時</sec>、 2ラウンドの間 自身が <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="7" r inv /></sec>が減少します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身が スクワッド 内 ユイルした 保護機の場合</sec>、 自身が <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="8" r inv /></sec>が減少します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="2" r /></sec> 增加，並 <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 列 / 行保護</sec> 獲得效果。
+        <sec typ="cond">攻擊時</sec>， 2回合內 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="7" r inv /></sec>減少。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身 小隊 內 唯一 保護機若為</sec>， 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="8" r inv /></sec>減少。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -5706,10 +5738,22 @@ skills:
             per: 0.05
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec>가 증가합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec>が増加します。
-      EN: <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="2" r /></sec> increases.
-      TC: <sec typ="cond">回合開始時</sec>，自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec>會增加。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond"><buff typ="RANGE_UP" /> 사거리 강화 효과가 적용된 경우</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 해당 효과를 해제</sec>하고 <sec typ="buff">상기 효과가 두 배로 증폭</sec>되며 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 전열인 경우</sec>, <sec typ="buff"><buff typ="COUNTER" /> <val idx="14" r signless /> 위력으로 반격</sec>이 활성화됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="2" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond"><buff typ="RANGE_UP" /> Range buff affected by case</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> the removes the effect</sec> and <sec typ="buff">above the effect is doubled amplification</sec>becomes and own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self front rowif</sec>, <sec typ="buff"><buff typ="COUNTER" /> <val idx="14" r signless /> power as Counterattack</sec> is activated.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond"><buff typ="RANGE_UP" /> 射程 強化 効果が適用された 場合</sec>、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 該当 効果を 解除</sec>し、 <sec typ="buff">上記 効果が2倍で 増幅</sec>になり、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身が 前列の場合</sec>、 <sec typ="buff"><buff typ="COUNTER" /> <val idx="14" r signless /> 威力で 反撃</sec>が 有効化されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond"><buff typ="RANGE_UP" /> 射程 強化 已套用效果的 情況</sec>， <sec typ="buff"><buff typ="REMOVE_BUFF" /> 該 效果 解除</sec>並 <sec typ="buff">上述 效果變為2倍以 增幅</sec>變為，且 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身 前排若為</sec>， <sec typ="buff"><buff typ="COUNTER" /> <val idx="14" r signless /> 威力以 反擊</sec> 啟用。
   "5":
     key: "5"
     icon: P.AWACS
@@ -5941,10 +5985,26 @@ skills:
             per: 0.01
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 사거리 감소 효과에 면역</sec> 상태가 됩니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、自身は <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 射程減少効果に免疫</sec>状態になります。
-      EN: <sec typ="cond">At the start of the round</sec>, self becomes <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immune to range reduction effects</sec>.
-      TC: <sec typ="cond">回合開始時</sec>，自身將處於 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 對射程減少效果免疫</sec>狀態。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 사거리 감소 효과에 면역</sec> 상태가 됩니다.
+        <sec typ="cond">공격 적중 시</sec>, 3라운드 동안 자신의 <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="cond"><sec typ="note">실드 차지</sec> 적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 최소화 효과를 해제</sec>하고 자신은 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 <val base="1" per="0" signless />회</sec>를 획득합니다.
+        <sec><sec typ="note">정밀 포착</sec>의 효과 발동을 위한 조건에 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격</sec> 효과를 추가하고, 더 이상 해당 효과를 해제하지 않도록 변경됩니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> Range decrease effect and immunity to</sec> state.
+        <sec typ="cond">On hit</sec>, 3 rounds own <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="4" r /></sec> increases.
+        <sec typ="cond"><sec typ="note">Sildeu kick whether</sec> On hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Damage Minimization removes the effect</sec> and self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Damage Minimization <val base="1" per="0" signless />times</sec> gains.
+        <sec><sec typ="note">precision capture/detect</sec> of effect and trigger above one condition to <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> support attack</sec> effect and additional and, more or more the removes the effect do whether not also Rok is changed.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 射程 減少 効果に 免疫</sec> 状態になります。
+        <sec typ="cond">攻撃命中時</sec>、 3ラウンドの間 自身の <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="4" r /></sec>が増加します。
+        <sec typ="cond"><sec typ="note">スイルドウ チアジイ</sec> 命中時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> ダメージ最小化 効果を 解除</sec>し、 自身は <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージ最小化 <val base="1" per="0" signless />回</sec>を獲得します。
+        <sec><sec typ="note">精密 プオチアク</sec>の 効果 ブアルドオンを ウィした 条件に <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻撃</sec> 効果を 追加し、 ドオ 以上 該当 効果を 解除ハアジイ アもルオク 変更されます。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 射程 減少 效果於 免疫</sec> 變為狀態。
+        <sec typ="cond">攻擊命中時</sec>， 3回合內 自身的 <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="4" r /></sec>增加。
+        <sec typ="cond"><sec typ="note">Sildeu Cha至</sec> 命中時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 傷害最小化 效果 解除</sec>並 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 傷害最小化 <val base="1" per="0" signless />次</sec>獲得。
+        <sec><sec typ="note">精密 捕捉</sec>的 效果 發動 上 條件於 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻擊</sec> 效果 額外並， 更多 以上 該 效果 解除下至 不也越 變更。</sec>
 dialogue:
   KR:
     "":

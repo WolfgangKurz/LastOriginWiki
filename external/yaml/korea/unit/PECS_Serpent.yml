@@ -589,6 +589,7 @@ source:
     - Ev:Ev35:EV2-2EX
   - - Ev:Ev36:EV2-2EX
   - - Ev:Ev37:EV1-3EX
+  - - Ev:Ev38:EV1-1EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2712,9 +2713,9 @@ skills:
             chance: 1
     desc:
       KR: 물 대포를 고압 분사해 <dmg elem="ice" />를 주며, 2라운드 동안 <sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 냉기/전기 저항력 <val idx="4" r /></sec>가 감소하며 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="3" r /></sec>가 증가하는 <sec typ="note">침수</sec> 상태로 만듭니다.
-      JP: 放水砲を高圧噴射し<dmg elem="ice" />のダメージを与え、2ラウンドの間、<sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" />冷気/電気耐性<val idx="4" r /></sec>が減少し、<sec typ="buff"><buff typ="FIRERES_UP" />火炎耐性<val idx="3" r /></sec>が増加する<sec typ="note">浸水</sec>状態にします。
-      EN: Sprays high pressure water from a water cannon and deals <dmg elem="ice" /> damage, Submerging the target for 2 rounds, which decreases <sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" />Cold/Electric Resistance<val idx="4" r /></sec> and increases <sec typ="buff"><buff typ="FIRERES_UP" />Fire Resistance<val idx="3" r /></sec>.
-      TC: 以高壓噴射水砲造成<dmg elem="ice" />傷害，使目標進入<sec typ="note">浸水</sec>狀態，持續2回合，並減少<sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" />冰霜/電擊抵抗<val idx="4" r /></sec>、增加<sec typ="buff"><buff typ="FIRERES_UP" />火焰抵抗<val idx="3" r /></sec>。
+      EN: water cannon high-pressure sprays <dmg elem="ice" /> deals and, 2 rounds <sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> Ice/Lightning Resistance power <val idx="4" r /></sec> decreases and <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="3" r /></sec> increase <sec typ="note">Flooded</sec> inflicts.
+      JP: 水砲を しアプ ブウンスアして<dmg elem="ice" />を 与え、、 2ラウンドの間 <sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 冷気/電気耐性ルヨク <val idx="4" r /></sec>が 減少し、 <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="3" r /></sec>が 増加する <sec typ="note">浸水</sec> 状態にします。
+      TC: 水炮 並前 噴射 <dmg elem="ice" /> 造成，並 2回合內 <sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 冰冷/電擊抗性力 <val idx="4" r /></sec> 減少，並 <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="3" r /></sec> 增加 <sec typ="note">浸水</sec> 使其進入狀態。
   "2":
     key: "2"
     icon: IceShot
@@ -4866,21 +4867,21 @@ skills:
         대상이 <sec typ="note">침수</sec> 상태면 <sec typ="note">빙결</sec> 상태로 만듭니다.
         <sec typ="cond">빙결</sec> 상태에선 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec>이며, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 적용됩니다.
         스쿼드 내에 <char uid="PECS_Sadius" />가 있을 시, 지정 대상에게 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">일렉트릭 펜스</sec> 스킬 협동 공격</sec>을 합니다.
-      JP: |-
-        液化窒素を噴射し<dmg elem="ice" />のダメージを与え、2ラウンドの間<sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態にします。
-        対象が<sec typ="note">浸水</sec>状態の場合は<sec typ="note">氷結</sec>状態にします。
-        <sec typ="cond">氷結</sec>状態では<sec typ="buff"><buff typ="STUN" />行動不可</sec>となり、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>が適用されます。
-        分隊内に<char uid="PECS_Sadius" />がいる場合、指定対象に<sec typ="buff"><buff typ="TOGETHER_ATTACK" /><sec typ="note">エレクトリックフェンス</sec>スキル協同攻撃</sec>を行います。
       EN: |-
-        Sprays Liquid Nitrogen and deals <dmg elem="ice" /> damage, Immobilizing the target for 2 rounds.
-        If the target is <sec typ="note">Submerged</sec>, inflict <sec typ="note">Freeze</sec>.
-        While <sec typ="cond">Frozen</sec>, the target becomes <sec typ="buff"><buff typ="STUN" />Action Disabled</sec> and <sec typ="buff"><buff typ="VULNERABLE" />received damage<val idx="1" r /></sec> is applied.
-        If <char uid="PECS_Sadius" /> is in the squad, launch a co-op attack at the designated target with the <sec typ="note">Electric Fence</sec> skill.
+        liquefied nitrogen sprays <dmg elem="ice" /> deals and, 2 rounds <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> inflicts.
+        target <sec typ="note">Flooded</sec> if in the state <sec typ="note">Frozen</sec> inflicts.
+        <sec typ="cond">Frozen</sec> in the state <sec typ="buff"><buff typ="STUN" /> Stunned</sec> and, <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> is applied.
+        in squad to <char uid="PECS_Sadius" /> if present, designated to the target <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Electric Fence</sec> skill coordinated attack</sec>.
+      JP: |-
+        液体窒素を ブウンスアして<dmg elem="ice" />を 与え、、 2ラウンドの間 <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態にします。
+        対象が <sec typ="note">浸水</sec> 状態なら <sec typ="note">凍結</sec> 状態にします。
+        <sec typ="cond">凍結</sec> 状態に宣 <sec typ="buff"><buff typ="STUN" /> 行動不可</sec>であり、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec>が 適用されます。
+        スクワッド 内に <char uid="PECS_Sadius" />が ある 時、 指定対象に <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">エレクトリックフェンス</sec> スキル 協同攻撃</sec>をします。
       TC: |-
-        噴射液態氮造成<dmg elem="ice" />傷害，並使目標陷入<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態，持續2回合。
-        若目標處於<sec typ="note">浸水</sec>狀態，則使其陷入<sec typ="note">冰凍</sec>狀態。
-        處於<sec typ="cond">冰凍</sec>狀態時，會<sec typ="buff"><buff typ="STUN" />無法行動</sec>，並套用<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="1" r /></sec>。
-        若小隊內有<char uid="PECS_Sadius" />，則對指定目標使用<sec typ="note">電圍欄</sec>技能進行協力攻擊。
+        液態氮 噴射 <dmg elem="ice" /> 造成，並 2回合內 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 使其進入狀態。
+        目標 <sec typ="note">浸水</sec> 若處於狀態 <sec typ="note">凍結</sec> 使其進入狀態。
+        <sec typ="cond">凍結</sec> 狀態於先 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec>且， <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec> 套用。
+        小隊 內於 <char uid="PECS_Sadius" /> 有 時， 指定目標給 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">電氣圍欄</sec> 技能 協同攻擊</sec>。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -5040,10 +5041,10 @@ skills:
             per: 0.01
             chance: 1
     desc:
-      KR: 라운드 개시 시, 지정 범위의 <sec typ="buff"><buff typ="DEF_Char" /> 경장 / 중장형 아군을 보호</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>를 증가시킵니다.
-      JP: ラウンド開始時、指定範囲の<sec typ="buff"><buff typ="DEF_Char" />軽装型 / 重装型の味方を保護</sec>し、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>を増加させます。
-      EN: At the start of the round, protects <sec typ="buff"><buff typ="DEF_Char" />Light Armor / Heavy Armor allies</sec> in the designated area and increases their <sec typ="buff"><buff typ="AP_UP" />MOVE<val idx="3" r /></sec>.
-      TC: 回合開始時，保護指定範圍內的<sec typ="buff"><buff typ="DEF_Char" />輕裝型 / 重裝型我軍</sec>，並增加其<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>。
+      KR: <sec typ="cond">라운드 개시 시</sec>, 지정 범위의 <sec typ="buff"><buff typ="DEF_Char" /> 경장 / 중장형 아군을 보호</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>를 증가시킵니다.
+      EN: <sec typ="cond">At round start</sec>, designated area of <sec typ="buff"><buff typ="DEF_Char" /> Light / Heavy-type allies protect</sec> and <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="3" r /></sec> increases.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 指定範囲の <sec typ="buff"><buff typ="DEF_Char" /> 軽装 / 重装型 味方を 保護</sec>し、 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>を増加させます。
+      TC: <sec typ="cond">回合開始時</sec>， 指定範圍的 <sec typ="buff"><buff typ="DEF_Char" /> 輕裝 / 重裝型 我方 保護</sec>並 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>使其增加。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -5382,16 +5383,16 @@ skills:
     desc:
       KR: |-
         전투 개시 시 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="3" signless /> HP로 전투 속행</sec> 효과를 얻습니다.
-        라운드 개시 시, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소하며 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="5" r /></sec>가 증가합니다.
-      JP: |-
-        戦闘開始時、<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="3" signless />HPで戦闘続行</sec>効果を獲得します。
-        ラウンド開始時、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" r inv /></sec>が減少し、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" />火炎耐性<val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" />冷気耐性<val idx="5" r /></sec>が増加します。
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소하며 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="5" r /></sec>가 증가합니다.
       EN: |-
-        At the start of combat, gains <sec typ="buff"><buff typ="DEF_RESSURRECT" />Continue Combat with <val idx="3" signless /> HP</sec>.
-        At the start of the round, <sec typ="buff"><buff typ="DAMAGE_REDUCE" />received damage<val idx="0" r inv /></sec> is decreased and <sec typ="buff"><buff typ="AP_UP" />MOVE<val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" />Fire Resistance<val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" />Cold Resistance<val idx="5" r /></sec> increases.
+        At battle start <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="3" signless /> HP and Continue Combat</sec> effect and gains.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decreases and <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance <val idx="5" r /></sec> increases.
+      JP: |-
+        戦闘開始時 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="3" signless /> HPで 戦闘続行</sec> 効果を オトます。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec>が 減少し、 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性 <val idx="5" r /></sec>が増加します。
       TC: |-
-        戰鬥開始時，獲得以<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="3" signless /> HP繼續戰鬥</sec>效果。
-        回合開始時，減少<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="0" r inv /></sec>，並增加<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" />火焰抵抗<val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" />冰霜抵抗<val idx="5" r /></sec>。
+        戰鬥開始時 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="3" signless /> HP以 戰鬥續行</sec> 效果 獲得。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="0" r inv /></sec> 減少，並 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 冰冷抗性 <val idx="5" r /></sec>增加。
 dialogue:
   KR:
     "1":

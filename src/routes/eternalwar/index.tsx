@@ -9,7 +9,7 @@ import { EnemyCategory } from "@/types/DB/Enemy";
 import { MapEnemyData } from "@/types/DB/Map";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
-import { CurrentDB } from "@/libs/DB";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { useUpdate } from "@/libs/hooks";
 import { BuildClass } from "@/libs/Class";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
@@ -19,7 +19,6 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { useLocale } from "@/libs/Locale";
 
 import Locale from "@/components/locale";
-import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Loading from "@/components/loading";
 import Icons from "@/components/bootstrap-icon";
 import DropItem from "@/components/drop-item";

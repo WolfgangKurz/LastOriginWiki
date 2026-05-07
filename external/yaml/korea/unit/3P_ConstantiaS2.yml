@@ -1709,18 +1709,18 @@ skills:
         라이플을 발사해 단일 대상에게 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec> 증가 상태로 만듭니다.
         <sec typ="cond">치명타 시</sec>, 해당 라운드 동안 대상의 <sec typ="buff"><buff typ="TROOPER_DMG_DOWN" /> 대 경장형 피해량 <val idx="2" r /></sec>를 감소시킵니다. (중첩 불가)
-      JP: |-
-        ライフルを発射し、単体対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間対象を<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="0" r /></sec>増加状態にします。
-        <sec typ="cond">クリティカル時</sec>、そのラウンドの間、対象の<sec typ="buff"><buff typ="TROOPER_DMG_DOWN" />対軽装型ダメージ<val idx="2" r /></sec>を減少させます。(重複不可)
       EN: |-
-        Fires a rifle shot to deal <dmg elem="physics" /> to a single target.
-        <sec typ="cond">On hit</sec>, make the target <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> up for 2 rounds.
-        <sec typ="cond">On critical hit</sec>, reduce the target's <sec typ="buff"><buff typ="TROOPER_DMG_DOWN" /> damage to Light Armor <val idx="2" r /></sec> for that round. (does not stack)
+        Fires a rifle to deal <dmg elem="physics" /> to a single target.
+        <sec typ="cond">On hit</sec>, inflicts the target with <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="0" r /></sec> Increase for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, decreases the target's <sec typ="buff"><buff typ="TROOPER_DMG_DOWN" /> damage against Light Armor <val idx="2" r /></sec> for that round. (Cannot stack)
+      JP: |-
+        ライフルを発射し、単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="0" r /></sec>増加状態にします。
+        <sec typ="cond">クリティカル時</sec>、そのラウンドの間、対象の<sec typ="buff"><buff typ="TROOPER_DMG_DOWN" />対軽装型ダメージ量 <val idx="2" r /></sec>を減少させます。(重複不可)
       TC: |-
         發射步槍，對單一目標造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，使目標在2回合內處於<sec typ="buff"><buff typ="VULNERABLE" />受到的傷害<val idx="0" r /></sec>增加狀態。
-        <sec typ="cond">暴擊時</sec>，在該回合內降低目標的<sec typ="buff"><buff typ="TROOPER_DMG_DOWN" />對輕裝型傷害<val idx="2" r /></sec>。(不可重疊)
+        <sec typ="cond">命中時</sec>，使目標進入<sec typ="buff"><buff typ="VULNERABLE" />所受傷害 <val idx="0" r /></sec>增加狀態，持續2回合。
+        <sec typ="cond">暴擊時</sec>，該回合內降低目標的<sec typ="buff"><buff typ="TROOPER_DMG_DOWN" />對輕裝型傷害量 <val idx="2" r /></sec>。（不可疊加）
   "2":
     key: "2"
     icon: SlowShot
@@ -3472,17 +3472,17 @@ skills:
         보리와 함께 단일 대상에게 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="4" r /></sec> 감소 상태로 만듭니다. (중첩 불가)
         <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>합니다.
-      JP: |-
-        ボリと共に単体対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間対象を<sec typ="buff"><buff typ="MARKING" />マーキング</sec> / <sec typ="buff"><buff typ="SNARE" />移動不可</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="4" r /></sec>減少状態にします。(重複不可)
-        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />反撃効果を解除</sec>します。
       EN: |-
-        Fires together with Boryeon to deal <dmg elem="physics" /> to a single target.
-        <sec typ="cond">On hit</sec>, for 2 rounds make the target <sec typ="buff"><buff typ="MARKING" /> Marked</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" r /></sec> down. (does not stack)
-        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's counterattack effect</sec>.
+        Deals <dmg elem="physics" /> to a single target together with Bori.
+        <sec typ="cond">On hit</sec>, inflicts the target with <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobilize</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="4" r /></sec> Decrease for 2 rounds. (Cannot stack)
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's Retaliation effect</sec>.
+      JP: |-
+        ボリと共に単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="SNARE" />移動不可</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="4" r /></sec>減少状態にします。(重複不可)
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />反撃効果を解除</sec>します。
       TC: |-
-        與保連一同對單一目標造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，使目標在2回合內處於<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="SNARE" />無法移動</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="4" r /></sec>減少狀態。(不可重疊)
+        與波莉一起對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，使目標進入<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="SNARE" />無法移動</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="4" r /></sec>降低狀態，持續2回合。（不可疊加）
         <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的反擊效果</sec>。
   "3":
     key: "3"
@@ -3647,17 +3647,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시</sec>, 꼼꼼한 준비를 통해 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, 꼼꼼한 준비를 통해 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>가 증가합니다.
         <sec typ="cond">라운드 개시 시</sec>, 아군의 <sec typ="buff"><buff typ="EXP_UP" /> 획득 경험치 <val idx="2" r /></sec>가 증가합니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、入念な準備により自分の<sec typ="buff"><buff typ="AP_UP" /> AP<val idx="0" /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、味方の<sec typ="buff"><buff typ="EXP_UP" />獲得経験値<val idx="2" r /></sec>が増加します。
       EN: |-
-        <sec typ="cond">At battle start</sec>, careful preparation increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>.
-        <sec typ="cond">On round start</sec>, allies' <sec typ="buff"><buff typ="EXP_UP" /> EXP gained <val idx="2" r /></sec> increases.
+        <sec typ="cond">At the start of combat</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases through meticulous preparation.
+        <sec typ="cond">At round start</sec>, allies' <sec typ="buff"><buff typ="EXP_UP" /> EXP Gain <val idx="2" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、入念な準備により自分の<sec typ="buff"><buff typ="AP_UP" />AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、味方の<sec typ="buff"><buff typ="EXP_UP" />獲得経験値 <val idx="2" r /></sec>が増加します。
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，透過周全準備使自身的<sec typ="buff"><buff typ="AP_UP" /> AP<val idx="0" /></sec>增加。
-        <sec typ="cond">回合開始時</sec>，我方的<sec typ="buff"><buff typ="EXP_UP" />獲得經驗值<val idx="2" r /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec>，透過周密準備增加自身的<sec typ="buff"><buff typ="AP_UP" />AP <val idx="0" /></sec>。
+        <sec typ="cond">回合開始時</sec>，我軍的<sec typ="buff"><buff typ="EXP_UP" />獲得經驗值 <val idx="2" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -3845,16 +3845,16 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">적 공격 시</sec>, 2라운드 동안 아군의 공격력 / 적중 / 치명타가 증가합니다.
-        스쿼드 내 <cmt t="배틀 메이드">$$BattleMaid:?$</cmt> 소속 전투원이 제공하는 모든 <sec typ="buff"><buff typ="AP_UP" /> 행동력 증가</sec> 효과가 두 배로 증폭됩니다.
-      JP: |-
-        <sec typ="cond">敵攻撃時</sec>、2ラウンドの間味方の攻撃力 / 命中 / クリティカルが増加します。
-        スコード内の<cmt t="バトルメイドプロジェクト">$$BattleMaid:?$</cmt>所属戦闘員が付与するすべての<sec typ="buff"><buff typ="AP_UP" />行動力増加</sec>効果が2倍に増幅されます。
+        스쿼드 내 <cmt t="배틀 메이드"><import name="BattleMaid" /></cmt> 소속 전투원이 제공하는 모든 <sec typ="buff"><buff typ="AP_UP" /> 행동력 증가</sec> 효과가 두 배로 증폭됩니다.
       EN: |-
-        <sec typ="cond">When the enemy attacks</sec>, allies' ATK / Accuracy / Critical increase for 2 rounds.
-        All <sec typ="buff"><buff typ="AP_UP" /> AP increase</sec> effects provided by combatants belonging to the <cmt t="Battle Maid Project">$$BattleMaid:?$</cmt> within the squad are doubled.
+        <sec typ="cond">When attacking an enemy</sec>, allies' ATK / Accuracy / CRIT increase for 2 rounds.
+        All <cmt t="Battle Maid"><import name="BattleMaid" /> MOVE Increase</cmt> effects provided by <sec typ="buff"><buff typ="AP_UP" /></sec> units in the squad are doubled.
+      JP: |-
+        <sec typ="cond">敵攻撃時</sec>、2ラウンドの間、味方の攻撃力 / 命中 / クリティカルが増加します。
+        分隊内の<cmt t="バトルメイド"><import name="BattleMaid" /></cmt>所属戦闘員が提供するすべての<sec typ="buff"><buff typ="AP_UP" />行動力増加</sec>効果が2倍に増幅されます。
       TC: |-
-        <sec typ="cond">敵方攻擊時</sec>，我方的攻擊力 / 命中 / 暴擊在2回合內增加。
-        隊伍內<cmt t="戰鬥女僕計畫">$$BattleMaid:?$</cmt>所屬戰鬥員提供的所有<sec typ="buff"><buff typ="AP_UP" />行動力增加</sec>效果會加倍增幅。
+        <sec typ="cond">攻擊敵人時</sec>，我軍的攻擊力 / 命中 / 暴擊增加，持續2回合。
+        小隊內<cmt t="戰鬥女僕"><import name="BattleMaid" /></cmt>所屬戰鬥員提供的所有<sec typ="buff"><buff typ="AP_UP" />行動力增加</sec>效果會增幅為兩倍。
   "5":
     key: "5"
     icon: P.Beam
@@ -4075,29 +4075,29 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="note">준비만전</sec>의 AP 증가 효과를 <cmt t="배틀 메이드">$$BattleMaid:?$</cmt> 소속 전투원에게 공유합니다.
+        <sec typ="note">준비만전</sec>의 AP 증가 효과를 <cmt t="배틀 메이드"><import name="BattleMaid" /></cmt> 소속 전투원에게 공유합니다.
         스킬 효과는 <sec typ="note">오르카 하우스키퍼</sec>의 스킬 레벨에 비례합니다.
         <sec typ="cond">스쿼드 내에 <char uid="3P_Labiata" />이 있을 경우</sec>, 상기 효과의 대상이 아군 바이오로이드로 확장됩니다.
         <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
         <sec>해당 효과는 효과 해제로 해제되지 않습니다.</sec>
-      JP: |-
-        <sec typ="note">準備万端</sec>のAP増加効果を<cmt t="バトルメイドプロジェクト">$$BattleMaid:?$</cmt>所属戦闘員に共有します。
-        スキル効果は<sec typ="note">オルカ・ハウスキーパー</sec>のスキルレベルに比例します。
-        <sec typ="cond">スコード内に<char uid="3P_Labiata" />がいる場合</sec>、上記効果の対象が味方バイオロイドへ拡張されます。
-        <sec typ="cond">戦闘開始時</sec>、自分の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗<val idx="0" r /></sec>が増加します。
-        <sec>この効果は効果解除では解除されません。</sec>
       EN: |-
-        Shares <sec typ="note">Fully Prepared</sec>'s AP increase effect with combatants belonging to the <cmt t="Battle Maid Project">$$BattleMaid:?$</cmt>.
-        The skill effect scales with the skill level of <sec typ="note">Orca Housekeeper</sec>.
-        <sec typ="cond">If <char uid="3P_Labiata" /> is in the squad</sec>, the above effect's target expands to allied Bioroids.
-        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> effect resistance <val idx="0" r /></sec> increases.
+        Shares the AP Increase effect of <sec typ="note">Fully Prepared</sec> with <cmt t="Battle Maid"><import name="BattleMaid" /></cmt> units.
+        Skill effects are proportional to the skill level of <sec typ="note">Orca Housekeeper</sec>.
+        <sec typ="cond">If <char uid="3P_Labiata" /> is in the squad</sec>, the target of the above effect expands to allied Bioroids.
+        <sec typ="cond">At the start of combat</sec>, self's <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increases.
         <sec>This effect cannot be removed by effect removal.</sec>
+      JP: |-
+        <sec typ="note">準備万端</sec>のAP増加効果を<cmt t="バトルメイド"><import name="BattleMaid" /></cmt>所属戦闘員に共有します。
+        スキル効果は<sec typ="note">オルカハウスキーパー</sec>のスキルレベルに比例します。
+        <sec typ="cond">分隊内に<char uid="3P_Labiata" />がいる場合</sec>、上記効果の対象が味方バイオロイドに拡張されます。
+        <sec typ="cond">戦闘開始時</sec>、自分の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性 <val idx="0" r /></sec>が増加します。
+        <sec>この効果は効果解除で解除されません。</sec>
       TC: |-
-        將<sec typ="note">準備齊全</sec>的AP增加效果共享給<cmt t="戰鬥女僕計畫">$$BattleMaid:?$</cmt>所屬戰鬥員。
-        技能效果會依照<sec typ="note">奧爾卡管家</sec>的技能等級而提升。
-        <sec typ="cond">若隊伍內有<char uid="3P_Labiata" /></sec>，上述效果的對象會擴展為我方生化人偶。
-        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="0" r /></sec>增加。
-        <sec>該效果無法透過解除效果移除。</sec>
+        將<sec typ="note">準備萬全</sec>的AP增加效果共享給<cmt t="戰鬥女僕"><import name="BattleMaid" /></cmt>所屬戰鬥員。
+        技能效果與<sec typ="note">奧爾卡家政員</sec>的技能等級成正比。
+        <sec typ="cond">若小隊內有<char uid="3P_Labiata" /></sec>，上述效果的目標會擴展為我軍生化人。
+        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗 <val idx="0" r /></sec>增加。
+        <sec>此效果不會因效果解除而解除。</sec>
 dialogue:
   KR:
     "3":

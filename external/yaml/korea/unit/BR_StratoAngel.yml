@@ -539,6 +539,7 @@ source:
   - - Ev:Ev24:EV2-1Ex
   - - Ev:Ev27:EV2-2Ex
   - - Ev:Ev33:EV3-3EX
+  - - Ev:Ev38:EV1-3EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1228,15 +1229,15 @@ skills:
       KR: |-
         미사일을 난사해 지정 범위에 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="6" slot="4" r /></sec> <dmg elem="physics" />를 줍니다.
         <sec typ="cond">대상이 중장형인 경우</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        ミサイルを乱射して指定範囲に<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="6" slot="4" r /></sec> <dmg elem="physics" />を与えます。
-        <sec typ="cond">対象が重装型の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
       EN: |-
-        Sprays missiles and deals <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="6" slot="4" r /></sec> <dmg elem="physics" /> to the designated area.
-        <sec typ="cond">If the target is Heavy Armor</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="0" r /></sec> increases.
+        missile fires rapidly to the designated area <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="6" slot="4" r /></sec> <dmg elem="physics" />.
+        <sec typ="cond">target Heavy-typeif</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        ミサイルを 乱射して 指定範囲に<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="6" slot="4" r /></sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">対象が 重装型の場合</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
       TC: |-
-        大量發射飛彈，對指定範圍造成<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="6" slot="4" r /></sec> <dmg elem="physics" />。
-        <sec typ="cond">若目標為重裝型</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        飛彈 掃射 指定範圍於 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="6" slot="4" r /></sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">目標 重裝型若為</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: AirStrike
@@ -2549,18 +2550,18 @@ skills:
         미사일 폭격으로 대상 지점에 <sec typ="attr">보호 무시</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="6" slot="4" r signless /></sec> <dmg elem="physics" />를 줍니다.
         대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 디버프를 가지고 있으면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
         <sec typ="cond">스쿼드에 <char uid="BR_NightAngel" />이 있다면</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">고공 폭격</sec> 협동 공격</sec>을 유도합니다.
-      JP: |-
-        ミサイル爆撃で対象地点に<sec typ="attr">保護無視</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="6" slot="4" r signless /></sec> <dmg elem="physics" />を与えます。
-        対象が<sec typ="cond"><buff typ="MARKING" /> マーク</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避減少</sec>デバフを持っている場合、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
-        <sec typ="cond">分隊に<char uid="BR_NightAngel" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">高空爆撃</sec>協同攻撃</sec>を誘導します。
       EN: |-
-        Uses a missile bombardment and deals <sec typ="attr">Ignore Protection</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="6" slot="4" r signless /></sec> <dmg elem="physics" /> to the target location.
-        If the target has the <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilize</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> EVA Decrease</sec> debuff, <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="0" r /></sec> increases.
-        <sec typ="cond">If <char uid="BR_NightAngel" /> is in the squad</sec>, induces a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> cooperative attack with <sec typ="note">High-Altitude Explosive Bombardment</sec></sec>.
+        missile by bombardment as target point to <sec typ="attr">Ignore Protection</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="6" slot="4" r signless /></sec> <dmg elem="physics" />.
+        target <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion decrease</sec> debuff and if present <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">squad <char uid="BR_NightAngel" /> if present</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">High-Altitude Bombing</sec> coordinated attack</sec> triggers.
+      JP: |-
+        ミサイル爆撃で 対象 地点に <sec typ="attr">保護無視</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="6" slot="4" r signless /></sec><dmg elem="physics" />を与えます。
+        対象が <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避 減少</sec> デバフを 持って ある場合 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">スクワッドに <char uid="BR_NightAngel" />が 存在するなら</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">高空爆撃</sec> 協同攻撃</sec>を 誘導します。
       TC: |-
-        以飛彈轟炸對目標地點造成<sec typ="attr">無視保護</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="6" slot="4" r signless /></sec> <dmg elem="physics" />。
-        若目標持有<sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避降低</sec>減益，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
-        <sec typ="cond">若小隊內有<char uid="BR_NightAngel" /></sec>，則會引導與<sec typ="note">高空爆炸轟炸</sec>的<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 協同攻擊</sec>。
+        以飛彈轟炸 目標 地點於 <sec typ="attr">無視保護</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="6" slot="4" r signless /></sec> 造成<dmg elem="physics" />。
+        目標 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避 減少</sec> 減益 持有 若有 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">小隊於 <char uid="BR_NightAngel" /> 若存在</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">高空轟炸</sec> 協同攻擊</sec> 誘發。
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -2874,21 +2875,21 @@ skills:
         <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec>은 <sec typ="cond">후열</sec>에 있을 때, <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력</sec>은 <sec typ="cond">중열</sec>에 있을 때 최대 수치로 적용되며, 반대의 경우 50%만 적용됩니다.
         중열 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="5" r /></sec>
         후열 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="6" r /></sec>
-      JP: |-
-        <sec typ="cond">中列</sec>または<sec typ="cond">後列</sec>にいる場合、1スキル使用後に<sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>が増加し、2スキル使用後に<sec typ="buff"><buff typ="SKILL_UP" /> スキル威力</sec>が増加します。
-        <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>は<sec typ="cond">後列</sec>にいる時、<sec typ="buff"><buff typ="SKILL_UP" /> スキル威力</sec>は<sec typ="cond">中列</sec>にいる時に最大値で適用され、逆の場合は50%のみ適用されます。
-        中列 : <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="5" r /></sec>
-        後列 : <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="6" r /></sec>
       EN: |-
-        If in the <sec typ="cond">middle line</sec> or <sec typ="cond">rear line</sec>, using Skill 1 increases <sec typ="buff"><buff typ="AP_UP" /> MOVE</sec> and using Skill 2 increases <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power</sec>.
-        <sec typ="buff"><buff typ="AP_UP" /> MOVE</sec> is applied at its maximum value when in the <sec typ="cond">rear line</sec>, while <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power</sec> is applied at its maximum value when in the <sec typ="cond">middle line</sec>; otherwise, only 50% is applied.
-        Middle line: <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="5" r /></sec>
-        Rear line: <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="6" r /></sec>
+        <sec typ="cond">middle row</sec> or <sec typ="cond">back row</sec> to if present, 1After using the skill <sec typ="buff"><buff typ="AP_UP" /> Action Speed</sec> increases and 2After using the skill <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power</sec> increases.
+        <sec typ="buff"><buff typ="AP_UP" /> Action Speed</sec> <sec typ="cond">back row</sec> to exists when, <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power</sec> <sec typ="cond">middle row</sec> to exists when up to value as is applied and, opposite of case 50%only is applied.
+        middle row: <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="5" r /></sec>
+        back row: <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="6" r /></sec>
+      JP: |-
+        <sec typ="cond">中列</sec> または <sec typ="cond">後列</sec>に ある 場合、 1スキル使用後 <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>が 増加し、 2スキル使用後 <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力</sec>が増加します。
+        <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>は <sec typ="cond">後列</sec>に ある 時、 <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力</sec>は <sec typ="cond">中列</sec>に ある 時 最大 数値で 適用され、、 ブアンドエの 場合 50%だけ 適用されます。
+        中列：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="5" r /></sec>
+        後列：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="6" r /></sec>
       TC: |-
-        若處於<sec typ="cond">中列</sec>或<sec typ="cond">後列</sec>，在使用1技能後<sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>增加，使用2技能後<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力</sec>增加。
-        <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>在<sec typ="cond">後列</sec>時會以最大值套用，<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力</sec>則在<sec typ="cond">中列</sec>時以最大值套用，反之僅套用50%。
-        中列：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="5" r /></sec>
-        後列：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="6" r /></sec>
+        <sec typ="cond">中排</sec> 或 <sec typ="cond">後排</sec>於 有 情況， 1使用技能後 <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec> 增加，並 2使用技能後 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力</sec>增加。
+        <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec> <sec typ="cond">後排</sec>於 有 時， <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力</sec> <sec typ="cond">中排</sec>於 有 時 最大 數值以 套用，並 相反情況 50%僅 套用。
+        中排：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="5" r /></sec>
+        後排：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="6" r /></sec>
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3172,15 +3173,15 @@ skills:
       KR: |-
         언제나 우월감에 가득찬 상태라 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
         스쿼드에 <char uid="BR_NightAngel" />이 있으면 해당 효과가 3배 추가 적용됩니다.
-      JP: |-
-        いつも強い優越感に満ちた状態なので、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
-        分隊に<char uid="BR_NightAngel" />がいる場合、この効果がさらに3倍適用されます。
       EN: |-
-        Always brimming with superiority, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="2" r /></sec>.
-        If <char uid="BR_NightAngel" /> is in the squad, this effect is additionally applied 3 times over.
+        always superiority complex to filled with state so <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increases.
+        squad <char uid="BR_NightAngel" /> if present the effect and 3 times additionally applied.
+      JP: |-
+        オンジエンア ウウォルグアムに がドウクチアン 状態ルア <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
+        スクワッドに <char uid="BR_NightAngel" />が ある場合 該当 効果が 3ブエ 追加適用されます。
       TC: |-
-        因為總是充滿優越感，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
-        若小隊內有<char uid="BR_NightAngel" />，則此效果會再額外套用3倍。
+        總是 充滿優越感 狀態時 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
+        小隊於 <char uid="BR_NightAngel" /> 若有 該 效果 3倍 額外套用。
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -3372,15 +3373,15 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec> 적 전체의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시킵니다.
         <sec typ="cond">스쿼드 내에 <char uid="BR_NightAngel" />이 있다면</sec> 적 전체의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="3" r /></sec>를 약화시킵니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、敵全体の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec>を減少させます。
-        <sec typ="cond">分隊内に<char uid="BR_NightAngel" />がいる場合</sec>、敵全体の<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ減少 <val idx="3" r /></sec>を弱化させます。
       EN: |-
-        At the start of the round, decreases all enemies' <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="1" r /></sec>.
-        <sec typ="cond">If <char uid="BR_NightAngel" /> is in the squad</sec>, weakens all enemies' <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage Decrease <val idx="3" r /></sec>.
+        <sec typ="cond">At round start</sec> all enemies of <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> decreases.
+        <sec typ="cond">in squad to <char uid="BR_NightAngel" /> if present</sec> all enemies of <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease <val idx="3" r /></sec> weaken causes.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 敵全体の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">スクワッド 内に <char uid="BR_NightAngel" />が 存在するなら</sec> 敵全体の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少 <val idx="3" r /></sec>を 弱化させます。
       TC: |-
-        回合開始時，降低所有敵軍的<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec>。
-        <sec typ="cond">若小隊內有<char uid="BR_NightAngel" /></sec>，則削弱所有敵軍的<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害降低 <val idx="3" r /></sec>。
+        <sec typ="cond">回合開始時</sec> 全體敵人的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec>使其減少。
+        <sec typ="cond">小隊 內於 <char uid="BR_NightAngel" /> 若存在</sec> 全體敵人的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少 <val idx="3" r /></sec> 弱化。
 dialogue:
   KR:
     "1":

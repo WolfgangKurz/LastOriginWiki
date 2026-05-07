@@ -1760,9 +1760,9 @@ skills:
             chance: 1
     desc:
       KR: 범위 내 대상에게 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec> <dmg elem="physics" />를 입히고 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>를 감소시킵니다.
-      JP: 範囲内の対象に<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec> <dmg elem="physics" />を与え、<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>を減少させます。
-      EN: Deals <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="3" r /></sec> <dmg elem="physics" /> to targets in range and decreases their <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec>.
-      TC: 對範圍內目標造成<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec> <dmg elem="physics" />，並降低其<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>。
+      EN: within range to the target <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="3" r /></sec> <dmg elem="physics" /> deals and <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> decreases.
+      JP: 範囲内 対象に <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec><dmg elem="physics" />を 与えし <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>を減少させます。
+      TC: 範圍內 對目標 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec> <dmg elem="physics" /> 造成並 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>使其減少。
   "2":
     key: "2"
     icon: TeamDefDeBuff
@@ -49415,16 +49415,28 @@ skills:
     desc:
       KR: |-
         범위 내 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 입히고 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 대폭 감소시키며 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 보호 효과를 해제</sec>합니다.
-        <sec typ="cond">치명타 시</sec> 2라운드 동안 대상의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>가 증가합니다.
-      JP: |-
-        範囲内の対象に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与え、<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を大幅に減少させ、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 保護効果を解除</sec>します。
-        <sec typ="cond">クリティカル時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="VULNERABLE" /> 被ダメージ <val idx="5" r /></sec>が増加します。
+        <equip uid="Sub_TuinOrellia" /> 착용 시, <sec typ="dmg"><buff typ="FireATK_UP" /> 화염 추가 피해</sec>를 입히고 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항</sec>을 크게 감소시킵니다.
+        <equip uid="Sub_SumaOrellia" /> 착용 시, <sec typ="dmg"><buff typ="IceATK_UP" /> 냉기 추가 피해</sec>를 입히고 <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항</sec>을 크게 감소시킵니다.
+        <equip uid="Sub_ZoweOrellia" /> 착용 시, <sec typ="dmg"><buff typ="LightningATK_UP" /> 전기 추가 피해</sec>를 입히고 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항</sec>을 크게 감소시킵니다.
+        각 <sec typ="dmg"><buff typ="FireATK_UP" /> <buff typ="IceATK_UP" /> <buff typ="LightningATK_UP" /> 속성 추가 피해</sec>와 <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 속성 저항 감소</sec>의 수치는 장비의 레벨에 따릅니다.
       EN: |-
-        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to targets in range, greatly decreases their <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec>, and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes protection effects</sec>.
-        <sec typ="cond">On critical hit</sec>, increases the target's <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec> for 2 rounds.
+        within range to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> deals and <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> greatly decreaseswhen and activates <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> protection effects remove</sec>.
+        <equip uid="Sub_TuinOrellia" /> equipped when, <sec typ="dmg"><buff typ="FireATK_UP" /> Fire additional damage</sec> deals and <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance</sec> greatly decreases.
+        <equip uid="Sub_SumaOrellia" /> equipped when, <sec typ="dmg"><buff typ="IceATK_UP" /> Ice additional damage</sec> deals and <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance</sec> greatly decreases.
+        <equip uid="Sub_ZoweOrellia" /> equipped when, <sec typ="dmg"><buff typ="LightningATK_UP" /> Lightning additional damage</sec> deals and <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance</sec> greatly decreases.
+        each <sec typ="dmg"><buff typ="FireATK_UP" /> <buff typ="IceATK_UP" /> <buff typ="LightningATK_UP" /> elemental additional damage</sec> and <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> Elemental Resistance decrease</sec> of value equipment of level to follows.
+      JP: |-
+        範囲内 対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />を 与えし <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を 大きく減少時クイし <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 保護効果を 解除</sec>します。
+        <equip uid="Sub_TuinOrellia" /> チアクヨン 時、 <sec typ="dmg"><buff typ="FireATK_UP" /> 火炎 追加 ダメージ</sec>を 与えし <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性</sec>を クウく 減少させます。
+        <equip uid="Sub_SumaOrellia" /> チアクヨン 時、 <sec typ="dmg"><buff typ="IceATK_UP" /> 冷気 追加 ダメージ</sec>を 与えし <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性</sec>を クウく 減少させます。
+        <equip uid="Sub_ZoweOrellia" /> チアクヨン 時、 <sec typ="dmg"><buff typ="LightningATK_UP" /> 電気 追加 ダメージ</sec>を 与えし <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性</sec>を クウく 減少させます。
+        各 <sec typ="dmg"><buff typ="FireATK_UP" /> <buff typ="IceATK_UP" /> <buff typ="LightningATK_UP" /> 属性 追加 ダメージ</sec>と <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 属性耐性 減少</sec>の 数値は 装備の レベルに ットアルウプンイドア。
       TC: |-
-        對範圍內目標造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />，大幅降低其<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除保護效果</sec>。
-        <sec typ="cond">暴擊時</sec>，使目標在2回合內的<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="5" r /></sec>增加。
+        範圍內 對目標 <sec typ="attr">無視保護</sec> <dmg elem="physics" /> 造成並 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> 大幅減少時台並 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 保護效果 解除</sec>。
+        <equip uid="Sub_TuinOrellia" /> 穿戴 時， <sec typ="dmg"><buff typ="FireATK_UP" /> 火焰 額外 傷害</sec> 造成並 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性</sec> 大 減少。
+        <equip uid="Sub_SumaOrellia" /> 穿戴 時， <sec typ="dmg"><buff typ="IceATK_UP" /> 冰冷 額外 傷害</sec> 造成並 <sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性</sec> 大 減少。
+        <equip uid="Sub_ZoweOrellia" /> 穿戴 時， <sec typ="dmg"><buff typ="LightningATK_UP" /> 電擊 額外 傷害</sec> 造成並 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性</sec> 大 減少。
+        各 <sec typ="dmg"><buff typ="FireATK_UP" /> <buff typ="IceATK_UP" /> <buff typ="LightningATK_UP" /> 屬性 額外 傷害</sec>與 <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 屬性抗性 減少</sec>的 數值 裝備的 等級於 Ttareu。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -49666,17 +49678,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>를 증가시킵니다.
-        <sec typ="cond">스쿼드에 <char uid="SJ_Tachi" />가 있는 경우</sec> <char uid="SJ_Tachi" />의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" /></sec>이(가) 추가로 증가합니다.
-      JP: |-
-        ラウンド開始時、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>を増加させます。
-        <sec typ="cond">スコードに<char uid="SJ_Tachi" />がいる場合</sec>、<char uid="SJ_Tachi" />の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" /></sec>がさらに増加します。
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>를 증가시킵니다.
+        대상이 <sec typ="note">스마트엔조이</sec> 대원일 경우, 일정 비율 추가 적용됩니다.
+        <sec typ="note">스마트엔조이</sec> 대원 : <char uid="SJ_Orellia" />, <char uid="SJ_Tachi" />
       EN: |-
-        At the start of the round, increases allies in range's <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec>.
-        <sec typ="cond">If <char uid="SJ_Tachi" /> is in the squad</sec>, additionally increases <char uid="SJ_Tachi" />'s <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>.
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> increases.
+        target <sec typ="note">Smart Enjoy</sec> memberif, fixed ratio additionally applied.
+        <sec typ="note">Smart Enjoy</sec> member: <char uid="SJ_Orellia" />, <char uid="SJ_Tachi" />
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>を増加させます。
+        対象が <sec typ="note">スウムアトウエンジオが</sec> 隊員の場合、 一定 ブイユル 追加適用されます。
+        <sec typ="note">スウムアトウエンジオが</sec> 隊員：<char uid="SJ_Orellia" />、 <char uid="SJ_Tachi" />
       TC: |-
-        回合開始時，提升範圍內我軍的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>與<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>。
-        <sec typ="cond">若隊伍中有<char uid="SJ_Tachi" /></sec>，則額外提升<char uid="SJ_Tachi" />的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" /></sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>使其增加。
+        目標 <sec typ="note">三umateuenjo</sec> 隊員若為， 一定 比例 額外套用。
+        <sec typ="note">三umateuenjo</sec> 隊員：<char uid="SJ_Orellia" />， <char uid="SJ_Tachi" />
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -50154,17 +50170,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, 범위 내 아군의 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>를 증가시킵니다.
-        <sec typ="cond">전투 개시 시</sec> 자신은 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="5" r /></sec>가 증가합니다.
-      JP: |-
-        ラウンド開始時、範囲内の味方の<sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電気耐性 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>を増加させます。
-        <sec typ="cond">戦闘開始時</sec>、自分の<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="5" r /></sec>が増加します。
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>를 증가시킵니다.
+        대상이 <sec typ="note">스마트엔조이</sec> 대원일 경우, 일정 비율 추가 적용됩니다.
       EN: |-
-        At the start of the round, increases allies in range's <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> Cold Resistance <val idx="12" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Electric Resistance <val idx="13" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec>.
-        <sec typ="cond">At the start of combat</sec>, increases own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="5" r /></sec>.
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance <val idx="12" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Lightning Resistance <val idx="13" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> increases.
+        target <sec typ="note">Smart Enjoy</sec> memberif, fixed ratio additionally applied.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電気耐性 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>を増加させます。
+        対象が <sec typ="note">スウムアトウエンジオが</sec> 隊員の場合、 一定 ブイユル 追加適用されます。
       TC: |-
-        回合開始時，提升範圍內我軍的<sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抵抗 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 冰霜抵抗 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電擊抵抗 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>。
-        <sec typ="cond">開始戰鬥時</sec>，自身的<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="5" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 冰冷抗性 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電擊抗性 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>使其增加。
+        目標 <sec typ="note">三umateuenjo</sec> 隊員若為， 一定 比例 額外套用。
 dialogue:
   KR:
     "":

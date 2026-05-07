@@ -2737,12 +2737,12 @@ skills:
       KR: |-
         총검 사격으로 단일 대상에게 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">대상이 <buff typ="EVADE_DOWN" /> 회피 / <buff typ="DEF_DOWN" /> 방어력 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        銃剣射撃で単体対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">対象が<buff typ="EVADE_DOWN" />回避 / <buff typ="DEF_DOWN" />防御力減少状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       EN: |-
-        Fires bayonet shots and deals <dmg elem="physics" /> to a single target.
-        <sec typ="cond">If the target is in <buff typ="EVADE_DOWN" /> Evasion / <buff typ="DEF_DOWN" /> DEF Down state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        Deals <dmg elem="physics" /> to a single target with bayonet fire.
+        <sec typ="cond">If the target is under <buff typ="EVADE_DOWN" /> Evasion / <buff typ="DEF_DOWN" /> DEF Down</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        銃剣射撃で単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">対象が<buff typ="EVADE_DOWN" />回避 / <buff typ="DEF_DOWN" />防御力減少状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
       TC: |-
         以刺刀射擊對單一目標造成<dmg elem="physics" />。
         <sec typ="cond">若目標處於<buff typ="EVADE_DOWN" />迴避 / <buff typ="DEF_DOWN" />防禦力降低狀態</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
@@ -4637,14 +4637,14 @@ skills:
       KR: |-
         단일 대상에게 돌격해 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        単体対象に突撃して<dmg elem="physics" />を与えます。
-        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       EN: |-
-        Charges at a single target and deals <dmg elem="physics" />.
+        Charges a single target to deal <dmg elem="physics" />.
         <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        単一対象へ突撃し、<dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
       TC: |-
-        衝向單一目標，造成<dmg elem="physics" />。
+        突擊單一目標並造成<dmg elem="physics" />。
         <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "3":
     key: "3"
@@ -4889,15 +4889,15 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
         <sec typ="cond">자신이 <buff typ="SUPPORT_ATTACK" /> 공격 지원을 받고 있을 경우</sec>, 상기 효과가 두 배로 증폭됩니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="2" r /></sec>が増加します。
-        <sec typ="cond">自身が<buff typ="SUPPORT_ATTACK" />攻撃支援を受けている場合</sec>、上記効果が2倍に増幅されます。
       EN: |-
-        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec> increases.
-        <sec typ="cond">If self is receiving <buff typ="SUPPORT_ATTACK" /> Attack Support</sec>, the above effect is doubled.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical Rate <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="2" r /></sec> increases.
+        <sec typ="cond">If self is receiving <buff typ="SUPPORT_ATTACK" /> attack support</sec>, the above effects are doubled.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="2" r /></sec>が増加します。
+        <sec typ="cond">自身が<buff typ="SUPPORT_ATTACK" />攻撃支援を受けている場合</sec>、上記効果が2倍に増幅されます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="2" r /></sec>增加。
-        <sec typ="cond">若自身正在接受<buff typ="SUPPORT_ATTACK" />攻擊支援</sec>，上述效果會增幅2倍。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="2" r /></sec>增加。
+        <sec typ="cond">若自身正受到<buff typ="SUPPORT_ATTACK" />攻擊支援</sec>，上述效果增幅為兩倍。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -5543,7 +5543,7 @@ skills:
         <box t="전열">
         	<sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>
         	<sec typ="cond">공격 적중 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="1" slot="1" r /></sec>가 증가합니다. <sec>해당 효과는 액티브 스킬 레벨에 비례합니다.</sec>
-        	<sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="4" /></sec>이(가) 증가합니다.
+        	<sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="4" /></sec>가 증가합니다.
         </box>
         <box t="중열">
         	<sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="7" r /></sec>
@@ -5551,44 +5551,44 @@ skills:
         <box t="후열">
         	<sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="10" r /></sec>
         </box>
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion</sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power</sec> increases.
+        <box t="Front Row">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="2" r /></sec>
+        <sec typ="cond">On attack hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="1" slot="1" r /></sec> increases. <sec>This effect is proportional to active skill level.</sec>
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="Action_Number_Change_Up" /> maximum action count <val idx="4" /></sec> increases.
+        </box>
+        <box t="Middle Row">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="7" r /></sec>
+        </box>
+        <box t="Back Row">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="9" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="10" r /></sec>
+        </box>
       JP: |-
         <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ACCURACY_UP" />命中</sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避</sec> / <sec typ="buff"><buff typ="AP_UP" />行動力</sec>が増加します。
         <box t="前列">
-        	<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>
-        	<sec typ="cond">攻撃命中時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="1" slot="1" r /></sec>が増加します。<sec>この効果はアクティブスキルレベルに比例します。</sec>
-        	<sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動回数<val idx="4" /></sec>が増加します。
+        <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>
+        <sec typ="cond">攻撃命中時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="1" slot="1" r /></sec>が増加します。<sec>この効果はアクティブスキルレベルに比例します。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動回数<val idx="4" /></sec>が増加します。
         </box>
         <box t="中列">
-        	<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>
+        <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>
         </box>
         <box t="後列">
-        	<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="9" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="10" r /></sec>
-        </box>
-      EN: |-
-        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA</sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE</sec> increases.
-        <box t="Front Line">
-        	<sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="2" r /></sec>
-        	<sec typ="cond">On hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="1" slot="1" r /></sec> increases. <sec>This effect scales with the active skill level.</sec>
-        	<sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="Action_Number_Change_Up" /> max action count <val idx="4" /></sec> increases.
-        </box>
-        <box t="Middle Line">
-        	<sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="7" r /></sec>
-        </box>
-        <box t="Rear Line">
-        	<sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="9" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="10" r /></sec>
+        <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="9" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="10" r /></sec>
         </box>
       TC: |-
         <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ACCURACY_UP" />命中</sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避</sec> / <sec typ="buff"><buff typ="AP_UP" />行動力</sec>增加。
         <box t="前列">
-        	<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>
-        	<sec typ="cond">命中時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="1" slot="1" r /></sec>增加。<sec>此效果會隨主動技能等級提升而增加。</sec>
-        	<sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動次數<val idx="4" /></sec>增加。
+        <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>
+        <sec typ="cond">攻擊命中時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="1" slot="1" r /></sec>增加。<sec>該效果與主動技能等級成比例。</sec>
+        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動次數<val idx="4" /></sec>增加。
         </box>
         <box t="中列">
-        	<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>
+        <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>
         </box>
         <box t="後列">
-        	<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="9" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="10" r /></sec>
+        <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="9" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="10" r /></sec>
         </box>
   "5":
     key: "5"
@@ -6346,33 +6346,33 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="0" r /></sec>가 증가합니다.
         <box t="대기 시">
         	자신을 제외한 <sec typ="important">아군과 적</sec>을 다음 라운드 동안 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만듭니다.
-        	자신은 <sec typ="dmg">보호 무시</sec>가 활성화되고 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="5" signless />(으)로 증가</sec>하며, <sec typ="note">총검 사격</sec>의 소모 AP가 3 감소합니다.
+        	자신은 <sec typ="dmg">보호 무시</sec>가 활성화되고 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수가 <val idx="5" signless />(으)로 증가</sec>하며, <sec typ="note">총검 사격</sec>의 소모 AP가 3 감소합니다.
         	<sec typ="cond">6회째의 액티브 스킬</sec>은 <sec typ="buff"><buff typ="PhyATK_UP" /> 피해량 증가</sec> 효과가 두 배로 증폭됩니다.
         	상기 효과는 <sec>전투 당 1회</sec> 사용할 수 있으며, <sec>효과 종료 시 모든 AP를 소모합니다.</sec>
+        </box>
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="0" r /></sec> increases.
+        <box t="When Waiting">
+        Inflicts <sec typ="important">allies and enemies</sec> other than self with <sec typ="buff"><buff typ="STUN" /> Stun</sec> for the next round.
+        Self activates <sec typ="dmg">Ignore Protection</sec>, <sec typ="buff"><buff typ="Action_Number_Change_Up" /> maximum action count increases to <val idx="5" signless /></sec>, and the AP cost of <sec typ="note">Bayonet Fire</sec> decreases by 3.
+        The <sec typ="cond">6th active skill</sec> has its <sec typ="buff"><buff typ="PhyATK_UP" /> damage increase</sec> effect doubled.
+        The above effects can be used <sec>once per battle</sec>, and <sec>all AP is consumed when the effects end.</sec>
         </box>
       JP: |-
         <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="0" r /></sec>が増加します。
         <box t="待機時">
-        	自身を除く<sec typ="important">味方と敵</sec>を次のラウンドの間<sec typ="buff"><buff typ="STUN" />行動不能</sec>状態にします。
-        	自身は<sec typ="dmg">保護無視</sec>が有効になり、<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動回数<val idx="5" signless />(に)増加</sec>し、<sec typ="note">銃剣射撃</sec>の消費APが3減少します。
-        	<sec typ="cond">6回目のアクティブスキル</sec>は<sec typ="buff"><buff typ="PhyATK_UP" />ダメージ量増加</sec>効果が2倍に増幅されます。
-        	上記効果は<sec>戦闘ごとに1回</sec>使用でき、<sec>効果終了時に全APを消費します。</sec>
-        </box>
-      EN: |-
-        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="0" r /></sec> increases.
-        <box t="On Wait">
-        	Makes <sec typ="important">allies and enemies</sec> except self <sec typ="buff"><buff typ="STUN" /> unable to act</sec> for the next round.
-        	Self's <sec typ="dmg">Ignore Protection</sec> is enabled and <sec typ="buff"><buff typ="Action_Number_Change_Up" /> max action count <val idx="5" signless /></sec> increases, and <sec typ="note">Bayonet Fire</sec>'s AP cost decreases by 3.
-        	The <sec typ="cond">6th active skill</sec>'s <sec typ="buff"><buff typ="PhyATK_UP" /> damage increase</sec> effect is doubled.
-        	This effect can be used <sec>once per battle</sec>, and <sec>all AP is consumed when the effect ends.</sec>
+        自身を除く<sec typ="important">味方と敵</sec>を次のラウンドの間、<sec typ="buff"><buff typ="STUN" />行動不可</sec>状態にします。
+        自身は<sec typ="dmg">保護無視</sec>が有効になり、<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動回数が<val idx="5" signless />に増加</sec>し、<sec typ="note">銃剣射撃</sec>の消費APが3減少します。
+        <sec typ="cond">6回目のアクティブスキル</sec>は<sec typ="buff"><buff typ="PhyATK_UP" />ダメージ増加</sec>効果が2倍に増幅されます。
+        上記効果は<sec>戦闘につき1回</sec>使用でき、<sec>効果終了時にすべてのAPを消費します。</sec>
         </box>
       TC: |-
         <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="0" r /></sec>增加。
         <box t="待機時">
-        	使除自身外的<sec typ="important">我軍與敵軍</sec>在下一回合內陷入<sec typ="buff"><buff typ="STUN" />無法行動</sec>狀態。
-        	自身的<sec typ="dmg">無視保護</sec>啟用，且<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動次數<val idx="5" signless /></sec>增加，<sec typ="note">銃槍射擊</sec>的消耗AP減少3。
-        	<sec typ="cond">第6次主動技能</sec>的<sec typ="buff"><buff typ="PhyATK_UP" />傷害量增加</sec>效果會增幅2倍。
-        	上述效果<sec>每場戰鬥可使用1次</sec>，且<sec>效果結束時會消耗所有AP。</sec>
+        使除自身外的<sec typ="important">友軍與敵人</sec>在下一回合期間處於<sec typ="buff"><buff typ="STUN" />無法行動</sec>狀態。
+        自身啟用<sec typ="dmg">無視保護</sec>，<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動次數增加至<val idx="5" signless /></sec>，且<sec typ="note">刺刀射擊</sec>的消耗AP減少3。
+        <sec typ="cond">第6次主動技能</sec>的<sec typ="buff"><buff typ="PhyATK_UP" />傷害量增加</sec>效果增幅為兩倍。
+        上述效果可<sec>每場戰鬥使用1次</sec>，且<sec>效果結束時消耗所有AP。</sec>
         </box>
   F1:
     key: F1
@@ -8466,14 +8466,14 @@ skills:
       KR: |-
         총검 사격으로 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
         <sec typ="cond">대상이 <buff typ="EVADE_DOWN" /> 회피 / <buff typ="DEF_DOWN" /> 방어력 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        銃剣射撃で単体対象に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
-        <sec typ="cond">対象が<buff typ="EVADE_DOWN" />回避 / <buff typ="DEF_DOWN" />防御力減少状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       EN: |-
-        Fires bayonet shots and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to a single target.
-        <sec typ="cond">If the target is in <buff typ="EVADE_DOWN" /> Evasion / <buff typ="DEF_DOWN" /> DEF Down state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to a single target with bayonet fire.
+        <sec typ="cond">If the target has <buff typ="EVADE_DOWN" /> reduced Evasion / <buff typ="DEF_DOWN" /> reduced DEF</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        銃剣射撃で単一対象へ<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">対象が<buff typ="EVADE_DOWN" />回避 / <buff typ="DEF_DOWN" />防御力減少状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       TC: |-
-        以刺刀射擊對單一目標造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+        以刺刀射擊對單一目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
         <sec typ="cond">若目標處於<buff typ="EVADE_DOWN" />迴避 / <buff typ="DEF_DOWN" />防禦力降低狀態</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   F2:
     key: F2
@@ -10407,14 +10407,14 @@ skills:
       KR: |-
         단일 대상에게 돌격해 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
         <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        単体対象に突撃して<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
-        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       EN: |-
         Charges at a single target and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
-        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">On Critical</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        単一対象へ突撃し、<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       TC: |-
-        衝向單一目標，造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+        突擊單一目標，造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
         <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
 dialogue:
   KR:

@@ -3088,10 +3088,18 @@ skills:
             per: 0
             chance: 0
     desc:
-      KR: 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 입힙니다.
-      JP: 対象に <sec typ="attr">防護無視</sec> <dmg elem="ice" />を与えます。
-      EN: Deals <sec typ="attr">ignore protection</sec> <dmg elem="ice" /> to the target.
-      TC: 對目標造成 <sec typ="attr">無視保護</sec> <dmg elem="ice" />。
+      KR: |-
+        대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 입힙니다.
+        <sec typ="cond">공격 적중 시</sec>, <sec typ="note">열기 흡수</sec> 버프를 획득하고 적의 <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec>를 감소시킵니다.
+      EN: |-
+        to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="ice" />.
+        <sec typ="cond">On hit</sec>, <sec typ="note">Heat Absorption</sec> buff gains and enemy's <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="2" r /></sec> decreases.
+      JP: |-
+        対象に <sec typ="attr">保護無視</sec><dmg elem="ice" />を与えます。
+        <sec typ="cond">攻撃命中時</sec>、 <sec typ="note">列機 ハウプ数</sec> バフを 獲得し、 敵の <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="2" r /></sec>を減少させます。
+      TC: |-
+        對目標 <sec typ="attr">無視保護</sec> 造成<dmg elem="ice" />。
+        <sec typ="cond">攻擊命中時</sec>， <sec typ="note">行台 吸數</sec> 增益 獲得，並 敵人的 <sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="2" r /></sec>使其減少。
   "2":
     key: "2"
     icon: WideIceShot
@@ -5977,10 +5985,22 @@ skills:
             per: -0.025
             chance: 1
     desc:
-      KR: 행 범위 대상에게 <dmg elem="ice" />를 입힙니다.
-      JP: 行範囲の対象に <dmg elem="ice" />を与えます。
-      EN: Deals <dmg elem="ice" /> to targets in the row area.
-      TC: 對行範圍內的目標造成 <dmg elem="ice" />。
+      KR: |-
+        행 범위 대상에게 <dmg elem="ice" />를 입힙니다.
+        <sec typ="note">열기 흡수</sec> 상태일 경우, <sec typ="note">열기 흡수</sec>를 소모하여 <sec typ="dmg"><buff typ="IceATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가하고 적중한 적을 <sec typ="note">침수</sec> 상태로 만듭니다.
+        <sec typ="note">침수</sec> : <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="6" r /></sec>
+      EN: |-
+        row range to the target with <dmg elem="ice" />.
+        <sec typ="note">Heat Absorption</sec> if in the state, <sec typ="note">Heat Absorption</sec> consumes <sec typ="dmg"><buff typ="IceATK_UP" /> damage <val idx="2" r /></sec> increases and Hit enemy <sec typ="note">Flooded</sec> inflicts.
+        <sec typ="note">Flooded</sec>: <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="6" r /></sec>
+      JP: |-
+        行 範囲 対象に<dmg elem="ice" />を与えます。
+        <sec typ="note">列機 ハウプ数</sec> 状態の場合、 <sec typ="note">列機 ハウプ数</sec>を 消費して <sec typ="dmg"><buff typ="IceATK_UP" /> ダメージ量 <val idx="2" r /></sec>が 増加し、 命中した 敵を <sec typ="note">浸水</sec> 状態にします。
+        <sec typ="note">浸水</sec>：<sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="6" r /></sec>
+      TC: |-
+        列 範圍 對目標 造成<dmg elem="ice" />。
+        <sec typ="note">行台 吸數</sec> 狀態若為， <sec typ="note">行台 吸數</sec> 消耗並 <sec typ="dmg"><buff typ="IceATK_UP" /> 傷害量 <val idx="2" r /></sec> 增加，並 命中 敵人 <sec typ="note">浸水</sec> 使其進入狀態。
+        <sec typ="note">浸水</sec>：<sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="6" r /></sec>
   "3":
     key: "3"
     icon: P.WideIceShot
@@ -6645,10 +6665,30 @@ skills:
             per: -0.005
             chance: 0
     desc:
-      KR: 라운드 개시 시, 적 전체의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="7" r /></sec>를 감소시킵니다.
-      JP: ラウンド開始時、敵全体の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気抵抗 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="7" r /></sec>を減少させます。
-      EN: At the start of the round, reduces all enemies' <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> Cold Resistance <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="7" r /></sec>.
-      TC: 回合開始時，降低全體敵人的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷氣抗性 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="7" r /></sec>。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 적 전체의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="7" r /></sec>를 감소시킵니다.
+        <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 감소</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 감소</sec> 효과는 라운드 진행에 따라 약화됩니다.
+        1 라운드 : <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="6" r /></sec> 감소 / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="7" r /></sec> 감소
+        2 라운드 : <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="11" r /></sec> 감소 / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="12" r /></sec> 감소
+        3 라운드 이후 : <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="16" r /></sec> 감소 / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="17" r /></sec> 감소
+      EN: |-
+        <sec typ="cond">At round start</sec>, all enemies of <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="7" r /></sec> decreases.
+        <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance decrease</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack decrease</sec> effect round formation row depending on weaken.
+        1 round: <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="6" r /></sec> decrease / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="7" r /></sec> decrease
+        2 round: <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="11" r /></sec> decrease / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="12" r /></sec> decrease
+        3 round after: <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="16" r /></sec> decrease / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="17" r /></sec> decrease
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 敵全体の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="7" r /></sec>を減少させます。
+        <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 減少</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 減少</sec> 効果は ラウンド ジイン行に応じて 弱化されます。
+        1 ラウンド：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="6" r /></sec> 減少 / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="7" r /></sec> 減少
+        2 ラウンド：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="11" r /></sec> 減少 / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="12" r /></sec> 減少
+        3 ラウンド 以後：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="16" r /></sec> 減少 / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="17" r /></sec> 減少
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 全體敵人的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="7" r /></sec>使其減少。
+        <sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 減少</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 減少</sec> 效果 回合 支n列依 弱化。
+        1 回合：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="6" r /></sec> 減少 / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="7" r /></sec> 減少
+        2 回合：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="11" r /></sec> 減少 / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="12" r /></sec> 減少
+        3 回合 之後：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="16" r /></sec> 減少 / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="17" r /></sec> 減少
   "4":
     key: "4"
     icon: P.DefCounter
@@ -7103,10 +7143,22 @@ skills:
             per: 0
             chance: 0
     desc:
-      KR: 라운드 개시 시, 자신의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소하고 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="4" r /></sec>가 증가합니다.
-      JP: ラウンド開始時、自身の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 被ダメージ <val idx="0" r inv /></sec>が減少し、<sec typ="buff"><buff typ="FIRERES_UP" /> 火炎抵抗 <val idx="4" r /></sec>が増加します。
-      EN: At the start of the round, own <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decreases and <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="4" r /></sec> increases.
-      TC: 回合開始時，自身的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到傷害 <val idx="0" r inv /></sec>會降低，且 <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="4" r /></sec>會增加。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소하고 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="note">열기 흡수</sec>상태일 경우, 해제 불가한 <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="8" /></sec> 감소 효과를 획득합니다.
+        피격 시, <sec typ="buff"><buff typ="COUNTER" /> <val idx="10" r signless /> 위력으로 반격</sec>하고 반격 시 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="6" slot="1" r /></sec>가 추가로 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decreases and <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="4" r /></sec> increases.
+        <sec typ="note">Heat Absorption</sec> if in the state, cannot be removed one <sec typ="buff"><buff typ="RANGE_DOWN" /> Range <val idx="8" /></sec> decrease gains the effect.
+        When hit, <sec typ="buff"><buff typ="COUNTER" /> <val idx="10" r signless /> power as Counterattack</sec> and When counterattacking <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="6" slot="1" r /></sec>additionally increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec>が 減少し、 <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="4" r /></sec>が増加します。
+        <sec typ="note">列機 ハウプ数</sec>状態の場合、 解除不可した <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="8" /></sec> 減少 効果を獲得します。
+        被弾時、 <sec typ="buff"><buff typ="COUNTER" /> <val idx="10" r signless /> 威力で 反撃</sec>し、 反撃 時 <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="6" slot="1" r /></sec>が追加で増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="0" r inv /></sec> 減少，並 <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="4" r /></sec>增加。
+        <sec typ="note">行台 吸數</sec>狀態若為， 無法解除 <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="8" /></sec> 減少 獲得效果。
+        被擊時， <sec typ="buff"><buff typ="COUNTER" /> <val idx="10" r signless /> 威力以 反擊</sec>並 反擊 時 <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="6" slot="1" r /></sec>會額外增加。
   "5":
     key: "5"
     icon: P.ShieldWall
@@ -7251,9 +7303,9 @@ skills:
             chance: 1
     desc:
       KR: <sec typ="buff"><buff typ="DEF_Char" /> 범위 내 아군을 지정 보호</sec>하고 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="2" r /></sec>를 증가시킵니다.
-      JP: <sec typ="buff"><buff typ="DEF_Char" /> 範囲内の味方を指定保護</sec>し、<sec typ="buff"><buff typ="FIRERES_UP" /> 火炎抵抗 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="2" r /></sec>を増加させます。
-      EN: <sec typ="buff"><buff typ="DEF_Char" /> protects allies in range</sec> and increases <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="2" r /></sec>.
-      TC: <sec typ="buff"><buff typ="DEF_Char" /> 指定保護範圍內的友軍</sec>，並提升 <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="2" r /></sec>。
+      EN: <sec typ="buff"><buff typ="DEF_Char" /> within range Designated Protection for allies</sec> and <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="2" r /></sec> increases.
+      JP: <sec typ="buff"><buff typ="DEF_Char" /> 範囲内 味方を 指定保護</sec>し、 <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="2" r /></sec>を増加させます。
+      TC: <sec typ="buff"><buff typ="DEF_Char" /> 範圍內 我方 指定保護</sec>並 <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="2" r /></sec>使其增加。
 dialogue:
   KR:
     "1":

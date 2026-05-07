@@ -1903,17 +1903,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        지정 범위에 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하며 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="2" r /></sec> 감소 상태로 만듭니다.
+        지정 범위에 <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="2" r /></sec> 감소 상태로 만듭니다.
         <sec typ="cond">치명타 시</sec>, 해당 라운드 동안 대상을 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 상태로 만듭니다.
-      JP: |-
-        指定範囲に<dmg elem="physics" />を与え、2ラウンドの間対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>し、<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル <val idx="2" r /></sec>減少状態にします。
-        <sec typ="cond">クリティカル時</sec>、そのラウンドの間対象を<sec typ="buff"><buff typ="SEAL_SKILL" />スキル使用不可</sec>状態にします。
       EN: |-
-        Deals <dmg elem="physics" /> to the designated area, and for 2 rounds provokes the target while placing them in a <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="2" r /></sec> decrease state.
-        <sec typ="cond">On critical hit</sec>, makes the target <sec typ="buff"><buff typ="SEAL_SKILL" /> unable to use skills</sec> for that round.
+        to the designated area <dmg elem="physics" /> damage and 2 rounds <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="2" r /></sec> decrease inflicts.
+        <sec typ="cond">On critical hit</sec>, each round target <sec typ="buff"><buff typ="SEAL_SKILL" /> skill cannot use</sec> inflicts.
+      JP: |-
+        指定範囲に<dmg elem="physics" />を与え、、 2ラウンドの間 <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="2" r /></sec> 減少 状態にします。
+        <sec typ="cond">クリティカル時</sec>、 該当 ラウンド間 対象を <sec typ="buff"><buff typ="SEAL_SKILL" /> スキル スアヨン 不可</sec> 状態にします。
       TC: |-
-        對指定範圍造成<dmg elem="physics" />傷害，並於2回合內使目標陷入<sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="2" r /></sec>減少狀態。
-        <sec typ="cond">暴擊時</sec>，使目標於該回合<sec typ="buff"><buff typ="SEAL_SKILL" />無法使用技能</sec>。
+        指定範圍於 造成<dmg elem="physics" />，並 2回合內 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="2" r /></sec> 減少 使其進入狀態。
+        <sec typ="cond">暴擊時</sec>， 該 回合內 目標 <sec typ="buff"><buff typ="SEAL_SKILL" /> 技能 使用 不可</sec> 使其進入狀態。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -4052,15 +4052,15 @@ skills:
       KR: |-
         지정 대상에게 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시키며 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="7" r /></sec>를 증가시킵니다.
         <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
-      JP: |-
-        指定対象に<dmg elem="physics" />を与え、2ラウンドの間対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力 <val idx="0" r /></sec>を減少させ、<sec typ="buff"><buff typ="VULNERABLE" />被ダメージ <val idx="7" r /></sec>を増加させます。
-        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />防御力増加</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" />被ダメージ減少効果を解除</sec>します。
       EN: |-
-        Deals <dmg elem="physics" /> to the designated target, decreasing the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> for 2 rounds and increasing <sec typ="buff"><buff typ="VULNERABLE" /> Received Damage <val idx="7" r /></sec>.
-        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's DEF increase</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> Received Damage Decrease effects</sec>.
+        designated to the target with <dmg elem="physics" /> damage and 2 rounds, target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> decreases and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="7" r /></sec> increases.
+        <sec typ="cond">On critical hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Defense increase</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken decrease removes the effect</sec>.
+      JP: |-
+        指定対象に<dmg elem="physics" />を与え、、 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を 減少させ、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="7" r /></sec>を増加させます。
+        <sec typ="cond">クリティカル時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防御力 増加</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ 減少 効果を 解除</sec>します。
       TC: |-
-        對指定目標造成<dmg elem="physics" />傷害，並於2回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>，同時增加其<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="7" r /></sec>。
-        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的防禦力增加</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" />所受傷害減少效果</sec>。
+        指定目標給 造成<dmg elem="physics" />，並 2回合內 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> 使其減少，並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="7" r /></sec>使其增加。
+        <sec typ="cond">暴擊時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防禦力 增加</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害 減少 效果 解除</sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4257,15 +4257,15 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
         <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec>가 감소하며 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="4" r /></sec>가 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="2" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />被ダメージ <val idx="3" r inv /></sec>が減少し、<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性 <val idx="4" r /></sec>が増加します。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="2" r /></sec> increases.
-        <sec typ="cond">At the start of the round</sec>, self's <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="3" r inv /></sec> decreases and <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect RES <val idx="4" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="3" r inv /></sec> decreases and <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="4" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="3" r inv /></sec>が 減少し、 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="4" r /></sec>が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="2" r /></sec>增加。
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="3" r inv /></sec>減少，且<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="4" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="2" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="3" r inv /></sec> 減少，並 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="4" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -4570,18 +4570,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 <sec typ="buff"><buff typ="DEF_Char" /> 공격기 / 지원기를 지정 보호</sec>합니다.
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /> (중열) / <val idx="5" r /> (후열)</sec>를 증가시킵니다.
         <sec typ="cond">전투 개시 시</sec>, 범위 내 아군에게 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 방어 관통 감소 면역</sec> 효과를 부여합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方<sec typ="buff"><buff typ="DEF_Char" />攻撃機/支援機を指定保護</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="4" r /> (中列) / <val idx="5" r /> (後列)</sec>を増加させます。
-        <sec typ="cond">戦闘開始時</sec>、範囲内の味方に<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />防御貫通減少免疫</sec>効果を付与します。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, provides <sec typ="buff"><buff typ="DEF_Char" /> designated protection to ally attackers/supporters</sec> within range.
-        <sec typ="cond">At the start of the round</sec>, increases allies' <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="4" r /> (middle row) / <val idx="5" r /> (rear row)</sec> within range.
-        <sec typ="cond">At the start of combat</sec>, grants allies within range <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immunity to DEF Pierce decrease</sec>.
+        <sec typ="cond">At round start</sec>, within range allies <sec typ="buff"><buff typ="DEF_Char" /> Attacker / Supporter Designated Protection</sec>.
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="4" r /> (middle row) / <val idx="5" r /> (back row)</sec> increases.
+        <sec typ="cond">At battle start</sec>, within range to allies <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> Defense Penetration decrease immunity</sec> grants the effect.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方 <sec typ="buff"><buff typ="DEF_Char" /> 攻撃機 / 支援機を 指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="4" r /> (中列) / <val idx="5" r /> (後列)</sec>を増加させます。
+        <sec typ="cond">戦闘開始時</sec>、 範囲内 味方に <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 防御貫通 減少 免疫</sec> 効果を付与します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，對範圍內我軍<sec typ="buff"><buff typ="DEF_Char" /> 攻擊機/支援機施加指定保護</sec>。
-        <sec typ="cond">回合開始時</sec>，提升範圍內我軍的<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="4" r />（中列）/ <val idx="5" r />（後列）</sec>。
-        <sec typ="cond">戰鬥開始時</sec>，賦予範圍內我軍<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 防禦穿透減少免疫</sec>效果。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方 <sec typ="buff"><buff typ="DEF_Char" /> 攻擊機 / 支援機 指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="4" r /> (中排) / <val idx="5" r /> (後排)</sec>使其增加。
+        <sec typ="cond">戰鬥開始時</sec>， 範圍內 我方給 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 防禦穿透 減少 免疫</sec> 賦予效果。
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -5169,18 +5169,18 @@ skills:
         <sec typ="cond">물리 공격 피격 시</sec>, 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>이(가) 증가합니다.
         <sec typ="cond">라운드 개시 시</sec>, 스쿼드 내 <sec>아군 공격기 수에 비례</sec>하여 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec>가 증가합니다.
         <sec typ="cond">라운드 개시 시</sec>, 스쿼드 내 <sec>아군 지원기 수에 비례</sec>하여 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="8" r /></sec>가 증가합니다.
-      JP: |-
-        <sec typ="cond">物理攻撃を受けた時</sec>、自分に適用された<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害効果を解除</sec>し、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、分隊内の<sec>味方攻撃機数に比例</sec>して自分の<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="4" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、分隊内の<sec>味方支援機数に比例</sec>して自分の<sec typ="buff"><buff typ="DEF_UP" />防御力 <val idx="8" r /></sec>が増加します。
       EN: |-
-        <sec typ="cond">When hit by a physical attack</sec>, removes the <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec> applied to self and increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>.
-        <sec typ="cond">At the start of the round</sec>, self's <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="4" r /></sec> increases in proportion to the number of ally attackers in the squad.
-        <sec typ="cond">At the start of the round</sec>, self's <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="8" r /></sec> increases in proportion to the number of ally supporters in the squad.
+        <sec typ="cond">Physical attack When hit</sec>, applied to self <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec> and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec> increases.
+        <sec typ="cond">At round start</sec>, in squad <sec>allies Attacker number to proportional</sec> by doing own <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, in squad <sec>allies Supporter number to proportional</sec> by doing own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="8" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">物理 攻撃 被弾時</sec>、 自身に 適用された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>し、 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 スクワッド 内 <sec>味方 攻撃機 数に 比例</sec>して 自身の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="4" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 スクワッド 内 <sec>味方 支援機 数に 比例</sec>して 自身の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="8" r /></sec>が増加します。
       TC: |-
-        <sec typ="cond">受到物理攻擊時</sec>，解除套用於自身的<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>，並增加<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>。
-        <sec typ="cond">回合開始時</sec>，依小隊中我軍攻擊機數量成比例，使自身的<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" r /></sec>增加。
-        <sec typ="cond">回合開始時</sec>，依小隊中我軍支援機數量成比例，使自身的<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="8" r /></sec>增加。
+        <sec typ="cond">物理 攻擊 被擊時</sec>， 自身給 套用已 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>並 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 小隊 內 <sec>我方 攻擊機 數於 成比例</sec>並 自身的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 小隊 內 <sec>我方 支援機 數於 成比例</sec>並 自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="8" r /></sec>增加。
 dialogue:
   KR:
     "1":

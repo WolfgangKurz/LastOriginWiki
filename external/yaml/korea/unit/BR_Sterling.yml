@@ -5599,29 +5599,29 @@ skills:
             chance: 1
     desc:
       KR: |-
-        지정 범위의 적들에게 <dmg elem="physics" /> 피해를 입히고 적중시 2라운드 동안 지속되는 공격력 감소/ 회피 감소/ 받는 피해 증가 디버프 및 효과 저항 약화 일반 효과를 각각 33%로 부여합니다.
-        각 효과는 모두 적용되거나 그렇지 않을 수 있으며 중첩 제한이 없습니다.
-        스쿼드에 <char uid="BR_Fafnir" />, <char uid="BR_May" />, <char uid="B11_NightAngel" />, <char uid="P18_Sylphid" />, <char uid="A87_Banshee" />, <char uid="B7_StratoAngel" />, <char uid="AL_Race" />가 있을 시, 100%로 [뇌정벽력], [석기 시대로!], [고공 폭격], [열 추적 로크 미사일], [기관포 소사], [고고도 폭격], [조준 폭격] 스킬로 협동 공격을 유도합니다.
-        협동 공격이 가능한 전투원이 여러 명인 경우, 위 표기된 순으로 우선권을 가집니다. (파프니르->AL 레이스 순)
-        다수의 적이 대상인 경우, 사거리가 닿는 적을 우선 선택하고 사거리로 인해 협동 공격이 불가능할 경우 다음 순서의 전투원이 협동 공격을 실행합니다.
-      JP: |-
-        指定範囲の敵に<dmg elem="physics" />ダメージを与え、命中時に2ラウンドの間持続する攻撃力減少/回避減少/受けるダメージ増加のデバフおよび効果抵抗弱化の一般効果をそれぞれ33%で付与します。
-        各効果はすべて適用される場合もあれば、そうでない場合もあり、重複制限はありません。
-        分隊に<char uid="BR_Fafnir" />、<char uid="BR_May" />、<char uid="B11_NightAngel" />、<char uid="P18_Sylphid" />、<char uid="A87_Banshee" />、<char uid="B7_StratoAngel" />、<char uid="AL_Race" />がいる場合、100%で[雷霆霹靂]、[石器時代へ! ]、[高空爆撃]、[熱追跡ロックミサイル]、[機関砲乱射]、[高高度爆撃]、[照準爆撃]スキルによる協同攻撃を誘導します。
-        協同攻撃が可能な戦闘員が複数いる場合、上記の順で優先権を持ちます。(ファフニール->ALレースの順)
-        複数の敵が対象の場合、射程が届く敵を優先選択し、射程の都合で協同攻撃が不可能な場合は次の順番の戦闘員が協同攻撃を実行します。
+        지정 범위의 적들에게 <dmg elem="physics" />를 입히고 <sec typ="cond">적중시</sec> 2라운드 동안 지속되는 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> 감소 / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec> 감소 / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="6" r /></sec> 증가 디버프 및 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="7" r inv /></sec> 약화 <sec typ="attr">일반 효과</sec>를 <sec typ="chance">각각 33% 확률</sec>로 부여합니다.
+        <sec>각 효과는 모두 적용되거나 그렇지 않을 수 있으며 중첩 제한이 없습니다.</sec>
+        <sec typ="cond">스쿼드에 <char uid="BR_Fafnir" />, <char uid="BR_May" />, <char uid="BR_NightAngel" />, <char uid="BR_Sylphid" />, <char uid="BR_Banshee" />, <char uid="BR_StratoAngel" />, <char uid="BR_ALWraith" />가 있을 시</sec>,<sec typ="chance"> 100% 확률</sec>로 각각 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">뇌정벽력</sec>, <sec typ="note">석기 시대로!</sec>, <sec typ="note">고공 폭격</sec>, <sec typ="note">열 추적 로크 미사일</sec>, <sec typ="note">기관포 소사</sec>, <sec typ="note">고고도 폭격</sec>, <sec typ="note">조준 폭격</sec> 스킬로 협동 공격</sec>을 유도합니다.
+        <sec>협동 공격이 가능한 전투원이 여렷인 경우, 위 표기된 순으로 우선권을 가집니다. (<char uid="BR_May" /> -&gt; <char uid="BR_ALWraith" /> 순)</sec>
+        <sec typ="cond">다수의 적이 대상인 경우</sec>, <sec>사거리가 닿는 적을 우선 선택</sec>하고 <sec typ="cond">사거리로 인해 협동 공격이 불가능할 경우</sec> <sec>다음 순서의 전투원이 협동 공격을 실행</sec>합니다.
       EN: |-
-        Deals <dmg elem="physics" /> damage to enemies in the designated area, and on hit, applies 33% chances for each of the following 2-round debuffs: ATK decrease, EVA decrease, received damage increase, and Effect Resistance weakening.
-        Each effect may or may not be applied, and there are no stacking restrictions.
-        If <char uid="BR_Fafnir" />, <char uid="BR_May" />, <char uid="B11_NightAngel" />, <char uid="P18_Sylphid" />, <char uid="A87_Banshee" />, <char uid="B7_StratoAngel" />, and <char uid="AL_Race" /> are in the squad, launches co-op attacks with [Thunderclap], [Stone Age!], [High-Altitude Bombardment], [Heat-Seeking Lock Missile], [Machine Gun Suppression], [High-Altitude Bombing], and [Aimed Bombardment] skills at 100% chance.
-        If multiple combatants can perform co-op attacks, priority follows the order shown above. (Fafnir -> AL Race)
-        If multiple enemies are targeted, the enemy within range is chosen first, and if co-op attacks are impossible due to range, the combatant next in order will perform the co-op attack.
+        designated area of to the enemy <dmg elem="physics" /> deals and <sec typ="cond">Accuracywhen</sec> 2 rounds continues <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> decrease / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> decrease / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="6" r /></sec> increase debuff and <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="7" r inv /></sec> weaken <sec typ="attr">normal effect</sec> <sec typ="chance">respectively 33% chance</sec> as grant.
+        <sec>each effect all enemy applied or the Reoh whether not number exists and stack limit does not.</sec>
+        <sec typ="cond">squad <char uid="BR_Fafnir" />, <char uid="BR_May" />, <char uid="BR_NightAngel" />, <char uid="BR_Sylphid" />, <char uid="BR_Banshee" />, <char uid="BR_StratoAngel" />, <char uid="BR_ALWraith" /> if present</sec>,<sec typ="chance"> 100% chance</sec> as respectively <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Thunderbolt</sec>, <sec typ="note">Back to the Stone Age!</sec>, <sec typ="note">High-Altitude Bombing</sec>, <sec typ="note">column additional enemy lock missile</sec>, <sec typ="note">Machine-Gun Strafing</sec>, <sec typ="note">High-Altitude Bombing</sec>, <sec typ="note">Aimed Bombing</sec> skill as coordinated attack</sec> triggers.
+        <sec>coordinated attack possible combatant multiple if, above listed in order as priority has. (<char uid="BR_May" /> -&gt; <char uid="BR_ALWraith" /> order)</sec>
+        <sec typ="cond">If there are multiple targets</sec>, <sec>Range prioritizes enemies within range</sec> and <sec typ="cond">Rangedue to coordinated attack if unable</sec> <sec>the next combatant in order performs the coordinated attack</sec>.
+      JP: |-
+        指定範囲の 敵たちに<dmg elem="physics" />を 与えし <sec typ="cond">命中時</sec> 2ラウンドの間 持続ドウェは <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec> 減少 / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec> 減少 / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="6" r /></sec> 増加 デバフ および <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="7" r inv /></sec> 弱化 <sec typ="attr">一般効果</sec>を <sec typ="chance">それぞれ 33% 確率</sec>で ブウヨします。
+        <sec>各 効果は ムオドウ 適用ドウェまたは グウルオフジイ アを 数 イトウし 重複 ジエしたが ありません。</sec>
+        <sec typ="cond">スクワッドに <char uid="BR_Fafnir" />、 <char uid="BR_May" />、 <char uid="BR_NightAngel" />、 <char uid="BR_Sylphid" />、 <char uid="BR_Banshee" />、 <char uid="BR_StratoAngel" />、 <char uid="BR_ALWraith" />が ある 時</sec>、<sec typ="chance"> 100% 確率</sec>で それぞれ <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">雷霆霹靂</sec>、 <sec typ="note">石器時代へ！</sec>、 <sec typ="note">高空爆撃</sec>、 <sec typ="note">熱追跡ロックミサイル</sec>、 <sec typ="note">機関砲掃射</sec>、 <sec typ="note">高高度爆撃</sec>、 <sec typ="note">照準爆撃</sec> スキルで 協同攻撃</sec>を 誘導します。
+        <sec>協同攻撃が 可能した 戦闘員が ヨルヨトの場合、 ウィ プヨ機された スウンで 優先権を がジイプンイドア。 (<char uid="BR_May" /> -&順; <char uid="BR_ALWraith" /> スウン)</sec>
+        <sec typ="cond">ドア数の 敵が 対象の場合</sec>、 <sec>射程が ドアフは 敵を ウ宣 選択</sec>し、 <sec typ="cond">射程により 協同攻撃が 不可能できる 場合</sec> <sec>次 順序の 戦闘員が 協同攻撃を 実行</sec>します。
       TC: |-
-        對指定範圍內的敵人造成<dmg elem="physics" />，命中時以33%機率施加以下持續2回合的減益：攻擊力下降、迴避下降、所受傷害增加，以及效果抵抗削弱。
-        各效果可能全數套用，也可能不套用，且無疊加限制。
-        若小隊中有<char uid="BR_Fafnir" />、<char uid="BR_May" />、<char uid="B11_NightAngel" />、<char uid="P18_Sylphid" />、<char uid="A87_Banshee" />、<char uid="B7_StratoAngel" />、<char uid="AL_Race" />，則會以100%機率發動[雷霆霹靂]、[石器時代！]、[高空轟炸]、[熱追蹤鎖定飛彈]、[機關炮掃射]、[高空轟炸]、[瞄準轟炸]技能協力攻擊。
-        若可發動協力攻擊的戰鬥員有多名，則依上述順序優先。(法芙妮爾->AL Race順序)
-        若目標為多名敵人，會優先選擇射程可及的敵人；若因射程無法進行協力攻擊，則由下一順位的戰鬥員執行協力攻擊。
+        指定範圍的 敵人們給 <dmg elem="physics" /> 造成並 <sec typ="cond">命中時</sec> 2回合內 持續變為 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec> 減少 / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec> 減少 / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="6" r /></sec> 增加 減益 以及 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="7" r inv /></sec> 弱化 <sec typ="attr">一般效果</sec> <sec typ="chance">各自 33% 機率</sec>以 賦予。
+        <sec>各 效果 全部 套用變為或 Geu達到h至 不 數 存在eu並 疊加 解除 不存在。</sec>
+        <sec typ="cond">小隊於 <char uid="BR_Fafnir" />， <char uid="BR_May" />， <char uid="BR_NightAngel" />， <char uid="BR_Sylphid" />， <char uid="BR_Banshee" />， <char uid="BR_StratoAngel" />， <char uid="BR_ALWraith" /> 有 時</sec>，<sec typ="chance"> 100% 機率</sec>以 各自 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">雷霆霹靂</sec>， <sec typ="note">回到石器時代！</sec>， <sec typ="note">高空轟炸</sec>， <sec typ="note">熱追蹤鎖定飛彈</sec>， <sec typ="note">機砲掃射</sec>， <sec typ="note">高空轟炸</sec>， <sec typ="note">瞄準轟炸</sec> 技能以 協同攻擊</sec> 誘發。
+        <sec>協同攻擊 可能 戰鬥員 多個若為， 上 標記台已 順序以 優先權。 (<char uid="BR_May" /> -&依; <char uid="BR_ALWraith" /> 順序)</sec>
+        <sec typ="cond">全部數的 敵人 目標若為</sec>， <sec>射程 全部h 敵人 優先 選擇</sec>並 <sec typ="cond">射程因 協同攻擊 不可能可 情況</sec> <sec>下次 順序的 戰鬥員 協同攻擊 執行</sec>。
   "2":
     key: "2"
     icon: TeamAtkBuff
@@ -5965,16 +5965,16 @@ skills:
     desc:
       KR: |-
         지정 범위 아군에게 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec> 증가 버프를 줍니다. <sec>(중첩 무제한)</sec>
-        대상이 둠 브링어와 파프니르는 3배 수치로 적용되고 파프니르인 경우 AP가 증가합니다.
-      JP: |-
-        指定範囲の味方に2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" />スキル威力<val idx="1" r /></sec>増加バフを与えます。<sec>(重複制限なし)</sec>
-        対象がDoom BringerとFafnirの場合は3倍の数値で適用され、Fafnirの場合はAPが増加します。
+        <sec typ="cond">대상이 <cmt t="둠 브링어"><import name="DoomBringer" /></cmt>와 <char uid="BR_Fafnir" />인 경우</sec> <sec typ="buff">3배 수치로 적용</sec>되고 <sec typ="cond"><char uid="BR_Fafnir" /></sec>는 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>이(가) 추가로 증가합니다.
       EN: |-
-        Grants allies in the designated area a 2-round buff that increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> skill power <val idx="1" r /></sec>. <sec>(no stacking limit)</sec>
-        If the target is Doom Bringer or Fafnir, the effect is applied at 3x value, and if the target is Fafnir, AP also increases.
+        to the designated area allies 2 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="1" r /></sec> increase buff deals. <sec>(stack unlimited)</sec>
+        <sec typ="cond">target <cmt t="Doom Bringer"><import name="DoomBringer" /></cmt> and <char uid="BR_Fafnir" /> if</sec> <sec typ="buff">3 times value as applies</sec>becomes and <sec typ="cond"><char uid="BR_Fafnir" /></sec> <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>() additionally increases.
+      JP: |-
+        指定範囲 味方に 2ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="1" r /></sec> 増加 バフを 与えます。 <sec>(重複 ムウジエした)</sec>
+        <sec typ="cond">対象が <cmt t="ドゥームブリンガー"><import name="DoomBringer" /></cmt>と <char uid="BR_Fafnir" />の場合</sec> <sec typ="buff">3ブエ 数値で 適用</sec>になり、 <sec typ="cond"><char uid="BR_Fafnir" /></sec>は <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>が追加で増加します。
       TC: |-
-        對指定範圍內的我軍施加持續2回合的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" />技能威力<val idx="1" r /></sec>增加增益。<sec>(無疊加上限)</sec>
-        若目標是毀滅使者與法芙妮爾，則以3倍數值套用；若目標是法芙妮爾，AP也會增加。
+        指定範圍 我方給 2回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="1" r /></sec> 增加 增益 造成。 <sec>(疊加 無je)</sec>
+        <sec typ="cond">目標 <cmt t="毀滅使者"><import name="DoomBringer" /></cmt>與 <char uid="BR_Fafnir" />若為</sec> <sec typ="buff">3倍 數值以 套用</sec>變為，且 <sec typ="cond"><char uid="BR_Fafnir" /></sec> <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>會額外增加。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -6365,16 +6365,16 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec> 1라운드 동안 범위내 아군에게 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec> 증가 버프를 줍니다.
-        대상이 둠 브링어와 파프니르라면 3배 수치로 적용되고 파프니르는 1라운드 동안 방어막 및 받는 피해 감소 무시 버프를 얻습니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、1ラウンドの間、範囲内の味方に<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>増加バフを与えます。
-        対象がDoom BringerとFafnirの場合は3倍の数値で適用され、Fafnirは1ラウンドの間バリアおよび受けるダメージ減少無視バフを得ます。
+        <sec typ="cond">대상이 <cmt t="둠 브링어"><import name="DoomBringer" /></cmt>와 <char uid="BR_Fafnir" />인 경우</sec> <sec typ="buff">3배 수치로 적용</sec>되고 <sec typ="cond"><char uid="BR_Fafnir" /></sec>는 1라운드 동안 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 및 받는 피해 감소 무시</sec> 버프를 얻습니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, grants allies in range a 1-round buff that increases <sec typ="buff"><buff typ="ACCURACY_UP" /> ACU <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec>.
-        If the target is Doom Bringer or Fafnir, the effect is applied at 3x value, and Fafnir gains a 1-round buff that ignores Barrier and Damage Decrease.
+        <sec typ="cond">At round start</sec> 1 round range within to allies <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increase buff deals.
+        <sec typ="cond">target <cmt t="Doom Bringer"><import name="DoomBringer" /></cmt> and <char uid="BR_Fafnir" /> if</sec> <sec typ="buff">3 times value as applies</sec>becomes and <sec typ="cond"><char uid="BR_Fafnir" /></sec> 1 round <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier and damage taken decrease ignore</sec> buff gains.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 1ラウンドの間 範囲内 味方に <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec> 増加 バフを 与えます。
+        <sec typ="cond">対象が <cmt t="ドゥームブリンガー"><import name="DoomBringer" /></cmt>と <char uid="BR_Fafnir" />の場合</sec> <sec typ="buff">3ブエ 数値で 適用</sec>になり、 <sec typ="cond"><char uid="BR_Fafnir" /></sec>は 1ラウンドの間 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア および 受けるダメージ 減少 無視</sec> バフを オトます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，對範圍內我軍施加持續1回合的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>增加增益。
-        若目標為毀滅使者與法芙妮爾，則以3倍數值套用；法芙妮爾將獲得持續1回合的無視防護罩與所受傷害減少增益。
+        <sec typ="cond">回合開始時</sec> 1回合內 範圍內 我方給 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec> 增加 增益 造成。
+        <sec typ="cond">目標 <cmt t="毀滅使者"><import name="DoomBringer" /></cmt>與 <char uid="BR_Fafnir" />若為</sec> <sec typ="buff">3倍 數值以 套用</sec>變為，且 <sec typ="cond"><char uid="BR_Fafnir" /></sec> 1回合內 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 護盾 以及 受到的傷害 減少 無視</sec> 增益 獲得。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -6795,29 +6795,29 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시시</sec> 전체 아군 전원의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
-        <sec typ="cond">라운드 개시시</sec> 둠 브링어 구성원과 파프니르의 AP를 증가시킵니다.
-        자신을 제외한 어떤 아군이든 공격을 성공시키면 모든 아군에게 2라운드 동안 공격력 증가 버프를 줍니다.(5중첩)
-        이 수치는 둠 브링어 구성원과 파프니르는 3배로 적용되고 파프니르는 추가로 스킬위력이 증가합니다. (5중첩)
-        협동 공격, 공격 지원, 반격은 이 효과를 발동시키지 않습니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、全味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
-        <sec typ="cond">ラウンド開始時</sec>、Doom Bringer構成員とFafnirのAPを増加させます。
-        自分以外のどの味方でも攻撃を成功させると、全味方に2ラウンドの間、攻撃力増加バフを与えます。(5スタック)
-        この数値はDoom Bringer構成員とFafnirには3倍で適用され、Fafnirはさらにスキル威力が増加します。(5スタック)
-        協同攻撃、攻撃支援、反撃はこの効果を発動させません。
+        <sec typ="cond">전투 개시 시</sec> 전체 아군 전원의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <cmt t="둠 브링어"><import name="DoomBringer" /></cmt> 구성원과 <char uid="BR_Fafnir" />의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">자신을 제외한 어떤 아군이든 공격을 성공시키면</sec> 모든 아군에게 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> 증가 버프를 줍니다. <sec>(최대 5중첩) </sec>
+        이 수치는 <sec typ="cond"><cmt t="둠 브링어"><import name="DoomBringer" /></cmt> 구성원과 <char uid="BR_Fafnir" /></sec>는 <sec typ="buff">3배로 적용</sec>되고 <sec typ="cond"><char uid="BR_Fafnir" /></sec>는 <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="8" r /></sec>가 추가로 증가합니다. <sec>(최대 5중첩)</sec>
+        <sec>협동 공격, 공격 지원, 반격은 이 효과를 발동시키지 않습니다.</sec>
       EN: |-
-        <sec typ="cond">At battle start</sec>, increases all allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>.
-        <sec typ="cond">At round start</sec>, increases the AP of Doom Bringer members and Fafnir.
-        Whenever any ally other than self lands an attack, all allies gain a 2-round ATK increase buff. (5 stacks)
-        This value is applied at 3x strength for Doom Bringer members and Fafnir, and Fafnir additionally gains increased skill power. (5 stacks)
-        Co-op attacks, attack support, and retaliation do not trigger this effect.
+        <sec typ="cond">At battle start</sec> all allies wire Won of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">At round start</sec> <cmt t="Doom Bringer"><import name="DoomBringer" /></cmt> member and <char uid="BR_Fafnir" /> of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increases.
+        <sec typ="cond">self excluding any allies all attack success when if activates</sec> all to allies 2 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> increase buff deals. <sec>(up to 5stack) </sec>
+        value <sec typ="cond"><cmt t="Doom Bringer"><import name="DoomBringer" /></cmt> member and <char uid="BR_Fafnir" /></sec> <sec typ="buff">3 times as applies</sec>becomes and <sec typ="cond"><char uid="BR_Fafnir" /></sec> <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="8" r /></sec>additionally increases. <sec>(up to 5stack)</sec>
+        <sec>coordinated attack, Attack Support, Counterattack does not trigger this effect.</sec>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec> 全体 味方 全員の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec> <cmt t="ドゥームブリンガー"><import name="DoomBringer" /></cmt> メンバーと <char uid="BR_Fafnir" />の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>を増加させます。
+        <sec typ="cond">自身を ジエ外した オットオン 味方がドウン 攻撃を 宣グオン時クイなら</sec> すべての味方に 2ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> 増加 バフを 与えます。 <sec>(最大 5重複)</sec>
+        が 数値は <sec typ="cond"><cmt t="ドゥームブリンガー"><import name="DoomBringer" /></cmt> メンバーと <char uid="BR_Fafnir" /></sec>は <sec typ="buff">3ブエで 適用</sec>になり、 <sec typ="cond"><char uid="BR_Fafnir" /></sec>は <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="8" r /></sec>が追加で増加します。 <sec>(最大 5重複)</sec>
+        <sec>協同攻撃、 攻撃支援、 反撃は が 効果を ブアルドオン時クイジイ しません。</sec>
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，提升全體我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>。
-        <sec typ="cond">回合開始時</sec>，提升毀滅使者成員與法芙妮爾的AP。
-        當除自身外的任一我軍成功攻擊時，會使全體我軍獲得持續2回合的攻擊力增加增益。(5層)
-        此數值對毀滅使者成員與法芙妮爾以3倍套用，且法芙妮爾另外提升技能威力。(5層)
-        協力攻擊、攻擊支援、反擊不會觸發此效果。
+        <sec typ="cond">戰鬥開始時</sec> 全體 我方 全員的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec> <cmt t="毀滅使者"><import name="DoomBringer" /></cmt> 成員與 <char uid="BR_Fafnir" />的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>使其增加。
+        <sec typ="cond">自身 解除外 獲得teon 我方獲得 攻擊 先g防空時台若</sec> 所有我方給 2回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> 增加 增益 造成。 <sec>(最大 5疊加) </sec>
+         數值 <sec typ="cond"><cmt t="毀滅使者"><import name="DoomBringer" /></cmt> 成員與 <char uid="BR_Fafnir" /></sec> <sec typ="buff">3倍以 套用</sec>變為，且 <sec typ="cond"><char uid="BR_Fafnir" /></sec> <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="8" r /></sec>會額外增加。 <sec>(最大 5疊加)</sec>
+        <sec>協同攻擊， 攻擊支援， 反擊 效果 發動時台至 不會。</sec>
   "5":
     key: "5"
     icon: P.TeamDefBuff
@@ -7164,21 +7164,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec> 1라운드 동안 범위 내 아군에게 방어력/ 효과 저항 증가 버프를 주고 스쿼드 내 둠브링어가 5명이라면 회피를 증가시킵니다.
-        추가로 파프니르에게 1라운드 동안 받는 피해 감소 및 피해 무효화 1회(고정)를 부여합니다.
-        자신을 제외한 어떤 아군이든 피격 당하면 모든 아군에게 기존 보호막 효과를 삭제시키고 1라운드동안 보호막 버프를 줍니다.(1중첩)
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、1ラウンドの間、範囲内の味方に防御力/効果抵抗増加バフを与え、分隊内のDoom Bringerが5人なら回避を増加させます。
-        さらにFafnirに1ラウンドの間、受けるダメージ減少および1回のダメージ無効化(固定)を付与します。
-        自分以外のどの味方でも被弾すると、全味方の既存バリア効果を削除し、1ラウンドの間バリアバフを与えます。(1スタック)
+        <sec typ="cond">라운드 개시 시</sec> 1라운드 동안 범위 내 아군에게 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="1" r /></sec> 증가 버프를 주고 <sec typ="cond">스쿼드 내 <cmt t="둠 브링어"><import name="DoomBringer" /></cmt>가 5명이라면</sec> <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="7" r /></sec>를 증가시킵니다.
+        추가로 <sec typ="cond"><char uid="BR_Fafnir" /></sec>에게 1라운드 동안 <s>받는 피해 감소</s> 및 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="6" signless />회<sub>(고정 수치)</sub></sec>를 부여합니다.
+        <sec typ="cond">자신을 제외한 어떤 아군이든 피격 당하면</sec> 모든 아군에게 <sec typ="buff">기존 보호막 효과를 삭제</sec>시키고 1라운드 동안 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 보호막 <val idx="5" signless /></sec> 버프를 줍니다. <sec>(최대 1중첩)</sec>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, grants allies in range a 1-round buff that increases DEF/Effect Resistance, and if there are 5 Doom Bringer members in the squad, increases EVA.
-        Additionally, grants Fafnir 1 round of received damage decrease and 1 fixed damage negate.
-        When any ally other than self is hit, removes existing barrier effects from all allies and grants a 1-round barrier buff. (1 stack)
+        <sec typ="cond">At round start</sec> 1 round within range to allies <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="1" r /></sec> increase buff deals and <sec typ="cond">in squad <cmt t="Doom Bringer"><import name="DoomBringer" /></cmt> 5 if members</sec> <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="7" r /></sec> increases.
+        additionally <sec typ="cond"><char uid="BR_Fafnir" /></sec> to 1 round <s>damage taken decrease</s> and <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification <val idx="6" signless />times<sub>(fixed value)</sub></sec> grants.
+        <sec typ="cond">self excluding any allies all hit per if doing</sec> all to allies <sec typ="buff">existing protective shield effect and removed.</sec>when activates 1 round <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> protective shield <val idx="5" signless /></sec> buff deals. <sec>(up to 1stack)</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 1ラウンドの間 範囲内 味方に <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="1" r /></sec> 増加 バフを 与え、 <sec typ="cond">スクワッド 内 <cmt t="ドゥームブリンガー"><import name="DoomBringer" /></cmt>が 5名がルアなら</sec> <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="7" r /></sec>を増加させます。
+        追加で <sec typ="cond"><char uid="BR_Fafnir" /></sec>に 1ラウンドの間 <s>受けるダメージ 減少</s> および <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="6" signless />回<sub>(固定 数値)</sub></sec>を付与します。
+        <sec typ="cond">自身を ジエ外した オットオン 味方がドウン 被弾 ごとハアなら</sec> すべての味方に <sec typ="buff">機ジオン 保護ムアク 効果を スアクジエ</sec>時クイし 1ラウンドの間 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 保護ムアク <val idx="5" signless /></sec> バフを 与えます。 <sec>(最大 1重複)</sec>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，對範圍內我軍施加持續1回合的防禦力 / 效果抵抗增加增益；若小隊內有5名毀滅使者，則提升迴避。
-        另外，賦予法芙妮爾持續1回合的所受傷害減少與1次固定傷害無效。
-        若除自身外的任一我軍受到攻擊，則移除全體我軍現有的護盾效果，並賦予持續1回合的護盾增益。(1層)
+        <sec typ="cond">回合開始時</sec> 1回合內 範圍內 我方給 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="1" r /></sec> 增加 增益 造成，並 <sec typ="cond">小隊 內 <cmt t="毀滅使者"><import name="DoomBringer" /></cmt> 5名若</sec> <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="7" r /></sec>使其增加。
+        額外 <sec typ="cond"><char uid="BR_Fafnir" /></sec>給 1回合內 <s>受到的傷害 減少</s> 以及 <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 <val idx="6" signless />次<sub>(固定 數值)</sub></sec>賦予。
+        <sec typ="cond">自身 解除外 獲得teon 我方獲得 被擊 每下若</sec> 所有我方給 <sec typ="buff">台存在 保護Mak 效果 Sakje</sec>時台並 1回合內 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 保護Mak <val idx="5" signless /></sec> 增益 造成。 <sec>(最大 1疊加)</sec>
 dialogue:
   KR:
     "1":

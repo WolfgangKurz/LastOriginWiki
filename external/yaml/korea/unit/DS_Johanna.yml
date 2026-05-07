@@ -1991,9 +1991,9 @@ skills:
             chance: 1
     desc:
       KR: 검격으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="2" r /></sec> 감소 효과를 줍니다.
-      JP: 剣撃で <dmg elem="physics" />を与え、2ラウンドの間対象に<sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="2" r /></sec>減少効果を与えます。
-      EN: Deals <dmg elem="physics" /> with a sword strike and applies <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="2" r /></sec> reduction effects to the target for 2 rounds.
-      TC: 以劍擊造成 <dmg elem="physics" />，並在 2 回合內使目標獲得 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="2" r /></sec>下降效果。
+      EN: sword strike as <dmg elem="physics" /> damage and 2 rounds to the target <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="2" r /></sec> decrease effect and deals.
+      JP: 斬撃で<dmg elem="physics" />を与え、、 2ラウンドの間 対象に <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="2" r /></sec> 減少 効果を 与えます。
+      TC: 劍擊以 造成<dmg elem="physics" />，並 2回合內 對目標 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="2" r /></sec> 減少 效果 造成。
   "2":
     key: "2"
     icon: ShieldWall
@@ -2441,15 +2441,15 @@ skills:
       KR: |-
         방패를 전개해 3라운드 동안 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> / <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec> 감소 효과를 얻습니다.
         <sec>스킬 레벨이 오를수록 소모 AP가 감소합니다.</sec>
-      JP: |-
-        盾を展開し、3ラウンドの間<sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec> / <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 被ダメージ <val idx="3" r inv /></sec>減少効果を得ます。
-        <sec>スキルレベルが上がるほど消費APが減少します。</sec>
       EN: |-
-        Deploys a shield and gains <sec typ="buff"><buff typ="DEF_Line" /> row protection</sec> / <sec typ="buff"><buff typ="DEF_Side" /> column protection</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="3" r inv /></sec> reduction effects for 3 rounds.
-        <sec>AP cost decreases as the skill level rises.</sec>
+        shield deploys 3 rounds <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> / <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="3" r inv /></sec> decrease effect and gains.
+        <sec>skill level O as AP cost decreases.</sec>
+      JP: |-
+        盾を展開して 3ラウンドの間 <sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec> / <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="3" r inv /></sec> 減少 効果を オトます。
+        <sec>スキル レベルが オを少ないほど 消費APが減少します。</sec>
       TC: |-
-        展開護盾，在 3 回合內獲得 <sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec> / <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到傷害 <val idx="3" r inv /></sec>減少效果。
-        <sec>技能等級越高，消耗 AP 越少。</sec>
+        展開盾牌 3回合內 <sec typ="buff"><buff typ="DEF_Line" /> 列保護</sec> / <sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="3" r inv /></sec> 減少 效果 獲得。
+        <sec>技能 等級 O數越 消耗AP減少。</sec>
   "3":
     key: "3"
     icon: P.Command
@@ -3316,24 +3316,24 @@ skills:
         <sec>해당 효과는 피격 시 해제됩니다.</sec>
         <sec typ="note">성전 선포</sec>에 의한 <sec typ="cond"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> 효과를 가진 대상에게 <sec typ="note">숙적</sec> 적중 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 강화 효과를 해제</sec>합니다.
         <sec typ="attr">해당 효과는 강화/해로운 효과 해제로 해제할 수 없습니다.</sec>
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、敵数に比例して自身の<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、味方数に比例して敵全体の<sec typ="buff"><buff typ="VULNERABLE" /> 被ダメージ <val idx="11" r /></sec>が増加します。
-        <sec>この効果は被弾時に解除されます。</sec>
-        <sec typ="note">Crusade Proclamation</sec>による<sec typ="cond"><buff typ="VULNERABLE" /> 被ダメージ増加</sec>効果を持つ対象に<sec typ="note">Fated Rival</sec>が命中した場合、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 被ダメージ減少強化効果を解除</sec>します。
-        <sec typ="attr">この効果は強化/有害効果解除では解除できません。</sec>
       EN: |-
         <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="0" r /></sec> increases in proportion to the number of enemies.
-        <sec typ="cond">At the start of the round</sec>, all enemies gain increased <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="11" r /></sec> in proportion to the number of allies.
+        <sec typ="cond">At round start</sec>, all enemies' <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="11" r /></sec> increases in proportion to the number of allies.
         <sec>This effect is removed when hit.</sec>
-        When <sec typ="note">Fated Rival</sec> hits a target with the <sec typ="note">Crusade Proclamation</sec>-applied <sec typ="cond"><buff typ="VULNERABLE" /> damage taken increase</sec> effect, it <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's damage reduction enhancement effect</sec>.
+        When a target affected by the <sec typ="note"></sec> damage taken increase<sec typ="cond"> from <buff typ="VULNERABLE" />Declaration of Holy War</sec> is hit by <sec typ="note">Nemesis</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's Damage Reduction buff</sec>.
         <sec typ="attr">This effect cannot be removed by buff/debuff removal.</sec>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、敵の数に比例して自身の<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、味方の数に比例して敵全体の<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="11" r /></sec>が増加します。
+        <sec>この効果は被弾時に解除されます。</sec>
+        <sec typ="note">聖戦宣言</sec>による<sec typ="cond"><buff typ="VULNERABLE" />受けるダメージ増加</sec>効果を持つ対象に<sec typ="note">宿敵</sec>が命中した時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ減少強化効果を解除</sec>します。
+        <sec typ="attr">この効果は強化/有害効果解除で解除できません。</sec>
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec>會隨敵人數量增加。
-        <sec typ="cond">回合開始時</sec>，全體敵人的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到傷害 <val idx="11" r /></sec>會隨隊友數量增加。
-        <sec>此效果在被攻擊時會解除。</sec>
-        對帶有 <sec typ="note">聖戰宣告</sec>賦予的 <sec typ="cond"><buff typ="VULNERABLE" /> 受到傷害增加</sec>效果的目標，若 <sec typ="note">宿敵</sec> 命中，則會 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 解除目標的受到傷害減少強化效果</sec>。
-        <sec typ="attr">此效果無法透過強化/有害效果解除移除。</sec>
+        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec>依敵人數量增加。
+        <sec typ="cond">回合開始時</sec>，全體敵人的<sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="11" r /></sec>依我方數量增加。
+        <sec>此效果會在被擊時解除。</sec>
+        由<sec typ="note">聖戰宣言</sec>造成的<sec typ="cond"><buff typ="VULNERABLE" />受到的傷害增加</sec>效果目標被<sec typ="note">宿敵</sec>命中時，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的受到傷害減少強化效果</sec>。
+        <sec typ="attr">此效果無法透過強化/負面效果解除來解除。</sec>
   "4":
     key: "4"
     icon: P.Beam
@@ -3786,25 +3786,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
         <equip uid="Sub_SpAlloyArmor" /> 장착 시, 장비 효과 중 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec> 확률이 <sec typ="chance">100%로 증가</sec>합니다.
         <sec typ="cond">대기 시</sec>, 아군 전체의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
         이후, 자신을 제외한 아군의 수에 비례하여 자신은 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 물리 고정 피해 <val idx="4" signless /></sec>을(를) 입습니다.
-      JP: |-
-        ラウンド開始時、自身の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="0" r /></sec>が増加します。
-        <equip uid="Sub_SpAlloyArmor" />装備時、装備効果中の<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果解除</sec>確率が<sec typ="chance">100%に増加</sec>します。
-        <sec typ="cond">待機時</sec>、味方全体の<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を解除</sec>します。
-        その後、自分を除く味方の数に比例して、自身は<sec typ="dmg"><buff typ="phyDMG_DOT" /> 物理固定ダメージ <val idx="4" signless /></sec>を受けます。
       EN: |-
-        At the start of the round, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increases.
-        When <equip uid="Sub_SpAlloyArmor" /> is equipped, the equipment effect's <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effect removal</sec> chance increases to <sec typ="chance">100%</sec>.
-        <sec typ="cond">On wait</sec>, removes harmful effects from all allies.
-        After that, self takes <sec typ="dmg"><buff typ="phyDMG_DOT" /> physical fixed damage <val idx="4" signless /></sec> in proportion to the number of allies excluding self.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increases.
+        <equip uid="Sub_SpAlloyArmor" /> when equipped, equipment effect and during <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> debuff removal</sec> chance <sec typ="chance">100%as increase</sec>.
+        <sec typ="cond">On standby</sec>, all allies of <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec>.
+        after, self excluding allies' in proportion to the number of self <sec typ="dmg"><buff typ="phyDMG_DOT" /> Physical fixed damage <val idx="4" signless /></sec> takes.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="0" r /></sec>が増加します。
+        <equip uid="Sub_SpAlloyArmor" /> ジアンチアク 時、 装備 効果 中 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果解除</sec> 確率が <sec typ="chance">100%で 増加</sec>します。
+        <sec typ="cond">待機時</sec>、 味方全体の <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>します。
+        以後、 自身を ジエ外した 味方の 数に比例して 自身は <sec typ="dmg"><buff typ="phyDMG_DOT" /> 物理 固定 ダメージ <val idx="4" signless /></sec>を 受けます。
       TC: |-
-        回合開始時，自身的 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="0" r /></sec>會增加。
-        裝備 <equip uid="Sub_SpAlloyArmor" /> 時，裝備效果中的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果解除</sec>機率會<sec typ="chance">提升至 100%</sec>。
-        <sec typ="cond">待機時</sec>，解除全體隊友的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害效果</sec>。
-        之後，自身會依除自己以外的隊友數量而受到 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 物理固定傷害 <val idx="4" signless /></sec>。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="0" r /></sec>增加。
+        <equip uid="Sub_SpAlloyArmor" /> 裝備 時， 裝備 效果 中 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除負面效果</sec> 機率 <sec typ="chance">100%以 增加</sec>。
+        <sec typ="cond">待機時</sec>， 全體我方的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>。
+        之後， 自身 解除外 我方的 依數量成比例 自身 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 物理 固定 傷害 <val idx="4" signless /></sec> 受到。
   "5":
     key: "5"
     icon: P.Barrier
@@ -4607,21 +4607,21 @@ skills:
         스킬 효과는 <sec typ="note">수호성인</sec>의 스킬 레벨에 비례합니다.
         <sec typ="cond"><sec typ="note">기사도</sec> 스킬 사용 시</sec>, 기존 효과 대신 아군 전체에게 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 1회</sec>를 부여합니다.
         <equip uid="Sub_SpAlloyArmor" /> 장착 시 증가하는 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항</sec> 수치만큼, <sec typ="cond">라운드 개시 시</sec> 자신의 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항</sec>이 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自身は<sec typ="note">Chivalry</sec>効果をすべて獲得します。
-        スキル効果は<sec typ="note">Patron Saint</sec>のスキルレベルに比例します。
-        <sec typ="cond"><sec typ="note">Chivalry</sec>スキル使用時</sec>、既存効果の代わりに味方全体へ<sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化1回</sec>を付与します。
-        <equip uid="Sub_SpAlloyArmor" />装備時に増加する<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗</sec>の数値分、<sec typ="cond">ラウンド開始時</sec>自身の<sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抵抗</sec>が増加します。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, self gains all <sec typ="note">Chivalry</sec> effects.
-        The skill effect scales with <sec typ="note">Patron Saint</sec> skill level.
-        <sec typ="cond">On use of the <sec typ="note">Chivalry</sec> skill</sec>, grants all allies <sec typ="buff"><buff typ="DEF_All" /> 1 damage nullification</sec> instead of the existing effect.
-        By the amount of <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance</sec> increased when <equip uid="Sub_SpAlloyArmor" /> is equipped, own <sec typ="cond">at the start of the round</sec> <sec typ="buff"><buff typ="Remove_Buff_Resist" /> buff removal resistance</sec> increases.
+        <sec typ="cond">At round start</sec>, self <sec typ="note">Chivalry</sec> effect and all gains.
+        Skill effects <sec typ="note">Patron Saint</sec> of skill level.
+        <sec typ="cond"><sec typ="note">Chivalry</sec> When using the skill</sec>, existing effect and instead all to allies <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification 1times</sec> grants.
+        <equip uid="Sub_SpAlloyArmor" /> when equipped increase <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance</sec> by the value, <sec typ="cond">At round start</sec> own <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Buff Removal Resistance</sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="note">騎士道</sec> 効果を ムオドウ 獲得します。
+        スキル 効果は <sec typ="note">守護聖人</sec>の スキル レベルに 比例します。
+        <sec typ="cond"><sec typ="note">騎士道</sec> スキル使用時</sec>、 機ジオン 効果 代わりに 味方全体に <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 1回</sec>を付与します。
+        <equip uid="Sub_SpAlloyArmor" /> ジアンチアク 時 増加する <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗</sec> 数値分、 <sec typ="cond">ラウンド開始時</sec> 自身の <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抵抗</sec>が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身會獲得全部 <sec typ="note">騎士道</sec>效果。
-        技能效果會依 <sec typ="note">守護聖人</sec> 的技能等級而提升。
-        <sec typ="cond"><sec typ="note">騎士道</sec>技能使用時</sec>，會改為賦予全體隊友 <sec typ="buff"><buff typ="DEF_All" /> 1 次傷害無效化</sec>，取代原有效果。
-        裝備 <equip uid="Sub_SpAlloyArmor" /> 時增加的 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗</sec>數值，會使自身 <sec typ="cond">回合開始時</sec>的 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抵抗</sec>提升。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="note">騎士道</sec> 效果 全部 獲得。
+        技能 效果 <sec typ="note">守護聖人</sec>的 技能 等級於 成比例。
+        <sec typ="cond"><sec typ="note">騎士道</sec> 使用技能時</sec>， 台存在 效果 改為 全體我方給 <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 1次</sec>賦予。
+        <equip uid="Sub_SpAlloyArmor" /> 裝備 時 增加 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性</sec> 數值等量， <sec typ="cond">回合開始時</sec> 自身的 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抗性</sec>增加。
 dialogue:
   KR:
     "1":

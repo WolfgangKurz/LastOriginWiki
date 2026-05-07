@@ -1574,15 +1574,15 @@ skills:
       KR: |-
         단일 대상 적에게 <dmg elem="physics" />를 입히고 <sec typ="chance"><chance idx="0" /> 확률</sec>로 2라운드 동안 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만듭니다.
         치명타 시 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
-      JP: |-
-        単一対象の敵に<dmg elem="physics" />を与え、<sec typ="chance"><chance idx="0" />確率</sec>で2ラウンドの間<sec typ="buff"><buff typ="STUN" /> 行動不能</sec>状態にします。
-        クリティカル時に<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ <val idx="2" r /></sec>が増加します。
       EN: |-
-        Deals <dmg elem="physics" /> to a single target enemy and, with a <sec typ="chance"><chance idx="0" /> chance</sec>, makes them <sec typ="buff"><buff typ="STUN" /> incapacitated</sec> for 2 rounds.
-        On critical hit, increases <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec>.
+        single target to the enemy <dmg elem="physics" /> deals and <sec typ="chance"><chance idx="0" /> chance</sec> as 2 rounds <sec typ="buff"><buff typ="STUN" /> Stunned</sec> inflicts.
+        On critical hit <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+      JP: |-
+        単一対象 敵に<dmg elem="physics" />を 与えし <sec typ="chance"><chance idx="0" /> 確率</sec>で 2ラウンドの間 <sec typ="buff"><buff typ="STUN" /> 行動不可</sec> 状態にします。
+        クリティカル時 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
       TC: |-
-        對單一目標敵人造成<dmg elem="physics" />，並以<sec typ="chance"><chance idx="0" />機率</sec>使其在2回合內進入<sec typ="buff"><buff typ="STUN" /> 行動不能</sec>狀態。
-        暴擊時增加<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害 <val idx="2" r /></sec>。
+        單一目標 敵人給 <dmg elem="physics" /> 造成並 <sec typ="chance"><chance idx="0" /> 機率</sec>以 2回合內 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 使其進入狀態。
+        暴擊時 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -5132,15 +5132,15 @@ skills:
       KR: |-
         지정 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 입히고, 한 칸 뒤 대상에게는 <sec typ="dmg">감소된 피해</sec>를 입힙니다.
         대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다.
-      JP: |-
-        指定対象に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与え、1マス後ろの対象には<sec typ="dmg">減少したダメージ</sec>を与えます。
-        対象の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を減少させます。
       EN: |-
-        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated target and <sec typ="dmg">reduced damage</sec> to the target one tile behind.
-        Decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec>.
+        designated to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> deals and, one tiles behind to the target <sec typ="dmg">reduced damage</sec> deals.
+        target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> decreases.
+      JP: |-
+        指定対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />を 与えし、 した マス ドウィ 対象には <sec typ="dmg">減少された ダメージ</sec>を 与えます。
+        対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を減少させます。
       TC: |-
-        對指定目標造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />，並對其後方一格的目標造成<sec typ="dmg">減少的傷害</sec>。
-        降低目標的<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>。
+        指定目標給 <sec typ="attr">無視保護</sec> <dmg elem="physics" /> 造成並， 格 後 對目標 <sec typ="dmg">減少已 傷害</sec> 造成。
+        目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>使其減少。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -5572,10 +5572,10 @@ skills:
             per: 0.015
             chance: 1
     desc:
-      KR: 라운드 개시 시, 스쿼드에 포함된 아군 1명 당 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>를 증가 시킵니다.
-      JP: ラウンド開始時、分隊に含まれる味方1体ごとに自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>と<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>を増加させます。
-      EN: At the start of the round, increases self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec> for each ally in the squad.
-      TC: 回合開始時，每當小隊中有1名我軍，自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>與<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>就會增加。
+      KR: <sec typ="cond">라운드 개시 시</sec>, 스쿼드에 포함된 아군 1명 당 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>를 증가 시킵니다.
+      EN: <sec typ="cond">At round start</sec>, squad included allies 1 members per own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> and <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> increase causes.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 スクワッドに 含むされた 味方 1名 ごと 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>と <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>を 増加 させます。
+      TC: <sec typ="cond">回合開始時</sec>， 小隊於 包含已 我方 1名 每 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>與 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec> 增加。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -5866,17 +5866,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, 범위 내 아군과 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군과 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>를 증가시킵니다.
         대기 시 <sec typ="note">바로 끝내주마!</sec>상태를 부여하여 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>, <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>를 추가로 상승 시키며 중첩됩니다.
-      JP: |-
-        ラウンド開始時、範囲内の味方と自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>と<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>を増加させます。
-        待機時に<sec typ="note">すぐ終わらせる!</sec>状態を付与して<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec>、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec>、<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>をさらに上昇させ、重複します。
       EN: |-
-        At the start of the round, increases the <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" r /></sec> of allies within range and self.
-        When waiting, grants <sec typ="note">I'll finish it right away!</sec> state, further increasing and stacking <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="7" r /></sec>, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec>, and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" r /></sec>.
+        <sec typ="cond">At round start</sec>, within range alliesand own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> and <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> increases.
+        On standby <sec typ="note">Ba as Kkeut within main Ma!</sec> state grant by doing <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="7" r /></sec>, <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec>, <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="6" r /></sec> additionally rise when and activates stack.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方と 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>と <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>を増加させます。
+        待機時 <sec typ="note">ブアで ックウト内ジウムア!</sec>状態を ブウヨして <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec>、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec>、 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>を 追加で スアンスウン 時クイし 重複されます。
       TC: |-
-        回合開始時，增加範圍內我軍與自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>與<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>。
-        待機時賦予<sec typ="note">立刻結束你！</sec>狀態，並進一步提升且可疊加<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="7" r /></sec>、<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec>、<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方與 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>與 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>使其增加。
+        待機時 <sec typ="note">Ba以 Kkeut內主ma!</sec>狀態 賦予並 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="7" r /></sec>， <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec>， <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec> 額外 上升 時台並 疊加。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -6185,25 +6185,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, 범위 내에 자신, <char uid="PECS_Babariana" />, <char uid="PECS_MightyR" />, <char uid="BR_Scathy" />, <char uid="PECS_Tiequan" />, <char uid="PECS_ElvenForestmaker" />, <char uid="BR_Bulgasari" />, <char uid="DS_BunnySlayer" />는 <sec typ="note">환호 유도</sec> 버프 효과가 50% 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내에 자신, <char uid="PECS_Babariana" />, <char uid="PECS_MightyR" />, <char uid="BR_Scathy" />, <char uid="PECS_Tiequan" />, <char uid="PECS_ElvenForestmaker" />, <char uid="BR_Bulgasari" />, <char uid="DS_BunnySlayer" />는 <sec typ="note">환호 유도</sec> 버프 효과가 50% 증가합니다.
         <sec typ="note">마벨러스 드롭킥</sec>을 사용했을 때 스쿼드에 <char uid="PECS_Babariana" />, <char uid="PECS_MightyR" />, <char uid="BR_Scathy" />, <char uid="PECS_Tiequan" />, <char uid="PECS_ElvenForestmaker" />, <char uid="BR_Bulgasari" />, <char uid="DS_BunnySlayer" />가 있을 시, 각각 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">철거 개시</sec>, <sec typ="note">바벨 강타</sec>,<sec typ="note">최후의 해킹</sec>, <sec typ="note">백보신권</sec>, <sec typ="note">묘목 심기</sec>, <sec typ="note">벙커 버스터</sec>, <sec typ="note">바니 파멸킥!</sec> 스킬로 협동 공격</sec>을 유도 합니다.
         <strike>협동 공격을 할 수 있는 전투원이 다수인 경우 가장 공격력이 높은 대상이 협동 공격을 가합니다.</strike>
         <char uid="PECS_MightyR" /> → <char uid="PECS_Babariana" /> → <char uid="BR_Scathy" /> → <char uid="PECS_Tiequan" /> → <char uid="PECS_ElvenForestmaker" /> → <char uid="BR_Bulgasari" /> → <char uid="DS_BunnySlayer" /> 순으로 협동 공격을 합니다.
-      JP: |-
-        ラウンド開始時、範囲内の自分、<char uid="PECS_Babariana" />、<char uid="PECS_MightyR" />、<char uid="BR_Scathy" />、<char uid="PECS_Tiequan" />、<char uid="PECS_ElvenForestmaker" />、<char uid="BR_Bulgasari" />、<char uid="DS_BunnySlayer" />は<sec typ="note">歓声誘導</sec>バフ効果が50%増加します。
-        <sec typ="note">Marvelous Drop Kick</sec>を使用した時、分隊に<char uid="PECS_Babariana" />、<char uid="PECS_MightyR" />、<char uid="BR_Scathy" />、<char uid="PECS_Tiequan" />、<char uid="PECS_ElvenForestmaker" />、<char uid="BR_Bulgasari" />、<char uid="DS_BunnySlayer" />がいる場合、それぞれ<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">解体開始</sec>、<sec typ="note">バベル強打</sec>、<sec typ="note">最後のハッキング</sec>、<sec typ="note">百歩神拳</sec>、<sec typ="note">苗木植え</sec>、<sec typ="note">Bunker Buster</sec>、<sec typ="note">バニーパルバライズキック!</sec>スキルで協同攻撃</sec>を誘導します。
-        <strike>協同攻撃をできる戦闘員が複数いる場合、最も攻撃力が高い対象が協同攻撃を行います。</strike>
-        <char uid="PECS_MightyR" /> → <char uid="PECS_Babariana" /> → <char uid="BR_Scathy" /> → <char uid="PECS_Tiequan" /> → <char uid="PECS_ElvenForestmaker" /> → <char uid="BR_Bulgasari" /> → <char uid="DS_BunnySlayer" />の順で協同攻撃を行います。
       EN: |-
-        At the start of the round, self and <char uid="PECS_Babariana" />, <char uid="PECS_MightyR" />, <char uid="BR_Scathy" />, <char uid="PECS_Tiequan" />, <char uid="PECS_ElvenForestmaker" />, <char uid="BR_Bulgasari" />, and <char uid="DS_BunnySlayer" /> within range gain <sec typ="note">Eliciting Cheers</sec> buff effects increased by 50%.
-        When using <sec typ="note">Marvelous Drop Kick</sec>, if the squad contains <char uid="PECS_Babariana" />, <char uid="PECS_MightyR" />, <char uid="BR_Scathy" />, <char uid="PECS_Tiequan" />, <char uid="PECS_ElvenForestmaker" />, <char uid="BR_Bulgasari" />, or <char uid="DS_BunnySlayer" />, induces cooperative attacks with the skills <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Demolition Start</sec>, <sec typ="note">Barbell Smash</sec>, <sec typ="note">Final Hack</sec>, <sec typ="note">Hundred-Step Divine Fist</sec>, <sec typ="note">Planting Saplings</sec>, <sec typ="note">Bunker Buster</sec>, and <sec typ="note">Bunny Pulverize Kick!</sec></sec> respectively.
-        <strike>If there are multiple combatants capable of cooperative attacks, the one with the highest ATK performs the cooperative attack.</strike>
-        Cooperative attacks occur in the order <char uid="PECS_MightyR" /> → <char uid="PECS_Babariana" /> → <char uid="BR_Scathy" /> → <char uid="PECS_Tiequan" /> → <char uid="PECS_ElvenForestmaker" /> → <char uid="BR_Bulgasari" /> → <char uid="DS_BunnySlayer" />.
+        <sec typ="cond">At round start</sec>, within range to self, <char uid="PECS_Babariana" />, <char uid="PECS_MightyR" />, <char uid="BR_Scathy" />, <char uid="PECS_Tiequan" />, <char uid="PECS_ElvenForestmaker" />, <char uid="BR_Bulgasari" />, <char uid="DS_BunnySlayer" /> <sec typ="note">Hwan protection trigger</sec> buff effect and 50% increases.
+        <sec typ="note">Mabelreo rod Deuropkik</sec> use Haet when squad <char uid="PECS_Babariana" />, <char uid="PECS_MightyR" />, <char uid="BR_Scathy" />, <char uid="PECS_Tiequan" />, <char uid="PECS_ElvenForestmaker" />, <char uid="BR_Bulgasari" />, <char uid="DS_BunnySlayer" /> if present, respectively <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">demolition unit(s) when</sec>, <sec typ="note">barbell smash</sec>,<sec typ="note">Final Hacking</sec>, <sec typ="note">Hundred-Step Divine Fist</sec>, <sec typ="note">sapling Sim unit</sec>, <sec typ="note">Bunker Buster</sec>, <sec typ="note">Bunny Ruin Kick!</sec> skill as coordinated attack</sec> trigger.
+        <strike>coordinated attack can number exists combatant multiple if chapter Attack high target coordinated attack.</strike>
+        <char uid="PECS_MightyR" /> → <char uid="PECS_Babariana" /> → <char uid="BR_Scathy" /> → <char uid="PECS_Tiequan" /> → <char uid="PECS_ElvenForestmaker" /> → <char uid="BR_Bulgasari" /> → <char uid="DS_BunnySlayer" /> in order as coordinated attack.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内に 自身、 <char uid="PECS_Babariana" />、 <char uid="PECS_MightyR" />、 <char uid="BR_Scathy" />、 <char uid="PECS_Tiequan" />、 <char uid="PECS_ElvenForestmaker" />、 <char uid="BR_Bulgasari" />、 <char uid="DS_BunnySlayer" />は <sec typ="note">ハワンハオ 誘導</sec> バフ 効果が 50% 増加します。
+        <sec typ="note">ムアブエルルオスウ ドウルオプクイク</sec>を スアヨンハエトを 時 スクワッドに <char uid="PECS_Babariana" />、 <char uid="PECS_MightyR" />、 <char uid="BR_Scathy" />、 <char uid="PECS_Tiequan" />、 <char uid="PECS_ElvenForestmaker" />、 <char uid="BR_Bulgasari" />、 <char uid="DS_BunnySlayer" />が ある 時、 それぞれ <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">チオルグオ 個時</sec>、 <sec typ="note">バーベル グアントア</sec>、<sec typ="note">チウェ後の してクイン</sec>、 <sec typ="note">百歩神拳</sec>、 <sec typ="note">ムヨムオク スイム機</sec>、 <sec typ="note">バンカーバスター</sec>、 <sec typ="note">バニー破滅キック!</sec> スキルで 協同攻撃</sec>を 誘導します。
+        <strike>協同攻撃を できる 数 ある 戦闘員が ドア数の場合 がジアン 攻撃力が ンオプは 対象が 協同攻撃を がします。</strike>
+        <char uid="PECS_MightyR" /> → <char uid="PECS_Babariana" /> → <char uid="BR_Scathy" /> → <char uid="PECS_Tiequan" /> → <char uid="PECS_ElvenForestmaker" /> → <char uid="BR_Bulgasari" /> → <char uid="DS_BunnySlayer" /> スウンで 協同攻撃をします。
       TC: |-
-        回合開始時，範圍內的自身、<char uid="PECS_Babariana" />、<char uid="PECS_MightyR" />、<char uid="BR_Scathy" />、<char uid="PECS_Tiequan" />、<char uid="PECS_ElvenForestmaker" />、<char uid="BR_Bulgasari" />、<char uid="DS_BunnySlayer" />的<sec typ="note">引起歡呼</sec>增益效果增加50%。
-        使用<sec typ="note">華麗跳踢</sec>時，若小隊內有<char uid="PECS_Babariana" />、<char uid="PECS_MightyR" />、<char uid="BR_Scathy" />、<char uid="PECS_Tiequan" />、<char uid="PECS_ElvenForestmaker" />、<char uid="BR_Bulgasari" />、<char uid="DS_BunnySlayer" />，則會分別引導與<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">拆除開始</sec>、<sec typ="note">杠鈴重擊</sec>、<sec typ="note">最終駭入</sec>、<sec typ="note">百步神拳</sec>、<sec typ="note">種植幼苗</sec>、<sec typ="note">Bunker Buster</sec>、<sec typ="note">兔子粉碎踢！</sec>技能的協同攻擊</sec>。
-        <strike>若有多名可進行協同攻擊的戰鬥員，則由攻擊力最高者進行協同攻擊。</strike>
-        依照<char uid="PECS_MightyR" /> → <char uid="PECS_Babariana" /> → <char uid="BR_Scathy" /> → <char uid="PECS_Tiequan" /> → <char uid="PECS_ElvenForestmaker" /> → <char uid="BR_Bulgasari" /> → <char uid="DS_BunnySlayer" />的順序進行協同攻擊。
+        <sec typ="cond">回合開始時</sec>， 範圍內於 自身， <char uid="PECS_Babariana" />， <char uid="PECS_MightyR" />， <char uid="BR_Scathy" />， <char uid="PECS_Tiequan" />， <char uid="PECS_ElvenForestmaker" />， <char uid="BR_Bulgasari" />， <char uid="DS_BunnySlayer" /> <sec typ="note">轉換ho 誘發</sec> 增益 效果 50% 增加。
+        <sec typ="note">Mabel達到seu Deuropkik</sec> 使用haet 時 小隊於 <char uid="PECS_Babariana" />， <char uid="PECS_MightyR" />， <char uid="BR_Scathy" />， <char uid="PECS_Tiequan" />， <char uid="PECS_ElvenForestmaker" />， <char uid="BR_Bulgasari" />， <char uid="DS_BunnySlayer" /> 有 時， 各自 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Cheolgeo 個時</sec>， <sec typ="note">槓鈴 強打</sec>，<sec typ="note">最後的 台ng</sec>， <sec typ="note">百步神拳</sec>， <sec typ="note">Myomok 心台</sec>， <sec typ="note">碉堡剋星</sec>， <sec typ="note">兔兔毀滅踢!</sec> 技能以 協同攻擊</sec> 誘發。
+        <strike>協同攻擊 可 數 有 戰鬥員 全部數若為 Jang 攻擊力 高 目標 協同攻擊。</strike>
+        <char uid="PECS_MightyR" /> → <char uid="PECS_Babariana" /> → <char uid="BR_Scathy" /> → <char uid="PECS_Tiequan" /> → <char uid="PECS_ElvenForestmaker" /> → <char uid="BR_Bulgasari" /> → <char uid="DS_BunnySlayer" /> 順序以 協同攻擊。
 dialogue:
   KR:
     "1":

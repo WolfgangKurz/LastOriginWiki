@@ -1416,15 +1416,15 @@ skills:
       KR: |-
         대상에게 <dmg elem="physics" />를 줍니다.
         치명타 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>합니다.
-      JP: |-
-        対象に <dmg elem="physics" />を与えます。
-        クリティカル時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃効果を解除</sec>します。
       EN: |-
-        Deals <dmg elem="physics" /> to the target.
-        <sec>On crit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's counterattack effect</sec>.
+        to the target with <dmg elem="physics" />.
+        On critical hit, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Counterattack removes the effect</sec>.
+      JP: |-
+        対象に<dmg elem="physics" />を与えます。
+        クリティカル時、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃 効果を 解除</sec>します。
       TC: |-
-        對目標造成 <dmg elem="physics" />。
-        暴擊時，解除目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊效果</sec>。
+        對目標 造成<dmg elem="physics" />。
+        暴擊時， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊 效果 解除</sec>。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -2328,15 +2328,15 @@ skills:
       KR: |-
         대상에게 <dmg elem="physics" />를 줍니다.
         치명타 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 감소 효과를 해제</sec>합니다.
-      JP: |-
-        対象に <dmg elem="physics" />を与えます。
-        クリティカル時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 被ダメージ減少効果を解除</sec>します。
       EN: |-
-        Deals <dmg elem="physics" /> to the target.
-        <sec>On crit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's damage reduction effect</sec>.
+        to the target with <dmg elem="physics" />.
+        On critical hit, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Damage Reduction removes the effect</sec>.
+      JP: |-
+        対象に<dmg elem="physics" />を与えます。
+        クリティカル時、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> ダメージ 減少 効果を 解除</sec>します。
       TC: |-
-        對目標造成 <dmg elem="physics" />。
-        暴擊時，解除目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到傷害減少效果</sec>。
+        對目標 造成<dmg elem="physics" />。
+        暴擊時， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 傷害 減少 效果 解除</sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -2719,19 +2719,19 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>가 증가합니다.
         <sec typ="cond">인접한 아군이 없을 경우</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 효과를 얻고 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수가 <val idx="6" />회</sec> 증가합니다.
-        <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="엠프레시스 하운드">$$EmpressHound:?$</cmt> 소속 전투원이 있는 경우</sec>, <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 얻습니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>が増加します。
-        <sec typ="cond">隣接する味方がいない場合</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec>効果を得て、<sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大行動回数が <val idx="6" />回</sec>増加します。
-        <sec typ="cond">分隊に自分以外の<cmt t="엠프레시스 하운드">$$EmpressHound:?$</cmt>所属戦闘員がいる場合</sec>、<sec typ="buff"><buff typ="Guardpierce_Apply" /> 防護無視</sec>効果を得ます。
+        <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="엠프레시스 하운드"><import name="EmpressHound" /></cmt> 소속 전투원이 있는 경우</sec>, <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 얻습니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, increases <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec>.
-        <sec typ="cond">If there are no adjacent allies</sec>, gains <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec> and increases <sec typ="buff"><buff typ="Action_Number_Change_Up" /> maximum action count by <val idx="6" /> times</sec>.
-        <sec typ="cond">If the squad has an allied unit from <cmt t="엠프레시스 하운드">$$EmpressHound:?$</cmt> other than self</sec>, gains <sec typ="buff"><buff typ="Guardpierce_Apply" /> ignore protection</sec>.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> increases.
+        <sec typ="cond">adjacent allies if absent</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec> effect and gain Go <sec typ="buff"><buff typ="Action_Number_Change_Up" /> up to number of actions <val idx="6" />times</sec> increases.
+        <sec typ="cond">squad self excluding <cmt t="Empress Hound"><import name="EmpressHound" /></cmt> affiliated combatant if present</sec>, <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> effect and gains.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">隣接する 味方が 存在しない場合</sec>、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec> 効果を オトし <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大 行ドオン 回数が <val idx="6" />回</sec> 増加します。
+        <sec typ="cond">スクワッドに 自身を ジエ外した <cmt t="エンプレスハウンド"><import name="EmpressHound" /></cmt> 所属 戦闘員が ある 場合</sec>、 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視</sec> 効果を オトます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>會增加。
-        <sec typ="cond">若周圍沒有鄰接隊友</sec>，則獲得 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻擊</sec>效果，並使 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大行動次數增加 <val idx="6" /> 次</sec>。
-        <sec typ="cond">若隊伍中有除自身以外的 <cmt t="엠프레시스 하운드">$$EmpressHound:?$</cmt> 所屬戰鬥員</sec>，則獲得 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec>效果。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>增加。
+        <sec typ="cond">相鄰的 我方 不存在時</sec>， <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec> 效果 獲得並 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大 列同 次數 <val idx="6" />次</sec> 增加。
+        <sec typ="cond">小隊於 自身 解除外 <cmt t="女帝獵犬"><import name="EmpressHound" /></cmt> 所屬 戰鬥員 有 情況</sec>， <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec> 效果 獲得。
   "4":
     key: "4"
     icon: P.WideSwordAttk
@@ -2853,15 +2853,15 @@ skills:
       KR: |-
         홀수 라운드일 경우, <sec typ="note">단검 투척</sec> 스킬 사용 시 대상에게 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">뱀 송곳니</sec> 스킬 협동 공격</sec>을 합니다.
         짝수 라운드일 경우, <sec typ="note">뱀 송곳니</sec> 스킬 사용 시 대상에게 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">단검 투척</sec> 스킬 협동 공격</sec>을 합니다.
-      JP: |-
-        奇数ラウンドの場合、<sec typ="note">短剣投擲</sec>スキル使用時に対象へ<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">蛇の牙</sec>スキルの協同攻撃</sec>を行います。
-        偶数ラウンドの場合、<sec typ="note">蛇の牙</sec>スキル使用時に対象へ<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">短剣投擲</sec>スキルの協同攻撃</sec>を行います。
       EN: |-
-        On odd rounds, when using <sec typ="note">Dagger Throw</sec>, performs a joint attack with <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Snake Fang</sec></sec> on the target.
-        On even rounds, when using <sec typ="note">Snake Fang</sec>, performs a joint attack with <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Dagger Throw</sec></sec> on the target.
+        During odd-numbered rounds, <sec typ="note">dagger throw</sec> When using the skill to the target <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">snake fang</sec> skill coordinated attack</sec>.
+        During even-numbered rounds, <sec typ="note">snake fang</sec> When using the skill to the target <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">dagger throw</sec> skill coordinated attack</sec>.
+      JP: |-
+        奇数ラウンドの場合、 <sec typ="note">短剣投擲</sec> スキル使用時 対象に <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">蛇の牙</sec> スキル 協同攻撃</sec>をします。
+        偶数ラウンドの場合、 <sec typ="note">蛇の牙</sec> スキル使用時 対象に <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">短剣投擲</sec> スキル 協同攻撃</sec>をします。
       TC: |-
-        在奇數回合時，使用 <sec typ="note">短劍投擲</sec> 會對目標發動 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 與 <sec typ="note">蛇之獠牙</sec> 的協同攻擊</sec>。
-        在偶數回合時，使用 <sec typ="note">蛇之獠牙</sec> 會對目標發動 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 與 <sec typ="note">短劍投擲</sec> 的協同攻擊</sec>。
+        若為奇數回合， <sec typ="note">投擲短劍</sec> 使用技能時 對目標 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">蛇牙</sec> 技能 協同攻擊</sec>。
+        若為偶數回合， <sec typ="note">蛇牙</sec> 使用技能時 對目標 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">投擲短劍</sec> 技能 協同攻擊</sec>。
   "5":
     key: "5"
     icon: P.FireShot
@@ -3188,17 +3188,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
         <sec>아군에 의한</sec> <sec typ="cond"><buff typ="ICERES_UP" /> 냉기 저항 증가</sec> 효과를 받고 있는 경우, <sec typ="note">따뜻해서 좋네~</sec> 효과가 2배로 적용됩니다.
-      JP: |-
-        ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
-        <sec>味方による</sec><sec typ="cond"><buff typ="ICERES_UP" /> 冷気抵抗増加</sec>効果を受けている場合、<sec typ="note">暖かくていいね〜</sec>効果が2倍で適用されます。
       EN: |-
-        At the start of the round, increases <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec>.
-        If affected by an ally-applied <sec typ="cond"><buff typ="ICERES_UP" /> Cold Resistance increase</sec> effect, the <sec typ="note">So Warm and Nice~</sec> effect is applied twice.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increases.
+        <sec>allies to by</sec> <sec typ="cond"><buff typ="ICERES_UP" /> Ice Resistance increase</sec> effect and receiving if present, <sec typ="note">It's nice and warm~</sec> the effect is doubled is applied.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
+        <sec>味方に よる</sec> <sec typ="cond"><buff typ="ICERES_UP" /> 冷気耐性 増加</sec> 効果を 受けて ある 場合、 <sec typ="note">暖かくていいね～</sec> 効果が2倍で 適用されます。
       TC: |-
-        回合開始時，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>會增加。
-        若正受到<sec typ="cond"><buff typ="ICERES_UP" /> 由隊友賦予的冷氣抗性增加</sec>效果，則 <sec typ="note">暖呼呼真不錯～</sec>效果會套用 2 次。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
+        <sec>我方於 的</sec> <sec typ="cond"><buff typ="ICERES_UP" /> 冰冷抗性 增加</sec> 效果 受到 有 情況， <sec typ="note">暖暖的真好～</sec> 效果變為2倍以 套用。
 dialogue:
   KR:
     "1":

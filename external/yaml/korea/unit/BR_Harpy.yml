@@ -1661,18 +1661,18 @@ skills:
         미사일을 발사하여 지정 범위에 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 대상이 <buff typ="MARKING" /> 표식 / <buff typ="SNARE" /> 이동 불가 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
         적중 여부에 관계 없이 2라운드 동안 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시킵니다.
-      JP: |-
-        ミサイルを発射して指定範囲に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中対象が<buff typ="MARKING" />標的 / <buff typ="SNARE" />移動不可状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="2" r /></sec>が増加します。
-        命中の有無に関係なく、2ラウンドの間、対象の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="1" r /></sec>を減少させます。
       EN: |-
-        Shoots missiles and deals <dmg elem="physics" /> to the designated area.
-        <sec typ="cond">If the hit target is <buff typ="MARKING" /> Marked / <buff typ="SNARE" /> Immobilized</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
-        Regardless of whether the attack hits, the target’s <sec typ="buff"><buff typ="EVADE_DOWN" /> evasion <val idx="1" r /></sec> decreases for 2 rounds.
+        missile fires to the designated area <dmg elem="physics" />.
+        <sec typ="cond">Hit target <buff typ="MARKING" /> Mark / <buff typ="SNARE" /> Immobilized if in the state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+        regardless of whether it hits 2 rounds, target's <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> decreases.
+      JP: |-
+        ミサイルを 発射して 指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象が <buff typ="MARKING" /> 標的 / <buff typ="SNARE" /> 移動不可 状態の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
+        命中 ヨブウに関係なく 2ラウンドの間 対象の <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec>を減少させます。
       TC: |-
-        發射導彈，對指定範圍造成<dmg elem="physics" />。
-        <sec typ="cond">若命中目標處於<buff typ="MARKING" />標記／<buff typ="SNARE" />無法移動狀態</sec>，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="2" r /></sec>提升。
-        無論是否命中，目標的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="1" r /></sec>在2回合內降低。
+        飛彈 發射並 指定範圍於 造成<dmg elem="physics" />。
+        <sec typ="cond">命中目標為 <buff typ="MARKING" /> 標記 / <buff typ="SNARE" /> 無法移動 若為狀態</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
+        無論是否命中 2回合內 目標的 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec>使其減少。
   "2":
     key: "2"
     icon: AirStrike
@@ -3016,21 +3016,21 @@ skills:
         <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
         <sec>스킬 레벨 당 +9%의 적중 보정이 적용됩니다.</sec>
-      JP: |-
-        全弾発射により単一対象に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
-        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
-        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態にします。
-        <sec>スキルレベルごとに+9%の命中補正が適用されます。</sec>
       EN: |-
-        Uses full-burst fire to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to a single target.
-        <sec typ="cond">On crit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
-        <sec typ="cond">On hit</sec>, marks the target and makes them <sec typ="buff"><buff typ="MARKING" /> Marked</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> for 2 rounds.
-        <sec>Gains +9% accuracy compensation per skill level.</sec>
+        Full Burst through to a single target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, 2 rounds target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> inflicts.
+        <sec>per skill level +9% of accuracy correction is applied.</sec>
+      JP: |-
+        前トアン発射を通じて 単一対象へ <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象を <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態にします。
+        <sec>スキルレベルごとに +9%の 命中補正が適用されます。</sec>
       TC: |-
-        透過全彈發射對單一目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
-        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="0" r /></sec>提升。
-        <sec typ="cond">命中時</sec>，在2回合內使目標處於<sec typ="buff"><buff typ="MARKING" />標記</sec>／<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態。
-        <sec>每個技能等級額外套用+9%命中修正。</sec>
+        前彈發射透過 單一目標給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 使其進入狀態。
+        <sec>每技能等級 +9%的 套用命中補正。</sec>
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3345,20 +3345,24 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 기동형 피해량 <val idx="1" r /></sec>가 증가합니다.
-        <sec typ="cond">전투 개시 시</sec>, <sec typ="note">스텔스 위장</sec> 상태가 되어 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 (2회)</sec> 효과를 획득합니다. <sec typ="cond">대기 시</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 (2회)</sec> 효과를 재활성화할 수 있습니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="note">스텔스 위장</sec> 상태가 되어 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 (2회)</sec> 효과를 획득합니다.
+        <sec typ="cond">대기 시</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 (2회)</sec> 효과를 재활성화할 수 있습니다.
         <sec typ="cond">라운드 개시 시</sec>, 자신이 <sec typ="note">스텔스 위장</sec> 상태인 경우, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec>가 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />対機動型ダメージ<val idx="1" r /></sec>が増加します。
-        <sec typ="cond">戦闘開始時</sec>、<sec typ="note">ステルス偽装</sec>状態になり、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />ダメージ最小化 (2回)</sec>効果を獲得します。<sec typ="cond">待機時</sec>、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />ダメージ最小化 (2回)</sec>効果を再有効化できます。
-        <sec typ="cond">ラウンド開始時</sec>、自分が<sec typ="note">ステルス偽装</sec>状態の場合、2ラウンドの間、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="6" r /></sec>が増加します。
       EN: |-
-        At round start, increases self’s <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> damage against Air units <val idx="1" r /></sec>.
-        At battle start, enters <sec typ="note">Stealth Camouflage</sec> state and gains <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Minimize Damage (2 times)</sec>. <sec typ="cond">On standby</sec>, the <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Minimize Damage (2 times)</sec> effect can be reactivated.
-        <sec typ="cond">At round start</sec>, if self is in <sec typ="note">Stealth Camouflage</sec> state, self’s <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="6" r /></sec> increases for 2 rounds.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> Anti-Mobile damage <val idx="1" r /></sec> increases.
+        <sec typ="cond">At battle start</sec>, <sec typ="note">Stealth Camouflage</sec> enters the state and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Damage Minimization (2times)</sec> gains the effect.
+        <sec typ="cond">On standby</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Damage Minimization (2times)</sec> effect and reactivate can number exists.
+        <sec typ="cond">At round start</sec>, self <sec typ="note">Stealth Camouflage</sec> if in the state, 2 rounds own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="6" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 対機動型ダメージ <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">戦闘開始時</sec>、 <sec typ="note">ステルス迷彩</sec> 状態になり <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージ最小化 (2回)</sec> 効果を獲得します。
+        <sec typ="cond">待機時</sec>、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージ最小化 (2回)</sec> 効果を 再有効化できます。
+        <sec typ="cond">ラウンド開始時</sec>、 自身が <sec typ="note">ステルス迷彩</sec> 状態の場合、 2ラウンドの間 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec>が増加します。
       TC: |-
-        於<sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="0" r /></sec>／<sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />對機動型造成的傷害<val idx="1" r /></sec>提升。
-        於<sec typ="cond">戰鬥開始時</sec>，進入<sec typ="note">隱形偽裝</sec>狀態，獲得<sec typ="buff"><buff typ="DAMAGE_REDUCE" />傷害最小化 (2次)</sec>效果。<sec typ="cond">待機時</sec>，可重新啟用<sec typ="buff"><buff typ="DAMAGE_REDUCE" />傷害最小化 (2次)</sec>效果。
-        於<sec typ="cond">回合開始時</sec>，若自身處於<sec typ="note">隱形偽裝</sec>狀態，則自身<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="6" r /></sec>在2回合內提升。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 對機動型傷害 <val idx="1" r /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec>， <sec typ="note">隱形偽裝</sec> 進入狀態並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 傷害最小化 (2次)</sec> 獲得效果。
+        <sec typ="cond">待機時</sec>， <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 傷害最小化 (2次)</sec> 效果 重新啟用可以。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="note">隱形偽裝</sec> 若為狀態， 2回合內 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -3717,18 +3721,18 @@ skills:
         <sec typ="cond">전투 개시 시</sec>, 범위 내 기동형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec>를 증가시킵니다.
         <sec typ="cond">대상이 기동형이 아닐 경우</sec>, 지속 효과가 50% 감소합니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>、範囲内の機動型の味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>を増加させます。
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec>を増加させます。
-        <sec typ="cond">対象が機動型でない場合</sec>、持続効果が50%減少します。
       EN: |-
-        At battle start, increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of allied Air units within range.
-        At round start, increases allies’ <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="6" r /></sec> within range.
-        <sec typ="cond">If the target is not an Air unit</sec>, the duration effect is reduced by 50%.
+        <sec typ="cond">At battle start</sec>, within range Mobile-type allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> increases.
+        <sec typ="cond">target Mobile-type if not case</sec>, continuous effect and 50% decreases.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 範囲内 機動型 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec>を増加させます。
+        <sec typ="cond">対象が 機動型が アンイル 場合</sec>、 持続 効果が 50% 減少します。
       TC: |-
-        於<sec typ="cond">戰鬥開始時</sec>，增加範圍內機動型我軍的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>。
-        於<sec typ="cond">回合開始時</sec>，增加範圍內我軍的<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="4" r /></sec>／<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec>／<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec>。
-        <sec typ="cond">若目標非機動型</sec>，則持續效果減少50%。
+        <sec typ="cond">戰鬥開始時</sec>， 範圍內 機動型 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec>使其增加。
+        <sec typ="cond">目標 機動型 不是 情況</sec>， 持續 效果 50% 減少。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -4237,16 +4241,16 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가하며 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 사거리 감소 효과를 해제</sec>합니다.
-        <sec typ="cond">공격 적중 / <buff typ="TOGETHER_ATTACK" /> 협동 공격 시</sec>, 해당 라운드 동안 자신이 장착한 대 타입 피해량 증가 장비 효과가 증폭됩니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="2" r /></sec>が増加し、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />射程距離減少効果を解除</sec>します。
-        <sec typ="cond">攻撃命中 / <buff typ="TOGETHER_ATTACK" />協同攻撃時</sec>、そのラウンドの間、自分が装備している対タイプダメージ量増加装備の効果が増幅します。
+        <sec typ="cond">공격 적중 / <buff typ="TOGETHER_ATTACK" /> 협동 공격 시</sec>, 해당 라운드 동안 자신이 장착한 대 타입 피해량 증가 장비 효과가 증폭됩니다. (<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="ARMORED_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> 대 타입 피해량 <val idx="5" r /></sec> 증가)
       EN: |-
-        At round start, increases self’s <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="2" r /></sec> and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes Range Decrease</sec>.
-        <sec typ="cond">When attack hits / when in <buff typ="TOGETHER_ATTACK" /> co-op attack</sec>, gear effects equipped by self that increase damage against specific unit types are amplified for that round.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec> increases and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Range decrease removes the effect</sec>.
+        <sec typ="cond">attack Accuracy / <buff typ="TOGETHER_ATTACK" /> coordinated attack when</sec>, each round self equipped Anti-Type damage increase equipment effect and amplification. (<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="ARMORED_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> Anti-Type damage <val idx="5" r /></sec> increase)
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が 増加し、 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 射程 減少 効果を 解除</sec>します。
+        <sec typ="cond">攻撃 命中 / <buff typ="TOGETHER_ATTACK" /> 協同攻撃 時</sec>、 該当 ラウンド間 自身が ジアンチアクした 対タイプダメージ 増加 装備 効果が 増幅されます。 (<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="ARMORED_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> 対タイプダメージ <val idx="5" r /></sec> 増加)
       TC: |-
-        於<sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>／<sec typ="buff"><buff typ="AP_UP" />行動點數<val idx="1" r /></sec>／<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="2" r /></sec>提升，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除射程降低效果</sec>。
-        <sec typ="cond">攻擊命中／<buff typ="TOGETHER_ATTACK" />協同攻擊時</sec>，當回合內自身裝備的對類型傷害增加裝備效果會被增幅。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="2" r /></sec> 增加，並 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 射程 減少 效果 解除</sec>。
+        <sec typ="cond">攻擊 命中 / <buff typ="TOGETHER_ATTACK" /> 協同攻擊 時</sec>， 該 回合內 自身 裝備 對類型傷害 增加 裝備 效果 增幅。 (<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="ARMORED_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> 對類型傷害 <val idx="5" r /></sec> 增加)
 dialogue:
   KR:
     "1":

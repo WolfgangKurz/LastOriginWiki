@@ -2140,15 +2140,15 @@ skills:
       KR: |-
         화염탄을 발사해 <dmg elem="fire" />를 줍니다.
         적중 시, 3라운드 동안 대상의 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="1" r /></sec>를 감소시키고, <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 지속 화염 피해</sec>를 부여합니다.
+      EN: |-
+        Fires an incendiary round to deal <dmg elem="fire" />.
+        On hit, decreases the target's <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance by <val idx="1" r /></sec> for 3 rounds and inflicts <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> continuous Fire damage</sec>.
       JP: |-
         火炎弾を発射して<dmg elem="fire" />を与えます。
         命中時、3ラウンドの間、対象の<sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性<val idx="1" r /></sec>を減少させ、<sec typ="dmg"><buff typ="FireDMG_DOT" /><val idx="0" signless />持続火炎ダメージ</sec>を付与します。
-      EN: |-
-        Fires a fire round to deal <dmg elem="fire" />.
-        On hit, for 3 rounds, reduces the target's <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="1" r /></sec> and applies <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> fire damage over time</sec>.
       TC: |-
         發射火焰彈造成<dmg elem="fire" />。
-        命中時，在3回合內降低目標的<sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性<val idx="1" r /></sec>，並賦予<sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless />持續火焰傷害</sec>。
+        命中時，3回合內降低目標的<sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性<val idx="1" r /></sec>，並賦予<sec typ="dmg"><buff typ="FireDMG_DOT" /><val idx="0" signless />持續火焰傷害</sec>。
   "2":
     key: "2"
     icon: WideFireShot
@@ -4100,17 +4100,17 @@ skills:
         목표 지점에 화염을 분사해 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 주고, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
         <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="1" r /></sec>를 감소시키고, <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> 지속 화염 피해</sec>를 부여합니다.
         <sec>스킬 레벨 5부터 범위가 증가합니다.</sec>
-      JP: |-
-        目標地点に火炎を噴射して<sec typ="attr">保護無視</sec><dmg elem="fire" />を与え、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />被ダメージ減少効果を解除</sec>します。
-        <sec typ="cond">命中時</sec>, 3ラウンドの間、対象の<sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性<val idx="1" r /></sec>を減少させ、<sec typ="dmg"><buff typ="FireDMG_DOT" /><val idx="0" signless />持続火炎ダメージ</sec>を付与します。
-        <sec>スキルレベル5から範囲が増加します。</sec>
       EN: |-
-        Sprays fire at the target point, dealing <sec typ="attr">protection-ignoring</sec> <dmg elem="fire" /> and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removing the target's damage reduction effect</sec>.
-        <sec typ="cond">On hit</sec>, for 3 rounds, reduces the target's <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="1" r /></sec> and applies <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> fire damage over time</sec>.
-        <sec>Range increases starting at Skill Lv. 5.</sec>
+        Sprays flame at the target point to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="fire" /> and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes damage reduction effects</sec> from targets.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance by <val idx="1" r /></sec> for 3 rounds and inflicts <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless /> continuous Fire damage</sec>.
+        <sec>Range increases from skill level 5.</sec>
+      JP: |-
+        目標地点に火炎を噴射して<sec typ="attr">保護無視</sec><dmg elem="fire" />を与え、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ減少効果を解除</sec>します。
+        <sec typ="cond">命中時</sec>、3ラウンドの間、対象の<sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性<val idx="1" r /></sec>を減少させ、<sec typ="dmg"><buff typ="FireDMG_DOT" /><val idx="0" signless />持続火炎ダメージ</sec>を付与します。
+        <sec>スキルレベル5から範囲が増加します。</sec>
       TC: |-
-        對目標點噴射火焰，造成<sec typ="attr">無視保護</sec><dmg elem="fire" />，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的受傷害降低效果</sec>。
-        <sec typ="cond">命中時</sec>，在3回合內降低目標的<sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性<val idx="1" r /></sec>，並賦予<sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="0" signless />持續火焰傷害</sec>。
+        向目標地點噴射火焰，造成<sec typ="attr">無視保護</sec><dmg elem="fire" />，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標受到傷害減少效果</sec>。
+        <sec typ="cond">命中時</sec>，3回合內降低目標的<sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性<val idx="1" r /></sec>，並賦予<sec typ="dmg"><buff typ="FireDMG_DOT" /><val idx="0" signless />持續火焰傷害</sec>。
         <sec>技能等級5起範圍增加。</sec>
   "3":
     key: "3"
@@ -4593,30 +4593,30 @@ skills:
         A 승급 : <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="7" r /></sec>
         S 승급 : <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val base="0.5" per="0.05" r /></sec>
         SS 승급 : <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val base="0.5" per="0.075" r /></sec>
-      JP: |-
-        気が弱い性格のため、フォティアは<sec typ="buff"><buff typ="CRITICAL_DOWN" />これ以上クリティカルを発生させることができません</sec>。
-        <sec typ="cond">ラウンド開始時</sec>に自身へ<sec typ="cond"><buff typ="CRITICAL_UP" />クリティカル上昇効果が適用されている場合</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>が増加します。
-        <sec typ="cond">戦闘開始時</sec>、<sec typ="buff"><buff typ="SKILL_UP" />スキル威力が永続的に増加</sec>し、<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />スキル威力減少効果に免疫</sec>になります。
-        <sec>昇級によって厨房内の役職が上がるほど、スキル威力の増加量が増えます。</sec>
-        A昇級 : <sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="7" r /></sec>
-        S昇級 : <sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val base="0.5" per="0.05" r /></sec>
-        SS昇級 : <sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val base="0.5" per="0.075" r /></sec>
       EN: |-
-        Due to her timid nature, Fotia <sec typ="buff"><buff typ="CRITICAL_DOWN" /> can no longer land critical hits</sec>.
-        <sec typ="cond">At round start</sec>, if a <sec typ="cond"><buff typ="CRITICAL_UP" /> Critical Up effect</sec> is applied to self, self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> increases.
-        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> skill power increases permanently</sec> and self becomes <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immune to skill power down effects</sec>.
-        <sec>The higher Fotia's rank in the kitchen rises through promotion, the greater the skill power increase.</sec>
-        A Promotion : <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="7" r /></sec>
-        S Promotion : <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val base="0.5" per="0.05" r /></sec>
-        SS Promotion : <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val base="0.5" per="0.075" r /></sec>
+        Due to her timid personality, Fotia <sec typ="buff"><buff typ="CRITICAL_DOWN" /> can no longer land critical hits</sec>.
+        <sec typ="cond">At round start</sec>, <sec typ="cond">if a <buff typ="CRITICAL_UP" /> Critical increase effect is applied to herself</sec>, her <sec typ="buff"><buff typ="ATK_UP" /> ATK increases by <val idx="0" r /></sec>.
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power permanently increases</sec> and she becomes <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immune to Skill Power reduction effects</sec>.
+        <sec>As her kitchen position rises through promotion, the Skill Power increase grows.</sec>
+        A Promotion: <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="7" r /></sec>
+        S Promotion: <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val base="0.5" per="0.05" r /></sec>
+        SS Promotion: <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val base="0.5" per="0.075" r /></sec>
+      JP: |-
+        気弱な性格により、フォティアは<sec typ="buff"><buff typ="CRITICAL_DOWN" />これ以上クリティカルを発生させることができません</sec>。
+        <sec typ="cond">ラウンド開始時</sec>、自身に<sec typ="cond"><buff typ="CRITICAL_UP" />クリティカル増加効果が適用されている場合</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>が増加します。
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="buff"><buff typ="SKILL_UP" />スキル威力が永久に増加</sec>し、<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />スキル威力減少効果に免疫</sec>になります。
+        <sec>昇級によって厨房内の職位が上がるほど、スキル威力増加値が増えます。</sec>
+        A昇級：<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="7" r /></sec>
+        S昇級：<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val base="0.5" per="0.05" r /></sec>
+        SS昇級：<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val base="0.5" per="0.075" r /></sec>
       TC: |-
-        由於個性膽小，芙堤亞<sec typ="buff"><buff typ="CRITICAL_DOWN" />將無法再觸發暴擊</sec>。
-        <sec typ="cond">回合開始時</sec>，若自身套用了<sec typ="cond"><buff typ="CRITICAL_UP" />暴擊增加效果</sec>，則自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>增加。
-        <sec typ="cond">戰鬥開始時</sec>，<sec typ="buff"><buff typ="SKILL_UP" />技能威力永久增加</sec>，並且獲得<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />對技能威力降低效果免疫</sec>。
-        <sec>透過昇級提升在廚房內的職位時，技能威力增加量也會隨之提高。</sec>
-        A昇級：<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="7" r /></sec>
-        S昇級：<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val base="0.5" per="0.05" r /></sec>
-        SS昇級：<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val base="0.5" per="0.075" r /></sec>
+        因膽小的個性，波蒂亞<sec typ="buff"><buff typ="CRITICAL_DOWN" />無法再造成暴擊</sec>。
+        <sec typ="cond">回合開始時</sec>，若自身套用<sec typ="cond"><buff typ="CRITICAL_UP" />暴擊增加效果</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec>，<sec typ="buff"><buff typ="SKILL_UP" />技能威力永久增加</sec>，並進入<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />免疫技能威力降低效果</sec>狀態。
+        <sec>透過晉升使廚房內職位越高，技能威力增加值越高。</sec>
+        A晉升：<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="7" r /></sec>
+        S晉升：<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val base="0.5" per="0.05" r /></sec>
+        SS晉升：<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val base="0.5" per="0.075" r /></sec>
   "4":
     key: "4"
     icon: P.SelfDefDeBuff
@@ -4881,18 +4881,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>가 증가합니다.
         <sec typ="cond">공격 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>가 증가합니다. (최대 3중첩)
         <sec typ="cond">공격 시</sec> <sec typ="note">예열</sec> 중첩이 2 이상일 경우, <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과를 획득합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>, 自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec>が増加します。
-        <sec typ="cond">攻撃時</sec>, 3ラウンドの間、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec>が増加します。(最大3スタック)
-        <sec typ="cond">攻撃時</sec> <sec typ="note">予熱</sec>のスタックが2以上の場合、<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア / 被ダメージ減少無視</sec>効果を獲得します。
       EN: |-
-        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> increases.
-        <sec typ="cond">On attack</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> increases for 3 rounds. (Max 3 stacks)
-        <sec typ="cond">On attack</sec>, if <sec typ="note">Preheat</sec> stacks are 2 or more, gains <sec typ="buff"><buff typ="BARRIER_PIERCE" /> barrier / damage reduction ignore</sec>.
+        <sec typ="cond">At round start</sec>, increases her <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="1" r /></sec>.
+        <sec typ="cond">On attack</sec>, increases her <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="5" r /></sec> for 3 rounds. (Stacks up to 3 times)
+        <sec typ="cond">On attack</sec>, if <sec typ="note">Warm-Up</sec> has 2 or more stacks, gains <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec>が増加します。
+        <sec typ="cond">攻撃時</sec>、3ラウンドの間、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec>が増加します。(最大3重複)
+        <sec typ="cond">攻撃時</sec>、<sec typ="note">予熱</sec>の重複が2以上の場合、<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア / ダメージ減少無視</sec>効果を獲得します。
       TC: |-
         <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec>增加。
-        <sec typ="cond">攻擊時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec>在3回合內增加。（最多3層）
-        <sec typ="cond">攻擊時</sec>，若<sec typ="note">預熱</sec>層數達到2以上，則獲得<sec typ="buff"><buff typ="BARRIER_PIERCE" />無視防護罩 / 受傷害降低</sec>效果。
+        <sec typ="cond">攻擊時</sec>，3回合內自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec>增加。（最多重疊3次）
+        <sec typ="cond">攻擊時</sec>，若<sec typ="note">預熱</sec>層數為2以上，獲得<sec typ="buff"><buff typ="BARRIER_PIERCE" />無視護盾 / 傷害減少</sec>效果。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -5085,23 +5085,23 @@ skills:
       KR: |-
         포티아의 불을 다루는 실력이 일취월장하여 건틀릿을 더욱 효율적으로 다룰 수 있게 되었습니다.
         자신의 공격에 의한 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 감소</sec> / <sec typ="dmg"><buff typ="FireDMG_DOT" /> 지속 화염 피해</sec> 수치가 두 배로 증폭됩니다.
-        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="1" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="1" /></sec>가 증가합니다.
         <sec typ="important">숨겨진 시너지</sec> : <sec typ="cond">스쿼드에 <char uid="3P_Sowan" />가 포함된 경우</sec>, <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 추가로 증가합니다.
-      JP: |-
-        フォティアの火を扱う腕前は日々向上し、ガントレットをより効率的に扱えるようになりました。
-        自身の攻撃による<sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性減少</sec> / <sec typ="dmg"><buff typ="FireDMG_DOT" />持続火炎ダメージ</sec>の数値が2倍に増幅されます。
-        <sec typ="cond">ラウンド開始時</sec>, 自身の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動回数<val idx="1" /></sec>が増加します。
-        <sec typ="important">隠されたシナジー</sec> : <sec typ="cond">スクワッドに<char uid="3P_Sowan" />が含まれる場合</sec>, <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>が追加で増加します。
       EN: |-
-        Fotia's skill at handling fire has improved by leaps and bounds, allowing her to use the gauntlet even more efficiently.
-        The values of <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance Down</sec> / <sec typ="dmg"><buff typ="FireDMG_DOT" /> fire damage over time</sec> caused by her attacks are doubled.
-        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="Action_Number_Change_Up" /> maximum action count <val idx="1" /></sec> increases.
-        <sec typ="important">Hidden synergy</sec> : <sec typ="cond">if the squad includes <char uid="3P_Sowan" /></sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" r /></sec> increases additionally.
+        Fotia's skill with fire has improved dramatically, allowing her to handle the gauntlet more efficiently.
+        The values of <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance Down</sec> / <sec typ="dmg"><buff typ="FireDMG_DOT" /> continuous Fire damage</sec> from her attacks are doubled.
+        <sec typ="cond">At round start</sec>, her <sec typ="buff"><buff typ="AP_UP" /> Action Power increases by <val idx="0" r /></sec> and <sec typ="buff"><buff typ="Action_Number_Change_Up" /> Max Action Count increases by <val idx="1" /></sec>.
+        <sec typ="important">Hidden Synergy</sec>: <sec typ="cond">If the squad includes <char uid="3P_Sowan" /></sec>, <sec typ="buff"><buff typ="AP_UP" /> Action Power additionally increases by <val idx="3" r /></sec>.
+      JP: |-
+        フォティアの火を扱う腕前が飛躍的に向上し、ガントレットをさらに効率的に扱えるようになりました。
+        自身の攻撃による<sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性低下</sec> / <sec typ="dmg"><buff typ="FireDMG_DOT" />持続火炎ダメージ</sec>の数値が2倍に増幅されます。
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動回数<val idx="1" /></sec>が増加します。
+        <sec typ="important">隠しシナジー</sec>：<sec typ="cond">スクワッドに<char uid="3P_Sowan" />が含まれている場合</sec>、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>が追加で増加します。
       TC: |-
-        芙堤亞駕馭火焰的技術突飛猛進，能更有效率地使用護手。
-        自身攻擊所造成的<sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性降低</sec> / <sec typ="dmg"><buff typ="FireDMG_DOT" />持續火焰傷害</sec>數值會變為2倍。
+        波蒂亞操控火焰的能力大幅成長，能更有效率地使用護手。
+        自身攻擊造成的<sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性降低</sec> / <sec typ="dmg"><buff typ="FireDMG_DOT" />持續火焰傷害</sec>數值增幅為兩倍。
         <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>增加，且<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動次數<val idx="1" /></sec>增加。
-        <sec typ="important">隱藏協同</sec>：<sec typ="cond">若隊伍包含<char uid="3P_Sowan" /></sec>，則自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>會額外增加。
+        <sec typ="important">隱藏協同</sec>：<sec typ="cond">若小隊包含<char uid="3P_Sowan" /></sec>，<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>額外增加。
 dialogue:
   KR:
     "1":

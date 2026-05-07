@@ -2155,16 +2155,15 @@ skills:
       KR: |-
         대공포를 발사해 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>으로 지정해 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec> 증가 상태로 만듭니다.
         <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 증가</sec>는 중첩되지 않으며, 대상이 기동형인 경우에는 <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
-      JP: |-
-        対空砲を発射して<dmg elem="physics" />を与え、2ラウンドの間、対象を<sec typ="buff"><buff typ="MARKING" />標的</sec>にして<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="3" r /></sec>増加状態にします。
-        <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ増加</sec>はスタックせず、対象が機動型の場合は<sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />ダメージ<val idx="4" r /></sec>が増加します。
       EN: |-
-        Fires an Anti-Aircraft Gun and deals <dmg elem="physics" />.
-        For 2 rounds, marks the target and makes them receive <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="3" r /></sec> increase.
-        The <sec typ="buff"><buff typ="VULNERABLE" /> received damage increase</sec> does not stack, and if the target is an Air unit, <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> damage <val idx="4" r /></sec> increases.
+        anti-air gun fires <dmg elem="physics" /> damage and 2 rounds target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> as designates <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec> increase inflicts.
+        <sec typ="buff"><buff typ="VULNERABLE" /> damage taken increase</sec> stack not become is not and, target Mobile-typeifin <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> damage <val idx="4" r /></sec> increases.
+      JP: |-
+        対空砲を 発射して<dmg elem="physics" />を与え、、 2ラウンドの間 対象を <sec typ="buff"><buff typ="MARKING" /> 標的</sec>で 指定して <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="3" r /></sec> 増加 状態にします。
+        <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ 増加</sec>は 重複ドウェジイ せず、、 対象が 機動型の場合には <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> ダメージ量 <val idx="4" r /></sec>が増加します。
       TC: |-
-        發射高射炮造成<dmg elem="physics" />，並在2回合內將目標<sec typ="buff"><buff typ="MARKING" />標記</sec>，使其處於<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="3" r /></sec>增加狀態。
-        <sec typ="buff"><buff typ="VULNERABLE" />所受傷害增加</sec>不會疊加，若目標為機動型，則<sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />傷害<val idx="4" r /></sec>提升。
+        防空砲 發射 造成<dmg elem="physics" />，並 2回合內 目標 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>以 指定 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="3" r /></sec> 增加 使其進入狀態。
+        <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 增加</sec> 疊加不會 不會，且 目標 機動型若為於 <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 傷害量 <val idx="4" r /></sec>增加。
   "2":
     key: "2"
     icon: TeamAtkBuff
@@ -2811,24 +2810,24 @@ skills:
         <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
         <sec typ="note">호라이즌 부대원</sec> : <char uid="BR_Undine" />, <char uid="BR_InvDragon" />, <char uid="BR_Thetis" />
         <sec typ="important"><char uid="BR_Nereid" />는 중장형 버프를 받기 때문에 <sec typ="note">호라이즌 부대원</sec> 목록에서 제외됨</sec>
-      JP: |-
-        範囲内の味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>を増加させ、2ラウンドの間、対象の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="3" r /></sec>を上昇させます。
-        対象が重装型または<sec typ="note">ホライゾン隊員</sec>の場合、効果が2倍になり、<sec typ="buff"><buff typ="SUPPORT_ATTACK" />対象の攻撃を支援</sec>します。
-        <sec>スキルレベル10で範囲が増加します。</sec>
-        <sec typ="note">ホライゾン隊員</sec> : <char uid="BR_Undine" />, <char uid="BR_InvDragon" />, <char uid="BR_Thetis" />
-        <sec typ="important"><char uid="BR_Nereid" />は重装型バフを受けるため、<sec typ="note">ホライゾン隊員</sec>一覧から除外されます</sec>
       EN: |-
-        Increases allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> within range and raises the target's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="3" r /></sec> for 2 rounds.
-        If the target is Heavy Armor or a <sec typ="note">Horizon squad member</sec>, the effect is doubled and <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> the target's attack is supported</sec>.
-        <sec>The range increases at Skill Lv. 10.</sec>
-        <sec typ="note">Horizon squad members</sec>: <char uid="BR_Undine" />, <char uid="BR_InvDragon" />, <char uid="BR_Thetis" />
-        <sec typ="important"><char uid="BR_Nereid" /> is excluded from the <sec typ="note">Horizon squad member</sec> list because it receives Heavy Armor buffs</sec>
+        within range allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases and 2 rounds, target's <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> increases.
+        target Heavy-type or <sec typ="note">Horizon Unit Member</sec> if, the effect is doubled increases and <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> target's supports the attack</sec>.
+        <sec>At skill level 10, range increases.</sec>
+        <sec typ="note">Horizon Unit Member</sec>: <char uid="BR_Undine" />, <char uid="BR_InvDragon" />, <char uid="BR_Thetis" />
+        <sec typ="important"><char uid="BR_Nereid" /> Heavy-type buff receiving because to <sec typ="note">Horizon Unit Member</sec> list in excluded</sec>
+      JP: |-
+        範囲内 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を 増加時クイし、 2ラウンドの間 対象の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec>を上昇させます。
+        対象が 重装型 または <sec typ="note">ホライゾン部隊員</sec>の場合、 効果が2倍で 増加し、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 対象の 攻撃を 支援</sec>します。
+        <sec>スキルレベル10で 範囲が増加します。</sec>
+        <sec typ="note">ホライゾン部隊員</sec>：<char uid="BR_Undine" />、 <char uid="BR_InvDragon" />、 <char uid="BR_Thetis" />
+        <sec typ="important"><char uid="BR_Nereid" />は 重装型 バフを ブアト機 時ムウンに <sec typ="note">ホライゾン部隊員</sec> ムオクルオクで ジエ外ドウェム</sec>
       TC: |-
-        增加範圍內我軍的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>，並在2回合內提升目標的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="3" r /></sec>。
-        若目標為重裝型或<sec typ="note">地平線隊員</sec>，則效果加倍，並<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援目標的攻擊</sec>。
-        <sec>技能等級10時，範圍增加。</sec>
-        <sec typ="note">地平線隊員</sec>：<char uid="BR_Undine" />、<char uid="BR_InvDragon" />、<char uid="BR_Thetis" />
-        <sec typ="important"><char uid="BR_Nereid" />因會受到重裝型增益，所以從<sec typ="note">地平線隊員</sec>名單中排除</sec>
+        範圍內 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 增加時台並， 2回合內 目標的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec>提升。
+        目標 重裝型 或 <sec typ="note">地平線部隊成員</sec>若為， 效果變為2倍以 增加，並 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 目標的 攻擊 支援</sec>。
+        <sec>技能等級10時 範圍增加。</sec>
+        <sec typ="note">地平線部隊成員</sec>：<char uid="BR_Undine" />， <char uid="BR_InvDragon" />， <char uid="BR_Thetis" />
+        <sec typ="important"><char uid="BR_Nereid" /> 重裝型 增益 接受台 始終 <sec typ="note">地平線部隊成員</sec> 列表在 解除外變為m</sec>
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -3774,21 +3773,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="10" slot="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="11" slot="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="9" slot="4" r /></sec>가 증가하며, 범위 내 아군에게 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec> 증가 효과를 줍니다.
-        적 공격 시, 2라운드 동안 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="7" slot="1" r /></sec>가 추가로 증가합니다.
-        스쿼드에 <char uid="BR_Nereid" /> / <char uid="BR_Sirene" /> / <char uid="BR_Thetis" /> 중 1기라도 있으면, 범위 내 기동 / 중장형 아군의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>합니다.
-      JP: |-
-        ラウンド開始時、自分の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="10" slot="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="11" slot="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="9" slot="4" r /></sec>が増加し、範囲内の味方に<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="4" r /></sec>増加効果を与えます。
-        敵から攻撃を受けた時、2ラウンドの間<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="7" slot="1" r /></sec>がさらに増加します。
-        分隊に<char uid="BR_Nereid" /> / <char uid="BR_Sirene" /> / <char uid="BR_Thetis" />のいずれか1体でもいる場合、範囲内のAir / Heavy Armor味方の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃を支援</sec>します。
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군들의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
+        대상에게 <sec typ="note">포격 지휘</sec>가 적용된 상태면 효과가 50% 증가합니다.
+        <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
       EN: |-
-        At round start, increases self's <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="10" slot="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="11" slot="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="9" slot="4" r /></sec>, and grants allies within range <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="4" r /></sec> increase effects.
-        When attacked by an enemy, <sec typ="buff"><buff typ="EVADE_UP" /> evasion <val idx="7" slot="1" r /></sec> further increases for 2 rounds.
-        If even one of <char uid="BR_Nereid" /> / <char uid="BR_Sirene" /> / <char uid="BR_Thetis" /> is in the squad, provides <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attack Support</sec> to allied Air / Heavy Armor units within range.
+        <sec typ="cond">At round start</sec>, within range allies of <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec> increases.
+        to the target <sec typ="note">Artillery Command</sec> while active if effect and 50% increases.
+        <sec>At skill level 10, range increases.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方たちの <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が増加します。
+        対象に <sec typ="note">砲撃指揮</sec>が 適用された状態なら 効果が 50% 増加します。
+        <sec>スキルレベル10で 範囲が増加します。</sec>
       TC: |-
-        於回合開始時，自身的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="10" slot="4" r /></sec>／<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="11" slot="4" r /></sec>／<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="9" slot="4" r /></sec>提升，並對範圍內我軍賦予<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>／<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="3" r /></sec>／<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="4" r /></sec>增加效果。
-        受到敵人攻擊時，<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="7" slot="1" r /></sec>在2回合內額外提升。
-        若隊伍中只要有<char uid="BR_Nereid" />／<char uid="BR_Sirene" />／<char uid="BR_Thetis" />其中1名，則會對範圍內機動型／重裝型我軍<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援攻擊</sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方們的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="2" r /></sec>增加。
+        對目標 <sec typ="note">砲擊指揮</sec> 已套用的狀態若 效果 50% 增加。
+        <sec>技能等級10時 範圍增加。</sec>
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -4025,15 +4024,15 @@ skills:
       KR: |-
         <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec>가 감소합니다.
         대기 시 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 포격 모드로 변환</sec>되어 다음 라운드 부터 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 증가</sec> 효과가 1.5배로 적용되지만, <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 증가</sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 증가</sec> 효과가 사라집니다.
-      JP: |-
-        <sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="4" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="2" r inv /></sec>が減少します。
-        待機時、<sec typ="buff"><buff typ="CHANGE_CHAR" />砲撃モードに転換</sec>され、次のラウンドから<sec typ="buff"><buff typ="ATK_UP" />攻撃力増加</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通増加</sec>効果が1.5倍で適用されますが、<sec typ="buff"><buff typ="ACCURACY_UP" />命中増加</sec> / <sec typ="buff"><buff typ="AP_UP" />行動力増加</sec>効果は失われます。
       EN: |-
-        <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce <val idx="4" r /></sec> increases, and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="2" r inv /></sec> decreases.
-        On standby, the unit <sec typ="buff"><buff typ="CHANGE_CHAR" /> switches to Bombardment Mode</sec>, and from the next round the <sec typ="buff"><buff typ="ATK_UP" /> ATK Increase</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce Increase</sec> effects are applied at 1.5x, but the <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy increase</sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE increase</sec> effects are lost.
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="4" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="2" r inv /></sec> decreases.
+        On standby <sec typ="buff"><buff typ="CHANGE_CHAR" /> Bombardment Modeas conversion</sec>becomes next round from <sec typ="buff"><buff typ="ATK_UP" /> Attack increase</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration increase</sec> effect and 1.5 times as enemy not applied only, <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy increase</sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed increase</sec> effect and disappears.
+      JP: |-
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="4" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="2" r inv /></sec>が減少します。
+        待機時 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 砲撃モードで 変換</sec>になり 次 ラウンド から <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 増加</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 増加</sec> 効果が 1。5ブエで 適用ドウェジイだけ、 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 増加</sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 増加</sec> 効果が 消滅します。
       TC: |-
-        <sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="3" r /></sec>／<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec>／<sec typ="buff"><buff typ="AP_UP" />行動點數<val idx="1" r /></sec>／<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="4" r /></sec>提升，並使<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="2" r inv /></sec>降低。
-        待機時會<sec typ="buff"><buff typ="CHANGE_CHAR" />變形為砲擊模式</sec>，使下一回合起的<sec typ="buff"><buff typ="ATK_UP" />攻擊力提升</sec>／<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿提升</sec>效果以1.5倍套用，但<sec typ="buff"><buff typ="ACCURACY_UP" />命中提升</sec>／<sec typ="buff"><buff typ="AP_UP" />行動點數提升</sec>效果會消失。
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="4" r /></sec> 增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="2" r inv /></sec>減少。
+        待機時 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 砲擊模式以 轉換</sec>變為 下次 回合 從 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 增加</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 增加</sec> 效果 1。5倍以 套用不會僅， <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 增加</sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 增加</sec> 效果 消失。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -4181,17 +4180,17 @@ skills:
             chance: 0
     desc:
       KR: |-
-        라운드 개시 시, 자신을 제외한 <sec typ="note">호라이즌</sec> 부대원 또는 지원기 1기 당 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="8" slot="3" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신을 제외한 <sec typ="note">호라이즌</sec> 부대원 또는 지원기 1기 당 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="8" slot="3" r /></sec>가 증가합니다.
         공격 지원을 받는 상태면 <sec typ="note">요격 모드 : 자신이 공격 지원 시 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 증가</sec> <sec typ="note">포격 모드 : 액티브 스킬 적중 시 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec></sec> 효과가 적용됩니다.
-      JP: |-
-        ラウンド開始時、自分を除いた<sec typ="note">ホライゾン</sec>隊員または支援機1機ごとに<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="8" slot="3" r /></sec>が増加します。
-        攻撃支援を受けている場合、<sec typ="note">迎撃モード：自分が攻撃支援時、<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>増加</sec> <sec typ="note">砲撃モード：アクティブスキル命中時、<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア/ダメージ減少無視</sec></sec>効果が適用されます。
       EN: |-
-        At round start, increases <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="8" slot="3" r /></sec> for each Horizon squad member or Supporter unit other than self.
-        If receiving Attack Support, the effects of <sec typ="note">Interception Mode: Increase <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> when self provides Attack Support</sec> <sec typ="note">Bombardment Mode: Ignore <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier / Damage Reduction</sec> when Active Skill hits</sec> are applied.
+        <sec typ="cond">At round start</sec>, self excluding <sec typ="note">Horizon</sec> part member or Supporter 1 unit per <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="8" slot="3" r /></sec> increases.
+        Attack Support receiving state if <sec typ="note">Interception Mode: self Attack Support when <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increase</sec> <sec typ="note">Bombardment Mode: active When the skill hits <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec></sec> the effect is applied.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身を ジエ外した <sec typ="note">ホライゾン</sec> ブウ隊員 または 支援機 1機 ごと <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="8" slot="3" r /></sec>が増加します。
+        攻撃支援を 受けている状態なら <sec typ="note">迎撃モード：自身が 攻撃支援 時 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 増加</sec> <sec typ="note">砲撃モード：アクティブ スキル命中時 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec></sec> 効果が適用されます。
       TC: |-
-        於回合開始時，除自身以外，每1名<sec typ="note">地平線</sec>隊員或支援機都會使<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="8" slot="3" r /></sec>提升。
-        若處於支援攻擊狀態，則會套用<sec typ="note">截擊模式：自身進行支援攻擊時，<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>提升</sec> <sec typ="note">砲擊模式：主動技能命中時，<sec typ="buff"><buff typ="BARRIER_PIERCE" />無視防護罩／傷害減少</sec></sec>效果。
+        <sec typ="cond">回合開始時</sec>， 自身 解除外 <sec typ="note">地平線</sec> 附加隊員 或 支援機 1台 每 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="8" slot="3" r /></sec>增加。
+        攻擊支援 受到的狀態若 <sec typ="note">攔截模式：自身 攻擊支援 時 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 增加</sec> <sec typ="note">砲擊模式：主動 技能命中時 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec></sec> 效果套用。
   F1:
     key: F1
     icon: CannonShot
@@ -5793,20 +5792,20 @@ skills:
     desc:
       KR: |-
         직사 포격으로 지정 범위에 <dmg elem="physics" />를 줍니다.
-        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태면 피해량이 증가합니다.
-        자신이 <sec typ="note"><char uid="BR_Thetis" /> : 전술 공중중계</sec>를 받는 상태면, <sec typ="note">집속 공격</sec> 효과로 공격 대상이 적을수록 피해량이 증가합니다.
-      JP: |-
-        直射砲撃で指定範囲に<dmg elem="physics" />を与えます。
-        対象が<sec typ="cond"><buff typ="MARKING" />標的</sec> / <sec typ="cond"><buff typ="PROVOKE" />挑発</sec>状態なら、ダメージ量が増加します。
-        自分が<sec typ="note"><char uid="BR_Thetis" /> : 戦術空中中継</sec>を受けている場合、<sec typ="note">集束攻撃</sec>効果で攻撃対象が少ないほどダメージ量が増加します。
+        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        자신이 <sec typ="note"><char uid="BR_Thetis" /> : 전술 공중중계</sec>를 받는 상태면, <sec typ="note">집속 공격</sec> 효과로 <sec typ="dmg"><buff typ="ATK_UP" /> 공격 대상이 적을수록 피해량 <val idx="3" r /></sec>가 증가합니다.
       EN: |-
-        Attacks with Point Blank Bombardment and deals <dmg elem="physics" /> to the designated area.
-        Damage increases if the target is <sec typ="cond"><buff typ="MARKING" /> Marked</sec> / <sec typ="cond"><buff typ="PROVOKE" /> Provoked</sec>.
-        If self is receiving <sec typ="note"><char uid="BR_Thetis" /> : Tactical Aerial Broadcast</sec>, the <sec typ="note">Focused Attack</sec> effect increases damage the fewer attack targets there are.
+        direct fire by bombardment as to the designated area <dmg elem="physics" />.
+        target <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="PROVOKE" /> Provoke</sec> if in the state <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        self <sec typ="note"><char uid="BR_Thetis" />: tactical air relay</sec> receiving state if, <sec typ="note">Focused Attack</sec> effect andas <sec typ="dmg"><buff typ="ATK_UP" /> attack target the fewer damage <val idx="3" r /></sec> increases.
+      JP: |-
+        ジイクスア 砲撃で 指定範囲に<dmg elem="physics" />を与えます。
+        対象が <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="PROVOKE" /> 挑発</sec> 状態なら <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        自身が <sec typ="note"><char uid="BR_Thetis" />：戦術空中中継</sec>を 受けている状態なら、 <sec typ="note">集束攻撃</sec> 効果で <sec typ="dmg"><buff typ="ATK_UP" /> 攻撃 対象が 少ないほど ダメージ量 <val idx="3" r /></sec>が増加します。
       TC: |-
-        以直線砲擊對指定範圍造成<dmg elem="physics" />。
-        若目標處於<sec typ="cond"><buff typ="MARKING" />標記</sec>／<sec typ="cond"><buff typ="PROVOKE" />挑釁</sec>狀態，傷害會提升。
-        若自身處於<sec typ="note"><char uid="BR_Thetis" />：戰術空中中繼</sec>狀態，則會因<sec typ="note">集束攻擊</sec>效果而使攻擊目標越少、傷害越高。
+        直射 砲擊以 指定範圍於 造成<dmg elem="physics" />。
+        目標 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="PROVOKE" /> 挑釁</sec> 若處於狀態 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        自身 <sec typ="note"><char uid="BR_Thetis" />：戰術空中中繼</sec> 受到的狀態若， <sec typ="note">集中攻擊</sec> 效果以 <sec typ="dmg"><buff typ="ATK_UP" /> 攻擊 目標 越少 傷害量 <val idx="3" r /></sec>增加。
   F2:
     key: F2
     icon: AirStrike
@@ -7517,28 +7516,28 @@ skills:
     desc:
       KR: |-
         지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
-        목표 지점에서 멀어질수록 피해량이 25%씩 감소하며, 대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태면 피해량이 증가합니다.
-        스킬 사용 시, 2라운드 동안 <sec typ="note">재장전</sec> 상태가 되어 행동력이 감소합니다.
-        <sec typ="note">재장전</sec> 2중첩 이상 상태로 라운드 개시 시, AP가 감소하며 <sec typ="note">재장전</sec> 상태가 해제됩니다.
+        목표 지점에서 멀어질수록 피해량이 <sec typ="dmg">25%씩 감소</sec>하며, 대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        스킬 사용 시, 2라운드 동안 <sec typ="note">재장전</sec> 상태가 되어 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="4" r /></sec>가 감소합니다.
+        <sec typ="note">재장전</sec> 2중첩 이상 상태로 <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" slot="CH_4" /></sec>이(가) 감소하며 <sec typ="note">재장전</sec> 상태가 해제됩니다.
         <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+      EN: |-
+        to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        target point in the farther from damage <sec typ="dmg">25%each decrease</sec> and, target <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="PROVOKE" /> Provoke</sec> if in the state <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        When using the skill, 2 rounds <sec typ="note">Reload</sec> enters the state and <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="4" r /></sec> decreases.
+        <sec typ="note">Reload</sec> 2stack or more to the state <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" slot="CH_4" /></sec>() decreases and <sec typ="note">Reload</sec> state is removed.
+        <sec>At skill level 10, range increases.</sec>
       JP: |-
         指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
-        目標地点から遠いほどダメージが25%ずつ減少し、対象が<sec typ="cond"><buff typ="MARKING" />標的</sec> / <sec typ="cond"><buff typ="PROVOKE" />挑発</sec>状態ならダメージ量が増加します。
-        スキル使用時、2ラウンドの間<sec typ="note">再装填</sec>状態になり、行動力が減少します。
-        <sec typ="note">再装填</sec>が2スタック以上の状態でラウンド開始時、APが減少し<sec typ="note">再装填</sec>状態が解除されます。
-        <sec>スキルレベル10で範囲が増加します。</sec>
-      EN: |-
-        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area.
-        Damage decreases by 25% the farther it is from the target point, and damage increases if the target is <sec typ="cond"><buff typ="MARKING" /> Marked</sec> / <sec typ="cond"><buff typ="PROVOKE" /> Provoked</sec>.
-        When using the skill, enters <sec typ="note">Reloading</sec> for 2 rounds and MOVE decreases.
-        When starting a round with <sec typ="note">Reloading</sec> at 2 stacks or more, AP decreases and the <sec typ="note">Reloading</sec> state is removed.
-        <sec>Range increases at Skill Lv. 10.</sec>
+        目標地点で 離れるほど ダメージ量が <sec typ="dmg">25%ッスイク 減少</sec>し、 対象が <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="PROVOKE" /> 挑発</sec> 状態なら <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        スキル使用時、 2ラウンドの間 <sec typ="note">再装填</sec> 状態になり <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="4" r /></sec>が減少します。
+        <sec typ="note">再装填</sec> 2重複 以上 状態に <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" slot="CH_4" /></sec>が 減少し、 <sec typ="note">再装填</sec> 状態が 解除されます。
+        <sec>スキルレベル10で 範囲が増加します。</sec>
       TC: |-
-        對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
-        距離目標地點越遠，傷害會以25%遞減；若目標處於<sec typ="cond"><buff typ="MARKING" />標記</sec>／<sec typ="cond"><buff typ="PROVOKE" />挑釁</sec>狀態，則傷害提升。
-        使用技能時，會在2回合內進入<sec typ="note">再裝填</sec>狀態並降低行動力。
-        若以<sec typ="note">再裝填</sec>2層以上狀態開始回合，則AP降低並解除<sec typ="note">再裝填</sec>狀態。
-        <sec>技能等級10時，範圍增加。</sec>
+        指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        目標地點在 越遠離 傷害量 <sec typ="dmg">25%各 減少</sec>並， 目標 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="PROVOKE" /> 挑釁</sec> 若處於狀態 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        使用技能時， 2回合內 <sec typ="note">重新裝彈</sec> 進入狀態並 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="4" r /></sec>減少。
+        <sec typ="note">重新裝彈</sec> 2疊加 以上 成為狀態 <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" slot="CH_4" /></sec> 減少，並 <sec typ="note">重新裝彈</sec> 狀態 解除。
+        <sec>技能等級10時 範圍增加。</sec>
   F4:
     key: F4
     icon: P.SelfAtkBuff
@@ -7797,17 +7796,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, 공격력 / 방어 관통이 증가하며 받는 피해가 감소합니다.
-        대기 시 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 요격 모드로 변환</sec>되어 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 증가</sec> 효과가 33% 감소하지만, <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" slot="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" slot="4" r /></sec> 증가 효과가 추가됩니다.
-      JP: |-
-        ラウンド開始時、攻撃力/防御貫通が増加し、受けるダメージが減少します。
-        待機時、<sec typ="buff"><buff typ="CHANGE_CHAR" />迎撃モードに転換</sec>され、<sec typ="buff"><buff typ="ATK_UP" />攻撃力増加</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通増加</sec>効果が33%減少しますが、<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" slot="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" slot="4" r /></sec>増加効果が追加されます。
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec>가 감소합니다.
+        대기 시 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 요격 모드로 변환</sec>되어 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 증가</sec> 효과가 33% 감소하지만, <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" slot="4" r /></sec> /  증가 효과가 <sec typ="buff"><buff typ="AP_UP" />  행동력 <val idx="1" slot="4" r /></sec>추가됩니다.
       EN: |-
-        At round start, ATK / Defense Pierce increases and received damage decreases.
-        On standby, the unit <sec typ="buff"><buff typ="CHANGE_CHAR" /> switches to Interception Mode</sec>, and while the <sec typ="buff"><buff typ="ATK_UP" /> ATK Increase</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Pierce Increase</sec> effects are reduced by 33%, additional <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="0" slot="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="1" slot="4" r /></sec> increase effects are granted.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="1" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="2" r inv /></sec> decreases.
+        On standby <sec typ="buff"><buff typ="CHANGE_CHAR" /> Interception Modeas conversion</sec>becomes <sec typ="buff"><buff typ="ATK_UP" /> Attack increase</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration increase</sec> effect and 33% decrease whether only, <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" slot="4" r /></sec> / increase effect and <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" slot="4" r /></sec>additional.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="2" r inv /></sec>が減少します。
+        待機時 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 迎撃モードで 変換</sec>になり <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 増加</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 増加</sec> 効果が 33% 減少ハアジイだけ、 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" slot="4" r /></sec> / 増加 効果が <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" slot="4" r /></sec>追加されます。
       TC: |-
-        於回合開始時，攻擊力／防禦貫穿提升，且所受傷害降低。
-        待機時會<sec typ="buff"><buff typ="CHANGE_CHAR" />變形為截擊模式</sec>，使<sec typ="buff"><buff typ="ATK_UP" />攻擊力提升</sec>／<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿提升</sec>效果減少33%，但會追加<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" slot="4" r /></sec>／<sec typ="buff"><buff typ="AP_UP" />行動點數<val idx="1" slot="4" r /></sec>增加效果。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="1" r /></sec> 增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="2" r inv /></sec>減少。
+        待機時 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 攔截模式以 轉換</sec>變為 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 增加</sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 增加</sec> 效果 33% 減少下至僅， <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" slot="4" r /></sec> / 增加 效果 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" slot="4" r /></sec>額外。
 dialogue:
   KR:
     "1":

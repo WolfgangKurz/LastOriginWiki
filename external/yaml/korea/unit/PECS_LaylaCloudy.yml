@@ -1568,20 +1568,20 @@ skills:
     desc:
       KR: |-
         운명을 관통하는 카드를 날려 <dmg elem="physics" />를 줍니다.
-        적중 시 2라운드 동안 대상의 행동력을 감소시킵니다.
-        치명타 시 AP를 감소시킵니다.
-      JP: |-
-        運命を貫くカードを放ち、<dmg elem="physics" />のダメージを与えます。
-        命中時、2ラウンドの間対象の行動力を減少させます。
-        クリティカル時、APを減少させます。
+        <sec typ="cond">적중 시</sec> 2라운드 동안 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec>를 감소시킵니다.
+        <sec typ="cond">치명타 시</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>을(를) 감소시킵니다.
       EN: |-
-        Throws a card that pierces fate and deals <dmg elem="physics" /> damage.
-        When attack hits, decreases the target’s MOVE for 2 rounds.
-        When CRIT hit, decreases AP.
+        fate Gwantong do Kadeu kicks away <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec> 2 rounds, target's <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="0" r /></sec> decreases.
+        <sec typ="cond">On critical hit</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec> decreases.
+      JP: |-
+        ウン名を グワントオンする カードを ンアルルヨ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec> 2ラウンドの間 対象の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec>を減少させます。
+        <sec typ="cond">クリティカル時</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>を減少させます。
       TC: |-
-        投出貫穿命運的卡牌，造成<dmg elem="physics" />傷害。
-        命中時，減少目標的行動力，持續2回合。
-        暴擊時，減少AP。
+        運名 Gwantong 卡片 Na害怕 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec> 2回合內 目標的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec>使其減少。
+        <sec typ="cond">暴擊時</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>使其減少。
   "2":
     key: "2"
     icon: SelfSpdBuff
@@ -1932,29 +1932,53 @@ skills:
             chance: 1
     desc:
       KR: |-
-        운명의 문장을 소환하여 아군 전체의 AP를 증가시키고 모든 해로운 효과를 해제합니다.
+        운명의 문장을 소환하여 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>을(를) 증가시키고 모든 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
         2라운드 동안 아군 타입에 따라 추가 효과를 부여합니다.
-        > 기동형 : 공격력 및 회피 증가
-        > 경장형 : 스킬 위력 증가
-        > 중장형 : 받는 피해 감소
-      JP: |-
-        運命の紋章を召喚して味方全体のAPを増加させ、すべての有害な効果を解除します。
-        2ラウンドの間、味方タイプに応じて追加効果を付与します。
-        > 機動型：攻撃力と回避増加
-        > 軽装型：スキル威力増加
-        > 重装型：受けるダメージ減少
+        <box t="기동형">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> 및 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec> 증가
+        </box>
+        <box t="경장형">
+        <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="7" r /></sec> 증가
+        </box>
+        <box t="중장형">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" r inv /></sec> 감소
+        </box>
       EN: |-
-        Summons the Emblem of Fate to increase the AP of all allies and remove all Malign Effects.
-        For 2 rounds, grants additional effects based on ally type.
-        > Air: increases ATK and EVA
-        > Light Armor: increases Skill Power
-        > Heavy Armor: decreases received damage
+        fate of Mun chapter summons all allies of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec> increases and all <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec>.
+        2 rounds allies type depending on additional grants the effect.
+        <box t="Mobile-type">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> and <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> increase
+        </box>
+        <box t="Light-type">
+        <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="7" r /></sec> increase
+        </box>
+        <box t="Heavy-type">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="8" r inv /></sec> decrease
+        </box>
+      JP: |-
+        ウン名の ムウンジアンを スオハワンして 味方全体の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>を 増加時クイし すべての <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>します。
+        2ラウンドの間 味方 トアイプに応じて 追加 効果を付与します。
+        <box t="機動型">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> および <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec> 増加
+        </box>
+        <box t="軽装型">
+        <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="7" r /></sec> 増加
+        </box>
+        <box t="重装型">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="8" r inv /></sec> 減少
+        </box>
       TC: |-
-        召喚命運的紋章，提升我軍全體AP並解除所有負面效果。
-        於2回合內依據我軍類型賦予額外效果。
-        > 機動型：攻擊力與迴避增加
-        > 輕裝型：技能威力增加
-        > 重裝型：所受傷害減少
+        運名的 無njang 召喚並 全體我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec> 增加時台並 所有 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>。
+        2回合內 我方 類型依 額外 賦予效果。
+        <box t="機動型">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> 以及 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec> 增加
+        </box>
+        <box t="輕裝型">
+        <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="7" r /></sec> 增加
+        </box>
+        <box t="重裝型">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="8" r inv /></sec> 減少
+        </box>
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -2291,29 +2315,53 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시 아군 전체의 공격력과 회피를 증가시킵니다.
-        라운드 개시 시 아군 타입에 따라 대 타입 피해량을 증가시킵니다.
-        > 기동형 : 대 중장형 피해량 증가
-        > 경장형 : 대 기동형 피해량 증가
-        > 중장형 : 대 경장형 피해량 증가
-      JP: |-
-        ラウンド開始時、味方全体の攻撃力と回避を増加させます。
-        ラウンド開始時、味方タイプに応じて対タイプダメージ量を増加させます。
-        > 機動型：対重装型ダメージ量増加
-        > 軽装型：対機動型ダメージ量増加
-        > 重装型：対軽装型ダメージ量増加
+        <sec typ="cond">라운드 개시 시</sec> 아군 전체의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> 아군 타입에 따라 대 타입 피해량을 증가시킵니다.
+        <box t="기동형">
+        <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="5" r /></sec> 증가
+        </box>
+        <box t="경장형">
+        <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 기동형 피해량 <val idx="6" r /></sec> 증가
+        </box>
+        <box t="중장형">
+        <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="7" r /></sec> 증가
+        </box>
       EN: |-
-        At the start of the round, increases ATK and EVA of all allies.
-        At the start of the round, increases anti-type damage based on ally type.
-        > Air: increases Anti-Heavy Armor Damage
-        > Light Armor: increases Anti-Air Damage
-        > Heavy Armor: increases Anti-Light Armor Damage
+        <sec typ="cond">At round start</sec> all allies of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> and <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec> allies type depending on Anti-Type damage increases.
+        <box t="Mobile-type">
+        <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy damage <val idx="5" r /></sec> increase
+        </box>
+        <box t="Light-type">
+        <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> Anti-Mobile damage <val idx="6" r /></sec> increase
+        </box>
+        <box t="Heavy-type">
+        <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light damage <val idx="7" r /></sec> increase
+        </box>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 味方全体の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>と <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec> 味方 トアイプに応じて 対タイプダメージを増加させます。
+        <box t="機動型">
+        <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="5" r /></sec> 増加
+        </box>
+        <box t="軽装型">
+        <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 対機動型ダメージ <val idx="6" r /></sec> 増加
+        </box>
+        <box t="重装型">
+        <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ <val idx="7" r /></sec> 増加
+        </box>
       TC: |-
-        回合開始時，增加我軍全體的攻擊力與迴避。
-        回合開始時，依據我軍類型增加對類型傷害量。
-        > 機動型：增加對重裝傷害量
-        > 輕裝型：增加對機動傷害量
-        > 重裝型：增加對輕裝傷害量
+        <sec typ="cond">回合開始時</sec> 全體我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>與 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec> 我方 類型依 對類型傷害使其增加。
+        <box t="機動型">
+        <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害 <val idx="5" r /></sec> 增加
+        </box>
+        <box t="輕裝型">
+        <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 對機動型傷害 <val idx="6" r /></sec> 增加
+        </box>
+        <box t="重裝型">
+        <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害 <val idx="7" r /></sec> 增加
+        </box>
   "4":
     key: "4"
     icon: P.TeamDefDeBuff
@@ -2650,29 +2698,53 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시 적군 전체의 공격력과 회피를 감소시킵니다.
-        라운드 개시 시 적군 타입에 따라 대 타입 피해량을 감소시킵니다.
-        > 기동형 : 대 중장형 피해량 감소
-        > 경장형 : 대 기동형 피해량 감소
-        > 중장형 : 대 경장형 피해량 감소
-      JP: |-
-        ラウンド開始時、敵軍全体の攻撃力と回避を減少させます。
-        ラウンド開始時、敵軍タイプに応じて対タイプダメージ量を減少させます。
-        > 機動型：対重装型ダメージ量減少
-        > 軽装型：対機動型ダメージ量減少
-        > 重装型：対軽装型ダメージ量減少
+        <sec typ="cond">라운드 개시 시</sec> 적군 전체의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> 적군 타입에 따라 대 타입 피해량을 감소시킵니다.
+        <box t="기동형">
+        <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> 대 중장형 피해량 <val idx="5" r /></sec> 감소
+        </box>
+        <box t="경장형">
+        <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> 대 기동형 피해량 <val idx="6" r /></sec> 감소
+        </box>
+        <box t="중장형">
+        <sec typ="buff"><buff typ="TROOPER_DMG_DOWN" /> 대 경장형 피해량 <val idx="7" r /></sec> 감소
+        </box>
       EN: |-
-        At the start of the round, decreases ATK and EVA of all enemies.
-        At the start of the round, decreases anti-type damage based on enemy type.
-        > Air: decreases Anti-Heavy Armor Damage
-        > Light Armor: decreases Anti-Air Damage
-        > Heavy Armor: decreases Anti-Light Armor Damage
+        <sec typ="cond">At round start</sec> all enemies of <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> decreases.
+        <sec typ="cond">At round start</sec> enemies type depending on Anti-Type damagedecreases.
+        <box t="Mobile-type">
+        <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> Anti-Heavy damage <val idx="5" r /></sec> decrease
+        </box>
+        <box t="Light-type">
+        <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> Anti-Mobile damage <val idx="6" r /></sec> decrease
+        </box>
+        <box t="Heavy-type">
+        <sec typ="buff"><buff typ="TROOPER_DMG_DOWN" /> Anti-Light damage <val idx="7" r /></sec> decrease
+        </box>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 敵全体の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec>と <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">ラウンド開始時</sec> 敵軍 トアイプに応じて 対タイプダメージを減少させます。
+        <box t="機動型">
+        <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> 対重装型ダメージ <val idx="5" r /></sec> 減少
+        </box>
+        <box t="軽装型">
+        <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> 対機動型ダメージ <val idx="6" r /></sec> 減少
+        </box>
+        <box t="重装型">
+        <sec typ="buff"><buff typ="TROOPER_DMG_DOWN" /> 対軽装型ダメージ <val idx="7" r /></sec> 減少
+        </box>
       TC: |-
-        回合開始時，減少敵軍全體的攻擊力與迴避。
-        回合開始時，依據敵軍類型減少對類型傷害量。
-        > 機動型：減少對重裝傷害量
-        > 輕裝型：減少對機動傷害量
-        > 重裝型：減少對輕裝傷害量
+        <sec typ="cond">回合開始時</sec> 全體敵方的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec>與 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec>使其減少。
+        <sec typ="cond">回合開始時</sec> 敵方 類型依 對類型傷害使其減少。
+        <box t="機動型">
+        <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> 對重裝型傷害 <val idx="5" r /></sec> 減少
+        </box>
+        <box t="輕裝型">
+        <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> 對機動型傷害 <val idx="6" r /></sec> 減少
+        </box>
+        <box t="重裝型">
+        <sec typ="buff"><buff typ="TROOPER_DMG_DOWN" /> 對輕裝型傷害 <val idx="7" r /></sec> 減少
+        </box>
   "5":
     key: "5"
     icon: P.Beam
@@ -3016,21 +3088,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시 자신의 행동력과 AP를 증가시킵니다.
-        라운드 개시 시 홀수 라운드인 경우 적군 전체의 받는 피해 증가 및 효과 저항이 감소합니다.
-        라운드 개시 시 짝수 라운드인 경우 아군 전체의 받는 피해 감소 및 효과 저항이 증가합니다.
-      JP: |-
-        ラウンド開始時、自分の行動力とAPを増加させます。
-        ラウンド開始時、奇数ラウンドの場合は敵軍全体の受けるダメージ増加と効果耐性を減少させます。
-        ラウンド開始時、偶数ラウンドの場合は味方全体の受けるダメージ減少と効果耐性を増加させます。
+        <sec typ="cond">라운드 개시 시</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>와 <sec typ="buff">AP <val idx="1" r /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">홀수 라운드인 경우</sec> 적군 전체의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec> 증가 및 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="6" r inv /></sec>가 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">짝수 라운드인 경우</sec> 아군 전체의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="7" r inv /></sec> 감소 및 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="8" r /></sec>가 증가합니다.
       EN: |-
-        At the start of the round, increases self’s MOVE and AP.
-        At the start of the round, if it is an odd round, decreases all enemies’ received damage increase and Effect Resistance.
-        At the start of the round, if it is an even round, increases all allies’ received damage decrease and Effect Resistance.
+        <sec typ="cond">At round start</sec> own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> and <sec typ="buff">AP <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">odd roundif</sec> all enemies of <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec> increase and <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="6" r inv /></sec> decreases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">even roundif</sec> all allies of <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="7" r inv /></sec> decrease and <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="8" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>と <sec typ="buff">AP <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">奇数 ラウンドの場合</sec> 敵全体の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="5" r /></sec> 増加 および <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="6" r inv /></sec>が減少します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">偶数 ラウンドの場合</sec> 味方全体の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="7" r inv /></sec> 減少 および <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="8" r /></sec>が増加します。
       TC: |-
-        回合開始時，增加自身的行動力與AP。
-        回合開始時，若為奇數回合，則減少敵軍全體的所受傷害增加與效果抵抗。
-        回合開始時，若為偶數回合，則增加我軍全體的所受傷害減少與效果抵抗。
+        <sec typ="cond">回合開始時</sec> 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>與 <sec typ="buff">AP <val idx="1" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">奇數 回合若為</sec> 全體敵方的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="5" r /></sec> 增加 以及 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="6" r inv /></sec>減少。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">偶數 回合若為</sec> 全體我方的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="7" r inv /></sec> 減少 以及 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="8" r /></sec>增加。
 dialogue:
   KR:
     "1":

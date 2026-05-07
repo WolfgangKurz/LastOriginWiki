@@ -1276,16 +1276,15 @@ skills:
       KR: |-
         권총을 발사해 <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec> 증가 상태로 만듭니다.
         <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 제외한 효과는 중첩 가능합니다.
-      JP: |-
-        拳銃を発射して<dmg elem="physics" />を与え、2ラウンドの間<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>増加状態にします。
-        <sec typ="buff"><buff typ="MARKING" />標的</sec>を除く効果は重複可能です。
       EN: |-
-        Fires a pistol and deals <dmg elem="physics" />.
-        For 2 rounds, inflicts <sec typ="buff"><buff typ="MARKING" /> Marking</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increase.
-        Effects other than <sec typ="buff"><buff typ="MARKING" /> Marking</sec> can stack.
+        pistol fires <dmg elem="physics" /> damage and 2 rounds <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increase inflicts.
+        <sec typ="buff"><buff typ="MARKING" /> Mark</sec> excluding effect stack ability.
+      JP: |-
+        拳銃を 発射して<dmg elem="physics" />を与え、、 2ラウンドの間 <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec> 増加 状態にします。
+        <sec typ="buff"><buff typ="MARKING" /> 標的</sec>を ジエ外した 効果は 重複 可能します。
       TC: |-
-        發射手槍，造成<dmg elem="physics" />，並使目標在2回合內進入<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="1" r /></sec>增加狀態。
-        除<sec typ="buff"><buff typ="MARKING" />標記</sec>外的效果可以疊加。
+        手槍 發射 造成<dmg elem="physics" />，並 2回合內 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec> 增加 使其進入狀態。
+        <sec typ="buff"><buff typ="MARKING" /> 標記</sec> 解除外 效果 疊加 可能。
   "2":
     key: "2"
     icon: Snipe
@@ -1871,15 +1870,15 @@ skills:
       KR: |-
         라이플 저격으로 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
         대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가 </sec>상태인 경우 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        ライフル狙撃で<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
-        対象が<sec typ="cond"><buff typ="MARKING" />標的</sec> / <sec typ="cond"><buff typ="SNARE" />移動不可</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       EN: |-
-        Rifle sniping deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
-        If the target is <sec typ="cond"><buff typ="MARKING" /> Marked</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        rifle by sniping as <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        target <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized </sec> if in the state <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        ライフル 狙撃で <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        対象が <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec>状態の場合 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
       TC: |-
-        以步槍狙擊造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
-        若目標處於<sec typ="cond"><buff typ="MARKING" />標記</sec> / <sec typ="cond"><buff typ="SNARE" />無法移動</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
+        步槍 狙擊以 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        目標 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動 </sec>若為狀態 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -2047,15 +2046,15 @@ skills:
       KR: |-
         <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 적의 HP%가 낮을수록 피해량 <val idx="0" r /></sec>가 증가합니다.
         적 처치 시, 다음 목표를 찾기 시작해 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>이(가) 증가합니다.
-      JP: |-
-        <sec typ="dmg"><buff typ="DamageAmp_Opp" />敵のHP%が低いほどダメージ量<val idx="0" r /></sec>が増加します。
-        敵撃破時、次の目標を探し始めて<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>が増加します。
       EN: |-
-        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> damage <val idx="0" r /></sec> increases as the enemy's HP% decreases.
-        When an enemy is killed, begins searching for the next target and gains <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>.
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> damage increases as the enemy's HP% decreases <val idx="0" r /></sec> increases.
+        When killing an enemy, next target to search when starts <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> increases.
+      JP: |-
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 敵のHP%が低いほどダメージ量 <val idx="0" r /></sec>が増加します。
+        敵撃破時、 次 目標を チアト機 開始して <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>が増加します。
       TC: |-
-        <sec typ="dmg"><buff typ="DamageAmp_Opp" />敵軍HP%越低，傷害量<val idx="0" r /></sec>越增加。
-        擊殺敵人時，會開始尋找下一個目標並增加<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>。
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 敵人HP%越低傷害量 <val idx="0" r /></sec>增加。
+        擊殺敵人時， 下次 目標 開始尋找 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -2905,17 +2904,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, <sec typ="cond">아군의 경장형 전투원 수에 비례</sec>하여 아군 경장형의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" r /></sec>와 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">아군의 경장형 전투원 수에 비례</sec>하여 아군 경장형의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" r /></sec>와 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>를 증가시킵니다.
         자신은 2배의 효과가 적용됩니다.
-      JP: |-
-        ラウンド開始時、<sec typ="cond">味方の軽装型戦闘員数に比例して</sec>味方軽装型の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="2" r /></sec>と<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率<val idx="0" r /></sec>を増加させます。
-        自身には2倍の効果が適用されます。
       EN: |-
-        At round start, <sec typ="cond">in proportion to the number of allied Light Armor combatants</sec>, increases allied Light Armor's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="2" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="0" r /></sec>.
-        The effect is doubled for self.
+        <sec typ="cond">At round start</sec>, <sec typ="cond">allies' Light-type number of combatants to proportional</sec> by doing allies Light-type of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="2" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> increases.
+        self 2 times of the effect is applied.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond">味方の 軽装型 戦闘員数に 比例</sec>して 味方 軽装型の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="2" r /></sec>と <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec>を増加させます。
+        自身は 2ブエの 効果が適用されます。
       TC: |-
-        回合開始時，<sec typ="cond">依我軍輕裝型戰鬥員數量比例</sec>增加我軍輕裝型的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="2" r /></sec>和<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="0" r /></sec>。
-        自身套用2倍效果。
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond">我方的 輕裝型 戰鬥員數量於 成比例</sec>並 我方 輕裝型的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="2" r /></sec>與 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec>使其增加。
+        自身 2倍的 效果套用。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -3140,21 +3139,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, 자신은 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막/피해 감소 무시</sec> 효과가 적용됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막/피해 감소 무시</sec> 효과가 적용됩니다.
         적 처치 시 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 추가로 획득 하며 획득과 동시에 자신이 추가로 획득한 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>을(를) 차감합니다.
         경장형 아군 전체에게 차감한 만큼의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 부여합니다.
-      JP: |-
-        ラウンド開始時、自身に<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア/被ダメージ減少無視</sec>効果が適用されます。
-        敵撃破時、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を追加で獲得し、獲得と同時に自身が追加で獲得した<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>を差し引きます。
-        差し引いた分の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を軽装型の味方全体に付与します。
       EN: |-
-        At round start, self is granted <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier / Damage Reduction Ignore</sec>.
-        When an enemy is killed, gains additional <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>, and at the same time subtracts the additionally gained <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec> from self.
-        Grants all Light Armor allies <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> equal to the amount subtracted.
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier/Damage Reduction</sec> the effect is applied.
+        When killing an enemy <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> additionally gain and gain and same when to self additionally gained <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec> subtracts.
+        Light-type all to allies subtracted by of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> grants.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec> 効果が適用されます。
+        敵撃破時 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を 追加で 獲得 し、 獲得と ドオン時に 自身が 追加で 獲得した <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>を 差し引きます。
+        軽装型 味方全体に チアグアムした 分の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を付与します。
       TC: |-
-        回合開始時，自身套用<sec typ="buff"><buff typ="BARRIER_PIERCE" />無視護盾 / 傷害減少</sec>效果。
-        擊殺敵人時，額外獲得<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>，並在獲得的同時扣除自身額外獲得的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>。
-        將扣除的數值以<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>的形式賦予所有輕裝型我軍。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec> 效果套用。
+        擊殺敵人時 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 額外 獲得 並 獲得與 同時於 自身 額外 獲得 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec> 扣除。
+        輕裝型 全體我方給 扣除 等量的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>賦予。
 dialogue:
   KR:
     "2":

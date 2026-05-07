@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "preact/hooks";
 import { useLocation } from "preact-iso";
 
 import { IWSeason, IWStage } from "@/types/DB/IW";
+import { Anomaly } from "@/types/DB/Anomaly";
 import { Consumable } from "@/types/DB/Consumable";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
@@ -17,6 +18,7 @@ import Icons from "@/components/bootstrap-icon";
 import UnitFace from "@/components/unit-face";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import EnemyPopup from "@/components/popup/enemy-popup";
+import BuffList from "@/components/buff-list";
 
 import ItemReward from "./components/ItemReward";
 
@@ -56,8 +58,12 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 	const seasons = useDBData<IWSeason[]>(StaticDB.IWSeason);
 	const enemies = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
 	const consumables = useDBData<Consumable[]>(StaticDB.Consumable);
+	const anomaly = useDBData<Partial<Record<string, Anomaly>>>(StaticDB.Anomaly);
 	const stages = useDBData<IWStage[]>(`iw/${props.season}`);
-	if (!assertDBData(seasons) || !assertDBData(enemies) || !assertDBData(consumables) || !assertDBData(stages))
+	if (
+		!assertDBData(seasons) || !assertDBData(enemies) || !assertDBData(consumables) ||
+		!assertDBData(anomaly) || !assertDBData(stages)
+	)
 		return <Loading.Data />;
 
 	const season = useMemo(() => seasons.find(e => e.key === props.season), [seasons, props.season]);
@@ -73,6 +79,8 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 			setSelectedPhase(0);
 	}, [selectedStage, selectedPhase]);
 
+	const currentAnomaly = useMemo(() => anomaly[selectedStage?.anomaly], [anomaly, selectedStage]);
+
 	const maxStageIdx = stages.length;
 	const inlineEnemy = useMemo(() => {
 		return selectedStage.monster.group.filter(r => r).length > 1
@@ -80,114 +88,13 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 			: enemies.find(r => r.id === selectedStage.phase[selectedPhase].id) || null;
 	}, [selectedStage, selectedPhase, enemies]);
 
+	const skillIconBase = useMemo(() => `${AssetsRoot}/${ImageExtension()}/skill`, []);
+
 	return <>
 		<button class="btn btn-dark" onClick={ (): void => window.history.back() }>
 			<Locale k="COMMON_BACK" />
 		</button>
 
-		{/*
-				<div class={ BuildClass("d-none", "d-lg-block", style.IWPage) }>
-					<div class={ style.IWLobby }>
-						<button class="btn btn-light" onClick={ (): void => window.history.back() }>
-							<Locale k="COMMON_BACK" />
-						</button>
-
-						<img class={ style.BG } src={ `${AssetsRoot}/${imgExt}/iw/${season.bg}.${imgExt}` } />
-
-						<div class={ style.Char }>
-							<img class={ style.PC } src={ `${AssetsRoot}/${imgExt}/full/${season.char.id}_0_O.${imgExt}` } />
-						</div>
-
-						<div class={ style.Bottom }>
-							<div class={ style.Banner }>
-								<img src={ `${AssetsRoot}/${imgExt}/iw/${season.monster}.${imgExt}` } />
-
-								<div class={ style.Title }>
-									<h1>
-										<Locale plain k={ `IWSEASON_${season.key}_TITLE` } />
-									</h1>
-									<h3>
-										<Locale plain k={ `IWSEASON_${season.key}_SUBTITLE` } />
-									</h3>
-									<h2>
-										<Locale plain k={ `IWSEASON_${season.key}_MOB` } />
-									</h2>
-								</div>
-
-								<div class={ style.Date }>
-									<span>{ season.date[0] }</span>
-									~
-									<span>{ season.date[1] }</span>
-								</div>
-							</div>
-
-							<div class={ style.BonusList }>
-								<h4>
-									<Locale k="IW_IW_Bonus" />
-								</h4>
-
-								{ season.bonus.map(b => {
-									return <div class={ BuildClass("col", style.BonusUnit) }>
-										<UnitFace uid={ b.char } />
-										<div>
-											<div class={ style.BonusRate }>
-												{ (Math.round(b.rate * 10000) / 100).toString().replace(/\.0+$/, "") }%
-											</div>
-
-											<Locale plain k={ `UNIT_${b.char}` } />
-										</div>
-									</div>;
-								}) }
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class={ BuildClass("d-block", "d-lg-none", style.IWMobilePage) }>
-					<button class="btn btn-dark" onClick={ (): void => window.history.back() }>
-						<Locale k="COMMON_BACK" />
-					</button>
-
-					<div class={ style.Date }>
-						<span>{ season.date[0] }</span>
-						<div>~</div>
-						<span>{ season.date[1] }</span>
-					</div>
-					<div class={ style.Banner }>
-						<img src={ `${AssetsRoot}/${imgExt}/iw/${season.monster}.${imgExt}` } />
-
-						<div class={ style.Title }>
-							<h1>
-								<Locale plain k={ `IWSEASON_${season.key}_TITLE` } />
-							</h1>
-							<h3>
-								<Locale plain k={ `IWSEASON_${season.key}_SUBTITLE` } />
-							</h3>
-							<h2>
-								<Locale plain k={ `IWSEASON_${season.key}_MOB` } />
-							</h2>
-						</div>
-					</div>
-
-					<div class={ style.BonusList }>
-						<h4>
-							<Locale k="IW_IW_Bonus" />
-						</h4>
-
-						{ season.bonus.map(b => {
-							return <div class={ BuildClass("col", style.BonusUnit) }>
-								<UnitFace uid={ b.char } />
-								<div>
-									<div class={ style.BonusRate }>
-										{ (Math.round(b.rate * 10000) / 100).toString().replace(/\.0+$/, "") }%
-									</div>
-
-									<Locale plain k={ `UNIT_${b.char}` } />
-								</div>
-							</div>;
-						}) }
-					</div>
-				</div>
-				*/}
 		<ul class="nav nav-tabs m-auto">
 			<li class="nav-item">
 				<a
@@ -310,6 +217,39 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 							<Icons.ChevronDoubleUp />
 						</button>
 					</div>
+
+					{ !!currentAnomaly && <div class={ style.AnomalyRow }>
+						<div class={ style.AnomalyDescription }>
+							<div class={ style.AnomalyIcon }>
+								<img
+									class="skill-icon my-2"
+									src={ `${skillIconBase}/${currentAnomaly.icon.replace(/^SkillIconCircle_/, "")}.${ImageExtension()}` }
+								/>
+							</div>
+
+							<div class={ style.AnomalyName }>
+								<strong>
+									<Locale plain k="IW_ANOMALY" />
+
+									<Icons.Dot />
+
+									<span class="text-warning">
+										<Locale raw={ false } k={ selectedStage.anomaly } />
+									</span>
+								</strong>
+							</div>
+							<div class={ style.AnomalyText }>
+								<Locale raw={ false } k={ `${selectedStage.anomaly}_DESC` } />
+							</div>
+						</div>
+
+						<div class={ style.AnomalyBuffs }>
+							<BuffList
+								list={ currentAnomaly.buffs }
+								level={ currentAnomaly.lv }
+							/>
+						</div>
+					</div> }
 
 					{ selectedStage.phase.length > 1
 						? <div class="btn-group my-1">

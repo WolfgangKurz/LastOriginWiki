@@ -1577,9 +1577,9 @@ skills:
             chance: 1
     desc:
       KR: 차크람 블레이드로 <dmg elem="fire" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="3" r /></sec> 감소 상태로 만듭니다.
-      JP: チャクラムブレードで<dmg elem="fire" />を与え、2ラウンドの間対象を<sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="3" r /></sec>減少状態にします。
-      EN: Deals <dmg elem="fire" /> with Chakram Blade and makes the target <sec typ="buff"><buff typ="PROVOKE" /> provoke</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACC <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="3" r /></sec> decreased for 2 rounds.
-      TC: 以飛輪刀造成<dmg elem="fire" />，並使目標在2回合內處於<sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="3" r /></sec>降低狀態。
+      EN: kick Keuram blade as <dmg elem="fire" /> damage and 2 rounds target <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="3" r /></sec> decrease inflicts.
+      JP: チアクウルアム ブウルルエがドウで<dmg elem="fire" />を与え、、 2ラウンドの間 対象を <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="3" r /></sec> 減少 状態にします。
+      TC: Chakeuram Blade以 造成<dmg elem="fire" />，並 2回合內 目標 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="3" r /></sec> 減少 使其進入狀態。
   "2":
     key: "2"
     icon: SelfSpdBuff
@@ -2135,27 +2135,27 @@ skills:
       KR: |-
         지정한 빈 아군 영역에 9라운드 동안 유지되며, 피격 시 파괴되는 <sec typ="important">홀로그램 타이거</sec>를 소환합니다.
         <sec typ="important">홀로그램 타이거</sec>는 <sec typ="buff">최대 <val base="1.1" per="0.1" signless floor /> 마리 소환</sec>할 수 있습니다.
-        <sec typ="important">홀로그램 타이거</sec>의 스킬 적중 시, 범위 내 적의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val base="-0.2" per="0" r /></sec>를 감소시키며 자신을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>으로 지정합니다.
+        <sec typ="important">홀로그램 타이거</sec>의 <sec typ="cond">스킬 적중 시</sec>, 범위 내 적의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val base="-0.2" per="0" r /></sec>를 감소시키며 자신을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>으로 지정합니다.
         <sec>스킬 레벨이 높아질수록 소모 AP가 감소</sec>하며, <sec>스킬 레벨 10에서 소환 가능한 수가 1 증가합니다.</sec>
         <sec>소환 스킬은 <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 감소</sec> 효과에 영향받지 않습니다.</sec>
-      JP: |-
-        指定した空の味方マスに9ラウンド維持され、被弾時に破壊される<sec typ="important">ホログラムタイガー</sec>を召喚します。
-        <sec typ="important">ホログラムタイガー</sec>は<sec typ="buff">最大<val base="1.1" per="0.1" signless floor />体召喚</sec>できます。
-        <sec typ="important">ホログラムタイガー</sec>のスキル命中時、範囲内の敵の<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val base="-0.2" per="0" r /></sec>を減少させ、自分を<sec typ="buff"><buff typ="MARKING" /> マーク</sec>します。
-        <sec>スキルレベルが高いほど消費APが減少</sec>し、<sec>スキルレベル10で召喚可能数が1増加します。</sec>
-        <sec>召喚スキルは<sec typ="buff"><buff typ="RANGE_DOWN" /> 射程減少</sec>効果の影響を受けません。</sec>
       EN: |-
-        Summons a <sec typ="important">Hologram Tiger</sec> in the designated empty ally area, lasting for 9 rounds and destroyed when hit.
-        The <sec typ="important">Hologram Tiger</sec> can summon up to <sec typ="buff">max <val base="1.1" per="0.1" signless floor /> units</sec>.
-        On <sec typ="important">Hologram Tiger</sec> skill hit, decreases <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACC <val base="-0.2" per="0" r /></sec> of enemies within range and marks self with <sec typ="buff"><buff typ="MARKING" /> Mark</sec>.
-        <sec>Consumed AP decreases as the skill level increases</sec>, and <sec>the number of summons increases by 1 at Skill Lv. 10.</sec>
-        <sec>Summon skills are not affected by <sec typ="buff"><buff typ="RANGE_DOWN" /> range decrease</sec> effects.</sec>
+        designated Bin allies area to 9rounds maintained and, When hit Pagoe becomes <sec typ="important">hologram targeter</sec> summon.
+        <sec typ="important">hologram targeter</sec> <sec typ="buff">up to <val base="1.1" per="0.1" signless floor /> Mari summon</sec>can number exists.
+        <sec typ="important">hologram targeter</sec> of <sec typ="cond">When the skill hits</sec>, within range enemy's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val base="-0.2" per="0" r /></sec> decreases and self <sec typ="buff"><buff typ="MARKING" /> Mark</sec> as designated.
+        <sec>skill level the higher consume AP decrease</sec> and, <sec>At skill level 10, summon possible number 1 increases.</sec>
+        <sec>summon skill <sec typ="buff"><buff typ="RANGE_DOWN" /> Range decrease</sec> effect and to not affected does not.</sec>
+      JP: |-
+        指定した ブイン 味方 領域に 9ラウンド間 ユジイになり、、 被弾時 プアグウェドウェは <sec typ="important">ハオルでグウルエム トアがグオ</sec>を スオハワンします。
+        <sec typ="important">ハオルでグウルエム トアがグオ</sec>は <sec typ="buff">最大 <val base="1.1" per="0.1" signless floor /> ムアルイ スオハワン</sec>できます。
+        <sec typ="important">ハオルでグウルエム トアがグオ</sec>の <sec typ="cond">スキル命中時</sec>、 範囲内 敵の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val base="-0.2" per="0" r /></sec>を 減少させ、 自身を <sec typ="buff"><buff typ="MARKING" /> 標的</sec>で 指定します。
+        <sec>スキル レベルが ンオプアジイル少ないほど 消費 APが 減少</sec>し、 <sec>スキルレベル10で スオハワン 可能した 数が 1 増加します。</sec>
+        <sec>スオハワン スキルは <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 減少</sec> 効果に ヨンハヤンブアトジイ しません。</sec>
       TC: |-
-        在指定的空我軍區域召喚會持續9回合、被擊中時會破壞的<sec typ="important">全息虎</sec>。
-        <sec typ="important">全息虎</sec>最多可<sec typ="buff">召喚 <val base="1.1" per="0.1" signless floor /> 隻</sec>。
-        <sec typ="important">全息虎</sec>技能命中時，降低範圍內敵人的<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val base="-0.2" per="0" r /></sec>，並將自身標記為<sec typ="buff"><buff typ="MARKING" /> 標記</sec>。
-        <sec>技能等級越高，消耗AP越少</sec>，且<sec>在技能等級10時，可召喚數量增加1。</sec>
-        <sec>召喚技能不受<sec typ="buff"><buff typ="RANGE_DOWN" /> 射程減少</sec>效果影響。</sec>
+        指定 Bin 我方 區域於 9回合內 維持變為，且 被擊時 破goedoe <sec typ="important">Hol以Geuraem Tageo</sec> 召喚。
+        <sec typ="important">Hol以Geuraem Tageo</sec> <sec typ="buff">最大 <val base="1.1" per="0.1" signless floor /> Mari 召喚</sec>可以。
+        <sec typ="important">Hol以Geuraem Tageo</sec>的 <sec typ="cond">技能命中時</sec>， 範圍內 敵人的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val base="-0.2" per="0" r /></sec> 使其減少，並 自身 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>以 指定。
+        <sec>技能 等級 高a至l數越 消耗 AP 減少</sec>並， <sec>技能等級10時 召喚 可能 數 1 增加。</sec>
+        <sec>召喚 技能 <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 減少</sec> 效果於 影響bat至 不會。</sec>
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -2388,17 +2388,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, 범위 내 <sec typ="buff"><buff typ="DEF_Char" /> 공격기 / 지원기를 지정 보호</sec>하며 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" slot="4" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="DEF_Char" /> 공격기 / 지원기를 지정 보호</sec>하며 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" slot="4" r /></sec>가 증가합니다.
         <char uid="PECS_Sunny" />의 <sec typ="cond">공격이 적중</sec>하거나 <sec typ="cond">적의 공격을 회피</sec>하면 2라운드 동안 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가합니다.
-      JP: |-
-        ラウンド開始時、範囲内の<sec typ="buff"><buff typ="DEF_Char" /> 攻撃機 / 支援機を指定保護</sec>し、自分の<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="4" slot="4" r /></sec>が増加します。
-        <char uid="PECS_Sunny" />の<sec typ="cond">攻撃が命中</sec>または<sec typ="cond">敵の攻撃を回避</sec>すると、2ラウンドの間範囲内の味方の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が増加します。
       EN: |-
-        At the start of the round, applies designated protection to <sec typ="buff"><buff typ="DEF_Char" /> attackers / supporters within range</sec> and increases self's <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="4" slot="4" r /></sec>.
-        When <char uid="PECS_Sunny" />'s <sec typ="cond">attack hits</sec> or <sec typ="cond">she evades an enemy attack</sec>, increases allies within range' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" r /></sec> for 2 rounds.
+        <sec typ="cond">At round start</sec>, within range <sec typ="buff"><buff typ="DEF_Char" /> Attacker / Supporter Designated Protection</sec> and own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="4" slot="4" r /></sec> increases.
+        <char uid="PECS_Sunny" /> of <sec typ="cond">attack Accuracy</sec>do or <sec typ="cond">enemy's attack Evasion</sec> if doing 2 rounds within range allies' <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="3" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 <sec typ="buff"><buff typ="DEF_Char" /> 攻撃機 / 支援機を 指定保護</sec>し、 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="4" slot="4" r /></sec>が増加します。
+        <char uid="PECS_Sunny" />の <sec typ="cond">攻撃が 命中</sec>ハアまたは <sec typ="cond">敵の 攻撃を 回避</sec>ハアなら 2ラウンドの間 範囲内 味方の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が増加します。
       TC: |-
-        回合開始時，對範圍內<sec typ="buff"><buff typ="DEF_Char" /> 攻擊器／支援器進行指定保護</sec>，並增加自身的<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="4" slot="4" r /></sec>。
-        當<char uid="PECS_Sunny" />的<sec typ="cond">攻擊命中</sec>或<sec typ="cond">迴避敵人攻擊</sec>時，在2回合內增加範圍內我軍的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 <sec typ="buff"><buff typ="DEF_Char" /> 攻擊機 / 支援機 指定保護</sec>並 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="4" slot="4" r /></sec>增加。
+        <char uid="PECS_Sunny" />的 <sec typ="cond">攻擊 命中</sec>下或 <sec typ="cond">敵人的 攻擊 迴避</sec>下若 2回合內 範圍內 我方的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -2809,21 +2809,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        전투 개시 시, 해제 불가한 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP로 전투 속행</sec> 효과가 적용됩니다.
+        <sec typ="cond">전투 개시 시</sec>, 해제 불가한 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP로 전투 속행</sec> 효과가 적용됩니다.
         공격 받을 때, <sec typ="cond">기본 능력치를 감소시키는 해로운 효과가 적용된 상태</sec>일 경우, 2라운드 동안 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="7" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="6" r inv /></sec>가 감소합니다.
         해당 효과들은 중첩되지 않습니다.
-      JP: |-
-        戦闘開始時、解除不能な<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HPで戦闘継続</sec>効果が適用されます。
-        攻撃を受けた時、<sec typ="cond">基本能力値を減少させる有害効果が適用されている状態</sec>の場合、2ラウンドの間<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="7" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="6" r inv /></sec>が減少します。
-        これらの効果は重複しません。
       EN: |-
-        At combat start, applies an unremovable <sec typ="buff"><buff typ="DEF_RESSURRECT" /> battle continuation with <val idx="0" signless /> HP</sec>.
-        When attacked, if <sec typ="cond">a harmful effect that decreases base stats is applied</sec>, increases <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="7" r /></sec> and decreases <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="6" r inv /></sec> for 2 rounds.
-        These effects do not stack.
+        <sec typ="cond">At battle start</sec>, cannot be removed one <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP and Continue Combat</sec> the effect is applied.
+        attack receives when, <sec typ="cond">base stats decrease when height/key harmful affected by state</sec> if, 2 rounds <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="7" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="6" r inv /></sec> decreases.
+        the effect and stack does not.
+      JP: |-
+        戦闘開始時、 解除不可した <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HPで 戦闘続行</sec> 効果が適用されます。
+        攻撃 ブアトを 時、 <sec typ="cond">基本 能力値を 減少時クイは 有害な 効果が適用された 状態</sec>の場合、 2ラウンドの間 <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="7" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="6" r inv /></sec>が減少します。
+        該当 効果たちは 重複ドウェジイ しません。
       TC: |-
-        戰鬥開始時，套用無法解除的<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以<val idx="0" signless /> HP繼續戰鬥</sec>效果。
-        受到攻擊時，若<sec typ="cond">處於會降低基礎能力值的有害效果狀態</sec>，則在2回合內增加<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="7" r /></sec>，並降低<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="6" r inv /></sec>。
-        這些效果不會疊加。
+        戰鬥開始時， 無法解除 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP以 戰鬥續行</sec> 效果套用。
+        攻擊 接受 時， <sec typ="cond">基礎 能力值 減少時台 有害 已套用效果的 狀態</sec>若為， 2回合內 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="7" r /></sec> 增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="6" r inv /></sec>減少。
+        該 效果們 疊加不會 不會。
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -2991,9 +2991,9 @@ skills:
             chance: 1
     desc:
       KR: <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">자신 뒤에 있는 아군 1개체의 HP가 25%이하</sec>라면 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="2" r /></sec>를 증가시키고 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효 <val idx="3" signless />회</sec>를 부여합니다.
-      JP: <sec typ="cond">戦闘開始時</sec>、<sec typ="cond">自分の後ろにいる味方1体のHPが25%以下</sec>なら、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="2" r /></sec>を増加させ、<sec typ="buff"><buff typ="DEF_All" /> ダメージ無効 <val idx="3" signless />回</sec>を付与します。
-      EN: <sec typ="cond">At combat start</sec>, if <sec typ="cond">one allied unit behind self has 25% HP or less</sec>, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="2" r /></sec> and grants <sec typ="buff"><buff typ="DEF_All" /> damage immunity <val idx="3" signless /> times</sec>.
-      TC: <sec typ="cond">戰鬥開始時</sec>，若<sec typ="cond">自身後方1名我軍的HP低於25%</sec>，則增加<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="2" r /></sec>，並賦予<sec typ="buff"><buff typ="DEF_All" /> 傷害無效 <val idx="3" signless />次</sec>。
+      EN: <sec typ="cond">At battle start</sec>, <sec typ="cond">self behind to exists allies 1 unit of HP 25%or less</sec> if <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="2" r /></sec> increases and <sec typ="buff"><buff typ="DEF_All" /> nullify damage <val idx="3" signless />times</sec> grants.
+      JP: <sec typ="cond">戦闘開始時</sec>、 <sec typ="cond">自身 ドウィに ある 味方 1個体の HPが 25%以下</sec>ルアなら <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="2" r /></sec>を 増加時クイし <sec typ="buff"><buff typ="DEF_All" /> ダメージ ムウハヨ <val idx="3" signless />回</sec>を付与します。
+      TC: <sec typ="cond">戰鬥開始時</sec>， <sec typ="cond">自身 後於 有 我方 1單位的 HP 25%以下</sec>若 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="2" r /></sec> 增加時台並 <sec typ="buff"><buff typ="DEF_All" /> 傷害 無hyo <val idx="3" signless />次</sec>賦予。
 dialogue:
   KR:
     "1":

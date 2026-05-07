@@ -1214,16 +1214,16 @@ skills:
     desc:
       KR: |-
         대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />와 <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="0" r signless /> 고정 물리 피해</sec>를 입힙니다.
-        <sec typ="cond">스킬 적중 시</sec>, 대상은 2라운드 동안 새로운 강화 효과를 얻을 수 없게 됩니다.
-      JP: |-
-        対象に<sec typ="attr">保護無視</sec><dmg elem="physics" />と<sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="0" r signless />固定物理ダメージ</sec>を与えます。
-        <sec typ="cond">スキル命中時</sec>、対象は2ラウンドの間、新しい強化効果を得られなくなります。
+        대상은 2라운드 동안 <sec typ="buff"><buff typ="Disallow" /> 강화 불가 상태</sec> <sec typ="attr">해로운 효과</sec>를 얻습니다.
       EN: |-
-        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> and <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="0" r signless /> fixed physical damage</sec> to the target.
-        <sec typ="cond">When the skill hits</sec>, the target cannot gain new buffs for 2 rounds.
+        to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> and <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="0" r signless /> fixed Physical damage</sec> deals.
+        the target 2 rounds <sec typ="buff"><buff typ="Disallow" /> Cannot be Buffed state</sec> <sec typ="attr">harmful effects</sec> gains.
+      JP: |-
+        対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />と <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="0" r signless /> 固定物理ダメージ</sec>を 与えます。
+        対象は 2ラウンドの間 <sec typ="buff"><buff typ="Disallow" /> 強化不可 状態</sec> <sec typ="attr">有害効果</sec>を オトます。
       TC: |-
-        對目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />與<sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="0" r signless />固定物理傷害</sec>。
-        <sec typ="cond">技能命中時</sec>，目標在2回合內無法獲得新的強化效果。
+        對目標 <sec typ="attr">無視保護</sec> <dmg elem="physics" />與 <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="0" r signless /> 固定物理傷害</sec> 造成。
+        目標 2回合內 <sec typ="buff"><buff typ="Disallow" /> 無法強化 狀態</sec> <sec typ="attr">負面效果</sec> 獲得。
   "2":
     key: "2"
     icon: Scan
@@ -1379,9 +1379,9 @@ skills:
             chance: 1
     desc:
       KR: 2라운드 동안 모든 아군에게 <char uid="PECS_Orangeade" />의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r signless />만큼 공격력 증가</sec> 효과를 부여합니다.
-      JP: 2ラウンドの間、すべての味方に<char uid="PECS_Orangeade" />の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r signless />分の攻撃力増加</sec>効果を付与します。
-      EN: For 2 rounds, grants all allies an <sec typ="buff"><buff typ="ATK_UP" /> Attack increase</sec> effect equal to <char uid="PECS_Orangeade" />'s Attack <val idx="1" r signless />.
-      TC: 於2回合內，賦予所有友軍等同於<char uid="PECS_Orangeade" />的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r signless /></sec>的攻擊力增加效果。
+      EN: 2 rounds all to allies <char uid="PECS_Orangeade" /> of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r signless /> by Attack increase</sec> grants the effect.
+      JP: 2ラウンドの間 すべての味方に <char uid="PECS_Orangeade" />の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r signless />分 攻撃力 増加</sec> 効果を付与します。
+      TC: 2回合內 所有我方給 <char uid="PECS_Orangeade" />的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r signless />等量 攻擊力 增加</sec> 賦予效果。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -1552,17 +1552,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시 <sec typ="cond">스쿼드에 기동형 아군 수가 2 이하</sec>일 경우</sec>, 모든 아군의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>를 증가시킵니다.
+        전투 개시 시 <sec typ="cond">스쿼드에 기동형 아군 수가 2 이하</sec>일 경우, 모든 아군의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>를 증가시킵니다.
         해당 효과는 해제할 수 없습니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時 <sec typ="cond">スコードに機動型の味方が2機以下の場合</sec></sec>、すべての味方の<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec>を増加させます。
-        この効果は解除できません。
       EN: |-
-        <sec typ="cond">At battle start <sec typ="cond">if the squad has 2 or fewer mobile allies</sec></sec>, increases all allies' <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec>.
-        This effect cannot be removed.
+        At battle start <sec typ="cond">squad Mobile-type number of allies 2 or less</sec> if, all allies of <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increases.
+        the effect cannot be removed.
+      JP: |-
+        戦闘開始時 <sec typ="cond">スクワッドに 機動型 味方数が 2 以下</sec>の場合、 すべての味方の <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>を増加させます。
+        該当 効果は 解除できません。
       TC: |-
-        <sec typ="cond">戰鬥開始時 <sec typ="cond">若小隊中的機動型友軍數量為2以下</sec></sec>，將提升所有友軍的<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>。
-        此效果無法解除。
+        戰鬥開始時 <sec typ="cond">小隊於 機動型 我方數量 2 以下</sec>若為， 所有我方的 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>使其增加。
+        該 效果 無法解除。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -1689,17 +1689,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시 <sec typ="cond">스쿼드에 중장형 아군 수가 2 이하</sec>일 경우</sec>, 모든 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" /></sec>을(를) 증가시킵니다.
+        전투 개시 시 <sec typ="cond">스쿼드에 중장형 아군 수가 2 이하</sec>일 경우, 모든 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" /></sec>을(를) 증가시킵니다.
         해당 효과는 해제할 수 없습니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時 <sec typ="cond">スコードに重装型の味方が2機以下の場合</sec></sec>、すべての味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="1" /></sec>を増加させます。
-        この効果は解除できません。
       EN: |-
-        <sec typ="cond">At battle start <sec typ="cond">if the squad has 2 or fewer heavy armor allies</sec></sec>, increases all allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" /></sec>.
-        This effect cannot be removed.
+        At battle start <sec typ="cond">squad Heavy-type number of allies 2 or less</sec> if, all allies of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" /></sec> increases.
+        the effect cannot be removed.
+      JP: |-
+        戦闘開始時 <sec typ="cond">スクワッドに 重装型 味方数が 2 以下</sec>の場合、 すべての味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" /></sec>を増加させます。
+        該当 効果は 解除できません。
       TC: |-
-        <sec typ="cond">戰鬥開始時 <sec typ="cond">若小隊中的重裝型友軍數量為2以下</sec></sec>，將提升所有友軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="1" /></sec>。
-        此效果無法解除。
+        戰鬥開始時 <sec typ="cond">小隊於 重裝型 我方數量 2 以下</sec>若為， 所有我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" /></sec>使其增加。
+        該 效果 無法解除。
   "5":
     key: "5"
     icon: P.Snipe
@@ -1917,21 +1917,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시 <sec typ="cond">스쿼드에 경장형 아군 수가 2 이하</sec>일 경우</sec>, 모든 아군의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="1" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec>를 증가시킵니다.
+        전투 개시 시 <sec typ="cond">스쿼드에 경장형 아군 수가 2 이하</sec>일 경우, 모든 아군의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="1" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec>를 증가시킵니다.
         <sec typ="attr">해당 효과는 해제할 수 없습니다.</sec>
         <sec typ="important">스킬 레벨 10에서 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리</sec>가 추가로 증가합니다.</sec>
-      JP: |-
-        <sec typ="cond">戦闘開始時 <sec typ="cond">スコードに軽装型の味方が2機以下の場合</sec></sec>、すべての味方の<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="1" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec>を増加させます。
-        <sec typ="attr">この効果は解除できません。</sec>
-        <sec typ="important">スキルレベル10で<sec typ="buff"><buff typ="RANGE_UP" />射程</sec>がさらに増加します。</sec>
       EN: |-
-        <sec typ="cond">At battle start <sec typ="cond">if the squad has 2 or fewer light armor allies</sec></sec>, increases all allies' <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="1" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec>.
-        <sec typ="attr">This effect cannot be removed.</sec>
-        <sec typ="important">At skill level 10, <sec typ="buff"><buff typ="RANGE_UP" /> Range</sec> increases further.</sec>
+        At battle start <sec typ="cond">squad Light-type number of allies 2 or less</sec> if, all allies of <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="1" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> increases.
+        <sec typ="attr">the effect cannot be removed.</sec>
+        <sec typ="important">At skill level 10, <sec typ="buff"><buff typ="RANGE_UP" /> Range</sec>additionally increases.</sec>
+      JP: |-
+        戦闘開始時 <sec typ="cond">スクワッドに 軽装型 味方数が 2 以下</sec>の場合、 すべての味方の <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="1" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec>を増加させます。
+        <sec typ="attr">該当 効果は 解除できません。</sec>
+        <sec typ="important">スキルレベル10で <sec typ="buff"><buff typ="RANGE_UP" /> 射程</sec>が追加で増加します。</sec>
       TC: |-
-        <sec typ="cond">戰鬥開始時 <sec typ="cond">若小隊中的輕裝型友軍數量為2以下</sec></sec>，將提升所有友軍的<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="1" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec>。
-        <sec typ="attr">此效果無法解除。</sec>
-        <sec typ="important">技能等級10時，<sec typ="buff"><buff typ="RANGE_UP" />射程</sec>會進一步增加。</sec>
+        戰鬥開始時 <sec typ="cond">小隊於 輕裝型 我方數量 2 以下</sec>若為， 所有我方的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="1" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec>使其增加。
+        <sec typ="attr">該 效果 無法解除。</sec>
+        <sec typ="important">技能等級10時 <sec typ="buff"><buff typ="RANGE_UP" /> 射程</sec>會額外增加。</sec>
 dialogue:
   KR:
     "1":
@@ -2733,7 +2733,7 @@ skins:
         consumableKey: Skin_PECS_Orangeade_1
     - sid: 2
       artist: ??
-      priceEx: ""
+      price: 41
       Spine: true
       SpineDamaged: false
       parts: 78

@@ -3042,17 +3042,17 @@ skills:
         근접 포격으로 단일 대상에게 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>를 증가시킵니다. (중첩 불가)
         <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        近接砲撃で単体対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間対象に<sec typ="buff"><buff typ="MARKING" />標的</sec>を付与し、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="5" r /></sec>を増加させます。(重複不可)
-        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       EN: |-
-        Closes in with close-range bombardment and deals <dmg elem="physics" /> to a single target.
-        <sec typ="cond">On hit</sec>, for 2 rounds inflict the target with <sec typ="buff"><buff typ="MARKING" /> Marking</sec> and increase <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec>. (does not stack)
+        Deals <dmg elem="physics" /> to a single target with close-range bombardment.
+        <sec typ="cond">On hit</sec>, grants the target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> and increases <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="5" r /></sec> for 2 rounds. (Cannot stack)
         <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        近接砲撃で単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象に<sec typ="buff"><buff typ="MARKING" />標識</sec>を付与し、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="5" r /></sec>を増加させます。（重複不可）
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       TC: |-
-        以近距砲擊對單一目標造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，使目標在2回合內獲得<sec typ="buff"><buff typ="MARKING" />標記</sec>，並提高<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="5" r /></sec>。（不可疊加）
+        以近距離砲擊對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，持續2回合賦予目標<sec typ="buff"><buff typ="MARKING" />標記</sec>，並增加<sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="5" r /></sec>。（不可重疊）
         <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "2":
     key: "2"
@@ -5573,17 +5573,17 @@ skills:
         고속 연계 공격으로 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>를 증가시킵니다. (중첩 불가)
         <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        高速連携攻撃で単体対象に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間対象に<sec typ="buff"><buff typ="MARKING" />標的</sec>を付与し、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="5" r /></sec>を増加させます。(重複不可)
-        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       EN: |-
-        Delivers a high-speed combo attack to a single target for <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage.
-        <sec typ="cond">On hit</sec>, for 2 rounds inflict the target with <sec typ="buff"><buff typ="MARKING" /> Marking</sec> and increase <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec>. (does not stack)
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to a single target with a high-speed combo attack.
+        <sec typ="cond">On hit</sec>, grants the target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> and increases <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="5" r /></sec> for 2 rounds. (Cannot stack)
         <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        高速連携攻撃で単一対象へ<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象に<sec typ="buff"><buff typ="MARKING" />標識</sec>を付与し、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="5" r /></sec>を増加させます。（重複不可）
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       TC: |-
-        以高速連攜攻擊對單一目標造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，使目標在2回合內獲得<sec typ="buff"><buff typ="MARKING" />標記</sec>，並提高<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="5" r /></sec>。（不可疊加）
+        以高速連攜攻擊對單一目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，持續2回合賦予目標<sec typ="buff"><buff typ="MARKING" />標記</sec>，並增加<sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="5" r /></sec>。（不可重疊）
         <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "3":
     key: "3"
@@ -6178,22 +6178,22 @@ skills:
         <sec typ="cond">전투 개시 시</sec> <sec typ="cond">자신이 전열인 경우</sec>, 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
         자신은 효과가 두 배로 증폭됩니다.
         <sec typ="cond">라운드 개시 시</sec>, 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="9" r /></sec>가 증가합니다.
-        <cmt t="앵거 오브 호드">$$AngerOfTheHorde:?$</cmt> 소속 전투원을 제외한 중장형 / 기동형 아군에게는 상기 효과의 50%만 적용됩니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec> <sec typ="cond">自身が前列の場合</sec>、味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
-        自身は効果が2倍に増幅されます。
-        <sec typ="cond">ラウンド開始時</sec>、味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率<val idx="9" r /></sec>が増加します。
-        <cmt t="アンガーオブホード">$$AngerOfTheHorde:?$</cmt>所属戦闘員を除く重装型 / 機動型の味方には上記効果の50%のみ適用されます。
+        <cmt t="앵거 오브 호드"><import name="AngerOfTheHorde" /></cmt> 소속 전투원을 제외한 중장형 / 기동형 아군에게는 상기 효과의 50%만 적용됩니다.
       EN: |-
-        <sec typ="cond">At battle start</sec> <sec typ="cond">if self is in the front line</sec>, allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">At battle start</sec>, <sec typ="cond">if self is in the front row</sec>, allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
         The effect is doubled for self.
-        <sec typ="cond">At round start</sec>, allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="9" r /></sec> increases.
-        For Heavy Armor / Mobile allies excluding <cmt t="Anger of Horde">$$AngerOfTheHorde:?$</cmt> combatants, only 50% of the above effect is applied.
+        <sec typ="cond">At round start</sec>, allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> accuracy <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> critical hit <val idx="9" r /></sec> increases.
+        Only 50% of the above effects apply to Heavy / Flying allies excluding combatants affiliated with <cmt t="Anger of the Horde"><import name="AngerOfTheHorde" /></cmt>.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="cond">自身が前列の場合</sec>、味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>が増加します。
+        自身は効果が2倍に増幅されます。
+        <sec typ="cond">ラウンド開始時</sec>、味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="9" r /></sec>が増加します。
+        <cmt t="アンガー・オブ・ホード"><import name="AngerOfTheHorde" /></cmt>所属戦闘員を除く重装型 / 機動型の味方には、上記効果の50%のみ適用されます。
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec> <sec typ="cond">若自身位於前列</sec>，我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
-        自身的效果會增幅2倍。
-        <sec typ="cond">回合開始時</sec>，我軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="9" r /></sec>增加。
-        除<cmt t="部落之怒">$$AngerOfTheHorde:?$</cmt>所屬戰鬥員外，重裝型 / 機動型我軍僅套用上述效果的50%。
+        <sec typ="cond">戰鬥開始時</sec>，<sec typ="cond">自身位於前列時</sec>，我方的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>增加。
+        自身的效果加倍。
+        <sec typ="cond">回合開始時</sec>，我方的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="9" r /></sec>增加。
+        除<cmt t="憤怒部落"><import name="AngerOfTheHorde" /></cmt>所屬戰鬥員外，重裝型 / 機動型我方僅適用上述效果的50%。
   "4":
     key: "4"
     icon: P.Scan
@@ -6613,25 +6613,25 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SKILL_UP" /> 회피의 <val idx="0" r signless /> 만큼 스킬 위력 감쇄</sec> 효과를 획득합니다.
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec>가 증가하고 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 획득합니다.
         <sec>해당 효과는 효과 해제로 해제할 수 없습니다.</sec>
-        <sec typ="cond">라운드 개시 시</sec>, 범위 내 자신을 제외한 <cmt t="앵거 오브 호드">$$AngerOfTheHorde:?$</cmt> 소속 전투원의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 자신을 제외한 <cmt t="앵거 오브 호드"><import name="AngerOfTheHorde" /></cmt> 소속 전투원의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec>를 증가시킵니다.
         <sec>해당 효과는 회피 시 해제됩니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自身は<sec typ="buff"><buff typ="SKILL_UP" />回避の<val idx="0" r signless />だけスキル威力減衰</sec>効果を獲得します。
-        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="4" r /></sec>が増加し、<sec typ="buff"><buff typ="MARKING" />標的</sec>を獲得します。
-        <sec>この効果は効果解除では解除できません。</sec>
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の自身を除く<cmt t="アンガーオブホード">$$AngerOfTheHorde:?$</cmt>所属戦闘員の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec>を増加させます。
-        <sec>この効果は回避時に解除されます。</sec>
       EN: |-
-        <sec typ="cond">At round start</sec>, self gains <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power reduced by own <val idx="0" r signless /> EVA</sec>.
-        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="4" r /></sec> increases and self gains <sec typ="buff"><buff typ="MARKING" /> Marking</sec>.
+        <sec typ="cond">At round start</sec>, self gains <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power Reduction by <val idx="0" r signless /> of EVA</sec>.
+        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="4" r /></sec> increases and gains <sec typ="buff"><buff typ="MARKING" /> Mark</sec>.
         <sec>This effect cannot be removed by effect removal.</sec>
-        <sec typ="cond">At round start</sec>, increases <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="6" r /></sec> of allies within range excluding self who belong to <cmt t="Anger of Horde">$$AngerOfTheHorde:?$</cmt>.
-        <sec>This effect is removed upon evasion.</sec>
+        <sec typ="cond">At round start</sec>, increases <cmt t="Anger of the Horde"><import name="AngerOfTheHorde" /> EVA </cmt><sec typ="buff"> of combatants affiliated with <buff typ="EVADE_UP" /><val idx="6" r /></sec> within range, excluding self.
+        <sec>This effect is removed on evasion.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身は<sec typ="buff"><buff typ="SKILL_UP" />回避の<val idx="0" r signless />分、スキル威力減衰</sec>効果を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="4" r /></sec>が増加し、<sec typ="buff"><buff typ="MARKING" />標識</sec>を獲得します。
+        <sec>この効果は効果解除で解除できません。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の自身を除く<cmt t="アンガー・オブ・ホード"><import name="AngerOfTheHorde" /></cmt>所属戦闘員の<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec>を増加させます。
+        <sec>この効果は回避時に解除されます。</sec>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身獲得<sec typ="buff"><buff typ="SKILL_UP" />依自身迴避的<val idx="0" r signless />而減少的技能威力</sec>效果。
+        <sec typ="cond">回合開始時</sec>，自身獲得<sec typ="buff"><buff typ="SKILL_UP" />依迴避的<val idx="0" r signless />降低技能威力</sec>效果。
         <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="4" r /></sec>增加，並獲得<sec typ="buff"><buff typ="MARKING" />標記</sec>。
-        <sec>此效果無法透過效果解除移除。</sec>
-        <sec typ="cond">回合開始時</sec>，增加範圍內除自身外、屬於<cmt t="部落之怒">$$AngerOfTheHorde:?$</cmt>的戰鬥員之<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec>。
+        <sec>此效果無法以效果解除來解除。</sec>
+        <sec typ="cond">回合開始時</sec>，增加範圍內除自身外<cmt t="憤怒部落"><import name="AngerOfTheHorde" /></cmt>所屬戰鬥員的<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec>。
         <sec>此效果會在迴避時解除。</sec>
   "5":
     key: "5"
@@ -7058,18 +7058,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="2" r /></sec>가 증가합니다.
         <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>가 증가합니다.
         <sec typ="cond">적 처치 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage against Light units <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage against Heavy units <val idx="2" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="6" r /></sec> increases for 3 rounds.
+        <sec typ="cond">On killing an enemy</sec>, self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="8" r /></sec> increases for 2 rounds.
       JP: |-
         <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" />対軽装型ダメージ量<val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />対重装型ダメージ量<val idx="2" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>が増加します。
-        <sec typ="cond">敵撃破時</sec>、2ラウンドの間自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="8" r /></sec>が増加します。
-      EN: |-
-        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light Armor Damage <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy Armor Damage <val idx="2" r /></sec> increases.
-        <sec typ="cond">At round start</sec>, for 3 rounds self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="6" r /></sec> increases.
-        <sec typ="cond">On enemy kill</sec>, for 2 rounds self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="8" r /></sec> increases.
+        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>が増加します。
+        <sec typ="cond">敵撃破時</sec>、2ラウンドの間、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="8" r /></sec>が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" />對輕裝型傷害量<val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型傷害量<val idx="2" r /></sec>增加。
-        <sec typ="cond">回合開始時</sec>，持續3回合，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>增加。
-        <sec typ="cond">擊殺敵人時</sec>，持續2回合，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="8" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" />對輕裝型傷害量<val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型傷害量<val idx="2" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，持續3回合增加自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="6" r /></sec>。
+        <sec typ="cond">擊殺敵人時</sec>，持續2回合增加自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="8" r /></sec>。
 dialogue:
   KR:
     "1":

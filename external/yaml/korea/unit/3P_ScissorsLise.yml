@@ -4243,15 +4243,15 @@ skills:
       KR: |-
         가위날로 장갑을 깎아 <dmg elem="physics" />를 주고, 3라운드 동안 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다.
         <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
-      JP: |-
-        ハサミ刃で装甲を削り、<dmg elem="physics" />のダメージを与え、3ラウンドの間、<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を減少させます。
-        <sec typ="cond">クリティカル時</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
       EN: |-
-        Cuts away armor with a scissor blade, dealing <dmg elem="physics" /> damage and decreasing <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> for 3 rounds.
-        <sec typ="cond">On CRIT</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+        Cuts through armor with scissor blades, dealing <dmg elem="physics" /> and decreasing <sec typ="buff"><buff typ="DEF_DOWN" /> DEF by <val idx="0" r /></sec> for 3 rounds.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt increases by <val idx="2" r /></sec>.
+      JP: |-
+        シザーブレードで装甲を削り<dmg elem="physics" />を与え、3ラウンドの間<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>を減少させます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="2" r /></sec>が増加します。
       TC: |-
-        以剪刀刃削開裝甲，造成<dmg elem="physics" />傷害，並在3回合內減少<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>。
-        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
+        用剪刃削切裝甲造成<dmg elem="physics" />，並在3回合內使<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>降低。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -7989,15 +7989,15 @@ skills:
       KR: |-
         시저스 블레이드 연속 베기로 <dmg elem="physics" />를 줍니다.
         대상이 <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> 상태인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 각각 증가합니다.
-      JP: |-
-        シザースブレードの連続斬りで<dmg elem="physics" />のダメージを与えます。
-        対象が<sec typ="cond"><buff typ="DEF_DOWN" /> 防御力減少</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> 受けるダメージ増加</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>がそれぞれ増加します。
       EN: |-
-        Delivers <dmg elem="physics" /> damage with a series of Scissors Blade strikes.
-        If the target is in <sec typ="cond"><buff typ="DEF_DOWN" /> DEF Decrease</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> Increased Received Damage</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases accordingly.
+        Deals <dmg elem="physics" /> with consecutive Scissors Blade slashes.
+        If the target is under <sec typ="cond"><buff typ="DEF_DOWN" /> DEF Down</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> Increased damage taken</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt increases by <val idx="0" r /></sec> for each condition.
+      JP: |-
+        シザーブレードの連続斬りで<dmg elem="physics" />を与えます。
+        対象が<sec typ="cond"><buff typ="DEF_DOWN" />防御力低下</sec> / <sec typ="cond"><buff typ="VULNERABLE" />受けるダメージ増加</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>がそれぞれ増加します。
       TC: |-
-        以西洋劍連續斬擊造成<dmg elem="physics" />傷害。
-        若目標處於<sec typ="cond"><buff typ="DEF_DOWN" /> 防禦力減少</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> 所受傷害增加</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>會分別增加。
+        以剪刀刃連續斬擊造成<dmg elem="physics" />。
+        若目標處於<sec typ="cond"><buff typ="DEF_DOWN" />防禦力降低</sec> / <sec typ="cond"><buff typ="VULNERABLE" />受到傷害增加</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>各自增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -8287,18 +8287,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r />가 증가합니다.
         <sec typ="cond">공격 적중 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="6" r /></sec>가 증가합니다.
         <sec>상기 효과는 효과 해제로 해제할 수 없으며</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가</sec> 효과는 <sec>최대 5회까지 중첩됩니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>, 自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r />が増加します。
-        <sec typ="cond">攻撃命中時</sec>, 2ラウンドの間、自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="6" r /></sec>が増加します。
-        <sec>上記効果は効果解除では解除できず</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力増加</sec>効果は<sec>最大5回までスタックします。</sec>
       EN: |-
-        At the start of the round, self’s <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /> increases.
-        <sec typ="cond">On attack hit</sec>, for 2 rounds self’s <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="6" r /></sec> increases.
-        <sec>These effects cannot be removed by effect removal</sec>, and the <sec typ="buff"><buff typ="ATK_UP" /> ATK Increase</sec> effect<sec> stacks up to 5 times.</sec>
+        <sec typ="cond">At round start</sec>, increases her <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical by <val idx="1" r /></sec> / <buff typ="DEF_PIERCE_UP" /> Defense Penetration by <val idx="2" r />.
+        <sec typ="cond">On attack hit</sec>, increases her <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="5" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken by <val idx="6" r /></sec> for 2 rounds.
+        <sec>The effects above cannot be removed by effect removal</sec>, and the <sec typ="buff"><buff typ="ATK_UP" /> ATK increase</sec> effect <sec>stacks up to 5 times</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec> / <buff typ="DEF_PIERCE_UP" />防御貫通<val idx="2" r />が増加します。
+        <sec typ="cond">攻撃命中時</sec>、2ラウンドの間、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="6" r /></sec>が増加します。
+        <sec>上記効果は効果解除で解除できず</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力増加</sec>効果は<sec>最大5回まで重複します。</sec>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="2" r />增加。
-        <sec typ="cond">攻擊命中時</sec>，在2回合內自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="6" r /></sec>增加。
-        <sec>上述效果無法透過解除強化解除</sec>，而<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力增加</sec>效果<sec>最多可疊加5次。</sec>
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="2" r />增加。
+        <sec typ="cond">攻擊命中時</sec>，2回合內自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="6" r /></sec>增加。
+        <sec>上述效果無法透過效果解除移除</sec>，<sec typ="buff"><buff typ="ATK_UP" />攻擊力增加</sec>效果<sec>最多可重疊5次。</sec>
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -8578,33 +8578,33 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec>이(가) 증가합니다.
         <sec typ="cond">적 공격 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가합니다. (최대 2중첩)
-        <sec typ="cond">스쿼드 내에 <cmt t="처리하고 싶은 해충">$$LISE_TARGET:?$</cmt>이 있는 경우</sec>에는 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>가 추가로 증가합니다.
-        $$LISE_TARGET~
+        <sec typ="cond">스쿼드 내에 <cmt t="처리하고 싶은 해충"><import name="LISE_TARGET" /></cmt>이 있는 경우</sec>에는 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>가 추가로 증가합니다.
+        <define name="LISE_TARGET">
         <char uid="3P_BlackLilith" /> / <char uid="3P_Sowan" />
-        ~$$LISE_TARGET
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>, 自身の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec>が増加します。
-        <sec typ="cond">敵攻撃時</sec>, 2ラウンドの間、自身の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が増加します。(最大2スタック)
-        <sec typ="cond">分隊内に<cmt t="処理したい害虫">$$LISE_TARGET:?$</cmt>がいる場合</sec>は<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>が追加で増加します。
-        $$LISE_TARGET~
-        <char uid="3P_BlackLilith" /> / <char uid="3P_Sowan" />
-        ~$$LISE_TARGET
+        </define>
       EN: |-
-        At the start of combat, self’s <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec> increases.
-        <sec typ="cond">When attacked by an enemy</sec>, self’s <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="3" r /></sec> increases for 2 rounds. (max 2 stacks)
-        <sec typ="cond">If there is a <cmt t="Pests to Deal With">$$LISE_TARGET:?$</cmt> in the squad</sec>, <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="4" r /></sec> additionally increases.
-        $$LISE_TARGET~
+        <sec typ="cond">At battle start</sec>, her <sec typ="buff"><buff typ="AP_UP" /> AP increases by <val idx="0" r /></sec>.
+        <sec typ="cond">When attacking an enemy</sec>, her <sec typ="buff"><buff typ="AP_UP" /> Action Power increases by <val idx="3" r /></sec> for 2 rounds. (Stacks up to 2 times)
+        <sec typ="cond">If there is a <cmt t="Pests to Eliminate"><import name="LISE_TARGET" /></cmt> in the squad</sec>, <sec typ="buff"><buff typ="AP_UP" /> Action Power additionally increases by <val idx="4" r /></sec>.
+        <define name="LISE_TARGET">
         <char uid="3P_BlackLilith" /> / <char uid="3P_Sowan" />
-        ~$$LISE_TARGET
+        </define>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" r /></sec>が増加します。
+        <sec typ="cond">敵攻撃時</sec>、2ラウンドの間、自身の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>が増加します。(最大2重複)
+        <sec typ="cond">スクワッド内に<cmt t="始末したい害虫"><import name="LISE_TARGET" /></cmt>がいる場合</sec>、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>が追加で増加します。
+        <define name="LISE_TARGET">
+        <char uid="3P_BlackLilith" /> / <char uid="3P_Sowan" />
+        </define>
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" r /></sec>增加。
-        <sec typ="cond">受到敵軍攻擊時</sec>，在2回合內自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>增加。(最多2層)
-        <sec typ="cond">若小隊內有<cmt t="想處理的害蟲">$$LISE_TARGET:?$</cmt></sec>，則<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>額外增加。
-        $$LISE_TARGET~
+        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" r /></sec>增加。
+        <sec typ="cond">攻擊敵人時</sec>，2回合內自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="3" r /></sec>增加。（最多重疊2次）
+        <sec typ="cond">若小隊內有<cmt t="想處理的害蟲"><import name="LISE_TARGET" /></cmt></sec>，<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>額外增加。
+        <define name="LISE_TARGET">
         <char uid="3P_BlackLilith" /> / <char uid="3P_Sowan" />
-        ~$$LISE_TARGET
+        </define>
   "5":
     key: "5"
     icon: P.Music
@@ -9031,24 +9031,24 @@ skills:
         <sec typ="cond">대기 시</sec>, 다음 라운드에 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 반복 행동</sec> 효과를 획득합니다.
         <sec>자신 또는 대상이 행동할 수 없을 때까지 효과가 유지</sec>되며, <sec typ="cond">스킬 사용 시</sec> <sec typ="buff"><buff typ="HP_DOWN" /> 자신의 최대 HP <val idx="7" slot="1" r signless />만큼 피해</sec>를 받습니다.
         <sec>반복 행동 중 다른 이가 개입할 수 없으며</sec>, <sec typ="cond">적 처치 시</sec> 지친 나머지 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 상태가 됩니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>, 自身は<sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HPで戦闘続行</sec>効果を獲得します。
-        <sec typ="cond">ラウンド開始時</sec>, 自身は<sec typ="dmg"><buff typ="DamageAmp_Me" /> 自身のHPに反比例するダメージ量 <val idx="4" r /></sec>増加効果を獲得します。
-        <sec typ="cond">待機時</sec>, 次のラウンドに<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 反復行動</sec>効果を獲得します。
-        <sec>自身または対象が行動できなくなるまで効果は維持</sec>され、<sec typ="cond">スキル使用時</sec> <sec typ="buff"><buff typ="HP_DOWN" /> 自身の最大HP <val idx="7" slot="1" r signless />分のダメージ</sec>を受けます。
-        <sec>反復行動中は他者が介入できず</sec>, <sec typ="cond">敵を撃破すると</sec>疲れ果てて<sec typ="buff"><buff typ="SEAL_SKILL" /> スキル使用不可</sec>状態になります。
       EN: |-
-        At the start of combat, self gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat with <val idx="0" r signless /> HP</sec>.
-        <sec typ="cond">At the start of the round</sec>, self gains an effect that increases <sec typ="dmg"><buff typ="DamageAmp_Me" /> damage inversely proportional to self’s HP <val idx="4" r /></sec>.
-        <sec typ="cond">On standby</sec>, self gains <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Repeat Action</sec> on the next round.
-        <sec>The effect lasts until self or the target can no longer act</sec>, and <sec typ="cond">when the skill is used</sec> self takes <sec typ="buff"><buff typ="HP_DOWN" /> damage equal to <val idx="7" slot="1" r signless /> of self’s max HP</sec>.
-        <sec>No one else can intervene during Repeat Action</sec>, and <sec typ="cond">when an enemy is defeated</sec> self becomes too exhausted to <sec typ="buff"><buff typ="SEAL_SKILL" /> use skills</sec>.
+        <sec typ="cond">At battle start</sec>, she gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Battle with <val idx="0" r signless /> HP</sec>.
+        <sec typ="cond">At round start</sec>, she gains an effect that increases <sec typ="dmg"><buff typ="DamageAmp_Me" /> damage dealt inversely proportional to her HP by <val idx="4" r /></sec>.
+        <sec typ="cond">On wait</sec>, she gains <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> repeated action</sec> on the next round.
+        <sec>The effect remains until she or the target can no longer act</sec>, and <sec typ="cond">when using a skill</sec>, she takes <sec typ="buff"><buff typ="HP_DOWN" /> damage equal to <val idx="7" slot="1" r signless /> of her Max HP</sec>.
+        <sec>No one else can intervene during repeated action</sec>, and <sec typ="cond">on killing an enemy</sec>, she becomes exhausted and enters <sec typ="buff"><buff typ="SEAL_SKILL" /> unable to use skills</sec>.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自身は<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="0" r signless />HPで戦闘続行</sec>効果を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、自身は<sec typ="dmg"><buff typ="DamageAmp_Me" />自身のHPに反比例するダメージ量<val idx="4" r /></sec>増加効果を獲得します。
+        <sec typ="cond">待機時</sec>、次のラウンドに<sec typ="buff"><buff typ="SUPPORT_ATTACK" />反復行動</sec>効果を獲得します。
+        <sec>自身または対象が行動できなくなるまで効果が維持</sec>され、<sec typ="cond">スキル使用時</sec>、<sec typ="buff"><buff typ="HP_DOWN" />自身の最大HP<val idx="7" slot="1" r signless />分のダメージ</sec>を受けます。
+        <sec>反復行動中は他者が介入できず</sec>、<sec typ="cond">敵撃破時</sec>、疲れ果てて<sec typ="buff"><buff typ="SEAL_SKILL" />スキル使用不可</sec>状態になります。
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，自身獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以<val idx="0" r signless /> HP繼續戰鬥</sec>效果。
-        <sec typ="cond">回合開始時</sec>，自身獲得<sec typ="dmg"><buff typ="DamageAmp_Me" /> 與自身生命力成反比的傷害量 <val idx="4" r /></sec>增加效果。
-        <sec typ="cond">待機時</sec>，在下回合獲得<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 重複行動</sec>效果。
-        <sec>效果持續至自身或目標無法行動為止</sec>，且<sec typ="cond">使用技能時</sec>會受到相當於<sec typ="buff"><buff typ="HP_DOWN" /> 自身最大生命力 <val idx="7" slot="1" r signless /></sec>的傷害。
-        <sec>重複行動期間他人無法介入</sec>，且<sec typ="cond">擊殺敵軍時</sec>會因疲憊而進入<sec typ="buff"><buff typ="SEAL_SKILL" /> 無法使用技能</sec>狀態。
+        <sec typ="cond">戰鬥開始時</sec>，自身獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="0" r signless />HP戰鬥續行</sec>效果。
+        <sec typ="cond">回合開始時</sec>，自身獲得<sec typ="dmg"><buff typ="DamageAmp_Me" />依自身HP反比例增加傷害量<val idx="4" r /></sec>的效果。
+        <sec typ="cond">待機時</sec>，下個回合獲得<sec typ="buff"><buff typ="SUPPORT_ATTACK" />重複行動</sec>效果。
+        <sec>效果會維持到自身或目標無法行動為止</sec>，且<sec typ="cond">使用技能時</sec>會受到<sec typ="buff"><buff typ="HP_DOWN" />相當於自身最大HP<val idx="7" slot="1" r signless />的傷害</sec>。
+        <sec>重複行動中其他人無法介入</sec>，<sec typ="cond">擊殺敵人時</sec>因過度疲憊而進入<sec typ="buff"><buff typ="SEAL_SKILL" />無法使用技能</sec>狀態。
 dialogue:
   KR:
     "1":

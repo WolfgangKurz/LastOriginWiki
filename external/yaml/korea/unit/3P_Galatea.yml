@@ -1622,21 +1622,21 @@ skills:
         적중 여부와 관계없이 2라운드 동안 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec>를 감소시킵니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec>를 감소시킵니다.
         <sec>스킬 레벨 당 10%의 적중 보정이 적용됩니다.</sec>
-      JP: |-
-        単一対象に<dmg elem="physics" />を与えます。
-        命中の有無に関係なく、2ラウンドの間、対象の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="0" r /></sec>を減少させます。
-        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="2" r /></sec>を減少させます。
-        <sec>スキルレベルごとに10%の命中補正が適用されます。</sec>
       EN: |-
-        Deals <dmg elem="physics" /> damage to a single target.
-        Regardless of whether it hits, decreases the target's <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="0" r /></sec> for 2 rounds.
-        <sec typ="cond">On Hit</sec>, decreases the target's <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="2" r /></sec> for 2 rounds.
-        <sec>10% ACU compensation is applied per skill level.</sec>
+        to a single target <dmg elem="physics" />.
+        regardless of whether it hits 2 rounds, target's <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="0" r /></sec> decreases.
+        <sec typ="cond">On hit</sec>, 2 rounds, target's <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="2" r /></sec> decreases.
+        <sec>per skill level 10% of accuracy correction is applied.</sec>
+      JP: |-
+        単一対象へ<dmg elem="physics" />を与えます。
+        命中 ヨブウに 関係なく 2ラウンドの間 対象の <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="0" r /></sec>を減少させます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="2" r /></sec>を減少させます。
+        <sec>スキルレベルごとに 10%の 命中補正が適用されます。</sec>
       TC: |-
-        對單一目標造成<dmg elem="physics" />傷害。
-        不論是否命中，目標的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="0" r /></sec>在2回合內降低。
-        <sec typ="cond">命中時</sec>，目標的<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="2" r /></sec>在2回合內降低。
-        <sec>每個技能等級套用10%的命中修正。</sec>
+        單一目標給 造成<dmg elem="physics" />。
+        無論是否命中 2回合內 目標的 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="0" r /></sec>使其減少。
+        <sec typ="cond">命中時</sec>， 2回合內 目標的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="2" r /></sec>使其減少。
+        <sec>每技能等級 10%的 套用命中補正。</sec>
   "2":
     key: "2"
     icon: AssaultAttack
@@ -5816,24 +5816,24 @@ skills:
     desc:
       KR: |-
         일직선상의 대상에게 충각으로 돌격하여 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 입히고, 2라운드 동안 <sec typ="buff"><buff typ="PROVOKE" /> 적중 대상을 도발</sec>합니다.
-        자신이 <sec typ="cond"><buff typ="DEF_UP" /> 방어력 증가</sec> / <sec typ="cond"><buff typ="AP_UP" /> 행동력 증가</sec> <sec typ="attr">강화 효과</sec>를 보유한 경우 각각 피해량이 증가하고 대상이 보유 중인 동일한 강화 효과를 해제합니다.
+        자신이 <sec typ="cond"><buff typ="DEF_UP" /> 방어력 증가</sec> / <sec typ="cond"><buff typ="AP_UP" /> 행동력 증가</sec> <sec typ="attr">강화 효과</sec>를 보유한 경우 각각 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" r /></sec>가 증가하고 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 대상이 보유 중인 동일한 강화 효과를 해제</sec>합니다.
         <sec typ="cond">적중 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 자신의 공격력 <val idx="10" r signless /> 고정 물리 피해</sec>를 입으며, 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 모든 해로운 효과를 해제</sec>합니다.
-        스쿼드에 자신을 제외한 <cmt t="머메이드">$$Mermaid:0$</cmt> 전투원이 있으면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 고정 물리 피해 수치가 공격력 <val idx="12" r signless />로 경감</sec>되며 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="14" r /></sec> 효과가 추가됩니다.
-      JP: |-
-        一直線上の対象に衝角で突撃し、<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、2ラウンドの間、<sec typ="buff"><buff typ="PROVOKE" />命中した対象を挑発</sec>します。
-        自分が<sec typ="cond"><buff typ="DEF_UP" />防御力増加</sec> / <sec typ="cond"><buff typ="AP_UP" />行動力増加</sec>の<sec typ="attr">強化効果</sec>を持つ場合、それぞれダメージ量が増加し、対象が持っている同一の強化効果を解除します。
-        <sec typ="cond">命中時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />自分の攻撃力<val idx="10" r signless />固定物理ダメージ</sec>を与え、自分に適用された<sec typ="buff"><buff typ="REMOVE_DEBUFF" />全ての有害な効果を解除</sec>します。
-        分隊に自分を除く<cmt t="머메이드">$$Mermaid:0$</cmt>戦闘員がいる場合、<sec typ="dmg"><buff typ="PhyATK_UP" />固定物理ダメージ数値が攻撃力<val idx="12" r signless />に軽減</sec>され、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="14" r /></sec>効果が追加されます。
+        스쿼드에 자신을 제외한 <cmt t="머메이드"><import name="Mermaid" p="0" /></cmt> 전투원이 있으면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 고정 물리 피해 수치가 공격력 <val idx="12" r signless />로 경감</sec>되며 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="14" r /></sec> 효과가 추가됩니다.
       EN: |-
-        Charges at targets in a straight line with a ram, dealing <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> and <sec typ="buff"><buff typ="PROVOKE" /> provoking the hit target</sec> for 2 rounds.
-        If self has <sec typ="cond"><buff typ="DEF_UP" /> DEF Increase</sec> / <sec typ="cond"><buff typ="AP_UP" /> MOVE Increase</sec> <sec typ="attr">upgrade effects</sec>, damage increases for each and the same upgrade effects on the target are removed.
-        <sec typ="cond">On Hit</sec>, deals <sec typ="dmg"><buff typ="PhyATK_UP" /> fixed physical damage equal to self's ATK <val idx="10" r signless /></sec>, and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes all Malign Effects applied to self</sec>.
-        If there is another <cmt t="머메이드">$$Mermaid:0$</cmt> unit in the squad aside from self, the <sec typ="dmg"><buff typ="PhyATK_UP" /> fixed physical damage value is reduced to ATK <val idx="12" r signless /></sec>, and <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="14" r /></sec> is additionally granted.
+        in a straight line of to the target Chung each as charges <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> deals and, 2 rounds <sec typ="buff"><buff typ="PROVOKE" /> Hit target Provoke</sec>.
+        self <sec typ="cond"><buff typ="DEF_UP" /> Defense increase</sec> / <sec typ="cond"><buff typ="AP_UP" /> Action Speed increase</sec> <sec typ="attr">buffs</sec> if having respectively <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec> increases and <sec typ="buff"><buff typ="REMOVE_BUFF" /> target possess in progress same removes buffs</sec>.
+        <sec typ="cond">On hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> own Attack <val idx="10" r signless /> fixed Physical damage</sec> takes, applied to self <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> all harmful effects remove</sec>.
+        squad self excluding <cmt t="Mermaid"><import name="Mermaid" p="0" /></cmt> combatant if present <sec typ="dmg"><buff typ="PhyATK_UP" /> fixed Physical damage value Attack <val idx="12" r signless /> as mitigation</sec>becomes and <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="14" r /></sec> effect and additional.
+      JP: |-
+        イルジイク宣スアンの 対象に チウン各で ドオルグヨクして <sec typ="attr">保護無視</sec><dmg elem="physics" />を 与えし、 2ラウンドの間 <sec typ="buff"><buff typ="PROVOKE" /> 命中 対象を 挑発</sec>します。
+        自身が <sec typ="cond"><buff typ="DEF_UP" /> 防御力 増加</sec> / <sec typ="cond"><buff typ="AP_UP" /> 行動力 増加</sec> <sec typ="attr">強化効果</sec>を 保有している場合 それぞれ <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="5" r /></sec>が 増加し、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 対象が 保有 中の 同一の 強化効果を 解除</sec>します。
+        <sec typ="cond">命中時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> 自身の 攻撃力 <val idx="10" r signless /> 固定物理ダメージ</sec>を イプウし、 自身に 適用された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> すべての 有害効果を 解除</sec>します。
+        スクワッドに 自身を ジエ外した <cmt t="ムオムエがドウ"><import name="Mermaid" p="0" /></cmt> 戦闘員が ある場合 <sec typ="dmg"><buff typ="PhyATK_UP" /> 固定物理ダメージ 数値が 攻撃力 <val idx="12" r signless />で グヨングアム</sec>になり、 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="14" r /></sec> 効果が 追加されます。
       TC: |-
-        以衝角對直線上的目標發動衝鋒，造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害，並於2回合內<sec typ="buff"><buff typ="PROVOKE" />嘲諷命中的目標</sec>。
-        若自身擁有<sec typ="cond"><buff typ="DEF_UP" />防禦力增加</sec> / <sec typ="cond"><buff typ="AP_UP" />行動力增加</sec><sec typ="attr">強化效果</sec>，則各自傷害增加，並解除目標所擁有的相同強化效果。
-        <sec typ="cond">命中時</sec>，造成<sec typ="dmg"><buff typ="PhyATK_UP" />等同自身攻擊力<val idx="10" r signless />的固定物理傷害</sec>，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除施加於自身的所有有害效果</sec>。
-        若小隊中除自身外另有<cmt t="머메이드">$$Mermaid:0$</cmt>戰鬥員，則<sec typ="dmg"><buff typ="PhyATK_UP" />固定物理傷害數值會降低為攻擊力<val idx="12" r signless /></sec>，並額外獲得<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="14" r /></sec>效果。
+        一至kseonsang的 對目標 Chung各以 突擊並 <sec typ="attr">無視保護</sec> <dmg elem="physics" /> 造成並， 2回合內 <sec typ="buff"><buff typ="PROVOKE" /> 命中 目標 挑釁</sec>。
+        自身 <sec typ="cond"><buff typ="DEF_UP" /> 防禦力 增加</sec> / <sec typ="cond"><buff typ="AP_UP" /> 行動力 增加</sec> <sec typ="attr">強化效果</sec> 持有時 各自 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="5" r /></sec> 增加，並 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 目標 持有 中的 相同 強化效果 解除</sec>。
+        <sec typ="cond">命中時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 自身的 攻擊力 <val idx="10" r signless /> 固定物理傷害</sec> Ipeu並， 自身給 套用已 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 所有 負面效果 解除</sec>。
+        小隊於 自身 解除外 <cmt t="美人魚"><import name="Mermaid" p="0" /></cmt> 戰鬥員 若有 <sec typ="dmg"><buff typ="PhyATK_UP" /> 固定物理傷害 數值 攻擊力 <val idx="12" r signless />以 輕gam</sec>變為，且 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="14" r /></sec> 效果 額外。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -6434,25 +6434,29 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 아군 지원기를 지정 보호하고 방어막을 부여합니다. 자신 또한 동일한 수치의 방어막을 획득합니다.
-        <sec typ="cond">라운드 개시 시</sec>, 자신이 지정 보호 중인 아군이 <sec typ="cond">중열에 위치한 경우</sec>, 대상의 행동력을, <sec typ="cond">후열에 위치한 경우</sec> 공격력을 증가시킵니다.
-        <char uid="3P_Amphitrite" />의 <sec typ="note">지휘 전파</sec> 효과를 받는 아군 공격기에게도 동일한 지정 보호와 방어막을 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_Char" /> 아군 지원기를 지정 보호</sec>하고 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="4" signless /></sec>을(를) 부여합니다.
+        자신 또한 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 동일한 수치의 방어막</sec>을 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신이 지정 보호 중인 아군이 <sec typ="cond">중열에 위치한 경우</sec>, 대상의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>를, <sec typ="cond">후열에 위치한 경우</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="7" r /></sec>를 증가시킵니다.
+        <char uid="3P_Amphitrite" />의 <sec typ="note">지휘 전파</sec> 효과를 받는 아군 공격기에게도 동일한 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>와 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="9" signless /></sec>를 부여합니다.
         <char uid="3P_Salacia" />의 <sec typ="note">시아, 엄~청 세!</sec> 기능 중 공격기 1기당 추가되는 효과에 <sec>자신을 공격기 취급</sec>하여 버프 효과에 합산합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、味方の支援機を指定保護し、バリアを付与します。自分も同数値のバリアを獲得します。
-        <sec typ="cond">ラウンド開始時</sec>、自分が指定保護中の味方が<sec typ="cond">中列に位置する場合</sec>は対象の行動力を、<sec typ="cond">後列に位置する場合</sec>は攻撃力を増加させます。
-        <char uid="3P_Amphitrite" />の<sec typ="note">指揮伝播</sec>効果を受ける味方の攻撃機にも同一の指定保護とバリアを付与します。
-        <char uid="3P_Salacia" />の<sec typ="note">シア、すっご～い強いぞ！</sec>機能のうち、攻撃機1機ごとに追加される効果に<sec>自分を攻撃機として扱い</sec>、バフ効果に加算します。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, provides Designated Protection to ally Supporters and grants a Defensive Shield. Self also gains a Defensive Shield with the same value.
-        <sec typ="cond">At the start of the round</sec>, if the ally receiving self's Designated Protection is <sec typ="cond">in the middle line</sec>, their MOVE is increased; if they are <sec typ="cond">in the rear line</sec>, their ATK is increased.
-        Also grants the same Designated Protection and Defensive Shield to ally Attackers receiving <char uid="3P_Amphitrite" />'s <sec typ="note">Relay Command</sec> effect.
-        Counts self as an Attacker and adds it to the buff effects among <char uid="3P_Salacia" />'s <sec typ="note">Cia, So Strong!</sec> effects that are added per Attacker.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_Char" /> allies Supporter Designated Protection</sec> and <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="4" signless /></sec> grants.
+        self also <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> same value of Barrier</sec> gains.
+        <sec typ="cond">At round start</sec>, self Designated Protection in progress allies <sec typ="cond">middle row to if positioned</sec>, target's <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="6" r /></sec>, <sec typ="cond">back row to if positioned</sec> <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="7" r /></sec> increases.
+        <char uid="3P_Amphitrite" /> of <sec typ="note">command wire Pa</sec> effect and receives allies Attackerto also same <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> and <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="9" signless /></sec> grants.
+        <char uid="3P_Salacia" /> of <sec typ="note">when A, Eom~Cheong three!</sec> function during Attacker 1 unit per additional becomes effect and to <sec>self Attacker treat</sec> by doing buff effect and to Hapsan.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_Char" /> 味方 支援機を 指定保護</sec>し、 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="4" signless /></sec>を付与します。
+        自身 ットオした <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 同一の 数値の バリア</sec>を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身が 指定保護 中の 味方が <sec typ="cond">中列に 位置している場合</sec>、 対象の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>を、 <sec typ="cond">後列に 位置している場合</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="7" r /></sec>を増加させます。
+        <char uid="3P_Amphitrite" />の <sec typ="note">指揮 前プア</sec> 効果を 受ける 味方 攻撃機にも 同一の <sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>と <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="9" signless /></sec>を付与します。
+        <char uid="3P_Salacia" />の <sec typ="note">時ア, オム~チオン スエ!</sec> 機ンウン 中 攻撃機 1機ごと 追加ドウェは 効果に <sec>自身を 攻撃機 チウィグウプ</sec>して バフ 効果に ハアプスアンします。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，對我軍支援機施加指定保護並賦予防護罩。自身也獲得相同數值的防護罩。
-        <sec typ="cond">回合開始時</sec>，若自身指定保護的我軍<sec typ="cond">位於中列</sec>，則增加其行動力；若<sec typ="cond">位於後列</sec>，則增加其攻擊力。
-        也對受到<char uid="3P_Amphitrite" />的<sec typ="note">指揮傳達</sec>效果的我軍攻擊機施加相同的指定保護與防護罩。
-        在<char uid="3P_Salacia" />的<sec typ="note">西亞，超~強哦！</sec>功能中，將自身視為攻擊機，並計入每1名攻擊機所增加的追加增益效果。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_Char" /> 我方 支援機 指定保護</sec>並 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾 <val idx="4" signless /></sec>賦予。
+        自身 又 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 相同 數值的 護盾</sec>獲得。
+        <sec typ="cond">回合開始時</sec>， 自身 指定保護 中的 我方 <sec typ="cond">中排於 位於時</sec>， 目標的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>， <sec typ="cond">後排於 位於時</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="7" r /></sec>使其增加。
+        <char uid="3P_Amphitrite" />的 <sec typ="note">指揮 前破</sec> 效果 受到 我方 攻擊機給也 相同 <sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>與 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾 <val idx="9" signless /></sec>賦予。
+        <char uid="3P_Salacia" />的 <sec typ="note">時A， 語m~Cheong 三!</sec> 台能力 中 攻擊機 1台每 額外變為 效果於 <sec>自身 攻擊機 視為</sec>並 增益 效果於 下psan。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -6801,18 +6805,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> 효과를 획득하고 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> HP <val idx="5" r signless />만큼 방어 관통 저항 증가</sec> 효과를 획득합니다.
         <sec typ="cond">라운드 개시 시</sec>, 자신이 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <sec typ="attr">강화 효과</sec></sec> 를 보유한 경우, <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="4" r /></sec>가 추가로 증가합니다.
         <sec typ="cond">라운드 개시 시</sec>, 자신이 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원 <sec typ="attr">강화 효과</sec></sec>를 보유한 경우, <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> HP <val idx="6" r signless />만큼 방어 관통 저항 증가</sec> 효과를 추가로 획득합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分は<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>効果を獲得し、<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="Current_Hp_Piercedown" />HP<val idx="5" r signless />分の防御貫通耐性増加</sec>効果を獲得します。
-        <sec typ="cond">ラウンド開始時</sec>、自分が<sec typ="cond"><buff typ="DAMAGE_REDUCE" />受けるダメージ減少<sec typ="attr">強化効果</sec></sec>を保有している場合、<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="4" r /></sec>がさらに増加します。
-        <sec typ="cond">ラウンド開始時</sec>、自分が<sec typ="cond"><buff typ="SUPPORT_ATTACK" />攻撃支援<sec typ="attr">強化効果</sec></sec>を保有している場合、<sec typ="buff"><buff typ="Current_Hp_Piercedown" />HP<val idx="6" r signless />分の防御貫通耐性増加</sec>効果を追加で獲得します。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, self gains <sec typ="buff"><buff typ="DEF_Line" /> Protect Row</sec> and <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="3" r /></sec> / <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> Defense Penetration Resistance equal to HP <val idx="5" r signless /></sec> increase effects.
-        <sec typ="cond">At the start of the round</sec>, if self has <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> Received Damage Decrease <sec typ="attr">upgrade effects</sec></sec>, <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="4" r /></sec> increases further.
-        <sec typ="cond">At the start of the round</sec>, if self has <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> Attack Support <sec typ="attr">upgrade effects</sec></sec>, additionally gains <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> Defense Penetration Resistance equal to HP <val idx="6" r signless /></sec>.
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> effect and gains and <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="3" r /></sec> / <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> HP <val idx="5" r signless /> by Defense Penetration resistance increase</sec> gains the effect.
+        <sec typ="cond">At round start</sec>, self <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> damage taken decrease <sec typ="attr">buffs</sec></sec> if having, <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="4" r /></sec>additionally increases.
+        <sec typ="cond">At round start</sec>, self <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> Attack Support <sec typ="attr">buffs</sec></sec> if having, <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> HP <val idx="6" r signless /> by Defense Penetration resistance increase</sec> effect and additionally gains.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec> 効果を 獲得し、 <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> HP <val idx="5" r signless />分 防御貫通 耐性 増加</sec> 効果を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身が <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少 <sec typ="attr">強化効果</sec></sec> を 保有している場合、 <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="4" r /></sec>が追加で増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身が <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻撃支援 <sec typ="attr">強化効果</sec></sec>を 保有している場合、 <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> HP <val idx="6" r signless />分 防御貫通 耐性 増加</sec> 効果を 追加で 獲得します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身獲得<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>效果，並獲得<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="Current_Hp_Piercedown" />相當於HP<val idx="5" r signless />的防禦穿透抗性增加</sec>效果。
-        <sec typ="cond">回合開始時</sec>，若自身持有<sec typ="cond"><buff typ="DAMAGE_REDUCE" />所受傷害減少<sec typ="attr">強化效果</sec></sec>，則<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="4" r /></sec>進一步增加。
-        <sec typ="cond">回合開始時</sec>，若自身持有<sec typ="cond"><buff typ="SUPPORT_ATTACK" />支援攻擊<sec typ="attr">強化效果</sec></sec>，則額外獲得<sec typ="buff"><buff typ="Current_Hp_Piercedown" />相當於HP<val idx="6" r signless />的防禦穿透抗性增加</sec>效果。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="DEF_Line" /> 列保護</sec> 效果 獲得，並 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> HP <val idx="5" r signless />等量 防禦穿透 抗性 增加</sec> 獲得效果。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少 <sec typ="attr">強化效果</sec></sec> 持有時， <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="4" r /></sec>會額外增加。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻擊支援 <sec typ="attr">強化效果</sec></sec> 持有時， <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> HP <val idx="6" r signless />等量 防禦穿透 抗性 增加</sec> 效果 額外 獲得。
   "5":
     key: "5"
     icon: P.AWACS
@@ -7072,18 +7076,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> 효과를 보유한 모든 적에게 1라운드 동안 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> 감소 효과를 부여합니다.
         <sec typ="cond">피격 시</sec>, <sec typ="note">영웅의 기상</sec>에 의한 <sec typ="cond"><buff typ="AP_DOWN" /> 행동력 감소</sec> 효과가 적용중인 대상에게 2라운드 동안 <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> 대 중장형 피해량 <val idx="3" r /></sec> 감소 효과를 부여합니다. (최대 3중첩)
         <sec typ="cond">피격 시</sec>, <sec typ="note">함대원형진</sec>에 의한 <sec typ="cond"><buff typ="DAMAGE_ABSORB" />  방어막 효과</sec>가 적용중인 대상의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>을(를) 증가시킵니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond"><buff typ="VULNERABLE" />受けるダメージ増加</sec>効果を持つ全ての敵に1ラウンドの間、<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="0" r /></sec>減少効果を付与します。
-        <sec typ="cond">被撃時</sec>、<sec typ="note">英雄の気迫</sec>による<sec typ="cond"><buff typ="AP_DOWN" />行動力減少</sec>効果が適用中の対象に2ラウンドの間、<sec typ="buff"><buff typ="ARMORED_DMG_DOWN" />対重装型ダメージ量<val idx="3" r /></sec>減少効果を付与します。(最大3スタック)
-        <sec typ="cond">被撃時</sec>、<sec typ="note">艦隊輪形陣</sec>による<sec typ="cond"><buff typ="DAMAGE_ABSORB" />バリア効果</sec>が適用中の対象の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="4" /></sec>を増加させます。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, inflicts <sec typ="cond"><buff typ="VULNERABLE" /> Received Damage Increase</sec> targets with <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="0" r /></sec> decrease for 1 round.
-        <sec typ="cond">When attacked</sec>, inflicts targets affected by the <sec typ="cond"><buff typ="AP_DOWN" /> MOVE Decrease</sec> effect from <sec typ="note">Hero's Awakening</sec> with <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> Anti-Heavy Armor Damage <val idx="3" r /></sec> decrease for 2 rounds. (Max 3 stacks)
-        <sec typ="cond">When attacked</sec>, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> of targets affected by the <sec typ="cond"><buff typ="DAMAGE_ABSORB" /> Defensive Shield effect</sec> from <sec typ="note">Fleet Circular Formation</sec>.
+        <sec typ="cond">At round start</sec>, <sec typ="cond"><buff typ="VULNERABLE" /> damage taken increase</sec> effect and has all enemiesto 1 round <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="0" r /></sec> decrease grants the effect.
+        <sec typ="cond">When hit</sec>, <sec typ="note">hero of unit Sang</sec> to by <sec typ="cond"><buff typ="AP_DOWN" /> Action Speed decrease</sec> effect and enemy being applied to the target 2 rounds <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> Anti-Heavy damage <val idx="3" r /></sec> decrease grants the effect. (up to 3stack)
+        <sec typ="cond">When hit</sec>, <sec typ="note">Ham member Hyeong formation</sec> to by <sec typ="cond"><buff typ="DAMAGE_ABSORB" /> Barrier effect and</sec> enemy being applied target's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond"><buff typ="VULNERABLE" /> 受けるダメージ 増加</sec> 効果を 保有する すべての敵に 1ラウンドの間 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> 減少 効果を付与します。
+        <sec typ="cond">被弾時</sec>、 <sec typ="note">ヨンウンの 機スアン</sec>に よる <sec typ="cond"><buff typ="AP_DOWN" /> 行動力 減少</sec> 効果が 適用中の 対象に 2ラウンドの間 <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> 対重装型ダメージ <val idx="3" r /></sec> 減少 効果を付与します。 (最大 3重複)
+        <sec typ="cond">被弾時</sec>、 <sec typ="note">ハアム隊員ハヨンジイン</sec>に よる <sec typ="cond"><buff typ="DAMAGE_ABSORB" /> バリア 効果</sec>が 適用中の 対象の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>を増加させます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，對所有持有<sec typ="cond"><buff typ="VULNERABLE" />所受傷害增加</sec>效果的敵人，在1回合內施加<sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="0" r /></sec>減少效果。
-        <sec typ="cond">被擊時</sec>，對處於<sec typ="note">英雄之氣勢</sec>所造成的<sec typ="cond"><buff typ="AP_DOWN" />行動力減少</sec>效果中的目標，於2回合內施加<sec typ="buff"><buff typ="ARMORED_DMG_DOWN" />對重裝型傷害量<val idx="3" r /></sec>減少效果。（最多3層）
-        <sec typ="cond">被擊時</sec>，增加受到<sec typ="note">艦隊圓形陣</sec>所造成的<sec typ="cond"><buff typ="DAMAGE_ABSORB" />防護罩效果</sec>影響之目標的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="4" /></sec>。
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond"><buff typ="VULNERABLE" /> 受到的傷害 增加</sec> 效果 持有的 所有敵人給 1回合內 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> 減少 賦予效果。
+        <sec typ="cond">被擊時</sec>， <sec typ="note">Yeongung的 台Sang</sec>於 的 <sec typ="cond"><buff typ="AP_DOWN" /> 行動力 減少</sec> 效果 套用中的 對目標 2回合內 <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> 對重裝型傷害 <val idx="3" r /></sec> 減少 賦予效果。 (最大 3疊加)
+        <sec typ="cond">被擊時</sec>， <sec typ="note">下m隊員Hyeong至n</sec>於 的 <sec typ="cond"><buff typ="DAMAGE_ABSORB" /> 護盾 效果</sec> 套用中的 目標的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>使其增加。
 dialogue:
   KR:
     "1":

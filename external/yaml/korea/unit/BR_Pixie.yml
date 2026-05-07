@@ -1646,21 +1646,21 @@ skills:
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>가 감소합니다.
         <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가 효과를 해제</sec>합니다.
         <sec typ="important">스킬 레벨 당 +8%의 적중 보정이 적용됩니다.</sec>
-      JP: |-
-        重機関銃で狙撃し、単一対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>, 2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>が減少します。
-        <sec typ="cond">クリティカル時</sec>, 対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 防御力増加効果を解除</sec>します。
-        <sec typ="important">スキルレベルごとに+8%の命中補正が適用されます。</sec>
       EN: |-
-        Aimed fire from a heavy machine gun deals <dmg elem="physics" /> damage to a single target.
-        <sec typ="cond">On hit</sec>, the target’s <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> decreases for 2 rounds.
-        <sec typ="cond">On CRIT</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target’s DEF Increase effect</sec>.
-        <sec typ="important">+8% hit correction is applied per skill level.</sec>
+        Aims and fires a heavy machine gun, dealing <dmg elem="physics" /> to a single target.
+        <sec typ="cond">On hit</sec>, reduces the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="0" r /></sec> for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes DEF increase effects</sec> from the target.
+        <sec typ="important">A +8% Accuracy correction per skill level is applied.</sec>
+      JP: |-
+        重機関銃で狙撃し、単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>が減少します。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />防御力増加効果を解除</sec>します。
+        <sec typ="important">スキルレベルごとに+8%の命中補正が適用されます。</sec>
       TC: |-
-        以重機槍瞄準射擊，對單一目標造成<dmg elem="physics" />傷害。
-        <sec typ="cond">命中時</sec>，在2回合內減少目標的<sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>。
-        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" /> 解除目標的防禦力增加效果</sec>。
-        <sec typ="important">每提升1級技能，命中修正增加8%。</sec>
+        瞄準射擊重機槍，對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>在2回合內降低。
+        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的防禦力增加效果</sec>。
+        <sec typ="important">每技能等級套用+8%的命中補正。</sec>
   "2":
     key: "2"
     icon: MGWideShot
@@ -2776,21 +2776,21 @@ skills:
         <sec typ="dmg">중행을 제외한 행에는 25% 감소한 피해를 입힙니다.</sec>
         <sec typ="cond">적중 대상의 방어력이 자신보다 낮은 경우</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>가 감소합니다.
         <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>이(가) 감소합니다.
-      JP: |-
-        重機関銃を乱射して指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
-        <sec typ="dmg">中列を除く列には25%減少したダメージを与えます。</sec>
-        <sec typ="cond">命中した対象の防御力が自分より低い場合</sec>, 2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>が減少します。
-        <sec typ="cond">クリティカル時</sec>, 対象の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>が減少します。
       EN: |-
-        Sprays a heavy machine gun at the designated area, dealing <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage.
-        <sec typ="dmg">Deals 25% reduced damage to rows excluding the middle row.</sec>
-        <sec typ="cond">If the hit target’s DEF is lower than self’s</sec>, the target’s <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> decreases for 2 rounds.
-        <sec typ="cond">On CRIT</sec>, the target’s <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec> decreases.
+        Fires a heavy machine gun wildly, dealing <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area.
+        <sec typ="dmg">Deals 25% reduced damage to rows other than the middle row.</sec>
+        <sec typ="cond">If the hit target's DEF is lower than self's</sec>, reduces the target's <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, reduces the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>.
+      JP: |-
+        重機関銃を乱射し、指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="dmg">中列を除く列には25%減少したダメージを与えます。</sec>
+        <sec typ="cond">命中対象の防御力が自身より低い場合</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec>が減少します。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="2" /></sec>が減少します。
       TC: |-
-        以重機槍掃射指定範圍，造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害。
-        <sec typ="dmg">對除中列以外的列造成減少25%的傷害。</sec>
-        <sec typ="cond">若命中目標的防禦力低於自身</sec>，則在2回合內減少目標的<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="0" r /></sec>。
-        <sec typ="cond">暴擊時</sec>，減少目標的<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>。
+        亂射重機槍，對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        <sec typ="dmg">對中列以外的列造成降低25%的傷害。</sec>
+        <sec typ="cond">命中目標的防禦力低於自身時</sec>，目標的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="0" r /></sec>在2回合內降低。
+        <sec typ="cond">暴擊時</sec>，目標的<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="2" /></sec>降低。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -4209,15 +4209,15 @@ skills:
       KR: |-
         <sec typ="cond">전투 개시 시</sec>, 아군 / 적 수에 비례하여 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" /></sec>이(가) 증가합니다.
         <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec>가 활성화됩니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>, 味方 / 敵の数に比例して自身の<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>, 自身は<sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec>が有効になります。
       EN: |-
-        <sec typ="cond">At the start of combat</sec>, self’s <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="0" /></sec> increases in proportion to the number of allies/enemies.
-        <sec typ="cond">At the start of the round</sec>, self’s <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> is activated.
+        <sec typ="cond">At battle start</sec>, increases own <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="0" /></sec> in proportion to the number of allies / enemies.
+        <sec typ="cond">At round start</sec>, activates <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> on self.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、味方 / 敵の数に比例して自身の<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、自身は<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>が有効になります。
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" /></sec>會隨我軍 / 敵軍數量成比例增加。
-        <sec typ="cond">回合開始時</sec>，自身會啟用<sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec>。
+        <sec typ="cond">戰鬥開始時</sec>，依友軍 / 敵人數量比例增加自身的<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="0" /></sec>。
+        <sec typ="cond">回合開始時</sec>，自身啟用<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>。
   "4":
     key: "4"
     icon: P.TeamAtkDeBuff
@@ -4455,21 +4455,21 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
         <sec typ="cond">피격 시</sec>, 2라운드 동안 적 전체의 <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="3" r /></sec>가 감소합니다.
         <sec typ="cond">대상이 공격기인 경우</sec>, 효과가 두 배로 증폭됩니다.
-      JP: |-
-        自身の基本<sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性</sec>が75%に増加します。
-        <sec typ="cond">ラウンド開始時</sec>, 3ラウンドの間、自身の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が増加します。
-        <sec typ="cond">被撃時</sec>, 2ラウンドの間、敵全体の<sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="3" r /></sec>が減少します。
-        <sec typ="cond">対象が攻撃機の場合</sec>, 効果が2倍に増幅されます。
       EN: |-
-        Self’s base <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance</sec> increases to 75%.
-        <sec typ="cond">At the start of the round</sec>, self’s <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> increases for 3 rounds.
-        <sec typ="cond">When hit</sec>, all enemies’ <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="3" r /></sec> decreases for 2 rounds.
-        <sec typ="cond">If the target is an Attacker</sec>, the effect is doubled.
+        Own base <sec typ="buff"><buff typ="ICERES_UP" /> Cold Resistance</sec> increases to 75%.
+        <sec typ="cond">At round start</sec>, increases own <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical Rate <val idx="1" r /></sec> for 3 rounds.
+        <sec typ="cond">When hit</sec>, reduces all enemies' <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="3" r /></sec> for 2 rounds.
+        <sec typ="cond">If the target is an Attacker</sec>, the effect is amplified twofold.
+      JP: |-
+        自身の基本<sec typ="buff"><buff typ="ICERES_UP" />冷気耐性</sec>が75%に増加します。
+        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間、自身の<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec>が増加します。
+        <sec typ="cond">被撃時</sec>、2ラウンドの間、敵全体の<sec typ="buff"><buff typ="SKILL_DOWN" />スキル威力<val idx="3" r /></sec>が減少します。
+        <sec typ="cond">対象が攻撃機の場合</sec>、効果が2倍に増幅されます。
       TC: |-
-        自身的基本<sec typ="buff"><buff typ="ICERES_UP" /> 冰冷抗性</sec>增加至75%。
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>在3回合內增加。
-        <sec typ="cond">受到攻擊時</sec>，敵軍全體的<sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="3" r /></sec>在2回合內減少。
-        <sec typ="cond">若目標為攻擊機</sec>，則效果加倍。
+        自身的基礎<sec typ="buff"><buff typ="ICERES_UP" />寒氣抗性</sec>增加至75%。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>在3回合內增加。
+        <sec typ="cond">被擊中時</sec>，全體敵人的<sec typ="buff"><buff typ="SKILL_DOWN" />技能威力<val idx="3" r /></sec>在2回合內降低。
+        <sec typ="cond">目標為攻擊機時</sec>，效果增幅為兩倍。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -5234,18 +5234,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 획득합니다.
         <sec typ="cond"><char uid="BR_Leona" />의 <sec typ="note">공격 지휘</sec>가 활성화된 경우</sec>, <sec typ="cond">라운드 개시 시</sec> 자신은 <sec typ="buff"><buff typ="SKILL_UP" /> 방어력 <val idx="4" r signless />만큼 스킬 위력 증가</sec> 효과를 획득합니다.
         <sec typ="cond"><char uid="BR_Leona" />의 <sec typ="note">방어 지휘</sec>가 활성화된 경우</sec>, <sec typ="cond">라운드 개시 시</sec> 자신은 <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>가 활성화됩니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>, 自身の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果耐性 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="MARKING" /> 標的</sec>を獲得します。
-        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">攻撃指揮</sec>が有効な場合</sec>, <sec typ="cond">ラウンド開始時</sec>自分は<sec typ="buff"><buff typ="SKILL_UP" /> 防御力 <val idx="4" r signless />分のスキル威力増加</sec>効果を獲得します。
-        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">防御指揮</sec>が有効な場合</sec>, <sec typ="cond">ラウンド開始時</sec>自分は<sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>が有効になります。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, self’s <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increases and self gains <sec typ="buff"><buff typ="MARKING" /> Marked</sec>.
-        <sec typ="cond">If <char uid="BR_Leona" />’s <sec typ="note">Attack Command</sec> is active</sec>, <sec typ="cond">at the start of the round</sec> self gains an effect that increases Skill Power by <sec typ="buff"><buff typ="SKILL_UP" /> the amount of DEF <val idx="4" r signless /></sec>.
-        <sec typ="cond">If <char uid="BR_Leona" />’s <sec typ="note">Defense Command</sec> is active</sec>, <sec typ="cond">at the start of the round</sec> self gains <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec>.
+        <sec typ="cond">At round start</sec>, increases own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> and gains <sec typ="buff"><buff typ="MARKING" /> Marked</sec>.
+        <sec typ="cond">If <char uid="BR_Leona" />'s <sec typ="note">Offensive Command</sec> is active</sec>, <sec typ="cond">at round start</sec>, self gains a <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power increase equal to DEF <val idx="4" r signless /></sec> effect.
+        <sec typ="cond">If <char uid="BR_Leona" />'s <sec typ="note">Defensive Command</sec> is active</sec>, <sec typ="cond">at round start</sec>, self activates <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗<val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="MARKING" />標的</sec>を獲得します。
+        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">攻撃指揮</sec>が有効な場合</sec>、<sec typ="cond">ラウンド開始時</sec>、自身は<sec typ="buff"><buff typ="SKILL_UP" />防御力<val idx="4" r signless />分のスキル威力増加</sec>効果を獲得します。
+        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">防御指揮</sec>が有効な場合</sec>、<sec typ="cond">ラウンド開始時</sec>、自身は<sec typ="buff"><buff typ="DEF_Side" />列保護</sec>が有効になります。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抵抗 <val idx="0" r /></sec>增加，並獲得<sec typ="buff"><buff typ="MARKING" /> 標記</sec>。
-        <sec typ="cond">若<char uid="BR_Leona" />的<sec typ="note">攻擊指揮</sec>啟用</sec>，則<sec typ="cond">回合開始時</sec>自身獲得<sec typ="buff"><buff typ="SKILL_UP" /> 依防禦力 <val idx="4" r signless />增加技能威力</sec>效果。
-        <sec typ="cond">若<char uid="BR_Leona" />的<sec typ="note">防禦指揮</sec>啟用</sec>，則<sec typ="cond">回合開始時</sec>自身會啟用<sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性<val idx="0" r /></sec>增加，並獲得<sec typ="buff"><buff typ="MARKING" />標記</sec>。
+        <sec typ="cond"><char uid="BR_Leona" />的<sec typ="note">攻擊指揮</sec>啟用時</sec>，<sec typ="cond">回合開始時</sec>自身獲得<sec typ="buff"><buff typ="SKILL_UP" />依防禦力<val idx="4" r signless />增加技能威力</sec>效果。
+        <sec typ="cond"><char uid="BR_Leona" />的<sec typ="note">防禦指揮</sec>啟用時</sec>，<sec typ="cond">回合開始時</sec>自身啟用<sec typ="buff"><buff typ="DEF_Side" />列保護</sec>。
 dialogue:
   KR:
     "1":

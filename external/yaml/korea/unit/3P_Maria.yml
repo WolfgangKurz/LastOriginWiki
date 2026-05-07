@@ -1443,15 +1443,15 @@ skills:
       KR: |-
         더블 배럴 샷건으로 대상에게 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 <sec typ="buff"><buff typ="PROVOKE" /> 대상을 도발</sec>하며 <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="1" r /></sec>를 감소시킵니다.
-      JP: |-
-        ダブルバレルショットガンで対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>, 2ラウンドの間、<sec typ="buff"><buff typ="PROVOKE" />対象を挑発</sec>し、<sec typ="buff"><buff typ="SKILL_DOWN" />スキル威力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="1" r /></sec>を減少させます。
       EN: |-
         Deals <dmg elem="physics" /> to the target with a double-barrel shotgun.
-        <sec typ="cond">On hit</sec>, for 2 rounds, <sec typ="buff"><buff typ="PROVOKE" /> taunts the target</sec> and reduces <sec typ="buff"><buff typ="SKILL_DOWN" /> skill power <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" r /></sec>.
+        <sec typ="cond">On hit</sec>, <sec typ="buff"><buff typ="PROVOKE" /> Provokes the target</sec> for 2 rounds and decreases <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power by <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Power by <val idx="1" r /></sec>.
+      JP: |-
+        ダブルバレルショットガンで対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間<sec typ="buff"><buff typ="PROVOKE" />対象を挑発</sec>し、<sec typ="buff"><buff typ="SKILL_DOWN" />スキル威力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="1" r /></sec>を減少させます。
       TC: |-
-        以雙管霰彈槍對目標造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，在2回合內<sec typ="buff"><buff typ="PROVOKE" />挑釁目標</sec>，並降低<sec typ="buff"><buff typ="SKILL_DOWN" />技能威力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="1" r /></sec>。
+        用雙管霰彈槍對目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，2回合內<sec typ="buff"><buff typ="PROVOKE" />挑釁目標</sec>，並使<sec typ="buff"><buff typ="SKILL_DOWN" />技能威力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="1" r /></sec>降低。
   "2":
     key: "2"
     icon: SelfDefBuff
@@ -1933,15 +1933,15 @@ skills:
       KR: |-
         자신과 대상 아군에게 3라운드 동안 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec> 감소 효과를 부여합니다.
         <sec typ="cond">대상이 보호기가 아닌 경우</sec>, <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec> 효과가 추가됩니다.
-      JP: |-
-        自身と対象の味方に3ラウンドの間、<sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア<val idx="0" signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />被ダメージ<val idx="3" r inv /></sec>減少効果を付与します。
-        <sec typ="cond">対象が保護機でない場合</sec>, <sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>効果が追加されます。
       EN: |-
-        Grants self and the target ally <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="0" signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="3" r inv /></sec> reduction for 3 rounds.
-        <sec typ="cond">If the target is not a Protector</sec>, <sec typ="buff"><buff typ="DEF_Char" /> designated protection</sec> is additionally applied.
+        Grants herself and the target ally <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="0" signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease by <val idx="3" r inv /></sec> for 3 rounds.
+        <sec typ="cond">If the target is not a Protector</sec>, adds <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec>.
+      JP: |-
+        自身と対象の味方に3ラウンドの間<sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア<val idx="0" signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="3" r inv /></sec>減少効果を付与します。
+        <sec typ="cond">対象が保護機でない場合</sec>、<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>効果が追加されます。
       TC: |-
-        對自身與目標我方套用3回合的<sec typ="buff"><buff typ="DAMAGE_ABSORB" />防護罩<val idx="0" signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受傷害<val idx="3" r inv /></sec>降低效果。
-        <sec typ="cond">若目標不是保護機</sec>，則會追加<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>效果。
+        賦予自身與目標我方3回合的<sec typ="buff"><buff typ="DAMAGE_ABSORB" />護盾<val idx="0" signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到傷害<val idx="3" r inv /></sec>降低效果。
+        <sec typ="cond">若目標不是保護機</sec>，追加<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>效果。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -2250,21 +2250,21 @@ skills:
         <sec>상기 효과는 <sec typ="buff">대기</sec>를 통해 해제할 수 있습니다.</sec>
         <sec typ="cond">라운드 개시 시</sec>, 상기 효과가 적용된 범위 내 아군에게 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화</sec> <sec typ="attr">일반 효과</sec>를 부여합니다.
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>가 증가합니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>, 保護機を除く範囲内の味方に<sec typ="buff"><buff typ="SEAL_SKILL" />スキル使用不可</sec> / <sec typ="buff"><buff typ="SNARE" />移動不可</sec>の<sec typ="attr">一般効果</sec>を付与します。
-        <sec>上記効果は<sec typ="buff">待機</sec>で解除できます。</sec>
-        <sec typ="cond">ラウンド開始時</sec>, 上記効果が適用された範囲内の味方に<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化</sec>の<sec typ="attr">一般効果</sec>を付与します。
-        <sec typ="cond">ラウンド開始時</sec>, 範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>が増加します。
       EN: |-
-        <sec typ="cond">At battle start</sec>, grants allies in range excluding Protectors the <sec typ="attr">general effects</sec> of <sec typ="buff"><buff typ="SEAL_SKILL" /> skill use disabled</sec> / <sec typ="buff"><buff typ="SNARE" /> immobility</sec>.
-        <sec>The above effects can be removed through <sec typ="buff">Wait</sec>.</sec>
-        <sec typ="cond">At round start</sec>, grants allies in range affected by the above effects the <sec typ="buff"><buff typ="DEF_All" /> damage nullification</sec> <sec typ="attr">general effect</sec>.
-        <sec typ="cond">At round start</sec>, increases allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" r /></sec> in range.
+        <sec typ="cond">At battle start</sec>, grants allies within range, excluding Protectors, <sec typ="buff"><buff typ="SEAL_SKILL" /> Unable to Use Skills</sec> / <sec typ="buff"><buff typ="SNARE" /> Unable to Move</sec> <sec typ="attr">General Effects</sec>.
+        <sec>The above effects can be removed by <sec typ="buff">Wait</sec>.</sec>
+        <sec typ="cond">At round start</sec>, grants allies within range affected by the above effects <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification</sec> <sec typ="attr">General Effect</sec>.
+        <sec typ="cond">At round start</sec>, increases allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power by <val idx="4" r /></sec> within range.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、保護機を除く範囲内の味方に<sec typ="buff"><buff typ="SEAL_SKILL" />スキル使用不可</sec> / <sec typ="buff"><buff typ="SNARE" />移動不可</sec><sec typ="attr">一般効果</sec>を付与します。
+        <sec>上記効果は<sec typ="buff">待機</sec>で解除できます。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、上記効果が適用された範囲内の味方に<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化</sec><sec typ="attr">一般効果</sec>を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>が増加します。
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，對除保護機外的範圍內我方施加<sec typ="buff"><buff typ="SEAL_SKILL" />無法使用技能</sec> / <sec typ="buff"><buff typ="SNARE" />無法移動</sec>的<sec typ="attr">一般效果</sec>。
+        <sec typ="cond">戰鬥開始時</sec>，賦予範圍內除保護機外的我方<sec typ="buff"><buff typ="SEAL_SKILL" />無法使用技能</sec> / <sec typ="buff"><buff typ="SNARE" />無法移動</sec><sec typ="attr">一般效果</sec>。
         <sec>上述效果可透過<sec typ="buff">待機</sec>解除。</sec>
-        <sec typ="cond">回合開始時</sec>，對套用上述效果的範圍內我方施加<sec typ="buff"><buff typ="DEF_All" />傷害無效化</sec>的<sec typ="attr">一般效果</sec>。
-        <sec typ="cond">回合開始時</sec>，增加範圍內我方的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，賦予套用上述效果的範圍內我方<sec typ="buff"><buff typ="DEF_All" />傷害無效化</sec><sec typ="attr">一般效果</sec>。
+        <sec typ="cond">回合開始時</sec>，範圍內我方的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -2767,21 +2767,21 @@ skills:
         <sec typ="cond">전투 개시 시</sec>, 인접한 아군 1기당 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>이(가) 증가합니다.
         <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">준비됐나요?</sec> 상태가 아닌 범위 내 아군에게 <sec typ="note">형상기억 스커트</sec> 지속 효과를 부여합니다.
         <sec>스킬 효과는 <sec typ="note">뒷바라지</sec>의 스킬 레벨에 비례합니다.</sec>
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>, <sec typ="note">準備できましたか？</sec>効果の対象となる味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>を増加させます。
-        <sec typ="cond">戦闘開始時</sec>, 隣接する味方1体につき自身の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="8" /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>, <sec typ="note">準備できましたか？</sec>状態でない範囲内の味方に<sec typ="note">形状記憶スカート</sec>の持続効果を付与します。
-        <sec>スキル効果は<sec typ="note">サポート</sec>のスキルレベルに比例します。</sec>
       EN: |-
-        <sec typ="cond">At battle start</sec>, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of allies affected by the <sec typ="note">Ready?</sec> effect.
-        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> increases for each adjacent ally.
-        <sec typ="cond">At round start</sec>, grants allies in range that are not in the <sec typ="note">Ready?</sec> state the persistent effect <sec typ="note">Shape-Memory Skirt</sec>.
-        <sec>The skill effect scales with the skill level of <sec typ="note">Support</sec>.</sec>
+        <sec typ="cond">At battle start</sec>, increases <sec typ="note"></sec> AP by <sec typ="buff"><buff typ="AP_UP" /> for allies targeted by <val idx="0" />Are You Ready?</sec>.
+        <sec typ="cond">At battle start</sec>, her <sec typ="buff"><buff typ="AP_UP" /> AP increases by <val idx="8" /></sec> for each adjacent ally.
+        <sec typ="cond">At round start</sec>, grants the <sec typ="note">Are You Ready?</sec> passive effect to allies within range who are not under <sec typ="note">Are You Ready?</sec>.
+        <sec>The skill effects are proportional to the skill level of <sec typ="note">Support Care</sec>.</sec>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="note">準備できましたか?</sec>効果の対象になる味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>を増加させます。
+        <sec typ="cond">戦闘開始時</sec>、隣接した味方1機につき自身の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="8" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">準備できましたか?</sec>状態でない範囲内の味方に<sec typ="note">形状記憶スカート</sec>持続効果を付与します。
+        <sec>スキル効果は<sec typ="note">世話焼き</sec>のスキルレベルに比例します。</sec>
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，增加成為<sec typ="note">準備好了嗎？</sec>效果目標之我方的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>。
-        <sec typ="cond">戰鬥開始時</sec>，每有1名鄰近我方，自身的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="8" /></sec>就會增加。
-        <sec typ="cond">回合開始時</sec>，對範圍內不處於<sec typ="note">準備好了嗎？</sec>狀態的我方賦予<sec typ="note">形狀記憶裙</sec>持續效果。
-        <sec>技能效果會依照<sec typ="note">支援</sec>的技能等級而成長。</sec>
+        <sec typ="cond">戰鬥開始時</sec>，使成為<sec typ="note">準備好了嗎？</sec>效果目標的我方<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec>，每有1名相鄰我方，自身的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="8" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，賦予範圍內未處於<sec typ="note">準備好了嗎？</sec>狀態的我方<sec typ="note">形狀記憶裙</sec>持續效果。
+        <sec>技能效果與<sec typ="note">照料</sec>的技能等級成比例。</sec>
   "5":
     key: "5"
     icon: P.Charm
@@ -3021,17 +3021,17 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
         <sec typ="note">형상기억 스커트</sec> 사용 시, 대상에게 <sec typ="note">준비됐어요~</sec> 지속 효과를 추가로 부여합니다.
         <sec typ="buff">대기</sec>를 통해 <sec typ="note">준비됐나요?</sec> 효과를 해제한 아군에게, 다음 2라운드 동안 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 부여합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>, 自身の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗<val idx="0" r /></sec>が増加します。
-        <sec typ="note">形状記憶スカート</sec>使用時、対象に<sec typ="note">準備できましたよ~</sec>の持続効果を追加で付与します。
-        <sec typ="buff">待機</sec>で<sec typ="note">準備できましたか？</sec>効果を解除した味方に、次の2ラウンドの間、<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視</sec>効果を付与します。
       EN: |-
-        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increases.
-        When using <sec typ="note">Shape-Memory Skirt</sec>, additionally grants the target the persistent effect <sec typ="note">Ready~</sec>.
-        For allies who cleared the <sec typ="note">Ready?</sec> effect through <sec typ="buff">Wait</sec>, grants <sec typ="buff"><buff typ="Guardpierce_Apply" /> protection ignore</sec> for the next 2 rounds.
+        <sec typ="cond">At round start</sec>, her <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance increases by <val idx="0" r /></sec>.
+        When using <sec typ="note">Are You Ready?</sec>, additionally grants the target the <sec typ="note">I'm Ready~</sec> passive effect.
+        Allies who removed <sec typ="buff">Are You Ready?</sec> through <sec typ="note">Wait</sec> gain <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> for the next 2 rounds.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="0" r /></sec>が増加します。
+        <sec typ="note">形状記憶スカート</sec>使用時、対象に<sec typ="note">準備できました~</sec>持続効果を追加で付与します。
+        <sec typ="buff">待機</sec>によって<sec typ="note">準備できましたか?</sec>効果を解除した味方に、次の2ラウンドの間<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視</sec>効果を付与します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="0" r /></sec>增加。
-        使用<sec typ="note">形狀記憶裙</sec>時，會額外對目標賦予<sec typ="note">準備好了喔~</sec>持續效果。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性<val idx="0" r /></sec>增加。
+        使用<sec typ="note">形狀記憶裙</sec>時，額外賦予目標<sec typ="note">準備好了喔～</sec>持續效果。
         對透過<sec typ="buff">待機</sec>解除<sec typ="note">準備好了嗎？</sec>效果的我方，在接下來2回合內賦予<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>效果。
 dialogue:
   KR:

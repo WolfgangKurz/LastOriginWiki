@@ -2604,15 +2604,15 @@ skills:
       KR: |-
         단일 대상에게 박음선을 표시하며 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>를 증가시키고 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
-      JP: |-
-        単一の対象に縫い目をつけ<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドにわたり対象の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="0" r /></sec>を増加させ、自分の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="2" r /></sec>が増加します。
       EN: |-
-        Marks a stitch seam and deals <dmg elem="physics" /> damage to a single target.
-        <sec typ="cond">On hit</sec>, increases the target's <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="0" r /></sec> for 2 rounds and increases own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec>.
+        Marks a seam on a single target and deals <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, increases the target’s <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> for 2 rounds and increases own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec>.
+      JP: |-
+        単一対象に縫い目を表示し、<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="0" r /></sec>を増加させ、自身の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="2" r /></sec>が増加します。
       TC: |-
-        對單一目標標記縫線並造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，2回合內提升目標的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="0" r /></sec>，並提升自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="2" r /></sec>。
+        對單一目標標示縫線並造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，2回合內增加目標的<sec typ="buff"><buff typ="VULNERABLE" />受到的傷害 <val idx="0" r /></sec>，並增加自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透 <val idx="2" r /></sec>。
   "2":
     key: "2"
     icon: WideBeamShot
@@ -8925,21 +8925,21 @@ skills:
         <sec typ="cond">적중 대상의 <sec typ="note">바늘땀</sec> 중첩이 2 이상일 경우</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
         <sec typ="cond">적중 시</sec>, 자신에게 적용된 <sec typ="note">실밥</sec> 중첩 수에 따라 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="6" r /></sec>가 증가합니다. (최대 5중첩)
         스킬을 사용한 다음 2라운드 동안 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" slot="4" r /></sec>를 증가시킵니다.
-      JP: |-
-        華麗な動きで針を踊らせ、対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中した対象の<sec typ="note">Stitches</sec>スタックが2以上の場合</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>します。
-        <sec typ="cond">命中時</sec>、自分に適用された<sec typ="note">Seams</sec>のスタック数に応じて<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="6" r /></sec>が増加します。(最大5スタック)
-        スキル使用後、2ラウンドの間、味方全体の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" slot="4" r /></sec>を増加させます。
       EN: |-
-        Weaves the needle to dance and deals <dmg elem="physics" /> damage to the target.
-        <sec typ="cond">If the hit target has 2 or more stacks of <sec typ="note">Stitches</sec></sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec> from the target.
-        <sec typ="cond">On hit</sec>, damage increases based on the number of <sec typ="note">Seams</sec> stacks active on self. (Max 5 stacks)
-        For the next 2 rounds after using the skill, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" slot="4" r /></sec> of all allies.
+        Moves splendidly, making the needle dance to deal <dmg elem="physics" /> to the target.
+        <sec typ="cond">If the hit target has 2 or more <sec typ="note">Stitches</sec> stacks</sec>, removes the target’s <sec typ="buff"><buff typ="REMOVE_BUFF" /> buffs</sec>.
+        <sec typ="cond">On hit</sec>, damage increases according to the number of <sec typ="note">Loose Thread</sec> stacks on self. <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="6" r /></sec> (up to 5 stacks)
+        For 2 rounds after using the skill, increases all allies’ <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="4" slot="4" r /></sec>.
+      JP: |-
+        華麗な動きで針を躍らせ、対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象の<sec typ="note">針目</sec>スタックが2以上の場合</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>します。
+        <sec typ="cond">命中時</sec>、自身に適用された<sec typ="note">糸くず</sec>スタック数に応じて<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="6" r /></sec>が増加します。（最大5スタック）
+        スキル使用後、2ラウンドの間味方全体の<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="4" slot="4" r /></sec>が増加します。
       TC: |-
-        以華麗動作讓針舞動，對目標造成<dmg elem="physics" />。
-        <sec typ="cond">若命中目標的<sec typ="note">Stitches</sec>疊加達2層以上</sec>，會<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的強化效果</sec>。
-        <sec typ="cond">命中時</sec>，依照套用於自身的<sec typ="note">Seams</sec>疊加數，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="6" r /></sec>增加。(最多5層)
-        使用技能後的2回合內，提升全體我軍的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" slot="4" r /></sec>。
+        以華麗的動作讓針舞動，對目標造成<dmg elem="physics" />。
+        <sec typ="cond">若命中目標的<sec typ="note">針腳</sec>疊層為2以上</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />強化效果</sec>。
+        <sec typ="cond">命中時</sec>，依自身套用的<sec typ="note">線頭</sec>疊層數增加<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="6" r /></sec>。（最多5疊）
+        使用技能後，2回合內增加全體我方的<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="4" slot="4" r /></sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -9150,20 +9150,20 @@ skills:
     desc:
       KR: |-
         <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격 / 지원 공격 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>가 증가합니다. (최대 2중첩)
-        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="2" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="2" /></sec>가 증가합니다.
         <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">적 개체 수가 1</sec>이고 <sec typ="cond"><char uid="PECS_TaylorClothcut" />가 있을 경우</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> 골무</sec>를 준비하여 <sec typ="buff"><sec typ="note">시침질</sec>의 스킬 위력이 감소</sec>하고 <sec typ="buff"><sec typ="note">파피용 스티치</sec>의 스킬 위력이 증가</sec>합니다.
-      JP: |-
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />再攻撃 / 支援攻撃時</sec>、2ラウンドの間自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>が増加します。(最大2スタック)
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動回数<val idx="2" /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">敵の数が1</sec>で<sec typ="cond"><char uid="PECS_TaylorClothcut" />がいる場合</sec>、<sec typ="buff"><buff typ="CHANGE_CHAR" />指ぬき</sec>を準備して<sec typ="buff"><sec typ="note">Tacking</sec>のスキル威力が減少</sec>し、<sec typ="buff"><sec typ="note">Papillon Stitch</sec>のスキル威力が増加</sec>します。
       EN: |-
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />When re-attacking / providing attack support</sec>, increases own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> for 2 rounds. (max 2 stacks)
-        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="Action_Number_Change_Up" /> max moves <val idx="2" /></sec> increases.
-        <sec typ="cond">At round start</sec> <sec typ="cond">when enemy count is 1</sec> and <sec typ="cond"><char uid="PECS_TaylorClothcut" /> is present</sec>, prepares <sec typ="buff"><buff typ="CHANGE_CHAR" /> a Thimble</sec> and <sec typ="buff"><sec typ="note">Tacking</sec>'s skill power decreases</sec> while <sec typ="buff"><sec typ="note">Papillon Stitch</sec>'s skill power increases</sec>.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> follow-up attack / support attack when</sec>, 2 rounds own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> increases. (up to 2stack)
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="Action_Number_Change_Up" /> up to number of actions <val idx="2" /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">enemy unit number 1</sec> and <sec typ="cond"><char uid="PECS_TaylorClothcut" /> if present</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> Thimble</sec> prepares <sec typ="buff"><sec typ="note">Basting</sec> of Skill Power decrease</sec> and <sec typ="buff"><sec typ="note">Papillon Stitch</sec> of Skill Power increase</sec>.
+      JP: |-
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃 / 支援攻撃 時</sec>、 2ラウンドの間 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>が増加します。 (最大 2重複)
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大 行ドオン 回数 <val idx="2" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">敵 個体 数が 1</sec>であり <sec typ="cond"><char uid="PECS_TaylorClothcut" />が 存在する場合</sec>、 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 指ぬき</sec>を ジウンブイして <sec typ="buff"><sec typ="note">しつけ縫い</sec>の スキル威力が 減少</sec>し、 <sec typ="buff"><sec typ="note">パピヨンステッチ</sec>の スキル威力が 増加</sec>します。
       TC: |-
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />再次攻擊 / 支援攻擊時</sec>，2回合內自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>增加。(最多2層)
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動次數<val idx="2" /></sec>增加。
-        <sec typ="cond">回合開始時</sec> <sec typ="cond">敵方數量為1</sec>且<sec typ="cond"><char uid="PECS_TaylorClothcut" />存在時</sec>，會準備<sec typ="buff"><buff typ="CHANGE_CHAR" />頂針</sec>，使<sec typ="buff"><sec typ="note">平針縫</sec>的技能威力下降</sec>，並使<sec typ="buff"><sec typ="note">蝴蝶針法</sec>的技能威力增加</sec>。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊 / 支援攻擊 時</sec>， 2回合內 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>增加。 (最大 2疊加)
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大 列同 次數 <val idx="2" /></sec>增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">敵人 單位 數 1</sec>且 <sec typ="cond"><char uid="PECS_TaylorClothcut" /> 存在時</sec>， <sec typ="buff"><buff typ="CHANGE_CHAR" /> 頂針</sec> 準備並 <sec typ="buff"><sec typ="note">假縫</sec>的 技能威力 減少</sec>並 <sec typ="buff"><sec typ="note">蝴蝶針法</sec>的 技能威力 增加</sec>。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -9524,31 +9524,31 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 아군 지원기의 공격을 지원</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>을(를) 증가시킵니다.
         <sec typ="cond">상기 효과가 적용된 아군이 있을 경우</sec>, 자신은 <sec>자신에 의한 효과 외의 공격 지원을 발동시킬 수 없습니다.</sec>
-        <sec typ="cond">자신 외의 <cmt t="PECS 의상 디자이너">$$PECS_CLOTHES_DESIGNER:0$</cmt>에 의한 효과가 자신에게 적용될 경우</sec>, 일부 효과가 증폭됩니다.
-        $$PECS_CLOTHES_DESIGNER~
+        <sec typ="cond">자신 외의 <cmt t="<PECS> 의상 디자이너"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt>에 의한 효과가 자신에게 적용될 경우</sec>, 일부 효과가 증폭됩니다.
+        <define name="PECS_CLOTHES_DESIGNER">
         <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
-        ~$$PECS_CLOTHES_DESIGNER
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" />味方の支援機の攻撃を支援</sec>し、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>を増加させます。
-        <sec typ="cond">上記効果が適用された味方がいる場合</sec>、自分は<sec>自分による効果以外の攻撃支援を発動させることはできません。</sec>
-        <sec typ="cond">自分以外の<cmt t="PECS 衣装デザイナー">$$PECS_CLOTHES_DESIGNER:0$</cmt>による効果が自分に適用される場合</sec>、一部の効果が増幅します。
-        $$PECS_CLOTHES_DESIGNER~
-        <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
-        ~$$PECS_CLOTHES_DESIGNER
+        </define>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, provides <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attack Support to allied Supporters</sec> and increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>.
-        <sec typ="cond">If there is an ally to whom the above effect is applied</sec>, self <sec>cannot trigger attack support effects other than self-caused ones.</sec>
-        <sec typ="cond">If self is affected by effects from a <cmt t="PECS Costume Designers">$$PECS_CLOTHES_DESIGNER:0$</cmt> other than self</sec>, some effects are amplified.
-        $$PECS_CLOTHES_DESIGNER~
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> allies Supporter of supports the attack</sec> and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec> increases.
+        <sec typ="cond">above affected by allies if present</sec>, self <sec>self to by effect and other than of Attack Support trigger when kill cannot.</sec>
+        <sec typ="cond">self other than of <cmt t="<PECS> Clothing Designer"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt> to by effect and self enemy to be applied case</sec>, some effect and amplification.
+        <define name="PECS_CLOTHES_DESIGNER">
         <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
-        ~$$PECS_CLOTHES_DESIGNER
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 味方 支援機の 攻撃を 支援</sec>し、 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>を増加させます。
+        <sec typ="cond">上記 効果が適用された 味方が 存在する場合</sec>、 自身は <sec>自身に よる 効果 外の 攻撃支援を ブアルドオン時クイル 数 ありません。</sec>
+        <sec typ="cond">自身 外の <cmt t="<PECS> 衣装デザイナー"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt>に よる 効果が 自身に 適用になる 場合</sec>、 一部 効果が 増幅されます。
+        <define name="PECS_CLOTHES_DESIGNER">
+        <char uid="PECS_Audrey" />、 <char uid="PECS_TaylorClothcut" />、 <char uid="PECS_Olivia" />
+        </define>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援我軍支援機的攻擊</sec>，並增加<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>。
-        <sec typ="cond">若有套用上述效果的我軍</sec>，自身<sec>無法發動自身效果以外的支援攻擊。</sec>
-        <sec typ="cond">若套用於自身的是來自自身之外的<cmt t="PECS服裝設計師">$$PECS_CLOTHES_DESIGNER:0$</cmt>效果</sec>，部分效果會增幅。
-        $$PECS_CLOTHES_DESIGNER~
-        <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
-        ~$$PECS_CLOTHES_DESIGNER
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 我方 支援機的 攻擊 支援</sec>並 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>使其增加。
+        <sec typ="cond">上述 已套用效果的 我方 存在時</sec>， 自身 <sec>自身於 的 效果 外的 攻擊支援 發動時台l 數 不存在。</sec>
+        <sec typ="cond">自身 外的 <cmt t="<PECS> 服裝設計師"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt>於 的 效果 自身給 套用將 情況</sec>， 部分 效果 增幅。
+        <define name="PECS_CLOTHES_DESIGNER">
+        <char uid="PECS_Audrey" />， <char uid="PECS_TaylorClothcut" />， <char uid="PECS_Olivia" />
+        </define>
   "5":
     key: "5"
     icon: P.Hang
@@ -9844,31 +9844,31 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="1" /></sec>이(가) 증가합니다.
         <sec typ="cond">적 개체 수가 3 이하일 경우</sec>, 자신의 액티브 스킬 효과가 두 배로 증폭됩니다.
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격 / 지원 공격 시</sec>, 2라운드 동안 <cmt t="PECS 의상 디자이너">$$PECS_CLOTHES_DESIGNER:0$</cmt>의 액티브 스킬 효과를 받는 적의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="5" r /></sec>를 감소시킵니다. (최대 5중첩)
-        $$PECS_CLOTHES_DESIGNER~
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격 / 지원 공격 시</sec>, 2라운드 동안 <cmt t="<PECS> 의상 디자이너"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt>의 액티브 스킬 효과를 받는 적의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="5" r /></sec>를 감소시킵니다. (최대 5중첩)
+        <define name="PECS_CLOTHES_DESIGNER">
         <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
-        ~$$PECS_CLOTHES_DESIGNER
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動回数<val idx="1" /></sec>が増加します。
-        <sec typ="cond">敵の数が3以下の場合</sec>、自分のアクティブスキル効果が2倍になります。
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />再攻撃 / 支援攻撃時</sec>、2ラウンドの間<cmt t="PECS 衣装デザイナー">$$PECS_CLOTHES_DESIGNER:0$</cmt>のアクティブスキル効果を受ける敵の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="5" r /></sec>を減少させます。(最大5スタック)
-        $$PECS_CLOTHES_DESIGNER~
-        <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
-        ~$$PECS_CLOTHES_DESIGNER
+        </define>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Action_Number_Change_Up" /> max moves <val idx="1" /></sec> increases.
-        <sec typ="cond">If enemy count is 3 or less</sec>, own Active Skill effects are doubled.
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />When re-attacking / providing attack support</sec>, for 2 rounds decreases the <sec typ="buff"><buff typ="ACCURACY_DOWN" /> ACU <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="5" r /></sec> of enemies affected by the Active Skill effects of the <cmt t="PECS Costume Designers">$$PECS_CLOTHES_DESIGNER:0$</cmt>. (Max 5 stacks)
-        $$PECS_CLOTHES_DESIGNER~
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Action_Number_Change_Up" /> up to number of actions <val idx="1" /></sec> increases.
+        <sec typ="cond">enemy unit number 3 or lessif</sec>, own active skill the effect is doubled amplification.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> follow-up attack / support attack when</sec>, 2 rounds <cmt t="<PECS> Clothing Designer"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt> of active skill effect and receives enemy's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="5" r /></sec> decreases. (up to 5stack)
+        <define name="PECS_CLOTHES_DESIGNER">
         <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
-        ~$$PECS_CLOTHES_DESIGNER
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大 行ドオン 回数 <val idx="1" /></sec>が増加します。
+        <sec typ="cond">敵 個体 数が 3 以下の場合</sec>、 自身の アクティブ スキル 効果が2倍で 増幅されます。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃 / 支援攻撃 時</sec>、 2ラウンドの間 <cmt t="<PECS> 衣装デザイナー"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt>の アクティブ スキル 効果を 受ける 敵の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="5" r /></sec>を減少させます。 (最大 5重複)
+        <define name="PECS_CLOTHES_DESIGNER">
+        <char uid="PECS_Audrey" />、 <char uid="PECS_TaylorClothcut" />、 <char uid="PECS_Olivia" />
+        </define>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動次數<val idx="1" /></sec>增加。
-        <sec typ="cond">若敵方數量為3以下</sec>，自身的主動技能效果會加倍。
-        <sec typ="cond"><buff typ="SUPPORT_ATTACK" />再次攻擊 / 支援攻擊時</sec>，2回合內使受到<cmt t="PECS服裝設計師">$$PECS_CLOTHES_DESIGNER:0$</cmt>主動技能效果影響的敵軍的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="5" r /></sec>降低。(最多5層)
-        $$PECS_CLOTHES_DESIGNER~
-        <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
-        ~$$PECS_CLOTHES_DESIGNER
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大 列同 次數 <val idx="1" /></sec>增加。
+        <sec typ="cond">敵人 單位 數 3 以下若為</sec>， 自身的 主動 技能 效果變為2倍以 增幅。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊 / 支援攻擊 時</sec>， 2回合內 <cmt t="<PECS> 服裝設計師"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt>的 主動 技能 效果 受到 敵人的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="5" r /></sec>使其減少。 (最大 5疊加)
+        <define name="PECS_CLOTHES_DESIGNER">
+        <char uid="PECS_Audrey" />， <char uid="PECS_TaylorClothcut" />， <char uid="PECS_Olivia" />
+        </define>
   F1:
     key: F1
     icon: WideSwordAttk
@@ -10221,15 +10221,15 @@ skills:
       KR: |-
         단일 대상에게 박음선을 표시하며 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec>를 증가시키고 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /></sec>가 증가합니다.
-      JP: |-
-        単一の対象に縫い目をつけ<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、2ラウンドにわたり対象の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="2" r /></sec>を増加させ、自分の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="4" r /></sec>が増加します。
       EN: |-
-        Marks a stitch seam and deals <dmg elem="physics" /> damage to a single target.
-        <sec typ="cond">On hit</sec>, increases the target's <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="2" r /></sec> for 2 rounds and increases own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="4" r /></sec>.
+        Marks a seam on a single target and deals <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, increases the target’s <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="2" r /></sec> for 2 rounds and increases own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="4" r /></sec>.
+      JP: |-
+        単一対象に縫い目を表示し、<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="2" r /></sec>を増加させ、自身の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="4" r /></sec>が増加します。
       TC: |-
-        對單一目標標記縫線並造成<dmg elem="physics" />。
-        <sec typ="cond">命中時</sec>，2回合內提升目標的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="2" r /></sec>，並提升自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="4" r /></sec>。
+        對單一目標標示縫線並造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，2回合內增加目標的<sec typ="buff"><buff typ="VULNERABLE" />受到的傷害 <val idx="2" r /></sec>，並增加自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透 <val idx="4" r /></sec>。
   F2:
     key: F2
     icon: WideBeamShot
@@ -16542,21 +16542,21 @@ skills:
         <sec typ="cond">적중 대상의 <sec typ="note">바늘땀</sec> 중첩이 2 이상일 경우</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
         <sec typ="cond">적중 시</sec>, 자신에게 적용된 <sec typ="note">실밥</sec> 중첩 수에 따라 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="6" r /></sec>가 증가합니다. (최대 5중첩)
         스킬을 사용한 다음 2라운드 동안 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" slot="4" r /></sec>를 증가시킵니다.
-      JP: |-
-        華麗な動きで針を踊らせ、対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中した対象の<sec typ="note">Stitches</sec>スタックが2以上の場合</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>します。
-        <sec typ="cond">命中時</sec>、自分に適用された<sec typ="note">Seams</sec>のスタック数に応じて<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="6" r /></sec>が増加します。(最大5スタック)
-        スキル使用後、2ラウンドの間、味方全体の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" slot="4" r /></sec>を増加させます。
       EN: |-
-        Weaves the needle to dance and deals <dmg elem="physics" /> damage to the target.
-        <sec typ="cond">If the hit target has 2 or more stacks of <sec typ="note">Stitches</sec></sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec> from the target.
-        <sec typ="cond">On hit</sec>, damage increases based on the number of <sec typ="note">Seams</sec> stacks active on self. (Max 5 stacks)
-        For the next 2 rounds after using the skill, increases the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" slot="4" r /></sec> of all allies.
+        Moves splendidly, making the needle dance to deal <dmg elem="physics" /> to the target.
+        <sec typ="cond">If the hit target has 2 or more <sec typ="note">Stitches</sec> stacks</sec>, removes the target’s <sec typ="buff"><buff typ="REMOVE_BUFF" /> buffs</sec>.
+        <sec typ="cond">On hit</sec>, damage increases according to the number of <sec typ="note">Loose Thread</sec> stacks on self. <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="6" r /></sec> (up to 5 stacks)
+        For 2 rounds after using the skill, increases all allies’ <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="4" slot="4" r /></sec>.
+      JP: |-
+        華麗な動きで針を躍らせ、対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象の<sec typ="note">針目</sec>スタックが2以上の場合</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>します。
+        <sec typ="cond">命中時</sec>、自身に適用された<sec typ="note">糸くず</sec>スタック数に応じて<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="6" r /></sec>が増加します。（最大5スタック）
+        スキル使用後、2ラウンドの間味方全体の<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="4" slot="4" r /></sec>が増加します。
       TC: |-
-        以華麗動作讓針舞動，對目標造成<dmg elem="physics" />。
-        <sec typ="cond">若命中目標的<sec typ="note">Stitches</sec>疊加達2層以上</sec>，會<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的強化效果</sec>。
-        <sec typ="cond">命中時</sec>，依照套用於自身的<sec typ="note">Seams</sec>疊加數，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="6" r /></sec>增加。(最多5層)
-        使用技能後的2回合內，提升全體我軍的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" slot="4" r /></sec>。
+        以華麗的動作讓針舞動，對目標造成<dmg elem="physics" />。
+        <sec typ="cond">若命中目標的<sec typ="note">針腳</sec>疊層為2以上</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />強化效果</sec>。
+        <sec typ="cond">命中時</sec>，依自身套用的<sec typ="note">線頭</sec>疊層數增加<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="6" r /></sec>。（最多5疊）
+        使用技能後，2回合內增加全體我方的<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="4" slot="4" r /></sec>。
 dialogue:
   KR:
     "1":

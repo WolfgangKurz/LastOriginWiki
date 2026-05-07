@@ -606,6 +606,7 @@ source:
     - Ev:Ev35:EV2-3B
   - - Ev:Ev36:EV2-7
   - - Ev:Ev37:EV2-1EX
+  - - Ev:Ev38:EV1-2EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -3478,15 +3479,15 @@ skills:
       KR: |-
         박격포를 발사해 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 대상을 <sec typ="buff"><buff typ="Push" /> <val idx="0" signless />칸 뒤로 밀어내며</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>을(를) 감소시킵니다.
         대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
-      JP: |-
-        迫撃砲を発射して<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与え、対象を<sec typ="buff"><buff typ="Push" /> <val idx="0" signless />マス後ろへ押し出し</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>を減少させます。
-        対象が<sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec>状態なら<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="4" r /></sec>が増加します。
       EN: |-
-        Fires a mortar shell that deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage, pushing the target back <sec typ="buff"><buff typ="Push" /> <val idx="0" signless /> tiles</sec> and decreasing <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>.
-        If the target is in <sec typ="cond"><buff typ="MARKING" /> Marked</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec> increases.
+        Fires a mortar to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />, <sec typ="buff"><buff typ="Push" /> pushes the target back <val idx="0" signless /> spaces</sec>, and decreases <sec typ="buff"><buff typ="AP_DOWN" /> AP by <val idx="3" /></sec>.
+        If the target is under <sec typ="cond"><buff typ="MARKING" /> Marked</sec> / <sec typ="cond"><buff typ="SNARE" /> Unable to Move</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt increases by <val idx="4" r /></sec>.
+      JP: |-
+        迫撃砲を発射して<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、対象を<sec typ="buff"><buff typ="Push" /><val idx="0" signless />マス後ろへ押し出し</sec>、<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="3" /></sec>を減少させます。
+        対象が<sec typ="cond"><buff typ="MARKING" />標識</sec> / <sec typ="cond"><buff typ="SNARE" />移動不可</sec>状態なら、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="4" r /></sec>が増加します。
       TC: |-
-        發射迫擊砲，造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害，並將目標<sec typ="buff"><buff typ="Push" /> 推開<val idx="0" signless />格</sec>，同時減少<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>。
-        若目標處於<sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="4" r /></sec>增加。
+        發射迫擊砲造成<sec typ="attr">無視保護</sec><dmg elem="physics" />，<sec typ="buff"><buff typ="Push" />將目標向後推<val idx="0" signless />格</sec>，並降低<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="3" /></sec>。
+        若目標處於<sec typ="cond"><buff typ="MARKING" />標記</sec> / <sec typ="cond"><buff typ="SNARE" />無法移動</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="4" r /></sec>增加。
   "2":
     key: "2"
     icon: CannonShotDelay
@@ -4372,21 +4373,21 @@ skills:
         적중 대상들은 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>이(가) 감소하며, 2라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" slot="7" r /></sec>가 증가합니다.
         목표 지점 주변에는 <sec typ="dmg">25% 감소한 피해</sec>를 줍니다.
         착탄 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>합니다.
-      JP: |-
-        1ラウンド後に着弾し、<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与える迫撃砲を発射します。
-        命中した対象は<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>が減少し、2ラウンドの間<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" slot="7" r /></sec>が増加します。
-        目標地点周辺には<sec typ="dmg">25%減少したダメージ</sec>を与えます。
-        着弾時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃効果を解除</sec>します。
       EN: |-
-        Fires a mortar shell that lands after 1 round and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage.
-        Hit targets have their <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> decreased, and their <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="1" slot="7" r /></sec> increases for 2 rounds.
-        Deals <sec typ="dmg">25% reduced damage</sec> to the area around the target point.
-        On impact, removes the target’s <sec typ="buff"><buff typ="REMOVE_BUFF" /> Retaliation effect</sec>.
+        Fires a mortar that lands after 1 round and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        Hit targets have <sec typ="buff"><buff typ="AP_DOWN" /> AP decreased by <val idx="0" /></sec>, and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken increases by <val idx="1" slot="7" r /></sec> for 2 rounds.
+        Deals <sec typ="dmg">25% reduced damage</sec> around the target point.
+        On impact, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's counterattack effects</sec>.
+      JP: |-
+        1ラウンド後に着弾し、<sec typ="attr">保護無視</sec><dmg elem="physics" />を与える迫撃砲を発射します。
+        命中対象は<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>が減少し、2ラウンドの間<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" slot="7" r /></sec>が増加します。
+        目標地点周辺には<sec typ="dmg">25%減少したダメージ</sec>を与えます。
+        着弾時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />反撃効果を解除</sec>します。
       TC: |-
-        在1回合後落地，發射造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害的迫擊砲。
-        命中目標會<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>減少，並在2回合內使其<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="1" slot="7" r /></sec>增加。
-        對目標位置周圍造成<sec typ="dmg">減少25%的傷害</sec>。
-        落地時，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊效果</sec>。
+        發射1回合後著彈、造成<sec typ="attr">無視保護</sec><dmg elem="physics" />的迫擊砲。
+        命中目標的<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>降低，並在2回合內使<sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="1" slot="7" r /></sec>增加。
+        對目標地點周圍造成<sec typ="dmg">減少25%的傷害</sec>。
+        著彈時，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的反擊效果</sec>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -4554,9 +4555,9 @@ skills:
             chance: 1
     desc:
       KR: 라운드 개시 시, 조명탄을 발사해 아군 전체의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>를 증가시키고 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 적중 감소 효과를 해제</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 치명타 감소 효과를 해제</sec>합니다.
-      JP: ラウンド開始時、照明弾を発射して味方全体の<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec>と<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>を増加させ、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 命中減少効果を解除</sec>し、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> クリティカル減少効果を解除</sec>します。
-      EN: At the start of the round, fires flares to increase all allies’ <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="0" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec>, and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes ACC decrease effects</sec> and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes CRIT decrease effects</sec>.
-      TC: 回合開始時，發射照明彈，使我軍全體的<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec>與<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>增加，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除命中減少效果</sec>、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除暴擊減少效果</sec>。
+      EN: <sec typ="cond">At round start</sec>, fires a flare, increasing all allies' <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="0" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical by <val idx="1" r /></sec>, and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes Accuracy Down effects</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes Critical Down effects</sec>.
+      JP: ラウンド開始時、照明弾を発射して味方全体の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec>と<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec>を増加させ、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />命中減少効果を解除</sec>、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />クリティカル減少効果を解除</sec>します。
+      TC: 回合開始時，發射照明彈，使全體我方的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec>和<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>增加，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除命中降低效果</sec>、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除暴擊降低效果</sec>。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -4825,15 +4826,15 @@ skills:
       KR: |-
         라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
         <sec typ="cond">해당 효과 활성화 상태에서 치명타 적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 지정 보호 해제</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 열 보호 해제</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 행 보호 효과를 해제</sec>합니다.
-      JP: |-
-        ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が増加します。
-        <sec typ="cond">この効果が有効な状態でクリティカル命中時</sec>, 対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 指定保護解除</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 列保護解除</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 行保護効果を解除</sec>します。
       EN: |-
-        At the start of the round, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACC <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec>.
-        <sec typ="cond">On CRIT hit while this effect is active</sec>, removes the target’s <sec typ="buff"><buff typ="REMOVE_BUFF" /> Designated Protection</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> Column Protection</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> Row Protection</sec>.
+        <sec typ="cond">At round start</sec>, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration by <val idx="2" r /></sec>.
+        <sec typ="cond">On critical hit while this effect is active</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Designated Protection</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> Column Protection</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> Row Protection effects</sec>.
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="2" r /></sec>が増加します。
+        <sec typ="cond">この効果が活性化状態でクリティカル命中時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />指定保護解除</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" />列保護解除</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" />行保護効果を解除</sec>します。
       TC: |-
-        回合開始時，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="2" r /></sec>增加。
-        <sec typ="cond">在該效果啟用狀態下暴擊命中時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 指定保護</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 列保護</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 行保護效果</sec>。
+        回合開始時，<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="2" r /></sec>增加。
+        <sec typ="cond">該效果啟用狀態下暴擊命中時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />指定保護</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" />列保護</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" />行保護效果</sec>。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -5262,19 +5263,19 @@ skills:
       KR: |-
         라운드 개시 시, 인접한 아군이 없을 경우, 범위 내 아군에게 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" r /></sec> 증가 효과를 부여합니다.
         스쿼드 내에 자신을 제외 한 <sec typ="note">스틸라인 계통</sec>의 전투원이 없는 경우, 범위 내 아군에게 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec> 증가 효과가 추가로 적용되고 자신은 <sec typ="buff"><buff typ="REMOVE_BUFF" />  행동력 증가 효과가 해제</sec>됩니다.
-        자신을 제외 한 <sec typ="note">스틸라인 계통</sec>의 전투원이 있거나 아군이 인접한 상태면 자신에게 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="7" r /></sec> 증가 효과가 각각 적용되며 <sec typ="note">140mm 고폭탄</sec> 스킬의 발사 / <sec typ="note">곡사 포격</sec> 착탄 시, 범위 내 적의 모든 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 광역 피해 분산 효과를 해제</sec> 합니다.
-      JP: |-
-        ラウンド開始時、隣接する味方がいない場合、範囲内の味方に<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>増加効果を付与します。
-        分隊内に自分を除く<sec typ="note">スチールライン系統</sec>の戦闘員がいない場合、範囲内の味方に<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>増加効果が追加で適用され、自身は<sec typ="buff"><buff typ="REMOVE_BUFF" /> 行動力増加効果を解除</sec>されます。
-        自分を除く<sec typ="note">スチールライン系統</sec>の戦闘員がいるか、味方が隣接している場合は、自身に<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="7" r /></sec>増加効果がそれぞれ適用され、<sec typ="note">140mm高爆弾</sec>スキルの発射 / <sec typ="note">曲射砲撃</sec>着弾時、範囲内の敵のすべての<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 広域ダメージ分散効果を解除</sec>します。
+        자신을 제외 한 <sec typ="note">스틸라인 계통</sec>의 전투원이 있거나 아군이 인접한 상태면 자신에게 <sec typ="buff"><buff typ="Action_Number_Change_Up copy" /> 행동력 <val idx="7" r /></sec> 증가 효과가 각각 적용되며 <sec typ="note">140mm 고폭탄</sec> 스킬의 발사 / <sec typ="note">곡사 포격</sec> 착탄 시, 범위 내 적의 모든 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 광역 피해 분산 효과를 해제</sec> 합니다.
       EN: |-
-        At the start of the round, if there are no adjacent allies, grants allies within range a <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="8" r /></sec> increase.
-        If there are no other <sec typ="note">Steel Line</sec> soldiers in the squad besides self, allies within range additionally gain <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="5" r /></sec> increase, and self is <sec typ="buff"><buff typ="REMOVE_BUFF" /> removed of MOVE increase effects</sec>.
-        If there is another <sec typ="note">Steel Line</sec> soldier besides self or an adjacent ally, self gains <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="7" r /></sec> increase effects accordingly, and when the <sec typ="note">140mm High-Explosive Bomb</sec> skill is fired / <sec typ="note">Arcing Bombardment</sec> lands, removes all <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Area Damage Spread effects</sec> from enemies within range.
+        <sec typ="cond">At round start</sec>, if there are no adjacent allies, grants allies within range <sec typ="buff"><buff typ="AP_UP" /> Action Power increase by <val idx="8" r /></sec>.
+        If there are no <sec typ="note">Steel Line</sec> combatants other than herself in the squad, allies within range additionally receive <sec typ="buff"><buff typ="AP_UP" /> Action Power increase by <val idx="5" r /></sec>, and she <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes Action Power increase effects</sec>.
+        If there is a <sec typ="note">Steel Line</sec> combatant other than herself or an ally is adjacent, she gains each <sec typ="buff"><buff typ="Action_Number_Change_Up copy" /> Action Power increase by <val idx="7" r /></sec>, and when <sec typ="note">140mm High-Explosive Shell</sec> fires / <sec typ="note">Curved Bombardment</sec> lands, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes all area damage dispersion effects from enemies within range</sec>.
+      JP: |-
+        ラウンド開始時、隣接した味方がいない場合、範囲内の味方に<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="8" r /></sec>増加効果を付与します。
+        スクワッド内に自身を除く<sec typ="note">スチールライン系統</sec>の戦闘員がいない場合、範囲内の味方に<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>増加効果が追加適用され、自身は<sec typ="buff"><buff typ="REMOVE_BUFF" />行動力増加効果が解除</sec>されます。
+        自身を除く<sec typ="note">スチールライン系統</sec>の戦闘員がいる、または味方が隣接している状態なら、自身に<sec typ="buff"><buff typ="Action_Number_Change_Up copy" />行動力<val idx="7" r /></sec>増加効果がそれぞれ適用され、<sec typ="note">140mm榴弾</sec>スキルの発射 / <sec typ="note">曲射砲撃</sec>着弾時、範囲内の敵のすべての<sec typ="buff"><buff typ="REMOVE_DEBUFF" />広域ダメージ分散効果を解除</sec>します。
       TC: |-
-        回合開始時，若沒有鄰接我軍，則使範圍內我軍獲得<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>增加效果。
-        若小隊內除了自身以外沒有<sec typ="note">鋼線系統</sec>的戰鬥員，則範圍內我軍會額外套用<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>增加效果，且自身的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 行動力增加效果會被解除</sec>。
-        若除了自身以外有<sec typ="note">鋼線系統</sec>的戰鬥員，或我軍處於鄰接狀態，則分別對自身套用<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="7" r /></sec>增加效果，並在<sec typ="note">140mm高爆彈</sec>技能發射 / <sec typ="note">曲射砲擊</sec>落地時，解除範圍內敵軍所有<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 廣域傷害分散效果</sec>。
+        回合開始時，若沒有相鄰我方，賦予範圍內我方<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="8" r /></sec>增加效果。
+        若小隊內沒有自身以外的<sec typ="note">鋼鐵防線系統</sec>戰鬥員，範圍內我方額外套用<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>增加效果，且自身<sec typ="buff"><buff typ="REMOVE_BUFF" />解除行動力增加效果</sec>。
+        若有自身以外的<sec typ="note">鋼鐵防線系統</sec>戰鬥員，或我方處於相鄰狀態，則自身分別套用<sec typ="buff"><buff typ="Action_Number_Change_Up copy" />行動力<val idx="7" r /></sec>增加效果，且<sec typ="note">140mm高爆彈</sec>技能發射 / <sec typ="note">曲射砲擊</sec>著彈時，<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除範圍內敵人所有廣域傷害分散效果</sec>。
   "7":
     key: "7"
     icon: Missile
@@ -7697,21 +7698,21 @@ skills:
         적중 대상들은 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>이(가) 감소하며, 2라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" slot="7" r /></sec>가 증가합니다.
         목표 지점 주변에는 <sec typ="dmg">25% 감소한 피해</sec>를 줍니다.
         착탄 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>합니다.
-      JP: |-
-        1ラウンド後に着弾し、<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与える迫撃砲を発射します。
-        命中した対象は<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>が減少し、2ラウンドの間<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" slot="7" r /></sec>が増加します。
-        目標地点周辺には<sec typ="dmg">25%減少したダメージ</sec>を与えます。
-        着弾時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃効果を解除</sec>します。
       EN: |-
-        Fires a mortar shell that lands after 1 round and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage.
-        Hit targets have their <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> decreased, and their <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="1" slot="7" r /></sec> increases for 2 rounds.
-        Deals <sec typ="dmg">25% reduced damage</sec> to the area around the target point.
-        On impact, removes the target’s <sec typ="buff"><buff typ="REMOVE_BUFF" /> Retaliation effect</sec>.
+        Fires a mortar that lands after 1 round and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        Hit targets have <sec typ="buff"><buff typ="AP_DOWN" /> AP decreased by <val idx="0" /></sec>, and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken increases by <val idx="1" slot="7" r /></sec> for 2 rounds.
+        Deals <sec typ="dmg">25% reduced damage</sec> around the target point.
+        On impact, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's counterattack effects</sec>.
+      JP: |-
+        1ラウンド後に着弾し、<sec typ="attr">保護無視</sec><dmg elem="physics" />を与える迫撃砲を発射します。
+        命中対象は<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>が減少し、2ラウンドの間<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" slot="7" r /></sec>が増加します。
+        目標地点周辺には<sec typ="dmg">25%減少したダメージ</sec>を与えます。
+        着弾時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />反撃効果を解除</sec>します。
       TC: |-
-        在1回合後落地，發射造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害的迫擊砲。
-        命中目標會<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>減少，並在2回合內使其<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="1" slot="7" r /></sec>增加。
-        對目標位置周圍造成<sec typ="dmg">減少25%的傷害</sec>。
-        落地時，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊效果</sec>。
+        發射1回合後著彈、造成<sec typ="attr">無視保護</sec><dmg elem="physics" />的迫擊砲。
+        命中目標的<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>降低，並在2回合內使<sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="1" slot="7" r /></sec>增加。
+        對目標地點周圍造成<sec typ="dmg">減少25%的傷害</sec>。
+        著彈時，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的反擊效果</sec>。
 dialogue:
   KR:
     "1":

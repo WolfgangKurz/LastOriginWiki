@@ -594,6 +594,7 @@ source:
   - - Ev:Ev35:EV2-2
   - - Ev:Ev36:EV1-1EX
   - - Ev:Ev37:EV2-2EX
+  - - Ev:Ev38:EV1-3EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1801,15 +1802,15 @@ skills:
       KR: |-
         기관포를 발사해 지정 범위에 <dmg elem="physics" />를 줍니다.
         대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 디버프를 받고있으면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        機関砲を発射して指定範囲に<dmg elem="physics" />を与えます。
-        対象が<sec typ="cond"><buff typ="MARKING" /> マーク</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避減少</sec>デバフを受けている場合、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
       EN: |-
-        Fires a machine gun and deals <dmg elem="physics" /> to the designated area.
-        If the target has the <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilize</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> EVA Decrease</sec> debuff, <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="0" r /></sec> increases.
+        machine cannon fires to the designated area <dmg elem="physics" />.
+        target <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion decrease</sec> debuff receiving if present <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        機関砲を 発射して 指定範囲に<dmg elem="physics" />を与えます。
+        対象が <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避 減少</sec> デバフを 受けてある場合 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
       TC: |-
-        發射機關炮，對指定範圍造成<dmg elem="physics" />。
-        若目標帶有<sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避降低</sec>減益，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        機砲 發射 指定範圍於 造成<dmg elem="physics" />。
+        目標 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避 減少</sec> 減益 受到若有 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: AirStrike
@@ -2834,15 +2835,15 @@ skills:
       KR: |-
         급강하 폭격으로 지정 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
         대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 디버프를 받고있으면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
-      JP: |-
-        急降下爆撃で指定対象に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
-        対象が<sec typ="cond"><buff typ="MARKING" /> マーク</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避減少</sec>デバフを受けている場合、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
       EN: |-
-        Uses a dive bombing attack and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated target.
-        If the target has the <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilize</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> EVA Decrease</sec> debuff, <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="0" r /></sec> increases.
+        dive by bombardment as designated to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        target <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion decrease</sec> debuff receiving if present <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        グウプグアンハア 爆撃で 指定対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        対象が <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避 減少</sec> デバフを 受けてある場合 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
       TC: |-
-        以急降轟炸對指定目標造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
-        若目標帶有<sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避降低</sec>減益，則<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        俯衝 轟炸以 指定目標給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        目標 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避 減少</sec> 減益 受到若有 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3274,21 +3275,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        전투 개시 시, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
-        라운드 개시 시, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="5" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="5" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="6" r /></sec>가 증가합니다.
         <char uid="BR_Djinnia" /> 또는 <char uid="BR_Sylphid" />의 스킬 효과를 받는 상태면 <sec typ="buff"><buff typ="AP_UP" /> AP 증가</sec> 효과가 50%만큼 매 라운드마다 적용되며, <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장 피해량 증가</sec> & <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 중장형 피해량 증가</sec>가 2배로 적용됩니다.
-      JP: |-
-        戦闘開始時、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
-        ラウンド開始時、<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="4" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ <val idx="5" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="6" r /></sec>が増加します。
-        <char uid="BR_Djinnia" />または<char uid="BR_Sylphid" />のスキル効果を受けている場合、<sec typ="buff"><buff typ="AP_UP" /> AP増加</sec>効果が毎ラウンド50%ずつ適用され、<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装ダメージ増加</sec> & <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 重装型ダメージ増加</sec>が2倍で適用されます。
       EN: |-
-        At the start of combat, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
-        At the start of the round, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="4" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Damage against Light Armor <val idx="5" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Damage against Heavy Armor <val idx="6" r /></sec> increases.
-        If affected by <char uid="BR_Djinnia" /> or <char uid="BR_Sylphid" /> skill effects, the <sec typ="buff"><buff typ="AP_UP" /> AP Increase</sec> effect is applied by 50% each round, and <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Damage against Light Armor Increase</sec> & <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Heavy Armor Damage Increase</sec> are applied at double strength.
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="4" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light damage <val idx="5" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy damage <val idx="6" r /></sec> increases.
+        <char uid="BR_Djinnia" /> or <char uid="BR_Sylphid" /> of skill effect and receiving state if <sec typ="buff"><buff typ="AP_UP" /> AP increase</sec> effect and 50%by every roundeach is applied and, <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> anti Light damage increase</sec> & <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Heavy-type damage increase</sec> 2 times is applied.
+      JP: |-
+        戦闘開始時、 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="4" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ <val idx="5" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="6" r /></sec>が増加します。
+        <char uid="BR_Djinnia" /> または <char uid="BR_Sylphid" />の スキル 効果を 受けている状態なら <sec typ="buff"><buff typ="AP_UP" /> AP 増加</sec> 効果が 50%分 ムエ ラウンドごとに 適用され、、 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> ドエ 軽装 ダメージ量 増加</sec> & <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 重装型 ダメージ量 増加</sec>が 2ブエで 適用されます。
       TC: |-
-        戰鬥開始時，<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
-        回合開始時，<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="4" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害 <val idx="5" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害 <val idx="6" r /></sec>增加。
-        若受到<char uid="BR_Djinnia" />或<char uid="BR_Sylphid" />的技能效果，則<sec typ="buff"><buff typ="AP_UP" /> AP增加</sec>效果每回合額外套用50%，且<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害增加</sec>與<sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 重裝型傷害增加</sec>會以2倍效果套用。
+        戰鬥開始時， <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="4" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害 <val idx="5" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害 <val idx="6" r /></sec>增加。
+        <char uid="BR_Djinnia" /> 或 <char uid="BR_Sylphid" />的 技能 效果 受到的狀態若 <sec typ="buff"><buff typ="AP_UP" /> AP 增加</sec> 效果 50%等量 每 回合每 套用，並 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對 輕裝 傷害量 增加</sec> & <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 重裝型 傷害量 增加</sec> 2倍以 套用。
   "4":
     key: "4"
     icon: P.EnemyDetect
@@ -3439,15 +3440,15 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">기관포 소사</sec>는 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 기동형 피해량 <val idx="2" slot="1" r /></sec>가, <sec typ="note">급강하 폭격</sec>은 <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 중장형 피해량 <val idx="2" slot="2" r /></sec>가 증가합니다.
         <sec typ="cond">스쿼드 내 <char uid="BR_Sylphid" />가 있다면</sec> <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="2" r /></sec>가 증가합니다
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">機関砲掃射</sec>は<sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対機動型ダメージ <val idx="2" slot="1" r /></sec>が、<sec typ="note">急降下爆撃</sec>は<sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 対重装型ダメージ <val idx="2" slot="2" r /></sec>が増加します。
-        <sec typ="cond">分隊内に<char uid="BR_Sylphid" />がいる場合</sec>、<sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="2" r /></sec>が増加します。
       EN: |-
-        At the start of the round, <sec typ="note">Machine Gun Sweep</sec> increases <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Damage against Mobility-type <val idx="2" slot="1" r /></sec>, and <sec typ="note">Dive Bombing</sec> increases <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> Damage against Heavy Armor <val idx="2" slot="2" r /></sec>.
-        If <char uid="BR_Sylphid" /> is in the squad, <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="2" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="note">Machine-Gun Strafing</sec> <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Anti-Mobile damage <val idx="2" slot="1" r /></sec>, <sec typ="note">Dive Bombing</sec> <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> Anti-Heavy damage <val idx="2" slot="2" r /></sec> increases.
+        <sec typ="cond">in squad <char uid="BR_Sylphid" /> if present</sec> <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="2" r /></sec> increases
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="note">機関砲掃射</sec>は <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対機動型ダメージ <val idx="2" slot="1" r /></sec>が、 <sec typ="note">急降下爆撃</sec>は <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 対重装型ダメージ <val idx="2" slot="2" r /></sec>が増加します。
+        <sec typ="cond">スクワッド 内 <char uid="BR_Sylphid" />が 存在するなら</sec> <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="2" r /></sec>が増加します
       TC: |-
-        回合開始時，<sec typ="note">機關炮掃射</sec>的<sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對機動型傷害 <val idx="2" slot="1" r /></sec>增加，<sec typ="note">急降轟炸</sec>的<sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 對重裝型傷害 <val idx="2" slot="2" r /></sec>增加。
-        若小隊內有<char uid="BR_Sylphid" />，則<sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="2" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="note">機砲掃射</sec> <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對機動型傷害 <val idx="2" slot="1" r /></sec>， <sec typ="note">俯衝轟炸</sec> <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 對重裝型傷害 <val idx="2" slot="2" r /></sec>增加。
+        <sec typ="cond">小隊 內 <char uid="BR_Sylphid" /> 若存在</sec> <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="2" r /></sec>增加
   "5":
     key: "5"
     icon: P.AirStrike
@@ -3660,15 +3661,15 @@ skills:
       KR: |-
         전술을 바꿔 더 빠르게 적에게 침투하여 치명적인 타격을 가하려합니다.
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>를 증가시키고 <sec typ="cond">스쿼드 내에 <char uid="BR_Sylphid" />가 있다면</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 받는 피해 감소와 방어막 무시</sec> 효과를 받습니다.
-      JP: |-
-        戦術を変えてより素早く敵に浸透し、致命的な打撃を与えようとします。
-        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>を増加させ、<sec typ="cond">分隊内に<char uid="BR_Sylphid" />がいる場合</sec>、<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 受けるダメージ減少とバリア無視</sec>効果を受けます。
       EN: |-
-        Changes tactics to infiltrate enemies faster and deliver a deadly strike.
-        <sec typ="cond">At the start of the round</sec>, increases self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="2" r /></sec>, and <sec typ="cond">if <char uid="BR_Sylphid" /> is in the squad</sec>, gains <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Damage Reduction and Barrier Ignore</sec> effects.
+        tactical changes more quickly to the enemy infiltrates fatal enemy is strike tries to.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increases and <sec typ="cond">in squad to <char uid="BR_Sylphid" /> if present</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> damage taken decrease and Barrier ignore</sec> effect and receives.
+      JP: |-
+        前スウルを ブアックウォ ドオ ップアルウく 敵に チイムトウして チイ名敵である トアグヨクを がハアルヨします。
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>を 増加時クイし <sec typ="cond">スクワッド 内に <char uid="BR_Sylphid" />が 存在するなら</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 受けるダメージ 減少と バリア 無視</sec> 効果を 受けます。
       TC: |-
-        改變戰術，更快滲透敵人並施以致命打擊。
-        <sec typ="cond">回合開始時</sec>，增加自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>，且<sec typ="cond">若小隊內有<char uid="BR_Sylphid" /></sec>，則獲得<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 受傷害減少與無視防護罩</sec>效果。
+        前術 改變 更多 迅速 敵人給 滲透並嘗試造成致命打擊。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec> 增加時台並 <sec typ="cond">小隊 內於 <char uid="BR_Sylphid" /> 若存在</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 受到的傷害 減少與 護盾 無視</sec> 效果 受到。
 dialogue:
   KR:
     "1":

@@ -511,6 +511,7 @@ source:
   - - Ev:Ev32:EV2-2EX
   - - Ev:Ev33:EV4-4
   - - Ev:Ev35:EV2-1
+  - - Ev:Ev38:EV1-1EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1977,15 +1978,15 @@ skills:
       KR: |-
         지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec> 감소 상태로 만듭니다.
         대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
-      JP: |-
-        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、2ラウンドの間、<sec typ="buff"><buff typ="PROVOKE" />挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="1" r /></sec>減少状態にします。
-        対象が<sec typ="cond"><buff typ="MARKING" />標識</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />回避低下</sec>状態なら<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="4" r /></sec>が増加します。
       EN: |-
-        Deals <sec typ="attr">protection-ignoring</sec> <dmg elem="physics" /> to the designated area, and makes the target <sec typ="buff"><buff typ="PROVOKE" /> Taunted</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="1" r /></sec> down for 2 rounds.
-        If the target is <sec typ="cond"><buff typ="MARKING" /> Marked</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec> increases.
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area and makes targets <sec typ="buff"><buff typ="PROVOKE" /> Provoked</sec> / decreases <sec typ="buff"><buff typ="ATK_DOWN" /> ATK by <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy by <val idx="1" r /></sec> for 2 rounds.
+        If the target is under <sec typ="cond"><buff typ="MARKING" /> Marked</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt increases by <val idx="4" r /></sec>.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、2ラウンドの間<sec typ="buff"><buff typ="PROVOKE" />挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="1" r /></sec>減少状態にします。
+        対象が<sec typ="cond"><buff typ="MARKING" />標識</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />回避低下</sec>状態なら、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="4" r /></sec>が増加します。
       TC: |-
-        對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />，並使目標在2回合內進入<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="1" r /></sec>降低狀態。
-        若目標處於<sec typ="cond"><buff typ="MARKING" />標記</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害<val idx="4" r /></sec>提升。
+        對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />，並在2回合內使目標進入<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="1" r /></sec>降低狀態。
+        若目標處於<sec typ="cond"><buff typ="MARKING" />標記</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="4" r /></sec>增加。
   "2":
     key: "2"
     icon: SelfAtkBuff
@@ -2268,14 +2269,14 @@ skills:
       KR: |-
         3라운드 동안 자신에게 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" /></sec>이(가) 적용되며, 대상이 보호기가 아닐 경우, 대상을 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>합니다.
         대상과 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+      EN: |-
+        Applies <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="0" /></sec> to herself for 3 rounds, and if the target is not a Protector, <sec typ="buff"><buff typ="DEF_Char" /> protects the target with Designated Protection</sec>.
+        Increases the target's and her own <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power by <val idx="2" r /></sec>.
       JP: |-
         3ラウンドの間、自身に<sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア<val idx="0" /></sec>が適用され、対象が保護機でない場合、対象を<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>します。
         対象と自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>が増加します。
-      EN: |-
-        For 3 rounds, self gains <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="0" /></sec>, and if the target is not a Protector, <sec typ="buff"><buff typ="DEF_Char" /> designated protection</sec> is applied to the target.
-        The target's and self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec> increase.
       TC: |-
-        在3回合內，自身會套用<sec typ="buff"><buff typ="DAMAGE_ABSORB" />防護罩<val idx="0" /></sec>，若目標不是保護機，則會對目標施加<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>。
+        3回合內對自身套用<sec typ="buff"><buff typ="DAMAGE_ABSORB" />護盾<val idx="0" /></sec>，若目標不是保護機，則<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>目標。
         目標與自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>增加。
   "3":
     key: "3"
@@ -2444,9 +2445,9 @@ skills:
             chance: 1
     desc:
       KR: 라운드 개시 시, <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> 증가 / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="2" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec> 감소 효과가 적용됩니다.
-      JP: ラウンド開始時、<sec typ="buff"><buff typ="DEF_Side" />列保護</sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="1" r /></sec>増加 / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗<val idx="2" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />被ダメージ<val idx="2" r inv /></sec>減少効果が適用されます。
-      EN: At round start, <sec typ="buff"><buff typ="DEF_Side" /> column protection</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> up / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="2" r /></sec> up / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="2" r inv /></sec> reduction effects are applied.
-      TC: 回合開始時，套用<sec typ="buff"><buff typ="DEF_Side" />列保護</sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="1" r /></sec>增加 / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗<val idx="2" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受傷害<val idx="2" r inv /></sec>降低效果。
+      EN: At round start, applies <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion increase by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance increase by <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease by <val idx="2" r inv /></sec>.
+      JP: ラウンド開始時、<sec typ="buff"><buff typ="DEF_Side" />列保護</sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="1" r /></sec>増加 / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="2" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="2" r inv /></sec>減少効果が適用されます。
+      TC: 回合開始時，套用<sec typ="buff"><buff typ="DEF_Side" />列保護</sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="1" r /></sec>增加 / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性<val idx="2" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到傷害<val idx="2" r inv /></sec>降低效果。
   "4":
     key: "4"
     icon: P.TeamDefDeBuff
@@ -2592,9 +2593,9 @@ skills:
             chance: 1
     desc:
       KR: 라운드 개시 시, <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태인 적을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec> 증가 / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" r /></sec> 감소 상태로 만듭니다.
-      JP: ラウンド開始時、<sec typ="cond"><buff typ="PROVOKE" />挑発</sec>状態の敵を<sec typ="buff"><buff typ="MARKING" />標識</sec> / <sec typ="buff"><buff typ="VULNERABLE" />被ダメージ<val idx="1" r /></sec>増加 / <sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="2" r /></sec>低下状態にします。
-      EN: At round start, puts enemies in <sec typ="cond"><buff typ="PROVOKE" /> Taunted</sec> state into <sec typ="buff"><buff typ="MARKING" /> Marked</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> up / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="2" r /></sec> down state.
-      TC: 回合開始時，使處於<sec typ="cond"><buff typ="PROVOKE" />挑釁</sec>狀態的敵人進入<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受傷害<val idx="1" r /></sec>增加 / <sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="2" r /></sec>降低狀態。
+      EN: At round start, enemies under <sec typ="cond"><buff typ="PROVOKE" /> Provoked</sec> become <sec typ="buff"><buff typ="MARKING" /> Marked</sec> / have <sec typ="buff"><buff typ="VULNERABLE" /> damage taken increased by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion decreased by <val idx="2" r /></sec>.
+      JP: ラウンド開始時、<sec typ="cond"><buff typ="PROVOKE" />挑発</sec>状態の敵を<sec typ="buff"><buff typ="MARKING" />標識</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>増加 / <sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="2" r /></sec>減少状態にします。
+      TC: 回合開始時，使處於<sec typ="cond"><buff typ="PROVOKE" />挑釁</sec>狀態的敵人進入<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="1" r /></sec>增加 / <sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="2" r /></sec>降低狀態。
 dialogue:
   KR:
     "1":

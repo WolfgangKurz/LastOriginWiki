@@ -1550,20 +1550,20 @@ skills:
     desc:
       KR: |-
         지정 범위 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
-        대상에게 <sec typ="note">엠피트리테 : 레이더 포착</sec> 효과가 적용 중이면 피해량이 증가합니다.
-        대상이 <sec typ="cond"><buff typ="AP_UP" /> 행동력 증가</sec> 상태가 아니면 피해량이 추가로 증가합니다.
-      JP: |-
-        指定範囲の敵に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
-        対象に<sec typ="note">アンフィトリテ：レーダー捕捉</sec>効果が適用されている場合、ダメージ量が増加します。
-        対象が<sec typ="cond"><buff typ="AP_UP" />行動力増加</sec>状態ではない場合、ダメージ量がさらに増加します。
+        대상에게 <sec typ="note">엠피트리테 : 레이더 포착</sec> 효과가 적용 중이면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        대상이 <sec typ="cond"><buff typ="AP_UP" /> 행동력 증가</sec> 상태가 아니면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="1" r /></sec>가 증가합니다.
       EN: |-
-        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage to enemies in the designated area.
-        Damage is increased if <sec typ="note">Amphitrite: Radar Detection</sec> is active on the target.
-        Damage is further increased if the target is not under <sec typ="cond"><buff typ="AP_UP" /> MOVE Increase</sec>.
+        to the designated area the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        to the target <sec typ="note">Amphitrite: radar capture/detect</sec> effect and is activeif <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        target <sec typ="cond"><buff typ="AP_UP" /> Action Speed increase</sec> state otherwise <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="1" r /></sec> increases.
+      JP: |-
+        指定範囲 敵に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        対象に <sec typ="note">エムプイトウルイトエ：ルエがドオ プオチアク</sec> 効果が 適用中なら <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        対象が <sec typ="cond"><buff typ="AP_UP" /> 行動力 増加</sec> 状態が アンイなら <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="1" r /></sec>が増加します。
       TC: |-
-        對指定範圍敵軍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害。
-        若目標套用<sec typ="note">安菲特萊特：捕捉雷達</sec>效果，則傷害增加。
-        若目標未處於<sec typ="cond"><buff typ="AP_UP" />行動力增加</sec>狀態，則傷害進一步增加。
+        指定範圍 敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        對目標 <sec typ="note">空中騎士：雷達 捕捉</sec> 效果 套用中若 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        目標 <sec typ="cond"><buff typ="AP_UP" /> 行動力 增加</sec> 狀態 內i若 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="1" r /></sec>增加。
   "2":
     key: "2"
     icon: MGShot
@@ -2876,20 +2876,20 @@ skills:
     desc:
       KR: |-
         지정 범위 적에게 <dmg elem="physics" />를 줍니다.
-        치명타 시, 피해량이 증가합니다.
-        대상이 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 상태가 아니면 피해량이 추가로 증가합니다.
-      JP: |-
-        指定範囲の敵に<dmg elem="physics" />を与えます。
-        クリティカル時、ダメージ量が増加します。
-        対象が<sec typ="cond"><buff typ="DAMAGE_REDUCE" />受けるダメージ減少</sec>状態ではない場合、ダメージ量がさらに増加します。
+        치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        대상이 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 상태가 아니면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="1" r /></sec>가 추가로 증가합니다.
       EN: |-
-        Deals <dmg elem="physics" /> damage to enemies in the designated area.
-        Damage increases on CRIT.
-        Damage is further increased if the target is not under <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> Received Damage Decrease</sec>.
+        to the designated area the enemy <dmg elem="physics" />.
+        On critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        target <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> damage taken decrease</sec> state otherwise <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="1" r /></sec>additionally increases.
+      JP: |-
+        指定範囲 敵に<dmg elem="physics" />を与えます。
+        クリティカル時、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        対象が <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少</sec> 状態が アンイなら <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="1" r /></sec>が追加で増加します。
       TC: |-
-        對指定範圍敵軍造成<dmg elem="physics" />傷害。
-        暴擊時，傷害增加。
-        若目標未處於<sec typ="cond"><buff typ="DAMAGE_REDUCE" />所受傷害減少</sec>狀態，則傷害進一步增加。
+        指定範圍 敵人給 造成<dmg elem="physics" />。
+        暴擊時， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        目標 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少</sec> 狀態 內i若 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="1" r /></sec>會額外增加。
   "3":
     key: "3"
     icon: P.SuicideBomb
@@ -3133,17 +3133,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
-        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><sec typ="note">엠피트리테 : 지휘전파</sec> 효과를 받는 상태일 경우</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec>가 증가합니다.
-      JP: |-
-        ラウンド開始時、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond"><sec typ="note">アンフィトリテ：指揮伝播</sec>効果を受けている場合</sec>、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="5" r /></sec>が増加します。
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="note">엠피트리테 : 지휘전파</sec> 효과를 받는 상태로 <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec>가 증가합니다.
       EN: |-
-        At the start of the round, increases <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec>.
-        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if under <sec typ="note">Amphitrite: Relay Command</sec></sec>, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="5" r /></sec>.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increases.
+        <sec typ="note">Amphitrite: command wire Pa</sec> effect and receiving stateas <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="5" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が増加します。
+        <sec typ="note">エムプイトウルイトエ：指揮前プア</sec> 効果を 受けている状態で <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="5" r /></sec>が増加します。
       TC: |-
-        回合開始時，增加<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>。
-        <sec typ="cond">回合開始時</sec>，若<sec typ="cond">處於<sec typ="note">安菲特萊特：指揮傳達</sec>效果下</sec>，則增加<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="5" r /></sec>。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>增加。
+        <sec typ="note">空中騎士：指揮前破</sec> 效果 受到的狀態以 <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="5" r /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3435,21 +3435,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, <sec typ="cond"><buff typ="AP_UP" /> 행동력 증가</sec> 상태면 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="0" r /></sec>가 증가합니다.
-        스쿼드에 엠피트리테가 있으면 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가하고, <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시 효과가 활성화</sec>됩니다.
-        <sec typ="cond"><sec typ="note">엠피트리테 : 돌격 진형</sec> 또는 <sec typ="note">엠피트리테 : 우회 진형</sec> 효과를 받는 상태면</sec> <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="6" r /></sec>가 추가로 증가합니다.
-      JP: |-
-        ラウンド開始時、<sec typ="cond"><buff typ="AP_UP" />行動力増加</sec>状態の場合、<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="0" r /></sec>が増加します。
-        分隊にアンフィトリテがいる場合、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>が増加し、<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視効果が有効化</sec>されます。
-        <sec typ="cond"><sec typ="note">アンフィトリテ：突撃陣形</sec>または<sec typ="note">アンフィトリテ：迂回陣形</sec>効果を受けている場合</sec>、<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="6" r /></sec>がさらに増加します。
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><buff typ="AP_UP" /> 행동력 증가</sec> 상태면 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="0" r /></sec>가 증가합니다.
+        스쿼드에 <char uid="3P_Amphitrite" />가 있으면 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가하고, <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시 효과가 활성화</sec>됩니다.
+        <sec typ="note">엠피트리테 : 돌격 진형</sec> 또는 <sec typ="note">엠피트리테 : 우회 진형</sec> 효과를 받는 상태면 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="6" r /></sec>가 추가로 증가합니다.
       EN: |-
-        At the start of the round, if under <sec typ="cond"><buff typ="AP_UP" /> MOVE Increase</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="0" r /></sec> increases.
-        If Amphitrite is in the squad, <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="1" r /></sec> increases and <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection is activated</sec>.
-        If <sec typ="cond">receiving <sec typ="note">Amphitrite: Charge Formation</sec> or <sec typ="note">Amphitrite: Detour Formation</sec></sec>, <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="6" r /></sec> additionally increases.
+        <sec typ="cond">At round start</sec>, <sec typ="cond"><buff typ="AP_UP" /> Action Speed increase</sec> if in the state <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="0" r /></sec> increases.
+        squad <char uid="3P_Amphitrite" /> if present <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> increases and <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection effect and activation</sec>.
+        <sec typ="note">Amphitrite: charge formation</sec> or <sec typ="note">Amphitrite: right times formation</sec> effect and receiving state if <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="6" r /></sec>additionally increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond"><buff typ="AP_UP" /> 行動力 増加</sec> 状態なら <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="0" r /></sec>が増加します。
+        スクワッドに <char uid="3P_Amphitrite" />が ある場合 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>が 増加し、 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視 効果が 有効化</sec>されます。
+        <sec typ="note">エムプイトウルイトエ：ドオルグヨク 陣形</sec> または <sec typ="note">エムプイトウルイトエ：ウ回 陣形</sec> 効果を 受けている状態なら <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="6" r /></sec>が追加で増加します。
       TC: |-
-        回合開始時，若處於<sec typ="cond"><buff typ="AP_UP" />行動力增加</sec>狀態，則<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="0" r /></sec>增加。
-        若小隊中有安菲特萊特，則<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="1" r /></sec>增加，並<sec typ="buff"><buff typ="Guardpierce_Apply" />啟用無視保護效果</sec>。
-        若<sec typ="cond">處於<sec typ="note">安菲特萊特：突擊陣形</sec>或<sec typ="note">安菲特萊特：迂迴陣形</sec>效果下</sec>，則<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="6" r /></sec>額外增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond"><buff typ="AP_UP" /> 行動力 增加</sec> 若處於狀態 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="0" r /></sec>增加。
+        小隊於 <char uid="3P_Amphitrite" /> 若有 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec> 增加，並 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護 效果 啟用</sec>。
+        <sec typ="note">空中騎士：突擊 陣形</sec> 或 <sec typ="note">空中騎士：U次 陣形</sec> 效果 受到的狀態若 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="6" r /></sec>會額外增加。
   "5":
     key: "5"
     icon: P.MGShot
@@ -4578,17 +4578,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 적중 <val idx="1" r /></sec>가 증가합니다.
-        스쿼드 내 자신을 제외한 공격기 1기마다  효과가 50%씩 증가합니다.
-      JP: |-
-        ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />命中<val idx="1" r /></sec>が増加します。
-        分隊内の自分を除く攻撃機1機ごとに効果が50%ずつ増加します。
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 적중 <val idx="1" r /></sec>가 증가합니다.
+        스쿼드 내 자신을 제외한 공격기 1기마다  효과가 50% 증가합니다.
       EN: |-
-        At the start of the round, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> ACU <val idx="1" r /></sec>.
-        The effect increases by 50% for each Attacker in the squad, excluding self.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Accuracy <val idx="1" r /></sec> increases.
+        in squad self excluding Attacker 1 unit each effect and 50% increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 命中 <val idx="1" r /></sec>が増加します。
+        スクワッド 内 自身を ジエ外した 攻撃機 1機ごとに 効果が 50% 増加します。
       TC: |-
-        回合開始時，增加<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />命中<val idx="1" r /></sec>。
-        小隊內每有1名除自身外的攻擊機，效果就增加50%。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 命中 <val idx="1" r /></sec>增加。
+        小隊 內 自身 解除外 攻擊機 1台每 效果 50% 增加。
 dialogue:
   KR:
     "1":

@@ -2392,18 +2392,18 @@ skills:
         기관단총으로 단일 대상에게 <dmg elem="physics" />를 줍니다.
         <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="3" r /></sec> 감소 상태로 만듭니다.
         <sec typ="cond"><char uid="BR_Leona" />의 <sec typ="note">방어 지휘</sec>가 활성화된 경우</sec>, 상기 효과의 수치가 50% 증폭됩니다.
-      JP: |-
-        短機関銃で単一対象に<dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>, 2ラウンドの間、対象を<sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>減少状態にします。
-        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">防御指揮</sec>が有効な場合</sec>, 上記効果の数値が50%増幅されます。
       EN: |-
-        Deals <dmg elem="physics" /> damage to a single target with a submachine gun.
-        <sec typ="cond">On hit</sec>, for 2 rounds inflicts the target with <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="3" r /></sec> decrease.
-        <sec typ="cond">If <char uid="BR_Leona" />’s <sec typ="note">Defense Command</sec> is active</sec>, the above effect values are amplified by 50%.
+        Deals <dmg elem="physics" /> to a single target with a submachine gun.
+        <sec typ="cond">On hit</sec>, inflicts <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical Rate <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Power <val idx="3" r /></sec> reduction on the target for 2 rounds.
+        <sec typ="cond">If <char uid="BR_Leona" />'s <sec typ="note">Defensive Command</sec> is active</sec>, the values of the above effects are amplified by 50%.
+      JP: |-
+        サブマシンガンで単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="3" r /></sec>減少状態にします。
+        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">防御指揮</sec>が有効な場合</sec>、上記効果の数値が50%増幅します。
       TC: |-
-        以衝鋒槍對單一目標造成<dmg elem="physics" />傷害。
-        <sec typ="cond">命中時</sec>，在2回合內使目標進入<sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>減少狀態。
-        <sec typ="cond">若<char uid="BR_Leona" />的<sec typ="note">防禦指揮</sec>啟用</sec>，則上述效果數值加倍50%。
+        使用衝鋒槍對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，使目標在2回合內陷入<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="3" r /></sec>降低狀態。
+        <sec typ="cond"><char uid="BR_Leona" />的<sec typ="note">防禦指揮</sec>啟用時</sec>，上述效果的數值增幅50%。
   "2":
     key: "2"
     icon: TeamDefBuff
@@ -2674,18 +2674,18 @@ skills:
         연막을 퍼트려 3라운드 동안 범위 내 아군에게 <sec typ="buff"><buff typ="DEF_UP" /> 광역 피해 분산 <val idx="2" r signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec> 감소 효과를 부여합니다. (중첩 불가)
         <sec typ="buff"><buff typ="DEF_UP" /> 광역 피해량 분산</sec>은 적의 공격 범위에 포함된 아군이 많을수록 받는 광역 공격의 최종 피해량이 감소하며, 광역 공격 범위 그리드와 공격을 받는 아군 수가 같을 때 최대로 적용됩니다.
         <sec typ="important">스킬 레벨 10에서 범위가 증가합니다.</sec>
-      JP: |-
-        煙幕を広げ、3ラウンドの間、範囲内の味方に<sec typ="buff"><buff typ="DEF_UP" /> 広域ダメージ分散 <val idx="2" r signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec>減少効果を付与します。(スタック不可)
-        <sec typ="buff"><buff typ="DEF_UP" /> 広域ダメージ分散</sec>は、敵の攻撃範囲に含まれる味方が多いほど広域攻撃の最終ダメージが減少し、広域攻撃範囲グリッドと攻撃を受ける味方の数が同じ時に最大で適用されます。
-        <sec typ="important">スキルレベル10で範囲が増加します。</sec>
       EN: |-
-        Spreads smoke and grants allies within range <sec typ="buff"><buff typ="DEF_UP" /> Area Damage Spread <val idx="2" r signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="0" r inv /></sec> decrease effects for 3 rounds. (cannot stack)
-        <sec typ="buff"><buff typ="DEF_UP" /> Area Damage Spread</sec> reduces the final damage from area attacks more as more allies are included in the enemy’s attack range, and is maximized when the area attack grid matches the number of allies hit.
-        <sec typ="important">Range increases at Skill Lv. 10.</sec>
+        Spreads smoke, granting allies within range <sec typ="buff"><buff typ="DEF_UP" /> Area Damage Dispersion <val idx="2" r signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> reduction effects for 3 rounds. (Cannot stack)
+        <sec typ="buff"><buff typ="DEF_UP" /> Area Damage Dispersion</sec> reduces the final damage taken from area attacks as more allies are included in the enemy's attack range, and applies at maximum when the area attack range grid count matches the number of allies being attacked.
+        <sec typ="important">Range increases at Skill Level 10.</sec>
+      JP: |-
+        煙幕を展開し、3ラウンドの間、範囲内の味方に<sec typ="buff"><buff typ="DEF_UP" />範囲ダメージ分散<val idx="2" r signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" r inv /></sec>減少効果を付与します。(重複不可)
+        <sec typ="buff"><buff typ="DEF_UP" />範囲ダメージ分散</sec>は、敵の攻撃範囲に含まれる味方が多いほど受ける範囲攻撃の最終ダメージが減少し、範囲攻撃のグリッド数と攻撃を受ける味方の数が同じ時に最大で適用されます。
+        <sec typ="important">スキルレベル10で範囲が増加します。</sec>
       TC: |-
-        散播煙幕，對範圍內我軍賦予持續3回合的<sec typ="buff"><buff typ="DEF_UP" /> 廣域傷害分散 <val idx="2" r signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="0" r inv /></sec>減少效果。(不可疊加)
-        <sec typ="buff"><buff typ="DEF_UP" /> 廣域傷害分散</sec>會隨著被敵軍攻擊範圍包含的我軍越多，使所受廣域攻擊的最終傷害減少，且當廣域攻擊範圍格與被攻擊我軍數量相同時達到最大值。
-        <sec typ="important">技能等級10時，增加範圍。</sec>
+        散佈煙幕，賦予範圍內友軍3回合的<sec typ="buff"><buff typ="DEF_UP" />範圍傷害分散<val idx="2" r signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="0" r inv /></sec>降低效果。（不可重疊）
+        <sec typ="buff"><buff typ="DEF_UP" />範圍傷害分散</sec>會根據敵人攻擊範圍內包含的友軍數量，降低受到範圍攻擊的最終傷害；當範圍攻擊格數與受攻擊友軍數相同時，套用最大效果。
+        <sec typ="important">技能等級10時範圍增加。</sec>
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -3019,18 +3019,18 @@ skills:
         <sec typ="cond">전투 개시 시</sec>, 범위 내 경장형 공격기 / 지원기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 경장형 공격기 / 지원기를 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>합니다.
         <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="6" r /></sec>과 <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="7" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" r inv /></sec>가 감소합니다.
-      JP: |-
-        <sec typ="cond">戦闘開始時</sec>, 範囲内の軽装型攻撃機 / 支援機の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>, 範囲内の軽装型攻撃機 / 支援機を<sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>, 自身の<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="6" r /></sec>と<sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性 <val idx="7" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="8" r inv /></sec>が減少します。
       EN: |-
-        <sec typ="cond">At the start of combat</sec>, increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of ally Light Armor Attackers / Supporters within range.
-        <sec typ="cond">At the start of the round</sec>, gives <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> to ally Light Armor Attackers / Supporters within range.
-        <sec typ="cond">At the start of the round</sec>, self’s <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="6" r /></sec> and <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance <val idx="7" r /></sec> increase, and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="8" r inv /></sec> decreases.
+        <sec typ="cond">At battle start</sec>, increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of Light Attackers / Supporters within range.
+        <sec typ="cond">At round start</sec>, grants <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> to Light Attackers / Supporters within range.
+        <sec typ="cond">At round start</sec>, increases own <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="6" r /></sec> and <sec typ="buff"><buff typ="ICERES_UP" /> Cold Resistance <val idx="7" r /></sec>, and reduces <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="8" r inv /></sec>.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、範囲内の軽装型攻撃機 / 支援機の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の軽装型攻撃機 / 支援機を<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="6" r /></sec>と<sec typ="buff"><buff typ="ICERES_UP" />冷気耐性<val idx="7" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="8" r inv /></sec>が減少します。
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>，增加範圍內輕裝型攻擊機 / 支援機的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>。
-        <sec typ="cond">回合開始時</sec>，對範圍內輕裝型攻擊機 / 支援機施加<sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>。
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="6" r /></sec>與<sec typ="buff"><buff typ="ICERES_UP" /> 冰冷抗性 <val idx="7" r /></sec>增加，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="8" r inv /></sec>減少。
+        <sec typ="cond">戰鬥開始時</sec>，範圍內輕裝型攻擊機 / 支援機的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，對範圍內輕裝型攻擊機 / 支援機賦予<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="6" r /></sec>與<sec typ="buff"><buff typ="ICERES_UP" />寒氣抗性<val idx="7" r /></sec>增加，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="8" r inv /></sec>降低。
   "4":
     key: "4"
     icon: P.TeamDefDeBuff
@@ -3343,21 +3343,21 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 도발 상태인 모든 적의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>를 증가시킵니다.
         <sec>해당 효과는 대상이 피격 시 해제됩니다.</sec>
         <sec typ="cond"><char uid="BR_Leona" />의 <sec typ="note">공격 지휘</sec>가 활성화된 경우</sec>, 상기 효과의 수치가 50% 증폭됩니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>, <sec>自分より行動力が低い敵</sec>を<sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>し、<sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec>を減少させます。
-        <sec typ="cond">ラウンド開始時</sec>, 挑発状態のすべての敵の<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="3" r /></sec>を増加させます。
-        <sec>この効果は対象が被弾すると解除されます。</sec>
-        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">攻撃指揮</sec>が有効な場合</sec>, 上記効果の数値が50%増幅されます。
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, <sec>enemies with lower MOVE than self</sec> are <sec typ="buff"><buff typ="PROVOKE" /> Provoked</sec> and their <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="1" r /></sec> decreases.
-        <sec typ="cond">At the start of the round</sec>, increases <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="3" r /></sec> of all enemies in Provoked state.
+        <sec typ="cond">At round start</sec>, <sec>enemies with lower Action Power than self</sec> are <sec typ="buff"><buff typ="PROVOKE" /> Provoked</sec>, and their <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> is reduced.
+        <sec typ="cond">At round start</sec>, increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec> of all Provoked enemies.
         <sec>This effect is removed when the target is hit.</sec>
-        <sec typ="cond">If <char uid="BR_Leona" />’s <sec typ="note">Attack Command</sec> is active</sec>, the above effect values are amplified by 50%.
+        <sec typ="cond">If <char uid="BR_Leona" />'s <sec typ="note">Offensive Command</sec> is active</sec>, the values of the above effects are amplified by 50%.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec>自身より行動力が低い敵</sec>を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>し、<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">ラウンド開始時</sec>、挑発状態のすべての敵の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="3" r /></sec>を増加させます。
+        <sec>この効果は対象が被撃時に解除されます。</sec>
+        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">攻撃指揮</sec>が有効な場合</sec>、上記効果の数値が50%増幅します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，<sec>對自身行動力較低的敵軍</sec>施加<sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>，並減少其<sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec>。
-        <sec typ="cond">回合開始時</sec>，增加所有處於挑釁狀態敵軍的<sec typ="buff"><buff typ="VULNERABLE" /> 所受傷害 <val idx="3" r /></sec>。
-        <sec>當目標受到攻擊時，該效果會解除。</sec>
-        <sec typ="cond">若<char uid="BR_Leona" />的<sec typ="note">攻擊指揮</sec>啟用</sec>，則上述效果數值加倍50%。
+        <sec typ="cond">回合開始時</sec>，<sec>行動力低於自身的敵人</sec>會受到<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>，且<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="1" r /></sec>降低。
+        <sec typ="cond">回合開始時</sec>，增加所有挑釁狀態敵人的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="3" r /></sec>。
+        <sec>該效果會在目標被擊中時解除。</sec>
+        <sec typ="cond"><char uid="BR_Leona" />的<sec typ="note">攻擊指揮</sec>啟用時</sec>，上述效果的數值增幅50%。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -6820,31 +6820,31 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 보호기를 제외한 아군을 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>합니다.
         <sec typ="cond">라운드 개시 시</sec>, 다음 조건을 만족하는 전투원 1기당 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="7" /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>을(를) 증가시킵니다.
-        - <cmt t="신장 145cm 이하의 바이오로이드">$$HEIGHT_145:?$</cmt> 또는 <cmt t="시스터즈 오브 발할라">$$Walhalla:?$</cmt> 소속
-        $$HEIGHT_145~
+        - <cmt t="신장 145cm 이하의 바이오로이드"><import name="HEIGHT_145" /></cmt> 또는 <cmt t="시스터즈 오브 발할라"><import name="Walhalla" /></cmt> 소속
+        <define name="HEIGHT_145">
         <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_LRL" />, <char uid="PECS_DutchGirl" />, <char uid="BR_Andvari" />, <char uid="SJ_Tachi" />, <char uid="BR_Efreeti" />, <char uid="3P_Aqua" />, <char uid="PECS_Ella" />, <char uid="BR_May" />, <char uid="BR_DrM" />, <char uid="BR_PXSilky" />, <char uid="PECS_Draculina" />, <char uid="DS_MoMo" />, <char uid="BR_Bulgasari" />, <char uid="BR_Sylphid" />, <char uid="PECS_Empress" />, <char uid="BR_Alvis" />, <char uid="BR_Thetis" />, <char uid="BR_Ellie" />
-        ~$$HEIGHT_145
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>, 範囲内の保護機を除く味方を<sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>, 次の条件を満たす戦闘員1機ごとに、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="7" /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>を増加させます。
-        - <cmt t="身長145cm以下のバイオロイド">$$HEIGHT_145:?$</cmt> または <cmt t="シスターズ・オブ・ヴァルハラ">$$Walhalla:?$</cmt>所属
-        $$HEIGHT_145~
-        <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_LRL" />, <char uid="PECS_DutchGirl" />, <char uid="BR_Andvari" />, <char uid="SJ_Tachi" />, <char uid="BR_Efreeti" />, <char uid="3P_Aqua" />, <char uid="PECS_Ella" />, <char uid="BR_May" />, <char uid="BR_DrM" />, <char uid="BR_PXSilky" />, <char uid="PECS_Draculina" />, <char uid="DS_MoMo" />, <char uid="BR_Bulgasari" />, <char uid="BR_Sylphid" />, <char uid="PECS_Empress" />, <char uid="BR_Alvis" />, <char uid="BR_Thetis" />, <char uid="BR_Ellie" />
-        ~$$HEIGHT_145
+        </define>
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, gives <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> to allies within range excluding Defenders.
-        <sec typ="cond">At the start of the round</sec>, increases allies within range’s <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="7" /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> for each unit that satisfies the following condition.
-        - <cmt t="Bioroids 145cm or shorter">$$HEIGHT_145:?$</cmt> or belonging to <cmt t="Sisters of Valhalla">$$Walhalla:?$</cmt>
-        $$HEIGHT_145~
+        <sec typ="cond">At round start</sec>, grants <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> to allies within range, excluding Protectors.
+        <sec typ="cond">At round start</sec>, for each combatant that meets the following conditions, increases allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="7" /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> within range.
+        - Affiliated with <cmt t="Bioroids 145 cm tall or shorter"><import name="HEIGHT_145" /></cmt> or <cmt t="Sisters of Valhalla"><import name="Walhalla" /></cmt>
+        <define name="HEIGHT_145">
         <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_LRL" />, <char uid="PECS_DutchGirl" />, <char uid="BR_Andvari" />, <char uid="SJ_Tachi" />, <char uid="BR_Efreeti" />, <char uid="3P_Aqua" />, <char uid="PECS_Ella" />, <char uid="BR_May" />, <char uid="BR_DrM" />, <char uid="BR_PXSilky" />, <char uid="PECS_Draculina" />, <char uid="DS_MoMo" />, <char uid="BR_Bulgasari" />, <char uid="BR_Sylphid" />, <char uid="PECS_Empress" />, <char uid="BR_Alvis" />, <char uid="BR_Thetis" />, <char uid="BR_Ellie" />
-        ~$$HEIGHT_145
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の保護機を除く味方を<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、次の条件を満たす戦闘員1機につき、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" /></sec> / <sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="7" /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />AP<val idx="6" /></sec>を増加させます。
+        - <cmt t="身長145cm以下のバイオロイド"><import name="HEIGHT_145" /></cmt>または<cmt t="シスターズ・オブ・ヴァルハラ"><import name="Walhalla" /></cmt>所属
+        <define name="HEIGHT_145">
+        <char uid="PECS_CoCoWhiteShell" />、 <char uid="PECS_LRL" />、 <char uid="PECS_DutchGirl" />、 <char uid="BR_Andvari" />、 <char uid="SJ_Tachi" />、 <char uid="BR_Efreeti" />、 <char uid="3P_Aqua" />、 <char uid="PECS_Ella" />、 <char uid="BR_May" />、 <char uid="BR_DrM" />、 <char uid="BR_PXSilky" />、 <char uid="PECS_Draculina" />、 <char uid="DS_MoMo" />、 <char uid="BR_Bulgasari" />、 <char uid="BR_Sylphid" />、 <char uid="PECS_Empress" />、 <char uid="BR_Alvis" />、 <char uid="BR_Thetis" />、 <char uid="BR_Ellie" />
+        </define>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，對範圍內除了保護機以外的我軍施加<sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>。
-        <sec typ="cond">回合開始時</sec>，每1名符合以下條件的戰鬥員，增加範圍內我軍的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="7" /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>。
-        - <cmt t="身高145cm以下的生化人">$$HEIGHT_145:?$</cmt> 或隸屬於 <cmt t="瓦爾哈拉姊妹會">$$Walhalla:?$</cmt>
-        $$HEIGHT_145~
-        <char uid="PECS_CoCoWhiteShell" />、<char uid="PECS_LRL" />、<char uid="PECS_DutchGirl" />、<char uid="BR_Andvari" />、<char uid="SJ_Tachi" />、<char uid="BR_Efreeti" />、<char uid="3P_Aqua" />、<char uid="PECS_Ella" />、<char uid="BR_May" />、<char uid="BR_DrM" />、<char uid="BR_PXSilky" />、<char uid="PECS_Draculina" />、<char uid="DS_MoMo" />、<char uid="BR_Bulgasari" />、<char uid="BR_Sylphid" />、<char uid="PECS_Empress" />、<char uid="BR_Alvis" />、<char uid="BR_Thetis" />、<char uid="BR_Ellie" />
-        ~$$HEIGHT_145
+        <sec typ="cond">回合開始時</sec>，對範圍內除保護機以外的友軍賦予<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>，每有1名滿足以下條件的戰鬥員，範圍內友軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" /></sec> / <sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="7" /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />AP<val idx="6" /></sec>增加。
+        - 隸屬於<cmt t="身高145cm以下的生化人"><import name="HEIGHT_145" /></cmt>或<cmt t="英靈殿姊妹"><import name="Wa釋放lla" /></cmt>
+        <define name="HEIGHT_145">
+        <char uid="PECS_CoCoWhiteShell" />， <char uid="PECS_LRL" />， <char uid="PECS_DutchGirl" />， <char uid="BR_Andvari" />， <char uid="SJ_Tachi" />， <char uid="BR_Efreeti" />， <char uid="3P_Aqua" />， <char uid="PECS_Ella" />， <char uid="BR_May" />， <char uid="BR_DrM" />， <char uid="BR_PXSilky" />， <char uid="PECS_Draculina" />， <char uid="DS_MoMo" />， <char uid="BR_Bulgasari" />， <char uid="BR_Sylphid" />， <char uid="PECS_Empress" />， <char uid="BR_Alvis" />， <char uid="BR_Thetis" />， <char uid="BR_Ellie" />
+        </define>
 dialogue:
   KR:
     "1":

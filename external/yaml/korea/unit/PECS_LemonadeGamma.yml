@@ -1193,20 +1193,20 @@ skills:
     desc:
       KR: |-
         지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
-        목표 지점 뒷 칸에는 피해가 25% 감소합니다.
-        <sec typ="cond">스킬 적중 시</sec> 2라운드 동안 대상의 방어력을 낮추고 받는 피해를 증가시킵니다.
+        <sec typ="dmg">목표 지점 뒷 칸에는 피해가 25% 감소합니다.</sec>
+        <sec typ="cond">스킬 적중 시</sec> 2라운드 동안 대상의 <sec typ="buff"><buff typ="VULNERABLE" /> 방어력 <val idx="0" r /></sec>를 낮추고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>를 증가시킵니다.
+      EN: |-
+        to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="dmg">target point rear tilesin damage 25% decreases.</sec>
+        <sec typ="cond">When the skill hits</sec> 2 rounds, target's <sec typ="buff"><buff typ="VULNERABLE" /> Defense <val idx="0" r /></sec> reduces and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increases.
       JP: |-
         指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
-        目標地点の後ろのマスには25%減少したダメージを与えます。
-        <sec typ="cond">スキル命中時</sec>、2ラウンドの間、対象の防御力を下げ受けるダメージを増加させます。
-      EN: |-
-        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage to the designated area.
-        Deals 25% less damage to the tiles behind the target point.
-        <sec typ="cond">When skill hits</sec>, decreases the target’s DEF and increases their received damage for 2 rounds.
+        <sec typ="dmg">目標地点 ドウィト マスには ダメージが 25% 減少します。</sec>
+        <sec typ="cond">スキル命中時</sec> 2ラウンドの間 対象の <sec typ="buff"><buff typ="VULNERABLE" /> 防御力 <val idx="0" r /></sec>を ンアトチウし <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec>を増加させます。
       TC: |-
-        對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害。
-        目標地點後方格的傷害減少25%。
-        <sec typ="cond">技能命中時</sec>，於2回合內降低目標防禦力並增加其所受傷害。
+        指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="dmg">目標地點 後t 格於 傷害 25% 減少。</sec>
+        <sec typ="cond">技能命中時</sec> 2回合內 目標的 <sec typ="buff"><buff typ="VULNERABLE" /> 防禦力 <val idx="0" r /></sec> 降低並並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec>使其增加。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -2309,16 +2309,16 @@ skills:
     desc:
       KR: |-
         지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
-        <sec typ="cond">적중 시</sec> 대상의 반격 효과를 해제하며 대상의 hp가 70% 이상인 경우, 피해량이 증가합니다.
+        <sec typ="cond">적중 시</sec> 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>하며 <sec typ="cond">대상의 HP가 70% 이상인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r signless /></sec>가 증가합니다.
+      EN: |-
+        to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec> target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Counterattack removes the effect</sec> and <sec typ="cond">target's HP 70% or moreif</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r signless /></sec> increases.
       JP: |-
         指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
-        <sec typ="cond">命中時</sec>、対象の反撃効果を解除し、対象のHPが70%以上の場合はダメージ量が増加します。
-      EN: |-
-        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area.
-        <sec typ="cond">When attack hits</sec>, removes the target’s Retaliation effect, and if the target’s HP is 70% or higher, damage is increased.
+        <sec typ="cond">命中時</sec> 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃 効果を 解除</sec>し、 <sec typ="cond">対象の HPが 70% 以上の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r signless /></sec>が増加します。
       TC: |-
-        對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />傷害。
-        <sec typ="cond">命中時</sec>，解除目標的反擊效果；若目標HP為70%以上，則傷害量增加。
+        指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec> 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊 效果 解除</sec>並 <sec typ="cond">目標的 HP 70% 以上若為</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r signless /></sec>增加。
   "3":
     key: "3"
     icon: P.SuicideBomb
@@ -2485,10 +2485,18 @@ skills:
             per: 0.02
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>를 획득합니다. 로데/ 멀린/ 트리톤/ 메로페 중 한명이 있으면 공격력이 상승합니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec>を獲得します。ローデ/メルリン/トリトン/メロペのうち1人でもいる場合、攻撃力が上昇します。
-      EN: <sec typ="cond">At the start of the round</sec>, gains <sec typ="buff"><buff typ="DEF_PIERCE_UP" />Defense Penetration<val idx="0" r /></sec>. If any one of Rhode/Merlin/Triton/Merope is present, ATK increases.
-      TC: <sec typ="cond">回合開始時</sec>，獲得<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿<val idx="0" r /></sec>。若羅德／梅林／特里同／梅洛佩中任一人在場，則攻擊力上升。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>를 획득합니다.
+        <sec typ="cond"><char uid="PECS_Rhode" /> / <char uid="PECS_Merlin" /> / <char uid="PECS_Triton" /> / <char uid="3P_Merope" /> 중 한명이 있으면</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" r /></sec>가 상승합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> gains.
+        <sec typ="cond"><char uid="PECS_Rhode" /> / <char uid="PECS_Merlin" /> / <char uid="PECS_Triton" /> / <char uid="3P_Merope" /> during one members if present</sec> <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="2" r /></sec> rise.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>を獲得します。
+        <sec typ="cond"><char uid="PECS_Rhode" /> / <char uid="PECS_Merlin" /> / <char uid="PECS_Triton" /> / <char uid="3P_Merope" /> 中 した名が ある場合</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="2" r /></sec>が スアンスウンします。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec>獲得。
+        <sec typ="cond"><char uid="PECS_Rhode" /> / <char uid="PECS_Merlin" /> / <char uid="PECS_Triton" /> / <char uid="3P_Merope" /> 中 名 若有</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="2" r /></sec> 上升。
   "4":
     key: "4"
     icon: P.Vortex
@@ -2650,10 +2658,18 @@ skills:
             per: 0.1
             chance: 1
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 자신에게 걸린 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다. HP가 25%이하인 경우 스킬 위력을 1라운드 증가시킵니다.
-      JP: <sec typ="cond">ラウンド開始時</sec>、自分にかかっている<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害な効果を解除</sec>します。HPが25%以下の場合、1ラウンドの間スキル威力を増加させます。
-      EN: <sec typ="cond">At the start of the round</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" />removes Malign Effects</sec> from self. If HP is 25% or lower, increases Skill Power for 1 round.
-      TC: <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除自身身上的負面效果</sec>。若HP為25%以下，則於1回合內增加技能威力。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신에게 걸린 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        <sec typ="cond">HP가 25%이하인 경우</sec> 1라운드 동안 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="2" r /></sec>를 증가시킵니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, self applied <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec>.
+        <sec typ="cond">HP 25%or lessif</sec> 1 round <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="2" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身に グオルルイン <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>します。
+        <sec typ="cond">HPが 25%以下の場合</sec> 1ラウンドの間 <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="2" r /></sec>を増加させます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身給 附加的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>。
+        <sec typ="cond">HP 25%以下若為</sec> 1回合內 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="2" r /></sec>使其增加。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -2944,20 +2960,20 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec> 자신에게 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless />HP로 전투 속행</sec> 효과를 얻습니다.
-        <sec typ="cond">라운드 개시 시</sec> 자신에게 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항</sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항</sec>을 부여합니다.
-        <sec typ="cond">피격시</sec>, 1라운드 동안 <sec typ="buff"><buff typ="COUNTER" /> 반격</sec>효과를 얻습니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自分に<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="0" signless />HPで戦闘続行</sec>効果を得ます。
-        <sec typ="cond">ラウンド開始時</sec>、自分に<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性</sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除耐性</sec>を付与します。
-        <sec typ="cond">被弾時</sec>、1ラウンドの間<sec typ="buff"><buff typ="COUNTER" />反撃</sec>効果を得ます。
+        <sec typ="cond">라운드 개시 시</sec> 자신에게 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="5" r /></sec>를 부여합니다.
+        <sec typ="cond">피격시</sec>, 1라운드 동안 <sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> 위력으로 반격</sec> 효과를 얻습니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="0" signless />HP Continue Combat</sec>.
-        <sec typ="cond">At the start of the round</sec>, grants self <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />Effect Resistance</sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />Remove Upgrade Resistance</sec>.
-        <sec typ="cond">When attacked</sec>, gains <sec typ="buff"><buff typ="COUNTER" />Retaliation</sec> for 1 round.
+        <sec typ="cond">At round start</sec> self <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless />HP and Continue Combat</sec> effect and gains.
+        <sec typ="cond">At round start</sec> self <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="4" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Buff Removal Resistance <val idx="5" r /></sec> grants.
+        <sec typ="cond">hit when</sec>, 1 round <sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> power as Counterattack</sec> effect and gains.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 自身に <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless />HPで 戦闘続行</sec> 効果を オトます。
+        <sec typ="cond">ラウンド開始時</sec> 自身に <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抵抗 <val idx="5" r /></sec>を付与します。
+        <sec typ="cond">被弾時</sec>、 1ラウンドの間 <sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> 威力で 反撃</sec> 効果を オトます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="0" signless />HP繼續戰鬥</sec>效果。
-        <sec typ="cond">回合開始時</sec>，賦予自身<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗</sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除抵抗</sec>。
-        <sec typ="cond">受到攻擊時</sec>，於1回合內獲得<sec typ="buff"><buff typ="COUNTER" />反擊</sec>效果。
+        <sec typ="cond">回合開始時</sec> 自身給 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless />HP以 戰鬥續行</sec> 效果 獲得。
+        <sec typ="cond">回合開始時</sec> 自身給 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抗性 <val idx="5" r /></sec>賦予。
+        <sec typ="cond">被擊時</sec>， 1回合內 <sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> 威力以 反擊</sec> 效果 獲得。
 dialogue:
   KR:
     "1":

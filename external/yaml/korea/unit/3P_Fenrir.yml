@@ -1898,20 +1898,20 @@ skills:
     desc:
       KR: |-
         체인 블레이드로 <dmg elem="physics" />를 줍니다.
-        공격 적중 시, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" r /></sec> 감소 상태로 만듭니다.
+        <sec typ="cond">공격 적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" r /></sec> 감소 상태로 만듭니다.
         치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      EN: |-
+        Deals <dmg elem="physics" /> with a chain blade.
+        On attack hit, makes the target <sec typ="buff"><buff typ="PROVOKE" /> Provoked</sec> / decreases <sec typ="buff"><buff typ="DEF_DOWN" /> DEF by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion by <val idx="2" r /></sec> for 2 rounds.
+        On critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt increases by <val idx="3" r /></sec>.
       JP: |-
         チェーンブレードで<dmg elem="physics" />を与えます。
-        攻撃命中時、2ラウンドの間、対象を<sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="2" r /></sec>減少状態にします。
-        クリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
-      EN: |-
-        Attacks with a Chain Blade and deals <dmg elem="physics" />.
-        When attack hits, inflicts the target with <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="2" r /></sec> Decrease for 2 rounds.
-        When CRIT hits, <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="3" r /></sec> increases.
+        攻撃命中時、2ラウンドの間、対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec> / <sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="2" r /></sec>減少状態にします。
+        クリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="3" r /></sec>が増加します。
       TC: |-
-        用鍊刃造成<dmg elem="physics" />。
-        攻擊命中時，讓目標陷入<sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="2" r /></sec>降低狀態，持續2回合。
-        暴擊時，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>增加。
+        用鏈刃造成<dmg elem="physics" />。
+        <sec typ="cond">攻擊命中時</sec>，2回合內使目標進入<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec> / <sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="2" r /></sec>降低狀態。
+        暴擊時，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="3" r /></sec>增加。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -3025,15 +3025,15 @@ skills:
       KR: |-
         구속구를 해제한 후, 지정 대상에게 <dmg elem="physics" />를 주고 대상 뒤에 <sec typ="dmg">50% 피해</sec>를 줍니다.
         치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가하며 <sec typ="dmg"><buff typ="DamageAmp_Me" /> 자신의 현재 HP%가 낮을수록 피해량 <val idx="2" r /></sec> 증가합니다.
-      JP: |-
-        拘束球を解除した後、指定対象に<dmg elem="physics" />を与え、対象の後ろに<sec typ="dmg">50%ダメージ</sec>を与えます。
-        クリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加し、<sec typ="dmg"><buff typ="DamageAmp_Me" /> 自分の現在HP%が低いほどダメージ量 <val idx="2" r /></sec>が増加します。
       EN: |-
-        After removing the orb of imprisonment, deals <dmg elem="physics" /> to the designated target and deals <sec typ="dmg">50% damage</sec> behind the target.
-        When CRIT hits, <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="0" r /></sec> increases and <sec typ="dmg"><buff typ="DamageAmp_Me" /> Damage <val idx="2" r /></sec> increases the lower self’s current HP% is.
+        After releasing her restraints, deals <dmg elem="physics" /> to the designated target and deals <sec typ="dmg">50% damage</sec> behind the target.
+        On critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt increases by <val idx="0" r /></sec>, and <sec typ="dmg"><buff typ="DamageAmp_Me" /> damage dealt increases by <val idx="2" r /> as her current HP% decreases</sec>.
+      JP: |-
+        拘束具を解除した後、指定対象に<dmg elem="physics" />を与え、対象の後方に<sec typ="dmg">50%ダメージ</sec>を与えます。
+        クリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加し、<sec typ="dmg"><buff typ="DamageAmp_Me" />自身の現在HP%が低いほどダメージ量<val idx="2" r /></sec>が増加します。
       TC: |-
-        解除拘束球後，對指定目標造成<dmg elem="physics" />，並對目標後方造成<sec typ="dmg">50%傷害</sec>。
-        暴擊時，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加，且<sec typ="dmg"><buff typ="DamageAmp_Me" /> 自身目前生命力%越低，傷害量 <val idx="2" r /></sec>越高。
+        解除拘束具後，對指定目標造成<dmg elem="physics" />，並對目標後方造成<sec typ="dmg">50%傷害</sec>。
+        暴擊時，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加，且<sec typ="dmg"><buff typ="DamageAmp_Me" />自身目前HP%越低，傷害量<val idx="2" r /></sec>增加。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -3349,17 +3349,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        전투 개시 시, <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>와 해제 불가한 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> HP <val idx="1" signless />(으)로 전투 속행</sec> 효과가 활성화되며, 자신이 적 처치 시 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>이(가) 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>와 해제 불가한 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> HP <val idx="1" signless />(으)로 전투 속행</sec> 효과가 활성화되며, 자신이 적 처치 시 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>이(가) 증가합니다.
         ※ 숨겨진 시너지 : <equip uid="Sub_LunchBox" /> 장착 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>가 증가합니다.
-      JP: |-
-        戦闘開始時、<sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>と解除不可の<sec typ="buff"><buff typ="DEF_RESSURRECT" /> HP <val idx="1" signless />で戦闘続行</sec>効果が有効化され、自分が敵を撃破すると<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>が増加します。
-        ※隠しシナジー：<equip uid="Sub_LunchBox" />装備時、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>が増加します。
       EN: |-
-        At the start of combat, activates <sec typ="buff"><buff typ="DEF_Side" /> Protect Line</sec> and an unremovable <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat with HP <val idx="1" signless /></sec> effect, and when self defeats an enemy, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec> increases.
-        ※ Hidden synergy: when <equip uid="Sub_LunchBox" /> is equipped, <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="5" r /></sec> increases.
+        At battle start, <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> and unremovable <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Battle with HP <val idx="1" signless /></sec> are activated, and when she kills an enemy, <sec typ="buff"><buff typ="AP_UP" /> AP increases by <val idx="3" /></sec>.
+        ※ Hidden Synergy: When equipped with <equip uid="Sub_LunchBox" />, <sec typ="buff"><buff typ="ATK_UP" /> ATK increases by <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power increases by <val idx="5" r /></sec>.
+      JP: |-
+        戦闘開始時、<sec typ="buff"><buff typ="DEF_Side" />列保護</sec>と解除不可の<sec typ="buff"><buff typ="DEF_RESSURRECT" />HP<val idx="1" signless />で戦闘続行</sec>効果が活性化され、自身が敵を倒すと<sec typ="buff"><buff typ="AP_UP" />AP<val idx="3" /></sec>が増加します。
+        ※ 隠しシナジー：<equip uid="Sub_LunchBox" />装備時、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>が増加します。
       TC: |-
-        開始戰鬥時，啟用<sec typ="buff"><buff typ="DEF_Side" /> 保護一列</sec>與無法解除的<sec typ="buff"><buff typ="DEF_RESSURRECT" /> 以HP <val idx="1" signless />繼續戰鬥</sec>效果，且自身擊殺敵軍時，<sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="3" /></sec>增加。
-        ※ 隱藏協同：裝備<equip uid="Sub_LunchBox" />時，<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>增加。
+        戰鬥開始時，啟用<sec typ="buff"><buff typ="DEF_Side" />列保護</sec>與無法解除的<sec typ="buff"><buff typ="DEF_RESSURRECT" />以HP<val idx="1" signless />戰鬥續行</sec>效果，且自身擊殺敵人時<sec typ="buff"><buff typ="AP_UP" />AP<val idx="3" /></sec>增加。
+        ※ 隱藏協同：裝備<equip uid="Sub_LunchBox" />時，<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3550,15 +3550,15 @@ skills:
       KR: |-
         <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec>가 감소합니다.
         <sec typ="cond">HP 50% 이하 시</sec>, 효과가 50% 증가합니다.
-      JP: |-
-        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec>が減少します。
-        <sec typ="cond">HP 50%以下の場合</sec>、効果が50%増加します。
       EN: |-
-        <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Received Damage <val idx="1" r inv /></sec> decreases.
-        <sec typ="cond">If HP is 50% or below</sec>, the effects are increased by 50%.
+        <sec typ="buff"><buff typ="ATK_UP" /> ATK increases by <val idx="0" r /></sec>, and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decreases by <val idx="1" r inv /></sec>.
+        <sec typ="cond">When HP is 50% or below</sec>, the effects increase by 50%.
+      JP: |-
+        <sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="1" r inv /></sec>が減少します。
+        <sec typ="cond">HP50%以下時</sec>、効果が50%増加します。
       TC: |-
-        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>增加，<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 所受傷害 <val idx="1" r inv /></sec>減少。
-        <sec typ="cond">若HP為50%以下</sec>，效果增加50%。
+        <sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec>增加，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到傷害<val idx="1" r inv /></sec>降低。
+        <sec typ="cond">HP 50%以下時</sec>，效果增加50%。
   "5":
     key: "5"
     icon: P.DefCounter
@@ -3908,17 +3908,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        피격 시, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가하며 <sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless /> 위력으로 반격</sec>합니다.
+        피격 시, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>가 증가하며 <sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless /> 위력으로 반격</sec>합니다.
         <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 전투 속행</sec> 발동 시, <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec>가 증가하며 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 효과를 무시</sec>하지만 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="ref"><buff typ="DEF_Side" /> 열 보호</sec>가 해제</sec>됩니다.
-      JP: |-
-        被撃時、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加し、<sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless /> の威力で反撃</sec>します。
-        <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 戦闘続行</sec>発動時、<sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec>が増加し、<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア/受けるダメージ減少効果を無視</sec>しますが、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="ref"><buff typ="DEF_Side" /> 列保護</sec>が解除</sec>されます。
       EN: |-
-        When attacked, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases and self retaliates with <sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless /> power</sec>.
-        When <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Combat</sec> is triggered, <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="6" r /></sec> increases and self <sec typ="buff"><buff typ="BARRIER_PIERCE" /> ignores Defensive Shield / Damage Decrease effects</sec>, but <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="ref"><buff typ="DEF_Side" /> Protect Line</sec> is removed</sec>.
+        When hit, <sec typ="buff"><buff typ="AP_UP" /> AP increases by <val idx="0" /></sec> and she <sec typ="buff"><buff typ="COUNTER" /> counterattacks with <val idx="7" r signless /> power</sec>.
+        When <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Battle</sec> activates, <sec typ="buff"><buff typ="EVADE_UP" /> Evasion increases by <val idx="6" r /></sec> and she <sec typ="buff"><buff typ="BARRIER_PIERCE" /> ignores Barrier / Damage Reduction effects</sec>, but <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="ref"><buff typ="DEF_Side" /> Column Protection</sec> is removed</sec>.
+      JP: |-
+        被撃時、<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>が増加し、<sec typ="buff"><buff typ="COUNTER" /><val idx="7" r signless />威力で反撃</sec>します。
+        <sec typ="buff"><buff typ="DEF_RESSURRECT" />戦闘続行</sec>発動時、<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec>が増加し、<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア / ダメージ減少効果を無視</sec>しますが、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="ref"><buff typ="DEF_Side" />列保護</sec>が解除</sec>されます。
       TC: |-
-        受到攻擊時，<sec typ="buff"><buff typ="AP_UP" /> 行動點數 <val idx="0" /></sec>增加，並以<sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless /> 威力</sec>進行反擊。
-        <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 繼續戰鬥</sec>發動時，<sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec>增加，並<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視防護罩/所受傷害減少效果</sec>，但會<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除<sec typ="ref"><buff typ="DEF_Side" /> 保護一列</sec></sec>。
+        被擊時，<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>增加，並<sec typ="buff"><buff typ="COUNTER" />以<val idx="7" r signless />威力反擊</sec>。
+        <sec typ="buff"><buff typ="DEF_RESSURRECT" />戰鬥續行</sec>發動時，<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec>增加，並<sec typ="buff"><buff typ="BARRIER_PIERCE" />無視護盾 / 傷害減少效果</sec>，但會<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除<sec typ="ref"><buff typ="DEF_Side" />列保護</sec></sec>。
 dialogue:
   KR:
     "1":

@@ -2808,19 +2808,19 @@ skills:
       KR: |-
         빠르게 적에게 접근하여 단일 대상에게 <dmg elem="ice" />를 입힙니다.
         <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상의 HP에 반비례하여 피해량 <val idx="0" r /></sec>가 증가합니다.
-        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <cmt loc t="FLOOD">$$FLOOD:4,5,6$</cmt> 상태로 만듭니다.
-      JP: |-
-        素早く敵に接近し、単体対象に<dmg elem="ice" />を与えます。
-        <sec typ="dmg"><buff typ="DamageAmp_Opp" />対象のHPに反比例してダメージ量<val idx="0" r /></sec>が増加します。
-        <sec typ="cond">命中時</sec>、2ラウンドの間対象を<cmt loc t="FLOOD">$$FLOOD:4,5,6$</cmt>状態にします。
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <cmt loc t="FLOOD"><import name="FLOOD" p="4,5,6" /></cmt> 상태로 만듭니다.
       EN: |-
-        Quickly approaches the enemy and deals <dmg elem="ice" /> to a single target.
-        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> Damage <val idx="0" r /></sec> increases in inverse proportion to the target's HP.
-        <sec typ="cond">On hit</sec>, makes the target <cmt loc t="FLOOD">$$FLOOD:4,5,6$</cmt> for 2 rounds.
+        quickly to the enemy approaches to a single target <dmg elem="ice" />.
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> target's HP to inversely proportional by doing damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, 2 rounds target <cmt loc t="FLOOD"><import name="FLOOD" p="4,5,6" /></cmt> inflicts.
+      JP: |-
+        素早く敵へ接近して 単一対象へ<dmg elem="ice" />を与えます。
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 対象の HPに 反比例して ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象を <cmt loc t="FLOOD"><import name="FLOOD" p="4,5,6" /></cmt> 状態にします。
       TC: |-
-        迅速接近敵人，對單一目標造成<dmg elem="ice" />。
-        <sec typ="dmg"><buff typ="DamageAmp_Opp" />傷害量<val idx="0" r /></sec>會隨目標的HP成反比增加。
-        <sec typ="cond">命中時</sec>，使目標在2回合內進入<cmt loc t="FLOOD">$$FLOOD:4,5,6$</cmt>狀態。
+        快速接近敵人 單一目標給 造成<dmg elem="ice" />。
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 目標的 HP於 成反比並 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <cmt loc t="FLOOD"><import name="FLOOD" p="4,5,6" /></cmt> 使其進入狀態。
   "2":
     key: "2"
     icon: Wave
@@ -4642,19 +4642,19 @@ skills:
       KR: |-
         거대한 닻을 내리쳐 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 입힙니다.
         <sec typ="cond">스킬을 사용한 다음 라운드 개시 시</sec>, <sec typ="note">극지 생존 경쟁</sec> 범위 내 아군에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
-        <sec typ="cond">대상이 <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt> 상태인 경우</sec>, 1라운드 동안 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만들고 <sec typ="dmg"><buff typ="IceDMG_DOT" /> 지속 냉기 피해 <val idx="4" signless /></sec>을(를) 입힙니다.
-      JP: |-
-        巨大な錨を叩き下ろし、<sec typ="attr">保護無視</sec> <dmg elem="ice" />を与えます。
-        <sec typ="cond">スキル使用後の次のラウンド開始時</sec>、<sec typ="note">後衛</sec>範囲内の味方に付与された<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害効果を解除</sec>します。
-        <sec typ="cond">対象が<cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>状態の場合</sec>、1ラウンドの間<sec typ="buff"><buff typ="STUN" />行動不能</sec>状態にし、<sec typ="dmg"><buff typ="IceDMG_DOT" />継続冷気ダメージ<val idx="4" signless /></sec>を与えます。
+        <sec typ="cond">대상이 <cmt loc t="FLOOD"><import name="FLOOD" p="?,?,?" /></cmt> 상태인 경우</sec>, 1라운드 동안 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만들고 <sec typ="dmg"><buff typ="IceDMG_DOT" /> 지속 냉기 피해 <val idx="4" signless /></sec>을(를) 입힙니다.
       EN: |-
-        Slams down a massive anchor and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="ice" />.
-        <sec typ="cond">At the start of the round after using the skill</sec>, <sec typ="note">Rear Guard</sec> removes <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects</sec> applied to allies within range.
-        <sec typ="cond">If the target is <cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt></sec>, inflicts <sec typ="buff"><buff typ="STUN" /> unable to act</sec> for 1 round and deals <sec typ="dmg"><buff typ="IceDMG_DOT" /> continuous Cold damage <val idx="4" signless /></sec>.
+        giant anchor slams down <sec typ="attr">Ignore Protection</sec> <dmg elem="ice" />.
+        <sec typ="cond">At the start of the next round after using the skill</sec>, <sec typ="note">Polar Survival Competition</sec> within range to allies enemy applied <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec>.
+        <sec typ="cond">target <cmt loc t="FLOOD"><import name="FLOOD" p="?,?,?" /></cmt> if in the state</sec>, 1 round <sec typ="buff"><buff typ="STUN" /> Stunned</sec> to the state makes and <sec typ="dmg"><buff typ="IceDMG_DOT" /> Ice damage over time <val idx="4" signless /></sec> deals.
+      JP: |-
+        巨大な錨を振り下ろし <sec typ="attr">保護無視</sec><dmg elem="ice" />を与えます。
+        <sec typ="cond">スキル使用後の次のラウンド開始時</sec>、 <sec typ="note">極地生存競争</sec> 範囲内 味方に 適用された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>します。
+        <sec typ="cond">対象が <cmt loc t="FLOOD"><import name="FLOOD" p="?,?,?" /></cmt> 状態の場合</sec>、 1ラウンドの間 <sec typ="buff"><buff typ="STUN" /> 行動不可</sec> 状態に だけたちし <sec typ="dmg"><buff typ="IceDMG_DOT" /> 持続冷気ダメージ <val idx="4" signless /></sec>を 与えます。
       TC: |-
-        重擊巨大錨，對單一目標造成<sec typ="attr">無視保護</sec> <dmg elem="ice" />。
-        <sec typ="cond">使用技能後的下一回合開始時</sec>，解除<sec typ="note">後衛</sec>範圍內我軍身上的<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害效果</sec>。
-        <sec typ="cond">若目標處於<cmt loc t="FLOOD">$$FLOOD:?,?,?$</cmt>狀態</sec>，使其在1回合內陷入<sec typ="buff"><buff typ="STUN" />無法行動</sec>狀態，並造成<sec typ="dmg"><buff typ="IceDMG_DOT" />持續冰霜傷害<val idx="4" signless /></sec>。
+        揮下巨大的錨 <sec typ="attr">無視保護</sec> 造成<dmg elem="ice" />。
+        <sec typ="cond">使用技能後的下一回合開始時</sec>， <sec typ="note">極地生存競賽</sec> 範圍內 我方給 套用已 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>。
+        <sec typ="cond">目標 <cmt loc t="FLOOD"><import name="FLOOD" p="?,?,?" /></cmt> 若為狀態</sec>， 1回合內 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 成為狀態 僅們並 <sec typ="dmg"><buff typ="IceDMG_DOT" /> 持續冰冷傷害 <val idx="4" signless /></sec> 造成。
   "3":
     key: "3"
     icon: P.ShieldWall
@@ -5087,19 +5087,19 @@ skills:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 아군을 지정 보호</sec>합니다.
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="6" r /></sec>가 증가합니다.
-        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 후열에 위치한 경우</sec>, <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>가 활성화되고 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="8" /></sec>이(가) 증가합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の<sec typ="buff"><buff typ="DEF_Char" />保護機を除く味方を指定保護</sec>します。
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="FIRERES_UP" />火炎耐性<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" />冷気耐性<val idx="6" r /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身が後列にいる場合</sec>、<sec typ="buff"><buff typ="DEF_Side" />列保護</sec>が有効になり、<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="8" /></sec>が増加します。
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 후열에 위치한 경우</sec>, <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>가 활성화되고 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="8" /></sec>가 증가합니다.
       EN: |-
-        <sec typ="cond">At round start</sec>, grants <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> to allies within range excluding Protectors.
-        <sec typ="cond">At round start</sec>, allies within range gain <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> Cold Resistance <val idx="6" r /></sec>.
-        <sec typ="cond">At round start</sec> <sec typ="cond">if self is in the rear line</sec>, <sec typ="buff"><buff typ="DEF_Side" /> Protect Line</sec> activates and <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="8" /></sec> increases.
+        <sec typ="cond">At round start</sec>, within range <sec typ="buff"><buff typ="DEF_Char" /> Defender excluding Designated Protection for allies</sec>.
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance <val idx="6" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self back row to if positioned</sec>, <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> activated and <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="8" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 <sec typ="buff"><buff typ="DEF_Char" /> 保護機を ジエ外した 味方を 指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性 <val idx="6" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身が 後列に 位置している場合</sec>、 <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>が 有効化になり、 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="8" /></sec>が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，對範圍內除保護機外的我軍賦予<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>。
-        <sec typ="cond">回合開始時</sec>，增加範圍內我軍的<sec typ="buff"><buff typ="FIRERES_UP" />火焰抵抗<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" />冰霜抵抗<val idx="6" r /></sec>。
-        <sec typ="cond">回合開始時</sec> <sec typ="cond">若自身位於後列</sec>，<sec typ="buff"><buff typ="DEF_Side" />保護一列</sec>會啟用，並增加<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="8" /></sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 <sec typ="buff"><buff typ="DEF_Char" /> 保護機 解除外 我方 指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ICERES_UP" /> 冰冷抗性 <val idx="6" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身 後排於 位於時</sec>， <sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec> 啟用變為，且 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="8" /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -5245,18 +5245,18 @@ skills:
         <sec typ="cond">라운드 개시 시</sec>, 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소합니다.
         <sec typ="cond">자신이 <buff typ="DEF_Char" />지정 보호 중인 아군이 있을 경우</sec>, 받는 피해 감소 효과가 두 배로 증폭됩니다.
         <sec>자신의 기본 화염 / 냉기 속성 저항이 35%로 증가합니다.</sec>
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、自身が受ける<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" r inv /></sec>が減少します。
-        <sec typ="cond">自身が<buff typ="DEF_Char" />指定保護中の味方がいる場合</sec>、被ダメージ減少効果が2倍に増幅されます。
-        <sec>自身の基本火炎 / 冷気属性耐性が35%に増加します。</sec>
       EN: |-
-        <sec typ="cond">At round start</sec>, self's <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decreases.
-        <sec typ="cond">If self has an ally under <buff typ="DEF_Char" /> Designated Protection</sec>, the damage taken decrease effect is doubled.
-        <sec>Self's base Fire / Cold resistance increases to 35%.</sec>
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decreases.
+        <sec typ="cond">self <buff typ="DEF_Char" />Designated Protection in progress allies if present</sec>, damage taken decrease the effect is doubled amplification.
+        <sec>own base Fire / Ice Resistance 35%as increases.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身が <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec>が減少します。
+        <sec typ="cond">自身が <buff typ="DEF_Char" />指定保護 中の 味方が 存在する場合</sec>、 受けるダメージ 減少 効果が2倍で 増幅されます。
+        <sec>自身の 基本火炎／冷気耐性が 35%で 増加します。</sec>
       TC: |-
-        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="0" r inv /></sec>減少。
-        <sec typ="cond">若自身有處於<buff typ="DEF_Char" />指定保護中的我軍</sec>，則所受傷害減少效果會增幅2倍。
-        <sec>自身的基本火焰 / 冰霜屬性抵抗增加至35%。</sec>
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="0" r inv /></sec>減少。
+        <sec typ="cond">自身 <buff typ="DEF_Char" />指定保護 中的 我方 存在時</sec>， 受到的傷害 減少 效果變為2倍以 增幅。
+        <sec>自身的 基礎火焰／冰冷抗性 35%以 增加。</sec>
   "5":
     key: "5"
     icon: P.DefCounter
@@ -5777,18 +5777,22 @@ skills:
         <sec typ="cond">피격 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>이(가) 증가하고 <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 위력으로 반격</sec>을 획득합니다.
         <sec typ="cond">속성 공격 피격 시</sec>, 반격 효과가 <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 위력으로 반격</sec>으로 증폭됩니다.
         <sec typ="cond">스쿼드 내에 자신 외의 보호기가 있을 경우</sec>, AP 증가 효과 대상이 아군 전체로 확대됩니다.
-      JP: |-
-        <sec typ="cond">被弾時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>が増加し、<sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless />威力で反撃</sec>を獲得します。
-        <sec typ="cond">属性攻撃を受けた時</sec>、反撃効果が<sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless />威力で反撃</sec>に増幅されます。
-        <sec typ="cond">スコード内に自分以外の保護機がいる場合</sec>、AP増加効果の対象が味方全体に拡大されます。
+        <sec typ="cond">라운드 개시 시</sec>, <cmt loc t="FLOOD"><import name="FLOOD" p="?,?,?" /></cmt> 상태인 적의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="9" r /></sec>를 증가시킵니다.
       EN: |-
-        <sec typ="cond">When hit</sec>, self's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec> increases and self gains <sec typ="buff"><buff typ="COUNTER" /> counterattack with <val idx="0" r signless /> power</sec>.
-        <sec typ="cond">When hit by an elemental attack</sec>, the counterattack effect is amplified into <sec typ="buff"><buff typ="COUNTER" /> counterattack with <val idx="4" r signless /> power</sec>.
-        <sec typ="cond">If there is another Protector besides self in the squad</sec>, the AP increase effect is expanded to all allies.
+        <sec typ="cond">When hit</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>() increases and <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> power as Counterattack</sec> gains.
+        <sec typ="cond">elemental attack When hit</sec>, Counterattack effect and <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> power as Counterattack</sec> as amplification.
+        <sec typ="cond">in squad to self other than of Defender if present</sec>, AP increase effect and target all alliesas expands.
+        <sec typ="cond">At round start</sec>, <cmt loc t="FLOOD"><import name="FLOOD" p="?,?,?" /></cmt> in the state enemy's <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="9" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">被弾時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>が 増加し、 <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力で 反撃</sec>を獲得します。
+        <sec typ="cond">属性 攻撃 被弾時</sec>、 反撃 効果が <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 威力で 反撃</sec>で 増幅されます。
+        <sec typ="cond">スクワッド 内に 自身 外の 保護機が 存在する場合</sec>、 AP 増加 効果 対象が 味方全体で 拡大されます。
+        <sec typ="cond">ラウンド開始時</sec>、 <cmt loc t="FLOOD"><import name="FLOOD" p="?,?,?" /></cmt> 状態の 敵の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="9" r /></sec>を増加させます。
       TC: |-
-        <sec typ="cond">被擊中時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>增加，並獲得以<sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless />威力反擊</sec>。
-        <sec typ="cond">被屬性攻擊擊中時</sec>，反擊效果會增幅為<sec typ="buff"><buff typ="COUNTER" />以<val idx="4" r signless />威力反擊</sec>。
-        <sec typ="cond">若小隊內除自身外還有保護機</sec>，AP增加效果的對象會擴大至我軍全體。
+        <sec typ="cond">被擊時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec> 增加，並 <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力以 反擊</sec>獲得。
+        <sec typ="cond">屬性 攻擊 被擊時</sec>， 反擊 效果 <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 威力以 反擊</sec>以 增幅。
+        <sec typ="cond">小隊 內於 自身 外的 保護機 存在時</sec>， AP 增加 效果 目標 全體我方以 擴大。
+        <sec typ="cond">回合開始時</sec>， <cmt loc t="FLOOD"><import name="FLOOD" p="?,?,?" /></cmt> 處於狀態的 敵人的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="9" r /></sec>使其增加。
 dialogue:
   KR:
     "1":

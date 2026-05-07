@@ -1278,9 +1278,9 @@ skills:
             chance: 1
     desc:
       KR: 목표 적을 감전시켜 <dmg elem="lightning" />를 주고 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>와 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시킵니다.
-      JP: 目標の敵を感電させ<dmg elem="lightning" />を与え、<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>と<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="1" r /></sec>を減少させます。
-      EN: Electrocutes the enemy target, dealing <dmg elem="lightning" /> damage and decreasing <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="1" r /></sec>.
-      TC: 使目標敵軍觸電，造成<dmg elem="lightning" />，並降低<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>與<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="1" r /></sec>。
+      EN: target enemy electrocutes when activate <dmg elem="lightning" /> damage and <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> decreases.
+      JP: 目標 敵を グアム前時クヨ<dmg elem="lightning" />を与え、 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>と <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec>を減少させます。
+      TC: 目標 敵人 Gam前時啟動 造成<dmg elem="lightning" />，並 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>與 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec>使其減少。
   "2":
     key: "2"
     icon: Hang
@@ -1748,18 +1748,18 @@ skills:
         목표 대상을 체포해 최대 <sec typ="buff"><buff typ="Pull" /> <val idx="0" signless />칸 앞으로 당기며</sec>, 2라운드 동안 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
         대상은 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec> 증가 상태가 됩니다.
         스쿼드 내에 <char uid="AGS_Rampart" />가 있을 시, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 대상에게 <sec typ="note">목표 견제</sec> 스킬 협동 공격</sec>을 합니다.
-      JP: |-
-        目標対象を捕縛し、最大<sec typ="buff"><buff typ="Pull" /> <val idx="0" signless />マス前方へ引き寄せ</sec>、2ラウンドの間<sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態にします。
-        対象は2ラウンドの間<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="5" r /></sec>増加状態になります。
-        分隊内に<char uid="AGS_Rampart" />がいる場合、<sec typ="buff"><buff typ="TOGETHER_ATTACK" />対象に<sec typ="note">目標牽制</sec>スキル協同攻撃</sec>を行います。
       EN: |-
-        Arrests the target and pulls them forward by up to <sec typ="buff"><buff typ="Pull" /> <val idx="0" signless /> spaces</sec>, and makes them <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> for 2 rounds.
-        The target becomes <sec typ="buff"><buff typ="MARKING" /> Marked</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="5" r /></sec> increase for 2 rounds.
-        If <char uid="AGS_Rampart" /> is in the squad, launches a co-op attack against the target with the <sec typ="note">Target Containment</sec> skill.
+        target arrests up to <sec typ="buff"><buff typ="Pull" /> <val idx="0" signless />tiles forward per and pulls</sec>, 2 rounds <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> inflicts.
+        the target 2 rounds <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec> increase state.
+        in squad to <char uid="AGS_Rampart" /> if present, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> to the target <sec typ="note">Target Suppression</sec> skill coordinated attack</sec>.
+      JP: |-
+        目標対象を 体プオして 最大 <sec typ="buff"><buff typ="Pull" /> <val idx="0" signless />マス 前方へ ごと機し</sec>、 2ラウンドの間 <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態にします。
+        対象は 2ラウンドの間 <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="5" r /></sec> 増加 状態になります。
+        スクワッド 内に <char uid="AGS_Rampart" />が ある 時、 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 対象に <sec typ="note">目標牽制</sec> スキル 協同攻撃</sec>をします。
       TC: |-
-        逮捕目標，最多以<sec typ="buff"><buff typ="Pull" /> <val idx="0" signless />格</sec>向前拉動，並使其在2回合內進入<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態。
-        目標會在2回合內陷入<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="5" r /></sec>增加狀態。
-        若小隊內有<char uid="AGS_Rampart" />，則對目標發動<sec typ="buff"><buff typ="TOGETHER_ATTACK" />與<sec typ="note">牽制目標</sec>的技能協力攻擊</sec>。
+        目標對象 個Po 最大 <sec typ="buff"><buff typ="Pull" /> <val idx="0" signless />格 向前 每台並</sec>， 2回合內 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 使其進入狀態。
+        目標 2回合內 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="5" r /></sec> 增加 變為狀態。
+        小隊 內於 <char uid="AGS_Rampart" /> 有 時， <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> 對目標 <sec typ="note">目標牽制</sec> 技能 協同攻擊</sec>。
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -2367,15 +2367,15 @@ skills:
       KR: |-
         스킬 적중 시 인접 아군들의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 상승하며, 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec>가 증가합니다.
         <sec>스킬 레벨 5 / 10에서 범위가 증가</sec>합니다.
-      JP: |-
-        スキル命中時、隣接する味方の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が上昇し、2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>が増加します。
-        <sec>スキルレベル5 / 10で範囲が増加</sec>します。
       EN: |-
-        When the skill hits, the <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of adjacent allies increases, and their <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> ACU <val idx="6" r /></sec> increases for 2 rounds.
-        <sec>Effective range increases at Skill Lv. 5/10</sec>.
+        When the skill hits adjacent allies of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>() rise and, 2 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> increases.
+        <sec>At skill levels 5 / 10, range increase</sec>.
+      JP: |-
+        スキル命中時 隣接 味方たちの <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が スアンスウンし、 2ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>が増加します。
+        <sec>スキルレベル5／10で 範囲が 増加</sec>します。
       TC: |-
-        技能命中時，相鄰我軍的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>會上升，並於2回合內提升其<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>。
-        <sec>技能等級5 / 10時範圍增加</sec>。
+        技能命中時 相鄰 我方們的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 上升並， 2回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>增加。
+        <sec>技能等級5／10時 範圍 增加</sec>。
   "4":
     key: "4"
     icon: P.None
@@ -2465,11 +2465,7 @@ skills:
             base: 0.3
             per: 0.01
             chance: 1
-    desc:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
+    desc: {}
   "5":
     key: "5"
     icon: P.None
@@ -2586,11 +2582,7 @@ skills:
             base: -0.1
             per: -0.1
             chance: 1
-    desc:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
+    desc: {}
 dialogue:
   KR:
     "":

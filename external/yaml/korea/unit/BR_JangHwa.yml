@@ -1055,10 +1055,18 @@ skills:
             per: 0.015
             chance: 0
     desc:
-      KR: 단일 대상에게 <dmg elem="physics" />를 줍니다. <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격</sec> 또는 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 시, 2라운드 동안 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="3" slot="4" r /></sec>가 증가합니다.
-      JP: 単一対象に<dmg elem="physics" />を与えます。<sec typ="cond"><buff typ="SUPPORT_ATTACK" />支援攻撃</sec>または<sec typ="cond"><buff typ="SUPPORT_ATTACK" />再攻撃</sec>時、2ラウンドの間<sec typ="buff"><buff typ="SKILL_UP" />スキル威力 <val idx="3" slot="4" r /></sec>が増加します。
-      EN: Deals <dmg elem="physics" /> to a single target. When <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> providing Attack Support</sec> or <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> re-attacking</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="3" slot="4" r /></sec> increases for 2 rounds.
-      TC: 對單一目標造成<dmg elem="physics" />傷害。進行<sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻擊支援</sec>或<sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec>時，於2回合內增加<sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="3" slot="4" r /></sec>。
+      KR: |-
+        단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격</sec> 또는 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 시, 2라운드 동안 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="3" slot="4" r /></sec>가 증가합니다.
+      EN: |-
+        to a single target <dmg elem="physics" />.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> support attack</sec> or <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec> when, 2 rounds <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="3" slot="4" r /></sec> increases.
+      JP: |-
+        単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻撃</sec> または <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec> 時、 2ラウンドの間 <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="3" slot="4" r /></sec>が増加します。
+      TC: |-
+        單一目標給 造成<dmg elem="physics" />。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻擊</sec> 或 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec> 時， 2回合內 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="3" slot="4" r /></sec>增加。
   "2":
     key: "2"
     icon: Hang
@@ -1750,10 +1758,18 @@ skills:
             per: 0
             chance: 0
     desc:
-      KR: 지정 범위의 적에게 {0}의 보호 무시 피해를 줍니다. 적중 여부와 상관 없이 대상의 회피 강화 효과를 해제하고, 1스킬과 2스킬이 <sec typ="note">원격 폭탄 격발</sec>로 변경됩니다.
-      JP: 指定範囲の敵に{0}の防御無視ダメージを与えます。命中の有無に関係なく対象の回避強化効果を解除し、スキル1とスキル2が<sec typ="note">遠隔爆弾撃発</sec>に変更されます。
-      EN: Deals {0} Ignore Protection damage to enemies in the designated area. Regardless of whether it hits, removes the target's EVA increase effects, and Skill 1 and Skill 2 change to <sec typ="note">Remote Detonation</sec>.
-      TC: 對指定範圍內的敵軍造成{0}的無視保護傷害。無論是否命中，都會解除目標的迴避強化效果，並使技能1和技能2變更為<sec typ="note">引爆遙控炸彈</sec>。
+      KR: |-
+        지정 범위의 적에게 {0}의 보호 무시 피해를 줍니다.
+        적중 여부와 상관 없이 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 회피 강화 효과를 해제</sec>하고, 1스킬과 2스킬이 <sec typ="note">원격 폭탄 격발</sec>로 변경됩니다.
+      EN: |-
+        designated area of to the enemy {0} of Ignore Protection damage.
+        Accuracy whether and relation none target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Evasion removes buffs</sec> and, 1skilland 2skill <sec typ="note">Remote Bomb Detonation</sec> as is changed.
+      JP: |-
+        指定範囲の 敵に {0}の 保護無視 ダメージを 与えます。
+        命中 ヨブウに関係なく 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 回避 強化効果を 解除</sec>し、 1スキルと 2スキルが <sec typ="note">遠隔爆弾起爆</sec>で 変更されます。
+      TC: |-
+        指定範圍的 敵人給 {0}的 無視保護 傷害 造成。
+        無論是否命中 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 迴避 強化效果 解除</sec>並， 1技能與 2技能 <sec typ="note">遠端炸彈引爆</sec>以 變更。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -1973,16 +1989,16 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>가 증가합니다.
-        <sec typ="cond">공격기가 자신 뿐이거나</sec>, <sec typ="cond">자신 외에 <cmt t="엠프레시스 하운드">$$EmpressHound:?$</cmt> 전투원이 있는 경우</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과를 획득합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="0" r /></sec>が増加します。
-        <sec typ="cond">攻撃機が自分だけの場合、または</sec> <sec typ="cond">自分以外に<cmt t="エンプレシスハウンド">$$EmpressHound:?$</cmt>戦闘員がいる場合</sec>、<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア / 被ダメージ減少無視</sec>効果を獲得します。
+        <sec typ="cond">공격기가 자신 뿐이거나</sec>, <sec typ="cond">자신 외에 <cmt t="엠프레시스 하운드"><import name="EmpressHound" /></cmt> 전투원이 있는 경우</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과를 획득합니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="0" r /></sec> increases.
-        <sec typ="cond">If self is the only attacker</sec>, or <sec typ="cond">if there are <cmt t="Empress Hounds">$$EmpressHound:?$</cmt> combatants other than self</sec>, gains <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> effects.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> increases.
+        <sec typ="cond">Attacker self Ppun or</sec>, <sec typ="cond">self other than to <cmt t="Empress Hound"><import name="EmpressHound" /></cmt> combatant if present</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> gains the effect.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">攻撃機が 自身 ップウンがまたは</sec>、 <sec typ="cond">自身 外に <cmt t="エンプレスハウンド"><import name="EmpressHound" /></cmt> 戦闘員が ある 場合</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec> 効果を獲得します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec>增加。
-        <sec typ="cond">若自身為唯一攻擊機</sec>，或<sec typ="cond">自身以外有<cmt t="女皇獵犬">$$EmpressHound:?$</cmt>戰鬥員時</sec>，將獲得<sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視防護罩 / 傷害減少</sec>效果。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec>增加。
+        <sec typ="cond">攻擊機 自身 Ppun或</sec>， <sec typ="cond">自身 外於 <cmt t="女帝獵犬"><import name="EmpressHound" /></cmt> 戰鬥員 有 情況</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec> 獲得效果。
   "4":
     key: "4"
     icon: P.SelfAtkDeBuff
@@ -2240,18 +2256,18 @@ skills:
         병적인 집착과 광폭함으로 인해 기본 150%의 치명타 수치를 갖습니다.
         적 사망 시, <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="0" r /></sec> 감소 효과를 영구 획득합니다.
         자신이 <sec typ="cond"><buff typ="DEF_Char" /> 지정 보호</sec>를 받고 있을 때, 라운드 개시 시 자신에게 적용된 <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 치명타 감소 효과를 해제</sec>합니다.
-      JP: |-
-        病的な執着と狂暴さにより、基本150%のクリティカル値を持ちます。
-        敵死亡時、<sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル <val idx="0" r /></sec>減少効果を永続的に獲得します。
-        自分が<sec typ="cond"><buff typ="DEF_Char" />指定保護</sec>を受けている時、ラウンド開始時に自分へ適用された<sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" />クリティカル減少効果を解除</sec>します。
       EN: |-
-        Due to pathological obsession and ferocity, has a base 150% CRIT value.
-        When an enemy dies, permanently gains a <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="0" r /></sec> decrease effect.
-        When self is receiving <sec typ="cond"><buff typ="DEF_Char" /> designated protection</sec>, removes the <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> CRIT decrease effects</sec> applied to self at the start of the round.
+        sick/pathological enemy is obsession and with ferocity due to base 150% of Critical value has.
+        When an enemy dies, <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="0" r /></sec> decrease effect and permanent gains.
+        self <sec typ="cond"><buff typ="DEF_Char" /> Designated Protection</sec> receiving exists when, At round start applied to self <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Critical decrease removes the effect</sec>.
+      JP: |-
+        ブヨン敵である ジイプチアクと グワンプオクハアムウにより 基本 150%の クリティカル 数値を グアトます。
+        敵死亡時、 <sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="0" r /></sec> 減少 効果を 永久 獲得します。
+        自身が <sec typ="cond"><buff typ="DEF_Char" /> 指定保護</sec>を 受けて ある 時、 ラウンド開始時 自身に 適用された <sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> クリティカル 減少 効果を 解除</sec>します。
       TC: |-
-        由於病態的執著與狂暴，基本暴擊數值為150%。
-        敵軍死亡時，永久獲得<sec typ="attr">有害</sec>的<sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="0" r /></sec>減少效果。
-        當自身受到<sec typ="cond"><buff typ="DEF_Char" /> 指定保護</sec>時，會在回合開始時解除套用於自身的<sec typ="attr">有害</sec>的<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 暴擊減少效果</sec>。
+        病敵人為 集中chak與 Gwang炮kham而 基礎 150%的 暴擊 數值 相同。
+        敵人死亡時， <sec typ="attr">有害</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="0" r /></sec> 減少 效果 永久 獲得。
+        自身 <sec typ="cond"><buff typ="DEF_Char" /> 指定保護</sec> 受到 有 時， 回合開始時 自身給 套用已 <sec typ="attr">有害</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 暴擊 減少 效果 解除</sec>。
   "5":
     key: "5"
     icon: P.BombActive
@@ -2486,20 +2502,20 @@ skills:
     desc:
       KR: |-
         <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 보호기 / 지원기 아군의 공격을 지원</sec>합니다.
-        자신과 <sec typ="cond">인접한 아군이 2 이상일 때</sec>, 라운드 개시 시 자신은 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec> 증가 효과를 획득합니다.
-        자신과 <sec typ="cond">인접한 아군이 4 이상일 때</sec>, 라운드 개시 시 자신은 <sec typ="buff"><buff typ="ATK_UP" /> 광역 피해 집중 <val idx="4" r /></sec> 효과를 획득합니다.
-      JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、範囲内の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />保護機 / 支援機味方の攻撃を支援</sec>します。
-        自分と<sec typ="cond">隣接した味方が2以上いる時</sec>、ラウンド開始時に自分は<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="3" r /></sec>増加効果を獲得します。
-        自分と<sec typ="cond">隣接した味方が4以上いる時</sec>、ラウンド開始時に自分は<sec typ="buff"><buff typ="ATK_UP" />範囲ダメージ集中 <val idx="4" r /></sec>効果を獲得します。
+        자신과 <sec typ="cond">인접한 아군이 2 이상</sec>일 때, 라운드 개시 시 자신은 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec> 증가 효과를 획득합니다.
+        자신과 <sec typ="cond">인접한 아군이 4 이상</sec>일 때, 라운드 개시 시 자신은 <sec typ="buff"><buff typ="ATK_UP" /> 광역 피해 집중 <val idx="4" r /></sec> 효과를 획득합니다.
       EN: |-
-        <sec typ="cond">At the start of the round</sec>, supports the attacks of ally defenders/supporters within range with <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> attack support</sec>.
-        When there are <sec typ="cond">2 or more adjacent allies</sec> to self, self gains a <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="3" r /></sec> increase effect at the start of the round.
-        When there are <sec typ="cond">4 or more adjacent allies</sec> to self, self gains a <sec typ="buff"><buff typ="ATK_UP" /> AoE damage focus <val idx="4" r /></sec> effect at the start of the round.
+        <sec typ="cond">At round start</sec>, within range <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Defender / Supporter allies' supports the attack</sec>.
+        self and <sec typ="cond">adjacent allies 2 or more</sec>when, At round start self <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="3" r /></sec> increase effect.
+        self and <sec typ="cond">adjacent allies 4 or more</sec>when, At round start self <sec typ="buff"><buff typ="ATK_UP" /> area damage concentration <val idx="4" r /></sec> gains the effect.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 保護機 / 支援機 味方の 攻撃を 支援</sec>します。
+        自身と <sec typ="cond">隣接する 味方が 2 以上</sec>イル 時、 ラウンド開始時 自身は <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec> 増加 効果を獲得します。
+        自身と <sec typ="cond">隣接する 味方が 4 以上</sec>イル 時、 ラウンド開始時 自身は <sec typ="buff"><buff typ="ATK_UP" /> 広域ダメージ集中 <val idx="4" r /></sec> 効果を獲得します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>，支援範圍內我軍防護機 / 支援機的攻擊。
-        當與自身<sec typ="cond">相鄰的我軍達2名以上</sec>時，回合開始時自身將獲得<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec>增加效果。
-        當與自身<sec typ="cond">相鄰的我軍達4名以上</sec>時，回合開始時自身將獲得<sec typ="buff"><buff typ="ATK_UP" /> 廣域傷害集中 <val idx="4" r /></sec>效果。
+        <sec typ="cond">回合開始時</sec>， 範圍內 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 保護機 / 支援機 我方的 攻擊 支援</sec>。
+        自身與 <sec typ="cond">相鄰的 我方 2 以上</sec>一 時， 回合開始時 自身 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec> 增加 獲得效果。
+        自身與 <sec typ="cond">相鄰的 我方 4 以上</sec>一 時， 回合開始時 自身 <sec typ="buff"><buff typ="ATK_UP" /> 範圍傷害集中 <val idx="4" r /></sec> 獲得效果。
   F1:
     key: F1
     icon: BombActive
@@ -3411,10 +3427,18 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: 지정 범위의 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" /> 피해를 주고, 1스킬과 2스킬이 기본 형태로 변경됩니다. 지원 공격 또는 재공격 시, 2라운드 동안 스킬 위력이 증가합니다.
-      JP: 指定範囲の敵に<sec typ="attr">防御無視</sec> <dmg elem="physics" />ダメージを与え、スキル1とスキル2が基本形態に変更されます。支援攻撃または再攻撃時、2ラウンドの間、スキル威力が増加します。
-      EN: Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage to enemies in the designated area and changes Skill 1 and Skill 2 to their basic form. Skill Power increases for 2 rounds when providing Attack Support or re-attacking.
-      TC: 對指定範圍內的敵軍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害，並使技能1和技能2變更為基本型態。進行攻擊支援或再次攻擊時，於2回合內增加技能威力。
+      KR: |-
+        지정 범위의 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 1스킬과 2스킬이 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 기본 형태로 변경</sec>됩니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격</sec> 또는 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 시, 2라운드 동안 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="3" slot="CH_4" r /></sec>가 증가합니다.
+      EN: |-
+        designated area of to the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and 1skilland 2skill <sec typ="buff"><buff typ="CHANGE_CHAR" /> base form as change</sec>.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> support attack</sec> or <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec> when, 2 rounds <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="3" slot="CH_4" r /></sec> increases.
+      JP: |-
+        指定範囲の 敵に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、、 1スキルと 2スキルが <sec typ="buff"><buff typ="CHANGE_CHAR" /> 基本 ハヨントエで 変更</sec>されます。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻撃</sec> または <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec> 時、 2ラウンドの間 <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="3" slot="CH_4" r /></sec>が増加します。
+      TC: |-
+        指定範圍的 敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 1技能與 2技能 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 基礎 Hyeon依ae以 變更</sec>。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻擊</sec> 或 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec> 時， 2回合內 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="3" slot="CH_4" r /></sec>增加。
   F2:
     key: F2
     icon: BombActive
@@ -4326,10 +4350,18 @@ skills:
             per: 0
             chance: 1
     desc:
-      KR: 지정 범위의 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" /> 피해를 주고, 1스킬과 2스킬이 기본 형태로 변경됩니다. 지원 공격 또는 재공격 시, 2라운드 동안 스킬 위력이 증가합니다.
-      JP: 指定範囲の敵に<sec typ="attr">防御無視</sec> <dmg elem="physics" />ダメージを与え、スキル1とスキル2が基本形態に変更されます。支援攻撃または再攻撃時、2ラウンドの間、スキル威力が増加します。
-      EN: Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage to enemies in the designated area and changes Skill 1 and Skill 2 to their basic form. Skill Power increases for 2 rounds when providing Attack Support or re-attacking.
-      TC: 對指定範圍內的敵軍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />傷害，並使技能1和技能2變更為基本型態。進行攻擊支援或再次攻擊時，於2回合內增加技能威力。
+      KR: |-
+        지정 범위의 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 1스킬과 2스킬이 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 기본 형태로 변경</sec>됩니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격</sec> 또는 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 시, 2라운드 동안 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="3" slot="CH_4" r /></sec>가 증가합니다.
+      EN: |-
+        designated area of to the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and 1skilland 2skill <sec typ="buff"><buff typ="CHANGE_CHAR" /> base form as change</sec>.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> support attack</sec> or <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec> when, 2 rounds <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="3" slot="CH_4" r /></sec> increases.
+      JP: |-
+        指定範囲の 敵に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、、 1スキルと 2スキルが <sec typ="buff"><buff typ="CHANGE_CHAR" /> 基本 ハヨントエで 変更</sec>されます。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻撃</sec> または <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec> 時、 2ラウンドの間 <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="3" slot="CH_4" r /></sec>が増加します。
+      TC: |-
+        指定範圍的 敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 1技能與 2技能 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 基礎 Hyeon依ae以 變更</sec>。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻擊</sec> 或 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec> 時， 2回合內 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="3" slot="CH_4" r /></sec>增加。
   F4:
     key: F4
     icon: P.SelfAtkDeBuff
@@ -4543,19 +4575,19 @@ skills:
       KR: |-
         병적인 집착과 광폭함으로 인해 기본 150%의 치명타 수치를 갖습니다.
         적 사망 시, <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="0" r /></sec> 감소 효과를 영구 획득합니다.
-        자신이 지정 보호를 받고 있을 때, 라운드 개시 시 자신에게 적용된 <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 치명타 감소 효과를 해제</sec>합니다.
-      JP: |-
-        病的な執着と狂暴さにより、基本150%のクリティカル値を持ちます。
-        敵死亡時、<sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル <val idx="0" r /></sec>減少効果を永続的に獲得します。
-        自分が指定保護を受けている時、ラウンド開始時に自分へ適用された<sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" />クリティカル減少効果を解除</sec>します。
+        자신이 <sec typ="cond"><buff typ="DEF_Char" /> 지정 보호</sec>를 받고 있을 때, 라운드 개시 시 자신에게 적용된 <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 치명타 감소 효과를 해제</sec>합니다.
       EN: |-
-        Due to pathological obsession and ferocity, has a base 150% CRIT value.
-        When an enemy dies, permanently gains a <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> CRIT <val idx="0" r /></sec> decrease effect.
-        When self is receiving designated protection, removes the <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> CRIT decrease effects</sec> applied to self at the start of the round.
+        sick/pathological enemy is obsession and with ferocity due to base 150% of Critical value has.
+        When an enemy dies, <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="0" r /></sec> decrease effect and permanent gains.
+        self <sec typ="cond"><buff typ="DEF_Char" /> Designated Protection</sec> receiving exists when, At round start applied to self <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Critical decrease removes the effect</sec>.
+      JP: |-
+        ブヨン敵である ジイプチアクと グワンプオクハアムウにより 基本 150%の クリティカル 数値を グアトます。
+        敵死亡時、 <sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="0" r /></sec> 減少 効果を 永久 獲得します。
+        自身が <sec typ="cond"><buff typ="DEF_Char" /> 指定保護</sec>を 受けて ある 時、 ラウンド開始時 自身に 適用された <sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> クリティカル 減少 効果を 解除</sec>します。
       TC: |-
-        由於病態的執著與狂暴，基本暴擊數值為150%。
-        敵軍死亡時，永久獲得<sec typ="attr">有害</sec>的<sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="0" r /></sec>減少效果。
-        當自身受到指定保護時，會在回合開始時解除套用於自身的<sec typ="attr">有害</sec>的<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 暴擊減少效果</sec>。
+        病敵人為 集中chak與 Gwang炮kham而 基礎 150%的 暴擊 數值 相同。
+        敵人死亡時， <sec typ="attr">有害</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="0" r /></sec> 減少 效果 永久 獲得。
+        自身 <sec typ="cond"><buff typ="DEF_Char" /> 指定保護</sec> 受到 有 時， 回合開始時 自身給 套用已 <sec typ="attr">有害</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 暴擊 減少 效果 解除</sec>。
 dialogue:
   KR:
     "1":
