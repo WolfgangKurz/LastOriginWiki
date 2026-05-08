@@ -3290,21 +3290,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        지정 대상에게 <dmg elem="physics" />를 줍니다.
-        2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>가 낮아지며, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 증가하고 <sec typ="buff"><buff typ="Push" /> 뒤로 <val idx="2" signless />칸 밀립니다</sec>.
-        출력 전개 상태면 <sec typ="chance">50% 확률</sec>로 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만들며, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> 효과가 50% 상승합니다.
+        내구력 테스트를 겸하여 단일 대상에게 <dmg elem="physics" />를 주고 <sec typ="buff"><buff typ="Push" /> 뒤로 <val idx="0" signless />칸 밀어냅니다</sec>.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="4" r /></sec>가 감소하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>가 증가합니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 증가 효과가 50% 증폭</sec>되고 <sec typ="chance">50% 확률</sec>로 2라운드 동안 대상을 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만듭니다.
       EN: |-
-        designated to the target with <dmg elem="physics" />.
-        2 rounds, target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> decreases and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increases and <sec typ="buff"><buff typ="Push" /> back <val idx="2" signless />tiles is pushed</sec>.
-        output deploy if in the state <sec typ="chance">50% chance</sec> as <sec typ="buff"><buff typ="STUN" /> Stunned</sec> to the state makes and, <sec typ="buff"><buff typ="VULNERABLE" /> damage taken increase</sec> effect and 50% rise.
+        Also serving as a durability test, deals <dmg elem="physics" /> damage to a single target and <sec typ="buff"><buff typ="Push" /> pushes them back <val idx="0" signless /> tile(s)</sec>.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="4" r /></sec> and increases their <sec typ="buff"><buff typ="VULNERABLE" /> Damage Taken <val idx="5" r /></sec> for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="VULNERABLE" /> the Damage Taken increase effect is amplified by 50%</sec>, and has a <sec typ="chance">50% chance</sec> to inflict <sec typ="buff"><buff typ="STUN" /> Stunned</sec> on the target for 2 rounds.
       JP: |-
-        指定対象に<dmg elem="physics" />を与えます。
-        2ラウンドの間 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>が ンアトアジイし、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec>が 増加し、 <sec typ="buff"><buff typ="Push" /> 後方へ <val idx="2" signless />マス ムイルルイプンイドア</sec>。
-        出力 展開 状態なら <sec typ="chance">50% 確率</sec>で <sec typ="buff"><buff typ="STUN" /> 行動不可</sec> 状態に し、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ 増加</sec> 効果が 50% スアンスウンします。
+        耐久力テストを兼ねて単一対象に<dmg elem="physics" />を与え、<sec typ="buff"><buff typ="Push" />後方へ<val idx="0" signless />マス押し出します</sec>。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="4" r /></sec>が減少し、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="5" r /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ増加効果が50%増幅</sec>し、<sec typ="chance">50%の確率</sec>で2ラウンドの間、対象を<sec typ="buff"><buff typ="STUN" />行動不能</sec>状態にします。
       TC: |-
-        指定目標給 造成<dmg elem="physics" />。
-        2回合內 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> 降低a至並， <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec> 增加，並 <sec typ="buff"><buff typ="Push" /> 向後 <val idx="2" signless />格 擊退</sec>。
-        輸出 展開 若處於狀態 <sec typ="chance">50% 機率</sec>以 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 成為狀態 使其，並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 增加</sec> 效果 50% 上升。
+        兼作耐久力測試，對單一目標造成<dmg elem="physics" />，並<sec typ="buff"><buff typ="Push" />向後推<val idx="0" signless />格</sec>。
+        <sec typ="cond">命中時</sec>，2回合內使目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="4" r /></sec>降低，並使<sec typ="buff"><buff typ="VULNERABLE" />受到的傷害<val idx="5" r /></sec>增加。
+        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="VULNERABLE" />受到傷害增加效果提升50%</sec>，並以<sec typ="chance">50%機率</sec>使目標在2回合內陷入<sec typ="buff"><buff typ="STUN" />無法行動</sec>狀態。
   "2":
     key: "2"
     icon: Hang
@@ -6040,21 +6040,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        목표 범위 내 대상을 포획해, <dmg elem="physics" />를 주며 <sec typ="buff"><buff typ="Pull" /> 앞으로 <val idx="0" signless />칸 당깁니다</sec>.
-        2라운드 동안 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태가 되며, <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>이(가) 감소합니다.
-        <sec typ="chance">50% 확률</sec>로 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>하며, <sec typ="note">출력 전개</sec> 상태면 <sec typ="chance">100% 확률로</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 해제</sec>합니다.
+        샘플 대상 선별을 위해 지정 범위에 <dmg elem="physics" />를 주고 <sec typ="buff"><buff typ="Pull" /> 앞으로 <val idx="0" signless />칸 당깁니다</sec>.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>이(가) 감소하고 2라운드 동안 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태가 됩니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="buff"><buff typ="AP_DOWN" /> AP 감소 효과가 50% 증폭</sec>되고 <sec typ="chance">50% 확률</sec>로 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
       EN: |-
-        target within range target captures, <dmg elem="physics" /> deals and <sec typ="buff"><buff typ="Pull" /> forward <val idx="0" signless />tiles per pulls</sec>.
-        2 rounds <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> state and, <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec> decreases.
-        <sec typ="chance">50% chance</sec> as <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec> and, <sec typ="note">output deploy</sec> if in the state <sec typ="chance">100% chance as</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> remove</sec>.
+        To select a sample target, deals <dmg elem="physics" /> damage to the designated area and <sec typ="buff"><buff typ="Pull" /> pulls targets forward <val idx="0" signless /> tile(s)</sec>.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec> and inflicts <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="AP_DOWN" /> the AP decrease effect is amplified by 50%</sec>, and has a <sec typ="chance">50% chance</sec> to <sec typ="buff"><buff typ="REMOVE_BUFF" /> remove buffs from the target</sec>.
       JP: |-
-        目標 範囲内 対象を プオハウェクして、<dmg elem="physics" />を 与え、 <sec typ="buff"><buff typ="Pull" /> 前方へ <val idx="0" signless />マス ごとグイプンイドア</sec>。
-        2ラウンドの間 <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態が になり、、 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>が減少します。
-        <sec typ="chance">50% 確率</sec>で <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>し、 <sec typ="note">出力 展開</sec> 状態なら <sec typ="chance">100% 確率で</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 解除</sec>します。
+        サンプル対象の選別のため、指定範囲に<dmg elem="physics" />を与え、<sec typ="buff"><buff typ="Pull" />前方へ<val idx="0" signless />マス引き寄せます</sec>。
+        <sec typ="cond">命中時</sec>、対象の<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="4" /></sec>が減少し、2ラウンドの間<sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態になります。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="buff"><buff typ="AP_DOWN" />AP減少効果が50%増幅</sec>し、<sec typ="chance">50%の確率</sec>で対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>します。
       TC: |-
-        目標 範圍內 目標 捕獲， <dmg elem="physics" /> 造成，並 <sec typ="buff"><buff typ="Pull" /> 向前 <val idx="0" signless />格 每拉動</sec>。
-        2回合內 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 狀態 變為，且 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>減少。
-        <sec typ="chance">50% 機率</sec>以 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>並， <sec typ="note">輸出 展開</sec> 若處於狀態 <sec typ="chance">100% 機率以</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 解除</sec>。
+        為了篩選樣本目標，對指定範圍造成<dmg elem="physics" />，並<sec typ="buff"><buff typ="Pull" />向前拉<val idx="0" signless />格</sec>。
+        <sec typ="cond">命中時</sec>，使目標的<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="4" /></sec>降低，並在2回合內陷入<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態。
+        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="AP_DOWN" />AP降低效果提升50%</sec>，並以<sec typ="chance">50%機率</sec><sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的強化效果</sec>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -6657,37 +6657,37 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 자신에게 적용된 강화 효과를 분석해 새 발명품을 만들어 주변 아군들에게 전달합니다.
-        <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
-        <sec typ="cond"><buff typ="ATK_UP" /> 공격력 증가</sec>일 때 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec>
-        <sec typ="cond"><buff typ="ACCURACY_UP" /> 적중 증가</sec>일 때 : <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec>
-        <sec typ="cond"><buff typ="CRITICAL_UP" /> 치명타 증가</sec>일 때 : <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec>
-        <sec typ="cond"><buff typ="AP_UP" /> 행동력 증가</sec>일 때 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="7" r /></sec>
-        <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec>일 때 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" r inv /></sec>
+        <sec typ="cond">첫번째 라운드 개시 시</sec>, 자신이 장착한 일부 보조 장비의 효과를 복제하여 범위 내 아군에게 부여합니다.
+        <box t="장착 장비별 효과">
+        <sec typ="cond"><equip uid="Sub_Observer" /></sec> : <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="5" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> 증가 
+        <sec typ="cond"><equip uid="Sub_ArmorPierce" /></sec> : <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="8" r /></sec> 증가 
+        <sec typ="cond"><equip uid="Chip_Atk" /></sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 <val base="2" per="0" signless />회</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="10" r /></sec> 증가
+        </box>
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">상기 효과를 자신 외의 아군에게 부여하고 있을 경우</sec>, 자신은 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec>가 활성화되고 치명타 <val idx="11" r />가 증가합니다.
       EN: |-
-        <sec typ="cond">At round start</sec>, applied to self buffs analyzes new invention creates nearby to allies deliver.
-        <sec>At skill level 10, range increases.</sec>
-        <sec typ="cond"><buff typ="ATK_UP" /> Attack increase</sec>when: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r /></sec>
-        <sec typ="cond"><buff typ="ACCURACY_UP" /> Accuracy increase</sec>when: <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec>
-        <sec typ="cond"><buff typ="CRITICAL_UP" /> Critical increase</sec>when: <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="5" r /></sec>
-        <sec typ="cond"><buff typ="AP_UP" /> Action Speed increase</sec>when: <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="7" r /></sec>
-        <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> damage taken decrease</sec>when: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="8" r inv /></sec>
+        <sec typ="cond">At the start of the first round</sec>, copies the effects of certain equipped auxiliary gear and grants them to allies within range.
+        <box t="Effects by Equipped Gear">
+        <sec typ="cond"><equip uid="Sub_Observer" /></sec> : <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="5" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> increase
+        <sec typ="cond"><equip uid="Sub_ArmorPierce" /></sec> : <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical Hit <val idx="8" r /></sec> increase
+        <sec typ="cond"><equip uid="Chip_Atk" /></sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Damage Minimization <val base="2" per="0" signless /> time(s)</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="10" r /></sec> increase
+        </box>
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if the above effects are being granted to an ally other than self</sec>, self activates <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> and Critical Hit <val idx="11" r /> increases.
       JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、 自身に 適用された 強化効果を 分析して スエ ブアル名プウムを だけたちオ 周辺 味方たちに 伝達します。
-        <sec>スキルレベル10で 範囲が増加します。</sec>
-        <sec typ="cond"><buff typ="ATK_UP" /> 攻撃力 増加</sec>イル 時：<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r /></sec>
-        <sec typ="cond"><buff typ="ACCURACY_UP" /> 命中 増加</sec>イル 時：<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>
-        <sec typ="cond"><buff typ="CRITICAL_UP" /> クリティカル 増加</sec>イル 時：<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="5" r /></sec>
-        <sec typ="cond"><buff typ="AP_UP" /> 行動力 増加</sec>イル 時：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="7" r /></sec>
-        <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少</sec>イル 時：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="8" r inv /></sec>
+        <sec typ="cond">1ラウンド目開始時</sec>、自身が装備している一部補助装備の効果を複製し、範囲内の味方に付与します。
+        <box t="装備別効果">
+        <sec typ="cond"><equip uid="Sub_Observer" /></sec>：<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="5" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>増加
+        <sec typ="cond"><equip uid="Sub_ArmorPierce" /></sec>：<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="8" r /></sec>増加
+        <sec typ="cond"><equip uid="Chip_Atk" /></sec>：<sec typ="buff"><buff typ="DAMAGE_REDUCE" />被ダメージ最小化<val base="2" per="0" signless />回</sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="10" r /></sec>増加
+        </box>
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">上記効果を自身以外の味方に付与している場合</sec>、自身は<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視</sec>が有効化し、クリティカル<val idx="11" r />が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>， 自身給 套用已 強化效果 分析 製作新發明並 周圍 我方們給 傳達。
-        <sec>技能等級10時 範圍增加。</sec>
-        <sec typ="cond"><buff typ="ATK_UP" /> 攻擊力 增加</sec>一 時：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r /></sec>
-        <sec typ="cond"><buff typ="ACCURACY_UP" /> 命中 增加</sec>一 時：<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>
-        <sec typ="cond"><buff typ="CRITICAL_UP" /> 暴擊 增加</sec>一 時：<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="5" r /></sec>
-        <sec typ="cond"><buff typ="AP_UP" /> 行動力 增加</sec>一 時：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="7" r /></sec>
-        <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少</sec>一 時：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="8" r inv /></sec>
+        <sec typ="cond">第一回合開始時</sec>，複製自身裝備的部分輔助裝備效果，並賦予範圍內的我方。
+        <box t="依裝備套用的效果">
+        <sec typ="cond"><equip uid="Sub_Observer" /></sec>：<sec typ="buff"><buff typ="RANGE_UP" />射程<val idx="5" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec>增加
+        <sec typ="cond"><equip uid="Sub_ArmorPierce" /></sec>：<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="8" r /></sec>增加
+        <sec typ="cond"><equip uid="Chip_Atk" /></sec>：<sec typ="buff"><buff typ="DAMAGE_REDUCE" />傷害最小化<val base="2" per="0" signless />次</sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="10" r /></sec>增加
+        </box>
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若正將上述效果賦予自身以外的我方</sec>，自身啟用<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>，且暴擊<val idx="11" r />增加。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -6973,17 +6973,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        대기 시, 기체의 출력을 강화해 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec>가 증가합니다.
-        <sec>스킬 레벨 10에서 효과 라운드가 1 증가합니다.</sec>
+        <sec typ="cond">전투 개시 시</sec>, 다음 1회에 한해 범위 내 아군 지원기의 <sec typ="buff"><buff typ="AP_SHIFT" /> 액티브 2스킬 소모 AP <val idx="0" /></sec>이(가) 감소합니다.
+        <sec typ="cond">적 처치 시</sec>, <sec typ="buff"><buff typ="AP_SHIFT" /> 상기 효과가 재활성화</sec>됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, 기체의 출력을 강화하여 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>가 증가합니다.
+        <sec typ="cond">상기 효과가 2중첩일 때</sec>, <sec typ="chance">50% 확률</sec>로 발동하는 액티브 스킬의 효과 발동 확률이 <sec typ="chance">100%로 증가</sec>합니다.
       EN: |-
-        On standby, unit/body of output enhances 2 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="2" r /></sec> increases.
-        <sec>At skill level 10, effect and round 1 increases.</sec>
+        <sec typ="cond">At the start of battle</sec>, for the next 1 time only, decreases <sec typ="buff"><buff typ="AP_SHIFT" /> the AP cost of Active Skill 2 <val idx="0" /></sec> for allied Supporters within range.
+        <sec typ="cond">When killing an enemy</sec>, <sec typ="buff"><buff typ="AP_SHIFT" /> the above effect is reactivated</sec>.
+        <sec typ="cond">At the start of the round</sec>, enhances the unit's output, increasing own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="5" r /></sec> for 2 rounds.
+        <sec typ="cond">When the above effect is stacked 2 times</sec>, the activation chance of active skill effects that trigger with a <sec typ="chance">50% chance</sec> increases to <sec typ="chance">100%</sec>.
       JP: |-
-        待機時、 機体の 出力を 強化して 2ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="2" r /></sec>が増加します。
-        <sec>スキルレベル10で 効果 ラウンドが 1 増加します。</sec>
+        <sec typ="cond">戦闘開始時</sec>、次の1回に限り、範囲内の味方支援機の<sec typ="buff"><buff typ="AP_SHIFT" />アクティブ2スキル消費AP<val idx="0" /></sec>が減少します。
+        <sec typ="cond">敵撃破時</sec>、<sec typ="buff"><buff typ="AP_SHIFT" />上記効果が再発動</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、機体の出力を強化し、2ラウンドの間、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>が増加します。
+        <sec typ="cond">上記効果が2スタックの時</sec>、<sec typ="chance">50%の確率</sec>で発動するアクティブスキル効果の発動確率が<sec typ="chance">100%に増加</sec>します。
       TC: |-
-        待機時， 台個的 輸出 強化 2回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec>增加。
-        <sec>技能等級10時 效果 回合 1 增加。</sec>
+        <sec typ="cond">戰鬥開始時</sec>，僅限接下來1次，使範圍內我方支援機的<sec typ="buff"><buff typ="AP_SHIFT" />主動2技能消耗AP<val idx="0" /></sec>降低。
+        <sec typ="cond">擊殺敵人時</sec>，<sec typ="buff"><buff typ="AP_SHIFT" />重新啟用上述效果</sec>。
+        <sec typ="cond">回合開始時</sec>，強化機體輸出，2回合內使自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>增加。
+        <sec typ="cond">上述效果疊加2層時</sec>，以<sec typ="chance">50%機率</sec>發動的主動技能效果，其發動機率提升為<sec typ="chance">100%</sec>。
   "5":
     key: "5"
     icon: P.EnemyDetect
@@ -7274,21 +7282,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시</sec>, 적을 분해해서 연구하기 위해 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="4" /></sec>이(가) 증가합니다.
-        전투 종료 시, <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec> 다음에 출현할 적 정보를 얻습니다.
-        <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec> 상태로 <sec typ="cond">전투 개시 시</sec>, 적의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="3" r /></sec>가 감소합니다.
+        <sec typ="cond">전투 개시 시</sec>, 적을 분해해서 연구하기 위해 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">전투 개시 시</sec> <sec typ="cond">자신 외의 <cmt t="080 팀"><import name="080" /></cmt> 소속 전투원이 있을 경우</sec>, 자신은 <sec typ="buff"><buff typ="SCOUTING" /> 정찰 활성화</sec> 상태가 됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><buff typ="SNARE" /> 이동 불가 상태인 적</sec>의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="6" r /></sec>가 감소합니다.
       EN: |-
-        <sec typ="cond">At battle start</sec>, enemy disassembles to research to <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="4" /></sec> increases.
-        At the end of battle, <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> next to appearing next enemy information gains.
-        <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> to the state <sec typ="cond">At battle start</sec>, enemy's <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="3" r /></sec> decreases.
+        <sec typ="cond">At the start of battle</sec>, increases own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> to disassemble and study the enemy.
+        <sec typ="cond">At the start of battle</sec>, <sec typ="cond">if there is another <cmt t="080 Team"><import name="080" /></cmt> combatant in the squad besides self</sec>, self enters <sec typ="buff"><buff typ="SCOUTING" /> Scouting Activated</sec> state.
+        <sec typ="cond">At the start of the round</sec>, decreases the <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical Hit <val idx="6" r /></sec> of <sec typ="cond">enemies in <buff typ="SNARE" /> Immobilized state</sec>.
       JP: |-
-        戦闘開始時、 敵を 分解してして 研究すること ために <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="4" /></sec>が増加します。
-        戦闘終了時、 <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 次に チウルハヨンできる 敵 情報を オトます。
-        <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 状態に 戦闘開始時、 敵の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="3" r /></sec>が減少します。
+        <sec typ="cond">戦闘開始時</sec>、敵を分解して研究するため、自身の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>が増加します。
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="cond">自身以外の<cmt t="080チーム"><import name="080" /></cmt>所属戦闘員がいる場合</sec>、自身は<sec typ="buff"><buff typ="SCOUTING" />偵察有効化</sec>状態になります。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond"><buff typ="SNARE" />移動不可状態の敵</sec>の<sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="6" r /></sec>が減少します。
       TC: |-
-        戰鬥開始時， 敵人 分解 研究進行 為了 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="4" /></sec>增加。
-        戰鬥結束時， <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 下次於 出現可 敵人 資訊 獲得。
-        <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 成為狀態 戰鬥開始時， 敵人的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="3" r /></sec>減少。
+        <sec typ="cond">戰鬥開始時</sec>，為了分解敵人進行研究，自身的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec>，<sec typ="cond">若小隊中存在自身以外的<cmt t="080小隊"><import name="080" /></cmt>所屬戰鬥員</sec>，自身進入<sec typ="buff"><buff typ="SCOUTING" />偵察啟用</sec>狀態。
+        <sec typ="cond">回合開始時</sec>，使<sec typ="cond">處於<buff typ="SNARE" />無法移動狀態的敵人</sec>的<sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="6" r /></sec>降低。
 dialogue:
   KR:
     "1":

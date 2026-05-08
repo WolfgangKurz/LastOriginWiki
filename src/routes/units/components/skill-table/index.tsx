@@ -408,7 +408,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			<div class={ style.Title }>
 				<Locale k="UNIT_SKILL" />
 
-				{ HasFormChange && <Button.Group>
+				{ HasFormChange && <Button.Group class="ms-3">
 					<Button
 						active={ formState === "normal" }
 						variant="warning"

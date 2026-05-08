@@ -1895,17 +1895,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        서브 머신건으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec>를 낮추며 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>를 증가시킵니다.
-        각 효과는 중첩 가능합니다.
+        서브머신건으로 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec>가 감소하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 증가합니다.
       EN: |-
-        sub by machine gun as <dmg elem="physics" /> damage and 2 rounds, target's <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="0" r /></sec> reduces and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increases.
-        each effect stack ability.
+        Deals <dmg elem="physics" /> damage to a single target with a submachine gun.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="0" r /></sec> and increases their <sec typ="buff"><buff typ="VULNERABLE" /> Damage Taken <val idx="1" r /></sec> for 2 rounds.
       JP: |-
-        サブマシンガンで<dmg elem="physics" />を与え、、 2ラウンドの間 対象の <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="0" r /></sec>を ンアトチウし <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec>を増加させます。
-        各 効果は 重複 可能します。
+        サブマシンガンで単一対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="0" r /></sec>が減少し、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>が増加します。
       TC: |-
-        衝鋒槍以 造成<dmg elem="physics" />，並 2回合內 目標的 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="0" r /></sec> 降低並並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec>使其增加。
-        各 效果 疊加 可能。
+        使用衝鋒槍對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，2回合內使目標的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="0" r /></sec>降低，並使<sec typ="buff"><buff typ="VULNERABLE" />受到的傷害<val idx="1" r /></sec>增加。
   "2":
     key: "2"
     icon: GrenadeAttack_1
@@ -2948,17 +2948,17 @@ skills:
             chance: 1
     desc:
       KR: |-
-        고폭 수류탄을 던져 <dmg elem="fire" />를 줍니다.
+        고폭 수류탄을 던져 단일 대상에게 <dmg elem="fire" />를 줍니다.
         대상이 <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 또는 <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 상태인 경우, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
       EN: |-
-        high explosive grenade throws <dmg elem="fire" />.
-        target <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion decrease</sec> or <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> if in the state, <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="0" r /></sec> increases.
+        Throws a high-explosive grenade to deal <dmg elem="fire" /> damage to a single target.
+        If the target is in <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down</sec> or <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> state, <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="0" r /></sec> increases.
       JP: |-
-        しプオク 手榴弾を ドオンジヨ<dmg elem="fire" />を与えます。
-        対象が <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避 減少</sec> または <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> 状態の場合、 <sec typ="dmg"><buff typ="FireATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        高爆手榴弾を投げ、単一対象に<dmg elem="fire" />を与えます。
+        対象が<sec typ="cond"><buff typ="EVADE_DOWN" />回避減少</sec>または<sec typ="cond"><buff typ="SNARE" />移動不可</sec>状態の場合、<sec typ="dmg"><buff typ="FireATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
       TC: |-
-        並Pok 手榴彈 更多投擲 造成<dmg elem="fire" />。
-        目標 <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避 減少</sec> 或 <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> 若為狀態， <sec typ="dmg"><buff typ="FireATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        投擲高爆手榴彈，對單一目標造成<dmg elem="fire" />。
+        若目標處於<sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec>或<sec typ="cond"><buff typ="SNARE" />無法移動</sec>狀態，<sec typ="dmg"><buff typ="FireATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.ExpUp
@@ -3565,17 +3565,29 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 같은 스쿼드 내의 <char uid="BR_WarWolf" />, <char uid="BR_Brownie" />, <char uid="BR_AS12TurtleDragon" />, <char uid="DS_Charlotte" /> 1기 당 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가하며 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 해당 대원들의 공격을 지원</sec>합니다.
-        해당 효과는 중첩 적용됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, <cmt t="080 팀"><import name="080" /></cmt> 소속 전투원과 <cmt t="자신만큼 똑똑한 친구들"><import name="SMART_FRIENDS" /></cmt>의 <sec typ="buff"><buff typ="EXP_UP" /> 획득 경험치 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">적 공격 시</sec> <sec typ="cond">자신보다 공격력이 높은 아군이 있을 경우</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec>가 영구히 증가합니다.
+        <define name="SMART_FRIENDS">
+        <char uid="BR_WarWolf" />, <char uid="DS_Charlotte" />, <char uid="BR_Brownie" />, <char uid="BR_AS12TurtleDragon" />, <char uid="DS_BunnySlayer" />, <char uid="BR_Fafnir" />
+        </define>
       EN: |-
-        <sec typ="cond">At round start</sec>, same in squad of <char uid="BR_WarWolf" />, <char uid="BR_Brownie" />, <char uid="BR_AS12TurtleDragon" />, <char uid="DS_Charlotte" /> 1 unit per <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="3" r /></sec> increases and <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> the member of supports the attack</sec>.
-        the effect stack is applied.
+        <sec typ="cond">At the start of the round</sec>, <cmt t="080 Team"><import name="080" /></cmt> combatants and <cmt t="Friends as Smart as Me"><import name="SMART_FRIENDS" /></cmt> have their <sec typ="buff"><buff typ="EXP_UP" /> EXP gained <val idx="0" r /></sec> increased.
+        <sec typ="cond">When attacking an enemy</sec> <sec typ="cond">if there is an ally with higher Attack than self</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> permanently increases.
+        <define name="SMART_FRIENDS">
+        <char uid="BR_WarWolf" />, <char uid="DS_Charlotte" />, <char uid="BR_Brownie" />, <char uid="BR_AS12TurtleDragon" />, <char uid="DS_BunnySlayer" />, <char uid="BR_Fafnir" />
+        </define>
       JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、 グアトは スクワッド 内の <char uid="BR_WarWolf" />、 <char uid="BR_Brownie" />、 <char uid="BR_AS12TurtleDragon" />、 <char uid="DS_Charlotte" /> 1機 ごと <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が 増加し、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 該当 隊員たちの 攻撃を 支援</sec>します。
-        該当 効果は 重複 適用されます。
+        <sec typ="cond">ラウンド開始時</sec>、<cmt t="080チーム"><import name="080" /></cmt>所属戦闘員と<cmt t="自分と同じくらい賢い友達"><import name="SMART_FRIENDS" /></cmt>の<sec typ="buff"><buff typ="EXP_UP" />獲得経験値<val idx="0" r /></sec>が増加します。
+        <sec typ="cond">敵攻撃時</sec> <sec typ="cond">自身より攻撃力が高い味方がいる場合</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="3" r /></sec>が永続的に増加します。
+        <define name="SMART_FRIENDS">
+        <char uid="BR_WarWolf" />, <char uid="DS_Charlotte" />, <char uid="BR_Brownie" />, <char uid="BR_AS12TurtleDragon" />, <char uid="DS_BunnySlayer" />, <char uid="BR_Fafnir" />
+        </define>
       TC: |-
-        <sec typ="cond">回合開始時</sec>， 相同 小隊 內的 <char uid="BR_WarWolf" />， <char uid="BR_Brownie" />， <char uid="BR_AS12TurtleDragon" />， <char uid="DS_Charlotte" /> 1台 每 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec> 增加，並 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 該 隊員們的 攻擊 支援</sec>。
-        該 效果 疊加 套用。
+        <sec typ="cond">回合開始時</sec>，使<cmt t="080小隊"><import name="080" /></cmt>所屬戰鬥員與<cmt t="和自己一樣聰明的朋友們"><import name="SMART_FRIENDS" /></cmt>的<sec typ="buff"><buff typ="EXP_UP" />獲得經驗值<val idx="0" r /></sec>增加。
+        <sec typ="cond">攻擊敵人時</sec> <sec typ="cond">若存在攻擊力高於自身的我方</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="3" r /></sec>永久增加。
+        <define name="SMART_FRIENDS">
+        <char uid="BR_WarWolf" />, <char uid="DS_Charlotte" />, <char uid="BR_Brownie" />, <char uid="BR_AS12TurtleDragon" />, <char uid="DS_BunnySlayer" />, <char uid="BR_Fafnir" />
+        </define>
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -3929,6 +3941,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>이(가) 증가합니다.
+        <sec typ="cond">공격 적중 시</sec>, <sec typ="cond"><buff typ="EXP_UP" /> 획득 경험치 증가 상태인 아군</sec>의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>이(가) 증가합니다.
+        <sec typ="cond">치명타 발생 시</sec> <sec typ="cond">대상이 <buff typ="SNARE" /> 이동 불가 상태인 경우</sec>, 대상은 해당 라운드 동안 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 상태가 됩니다.
+      EN: |-
+        <sec typ="cond">At the start of battle</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increases.
+        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> increases.
+        <sec typ="cond">When an attack hits</sec>, the <sec typ="cond"><buff typ="EXP_UP" /> allies in an EXP Gain Up state</sec> have their <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> increased.
+        <sec typ="cond">When a critical hit occurs</sec> <sec typ="cond">if the target is in <buff typ="SNARE" /> Immobilized state</sec>, the target enters <sec typ="buff"><buff typ="SEAL_SKILL" /> Skill Unavailable</sec> state for that round.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="4" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="5" /></sec>が増加します。
+        <sec typ="cond">攻撃命中時</sec>、<sec typ="cond"><buff typ="EXP_UP" />獲得経験値増加状態の味方</sec>の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="6" /></sec>が増加します。
+        <sec typ="cond">クリティカル発生時</sec> <sec typ="cond">対象が<buff typ="SNARE" />移動不可状態の場合</sec>、対象はそのラウンドの間<sec typ="buff"><buff typ="SEAL_SKILL" />スキル使用不可</sec>状態になります。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="4" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="5" /></sec>增加。
+        <sec typ="cond">攻擊命中時</sec>，使<sec typ="cond"><buff typ="EXP_UP" />獲得經驗值增加狀態的我方</sec>的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="6" /></sec>增加。
+        <sec typ="cond">發生暴擊時</sec> <sec typ="cond">若目標處於<buff typ="SNARE" />無法移動狀態</sec>，目標在該回合內陷入<sec typ="buff"><buff typ="SEAL_SKILL" />無法使用技能</sec>狀態。
   "5":
     key: "5"
     icon: P.WideLightning
@@ -4137,6 +4170,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>가 증가합니다.
+        허를 찌르는 발상으로, 자신이 있는 한 <sec typ="cond"><cmt t="080 팀"><import name="080" /></cmt> 소속 전투원</sec>의 '<sec typ="cond">라운드 개시 시</sec>' 스킬 효과는 적대 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항을 무시</sec>합니다.
+        <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">SMG 연사</sec>가 <sec typ="note">특수개조 MSG 연사</sec>로 변경</sec>되어, <sec typ="cond">치명타 시</sec> 대상을 영구히 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만들고 '<sec typ="cond">적중 시</sec>' 효과가 추가로 적용됩니다.
+        <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">고폭 수류탄</sec>이 <sec typ="note">최고폭 ENP 수류탄</sec>으로 변경</sec>되어, 이제 <sec typ="attr">보호 무시</sec> <sec typ="dmg"><elem type="fire" /><elem type="lightning" />화염 / 전기 적응형 속성 피해</sec>를 줍니다.
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical Hit <val idx="0" r /></sec> increases.
+        With an unexpected idea, while self is present, the <sec typ="cond"><cmt t="080 Team"><import name="080" /></cmt> combatants</sec>' '<sec typ="cond">At the start of the round</sec>' skill effects <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> ignore the Effect Resistance</sec> of hostile targets.
+        <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">SMG Burst</sec> changes to <sec typ="note">Specially Modified MSG Burst</sec></sec>, and on <sec typ="cond">critical hit</sec>, makes the target permanently <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> and additionally applies the '<sec typ="cond">On hit</sec>' effect.
+        <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">High-Explosive Grenade</sec> changes to <sec typ="note">Highest-Explosive ENP Grenade</sec></sec>, now dealing <sec typ="attr">Ignore Protection</sec> <sec typ="dmg"><elem type="fire" /><elem type="lightning" />Fire / Lightning adaptive elemental damage</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="0" r /></sec>が増加します。
+        虚を突く発想により、自身がいる限り、<sec typ="cond"><cmt t="080チーム"><import name="080" /></cmt>所属戦闘員</sec>の'<sec typ="cond">ラウンド開始時</sec>'スキル効果は敵対対象の<sec typ="buff"><buff typ="DEBUFF_RATEUP" />効果抵抗を無視</sec>します。
+        <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">SMG連射</sec>が<sec typ="note">特殊改造MSG連射</sec>に変更</sec>され、<sec typ="cond">クリティカル時</sec>対象を永続的に<sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態にし、'<sec typ="cond">命中時</sec>'効果が追加で適用されます。
+        <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">高爆手榴弾</sec>が<sec typ="note">最高爆ENP手榴弾</sec>に変更</sec>され、以後<sec typ="attr">保護無視</sec> <sec typ="dmg"><elem type="fire" /><elem type="lightning" />火炎 / 電気適応型属性ダメージ</sec>を与えます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="0" r /></sec>增加。
+        憑藉出其不意的發想，只要自身存在，<sec typ="cond"><cmt t="080小隊"><import name="080" /></cmt>所屬戰鬥員</sec>的'<sec typ="cond">回合開始時</sec>'技能效果會<sec typ="buff"><buff typ="DEBUFF_RATEUP" />無視敵對目標的效果抵抗</sec>。
+        <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">SMG連射</sec>變更為<sec typ="note">特殊改造MSG連射</sec></sec>，<sec typ="cond">暴擊時</sec>會使目標永久陷入<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態，並追加套用'<sec typ="cond">命中時</sec>'效果。
+        <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">高爆手榴彈</sec>變更為<sec typ="note">最高爆ENP手榴彈</sec></sec>，現在造成<sec typ="attr">無視保護</sec>的<sec typ="dmg"><elem type="fire" /><elem type="lightning" />火焰 / 電氣適應型屬性傷害</sec>。
   F1:
     key: F1
     icon: ARShot
@@ -6481,6 +6535,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        무슨서브건?으로 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="3" r /></sec>가 감소하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="cond">치명타 시</sec>, 대상은 영구히 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태가 되고 <sec typ="cond">적중 시</sec> 효과가 <sec typ="buff">추가로 적용</sec>됩니다.
+      EN: |-
+        Deals <dmg elem="physics" /> damage to a single target with a What Subgun?.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="3" r /></sec> and increases their <sec typ="buff"><buff typ="VULNERABLE" /> Damage Taken <val idx="4" r /></sec> for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, the target permanently enters <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> state and the <sec typ="cond">On hit</sec> effect is <sec typ="buff">applied additionally</sec>.
+      JP: |-
+        ナニサブガン?で単一対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="3" r /></sec>が減少し、<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="4" r /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec>、対象は永続的に<sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態になり、<sec typ="cond">命中時</sec>効果が<sec typ="buff">追加で適用</sec>されます。
+      TC: |-
+        用什麼衝鋒槍?對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，2回合內使目標的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="3" r /></sec>降低，並使<sec typ="buff"><buff typ="VULNERABLE" />受到的傷害<val idx="4" r /></sec>增加。
+        <sec typ="cond">暴擊時</sec>，目標永久陷入<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態，且<sec typ="cond">命中時</sec>效果會<sec typ="buff">追加套用</sec>。
   F2:
     key: F2
     icon: GrenadeAttack_1
@@ -8407,6 +8478,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        최고폭 수류탄을 던져 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="fire,lightning" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 또는 <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 상태인 경우, <sec typ="dmg"><buff typ="FireATK_UP" /><buff typ="LightningATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      EN: |-
+        Throws a highest-explosive grenade to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="fire,lightning" /> damage to a single target.
+        If the target is in <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down</sec> or <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> state, <sec typ="dmg"><buff typ="FireATK_UP" /><buff typ="LightningATK_UP" /> damage <val idx="3" r /></sec> increases.
+      JP: |-
+        最高爆手榴弾を投げ、単一対象に<sec typ="attr">保護無視</sec> <dmg elem="fire,lightning" />を与えます。
+        対象が<sec typ="cond"><buff typ="EVADE_DOWN" />回避減少</sec>または<sec typ="cond"><buff typ="SNARE" />移動不可</sec>状態の場合、<sec typ="dmg"><buff typ="FireATK_UP" /><buff typ="LightningATK_UP" />ダメージ量<val idx="3" r /></sec>が増加します。
+      TC: |-
+        投擲最高爆手榴彈，對單一目標造成<sec typ="attr">無視保護</sec> <dmg elem="fire,lightning" />。
+        若目標處於<sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec>或<sec typ="cond"><buff typ="SNARE" />無法移動</sec>狀態，<sec typ="dmg"><buff typ="FireATK_UP" /><buff typ="LightningATK_UP" />傷害量<val idx="3" r /></sec>增加。
 dialogue:
   KR:
     "2":

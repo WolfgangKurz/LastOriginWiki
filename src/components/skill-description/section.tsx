@@ -8,7 +8,7 @@ import { GetSkillDescription } from "@/libs/SkillDescription";
 
 import style from "./components/style.module.scss";
 
-export default function buildDefaultSection (units: FilterableUnit[] | symbol): Record<string, preact.FunctionalComponent<unknown>> {
+export default function buildDefaultSection (units: FilterableUnit[] | symbol): Record<string, preact.FunctionalComponent<unknown>[]> {
 	if (!assertDBData(units)) return {};
 
 	let groupUnits: Record<string, FilterableUnit[]> = {};
@@ -67,19 +67,22 @@ export default function buildDefaultSection (units: FilterableUnit[] | symbol): 
 	});
 	groupUnits = Object.assign(groupUnits, groupUnitsAdd);
 
-	const tags: Record<string, preact.FunctionalComponent<unknown>> = {};
-	Object.keys(groupUnits).forEach(g => {
-		const section = `$$${g}~\n${groupUnits[g].map(r => `<char uid="${r.uid}" />`).join(", ")}\n~$$${g}`;
+	const tags: Record<string, preact.FunctionalComponent<unknown>[]> = {};
+	for (const g in groupUnits) {
+		const section = `<define name="${g}">${groupUnits[g].map(r => `<char uid="${r.uid}" />`).join(", ")}</define>`;
 		const ret = GetSkillDescription(section, "", {});
 
-		tags[`SECTION_${g}`] = (): preact.VNode => <>{
+		tags[`SECTION_${g}`] =
 			(ret.sections[g] || [])
-				.map((r, i) => <div
-					key={ `SKILL_DESCRIPTION_COMMENT_SECTION_${g}_LINE_${i}` }
-					class={ style.CommentLine }
-				>{ createElement(r, { params: [undefined] }) }</div>)
-		}</>;
-	});
+				.map((r, i) =>
+					function GroupPrebuiltSection(): preact.VNode {
+						return <div
+							key={ `SKILL_DESCRIPTION_COMMENT_SECTION_${g}_LINE_${i}` }
+							class={ style.CommentLine }
+						>{ createElement(r, { params: [undefined] }) }</div>;
+					}
+				);
+	}
 
 	return tags;
 }

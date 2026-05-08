@@ -28,7 +28,7 @@ function InitPrebuiltSections (): void {
 	const locs = GetLocaleTable(CurrentLocale.value) || {};
 	const keys = Object.keys(locs).filter(x => x.startsWith("UNIT_SKILL_SECTION_"));
 	keys.forEach(k => {
-		const kk = k.replace(/^UNIT_SKILL_SECTION_(.+)$/, "$1");
+		const kk = k.replace(/^UNIT_SKILL_SECTION_(?!NAME_)(.+)$/, "$1");
 		const _p2 = locs[k]
 			.replace(/^\n+/gs, "")
 			.replace(/\n+$/gs, "")

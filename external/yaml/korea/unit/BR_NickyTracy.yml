@@ -4767,17 +4767,45 @@ skills:
             chance: 1
     desc:
       KR: |-
-        단일 대상 <dmg elem="lightning" />를 입히고 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>을(를) 감소시키며 2라운드 동안 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="0" r /></sec>를 감소시킵니다.
-        <sec typ="cond">공격 적중 시</sec>, 자신은 <sec typ="note">충전</sec>상태가 됩니다.
+        테슬라 송곳으로 단일 대상에게 <dmg elem="lightning" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <cmt t="회로 과열"><import name="CIRCUIT_OVERHIT" /></cmt> 상태로 만듭니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_UP" /> AP를 0으로 변경</sec>합니다.
+        <sec>동일한 대상에게 3라운드당 1회만 시도할 수 있습니다.</sec>
+        <define name="CIRCUIT_OVERHIT">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="9" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="10" r /></sec>
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="11" r /></sec>
+        </define>
       EN: |-
-        single target <dmg elem="lightning" /> deals and <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec> decreases and 2 rounds <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="0" r /></sec> decreases.
-        <sec typ="cond">On hit</sec>, self <sec typ="note">Charge</sec> state.
+        Deals <dmg elem="lightning" /> damage to a single target with the Tesla Spike.
+        <sec typ="cond">On hit</sec>, inflicts <cmt t="Circuit Overheat"><import name="CIRCUIT_OVERHIT" /></cmt> on the target for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="AP_UP" /> changes the target's AP to 0</sec>.
+        <sec>This can only be attempted on the same target once every 3 rounds.</sec>
+        <define name="CIRCUIT_OVERHIT">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="9" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance <val idx="10" r /></sec>
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="11" r /></sec>
+        </define>
       JP: |-
-        単一対象<dmg elem="lightning" />を 与えし <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>を 減少させ、 2ラウンドの間 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="0" r /></sec>を減少させます。
-        <sec typ="cond">攻撃命中時</sec>、 自身は <sec typ="note">チャージ</sec>状態になります。
+        テスラスパイクで単一対象に<dmg elem="lightning" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<cmt t="回路過熱"><import name="CIRCUIT_OVERHIT" /></cmt>状態にします。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="AP_UP" />APを0に変更</sec>します。
+        <sec>同じ対象には3ラウンドにつき1回だけ試行できます。</sec>
+        <define name="CIRCUIT_OVERHIT">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性<val idx="9" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_UP" />冷気耐性<val idx="10" r /></sec>
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性<val idx="11" r /></sec>
+        </define>
       TC: |-
-        單一目標 <dmg elem="lightning" /> 造成並 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec> 使其減少，並 2回合內 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="0" r /></sec>使其減少。
-        <sec typ="cond">攻擊命中時</sec>， 自身 <sec typ="note">充能</sec>變為狀態。
+        使用特斯拉錐對單一目標造成<dmg elem="lightning" />。
+        <sec typ="cond">命中時</sec>，2回合內使目標進入<cmt t="迴路過熱"><import name="CIRCUIT_OVERHIT" /></cmt>狀態。
+        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="AP_UP" />將目標的AP變更為0</sec>。
+        <sec>同一目標每3回合只能嘗試1次。</sec>
+        <define name="CIRCUIT_OVERHIT">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性<val idx="9" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_UP" />冷氣抗性<val idx="10" r /></sec>
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電氣抗性<val idx="11" r /></sec>
+        </define>
   "2":
     key: "2"
     icon: WideLightning
@@ -7824,21 +7852,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        범위 내 대상 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 입히고 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>을(를) 감소시키며 2라운드 동안 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="0" r /></sec>를 감소시킵니다.
-        자신은 2라운드 동안 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="3" signless /> 고정 전기 피해</sec>를 받으면서 <sec typ="cond">공격 적중 시</sec>, <sec typ="note">충전</sec>상태가 됩니다.
-        (<sec typ="dmg"><buff typ="LightningDMG_DOT" /> 고정 전기 피해</sec>는 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항</sec>을 높여 피해를 줄일 수 있습니다.)
+        코트 내부의 장치를 전개하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상은 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="3" r /></sec>가 감소하고 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태가 됩니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="7" r /></sec>가 증가합니다.
       EN: |-
-        within range target <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> deals and <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec> decreases and 2 rounds <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="0" r /></sec> decreases.
-        self 2 rounds <sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="3" signless /> fixed Lightning damage</sec> when receiving from <sec typ="cond">On hit</sec>, <sec typ="note">Charge</sec> state.
-        (<sec typ="dmg"><buff typ="LightningDMG_DOT" /> fixed Lightning damage</sec> <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Lightning Resistance</sec> high Yeo damage Jul when number exists.)
+        Deploys the device inside the coat to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> damage to the designated area.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="3" r /></sec> and inflicts <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> damage <val idx="7" r /></sec> increases.
       JP: |-
-        範囲内 対象 <sec typ="attr">保護無視</sec><dmg elem="lightning" />を 与えし <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>を 減少させ、 2ラウンドの間 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="0" r /></sec>を減少させます。
-        自身は 2ラウンドの間 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="3" signless /> 固定電気ダメージ</sec>を 受けている場合して <sec typ="cond">攻撃命中時</sec>、 <sec typ="note">チャージ</sec>状態になります。
-        (<sec typ="dmg"><buff typ="LightningDMG_DOT" /> 固定電気ダメージ</sec>は <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電気耐性</sec>を ンオプヨ ダメージを ジウルイル 数 あります。)
+        コート内部の装置を展開し、指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="lightning" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象は<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性<val idx="3" r /></sec>が減少し、<sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態になります。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="LightningATK_UP" />ダメージ量<val idx="7" r /></sec>が増加します。
       TC: |-
-        範圍內 目標 <sec typ="attr">無視保護</sec> <dmg elem="lightning" /> 造成並 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec> 使其減少，並 2回合內 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="0" r /></sec>使其減少。
-        自身 2回合內 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="3" signless /> 固定電擊傷害</sec> 接受若 <sec typ="cond">攻擊命中時</sec>， <sec typ="note">充能</sec>變為狀態。
-        (<sec typ="dmg"><buff typ="LightningDMG_DOT" /> 固定電擊傷害</sec> <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電擊抗性</sec> 高yeo 傷害 主lil 數 存在。)
+        展開外套內部的裝置，對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="lightning" />。
+        <sec typ="cond">命中時</sec>，2回合內使目標的<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電氣抗性<val idx="3" r /></sec>降低，並陷入<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="LightningATK_UP" />傷害量<val idx="7" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -8034,10 +8062,22 @@ skills:
             per: 0.1
             chance: 0
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
-      EN: <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Lightning Resistance <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increases.
-      JP: <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電気耐性 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
-      TC: <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電擊抗性 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="2" r /></sec>가 증가합니다.
+        매 라운드 첫번째 <sec typ="note">대화수단</sec>은 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec>가 적용됩니다.
+        <sec typ="cond"><sec typ="note">대화수단</sec>으로 적 처치 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" slot="1" /></sec>이(가) 증가하고 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과가 재활성화됩니다.
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Lightning Resistance <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light Type damage <val idx="2" r /></sec> increases.
+        The first <sec typ="note">Means of Communication</sec> each round applies <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec>.
+        <sec typ="cond">When killing an enemy with <sec typ="note">Means of Communication</sec></sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" slot="1" /></sec> increases and the <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> effect is reactivated.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電気耐性<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" />対軽装型ダメージ量<val idx="2" r /></sec>が増加します。
+        毎ラウンド最初の<sec typ="note">対話手段</sec>には<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視</sec>が適用されます。
+        <sec typ="cond"><sec typ="note">対話手段</sec>で敵撃破時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="8" slot="1" /></sec>が増加し、<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視</sec>効果が再有効化されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電氣抗性<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" />對輕裝型傷害量<val idx="2" r /></sec>增加。
+        每回合第一次<sec typ="note">溝通手段</sec>會套用<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>。
+        <sec typ="cond">以<sec typ="note">溝通手段</sec>擊殺敵人時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="8" slot="1" /></sec>增加，並重新啟用<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>效果。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -8498,17 +8538,25 @@ skills:
             chance: 9.99
     desc:
       KR: |-
-        <sec typ="cond">공격 적중 시</sec>, 자신의 <sec typ="note">충전</sec>상태의 중첩 횟수에 따라 적군 전체에게 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> 고정 전기 피해</sec> 효과를 적용시킵니다.
-        <sec typ="note">충전</sec> 2중첩 이상일 때 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="0" signless /> 고정 전기 피해</sec>, 3중첩 이상부터 7중첩 이상까지 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> 고정 전기 피해 <val idx="2" signless /></sec>씩 증가합니다.
+        <sec typ="cond"><sec typ="note">대화수단</sec> 적중 시</sec>, <sec typ="buff"><sec typ="note">충전</sec> 중첩을 획득</sec>하며 3라운드 동안 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" slot="1" r /></sec>가 증가합니다. <sec>(최대 3중첩)</sec>
+        <sec typ="cond"><sec typ="note">펄스 임팩트</sec> 적중 시</sec>, <sec typ="note">충전</sec> 중첩 수에 비례하여 <sec typ="cond">적중 시</sec> 효과가 증폭됩니다.
+        <sec>증폭된 효과는 중첩되지 않습니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">충전</sec> 중첩 수에 비례하여 모든 적에게 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="2" signless /> 지속 전기 피해</sec>를 줍니다.
       EN: |-
-        <sec typ="cond">On hit</sec>, own <sec typ="note">Charge</sec> state of stack Hoet depending on the number of all enemiesto <sec typ="dmg"><buff typ="LightningDMG_DOT" /> fixed Lightning damage</sec> effect and applies causes.
-        <sec typ="note">Charge</sec> 2stack or morewhen <sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="0" signless /> fixed Lightning damage</sec>, 3stack or more from 7stack or more up to <sec typ="dmg"><buff typ="LightningDMG_DOT" /> fixed Lightning damage <val idx="2" signless /></sec>each increases.
+        <sec typ="cond">When <sec typ="note">Means of Communication</sec> hits</sec>, <sec typ="buff">gains <sec typ="note">Charge</sec> stacks</sec> and own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="5" slot="1" r /></sec> increases for 3 rounds. <sec>(up to 3 stacks)</sec>
+        <sec typ="cond">When <sec typ="note">Pulse Impact</sec> hits</sec>, the <sec typ="cond">On hit</sec> effect is amplified in proportion to the number of <sec typ="note">Charge</sec> stacks.
+        <sec>The amplified effect does not stack.</sec>
+        <sec typ="cond">At the start of the round</sec>, deals <sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="2" signless /> Lightning damage over time</sec> to all enemies in proportion to the number of <sec typ="note">Charge</sec> stacks.
       JP: |-
-        <sec typ="cond">攻撃命中時</sec>、 自身の <sec typ="note">チャージ</sec>状態の 重複 ハウェト数に応じて 敵全体に <sec typ="dmg"><buff typ="LightningDMG_DOT" /> 固定電気ダメージ</sec> 効果を 適用させます。
-        <sec typ="note">チャージ</sec> 2重複 以上イル 時 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="0" signless /> 固定電気ダメージ</sec>、 3重複 以上から 7重複 以上まで <sec typ="dmg"><buff typ="LightningDMG_DOT" /> 固定電気ダメージ <val idx="2" signless /></sec>ッスイク 増加します。
+        <sec typ="cond"><sec typ="note">対話手段</sec>命中時</sec>、<sec typ="buff"><sec typ="note">充電</sec>スタックを獲得</sec>し、3ラウンドの間、自身の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" slot="1" r /></sec>が増加します。<sec>(最大3スタック)</sec>
+        <sec typ="cond"><sec typ="note">パルスインパクト</sec>命中時</sec>、<sec typ="note">充電</sec>スタック数に比例して<sec typ="cond">命中時</sec>効果が増幅されます。
+        <sec>増幅された効果は重複しません。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">充電</sec>スタック数に比例して、すべての敵に<sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="2" signless />持続電気ダメージ</sec>を与えます。
       TC: |-
-        <sec typ="cond">攻擊命中時</sec>， 自身的 <sec typ="note">充能</sec>狀態的 疊加 Hoet依數量 全體敵方給 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> 固定電擊傷害</sec> 效果 套用。
-        <sec typ="note">充能</sec> 2疊加 以上一 時 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="0" signless /> 固定電擊傷害</sec>， 3疊加 以上從 7疊加 以上至 <sec typ="dmg"><buff typ="LightningDMG_DOT" /> 固定電擊傷害 <val idx="2" signless /></sec>各 增加。
+        <sec typ="cond"><sec typ="note">溝通手段</sec>命中時</sec>，<sec typ="buff">獲得<sec typ="note">充電</sec>疊層</sec>，並在3回合內使自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" slot="1" r /></sec>增加。<sec>(最多3層)</sec>
+        <sec typ="cond"><sec typ="note">脈衝衝擊</sec>命中時</sec>，依<sec typ="note">充電</sec>疊層數比例提升<sec typ="cond">命中時</sec>效果。
+        <sec>提升後的效果不會重疊。</sec>
+        <sec typ="cond">回合開始時</sec>，依<sec typ="note">充電</sec>疊層數比例，對所有敵人造成<sec typ="dmg"><buff typ="LightningDMG_DOT" /> <val idx="2" signless />持續電氣傷害</sec>。
   "5":
     key: "5"
     icon: P.Scan
@@ -8872,10 +8920,38 @@ skills:
             per: -0.015
             chance: 9.99
     desc:
-      KR: <sec typ="cond">라운드 개시 시</sec>, 아군의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec>를 감소시키는 대신 적들의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>를 증가시킵니다.
-      EN: <sec typ="cond">At round start</sec>, allies' <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="1" r /></sec> decrease when height/key instead enemy of <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec> increases.
-      JP: <sec typ="cond">ラウンド開始時</sec>、 味方の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="1" r /></sec>を 減少時クイは 代わりに 敵たちの <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="5" r /></sec>を増加させます。
-      TC: <sec typ="cond">回合開始時</sec>， 我方的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="1" r /></sec> 減少時台 改為 敵人們的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="5" r /></sec>使其增加。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 모든 아군의 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="0" r /></sec>가 감소하는 대신 모든 적의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 <sec typ="cond"><cmt t="회로 과열"><import name="CIRCUIT_OVERHIT" p="?,?,?" /></cmt> 상태</sec>인 적의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="5" r /></sec>가 감소합니다.
+        <define name="CIRCUIT_OVERHIT">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val param="$1:n" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val param="$2:p" r /></sec>
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val param="$3:n" r /></sec>
+        </define>
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, all allies' <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="0" r /></sec> decreases, but all enemies' <sec typ="buff"><buff typ="VULNERABLE" /> Damage Taken <val idx="3" r /></sec> increases.
+        <sec typ="cond">At the start of the round</sec>, decreases the <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="5" r /></sec> of enemies in <sec typ="cond"><cmt t="Circuit Overheat"><import name="CIRCUIT_OVERHIT" p="?,?,?" /></cmt> state</sec> for 2 rounds.
+        <define name="CIRCUIT_OVERHIT">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val param="$1:n" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance <val param="$2:p" r /></sec>
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val param="$3:n" r /></sec>
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、すべての味方の<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性<val idx="0" r /></sec>が減少する代わりに、すべての敵の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="3" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、2ラウンドの間、<sec typ="cond"><cmt t="回路過熱"><import name="CIRCUIT_OVERHIT" p="?,?,?" /></cmt>状態</sec>の敵の<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="5" r /></sec>が減少します。
+        <define name="CIRCUIT_OVERHIT">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性<val param="$1:n" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_UP" />冷気耐性<val param="$2:p" r /></sec>
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気耐性<val param="$3:n" r /></sec>
+        </define>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，所有我方的<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電氣抗性<val idx="0" r /></sec>降低，但所有敵人的<sec typ="buff"><buff typ="VULNERABLE" />受到的傷害<val idx="3" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，2回合內使處於<sec typ="cond"><cmt t="迴路過熱"><import name="CIRCUIT_OVERHIT" p="?,?,?" /></cmt>狀態</sec>的敵人的<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="5" r /></sec>降低。
+        <define name="CIRCUIT_OVERHIT">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性<val param="$1:n" r /></sec>
+        <sec typ="buff"><buff typ="ICERES_UP" />冷氣抗性<val param="$2:p" r /></sec>
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電氣抗性<val param="$3:n" r /></sec>
+        </define>
 dialogue:
   KR:
     "1":

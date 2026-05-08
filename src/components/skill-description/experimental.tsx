@@ -1,3 +1,5 @@
+import { FunctionalComponent } from "preact";
+
 import { CurrentLocale } from "@/libs/Locale";
 
 import SkillDescription, { SectionProps } from ".";
@@ -9,7 +11,7 @@ interface BuffNameReturn {
 function BuffName (text: string): BuffNameReturn {
 	// https://arca.live/b/lastorigin/81694084
 
-	if (CurrentLocale !== "KR") return { text, sections: {} };
+	if (CurrentLocale.value !== "KR") return { text, sections: {} };
 
 	type BuffReg = [from: RegExp, icon: string | string[], desc: ((substring: string, ...args: any[]) => string)];
 	type BuffText = [from: string, icon: string | string[], desc: string];
@@ -257,6 +259,7 @@ function BuffName (text: string): BuffNameReturn {
 				buffBonus={ false }
 				skillBonus={ 0 }
 				favorBonus={ false }
+				valueDetail={ false }
 			/>,
 		];
 		return name;

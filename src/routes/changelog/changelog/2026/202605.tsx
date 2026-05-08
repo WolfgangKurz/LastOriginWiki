@@ -4,6 +4,14 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13138" date="2026-05-09"
+		update={ <>
+			<li>전투원 <BY>니키 트레이시</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>시라유리</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>닥터</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>토모</BY>의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13134" date="2026-05-08"
 		new={ <>
 			<li>신규 장비 <BY>미니 캐럴</BY>의 정보가 추가되었습니다.</li>

@@ -1872,17 +1872,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        대상에게 <dmg elem="fire" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="1" r /></sec> 감소 효과를 줍니다.
-        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> <strike>추가 화염 피해</strike> 피해량 <val idx="3" r /></sec>를 줍니다.
+        불화살로 단일 대상에게 <dmg elem="fire" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="1" r /></sec>가 감소합니다.
+        <sec typ="cond">대상이 <buff typ="MARKING" /> 표식 / <buff typ="SNARE" /> 이동 불가 상태인 경우</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
       EN: |-
-        to the target with <dmg elem="fire" /> damage and 2 rounds <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="1" r /></sec> decrease effect and deals.
-        target <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> if in the state <sec typ="dmg"><buff typ="PhyATK_UP" /> <strike>additional Fire damage</strike> damage <val idx="3" r /></sec> deals.
+        Deals <dmg elem="fire" /> damage to a single target with a fire arrow.
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="1" r /></sec> for 2 rounds.
+        <sec typ="cond">If the target is in <buff typ="MARKING" /> Marked / <buff typ="SNARE" /> Immobilized state</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="3" r /></sec> increases.
       JP: |-
-        対象に<dmg elem="fire" />を与え、、 2ラウンドの間 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="1" r /></sec> 減少 効果を 与えます。
-        対象が <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> 状態なら <sec typ="dmg"><buff typ="PhyATK_UP" /> <strike>追加火炎ダメージ</strike> ダメージ量 <val idx="3" r /></sec>を 与えます。
+        火矢で単一対象に<dmg elem="fire" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" />火炎耐性<val idx="1" r /></sec>が減少します。
+        <sec typ="cond">対象が<buff typ="MARKING" />標識 / <buff typ="SNARE" />移動不可状態の場合</sec>、<sec typ="dmg"><buff typ="FireATK_UP" />ダメージ量<val idx="3" r /></sec>が増加します。
       TC: |-
-        對目標 造成<dmg elem="fire" />，並 2回合內 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="1" r /></sec> 減少 效果 造成。
-        目標 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> 若處於狀態 <sec typ="dmg"><buff typ="PhyATK_UP" /> <strike>追加火焰傷害</strike> 傷害量 <val idx="3" r /></sec> 造成。
+        以火箭對單一目標造成<dmg elem="fire" />。
+        <sec typ="cond">命中時</sec>，2回合內使目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" />火焰抗性<val idx="1" r /></sec>降低。
+        <sec typ="cond">若目標處於<buff typ="MARKING" />標記 / <buff typ="SNARE" />無法移動狀態</sec>，<sec typ="dmg"><buff typ="FireATK_UP" />傷害量<val idx="3" r /></sec>增加。
   "2":
     key: "2"
     icon: AntiArmorShot
@@ -6425,21 +6429,25 @@ skills:
             chance: 1
     desc:
       KR: |-
-        지정 대상에게 <sec typ="attr">보호 무시</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어력 무시</sec> <dmg elem="physics" />를 주고, 주변 대상에겐 <sec typ="dmg">75% 감소한 피해</sec>를 줍니다.
-        적중 대상들은 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>이(가) 감소하며 2라운드 동안 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태가 됩니다.
-        치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" r /></sec>가 증가합니다.
+        액체 금속 화살을 발사하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 대상의 방어력을 무시하며</sec>,<sec typ="dmg"> 목표 지점 주변은 피해량이 50% 감소합니다.</sec>
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>이(가) 감소하고 2라운드 동안 <buff typ="SNARE" /> 이동 불가 상태가 됩니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
       EN: |-
-        Deals <sec typ="attr">Ignore Protection</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense-ignoring</sec> <dmg elem="physics" /> to the designated target, and deals <sec typ="dmg">75% reduced damage</sec> to nearby targets.
-        Hit targets have their <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> decreased and become <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> for 2 rounds.
-        On critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec> increases.
+        Fires a liquid metal arrow to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage to the designated area.
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Ignores the target's Defense</sec>,<sec typ="dmg"> and damage around the target point is reduced by 50%.</sec>
+        <sec typ="cond">On hit</sec>, decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> and inflicts <buff typ="SNARE" /> Immobilized state for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec> increases.
       JP: |-
-        指定対象に<sec typ="attr">保護無視</sec><sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御力無視</sec><dmg elem="physics" />を与え、周辺対象には<sec typ="dmg">75%減少したダメージ</sec>を与えます。
-        命中した対象は<sec typ="buff"><buff typ="AP_DOWN" />AP <val idx="0" /></sec>が減少し、2ラウンドの間<sec typ="buff"><buff typ="SNARE" />移動不可</sec>状態になります。
-        クリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="5" r /></sec>が増加します。
+        液体金属の矢を発射し、指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" />対象の防御力を無視し</sec>,<sec typ="dmg"> 目標地点周辺はダメージ量が50%減少します。</sec>
+        <sec typ="cond">命中時</sec>、対象の<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>が減少し、2ラウンドの間<buff typ="SNARE" />移動不可状態になります。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="4" r /></sec>が増加します。
       TC: |-
-        對指定目標造成<sec typ="attr">無視保護</sec><sec typ="buff"><buff typ="DEF_PIERCE_UP" />無視防禦力</sec><dmg elem="physics" />，並對周圍目標造成<sec typ="dmg">減少75%的傷害</sec>。
-        命中的目標<sec typ="buff"><buff typ="AP_DOWN" />AP <val idx="0" /></sec>減少，並在2回合內處於<sec typ="buff"><buff typ="SNARE" />無法移動</sec>狀態。
-        暴擊時，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="5" r /></sec>增加。
+        發射液態金屬箭，對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="physics" />。
+        <sec typ="buff"><buff typ="DEF_PIERCE_UP" />無視目標的防禦力</sec>,<sec typ="dmg"> 目標地點周圍的傷害量降低50%。</sec>
+        <sec typ="cond">命中時</sec>，使目標的<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>降低，並在2回合內陷入<buff typ="SNARE" />無法移動狀態。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="4" r /></sec>增加。
   "3":
     key: "3"
     icon: P.Scan
@@ -6719,21 +6727,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="3" r /></sec>가 증가합니다.
-        전투 종료 시, <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec>로 다음에 출현할 적 정보를 얻습니다.
-        <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec> 활성화 상태면 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec>가 추가로 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SCOUTING" /> 정찰이 활성화</sec>되어 다음에 출현할 적을 확인할 수 있습니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond">웨이브 종료 시</sec>, 취득한 첩보를 분석하여 자신의 <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="6" r /></sec>가 증가합니다.
       EN: |-
-        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="2" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="3" r /></sec> increases.
-        At the end of battle, <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> as next to appearing next enemy information gains.
-        <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> active state if <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="6" r /></sec>additionally increases.
+        <sec typ="cond">At the start of battle</sec>, self enters <sec typ="buff"><buff typ="SCOUTING" /> Scouting Activated</sec> state, allowing the next enemies to appear to be checked.
+        <sec typ="cond">At the start of the round</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical Hit <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="2" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="3" r /></sec> increases.
+        <sec typ="cond">At the end of the wave</sec>, analyzes acquired intelligence, increasing own <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="6" r /></sec>.
       JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="3" r /></sec>が増加します。
-        戦闘終了時、 <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec>で 次に チウルハヨンできる 敵 情報を オトます。
-        <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 有効状態なら <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec>が追加で増加します。
+        <sec typ="cond">戦闘開始時</sec>、自身は<sec typ="buff"><buff typ="SCOUTING" />偵察が有効化</sec>され、次に出現する敵を確認できます。
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="2" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="3" r /></sec>が増加します。
+        <sec typ="cond">ウェーブ終了時</sec>、取得した情報を分析し、自身の<sec typ="dmg"><buff typ="SKILL_UP" />スキル威力<val idx="6" r /></sec>が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="3" r /></sec>增加。
-        戰鬥結束時， <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec>以 下次於 出現可 敵人 資訊 獲得。
-        <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 啟用狀態若 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec>會額外增加。
+        <sec typ="cond">戰鬥開始時</sec>，自身進入<sec typ="buff"><buff typ="SCOUTING" />偵察啟用</sec>狀態，可確認接下來出現的敵人。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="2" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="3" r /></sec>增加。
+        <sec typ="cond">波次結束時</sec>，分析取得的情報，使自身的<sec typ="dmg"><buff typ="SKILL_UP" />技能威力<val idx="6" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -7194,21 +7202,21 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 증가합니다.
-        범위 내 <sec typ="cond"><buff typ="SCOUTING" /> 정찰</sec> 활성화 상태인 아군의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>합니다.
-        3라운드 이후부터 아군의 행동을 기록하여, <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>를 추가로 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>가 증가합니다.
+        <sec typ="cond">대상이 <buff typ="SCOUTING" /> 정찰 활성화 상태인 경우</sec>, 효과 수치가 50% 증폭되고 대상의 공격을 지원합니다.
+        <sec typ="cond"><cmt t="080 팀"><import name="080" /></cmt> 소속 전투원</sec>에 대해, 상기 효과는 <sec>위치와 조건을 무시</sec>할 수 있습니다.
       EN: |-
-        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> increases.
-        within range <sec typ="cond"><buff typ="SCOUTING" /> Scouting</sec> active state is allies' <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports the attack</sec>.
-        3round after from allies' action records, <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="6" r /></sec>additionally increases.
+        <sec typ="cond">At the start of the round</sec>, increases allies' <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="5" r /></sec> within range.
+        <sec typ="cond">If the target is in <buff typ="SCOUTING" /> Scouting Activated state</sec>, effect values are amplified by 50% and self supports the target's attack.
+        For <sec typ="cond"><cmt t="080 Team"><import name="080" /></cmt> combatants</sec>, the above effects can <sec>ignore position and conditions</sec>.
       JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>が増加します。
-        範囲内 <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 有効状態である 味方の <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃を 支援</sec>します。
-        3ラウンド 以後から 味方の 行ドオンを 機ルオクして、 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>を追加で増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>が増加します。
+        <sec typ="cond">対象が<buff typ="SCOUTING" />偵察有効化状態の場合</sec>、効果数値が50%増幅し、対象の攻撃を支援します。
+        <sec typ="cond"><cmt t="080チーム"><import name="080" /></cmt>所属戦闘員</sec>に対して、上記効果は<sec>位置と条件を無視</sec>できます。
       TC: |-
-        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>增加。
-        範圍內 <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 啟用狀態為 我方的 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻擊 支援</sec>。
-        3回合 之後從 我方的 列同 台越並， <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>會額外增加。
+        <sec typ="cond">回合開始時</sec>，使範圍內我方的<sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="4" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>增加。
+        <sec typ="cond">若目標處於<buff typ="SCOUTING" />偵察啟用狀態</sec>，效果數值提升50%，並支援目標的攻擊。
+        對<sec typ="cond"><cmt t="080小隊"><import name="080" /></cmt>所屬戰鬥員</sec>，上述效果可<sec>無視位置與條件</sec>。
   "5":
     key: "5"
     icon: P.EnemyDetect
@@ -8519,37 +8527,29 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, 범위 내 적에게 <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> 공격력 증감</sec> / <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> 회피 증감</sec> / <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 속성 저항 증감</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> 효과가 적용된 상태면 관련 정보를 공유해 능력치를 낮추거나 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해</sec>를 증가시킵니다.
-        <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> 공격력 증감</sec> : <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>
-        <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> 회피 증감</sec> : <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="4" r /></sec>
-        <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="FIRERES_DOWN" /> 화염 저항 증감</sec> : <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="5" r /></sec>
-        <sec typ="cond"><buff typ="ICERES_UP" /> <buff typ="ICERES_DOWN" /> 냉기 저항 증감</sec> : <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="6" r /></sec>
-        <sec typ="cond"><buff typ="LIGHTNINGRES_UP" /> <buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 증감</sec> : <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="7" r /></sec>
-        <sec typ="cond"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> : <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="8" r /></sec>
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><buff typ="ATK_UP" /><buff typ="ATK_DOWN" /> 공격력</sec> / <sec typ="cond"><buff typ="EVADE_UP" /><buff typ="EVADE_DOWN" /> 회피</sec> / <sec typ="cond"><buff typ="FIRERES_UP" /><buff typ="FIRERES_DOWN" /><buff typ="ICERES_UP" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_UP" /><buff typ="LIGHTNINGRES_DOWN" /> 속성 저항</sec> / <sec typ="cond"><buff typ="VULNERABLE" /><buff typ="DAMAGE_REDUCE" /> 받는 피해</sec> 증감 효과를 보유한 적에게 각각 대응하는 <sec typ="attr">해로운 효과</sec>를 부여합니다.
+        <box t="적용 효과">
+        <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" /> 속성 저항 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="10" r /></sec>
+        </box>
+        <sec typ="cond">상기 효과가 적용된 대상에게 <sec typ="note">개화</sec> 적중 시</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 각각 대응하는 강화 효과를 해제</sec>합니다.
       EN: |-
-        <sec typ="cond">At round start</sec>, within range to the enemy <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> Attack increase /decrease</sec> / <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> Evasion increase /decrease</sec> / <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> Elemental Resistance increase /decrease</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> damage taken increase</sec> affected by if in the state related information shares stats reduces or <sec typ="buff"><buff typ="VULNERABLE" /> damage taken</sec> increases.
-        <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> Attack increase /decrease</sec>: <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec>
-        <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> Evasion increase /decrease</sec>: <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="4" r /></sec>
-        <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="FIRERES_DOWN" /> Fire Resistance increase /decrease</sec>: <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="5" r /></sec>
-        <sec typ="cond"><buff typ="ICERES_UP" /> <buff typ="ICERES_DOWN" /> Ice Resistance increase /decrease</sec>: <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="6" r /></sec>
-        <sec typ="cond"><buff typ="LIGHTNINGRES_UP" /> <buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance increase /decrease</sec>: <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="7" r /></sec>
-        <sec typ="cond"><buff typ="VULNERABLE" /> damage taken increase</sec>: <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="8" r /></sec>
+        <sec typ="cond">At the start of the round</sec>, to enemies that have increase/decrease effects for <sec typ="cond"><buff typ="ATK_UP" /><buff typ="ATK_DOWN" /> Attack</sec> / <sec typ="cond"><buff typ="EVADE_UP" /><buff typ="EVADE_DOWN" /> Evasion</sec> / <sec typ="cond"><buff typ="FIRERES_UP" /><buff typ="FIRERES_DOWN" /><buff typ="ICERES_UP" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_UP" /><buff typ="LIGHTNINGRES_DOWN" /> Elemental Resistance</sec> / <sec typ="cond"><buff typ="VULNERABLE" /><buff typ="DAMAGE_REDUCE" /> Damage Taken</sec>, grants the corresponding <sec typ="attr">harmful effects</sec>.
+        <box t="Applied Effects">
+        <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="6" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" /> Elemental Resistance <val idx="7" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" /> Damage Taken <val idx="10" r /></sec>
+        </box>
+        <sec typ="cond">When <sec typ="note">Bloom</sec> hits a target affected by the above effects</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes each corresponding buff</sec>.
       JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、 範囲内 敵に <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> 攻撃力 ジウングアム</sec> / <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> 回避 ジウングアム</sec> / <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 属性耐性 ジウングアム</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> 受けるダメージ 増加</sec> 効果が適用された 状態なら グワンルヨン 情報を 共有して 能力値を ンアトチウまたは <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ</sec>を増加させます。
-        <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> 攻撃力 ジウングアム</sec>：<sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec>
-        <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> 回避 ジウングアム</sec>：<sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="4" r /></sec>
-        <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="FIRERES_DOWN" /> 火炎耐性 ジウングアム</sec>：<sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="5" r /></sec>
-        <sec typ="cond"><buff typ="ICERES_UP" /> <buff typ="ICERES_DOWN" /> 冷気耐性 ジウングアム</sec>：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="6" r /></sec>
-        <sec typ="cond"><buff typ="LIGHTNINGRES_UP" /> <buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 ジウングアム</sec>：<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="7" r /></sec>
-        <sec typ="cond"><buff typ="VULNERABLE" /> 受けるダメージ 増加</sec>：<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="8" r /></sec>
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond"><buff typ="ATK_UP" /><buff typ="ATK_DOWN" />攻撃力</sec> / <sec typ="cond"><buff typ="EVADE_UP" /><buff typ="EVADE_DOWN" />回避</sec> / <sec typ="cond"><buff typ="FIRERES_UP" /><buff typ="FIRERES_DOWN" /><buff typ="ICERES_UP" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_UP" /><buff typ="LIGHTNINGRES_DOWN" />属性耐性</sec> / <sec typ="cond"><buff typ="VULNERABLE" /><buff typ="DAMAGE_REDUCE" />受けるダメージ</sec>の増減効果を所持する敵に、それぞれ対応する<sec typ="attr">有害効果</sec>を付与します。
+        <box t="適用効果">
+        <sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" />属性耐性<val idx="7" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="10" r /></sec>
+        </box>
+        <sec typ="cond">上記効果が適用された対象に<sec typ="note">開花</sec>命中時</sec>、<sec typ="buff"><buff typ="REMOVE_BUFF" />それぞれ対応する強化効果を解除</sec>します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>， 範圍內 敵人給 <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> 攻擊力 解除增減</sec> / <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> 迴避 解除增減</sec> / <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 屬性抗性 解除增減</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> 受到的傷害 增加</sec> 已套用效果的 若處於狀態 相關 資訊 分享 能力值 降低並或 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害</sec>使其增加。
-        <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> 攻擊力 解除增減</sec>：<sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec>
-        <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> 迴避 解除增減</sec>：<sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="4" r /></sec>
-        <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="FIRERES_DOWN" /> 火焰抗性 解除增減</sec>：<sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="5" r /></sec>
-        <sec typ="cond"><buff typ="ICERES_UP" /> <buff typ="ICERES_DOWN" /> 冰冷抗性 解除增減</sec>：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="6" r /></sec>
-        <sec typ="cond"><buff typ="LIGHTNINGRES_UP" /> <buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 解除增減</sec>：<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="7" r /></sec>
-        <sec typ="cond"><buff typ="VULNERABLE" /> 受到的傷害 增加</sec>：<sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="8" r /></sec>
+        <sec typ="cond">回合開始時</sec>，對持有<sec typ="cond"><buff typ="ATK_UP" /><buff typ="ATK_DOWN" />攻擊力</sec> / <sec typ="cond"><buff typ="EVADE_UP" /><buff typ="EVADE_DOWN" />迴避</sec> / <sec typ="cond"><buff typ="FIRERES_UP" /><buff typ="FIRERES_DOWN" /><buff typ="ICERES_UP" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_UP" /><buff typ="LIGHTNINGRES_DOWN" />屬性抗性</sec> / <sec typ="cond"><buff typ="VULNERABLE" /><buff typ="DAMAGE_REDUCE" />受到的傷害</sec>增減效果的敵人，分別賦予對應的<sec typ="attr">有害效果</sec>。
+        <box t="套用效果">
+        <sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /><buff typ="ICERES_DOWN" /><buff typ="LIGHTNINGRES_DOWN" />屬性抗性<val idx="7" r /></sec> / <sec typ="buff"><buff typ="VULNERABLE" />受到的傷害<val idx="10" r /></sec>
+        </box>
+        <sec typ="cond">對已套用上述效果的目標命中<sec typ="note">開花</sec>時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除各自對應的強化效果</sec>。
 dialogue:
   KR:
     "1":
