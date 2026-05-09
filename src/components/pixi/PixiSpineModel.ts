@@ -200,7 +200,20 @@ export default class PixiSpineModel extends FadeContainer {
 									img.crossOrigin = "anonymous";
 									img.src = url;
 								})
-									.then(async (img) => {
+									.then(img => {
+										if (!page.pma) {
+											return new PIXI.BaseTexture(img, {
+												alphaMode: PIXI.ALPHA_MODES.UNPACK,
+												anisotropicLevel: 1,
+												mipmap: PIXI.MIPMAP_MODES.OFF,
+												multisample: PIXI.MSAA_QUALITY.LOW,
+												resourceOptions: {
+													alphaMode: PIXI.ALPHA_MODES.UNPACK,
+													createBitmap: false,
+												},
+											});
+										}
+
 										const cv = document.createElement("canvas");
 										cv.width = img.naturalWidth;
 										cv.height = img.naturalHeight;
@@ -211,25 +224,29 @@ export default class PixiSpineModel extends FadeContainer {
 										ctx.drawImage(img, 0, 0);
 
 										const imgData = ctx.getImageData(0, 0, cv.width, cv.height);
-										const arr = imgData.data.slice();
-										for (let i = 0; i < arr.length; i += 4) {
-											const af = arr[i + 3] / 255;
-											arr[i + 0] /= af;
-											arr[i + 1] /= af;
-											arr[i + 2] /= af;
+										const src = imgData.data;
+										const arr = new Uint8ClampedArray(src.length);
+
+										for (let i = 0; i < src.length; i += 4) {
+											const alpha = src[i + 3];
+											arr[i + 3] = alpha;
+											if (alpha === 0) continue;
+
+											const af = alpha / 255;
+											arr[i + 0] = Math.round(Math.min(255, src[i + 0] / af) * af);
+											arr[i + 1] = Math.round(Math.min(255, src[i + 1] / af) * af);
+											arr[i + 2] = Math.round(Math.min(255, src[i + 2] / af) * af);
 										}
 										cv.remove();
 
-										return createImageBitmap(
-											new ImageData(arr, img.naturalWidth, img.naturalHeight),
-											{ premultiplyAlpha: "premultiply", colorSpaceConversion: "none" },
-										);
+										return PIXI.BaseTexture.fromBuffer(arr, img.naturalWidth, img.naturalHeight, {
+											alphaMode: PIXI.ALPHA_MODES.PMA,
+											anisotropicLevel: 1,
+											mipmap: PIXI.MIPMAP_MODES.OFF,
+											multisample: PIXI.MSAA_QUALITY.LOW,
+											scaleMode: PIXI.SCALE_MODES.LINEAR,
+										});
 									})
-									.then(_img => new PIXI.BaseTexture(_img, {
-										anisotropicLevel: 1,
-										mipmap: PIXI.MIPMAP_MODES.OFF,
-										multisample: PIXI.MSAA_QUALITY.LOW,
-									}))
 									.then(r => {
 										page.setTexture(spine.SpineTexture.from(r));
 										return url;

@@ -79,7 +79,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 				width: 1,
 				height: 1,
-				resolution: window.devicePixelRatio || 1,
+				resolution: 1,
 				autoDensity: true,
 				powerPreference: "default",
 
