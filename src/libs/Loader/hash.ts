@@ -1811,7 +1811,7 @@ export default {
 		"filterable.enemy": "d84ecad9",
 		"filterable.equip": "98834b5b",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "35917c41",
+		"filterable.unit": "1146f7b6",
 		"gacha": "88d68dd1",
 		"iw": {
 			"Colossus_01": "c33e7edc",
@@ -5463,7 +5463,7 @@ export default {
 			"BR_Fafnir": "0ce452ad",
 			"BR_Gnome": "00411c8b",
 			"BR_Gremlin": "e43914ab",
-			"BR_Habetrot": "b98dae2b",
+			"BR_Habetrot": "eb4983ad",
 			"BR_Harpy": "0e1cc9d8",
 			"BR_Hela": "975a2dc2",
 			"BR_HongRyun": "118036bd",
