@@ -1811,7 +1811,7 @@ export default {
 		"filterable.enemy": "d84ecad9",
 		"filterable.equip": "98834b5b",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "1146f7b6",
+		"filterable.unit": "9a1da1dc",
 		"gacha": "88d68dd1",
 		"iw": {
 			"Colossus_01": "c33e7edc",
@@ -5463,7 +5463,7 @@ export default {
 			"BR_Fafnir": "0ce452ad",
 			"BR_Gnome": "00411c8b",
 			"BR_Gremlin": "e43914ab",
-			"BR_Habetrot": "eb4983ad",
+			"BR_Habetrot": "931878f8",
 			"BR_Harpy": "0e1cc9d8",
 			"BR_Hela": "975a2dc2",
 			"BR_HongRyun": "118036bd",
@@ -5572,7 +5572,7 @@ export default {
 			"PECS_Fortune": "c80e0407",
 			"PECS_Glacias": "78d76085",
 			"PECS_Hathor": "34f9680c",
-			"PECS_Hestia": "bcb14332",
+			"PECS_Hestia": "5792cf4f",
 			"PECS_HighElven": "029525a4",
 			"PECS_Hussar": "b61caf1e",
 			"PECS_Ignis": "065c2502",
@@ -5619,10 +5619,10 @@ export default {
 			"PECS_Yimir": "51283310",
 			"SJ_Orellia": "16376819",
 			"SJ_Tachi": "ae5b2e75",
-			"ST_Lancer": "b54a62a0",
+			"ST_Lancer": "b792668c",
 			"ST_Mercury": "6893f854",
 			"ST_Tiamat": "df1c04b0",
-			"ST_Ullr": "a724610b"
+			"ST_Ullr": "08e301bb"
 		}
 	},
 	"locale": {
