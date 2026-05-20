@@ -1811,7 +1811,7 @@ export default {
 		"filterable.enemy": "d84ecad9",
 		"filterable.equip": "98834b5b",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "9a1da1dc",
+		"filterable.unit": "4af8adb3",
 		"gacha": "88d68dd1",
 		"iw": {
 			"Colossus_01": "c33e7edc",
@@ -5580,7 +5580,7 @@ export default {
 			"PECS_ElvenForestmaker": "6b642928",
 			"PECS_Empress": "e61b3dc4",
 			"PECS_Erato": "d9795cfa",
-			"PECS_Express76": "33389506",
+			"PECS_Express76": "0a076a69",
 			"PECS_Fortune": "c80e0407",
 			"PECS_Glacias": "78d76085",
 			"PECS_Hathor": "34f9680c",

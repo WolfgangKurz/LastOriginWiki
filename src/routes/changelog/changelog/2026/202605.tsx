@@ -4,6 +4,14 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13143" date="2026-05-21"
+		bugfix={ <>
+			<li>
+				전투원 <BY>익스프레스 76</BY>의 스킨 <BR>특급 배송 당일 출고 서비스 : 스키니 데이트 룩</BR>의
+				로비 애니메이션이 재생되지 않는 문제를 수정했습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13142" date="2026-05-20"
 		update={ <>
 			<li>
