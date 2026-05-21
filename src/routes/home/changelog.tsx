@@ -6,6 +6,30 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13148" date="2026-05-22"
+		new={ <>
+			<li>신규 전투원 <BY>암루의 사와메</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <BY>휴대용 제구「이미아케」</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 이벤트 <BY>두근두근 러브 스케쥴</BY>이 시작되었습니다.</li>
+			<li>신규 소모품의 정보가 추가되었습니다.</li>
+			<li>신규 스토리 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>일부 전투원의 정보가 갱신되었습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>전투원 <BY>헤스티아</BY>의 스킬 설명이 누락된 점을 수정했습니다.</li>
+		</> }
+		skin={ <>
+			<li>전투원 <BY>암루의 사와메</BY>의 스킨 <BR>피안화가 피고 지는 학교 : 흑세라복</BR>의 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>LRL</BY>의 스킨 <BR>아쿠아 랜드 물놀이의 사명 : 권속이 선물해준 수영복</BR>의 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>살라시아</BY>의 스킨 <BR>Sexie Honey♡ : 흑의의 섹시 데빌 란제리</BR>이 잘못 표시되던 점을 수정했습니다.</li>
+			<li>전투원 <BY>엠피트리테</BY>의 스킨 <BR>Cutie Honey♡ : 백의의 큐티 데빌 란제리</BR>이 잘못 표시되던 점을 수정했습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2026-05-22 06:13:19</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13143" date="2026-05-21"
 		bugfix={ <>
 			<li>

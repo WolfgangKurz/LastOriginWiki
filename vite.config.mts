@@ -236,6 +236,7 @@ export default defineConfig(async ({ mode, command }) => {
 				? {
 					exclude: [
 						"external/yaml/**",
+						"db/**",
 					]
 				}
 				: undefined,

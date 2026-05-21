@@ -7156,7 +7156,10 @@ skills:
                     select:
                       - 78
                     attr: 6
-                - false
+                - in_squad_buff:
+                    - Effect_BR_Tomoe_N_51
+                  count:
+                    - 0
               body:
                 - 0
                 - 1
@@ -7197,6 +7200,70 @@ skills:
                     rounds: 1
                   value:
                     isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_DrM_N_53
+              on: round
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 78
+                    attr: 6
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Tomoe_N_51
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_BR_DrM_N_53_1
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 1
+                    attack:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_BR_DrM_N_53_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 999%
                     type: 9
                     critical:
                       base: -10%
@@ -7280,6 +7347,24 @@ skills:
             base: -0.1
             per: -0.01
             chance: 1
+          - icon: BuffIcon_ATK_DOWN
+            desc:
+              desc: Effect_BR_DrM_N_53_1
+              type: 1
+              value: "-0.100000"
+              level: "-0.010000"
+            base: -0.1
+            per: -0.01
+            chance: 9.99
+          - icon: BuffIcon_CRITICAL_DOWN
+            desc:
+              desc: Effect_BR_DrM_N_53_2
+              type: 1
+              value: "-0.100000"
+              level: "-0.010000"
+            base: -0.1
+            per: -0.01
+            chance: 9.99
     desc:
       KR: |-
         <sec typ="cond">전투 개시 시</sec>, 적을 분해해서 연구하기 위해 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
