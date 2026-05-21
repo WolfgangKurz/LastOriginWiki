@@ -511,6 +511,7 @@ source:
   - - Ev:Ev32:EV2-2EX
   - - Ev:Ev33:EV4-4
   - - Ev:Ev35:EV2-1
+  - - Ev:Ev38:EV1-1EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1973,6 +1974,19 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec> 감소 상태로 만듭니다.
+        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area and makes targets <sec typ="buff"><buff typ="PROVOKE" /> Provoked</sec> / decreases <sec typ="buff"><buff typ="ATK_DOWN" /> ATK by <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy by <val idx="1" r /></sec> for 2 rounds.
+        If the target is under <sec typ="cond"><buff typ="MARKING" /> Marked</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt increases by <val idx="4" r /></sec>.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、2ラウンドの間<sec typ="buff"><buff typ="PROVOKE" />挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="1" r /></sec>減少状態にします。
+        対象が<sec typ="cond"><buff typ="MARKING" />標識</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />回避低下</sec>状態なら、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="4" r /></sec>が増加します。
+      TC: |-
+        對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />，並在2回合內使目標進入<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中<val idx="1" r /></sec>降低狀態。
+        若目標處於<sec typ="cond"><buff typ="MARKING" />標記</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="4" r /></sec>增加。
   "2":
     key: "2"
     icon: SelfAtkBuff
@@ -2038,7 +2052,7 @@ skills:
                     barrier:
                       base: 75
                       per: 75
-                  overlap: 1
+                  overlap: 4
                 - icon: BuffIcon_ATK_UP
                   desc:
                     desc: Effect_3P_Annie_N_2_2
@@ -2251,6 +2265,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        3라운드 동안 자신에게 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" /></sec>이(가) 적용되며, 대상이 보호기가 아닐 경우, 대상을 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>합니다.
+        대상과 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+      EN: |-
+        Applies <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="0" /></sec> to herself for 3 rounds, and if the target is not a Protector, <sec typ="buff"><buff typ="DEF_Char" /> protects the target with Designated Protection</sec>.
+        Increases the target's and her own <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power by <val idx="2" r /></sec>.
+      JP: |-
+        3ラウンドの間、自身に<sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア<val idx="0" /></sec>が適用され、対象が保護機でない場合、対象を<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>します。
+        対象と自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>が増加します。
+      TC: |-
+        3回合內對自身套用<sec typ="buff"><buff typ="DAMAGE_ABSORB" />護盾<val idx="0" /></sec>，若目標不是保護機，則<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>目標。
+        目標與自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -2416,6 +2443,11 @@ skills:
             base: 0.15
             per: 0.02
             chance: 1
+    desc:
+      KR: 라운드 개시 시, <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> 증가 / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="2" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec> 감소 효과가 적용됩니다.
+      EN: At round start, applies <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion increase by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance increase by <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease by <val idx="2" r inv /></sec>.
+      JP: ラウンド開始時、<sec typ="buff"><buff typ="DEF_Side" />列保護</sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="1" r /></sec>増加 / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="2" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="2" r inv /></sec>減少効果が適用されます。
+      TC: 回合開始時，套用<sec typ="buff"><buff typ="DEF_Side" />列保護</sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="1" r /></sec>增加 / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性<val idx="2" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到傷害<val idx="2" r inv /></sec>降低效果。
   "4":
     key: "4"
     icon: P.TeamDefDeBuff
@@ -2559,6 +2591,11 @@ skills:
             base: -0.25
             per: -0.0125
             chance: 1
+    desc:
+      KR: 라운드 개시 시, <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태인 적을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec> 증가 / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" r /></sec> 감소 상태로 만듭니다.
+      EN: At round start, enemies under <sec typ="cond"><buff typ="PROVOKE" /> Provoked</sec> become <sec typ="buff"><buff typ="MARKING" /> Marked</sec> / have <sec typ="buff"><buff typ="VULNERABLE" /> damage taken increased by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion decreased by <val idx="2" r /></sec>.
+      JP: ラウンド開始時、<sec typ="cond"><buff typ="PROVOKE" />挑発</sec>状態の敵を<sec typ="buff"><buff typ="MARKING" />標識</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="1" r /></sec>増加 / <sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="2" r /></sec>減少状態にします。
+      TC: 回合開始時，使處於<sec typ="cond"><buff typ="PROVOKE" />挑釁</sec>狀態的敵人進入<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="1" r /></sec>增加 / <sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="2" r /></sec>降低狀態。
 dialogue:
   KR:
     "1":
@@ -2619,9 +2656,7 @@ dialogue:
       SPIdle_02_01: |-
         하하… 꽉 움켜쥐라고.
         세게 잡을 때마다 속도도 빨라지니까…​
-      Oath: 대장, 갑자기 날 불러내서 뭘 말하려는 거지? 어… 엇?! 이건… 대, 대장! 이건 반칙이라고! 완전 야비해! 나, 난… 생각도
-        못했는… 헤헤. 좋아, 대장이 정 그렇다면 나도 무장을 해제 해야… 겠지? 그럼 오늘 만큼은 나와바리 순찰이 아니라… 데이트…
-        하러 가도 될까? ​정말? 하하하~! 좋았어! 얼른 내 뒤에 타서… 오늘 밤, 같이 끝까지 달려 줄래?
+      Oath: 대장, 갑자기 날 불러내서 뭘 말하려는 거지? 어… 엇?! 이건… 대, 대장! 이건 반칙이라고! 완전 야비해! 나, 난… 생각도 못했는… 헤헤. 좋아, 대장이 정 그렇다면 나도 무장을 해제 해야… 겠지? 그럼 오늘 만큼은 나와바리 순찰이 아니라… 데이트… 하러 가도 될까? ​정말? 하하하~! 좋았어! 얼른 내 뒤에 타서… 오늘 밤, 같이 끝까지 달려 줄래?
       OathIdle_01: |-
         좋아~ 기분이다 대장!
         오늘 시간 비면,
@@ -2779,13 +2814,10 @@ dialogue:
       Idle_03_01: 後ろに乗ってみる？ここは特別な人しか乗せないんだからね…。…ちょ、ちょっとくっつき過ぎじゃない？
       Idle_04_01: いつかは今の姿もクラシックになっちゃうんだと思うわ…。その時まで…よろしくお願いね。
       SPIdle_02_01: もう癖になっちゃったみたいね…でも運転中はちょっと我慢してくれるかしら？
-      Oath: >-
+      Oath: |-
         こんなものまでくれなくても、司令官の気持ちは全部わかってるのに…
-
         へへ、それでも証しを残したいってこと？ そうね…そこまで言うなら仕方ないわ。まずはドライブでもしながら、これからの私たちについて話し合うのはどう？
-
         …あ、その前に。
-
         ……ありがとう。私も大好き。
       OathIdle_01: 後ろから司令官の体温が感じられないと何だか寂しい感じがするの。…はぁ…。だから…司令官、ドライブでも行かない？
       MVP: 私の戦いっぷり、どうだった？惚れちゃいそう？
@@ -2888,12 +2920,9 @@ dialogue:
       SPIdle_02_01: |-
         Now you’re doing that out of habit…
         Stop it when I’m driving. OK?
-      Oath: >-
-        Aww. You shouldn't have. I know how you feel already… but still, you
-        wanted to show it, didn't you?
-
+      Oath: |-
+        Aww. You shouldn't have. I know how you feel already… but still, you wanted to show it, didn't you?
         Well… if that's what you want. Let's go for a drive and talk about
-
         our future plans. … Oh, before that. …… Thank you. I like you, too.
       OathIdle_01: |-
         Now I feel kind of empty
@@ -3063,20 +3092,13 @@ skins:
   sid: null
   artist: PaintAle
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -3091,25 +3113,27 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_3P_Annie_N
   skins:
     - sid: 1
       artist: TeddYellow
       price: 182
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -3126,5 +3150,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_3P_Annie_NS1_Dam
         consumableKey: Skin_3P_Annie_1

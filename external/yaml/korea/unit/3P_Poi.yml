@@ -508,6 +508,7 @@ source:
   - - Ev:Ev18:EV2-2Ex
   - - Ev:Ev20:EV2-2B
   - - Ev:Ev33:EV4-1EX
+  - - Ev:Ev37:EV2-1EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1602,6 +1603,11 @@ skills:
             base: 0.25
             per: 0.05
             chance: 1
+    desc:
+      KR: 적에게 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> <dmg elem="physics" />를 주고, <sec typ="note">과흥분</sec> 상태일 시 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      EN: to the enemy <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> <dmg elem="physics" /> damage and <sec typ="note">Overexcited</sec> if in the state <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+      JP: 敵に <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec><dmg elem="physics" />を与え、、 <sec typ="note">とハウンブウン</sec> 状態イル 時 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
+      TC: 敵人給 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec> 造成<dmg elem="physics" />，並 <sec typ="note">與興奮</sec> 狀態一 時 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -3259,6 +3265,19 @@ skills:
             base: 0.22
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        지정 범위 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="3" r /></sec>를 감소시킵니다.
+        <sec typ="note">과흥분</sec> 상태일 시 <sec typ="buff"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        to the designated area the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="3" r /></sec> decreases.
+        <sec typ="note">Overexcited</sec> if in the state <sec typ="buff"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec> increases.
+      JP: |-
+        指定範囲 敵に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、、 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="3" r /></sec>を減少させます。
+        <sec typ="note">とハウンブウン</sec> 状態イル 時 <sec typ="buff"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="4" r /></sec>が増加します。
+      TC: |-
+        指定範圍 敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="3" r /></sec>使其減少。
+        <sec typ="note">與興奮</sec> 狀態一 時 <sec typ="buff"><buff typ="PhyATK_UP" /> 傷害量 <val idx="4" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3837,6 +3856,23 @@ skills:
               level: "0"
             value: Effect_3P_Poi_N_32
             chance: 1
+    desc:
+      KR: |-
+        라운드 시작 시 <sec typ="note">과흥분</sec> 상태가 됩니다.
+        피격 시 <sec typ="note">과흥분</sec> 상태가 해제되고, 2회 공격 후 라운드 시작 시 <sec typ="note">과흥분</sec> 상태가 재활성화 됩니다.
+        자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec>가 증가하며 <sec typ="note">과흥분</sec> 상태일 시 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="9" r /></sec>가 추가로 증가합니다.
+      EN: |-
+        round when operation when <sec typ="note">Overexcited</sec> state.
+        When hit <sec typ="note">Overexcited</sec> state remove becomes and, 2times attack after round when operation when <sec typ="note">Overexcited</sec> state reactivate.
+        own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="8" r /></sec> increases and <sec typ="note">Overexcited</sec> if in the state <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="9" r /></sec>additionally increases.
+      JP: |-
+        ラウンド 時ジアク 時 <sec typ="note">とハウンブウン</sec> 状態になります。
+        被弾時 <sec typ="note">とハウンブウン</sec> 状態が 解除になり、、 2回 攻撃 後 ラウンド 時ジアク 時 <sec typ="note">とハウンブウン</sec> 状態が 再有効化 されます。
+        自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" r /></sec>が 増加し、 <sec typ="note">とハウンブウン</sec> 状態イル 時 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="9" r /></sec>が追加で増加します。
+      TC: |-
+        回合 時作 時 <sec typ="note">與興奮</sec> 變為狀態。
+        被擊時 <sec typ="note">與興奮</sec> 狀態 解除變為，且 2次 攻擊 後 回合 時作 時 <sec typ="note">與興奮</sec> 狀態 重新啟用。
+        自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" r /></sec> 增加，並 <sec typ="note">與興奮</sec> 狀態一 時 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="9" r /></sec>會額外增加。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -4002,6 +4038,19 @@ skills:
             base: 0.01
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 증가합니다.
+        과흥분 상태일 시 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 추가로 증가합니다.
+      EN: |-
+        own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> increases.
+        Overexcited if in the state <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec>additionally increases.
+      JP: |-
+        自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>が増加します。
+        とハウンブウン 状態イル 時 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が追加で増加します。
+      TC: |-
+        自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>增加。
+        與興奮 狀態一 時 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>會額外增加。
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -4333,6 +4382,23 @@ skills:
             base: 0.05
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 경장형 보호기와 <sec typ="note">컴패니언</sec> 소속 캐릭터를 지원 공격</sec>합니다.
+        자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="5" r /></sec>가 증가하며 <sec typ="note">과흥분</sec> 상태가 해제되면 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec>가 추가로 증가합니다.
+        <sec typ="note">컴패니언</sec> : <char uid="3P_BlackLilith" /> / <char uid="3P_CSPerrault" /> / <char uid="3P_Hachiko" /> / <char uid="3P_Fenrir" /> / <char uid="3P_SnowFeather" /> / <char uid="3P_Poi" />
+      EN: |-
+        <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Light-type Defenderand <sec typ="note">Companion</sec> affiliated character support attack</sec>.
+        own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="5" r /></sec> increases and <sec typ="note">Overexcited</sec> state remove if becomes <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec>additionally increases.
+        <sec typ="note">Companion</sec>: <char uid="3P_BlackLilith" /> / <char uid="3P_CSPerrault" /> / <char uid="3P_Hachiko" /> / <char uid="3P_Fenrir" /> / <char uid="3P_SnowFeather" /> / <char uid="3P_Poi" />
+      JP: |-
+        <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 軽装型 保護機と <sec typ="note">クオム牌ンイオン</sec> 所属 クエルイクトオを 支援攻撃</sec>します。
+        自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="5" r /></sec>が 増加し、 <sec typ="note">とハウンブウン</sec> 状態が 解除になると <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec>が追加で増加します。
+        <sec typ="note">クオム牌ンイオン</sec>：<char uid="3P_BlackLilith" /> / <char uid="3P_CSPerrault" /> / <char uid="3P_Hachiko" /> / <char uid="3P_Fenrir" /> / <char uid="3P_SnowFeather" /> / <char uid="3P_Poi" />
+      TC: |-
+        <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 輕裝型 保護機與 <sec typ="note">Keom牌Nieon</sec> 所屬 角色 支援攻擊</sec>。
+        自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="5" r /></sec> 增加，並 <sec typ="note">與興奮</sec> 狀態 解除若變成 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec>會額外增加。
+        <sec typ="note">Keom牌Nieon</sec>：<char uid="3P_BlackLilith" /> / <char uid="3P_CSPerrault" /> / <char uid="3P_Hachiko" /> / <char uid="3P_Fenrir" /> / <char uid="3P_SnowFeather" /> / <char uid="3P_Poi" />
 dialogue:
   KR:
     "1":
@@ -4509,8 +4575,7 @@ dialogue:
       SPIdle_02_01: |-
         하아, 하아… 주인님…
         너무, 좋아….
-      Oath: 냐하하핫. 자신 있으신가 보네요? 그런데 이번은… 지금까지랑은 다를 거예요. 주인님이 진짜로… 포이를 감당하실만한 자격이 있는지…
-        확인해볼 테니까요. 그러니까… 빨리하자♡
+      Oath: 냐하하핫. 자신 있으신가 보네요? 그런데 이번은… 지금까지랑은 다를 거예요. 주인님이 진짜로… 포이를 감당하실만한 자격이 있는지… 확인해볼 테니까요. 그러니까… 빨리하자♡
       OathIdle_01: |-
         냐아… 죄송해요오… 앞으론 착하게
         굴 테니까… 그거, 더 해줘어…♡
@@ -4778,12 +4843,9 @@ dialogue:
       SPIdle_02_01: |-
         Umm… That’s not milk…
          Poi got turned on bad right now, hurry…
-      Oath: >-
-        I was about to get turned on… Ehem. Poi swears an endless love to you,
-        master.
-
+      Oath: |-
+        I was about to get turned on… Ehem. Poi swears an endless love to you, master.
         Nyahaha. Are we good now? Keep doing what you’ve been doing. Poi, I can’t… Of course I’m serious.
-
         If I don’t love the person who can handle me, who else would I love…?
       OathIdle_01: |-
         Real milk… Umm, no. Lilith will
@@ -4808,10 +4870,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        Sis… Audrey? She made this for me… Huh? Are these actual clothes?
-        There’s even a zipper here.
-
+      Idle_01_01: |-
+        Sis… Audrey? She made this for me… Huh? Are these actual clothes? There’s even a zipper here.
         Look. Of course they’re clothes♡
       Idle_01_02: |-
         Meowhaha~ You know, the Vampire… She said she’ll make you serve her!
@@ -4839,10 +4899,8 @@ dialogue:
         You must have noticed too, Master.
         Poi got fired up already… Master, go on and let yourself
         feel delightful. Hurry♡
-      Oath: >-
-        Huh? Why are you giving this to me after having sooo much fun with other
-        girls?
-
+      Oath: |-
+        Huh? Why are you giving this to me after having sooo much fun with other girls?
         … I’m the one you like the most? Really? I’ll trust you this one time. Since I was a little disappointed today… I’ll play with you until you can’t even lift a finger, master. Mewohahaha, are you excited?
       OathIdle_01: |-
         Poi doesn’t like water~
@@ -4906,9 +4964,7 @@ dialogue:
       SPIdle_02_01: |-
         *Panting* Master…
         I like it…
-      Oath: Meowhahaha. Are you that sure of yourself? But this time it will be
-        different. I’ll have to see if you’re really good enough for Poi… So…
-        let’s do it.♡
+      Oath: Meowhahaha. Are you that sure of yourself? But this time it will be different. I’ll have to see if you’re really good enough for Poi… So… let’s do it.♡
       OathIdle_01: |-
         Meow… I’m sorry… I’ll be
         a good girl… More, more…♡
@@ -5181,20 +5237,17 @@ skins:
   sid: null
   artist: おぶい(Obui)
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - D
+    G:
+      - _
+      - D
   anim:
     - false
     - false
@@ -5209,26 +5262,28 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 1
     2dmodel: 2DModel_3P_Poi_N
     2dmodel_dam: 2DModel_3P_Poi_N_Dam
   skins:
     - sid: 1
       artist: おぶい(Obui)
       price: 159
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 70
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - true
         - false
@@ -5245,24 +5300,24 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 5
         2dmodel_dam: 2DModel_3P_Poi_NS1_Dam
     - sid: 2
       artist: おぶい(Obui)
       price: 156
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 70
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - DS
+        G:
+          - _
+          - D
+          - DS
       anim:
         - false
         - false
@@ -5279,4 +5334,5 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_3P_Poi_NS2_Dam

@@ -3,12 +3,15 @@ import { FunctionalComponent } from "preact";
 import { MISSION_OBJECT_TYPE, MISSION_TRIGGER_TYPE } from "@/types/Enums";
 import Mission from "@/types/DB/Mission";
 
-import Loader, { GetJson, StaticDB } from "@/libs/Loader";
-import { LocaleGet } from "@/components/locale";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
+import { formatString, useLocale } from "@/libs/Locale";
+import { parseVNode } from "@/libs/VNode";
+
+import Loading from "@/components/loading";
+
 import Reference from "./Reference";
 import SkillFrom from "./SkillFrom";
 import SkillName from "./SkillName";
-import { parseVNode } from "@/libs/VNode";
 
 interface MissionTextRawProps {
 	objectType: MISSION_OBJECT_TYPE;
@@ -19,8 +22,10 @@ interface MissionTextRawProps {
 }
 
 const MissionTextRaw: FunctionalComponent<MissionTextRawProps> = (props) => {
+	const [loc] = useLocale();
+
 	function num (_v: number): string {
-		const base = parseInt(LocaleGet("Mission_Unit_Base"), 10);
+		const base = parseInt(loc["Mission_Unit_Base"], 10);
 
 		const part: string[] = [];
 
@@ -30,7 +35,7 @@ const MissionTextRaw: FunctionalComponent<MissionTextRawProps> = (props) => {
 			const cur = v % base;
 			v = Math.floor(v / base);
 			if (cur > 0)
-				part.push(LocaleGet(`Mission_Unit_${level}`, cur));
+				part.push(formatString(loc[`Mission_Unit_${level}`], cur));
 			level++;
 		}
 		return part.reverse().join(" ");
@@ -75,14 +80,14 @@ const MissionTextRaw: FunctionalComponent<MissionTextRawProps> = (props) => {
 		}
 	})();
 
-	const trigger = LocaleGet(
-		`Mission_Trigger_${kTrigger}`,
+	const trigger = formatString(
+		loc[`Mission_Trigger_${kTrigger}`],
 		`<strong class="text-danger">${props.triggerValue}</strong>`,
 		props.triggerValue,
 		`<strong class="text-danger">${num(parseInt(props.triggerValue, 10))}</strong>`,
 	);
-	const object = LocaleGet(
-		`Mission_Object_${kObject}`,
+	const object = formatString(
+		loc[`Mission_Object_${kObject}`],
 		`<strong class="text-primary">${props.objectValue}</strong>`,
 		trigger,
 		props.objectValue,
@@ -103,20 +108,20 @@ interface MissionTextProps {
 const MissionText: FunctionalComponent<MissionTextProps> & {
 	Raw: typeof MissionTextRaw,
 } = (props) => {
-	return <Loader json={ StaticDB.Mission } content={ () => {
-		const missions = GetJson<Mission[]>(StaticDB.Mission);
-		const mission = missions.find(m => m.key === props.mission);
+	const missions = useDBData<Mission[]>(StaticDB.Mission);
+	if (!assertDBData(missions)) return <Loading.Data />;
 
-		if (mission) {
-			return <MissionText.Raw
-				objectType={ mission.objectType }
-				objectValue={ mission.objectValue }
-				triggerType={ mission.triggerType }
-				triggerValue={ mission.triggerValue }
-			/>;
-		}
-		return <span class="text-secondary">???</span>;
-	} } />;
+	const mission = missions.find(m => m.key === props.mission);
+
+	if (mission) {
+		return <MissionText.Raw
+			objectType={ mission.objectType }
+			objectValue={ mission.objectValue }
+			triggerType={ mission.triggerType }
+			triggerValue={ mission.triggerValue }
+		/>;
+	}
+	return <span class="text-secondary">???</span>;
 };
 MissionText.Raw = MissionTextRaw;
 

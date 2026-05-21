@@ -2889,6 +2889,27 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        성형 작약탄을 발사해 <dmg elem="physics" />를 줍니다.
+        대상의 방어력을 일정 비율 무시합니다. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r signless /></sec>
+        대상이 <sec typ="cond">중장형</sec> 또는 <sec typ="cond">보호기</sec>인 경우 각각 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+        스쿼드 내에 <char uid="BR_Pani" />가 있을 경우 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">183mm HESH탄</sec> 협동 공격</sec>을 유도합니다.
+      EN: |-
+        shaped charge shell fires <dmg elem="physics" />.
+        target's Defense fixed ratio ignore. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="1" r signless /></sec>
+        target <sec typ="cond">Heavy-type</sec> or <sec typ="cond">Defender</sec> if respectively <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
+        in squad to <char uid="BR_Pani" /> if present <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">183mm HESH round</sec> coordinated attack</sec> triggers.
+      JP: |-
+        成形炸薬弾を 発射して<dmg elem="physics" />を与えます。
+        対象の 防御力を 一定 ブイユル 無視します。 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r signless /></sec>
+        対象が <sec typ="cond">重装型</sec> または <sec typ="cond">保護機</sec>の場合 それぞれ <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
+        スクワッド 内に <char uid="BR_Pani" />が 存在する場合 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">183mm HESH弾</sec> 協同攻撃</sec>を 誘導します。
+      TC: |-
+        錐形裝藥彈 發射 造成<dmg elem="physics" />。
+        目標的 防禦力 一定 比例 無視。 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="1" r signless /></sec>
+        目標 <sec typ="cond">重裝型</sec> 或 <sec typ="cond">保護機</sec>若為 各自 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>增加。
+        小隊 內於 <char uid="BR_Pani" /> 存在時 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">183mm HESH彈</sec> 協同攻擊</sec> 誘發。
   "2":
     key: "2"
     icon: CannonShotWide
@@ -4746,6 +4767,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        유산탄을 발사해 목표 범위 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">대상이 전열에 위치</sec>한 경우 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+        대상이 <sec typ="cond">경장형</sec>인 경우 위치에 관계 없이 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 대상의 받는 피해 감소 효과를 해제</sec>하고, <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      EN: |-
+        shrapnel shell fires target range to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">target front row to position</sec>one case target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken decrease removes the effect</sec>.
+        target <sec typ="cond">Light-type</sec> if position to relation none <sec typ="buff"><buff typ="REMOVE_BUFF" /> target's damage taken decrease removes the effect</sec> and, <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> damage <val idx="3" r /></sec> increases.
+      JP: |-
+        榴散弾を 発射して 目標 範囲 対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">対象が 前列に 位置</sec>した 場合 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ 減少 効果を 解除</sec>します。
+        対象が <sec typ="cond">軽装型</sec>の場合 位置に グワングイェ オが <sec typ="buff"><buff typ="REMOVE_BUFF" /> 対象の 受けるダメージ 減少 効果を 解除</sec>し、 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
+      TC: |-
+        榴霰彈 發射 目標 範圍 對目標 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">目標 前排於 位置</sec> 情況 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害 減少 效果 解除</sec>。
+        目標 <sec typ="cond">輕裝型</sec>若為 位置於 關係 無 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 目標的 受到的傷害 減少 效果 解除</sec>並， <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 傷害量 <val idx="3" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4940,6 +4978,23 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">적 처치 시</sec>, 자신의 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="3" r /></sec>가 영구 증가합니다. (최대 3중첩)
+        <sec typ="cond">적 공격 시</sec>, <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상 HP 반비례 피해량 <val idx="6" slot="1" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">When killing an enemy</sec>, own <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy damage <val idx="3" r /></sec> permanent increases. (up to 3stack)
+        <sec typ="cond">When attacking an enemy</sec>, <sec typ="dmg"><buff typ="DamageAmp_Opp" /> damage inversely proportional to target HP <val idx="6" slot="1" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">敵撃破時</sec>、 自身の <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="3" r /></sec>が 永久 増加します。 (最大 3重複)
+        <sec typ="cond">敵攻撃時</sec>、 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 対象HPに反比例するダメージ量 <val idx="6" slot="1" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害 <val idx="0" r /></sec>增加。
+        <sec typ="cond">擊殺敵人時</sec>， 自身的 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害 <val idx="3" r /></sec> 永久 增加。 (最大 3疊加)
+        <sec typ="cond">攻擊敵人時</sec>， <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 與目標HP成反比的傷害量 <val idx="6" slot="1" r /></sec>增加。
   "4":
     key: "4"
     icon: P.CannonShot
@@ -5224,6 +5279,23 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec> 증가 효과를 획득합니다.
+        스쿼드 내에 <cmt t="AA 캐노니어 소속 지원기"><import name="AACannonier_Supporter" /></cmt>가 있을 경우, 상기 효과가 50% 증폭됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막/피해 감소 무시</sec> 효과를 획득합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" r /></sec> increase effect.
+        in squad to <cmt t="AA Cannoneer affiliated Supporter"><import name="AACannonier_Supporter" /></cmt> if present, above effect and increased by 50%.
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier/Damage Reduction</sec> gains the effect.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="4" r /></sec> 増加 効果を獲得します。
+        スクワッド 内に <cmt t="AAキャノニア 所属 支援機"><import name="AACannonier_Supporter" /></cmt>が 存在する場合、 上記 効果が 50%増幅されます。
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec> 効果を獲得します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" r /></sec> 增加 獲得效果。
+        小隊 內於 <cmt t="AA砲手 所屬 支援機"><import name="AACannonier_Supporter" /></cmt> 存在時， 上述 效果 增幅50%。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec> 獲得效果。
   "5":
     key: "5"
     icon: P.AWACS
@@ -6449,6 +6521,31 @@ skills:
             base: -0.075
             per: -0.0075
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 스쿼드 내 중장형 전투원 수에 따라 적 전체의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>씩 증가시킵니다.
+        <sec>해당 효과는 피격 시 해제됩니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 스쿼드 내 공격기 전투원 수에 따라 적 전체의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="13" r /></sec>씩 감소시킵니다.
+        스쿼드 내에 <cmt t="AA 캐노니어 소속 지원기"><import name="AACannonier_Supporter" /></cmt>가 있을 경우, 상기 효과가 50% 증폭됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="AA 캐노니어 소속 공격기"><import name="AACannonier_Attacker" /></cmt>를 공격 지원</sec>합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, in squad Heavy-type number of combatantsdepending on all enemies of <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec>each increases.
+        <sec>This effect is removed when hit.</sec>
+        <sec typ="cond">At round start</sec>, in squad Attacker number of combatantsdepending on all enemies of <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="13" r /></sec>each decreases.
+        in squad to <cmt t="AA Cannoneer affiliated Supporter"><import name="AACannonier_Supporter" /></cmt> if present, above effect and increased by 50%.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="AA Cannoneer affiliated Attacker"><import name="AACannonier_Attacker" /></cmt> Attack Support</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 スクワッド 内 重装型 戦闘員数に応じて 敵全体の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="3" r /></sec>ッスイク 増加させます。
+        <sec>該当 効果は 被弾時 解除されます。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、 スクワッド 内 攻撃機 戦闘員数に応じて 敵全体の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="13" r /></sec>ッスイク 減少させます。
+        スクワッド 内に <cmt t="AAキャノニア 所属 支援機"><import name="AACannonier_Supporter" /></cmt>が 存在する場合、 上記 効果が 50%増幅されます。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="AAキャノニア 所属 攻撃機"><import name="AACannonier_Attacker" /></cmt>を 攻撃支援</sec>します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 小隊 內 重裝型 戰鬥員數量依 全體敵人的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="3" r /></sec>各 增加。
+        <sec>該 效果 被擊時 解除。</sec>
+        <sec typ="cond">回合開始時</sec>， 小隊 內 攻擊機 戰鬥員數量依 全體敵人的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="13" r /></sec>各 減少。
+        小隊 內於 <cmt t="AA砲手 所屬 支援機"><import name="AACannonier_Supporter" /></cmt> 存在時， 上述 效果 增幅50%。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="AA砲手 所屬 攻擊機"><import name="AACannonier_Attacker" /></cmt> 攻擊支援</sec>。
 dialogue:
   KR:
     "1":
@@ -6553,9 +6650,7 @@ dialogue:
         술기운에 그러셨다는 변명은 저한테 
         통하지 않는 거 아시죠?
         저를 달아오르게 만든 책임… 지셔야 해요?
-      Oath: 익숙지 않은 술 때문에 취해버린 걸까요, 아니면 이미 술에 취해 잠들어버린 걸까요? 매일 밤 꿈꾸던 사령관님의 모습이 지금 눈앞에
-        보이네요… 후후, 농담이에요 사령관님. 사령관님이 제 손을 잡으셨을 때 벌써 취기가 사라져버렸는걸요. 건배하시겠어요? 우리 둘의
-        영원한 사랑을 맹세하면서.
+      Oath: 익숙지 않은 술 때문에 취해버린 걸까요, 아니면 이미 술에 취해 잠들어버린 걸까요? 매일 밤 꿈꾸던 사령관님의 모습이 지금 눈앞에 보이네요… 후후, 농담이에요 사령관님. 사령관님이 제 손을 잡으셨을 때 벌써 취기가 사라져버렸는걸요. 건배하시겠어요? 우리 둘의 영원한 사랑을 맹세하면서.
       OathIdle_01: |-
         술자리에는 빠질 수 없는 게 여러 가지 있죠.
         좋은 술과 어울리는 안주, 멋진 분위기
@@ -6744,9 +6839,7 @@ dialogue:
         [미번역]술기운에 그러셨다는 변명은 저한테 
         통하지 않는 거 아시죠?
         저를 달아오르게 만든 책임… 지셔야 해요?
-      Oath: "[미번역]익숙지 않은 술 때문에 취해버린 걸까요, 아니면 이미 술에 취해 잠들어버린 걸까요? 매일 밤 꿈꾸던 사령관님의 모습이 지금
-        눈앞에 보이네요… 후후, 농담이에요 사령관님. 사령관님이 제 손을 잡으셨을 때 벌써 취기가 사라져버렸는걸요. 건배하시겠어요? 우리
-        둘의 영원한 사랑을 맹세하면서."
+      Oath: "[미번역]익숙지 않은 술 때문에 취해버린 걸까요, 아니면 이미 술에 취해 잠들어버린 걸까요? 매일 밤 꿈꾸던 사령관님의 모습이 지금 눈앞에 보이네요… 후후, 농담이에요 사령관님. 사령관님이 제 손을 잡으셨을 때 벌써 취기가 사라져버렸는걸요. 건배하시겠어요? 우리 둘의 영원한 사랑을 맹세하면서."
       OathIdle_01: |-
         [미번역]술자리에는 빠질 수 없는 게 여러 가지 있죠.
         좋은 술과 어울리는 안주, 멋진 분위기
@@ -6863,10 +6956,8 @@ dialogue:
         Commander. So, well…
         you know what I mean?
       SPIdle_02_01: Hmm… Are you going to do more?
-      Oath: >-
-        Commander. I’ve only waited for this day to come. I’ll train your mind
-        and body from now on.
-
+      Oath: |-
+        Commander. I’ve only waited for this day to come. I’ll train your mind and body from now on.
         You can look forward to it. I’ll make you a better man.
       OathIdle_01: |-
         Hmm… I wasn’t joking when I said
@@ -6945,9 +7036,8 @@ dialogue:
       SPIdle_02_01: |-
         Hmm… Are you trying to
         break me? I can’t allow that.
-      Oath: >-
+      Oath: |-
         You've made up your mind. Commander. I've waited for this moment, too.
-
         Today, I'll train you, Commander. It's be a once in a lifetime experience.
       OathIdle_01: |-
         Commander, shall I keep the promise
@@ -6971,14 +7061,10 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        The sense of accomplishment of defeating a strong enemy… It’s really
-        overwhelming. Power of myself and that of the enemy
-
+      Idle_01_01: |-
+        The sense of accomplishment of defeating a strong enemy… It’s really overwhelming. Power of myself and that of the enemy
         collides… W-what was it like
-
         when I defeated you? You lost on purpose.
-
         After that, it was me who… Ugh…​
       Idle_01_02: |-
         She’s right. I came up with a tougher training.
@@ -7161,20 +7247,13 @@ skins:
   sid: null
   artist: Kakiman
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -7189,25 +7268,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_BeastHunter_N
   skins:
     - sid: 1
       artist: Kakiman
       price: 80
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 22
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - true
         - false
@@ -7224,24 +7299,21 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_BR_BeastHunter_1
     - sid: 2
       artist: TunaMaYo
       price: 167
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 36
       stage: false
       subset:
-        - true
-        - false
-        - true
-        - true
-        - false
-        - false
-        - true
-        - false
+        O:
+          - _
+          - B
+          - S
+          - BS
       anim:
         - false
         - false
@@ -7258,5 +7330,6 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_BeastHunter_NS2
         consumableKey: Skin_BR_BeastHunter_2

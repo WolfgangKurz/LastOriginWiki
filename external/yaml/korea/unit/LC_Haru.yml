@@ -442,6 +442,7 @@ age: ""
 secretRoomType: Adult
 marriageVoice: true
 introVoice:
+  - jp
   - ko
 favor:
   present: 1
@@ -2114,6 +2115,27 @@ skills:
             base: -0.01
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        점프 하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" /> 발생시킵니다.
+        <sec typ="dmg">목표 지점 주변은 피해가 75%만 적용됩니다.</sec>
+        <sec typ="cond">스킬 적중 시</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력 <val idx="0" r signless /> 물리 고정 피해</sec>가 발생하고 2라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond">치명타 시</sec> 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="4" r /></sec>가 감소합니다.
+      EN: |-
+        removeompeu by doing to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> causes.
+        <sec typ="dmg">target point nearby damage 75%only is applied.</sec>
+        <sec typ="cond">When the skill hits</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> Attack <val idx="0" r signless /> Physical fixed damage</sec> occurs and 2 rounds <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec> increases.
+        <sec typ="cond">On critical hit</sec> target's <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="4" r /></sec> decreases.
+      JP: |-
+        ジオムプウ して 指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" /> ブアルスエンさせます。
+        <sec typ="dmg">目標地点 周辺は ダメージが 75%だけ 適用されます。</sec>
+        <sec typ="cond">スキル命中時</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 攻撃力 <val idx="0" r signless /> 物理 固定 ダメージ</sec>が ブアルスエンし、 2ラウンドの間 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="3" r /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec> 対象の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="4" r /></sec>が減少します。
+      TC: |-
+        解除ompeu 並 指定範圍於 <sec typ="attr">無視保護</sec> <dmg elem="physics" /> 發生。
+        <sec typ="dmg">目標地點 周圍 傷害 75%僅 套用。</sec>
+        <sec typ="cond">技能命中時</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 攻擊力 <val idx="0" r signless /> 物理 固定 傷害</sec> 發生並 2回合內 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="3" r /></sec>增加。
+        <sec typ="cond">暴擊時</sec> 目標的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="4" r /></sec>減少。
   "2":
     key: "2"
     icon: AirStrike
@@ -4515,6 +4537,27 @@ skills:
               level: "0"
             value: Char_LC_Iris_N
             chance: 1
+    desc:
+      KR: |-
+        전방의 하늘로 검을 던져 검의 폭풍우를 소환하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" /> 발생시킵니다.
+        <sec typ="dmg">목표 지점에서 멀 수록 피해량이 최대 50%까지 감소합니다.</sec>
+        <sec typ="cond">대상이 중장형</sec>이거나 <sec typ="cond">치명타 시</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /><buff typ="ARMORED_DMG_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">스쿼드에 <char uid="LC_Stella" />이 있는 경우</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">베이스 어택</sec> 스킬로 협동 공격</sec>을 유도합니다.
+      EN: |-
+        front of do Neul as sword throws sword of Pokpung right summons to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> causes.
+        <sec typ="dmg">target point in far as damage up to 50%up to decreases.</sec>
+        <sec typ="cond">target Heavy-type</sec>or <sec typ="cond">On critical hit</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /><buff typ="ARMORED_DMG_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">squad <char uid="LC_Stella" /> if present</sec> <sec typ="chance">100% chance</sec> as <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Bass Attack</sec> skill as coordinated attack</sec> triggers.
+      JP: |-
+        前方の ハアンウルで グオムを ドオンジヨ グオムの プオクプウンウを スオハワンして 指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" /> ブアルスエンさせます。
+        <sec typ="dmg">目標地点で ムオル 少ないほど ダメージ量が 最大 50%まで 減少します。</sec>
+        <sec typ="cond">対象が 重装型</sec>がまたは <sec typ="cond">クリティカル時</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /><buff typ="ARMORED_DMG_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">スクワッドに <char uid="LC_Stella" />が ある 場合</sec> <sec typ="chance">100% 確率</sec>で <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">ベースアタック</sec> スキルで 協同攻撃</sec>を 誘導します。
+      TC: |-
+        前方的 下neul以 Geom 更多投擲 Geom的 Pokpungu 召喚並 指定範圍於 <sec typ="attr">無視保護</sec> <dmg elem="physics" /> 發生。
+        <sec typ="dmg">目標地點在 遠 數越 傷害量 最大 50%至 減少。</sec>
+        <sec typ="cond">目標 重裝型</sec>或 <sec typ="cond">暴擊時</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /><buff typ="ARMORED_DMG_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">小隊於 <char uid="LC_Stella" /> 有 情況</sec> <sec typ="chance">100% 機率</sec>以 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">貝斯攻擊</sec> 技能以 協同攻擊</sec> 誘發。
   "3":
     key: "3"
     icon: P.SuicideBomb
@@ -4797,6 +4840,23 @@ skills:
             base: 0.05
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 자신에게 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> <s>스킬 위력</s> 치명타 <val idx="2" r /></sec> 증가를 부여합니다.
+        <sec typ="cond">공격 적중 시</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">적 처치 시</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>을(를) 추가로 증가시킵니다.
+      EN: |-
+        <sec typ="cond">At round start</sec> self <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> <s>Skill Power</s> Critical <val idx="2" r /></sec> increase grants.
+        <sec typ="cond">On hit</sec> own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> increases.
+        <sec typ="cond">When killing an enemy</sec> own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> additionally increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 自身に <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> <s>スキル威力</s> クリティカル <val idx="2" r /></sec> 増加を付与します。
+        <sec typ="cond">攻撃命中時</sec> 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>を増加させます。
+        <sec typ="cond">敵撃破時</sec> 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>を 追加で 増加させます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec> 自身給 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> <s>技能威力</s> 暴擊 <val idx="2" r /></sec> 增加賦予。
+        <sec typ="cond">攻擊命中時</sec> 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>使其增加。
+        <sec typ="cond">擊殺敵人時</sec> 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> 額外 增加。
   "4":
     key: "4"
     icon: P.MeleeAttack
@@ -5105,6 +5165,23 @@ skills:
             base: 0.02
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 자신에게 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> 증가 및 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec> 감소가 부여됩니다.
+        <sec typ="cond">스쿼드에 <char uid="BR_Vargr" />가 있는 경우</sec> <char uid="BR_Vargr" />에게 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="6" r /></sec> 증가 및 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="7" r inv /></sec> 감소가 부여됩니다.
+        <sec typ="cond">피격 시</sec> <sec typ="chance">100% 확률</sec>로 <sec typ="dmg"><buff typ="COUNTER" /> <val idx="5" r signless /> 위력으로 반격</sec>합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec> self <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> increase and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="1" r inv /></sec> decrease grant.
+        <sec typ="cond">squad <char uid="BR_Vargr" /> if present</sec> <char uid="BR_Vargr" /> to <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="6" r /></sec> increase and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="7" r inv /></sec> decrease grant.
+        <sec typ="cond">When hit</sec> <sec typ="chance">100% chance</sec> as <sec typ="dmg"><buff typ="COUNTER" /> <val idx="5" r signless /> power as Counterattack</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 自身に <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec> 増加 および <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec> 減少が ブウヨされます。
+        <sec typ="cond">スクワッドに <char uid="BR_Vargr" />が ある 場合</sec> <char uid="BR_Vargr" />に <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="6" r /></sec> 増加 および <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="7" r inv /></sec> 減少が ブウヨされます。
+        <sec typ="cond">被弾時</sec> <sec typ="chance">100% 確率</sec>で <sec typ="dmg"><buff typ="COUNTER" /> <val idx="5" r signless /> 威力で 反撃</sec>します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec> 自身給 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec> 增加 以及 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="1" r inv /></sec> 減少 賦予。
+        <sec typ="cond">小隊於 <char uid="BR_Vargr" /> 有 情況</sec> <char uid="BR_Vargr" />給 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="6" r /></sec> 增加 以及 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="7" r inv /></sec> 減少 賦予。
+        <sec typ="cond">被擊時</sec> <sec typ="chance">100% 機率</sec>以 <sec typ="dmg"><buff typ="COUNTER" /> <val idx="5" r signless /> 威力以 反擊</sec>。
   "5":
     key: "5"
     icon: P.MeleeAttack
@@ -5663,6 +5740,67 @@ skills:
             base: 0.02
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 자신에게 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP로 전투 속행</sec> 효과를 얻습니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="라이언 코퍼레이션"><import name="LionCooperation" /></cmt> 소속 전투원이 있을 경우</sec> 인원수에 따라 아군 전체에게 아군에게 <sec typ="note">준비!</sec>를 부여합니다.
+        <box t="준비! 1">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> 증가
+        </box>
+        <box t="준비! 2">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> <s>적중</s> 방어 관통 <val idx="7" r /></sec> 증가
+        </box>
+        <box t="준비! 3">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="10" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="9" r /></sec> 증가
+        </box>
+        <box t="준비! 4">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="14" r /></sec> 증가
+        </box>
+      EN: |-
+        <sec typ="cond">At round start</sec> self <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP and Continue Combat</sec> effect and gains.
+        <sec typ="cond">At round start</sec> <sec typ="cond">squad self excluding <cmt t="Ryan Corporation"><import name="LionCooperation" /></cmt> affiliated combatant if present</sec> members depending on the number of all to allies to allies <sec typ="note">ready!</sec> grants.
+        <box t="ready! 1">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> increase
+        </box>
+        <box t="ready! 2">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> <s>Accuracy</s> Defense Penetration <val idx="7" r /></sec> increase
+        </box>
+        <box t="ready! 3">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="10" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="9" r /></sec> increase
+        </box>
+        <box t="ready! 4">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="13" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="12" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="14" r /></sec> increase
+        </box>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 自身に <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HPで 戦闘続行</sec> 効果を オトます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スクワッドに 自身を ジエ外した <cmt t="ルアがオン クオプオルエがスヨン"><import name="LionCooperation" /></cmt> 所属 戦闘員が 存在する場合</sec> であるウォン数に応じて 味方全体に 味方に <sec typ="note">ジウンブイ!</sec>を付与します。
+        <box t="ジウンブイ! 1">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> 増加
+        </box>
+        <box t="ジウンブイ! 2">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> <s>命中</s> 防御貫通 <val idx="7" r /></sec> 増加
+        </box>
+        <box t="ジウンブイ! 3">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="10" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="9" r /></sec> 増加
+        </box>
+        <box t="ジウンブイ! 4">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="14" r /></sec> 増加
+        </box>
+      TC: |-
+        <sec typ="cond">回合開始時</sec> 自身給 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP以 戰鬥續行</sec> 效果 獲得。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">小隊於 自身 解除外 <cmt t="時eon 公司"><import name="LionCooperation" /></cmt> 所屬 戰鬥員 存在時</sec> 為人員依數量 全體我方給 我方給 <sec typ="note">準備!</sec>賦予。
+        <box t="準備! 1">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> 增加
+        </box>
+        <box t="準備! 2">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> <s>命中</s> 防禦穿透 <val idx="7" r /></sec> 增加
+        </box>
+        <box t="準備! 3">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="10" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="9" r /></sec> 增加
+        </box>
+        <box t="準備! 4">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="13" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="14" r /></sec> 增加
+        </box>
 dialogue:
   KR:
     "1":
@@ -5723,8 +5861,7 @@ dialogue:
         어떻게 해줘야 할까~?
         만졌다는 건 만져질 각오가
         되어 있다는 거겠지?
-      Oath: 엑!? 이걸 나한테 준다고!? 어쩌지… 이런 상황이 나한테도 올 거라고는 상상해본적도 없는데… 그래도 말이야… 사령관의 진심, 잘
-        알겠어. 그렇다면 나도 사령관의 기대에 부응해야겠지? 자, 그럼… 뭐부터 할까?
+      Oath: 엑!? 이걸 나한테 준다고!? 어쩌지… 이런 상황이 나한테도 올 거라고는 상상해본적도 없는데… 그래도 말이야… 사령관의 진심, 잘 알겠어. 그렇다면 나도 사령관의 기대에 부응해야겠지? 자, 그럼… 뭐부터 할까?
       OathIdle_01: |-
         심심하다고는 했지만…
         과연 이렇게 나오시겠다…?
@@ -5789,8 +5926,7 @@ dialogue:
         어떻게 해줘야 할까~?
         만졌다는 건 만져질 각오가
         되어 있다는 거겠지?
-      Oath: 엑!? 이걸 나한테 준다고!? 어쩌지… 이런 상황이 나한테도 올 거라고는 상상해본적도 없는데… 그래도 말이야… 사령관의 진심, 잘
-        알겠어. 그렇다면 나도 사령관의 기대에 부응해야겠지? 자, 그럼… 뭐부터 할까?
+      Oath: 엑!? 이걸 나한테 준다고!? 어쩌지… 이런 상황이 나한테도 올 거라고는 상상해본적도 없는데… 그래도 말이야… 사령관의 진심, 잘 알겠어. 그렇다면 나도 사령관의 기대에 부응해야겠지? 자, 그럼… 뭐부터 할까?
       OathIdle_01: |-
         심심하다고는 했지만…
         과연 이렇게 나오시겠다…?
@@ -5849,8 +5985,7 @@ dialogue:
         사, 사령관님!?
         그런 건 아직…
         저한테는 이르다고 생각해요…
-      Oath: 사령관님은 혼자가 되어버린 저를 오르카의 일원으로… 그리고 소중한 가족으로 받아주셨어요. 그러니까… 저도 사령관님을 저의 소중한
-        가족으로 언제까지나 지켜드릴게요!
+      Oath: 사령관님은 혼자가 되어버린 저를 오르카의 일원으로… 그리고 소중한 가족으로 받아주셨어요. 그러니까… 저도 사령관님을 저의 소중한 가족으로 언제까지나 지켜드릴게요!
       OathIdle_01: |-
         아… 그, 그게…
         사령관님이라면…
@@ -6235,22 +6370,16 @@ dialogue:
       MVP: ""
 skins:
   sid: null
-  artist: ""
+  artist: ??
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -6265,25 +6394,31 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_LC_Haru_N
   skins:
     - sid: 1
       artist: U-rix
       price: 197
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - true
-        - true
-        - false
-        - true
-        - true
-        - false
+        O:
+          - _
+          - D
+          - B
+          - S
+          - DS
+          - BS
+        G:
+          - _
+          - D
+          - B
+          - S
+          - DS
+          - BS
       anim:
         - false
         - false
@@ -6300,26 +6435,32 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 3
+        dflags: 1
         2dmodel: 2DModel_LC_Haru_NS1
         2dmodel_dam: 2DModel_LC_Haru_NS1_Dam
         consumableKey: Skin_LC_Haru_1
     - sid: 2
       artist: U-rix
       priceEx: ""
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - true
-        - true
-        - false
-        - true
-        - true
-        - false
+        O:
+          - _
+          - D
+          - B
+          - S
+          - DS
+          - BS
+        G:
+          - _
+          - D
+          - B
+          - S
+          - DS
+          - BS
       anim:
         - false
         - false
@@ -6336,5 +6477,6 @@ skins:
         tbarId: 1
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_LC_Haru_NS2
         2dmodel_dam: 2DModel_LC_Haru_NS2_Dam

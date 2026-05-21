@@ -412,15 +412,15 @@ company: ""
 country: ""
 age: ""
 secretRoomType: AGS
-marriageVoice: false
+marriageVoice: true
 introVoice:
   - jp
   - ko
 favor:
-  present: 0
-  clear: 0
-  death: 0
-  assistant: 0
+  present: 1
+  clear: 1
+  death: 1
+  assistant: 1
 linkBonus:
   - HP_20
   - ATK_20
@@ -460,11 +460,13 @@ chart:
   - 5
   - 8
 cv:
+  "1": {}
   "": {}
+  M: {}
 source:
   - - Ev:Ev35:EV2-2EX
 oneoff: false
-oathable: false
+oathable: true
 entryReqMap: []
 cost:
   res:
@@ -4891,6 +4893,31 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        칼날을 세우고 돌진하여 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="0" r /></sec>를 감소시키고 자신의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="4" r /></sec>가 증가합니다. (중첩 불가)
+        <sec typ="important">기동형 적에게는 스킬 위력 감소 수치가 2배로 적용됩니다.</sec>
+        <sec typ="cond">치명타 시</sec>, <sec typ="note">유독 물질</sec>을 1중첩 획득합니다.
+        <sec typ="cond">적중 대상이 <sec typ="note">사무친 악의의 분출</sec>에 의한 효과가 적용 중인 경우</sec>, 피해량이 증가합니다.
+      EN: |-
+        Kalnal three right Go charges to a single target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 3 rounds, target's <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="0" r /></sec> decreases and own <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="4" r /></sec> increases. (Cannot stack)
+        <sec typ="important">Mobile-type to the enemy Skill Power decrease value 2 times is applied.</sec>
+        <sec typ="cond">On critical hit</sec>, <sec typ="note">Toxic Substance</sec> 1stack gains.
+        <sec typ="cond">Hit target <sec typ="note">Outpouring of Deep Malice</sec> to by effect and is activeif</sec>, damage increases.
+      JP: |-
+        クアルンアルを スエウし 突撃して 単一対象へ <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 3ラウンドの間 対象の <sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="0" r /></sec>を 減少時クイし 自身の <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="4" r /></sec>が増加します。 (重複不可)
+        <sec typ="important">機動型 敵には スキル威力 減少 数値が 2ブエで 適用されます。</sec>
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="note">ユドオク ムウルジイル</sec>を 1重複 獲得します。
+        <sec typ="cond">命中対象が <sec typ="note">染み付いた悪意の噴出</sec>に よる 効果が 適用中の場合</sec>、 ダメージ量が増加します。
+      TC: |-
+        Kalnal 三u並 衝鋒並 單一目標給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 3回合內 目標的 <sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="0" r /></sec> 減少時台並 自身的 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="4" r /></sec>增加。 (不可疊加)
+        <sec typ="important">機動型 敵人給 技能威力 減少 數值 2倍以 套用。</sec>
+        <sec typ="cond">暴擊時</sec>， <sec typ="note">特別 物質</sec> 1疊加 獲得。
+        <sec typ="cond">命中目標為 <sec typ="note">深切惡意的噴發</sec>於 的 效果 套用中若為</sec>， 傷害量增加。
   "2":
     key: "2"
     icon: Vortex
@@ -8837,6 +8864,43 @@ skills:
               level: "0"
             value: Effect_PECS_Nidhogg_N_19
             chance: 1
+    desc:
+      KR: |-
+        농축된 독액을 분출하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="buff"><sec typ="note">유독 물질</sec> 중첩을 모두 소모</sec>하며, 그 수에 따라 2라운드 동안 대상에게 다음 효과가 추가로 적용됩니다.
+        <box>
+        <sec typ="cond">1중첩 이상</sec> : <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec> 감소
+        <sec typ="cond">2중첩 이상</sec> : <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec> 증가
+        <sec typ="cond">3중첩</sec> : <sec typ="buff"><buff typ="Disallow" /> 강화 불가</sec>
+        <sec typ="important">기동형 적에게는 수치가 2배로 적용됩니다.</sec>
+        </box>
+      EN: |-
+        Nongchuk applied Dokaek eruption by doing to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="buff"><sec typ="note">Toxic Substance</sec> stack all consume</sec> and, the depending on the number of 2 rounds to the target next effect and additionally is applied.
+        <box>
+        <sec typ="cond">1stack or more</sec>: <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> decrease
+        <sec typ="cond">2stack or more</sec>: <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec> increase
+        <sec typ="cond">3stack</sec>: <sec typ="buff"><buff typ="Disallow" /> Cannot be Buffed</sec>
+        <sec typ="important">Mobile-type to the enemy value 2 times is applied.</sec>
+        </box>
+      JP: |-
+        ンオンチウクされた ドオクエクを ブウンチウルして 指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="buff"><sec typ="note">ユドオク ムウルジイル</sec> 重複を ムオドウ 消費</sec>し、 グウ 数に応じて 2ラウンドの間 対象に 次 効果が 追加で 適用されます。
+        <box>
+        <sec typ="cond">1重複 以上</sec>：<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> 減少
+        <sec typ="cond">2重複 以上</sec>：<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec> 増加
+        <sec typ="cond">3重複</sec>：<sec typ="buff"><buff typ="Disallow" /> 強化不可</sec>
+        <sec typ="important">機動型 敵には 数値が 2ブエで 適用されます。</sec>
+        </box>
+      TC: |-
+        Nong並k已 Dokaek 分配並l並 指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="buff"><sec typ="note">特別 物質</sec> 疊加 全部 消耗</sec>並， Geu 依數量 2回合內 對目標 下次 效果 額外 套用。
+        <box>
+        <sec typ="cond">1疊加 以上</sec>：<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> 減少
+        <sec typ="cond">2疊加 以上</sec>：<sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" r /></sec> 增加
+        <sec typ="cond">3疊加</sec>：<sec typ="buff"><buff typ="Disallow" /> 無法強化</sec>
+        <sec typ="important">機動型 敵人給 數值 2倍以 套用。</sec>
+        </box>
   "3":
     key: "3"
     icon: P.Wave
@@ -9115,6 +9179,23 @@ skills:
             base: 0.4
             per: -0.03
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 독성이 유출되어 범위 내 아군의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="2" r inv /></sec>가 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 독성을 흘려보내 모든 적의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="2" slot="4" r inv /></sec>가 감소합니다.
+        자신이 보유한 <sec typ="note">유독 물질</sec> 중첩 수에 따라 상기 효과가 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, toxicity Yuchul becomes within range allies' <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="2" r inv /></sec> decreases.
+        <sec typ="cond">At round start</sec>, toxicity Heulryeobo within all enemies of <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="2" slot="4" r inv /></sec> decreases.
+        self has <sec typ="note">Toxic Substance</sec> stack depending on the number of above effect increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 ドオク宣が ユチウルになり 範囲内 味方の <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="2" r inv /></sec>が減少します。
+        <sec typ="cond">ラウンド開始時</sec>、 ドオク宣を ハウルルヨブオ内 すべての敵の <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="2" slot="4" r inv /></sec>が減少します。
+        自身が 保有する <sec typ="note">ユドオク ムウルジイル</sec> 重複 数に応じて 上記 効果が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， Dokseong Yu並l變為 範圍內 我方的 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="2" r inv /></sec>減少。
+        <sec typ="cond">回合開始時</sec>， Dokseong Heu害怕bo內 所有敵人的 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="2" slot="4" r inv /></sec>減少。
+        自身 持有的 <sec typ="note">特別 物質</sec> 疊加 依數量 上述 效果增加。
   "4":
     key: "4"
     icon: P.TeamAtkDeBuff
@@ -9474,6 +9555,27 @@ skills:
             base: -2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 적 공격기의 <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="5" /></sec>가 감소합니다.
+        <sec typ="cond">적 사망 시</sec>, <sec typ="note">유독 물질</sec>을 1중첩 획득합니다.
+        <sec>자신이 적에게 부여하는 해로운 효과는, 대상이 기동형일 경우 효과가 두 배로 증폭됩니다.</sec>
+        <sec typ="note">사무친 악의의 분출</sec>의 <sec typ="buff"><buff typ="Disallow" /> 강화 불가</sec> 효과는, 대상이 기동형일 경우 <sec typ="cond">적중 여부에 관계 없이</sec> 적용됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, enemy Attacker of <sec typ="buff"><buff typ="RANGE_DOWN" /> Range <val idx="5" /></sec> decreases.
+        <sec typ="cond">When an enemy dies</sec>, <sec typ="note">Toxic Substance</sec> 1stack gains.
+        <sec>self to the enemy grant do harmful effects, target Mobile-typeif the effect is doubled amplification.</sec>
+        <sec typ="note">Outpouring of Deep Malice</sec> of <sec typ="buff"><buff typ="Disallow" /> Cannot be Buffed</sec> effect, target Mobile-typeif <sec typ="cond">regardless of whether it hits</sec> is applied.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 敵 攻撃機の <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="5" /></sec>が減少します。
+        <sec typ="cond">敵死亡時</sec>、 <sec typ="note">ユドオク ムウルジイル</sec>を 1重複 獲得します。
+        <sec>自身が 敵に ブウヨする 有害効果は、 対象が 機動型の場合 効果が2倍で 増幅されます。</sec>
+        <sec typ="note">染み付いた悪意の噴出</sec>の <sec typ="buff"><buff typ="Disallow" /> 強化不可</sec> 効果は、 対象が 機動型の場合 <sec typ="cond">命中 ヨブウに関係なく</sec> 適用されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 敵人 攻擊機的 <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="5" /></sec>減少。
+        <sec typ="cond">敵人死亡時</sec>， <sec typ="note">特別 物質</sec> 1疊加 獲得。
+        <sec>自身 敵人給 賦予 負面效果， 目標 機動型若為 效果變為2倍以 增幅。</sec>
+        <sec typ="note">深切惡意的噴發</sec>的 <sec typ="buff"><buff typ="Disallow" /> 無法強化</sec> 效果， 目標 機動型若為 <sec typ="cond">無論是否命中</sec> 套用。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -9591,8 +9693,90 @@ skills:
             base: 0.5
             per: 0.05
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="note">유독 물질</sec>을 2중첩 획득하며 중첩 수에 따라 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" slot="1" r /></sec>가 증가합니다.
+        <sec><sec typ="note">유독 물질</sec>은 최대 3중첩까지만 보유할 수 있습니다.</sec>
+        <sec typ="cond">최대 한도를 초과하여 <sec typ="note">유독 물질</sec> 획득 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" slot="1" /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, <sec typ="note">Toxic Substance</sec> 2stack gain and stack depending on the number of own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="8" slot="1" r /></sec> increases.
+        <sec><sec typ="note">Toxic Substance</sec> up to 3stack up to only possess can number exists.</sec>
+        <sec typ="cond">up to one also more than by doing <sec typ="note">Toxic Substance</sec> gain when</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" slot="1" /></sec> increases.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 <sec typ="note">ユドオク ムウルジイル</sec>を 2重複 獲得し、 重複 数に応じて 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" slot="1" r /></sec>が増加します。
+        <sec><sec typ="note">ユドオク ムウルジイル</sec>は 最大 3重複までだけ 保有できます。</sec>
+        <sec typ="cond">最大 したもを 超過して <sec typ="note">ユドオク ムウルジイル</sec> 獲得 時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" slot="1" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， <sec typ="note">特別 物質</sec> 2疊加 獲得並 疊加 依數量 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" slot="1" r /></sec>增加。
+        <sec><sec typ="note">特別 物質</sec> 最大 3疊加至僅 持有可以。</sec>
+        <sec typ="cond">最大 也 超過並 <sec typ="note">特別 物質</sec> 獲得 時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" slot="1" /></sec>增加。
 dialogue:
   KR:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        미드가르드를 위협하는 악룡들을 없애는 것,
+        그것이 수호룡의 사명이다.
+      Idle_01_02: |-
+        내 누이는
+        내 지나친 심판 태도를 걱정하고 있지.
+        하지만 악을 이기기 위해선,
+        때로는 강경해질 수밖에 없는 법이니라,
+        용살자여.
+      Idle_01_03: |-
+        다음에 동료를 편성할 때에는…
+        그 수다스러운 하피는
+        빼 주었으면 하는군.
+        필요 이상으로 떠들어,
+        전투에 거슬리기만 하니까.
+      SPIdle_01_01: |-
+        용살자,
+        난 내 누이처럼 접촉을 좋아하진 않는다.
+      Idle_02_01: |-
+        묻고 싶은 게 있다, 용살자.
+        너는 폭력을 상당히 싫어하던데…
+        그러나 대의가 있는 폭력은
+        징벌과 심판이지 않은가?
+        어째서 내게 잔혹하다 말하는 거지?
+      Idle_03_01: |-
+        가끔은 내가 죽인 악룡의 피를 들이켜며
+        타락하는 모습을 상상하곤 한다.
+        …허나 그런 생각은 헛소리일 뿐이지.
+        내가 그 더러운 놈들의 편에 서는 일은,
+        네가 있는 이상 있을 수 없는 일이니까.
+      Idle_04_01: |-
+        정의롭게 행동하되,
+        폭력에 삼켜지지 않도록 스스로를 다잡아라,
+        네 조언을, 나는 수없이 외고 있다.
+        그래… 미드가르드를 지키기 위해 태어난
+        수호룡 니드호그.
+        그게 바로 나의 사명이자 이름이다.
+      SPIdle_02_01: |-
+        인간들이 유대를 표현하는 방식인가?
+        날 신뢰하는 행동이라고 생각하면 되겠군.
+      Oath: 용살자여, 적을 물리칠 때마다 한편으론 내 안의 무언가가 자라나는 느낌이노라. …필요 이상으로 잔혹한 면모를 보일 때마다, 자네가 내 버팀목이 되었으면 좋겠다는 생각이 커지는군. 오늘이야말로 자네의 정의를 긍정하며 따르는 나와의 맹약을 더욱 굳게 다지지 않겠나?
+      OathIdle_01: |-
+        빛의 성녀와 진조의 공주…
+        그리고 내 누이까지 모두 널 의지하더군.
+        네 뜻을 잇는 이가 누구에게서 태어나든,
+        나는 끝까지 곁에 남아 그 뜻을 지켜 줄 것이다.
+      MVP: ""
     "":
       Join: 독과 약은 한끗 차이. 내 힘을 어떻게 쓸지는 네 선택에 달려 있다. 부디 재미있는 선택을 내리길 바라지.
       SquadJoin: 흥미로운 선택이군.
@@ -9610,23 +9794,134 @@ dialogue:
       Reinforce: 더욱 강한 독을 다룰 수 있겠는데.
       ItemEquip: 다음 사냥이 한결 수월해지겠군.
       CoreLink: 새로운 독의 제조법인가. 흥미롭군.
+      PresentGet: ""
       Login: 오늘은 뭘 사냥할 생각이지.
       Idle_01_01: |-
-        도끼를 들고 다니는 꼬맹이가 나를
-        원수 보듯이 노려보더군.
-        가볍게 겁을 줬는데 벌벌 떨면서도
-        도망은 안 치더군. 핫! 당돌하긴.
+        도끼를 들고 다니는 꼬맹이가
+        나를 원수 보듯이 노려보더군.
+        가볍게 겁을 줬는데
+        벌벌 떨면서도 도망은 안 치더군.
+        핫! 당돌하긴.
       Idle_01_02: |-
-        날 글라시아스랑 같은 격납고에 넣지 마라.
+        날 글라시아스랑
+        같은 격납고에 넣지 마라.
         그 허여멀건한 동체를 보기만 해도
         회로에 거부반응이 일어날 것 같으니까.
       Idle_01_03: |-
-        내 무장의 이름이 칵테일 메이커긴 하지만
+        내 무장의 이름이
+        칵테일 메이커긴 하지만
         내게 칵테일 제조 기능은 없다.
         …아니, 없었다고 해야 맞겠군…
         빌어먹을 해체자 같으니.
+      SPIdle_01_01: |-
+        호오, 내가 가진 것이
+        독인 것을 알고도 만지다니,
+        그 용기가 가상하군.
+      Idle_02_01: |-
+        <드래곤 슬레이어>에서 스스로를
+        용살자라 자칭하는 어설픈 애송이와
+        싸운 적이 있었지.
+        끝까지 타락한 날 구원하느니
+        뭐니 하는 소릴 지껄이던데,
+        넌 어떤 판단을 내릴지 궁금하군.
+      Idle_03_01: |-
+        네가 무패의 용사란 말을 들었다.
+        하지만 조심하는 게 좋을 것이다,
+        네가 적을 오랫동안 들여다 본다면,
+        적 또한 너를 들여다 볼 것이니…
+      Idle_04_01: |-
+        힘 없는 정의는 무능이고,
+        정의 없는 힘은 폭력이지.
+        네 정의가 무르지 않다면…
+        내가 가진 힘을 어디 잘 써 보거라.
+      SPIdle_02_01: |-
+        …해체자가 내 소체에 이상한 기능을
+        달아 놨을 지도 모르니 조심해라.
+      Oath: 충성이니 맹약이니 따위는 관심 없다. 네가 이 나를 감당할 수 있느냐, 그게 전부다. 날 보고도 물러서지 않는 그 눈빛이 꽤 마음에 들었다. 그렇다면 말해라, 네가 가리킨 적이라면, 내가 모조리 사냥해주도록 하지.
+      OathIdle_01: |-
+        네가 무력을 자제하는 걸 보니,
+        용살자가 떠오르는군.
+        내면의 강함이 진짜라는 말…
+        인간들은 그렇게 부르던가?
+        볼수록 흥미롭구나, 인간이여.
       MVP: 멍청할 놈들이군. 내게 맞설 생각을 하다니.
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        요즘 내 누이가
+        이상한 생각에 빠져 있더군.
+        보아하니 너와 맹우 이상의
+        관계를 점치는 것 같던데…
+        …솔직히 말해,
+        복잡한 기분이 드는군.
+        내 누이는 절대 그런 개체가
+        아니었는데 말이지.​
+      Idle_01_02: |-
+        동료라…
+        하, 그런 뜨뜻미지근한 단어에
+        얽매이고 싶은 생각은 없다.
+        …다만, 유대가 네 신념이라면,
+        그 얼빠진 성녀 일행들에게
+        관심은 가져주도록 하지.
+      Idle_01_03: |-
+        네가 미래에 건설할
+        미드가르드는 어떤 세계일지
+        문득, 그 모습이 궁금해졌다.
+        물론 용살자가 그랬듯 터무니없는
+        이상 덩어리일지도 모르지.
+        …그래도 한 번 말해봐라.
+        제법 궁금해졌으니 말이다.
+      SPIdle_01_01: |-
+        도끼 든 꼬맹이가 안 본 사이에
+        내 몸 여기저기에 낙서를 해 놨다.
+        정말이지, 귀찮게 그지 없는 아이야.
+      MVP: ""
   JP:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: ""
       SquadJoin: ""
@@ -9644,12 +9939,72 @@ dialogue:
       Reinforce: ""
       ItemEquip: ""
       CoreLink: ""
+      PresentGet: ""
       Login: ""
       Idle_01_01: ""
       Idle_01_02: ""
       Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
       MVP: ""
   EN:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: ""
       SquadJoin: ""
@@ -9667,12 +10022,72 @@ dialogue:
       Reinforce: ""
       ItemEquip: ""
       CoreLink: ""
+      PresentGet: ""
       Login: ""
       Idle_01_01: ""
       Idle_01_02: ""
       Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
       MVP: ""
   TC:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: ""
       SquadJoin: ""
@@ -9690,29 +10105,55 @@ dialogue:
       Reinforce: ""
       ItemEquip: ""
       CoreLink: ""
+      PresentGet: ""
       Login: ""
       Idle_01_01: ""
       Idle_01_02: ""
       Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
       MVP: ""
 skins:
   sid: null
   artist: Superphotrone
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+    G:
+      - _
   anim:
     - false
     - false
@@ -9727,4 +10168,37 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Nidhogg_N
+  skins:
+    - sid: 1
+      artist: Yura Unni
+      price: 192
+      Spine: true
+      SpineDamaged: false
+      parts: 78
+      stage: false
+      subset:
+        O:
+          - _
+          - D
+          - DS
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Costume
+      facelist: []
+      releaseDate: 1770854400000
+      metadata:
+        imageId: 1
+        iconId: 1
+        tbarId: 1
+        voiceId: 1
+        flags: 2
+        dflags: 1
+        2dmodel_dam: 2DModel_PECS_Nidhogg_NS1_Dam
+        consumableKey: Skin_PECS_Nidhogg_1

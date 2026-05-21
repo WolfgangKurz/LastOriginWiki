@@ -4520,6 +4520,31 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="note">성검 : 빛의 약속</sec>을 휘둘러 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="1" /></sec>을(를) 감소시킵니다.
+        <sec>해당 효과는 라운드 경과에 따라 점감합니다.</sec>
+        <sec typ="cond">공격 시</sec>, 스쿼드 내에 <char uid="PECS_LRL" />이 존재할 경우, 자신은 2라운드 동안 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="10" r /></sec> 효과를 획득합니다.
+        <sec typ="cond">공격 시</sec>, 스쿼드 내에 <char uid="PECS_CyclopsePrincess" />가 존재할 경우, 자신은 2라운드 동안 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시 활성화</sec> 효과를 획득합니다.
+      EN: |-
+        <sec typ="note">Holy Sword: Promise of Light</sec> swings to a single target <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 3 rounds, target's <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="0" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> Range <val idx="1" /></sec> decreases.
+        <sec>the effect round case anddepending on diminish over time.</sec>
+        <sec typ="cond">When attacking</sec>, in squad to <char uid="PECS_LRL" /> if present, self 2 rounds <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="10" r /></sec> gains the effect.
+        <sec typ="cond">When attacking</sec>, in squad to <char uid="PECS_CyclopsePrincess" /> if present, self 2 rounds <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection activation</sec> gains the effect.
+      JP: |-
+        <sec typ="note">聖剣：光の約束</sec>を ハウィドウルルオ 単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 3ラウンドの間 対象の <sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="1" /></sec>を減少させます。
+        <sec>該当 効果は ラウンド グヨンとに応じて ジオムグアムします。</sec>
+        <sec typ="cond">攻撃時</sec>、 スクワッド 内に <char uid="PECS_LRL" />が ジオンジエできる 場合、 自身は 2ラウンドの間 <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="10" r /></sec> 効果を獲得します。
+        <sec typ="cond">攻撃時</sec>、 スクワッド 内に <char uid="PECS_CyclopsePrincess" />が ジオンジエできる 場合、 自身は 2ラウンドの間 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視 有効化</sec> 効果を獲得します。
+      TC: |-
+        <sec typ="note">聖劍：光之約定</sec> 揮舞 單一目標給 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 3回合內 目標的 <sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="1" /></sec>使其減少。
+        <sec>該 效果 回合 輕與依 解除遞減。</sec>
+        <sec typ="cond">攻擊時</sec>， 小隊 內於 <char uid="PECS_LRL" /> 存在可 情況， 自身 2回合內 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="10" r /></sec> 獲得效果。
+        <sec typ="cond">攻擊時</sec>， 小隊 內於 <char uid="PECS_CyclopsePrincess" /> 存在可 情況， 自身 2回合內 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護 啟用</sec> 獲得效果。
   "2":
     key: "2"
     icon: Charm
@@ -5629,6 +5654,27 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        사랑이 담긴 성검을 강림시켜 지정 범위에 <dmg elem="physics" />를 줍니다.
+        <sec typ="dmg">목표 지점에서 멀 수록 피해량이 최대 50%까지 감소합니다.</sec>
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
+        <sec typ="cond"><sec typ="note">성검 : 빛의 약속</sec>에 의한 추가 효과가 모두 충족되었을 때 (스쿼드 내에 <char uid="PECS_CyclopsePrincess" /> 및 <char uid="PECS_LRL" />이 있을 때)</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      EN: |-
+        Sarang with Gin holy sword Gangrim when activate to the designated area <dmg elem="physics" />.
+        <sec typ="dmg">target point in far as damage up to 50%up to decreases.</sec>
+        <sec typ="cond">On critical hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec>.
+        <sec typ="cond"><sec typ="note">Holy Sword: Promise of Light</sec> to by additional effect and all Chungjok becomes Eot when (in squad to <char uid="PECS_CyclopsePrincess" /> and <char uid="PECS_LRL" /> exists when)</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+      JP: |-
+        スアルアンが ドアムグイン 宣グオムを グアンルイム時クヨ 指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="dmg">目標地点で ムオル 少ないほど ダメージ量が 最大 50%まで 減少します。</sec>
+        <sec typ="cond">クリティカル時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>します。
+        <sec typ="cond"><sec typ="note">聖剣：光の約束</sec>に よる 追加 効果が ムオドウ チウンジオクドウェオトを 時 (スクワッド 内に <char uid="PECS_CyclopsePrincess" /> および <char uid="PECS_LRL" />が ある 時)</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
+      TC: |-
+        Sarang 全部mgin 先ggeom Gangrim時啟動 指定範圍於 造成<dmg elem="physics" />。
+        <sec typ="dmg">目標地點在 遠 數越 傷害量 最大 50%至 減少。</sec>
+        <sec typ="cond">暴擊時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>。
+        <sec typ="cond"><sec typ="note">聖劍：光之約定</sec>於 的 額外 效果 全部 Chungjokdoeeot 時 (小隊 內於 <char uid="PECS_CyclopsePrincess" /> 以及 <char uid="PECS_LRL" /> 有 時)</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
   "3":
     key: "3"
     icon: P.Beam
@@ -5868,6 +5914,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 행 / 열 보호 효과를 해제</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드 내에 보호기가 자신뿐인 경우</sec>, 자신은 <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 획득합니다.
+        <sec typ="cond">스쿼드 내에 <char uid="PECS_CyclopsePrincess" /></sec>가 존재할 경우, <sec typ="important">자신을 대신하여</sec> <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 이전합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, applied to self <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> row / column protection effects remove</sec>.
+        <sec typ="cond">At round start</sec> <sec typ="cond">in squad to Defender self Ppun if</sec>, self <sec typ="attr">normal</sec> <sec typ="buff"><buff typ="MARKING" /> Mark</sec> gains.
+        <sec typ="cond">in squad to <char uid="PECS_CyclopsePrincess" /></sec> if present, <sec typ="important">self instead by doing</sec> <sec typ="buff"><buff typ="MARKING" /> Mark</sec> previous.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身に 適用された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 行 / 列 保護効果を 解除</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スクワッド 内に 保護機が 自身ップウンの場合</sec>、 自身は <sec typ="attr">一般</sec> <sec typ="buff"><buff typ="MARKING" /> 標的</sec>を獲得します。
+        <sec typ="cond">スクワッド 内に <char uid="PECS_CyclopsePrincess" /></sec>が ジオンジエできる 場合、 <sec typ="important">自身を 代わりにして</sec> <sec typ="buff"><buff typ="MARKING" /> 標的</sec>を 以前します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身給 套用已 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 列 / 行 保護效果 解除</sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">小隊 內於 保護機 自身Ppun若為</sec>， 自身 <sec typ="attr">一般</sec> <sec typ="buff"><buff typ="MARKING" /> 標記</sec>獲得。
+        <sec typ="cond">小隊 內於 <char uid="PECS_CyclopsePrincess" /></sec> 存在可 情況， <sec typ="important">自身 改為並</sec> <sec typ="buff"><buff typ="MARKING" /> 標記</sec> 之前。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -6213,6 +6276,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 보호기를 제외한 범위 내 아군의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>를 감소시킵니다.
+        <sec typ="cond">자신 외에 보호기가 없을 경우</sec>, <sec typ="buff">효과가 두 배로 증폭</sec>되고 <sec typ="buff">자신 또한 효과의 대상</sec>이 됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 바이오로이드 지원기에게 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="6" /></sec> 증가 / <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="7" signless />회</sec>를 부여합니다.
+        <sec typ="cond">대상이 <char uid="PECS_LRL" /> 또는 <char uid="PECS_CyclopsePrincess" />인 경우</sec>, <sec typ="buff">상기 효과가 두 배로 증폭</sec>됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, Defender excluding within range allies' <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decreases.
+        <sec typ="cond">self other than to Defender if absent</sec>, <sec typ="buff">the effect is doubled amplification</sec>becomes and <sec typ="buff">self also effect and of target</sec>.
+        <sec typ="cond">At round start</sec>, within range Bioroid Supporterto <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="6" /></sec> increase / <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification <val idx="7" signless />times</sec> grants.
+        <sec typ="cond">target <char uid="PECS_LRL" /> or <char uid="PECS_CyclopsePrincess" /> if</sec>, <sec typ="buff">above the effect is doubled amplification</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 保護機を ジエ外した 範囲内 味方の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec>を減少させます。
+        <sec typ="cond">自身 外に 保護機が 存在しない場合</sec>、 <sec typ="buff">効果が2倍で 増幅</sec>になり、 <sec typ="buff">自身 ットオした 効果の 対象</sec>が されます。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 バイオロイド 支援機に <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="6" /></sec> 増加 / <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="7" signless />回</sec>を付与します。
+        <sec typ="cond">対象が <char uid="PECS_LRL" /> または <char uid="PECS_CyclopsePrincess" />の場合</sec>、 <sec typ="buff">上記 効果が2倍で 増幅</sec>されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 保護機 解除外 範圍內 我方的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="0" r inv /></sec>使其減少。
+        <sec typ="cond">自身 外於 保護機 不存在時</sec>， <sec typ="buff">效果變為2倍以 增幅</sec>變為，且 <sec typ="buff">自身 又 效果的 目標</sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 生化人 支援機給 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="6" /></sec> 增加 / <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 <val idx="7" signless />次</sec>賦予。
+        <sec typ="cond">目標 <char uid="PECS_LRL" /> 或 <char uid="PECS_CyclopsePrincess" />若為</sec>， <sec typ="buff">上述 效果變為2倍以 增幅</sec>。
   "5":
     key: "5"
     icon: P.Scan
@@ -6449,6 +6533,27 @@ skills:
             base: 94
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <char uid="PECS_BlindPrincess" />는 눈이 보이지 않아 적의 공격을 회피하기 매우 어렵습니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 적중 감소 효과에 면역</sec>이 되고 3라운드 동안 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">피격 시</sec>, <sec typ="cond"><buff typ="ACCURACY_DOWN" /> 적중 감소 / <buff typ="DEF_DOWN" /> 방어력 감소</sec> 상태인 적의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어막 / 피해 감소 무시 효과를 해제</sec>합니다.
+        <sec>스쿼드 내에 존재하는 <char uid="PECS_CyclopsePrincess" />가 피격 시에도 동일한 효과가 발동합니다.</sec>
+      EN: |-
+        <char uid="PECS_BlindPrincess" /> Nun Bo whether not A enemy's attack Evasion do unit very uh Ryeopseupni all.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> Accuracy decrease effect and immunity to</sec> becomes and 3 rounds own <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> increases.
+        <sec typ="cond">When hit</sec>, <sec typ="cond"><buff typ="ACCURACY_DOWN" /> Accuracy decrease / <buff typ="DEF_DOWN" /> Defense decrease</sec> in the state enemy's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Ignore Barrier / Damage Reduction removes the effect</sec>.
+        <sec>in squad to exists <char uid="PECS_CyclopsePrincess" /> When hit also same effect and triggers.</sec>
+      JP: |-
+        <char uid="PECS_BlindPrincess" />は ンウンが ブオがジイ アア 敵の 攻撃を 回避すること ムエウ オルヨプます。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 命中 減少 効果に 免疫</sec>が になり、 3ラウンドの間 自身の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">被弾時</sec>、 <sec typ="cond"><buff typ="ACCURACY_DOWN" /> 命中 減少 / <buff typ="DEF_DOWN" /> 防御力 減少</sec> 状態の 敵の <sec typ="buff"><buff typ="REMOVE_BUFF" /> バリア／ダメージ減少無視 効果を 解除</sec>します。
+        <sec>スクワッド 内に ジオンジエする <char uid="PECS_CyclopsePrincess" />が 被弾時にも 同一の 効果が 発動します。</sec>
+      TC: |-
+        <char uid="PECS_BlindPrincess" /> Nun Bo至 不a 敵人的 攻擊 迴避進行 每u 語ryeop。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 命中 減少 效果於 免疫</sec> 變為，且 3回合內 自身的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec>增加。
+        <sec typ="cond">被擊時</sec>， <sec typ="cond"><buff typ="ACCURACY_DOWN" /> 命中 減少 / <buff typ="DEF_DOWN" /> 防禦力 減少</sec> 處於狀態的 敵人的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 無視護盾／傷害減免 效果 解除</sec>。
+        <sec>小隊 內於 存在 <char uid="PECS_CyclopsePrincess" /> 被擊時於也 相同 效果 發動。</sec>
 dialogue:
   KR:
     "1":
@@ -6504,42 +6609,14 @@ dialogue:
         용이란 본래 탐욕스러운 존재.
         한번 손에 넣은 것은 놓아주지 않는다.
         …그러니, 오늘 밤은 그대를 독점하겠다.
-      Oath: 만들어진 인격에, 빌린 몸. 거짓으로 점철된 삶이었지만… 후회는 없다. 그대와 만나고, 사랑이라는 감정을 배울 수 있었기에. 세상에
-        영원한 것은 없다는 말도 믿을 게 못 되는구나. 여가 그대에게 받은, 그리고 그대에게 되돌려주고 싶은 이 사랑이라는 감정은...
-        영원히 남을 테니까.
+      Oath: 만들어진 인격에, 빌린 몸. 거짓으로 점철된 삶이었지만… 후회는 없다. 그대와 만나고, 사랑이라는 감정을 배울 수 있었기에. 세상에 영원한 것은 없다는 말도 믿을 게 못 되는구나. 여가 그대에게 받은, 그리고 그대에게 되돌려주고 싶은 이 사랑이라는 감정은... 영원히 남을 테니까.
       OathIdle_01: |-
         잠깐, 성녀가 그대에게 할 말이 있다는구나.
         지금이라면... 원 플러스 원 이벤트…?
         ...이게 무슨 뜻인지 그대는 알고 있느냐?
       MVP: 악룡의 힘을 손에 넣은 여에게 적이란 없다.
     "":
-      Intro: >-
-        후. 후. 후... 오랜만입니다, 용살자.
-
-        블라인드 프린세스, 진조의 공주이자 사랑의 힘으로 각성한 빛의 성녀입니다.
-
-        강대한 적에 맞서 승리를 거둘 영광의 순간까지 곁에서 당신을 지켜드리기 위해,
-
-        제가 죽음의 저편에서 돌아왔나이다. 
-
-
-        용살자, 기억하시나요? 우리가 겪어왔던 험난한 전투와 고난을. 사악한 용의 군대에 맞서 싸웠던 그 치열한 격전을.
-
-        지금 세상은 우리가 악룡의 함정에 빠졌던 때만큼이나 크나큰 위기에 처해 있습니다.
-
-
-        하지만, 걱정하지 마세요. 제가 그대의 곁에 있으니까요.
-
-        악룡의 독에 당해 우리 모두가 암흑에 빠졌을 때, 어둠 속에서도 빛을 잃지 않았던 사안을 당신께 넘겨드리고 눈먼 공주가 되었듯이...
-
-        다시 한번 분골쇄신의 각오로 당신을 돕겠습니다.
-
-
-        ...라는 설정입니다.
-
-        후후... 어떠신가요, 사령관님? 제 연기, 오랜만이지만 아직 녹슬지 않았죠?
-      Join: 후, 후, 후... 사랑으로 맺은 계약에 따라, 가... 아, 역시 당신 앞에서 이런 말을 하는 건 부끄럽네요. 잘 부탁드려요,
-        사령관.
+      Join: 후, 후, 후... 사랑으로 맺은 계약에 따라, 가... 아, 역시 당신 앞에서 이런 말을 하는 건 부끄럽네요. 잘 부탁드려요, 사령관.
       SquadJoin: 어, 업무 시작인가요? 좋아요. 다시 성녀가 될 시간이네요.
       Leader: 걱정하지 마세요. 제가 그대들과 함께하니까.
       SortiePick: 프린세스, 전투 준비 끝났습니다.
@@ -6598,8 +6675,7 @@ dialogue:
         제 협력이 필요하시다는 뜻이군요.
         네? 그 뜻이 아니라고요? 아뇨, 사령관.
         그 뜻이 맞아요. 방금 제가 그렇게 정했어요.
-      Oath: 저는 한때 왜 우리에게 감정이 있을까, 하는 질문을 품고 있던 적이 있었어요. 그리고... 방금 그 질문에 대한 대답을 받았네요.
-        그건 바로, 지금 이 순간의 행복을 느끼기 위해서였던 거예요. 고마워요, 사령관. 내 앞에 나타나줘서. 그리고, 나를 사랑해줘서.
+      Oath: 저는 한때 왜 우리에게 감정이 있을까, 하는 질문을 품고 있던 적이 있었어요. 그리고... 방금 그 질문에 대한 대답을 받았네요. 그건 바로, 지금 이 순간의 행복을 느끼기 위해서였던 거예요. 고마워요, 사령관. 내 앞에 나타나줘서. 그리고, 나를 사랑해줘서.
       OathIdle_01: |-
         용살자! 큰일났어요! 사랑의 힘이 부족합니다!
         이대로라면 힘을 쓸 수 없어요!
@@ -6703,16 +6779,13 @@ dialogue:
         [미번역]용이란 본래 탐욕스러운 존재.
         한번 손에 넣은 것은 놓아주지 않는다.
         …그러니, 오늘 밤은 그대를 독점하겠다.
-      Oath: "[미번역]만들어진 인격에, 빌린 몸. 거짓으로 점철된 삶이었지만… 후회는 없다. 그대와 만나고, 사랑이라는 감정을 배울 수
-        있었기에. 세상에 영원한 것은 없다는 말도 믿을 게 못 되는구나. 여가 그대에게 받은, 그리고 그대에게 되돌려주고 싶은 이
-        사랑이라는 감정은... 영원히 남을 테니까."
+      Oath: "[미번역]만들어진 인격에, 빌린 몸. 거짓으로 점철된 삶이었지만… 후회는 없다. 그대와 만나고, 사랑이라는 감정을 배울 수 있었기에. 세상에 영원한 것은 없다는 말도 믿을 게 못 되는구나. 여가 그대에게 받은, 그리고 그대에게 되돌려주고 싶은 이 사랑이라는 감정은... 영원히 남을 테니까."
       OathIdle_01: |-
         [미번역]잠깐, 성녀가 그대에게 할 말이 있다는구나.
         지금이라면... 원 플러스 원 이벤트…?
         ...이게 무슨 뜻인지 그대는 알고 있느냐?
       MVP: ""
     "":
-      Intro: ""
       Join: ふふふ……深き愛の契約に従い…あ、やっぱりあなたの前でこんなことを言うのは照れますね。よろしくお願いします、司令官さん。
       SquadJoin: ""
       Leader: ""
@@ -6800,10 +6873,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Intro: ""
-      Join: Hehehe… According to the contract signed with love… Ah, it really is
-        embarrassing to say things like this in front of you. I look forward to
-        working with you, Commander.
+      Join: Hehehe… According to the contract signed with love… Ah, it really is embarrassing to say things like this in front of you. I look forward to working with you, Commander.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -6862,10 +6932,7 @@ dialogue:
         in order to rebuild humanity.
         What? That's not what you mean? No, Commander.
         That's what you mean. I just decided that it is what it is.
-      Oath: There was a time when I wondered why we had such things as emotions. And
-        then… I just received the answer to that question. It was for me to be
-        able to feel the joy of this very moment. Thank you, Commander. Thank
-        you for appearing in my life. And for loving me.
+      Oath: There was a time when I wondered why we had such things as emotions. And then… I just received the answer to that question. It was for me to be able to feel the joy of this very moment. Thank you, Commander. Thank you for appearing in my life. And for loving me.
       OathIdle_01: |-
         Dragon Slayer! We're in big trouble! The power of love is weakening!
         At this rate, I will lose my strength!
@@ -6944,7 +7011,6 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Intro: ""
       Join: 呵、呵、呵…根據以愛締結的契約…啊，果然要在你面前說這種話太羞恥了。請多關照了，司令官。
       SquadJoin: ""
       Leader: ""
@@ -7052,20 +7118,14 @@ skins:
   sid: null
   artist: Sol
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -7080,25 +7140,27 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_BlindPrincess_N
   skins:
     - sid: 1
       artist: Sol
       price: 272
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 60
       stage: false
       subset:
-        - true
-        - false
-        - true
-        - true
-        - false
-        - false
-        - true
-        - false
+        O:
+          - _
+          - B
+          - S
+          - BS
+        G:
+          - _
+          - B
+          - S
+          - BS
       anim:
         - false
         - false
@@ -7115,5 +7177,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_PECS_BlindPrincess_NS1
         consumableKey: Skin_PECS_BlindPrincess_1

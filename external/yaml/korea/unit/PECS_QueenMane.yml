@@ -544,6 +544,7 @@ source:
   - - Ev:Ev27:EV2-6
   - - Ev:Ev32:EV2-6
   - - Ev:Ev34:EV1-3EX
+  - - Ev:Ev36:EV2-3EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1658,6 +1659,23 @@ skills:
             base: 900
             per: 70
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec> <sec typ="cond">대상의 공격력이 자신보다 낮을 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" slot="1" r /></sec>가 증가합니다.
+        <sec typ="cond">치명타 시</sec>, 3라운드 동안 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="2" slot="1" signless /> 지속 물리 피해</sec>를 입힙니다.
+      EN: |-
+        to a single target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec> <sec typ="cond">target's Attack self than low case</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" slot="1" r /></sec> increases.
+        <sec typ="cond">On critical hit</sec>, 3 rounds <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="2" slot="1" signless /> Physical damage over time</sec> deals.
+      JP: |-
+        単一対象へ <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec> <sec typ="cond">対象の 攻撃力が 自身より ンアトを 場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" slot="1" r /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec>、 3ラウンドの間 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="2" slot="1" signless /> 持続物理ダメージ</sec>を 与えます。
+      TC: |-
+        單一目標給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec> <sec typ="cond">目標的 攻擊力 自身比 降低 情況</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" slot="1" r /></sec>增加。
+        <sec typ="cond">暴擊時</sec>， 3回合內 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="2" slot="1" signless /> 持續物理傷害</sec> 造成。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -3474,6 +3492,31 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
+        <sec typ="cond">치명타 시</sec>, 해당 라운드 동안 대상을 <sec typ="buff"><buff typ="STUN" /> 행동 불능</sec> 상태로 만듭니다.
+        <sec typ="cond">대상에게 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 지속 물리 피해</sec>가 적용중인 경우</sec>, <sec typ="buff"><buff typ="STUN" /> 행동 불능</sec>이 2라운드 동안 지속됩니다.
+        <sec typ="cond">스킬 사용 시</sec>, 2라운드 동안 <sec typ="note">무리짓기</sec> 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="7" slot="4" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="8" slot="4" r /></sec>를 증가시킵니다.
+        <sec><sec typ="buff"><buff typ="ATK_UP" /><buff typ="DEF_UP" /> 공격력 / 방어력</sec> 증가 효과는 <sec typ="note">무리짓기</sec> 레벨에 비례합니다.</sec>
+      EN: |-
+        to the designated area <dmg elem="physics" /> damage and 2 rounds target <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> inflicts.
+        <sec typ="cond">On critical hit</sec>, each round target <sec typ="buff"><buff typ="STUN" /> Stunned</sec> inflicts.
+        <sec typ="cond"> to the target <sec typ="dmg"><buff typ="phyDMG_DOT" /> Physical damage over time</sec> enemy in use if</sec>, <sec typ="buff"><buff typ="STUN" /> Stunned</sec> 2 rounds continuous.
+        <sec typ="cond">When using the skill</sec>, 2 rounds <sec typ="note">Pack Formation</sec> within range allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="7" slot="4" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="8" slot="4" r /></sec> increases.
+        <sec><sec typ="buff"><buff typ="ATK_UP" /><buff typ="DEF_UP" /> Attack / Defense</sec> increase effect <sec typ="note">Pack Formation</sec> level.</sec>
+      JP: |-
+        指定範囲に<dmg elem="physics" />を与え、、 2ラウンドの間 対象を <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態にします。
+        <sec typ="cond">クリティカル時</sec>、 該当 ラウンド間 対象を <sec typ="buff"><buff typ="STUN" /> 行動不能</sec> 状態にします。
+        <sec typ="cond">対象に <sec typ="dmg"><buff typ="phyDMG_DOT" /> 持続物理ダメージ</sec>が 適用中の場合</sec>、 <sec typ="buff"><buff typ="STUN" /> 行動不能</sec>が 2ラウンドの間 持続されます。
+        <sec typ="cond">スキル使用時</sec>、 2ラウンドの間 <sec typ="note">群れ形成</sec> 範囲内 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="7" slot="4" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="8" slot="4" r /></sec>を増加させます。
+        <sec><sec typ="buff"><buff typ="ATK_UP" /><buff typ="DEF_UP" /> 攻撃力 / 防御力</sec> 増加 効果は <sec typ="note">群れ形成</sec> レベルに 比例します。</sec>
+      TC: |-
+        指定範圍於 造成<dmg elem="physics" />，並 2回合內 目標 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 使其進入狀態。
+        <sec typ="cond">暴擊時</sec>， 該 回合內 目標 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 使其進入狀態。
+        <sec typ="cond">對目標 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 持續物理傷害</sec> 套用中若為</sec>， <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 2回合內 持續。
+        <sec typ="cond">使用技能時</sec>， 2回合內 <sec typ="note">群聚</sec> 範圍內 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="7" slot="4" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="8" slot="4" r /></sec>使其增加。
+        <sec><sec typ="buff"><buff typ="ATK_UP" /><buff typ="DEF_UP" /> 攻擊力 / 防禦力</sec> 增加 效果 <sec typ="note">群聚</sec> 等級於 成比例。</sec>
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3856,6 +3899,27 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">대기 시</sec>, 자신은 <sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 위력으로 반격</sec> 효과를 획득합니다.
+        해당 효과는 대기를 통해 임의로 해제할 수 있습니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신에게 <sec typ="buff"><buff typ="COUNTER" /> 반격</sec> 효과가 적용된 경우</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="9" r /></sec>가 증가하고 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="7" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increases.
+        <sec typ="cond">On standby</sec>, self <sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> power as Counterattack</sec> gains the effect.
+        the effect wait through Imui as can be removed.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self <sec typ="buff"><buff typ="COUNTER" /> Counterattack</sec> affected by case</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="9" r /></sec> increases and <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="7" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">待機時</sec>、 自身は <sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 威力で 反撃</sec> 効果を獲得します。
+        該当 効果は 待機を通じて イムので 解除できます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身に <sec typ="buff"><buff typ="COUNTER" /> 反撃</sec> 効果が適用された 場合</sec>、 <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="9" r /></sec>が 増加し、 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="7" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>增加。
+        <sec typ="cond">待機時</sec>， 自身 <sec typ="buff"><buff typ="COUNTER" /> <val idx="5" r signless /> 威力以 反擊</sec> 獲得效果。
+        該 效果 待機透過 Im的以 可以解除。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身給 <sec typ="buff"><buff typ="COUNTER" /> 反擊</sec> 已套用效果的 情況</sec>， <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="9" r /></sec> 增加，並 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="7" /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -4261,6 +4325,23 @@ skills:
             base: 1
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 / 경장형 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">5인 스쿼드 구성 시</sec> 효과가 50% 증폭됩니다.
+        <sec typ="cond">전투 개시 시</sec> <sec typ="cond">자신이 스쿼드 내 유일한 공격기인 경우</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> anti Heavy-type / Light-type damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">5 is squad composition when</sec> effect and increased by 50%.
+        <sec typ="cond">At battle start</sec> <sec typ="cond">self in squad only Attackerif</sec>, within range allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> ドエ 重装型 / 軽装型 ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">5である スクワッド 構成 時</sec> 効果が 50%増幅されます。
+        <sec typ="cond">戦闘開始時</sec> <sec typ="cond">自身が スクワッド 内 ユイルした 攻撃機の場合</sec>、 範囲内 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對 重裝型 / 輕裝型 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">5為 小隊 組成 時</sec> 效果 增幅50%。
+        <sec typ="cond">戰鬥開始時</sec> <sec typ="cond">自身 小隊 內 唯一 攻擊機若為</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>增加。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -4911,6 +4992,23 @@ skills:
             base: 0.09
             per: 0.018
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 기본 공격력 <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 위압적인 포효로 <sec typ="buff">자신보다 공격력이 낮은 모든 적의 <buff typ="AP_DOWN" /> 행동력 <val idx="3" r /></sec>를 감소시킵니다.
+        <sec typ="cond">전투 개시 시</sec>, 사냥감 수에 비례하여 자신은 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec> 증가 <sec typ="attr">일반 효과</sec>를 획득합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, 3 rounds own <sec typ="buff"><buff typ="ATK_UP" /> base Attack <val idx="0" /></sec> increases.
+        <sec typ="cond">At round start</sec>, above Ap enemy is Po effect as <sec typ="buff">self than Attack low all enemies of <buff typ="AP_DOWN" /> Action Speed <val idx="3" r /></sec> decreases.
+        <sec typ="cond">At battle start</sec>, Sanyanggam in proportion to the number of self <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="4" r /></sec> increase <sec typ="attr">normal effect</sec> gains.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 3ラウンドの間 自身の <sec typ="buff"><buff typ="ATK_UP" /> 基本 攻撃力 <val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 ウィアプ敵である プオハヨで <sec typ="buff">自身より 攻撃力が ンアトは すべての敵の <buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>を減少させます。
+        <sec typ="cond">戦闘開始時</sec>、 スアンヤングアム 数に比例して 自身は <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> 増加 <sec typ="attr">一般効果</sec>を獲得します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 3回合內 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 基礎 攻擊力 <val idx="0" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 上ap敵人為 Pohyo以 <sec typ="buff">自身比 攻擊力 降低 所有敵人的 <buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>使其減少。
+        <sec typ="cond">戰鬥開始時</sec>， Sanyanggam 依數量成比例 自身 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> 增加 <sec typ="attr">一般效果</sec>獲得。
 dialogue:
   KR:
     "1":
@@ -5032,8 +5130,7 @@ dialogue:
         하하하하! 좋아! 좋아!
         사령관도 그럴 기분이 들었다는 거지? 좋아.
         암컷이 된 내 모습을… 사령관에게 보여주겠어.
-      Oath: 이런 걸로 나를 길들일 수 있을 거라고 생각했어? 착각하지마. 이거 때문에 당신에게 길들여진 게 아니라… 당신이라 길들여진 거니까.
-        그래도 가끔씩 내 야성이 날뛰거나 그럴텐데… 그 때는… 다시 나를 당신의 취향에 맞게 길들여줘.
+      Oath: 이런 걸로 나를 길들일 수 있을 거라고 생각했어? 착각하지마. 이거 때문에 당신에게 길들여진 게 아니라… 당신이라 길들여진 거니까. 그래도 가끔씩 내 야성이 날뛰거나 그럴텐데… 그 때는… 다시 나를 당신의 취향에 맞게 길들여줘.
       OathIdle_01: |-
         나를 길들이는 것도 사령관이고.
         나의 야성을 일깨우는 것도 사령관이지.
@@ -5160,8 +5257,7 @@ dialogue:
       Login: 本モデルはウォッチャーオブネイチャーの小動物たちと一緒にいる時、一種の…高揚感を感じます。分析結果、管理者様にも精神的な安定感を与え得るものと判断します。
       Idle_01_01: 勢い任せでしかアプローチできないと思ってた？ふふ、司令官。このプライドで生き残るためには、このくらいの戦略は基本中の基本よ。
       Idle_01_02: できる限り、私の野性を抑えようと努力してきたわ。服を着たり、外見に気を使ったりね。こうして見ると私も……なかなかエレガントなレディじゃない？
-      Idle_01_03: どれどれ。フルーツもあるし、喉を潤すワインもある……。
-        あぁ……そういえば、司令官はお酒が入ると手のつけようがないって聞いたけど……一緒にどうかしら。私なら問題ないわ。
+      Idle_01_03: どれどれ。フルーツもあるし、喉を潤すワインもある……。 あぁ……そういえば、司令官はお酒が入ると手のつけようがないって聞いたけど……一緒にどうかしら。私なら問題ないわ。
       SPIdle_01_01: ふふ。獣のように荒々しいのも好きだけど、今はこの瞬間を楽しみたいの。
       Idle_02_01: ええと、だから、司令官が来たら、できる限りエレガントなポーズで余裕の笑みを浮かべて……う～ん。まだまだね。また今度ちゃんと教えてもらわないと。
       Idle_03_01: ここまでやっても効いてないなんて……、プライドのボスを甘く見てたみたいね。今度は別の方法で―か、可愛い？いきなりそういうことを言うのは……やだもう。これじゃあ私の方が先にノックアウトされちゃうわね？
@@ -5220,8 +5316,7 @@ dialogue:
         [미번역]하하하하! 좋아! 좋아!
         사령관도 그럴 기분이 들었다는 거지? 좋아.
         암컷이 된 내 모습을… 사령관에게 보여주겠어.
-      Oath: "[미번역]이런 걸로 나를 길들일 수 있을 거라고 생각했어? 착각하지마. 이거 때문에 당신에게 길들여진 게 아니라… 당신이라 길들여진
-        거니까. 그래도 가끔씩 내 야성이 날뛰거나 그럴텐데… 그 때는… 다시 나를 당신의 취향에 맞게 길들여줘."
+      Oath: "[미번역]이런 걸로 나를 길들일 수 있을 거라고 생각했어? 착각하지마. 이거 때문에 당신에게 길들여진 게 아니라… 당신이라 길들여진 거니까. 그래도 가끔씩 내 야성이 날뛰거나 그럴텐데… 그 때는… 다시 나를 당신의 취향에 맞게 길들여줘."
       OathIdle_01: |-
         [미번역]나를 길들이는 것도 사령관이고.
         나의 야성을 일깨우는 것도 사령관이지.
@@ -5309,26 +5404,20 @@ dialogue:
         I tried my best to keep my savageness.
         I tried wearing proper clothes, and tend my features.
         What do you think… Don’t I look like a proper lady now?
-      Idle_01_03: >-
+      Idle_01_03: |-
         Let’s see.
-
         Some adequate fruit and some wine… Come to think of it, I heard that the Commander gets into big trouble
-
         When he drinks… What do you say? I’m alright, Would you care for a glass?
       SPIdle_01_01: |-
         Haha. I like it when things go wild,
         But now I want to savor this moment.​
-      Idle_02_01: >-
+      Idle_02_01: |-
         So, when the Commander comes, I will try my best to look graceful
-
         With a straight posture and a noble smile… Hmm. I’ll have to ask again later.
-      Idle_03_01: >-
+      Idle_03_01: |-
         You’re still not falling for it, after all this?
-
         Could it be that the leader of the pride
-
         Cannot be bothered with this level of seduction? Next time, I’ll try another-
-
         F-for you to suddenly say I’m pretty… My gosh. I’m the one who’s falling for you.
       Idle_04_01: |-
         Isn’t it hard to keep it all in?
@@ -5341,10 +5430,8 @@ dialogue:
         Yes.
         I’m all good here, from now on it’s all yours.
         Well then, go ahead and awaken my inner beast.​
-      Oath: >-
-        I tried to express my feelings for you, but I didn’t know how and kept
-        on acting aggressively instead.
-
+      Oath: |-
+        I tried to express my feelings for you, but I didn’t know how and kept on acting aggressively instead.
         That’s why I wanted to oppress my savageness, and seduce you with a more gracious look… But hearing you say that, I don’t think I can hold it in anymore. Haha. Well then… Let me unleash the beast inside of me for tonight.
       OathIdle_01: |-
         I wanted to be a graceful lady,
@@ -5435,9 +5522,8 @@ dialogue:
         How are the kids doing?
         I told them they need to get stronger
         if they wanted to join Pride. I wonder how they’re doing.
-      Idle_01_02: >-
+      Idle_01_02: |-
         Pride can’t rule the world?
-
         I. You don’t have the spirits… You should learn from me. I’ll tell you the know-how.
       Idle_01_03: |-
         They said you were one amazing man.
@@ -5449,11 +5535,9 @@ dialogue:
         you should first become a superior male. I’ll train you
         myself. You begin by jumping off a cliff
         with bare hands.
-      Idle_03_01: >-
+      Idle_03_01: |-
         Hmm. You were hiding something nice
-
         under your clothes. I’m sorry I jumped to conclusions. By the way… You need to show that, you know.
-
         Just like I do.
       Idle_04_01: |-
         What are you doing, Commander? Having a large Pride is…
@@ -5464,17 +5548,12 @@ dialogue:
         that doesn’t even get muscular?
         You’d like to do something…
         more practical and PRODUCTIVE?
-      Oath: >-
-        Right… the alpha male is attracted to the alpha female. I already knew
-        you were going to come to me.
-
+      Oath: |-
+        Right… the alpha male is attracted to the alpha female. I already knew you were going to come to me.
         I know this isn’t happening in the meantime, but I know we will create a powerful successor, you and me.
-
         Until then, I will assist you as the Queen of Pride, Commander. You haven’t forgot what our goal is, right?
-
         I believe that… you, Commander, as my spouse, are a strong alpha male that is capable of embracing all bioroids.
-      OathIdle_01: Now that’s more like Pride. We’re lacking something… Yes. Shouldn’t
-        we have an heir?
+      OathIdle_01: Now that’s more like Pride. We’re lacking something… Yes. Shouldn’t we have an heir?
       MVP: ""
     M:
       SquadJoin: ""
@@ -5499,11 +5578,9 @@ dialogue:
         A leader should save up some strength.
         You don’t know what might happen. Forget it, come here.
         Me? I’m a queen. I should save strength, too.
-      Idle_01_02: >-
+      Idle_01_02: |-
         Pride is getting bigger and bigger. … What? I.
-
         That’s the right of a leader. There’s no way
-
         I’m jealous. Well, but as a queen… I’d like to have more than the others.
       Idle_01_03: |-
         Did you not train yourself? This is not enough-
@@ -5748,20 +5825,15 @@ skins:
   sid: null
   artist: Jam
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+    G:
+      - _
   anim:
     - false
     - false
@@ -5776,25 +5848,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_QueenMane_N
   skins:
     - sid: 1
       artist: Jam
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -5811,25 +5881,27 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_PECS_QueenMane_NS1
         consumableKey: Skin_PECS_QueenMane_1
     - sid: 2
       artist: Taesi
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -5846,6 +5918,7 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_PECS_QueenMane_NS2
         2dmodel_dam: 2DModel_PECS_QueenMane_NS2_Dam
         consumableKey: Skin_PECS_QueenMane_2

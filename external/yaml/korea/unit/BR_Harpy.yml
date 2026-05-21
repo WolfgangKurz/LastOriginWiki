@@ -1656,6 +1656,23 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        미사일을 발사하여 지정 범위에 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 대상이 <buff typ="MARKING" /> 표식 / <buff typ="SNARE" /> 이동 불가 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+        적중 여부에 관계 없이 2라운드 동안 대상의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시킵니다.
+      EN: |-
+        missile fires to the designated area <dmg elem="physics" />.
+        <sec typ="cond">Hit target <buff typ="MARKING" /> Mark / <buff typ="SNARE" /> Immobilized if in the state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+        regardless of whether it hits 2 rounds, target's <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> decreases.
+      JP: |-
+        ミサイルを 発射して 指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象が <buff typ="MARKING" /> 標的 / <buff typ="SNARE" /> 移動不可 状態の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
+        命中 ヨブウに関係なく 2ラウンドの間 対象の <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec>を減少させます。
+      TC: |-
+        飛彈 發射並 指定範圍於 造成<dmg elem="physics" />。
+        <sec typ="cond">命中目標為 <buff typ="MARKING" /> 標記 / <buff typ="SNARE" /> 無法移動 若為狀態</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
+        無論是否命中 2回合內 目標的 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec>使其減少。
   "2":
     key: "2"
     icon: AirStrike
@@ -2993,6 +3010,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전탄발사를 통해 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
+        <sec>스킬 레벨 당 +9%의 적중 보정이 적용됩니다.</sec>
+      EN: |-
+        Full Burst through to a single target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, 2 rounds target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> inflicts.
+        <sec>per skill level +9% of accuracy correction is applied.</sec>
+      JP: |-
+        前トアン発射を通じて 単一対象へ <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象を <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態にします。
+        <sec>スキルレベルごとに +9%の 命中補正が適用されます。</sec>
+      TC: |-
+        前彈發射透過 單一目標給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 使其進入狀態。
+        <sec>每技能等級 +9%的 套用命中補正。</sec>
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3304,6 +3342,27 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 기동형 피해량 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="note">스텔스 위장</sec> 상태가 되어 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 (2회)</sec> 효과를 획득합니다.
+        <sec typ="cond">대기 시</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 (2회)</sec> 효과를 재활성화할 수 있습니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신이 <sec typ="note">스텔스 위장</sec> 상태인 경우, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> Anti-Mobile damage <val idx="1" r /></sec> increases.
+        <sec typ="cond">At battle start</sec>, <sec typ="note">Stealth Camouflage</sec> enters the state and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Damage Minimization (2times)</sec> gains the effect.
+        <sec typ="cond">On standby</sec>, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Damage Minimization (2times)</sec> effect and reactivate can number exists.
+        <sec typ="cond">At round start</sec>, self <sec typ="note">Stealth Camouflage</sec> if in the state, 2 rounds own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="6" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 対機動型ダメージ <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">戦闘開始時</sec>、 <sec typ="note">ステルス迷彩</sec> 状態になり <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージ最小化 (2回)</sec> 効果を獲得します。
+        <sec typ="cond">待機時</sec>、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージ最小化 (2回)</sec> 効果を 再有効化できます。
+        <sec typ="cond">ラウンド開始時</sec>、 自身が <sec typ="note">ステルス迷彩</sec> 状態の場合、 2ラウンドの間 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 對機動型傷害 <val idx="1" r /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec>， <sec typ="note">隱形偽裝</sec> 進入狀態並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 傷害最小化 (2次)</sec> 獲得效果。
+        <sec typ="cond">待機時</sec>， <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 傷害最小化 (2次)</sec> 效果 重新啟用可以。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="note">隱形偽裝</sec> 若為狀態， 2回合內 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -3657,6 +3716,23 @@ skills:
             base: 0.075
             per: 0.0075
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 범위 내 기동형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec>를 증가시킵니다.
+        <sec typ="cond">대상이 기동형이 아닐 경우</sec>, 지속 효과가 50% 감소합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, within range Mobile-type allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> increases.
+        <sec typ="cond">target Mobile-type if not case</sec>, continuous effect and 50% decreases.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 範囲内 機動型 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec>を増加させます。
+        <sec typ="cond">対象が 機動型が アンイル 場合</sec>、 持続 効果が 50% 減少します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 範圍內 機動型 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec>使其增加。
+        <sec typ="cond">目標 機動型 不是 情況</sec>， 持續 效果 50% 減少。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -4162,6 +4238,19 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가하며 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 사거리 감소 효과를 해제</sec>합니다.
+        <sec typ="cond">공격 적중 / <buff typ="TOGETHER_ATTACK" /> 협동 공격 시</sec>, 해당 라운드 동안 자신이 장착한 대 타입 피해량 증가 장비 효과가 증폭됩니다. (<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="ARMORED_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> 대 타입 피해량 <val idx="5" r /></sec> 증가)
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec> increases and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Range decrease removes the effect</sec>.
+        <sec typ="cond">attack Accuracy / <buff typ="TOGETHER_ATTACK" /> coordinated attack when</sec>, each round self equipped Anti-Type damage increase equipment effect and amplification. (<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="ARMORED_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> Anti-Type damage <val idx="5" r /></sec> increase)
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が 増加し、 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 射程 減少 効果を 解除</sec>します。
+        <sec typ="cond">攻撃 命中 / <buff typ="TOGETHER_ATTACK" /> 協同攻撃 時</sec>、 該当 ラウンド間 自身が ジアンチアクした 対タイプダメージ 増加 装備 効果が 増幅されます。 (<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="ARMORED_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> 対タイプダメージ <val idx="5" r /></sec> 増加)
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="2" r /></sec> 增加，並 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 射程 減少 效果 解除</sec>。
+        <sec typ="cond">攻擊 命中 / <buff typ="TOGETHER_ATTACK" /> 協同攻擊 時</sec>， 該 回合內 自身 裝備 對類型傷害 增加 裝備 效果 增幅。 (<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="ARMORED_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> 對類型傷害 <val idx="5" r /></sec> 增加)
 dialogue:
   KR:
     "1":
@@ -4591,9 +4680,7 @@ dialogue:
         *Squeals*! N-no. It’s…different from
         what I studied. … I want to get better.
         You have to teach me.
-      Oath: Yes… It is a lot different than what I read in the books… This is much
-        more desirable and sweeter than I imagined… Commander, thank you for
-        teaching me this amazing feeling. And… I love you, too.
+      Oath: Yes… It is a lot different than what I read in the books… This is much more desirable and sweeter than I imagined… Commander, thank you for teaching me this amazing feeling. And… I love you, too.
       OathIdle_01: |-
         Okay. No more book talk today.
         I just want to hang out with you.
@@ -4633,11 +4720,9 @@ dialogue:
         I’m Harpyia, the sweet voice of SkyNights!
         Applaud~ Now I really feel natural.
         Didn’t I look like a real idol, Producer?
-      Idle_03_01: >-
+      Idle_03_01: |-
         How was it? It was worth the practice!
-
         Hoo hoo, I’m not clumsy anymore-
-
         … You’ll give me a massage as a reward? You’re sly… T-then… should I enjoy the massage?
       Idle_04_01: |-
         Great job to you too, Producer.
@@ -4648,12 +4733,8 @@ dialogue:
         *Moans*… Oh! Oh no, I have to go up to stage soon.
         You won’t let me go…? … Okay.
         Just a little more…
-      Oath: >-
-        Oh…! I’m startled since I just finished the Concert. To think I’ll
-        become a wife as soon as I debuted as an idol… Am I the first celebrity
-        and a wife of a producer in the history of Orca Sub? Now what should I
-        call you…?
-
+      Oath: |-
+        Oh…! I’m startled since I just finished the Concert. To think I’ll become a wife as soon as I debuted as an idol… Am I the first celebrity and a wife of a producer in the history of Orca Sub? Now what should I call you…?
         Commander? Producer? Or… honey?
       OathIdle_01: |-
         Choose one between book and idol…?
@@ -4711,12 +4792,9 @@ dialogue:
         Y-you stay still. I’ll take care
         of everything. I prac- I-I’m good
         at this.
-      Oath: >-
-        Y-you're giving this to me…? I saw this in a book before, but I never
-        thought… 
-
+      Oath: |-
+        Y-you're giving this to me…? I saw this in a book before, but I never thought… 
         N-no. I'm so happy… You didn't judge me by my cover… 
-
         Here. This book is my answer. Read it thoroughly, OK? I'm gonna check later.♥
       OathIdle_01: |-
         Did you finish the book I lend you? Then…
@@ -4755,9 +4833,8 @@ dialogue:
         If our story were written in a book, what genre would it be?
         Thriller? Horror? Or… romance? Journal? Why?
         You’re right. We have to keep on writing it.
-      SPIdle_01_01: >-
+      SPIdle_01_01: |-
         I studied a lot of things for you.
-
         But I never got the change to use it… Can I try… what I’ve been practicing?
       MVP: ""
   TC:
@@ -4978,20 +5055,13 @@ skins:
   sid: null
   artist: SNOWBALL
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5006,25 +5076,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_Harpy_N
   skins:
     - sid: 1
       artist: SNOWBALL
       price: 182
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 44
       stage: false
       subset:
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - B
+        G:
+          - _
+          - B
       anim:
         - false
         - false
@@ -5046,24 +5114,18 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_Harpy_NS1
     - sid: 2
       artist: SNOWBALL
       price: 242
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 28
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
       anim:
         - false
         - false
@@ -5080,4 +5142,5 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_Harpy_NS2

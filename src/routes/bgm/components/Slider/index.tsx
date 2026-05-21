@@ -1,3 +1,5 @@
+import { FunctionalComponent } from "preact";
+
 import { BuildClass } from "@/libs/Class";
 
 import style from "./style.module.scss";

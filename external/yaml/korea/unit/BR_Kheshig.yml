@@ -3285,6 +3285,23 @@ skills:
               level: "0"
             value: Char_BR_QuickCamel_N
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">자신이 전열인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        적중 대상에게 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec> 증가 효과를 부여합니다.
+      EN: |-
+        Deals <dmg elem="physics" /> to a single target.
+        <sec typ="cond">If self is in the front row</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        Grants the hit target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="5" r /></sec> increase effects for 2 rounds.
+      JP: |-
+        単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">自身が前列の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+        命中した対象に2ラウンドの間、<sec typ="buff"><buff typ="MARKING" />標識</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="5" r /></sec>増加効果を付与します。
+      TC: |-
+        對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">自身位於前列時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
+        賦予命中目標持續2回合的<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="5" r /></sec>增加效果。
   "2":
     key: "2"
     icon: Move
@@ -3805,6 +3822,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 위치한 아군에게 전술적 배치 지시를 내립니다.
+        대상이 전열에 위치한 <sec typ="note">앵거 오브 호드</sec>인 경우, 2라운드 동안 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 부여합니다.
+        대상에게 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> 증가 / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="6" r inv /></sec> 감소 효과를 부여합니다.
+        대상이 <sec typ="cond">전열</sec>에 위치한 경우 효과가 증가합니다.
+      EN: |-
+        Issues tactical deployment orders to allies in the designated area.
+        If the target is <sec typ="note">Anger of the Horde</sec> in the front row, grants <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> for 2 rounds.
+        Grants the target <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="4" r /></sec> increase / <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="5" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="6" r inv /></sec> reduction effects for 2 rounds.
+        Effects increase if the target is in the <sec typ="cond">front row</sec>.
+      JP: |-
+        指定範囲にいる味方に戦術的配置指示を出します。
+        対象が前列にいる<sec typ="note">アンガー・オブ・ホード</sec>の場合、2ラウンドの間、<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視</sec>効果を付与します。
+        対象に2ラウンドの間、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="4" r /></sec>増加 / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="6" r inv /></sec>減少効果を付与します。
+        対象が<sec typ="cond">前列</sec>にいる場合、効果が増加します。
+      TC: |-
+        對位於指定範圍內的我方下達戰術部署指令。
+        若目標為位於前列的<sec typ="note">憤怒部落</sec>，賦予其持續2回合的<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>效果。
+        賦予目標持續2回合的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="4" r /></sec>增加 / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到傷害<val idx="6" r inv /></sec>減少效果。
+        若目標位於<sec typ="cond">前列</sec>，效果增加。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -4909,6 +4947,23 @@ skills:
             base: 0.2
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        첫 라운드 개시 시, <sec typ="cond"><buff typ="DEF_RESSURRECT" /> 전투 속행 효과를 가지지 않은 아군 바이오로이드</sec>에게 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" signless /> HP로 전투 속행</sec> 효과를 부여합니다.
+        <sec typ="note">응급 처치</sec>를 통해 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> 전투 속행</sec>한 아군이 다음 라운드까지 생존 시, 추가 처치를 통해 아군의 생존성을 향상시킵니다.
+        라운드 개시 시, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 </sec> 일반 효과를 부여하고, <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항<val idx="7" r /></sec>를 증가시키며, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 모든 해로운 효과를 해제</sec>합니다.
+      EN: |-
+        At the start of the first round, grants allied Bioroids <sec typ="cond">without the <buff typ="DEF_RESSURRECT" /> battle continuation effect</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Battle Continuation with <val idx="0" signless /> HP</sec>.
+        If an ally who <sec typ="note"></sec> continued battle<sec typ="buff"> through <buff typ="DEF_RESSURRECT" />First Aid</sec> survives until the next round, additional treatment improves ally survivability.
+        At round start, grants the general effect <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Damage Minimization </sec>, increases <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> effect resistance <val idx="7" r /></sec>, and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes all harmful effects</sec>.
+      JP: |-
+        最初のラウンド開始時、<sec typ="cond"><buff typ="DEF_RESSURRECT" />戦闘続行効果を持たない味方バイオロイド</sec>に<sec typ="buff"><buff typ="DEF_RESSURRECT" />HP<val idx="0" signless />で戦闘続行</sec>効果を付与します。
+        <sec typ="note">応急処置</sec>によって<sec typ="buff"><buff typ="DEF_RESSURRECT" />戦闘続行</sec>した味方が次のラウンドまで生存した場合、追加処置によって味方の生存性を向上させます。
+        ラウンド開始時、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />ダメージ最小化</sec>一般効果を付与し、<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="7" r /></sec>を増加させ、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />すべての有害効果を解除</sec>します。
+      TC: |-
+        第1回合開始時，賦予<sec typ="cond">未持有<buff typ="DEF_RESSURRECT" />戰鬥續行效果的我方生化人</sec><sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="0" signless /> HP戰鬥續行</sec>效果。
+        透過<sec typ="note">急救</sec><sec typ="buff"><buff typ="DEF_RESSURRECT" />戰鬥續行</sec>的我方若存活至下一回合，將透過追加處置提升我方的生存能力。
+        回合開始時，賦予<sec typ="buff"><buff typ="DAMAGE_REDUCE" />傷害最小化</sec>一般效果，增加<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性<val idx="7" r /></sec>，並<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除所有有害效果</sec>。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -5375,6 +5430,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">자신보다 <buff typ="ATK_UP" /> 공격력 / <buff typ="DEF_UP" /> 방어력 / <buff typ="EVADE_UP" /> 회피가 높은 아군</sec>에게 경외심을 품습니다.
+        라운드 개시 시, 자신이 경외심을 품은 대상이 존재할 때 각 효과별 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>가 증가합니다.
+        각기 다른 세 조건이 충족된 경우, 스킬 사용 시 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="1" /></sec>이(가) 증가합니다.
+        스쿼드 내에 <char uid="BR_Khan" />이 존재하는 경우, 상기 조건을 무시하고 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec> 증가 / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="1" /></sec> 증가 효과를 획득합니다.
+      EN: |-
+        At battle start, feels awe toward <sec typ="cond">allies with higher <buff typ="ATK_UP" /> ATK / <buff typ="DEF_UP" /> DEF / <buff typ="EVADE_UP" /> EVA than self</sec>.
+        At round start, when a target self feels awe toward exists, self's <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="5" r /></sec> increases for each effect.
+        If all three different conditions are met, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="1" /></sec> increases when using a skill.
+        If <char uid="BR_Khan" /> is present in the squad, ignores the above conditions and gains <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="0" r /></sec> increase / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="1" /></sec> increase effects.
+      JP: |-
+        戦闘開始時、<sec typ="cond">自身より<buff typ="ATK_UP" />攻撃力 / <buff typ="DEF_UP" />防御力 / <buff typ="EVADE_UP" />回避が高い味方</sec>に畏敬の念を抱きます。
+        ラウンド開始時、自身が畏敬の念を抱く対象が存在する場合、各効果ごとに自身の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>が増加します。
+        異なる3つの条件がすべて満たされた場合、スキル使用時に<sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" slot="1" /></sec>が増加します。
+        スクワッド内に<char uid="BR_Khan" />が存在する場合、上記条件を無視し、<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>増加 / <sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" slot="1" /></sec>増加効果を獲得します。
+      TC: |-
+        戰鬥開始時，對<sec typ="cond">比自身<buff typ="ATK_UP" />攻擊力 / <buff typ="DEF_UP" />防禦力 / <buff typ="EVADE_UP" />迴避更高的我方</sec>心生敬畏。
+        回合開始時，若存在自身敬畏的目標，依各效果增加自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>。
+        若三個不同條件皆達成，使用技能時<sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" slot="1" /></sec>增加。
+        若小隊內存在<char uid="BR_Khan" />，則無視上述條件，獲得<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec>增加 / <sec typ="buff"><buff typ="AP_UP" />AP<val idx="7" slot="1" /></sec>增加效果。
   "5":
     key: "5"
     icon: P.Command
@@ -5543,6 +5619,19 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신은 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수가 <val idx="0" /></sec> 증가합니다.
+        라운드 개시 시, <sec typ="note">응급 처치</sec>에 의한 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 피해 최소화</sec> 효과를 보유한 아군에게 <sec typ="dmg"><buff typ="DamageAmp_Me" /> 현재 HP에 반비례하여 가하는 피해량 증가</sec> 일반 효과를 부여합니다. → <sec typ="dmg"><buff typ="DamageAmp_Me" /> 잃은 HP 비례 피해량 <val idx="2" r /></sec>
+      EN: |-
+        At round start, self's <sec typ="buff"><buff typ="Action_Number_Change_Up" /> maximum number of actions increases by <val idx="0" /></sec>.
+        At round start, grants allies with the <sec typ="note"></sec> Damage Minimization<sec typ="cond"> effect from <buff typ="DAMAGE_REDUCE" />First Aid</sec> the general effect <sec typ="dmg"><buff typ="DamageAmp_Me" /> increases damage dealt in inverse proportion to current HP</sec>. → <sec typ="dmg"><buff typ="DamageAmp_Me" /> damage proportional to lost HP <val idx="2" r /></sec>
+      JP: |-
+        ラウンド開始時、自身は<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動回数が<val idx="0" /></sec>増加します。
+        ラウンド開始時、<sec typ="note">応急処置</sec>による<sec typ="cond"><buff typ="DAMAGE_REDUCE" />ダメージ最小化</sec>効果を持つ味方に、<sec typ="dmg"><buff typ="DamageAmp_Me" />現在HPに反比例して与えるダメージ量増加</sec>一般効果を付与します。 → <sec typ="dmg"><buff typ="DamageAmp_Me" />失ったHP比例ダメージ量<val idx="2" r /></sec>
+      TC: |-
+        回合開始時，自身的<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動次數增加<val idx="0" /></sec>。
+        回合開始時，賦予持有由<sec typ="note">急救</sec>產生的<sec typ="cond"><buff typ="DAMAGE_REDUCE" />傷害最小化</sec>效果的我方<sec typ="dmg"><buff typ="DamageAmp_Me" />依目前HP反比例增加造成傷害量</sec>一般效果。 → <sec typ="dmg"><buff typ="DamageAmp_Me" />依損失HP比例的傷害量<val idx="2" r /></sec>
 dialogue:
   KR:
     "1":
@@ -5858,12 +5947,9 @@ dialogue:
         What if somebody comes…
         Unngh! O-okay… I'm ready…
         Don't stop even if someone comes…
-      Oath: >-
-        You're so mean, Commander. You always play pranks on me, tease me, do
-        dirty things…
-
+      Oath: |-
+        You're so mean, Commander. You always play pranks on me, tease me, do dirty things…
         And then you give me a ring at a time like this? Pffft. Don't think you're going to get off easy.
-
         I'll make sure to punish you. For the rest of your life. Hehe. I'll love you forever and ever.
       OathIdle_01: |-
         Come over here.
@@ -5874,8 +5960,7 @@ dialogue:
         And let’s live together for a very very long time.
       MVP: ""
     "":
-      Join: Nice to meet you, Commander! I am T-4 Kheshig. It is a great honor to meet
-        you!
+      Join: Nice to meet you, Commander! I am T-4 Kheshig. It is a great honor to meet you!
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -5893,35 +5978,25 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        I was responsible for managing military logistics and providing relief
-        to the wounded.
-
+      Idle_01_01: |-
+        I was responsible for managing military logistics and providing relief to the wounded.
         The increase may be as low as 1%, but I provide support to boost the rate of survival for our comrades in battle
-
         so that they can solely focus on their mission.
-
         That is my role.
-      Idle_01_02: >-
+      Idle_01_02: |-
         Oh, Commander… I feel that I’m a little tired
-
         from doing unfamiliar tasks. But I’m sure I will get used to it in no time.
-
         You need not worry.
-
         I will get used to it in no time…
       Idle_01_03: |-
         Um… The beautiful lady over there has been
         staring at me for a while… Did I do something wrong?
         Perhaps I did something without realizing it?..!
       SPIdle_01_01: C-Commander…?! Why would you do that..
-      Idle_02_01: >-
+      Idle_02_01: |-
         Phew… Oh, no. It’s just that everyone in the Horde
-
         is achieving something every day… but it’s starting to get tough catching up.
-
         But since I’m getting better and better,
-
         I will be able to stand by them one day.
       Idle_03_01: |-
         If Khan used to be the same Kheshig like me… Then could I be
@@ -5938,12 +6013,9 @@ dialogue:
         There’s so much I don’t know about… But I will try my best
         to adjust to them. So please…
         teach me one by one, slowly.
-      Oath: >-
-        Um… Can I say something honestly? I’ve been actually waiting for this
-        moment.
-
+      Oath: |-
+        Um… Can I say something honestly? I’ve been actually waiting for this moment.
         I thought it wouldn’t matter how long it took as long as it happened…
-
         I will reap the harvest after such a long wait, Commander… My way.
       OathIdle_01: |-
         If you have time, why don’t you take a medical examination?
@@ -6165,20 +6237,14 @@ skins:
   sid: null
   artist: MAR10
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -6193,25 +6259,27 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_Kheshig_N
   skins:
     - sid: 1
       artist: D-loG
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - true
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - DB
+          - S
+        G:
+          - _
+          - D
+          - DB
+          - S
       anim:
         - false
         - false
@@ -6228,6 +6296,7 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_Kheshig_NS1
         2dmodel_dam: 2DModel_BR_Kheshig_NS1_Dam
         consumableKey: Skin_BR_Kheshig_1

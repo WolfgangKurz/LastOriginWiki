@@ -494,6 +494,7 @@ cv:
 source:
   - - Ev:Ev33:EV3-4EX
   - - Ev:Ev34:EV1-2EX
+  - - Ev:Ev37:EV2-4EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -4857,6 +4858,31 @@ skills:
             base: 0.5
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        거대한 닻을 쏘아 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">스킬 적중 시</sec> 대상은 2라운드 동안 <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="5" r /></sec> 및 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="6" r /></sec>가 감소되고 <cmt loc t="FLOOD"><import name="FLOOD" p="12,10,11" /></cmt> 상태가 됩니다.
+        <sec typ="cond">홀수 라운드</sec>에서 <sec typ="cond">스킬 적중 시</sec> <sec typ="cond">스쿼드에 <char uid="3P_Alcyone" />가 있을 경우</sec> 2라운드 동안 자신에게 <sec typ="buff"><cmt t="언니~!"><sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="7" r /></sec> 감소</cmt>를 부여</sec>합니다.
+        <sec typ="cond">홀수 라운드</sec>에서 <sec typ="cond">스킬 적중 시</sec> <sec typ="dmg"><buff typ="TOGETHER_ATTACK" /> <char uid="3P_Alcyone" />가 <sec typ="note">스키터링 브리니클</sec>을 사용하여 협동 공격</sec> 합니다.
+        <sec typ="cond">짝수 라운드</sec>에서 <sec typ="cond">스킬 적중 시</sec> <sec typ="cond">스쿼드에 <char uid="PECS_LemonadeGamma" />가 있을 경우</sec> 2라운드 동안 자신에게 <sec typ="buff"><cmt t="대장~!"><sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="9" r /></sec> 증가</cmt>을 부여</sec>합니다.
+      EN: |-
+        Fires a giant anchor at a single target to deal <dmg elem="physics" />.
+        <sec typ="cond">When the skill hits</sec> the target 2 rounds <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="5" r /></sec> and <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="6" r /></sec> decreased and <cmt loc t="FLOOD"><import name="FLOOD" p="12,10,11" /></cmt> state.
+        <sec typ="cond">odd round</sec> in <sec typ="cond">When the skill hits</sec> <sec typ="cond">squad <char uid="3P_Alcyone" /> if present</sec> 2 rounds self <sec typ="buff"><cmt t="sister~!"><sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="7" r /></sec> decrease</cmt> grant</sec>.
+        <sec typ="cond">odd round</sec> in <sec typ="cond">When the skill hits</sec> <sec typ="dmg"><buff typ="TOGETHER_ATTACK" /> <char uid="3P_Alcyone" /> <sec typ="note">rod height/key Teoring b Rinikeul</sec> use by doing coordinated attack</sec>.
+        <sec typ="cond">even round</sec> in <sec typ="cond">When the skill hits</sec> <sec typ="cond">squad <char uid="PECS_LemonadeGamma" /> if present</sec> 2 rounds self <sec typ="buff"><cmt t="captain~!"><sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="9" r /></sec> increase</cmt> grant</sec>.
+      JP: |-
+        グオドエした ドアトを ッスオア 単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">スキル命中時</sec> 対象は 2ラウンドの間 <sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="5" r /></sec> および <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="6" r /></sec>が 減少になり、 <cmt loc t="FLOOD"><import name="FLOOD" p="12,10,11" /></cmt> 状態になります。
+        <sec typ="cond">奇数 ラウンド</sec>で <sec typ="cond">スキル命中時</sec> <sec typ="cond">スクワッドに <char uid="3P_Alcyone" />が 存在する場合</sec> 2ラウンドの間 自身に <sec typ="buff"><cmt t="お姉ちゃん～！"><sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="7" r /></sec> 減少</cmt>を 付与</sec>します。
+        <sec typ="cond">奇数 ラウンド</sec>で <sec typ="cond">スキル命中時</sec> <sec typ="dmg"><buff typ="TOGETHER_ATTACK" /> <char uid="3P_Alcyone" />が <sec typ="note">スキタリング・ブライニクル</sec>を 使用して 協同攻撃</sec>します。
+        <sec typ="cond">偶数 ラウンド</sec>で <sec typ="cond">スキル命中時</sec> <sec typ="cond">スクワッドに <char uid="PECS_LemonadeGamma" />が 存在する場合</sec> 2ラウンドの間 自身に <sec typ="buff"><cmt t="ドエジアン~!"><sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="9" r /></sec> 増加</cmt>を 付与</sec>します。
+      TC: |-
+        發射巨大的錨 單一目標給 造成<dmg elem="physics" />。
+        <sec typ="cond">技能命中時</sec> 目標 2回合內 <sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="5" r /></sec> 以及 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="6" r /></sec> 減少變為，且 <cmt loc t="FLOOD"><import name="FLOOD" p="12,10,11" /></cmt> 變為狀態。
+        <sec typ="cond">奇數 回合</sec>在 <sec typ="cond">技能命中時</sec> <sec typ="cond">小隊於 <char uid="3P_Alcyone" /> 存在時</sec> 2回合內 自身給 <sec typ="buff"><cmt t="姊姊～！"><sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="7" r /></sec> 減少</cmt> 賦予</sec>。
+        <sec typ="cond">奇數 回合</sec>在 <sec typ="cond">技能命中時</sec> <sec typ="dmg"><buff typ="TOGETHER_ATTACK" /> <char uid="3P_Alcyone" /> <sec typ="note">掠行冰凌</sec> 使用並 協同攻擊</sec>。
+        <sec typ="cond">偶數 回合</sec>在 <sec typ="cond">技能命中時</sec> <sec typ="cond">小隊於 <char uid="PECS_LemonadeGamma" /> 存在時</sec> 2回合內 自身給 <sec typ="buff"><cmt t="隊長～！"><sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="9" r /></sec> 增加</cmt> 賦予</sec>。
   "2":
     key: "2"
     icon: Wave
@@ -8628,6 +8654,55 @@ skills:
             base: 0.03
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <dmg elem="physics" />를 줍니다.
+        스킬 적중에 따른 <sec typ="cond">치명타 시</sec> 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
+        <sec typ="cond"><cmt t="언니~!"><import name="B1" /></sec> 감소</cmt> 적용 상태로 스킬 적중 시</sec> 적중 대상을 1 라운드 동안 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만들고, 자신에게 <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="7" r /></sec>가 증가합니다.
+        <sec typ="cond"><cmt t="대장~!"><import name="B2" /></cmt> 적용 상태로 스킬 적중 시</sec> 자신의 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="8" r /></sec>가 증가하고, 1 라운드 동안 적중 대상을 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 상태로 만들고 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="10" r /></sec>가 증가합니다.
+        <sec>※ <cmt t="언니~!"><import name="B1" /></sec> 또는 <cmt t="대장~!"><import name="B2" /></cmt> 효과는 <sec typ="note">립타이드 헤드샷</sec> 사용 시 획득할 수 있습니다.</sec>
+        <define name="B1">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val slot="1" idx="7" r />
+        </define>
+        <define name="B2">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val slot="1" idx="9" r /></sec> 증가
+        </define>
+      EN: |-
+        to the designated area <dmg elem="physics" />.
+        skill Accuracy to depending on <sec typ="cond">On critical hit</sec> target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec>.
+        <sec typ="cond"><cmt t="sister~!"><import name="B1" /></sec> decrease</cmt> active stateas When the skill hits</sec> Hit target 1 round <sec typ="buff"><buff typ="STUN" /> Stunned</sec> to the state makes and, self <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease <val idx="7" r /></sec> increases.
+        <sec typ="cond"><cmt t="captain~!"><import name="B2" /></cmt> active stateas When the skill hits</sec> own <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Lightning Resistance <val idx="8" r /></sec> increases and 1 round Hit target <sec typ="buff"><buff typ="SEAL_SKILL" /> skill cannot use</sec> to the state makes and <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="10" r /></sec> increases.
+        <sec>※ <cmt t="sister~!"><import name="B1" /></sec> or <cmt t="captain~!"><import name="B2" /></cmt> effect <sec typ="note">Riptadeu Hedeusyat</sec> When used can gain.</sec>
+        <define name="B1">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val slot="1" idx="7" r />
+        </define>
+        <define name="B2">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val slot="1" idx="9" r /></sec> increase
+        </define>
+      JP: |-
+        指定範囲に<dmg elem="physics" />を与えます。
+        スキル 命中に ットアルウン <sec typ="cond">クリティカル時</sec> 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>します。
+        <sec typ="cond"><cmt t="オンンイ~!"><import name="B1" /></sec> 減少</cmt> 適用状態で スキル命中時</sec> 命中 対象を 1 ラウンド間 <sec typ="buff"><buff typ="STUN" /> 行動不可</sec> 状態に だけたちし、 自身に <sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少 <val idx="7" r /></sec>が増加します。
+        <sec typ="cond"><cmt t="ドエジアン~!"><import name="B2" /></cmt> 適用状態で スキル命中時</sec> 自身の <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電気耐性 <val idx="8" r /></sec>が 増加し、 1 ラウンド間 命中 対象を <sec typ="buff"><buff typ="SEAL_SKILL" /> スキル スアヨン 不可</sec> 状態に だけたちし <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="10" r /></sec>が増加します。
+        <sec>※ <cmt t="オンンイ~!"><import name="B1" /></sec> または <cmt t="ドエジアン~!"><import name="B2" /></cmt> 効果は <sec typ="note">ルイプトアがドウ ハエドウスヤト</sec> 使用時 獲得できます。</sec>
+        <define name="B1">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val slot="1" idx="7" r />
+        </define>
+        <define name="B2">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val slot="1" idx="9" r /></sec> 増加
+        </define>
+      TC: |-
+        指定範圍於 造成<dmg elem="physics" />。
+        技能 命中於 依照 <sec typ="cond">暴擊時</sec> 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>。
+        <sec typ="cond"><cmt t="語nni~!"><import name="B1" /></sec> 減少</cmt> 套用狀態以 技能命中時</sec> 命中 目標 1 回合內 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 成為狀態 僅們並， 自身給 <sec typ="buff"><buff typ="ICERES_UP" /> 冰冷抗性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少 <val idx="7" r /></sec>增加。
+        <sec typ="cond"><cmt t="對jang~!"><import name="B2" /></cmt> 套用狀態以 技能命中時</sec> 自身的 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電擊抗性 <val idx="8" r /></sec> 增加，並 1 回合內 命中 目標 <sec typ="buff"><buff typ="SEAL_SKILL" /> 技能 使用 不可</sec> 成為狀態 僅們並 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="10" r /></sec>增加。
+        <sec>※ <cmt t="語nni~!"><import name="B1" /></sec> 或 <cmt t="對jang~!"><import name="B2" /></cmt> 效果 <sec typ="note">利ptadeu Hedeusyat</sec> 使用時 可以獲得。</sec>
+        <define name="B1">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val slot="1" idx="7" r />
+        </define>
+        <define name="B2">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val slot="1" idx="9" r /></sec> 增加
+        </define>
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -8999,6 +9074,51 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 행 / 열 보호 효과를 해제</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> 자신은 <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 획득하고, <sec typ="cond">스쿼드 내에 <char uid="3P_Alcyone" />가 존재할 경우</sec>, 자신을 대신하여 <sec typ="buff">표식을 이전</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">홀수 라운드일 경우</sec> <sec typ="cond">스쿼드 내에 <char uid="3P_Alcyone" />가 있을 경우</sec> 2라운드 동안 아군에게 <sec typ="buff"><cmt t="언니?!"><import name="B1" /></sec>를 부여</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">짝수 라운드일 경우</sec> <sec typ="cond">스쿼드 내에 <char uid="PECS_LemonadeGamma" />가 있을 경우</sec> 자신에게 <sec typ="buff"><cmt t="대장?!"><import name="B2" /></sec>을 부여</sec>합니다.
+        <define name="B1">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="7" r />
+        </define>
+        <define name="B2">
+        <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> 증가
+        </define>
+      EN: |-
+        <sec typ="cond">At round start</sec> applied to self <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> row / column protection effects remove</sec>.
+        <sec typ="cond">At round start</sec> self <sec typ="attr">normal</sec> <sec typ="buff"><buff typ="MARKING" /> Mark</sec> gains and, <sec typ="cond">in squad to <char uid="3P_Alcyone" /> if present</sec>, self instead by doing <sec typ="buff">Mark previous</sec>.
+        <sec typ="cond">At round start</sec> <sec typ="cond">During odd-numbered rounds</sec> <sec typ="cond">in squad to <char uid="3P_Alcyone" /> if present</sec> 2 rounds to allies <sec typ="buff"><cmt t="sister?!"><import name="B1" /></sec> grant</sec>.
+        <sec typ="cond">At round start</sec> <sec typ="cond">During even-numbered rounds</sec> <sec typ="cond">in squad to <char uid="PECS_LemonadeGamma" /> if present</sec> self <sec typ="buff"><cmt t="captain?!"><import name="B2" /></sec> grant</sec>.
+        <define name="B1">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="7" r />
+        </define>
+        <define name="B2">
+        <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> increase
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 自身に 適用された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 行 / 列 保護効果を 解除</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> 自身は <sec typ="attr">一般</sec> <sec typ="buff"><buff typ="MARKING" /> 標的</sec>を 獲得し、 <sec typ="cond">スクワッド 内に <char uid="3P_Alcyone" />が ジオンジエできる 場合</sec>、 自身を 代わりにして <sec typ="buff">標的を 以前</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">奇数ラウンドの場合</sec> <sec typ="cond">スクワッド 内に <char uid="3P_Alcyone" />が 存在する場合</sec> 2ラウンドの間 味方に <sec typ="buff"><cmt t="オンンイ?!"><import name="B1" /></sec>を ブウヨ</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">偶数ラウンドの場合</sec> <sec typ="cond">スクワッド 内に <char uid="PECS_LemonadeGamma" />が 存在する場合</sec> 自身に <sec typ="buff"><cmt t="ドエジアン?!"><import name="B2" /></sec>を ブウヨ</sec>します。
+        <define name="B1">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="7" r />
+        </define>
+        <define name="B2">
+        <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> 増加
+        </define>
+      TC: |-
+        <sec typ="cond">回合開始時</sec> 自身給 套用已 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 列 / 行 保護效果 解除</sec>。
+        <sec typ="cond">回合開始時</sec> 自身 <sec typ="attr">一般</sec> <sec typ="buff"><buff typ="MARKING" /> 標記</sec> 獲得，並 <sec typ="cond">小隊 內於 <char uid="3P_Alcyone" /> 存在可 情況</sec>， 自身 改為並 <sec typ="buff">標記 之前</sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若為奇數回合</sec> <sec typ="cond">小隊 內於 <char uid="3P_Alcyone" /> 存在時</sec> 2回合內 我方給 <sec typ="buff"><cmt t="語nni?!"><import name="B1" /></sec> 賦予</sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若為偶數回合</sec> <sec typ="cond">小隊 內於 <char uid="PECS_LemonadeGamma" /> 存在時</sec> 自身給 <sec typ="buff"><cmt t="對jang?!"><import name="B2" /></sec> 賦予</sec>。
+        <define name="B1">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="7" r />
+        </define>
+        <define name="B2">
+        <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> 增加
+        </define>
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -9966,6 +10086,71 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">피격 시</sec> 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="가디언 시리즈"><import name="GuardianSeries" /></cmt> 소속 전투원이 있을 경우</sec> 인원수에 따라 아군에게 버프효과를 줍니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <cmt t="포세이돈"><import name="Poseidon" /></cmt> 소속 전투원이 있을 경우</sec> 인원수에 따라 아군에게 버프효과를 줍니다.
+        <box t="가디언 시리즈 집결">
+        <sec typ="cond">1인</sec> : <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" /></sec> 증가
+        <sec typ="cond">2인</sec> : <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="2" /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="3" r /></sec> 증가
+        <sec typ="cond">3인</sec> : <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="4" /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="5" r /></sec> 증가 / <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="6" r /></sec> 증가 / <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="7" r /></sec> 증가 / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="8" r /></sec> 증가
+        <sec typ="cond">4인</sec> : <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="9" /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="10" r /></sec> 증가 / <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="11" r /></sec> 증가 / <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="12" r /></sec> 증가 / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="13" r /></sec> 증가 / <sec typ="cond">홀수 라운드 시</sec> <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="14" signless />회</sec> 적용
+        </box>
+        <box t="포세이돈 집결">
+        <sec typ="cond">1인</sec> : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="15" r /></sec> 증가
+        <sec typ="cond">2인</sec> : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="16" r /></sec> 증가 / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="17" r /></sec> 증가
+        <sec typ="cond">3인</sec> : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="17" r /></sec> 증가 / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="19" r /></sec> 증가 / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="20" r /></sec> 증가
+        <sec typ="cond">4인</sec> : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="18" r /></sec> 증가 / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="22" r /></sec> 증가 / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="23" r /></sec> 증가 / <sec typ="cond">짝수 라운드 시</sec> <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="24" signless />회</sec> 적용
+        </box>
+      EN: |-
+        <sec typ="cond">When hit</sec> applied to self <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec>.
+        <sec typ="cond">At round start</sec> <sec typ="cond">squad self excluding <cmt t="Dian when Liz"><import name="GuardianSeries" /></cmt> affiliated combatant if present</sec> number of to allies buff effect and deals.
+        <sec typ="cond">At round start</sec> <sec typ="cond">squad <cmt t="Poseidon"><import name="Poseidon" /></cmt> affiliated combatant if present</sec> number of to allies buff effect and deals.
+        <box t="Dian when Liz gather">
+        <sec typ="cond">1 is</sec>: <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" /></sec> increase
+        <sec typ="cond">2 is</sec>: <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="2" /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease <val idx="3" r /></sec> increase
+        <sec typ="cond">3 is</sec>: <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="4" /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease <val idx="5" r /></sec> increase / <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="6" r /></sec> increase / <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance <val idx="7" r /></sec> increase / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Lightning Resistance <val idx="8" r /></sec> increase
+        <sec typ="cond">4 is</sec>: <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="9" /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease <val idx="10" r /></sec> increase / <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="11" r /></sec> increase / <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance <val idx="12" r /></sec> increase / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Lightning Resistance <val idx="13" r /></sec> increase / <sec typ="cond">odd round when</sec> <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification <val idx="14" signless />times</sec> applies
+        </box>
+        <box t="Poseidon gather">
+        <sec typ="cond">1 is</sec>: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="15" r /></sec> increase
+        <sec typ="cond">2 is</sec>: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="16" r /></sec> increase / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="17" r /></sec> increase
+        <sec typ="cond">3 is</sec>: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="17" r /></sec> increase / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="19" r /></sec> increase / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="20" r /></sec> increase
+        <sec typ="cond">4 is</sec>: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="18" r /></sec> increase / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="22" r /></sec> increase / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="23" r /></sec> increase / <sec typ="cond">even round when</sec> <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification <val idx="24" signless />times</sec> applies
+        </box>
+      JP: |-
+        <sec typ="cond">被弾時</sec> 自身に 適用された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スクワッドに 自身を ジエ外した <cmt t="がドイオン 時ルイジウ"><import name="GuardianSeries" /></cmt> 所属 戦闘員が 存在する場合</sec> であるウォン数に応じて 味方に バフ効果を 与えます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スクワッドに <cmt t="プオスエがドオン"><import name="Poseidon" /></cmt> 所属 戦闘員が 存在する場合</sec> であるウォン数に応じて 味方に バフ効果を 与えます。
+        <box t="がドイオン 時ルイジウ ジイプグヨル">
+        <sec typ="cond">1である</sec>：<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" /></sec> 増加
+        <sec typ="cond">2である</sec>：<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="2" /></sec> 増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少 <val idx="3" r /></sec> 増加
+        <sec typ="cond">3である</sec>：<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="4" /></sec> 増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少 <val idx="5" r /></sec> 増加 / <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="6" r /></sec> 増加 / <sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性 <val idx="7" r /></sec> 増加 / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電気耐性 <val idx="8" r /></sec> 増加
+        <sec typ="cond">4である</sec>：<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="9" /></sec> 増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少 <val idx="10" r /></sec> 増加 / <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="11" r /></sec> 増加 / <sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性 <val idx="12" r /></sec> 増加 / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電気耐性 <val idx="13" r /></sec> 増加 / <sec typ="cond">奇数 ラウンド 時</sec> <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="14" signless />回</sec> 適用
+        </box>
+        <box t="プオスエがドオン ジイプグヨル">
+        <sec typ="cond">1である</sec>：<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="15" r /></sec> 増加
+        <sec typ="cond">2である</sec>：<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="16" r /></sec> 増加 / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="17" r /></sec> 増加
+        <sec typ="cond">3である</sec>：<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="17" r /></sec> 増加 / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="19" r /></sec> 増加 / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="20" r /></sec> 増加
+        <sec typ="cond">4である</sec>：<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="18" r /></sec> 増加 / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="22" r /></sec> 増加 / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="23" r /></sec> 増加 / <sec typ="cond">偶数 ラウンド 時</sec> <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="24" signless />回</sec> 適用
+        </box>
+      TC: |-
+        <sec typ="cond">被擊時</sec> 自身給 套用已 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">小隊於 自身 解除外 <cmt t="Dieon 時利jeu"><import name="GuardianSeries" /></cmt> 所屬 戰鬥員 存在時</sec> 為人員依數量 我方給 增益效果 造成。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">小隊於 <cmt t="Posedon"><import name="Poseidon" /></cmt> 所屬 戰鬥員 存在時</sec> 為人員依數量 我方給 增益效果 造成。
+        <box t="Dieon 時利jeu 集中gyeol">
+        <sec typ="cond">1為</sec>：<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" /></sec> 增加
+        <sec typ="cond">2為</sec>：<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="2" /></sec> 增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少 <val idx="3" r /></sec> 增加
+        <sec typ="cond">3為</sec>：<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="4" /></sec> 增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少 <val idx="5" r /></sec> 增加 / <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="6" r /></sec> 增加 / <sec typ="buff"><buff typ="ICERES_UP" /> 冰冷抗性 <val idx="7" r /></sec> 增加 / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電擊抗性 <val idx="8" r /></sec> 增加
+        <sec typ="cond">4為</sec>：<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="9" /></sec> 增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少 <val idx="10" r /></sec> 增加 / <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="11" r /></sec> 增加 / <sec typ="buff"><buff typ="ICERES_UP" /> 冰冷抗性 <val idx="12" r /></sec> 增加 / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電擊抗性 <val idx="13" r /></sec> 增加 / <sec typ="cond">奇數 回合 時</sec> <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 <val idx="14" signless />次</sec> 套用
+        </box>
+        <box t="Posedon 集中gyeol">
+        <sec typ="cond">1為</sec>：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="15" r /></sec> 增加
+        <sec typ="cond">2為</sec>：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="16" r /></sec> 增加 / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="17" r /></sec> 增加
+        <sec typ="cond">3為</sec>：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="17" r /></sec> 增加 / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="19" r /></sec> 增加 / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="20" r /></sec> 增加
+        <sec typ="cond">4為</sec>：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="18" r /></sec> 增加 / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="22" r /></sec> 增加 / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="23" r /></sec> 增加 / <sec typ="cond">偶數 回合 時</sec> <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 <val idx="24" signless />次</sec> 套用
+        </box>
   "5":
     key: "5"
     icon: P.Hang
@@ -10198,6 +10383,23 @@ skills:
             base: 0.15
             per: 0.15
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">피격 시</sec> 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">적 처치 시</sec> 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>을(를) 증가시킵니다.
+      EN: |-
+        <sec typ="cond">At round start</sec> own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">When hit</sec> allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec> increases.
+        <sec typ="cond">When killing an enemy</sec> allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        <sec typ="cond">被弾時</sec> 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>を増加させます。
+        <sec typ="cond">敵撃破時</sec> 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>を増加させます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec> 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>使其增加。
+        <sec typ="cond">被擊時</sec> 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>使其增加。
+        <sec typ="cond">擊殺敵人時</sec> 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>使其增加。
 dialogue:
   KR:
     "1":
@@ -10253,10 +10455,7 @@ dialogue:
         내 꼬리… 많이 델리케이트하지?
         한 번 더 만져볼래,
         주인님~? 헤헤…
-      Oath: 주인님이 놀아주니까 너무 즐겁고 행복해.. 시간이 멈췄으면 좋겠어. 내가 말이야.. 요렇게 조금 더 키가 크고 나면 또 같이 놀러 와
-        주기로 한 거.. 약속이다?​​ 그땐 이것보다 훨씬 더 재미있는 놀이기구를 아주 많이 탈 수 있겠지?​​ 응? 그럼 더 빨리
-        어른이 될 수 있는 거야?​​ 내가 어리다고 귀찮아 할 줄 알았는데.. 언니가 아니라 나여도 괜찮은 거야?​​ 이것도 좋지만..
-        손.. 잡아줘.. 주인님 건 커다래서 너무 좋아.​​
+      Oath: 주인님이 놀아주니까 너무 즐겁고 행복해.. 시간이 멈췄으면 좋겠어. 내가 말이야.. 요렇게 조금 더 키가 크고 나면 또 같이 놀러 와 주기로 한 거.. 약속이다?​​ 그땐 이것보다 훨씬 더 재미있는 놀이기구를 아주 많이 탈 수 있겠지?​​ 응? 그럼 더 빨리 어른이 될 수 있는 거야?​​ 내가 어리다고 귀찮아 할 줄 알았는데.. 언니가 아니라 나여도 괜찮은 거야?​​ 이것도 좋지만.. 손.. 잡아줘.. 주인님 건 커다래서 너무 좋아.​​
       OathIdle_01: |-
         주인님,
         나… 나중에 키 크면…히히, 주인님이랑
@@ -10312,8 +10511,7 @@ dialogue:
       SPIdle_02_01: |-
         주인님.. 언니 만큼은 아니지만, 나도 델리케이트 꼬리지?​
         주인님이 꼬리 토닥거려주는 거 엄청 좋아...♥
-      Oath: 주, 주인님… 나한테 이거 주는 거야? 나, 나는… 흐읍… 으윽… 으아아아앙!​ 안 울려고 했는데에… 훌쩍… 이렇게 약하고 미숙한
-        나를… 정말 받아주는 거야?​ 고마워! 나 앞으로 정말 주인님을 위해 노력할게! 믿어줘 헤헤헤헤헤헤!​
+      Oath: 주, 주인님… 나한테 이거 주는 거야? 나, 나는… 흐읍… 으윽… 으아아아앙!​ 안 울려고 했는데에… 훌쩍… 이렇게 약하고 미숙한 나를… 정말 받아주는 거야?​ 고마워! 나 앞으로 정말 주인님을 위해 노력할게! 믿어줘 헤헤헤헤헤헤!​
       OathIdle_01: |-
         사실 나 누군가가 꼬리 만져주는 거 이렇게 기분 좋은 지 몰랐어..
         날 매일 매일 기분좋게 해줘..주.인.님!!
@@ -10603,20 +10801,14 @@ skins:
   sid: null
   artist: MEL
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -10631,25 +10823,20 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_3P_Merope_N
   skins:
     - sid: 1
       artist: MEL
       price: 182
-      G: false
       Spine: true
       SpineDamaged: false
       parts: 14
       stage: false
       subset:
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - B
       anim:
         - false
         - false
@@ -10666,4 +10853,5 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 2
+        dflags: 0
         consumableKey: Skin_3P_Merope_1

@@ -3,7 +3,6 @@ import { ComponentType, FunctionalComponent, createElement } from "preact";
 import type { LocaleTypes } from "@/types/Locale";
 
 import { CurrentLocale, GetCachedLocaleTable, useLocale } from "@/libs/Locale";
-import idxs from "@/libs/Loader/locales";
 
 type LocaleComponentProp<T> = Record<string, ComponentType<T>>;
 

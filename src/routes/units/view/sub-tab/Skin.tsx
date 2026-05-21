@@ -1,6 +1,5 @@
 import { FunctionComponent } from "preact";
 import { useLayoutEffect, useMemo, useState } from "preact/hooks";
-import { Link } from "preact-router";
 
 import { AssetsRoot } from "@/libs/Const.1";
 import { SkillVideo, SkinBanners } from "@/libs/Const.2";
@@ -184,9 +183,9 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 		}
 
 		<div class="mt-2">
-			<Link href={ SkinLink }>
+			<a href={ SkinLink }>
 				<small>{ SkinLink }</small>
-			</Link>
+			</a>
 		</div>
 
 		<div class="row pt-3">

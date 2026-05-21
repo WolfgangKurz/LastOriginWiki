@@ -1,5 +1,6 @@
+import { FunctionalComponent } from "preact";
 import { useCallback, useEffect, useMemo, useRef, useState } from "preact/hooks";
-import { route } from "preact-router";
+import { useLocation } from "preact-iso";
 import Store from "@/store";
 
 import { DIALOG_SPEAKER, SCG_ACTIVATION } from "@/types/Enums";
@@ -14,7 +15,7 @@ import { BuildClass, cn } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
 import { UpdateTitle } from "@/libs/Site";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import UnitFace from "@/components/unit-face";
 import Icons from "@/components/bootstrap-icon";
@@ -41,6 +42,7 @@ const FaceAlias: Record<string, string> = {
 };
 
 const Viewer: FunctionalComponent<StoryProps> = (props) => {
+	const location = useLocation();
 	const [loc] = useLocale();
 
 	const [isBackMode] = useState(Store.Story.back.value);
@@ -106,15 +108,18 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			.filter(r => r.SCG === SCG_ACTIVATION.ACTIVATION)
 			.filter(r => !r.image.includes("_Cut"));
 	}
-	function ImageToFace (model: string): { uid: string; skin: number; fallback: string; } {
+	function ImageToFace (model: string): { uid: string; skin: number; fallback: string; } | null {
 		let sid = model
 			.replace(/_N_DL(_[0-9]+)?/g, "_N")
+			.replace(/(_[NS]S[0-9]+)_NDL/g, "$1")
+			.replace(/_SS([0-9]+)/g, (p, p1) => `_NS${parseInt(p1, 10) + 20}`)
+			.replace(/_N[0-9]+/g, "_N")
 			.replace(/_DL_N/g, "")
 			.replace(/_DL/g, "")
 			.replace(/_NDL/g, "_N")
 			.replace(/_N_N/g, "_N")
 			.replace(/_D$/g, "") // same with _DL_N
-			.replace(/^2DModel_(.+)_([NPS])(S[0-9]+)?$/, (p, p1, p2, p3) => {
+			.replace(/^2DModel_(.*)_([NPS])(S[0-9]+)?$/, (p, p1, p2, p3) => {
 				if (p2 === "N") {
 					if (p3)
 						return `${p1}_${p3.substring(1)}`;
@@ -126,6 +131,8 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 					return `${p1}_${parseInt(p3.substring(1), 10) + 20}`;
 				return `${p1}_0`;
 			});
+		if (sid[0] === "_") return null;
+
 		if (sid in FaceAlias) sid = FaceAlias[sid];
 
 		if (sid.includes("_Dialog")) { // story 2dmodel
@@ -267,7 +274,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 
 	const SubStoryDB = useDBData<SubStoryDB>(storyType === "Sub3" ? StaticDB.SubStory : null);
 	const subGroup = useMemo(() => {
-		if (!SubStoryDB) return null;
+		if (!assertDBData(SubStoryDB)) return null;
 		return SubStoryDB.story.find(r => r.key === wid) || null;
 	}, [SubStoryDB]);
 
@@ -281,15 +288,20 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 
 	const storyMetadata = useDBData<StoryMetadata>(`story/${props.id}`);
 	useEffect(() => {
-		if (storyMetadata)
+		console.log(props.id, storyMetadata);
+		if (assertDBData(storyMetadata))
 			setBGM(storyMetadata.bgm[type]);
-		else if (storyMetadata === null)  // Error
+		else if (storyMetadata === useDBData.Failed)  // Error
 			setError(true);
 	}, [storyMetadata, type]);
 
-	const storyData = useDBData<StoryData[]>(storyMetadata ? `story/script/${storyMetadata.index[type]}` : null);
+	const storyData = useDBData<StoryData[]>(
+		assertDBData(storyMetadata)
+			? `story/script/${storyMetadata.index[type]}`
+			: null
+	);
 	useEffect(() => {
-		if (!world || !storyMetadata) {
+		if (!world || !assertDBData(storyMetadata)) {
 			UpdateTitle("Story Viewer");
 		} else {
 			UpdateTitle(LText(storyMetadata.title), world);
@@ -297,7 +309,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	}, [lang, world, storyMetadata]);
 
 	const faces = useMemo(() => {
-		if (!storyData) return [];
+		if (!assertDBData(storyData)) return [];
 		interface FaceMetadata {
 			uid: string;
 			skin: number;
@@ -308,10 +320,11 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			.filter(r => r.image && !r.image.includes("_Cut") && !r.image.startsWith("#"))
 			.filter(r => r.image !== "2DModel__N")
 			.map(r => ImageToFace(r.image))
+			.filter(r => r)
 			.reduce<FaceMetadata[]>(
-				(p, c) => p.some(r => r.uid === c.uid && r.skin === c.skin)
+				(p, c) => p.some(r => r.uid === c!.uid && r.skin === c!.skin)
 					? p
-					: [...p, c],
+					: [...p, c!],
 				[],
 			);
 	}, [storyData]);
@@ -335,11 +348,11 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 				: <button class="btn btn-dark" onClick={ e => {
 					e.preventDefault();
 					if (storyType === "Sub2")
-						route(`/worlds/${wid}/${mid}/substory`);
+						location.route(`/worlds/${wid}/${mid}/substory`);
 					else if (storyType === "Sub3")
-						route("/worlds/Sub");
+						location.route("/worlds/Sub");
 					else
-						route(`/worlds/${wid}/${mid}/${nid}`);
+						location.route(`/worlds/${wid}/${mid}/${nid}`);
 				} }>
 					<Icons.ArrowLeft class="me-1" />
 					<Locale k="WORLDS_BACK_TO_WORLDS" />
@@ -400,12 +413,12 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		</h5>
 		{ storyType === "Sub2"
 			? <h3 class="font-ibm mb-2">
-				{ storyMetadata ? LText(storyMetadata.title) : "..." }
+				{ assertDBData(storyMetadata) ? LText(storyMetadata.title) : "..." }
 			</h3>
 			: <></>
 		}
 		<h1 class={ BuildClass("font-ibm", storyType === "Sub3" ? "mb-1" : "mb-4") }>
-			{ storyMetadata
+			{ assertDBData(storyMetadata)
 				? storyType === "Sub2"
 					? <Locale plain k={ type } />
 					: storyType === "Sub3"
@@ -499,10 +512,13 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 				onVoice={ voice => setVoicePreview(voice) }
 			/> }
 
-			{ tab === "transcription" && storyData && <>
+			{ tab === "transcription" && assertDBData(storyData) && <>
 				{ storyData.map((d, i) => {
 					const speaker = Speaker(d);
 					const activates = Activates(d);
+					const activateFaces = activates
+						.map(s => ImageToFace(s.image))
+						.filter(s => s) as Array<ReturnType<typeof ImageToFace> & {}>;
 
 					return <div
 						class={ BuildClass(
@@ -525,11 +541,8 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 						} }
 					>
 						<div class="row">
-							{ activates.length > 0 && <div class="col-auto">
-								{ activates.map(s => <UnitFace
-									{ ...ImageToFace(s.image) }
-									size="3rem"
-								/>) }
+							{ activateFaces.length > 0 && <div class="col-auto">
+								{ activateFaces.map(s => <UnitFace { ...s } size="3rem" />) }
 							</div> }
 
 							<div class="col">

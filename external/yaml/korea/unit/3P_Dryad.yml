@@ -6974,6 +6974,11 @@ skills:
             base: 29
             per: 0
             chance: 1
+    desc:
+      KR: 지정 범위에 <dmg elem="physics" />를 주고, 2라운드 동안 대상들의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시키며 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec>를 증가시킵니다.
+      EN: to the designated area <dmg elem="physics" /> damage and 2 rounds target of <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> decreases and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="2" r /></sec> increases.
+      JP: 指定範囲に<dmg elem="physics" />を与え、、 2ラウンドの間 対象たちの <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を 減少させ、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="2" r /></sec>を増加させます。
+      TC: 指定範圍於 造成<dmg elem="physics" />，並 2回合內 目標們的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> 使其減少，並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="2" r /></sec>使其增加。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -12384,6 +12389,19 @@ skills:
             base: 29
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        단일 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        치명타 시 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가하며, 스킬 사용 시 탈진하여 자신의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="2" r /></sec>가 크게 감소합니다.
+      EN: |-
+        single to the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        On critical hit <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases and When using the skill escape formation by doing own <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="2" r /></sec> greatly decreases.
+      JP: |-
+        ドアンイル 敵に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        クリティカル時 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が 増加し、 スキル使用時 トアルジインして 自身の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="2" r /></sec>が クウく 減少します。
+      TC: |-
+        全部nil 敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        暴擊時 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec> 增加，並 使用技能時 Tal至n並 自身的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="2" r /></sec> 大 減少。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -12552,6 +12570,11 @@ skills:
             base: 0.2
             per: 0.02
             chance: 0
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec>가 증가하며, <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장 공격력 <val idx="2" r /></sec>가 증가합니다.
+      EN: <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="1" r /></sec> increases and <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> anti Heavy Attack <val idx="2" r /></sec> increases.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec>が 増加し、 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> ドエ 重装 攻撃力 <val idx="2" r /></sec>が増加します。
+      TC: <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="1" r /></sec> 增加，並 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對 重裝 攻擊力 <val idx="2" r /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -12983,6 +13006,19 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중<val idx="0" r /></sec>  / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+        스쿼드에 <char uid="3P_ScissorsLise" />, <char uid="3P_Daphne" />가 있으면 효과가 추가로 증가하여, 최대 3회까지 중첩됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increases.
+        squad <char uid="3P_ScissorsLise" />, <char uid="3P_Daphne" /> if present effect and additionally increase Yeo, up to 3times up to stack.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
+        スクワッドに <char uid="3P_ScissorsLise" />、 <char uid="3P_Daphne" />が ある場合 効果が 追加で 増加して、 最大 3回まで 重複されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
+        小隊於 <char uid="3P_ScissorsLise" />， <char uid="3P_Daphne" /> 若有 效果 額外 增加並， 最大 3次至 疊加。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -13172,6 +13208,11 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec>와 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장 피해량 <val idx="1" r /></sec>를 증가시키고 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" r /></sec>가 증가합니다.
+      EN: <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> and <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> anti Heavy damage <val idx="1" r /></sec> increases and own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="2" r /></sec> increases.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec>と <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> ドエ 重装 ダメージ量 <val idx="1" r /></sec>を 増加時クイし 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="2" r /></sec>が増加します。
+      TC: <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec>與 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對 重裝 傷害量 <val idx="1" r /></sec> 增加時台並 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="2" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -13269,8 +13310,7 @@ dialogue:
         만들어지고 바로 마시는 게 제일 좋아요.
         그러니까… 주인님… 만들어진 걸
         바로 마시는 게 맛있지 않을까요?
-      Oath: 오늘의 축제가 끝나도, 내일의 수확이 시작돼도, 저는 언제나 주인님의 잔을 먼저 채울 거예요. 넘실대는 거품처럼… 기쁨이 차올라도
-        흔들리지 않도록… 그러니까 주인님도 저의 잔을 가득 채워주시겠어요?
+      Oath: 오늘의 축제가 끝나도, 내일의 수확이 시작돼도, 저는 언제나 주인님의 잔을 먼저 채울 거예요. 넘실대는 거품처럼… 기쁨이 차올라도 흔들리지 않도록… 그러니까 주인님도 저의 잔을 가득 채워주시겠어요?
       OathIdle_01: |-
         저도 주인님의 맥주를
         시음해 봐도 괜찮을까요?
@@ -13325,8 +13365,7 @@ dialogue:
       SPIdle_02_01: |-
         네 주인님… 제 몸과 마음은 모두 주인님의
         것이니… 주인님 마음대로 해 주세요….
-      Oath: 앗… 이건 주인님이 아끼시던 물건 아닌가요? 이런 걸 제가 받아도 될까요? 역시 안 되겠죠? 네? …된다고요? 아아... 제가 가동을
-        시작한 이후 처음으로 제 마음의 밭에 풍년이 들었어요!
+      Oath: 앗… 이건 주인님이 아끼시던 물건 아닌가요? 이런 걸 제가 받아도 될까요? 역시 안 되겠죠? 네? …된다고요? 아아... 제가 가동을 시작한 이후 처음으로 제 마음의 밭에 풍년이 들었어요!
       OathIdle_01: |-
         주인님과 함께라면, 전 아무것도 두렵지
         않아요.
@@ -13413,9 +13452,8 @@ dialogue:
         (미번역)저는 이렇게 꾀병을 부려서라도 주인님의 관심과 애정을 받고 싶었어요. 이런 나쁜 아이인
         저에게… 주인님. 제 열병은… 주인님만 치료해주실 수 있어요. 앞으로도 계속… 저를 사랑해주세요.
       OathIdle_01: (미번역)주인님의 사랑이 없다면 진짜로 아플지도 몰라요.
-      MVP: >-
+      MVP: |-
         指…輪？おい、司令官？これを私に渡したらどうなるのかわかってるのか？ふっ…まぁいい、私も司令官のようなスタイルは嫌いではないからな。
-
         言っておくが、万が一、私の前で情けない姿を見せようものなら、相応の覚悟をしておくように…。私のキツイ蹴りで、少々痛い目に遭うこともありうるからな？
     "2":
       SquadJoin: ""
@@ -13531,12 +13569,10 @@ dialogue:
       Idle_03_01: |-
         W-wait a minute. I’m sweating… Wait…! It’s smaller than I thought.
         Come closer…
-      Idle_04_01: I’m sorry. Actually, I’m not ill… N-no. I am, I am really ill…
-        Master, will you give me an injection?
+      Idle_04_01: I’m sorry. Actually, I’m not ill… N-no. I am, I am really ill… Master, will you give me an injection?
       SPIdle_02_01: Ah… I’m so happy… I want to be yours…
-      Oath: >-
+      Oath: |-
         I wanted to get attention and love by pretending to be sick. I’m such
-
         a bad girl… master. Only you can treat my disease… Please keep giving me love.
       OathIdle_01: I might really fall ill if you don’t love me.
       MVP: ""
@@ -13618,9 +13654,7 @@ dialogue:
       SPIdle_02_01: |-
         Yes, Master… My body and my mind…
         They’re all yours. Do as you wish.
-      Oath: Oh… Isn’t this something you cherished? Can I really take it? I guess not,
-        right? Huh? I can? Oh… I finally feel happy for the first time ever
-        since I’ve been operating!
+      Oath: Oh… Isn’t this something you cherished? Can I really take it? I guess not, right? Huh? I can? Oh… I finally feel happy for the first time ever since I’ve been operating!
       OathIdle_01: |-
         With you, I’m not afraid of
         anything.
@@ -13833,20 +13867,13 @@ skins:
   sid: null
   artist: SIMA
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -13861,25 +13888,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_3P_Dryad_N
   skins:
     - sid: 1
       artist: BUMCHa
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -13901,24 +13926,26 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_3P_Dryad_NS1
     - sid: 2
       artist: WOW
       price: 192
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -13935,5 +13962,6 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_3P_Dryad_NS2_Dam
         consumableKey: Skin_3P_Dryad_2

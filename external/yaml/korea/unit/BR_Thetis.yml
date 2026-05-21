@@ -3723,6 +3723,31 @@ skills:
             base: 34
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        기관총을 난사해 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        적중 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>을(를) 감소시키며, 2라운드 동안 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec>를 낮춥니다.
+        <sec typ="note">H.P.E : 보조</sec> 활성화 시, 각 감소 효과가 2배로 적용됩니다.
+        <sec typ="note">H.P.E : 무장</sec> 활성화 상태로 치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="8" r /></sec>가 증가하며 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 최소화 효과를 해제</sec>합니다.
+        <sec>해당 스킬은 -30%의 적중 보정이 적용됩니다.</sec>
+      EN: |-
+        machine gun fires rapidly to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        Hit target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec> decreases and 2 rounds <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="1" r /></sec>reduces.
+        <sec typ="note">H.P.E: support</sec> activation when, each decrease the effect is doubled is applied.
+        <sec typ="note">H.P.E: armament</sec> active stateas On critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="8" r /></sec> increases and <sec typ="buff"><buff typ="REMOVE_BUFF" /> Damage Minimization removes the effect</sec>.
+        <sec>the skill -30% of accuracy correction is applied.</sec>
+      JP: |-
+        機関銃を 乱射して 指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        命中対象の <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>を 減少させ、、 2ラウンドの間 <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec>を低下させます。
+        <sec typ="note">H.P.E：補助</sec> 有効化 時、 各 減少 効果が2倍で 適用されます。
+        <sec typ="note">H.P.E：武装</sec> 有効状態で クリティカル時、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="8" r /></sec>が 増加し、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> ダメージ最小化 効果を 解除</sec>します。
+        <sec>該当 スキルは -30%の 命中補正が適用されます。</sec>
+      TC: |-
+        機槍 掃射 指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        命中目標的 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec> 使其減少，並 2回合內 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec>降低。
+        <sec typ="note">H.P.E：輔助</sec> 啟用 時， 各 減少 效果變為2倍以 套用。
+        <sec typ="note">H.P.E：武裝</sec> 啟用狀態以 暴擊時， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="8" r /></sec> 增加，並 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 傷害最小化 效果 解除</sec>。
+        <sec>該 技能 -30%的 套用命中補正。</sec>
   "2":
     key: "2"
     icon: Missile
@@ -7345,6 +7370,27 @@ skills:
             base: 7
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 대상에게 미사일과 연막탄을 발사해 <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec> 증가 / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="2" r /></sec> 감소 상태로 만듭니다.
+        각 효과는 중첩 가능합니다.
+        <sec typ="cond">H.P.E : 보조</sec> 활성화 시, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 감소</sec> 효과가 2배로 적용되며 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 적중 강화 효과를 해제</sec>합니다.
+        <sec typ="cond">H.P.E : 무장</sec> 활성화 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="8" r /></sec>가 증가합니다.
+      EN: |-
+        designated to the target missile and smoke shell fires <dmg elem="physics" /> damage and 2 rounds <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increase / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="2" r /></sec> decrease inflicts.
+        each effect stack ability.
+        <sec typ="cond">H.P.E: support</sec> activation when, <sec typ="buff"><buff typ="VULNERABLE" /> damage taken increase</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy decrease</sec> the effect is doubled is applied and <sec typ="buff"><buff typ="REMOVE_BUFF" /> Accuracy removes buffs</sec>.
+        <sec typ="cond">H.P.E: armament</sec> active state if <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="8" r /></sec> increases.
+      JP: |-
+        指定対象に ミサイルと 煙幕弾を 発射して<dmg elem="physics" />を与え、、 2ラウンドの間 <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec> 増加 / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec> 減少 状態にします。
+        各 効果は 重複 可能します。
+        <sec typ="cond">H.P.E：補助</sec> 有効化 時、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ 増加</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 減少</sec> 効果が2倍で 適用され、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 命中 強化効果を 解除</sec>します。
+        <sec typ="cond">H.P.E：武装</sec> 有効状態なら <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="8" r /></sec>が増加します。
+      TC: |-
+        指定目標給 飛彈與 煙幕彈 發射 造成<dmg elem="physics" />，並 2回合內 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec> 增加 / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec> 減少 使其進入狀態。
+        各 效果 疊加 可能。
+        <sec typ="cond">H.P.E：輔助</sec> 啟用 時， <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 增加</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 減少</sec> 效果變為2倍以 套用，並 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 命中 強化效果 解除</sec>。
+        <sec typ="cond">H.P.E：武裝</sec> 啟用狀態若 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="8" r /></sec>增加。
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -7794,6 +7840,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="note">H.P.E : 보조</sec> 활성 상태인 경우, 효과가 2배로 증가합니다.
+        대상이 <char uid="BR_Sirene" />인 경우, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>합니다.
+        전투 종료 후 <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec>이 활성화됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="3" r /></sec> increases.
+        <sec typ="note">H.P.E: support</sec> active if in the state, the effect is doubled increases.
+        target <char uid="BR_Sirene" /> if, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports the attack</sec>.
+        battle end after <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> is activated.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が増加します。
+        <sec typ="note">H.P.E：補助</sec> ハワル宣 状態の場合、 効果が2倍で 増加します。
+        対象が <char uid="BR_Sirene" />の場合、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃を 支援</sec>します。
+        戦闘 ジオンルヨ 後 <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec>が 有効化されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>增加。
+        <sec typ="note">H.P.E：輔助</sec> 啟用 若為狀態， 效果變為2倍以 增加。
+        目標 <char uid="BR_Sirene" />若為， <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻擊 支援</sec>。
+        戰鬥 結束 後 <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 啟用。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -8199,6 +8266,23 @@ skills:
             base: 0.24
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec>가 증가합니다.
+        <equip uid="Sub_ArmorPierce" /> / <equip uid="Sub_Bombard" /> / <equip uid="Sub_HornOfBADK" /> 장착 시, <sec typ="note">H.P.E : 무장</sec>이 활성화되며 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="6" r /></sec>가 증가합니다.
+        <equip uid="Sub_SpyDrone" /> / <equip uid="Sub_FortuneOrb" /> / <equip uid="Sub_Interceptor" /> 장착 시, <sec typ="note">H.P.E : 보조</sec>가 활성화되며 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="7" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> increases.
+        <equip uid="Sub_ArmorPierce" /> / <equip uid="Sub_Bombard" /> / <equip uid="Sub_HornOfBADK" /> when equipped, <sec typ="note">H.P.E: armament</sec> activation becomes and <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="6" r /></sec> increases.
+        <equip uid="Sub_SpyDrone" /> / <equip uid="Sub_FortuneOrb" /> / <equip uid="Sub_Interceptor" /> when equipped, <sec typ="note">H.P.E: support</sec> activation becomes and <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="7" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec>が増加します。
+        <equip uid="Sub_ArmorPierce" /> / <equip uid="Sub_Bombard" /> / <equip uid="Sub_HornOfBADK" /> ジアンチアク 時、 <sec typ="note">H.P.E：武装</sec>が 有効化になり、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="6" r /></sec>が増加します。
+        <equip uid="Sub_SpyDrone" /> / <equip uid="Sub_FortuneOrb" /> / <equip uid="Sub_Interceptor" /> ジアンチアク 時、 <sec typ="note">H.P.E：補助</sec>が 有効化になり、 <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec>增加。
+        <equip uid="Sub_ArmorPierce" /> / <equip uid="Sub_Bombard" /> / <equip uid="Sub_HornOfBADK" /> 裝備 時， <sec typ="note">H.P.E：武裝</sec> 啟用變為，且 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="6" r /></sec>增加。
+        <equip uid="Sub_SpyDrone" /> / <equip uid="Sub_FortuneOrb" /> / <equip uid="Sub_Interceptor" /> 裝備 時， <sec typ="note">H.P.E：輔助</sec> 啟用變為，且 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec>增加。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -8762,6 +8846,23 @@ skills:
             base: 0.05
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        자신이 <sec typ="cond"><buff typ="SCOUTING" /> 정찰</sec> 활성화 상태로 <sec typ="cond">전투 개시 시</sec>, 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">H.P.E : 보조</sec>면 아군 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="5" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="6" r inv /></sec> 감소, <sec typ="note">H.P.E : 무장</sec>이면 아군에게 <sec typ="buff"><buff typ="ATK_UP" /> 자신의 공격력의 <val idx="7" r signless />만큼 공격력 증가</sec>가 적용됩니다.
+        <sec typ="note"><char uid="BR_Nereid" /> : 대공 포메이션!</sec><sec typ="note"><char uid="BR_Sirene" /> : 포격 지휘</sec><sec typ="note"><char uid="BR_Undine" /> : 오만과 분노</sec> 효과를 받는 대상들은 각 효과마다 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        self <sec typ="cond"><buff typ="SCOUTING" /> Scouting</sec> active stateas <sec typ="cond">At battle start</sec>, allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="note">H.P.E: support</sec> if allies <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="5" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="6" r inv /></sec> decrease, <sec typ="note">H.P.E: armament</sec> if to allies <sec typ="buff"><buff typ="ATK_UP" /> own Attack of <val idx="7" r signless /> by Attack increase</sec> is applied.
+        <sec typ="note"><char uid="BR_Nereid" />: anti-air formation!</sec><sec typ="note"><char uid="BR_Sirene" />: Artillery Command</sec><sec typ="note"><char uid="BR_Undine" />: Pride and Rage</sec> effect and receives target each effect andeach <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="4" r /></sec> increases.
+      JP: |-
+        自身が <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 有効状態で 戦闘開始時、 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="note">H.P.E：補助</sec>なら 味方 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="5" r /></sec> 増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="6" r inv /></sec> 減少、 <sec typ="note">H.P.E：武装</sec>なら 味方に <sec typ="buff"><buff typ="ATK_UP" /> 自身の 攻撃力の <val idx="7" r signless />分 攻撃力 増加</sec>が 適用されます。
+        <sec typ="note"><char uid="BR_Nereid" />：対空フォーメーション！</sec><sec typ="note"><char uid="BR_Sirene" />：砲撃指揮</sec><sec typ="note"><char uid="BR_Undine" />：傲慢と怒り</sec> 効果を 受ける 対象たちは 各 効果ごとに <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="4" r /></sec>が増加します。
+      TC: |-
+        自身 <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 啟用狀態以 戰鬥開始時， 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="note">H.P.E：輔助</sec>若 我方 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="5" r /></sec> 增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="6" r inv /></sec> 減少， <sec typ="note">H.P.E：武裝</sec>若 我方給 <sec typ="buff"><buff typ="ATK_UP" /> 自身的 攻擊力的 <val idx="7" r signless />等量 攻擊力 增加</sec> 套用。
+        <sec typ="note"><char uid="BR_Nereid" />：防空陣型！</sec><sec typ="note"><char uid="BR_Sirene" />：砲擊指揮</sec><sec typ="note"><char uid="BR_Undine" />：傲慢與憤怒</sec> 效果 受到 目標們 各 效果每 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="4" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -9093,9 +9194,8 @@ dialogue:
       Idle_03_01: ひひっ、司令く～ん。今日は何して遊んであげましょ――痛っ！くぅ～、もぉ～！私は子供じゃありません。げんこつとかやめてください！
       Idle_04_01: へぇ～。司令くんはこういうのがお好きなんですか？くふふ、とてもお上品なご趣味ですね。え？…はい？あ、そ、そういうことは…ちょっと今はあ、あれなので、またの機会に…
       SPIdle_02_01: 司令くんにそんな勇気があるなんて――あれ…？ちょ、ちょっと待ってください。す、少し近すぎるんじゃ、あ…ス、ストップぅ
-      Oath: >-
+      Oath: |-
         あはは。ついに私の魅力にハマっちゃったんですか～？ふ～ん…どうしようかー
-
         うっ、ちょ、ちょっと待ってくださいっ！あ…、うぅ…、そんな何度も…す、好きって言わないでください…！た、ただでさえ司令くんにそんなこと言われると、私…うぅ…わ、私も好きです…
       OathIdle_01: ひん…もうふざけたりしません…許して…って言うと思いましたぁ？悔しいですか？べぇ～…ですよ、司令くん♥
       MVP: ""
@@ -9190,10 +9290,8 @@ dialogue:
       SPIdle_02_01: |-
         Y-you’re too serious right now. I was kidding…
         I was kidding…
-      Oath: >-
-        Ahaha. Isn’t this too dangerous? Still, you and I alone… Ha! … A-all
-        right! … I won’t talk about boring stories like that for today.
-
+      Oath: |-
+        Ahaha. Isn’t this too dangerous? Still, you and I alone… Ha! … A-all right! … I won’t talk about boring stories like that for today.
         So, commander… you should only adore me, okay?
       OathIdle_01: |-
         Talking about the pledge?
@@ -9235,14 +9333,10 @@ dialogue:
       SPIdle_01_01: |-
         Aarg! W-wait!
         You have to… order first.
-      Idle_02_01: >-
-        *Giggles* You can’t take your eyes off of me… You can- N-no? I’m not
-        embarrassed at all.
-
+      Idle_02_01: |-
+        *Giggles* You can’t take your eyes off of me… You can- N-no? I’m not embarrassed at all.
         And I’m not blushing! Look who’s talking.
-
         You’re the one who’s… Who’s… Ugh…
-
          I-I’m going to help out the kitchen.
       Idle_03_01: |-
         Yeah, yeah, americano again.
@@ -9260,12 +9354,9 @@ dialogue:
         S-secret menu? Hmmm… You’d better think again.
         It’s super expensive- Oh?! … If you hold me tight,
         and give me a kiss, I’ll think about it.​
-      Oath: >-
-        This is… Ma-master… I’m so happy. From this day forward, I’ll be a maid
-        just for you
-
+      Oath: |-
+        This is… Ma-master… I’m so happy. From this day forward, I’ll be a maid just for you
         who really like. … Did you really expect me to say that? Kyahaha, I would never— wh-why do you look so touched?!
-
         This… This was just for fun… Bu-but I was partially serious. Um… The part where it says, "who I really like" behind… "I’ll be a maid just for you."​
       OathIdle_01: |-
         Master, welcome. Thetis can’t live without you…
@@ -9329,12 +9420,9 @@ dialogue:
         to- Huh? H-hold on.
         I-it’s too close…
         Oh, ah… S-stop…
-      Oath: >-
-        Hahaha. Finally, you've fallen in love with my charms. Hmmㅡ… What should
-        I doㅡ J-just a sec.
-
+      Oath: |-
+        Hahaha. Finally, you've fallen in love with my charms. Hmmㅡ… What should I doㅡ J-just a sec.
         Hey. S-stop saying that you l-like me…! If y-you keep saying that
-
         then I… Ugh…… I-I like you, too…
       OathIdle_01: |-
         *Whines*… I’ll behave from now on…
@@ -9368,10 +9456,8 @@ dialogue:
         You confessed first, so I won, didn’t I?
         … Huh? I-I don’t like you that much.
         It’s just that you like… me… Actually, I really really like you…​
-      Idle_01_03: >-
-        You want me to say what’s written here? Umm… Commander, you’re a fool,
-        coward, and pervert♥
-
+      Idle_01_03: |-
+        You want me to say what’s written here? Umm… Commander, you’re a fool, coward, and pervert♥
         Do you really like these things…?​
       SPIdle_01_01: |-
         *Giggles* You’re head over heels in love with me.
@@ -9618,20 +9704,15 @@ skins:
   sid: null
   artist: Sol
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+    G:
+      - _
   anim:
     - false
     - false
@@ -9646,25 +9727,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_Thetis_N
   skins:
     - sid: 1
       artist: BUMCHa
       price: 182
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 30
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - true
         - false
@@ -9681,23 +9758,21 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
     - sid: 2
       artist: Sol
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+        G:
+          - _
+          - D
       anim:
         - false
         - false
@@ -9722,6 +9797,7 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_Thetis_NS2
         2dmodel_dam: 2DModel_BR_Thetis_NS2_Dam
         consumableKey: Skin_BR_Thetis_2

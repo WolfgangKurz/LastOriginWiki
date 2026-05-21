@@ -1,5 +1,4 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { ACTOR_BODY_TYPE, ACTOR_GRADE, ROLE_TYPE } from "@/types/Enums";
@@ -62,7 +61,7 @@ const Horizontal: FunctionalComponent<UnitCardProps> = (props) => {
 			}
 
 			{ !props.noLink
-				? <Link class="stretched-link unit-stretched" href={ `/units/${props.unit.uid}` } />
+				? <a class="stretched-link unit-stretched" href={ `/units/${props.unit.uid}` } />
 				: <></>
 			}
 		</div>
@@ -139,7 +138,7 @@ const UnitCard: FunctionalComponent<UnitCardProps> & {
 				</div>
 			</h4>
 			{ !props.noLink
-				? <Link class="stretched-link unit-stretched" href={ `/units/${unit.uid}` } />
+				? <a class="stretched-link unit-stretched" href={ `/units/${unit.uid}` } />
 				: <></>
 			}
 		</div>

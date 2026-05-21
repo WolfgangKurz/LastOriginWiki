@@ -1565,6 +1565,23 @@ skills:
             base: -0.05
             per: -0.05
             chance: 1
+    desc:
+      KR: |-
+        운명을 관통하는 카드를 날려 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec> 2라운드 동안 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec>를 감소시킵니다.
+        <sec typ="cond">치명타 시</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>을(를) 감소시킵니다.
+      EN: |-
+        fate Gwantong do Kadeu kicks away <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec> 2 rounds, target's <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="0" r /></sec> decreases.
+        <sec typ="cond">On critical hit</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec> decreases.
+      JP: |-
+        ウン名を グワントオンする カードを ンアルルヨ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec> 2ラウンドの間 対象の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec>を減少させます。
+        <sec typ="cond">クリティカル時</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>を減少させます。
+      TC: |-
+        運名 Gwantong 卡片 Na害怕 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec> 2回合內 目標的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec>使其減少。
+        <sec typ="cond">暴擊時</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec>使其減少。
   "2":
     key: "2"
     icon: SelfSpdBuff
@@ -1735,8 +1752,8 @@ skills:
                   desc:
                     desc: Effect_PECS_LaylaCloudy_N_21_2
                     type: 1
-                    value: "0.100000"
-                    level: "0.100000"
+                    value: "0.010000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -1744,8 +1761,8 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 10%
-                      per: 10%
+                      base: 1%
+                      per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1890,10 +1907,10 @@ skills:
             desc:
               desc: Effect_PECS_LaylaCloudy_N_21_2
               type: 1
-              value: "0.100000"
-              level: "0.100000"
-            base: 0.1
-            per: 0.1
+              value: "0.010000"
+              level: "0.010000"
+            base: 0.01
+            per: 0.01
             chance: 1
           - icon: BuffIcon_SKILL_UP
             desc:
@@ -1913,6 +1930,55 @@ skills:
             base: 0.01
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        운명의 문장을 소환하여 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>을(를) 증가시키고 모든 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        2라운드 동안 아군 타입에 따라 추가 효과를 부여합니다.
+        <box t="기동형">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> 및 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec> 증가
+        </box>
+        <box t="경장형">
+        <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="7" r /></sec> 증가
+        </box>
+        <box t="중장형">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" r inv /></sec> 감소
+        </box>
+      EN: |-
+        fate of Mun chapter summons all allies of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec> increases and all <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec>.
+        2 rounds allies type depending on additional grants the effect.
+        <box t="Mobile-type">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> and <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> increase
+        </box>
+        <box t="Light-type">
+        <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="7" r /></sec> increase
+        </box>
+        <box t="Heavy-type">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="8" r inv /></sec> decrease
+        </box>
+      JP: |-
+        ウン名の ムウンジアンを スオハワンして 味方全体の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>を 増加時クイし すべての <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>します。
+        2ラウンドの間 味方 トアイプに応じて 追加 効果を付与します。
+        <box t="機動型">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> および <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec> 増加
+        </box>
+        <box t="軽装型">
+        <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="7" r /></sec> 増加
+        </box>
+        <box t="重装型">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="8" r inv /></sec> 減少
+        </box>
+      TC: |-
+        運名的 無njang 召喚並 全體我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec> 增加時台並 所有 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>。
+        2回合內 我方 類型依 額外 賦予效果。
+        <box t="機動型">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> 以及 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec> 增加
+        </box>
+        <box t="輕裝型">
+        <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="7" r /></sec> 增加
+        </box>
+        <box t="重裝型">
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="8" r inv /></sec> 減少
+        </box>
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -1983,8 +2049,8 @@ skills:
                   desc:
                     desc: Effect_PECS_LaylaCloudy_N_3_2
                     type: 1
-                    value: "0.100000"
-                    level: "0.100000"
+                    value: "0.010000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -1992,8 +2058,8 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 10%
-                      per: 10%
+                      base: 1%
+                      per: 1%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
@@ -2188,10 +2254,10 @@ skills:
             desc:
               desc: Effect_PECS_LaylaCloudy_N_3_2
               type: 1
-              value: "0.100000"
-              level: "0.100000"
-            base: 0.1
-            per: 0.1
+              value: "0.010000"
+              level: "0.010000"
+            base: 0.01
+            per: 0.01
             chance: 1
           - icon: BuffIcon_ARMORED_DMG_UP
             desc:
@@ -2247,6 +2313,55 @@ skills:
             base: 0.01
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 아군 전체의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> 아군 타입에 따라 대 타입 피해량을 증가시킵니다.
+        <box t="기동형">
+        <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="5" r /></sec> 증가
+        </box>
+        <box t="경장형">
+        <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 기동형 피해량 <val idx="6" r /></sec> 증가
+        </box>
+        <box t="중장형">
+        <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="7" r /></sec> 증가
+        </box>
+      EN: |-
+        <sec typ="cond">At round start</sec> all allies of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> and <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec> allies type depending on Anti-Type damage increases.
+        <box t="Mobile-type">
+        <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy damage <val idx="5" r /></sec> increase
+        </box>
+        <box t="Light-type">
+        <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> Anti-Mobile damage <val idx="6" r /></sec> increase
+        </box>
+        <box t="Heavy-type">
+        <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light damage <val idx="7" r /></sec> increase
+        </box>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 味方全体の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>と <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec> 味方 トアイプに応じて 対タイプダメージを増加させます。
+        <box t="機動型">
+        <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="5" r /></sec> 増加
+        </box>
+        <box t="軽装型">
+        <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 対機動型ダメージ <val idx="6" r /></sec> 増加
+        </box>
+        <box t="重装型">
+        <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ <val idx="7" r /></sec> 増加
+        </box>
+      TC: |-
+        <sec typ="cond">回合開始時</sec> 全體我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>與 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec> 我方 類型依 對類型傷害使其增加。
+        <box t="機動型">
+        <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害 <val idx="5" r /></sec> 增加
+        </box>
+        <box t="輕裝型">
+        <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 對機動型傷害 <val idx="6" r /></sec> 增加
+        </box>
+        <box t="重裝型">
+        <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害 <val idx="7" r /></sec> 增加
+        </box>
   "4":
     key: "4"
     icon: P.TeamDefDeBuff
@@ -2581,6 +2696,55 @@ skills:
             base: -0.01
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 적군 전체의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> 적군 타입에 따라 대 타입 피해량을 감소시킵니다.
+        <box t="기동형">
+        <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> 대 중장형 피해량 <val idx="5" r /></sec> 감소
+        </box>
+        <box t="경장형">
+        <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> 대 기동형 피해량 <val idx="6" r /></sec> 감소
+        </box>
+        <box t="중장형">
+        <sec typ="buff"><buff typ="TROOPER_DMG_DOWN" /> 대 경장형 피해량 <val idx="7" r /></sec> 감소
+        </box>
+      EN: |-
+        <sec typ="cond">At round start</sec> all enemies of <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> decreases.
+        <sec typ="cond">At round start</sec> enemies type depending on Anti-Type damagedecreases.
+        <box t="Mobile-type">
+        <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> Anti-Heavy damage <val idx="5" r /></sec> decrease
+        </box>
+        <box t="Light-type">
+        <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> Anti-Mobile damage <val idx="6" r /></sec> decrease
+        </box>
+        <box t="Heavy-type">
+        <sec typ="buff"><buff typ="TROOPER_DMG_DOWN" /> Anti-Light damage <val idx="7" r /></sec> decrease
+        </box>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 敵全体の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec>と <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">ラウンド開始時</sec> 敵軍 トアイプに応じて 対タイプダメージを減少させます。
+        <box t="機動型">
+        <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> 対重装型ダメージ <val idx="5" r /></sec> 減少
+        </box>
+        <box t="軽装型">
+        <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> 対機動型ダメージ <val idx="6" r /></sec> 減少
+        </box>
+        <box t="重装型">
+        <sec typ="buff"><buff typ="TROOPER_DMG_DOWN" /> 対軽装型ダメージ <val idx="7" r /></sec> 減少
+        </box>
+      TC: |-
+        <sec typ="cond">回合開始時</sec> 全體敵方的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec>與 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec>使其減少。
+        <sec typ="cond">回合開始時</sec> 敵方 類型依 對類型傷害使其減少。
+        <box t="機動型">
+        <sec typ="buff"><buff typ="ARMORED_DMG_DOWN" /> 對重裝型傷害 <val idx="5" r /></sec> 減少
+        </box>
+        <box t="輕裝型">
+        <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> 對機動型傷害 <val idx="6" r /></sec> 減少
+        </box>
+        <box t="重裝型">
+        <sec typ="buff"><buff typ="TROOPER_DMG_DOWN" /> 對輕裝型傷害 <val idx="7" r /></sec> 減少
+        </box>
   "5":
     key: "5"
     icon: P.Beam
@@ -2922,6 +3086,23 @@ skills:
             base: 0.02
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>와 <sec typ="buff">AP <val idx="1" r /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">홀수 라운드인 경우</sec> 적군 전체의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec> 증가 및 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="6" r inv /></sec>가 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">짝수 라운드인 경우</sec> 아군 전체의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="7" r inv /></sec> 감소 및 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="8" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec> own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> and <sec typ="buff">AP <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">odd roundif</sec> all enemies of <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec> increase and <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="6" r inv /></sec> decreases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">even roundif</sec> all allies of <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="7" r inv /></sec> decrease and <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="8" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>と <sec typ="buff">AP <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">奇数 ラウンドの場合</sec> 敵全体の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="5" r /></sec> 増加 および <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="6" r inv /></sec>が減少します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">偶数 ラウンドの場合</sec> 味方全体の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="7" r inv /></sec> 減少 および <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="8" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec> 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>與 <sec typ="buff">AP <val idx="1" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">奇數 回合若為</sec> 全體敵方的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="5" r /></sec> 增加 以及 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="6" r inv /></sec>減少。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">偶數 回合若為</sec> 全體我方的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="7" r inv /></sec> 減少 以及 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="8" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -2992,8 +3173,7 @@ dialogue:
         지금은 별빛이 무대를 비추고 있잖아요?
         우리의 사랑을 저들이 증명해 줄 거랍니다.
         어서 제 몸을 무대삼아… 춤 춰주시겠어요?
-      Oath: 달은 무대를 깔고 별들은 조명을 비추니, 저는 발끝으로 궤도를 그리며 나아갈 길을 선보이죠. 혹여 달과 별이 사라져도 길을 잃지
-        않도록ㅡ 사랑이라는 서약의 매듭을 이 반지에 묶을게요. 사령관, 제 무대의 첫걸음과 마지막 걸음은 언제나 당신 뒤를 따를 거예요.
+      Oath: 달은 무대를 깔고 별들은 조명을 비추니, 저는 발끝으로 궤도를 그리며 나아갈 길을 선보이죠. 혹여 달과 별이 사라져도 길을 잃지 않도록ㅡ 사랑이라는 서약의 매듭을 이 반지에 묶을게요. 사령관, 제 무대의 첫걸음과 마지막 걸음은 언제나 당신 뒤를 따를 거예요.
       OathIdle_01: |-
         조금 더 가까이… 호흡에 맞춰 부드럽게.
         좋아요, 이젠 제법 잘 추시는군요.
@@ -3059,9 +3239,7 @@ dialogue:
         점성술사라고 해서
         모든 걸 아는 건 아닙니다.
         그러니까… 조금… 부끄럽네요…
-      Oath: 사령관, 카드들이 말하길 제 운명의 북극성은 이미 정해졌대요. 무대의 막이 수없이 바뀌어도, 별을 쫓는 여정의 길에서 방향을
-        잃더라도, 제가 돌아갈 자리는 당신 곁이라고. 예언은 바뀔 수 있어요. 하지만 제가 택한 상징은 변하지 않겠죠. 별과 달이 서로를
-        비추듯, 저도 당신의 밤과 낮을 비출게요. 이것이 제 서약입니다.
+      Oath: 사령관, 카드들이 말하길 제 운명의 북극성은 이미 정해졌대요. 무대의 막이 수없이 바뀌어도, 별을 쫓는 여정의 길에서 방향을 잃더라도, 제가 돌아갈 자리는 당신 곁이라고. 예언은 바뀔 수 있어요. 하지만 제가 택한 상징은 변하지 않겠죠. 별과 달이 서로를 비추듯, 저도 당신의 밤과 낮을 비출게요. 이것이 제 서약입니다.
       OathIdle_01: |-
         이, 이것도 운명이라면 받아들여야겠죠.
         저, 절대로 부끄러워서
@@ -3380,20 +3558,21 @@ skins:
   sid: null
   artist: Bong7
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
+      - P
+      - SP
+    G:
+      - _
+      - S
+      - P
+      - SP
   anim:
     - false
     - false
@@ -3408,25 +3587,25 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_LaylaCloudy_N
   skins:
     - sid: 1
       artist: Bong7
-      price: 352
-      G: true
+      price: 192
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - DS
+        G:
+          - _
+          - D
+          - DS
       anim:
         - false
         - false
@@ -3443,5 +3622,5 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 2
-        2dmodel_dam: 2DModel_PECS_LaylaCloudy_NS1_Dam
+        dflags: 0
         consumableKey: Skin_PECS_LaylaCloudy_1

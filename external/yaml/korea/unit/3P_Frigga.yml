@@ -492,6 +492,7 @@ chart:
 cv:
   "1": {}
   "2": {}
+  "3": {}
   "":
     ko: ""
     jp: 吉岡茉祐
@@ -508,6 +509,7 @@ source:
   - - Ev:Ev25:*EV2-3Ex
     - Ev:Ev25:EV2-3Ex
   - - Ev:Ev32:EV2-1EX
+  - - Ev:Ev37:EV1-4EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2250,6 +2252,19 @@ skills:
             base: 0.3
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        목표 지점에 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r signless /></sec> <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond">경장형</sec>인 경우에는 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="3" r /></sec>가 증가하며, <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 상태인 경우 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        Deals <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="0" r signless /></sec> <dmg elem="physics" /> at the target location.
+        If the target is <sec typ="cond">Light type</sec>, <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> anti-Light damage <val idx="3" r /></sec> increases, and if the target has <sec typ="cond"><buff typ="EVADE_DOWN" /> reduced Evasion</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> reduced DEF</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec> increases.
+      JP: |-
+        目標地点に<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r signless /></sec><dmg elem="physics" />を与えます。
+        対象が<sec typ="cond">軽装型</sec>の場合は<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />対軽装型ダメージ量<val idx="3" r /></sec>が増加し、<sec typ="cond"><buff typ="EVADE_DOWN" />回避減少</sec> / <sec typ="cond"><buff typ="DEF_DOWN" />防御力減少</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="4" r /></sec>が増加します。
+      TC: |-
+        對目標地點造成<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透<val idx="0" r signless /></sec><dmg elem="physics" />。
+        若目標為<sec typ="cond">輕裝型</sec>，則<sec typ="dmg"><buff typ="TROOPER_DMG_UP" />對輕裝型傷害量<val idx="3" r /></sec>增加；若處於<sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec> / <sec typ="cond"><buff typ="DEF_DOWN" />防禦力降低</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="4" r /></sec>增加。
   "2":
     key: "2"
     icon: DefCounter
@@ -2567,6 +2582,19 @@ skills:
             base: 0.8
             per: 0.08
             chance: 1
+    desc:
+      KR: |-
+        3라운드 동안 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec>를 증가시키며, 자신은 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 모든 속성 저항 <val idx="4" r /></sec>가 증가합니다.
+        해당 상태에선 <sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless /> 위력으로 반격</sec>합니다.
+      EN: |-
+        For 3 rounds, increases <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="1" r /></sec> of allies within range, and self gains increased <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> all elemental resistance <val idx="4" r /></sec>.
+        While in this state, <sec typ="buff"><buff typ="COUNTER" /> counterattacks with <val idx="7" r signless /> power</sec>.
+      JP: |-
+        3ラウンドの間、範囲内の味方の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r /></sec>を増加させ、自身は<sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" />すべての属性耐性<val idx="4" r /></sec>が増加します。
+        該当状態では<sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless />の威力で反撃</sec>します。
+      TC: |-
+        3回合內，增加範圍內友軍的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r /></sec>，自身的<sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" />所有屬性抗性<val idx="4" r /></sec>增加。
+        在該狀態下，<sec typ="buff"><buff typ="COUNTER" />以<val idx="7" r signless />威力反擊</sec>。
   "3":
     key: "3"
     icon: P.ShieldWall
@@ -2813,6 +2841,11 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: 라운드 개시 시, <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> / <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>가 활성화되고 <sec typ="buff"><buff typ="DEF_Char" /> 범위 내 아군을 지정 보호</sec>합니다.
+      EN: At round start, activates <sec typ="buff"><buff typ="DEF_Line" /> row protection</sec> / <sec typ="buff"><buff typ="DEF_Side" /> column protection</sec> and <sec typ="buff"><buff typ="DEF_Char" /> designated protection for allies within range</sec>.
+      JP: ラウンド開始時、<sec typ="buff"><buff typ="DEF_Line" />行保護</sec> / <sec typ="buff"><buff typ="DEF_Side" />列保護</sec>が有効化され、<sec typ="buff"><buff typ="DEF_Char" />範囲内の味方を指定保護</sec>します。
+      TC: 回合開始時，啟用<sec typ="buff"><buff typ="DEF_Line" />行保護</sec> / <sec typ="buff"><buff typ="DEF_Side" />列保護</sec>，並<sec typ="buff"><buff typ="DEF_Char" />指定保護範圍內友軍</sec>。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -3300,6 +3333,19 @@ skills:
             base: 0.15
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec>가 증가합니다.
+        인접한 아군 수에 비례하여 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="3" r /></sec>가 추가로 증가하며, 인접한 아군 수가 4일 경우 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="7" r /></sec>가 크게 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="0" r /></sec> increases.
+        adjacent allies in proportion to the number of <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="3" r /></sec> additionally increases and number of adjacent allies 4, if <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="7" r /></sec> greatly increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec>が増加します。
+        隣接する 味方 数に比例して <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="3" r /></sec>が 追加で 増加し、 隣接する 味方数が 4の場合 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="7" r /></sec>が 大きく増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec>增加。
+        相鄰的 我方 依數量成比例 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="3" r /></sec> 額外 增加，並 相鄰的 我方數量 4若為 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="7" r /></sec> 大幅增加。
   "5":
     key: "5"
     icon: P.Wait
@@ -3413,6 +3459,11 @@ skills:
             base: -0.1
             per: -0.005
             chance: 1
+    desc:
+      KR: <sec typ="cond">전투 시작 시</sec>, 전체 적의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec>를 영구적으로 감소시킵니다.
+      EN: <sec typ="cond">At battle start</sec>, all enemies' <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="1" r /></sec> permanently decreases.
+      JP: 戦闘開始時、 全体 敵の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="1" r /></sec>を 永久に 減少させます。
+      TC: 戰鬥開始時， 全體 敵人的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="1" r /></sec> 永久 減少。
 dialogue:
   KR:
     "1":
@@ -3535,15 +3586,86 @@ dialogue:
       SPIdle_02_01: |-
         평소엔 믿음직한 주인님도,
         이럴 때면 아이처럼 귀여우세요.
-      Oath: 주인님은 제가 인간이든 아니든 상관없이 저를 사랑해 주시고, 반지를 끼워주시고, 이렇게 꼬옥 안겨서 제게 사랑한다고 말해주시네요.
-        저도 사랑해요 주인님. 오랜 세월이 지나고, 우리의 아이들이 다시 새로운 역사를 만들 때까지, 영원히 주인님만을 사랑할 것을
-        약속드릴게요.
+      Oath: 주인님은 제가 인간이든 아니든 상관없이 저를 사랑해 주시고, 반지를 끼워주시고, 이렇게 꼬옥 안겨서 제게 사랑한다고 말해주시네요. 저도 사랑해요 주인님. 오랜 세월이 지나고, 우리의 아이들이 다시 새로운 역사를 만들 때까지, 영원히 주인님만을 사랑할 것을 약속드릴게요.
       OathIdle_01: |-
         아마 저는 평생 인간이 될 수 없을 거예요.
         쑥과 마늘만 먹는 것도, 동굴에 갇히는 것도
         참을 수 있지만, 주인님을 100일이나 
         볼 수 없는 건 절대 참을 수 없는걸요.
       MVP: 하핫. 아무도 다치지 않았군요? 정말 다행이에요.
+    "3":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        아하하…
+        제가 숙소에서 즐겨 입는 옷이랍니다…
+        이런 모습으로
+        주인님을 뵐 생각은 아니었는데…
+        주책 없게 보진 말아주세요.
+      Idle_01_02: |-
+        옷이 왜 이렇게 지저분하냐고요?
+        그게… 신선한 꿀단지를 보니
+        참기 힘들지 뭐예요.
+        저도 모르게 정신없이 핥아 버렸네요.
+        으음… 정말 많이 질척해졌어요…
+        갈아입고 올까요?
+      Idle_01_03: |-
+        이 옷이 좀 작아 보일 진 몰라도,
+        멸망 전 어머님들이 자주 즐기던
+        스타일이라고 들었어요.
+        아이에게 맘마를 편히 주기 위해서라고…
+        어머나…? 아닌가요?
+      SPIdle_01_01: |-
+        후후… 주인님,
+        꿀 통은 그쪽이 아니요.
+      Idle_02_01: |-
+        허니란 단어는 꿀 말고도…
+        ‘여보’…라는 애칭으로 쓰인다는 점이
+        참 달콤한 것 같아요.
+        여보~ 여보? 여보…♥
+        그렇게 꿀이 뚝뚝 떨어지는 눈으로
+        바라보면 부끄러워요, 주인님.
+      Idle_03_01: |-
+        주인님,
+        이 꿀은 제가 직접 관리한
+        벌집에서 채취했어요.
+        아주 달고 맛있답니다.
+        주인님이 드시기에 가장 좋은 상태예요.
+        농익었고… 달콤하지요… 후후…
+      Idle_04_01: |-
+        주인님,
+        이제는 꿀만으로는
+        제 마음을 다 전하지 못할 것 같아요.
+        …잠시 어리광을 부려 주시겠어요?
+        주인님을 위한 맘마 늘 준비되어 있으니까요…
+      SPIdle_02_01: |-
+        배고프신가요?
+        자~ 맘마 먹을 시간이랍니다?
+        있는 힘껏 빨아보시겠어요?
+      Oath: 달콤하다는 건, 혀로 직접 맛 봐야지만 알 수 있는 감각이라고 생각했어요. 그런데 지금, 주인님의 고백이 제 마음을 달콤하게 만드네요. 사랑하는 주인님… 실례가 되지 않는다면… 허니… 라고 불러도 될까요? 후훗… 허니♥ 앞으로도 평생을, 이 꿀처럼 끈적하고 달콤한 사이로 남도록 해요.
+      OathIdle_01: |-
+        어머, 사령관실에
+        제가 가장 좋아하는 꿀 통이 있었네요~
+        엄마 곰은 질 좋은 꿀로 기력을
+        보충한다고 하던데,
+        제가 숙소로 데려가서…
+        혼자 맛봐도 괜찮을까요?
+      MVP: ""
     "":
       Join: 제 이름은 프리가, 주인님의 방패로써 위험으로부터 지켜드릴게요.
       SquadJoin: 최전방은 제게 맡겨주세요.
@@ -3754,14 +3876,41 @@ dialogue:
       SPIdle_02_01: |-
         [미번역]평소엔 믿음직한 주인님도,
         이럴 때면 아이처럼 귀여우세요.
-      Oath: "[미번역]주인님은 제가 인간이든 아니든 상관없이 저를 사랑해 주시고, 반지를 끼워주시고, 이렇게 꼬옥 안겨서 제게 사랑한다고
-        말해주시네요. 저도 사랑해요 주인님. 오랜 세월이 지나고, 우리의 아이들이 다시 새로운 역사를 만들 때까지, 영원히 주인님만을
-        사랑할 것을 약속드릴게요."
+      Oath: "[미번역]주인님은 제가 인간이든 아니든 상관없이 저를 사랑해 주시고, 반지를 끼워주시고, 이렇게 꼬옥 안겨서 제게 사랑한다고 말해주시네요. 저도 사랑해요 주인님. 오랜 세월이 지나고, 우리의 아이들이 다시 새로운 역사를 만들 때까지, 영원히 주인님만을 사랑할 것을 약속드릴게요."
       OathIdle_01: |-
         [미번역]아마 저는 평생 인간이 될 수 없을 거예요.
         쑥과 마늘만 먹는 것도, 동굴에 갇히는 것도
         참을 수 있지만, 주인님을 100일이나 
         볼 수 없는 건 절대 참을 수 없는걸요.
+      MVP: ""
+    "3":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: 私の名前はフリッガ、ご主人様を危険からお守りする盾となりましょう。
@@ -3874,11 +4023,9 @@ dialogue:
         There's no way I'll dislike it. It's just… I'm rather
         aware… Uhm, Master? If you're alright with it…
         Can you be childish for me?​
-      Oath: >-
+      Oath: |-
         Thank you. For letting me love you… For loving me…
-
         Now that I know my master’s love for me, I want to protect you, care for you, love you.
-
         I realize that they’re not different. So… Be childish for me, master!
       OathIdle_01: |-
         Haha. Hug me, Master.
@@ -3887,6 +4034,35 @@ dialogue:
         Uhm, Master… May I… be childish?​
       MVP: ""
     "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    "3":
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -3934,9 +4110,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         As the shield of Guardian, I’ve protected
-
         Master and the sisters. If something happens to any of you… I’ll go blind by fury.​
       Idle_01_02: |-
         Master… Do you feel uncomfortable?
@@ -3947,11 +4122,9 @@ dialogue:
         and loving someone.
         Maybe I want to be the mom…​
       SPIdle_01_01: Save the childishness for later… Let’s focus on work right now.​​
-      Idle_02_01: >-
+      Idle_02_01: |-
         All the Guardian sisters and Companion sisters
-
         hold me back when I hug them, but Poi… She’s the only one who runs away. I was just so happy
-
         that I hugged her a little bit tight…​
       Idle_03_01: |-
         Oh, are you acting like a child?
@@ -3966,11 +4139,8 @@ dialogue:
         I can’t wait any more.
         I might not be able to control myself.
         So… you’d better be prepared, okay?​
-      Oath: >-
-        Watching you grow up, I was glad, but I also felt sad. I thought you’d
-        leave the nest one day… I thought you were a little child, but you grew
-        up as a grown-up before I knew it. Thank you so much
-
+      Oath: |-
+        Watching you grow up, I was glad, but I also felt sad. I thought you’d leave the nest one day… I thought you were a little child, but you grew up as a grown-up before I knew it. Thank you so much
         for turning out so well, and giving back love to me. I’ll always embrace you by your side, Master.​
       OathIdle_01: |-
         Come on , I-I never dreamed such a day would come.
@@ -3997,14 +4167,11 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         I feel really happy when I’m embracing you like this.
-
         I know I have to refrain myself, but I’m too happy… Master? Master, are you alright?​
-      Idle_01_02: >-
-        I should be looking after you… I really feel happy whenever you touch
-        me.
-
+      Idle_01_02: |-
+        I should be looking after you… I really feel happy whenever you touch me.
         This isn’t bad.​
       Idle_01_03: |-
         I thought I was physically strong… I can’t keep up with you.
@@ -4085,6 +4252,35 @@ dialogue:
         那個，主人…我…可以撒嬌嗎？
       MVP: ""
     "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    "3":
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -4218,20 +4414,17 @@ skins:
   sid: null
   artist: Jam
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
+    G:
+      - _
+      - S
   anim:
     - false
     - false
@@ -4246,25 +4439,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_3P_Frigga_N
   skins:
     - sid: 1
       artist: Jam
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -4287,25 +4478,21 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_3P_Frigga_NS1
         consumableKey: Skin_3P_Frigga_1
     - sid: 2
       artist: U-rix
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - false
         - false
@@ -4322,5 +4509,43 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_3P_Frigga_NS2
         consumableKey: Skin_3P_Frigga_2
+    - sid: 3
+      artist: DiisukeHan
+      price: 192
+      Spine: true
+      SpineDamaged: false
+      parts: 78
+      stage: false
+      subset:
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Costume
+      facelist: []
+      releaseDate: 1770854400000
+      metadata:
+        imageId: 3
+        iconId: 3
+        tbarId: 3
+        voiceId: 3
+        flags: 2
+        dflags: 1
+        2dmodel_dam: 2DModel_3P_Frigga_NS3_Dam
+        consumableKey: Skin_3P_Frigga_3

@@ -512,6 +512,7 @@ source:
   - - Ev:Ev19:EV1-2Ex
   - - Ev:Ev27:EV1-3B
   - - Ev:Ev29:EV1-1Ex
+  - - Ev:Ev36:EV2-7
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -3439,6 +3440,19 @@ skills:
             base: -0.5
             per: -0.025
             chance: 1
+    desc:
+      KR: |-
+        빙결 볼트로 대상에게 <dmg elem="ice" />를 주고, 2라운드 동안 <cmt loc t="FLOOD"><import name="FLOOD" p="6,7,8" /></cmt> / <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="1" r /></sec> 감소 / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec> 증가 효과를 부여합니다.
+        <sec typ="cond">스쿼드 내 <char uid="BR_Bulgasari" />가 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">배터링 램</sec> / <sec typ="note">벙커 버스터</sec> 스킬 협동 공격</sec>을 유도합니다.
+      EN: |-
+        Fires a Freezing Bolt at the target to deal <dmg elem="ice" /> and, for 2 rounds, grants <cmt loc t="FLOOD"><import name="FLOOD" p="6,7,8" /></cmt> / <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="1" r /></sec> decrease / <sec typ="buff"><buff typ="VULNERABLE" /> Damage Taken <val idx="2" r /></sec> increase.
+        <sec typ="cond">If <char uid="BR_Bulgasari" /> is in the squad</sec>, triggers a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> coordinated attack with the <sec typ="note">Battering Ram</sec> / <sec typ="note">Bunker Buster</sec> skill</sec>.
+      JP: |-
+        凍結ボルトで対象に<dmg elem="ice" />を与え、2ラウンドの間<cmt loc t="FLOOD"><import name="FLOOD" p="6,7,8" /></cmt> / <sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="1" r /></sec>減少 / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="2" r /></sec>増加効果を付与します。
+        <sec typ="cond">部隊内に<char uid="BR_Bulgasari" />がいる場合</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">バッタリングラム</sec> / <sec typ="note">バンカーバスター</sec>スキルによる協同攻撃</sec>を誘発します。
+      TC: |-
+        以凍結弩箭對目標造成<dmg elem="ice" />，並在2回合內賦予<cmt loc t="FLOOD"><import name="FLOOD" p="6,7,8" /></cmt> / <sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="1" r /></sec>減少 / <sec typ="buff"><buff typ="VULNERABLE" />受到的傷害 <val idx="2" r /></sec>增加效果。
+        <sec typ="cond">若小隊內有<char uid="BR_Bulgasari" /></sec>，誘發<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">攻城槌</sec> / <sec typ="note">碉堡破壞者</sec>技能協同攻擊</sec>。
   "2":
     key: "2"
     icon: Scan
@@ -5423,6 +5437,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        면밀한 전황 예측을 통해 <sec typ="cond">스킬 사용 시</sec>, 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시키고 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec>를 증가시킵니다.
+        스쿼드 내 보호기 1기 당, 지속 라운드가 1 증가하고 지속 효과가 50% 증폭됩니다.
+        <sec typ="cond"><cmt t="몽구스 팀"><import name="TeamMongus" p="0" /></cmt> 소속 보호기가 있을 경우</sec>, 추가로 아군 전체의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+      EN: |-
+        thorough battle situation prediction through <sec typ="cond">When using the skill</sec>, all allies of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases and 2 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="7" r /></sec> increases.
+        in squad Defender 1 unit per, continuous round 1 increases and continuous effect and increased by 50%.
+        <sec typ="cond"><cmt t="Mongoose Team"><import name="TeamMongus" p="0" /></cmt> affiliated Defender if present</sec>, additionally all allies of <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec>.
+      JP: |-
+        ならムイルした 前ハワン 予測を 通じて <sec typ="cond">スキル使用時</sec>、 味方全体の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を 増加時クイし 2ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec>を増加させます。
+        スクワッド 内 保護機 1機 ごと、 持続 ラウンドが 1 増加し、 持続 効果が 50%増幅されます。
+        <sec typ="cond"><cmt t="マングースチーム"><import name="TeamMongus" p="0" /></cmt> 所属 保護機が 存在する場合</sec>、 追加で 味方全体の <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>します。
+      TC: |-
+        若未l 戰況 預測 透過 <sec typ="cond">使用技能時</sec>， 全體我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 增加時台並 2回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="7" r /></sec>使其增加。
+        小隊 內 保護機 1台 每， 持續 回合 1 增加，並 持續 效果 增幅50%。
+        <sec typ="cond"><cmt t="貓鼬小隊"><import name="TeamMongus" p="0" /></cmt> 所屬 保護機 存在時</sec>， 額外 全體我方的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>。
   "3":
     key: "3"
     icon: P.Command
@@ -5850,6 +5881,23 @@ skills:
             base: -0.05
             per: -0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군 전체의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 적 전체의 <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="7" r /></sec>를 감소시킵니다.
+        상기 효과의 대상이 <sec typ="cond">자신을 제외한 <cmt t="몽구스 팀"><import name="TeamMongus" p="0" /></cmt> 소속 전투원의 스킬 효과를 받고 있을 경우</sec>, 효과가 두 배로 증폭됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, all allies of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, all enemies of <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="7" r /></sec> decreases.
+        above effect and of target <sec typ="cond">self excluding <cmt t="Mongoose Team"><import name="TeamMongus" p="0" /></cmt> affiliated combatant of skill effect and receiving if present</sec>, the effect is doubled amplification.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 味方全体の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、 敵全体の <sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec>を減少させます。
+        上記 効果の 対象が <sec typ="cond">自身を ジエ外した <cmt t="マングースチーム"><import name="TeamMongus" p="0" /></cmt> 所属 戦闘員の スキル 効果を 受けて 存在する場合</sec>、 効果が2倍で 増幅されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 全體我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec>， 全體敵人的 <sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="7" r /></sec>使其減少。
+        上述 效果的 目標 <sec typ="cond">自身 解除外 <cmt t="貓鼬小隊"><import name="TeamMongus" p="0" /></cmt> 所屬 戰鬥員的 技能 效果 受到 存在時</sec>， 效果變為2倍以 增幅。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -6571,6 +6619,27 @@ skills:
             base: 1
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 보호기에게 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec> 감소 / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> 증가 효과를 부여합니다.
+        상기 효과의 대상이 <sec typ="cond"><cmt t="몽구스 팀"><import name="TeamMongus" p="0" /></cmt> 소속 보호기인 경우</sec>, 효과가 50% 증폭됩니다.
+        <sec typ="cond">전투 개시 시</sec>, 범위 내 아군 보호기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>을(를) 증가시킵니다.
+        <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range allies Defenderto <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decrease / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> increase grants the effect.
+        above effect and of target <sec typ="cond"><cmt t="Mongoose Team"><import name="TeamMongus" p="0" /></cmt> affiliated Defenderif</sec>, effect and increased by 50%.
+        <sec typ="cond">At battle start</sec>, within range allies Defender of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> increases.
+        <sec>At skill level 10, range increases.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方 保護機に <sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec> 減少 / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec> 増加 効果を付与します。
+        上記 効果の 対象が <sec typ="cond"><cmt t="マングースチーム"><import name="TeamMongus" p="0" /></cmt> 所属 保護機の場合</sec>、 効果が 50%増幅されます。
+        <sec typ="cond">戦闘開始時</sec>、 範囲内 味方 保護機の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>を増加させます。
+        <sec>スキルレベル10で 範囲が増加します。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方 保護機給 <sec typ="buff"><buff typ="DEF_Line" /> 列保護</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="0" r inv /></sec> 減少 / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec> 增加 賦予效果。
+        上述 效果的 目標 <sec typ="cond"><cmt t="貓鼬小隊"><import name="TeamMongus" p="0" /></cmt> 所屬 保護機若為</sec>， 效果 增幅50%。
+        <sec typ="cond">戰鬥開始時</sec>， 範圍內 我方 保護機的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>使其增加。
+        <sec>技能等級10時 範圍增加。</sec>
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -7170,6 +7239,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 경장형 공격기 / 지원기의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec>를 증가시킵니다.
+        <cmt t="몽구스 팀"><import name="TeamMongus" p="0" /></cmt> 소속 전투원은 역할군 조건을 무시하고 적용되며, 추가로 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="9" /></sec>이(가) 증가합니다.
+        <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range allies Light-type Attacker / Supporter of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="3" r /></sec> increases.
+        <cmt t="Mongoose Team"><import name="TeamMongus" p="0" /></cmt> affiliated combatant role condition ignoreand is applied and, additionally <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="9" /></sec> increases.
+        <sec>At skill level 10, range increases.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方 軽装型 攻撃機 / 支援機の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec>を増加させます。
+        <cmt t="マングースチーム"><import name="TeamMongus" p="0" /></cmt> 所属 戦闘員は 役割条件を 無視し、 適用され、、 追加で <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="9" /></sec>が増加します。
+        <sec>スキルレベル10で 範囲が増加します。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方 輕裝型 攻擊機 / 支援機的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec>使其增加。
+        <cmt t="貓鼬小隊"><import name="TeamMongus" p="0" /></cmt> 所屬 戰鬥員 職能條件 無視並 套用，並 額外 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="9" /></sec>增加。
+        <sec>技能等級10時 範圍增加。</sec>
 dialogue:
   KR:
     "1":
@@ -7337,9 +7423,7 @@ dialogue:
         이걸 어쩌나… 나도 마찬가진데.
         기다려~ 씻고 올게.
         아니다... 같이 씻을까?
-      Oath: 기습당하는 건 별로 안 좋아하는데… 하지만 당신이 먼저 고백하는 거라면… 표정 관리가 안 되네. 고백은 당신이 먼저 했지만, 내가 더
-        좋아하는 거 알지? 후후, 여기까지 와서 누가 더 좋아하는 걸 따져서 뭐해? 그것보다는… 애는 몇 명 원해? 4명? 나는 그
-        이상도 좋고. 후후후.
+      Oath: 기습당하는 건 별로 안 좋아하는데… 하지만 당신이 먼저 고백하는 거라면… 표정 관리가 안 되네. 고백은 당신이 먼저 했지만, 내가 더 좋아하는 거 알지? 후후, 여기까지 와서 누가 더 좋아하는 걸 따져서 뭐해? 그것보다는… 애는 몇 명 원해? 4명? 나는 그 이상도 좋고. 후후후.
       OathIdle_01: |-
         여보~. 이렇게 불러주니까 좋아? 후후.
         하지만 이런 말도 오래는 못 들을 거야. 
@@ -7397,9 +7481,7 @@ dialogue:
         후후, 침대에서는 어떻게 노래하는지
         알고 싶으신가요?
         ……여, 역시 이런 말은 부끄럽네요.
-      Oath: 저는 단순히 제가 아니라 바이오로이드, 지휘관, 친구, 가족이죠. 누군가는 타인이 지옥이라고 말했지만… 저에게는 타인은 천국이에요.
-        타인 덕분에 행복해지니까요. 그리고 지금… 사랑하는 당신께서 저를 사랑하는 여자로 봐주시기에 그 어떤 때보다 행복해요. 이 순간을
-        영원히 노래할게요.
+      Oath: 저는 단순히 제가 아니라 바이오로이드, 지휘관, 친구, 가족이죠. 누군가는 타인이 지옥이라고 말했지만… 저에게는 타인은 천국이에요. 타인 덕분에 행복해지니까요. 그리고 지금… 사랑하는 당신께서 저를 사랑하는 여자로 봐주시기에 그 어떤 때보다 행복해요. 이 순간을 영원히 노래할게요.
       OathIdle_01: |-
         당신과 만난 덕분에 새롭게 늘어난 역할들은
         모두 저를 행복하게 하네요.
@@ -7684,9 +7766,7 @@ dialogue:
         [미번역]후후, 침대에서는 어떻게 노래하는지
         알고 싶으신가요?
         ……여, 역시 이런 말은 부끄럽네요.
-      Oath: "[미번역]저는 단순히 제가 아니라 바이오로이드, 지휘관, 친구, 가족이죠. 누군가는 타인이 지옥이라고 말했지만… 저에게는 타인은
-        천국이에요. 타인 덕분에 행복해지니까요. 그리고 지금… 사랑하는 당신께서 저를 사랑하는 여자로 봐주시기에 그 어떤 때보다
-        행복해요. 이 순간을 영원히 노래할게요."
+      Oath: "[미번역]저는 단순히 제가 아니라 바이오로이드, 지휘관, 친구, 가족이죠. 누군가는 타인이 지옥이라고 말했지만… 저에게는 타인은 천국이에요. 타인 덕분에 행복해지니까요. 그리고 지금… 사랑하는 당신께서 저를 사랑하는 여자로 봐주시기에 그 어떤 때보다 행복해요. 이 순간을 영원히 노래할게요."
       OathIdle_01: |-
         [미번역]당신과 만난 덕분에 새롭게 늘어난 역할들은
         모두 저를 행복하게 하네요.
@@ -7815,12 +7895,9 @@ dialogue:
         Now I don’t know.
         … No. Here. I can’t…
         wait any more.
-      Oath: >-
-        I said my feelings depend on my outfit, right? To think that I’m making
-        vows with you in this outfit
-
+      Oath: |-
+        I said my feelings depend on my outfit, right? To think that I’m making vows with you in this outfit
         at a beautiful Deck… I might not be able to work for you properly
-
         from now on. Since… I will keep being reminded of today.
       OathIdle_01: |-
         *Chuckles* Wearing this reminds me of that day.
@@ -7860,27 +7937,20 @@ dialogue:
         I think I know what you like better.
         But if there’s anything you’d like to eat,
         you just tell me.​
-      Idle_03_01: >-
+      Idle_03_01: |-
         But you have to hurry.
-
         Sometimes I feel lonely, waiting for you… I’m sorry. I shouldn’t have said that.
       Idle_04_01: |-
         I’ll clean up the dishes. You can take a shower.
         And… I’m putting the children to bed early.
         Don’t go to sleep yet. Okay, HONEY?
-      SPIdle_02_01: >-
-        Hoo hoo, you were so quick to eat… And you’re not even giving me time to
-        clean up?
-
+      SPIdle_02_01: |-
+        Hoo hoo, you were so quick to eat… And you’re not even giving me time to clean up?
         You might be tired, but will you try?
-
         I’ll do my best…
-      Oath: >-
-        It been so long since I came here. Back then, we were a commander and
-        soldier, but now we are—
-
+      Oath: |-
+        It been so long since I came here. Back then, we were a commander and soldier, but now we are—
         A ring…? You wanted to show me your feelings one more time? Haha. I wondered why you asked me to borrow the wedding ring,
-
         but I didn’t expect this at all… I also always love you, darling. Shall we… relive our honeymoon today?
       OathIdle_01: |-
         Time will not change this place.
@@ -7975,8 +8045,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Join: My name is HongRyeon, the operations officer of the Team Mongoose. I hope
-        my team members didn’t bother you.
+      Join: My name is HongRyeon, the operations officer of the Team Mongoose. I hope my team members didn’t bother you.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -8025,12 +8094,9 @@ dialogue:
       SPIdle_02_01: |-
         Ugh… I can’t control my expressions,
         so…
-      Oath: >-
-        Commander. It's working hours. FocusㅡOh… Did you have to say that during
-        work? Sheesh… You're mean.
-
+      Oath: |-
+        Commander. It's working hours. FocusㅡOh… Did you have to say that during work? Sheesh… You're mean.
         I can't help but give in if you give me this… Oh… Since I have to straighten out my clothes
-
         there's not enough time. OK. Just this once. Next time, do this when we get off…
       OathIdle_01: |-
         I’m working- I guess I can’t help it.
@@ -8371,20 +8437,17 @@ skins:
   sid: null
   artist: Taesi
   priceEx: ""
-  G: true
   Spine: true
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - D
+    G:
+      - _
+      - D
   anim:
     - false
     - false
@@ -8399,25 +8462,25 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 2
+    dflags: 1
     2dmodel_dam: 2DModel_BR_HongRyun_N_Dam
   skins:
     - sid: 1
       artist: Taesi
       price: 159
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 70
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+        G:
+          - _
+          - D
+          - S
       anim:
         - true
         - false
@@ -8434,25 +8497,27 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 5
         2dmodel_dam: 2DModel_BR_HongRyun_NS1_Dam
         consumableKey: Skin_BR_HongRyun_1
     - sid: 2
       artist: Taesi
       price: 159
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 100
       stage: false
       subset:
-        - true
-        - true
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - B
+          - DS
+        G:
+          - _
+          - D
+          - B
+          - DS
       anim:
         - false
         - false
@@ -8469,26 +8534,26 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_HongRyun_NS2
         2dmodel_dam: 2DModel_BR_HongRyun_NS2_Dam
         consumableKey: Skin_BR_HongRyun_2
     - sid: 3
       artist: Taesi
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - DS
+        G:
+          - _
+          - D
+          - DS
       anim:
         - false
         - false
@@ -8505,26 +8570,21 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_HongRyun_NS3
         2dmodel_dam: 2DModel_BR_HongRyun_NS3_Dam
         consumableKey: Skin_BR_HongRyun_3
     - sid: 4
       artist: Taesi
       price: 257
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 60
       stage: false
       subset:
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - B
       anim:
         - false
         - false
@@ -8541,5 +8601,6 @@ skins:
         tbarId: 4
         voiceId: 4
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_HongRyun_NS4
         consumableKey: Skin_BR_HongRyun_4

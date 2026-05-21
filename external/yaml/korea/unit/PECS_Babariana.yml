@@ -1901,6 +1901,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="2" r /></sec> 감소 상태로 만듭니다.
+        <sec typ="cond">치명타 시</sec>, 해당 라운드 동안 대상을 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 상태로 만듭니다.
+      EN: |-
+        to the designated area <dmg elem="physics" /> damage and 2 rounds <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="2" r /></sec> decrease inflicts.
+        <sec typ="cond">On critical hit</sec>, each round target <sec typ="buff"><buff typ="SEAL_SKILL" /> skill cannot use</sec> inflicts.
+      JP: |-
+        指定範囲に<dmg elem="physics" />を与え、、 2ラウンドの間 <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="2" r /></sec> 減少 状態にします。
+        <sec typ="cond">クリティカル時</sec>、 該当 ラウンド間 対象を <sec typ="buff"><buff typ="SEAL_SKILL" /> スキル スアヨン 不可</sec> 状態にします。
+      TC: |-
+        指定範圍於 造成<dmg elem="physics" />，並 2回合內 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="2" r /></sec> 減少 使其進入狀態。
+        <sec typ="cond">暴擊時</sec>， 該 回合內 目標 <sec typ="buff"><buff typ="SEAL_SKILL" /> 技能 使用 不可</sec> 使其進入狀態。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -4035,6 +4048,19 @@ skills:
             base: 0.3
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        지정 대상에게 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시키며 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="7" r /></sec>를 증가시킵니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+      EN: |-
+        designated to the target with <dmg elem="physics" /> damage and 2 rounds, target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> decreases and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="7" r /></sec> increases.
+        <sec typ="cond">On critical hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Defense increase</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken decrease removes the effect</sec>.
+      JP: |-
+        指定対象に<dmg elem="physics" />を与え、、 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を 減少させ、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="7" r /></sec>を増加させます。
+        <sec typ="cond">クリティカル時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防御力 増加</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ 減少 効果を 解除</sec>します。
+      TC: |-
+        指定目標給 造成<dmg elem="physics" />，並 2回合內 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> 使其減少，並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="7" r /></sec>使其增加。
+        <sec typ="cond">暴擊時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防禦力 增加</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害 減少 效果 解除</sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4227,6 +4253,19 @@ skills:
             base: 0.1
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec>가 감소하며 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="3" r inv /></sec> decreases and <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="4" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="3" r inv /></sec>が 減少し、 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="4" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="2" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="3" r inv /></sec> 減少，並 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="4" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -4526,6 +4565,23 @@ skills:
             base: 58
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 <sec typ="buff"><buff typ="DEF_Char" /> 공격기 / 지원기를 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /> (중열) / <val idx="5" r /> (후열)</sec>를 증가시킵니다.
+        <sec typ="cond">전투 개시 시</sec>, 범위 내 아군에게 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 방어 관통 감소 면역</sec> 효과를 부여합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range allies <sec typ="buff"><buff typ="DEF_Char" /> Attacker / Supporter Designated Protection</sec>.
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="4" r /> (middle row) / <val idx="5" r /> (back row)</sec> increases.
+        <sec typ="cond">At battle start</sec>, within range to allies <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> Defense Penetration decrease immunity</sec> grants the effect.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方 <sec typ="buff"><buff typ="DEF_Char" /> 攻撃機 / 支援機を 指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="4" r /> (中列) / <val idx="5" r /> (後列)</sec>を増加させます。
+        <sec typ="cond">戦闘開始時</sec>、 範囲内 味方に <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 防御貫通 減少 免疫</sec> 効果を付与します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方 <sec typ="buff"><buff typ="DEF_Char" /> 攻擊機 / 支援機 指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="4" r /> (中排) / <val idx="5" r /> (後排)</sec>使其增加。
+        <sec typ="cond">戰鬥開始時</sec>， 範圍內 我方給 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 防禦穿透 減少 免疫</sec> 賦予效果。
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -5108,6 +5164,23 @@ skills:
             base: 0.8
             per: 0.08
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">물리 공격 피격 시</sec>, 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 스쿼드 내 <sec>아군 공격기 수에 비례</sec>하여 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 스쿼드 내 <sec>아군 지원기 수에 비례</sec>하여 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="8" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">Physical attack When hit</sec>, applied to self <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec> and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec> increases.
+        <sec typ="cond">At round start</sec>, in squad <sec>allies Attacker number to proportional</sec> by doing own <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, in squad <sec>allies Supporter number to proportional</sec> by doing own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="8" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">物理 攻撃 被弾時</sec>、 自身に 適用された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>し、 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 スクワッド 内 <sec>味方 攻撃機 数に 比例</sec>して 自身の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="4" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 スクワッド 内 <sec>味方 支援機 数に 比例</sec>して 自身の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="8" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">物理 攻擊 被擊時</sec>， 自身給 套用已 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>並 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 小隊 內 <sec>我方 攻擊機 數於 成比例</sec>並 自身的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 小隊 內 <sec>我方 支援機 數於 成比例</sec>並 自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="8" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -5339,11 +5412,9 @@ dialogue:
       Idle_03_01: 設定とか必要？ねぇ、そこの可愛い後輩ちゃん、これあげるから先輩と…楽しいことしな～い？
       Idle_04_01: 美味しい？本当？じゃ、アタシも、んんんんん…ふふふ、とっても甘い。え、まさかこれくらいでドキドキしてるわけじゃないわよね？
       SPIdle_02_01: う～ん…すっごく上手いのは認めるわ…。でも…こんなんじゃお互い満足できないってこと、わかってる？
-      Oath: >-
+      Oath: |-
         あはは…誘惑の仕方がちょっとあからさまだったかな…？元々こういう性格だし…仕方ないじゃない？司令官だってまんざらでもないみたいだし…。これをアタシにくれるんでしょ？
-
         じゃあ、目的は半分達成したことだし！あとは残り半分も達成しないとね！どういうことか…わかるでしょ？
-
         もうアタシは司令官のモノなのよ？ほらほら、好きにしてみなさいよ？
       OathIdle_01: うぅっ、腰が……。気軽に司令官を挑発したらダメね…。これからが心配……え？部屋に…行こう…？
       MVP: ""
@@ -5515,13 +5586,9 @@ dialogue:
       SPIdle_02_01: |-
         Umm… It’s great, but
         we both know this isn’t enough.
-      Oath: >-
-        Haha, was it too obvious that I’m trying to seduce you? Well, what can I
-        do? that’s my personality. It also doesn’t seem like the commander
-        doesn’t like it.
-
+      Oath: |-
+        Haha, was it too obvious that I’m trying to seduce you? Well, what can I do? that’s my personality. It also doesn’t seem like the commander doesn’t like it.
         That’s probably why you are giving this to me, right? Good. Now that I’ve reached half of the goal, now it’s time for the remaining half.
-
         You know that, right ? Now I’m yours, commander. So do whatever you’d like.
       OathIdle_01: |-
         Ugh, my back… I shouldn’t
@@ -5550,27 +5617,20 @@ dialogue:
         Huh? My aura changed? …Of course you would feel
         that. Now, tell me, Commander.
         What part of me…“changed?” We’ve got all day.​
-      Idle_01_02: >-
+      Idle_01_02: |-
         Hahaha! Don’t just stand there. Come in.
-
         It’s been a while since we’ve been alone like this. Now, why don’t we have a sincere conversation
-
         about how you’ve become manlier, and how I’ve become more “feminine”…
-
         I would really love to have this session with you.​
       Idle_01_03: |-
         How about a drink? This does have a kick, but to you,
         I’m sure that this is just like drinking water. You won’t get drunk.
         Or perhaps… You need another excuse?​
       SPIdle_01_01: …You are going to stop at the appetizer?​
-      Idle_02_01: >-
-        You don’t look like your usual self. You are strangely pushier than
-        usual.
-
+      Idle_02_01: |-
+        You don’t look like your usual self. You are strangely pushier than usual.
         But I have to say, this is quite refreshing.
-
         There’s actually one thing you can do to please me even more…
-
         You see what I’m getting at?​
       Idle_03_01: |-
         Hmm… This actually tastes better than drinking
@@ -5585,18 +5645,13 @@ dialogue:
         Now, that’s my Commander… The man I chose. But…
         Come on, put more strength into it.
         So… ravage me.​
-      Oath: >-
-        I did hear that push-pull is important, but I did not expect it to be
-        this effective.
-
+      Oath: |-
+        I did hear that push-pull is important, but I did not expect it to be this effective.
         I should’ve done this from the beginning. …Answer? Haha! Yeah, I wasn’t being myself, beating around the bushes.
-
         The answer… will be shown through my actions than words. Shall we go now?
-      OathIdle_01: >-
+      OathIdle_01: |-
         I learned that your attitude is what matters.
-
         It feels a bit too late for that, but what’s important is now and onward.
-
         Don’t you agree? I hope you are as excited as I am for what lies ahead, Commander.​
       MVP: ""
     "":
@@ -5643,10 +5698,8 @@ dialogue:
       SPIdle_02_01: |-
         Awee! How long are you going to
         stay like that? Be a man and come at me.
-      Oath: >-
-        Haha! So, you're playing hard and get? … Alright. Since I lost this
-        time,… do as you like today,
-
+      Oath: |-
+        Haha! So, you're playing hard and get? … Alright. Since I lost this time,… do as you like today,
         Commander. Whatever it is, I'll do as you say.
       OathIdle_01: |-
         I said I’d take anything, but…
@@ -5896,20 +5949,17 @@ skins:
   sid: null
   artist: Taesi
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - D
+    G:
+      - _
+      - D
   anim:
     - false
     - false
@@ -5924,26 +5974,26 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 1
     2dmodel: 2DModel_PECS_Babariana_N
     2dmodel_dam: 2DModel_PECS_Babariana_N_Dam
   skins:
     - sid: 1
       artist: Taesi
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 70
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+        G:
+          - _
+          - D
+          - S
       anim:
         - true
         - false
@@ -5960,25 +6010,25 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 5
         2dmodel_dam: 2DModel_PECS_Babariana_NS1_Dam
         consumableKey: Skin_PECS_Babariana_1
     - sid: 2
       artist: Taesi
       price: 134
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 70
       stage: true
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+        G:
+          - _
+          - D
+          - S
       anim:
         - false
         - false
@@ -5995,5 +6045,6 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_PECS_Babariana_NS2_Dam
         consumableKey: Skin_PECS_Babariana_2

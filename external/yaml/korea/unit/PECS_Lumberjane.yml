@@ -591,6 +591,7 @@ source:
   - - Ev:Ev34:EV1-3EX
   - - Ev:Ev35:EV2-2
   - - Ev:Ev36:EV1-1EX
+  - - Ev:Ev37:EV2-4EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1874,6 +1875,23 @@ skills:
             base: 0.2
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        톱날을 발사하여 목표 지점에 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>  / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">적중 대상이 중장형</sec>인 경우 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      EN: |-
+        Topnal fires target point to <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 3 rounds, target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="1" r /></sec> decreases.
+        <sec typ="cond">Hit target Heavy-type</sec> if <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> damage <val idx="3" r /></sec> increases.
+      JP: |-
+        トオプンアルを 発射して 目標地点に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 3ラウンドの間 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">命中対象が 重装型</sec>の場合 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
+      TC: |-
+        Topnal 發射並 目標地點於 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 3回合內 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="1" r /></sec>使其減少。
+        <sec typ="cond">命中目標為 重裝型</sec>若為 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 傷害量 <val idx="3" r /></sec>增加。
   "2":
     key: "2"
     icon: CannonShot
@@ -3672,6 +3690,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 대상에게 1:1 대화를 시도하여 <dmg elem="physics" />를 줍니다.
+        적중 대상이 <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> / <sec typ="cond"><buff typ="AP_DOWN" /> 행동력 감소</sec> 상태인 경우 각각 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        designated to the target 1:1 conversation when also by doing <dmg elem="physics" />.
+        Hit target <sec typ="cond"><buff typ="DEF_DOWN" /> Defense decrease</sec> / <sec typ="cond"><buff typ="AP_DOWN" /> Action Speed decrease</sec> if in the state respectively <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        指定対象に 1:1 会話を 時もして<dmg elem="physics" />を与えます。
+        命中対象が <sec typ="cond"><buff typ="DEF_DOWN" /> 防御力 減少</sec> / <sec typ="cond"><buff typ="AP_DOWN" /> 行動力 減少</sec> 状態の場合 それぞれ <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+      TC: |-
+        指定目標給 1:1 對話 時也並 造成<dmg elem="physics" />。
+        命中目標為 <sec typ="cond"><buff typ="DEF_DOWN" /> 防禦力 減少</sec> / <sec typ="cond"><buff typ="AP_DOWN" /> 行動力 減少</sec> 若為狀態 各自 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4318,6 +4349,19 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec>가 영구적으로 증가합니다. (최대 4중첩)
+        <sec typ="cond">공격 적중 시</sec>, <sec typ="note">화끈하게 가보자고!</sec> 중첩 수에 비례하여 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="3" r /></sec> permanently increases. (up to 4stack)
+        <sec typ="cond">On hit</sec>, <sec typ="note">flashily let us see!</sec> stack in proportion to the number of own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec>が 永久に 増加します。 (最大 4重複)
+        <sec typ="cond">攻撃命中時</sec>、 <sec typ="note">ハワックウンするよう がブオジアし!</sec> 重複 数に比例して 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec> 永久 增加。 (最大 4疊加)
+        <sec typ="cond">攻擊命中時</sec>， <sec typ="note">火kkeun使 Boja並!</sec> 疊加 依數量成比例 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfDefDeBuff
@@ -4487,6 +4531,23 @@ skills:
             base: 0.01
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 적 전체의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="note">입목등기</sec> 효과는 <sec>효과 저항의 영향을 받지 않지만</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec>로 해제할 수 있습니다.
+        <sec typ="cond"><sec typ="note">입목등기</sec> 중첩이 3 이상인 대상</sec>에게 <sec typ="note">대화 시도</sec> 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, 3 rounds all enemies of <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> increases.
+        <sec typ="note">Tree Registration</sec> effect <sec> is not affected by Effect Resistance although not</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> debuff removal</sec> as can be removed.
+        <sec typ="cond"><sec typ="note">Tree Registration</sec> stack 3 or more is target</sec> to <sec typ="note">Attempt Conversation</sec> when, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 3ラウンドの間 敵全体の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="0" r /></sec>を増加させます。
+        <sec typ="note">イプムオクドウン機</sec> 効果は <sec>効果抵抗の影響を受けない アジイだけ</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果解除</sec>で 解除できます。
+        <sec typ="cond"><sec typ="note">イプムオクドウン機</sec> 重複が 3 以上である 対象</sec>に <sec typ="note">対話試行</sec> 時、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 3回合內 全體敵人的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="0" r /></sec>使其增加。
+        <sec typ="note">入木等台</sec> 效果 <sec>不受效果抗性影響 不至僅</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除負面效果</sec>以 可以解除。
+        <sec typ="cond"><sec typ="note">入木等台</sec> 疊加 3 以上為 目標</sec>給 <sec typ="note">嘗試對話</sec> 時， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -4601,6 +4662,23 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> 증가 일반 효과를 획득합니다.
+        <sec typ="note">화끈하게 가보자고!</sec>의 중첩 누적 속도가 두 배로 증폭되고 최대 중첩 수가 50% 증폭됩니다.
+        <sec typ="note">입목등기</sec> 효과 중, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과 해제</sec>에 필요한 <sec typ="note">입목등기</sec> 중첩이 1 감소하고 <sec typ="attr">일반 효과</sec>로 변경됩니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> increase normal gains the effect.
+        <sec typ="note">flashily let us see!</sec> of stack who enemy speed doubled becomes and up to stack number increased by 50%.
+        <sec typ="note">Tree Registration</sec> effect and during, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec> to needed <sec typ="note">Tree Registration</sec> stack 1 decreases and <sec typ="attr">normal effect</sec> as is changed.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 自身は <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec> 増加 一般 効果を獲得します。
+        <sec typ="note">ハワックウンするよう がブオジアし!</sec>の 重複 ンウ敵 スオクもが 2倍に増幅になり、 最大 重複 数が 50%増幅されます。
+        <sec typ="note">イプムオクドウン機</sec> 効果 中、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果 解除</sec>に プイルヨした <sec typ="note">イプムオクドウン機</sec> 重複が 1 減少し、 <sec typ="attr">一般効果</sec>で 変更されます。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 自身 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec> 增加 一般 獲得效果。
+        <sec typ="note">火kkeun使 Boja並!</sec>的 疊加 Nu敵人 屬也 增幅為2倍變為，且 最大 疊加 數 增幅50%。
+        <sec typ="note">入木等台</sec> 效果 中， <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>於 Pilyo <sec typ="note">入木等台</sec> 疊加 1 減少，並 <sec typ="attr">一般效果</sec>以 變更。
 dialogue:
   KR:
     "1":
@@ -4808,8 +4886,7 @@ dialogue:
       OathIdle_01: |-
         (미번역)우리 남편이 너~무 듬직해서…
         가끔씩 폭 안기고 싶다니까?
-      MVP: …こうならないよう願っていたのに…こんなことをされてはもう私は…この想いを押し殺すことができません。少しだけ、この感情に正直になってもいいのでしょうか…？
-        不安な未来ではなく、幸せな今を生きてもいいのでしょうか…？
+      MVP: …こうならないよう願っていたのに…こんなことをされてはもう私は…この想いを押し殺すことができません。少しだけ、この感情に正直になってもいいのでしょうか…？ 不安な未来ではなく、幸せな今を生きてもいいのでしょうか…？
     "":
       Join: 私が必要？なら、指示をお願いね。
       SquadJoin: ""
@@ -4926,10 +5003,8 @@ dialogue:
         Hold on, let me get this away…
         Are you in such a hurry?
         There, all done. Come here.
-      Oath: >-
-        This is… a ring…! Is this really for me? I'm sorry, Commander. If I had
-        known about this before
-
+      Oath: |-
+        This is… a ring…! Is this really for me? I'm sorry, Commander. If I had known about this before
         , I would've prepared something… huh? You don't need anything? Haa, seriously… You are so charming.
       OathIdle_01: |-
         My Hubby is so reliable…
@@ -4985,11 +5060,8 @@ dialogue:
       SPIdle_02_01: |-
         I think it’s about time we stopped…
         N-no. As much as you want. … Ha ha.
-      Oath: >-
-        You're giving this to me…? Oh. I'll have to work hard on whatever I do
-        from now on. Since now, it's a favor from my dear, not an order from my
-        Commander.
-
+      Oath: |-
+        You're giving this to me…? Oh. I'll have to work hard on whatever I do from now on. Since now, it's a favor from my dear, not an order from my Commander.
         … Uh, Commander. Since it's a special day… how about a glass of wine?
       OathIdle_01: |-
         I’m not drinking with you again…
@@ -5185,20 +5257,13 @@ skins:
   sid: null
   artist: CHoney
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5213,25 +5278,27 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Lumberjane_N
   skins:
     - sid: 1
       artist: CHoney
       price: 91
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -5248,5 +5315,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_PECS_Lumberjane_NS1
         2dmodel_dam: 2DModel_PECS_Lumberjane_NS1_Dam

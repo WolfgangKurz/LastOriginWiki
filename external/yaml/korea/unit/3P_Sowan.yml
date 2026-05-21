@@ -1645,6 +1645,19 @@ skills:
             base: 0.15
             per: 0.0075
             chance: 1
+    desc:
+      KR: |-
+        목표 대상을 손질해 <dmg elem="physics" />를 주고, 3라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 낮춥니다.
+        대상이 <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 상태면 2라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec>가 증가하는 상태로 만듭니다.
+      EN: |-
+        Prepares the target, dealing <dmg elem="physics" /> and decreasing the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF by <val idx="0" r /></sec> for 3 rounds.
+        If the target is under <sec typ="cond"><buff typ="DEF_DOWN" /> DEF Down</sec>, makes them take increased <sec typ="buff"><buff typ="VULNERABLE" /> damage by <val idx="2" r /></sec> for 2 rounds.
+      JP: |-
+        対象を下処理して<dmg elem="physics" />を与え、3ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="0" r /></sec>を低下させます。
+        対象が<sec typ="cond"><buff typ="DEF_DOWN" />防御力低下</sec>状態なら、2ラウンドの間<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="2" r /></sec>が増加する状態にします。
+      TC: |-
+        處理目標對象造成<dmg elem="physics" />，並在3回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="0" r /></sec>。
+        若目標處於<sec typ="cond"><buff typ="DEF_DOWN" />防禦力降低</sec>狀態，2回合內使其進入<sec typ="buff"><buff typ="VULNERABLE" />受到傷害<val idx="2" r /></sec>增加狀態。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -2774,6 +2787,19 @@ skills:
             base: -0.25
             per: -0.0125
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 있는 대상들을 요리해 <dmg elem="physics" />를 주고, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="2" r /></sec>를 낮춥니다.
+        공격 전에 대상이 <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        Cooks targets in the designated area, dealing <dmg elem="physics" /> and decreasing their <sec typ="buff"><buff typ="DEF_DOWN" /> DEF by <val idx="2" r /></sec> for 2 rounds.
+        If a target is under <sec typ="cond"><buff typ="DEF_DOWN" /> DEF Down</sec> before the attack, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage dealt increases by <val idx="0" r /></sec>.
+      JP: |-
+        指定範囲内の対象を調理して<dmg elem="physics" />を与え、2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="2" r /></sec>を低下させます。
+        攻撃前に対象が<sec typ="cond"><buff typ="DEF_DOWN" />防御力低下</sec>状態なら、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+      TC: |-
+        料理指定範圍內的目標並造成<dmg elem="physics" />，2回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="2" r /></sec>。
+        攻擊前若目標處於<sec typ="cond"><buff typ="DEF_DOWN" />防禦力降低</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3367,6 +3393,19 @@ skills:
             base: 0.225
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        공격이 적중하면 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="7" r /></sec>가 증가합니다.
+        라운드 개시 시, 아군 인원 수에 따라 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">On hit</sec>, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical by <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power by <val idx="7" r /></sec> for 2 rounds.
+        At round start, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="8" r /></sec> based on the number of allies.
+      JP: |-
+        攻撃が命中すると、2ラウンドの間<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>が増加します。
+        ラウンド開始時、味方人数に応じて<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="8" r /></sec>が増加します。
+      TC: |-
+        攻擊命中時，2回合內<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>增加。
+        回合開始時，根據我方人數使<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="8" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -3653,6 +3692,19 @@ skills:
             base: 0.05
             per: 0.0025
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신과 주변에 있는 경장형 아군의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>하며 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="3" r /></sec>를 증가시킵니다.
+        <sec typ="note">가학적인 요리사</sec> 활성화 상태면 <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중</sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타</sec> 증가 효과가 2배로 적용됩니다.
+      EN: |-
+        At round start, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports attacks</sec> for herself and nearby Light allies, and increases <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical by <val idx="3" r /></sec>.
+        If <sec typ="note">Sadistic Chef</sec> is active, the <sec typ="buff"><buff typ="ATK_UP" /> ATK</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy</sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical</sec> increase effects are applied at double value.
+      JP: |-
+        ラウンド開始時、自身と周辺の軽装型味方の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃を支援</sec>し、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="3" r /></sec>を増加させます。
+        <sec typ="note">嗜虐的な料理人</sec>が活性化状態なら、<sec typ="buff"><buff typ="ATK_UP" />攻撃力</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中</sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル</sec>増加効果が2倍で適用されます。
+      TC: |-
+        回合開始時，<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援攻擊</sec>自身與周圍輕裝型我方，並使<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="2" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="3" r /></sec>增加。
+        若<sec typ="note">施虐的廚師</sec>處於啟用狀態，<sec typ="buff"><buff typ="ATK_UP" />攻擊力</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中</sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊</sec>增加效果會以兩倍套用。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -3797,6 +3849,23 @@ skills:
             base: 0.16
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        자신과 공격당하는 적의 잔여 HP 비율이 낮을수록 적에게 주는 피해량이 증가합니다.
+        라운드 개시 시, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>를 증가시킵니다.
+        <sec typ="dmg"><buff typ="DamageAmp_Me" /> 내 HP가 낮을수록 피해량 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 적 HP가 낮을수록 피해량 <val idx="1" r /></sec>
+      EN: |-
+        The lower the remaining HP ratio of herself and the attacked enemy, the more damage she deals to the enemy.
+        At round start, increases her <sec typ="buff"><buff typ="AP_UP" /> Action Power by <val idx="2" r /></sec>.
+        <sec typ="dmg"><buff typ="DamageAmp_Me" /> Damage dealt as own HP decreases <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="DamageAmp_Opp" /> Damage dealt as enemy HP decreases <val idx="1" r /></sec>
+      JP: |-
+        自身と攻撃される敵の残りHP比率が低いほど、敵に与えるダメージ量が増加します。
+        ラウンド開始時、自身の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>を増加させます。
+        <sec typ="dmg"><buff typ="DamageAmp_Me" />自身のHPが低いほどダメージ量<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="DamageAmp_Opp" />敵のHPが低いほどダメージ量<val idx="1" r /></sec>
+      TC: |-
+        自身與被攻擊敵人的剩餘HP比例越低，對敵人造成的傷害量越高。
+        回合開始時，自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>增加。
+        <sec typ="dmg"><buff typ="DamageAmp_Me" />自身HP越低傷害量<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="DamageAmp_Opp" />敵人HP越低傷害量<val idx="1" r /></sec>
 dialogue:
   KR:
     "1":
@@ -4322,9 +4391,8 @@ dialogue:
         I should award you for waiting,
         right? Are you
         excited?
-      Oath: >-
+      Oath: |-
         Haha, were you looking at me? If you talk to me this passionately,
-
         I won’t be able to refuse. Even if you were captivated by how I look right now, I’m delighted. Of course I am.
       OathIdle_01: |-
         Seeing the dress you gave me,
@@ -4380,12 +4448,8 @@ dialogue:
         Stop making me…
         antsy…
         I’m already ready…
-      Oath: >-
-        Conspiracy, secret fights… I have now realized those things aren’t
-        necessary to earn your heart… But there are still people who are coming
-        for you… Haha, master. Can you please stop me from having those
-        thoughts?
-
+      Oath: |-
+        Conspiracy, secret fights… I have now realized those things aren’t necessary to earn your heart… But there are still people who are coming for you… Haha, master. Can you please stop me from having those thoughts?
         I will get everything I haven’t been able to get all this time. So don’t worry about me, and do whatever you please…
       OathIdle_01: |-
         I haven’t given up. I just gave way
@@ -4437,11 +4501,8 @@ dialogue:
       SPIdle_02_01: |-
         Hoo hoo, can’t you wait until
         I serve you desert? Then… Take your time and taste me.
-      Oath: >-
-        You took me in when I was a drifter. Not only that, you were kind to my
-        mistakes… You gave me more love than I ever deserve… Master. I only
-        belong to you. Your happiness is my happiness.
-
+      Oath: |-
+        You took me in when I was a drifter. Not only that, you were kind to my mistakes… You gave me more love than I ever deserve… Master. I only belong to you. Your happiness is my happiness.
         Even if you fall out of love for me… I will always love you, master.
       OathIdle_01: |-
         Seeing you eat is enough
@@ -4492,10 +4553,8 @@ dialogue:
       SPIdle_02_01: |-
         I guess my food isn’t the only thing that
         you are interested in.
-      Oath: >-
-        I knew that it would. Eventually, you want more of the pleasure I give
-        to you Master.
-
+      Oath: |-
+        I knew that it would. Eventually, you want more of the pleasure I give to you Master.
         Don't worry. I am ready to give you everlasting pleasure.
       OathIdle_01: |-
         I’m yours, and you’re
@@ -4804,20 +4863,13 @@ skins:
   sid: null
   artist: SIMA
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -4832,25 +4884,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_3P_Sowan_N
   skins:
     - sid: 1
       artist: SIMA
       price: 182
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+        G:
+          - _
+          - D
       anim:
         - true
         - false
@@ -4867,25 +4917,23 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 5
         2dmodel_dam: 2DModel_3P_Sowan_NS1_Dam
         consumableKey: Skin_3P_Sowan_1
     - sid: 2
       artist: SIMA
       price: 182
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 14
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - true
         - false
@@ -4902,24 +4950,19 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 4
+        dflags: 4
         consumableKey: Skin_3P_Sowan_2
     - sid: 3
       artist: Taesi
       price: 159
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 36
       stage: false
       subset:
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - B
       anim:
         - false
         - false
@@ -4936,4 +4979,5 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_3P_Sowan_NS3

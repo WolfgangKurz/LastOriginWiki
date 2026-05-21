@@ -1597,6 +1597,19 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        센서 교란용 가스탄으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="2" r /></sec> 감소 / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec> 증가 상태로 만듭니다.
+        각 효과는 중첩 가능하며, <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+      EN: |-
+        Sen from Gyoran use gas shell as <dmg elem="physics" /> damage and 2 rounds target <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="2" r /></sec> decrease / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec> increase inflicts.
+        each effect stack ability and, <sec>At skill level 10, range increases.</sec>
+      JP: |-
+        スエンして グヨルアンヨン がスウトアンで<dmg elem="physics" />を与え、、 2ラウンドの間 対象を <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="2" r /></sec> 減少 / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="3" r /></sec> 増加 状態にします。
+        各 効果は 重複 可能し、 <sec>スキルレベル10で 範囲が増加します。</sec>
+      TC: |-
+        三n Gyoranyong 三utan以 造成<dmg elem="physics" />，並 2回合內 目標 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="2" r /></sec> 減少 / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="3" r /></sec> 增加 使其進入狀態。
+        各 效果 疊加 可能並， <sec>技能等級10時 範圍增加。</sec>
   "2":
     key: "2"
     icon: AssaultAttack
@@ -3752,6 +3765,23 @@ skills:
             base: 0.25
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        대상에게 돌진해 <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>을(를) 감소시키고 2라운드 동안 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> 상태로 만듭니다.
+        치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" r /></sec>가 증가합니다.
+        스킬 사용 시, 2라운드 동안 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="6" r inv /></sec>가 감소합니다.
+      EN: |-
+        to the target charges <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec> decreases and 2 rounds <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> inflicts.
+        On critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec> increases.
+        When using the skill, 2 rounds self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="6" r inv /></sec> decreases.
+      JP: |-
+        対象に 突撃して<dmg elem="physics" />を与え、、 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>を 減少時クイし 2ラウンドの間 <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec> 状態にします。
+        クリティカル時、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="5" r /></sec>が増加します。
+        スキル使用時、 2ラウンドの間 自身が <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="6" r inv /></sec>が減少します。
+      TC: |-
+        對目標 衝鋒 造成<dmg elem="physics" />，並 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec> 減少時台並 2回合內 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> 使其進入狀態。
+        暴擊時， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="5" r /></sec>增加。
+        使用技能時， 2回合內 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="6" r inv /></sec>減少。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -4011,6 +4041,23 @@ skills:
             base: 0.1
             per: 0.0135
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신과 양 옆에 있는 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신에게 <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec> 증가 효과가 적용됩니다.
+        피격 시, 자신의 <sec typ="buff"><buff typ="DEF_Side" /> 효과 저항 <val idx="4" r /></sec>가 증가하며 최대 3중첩까지 가능합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self and amount beside to exists allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec> increases.
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> / <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" r /></sec> increase the effect is applied.
+        When hit, own <sec typ="buff"><buff typ="DEF_Side" /> Effect Resistance <val idx="4" r /></sec> increases and up to 3stack up to ability.
+      JP: |-
+        戦闘開始時、 自身と ヤン ヨプに ある 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身に <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" r /></sec> 増加 効果が適用されます。
+        被弾時、 自身の <sec typ="buff"><buff typ="DEF_Side" /> 効果抵抗 <val idx="4" r /></sec>が 増加し、 最大 3重複まで 可能します。
+      TC: |-
+        戰鬥開始時， 自身與 Yang Yeop於 有 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 自身給 <sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" r /></sec> 增加 效果套用。
+        被擊時， 自身的 <sec typ="buff"><buff typ="DEF_Side" /> 效果抗性 <val idx="4" r /></sec> 增加，並 最大 3疊加至 可能。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -4172,6 +4219,19 @@ skills:
             base: 0.19
             per: 0.016
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_Char" /> 후열의 공격기 / 지원기를 지정 보호</sec>합니다.
+        자신이 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 상태일 시, 지정 보호 대상들의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력<val idx="2" r /></sec>를 증가시킵니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_Char" /> back row of Attacker / Supporter Designated Protection</sec>.
+        self <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> damage taken decrease</sec> if in the state, Designated Protection target of <sec typ="buff"><buff typ="ATK_UP" /> Attack<val idx="2" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_Char" /> 後列の 攻撃機 / 支援機を 指定保護</sec>します。
+        自身が <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少</sec> 状態イル 時、 指定保護 対象たちの <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力<val idx="2" r /></sec>を増加させます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_Char" /> 後排的 攻擊機 / 支援機 指定保護</sec>。
+        自身 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少</sec> 狀態一 時， 指定保護 目標們的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力<val idx="2" r /></sec>使其增加。
 dialogue:
   KR:
     "1":
@@ -4287,11 +4347,9 @@ dialogue:
         다 같이 온 여름 휴가지만 항상 제 옆에는
         사령관님이 계시잖아요.
       SPIdle_02_01: 아…안돼요 거긴 아…아니… 돼요…
-      Oath: >-
+      Oath: |-
         겁이 많은 제가 보호복을 벗는 것은 무척이나 큰 용기가 필요했어요. 특히 수영복을 입는 건 더 큰 용기가 필요했죠. 
-
         그..그래도 사령관님과 함께 이, 있기 위해 용기를 냈어요. 만약 저 혼자였다면 무서워서 아무 것도 시도해 보지 못했을 거예요.
-
         그치만 사령관님을 위해서라면 뭐든지 할 수 있는 용기가 생겨요. 그러니까 사령관님. 겁쟁이인 제가 많은 걸 경험할 수 있게 앞으로도 제 곁에 같이 있어 주실 거죠?
       OathIdle_01: |-
         사령관님 곁에 있으면 마음이 안정되고
@@ -4354,10 +4412,8 @@ dialogue:
         꺅?! 저, 저기 이건… 충격을
         흡수하기 위해… 으햣?! 배, 배는
         안돼요…!
-      Oath: >-
-        저는 겁쟁이인데다가 다른 아이들을 지켜야해서… 태어나서 한 번도 긴장을 풀어본 적이 없어요. 그런데 오르카에 오고, 사령관님을
-        만나고 나서…
-
+      Oath: |-
+        저는 겁쟁이인데다가 다른 아이들을 지켜야해서… 태어나서 한 번도 긴장을 풀어본 적이 없어요. 그런데 오르카에 오고, 사령관님을 만나고 나서…
         처음으로 보호받는다는 느낌을 받았어요. 우으, 눈물이 날 것 같아… 사령관님, 제 안식처가 되어주셔서 정말로 고마워요.
       OathIdle_01: |-
         사령관님도 들어오실래요?
@@ -4475,8 +4531,7 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: ど…どうされましたか？あ、タイガーですか？タイガーなら部屋にいますよ。暑いところより涼しいところが好きなんです。プールゾーンはどこも暑いですからね。
-      Idle_01_02: みんなが水着を着ていたので私も勇気を出して着てみましたが、暑さは変わりませんね。あ！わ…分かってます。ここは気温が高いって…。
-        あはは…お、おかしいですね。水着の方がさらに暑い気がします。
+      Idle_01_02: みんなが水着を着ていたので私も勇気を出して着てみましたが、暑さは変わりませんね。あ！わ…分かってます。ここは気温が高いって…。 あはは…お、おかしいですね。水着の方がさらに暑い気がします。
       Idle_01_03: ビーチバレーですか？面白いですよ。司令官様も一緒にやってみませんか？2人でもできますし、チームを組んでやっても楽しいですよ。はい？何人でやるのが一番楽しいのか、ですか？おそらく…司令官様と2人きりでやるのが一番楽しいと思います。
       SPIdle_01_01: あう！？急に触られて…びっくりしてしまいました。
       Idle_02_01: 司令官様。…タオルを見かけませんでしたか？汗を拭いた後そのままにしておいたのですが、なくなってしまいまして。はい？司令官様がお使いになったのですか！？あうぅ…すみません。私がちゃんと片付けなかったせいで……ま、まさか匂いを嗅いだりはしていませんよね？
@@ -4632,11 +4687,9 @@ dialogue:
         Tiger's in the room. Tiger prefers
         cold places to hot ones.
         The inside of the water park is rather hot.
-      Idle_01_02: >-
+      Idle_01_02: |-
         I saw that everyone was wearing a swimsuit,
-
         so I mustered the courage to do the same, but it's still hot. Oh! I-I know… I know it's the weather…
-
         Strange that it's hotter when I'm in my swimsuit.
       Idle_01_03: |-
         Beach volleyball? It’s fun. Commander,
@@ -4645,24 +4698,16 @@ dialogue:
         I think… It’d be more fun to play
         one on one with you, Commander.
       SPIdle_01_01: I was shocked that you touched me so suddenly.
-      Idle_02_01: >-
-        Commander. Umm… Have you seen my towel? I hung it up here after I wiped
-        off my sweat.
-
+      Idle_02_01: |-
+        Commander. Umm… Have you seen my towel? I hung it up here after I wiped off my sweat.
         Now it's gone. What?
-
         You used it? Oh… I'm sorry.
-
         I should have looked after it better…
-
         Did you smell it by any chance?
-      Idle_03_01: >-
+      Idle_03_01: |-
         I feel so defenseless right now…
-
         Are we going to be okay? Is that so? If you say there won't be any trouble,
-
         I'm sure you're right.
-
         But I… I'm completely defenseless right now…
       Idle_04_01: |-
         I've spent a lot of time with you,
@@ -4672,12 +4717,9 @@ dialogue:
         It's a vacation for everyone,
         but you're always by my side.
       SPIdle_02_01: N-no… not there… Oh… no…
-      Oath: >-
-        As a timid person, I needed a lot of courage to remove my protective
-        clothing. Even more to wear a swimsuit. 
-
+      Oath: |-
+        As a timid person, I needed a lot of courage to remove my protective clothing. Even more to wear a swimsuit. 
         But… I pushed on in order to be with you… Without you… I wouldn't have had the courage to try anything by myself.
-
         Now, I'm brave enough to do anything for you. So, Commander. You're staying by my side so that I can experience many things, right?
       OathIdle_01: |-
         When I’m beside you I feel safe,
@@ -4739,10 +4781,8 @@ dialogue:
         Oh!! T-this is… to absorb
         the shock… Yikes?! N-not
         the belly…
-      Oath: >-
-        I'm a coward who has to protect the others… So I've never been able to
-        loosen up my whole life. But after boarding the Orca and meeting you…
-
+      Oath: |-
+        I'm a coward who has to protect the others… So I've never been able to loosen up my whole life. But after boarding the Orca and meeting you…
         I felt safe for the first time in my life. Oh. I'm getting all teary… Mr. Commander, thank you for being my haven.
       OathIdle_01: |-
         Will you come in?
@@ -4993,20 +5033,15 @@ skins:
   sid: null
   artist: Sol
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+    G:
+      - _
   anim:
     - false
     - false
@@ -5021,25 +5056,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Saetti_N
   skins:
     - sid: 1
       artist: Sol
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 14
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - true
         - false
@@ -5056,24 +5089,22 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_PECS_Saetti_1
     - sid: 2
       artist: Sol
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 12
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -5090,5 +5121,6 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_PECS_Saetti_NS2
         consumableKey: Skin_PECS_Saetti_2

@@ -593,6 +593,9 @@ source:
   - - Ev:Ev33:EV1-2EX
   - - Ev:Ev35:EV1-6
     - Ev:Ev35:EV2-3EX
+  - - Ev:Ev36:EV2-3EX
+  - - Ev:Ev37:EV2-4EX
+  - - Ev:Ev39:EV1-3EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1049,6 +1052,19 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        2라운드 동안 대상의 회로를 <cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="0,3,1,2" /></cmt> 상태로 만들어 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="0" signless /> 지속 고정 피해</sec>를 주며, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>를 증가시킵니다.
+        <cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="0,3,1,2" /></cmt> 상태인 대상은 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec>가 증가하며 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="2" r /></sec>가 감소합니다.
+      EN: |-
+        2 rounds, target's times as <cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="0,3,1,2" /></cmt> to the state creates <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="0" signless /> fixed damage over time</sec> deals and, <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec> increases.
+        <cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="0,3,1,2" /></cmt> in the state the target <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r /></sec> increases and <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="2" r /></sec> decreases.
+      JP: |-
+        2ラウンドの間 対象の 回でを <cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="0,3,1,2" /></cmt> 状態に だけたちオ <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="0" signless /> 持続固定ダメージ</sec>を 与え、、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="3" r /></sec>を増加させます。
+        <cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="0,3,1,2" /></cmt> 状態の 対象は <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r /></sec>が 増加し、 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec>が減少します。
+      TC: |-
+        2回合內 目標的 次以 <cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="0,3,1,2" /></cmt> 成為狀態 僅們語 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="0" signless /> 持續固定傷害</sec> 造成，並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="3" r /></sec>使其增加。
+        <cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="0,3,1,2" /></cmt> 處於狀態的 目標 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r /></sec> 增加，並 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec>減少。
   "2":
     key: "2"
     icon: MeleeAttack
@@ -4553,6 +4569,19 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        고전적인 방법으로 대상을 해킹해 <dmg elem="physics" />를 주고, <sec typ="chance"><chance idx="0" /> 확률</sec>로 <sec typ="buff"><buff typ="STUN" /> 행동 불능</sec>으로 만듭니다.
+        대상이 <sec typ="cond"><cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="1@0,1@3,1@1,1@2" /></cmt> 상태</sec>면 <sec typ="chance"><chance idx="1" /> 확률</sec>로 <sec typ="buff"><buff typ="STUN" /> 행동 불능</sec>이 됩니다.
+      EN: |-
+        hacks the target the old-fashioned way as target remove King remove <dmg elem="physics" /> damage and <sec typ="chance"><chance idx="0" /> chance</sec> as <sec typ="buff"><buff typ="STUN" /> Stunned</sec> as makes.
+        target <sec typ="cond"><cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="1@0,1@3,1@1,1@2" /></cmt> state</sec> if <sec typ="chance"><chance idx="1" /> chance</sec> as <sec typ="buff"><buff typ="STUN" /> Stunned</sec>.
+      JP: |-
+        し前敵である ブアンブオプで 対象を してクインして<dmg elem="physics" />を与え、、 <sec typ="chance"><chance idx="0" /> 確率</sec>で <sec typ="buff"><buff typ="STUN" /> 行動不能</sec>でします。
+        対象が <sec typ="cond"><cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="1@0,1@3,1@1,1@2" /></cmt> 状態</sec>なら <sec typ="chance"><chance idx="1" /> 確率</sec>で <sec typ="buff"><buff typ="STUN" /> 行動不能</sec>が されます。
+      TC: |-
+        並前敵人為 防beop以 目標 台ng 造成<dmg elem="physics" />，並 <sec typ="chance"><chance idx="0" /> 機率</sec>以 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec>以 使其。
+        目標 <sec typ="cond"><cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="1@0,1@3,1@1,1@2" /></cmt> 狀態</sec>若 <sec typ="chance"><chance idx="1" /> 機率</sec>以 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec>。
   "3":
     key: "3"
     icon: P.EnemyDetect
@@ -4764,6 +4793,19 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">웨이브 종료 시</sec>, 정보를 분석해 다음에 출현할 적의 정보를 입수합니다. <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec>
+        <sec typ="cond"><buff typ="SCOUTING" /> 정찰 활성화 상태로 라운드 개시 시</sec>, 적을 물리적으로 해킹할 의욕에 가득 차, 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="3" r /></sec>와 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At the end of the wave</sec>, analyzes information and obtains info on the next enemies to appear. <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec>
+        <sec typ="cond">At round start while <buff typ="SCOUTING" /> Scouting is active</sec>, filled with the urge to physically hack enemies, own <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="3" r /></sec> and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increase.
+      JP: |-
+        <sec typ="cond">ウェーブ終了時</sec>、情報を分析して次に出現する敵の情報を入手します。<sec typ="buff"><buff typ="SCOUTING" />偵察</sec>
+        <sec typ="cond"><buff typ="SCOUTING" />偵察有効状態でラウンド開始時</sec>、敵を物理的にハッキングしたい意欲に満ち、自身の<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="3" r /></sec>と<sec typ="buff"><buff typ="AP_UP" />AP <val idx="4" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">波次結束時</sec>，分析情報並取得下一波出現敵人的情報。<sec typ="buff"><buff typ="SCOUTING" />偵察</sec>
+        <sec typ="cond">在<b>偵察</b>啟用狀態下回合開始時</sec>，充滿想以物理方式駭入敵人的衝動，自身的<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="3" r /></sec>與<sec typ="buff"><buff typ="AP_UP" />AP <val idx="4" /></sec>增加.
   "4":
     key: "4"
     icon: P.Scan
@@ -5104,6 +5146,27 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">공격 적중 시</sec>, 아군 전체의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="7" r /></sec>를 2라운드 동안 증가시킵니다. (최대 2중첩)
+        <sec typ="note">최후의 해킹</sec> 치명타 시, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 대상의 강화 효과를 해제</sec>하고, 자신은 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 1회</sec> 효과를 획득합니다.
+        공격 대상이 <sec typ="cond"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 증가 상태가 아니거나</sec> <sec typ="cond"><buff typ="DEBUFF_RATEUP" /> 효과 저항 감소 상태인 경우</sec>, 적중 대상에게 2라운드 동안 <sec typ="buff"><buff typ="Disallow" /> 강화 불가 상태</sec>를 부여합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, all allies of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="7" r /></sec> 2 rounds increases. (up to 2stack)
+        <sec typ="note">Final Hacking</sec> On critical hit, <sec typ="buff"><buff typ="REMOVE_BUFF" /> target's removes buffs</sec> and, self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Damage Minimization 1times</sec> gains the effect.
+        attack target <sec typ="cond"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance increase state Ani or</sec> <sec typ="cond"><buff typ="DEBUFF_RATEUP" /> Effect Resistance decrease if in the state</sec>, Accuracy to the target 2 rounds <sec typ="buff"><buff typ="Disallow" /> Cannot be Buffed state</sec> grants.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">攻撃命中時</sec>、 味方全体の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec>を 2ラウンドの間 増加させます。 (最大 2重複)
+        <sec typ="note">チウェ後の してクイン</sec> クリティカル時、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 対象の 強化効果を 解除</sec>し、 自身は <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージ最小化 1回</sec> 効果を獲得します。
+        攻撃 対象が <sec typ="cond"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 増加 状態が アンイまたは</sec> <sec typ="cond"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 減少 状態の場合</sec>、 命中対象に 2ラウンドの間 <sec typ="buff"><buff typ="Disallow" /> 強化不可 状態</sec>を付与します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>增加。
+        <sec typ="cond">攻擊命中時</sec>， 全體我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec> 2回合內 增加。 (最大 2疊加)
+        <sec typ="note">最後的 台ng</sec> 暴擊時， <sec typ="buff"><buff typ="REMOVE_BUFF" /> 目標的 強化效果 解除</sec>並， 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 傷害最小化 1次</sec> 獲得效果。
+        攻擊 目標 <sec typ="cond"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 增加 狀態 內i或</sec> <sec typ="cond"><buff typ="DEBUFF_RATEUP" /> 效果抗性 減少 若為狀態</sec>， 對命中目標 2回合內 <sec typ="buff"><buff typ="Disallow" /> 無法強化 狀態</sec>賦予。
   "5":
     key: "5"
     icon: P.AssaultAttack
@@ -5243,6 +5306,27 @@ skills:
             base: 0.5
             per: 0.05
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시 효과</sec>를 획득합니다.
+        <sec typ="note">회로 과부하</sec>의 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 지속 고정 피해</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 감소</sec> 수치가 2배로 증가하고 대상의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가 효과가 제거</sec>되며, 추가로 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="10" slot="1" r inv /></sec>를 감소시킵니다.
+        <sec typ="note">최후의 해킹</sec>의 <sec typ="buff"><buff typ="STUN" /> 행동 불능</sec> 확률이 <sec typ="chance">항상 100%</sec>로 증가합니다.
+        대상이 <cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="1@0,1@3,1@1,1@2" /></cmt> 상태인 경우, <sec typ="note">최후의 해킹</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="7" slot="2" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection effect and</sec> gains.
+        <sec typ="note">Circuit Overload</sec> of <sec typ="dmg"><buff typ="phyDMG_DOT" /> fixed damage over time</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy decrease</sec> value 2 times as increases and target's <sec typ="buff"><buff typ="ATK_UP" /> Attack increase removes the effect</sec>becomes and, additionally 2 rounds, target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="10" slot="1" r inv /></sec> decreases.
+        <sec typ="note">Final Hacking</sec> of <sec typ="buff"><buff typ="STUN" /> Stunned</sec> chance <sec typ="chance">always 100%</sec> as increases.
+        target <cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="1@0,1@3,1@1,1@2" /></cmt> if in the state, <sec typ="note">Final Hacking</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="7" slot="2" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 自身は <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視 効果</sec>を獲得します。
+        <sec typ="note">回路過負荷</sec>の <sec typ="dmg"><buff typ="phyDMG_DOT" /> 持続固定ダメージ</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 減少</sec> 数値が 2ブエで 増加し、 対象の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 増加 効果が 除去</sec>になり、、 追加で 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="10" slot="1" r inv /></sec>を減少させます。
+        <sec typ="note">チウェ後の してクイン</sec>の <sec typ="buff"><buff typ="STUN" /> 行動不能</sec> 確率が <sec typ="chance">常に 100%</sec>で 増加します。
+        対象が <cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="1@0,1@3,1@1,1@2" /></cmt> 状態の場合、 <sec typ="note">チウェ後の してクイン</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="7" slot="2" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 自身 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護 效果</sec>獲得。
+        <sec typ="note">迴路過載</sec>的 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 持續固定傷害</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 減少</sec> 數值 2倍以 增加，並 目標的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 增加 效果 移除</sec>變為，且 額外 2回合內 目標的 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="10" slot="1" r inv /></sec>使其減少。
+        <sec typ="note">最後的 台ng</sec>的 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 機率 <sec typ="chance">總是 100%</sec>以 增加。
+        目標 <cmt loc t="SCATHY_OVERLOAD"><import name="SCATHY_OVERLOAD" p="1@0,1@3,1@1,1@2" /></cmt> 若為狀態， <sec typ="note">最後的 台ng</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="7" slot="2" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -5352,8 +5436,7 @@ dialogue:
       SPIdle_02_01: |-
         어머나 자기~
         아름다운 근육의 조임이 느껴지나요?
-      Oath: 아름다운 밤, 아름다운 시간. 그리고… 그 무엇보다 아름다운 자기. 제 아름다움을 채워줄 존재는 바로 자기에요. 하아… 안아줘요. 제
-        마음에 입력해줘요. 오늘 밤, 우리 둘이서 가장 정밀하고 완벽한 공식을 만들고 싶어요. 사. 랑. 해… 명령어를 입력해줘요 자기?
+      Oath: 아름다운 밤, 아름다운 시간. 그리고… 그 무엇보다 아름다운 자기. 제 아름다움을 채워줄 존재는 바로 자기에요. 하아… 안아줘요. 제 마음에 입력해줘요. 오늘 밤, 우리 둘이서 가장 정밀하고 완벽한 공식을 만들고 싶어요. 사. 랑. 해… 명령어를 입력해줘요 자기?
       OathIdle_01: |-
         사실… 자기에게 보여주기가 부끄러웠어요.
         혹시라도 자기가 어색해하면…
@@ -5634,10 +5717,8 @@ dialogue:
       SPIdle_02_01: |-
         What? That means you are ready?
         Ha, ha.
-      Oath: >-
-        My answer is…? Ohohoho! Of course! My answer is YES. Now… The playtime
-        is over.
-
+      Oath: |-
+        My answer is…? Ohohoho! Of course! My answer is YES. Now… The playtime is over.
         From now on, I’ll treat you with all my heart… my love…
       OathIdle_01: |-
         A sweet love should have
@@ -5721,9 +5802,8 @@ dialogue:
       SPIdle_02_01: |-
         Alright. What order
         do you want me to issue?
-      Oath: >-
+      Oath: |-
         I don't want to break your heart… But a girl can't give in at once.
-
         Please show me how genuine you are. So that I would be more moved. What? Quickly.
       OathIdle_01: |-
         You won’t neglect me
@@ -5948,20 +6028,15 @@ skins:
   sid: null
   artist: Rorobomb
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 6
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+    G:
+      - _
   anim:
     - true
     - false
@@ -5976,24 +6051,20 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 4
+    dflags: 4
   skins:
     - sid: 1
       artist: Rorobomb
       price: 46
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - false
         - false
@@ -6010,25 +6081,27 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_Scathy_NS1
         consumableKey: Skin_BR_Scathy_1
     - sid: 2
       artist: CHO!CHO!
       price: 182
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -6045,5 +6118,6 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_BR_Scathy_NS2_Dam
         consumableKey: Skin_BR_Scathy_2

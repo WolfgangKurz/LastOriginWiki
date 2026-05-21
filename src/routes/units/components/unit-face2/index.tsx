@@ -5,8 +5,9 @@ import { FACETYPE } from "@/types/Enums";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { FaceTable } from "@/libs/Face";
 
-import style from "./style.module.scss";
 import Locale from "@/components/locale";
+
+import style from "./style.module.scss";
 
 interface UnitFace2Props {
 	class?: string;

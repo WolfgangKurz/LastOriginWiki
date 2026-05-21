@@ -3149,6 +3149,31 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        목표 지점에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 입힙니다.
+        적중 대상들에 4가지 추가 효과 중 1개가 <sec typ="chance">랜덤</sec>으로 발생합니다.
+        <box t="추가 효과">
+        <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> / <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과 해제</sec>
+        </box>
+      EN: |-
+        target point to <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        Hit target to 4 whether additional effect and during 1 units <sec typ="chance">Raendeom</sec> as occurs.
+        <box t="Additional Effect">
+        <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="buff"><buff typ="STUN" /> Stunned</sec> / <sec typ="buff"><buff typ="SEAL_SKILL" /> skill cannot use</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec>
+        </box>
+      JP: |-
+        目標地点に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        命中 対象たちに 4がジイ 追加 効果 中 1個が <sec typ="chance">ルエンドオム</sec>で 発生します。
+        <box t="追加効果">
+        <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="buff"><buff typ="STUN" /> 行動不可</sec> / <sec typ="buff"><buff typ="SEAL_SKILL" /> スキル スアヨン 不可</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果 解除</sec>
+        </box>
+      TC: |-
+        目標地點於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        命中 目標們於 4支 額外 效果 中 1個 <sec typ="chance">時endeom</sec>以 發生。
+        <box t="追加效果">
+        <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> / <sec typ="buff"><buff typ="SEAL_SKILL" /> 技能 使用 不可</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>
+        </box>
   "2":
     key: "2"
     icon: Charm
@@ -3455,6 +3480,39 @@ skills:
             base: 0.06
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        아군을 세뇌하여 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 사용한 스킬을 한번 더 사용</sec>하게 만듭니다.
+        대상의 역할군에 따라 추가 효과를 받습니다.
+        <box t="추가 효과">
+        <sec typ="cond">공격기</sec> : <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec> 증가
+        <sec typ="cond">보호기</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="5" r inv /></sec> 감소
+        <sec typ="cond">지원기</sec> : <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> 증가
+        </box>
+      EN: |-
+        allies three Noe by doing <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> used skill one time more use</sec> makes.
+        target's role group depending on additional effect and receives.
+        <box t="Additional Effect">
+        <sec typ="cond">Attacker</sec>: <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" r /></sec> increase
+        <sec typ="cond">Defender</sec>: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="5" r inv /></sec> decrease
+        <sec typ="cond">Supporter</sec>: <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> increase
+        </box>
+      JP: |-
+        味方を スエンウェして <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> スアヨンした スキルを した回 ドオ スアヨン</sec>するようします。
+        対象の ヨクできるグウンに応じて 追加 効果を 受けます。
+        <box t="追加効果">
+        <sec typ="cond">攻撃機</sec>：<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="4" r /></sec> 増加
+        <sec typ="cond">保護機</sec>：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="5" r inv /></sec> 減少
+        <sec typ="cond">支援機</sec>：<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> 増加
+        </box>
+      TC: |-
+        我方 三noe並 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 使用 技能 次 更多 使用</sec>使 使其。
+        目標的 逆可槍依 額外 效果 受到。
+        <box t="追加效果">
+        <sec typ="cond">攻擊機</sec>：<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" r /></sec> 增加
+        <sec typ="cond">保護機</sec>：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="5" r inv /></sec> 減少
+        <sec typ="cond">支援機</sec>：<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> 增加
+        </box>
   "3":
     key: "3"
     icon: P.Command
@@ -3670,6 +3728,19 @@ skills:
             base: 0.11
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">중파 상태</sec>에서 <sec typ="cond">라운드 시작 시</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec>과 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec> own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">moderate damage state</sec> in <sec typ="cond">round when operation when</sec> <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> and <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="4" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec> 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond">中プア 状態</sec>で <sec typ="cond">ラウンド 時ジアク 時</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec>と <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec> 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        <sec typ="cond">中破 狀態</sec>在 <sec typ="cond">回合 時作 時</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec>與 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>增加。
   "4":
     key: "4"
     icon: P.Charm
@@ -3906,6 +3977,19 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec> 감소합니다.
+        <sec typ="cond">스쿼드 내에 <char uid="3P_Poi" />가 존재할 경우</sec>, <char uid="3P_Poi" />는 적용 효과를 2배로 받습니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="1" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="2" r inv /></sec> decreases.
+        <sec typ="cond">in squad to <char uid="3P_Poi" /> if present</sec>, <char uid="3P_Poi" /> applies effect and 2 times as receives.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="2" r inv /></sec> 減少します。
+        <sec typ="cond">スクワッド 内に <char uid="3P_Poi" />が ジオンジエできる 場合</sec>、 <char uid="3P_Poi" />は 適用 効果を 2ブエで 受けます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="1" r /></sec> 增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="2" r inv /></sec> 減少。
+        <sec typ="cond">小隊 內於 <char uid="3P_Poi" /> 存在可 情況</sec>， <char uid="3P_Poi" /> 套用 效果 2倍以 受到。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -4092,6 +4176,11 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, 아군의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="2" r /></sec>가 증가합니다.
+      EN: <sec typ="cond">At round start</sec>, allies' <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="2" r /></sec> increases.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 味方の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="2" r /></sec>が増加します。
+      TC: <sec typ="cond">回合開始時</sec>， 我方的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="2" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -4160,9 +4249,7 @@ dialogue:
         하앗… 아앗… 나리…?!
         제 등에도 매를 드시다니…
         짓궂기도 하셔라…♥​
-      Oath: 피로는 잘 풀리셨사옵니까? 잠은 잘 주무셨사옵니까? 엇, 오히려… 소녀의 생각이 나서 잠을 이루지 못하셨사옵니까? 그리하여 이리도
-        급히 찾아오셨… 엇… 참으로… 소녀의 인생에서 가장 행복한 날이옵니다! 아아… 오늘 밤 소녀, 나리의 여자가 되고 싶사옵니다…
-        부디 수청을 들 수 있도록 허락해주시옵소서…
+      Oath: 피로는 잘 풀리셨사옵니까? 잠은 잘 주무셨사옵니까? 엇, 오히려… 소녀의 생각이 나서 잠을 이루지 못하셨사옵니까? 그리하여 이리도 급히 찾아오셨… 엇… 참으로… 소녀의 인생에서 가장 행복한 날이옵니다! 아아… 오늘 밤 소녀, 나리의 여자가 되고 싶사옵니다… 부디 수청을 들 수 있도록 허락해주시옵소서…
       OathIdle_01: |-
         나리, 소녀의 목소리와 눈은
         오로지 적에게 술수를 부리기 위한
@@ -4222,9 +4309,7 @@ dialogue:
         후후, 응큼하시긴…♥
         하아…자, 힘을 쭉 빼고…
         자리에 누워 옷부터 벗어주실래요?​
-      Oath: 어떤 말을 해야 할까요? 어떤 말을 해야 할지 모르겠어요. 아니, 세상 그 어떤 소리로도 표현할 수 없어요. 사령관님의 말씀이 제
-        몸을 흠뻑 젖게 해요… 사령관님… 계속 제 귀에 속삭여주세요, 제 몸에 영원히, 사령관님의 진심을 새겨 주세요.​ 영원히
-        사랑해요… 사령관님.
+      Oath: 어떤 말을 해야 할까요? 어떤 말을 해야 할지 모르겠어요. 아니, 세상 그 어떤 소리로도 표현할 수 없어요. 사령관님의 말씀이 제 몸을 흠뻑 젖게 해요… 사령관님… 계속 제 귀에 속삭여주세요, 제 몸에 영원히, 사령관님의 진심을 새겨 주세요.​ 영원히 사랑해요… 사령관님.
       OathIdle_01: |-
         오늘도 테라피를 하고 싶다고요?
         어떤 부분을 풀고 싶은지…
@@ -4530,20 +4615,17 @@ skins:
   sid: null
   artist: REN.
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
+    G:
+      - _
+      - S
   anim:
     - false
     - false
@@ -4558,25 +4640,27 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Melt_N
   skins:
     - sid: 1
       artist: REN.
       price: 182
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -4593,5 +4677,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_PECS_Melt_NS1_Dam
         consumableKey: Skin_PECS_Melt_1

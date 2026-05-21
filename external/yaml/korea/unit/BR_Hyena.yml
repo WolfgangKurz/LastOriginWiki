@@ -8776,6 +8776,23 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        수류탄을 던져 지정 범위에 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 아군 수에 비례하여 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>가 감소하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 대상이 <buff typ="FireDMG_DOT" /> 지속 화염 피해 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="19" r /></sec>가 증가합니다.
+      EN: |-
+        grenade throws to the designated area <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, allies in proportion to the number of 2 rounds, target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> decreases and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increases.
+        <sec typ="cond">Hit target <buff typ="FireDMG_DOT" /> Fire damage over time if in the state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="19" r /></sec> increases.
+      JP: |-
+        手榴弾を ドオンジヨ 指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 味方 数に比例して 2ラウンドの間 対象の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>が 減少し、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">命中対象が <buff typ="FireDMG_DOT" /> 持続火炎ダメージ 状態の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="19" r /></sec>が増加します。
+      TC: |-
+        手榴彈 更多投擲 指定範圍於 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 我方 依數量成比例 2回合內 目標的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> 減少，並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec>增加。
+        <sec typ="cond">命中目標為 <buff typ="FireDMG_DOT" /> 持續火焰傷害 若為狀態</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="19" r /></sec>增加。
   "2":
     key: "2"
     icon: ShotGun
@@ -19265,6 +19282,23 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        샷건으로 단일 대상에게 <dmg elem="physics" />를 입힙니다.
+        <sec typ="cond">적중 시</sec>, 아군 수에 비례하여 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다. (중첩 불가)
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="10" r /></sec>가 증가합니다.
+      EN: |-
+        by shotgun as to a single target <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, allies in proportion to the number of 2 rounds, target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> decreases. (Cannot stack)
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="10" r /></sec> increases.
+      JP: |-
+        ショットガンで 単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 味方 数に比例して 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を減少させます。 (重複不可)
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="10" r /></sec>が増加します。
+      TC: |-
+        霰彈槍以 單一目標給 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 我方 依數量成比例 2回合內 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>使其減少。 (不可疊加)
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="10" r /></sec>增加。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -20059,6 +20093,19 @@ skills:
             base: 0.075
             per: 0.0075
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군 수에 비례하여 아군 전체의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
+        자신의 스킬 효과 중 <sec typ="buff">인원 수에 비례하는 효과</sec>는, 자신 외의 <cmt t="앵거 오브 호드"><import name="AngerOfTheHorde" /></cmt> 소속 전투원이 있을 경우 효과가 50% 증폭됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, allies in proportion to the number of all allies of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> increases.
+        own skill effect and during <sec typ="buff">members number to proportional do effect and</sec>, self other than of <cmt t="Anger of the Horde"><import name="AngerOfTheHorde" /></cmt> affiliated combatant if present effect and increased by 50%.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 味方 数に比例して 味方全体の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>が増加します。
+        自身の スキル 効果 中 <sec typ="buff">であるウォン 数に 比例する 効果</sec>は、 自身 外の <cmt t="アンガー・オブ・ホード"><import name="AngerOfTheHorde" /></cmt> 所属 戦闘員が 存在する場合 効果が 50%増幅されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 我方 依數量成比例 全體我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>增加。
+        自身的 技能 效果 中 <sec typ="buff">為人員 數於 成比例 效果</sec>， 自身 外的 <cmt t="憤怒部落"><import name="AngerOfTheHorde" /></cmt> 所屬 戰鬥員 存在時 效果 增幅50%。
   "4":
     key: "4"
     icon: SetBomb
@@ -29563,6 +29610,27 @@ skills:
             base: 1.05
             per: 0.105
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="0" /></sec>가 증가합니다.
+        <sec>해당 효과는 3회 공격 적중 시 해제됩니다.</sec>
+        <sec typ="cond">공격 적중 시</sec> <sec typ="cond"><sec typ="note">짧은 도화선</sec>에 의한 <buff typ="RANGE_UP" /> 사거리 증가 효과가 없을 경우</sec>, 아군 / 적 수에 비례하여 자신의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 증가</sec> 효과는 적 처치 시까지 유지되며, <sec typ="cond">효과 해제 후</sec> 다시 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 증가</sec> 효과를 획득합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="0" /></sec> increases.
+        <sec>the effect 3times On hit is removed.</sec>
+        <sec typ="cond">On hit</sec> <sec typ="cond"><sec typ="note">Jjalb also Hwa line</sec> to by <buff typ="RANGE_UP" /> Range increase effect and if absent</sec>, allies / own <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="1" r /></sec> increases.
+        <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power increase</sec> effect When killing an enemy up to maintained and, <sec typ="cond">effect removal after</sec> all when <sec typ="buff"><buff typ="RANGE_UP" /> Range increase</sec> gains the effect.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 自身の <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>が増加します。
+        <sec>該当 効果は 3回 攻撃命中時 解除されます。</sec>
+        <sec typ="cond">攻撃命中時</sec> <sec typ="cond"><sec typ="note">ッジアは もハワ宣</sec>に よる <buff typ="RANGE_UP" /> 射程 増加 効果が 存在しない場合</sec>、 味方 / 敵 数に比例して 自身の <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="1" r /></sec>が増加します。
+        <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 増加</sec> 効果は 敵撃破時まで ユジイになり、、 <sec typ="cond">効果解除 後</sec> ドア時 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 増加</sec> 効果を獲得します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 自身的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>增加。
+        <sec>該 效果 3次 攻擊命中時 解除。</sec>
+        <sec typ="cond">攻擊命中時</sec> <sec typ="cond"><sec typ="note">Jjalb 也火seon</sec>於 的 <buff typ="RANGE_UP" /> 射程 增加 效果 不存在時</sec>， 我方 / 敵人 依數量成比例 自身的 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="1" r /></sec>增加。
+        <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 增加</sec> 效果 擊殺敵人時至 維持變為，且 <sec typ="cond">效果解除 後</sec> 全部時 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 增加</sec> 獲得效果。
   "5":
     key: "5"
     icon: P.SuicideBomb
@@ -30286,6 +30354,31 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 아군 수에 비례하여 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond"><sec typ="note">죽여주는 수류탄</sec> 적중 시</sec>, 2라운드 동안 기폭제를 추가 부착하여 다음 <sec typ="note">죽여주는 수류탄</sec>의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="20" slot="1" r /></sec>가 증가합니다.
+        <sec>상기 효과는 <char uid="BR_Salamander" />의 액티브 스킬로도 기폭시킬 수 있습니다.</sec>
+        <sec typ="buff"><buff typ="PhyATK_UP" /> <sec typ="note">샷건 연사</sec>의 피해량 증가</sec> 효과가 <sec typ="note">아군 수에 비례하는 효과</sec>로 변경됩니다.
+        <sec>스킬 효과는 <sec typ="note">샷건 연사</sec> 스킬 레벨에 비례합니다.</sec>
+      EN: |-
+        <sec typ="cond">At battle start</sec>, allies in proportion to the number of own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond"><sec typ="note">killer grenade</sec> On hit</sec>, 2 rounds unit Pok. additional part Chak by doing next <sec typ="note">killer grenade</sec> of <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="20" slot="1" r /></sec> increases.
+        <sec>above effect <char uid="BR_Salamander" /> of active skill also as unit Pok when kill number exists.</sec>
+        <sec typ="buff"><buff typ="PhyATK_UP" /> <sec typ="note">Shotgun Rapid Fire</sec> of damage increase</sec> effect and <sec typ="note">number of allies to proportional do effect and</sec> as is changed.
+        <sec>Skill effects <sec typ="note">Shotgun Rapid Fire</sec> skill level.</sec>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 味方 数に比例して 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond"><sec typ="note">ジウクヨジウは 手榴弾</sec> 命中時</sec>、 2ラウンドの間 機プオクジエを 追加 ブウチアクして 次 <sec typ="note">ジウクヨジウは 手榴弾</sec>の <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="20" slot="1" r /></sec>が増加します。
+        <sec>上記 効果は <char uid="BR_Salamander" />の アクティブ スキルでも 機プオク時クイル 数 あります。</sec>
+        <sec typ="buff"><buff typ="PhyATK_UP" /> <sec typ="note">ショットガン連射</sec>の ダメージ量 増加</sec> 効果が <sec typ="note">味方数に 比例する 効果</sec>で 変更されます。
+        <sec>スキル 効果は <sec typ="note">ショットガン連射</sec> スキル レベルに 比例します。</sec>
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 我方 依數量成比例 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        <sec typ="cond"><sec typ="note">主kyeoju 手榴彈</sec> 命中時</sec>， 2回合內 台Pokje 額外 附加chak並 下次 <sec typ="note">主kyeoju 手榴彈</sec>的 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="20" slot="1" r /></sec>增加。
+        <sec>上述 效果 <char uid="BR_Salamander" />的 主動 技能以也 台Pok時台l 數 存在。</sec>
+        <sec typ="buff"><buff typ="PhyATK_UP" /> <sec typ="note">霰彈槍連射</sec>的 傷害量 增加</sec> 效果 <sec typ="note">我方數量於 成比例 效果</sec>以 變更。
+        <sec>技能 效果 <sec typ="note">霰彈槍連射</sec> 技能 等級於 成比例。</sec>
 dialogue:
   KR:
     "1":
@@ -30407,9 +30500,7 @@ dialogue:
         사령관이 가만히 있을 리 없지!
         그래서… 내 몸에 그림 그렸는데…
         보여 줄까? 아니… 봐줘…
-      Oath: 캬하핫! 벽이란 벽에다가 사령관♡하이에나라고 쓰고 다닌 보람이 있네! 그거 있잖아. 어… 무슨무슨 효과… 어쨌든! 사실이 됐으니까
-        굳이 지울 필요는 없지? 아니다. 이제는 더 크게 쓰고 다녀야지! 자! 가자, 사령관! 같이 공동작 업하러 가야지! 우리가 얼마나
-        사랑하는지 보여주자고!
+      Oath: 캬하핫! 벽이란 벽에다가 사령관♡하이에나라고 쓰고 다닌 보람이 있네! 그거 있잖아. 어… 무슨무슨 효과… 어쨌든! 사실이 됐으니까 굳이 지울 필요는 없지? 아니다. 이제는 더 크게 쓰고 다녀야지! 자! 가자, 사령관! 같이 공동작 업하러 가야지! 우리가 얼마나 사랑하는지 보여주자고!
       OathIdle_01: |-
         내가 최근에 벽에 그린 글자들 봤어?
         못 봤다고?
@@ -30646,13 +30737,10 @@ dialogue:
         aren't allowed in Aqua Land. I am one
         with my explosives! So, I just took a few with me.
         Just ignore the fact that I have them.
-      Idle_01_03: >-
+      Idle_01_03: |-
         Hey. Commander. Did you happen to see Salamander?
-
         She took my prize money and bolted.
-
         How could she do that with a smile on her face? I was planning to pay Kheshig back
-
         with that money.
       SPIdle_01_01: |-
         If you play with fire…
@@ -30662,35 +30750,24 @@ dialogue:
         They're not explosives! Here. Take this. It's ice cream. What the?!
         Were you expecting something dirty? Well that's a relief.
         The popsicle stick is the pin. Enjoy!
-      Idle_03_01: >-
+      Idle_03_01: |-
         You know how everyone enjoys
-
         fireworks at night? Would it be the same
-
         if we set off some bombs? What's dangerous about that? We'd just be watching.
-
         Well… If you say so.
-
         I'll think about it.
-      Idle_04_01: >-
-        This swimsuit? I’m not taking it off even if you tell me it’s not
-        pretty.
-
+      Idle_04_01: |-
+        This swimsuit? I’m not taking it off even if you tell me it’s not pretty.
         I chose it and I’m sticking to it. I knew you’d be
-
         like that. You're just as
-
         weird as I am. Maybe that's why I like you.
       SPIdle_02_01: |-
         Oh! Looks like you've made up your mind.
         What do you think? You want me to make this
         a tad bit more exciting?
-      Oath: >-
-        Commander. Something seems different about you today… Maybe you don't
-        know what to do because my swimsuit is hotter
-
+      Oath: |-
+        Commander. Something seems different about you today… Maybe you don't know what to do because my swimsuit is hotter
         than explosives… What do you say we spend a loud night together? Ah, Commander! I knew you're as weird as I am!
-
         It might hurt a little tonight, Hubby.
       OathIdle_01: |-
         I have a little something for you, my husband.
@@ -30769,15 +30846,11 @@ dialogue:
         Want me to be careful in battle? Keep the distance? Eh, I don’t want to.
         There’s no point of fighting. … Well, if you say so.
         I’ll take a step or two back. Okay?
-      SPIdle_02_01: >-
-        If you keep doing that, this might go off… Pfft, I was kidding. This
-        thing doesn’t go off.
-
+      SPIdle_02_01: |-
+        If you keep doing that, this might go off… Pfft, I was kidding. This thing doesn’t go off.
         Do as you wish.
-      Oath: >-
-        Hm… Yo, Commander. Are you into the kinky, crazy type? … You should have
-        told me sooner!
-
+      Oath: |-
+        Hm… Yo, Commander. Are you into the kinky, crazy type? … You should have told me sooner!
         I also happen to be into kinky, crazy men! Kyahaha, let’s hang around for a lo~ng time, and blow everything up~
       OathIdle_01: Hey, Hubby. I want something… I-it’s not a bomb.
       MVP: ""
@@ -30989,20 +31062,13 @@ skins:
   sid: null
   artist: MAR10
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -31017,25 +31083,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_Hyena_N
   skins:
     - sid: 1
       artist: Rabon
       price: 114
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
       anim:
         - false
         - false
@@ -31052,26 +31114,28 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_Hyena_NS1
         2dmodel_dam: 2DModel_BR_Hyena_NS1_Dam
         consumableKey: Skin_BR_Hyena_1
     - sid: 2
       artist: TunaMaYo
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -31088,6 +31152,7 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_Hyena_NS2
         2dmodel_dam: 2DModel_BR_Hyena_NS2_Dam
         consumableKey: Skin_BR_Hyena_2

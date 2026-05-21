@@ -107,43 +107,52 @@
 	cursor: pointer;
 	z-index: 4;
 
+	$r: math.div(36px, 68px);
+
 	&.Damaged {
-		top: 0px;
-		right: 0px;
-		width: 64px;
-		height: 62px;
-		background-image: url($assetsRoot + "/ui/icon-skin-damaged.png");
-		background-size: 128px 62px;
+		top: 14px;
+		right: 14px;
+		width: 36px;
+		height: 36px;
+		background-image: url($assetsRoot + "/ui/ui-skin-damaged.png");
+		background-size: 136px * $r 68px * $r;
 
 		&[data-damaged="1"] {
-			background-position-x: -64px;
-		}
-	}
-	&.Simplified {
-		top: 70px;
-		right: 18px;
-		width: 28px;
-		height: 28px;
-		background-image: url($assetsRoot + "/ui/icon-skin-simplify.png");
-		background-position-x: -28px;
-		background-size: 56px 28px;
-
-		&[data-simplified="1"] {
-			background-position-x: 0;
+			background-position-x: -68px * $r;
 		}
 	}
 	&.BG {
-		top: 130px;
-		right: 18px;
-		width: 28px;
-		height: 28px;
-		background-image: url($assetsRoot + "/ui/icon-skin-bg.png");
-		background-position-x: -28px;
-		background-size: 56px 28px;
+		top: 64px;
+		right: 14px;
+		width: 36px;
+		height: 36px;
+		background-image: url($assetsRoot + "/ui/ui-skin-bg.png");
+		background-size: 136px * $r 68px * $r;
 
 		&[data-bg="1"] {
-			background-position-x: 0;
+			background-position-x: -68px * $r;
 		}
+	}
+	&.Props,
+	&.Props1,
+	&.Props2 {
+		top: 114px;
+		right: 14px;
+		width: 36px;
+		height: 36px;
+		background-image: url($assetsRoot + "/ui/ui-skin-props.png");
+		background-size: 136px * $r 204px * $r;
+
+		&[data-prop="1"] {
+			background-position-x: -68px * $r;
+		}
+	}
+	&.Props1 {
+		background-position-y: -68px * $r;
+	}
+	&.Props2 {
+		top: 164px;
+		background-position-y: -68px * $r * 2;
 	}
 	&.Platform {
 		// top: 180px;

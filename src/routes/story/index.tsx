@@ -1,12 +1,13 @@
+import { FunctionalComponent } from "preact";
 import { useEffect, useMemo, useState } from "preact/hooks";
-import { Link, route } from "preact-router";
+import { useLocation } from "preact-iso";
 import Store from "@/store";
 
 import StoryMap, { StoryMapSubstory } from "@/types/DB/StoryMap";
 import { STAGE_SUB_TYPE } from "@/types/Enums";
 
 import { useLocale } from "@/libs/Locale";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { AssetsRoot } from "@/libs/Const";
 import { cn } from "@/libs/Class";
 import { UpdateTitle } from "@/libs/Site";
@@ -28,6 +29,7 @@ interface StoryProps {
 }
 
 const Story: FunctionalComponent<StoryProps> = (props) => {
+	const location = useLocation();
 	const [loc] = useLocale();
 
 	const [selectedKey, setSelectedKey] = useState<[string | number, number] | null>(null);
@@ -77,7 +79,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		"Ev31", // 대전란 ~끝없이 내리치는 자색의 번개~
 		"Ev26", "Ev27", "Ev28", "Ev29", "Ev30",
 		13,
-		"Ev32",
+		"Ev32", "Ev33", "Ev34", "Ev35", "Ev36", "Ev37",
 	];
 	const StoryList: Array<StoryKeyType | null> = useMemo(
 		() => {
@@ -90,7 +92,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 				return [r, [0]];
 			});
 
-			if (StoryMapDB) {
+			if (assertDBData(StoryMapDB)) {
 				const unordered: StoryKeyType[] = Object.keys(StoryMapDB)
 					.filter(k => !arr.some(r => r[0] == k))
 					.map(k => [k, [0]]);
@@ -124,7 +126,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 	}
 
 	const Maps = useMemo(() => {
-		if (sKey !== null && sSub !== null && StoryMapDB) {
+		if (sKey !== null && sSub !== null && assertDBData(StoryMapDB)) {
 			if (sSub === 0)
 				return Object.values(StoryMapDB[sKey])
 					.map(c => c.list)
@@ -136,7 +138,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		return [];
 	}, [sKey, sSub, StoryMapDB]);
 	const Substories = useMemo(() => {
-		if (sKey !== null && sSub !== null && StoryMapDB) {
+		if (sKey !== null && sSub !== null && assertDBData(StoryMapDB)) {
 			if (sSub === 0)
 				return Object.values(StoryMapDB[sKey])
 					.reduce<StoryMapSubstory[]>((p, c) => p.concat(...c.substory), []);
@@ -153,7 +155,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 
 	function StoryTimeline (k: StoryKeyType): preact.VNode[] {
 		return k[1].map(s => <div class={ style.StoryMapItem }>
-			<Link
+			<a
 				class={ style.Box }
 				href={ `/story/${k[0]}_${s}` }
 			>
@@ -184,7 +186,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 				<div class={ style.StoryName }>
 					{ GetWorldLocale(k[0], s) }
 				</div>
-			</Link>
+			</a>
 		</div>);
 	}
 
@@ -206,7 +208,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		<div class="text-end">
 			<Button
 				variant="dark"
-				onClick={ () => route("/worlds/Sub") }
+				onClick={ () => location.route("/worlds/Sub") }
 			>
 				<Locale k="STORY_GOTO_UNIT_SUBSTORY" />
 			</Button>
@@ -226,7 +228,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 
 		<PopupBase
 			display={ !!selectedKey }
-			onHidden={ () => route("/story") }
+			onHidden={ () => location.route("/story") }
 			size="lg"
 
 			headerClass={ style.PopupHeader }
@@ -291,7 +293,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 											onClick={ e => {
 												e.preventDefault();
 												Store.Story.back.value = true;
-												route(`/story/${r.key}/ED`);
+												location.route(`/story/${r.key}/ED`);
 											} }
 										>
 											<Icons.Book class="me-1" />
@@ -305,7 +307,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 													onClick={ e => {
 														e.preventDefault();
 														Store.Story.back.value = true;
-														route(`/story/${r.key}/OP`);
+														location.route(`/story/${r.key}/OP`);
 													} }
 												>
 													<Icons.Book class="me-1" />
@@ -329,7 +331,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 													onClick={ e => {
 														e.preventDefault();
 														Store.Story.back.value = true;
-														route(`/story/${r.key}/${v}`);
+														location.route(`/story/${r.key}/${v}`);
 													} }
 												>
 													<Icons.Book class="me-1" />
@@ -352,7 +354,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 													onClick={ e => {
 														e.preventDefault();
 														Store.Story.back.value = true;
-														route(`/story/${r.key}/ED`);
+														location.route(`/story/${r.key}/ED`);
 													} }
 												>
 													<Icons.Book class="me-1" />
@@ -412,7 +414,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 											onClick={ e => {
 												e.preventDefault();
 												Store.Story.back.value = true;
-												route(`/story/${r.key}/${s.key}`);
+												location.route(`/story/${r.key}/${s.key}`);
 											} }
 										>
 											<Icons.Book class="me-1" />

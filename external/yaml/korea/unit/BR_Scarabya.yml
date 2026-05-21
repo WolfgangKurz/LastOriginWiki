@@ -3558,6 +3558,27 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        범위 내 적에게 잡동사니를 마구잡이로 발사하여 <dmg elem="physics" />를 주고, 적중 대상은 2라운드 동안 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> 감소 / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec> 증가 효과가 적용됩니다.
+        <sec typ="cond">자신이 <sec typ="note">카페인 충전</sec> 상태일 때</sec>, 해당 효과를 <sec typ="buff">1회 차감</sec>하여 추가로 적중 대상에게 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 효과를 적용합니다.
+        <sec typ="cond">스쿼드 내 <char uid="BR_Salamander" /> / <char uid="BR_Hyena" /> 가 있을 시</sec>, 지정 타겟 대상으로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">전술 기동 : 스트레이트 플러시</sec> 스킬 협동 공격</sec> / <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">죽여주는 수류탄</sec> 스킬 협동 공격</sec>을 합니다.
+        <sec>스킬 레벨당 20%의 적중 보정이 적용됩니다.</sec>
+      EN: |-
+        within range to the enemy junk Magujap as fires <dmg elem="physics" /> damage and Hit target 2 rounds <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> decrease / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increase the effect is applied.
+        <sec typ="cond">self <sec typ="note">Caffeine Charge</sec> state when</sec>, the effect and <sec typ="buff">1times kick Gam</sec> by doing additionally Accuracy to the target 2 rounds <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> applies the effect.
+        <sec typ="cond">in squad <char uid="BR_Salamander" /> / <char uid="BR_Hyena" /> if present</sec>, designated Taget target as <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">tactical Mobile: rod Teureteu Peulreo when</sec> skill coordinated attack</sec> / <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">killer grenade</sec> skill coordinated attack</sec>.
+        <sec>per skill level 20% of accuracy correction is applied.</sec>
+      JP: |-
+        範囲内 敵に ジアプドオンスアンイを ムアグウジアプがで 発射して<dmg elem="physics" />を与え、、 命中対象は 2ラウンドの間 <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec> 減少 / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec> 増加 効果が適用されます。
+        <sec typ="cond">自身が <sec typ="note">クアプエである チャージ</sec> 状態イル 時</sec>、 該当 効果を <sec typ="buff">1回 チアグアム</sec>して 追加で 命中対象に 2ラウンドの間 <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 効果を適用します。
+        <sec typ="cond">スクワッド 内 <char uid="BR_Salamander" /> / <char uid="BR_Hyena" /> が ある 時</sec>、 指定 トアグエト 対象で <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">前スウル 機動：スウトウルエがトウ プウルルオ時</sec> スキル 協同攻撃</sec> / <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">ジウクヨジウは 手榴弾</sec> スキル 協同攻撃</sec>をします。
+        <sec>スキルレベルごとに 20%の 命中補正が適用されます。</sec>
+      TC: |-
+        範圍內 敵人給 Japdongsani Magujap以 發射並 造成<dmg elem="physics" />，並 命中目標 2回合內 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> 減少 / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec> 增加 效果套用。
+        <sec typ="cond">自身 <sec typ="note">咖啡為 充能</sec> 狀態一 時</sec>， 該 效果 <sec typ="buff">1次 扣除</sec>並 額外 對命中目標 2回合內 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 套用效果。
+        <sec typ="cond">小隊 內 <char uid="BR_Salamander" /> / <char uid="BR_Hyena" /> 有 時</sec>， 指定 目標 目標以 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">前術 機動：三uteureteu Peul達到時</sec> 技能 協同攻擊</sec> / <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">主kyeoju 手榴彈</sec> 技能 協同攻擊</sec>。
+        <sec>每技能等級 20%的 套用命中補正。</sec>
   "2":
     key: "2"
     icon: SelfAtkBuff
@@ -4340,6 +4361,43 @@ skills:
             base: 2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        아군 단일 대상의 장비를 자신이 수집한 고철로 마개조합니다.
+        자신에게 적용된 이로운 <sec typ="cond"><buff typ="ATK_UP" /> 공격력 증가</sec> / <sec typ="cond"><buff typ="ACCURACY_UP" /> 적중 증가</sec> / <sec typ="cond"><buff typ="CRITICAL_UP" /> 치명타 증가</sec> 효과를 모두 해제하고, 해제한 효과와 동일한 분류의 효과를 대상에게 다음 2회의 공격에 한하여 적용합니다.
+        자신이 <sec typ="note">니코틴 충전</sec> 상태일 때, 해당 효과를 1회 차감하여 추가로 대상의 <sec typ="buff"><buff typ="AP_UP" /> AP를 <val idx="14" signless />로 변경</sec>하고 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="15" /></sec> 증가 효과를 부여합니다.
+        대상이 <sec typ="note">앵거 오브 호드</sec>인 경우 효과 지속이 2회가 아닌 2라운드로 변경됩니다.
+        <sec typ="cond"><buff typ="ATK_UP" /> 공격력 증가</sec> 상태 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>
+        <sec typ="cond"><buff typ="ACCURACY_UP" /> 적중 증가</sec> 상태 : <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec>
+        <sec typ="cond"><buff typ="CRITICAL_UP" /> 치명타 증가</sec> 상태 : <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>
+        <sec typ="note">앵거 오브 호드</sec> : <char uid="BR_Khan" />, <char uid="BR_QuickCamel" />, <char uid="BR_WarWolf" />, <char uid="BR_TalonFeather" />, <char uid="BR_Salamander" />, <char uid="BR_Hyena" />, <char uid="BR_Kheshig" />
+      EN: |-
+        allies single target of equipment self number Jip one Gocheol as Ma units Jo.
+        applied to self beneficial <sec typ="cond"><buff typ="ATK_UP" /> Attack increase</sec> / <sec typ="cond"><buff typ="ACCURACY_UP" /> Accuracy increase</sec> / <sec typ="cond"><buff typ="CRITICAL_UP" /> Critical increase</sec> effect and all remove and, released effect and same category of effect and to the target next 2times of attack to limited to applies.
+        self <sec typ="note">Nicotine Charge</sec> state when, the effect and 1times kick Gam by doing additionally target's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="14" signless /> as change</sec> and <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="15" /></sec> increase grants the effect.
+        target <sec typ="note">Anger of the Horde</sec> if effect and continuous 2times not 2roundas is changed.
+        <sec typ="cond"><buff typ="ATK_UP" /> Attack increase</sec> state: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec>
+        <sec typ="cond"><buff typ="ACCURACY_UP" /> Accuracy increase</sec> state: <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec>
+        <sec typ="cond"><buff typ="CRITICAL_UP" /> Critical increase</sec> state: <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="6" r /></sec>
+        <sec typ="note">Anger of the Horde</sec>: <char uid="BR_Khan" />, <char uid="BR_QuickCamel" />, <char uid="BR_WarWolf" />, <char uid="BR_TalonFeather" />, <char uid="BR_Salamander" />, <char uid="BR_Hyena" />, <char uid="BR_Kheshig" />
+      JP: |-
+        味方 単一対象の 装備を 自身が 収集した しチオルで ムア個ジオします。
+        自身に 適用された 有益な <sec typ="cond"><buff typ="ATK_UP" /> 攻撃力 増加</sec> / <sec typ="cond"><buff typ="ACCURACY_UP" /> 命中 増加</sec> / <sec typ="cond"><buff typ="CRITICAL_UP" /> クリティカル 増加</sec> 効果を ムオドウ 解除し、 解除した 効果と 同一の ブウンルユの 効果を 対象に 次 2回の 攻撃に したして 適用します。
+        自身が <sec typ="note">ンイクオトイン チャージ</sec> 状態イル 時、 該当 効果を 1回 チアグアムして 追加で 対象の <sec typ="buff"><buff typ="AP_UP" /> APを <val idx="14" signless />で 変更</sec>し、 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="15" /></sec> 増加 効果を付与します。
+        対象が <sec typ="note">アンガー・オブ・ホード</sec>の場合 効果 持続が 2回が ではない 2ラウンドで 変更されます。
+        <sec typ="cond"><buff typ="ATK_UP" /> 攻撃力 増加</sec> 状態：<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>
+        <sec typ="cond"><buff typ="ACCURACY_UP" /> 命中 増加</sec> 状態：<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>
+        <sec typ="cond"><buff typ="CRITICAL_UP" /> クリティカル 増加</sec> 状態：<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="6" r /></sec>
+        <sec typ="note">アンガー・オブ・ホード</sec>：<char uid="BR_Khan" />、 <char uid="BR_QuickCamel" />、 <char uid="BR_WarWolf" />、 <char uid="BR_TalonFeather" />、 <char uid="BR_Salamander" />、 <char uid="BR_Hyena" />、 <char uid="BR_Kheshig" />
+      TC: |-
+        我方 單一目標的 裝備 自身 收集 並Cheol以 Ma個Jo。
+        自身給 套用已 有益 <sec typ="cond"><buff typ="ATK_UP" /> 攻擊力 增加</sec> / <sec typ="cond"><buff typ="ACCURACY_UP" /> 命中 增加</sec> / <sec typ="cond"><buff typ="CRITICAL_UP" /> 暴擊 增加</sec> 效果 全部 解除並， 解除 效果與 相同 分類的 效果 對目標 下次 2次的 攻擊於 並 套用。
+        自身 <sec typ="note">尼古丁 充能</sec> 狀態一 時， 該 效果 1次 扣除並 額外 目標的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="14" signless />以 變更</sec>並 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="15" /></sec> 增加 賦予效果。
+        目標 <sec typ="note">憤怒部落</sec>若為 效果 持續 2次 非 2回合以 變更。
+        <sec typ="cond"><buff typ="ATK_UP" /> 攻擊力 增加</sec> 狀態：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>
+        <sec typ="cond"><buff typ="ACCURACY_UP" /> 命中 增加</sec> 狀態：<sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>
+        <sec typ="cond"><buff typ="CRITICAL_UP" /> 暴擊 增加</sec> 狀態：<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="6" r /></sec>
+        <sec typ="note">憤怒部落</sec>：<char uid="BR_Khan" />， <char uid="BR_QuickCamel" />， <char uid="BR_WarWolf" />， <char uid="BR_TalonFeather" />， <char uid="BR_Salamander" />， <char uid="BR_Hyena" />， <char uid="BR_Kheshig" />
   "3":
     key: "3"
     icon: P.Barrier
@@ -4674,6 +4732,23 @@ skills:
             base: 127
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 해제 불가의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="1" /></sec>을(를) 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신에게 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원</sec> 또는 <sec typ="cond"><buff typ="Action_Number_Change_Up" /> <buff typ="Action_Number_Change_Up copy" /> 행동 횟수 증감</sec> 효과가 적용된 경우, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해당 효과를 해제</sec>하고 각각 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>이(가) 증가합니다.
+        자신은 <char uid="BR_Khan" />의 <sec typ="note">출격 명령!</sec> 및 <sec typ="note">틈새 노리기</sec> 효과를 받지 않습니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self cannot be removed of <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="1" /></sec> gains.
+        <sec typ="cond">At round start</sec>, self <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> Attack Support</sec> or <sec typ="cond"><buff typ="Action_Number_Change_Up" /> <buff typ="Action_Number_Change_Up copy" /> number of actions increase /decrease</sec> affected by case, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> the removes the effect</sec> and respectively <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> increases.
+        self <char uid="BR_Khan" /> of <sec typ="note">sortie member(s) Ryeong!</sec> and <sec typ="note">Teum new Nori unit</sec> effect and not affected does not.
+      JP: |-
+        戦闘開始時、 自身は 解除不可の <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="0" r /></sec> 増加 / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="1" /></sec>を 獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身に <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻撃支援</sec> または <sec typ="cond"><buff typ="Action_Number_Change_Up" /> <buff typ="Action_Number_Change_Up copy" /> 行ドオン 回数 ジウングアム</sec> 効果が適用された 場合、 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 該当 効果を 解除</sec>し、 それぞれ <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>が増加します。
+        自身は <char uid="BR_Khan" />の <sec typ="note">チウルグヨク 名ルヨン!</sec> および <sec typ="note">トウムスエ ンオルイ機</sec> 効果を ブアトジイ しません。
+      TC: |-
+        戰鬥開始時， 自身 無法解除的 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="0" r /></sec> 增加 / <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾 <val idx="1" /></sec> 獲得。
+        <sec typ="cond">回合開始時</sec>， 自身給 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻擊支援</sec> 或 <sec typ="cond"><buff typ="Action_Number_Change_Up" /> <buff typ="Action_Number_Change_Up copy" /> 列同 次數 解除增減</sec> 已套用效果的 情況， <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 該 效果 解除</sec>並 各自 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>增加。
+        自身 <char uid="BR_Khan" />的 <sec typ="note">Chul格 名以ng!</sec> 以及 <sec typ="note">Teumsae Nori台</sec> 效果 受到 不會。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -4881,6 +4956,27 @@ skills:
             base: 0.05
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="note">카페인 충전</sec> 및 <sec typ="note">니코틴 충전</sec> 상태가 됩니다.
+        해당 효과가 적용되지 않은 상태에서 대기 시 <sec typ="buff">재활성화</sec> 됩니다.
+        <sec typ="note">카페인 충전</sec> / <sec typ="note">니코틴 충전</sec>: 각각 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="13" slot="5" r /></sec> 증가 (2회 충전)
+        자신이 <sec typ="note">카페인 충전</sec> 또는 <sec typ="note">니코틴 충전</sec> 효과가 <sec typ="cond">재활성화</sec>됐을 때, 인접한 아군에게도 자신의 간식(?)을 나눠주어 2라운드 동안 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>를 증가시킵니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self <sec typ="note">Caffeine Charge</sec> and <sec typ="note">Nicotine Charge</sec> state.
+        the effect and enemy not applied not while in the state On standby <sec typ="buff">reactivate</sec>.
+        <sec typ="note">Caffeine Charge</sec> / <sec typ="note">Nicotine Charge</sec>: respectively <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="13" slot="5" r /></sec> increase (2times Charge)
+        self <sec typ="note">Caffeine Charge</sec> or <sec typ="note">Nicotine Charge</sec> effect and <sec typ="cond">reactivate</sec>Dwaet when, adjacent to allies also own between Sik (?) or Nwo dealing 2 rounds <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> increases.
+      JP: |-
+        戦闘開始時、 自身は <sec typ="note">クアプエである チャージ</sec> および <sec typ="note">ンイクオトイン チャージ</sec> 状態になります。
+        該当 効果が 適用ドウェジイ アは 状態で 待機時 <sec typ="buff">再有効化</sec> されます。
+        <sec typ="note">クアプエである チャージ</sec> / <sec typ="note">ンイクオトイン チャージ</sec>：それぞれ <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="13" slot="5" r /></sec> 増加 (2回 チャージ)
+        自身が <sec typ="note">クアプエである チャージ</sec> または <sec typ="note">ンイクオトイン チャージ</sec> 効果が <sec typ="cond">再有効化</sec>ドウェトを 時、 隣接する 味方にも 自身の グアンスイク(?)を ンアンウォ与え 2ラウンドの間 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>を増加させます。
+      TC: |-
+        戰鬥開始時， 自身 <sec typ="note">咖啡為 充能</sec> 以及 <sec typ="note">尼古丁 充能</sec> 變為狀態。
+        該 效果 套用不會 不 在狀態下 待機時 <sec typ="buff">重新啟用</sec>。
+        <sec typ="note">咖啡為 充能</sec> / <sec typ="note">尼古丁 充能</sec>：各自 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="13" slot="5" r /></sec> 增加 (2次 充能)
+        自身 <sec typ="note">咖啡為 充能</sec> 或 <sec typ="note">尼古丁 充能</sec> 效果 <sec typ="cond">重新啟用</sec>Dwaet 時， 相鄰的 我方給也 自身的 Gansik(?) Nanwo造成 2回合內 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>使其增加。
   "5":
     key: "5"
     icon: P.TeamAtkDeBuff
@@ -5609,6 +5705,31 @@ skills:
             base: 0.04
             per: 0.004
             chance: 1
+    desc:
+      KR: |-
+        적 사망 시, 즉석에서 잔해를 분해하여 <sec typ="note">헌팅 트로피</sec>를 제작합니다.
+        자신은 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="8" r /></sec>가 증가합니다.
+        <sec typ="note">헌팅 트로피</sec>를 선물받은 아군 전체의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="5" r /></sec>를 2라운드 동안 증가시킵니다.
+        아군이 해체되는 모습을 목격한 적은 공포에 질려 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="11" r /></sec>가 2라운드 동안 감소합니다.
+        목격한 적에게 <sec typ="note">텐더라이즈</sec> 효과가 적용중인 경우, 디버프 효과가 50% 증가합니다.
+      EN: |-
+        When an enemy dies, instant in Debris rouses by doing <sec typ="note">Hunting Trophy</sec>. operation.
+        self 2 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="8" r /></sec> increases.
+        <sec typ="note">Hunting Trophy</sec> line water receives all allies of <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light damage <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy damage <val idx="5" r /></sec> 2 rounds increases.
+        allies remove unit becomes appearance witnessed enemy fear to terrified <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="9" r /></sec> / <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="11" r /></sec> 2 rounds decreases.
+        witnessed to the enemy <sec typ="note">Ten more Rajeu</sec> effect and enemy in use if, debuff effect and 50% increases.
+      JP: |-
+        敵死亡時、 ジウクスオクで 残骸を 分解して <sec typ="note">ハンティングトロフィー</sec>を ジエジアクします。
+        自身は 2ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="8" r /></sec>が増加します。
+        <sec typ="note">ハンティングトロフィー</sec>を 宣ムウルブアトは 味方全体の <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="5" r /></sec>を 2ラウンドの間 増加させます。
+        味方が して体ドウェは ムオスウプを ムオクグヨクした 敵は グオンプオに ジイルルヨ <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="11" r /></sec>が 2ラウンドの間 減少します。
+        ムオクグヨクした 敵に <sec typ="note">トエンドオルアがジウ</sec> 効果が 適用中の場合、 デバフ 効果が 50% 増加します。
+      TC: |-
+        敵人死亡時， 即席在 殘骸 分解並 <sec typ="note">狩獵戰利品</sec> 解除製作。
+        自身 2回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="8" r /></sec>增加。
+        <sec typ="note">狩獵戰利品</sec> 先mulbat 全體我方的 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害 <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害 <val idx="5" r /></sec> 2回合內 增加。
+        我方 個變為 樣貌 Mok格 敵人 恐慌於 支害怕 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="11" r /></sec> 2回合內 減少。
+        Mok格 敵人給 <sec typ="note">Tendeorajeu</sec> 效果 套用中若為， 減益 效果 50% 增加。
 dialogue:
   KR:
     "1":
@@ -5730,9 +5851,7 @@ dialogue:
         보건위원이 하는 일 중에…
         성교육도 있는데…
         같이... 시청각 자료… 만들까?
-      Oath: 내가 아직 잠이 덜 깼나? 이게 꿈이라면… 안 깼으면 좋겠어. 아니다… 그러면 진짜 사령관을 못 보겠구나… 어? 꿈 아니라고? 진짜?
-        사령관… 이상해… 이런 내가 뭐가 예쁘다고… 하지만… 후후. 행복해. 사랑이 우리 몸에 어떤 영향을 끼치는지 기록해야겠어. 도와줄
-        거지?
+      Oath: 내가 아직 잠이 덜 깼나? 이게 꿈이라면… 안 깼으면 좋겠어. 아니다… 그러면 진짜 사령관을 못 보겠구나… 어? 꿈 아니라고? 진짜? 사령관… 이상해… 이런 내가 뭐가 예쁘다고… 하지만… 후후. 행복해. 사랑이 우리 몸에 어떤 영향을 끼치는지 기록해야겠어. 도와줄 거지?
       OathIdle_01: |-
         사령관… 과로 금지. 그러니 내 옆에 누워.
         둘이 눕기에는 좁은 침대지만…
@@ -5997,13 +6116,10 @@ dialogue:
       SPIdle_01_01: |-
         …I don’t have to move, right?
         Make sure to clean up afterwards.​
-      Idle_02_01: >-
+      Idle_02_01: |-
         Someone was launched from the flume ride…?
-
         That’s alright. It’s working just like how it was designed. I wrote it on the notice:
-
         Beware - very high water pressure.
-
         …Huh? You want me to make it again? Now, that’s a hassle.​
       Idle_03_01: |-
         I need a smoke… You took it, didn’t you, Commander?
@@ -6019,20 +6135,14 @@ dialogue:
         There’s no one else who would listen but you…
         There’s no one else but you who gets to listen to that.
         You know what I mean, right?​
-      Oath: >-
-        I thought that I only needed to lie down, but this… This is out of my
-        expectation. I need to calculate from the beginning.
-
+      Oath: |-
+        I thought that I only needed to lie down, but this… This is out of my expectation. I need to calculate from the beginning.
         What Commander wants from me, and what I can do for Commander… Hmm, better.
-
         Now then, what should I call Commander? Husband? Honey? Or perhaps in this case… Prince?​
-      OathIdle_01: >-
+      OathIdle_01: |-
         I’m going sleep while things are calm. There’s no guaranteeing
-
         when I will wake up, but… I’m sure you
-
         will wake me up when I’m needed. Just like how it happened in the fairy tale.
-
         …Ah, was it a different one?​
       MVP: ""
     "2":
@@ -6107,36 +6217,24 @@ dialogue:
         The power has been greatly increased, so I'm sure she will be satisfied.
         Smoke…? …Run! Commander!
         You won't die, but it will be so hurt that you might want to die.​
-      Idle_03_01: >-
-        Nicotine and caffeine. These are more important than the three major
-        nutrients
-
+      Idle_03_01: |-
+        Nicotine and caffeine. These are more important than the three major nutrients
         for me. You think they are bad for health? Well…
-
         It not is to create something new. Replacing the agony of creativity with
-
         your health doesn’t sound bad for me.​
-      Idle_04_01: >-
-        You said you were tired before. Here. Drink up. I modified an energy
-        drink.
-
+      Idle_04_01: |-
+        You said you were tired before. Here. Drink up. I modified an energy drink.
         It will keep you up for a week for sure.
-
         Maybe. Huh? No, I haven’t go through the clinical trials yet-
-
         …This is not an expected effect. It will be okay
-
         after release enough a bit. Use as much as you want.​
       SPIdle_02_01: |-
         Well. I’m still not sure what’s so good about it.
         But I do want to keep seeing. your face that
         focusing only on me.​
-      Oath: >-
-        Hmm… I thought this was none of my business. Since the Commander is a
-        man and I am a woman, there was always a possibility.
-
+      Oath: |-
+        Hmm… I thought this was none of my business. Since the Commander is a man and I am a woman, there was always a possibility.
         It’s hard to say it in a logical way, but to clear it… I’m glad. Here, my hand. Put your ring here.
-
         …Now, what should I do as your bride? Shell me we our genes?
       OathIdle_01: |-
         I find it really amazing. There are many information left about humans,
@@ -6162,16 +6260,11 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        …Oh, you are here. Nah, it’s nothing. I’m just checking things
-        regularly.
-
+      Idle_01_01: |-
+        …Oh, you are here. Nah, it’s nothing. I’m just checking things regularly.
         I’m the technical advisor, you know? Everybody should have a long happy life
-
         with our Commander, right? …When that day come,
-
         I wish I’m the closest one.
-
         I’m pretty possessive than I look.​
       Idle_01_02: |-
         I developed some nutritional supplements. Commander told me to
@@ -6399,20 +6492,21 @@ skins:
   sid: null
   artist: Cruno
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - true
-    - false
-    - true
-    - false
-    - true
-    - false
-    - false
+    O:
+      - _
+      - D
+      - S
+      - DS
+    G:
+      - _
+      - D
+      - S
+      - DS
   anim:
     - false
     - false
@@ -6427,6 +6521,7 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 1
     2dmodel: 2DModel_BR_Scarabya_N
     2dmodel_dam: 2DModel_BR_Scarabya_N_Dam
   skins:
@@ -6435,20 +6530,21 @@ skins:
         Cruno
         D:CORGI
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 76
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -6465,26 +6561,28 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_Scarabya_NS1
         2dmodel_dam: 2DModel_BR_Scarabya_NS1_Dam
         consumableKey: Skin_BR_Scarabya_1
     - sid: 2
       artist: MEL
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -6501,6 +6599,7 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_Scarabya_NS2
         2dmodel_dam: 2DModel_BR_Scarabya_NS2_Dam
         consumableKey: Skin_BR_Scarabya_2

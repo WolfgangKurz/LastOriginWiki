@@ -609,6 +609,7 @@ source:
   - - Ev:Ev34:EV1-4
   - - Ev:Ev35:EV1-3
     - Ev:Ev35:EV2-2B
+  - - Ev:Ev36:EV2-7
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2010,6 +2011,23 @@ skills:
               level: "0"
             value: Char_BR_Bulgasari_N
             chance: 1
+    desc:
+      KR: |-
+        우회 기동을 통해 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하며 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec> 감소 / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec> 증가 효과를 부여합니다.
+        <sec typ="cond">스쿼드 내 <char uid="BR_Bulgasari" />가 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">배터링 램</sec> / <sec typ="note">벙커 버스터</sec> 스킬 협동 공격</sec>을 유도합니다.
+      EN: |-
+        right times Mobile through <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 2 rounds target <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> and <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="1" r /></sec> decrease / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="2" r /></sec> increase grants the effect.
+        <sec typ="cond">in squad <char uid="BR_Bulgasari" /> if present</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Battering Ram</sec> / <sec typ="note">Bunker Buster</sec> skill coordinated attack</sec> triggers.
+      JP: |-
+        ウ回 機動を 通じて<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象を <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>し、 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> 減少 / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="2" r /></sec> 増加 効果を付与します。
+        <sec typ="cond">スクワッド 内 <char uid="BR_Bulgasari" />が 存在する場合</sec>、 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">バタリングラム</sec> / <sec typ="note">バンカーバスター</sec> スキル 協同攻撃</sec>を 誘導します。
+      TC: |-
+        U次 機動 透過 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>並 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> 減少 / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="2" r /></sec> 增加 賦予效果。
+        <sec typ="cond">小隊 內 <char uid="BR_Bulgasari" /> 存在時</sec>， <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">破城槌</sec> / <sec typ="note">碉堡剋星</sec> 技能 協同攻擊</sec> 誘發。
   "2":
     key: "2"
     icon: SelfDefBuff
@@ -2285,6 +2303,19 @@ skills:
             base: 11
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        곡예 비행을 시작해 3라운드 동안 <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 위력으로 반격</sec>이 활성화되고 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec>가 감소하며, <sec typ="buff"><buff typ="DEF_Char" /> 대상을 지정 보호</sec>합니다.
+        <sec typ="cond">스쿼드 내 <char uid="BR_HongRyun" />이 있을 경우</sec>, 추가로 자신은 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 회피 감소 효과에 면역</sec> 상태가 됩니다.
+      EN: |-
+        Begins aerobatic flight, activating <sec typ="buff"><buff typ="COUNTER" /> Counterattack with <val idx="0" r signless /> power</sec> for 3 rounds, reducing own <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="3" r inv /></sec>, and applying <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection to the target</sec>.
+        <sec typ="cond">If <char uid="BR_HongRyun" /> is in the squad</sec>, self also gains <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immunity to Evasion reduction</sec>.
+      JP: |-
+        曲技飛行を開始し、3ラウンドの間<sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless />威力で反撃</sec>が有効化され、自身の<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ <val idx="3" r inv /></sec>が減少し、<sec typ="buff"><buff typ="DEF_Char" />対象を指定保護</sec>します。
+        <sec typ="cond">部隊内に<char uid="BR_HongRyun" />がいる場合</sec>、追加で自身は<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />回避減少効果に免疫</sec>状態になります。
+      TC: |-
+        開始特技飛行，3回合內啟用<sec typ="buff"><buff typ="COUNTER" />以<val idx="0" r signless />威力反擊</sec>，自身<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到的傷害 <val idx="3" r inv /></sec>減少，並<sec typ="buff"><buff typ="DEF_Char" />指定保護目標</sec>。
+        <sec typ="cond">若小隊內有<char uid="BR_HongRyun" /></sec>，自身額外處於<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />免疫迴避減少效果</sec>狀態。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -2634,6 +2665,23 @@ skills:
             base: 0.4
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 호위 대형을 편성해 범위 내 기동형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 기동형 아군의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec>를 증가시키고, <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 대상을 지정 보호</sec>합니다.
+        <sec typ="cond">자신이 <buff typ="DEF_Char" /> 지정 보호 중인 아군이 있을 경우</sec>, 자신에게 적용되는 상기 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피</sec> 증가 효과가 세 배로 증폭됩니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, escort formation organizes within range Mobile-type allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">At round start</sec>, within range Mobile-type allies' <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> increases and <sec typ="buff"><buff typ="DEF_Char" /> Defender excluding target Designated Protection</sec>.
+        <sec typ="cond">self <buff typ="DEF_Char" /> Designated Protection in progress allies if present</sec>, self enemy applied above <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion</sec> increase effect and three times as amplification.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 ハオウィ 陣形を プヨン宣して 範囲内 機動型 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 機動型 味方の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec>を 増加時クイし、 <sec typ="buff"><buff typ="DEF_Char" /> 保護機を ジエ外した 対象を 指定保護</sec>します。
+        <sec typ="cond">自身が <buff typ="DEF_Char" /> 指定保護 中の 味方が 存在する場合</sec>、 自身に 適用ドウェは 上記 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避</sec> 増加 効果が スエ ブエで 増幅されます。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 護衛 陣型 編成 範圍內 機動型 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 範圍內 機動型 我方的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec> 增加時台並， <sec typ="buff"><buff typ="DEF_Char" /> 保護機 解除外 目標 指定保護</sec>。
+        <sec typ="cond">自身 <buff typ="DEF_Char" /> 指定保護 中的 我方 存在時</sec>， 自身給 套用變為 上述 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避</sec> 增加 效果 三 倍以 增幅。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -3042,6 +3090,27 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec>가 활성화됩니다.
+        <sec typ="note">편대 호위</sec>의 효과 적용 대상에 <cmt t="몽구스 팀"><import name="TeamMongus" p="0" /></cmt> 소속 전투원을 추가합니다.
+        <sec>스킬 효과는 <sec typ="note">돌입 준비</sec>의 스킬 레벨에 비례합니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">자신과 <sec typ="note">편대 호위</sec>에 의한 <buff typ="DEF_Char" /> 지정 보호</sec>를 받는 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="9" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> is activated.
+        <sec typ="note">Formation Escort</sec> of effect and applies target to <cmt t="Mongoose Team"><import name="TeamMongus" p="0" /></cmt> affiliated combatant additional.
+        <sec>Skill effects <sec typ="note">Entry Preparation</sec> of skill level.</sec>
+        <sec typ="cond">At round start</sec>, <sec typ="cond">self and <sec typ="note">Formation Escort</sec> to by <buff typ="DEF_Char" /> Designated Protection</sec> receives allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="9" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec>が 有効化されます。
+        <sec typ="note">編隊護衛</sec>の 効果 適用 対象に <cmt t="マングースチーム"><import name="TeamMongus" p="0" /></cmt> 所属 戦闘員を 追加します。
+        <sec>スキル 効果は <sec typ="note">突入準備</sec>の スキル レベルに 比例します。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond">自身と <sec typ="note">編隊護衛</sec>に よる <buff typ="DEF_Char" /> 指定保護</sec>を 受ける 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="9" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> 增加，並 <sec typ="buff"><buff typ="DEF_Line" /> 列保護</sec> 啟用。
+        <sec typ="note">編隊護衛</sec>的 效果 套用 目標於 <cmt t="貓鼬小隊"><import name="TeamMongus" p="0" /></cmt> 所屬 戰鬥員 額外。
+        <sec>技能 效果 <sec typ="note">突入準備</sec>的 技能 等級於 成比例。</sec>
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond">自身與 <sec typ="note">編隊護衛</sec>於 的 <buff typ="DEF_Char" /> 指定保護</sec> 受到 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="9" r /></sec>增加。
   "5":
     key: "5"
     icon: P.FormChange
@@ -3389,6 +3458,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec>가 활성화됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">곡예 비행</sec>의 지속 효과가 기본 효과로 적용되고, 해당 스킬을 <sec typ="note">몽구스 매뉴버</sec>로 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 교체</sec>합니다.
+        <sec>스킬 효과는 <sec typ="note">영웅 출현</sec>의 스킬 레벨에 비례합니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> is activated.
+        <sec typ="cond">At round start</sec>, <sec typ="note">Aerobatic Flight</sec> of continuous effect and base effect andas enemy is applied and, the skill <sec typ="note">Mongoose Maneuver</sec> as <sec typ="buff"><buff typ="CHANGE_CHAR" /> replace</sec>.
+        <sec>Skill effects <sec typ="note">Hero Appears</sec> of skill level.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="0" r /></sec>が 増加し、 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視</sec>が 有効化されます。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="note">曲技飛行</sec>の 持続 効果が 基本 効果で 適用になり、、 該当 スキルを <sec typ="note">マングースマニューバ</sec>で <sec typ="buff"><buff typ="CHANGE_CHAR" /> グヨ体</sec>します。
+        <sec>スキル 効果は <sec typ="note">英雄出現</sec>の スキル レベルに 比例します。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="0" r /></sec> 增加，並 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec> 啟用。
+        <sec typ="cond">回合開始時</sec>， <sec typ="note">特技飛行</sec>的 持續 效果 基礎 效果以 套用變為，且 該 技能 <sec typ="note">獴式機動</sec>以 <sec typ="buff"><buff typ="CHANGE_CHAR" /> Gyo個</sec>。
+        <sec>技能 效果 <sec typ="note">英雄登場</sec>的 技能 等級於 成比例。</sec>
   F2:
     key: F2
     icon: SelfAtkDeBuff
@@ -3627,6 +3713,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        몽구스 기동을 통해 대상의 모든 시선을 자신에게 집중시켜 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 적중 / 치명타 증가 효과를 해제</sec>합니다.
+        <sec typ="cond">스킬 사용 시</sec>, 대상이 <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태인 경우 2라운드 동안 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="4" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="Disallow" /> 강화 불가</sec> 상태로 만듭니다.
+      EN: |-
+        Uses a Mongoose Maneuver to draw all of the target’s attention to self and <sec typ="buff"><buff typ="REMOVE_BUFF" /> remove Accuracy / Critical increase effects</sec>.
+        <sec typ="cond">When using the skill</sec>, if the target is <sec typ="cond"><buff typ="PROVOKE" /> Provoked</sec>, decreases <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="4" r /></sec> for 2 rounds and inflicts <sec typ="buff"><buff typ="Disallow" /> Cannot be Buffed</sec>.
+      JP: |-
+        マングース機動によって対象のすべての視線を自身に集中させ、<sec typ="buff"><buff typ="REMOVE_BUFF" />命中 / クリティカル増加効果を解除</sec>します。
+        <sec typ="cond">スキル使用時</sec>、対象が<sec typ="cond"><buff typ="PROVOKE" />挑発</sec>状態の場合、2ラウンドの間<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="4" r /></sec>を減少させ、<sec typ="buff"><buff typ="Disallow" />強化不可</sec>状態にします。
+      TC: |-
+        透過獴式機動將目標的所有視線集中到自身，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除命中／暴擊增加效果</sec>。
+        <sec typ="cond">使用技能時</sec>，若目標處於<sec typ="cond"><buff typ="PROVOKE" />挑釁</sec>狀態，2回合內降低<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="4" r /></sec>，並使其處於<sec typ="buff"><buff typ="Disallow" />無法強化</sec>狀態。
 dialogue:
   KR:
     "20":
@@ -3680,8 +3779,7 @@ dialogue:
         공공장소에서 이러는 거 바람직하지 못해…
         그러니까…
         내 방에서 마저하자…
-      Oath: 정의란 무엇인가... 나는 언제나 이 생각을 해. 히어로가 정의에 대해서 고민하는 건 당연하잖아? 그런데 이제 더 이상 고민하지는
-        않을거야. 나에게 정의란 사령관이야. 사령관이 옳다고 하면 옳고, 틀리다고 하면 틀려. 너무 맹목적이지? 사랑이란 게 그렇지 뭐.
+      Oath: 정의란 무엇인가... 나는 언제나 이 생각을 해. 히어로가 정의에 대해서 고민하는 건 당연하잖아? 그런데 이제 더 이상 고민하지는 않을거야. 나에게 정의란 사령관이야. 사령관이 옳다고 하면 옳고, 틀리다고 하면 틀려. 너무 맹목적이지? 사랑이란 게 그렇지 뭐.
       OathIdle_01: |-
         사령관 정의로운 일 하러가지 않을래?
         악당을 혼내주러 가도 되고,
@@ -3834,9 +3932,7 @@ dialogue:
         [미번역]공공장소에서 이러는 거 바람직하지 못해…
         그러니까…
         내 방에서 마저하자…
-      Oath: "[미번역]정의란 무엇인가... 나는 언제나 이 생각을 해. 히어로가 정의에 대해서 고민하는 건 당연하잖아? 그런데 이제 더 이상
-        고민하지는 않을거야. 나에게 정의란 사령관이야. 사령관이 옳다고 하면 옳고, 틀리다고 하면 틀려. 너무 맹목적이지? 사랑이란 게
-        그렇지 뭐."
+      Oath: "[미번역]정의란 무엇인가... 나는 언제나 이 생각을 해. 히어로가 정의에 대해서 고민하는 건 당연하잖아? 그런데 이제 더 이상 고민하지는 않을거야. 나에게 정의란 사령관이야. 사령관이 옳다고 하면 옳고, 틀리다고 하면 틀려. 너무 맹목적이지? 사랑이란 게 그렇지 뭐."
       OathIdle_01: |-
         [미번역]사령관 정의로운 일 하러가지 않을래?
         악당을 혼내주러 가도 되고,
@@ -4018,10 +4114,8 @@ dialogue:
         Yeah… It’s not a crime
         if I agree so… umm… I just need
         to agree, right?
-      Oath: >-
-        I never knew… something like this would happen to me. Would you pinch
-        me? Commander… Huh?
-
+      Oath: |-
+        I never knew… something like this would happen to me. Would you pinch me? Commander… Huh?
         I'd love to. I'd really love to! Commander!
       OathIdle_01: I love just seeing you, Commander. He he.
       MVP: ""
@@ -4043,13 +4137,10 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         Why I want to be a hero is simple.
-
         Because I can be another’s strengths. Before, I used to say I’ll be a hero
-
         because of the commander…
-
         Now I’ll be a hero just for the Commander.
       Idle_01_02: |-
         Do you want to watch a fun hero movie with me?
@@ -4220,20 +4311,13 @@ skins:
   sid: null
   artist: PaintAle
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -4248,25 +4332,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_PoniesAnger_N
   skins:
     - sid: 1
       artist: PaintAle
       price: 46
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 2
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - true
         - false
@@ -4283,25 +4363,19 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_BR_PoniesAnger_1
   P:
     sid: 20
     artist: PaintAle
     priceEx: Promotion
-    G: false
     Spine: false
     SpineDamaged: false
     parts: 5
     stage: false
     subset:
-      - true
-      - false
-      - false
-      - false
-      - false
-      - false
-      - false
-      - false
+      O:
+        - _
     anim:
       - false
       - false
@@ -4317,4 +4391,5 @@ skins:
       iconId: 20
       tbarId: 20
       flags: 0
+      dflags: 0
       2dmodel: 2DModel_BR_PoniesAnger_PS1

@@ -1,3 +1,5 @@
+import { FunctionalComponent } from "preact";
+
 import { cn } from "@/libs/Class";
 import { UniqueID } from "@/libs/Functions";
 import { AssetsRoot } from "@/libs/Const.1";
@@ -62,7 +64,6 @@ const TitleCallDisplay: FunctionalComponent<TitleCallDisplayProps> = (props) => 
 										{ Object.values(TitleCalls[props.unitId][sid][key]).map(name => <div>
 											<audio
 												src={ `${AssetsRoot}/audio/titlecall/${name}.mp3` }
-												type="audio/mp3"
 												controls
 												preload="none"
 												volume="0.5"

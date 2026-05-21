@@ -589,6 +589,7 @@ source:
     - Ev:Ev35:EV2-1EX
     - Ev:Ev35:EV2-2EX
   - - Ev:Ev36:EV1-3EX
+  - - Ev:Ev38:EV1-4EX
 oneoff: false
 oathable: false
 entryReqMap: []
@@ -1736,6 +1737,11 @@ skills:
             base: 11
             per: 0
             chance: 1
+    desc:
+      KR: 충격파 미사일을 발사해 <dmg elem="physics" />를 주고, 대상을 <sec typ="buff"><buff typ="Push" /> 뒤로 <val idx="0" signless />칸 밀어내며</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>을(를) 감소시킵니다.
+      EN: shockwave missile fires <dmg elem="physics" /> damage and target <sec typ="buff"><buff typ="Push" /> back <val idx="0" signless />tiles pushes back and</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec> decreases.
+      JP: チウングヨクプア ミサイルを 発射して<dmg elem="physics" />を与え、、 対象を <sec typ="buff"><buff typ="Push" /> 後方へ <val idx="0" signless />マス ムイルオ内し</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>を減少させます。
+      TC: 衝擊波 飛彈 發射 造成<dmg elem="physics" />，並 目標 <sec typ="buff"><buff typ="Push" /> 向後 <val idx="0" signless />格 推開內並</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="1" /></sec>使其減少。
   "2":
     key: "2"
     icon: Scan
@@ -2141,6 +2147,19 @@ skills:
             base: 33
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        목표 지점에 있는 대상들의 약점을 분석해, 2라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>을(를) 증가시키며 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="1" r inv /></sec>와 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" r /></sec>를 감소시킵니다.
+        <sec>스킬 레벨 5부터 범위가 증가합니다.</sec>
+      EN: |-
+        target point to exists target of weakness analyzes, 2 rounds <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="1" r inv /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="2" r /></sec> decreases.
+        <sec>From skill level 5, range increases.</sec>
+      JP: |-
+        目標地点に ある 対象たちの ヤクジオムを 分析して、 2ラウンドの間 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="0" r /></sec>を 増加させ、 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="1" r inv /></sec>と <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="2" r /></sec>を減少させます。
+        <sec>スキルレベル5から 範囲が増加します。</sec>
+      TC: |-
+        目標地點於 有 目標們的 弱點 分析， 2回合內 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="0" r /></sec> 使其增加，並 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="1" r inv /></sec>與 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="2" r /></sec>使其減少。
+        <sec>自技能等級5起 範圍增加。</sec>
   "3":
     key: "3"
     icon: P.WideFireShot
@@ -2578,6 +2597,19 @@ skills:
             base: 13
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 스쿼드 내 AGS 1기당 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="7" r /></sec>가 증가하고 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 행동력 감소 효과에 면역</sec> 상태가 됩니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, in squad AGS 1 unit per own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="7" r /></sec> increases and <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> Action Speed decrease effect and immunity to</sec> state.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 スクワッド 内 AGS 1機ごと 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="7" r /></sec>が 増加し、 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 行動力 減少 効果に 免疫</sec> 状態になります。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 小隊 內 AGS 1台每 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="7" r /></sec> 增加，並 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 行動力 減少 效果於 免疫</sec> 變為狀態。
   "4":
     key: "4"
     icon: P.AWACS
@@ -2805,6 +2837,19 @@ skills:
             base: -0.1
             per: -0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="Guardpierce_Apply" /> 아군 지원기의 보호 무시를 활성화</sec>하고 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="Guardpierce_No_Apply" /> 적 지원기의 보호 무시를 비활성화</sec>하고 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="5" r /></sec>를 감소시킵니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="Guardpierce_Apply" /> allies Supporter of Ignore Protection activation</sec> and <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="Guardpierce_No_Apply" /> enemy Supporter of Ignore Protection deactivate</sec> and <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="5" r /></sec> decreases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 味方 支援機の 保護無視を 有効化</sec>し、 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="Guardpierce_No_Apply" /> 敵 支援機の 保護無視を 無効化</sec>し、 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="5" r /></sec>を減少させます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="Guardpierce_Apply" /> 我方 支援機的 無視保護 啟用</sec>並 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="Guardpierce_No_Apply" /> 敵人 支援機的 無視保護 停用</sec>並 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="5" r /></sec>使其減少。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -3063,6 +3108,27 @@ skills:
             base: 0.4
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">스쿼드 내에 <char uid="PECS_TommyWalker" />가 존재하는 한</sec>, 자신은 예비 소체를 공급받아 무제한의 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="4" r signless /> HP로 전투 속행</sec>을 획득합니다.
+        <sec typ="cond"><sec typ="note">충격파 미사일</sec> 사용 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 회피 강화 효과를 해제</sec>합니다.
+        <sec typ="cond"><sec typ="note">정밀 스캔</sec> 사용 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 무효화 효과를 해제</sec>합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> increases.
+        <sec typ="cond">in squad to <char uid="PECS_TommyWalker" /> exists one</sec>, self spare body receives supply unlimited of <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="4" r signless /> HP and Continue Combat</sec> gains.
+        <sec typ="cond"><sec typ="note">Shockwave Missile</sec> When used</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Evasion removes buffs</sec>.
+        <sec typ="cond"><sec typ="note">Precision Scan</sec> When used</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Damage Nullification removes the effect</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">スクワッド 内に <char uid="PECS_TommyWalker" />が ジオンジエする した</sec>、 自身は イェブイ スオ体を グオングウプ受けて ムウジエしたの <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="4" r signless /> HPで 戦闘続行</sec>を獲得します。
+        <sec typ="cond"><sec typ="note">衝撃波ミサイル</sec> 使用時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 回避 強化効果を 解除</sec>します。
+        <sec typ="cond"><sec typ="note">精密スキャン</sec> 使用時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> ダメージ無効化 効果を 解除</sec>します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>增加。
+        <sec typ="cond">小隊 內於 <char uid="PECS_TommyWalker" /> 存在 </sec>， 自身 獲得無限供應的備用機體 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="4" r signless /> HP以 戰鬥續行</sec>獲得。
+        <sec typ="cond"><sec typ="note">衝擊波飛彈</sec> 使用時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 迴避 強化效果 解除</sec>。
+        <sec typ="cond"><sec typ="note">精密掃描</sec> 使用時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 傷害無效化 效果 解除</sec>。
 dialogue:
   KR:
     "":
@@ -3175,20 +3241,13 @@ skins:
   sid: null
   artist: 메카셔군
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -3203,4 +3262,5 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Drone_N

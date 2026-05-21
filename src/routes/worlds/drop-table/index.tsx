@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useMemo, useRef, useState } from "preact/hooks";
-import { Link, route } from "preact-router";
+import { useLocation } from "preact-iso";
 
 import { toJpeg } from "html-to-image";
 
@@ -13,7 +13,7 @@ import { AssetsRoot } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { useLocale } from "@/libs/Locale";
 import { groupBy, isActive } from "@/libs/Functions";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
@@ -47,6 +47,7 @@ interface DropTableProps {
 }
 
 const DropTable: FunctionalComponent<DropTableProps> = (props) => {
+	const location = useLocation();
 	const [loc] = useLocale();
 
 	const tableRef = useRef<HTMLTableElement>(null);
@@ -155,7 +156,7 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 	const MapDB = useDBData<World>(`map/${props.wid}`);
 
 	const Maps = useMemo(() => {
-		if (!MapDB) return null;
+		if (!assertDBData(MapDB)) return null;
 		if (props.wid === "13") {
 			const w: World[""] = {
 				list: Object.values(MapDB).flatMap(r => r.list),
@@ -176,9 +177,9 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 			<div class="col-auto">
 				<button class="btn btn-dark" onClick={ (): void => {
 					if (props.wid === "Sub")
-						route("/worlds/");
+						location.route("/worlds/");
 					else
-						route(`/worlds/${props.wid}`);
+						location.route(`/worlds/${props.wid}`);
 				} }>
 					<Icons.ArrowLeft class="me-1" />
 					{ props.wid === "Sub"
@@ -314,7 +315,7 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 				</tr>
 			</thead>
 			<tbody>
-				{ (!FilterableUnitDB || !FilterableEquipDB || !MapDB || !groups)
+				{ (!assertDBData(FilterableUnitDB) || !assertDBData(FilterableEquipDB) || !assertDBData(MapDB) || !groups)
 					? <></>
 					: Object.keys(groups)
 						.sort((a, b) => {
@@ -370,9 +371,9 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 											? <span class="text-secondary">
 												<Locale k="WORLDS_DROP_NO_RESULT" />
 											</span>
-											: units.map(u => <Link href={ `/units/${u.uid}` }>
+											: units.map(u => <a href={ `/units/${u.uid}` }>
 												<UnitFace class="m-1" uid={ u.uid } size={ 64 } />
-											</Link>)
+											</a>)
 										}
 									</td>
 									<td>
@@ -380,13 +381,13 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 											? <span class="text-secondary">
 												<Locale k="WORLDS_DROP_NO_RESULT" />
 											</span>
-											: equips.map(e => <Link href={ `/equips/${e.fullKey}` } onClick={ (ev) => {
+											: equips.map(e => <a href={ `/equips/${e.fullKey}` } onClick={ (ev) => {
 												ev.preventDefault();
 												ev.stopPropagation();
 												setSelectedEquip(e);
 											} }>
 												<EquipIcon class="m-1" image={ e.icon } size={ 64 } />
-											</Link>)
+											</a>)
 										}
 									</td>
 								</tr>;

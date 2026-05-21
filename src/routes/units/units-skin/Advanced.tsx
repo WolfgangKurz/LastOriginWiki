@@ -1,8 +1,8 @@
 import { FunctionalComponent } from "preact";
 import { useCallback, useEffect, useMemo, useState } from "preact/hooks";
-import { route } from "preact-router";
+import { useLocation } from "preact-iso";
 
-import { SKIN_SUBSET_ENUM, UnitSkinEntity } from "@/types/DB/Unit";
+import { UnitSkinEntity } from "@/types/DB/Unit";
 import { SKIN_IN_PARTS } from "@/types/Enums";
 import { UnitsListProps } from "..";
 
@@ -27,6 +27,7 @@ interface SkinData extends UnitSkinEntity {
 }
 
 const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
+	const location = useLocation();
 	const [loc] = useLocale();
 
 	const [filterPart, setFilterPart] = useState<Record<Exclude<SKIN_IN_PARTS, SKIN_IN_PARTS.NONE>, boolean | undefined>>({
@@ -90,8 +91,8 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 				const pVoice = (x.parts & (1 << SKIN_IN_PARTS.VOICE)) > 0;
 				const pSDAnim = (x.parts & (1 << SKIN_IN_PARTS.SD_ANIMATION)) > 0;
 				const pFX = (x.parts & (1 << SKIN_IN_PARTS.SD_EFFECT)) > 0;
-				const pDamaged = x.subset[SKIN_SUBSET_ENUM.Damaged] || (x.parts & (1 << SKIN_IN_PARTS.DAMAGE_IMAGE)) > 0;
-				const pBG = x.subset[SKIN_SUBSET_ENUM.Background] || (x.parts & (1 << SKIN_IN_PARTS.PROPS)) > 0;
+				const pDamaged = x.subset.O.some(r => r.includes("D")) || (x.parts & (1 << SKIN_IN_PARTS.DAMAGE_IMAGE)) > 0;
+				const pBG = x.subset.O.some(r => r.includes("B")) || (x.parts & (1 << SKIN_IN_PARTS.PROPS)) > 0;
 
 				// 미설정이 아니고 일치하지 않는다면 제외
 				if (
@@ -319,7 +320,11 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 					/>
 
 					<div class={ style.SkinNavigator }>
-						<Button variant="light" textVariant="dark" onClick={ () => route(`/units/${currentSkin.uid}/s${currentSkin.sid}`) }>
+						<Button
+							variant="light"
+							textVariant="dark"
+							onClick={ () => location.route(`/units/${currentSkin.uid}/s${currentSkin.sid}`) }
+						>
 							<Locale raw={ false } k="UNIT_SKIN_NAVIGATE" />
 						</Button>
 					</div>

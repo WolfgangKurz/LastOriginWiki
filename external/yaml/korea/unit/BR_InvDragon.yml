@@ -2492,6 +2492,23 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        참격으로 대상에게 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec> 증가 상태로 만듭니다.
+        치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" r /></sec>가 증가하며 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="6" r inv /></sec>를 감소시킵니다.
+        <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 감소</sec>는 중첩 가능합니다.
+      EN: |-
+        by slash as to the target with <dmg elem="physics" /> damage and 2 rounds target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec> increase inflicts.
+        On critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec> increases and 2 rounds, target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="6" r inv /></sec> decreases.
+        <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance decrease</sec> stack ability.
+      JP: |-
+        斬撃で 対象に<dmg elem="physics" />を与え、、 2ラウンドの間 対象を <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec> 増加 状態にします。
+        クリティカル時、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="5" r /></sec>が 増加し、 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="6" r inv /></sec>を減少させます。
+        <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 減少</sec>は 重複 可能します。
+      TC: |-
+        斬擊以 對目標 造成<dmg elem="physics" />，並 2回合內 目標 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" r /></sec> 增加 使其進入狀態。
+        暴擊時， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="5" r /></sec> 增加，並 2回合內 目標的 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="6" r inv /></sec>使其減少。
+        <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 減少</sec> 疊加 可能。
   "2":
     key: "2"
     icon: Command
@@ -2822,6 +2839,31 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 상승시키고, 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec>를 증가시킵니다.
+        대상이 자신을 제외한 <sec typ="note">호라이즌</sec> 또는 <sec typ="note">21 스쿼드</sec> 대원이면 효과가 50% 증가합니다.
+        <sec>스킬 레벨 10에서 자신의 위치와 상관없이 적용됩니다.</sec>
+        <sec typ="note">호라이즌</sec> : <char uid="BR_Nereid" />, <char uid="BR_Undine" />, <char uid="BR_Sirene" />, <char uid="BR_Thetis" />
+        <sec typ="note">21 스쿼드</sec> : <char uid="BR_PA00EL" />, <char uid="3P_ConstantiaS2" />, <char uid="DS_Johanna" />, <char uid="PECS_LRL" />, <char uid="3P_Labiata" />, <char uid="PECS_LemonadeAlpha" />, <char uid="PECS_LemonadeBeta" />, <char uid="PECS_LemonadeGamma" />, <char uid="PECS_LemonadeEpsilon" />
+      EN: |-
+        within range allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> rise when activates, 2 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r /></sec> increases.
+        target self excluding <sec typ="note">Horizon</sec> or <sec typ="note">21 squad</sec> memberif effect and 50% increases.
+        <sec>At skill level 10, regardless of own position is applied.</sec>
+        <sec typ="note">Horizon</sec>: <char uid="BR_Nereid" />, <char uid="BR_Undine" />, <char uid="BR_Sirene" />, <char uid="BR_Thetis" />
+        <sec typ="note">21 squad</sec>: <char uid="BR_PA00EL" />, <char uid="3P_ConstantiaS2" />, <char uid="DS_Johanna" />, <char uid="PECS_LRL" />, <char uid="3P_Labiata" />, <char uid="PECS_LemonadeAlpha" />, <char uid="PECS_LemonadeBeta" />, <char uid="PECS_LemonadeGamma" />, <char uid="PECS_LemonadeEpsilon" />
+      JP: |-
+        範囲内 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を スアンスウン時クイし、 2ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r /></sec>を増加させます。
+        対象が 自身を ジエ外した <sec typ="note">ホライゾン</sec> または <sec typ="note">21 スクワッド</sec> 隊員なら 効果が 50% 増加します。
+        <sec>スキルレベル10で 自身の位置に関係なく 適用されます。</sec>
+        <sec typ="note">ホライゾン</sec>：<char uid="BR_Nereid" />、 <char uid="BR_Undine" />、 <char uid="BR_Sirene" />、 <char uid="BR_Thetis" />
+        <sec typ="note">21 スクワッド</sec>：<char uid="BR_PA00EL" />、 <char uid="3P_ConstantiaS2" />、 <char uid="DS_Johanna" />、 <char uid="PECS_LRL" />、 <char uid="3P_Labiata" />、 <char uid="PECS_LemonadeAlpha" />、 <char uid="PECS_LemonadeBeta" />、 <char uid="PECS_LemonadeGamma" />、 <char uid="PECS_LemonadeEpsilon" />
+      TC: |-
+        範圍內 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 上升時台並， 2回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r /></sec>使其增加。
+        目標 自身 解除外 <sec typ="note">地平線</sec> 或 <sec typ="note">21 小隊</sec> 隊員若 效果 50% 增加。
+        <sec>技能等級10時 無論自身位置 套用。</sec>
+        <sec typ="note">地平線</sec>：<char uid="BR_Nereid" />， <char uid="BR_Undine" />， <char uid="BR_Sirene" />， <char uid="BR_Thetis" />
+        <sec typ="note">21 小隊</sec>：<char uid="BR_PA00EL" />， <char uid="3P_ConstantiaS2" />， <char uid="DS_Johanna" />， <char uid="PECS_LRL" />， <char uid="3P_Labiata" />， <char uid="PECS_LemonadeAlpha" />， <char uid="PECS_LemonadeBeta" />， <char uid="PECS_LemonadeGamma" />， <char uid="PECS_LemonadeEpsilon" />
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -3297,6 +3339,23 @@ skills:
             base: 0.3
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="2" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec>가 감소합니다.
+        자신이 <sec typ="attr">전투 불능</sec>이 될 경우, 2라운드 동안 각 효과가 추가 적용되며 <sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless /> 위력으로 반격</sec> 효과가 추가됩니다.
+        <sec>스킬 레벨 10에서 자신의 위치와 상관없이 적용됩니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="2" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="1" r inv /></sec> decreases.
+        self <sec typ="attr">battle disabled</sec> becomes case, 2 rounds each effect and additionally applied becomes and <sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless /> power as Counterattack</sec> effect and additional.
+        <sec>At skill level 10, regardless of own position is applied.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="2" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec>が減少します。
+        自身が <sec typ="attr">戦闘 不能</sec>が になる 場合、 2ラウンドの間 各 効果が 追加適用になり、 <sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless /> 威力で 反撃</sec> 効果が 追加されます。
+        <sec>スキルレベル10で 自身の位置に関係なく 適用されます。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="2" r /></sec> 增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="1" r inv /></sec>減少。
+        自身 <sec typ="attr">戰鬥 無法</sec> 將 情況， 2回合內 各 效果 額外套用變為，且 <sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless /> 威力以 反擊</sec> 效果 額外。
+        <sec>技能等級10時 無論自身位置 套用。</sec>
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -3986,6 +4045,27 @@ skills:
             base: 0.02
             per: 0.001
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가합니다.
+        대상이 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원</sec>을 받는 상태면 효과가 50% 증가합니다.
+        대상이 <sec typ="cond"><buff typ="SCOUTING" /> 정찰</sec> 활성화 상태면 효과가 50% 증가합니다.
+        <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="3" r /></sec> increases.
+        target <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> Attack Support</sec> receiving state if effect and 50% increases.
+        target <sec typ="cond"><buff typ="SCOUTING" /> Scouting</sec> active state if effect and 50% increases.
+        <sec>At skill level 10, range increases.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が増加します。
+        対象が <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻撃支援</sec>を 受けている状態なら 効果が 50% 増加します。
+        対象が <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 有効状態なら 効果が 50% 増加します。
+        <sec>スキルレベル10で 範囲が増加します。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>增加。
+        目標 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻擊支援</sec> 受到的狀態若 效果 50% 增加。
+        目標 <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 啟用狀態若 效果 50% 增加。
+        <sec>技能等級10時 範圍增加。</sec>
   "5":
     key: "5"
     icon: P.Command
@@ -4519,6 +4599,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="note">포격 대기</sec> 활성화 상태에서 대기 시, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="ref">함대 포격 모드</sec>로 변환</sec>됩니다.
+        <sec typ="note">착탄형 액티브 스킬</sec>을 보유한 아군의 <sec typ="buff"><buff typ="AP_UP" /> 전투 개시 AP <val idx="5" /></sec>를 올려주고, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>를 증가시킵니다.
+        전투 종료 시, <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec>이 활성화됩니다.
+        <sec typ="cond"><buff typ="SCOUTING" /> 정찰</sec> 활성화 시, 자신에게도 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="10" r /></sec> 증가 효과가 적용됩니다.
+      EN: |-
+        <sec typ="note">Artillery Standby</sec> active state in On standby, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="ref">Fleet Bombardment Mode</sec> as conversion</sec>.
+        <sec typ="note">Impact-Type Active Skill</sec> has allies' <sec typ="buff"><buff typ="AP_UP" /> battle units when AP <val idx="5" /></sec> raises deals and, <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="6" r /></sec> increases.
+        At the end of battle, <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> is activated.
+        <sec typ="cond"><buff typ="SCOUTING" /> Scouting</sec> activation when, self also <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="12" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="10" r /></sec> increase the effect is applied.
+      JP: |-
+        <sec typ="note">砲撃待機</sec> 有効状態で 待機時、 <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="ref">艦隊砲撃モード</sec>で 変換</sec>されます。
+        <sec typ="note">着弾型アクティブスキル</sec>を 保有する 味方の <sec typ="buff"><buff typ="AP_UP" /> 戦闘 個時 AP <val idx="5" /></sec>を オルルヨ与え、、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="6" r /></sec>を増加させます。
+        戦闘終了時、 <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec>が 有効化されます。
+        <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 有効化 時、 自身にも <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="10" r /></sec> 増加 効果が適用されます。
+      TC: |-
+        <sec typ="note">砲擊待機</sec> 啟用狀態在 待機時， <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="ref">艦隊砲擊模式</sec>以 轉換</sec>。
+        <sec typ="note">著彈型主動技能</sec> 持有的 我方的 <sec typ="buff"><buff typ="AP_UP" /> 戰鬥 個時 AP <val idx="5" /></sec> 提升造成，並 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="6" r /></sec>使其增加。
+        戰鬥結束時， <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 啟用。
+        <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 啟用 時， 自身給也 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="10" r /></sec> 增加 效果套用。
   F1:
     key: F1
     icon: AirStrike
@@ -7411,6 +7512,31 @@ skills:
             base: 38
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        함대 포격을 개시해 지정 범위에 <sec typ="attr">보호 무시</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec> <dmg elem="physics" />를 줍니다.
+        치명타 시, 적중 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어막 효과를 해제</sec>합니다.
+        자신이 <sec typ="cond"><buff typ="SCOUTING" /> 정찰</sec> 활성화 상태일 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="6" r /></sec>가 증가합니다.
+        해당 스킬 사용 시, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 기본 모드로 자동 변경</sec>되며 <sec typ="note">포격 대기</sec> 상태가 해제됩니다.
+        <sec typ="cond"><buff typ="COUNTER" /> 반격</sec> 시에도 <sec typ="note">함대 포격 모드</sec>는 해제됩니다.
+      EN: |-
+        fleet bombardment units when remove to the designated area <sec typ="attr">Ignore Protection</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="5" r /></sec> <dmg elem="physics" />.
+        On critical hit, Hit target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Barrier removes the effect</sec>.
+        self <sec typ="cond"><buff typ="SCOUTING" /> Scouting</sec> active stateif, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="6" r /></sec> increases.
+        the When using the skill, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Default Modeas automatic change</sec>becomes and <sec typ="note">Artillery Standby</sec> state is removed.
+        <sec typ="cond"><buff typ="COUNTER" /> Counterattack</sec> when also <sec typ="note">Fleet Bombardment Mode</sec> is removed.
+      JP: |-
+        ハアムドエ 砲撃を 個時して 指定範囲に<sec typ="attr">保護無視</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="5" r /></sec><dmg elem="physics" />を与えます。
+        クリティカル時、 命中対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> バリア 効果を 解除</sec>します。
+        自身が <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 有効状態の場合、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="6" r /></sec>が増加します。
+        該当 スキル使用時、 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 基本モードで ジアドオン 変更</sec>になり、 <sec typ="note">砲撃待機</sec> 状態が 解除されます。
+        <sec typ="cond"><buff typ="COUNTER" /> 反撃</sec> 時にも <sec typ="note">艦隊砲撃モード</sec>は 解除されます。
+      TC: |-
+        下m帶 砲擊 個時 指定範圍於 <sec typ="attr">無視保護</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="5" r /></sec> 造成<dmg elem="physics" />。
+        暴擊時， 命中目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 護盾 效果 解除</sec>。
+        自身 <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 啟用狀態若為， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="6" r /></sec>增加。
+        該 使用技能時， <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 基本模式以 自動 變更</sec>變為，且 <sec typ="note">砲擊待機</sec> 狀態 解除。
+        <sec typ="cond"><buff typ="COUNTER" /> 反擊</sec> 時於也 <sec typ="note">艦隊砲擊模式</sec> 解除。
   F2:
     key: F2
     icon: FormChange
@@ -7523,6 +7649,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        스킬 사용 시, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 기본 모드로 변경</sec>되며 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과가 해제</sec>됩니다.
+        <sec typ="note">포격 대기</sec>는 해제되지 않습니다.
+      EN: |-
+        When using the skill, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Default Modeas change</sec>becomes and <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec>.
+        <sec typ="note">Artillery Standby</sec> is not removed.
+      JP: |-
+        スキル使用時、 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 基本モードで 変更</sec>になり、 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果が 解除</sec>されます。
+        <sec typ="note">砲撃待機</sec>は 解除ドウェジイ しません。
+      TC: |-
+        使用技能時， <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 基本模式以 變更</sec>變為，且 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>。
+        <sec typ="note">砲擊待機</sec> 解除不會 不會。
 dialogue:
   KR:
     "1":
@@ -7679,8 +7818,7 @@ dialogue:
         이, 이건 그러니까...
         시크릿 메뉴를 주문하려는 것이오?
         ...그렇다면, 잠시 저 뒤쪽으로...
-      Oath: 주군, 그렇게나 소관의 커피가 마음에 들었소? ...후후, 농이오. 사랑하는 이가 내민 반지를 보자, 기쁨과 감격에 북받쳐 괜한 말을
-        해 버렸군. 진정으로 하고 싶은 말은 이거였소. '네, 서방님. 저도 당신을 사랑합니다. 평생 그대와 함께 하겠어요.'
+      Oath: 주군, 그렇게나 소관의 커피가 마음에 들었소? ...후후, 농이오. 사랑하는 이가 내민 반지를 보자, 기쁨과 감격에 북받쳐 괜한 말을 해 버렸군. 진정으로 하고 싶은 말은 이거였소. '네, 서방님. 저도 당신을 사랑합니다. 평생 그대와 함께 하겠어요.'
       OathIdle_01: |-
         서방님을 위해 모닝 커피를 준비했습니다.
         한 잔 마시고 잠을 털어버린 뒤...
@@ -7738,9 +7876,7 @@ dialogue:
       SPIdle_02_01: |-
         이건 날 유혹하려는 건가?
         후후, 좋아. 즐겁게 유혹당하도록 하지.
-      Oath: 그대는 정말로 간도 크군. 포세이돈의 최고 지휘관에게 사랑을 고백하다니. 뭐, 그런 대범한 면이 있기에 내가 그대를 사랑하는 거지만
-        말이야. 이제… 앞으로는 내 직함에 한 줄을 더 추가해야겠군. 무적의 용, 포세이돈 인더스트리의 해군 지휘관… 그리고 그대의
-        아내라고 말이야.
+      Oath: 그대는 정말로 간도 크군. 포세이돈의 최고 지휘관에게 사랑을 고백하다니. 뭐, 그런 대범한 면이 있기에 내가 그대를 사랑하는 거지만 말이야. 이제… 앞으로는 내 직함에 한 줄을 더 추가해야겠군. 무적의 용, 포세이돈 인더스트리의 해군 지휘관… 그리고 그대의 아내라고 말이야.
       OathIdle_01: |-
         포세이돈에는 출산 휴가 제도가 있다.
         왜 이 말을 하는 거냐고?
@@ -7854,9 +7990,8 @@ dialogue:
       Idle_03_01: 貴官の望んでいることは小官も同じく望んでいる。貴官が目標としている場所についても同じだ。どこへでも小官はついて行こう。
       Idle_04_01: 過去、歪み黒く変わってしまった世界を見たことがある…貴官にはあの黒に染まって欲しくない。
       SPIdle_02_01: くぅっ…！
-      Oath: >-
+      Oath: |-
         ここで待っている間、あなたと共に過ごした日々を思い出していた。武人として、あなたに相応しい部下になりたいものだ。そして…これからは誇り高い妻としても…、誠心誠意支えていこう…。
-
         う～ん…やはり…まだ慣れない呼び方だが……、…旦那様…。
       OathIdle_01: 例え別の人生を選べたとしても、小官は旦那様に仕える道を選択するだろう。
       MVP: ""
@@ -7883,8 +8018,7 @@ dialogue:
       Idle_01_03: これで満足したか？ では兵士たちに見つかる前に着替えを…うぅっ…！し、暫し身を隠させてもらう！
       SPIdle_01_01: うぅっ… ど、どこをどうやって隠せばいいのか…
       Idle_02_01: そんな露骨に…あ、あそこがああだとかこうだとか…言わないでいただけるか…。 穴があったら入りたい…
-      Idle_03_01: 運良く見られなかったようだ… 幾多の戦場を生き抜いてきた小官だが、これほど緊張したのは初めてだ。…ではそろそろ放してくれないか…。
-        そんなに、触られていると…
+      Idle_03_01: 運良く見られなかったようだ… 幾多の戦場を生き抜いてきた小官だが、これほど緊張したのは初めてだ。…ではそろそろ放してくれないか…。 そんなに、触られていると…
       Idle_04_01: 恥ずかし過ぎて死んだ方がマシかもしれない程だ。しかし…恋慕する貴官の頼みを聞くのは小官の喜びでもあるのだ…うぅ…。
       SPIdle_02_01: はぁ…。この格好がそんなに…良い……のか…？ 今日は普段よりも…特に…
       Oath: |-
@@ -7930,8 +8064,7 @@ dialogue:
       SPIdle_02_01: |-
         こ、これはつまり…シークレットメニューを注文するということか？
         …そういうことなら、裏に来てくれ……
-      Oath: 主よ、そんなに小官のコーヒーが気に入ったのか？
-        …ふふ、冗談だ。愛する人から指輪を渡されて、思わずおかしなことを言ってしまった。許してくれ。本当に言いたいことは…うむ。旦那様。私もあなたを愛しています。これからの人生…ずっとあなたと共にいたい。
+      Oath: 主よ、そんなに小官のコーヒーが気に入ったのか？ …ふふ、冗談だ。愛する人から指輪を渡されて、思わずおかしなことを言ってしまった。許してくれ。本当に言いたいことは…うむ。旦那様。私もあなたを愛しています。これからの人生…ずっとあなたと共にいたい。
       OathIdle_01: |-
         旦那様、モーニングコーヒーを淹れました。これで眠気を覚まし…素敵な一日の始まりにしてください。 
         それと、その…お仕事に行かれる前にモーニング、キスを……
@@ -7993,11 +8126,9 @@ dialogue:
       Idle_03_01: む、無敵などと……そのようなむず痒くなる二つ名……やめていただきたいのだが…！
       Idle_04_01: たまには…兵士たちではなく、貴官が…小官のことを見てくれたら……と思うことがある。
       SPIdle_02_01: うっ…
-      Oath: >-
+      Oath: |-
         な、何を…小官は武人だ。武人にこのようなもの…しかし…貴官が望むのならば致し方ない…。
-
         どうか…これから…こんな小官を…よろしく頼む。いや、よろしくお頼み申しあげる。
-
         小官は、あ、主…のものになる覚悟は…できている。ただ…今日のことはまだ秘め事にしておいてもらいたい…この決まりが悪く、浮ついた感情がなくなるまでは…。
       OathIdle_01: 主…、そうしきりに見つめても…何も出ないぞ…？も、もう、そろそろやめていただけないだろうか…
       MVP: ""
@@ -8073,12 +8204,9 @@ dialogue:
         distorted and darkened… I won’t let
         the darkness come to you.
       SPIdle_02_01: … Ugh!
-      Oath: >-
-        While I’m waiting here, I was thinking about the memories I had with
-        you. As a warrior,
-
+      Oath: |-
+        While I’m waiting here, I was thinking about the memories I had with you. As a warrior,
         I hope I’m a proud soldier to you, my liege. And… from now on,
-
         I will try my best to take care of… um… It’s still awkward to call you that, but I will try my best… Dear Husband.
       OathIdle_01: |-
         Even if I can choose
@@ -8112,10 +8240,8 @@ dialogue:
       Idle_02_01: |-
         D-don’t be so specific like you’re
         giving comments. You’re embarrassing me…
-      Idle_03_01: >-
-        Thank goodness I didn’t get caught… I’ve went to numerous battlefields,
-        but I was never so nervous… Then will you let go of me now?
-
+      Idle_03_01: |-
+        Thank goodness I didn’t get caught… I’ve went to numerous battlefields, but I was never so nervous… Then will you let go of me now?
         You’re touching me.
       Idle_04_01: |-
         Of course I’m embarrassed to death. Still… Realizing my lover’s wish is…
@@ -8123,15 +8249,11 @@ dialogue:
       SPIdle_02_01: |-
         Ugh… Do you like this costume?
         Today, you’re more…
-      Oath: >-
-        Wh-what…? I’m a warrior. Why would you give this to a… I-I don’t think I
-        can do this anymore.
-
+      Oath: |-
+        Wh-what…? I’m a warrior. Why would you give this to a… I-I don’t think I can do this anymore.
         I appreciate your love, but looking like this… I think we should move to somewhere else. Um… my dear husband.​
-      OathIdle_01: >-
-        Did you bring other members’ clothes again… D-Dear Husband. Please look
-        away
-
+      OathIdle_01: |-
+        Did you bring other members’ clothes again… D-Dear Husband. Please look away
         while I get changed.
       MVP: ""
     "3":
@@ -8176,21 +8298,16 @@ dialogue:
       Idle_03_01: |-
         They say there’s a special menu at Cafe Horizon.
         …Do you want to try it, by any chance?
-      Idle_04_01: >-
-        I heard that this uniform was made to seduce you, Master. So… How do you
-        like it?
-
+      Idle_04_01: |-
+        I heard that this uniform was made to seduce you, Master. So… How do you like it?
         Master? Are you being seduced by this uniform?
-
         Do I… make your heart beat faster?
       SPIdle_02_01: |-
         This is a bit…
         Are you going to order from the secret menu?
         In that case, please follow me to the back…
-      Oath: >-
-        Master, did you like my coffee that much? …Hah, it's a joke. I guess I
-        got a bit carried away
-
+      Oath: |-
+        Master, did you like my coffee that much? …Hah, it's a joke. I guess I got a bit carried away
         when I saw the person I loved was giving me a ring. This is what I really wanted to say. “Yes, darling. I love you too. I would like to be with you for the rest of my life.”
       OathIdle_01: |-
         I’ve prepared some coffee for my darling.
@@ -8228,8 +8345,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Join: Good to see you. I will serve you until the inevitable death comes upon
-        us.
+      Join: Good to see you. I will serve you until the inevitable death comes upon us.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -8269,12 +8385,9 @@ dialogue:
         Sometimes… I want you to
         look at me, not the soldiers.
       SPIdle_02_01: Ow…
-      Oath: >-
-        W-what… But I'm invincible. You're giving this to me…? Oh well, if
-        that's what you want.
-
+      Oath: |-
+        W-what… But I'm invincible. You're giving this to me…? Oh well, if that's what you want.
         Please… take care of me from now on. No, I'm asking a favor. Because I will become
-
         your Dog Horse Robot. However… keep what happened today just between us… until my shyness wears off.
       OathIdle_01: |-
         Dear Husband, I won’t say anything even if
@@ -8588,20 +8701,13 @@ skins:
   sid: null
   artist: Kakiman
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -8616,25 +8722,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_InvDragon_N
   skins:
     - sid: 1
       artist: Kakiman
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - false
         - false
@@ -8651,24 +8753,20 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_InvDragon_NS1
     - sid: 2
       artist: Kakiman
       price: 159
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - true
         - false
@@ -8685,23 +8783,25 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 4
+        dflags: 4
     - sid: 3
       artist: MEL
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -8718,26 +8818,21 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_InvDragon_NS3
         2dmodel_dam: 2DModel_BR_InvDragon_NS3_Dam
         consumableKey: Skin_BR_InvDragon_3
     - sid: 4
       artist: MEL
       price: 147
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
       anim:
         - false
         - false
@@ -8754,5 +8849,6 @@ skins:
         tbarId: 4
         voiceId: 4
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_InvDragon_NS4
         consumableKey: Skin_BR_InvDragon_4

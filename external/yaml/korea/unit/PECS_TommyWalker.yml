@@ -2199,6 +2199,23 @@ skills:
             base: 0
             per: 0
             chance: 0.5
+    desc:
+      KR: |-
+        적을 연타해 <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 감소 효과를 해제</sec>합니다.
+        대상의 방어력을 일정 비율 무시합니다. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec>
+        대상이 <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="MARKING" /> 표식</sec> 상태인 경우, <sec typ="chance"><chance idx="4" /> 확률</sec>로 해당 라운드에 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만듭니다.
+      EN: |-
+        enemy strikes repeatedly <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="REMOVE_BUFF" /> Damage Reduction removes the effect</sec>.
+        target's Defense fixed ratio ignore. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="3" r /></sec>
+        target <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="cond"><buff typ="MARKING" /> Mark</sec> if in the state, <sec typ="chance"><chance idx="4" /> chance</sec> as the round to <sec typ="buff"><buff typ="STUN" /> Stunned</sec> inflicts.
+      JP: |-
+        敵を ヨントアして<dmg elem="physics" />を与え、、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> ダメージ 減少 効果を 解除</sec>します。
+        対象の 防御力を 一定 ブイユル 無視します。 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec>
+        対象が <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="cond"><buff typ="MARKING" /> 標的</sec> 状態の場合、 <sec typ="chance"><chance idx="4" /> 確率</sec>で 該当 ラウンドに <sec typ="buff"><buff typ="STUN" /> 行動不可</sec> 状態にします。
+      TC: |-
+        敵人 Yeonta 造成<dmg elem="physics" />，並 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 傷害 減少 效果 解除</sec>。
+        目標的 防禦力 一定 比例 無視。 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec>
+        目標 <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="cond"><buff typ="MARKING" /> 標記</sec> 若為狀態， <sec typ="chance"><chance idx="4" /> 機率</sec>以 該 回合於 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 使其進入狀態。
   "2":
     key: "2"
     icon: Hang
@@ -4014,6 +4031,23 @@ skills:
               level: "0"
             value: Char_PECS_TommyWalker_N
             chance: 1
+    desc:
+      KR: |-
+        앵커로 적을 포획해 <dmg elem="physics" />를 주고 <sec typ="buff"><buff typ="Pull" /> <val idx="1" signless />칸 앞으로 당깁니다</sec>.
+        포획된 대상은 2라운드 동안 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> 감소 / <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec> 증가 상태가 됩니다.
+        <sec>스킬 레벨 당 8%의 적중 보정이 적용됩니다.</sec>
+      EN: |-
+        anchor as enemy captures <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="Pull" /> <val idx="1" signless />tiles forward per pulls</sec>.
+        captured the target 2 rounds <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="0" r /></sec> decrease / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec> increase state.
+        <sec>per skill level 8% of accuracy correction is applied.</sec>
+      JP: |-
+        アンカーで 敵を プオハウェクして<dmg elem="physics" />を与え、 <sec typ="buff"><buff typ="Pull" /> <val idx="1" signless />マス 前方へ ごとグイプンイドア</sec>。
+        プオハウェクされた 対象は 2ラウンドの間 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> 減少 / <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec> 増加 状態になります。
+        <sec>スキルレベルごとに 8%の 命中補正が適用されます。</sec>
+      TC: |-
+        錨以 敵人 捕獲 造成<dmg elem="physics" />，並 <sec typ="buff"><buff typ="Pull" /> <val idx="1" signless />格 向前 每拉動</sec>。
+        捕獲已 目標 2回合內 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> 減少 / <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" r /></sec> 增加 變為狀態。
+        <sec>每技能等級 8%的 套用命中補正。</sec>
   "3":
     key: "3"
     icon: P.ExpUp
@@ -4514,6 +4548,27 @@ skills:
             base: 0.15
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">적 사망 시</sec>, 적의 잔해를 수거해 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" /></sec>을(를) 영구적으로 증가시킵니다.
+        <sec typ="cond">전투 개시 시</sec>, 아군의 <sec typ="buff"><buff typ="EXP_UP" /> 획득 경험치 <val idx="5" r /></sec>를 증가시킵니다.
+        <sec typ="cond">대상이 AGS인 경우</sec> 효과가 두 배로 증폭됩니다.
+        스쿼드 내에 <char uid="PECS_Drone" />이 있는 경우, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">When an enemy dies</sec>, enemy's Debris collects allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" /></sec> permanently increases.
+        <sec typ="cond">At battle start</sec>, allies' <sec typ="buff"><buff typ="EXP_UP" /> gain EXP <val idx="5" r /></sec> increases.
+        <sec typ="cond">target AGSif</sec> the effect is doubled amplification.
+        in squad to <char uid="PECS_Drone" /> if present, own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="4" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">敵死亡時</sec>、 敵の 残骸を 回収して 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" /></sec>を 永久に 増加させます。
+        <sec typ="cond">戦闘開始時</sec>、 味方の <sec typ="buff"><buff typ="EXP_UP" /> 獲得 経験値 <val idx="5" r /></sec>を増加させます。
+        <sec typ="cond">対象が AGSの場合</sec> 効果が2倍で 増幅されます。
+        スクワッド 内に <char uid="PECS_Drone" />が ある 場合、 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">敵人死亡時</sec>， 敵人的 殘骸 回收 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" /></sec> 永久 增加。
+        <sec typ="cond">戰鬥開始時</sec>， 我方的 <sec typ="buff"><buff typ="EXP_UP" /> 獲得 經驗值 <val idx="5" r /></sec>使其增加。
+        <sec typ="cond">目標 AGS若為</sec> 效果變為2倍以 增幅。
+        小隊 內於 <char uid="PECS_Drone" /> 有 情況， 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -4723,6 +4778,23 @@ skills:
             base: 0.15
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">적 사망 시</sec>, 적의 잔해를 수거해 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>을(를) 증가시킵니다.
+        스쿼드 내에 <char uid="PECS_Drone" />이 있는 경우, 원격 배송을 통해 인접 여부에 관계 없이 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>을(를) 증가시킵니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">When an enemy dies</sec>, enemy's Debris collects within range allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> increases.
+        in squad to <char uid="PECS_Drone" /> if present, remote delivery through adjacent whether to relation none <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        <sec typ="cond">敵死亡時</sec>、 敵の 残骸を 回収して 範囲内 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>を増加させます。
+        スクワッド 内に <char uid="PECS_Drone" />が ある 場合、 ウォングヨク ブエ宣を 通じて 隣接 ヨブウに グワングイェ オが <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>を増加させます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>使其增加。
+        <sec typ="cond">敵人死亡時</sec>， 敵人的 殘骸 回收 範圍內 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>使其增加。
+        小隊 內於 <char uid="PECS_Drone" /> 有 情況， 人員格 倍送 透過 相鄰 是否於 關係 無 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>使其增加。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -4915,6 +4987,23 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="2" /></sec>이(가) 증가합니다.
+        <sec typ="cond"><sec typ="note">작업용 앵커</sec> 적중 시</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">분쇄 강타</sec> 스킬 협동 공격</sec>을 실행합니다.
+        <sec typ="note">잔해 재활용</sec> / <sec typ="note">보급 개시</sec>의 적 사망 시 발동 효과가, 자신이 적 처치 시에는 두 배로 증폭됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="2" /></sec> increases.
+        <sec typ="cond"><sec typ="note">Work Anchor</sec> On hit</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Crushing Smash</sec> skill coordinated attack</sec> execute.
+        <sec typ="note">Debris Recycling</sec> / <sec typ="note">Supply Start</sec> of When an enemy dies trigger effect and, self When killing an enemyin doubled.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="2" /></sec>が増加します。
+        <sec typ="cond"><sec typ="note">作業用アンカー</sec> 命中時</sec>、 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">粉砕強打</sec> スキル 協同攻撃</sec>を 実行します。
+        <sec typ="note">残骸リサイクル</sec> / <sec typ="note">補給開始</sec>の 敵死亡時 ブアルドオン 効果が、 自身が 敵撃破時には 2倍に増幅されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="2" /></sec>增加。
+        <sec typ="cond"><sec typ="note">作業用錨</sec> 命中時</sec>， <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">粉碎重擊</sec> 技能 協同攻擊</sec> 執行。
+        <sec typ="note">殘骸回收</sec> / <sec typ="note">開始補給</sec>的 敵人死亡時 發動 效果， 自身 擊殺敵人時於 增幅為2倍。
 dialogue:
   KR:
     "":
@@ -5024,20 +5113,13 @@ skins:
   sid: null
   artist: 메카셔군
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5052,4 +5134,5 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_TommyWalker_N

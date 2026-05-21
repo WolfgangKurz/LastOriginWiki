@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 
 import { AssetsRoot } from "@/libs/Const";
+import { cn } from "@/libs/Class";
 
 import Locale from "@/components/locale";
 
@@ -10,9 +10,9 @@ import style from "./style.module.scss";
 interface WorldItemProps {
 	wid: string;
 
+	large?: boolean;
 	image?: string;
 	imageless?: boolean;
-	center?: boolean;
 
 	title?: preact.ComponentChildren;
 	description?: preact.ComponentChildren;
@@ -22,13 +22,9 @@ interface WorldItemProps {
 }
 
 const WorldItem: FunctionalComponent<WorldItemProps> = (props) => {
-	const WorldIcon = props.image ?? (
-		["Cha", "Daily"].includes(props.wid)
-			? `${props.wid}_0`
-			: `${props.wid}_1`
-	);
+	const WorldIcon = props.image ?? (`${props.wid}_${["Cha", "Daily"].includes(props.wid) ? "0" : "1"}`);
 
-	return <div class={ style.WorldItem }>
+	return <div class={ cn(style.WorldItem, props.large && style.Large) }>
 		<div class={ style.WorldHeader }>
 			{ !props.imageless && <img src={ `${AssetsRoot}/world/icons/${WorldIcon}.png` } /> }
 
@@ -49,7 +45,7 @@ const WorldItem: FunctionalComponent<WorldItemProps> = (props) => {
 			{ props.children }
 		</div> }
 
-		{ props.linked && <Link href={ props.link ?? `/worlds/${props.wid}` } class="stretched-link" /> }
+		{ props.linked && <a href={ props.link ?? `/worlds/${props.wid}` } class="stretched-link" /> }
 	</div>;
 };
 export default WorldItem;

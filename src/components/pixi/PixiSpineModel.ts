@@ -122,6 +122,11 @@ export default class PixiSpineModel extends FadeContainer {
 		return this._hidePart;
 	}
 
+	private _hidePart2: boolean = false;
+	public get hidePart2 (): boolean {
+		return this._hidePart2;
+	}
+
 	private _colliderVisible: boolean = false;
 	public get colliderVisible (): boolean {
 		return this._colliderVisible;
@@ -195,7 +200,20 @@ export default class PixiSpineModel extends FadeContainer {
 									img.crossOrigin = "anonymous";
 									img.src = url;
 								})
-									.then(async (img) => {
+									.then(img => {
+										if (!page.pma) {
+											return new PIXI.BaseTexture(img, {
+												alphaMode: PIXI.ALPHA_MODES.UNPACK,
+												anisotropicLevel: 1,
+												mipmap: PIXI.MIPMAP_MODES.OFF,
+												multisample: PIXI.MSAA_QUALITY.LOW,
+												resourceOptions: {
+													alphaMode: PIXI.ALPHA_MODES.UNPACK,
+													createBitmap: false,
+												},
+											});
+										}
+
 										const cv = document.createElement("canvas");
 										cv.width = img.naturalWidth;
 										cv.height = img.naturalHeight;
@@ -206,25 +224,29 @@ export default class PixiSpineModel extends FadeContainer {
 										ctx.drawImage(img, 0, 0);
 
 										const imgData = ctx.getImageData(0, 0, cv.width, cv.height);
-										const arr = imgData.data.slice();
-										for (let i = 0; i < arr.length; i += 4) {
-											const af = arr[i + 3] / 255;
-											arr[i + 0] /= af;
-											arr[i + 1] /= af;
-											arr[i + 2] /= af;
+										const src = imgData.data;
+										const arr = new Uint8ClampedArray(src.length);
+
+										for (let i = 0; i < src.length; i += 4) {
+											const alpha = src[i + 3];
+											arr[i + 3] = alpha;
+											if (alpha === 0) continue;
+
+											const af = alpha / 255;
+											arr[i + 0] = Math.round(Math.min(255, src[i + 0] / af) * af);
+											arr[i + 1] = Math.round(Math.min(255, src[i + 1] / af) * af);
+											arr[i + 2] = Math.round(Math.min(255, src[i + 2] / af) * af);
 										}
 										cv.remove();
 
-										return createImageBitmap(
-											new ImageData(arr, img.naturalWidth, img.naturalHeight),
-											{ premultiplyAlpha: "premultiply", colorSpaceConversion: "none" },
-										);
+										return PIXI.BaseTexture.fromBuffer(arr, img.naturalWidth, img.naturalHeight, {
+											alphaMode: PIXI.ALPHA_MODES.PMA,
+											anisotropicLevel: 1,
+											mipmap: PIXI.MIPMAP_MODES.OFF,
+											multisample: PIXI.MSAA_QUALITY.LOW,
+											scaleMode: PIXI.SCALE_MODES.LINEAR,
+										});
 									})
-									.then(_img => new PIXI.BaseTexture(_img, {
-										anisotropicLevel: 1,
-										mipmap: PIXI.MIPMAP_MODES.OFF,
-										multisample: PIXI.MSAA_QUALITY.LOW,
-									}))
 									.then(r => {
 										page.setTexture(spine.SpineTexture.from(r));
 										return url;
@@ -463,19 +485,19 @@ export default class PixiSpineModel extends FadeContainer {
 		return [s, root!];
 	}
 
-	addSkin (skinName: string): boolean {
+	addSkin (skinName: string, withoutUpdate: boolean = false): boolean {
 		if (this.selectedSkins.indexOf(skinName) != -1) return true;
 		if (!this.skeletonData?.findSkin(skinName)) return false;
 		this.selectedSkins.push(skinName);
-		this.updateSkin();
+		if (!withoutUpdate) this.updateSkin();
 		return true;
 	}
 
-	removeSkin (skinName: string) {
+	removeSkin (skinName: string, withoutUpdate: boolean = false) {
 		const index = this.selectedSkins.indexOf(skinName);
 		if (index === -1) return;
 		this.selectedSkins.splice(index, 1);
-		this.updateSkin();
+		if (!withoutUpdate) this.updateSkin();
 	}
 
 	updateSkin () {
@@ -489,7 +511,7 @@ export default class PixiSpineModel extends FadeContainer {
 		}
 
 		this.skeleton.setSkin(newSkin);
-		this.skeleton.setToSetupPose();
+		this.skeleton.setSlotsToSetupPose();
 		if ("Physics" in spine) { // for newer version... temporary
 			// @ts-ignore
 			this.skeleton.updateWorldTransform(spine.Physics.update);
@@ -621,9 +643,10 @@ export default class PixiSpineModel extends FadeContainer {
 	}
 
 	setFace (face: string): boolean {
-		if (this.lastFace) this.removeSkin("face/" + this.lastFace);
-		const ret = this.addSkin("face/" + face);
+		if (this.lastFace) this.removeSkin("face/" + this.lastFace, true);
+		const ret = this.addSkin("face/" + face, true);
 		this.lastFace = face || "";
+		this.updateSkin();
 		return ret;
 	}
 
@@ -635,12 +658,13 @@ export default class PixiSpineModel extends FadeContainer {
 		if (!hasGoogle) return;
 
 		if (google) {
-			this.removeSkin("breast/Unedited");
-			this.addSkin("breast/Censorship");
+			this.removeSkin("breast/Unedited", true);
+			this.addSkin("breast/Censorship", true);
 		} else {
-			this.addSkin("breast/Unedited");
-			this.removeSkin("breast/Censorship");
+			this.addSkin("breast/Unedited", true);
+			this.removeSkin("breast/Censorship", true);
 		}
+		this.updateSkin();
 	}
 
 	setHideBG (hide: boolean) {
@@ -650,13 +674,12 @@ export default class PixiSpineModel extends FadeContainer {
 		const names = this.skeletonData.skins.map(r => r.name);
 		if (!names) return;
 
-		const targets = names.filter(x => (x.startsWith("decoration") || x.startsWith("decocation")) && (
-			/Background/i.test(x) || /Bcakground/i.test(x)
-		));
+		const targets = names.filter(x => /deco[^/]+\/.*background/i.test(x));
 		if (hide)
-			targets.forEach(skin => this.removeSkin(skin));
+			targets.forEach(skin => this.removeSkin(skin, true));
 		else
-			targets.forEach(skin => this.addSkin(skin));
+			targets.forEach(skin => this.addSkin(skin, true));
+		this.updateSkin();
 	}
 
 	setHidePart (hide: boolean) {
@@ -666,13 +689,26 @@ export default class PixiSpineModel extends FadeContainer {
 		const names = this.skeletonData.skins.map(r => r.name);
 		if (!names) return;
 
-		const targets = names.filter(x => (x.startsWith("decoration") || x.startsWith("decocation")) && !(
-			/Background/i.test(x) || /Bcakground/i.test(x)
-		));
+		const targets = names.filter(x => (x.startsWith("decorations/") || x.startsWith("decocation")));
 		if (hide)
-			targets.forEach(skin => this.removeSkin(skin));
+			targets.forEach(skin => this.removeSkin(skin, true));
 		else
-			targets.forEach(skin => this.addSkin(skin));
+			targets.forEach(skin => this.addSkin(skin, true));
+		this.updateSkin();
+	}
+	setHidePart2 (hide: boolean) {
+		this._hidePart2 = hide;
+		if (!this.skeletonData) return;
+
+		const names = this.skeletonData.skins.map(r => r.name);
+		if (!names) return;
+
+		const targets = names.filter(x => x.startsWith("decorations2/"));
+		if (hide)
+			targets.forEach(skin => this.removeSkin(skin, true));
+		else
+			targets.forEach(skin => this.addSkin(skin, true));
+		this.updateSkin();
 	}
 
 	setColliderVisible (visible: boolean) {

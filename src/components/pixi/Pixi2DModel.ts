@@ -61,6 +61,7 @@ interface MODEL_DATA {
 		dialogDeactive?: string[],
 	} & ({
 		parts: string[],
+		parts2: string[],
 	} | {
 		swapActive: string[],
 		swapInactive: string[],
@@ -129,6 +130,11 @@ export default class Pixi2DModel extends FadeContainer {
 		return this._hidePart;
 	}
 
+	private _hidePart2: boolean = false;
+	public get hidePart2 (): boolean {
+		return this._hidePart2;
+	}
+
 	private _hideBG: boolean = false;
 	public get hideBG (): boolean {
 		return this._hideBG;
@@ -146,6 +152,7 @@ export default class Pixi2DModel extends FadeContainer {
 
 	private faceList: SPRITE_DATA[] = [];
 	private hidePartList: string[] = [];
+	private hidePart2List: string[] = [];
 	private swapActiveList: string[] = [];
 	private swapInactiveList: string[] = [];
 	private hideBGList: string[] = [];
@@ -224,9 +231,10 @@ export default class Pixi2DModel extends FadeContainer {
 				this.hideBGList = r.list.bg || [];
 				this.dialogDeactiveList = r.list.dialogDeactive || [];
 
-				if ("parts" in r.list)
+				if ("parts" in r.list) {
 					this.hidePartList = r.list.parts;
-				else if ("swapActive" in r.list) {
+					this.hidePart2List = r.list.parts2 ?? [];
+				} else if ("swapActive" in r.list) {
 					this.swapActiveList = r.list.swapActive;
 					this.swapInactiveList = r.list.swapInactive;
 				}
@@ -490,6 +498,12 @@ export default class Pixi2DModel extends FadeContainer {
 		this.UpdateNodeVisible();
 	}
 
+	setHidePart2 (hide: boolean) {
+		this._hidePart2 = hide;
+		if (!this.ready) return;
+		this.UpdateNodeVisible();
+	}
+
 	setHideBG (hide: boolean) {
 		this._hideBG = hide;
 		if (!this.ready) return;
@@ -503,6 +517,7 @@ export default class Pixi2DModel extends FadeContainer {
 	private UpdateNodeVisible () {
 		const items: string[] = [ // to restore visible to true
 			...this.hidePartList,
+			...this.hidePart2List,
 			...this.swapActiveList,
 			...this.swapInactiveList,
 			...this.hideBGList,
@@ -510,6 +525,7 @@ export default class Pixi2DModel extends FadeContainer {
 		].unique();
 		const namesToHide: string[] = [
 			...(this.hidePart ? this.hidePartList : []),
+			...(this.hidePart2 ? this.hidePart2List : []),
 			...(this.hidePart ? this.swapActiveList : this.swapInactiveList),
 			...(this.hideBG ? this.hideBGList : []),
 			...(this.dialogDeactive ? this.dialogDeactiveList : []),

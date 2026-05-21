@@ -2860,6 +2860,23 @@ skills:
             base: 0.35
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        리볼버 캐논으로 단일 대상에게 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하며 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" r /></sec>를 감소시킵니다.
+        치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
+        적중 시, <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="6" r /></sec>가 최대 2회까지 증가합니다.
+      EN: |-
+        revolver by cannon as to a single target <dmg elem="physics" /> damage and 2 rounds target <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> and <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="2" r /></sec> decreases.
+        On critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="4" r /></sec> increases.
+        On hit, <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="6" r /></sec> up to 2times up to increases.
+      JP: |-
+        リボルバーキャノンで 単一対象へ<dmg elem="physics" />を与え、、 2ラウンドの間 対象を <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>し、 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="2" r /></sec>を減少させます。
+        クリティカル時、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="4" r /></sec>が増加します。
+        命中時、 <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="6" r /></sec>が 最大 2回まで 増加します。
+      TC: |-
+        左輪加農砲以 單一目標給 造成<dmg elem="physics" />，並 2回合內 目標 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>並 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="2" r /></sec>使其減少。
+        暴擊時， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="4" r /></sec>增加。
+        命中時， <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="6" r /></sec> 最大 2次至 增加。
   "2":
     key: "2"
     icon: Missile
@@ -4478,6 +4495,23 @@ skills:
             base: 0.35
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        날치 미사일로 <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> 또는 <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="note"><char uid="BR_Sirene" /> : 포격 지휘</sec> 또는 <sec typ="note"><char uid="BR_Thetis" /> : 전술 공중중계</sec> 효과가 적용된 상태인 경우, 공격 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+      EN: |-
+        Fires a flying-fish missile to deal <dmg elem="physics" />.
+        If the target is <sec typ="cond"><buff typ="MARKING" /> Marked</sec> or <sec typ="cond"><buff typ="PROVOKE" /> Provoked</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        If self is affected by <sec typ="note"><char uid="BR_Sirene" /> : Artillery Command</sec> or <sec typ="note"><char uid="BR_Thetis" /> : Tactical Air Relay</sec>, removes the attack target’s <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage reduction effect</sec>.
+      JP: |-
+        トビウオミサイルで<dmg elem="physics" />を与えます。
+        対象が<sec typ="cond"><buff typ="MARKING" />標的</sec>または<sec typ="cond"><buff typ="PROVOKE" />挑発</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="0" r /></sec>が増加します。
+        自身に<sec typ="note"><char uid="BR_Sirene" />：砲撃指揮</sec>または<sec typ="note"><char uid="BR_Thetis" />：戦術空中中継</sec>効果が適用されている場合、攻撃対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ減少効果を解除</sec>します。
+      TC: |-
+        以飛魚飛彈造成<dmg elem="physics" />。
+        若目標處於<sec typ="cond"><buff typ="MARKING" />標記</sec>或<sec typ="cond"><buff typ="PROVOKE" />挑釁</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="0" r /></sec>增加。
+        若自身處於<sec typ="note"><char uid="BR_Sirene" />：砲擊指揮</sec>或<sec typ="note"><char uid="BR_Thetis" />：戰術空中中繼</sec>效果狀態，解除攻擊目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />受到傷害減少效果</sec>。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -4715,6 +4749,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="10" slot="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="11" slot="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="9" slot="4" r /></sec>가 증가하며, 범위 내 아군에게 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec> 증가 효과를 줍니다.
+        적 공격 시, 2라운드 동안 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="7" slot="1" r /></sec>가 추가로 증가합니다.
+        스쿼드에 <char uid="BR_Nereid" /> / <char uid="BR_Sirene" /> / <char uid="BR_Thetis" /> 중 1기라도 있으면, 범위 내 기동 / 중장형 아군의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>합니다.
+      EN: |-
+        At round start own <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="10" slot="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="11" slot="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="9" slot="4" r /></sec> increases and within range to allies <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" r /></sec> increase effect and deals.
+        When attacking an enemy, 2 rounds <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="7" slot="1" r /></sec>additionally increases.
+        squad <char uid="BR_Nereid" /> / <char uid="BR_Sirene" /> / <char uid="BR_Thetis" /> during 1 even one if present, within range Mobile / Heavy-type allies' <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports the attack</sec>.
+      JP: |-
+        ラウンド開始時 自身の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="10" slot="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="11" slot="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="9" slot="4" r /></sec>が 増加し、 範囲内 味方に <sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="4" r /></sec> 増加 効果を 与えます。
+        敵攻撃時、 2ラウンドの間 <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="7" slot="1" r /></sec>が追加で増加します。
+        スクワッドに <char uid="BR_Nereid" /> / <char uid="BR_Sirene" /> / <char uid="BR_Thetis" /> 中 1機ルアも ある場合、 範囲内 機動 / 重装型 味方の <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃を 支援</sec>します。
+      TC: |-
+        回合開始時 自身的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="10" slot="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="11" slot="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="9" slot="4" r /></sec> 增加，並 範圍內 我方給 <sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" r /></sec> 增加 效果 造成。
+        攻擊敵人時， 2回合內 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="7" slot="1" r /></sec>會額外增加。
+        小隊於 <char uid="BR_Nereid" /> / <char uid="BR_Sirene" /> / <char uid="BR_Thetis" /> 中 1台時也 若有， 範圍內 機動 / 重裝型 我方的 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻擊 支援</sec>。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -5424,6 +5475,23 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
+        자신이 적을 처치하면 2라운드 동안 자신과 아군에게 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" r /></sec> 증가 효과가 추가 적용되며, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="5" r /></sec>가 최대 2회까지 증가합니다.
+        <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec> increases.
+        self enemy if kills 2 rounds self and to allies <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="8" r /></sec> increase effect and additionally applied becomes and, own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="5" r /></sec> up to 2times up to increases.
+        <sec>At skill level 10, range increases.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が増加します。
+        自身が 敵を 撃破ハアなら 2ラウンドの間 自身と 味方に <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec> 増加 効果が 追加適用になり、、 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="5" r /></sec>が 最大 2回まで 増加します。
+        <sec>スキルレベル10で 範囲が増加します。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="2" r /></sec>增加。
+        自身 敵人 擊殺下若 2回合內 自身與 我方給 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec> 增加 效果 額外套用變為，且 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="5" r /></sec> 最大 2次至 增加。
+        <sec>技能等級10時 範圍增加。</sec>
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -5942,6 +6010,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec> 감소 / <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="3" /></sec>이(가) 증가합니다.
+        자신을 제외한 <sec typ="note">호라이즌</sec> 부대원 1기 당 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 효과가 50%씩 추가 적용됩니다.
+        자신이 적 처치 시, 2라운드 동안 적 전체를 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>합니다.
+        <sec typ="note">호라이즌</sec> 부대원 : <char uid="BR_Nereid" />, <char uid="BR_Sirene" />, <char uid="BR_Thetis" />, <char uid="BR_InvDragon" />
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="2" r inv /></sec> decrease / <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="3" /></sec> increases.
+        self excluding <sec typ="note">Horizon</sec> part member 1 unit per <sec typ="buff"><buff typ="ATK_UP" /> Attack increase</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease</sec> effect and 50%each additionally applied.
+        self When killing an enemy, 2 rounds all enemies <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec>.
+        <sec typ="note">Horizon</sec> part member: <char uid="BR_Nereid" />, <char uid="BR_Sirene" />, <char uid="BR_Thetis" />, <char uid="BR_InvDragon" />
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="2" r inv /></sec> 減少 / <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="3" /></sec>が増加します。
+        自身を ジエ外した <sec typ="note">ホライゾン</sec> ブウ隊員 1機 ごと <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 増加</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少</sec> 効果が 50%ッスイク 追加適用されます。
+        自身が 敵撃破時、 2ラウンドの間 敵全体を <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>します。
+        <sec typ="note">ホライゾン</sec> ブウ隊員：<char uid="BR_Nereid" />、 <char uid="BR_Sirene" />、 <char uid="BR_Thetis" />、 <char uid="BR_InvDragon" />
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="2" r inv /></sec> 減少 / <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="3" /></sec>增加。
+        自身 解除外 <sec typ="note">地平線</sec> 附加隊員 1台 每 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 增加</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少</sec> 效果 50%各 額外套用。
+        自身 擊殺敵人時， 2回合內 全體敵人 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>。
+        <sec typ="note">地平線</sec> 附加隊員：<char uid="BR_Nereid" />， <char uid="BR_Sirene" />， <char uid="BR_Thetis" />， <char uid="BR_InvDragon" />
 dialogue:
   KR:
     "1":
@@ -6366,12 +6455,9 @@ dialogue:
         Whoa!? Y-you want to taste
         here? … Okay. … So,
         what’s it like?
-      Oath: >-
-        Ahaha, it was a little too sudden, wasn’t it? It makes sense for you to
-        be surprised. But I also had a reason.
-
+      Oath: |-
+        Ahaha, it was a little too sudden, wasn’t it? It makes sense for you to be surprised. But I also had a reason.
         Although I didn’t know it was going to turn out like this… I-I was gonna do something similar anywa… Ughh, what am I talking about right now?
-
         I just wanted to say I also like you. Okay. I wanted to do something like this because I like you so much, so don’t take this the wrong way.
       OathIdle_01: |-
         You’d like to try another cheese…
@@ -6427,13 +6513,10 @@ dialogue:
         You want me to feed… feed you? I guess there’s no other way around it.
         I’ll make a special exception this time, since I’m a Maid for now.
         Here, say ah~
-      Idle_04_01: >-
+      Idle_04_01: |-
         I didn’t know it when I was working.
-
         But this is a pretty embarrassing dress.
-
         I didn’t realize I was wearing something like this.
-
         It, is it pretty…?! Of course! It’s me wearing it… You see. Commander. Well… can you tell me that it looks prettier on me?
       SPIdle_02_01: |-
         I guess there’s no other way around it.
@@ -6441,14 +6524,10 @@ dialogue:
         Do you want to try something else?
         Cookie… pie… or
         Un… Undine?​
-      Oath: >-
-        Ha, ha, I knew you’d like my cooking. Staying up all night during the
-        past few days to learn the dishes are all worth it.
-
+      Oath: |-
+        Ha, ha, I knew you’d like my cooking. Staying up all night during the past few days to learn the dishes are all worth it.
         Oh… I mean… well, actually… I like the cafe business, but I also wanted to impress the Master. Really?
-
         You really do like me a lot? Ha, ha… I knew it. If there’s anything you want to eat from now on, just tell me.
-
         What? Me…? If you want, then I guess it’s okay… Master.​
       OathIdle_01: |-
         Hmm… Master, Master.
@@ -6504,10 +6583,8 @@ dialogue:
         There’s generalization of woman in our world.
         About that… I’ll show you that
         it’s all true.
-      Oath: >-
-        Actually,… I was worried that nobody would like me. That nobody would
-        even give me a glance…!
-
+      Oath: |-
+        Actually,… I was worried that nobody would like me. That nobody would even give me a glance…!
         … Now, I don't care about that. Since you said so, Commander. Please pay attention to me forever.
       OathIdle_01: |-
         Commander, why are you smiling? Was it that
@@ -6544,14 +6621,10 @@ dialogue:
         N-no. It’s not that I don’t like it.
         When you lead so nicely as you do…
         my heart pounds so fast…​
-      Idle_01_03: >-
-        Let me help you tidy up your room. You know, I… I sometimes think about
-        what will happen when everything is over.
-
+      Idle_01_03: |-
+        Let me help you tidy up your room. You know, I… I sometimes think about what will happen when everything is over.
         Spending time in a small home with just the two of us.
-
         … I’ll leave the flower pot here.
-
         Yeah, this sounds like a good place. Commander.​
       SPIdle_01_01: |-
         *Squeals* Oh, yeah… again?
@@ -6789,20 +6862,13 @@ skins:
   sid: null
   artist: PaintAle
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 6
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - true
     - false
@@ -6817,24 +6883,20 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 4
+    dflags: 4
   skins:
     - sid: 1
       artist: PaintAle
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - true
         - false
@@ -6851,24 +6913,22 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_BR_Undine_1
     - sid: 2
       artist: PaintAle
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 84
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+        G:
+          - _
+          - D
       anim:
         - false
         - false
@@ -6890,6 +6950,7 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_Undine_NS2
         2dmodel_dam: 2DModel_BR_Undine_NS2_Dam
         consumableKey: Skin_BR_Undine_2

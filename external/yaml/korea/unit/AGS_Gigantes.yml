@@ -10,6 +10,19 @@ slots:
   - 0
   - 1
   - 2
+promotions:
+  - to: 5
+    level: 90
+    favor: "0"
+    req:
+      - id: Special_Module
+        count: 100
+      - id: TestItem_4
+        count: 100
+      - id: RobotParts_HDCalculationControl
+        count: 50
+      - id: RobotParts_SuperAlloyArmor
+        count: 100
 lvLimits:
   - level: 101
     items:
@@ -452,6 +465,23 @@ stat:
       fire: 0
       ice: 0
       lightning: 0
+  - HP:
+      - 635.5
+      - 5283.352
+    ATK:
+      - 169.6
+      - 1090.3
+    DEF:
+      - 129.7
+      - 714.493
+    SPD: 3.43
+    CRI: 20
+    ACC: 130
+    EVA: 0
+    Resist:
+      fire: 0
+      ice: 0
+      lightning: 0
 chart:
   - 8
   - 2
@@ -509,7 +539,7 @@ skills:
         - 8
         - 9
       data:
-        - rate: 2.59
+        - rate: 2.48
           type: 0
           range: 1
           ap: 10
@@ -557,7 +587,7 @@ skills:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_AGS_Gigantes_N_1_2
-                    type: 1
+                    type: 0
                     value: "36"
                     level: "0"
                   attr: 1
@@ -626,42 +656,6 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_13
               on: criticaled
               if:
                 - false
@@ -681,7 +675,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_1
+                    desc: Effect_AGS_Gigantes_N_12_1
                     type: 0
                     value: "36"
                     level: "0"
@@ -694,10 +688,10 @@ skills:
                     off:
                       type: 36
                       target: 0
-                  overlap: 0
+                  overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_2
+                    desc: Effect_AGS_Gigantes_N_12_2
                     type: 1
                     value: "0.300000"
                     level: "0.015000"
@@ -710,10 +704,10 @@ skills:
                     damage_add:
                       base: 30%
                       per: 1.5%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.825
+        - rate: 2.728
           type: 0
           range: 1
           ap: 10
@@ -761,7 +755,7 @@ skills:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_AGS_Gigantes_N_1_2
-                    type: 1
+                    type: 0
                     value: "36"
                     level: "0"
                   attr: 1
@@ -830,42 +824,6 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_13
               on: criticaled
               if:
                 - false
@@ -885,7 +843,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_1
+                    desc: Effect_AGS_Gigantes_N_12_1
                     type: 0
                     value: "36"
                     level: "0"
@@ -898,10 +856,10 @@ skills:
                     off:
                       type: 36
                       target: 0
-                  overlap: 0
+                  overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_2
+                    desc: Effect_AGS_Gigantes_N_12_2
                     type: 1
                     value: "0.300000"
                     level: "0.015000"
@@ -914,10 +872,10 @@ skills:
                     damage_add:
                       base: 30%
                       per: 1.5%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.06
+        - rate: 2.976
           type: 0
           range: 1
           ap: 10
@@ -965,7 +923,7 @@ skills:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_AGS_Gigantes_N_1_2
-                    type: 1
+                    type: 0
                     value: "36"
                     level: "0"
                   attr: 1
@@ -1034,42 +992,6 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_13
               on: criticaled
               if:
                 - false
@@ -1089,7 +1011,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_1
+                    desc: Effect_AGS_Gigantes_N_12_1
                     type: 0
                     value: "36"
                     level: "0"
@@ -1102,10 +1024,10 @@ skills:
                     off:
                       type: 36
                       target: 0
-                  overlap: 0
+                  overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_2
+                    desc: Effect_AGS_Gigantes_N_12_2
                     type: 1
                     value: "0.300000"
                     level: "0.015000"
@@ -1118,10 +1040,10 @@ skills:
                     damage_add:
                       base: 30%
                       per: 1.5%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.295
+        - rate: 3.224
           type: 0
           range: 1
           ap: 10
@@ -1169,7 +1091,7 @@ skills:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_AGS_Gigantes_N_1_2
-                    type: 1
+                    type: 0
                     value: "36"
                     level: "0"
                   attr: 1
@@ -1238,42 +1160,6 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_13
               on: criticaled
               if:
                 - false
@@ -1293,7 +1179,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_1
+                    desc: Effect_AGS_Gigantes_N_12_1
                     type: 0
                     value: "36"
                     level: "0"
@@ -1306,10 +1192,10 @@ skills:
                     off:
                       type: 36
                       target: 0
-                  overlap: 0
+                  overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_2
+                    desc: Effect_AGS_Gigantes_N_12_2
                     type: 1
                     value: "0.300000"
                     level: "0.015000"
@@ -1322,10 +1208,10 @@ skills:
                     damage_add:
                       base: 30%
                       per: 1.5%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.53
+        - rate: 3.472
           type: 0
           range: 1
           ap: 10
@@ -1373,7 +1259,7 @@ skills:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_AGS_Gigantes_N_1_2
-                    type: 1
+                    type: 0
                     value: "36"
                     level: "0"
                   attr: 1
@@ -1442,42 +1328,6 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_13
               on: criticaled
               if:
                 - false
@@ -1497,7 +1347,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_1
+                    desc: Effect_AGS_Gigantes_N_12_1
                     type: 0
                     value: "36"
                     level: "0"
@@ -1510,10 +1360,10 @@ skills:
                     off:
                       type: 36
                       target: 0
-                  overlap: 0
+                  overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_2
+                    desc: Effect_AGS_Gigantes_N_12_2
                     type: 1
                     value: "0.300000"
                     level: "0.015000"
@@ -1526,10 +1376,10 @@ skills:
                     damage_add:
                       base: 30%
                       per: 1.5%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.765
+        - rate: 3.72
           type: 0
           range: 1
           ap: 10
@@ -1577,7 +1427,7 @@ skills:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_AGS_Gigantes_N_1_2
-                    type: 1
+                    type: 0
                     value: "36"
                     level: "0"
                   attr: 1
@@ -1646,42 +1496,6 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_13
               on: criticaled
               if:
                 - false
@@ -1701,7 +1515,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_1
+                    desc: Effect_AGS_Gigantes_N_12_1
                     type: 0
                     value: "36"
                     level: "0"
@@ -1714,10 +1528,10 @@ skills:
                     off:
                       type: 36
                       target: 0
-                  overlap: 0
+                  overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_2
+                    desc: Effect_AGS_Gigantes_N_12_2
                     type: 1
                     value: "0.300000"
                     level: "0.015000"
@@ -1730,10 +1544,10 @@ skills:
                     damage_add:
                       base: 30%
                       per: 1.5%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 4
+        - rate: 3.968
           type: 0
           range: 1
           ap: 10
@@ -1781,7 +1595,7 @@ skills:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_AGS_Gigantes_N_1_2
-                    type: 1
+                    type: 0
                     value: "36"
                     level: "0"
                   attr: 1
@@ -1850,42 +1664,6 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_13
               on: criticaled
               if:
                 - false
@@ -1905,7 +1683,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_1
+                    desc: Effect_AGS_Gigantes_N_12_1
                     type: 0
                     value: "36"
                     level: "0"
@@ -1918,10 +1696,10 @@ skills:
                     off:
                       type: 36
                       target: 0
-                  overlap: 0
+                  overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_2
+                    desc: Effect_AGS_Gigantes_N_12_2
                     type: 1
                     value: "0.300000"
                     level: "0.015000"
@@ -1934,10 +1712,10 @@ skills:
                     damage_add:
                       base: 30%
                       per: 1.5%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 4.235
+        - rate: 4.216
           type: 0
           range: 1
           ap: 10
@@ -1985,7 +1763,7 @@ skills:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_AGS_Gigantes_N_1_2
-                    type: 1
+                    type: 0
                     value: "36"
                     level: "0"
                   attr: 1
@@ -2054,42 +1832,6 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_13
               on: criticaled
               if:
                 - false
@@ -2109,7 +1851,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_1
+                    desc: Effect_AGS_Gigantes_N_12_1
                     type: 0
                     value: "36"
                     level: "0"
@@ -2122,10 +1864,10 @@ skills:
                     off:
                       type: 36
                       target: 0
-                  overlap: 0
+                  overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_2
+                    desc: Effect_AGS_Gigantes_N_12_2
                     type: 1
                     value: "0.300000"
                     level: "0.015000"
@@ -2138,10 +1880,10 @@ skills:
                     damage_add:
                       base: 30%
                       per: 1.5%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 4.47
+        - rate: 4.464
           type: 0
           range: 1
           ap: 10
@@ -2189,7 +1931,7 @@ skills:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_AGS_Gigantes_N_1_2
-                    type: 1
+                    type: 0
                     value: "36"
                     level: "0"
                   attr: 1
@@ -2258,42 +2000,6 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_13
               on: criticaled
               if:
                 - false
@@ -2313,7 +2019,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_1
+                    desc: Effect_AGS_Gigantes_N_12_1
                     type: 0
                     value: "36"
                     level: "0"
@@ -2326,10 +2032,10 @@ skills:
                     off:
                       type: 36
                       target: 0
-                  overlap: 0
+                  overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_2
+                    desc: Effect_AGS_Gigantes_N_12_2
                     type: 1
                     value: "0.300000"
                     level: "0.015000"
@@ -2342,10 +2048,10 @@ skills:
                     damage_add:
                       base: 30%
                       per: 1.5%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 4.705
+        - rate: 4.712
           type: 0
           range: 1
           ap: 10
@@ -2393,7 +2099,7 @@ skills:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_AGS_Gigantes_N_1_2
-                    type: 1
+                    type: 0
                     value: "36"
                     level: "0"
                   attr: 1
@@ -2462,42 +2168,6 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_13
               on: criticaled
               if:
                 - false
@@ -2517,7 +2187,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_1
+                    desc: Effect_AGS_Gigantes_N_12_1
                     type: 0
                     value: "36"
                     level: "0"
@@ -2530,10 +2200,10 @@ skills:
                     off:
                       type: 36
                       target: 0
-                  overlap: 0
+                  overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_AGS_Gigantes_N_13_2
+                    desc: Effect_AGS_Gigantes_N_12_2
                     type: 1
                     value: "0.300000"
                     level: "0.015000"
@@ -2546,7 +2216,7 @@ skills:
                     damage_add:
                       base: 30%
                       per: 1.5%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
     values:
@@ -2574,7 +2244,7 @@ skills:
           - icon: BuffIcon_REMOVE_BUFF
             desc:
               desc: Effect_AGS_Gigantes_N_1_2
-              type: 1
+              type: 0
               value: "36"
               level: "0"
             base: 36
@@ -2598,18 +2268,9 @@ skills:
             base: 0
             per: 0
             chance: 0.5
-          - icon: BuffIcon_DAMAGE_REDUCE
-            desc:
-              desc: Effect_AGS_Gigantes_N_12_1
-              type: 1
-              value: "0.250000"
-              level: "0.015000"
-            base: 0.25
-            per: 0.015
-            chance: 1
           - icon: BuffIcon_REMOVE_BUFF
             desc:
-              desc: Effect_AGS_Gigantes_N_13_1
+              desc: Effect_AGS_Gigantes_N_12_1
               type: 0
               value: "36"
               level: "0"
@@ -2618,13 +2279,30 @@ skills:
             chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_AGS_Gigantes_N_13_2
+              desc: Effect_AGS_Gigantes_N_12_2
               type: 1
               value: "0.300000"
               level: "0.015000"
             base: 0.3
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        단일 대상을 강타해 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, <sec typ="chance">25% 확률</sec>로 해당 라운드 동안 대상을 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만듭니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> <sec typ="chance">확률이 2배</sec>로 증가하고 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" r /></sec>가 증가하며 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+      EN: |-
+        single target smashes <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, <sec typ="chance">25% chance</sec> as each round target <sec typ="buff"><buff typ="STUN" /> Stunned</sec> inflicts.
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="STUN" /> Stunned</sec> <sec typ="chance">chance 2 times</sec> as increases and <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec> increases and target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken decrease removes the effect</sec>.
+      JP: |-
+        単一対象を グアントアして<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 <sec typ="chance">25% 確率</sec>で 該当 ラウンド間 対象を <sec typ="buff"><buff typ="STUN" /> 行動不可</sec> 状態にします。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="buff"><buff typ="STUN" /> 行動不可</sec> <sec typ="chance">確率が 2ブエ</sec>で 増加し、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="5" r /></sec>が 増加し、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ 減少 効果を 解除</sec>します。
+      TC: |-
+        單一目標 強打 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， <sec typ="chance">25% 機率</sec>以 該 回合內 目標 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 使其進入狀態。
+        <sec typ="cond">暴擊時</sec>， <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> <sec typ="chance">機率 2倍</sec>以 增加，並 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="5" r /></sec> 增加，並 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害 減少 效果 解除</sec>。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -2644,7 +2322,7 @@ skills:
         - 8
         - 9
       data:
-        - rate: 2.1
+        - rate: 1.99
           type: 0
           range: 2
           ap: 9
@@ -2709,29 +2387,12 @@ skills:
                       type: 50
                       target: 0
                   overlap: 4
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_2_3
-                    type: 0
-                    value: "75"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 88
-                    off:
-                      type: 75
-                      target: 0
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_4
+                    desc: Effect_AGS_Gigantes_N_2_3
                     type: 1
                     value: "-0.150000"
-                    level: "-0.007500"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -2740,11 +2401,11 @@ skills:
                     type: 1
                     attack:
                       base: -15%
-                      per: -0.75%
+                      per: -1%
                   overlap: 4
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_5
+                    desc: Effect_AGS_Gigantes_N_2_4
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -2759,42 +2420,6 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_21
               on: attack_success
@@ -2848,7 +2473,88 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.285
+            - key: Effect_AGS_Gigantes_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_22_1
+                    type: 1
+                    value: "9999999"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 34
+                    damage_minimize:
+                      base: 9999999
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_23_1
+                    type: 0
+                    value: "34"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.189
           type: 0
           range: 2
           ap: 9
@@ -2913,29 +2619,12 @@ skills:
                       type: 50
                       target: 0
                   overlap: 4
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_2_3
-                    type: 0
-                    value: "75"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 88
-                    off:
-                      type: 75
-                      target: 0
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_4
+                    desc: Effect_AGS_Gigantes_N_2_3
                     type: 1
                     value: "-0.150000"
-                    level: "-0.007500"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -2944,11 +2633,11 @@ skills:
                     type: 1
                     attack:
                       base: -15%
-                      per: -0.75%
+                      per: -1%
                   overlap: 4
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_5
+                    desc: Effect_AGS_Gigantes_N_2_4
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -2963,42 +2652,6 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_21
               on: attack_success
@@ -3052,7 +2705,88 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.47
+            - key: Effect_AGS_Gigantes_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_22_1
+                    type: 1
+                    value: "9999999"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 34
+                    damage_minimize:
+                      base: 9999999
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_23_1
+                    type: 0
+                    value: "34"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.388
           type: 0
           range: 2
           ap: 9
@@ -3117,29 +2851,12 @@ skills:
                       type: 50
                       target: 0
                   overlap: 4
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_2_3
-                    type: 0
-                    value: "75"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 88
-                    off:
-                      type: 75
-                      target: 0
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_4
+                    desc: Effect_AGS_Gigantes_N_2_3
                     type: 1
                     value: "-0.150000"
-                    level: "-0.007500"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -3148,11 +2865,11 @@ skills:
                     type: 1
                     attack:
                       base: -15%
-                      per: -0.75%
+                      per: -1%
                   overlap: 4
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_5
+                    desc: Effect_AGS_Gigantes_N_2_4
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -3167,42 +2884,6 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_21
               on: attack_success
@@ -3256,7 +2937,88 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.655
+            - key: Effect_AGS_Gigantes_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_22_1
+                    type: 1
+                    value: "9999999"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 34
+                    damage_minimize:
+                      base: 9999999
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_23_1
+                    type: 0
+                    value: "34"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.587
           type: 0
           range: 2
           ap: 9
@@ -3321,29 +3083,12 @@ skills:
                       type: 50
                       target: 0
                   overlap: 4
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_2_3
-                    type: 0
-                    value: "75"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 88
-                    off:
-                      type: 75
-                      target: 0
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_4
+                    desc: Effect_AGS_Gigantes_N_2_3
                     type: 1
                     value: "-0.150000"
-                    level: "-0.007500"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -3352,11 +3097,11 @@ skills:
                     type: 1
                     attack:
                       base: -15%
-                      per: -0.75%
+                      per: -1%
                   overlap: 4
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_5
+                    desc: Effect_AGS_Gigantes_N_2_4
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -3371,42 +3116,6 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_21
               on: attack_success
@@ -3460,7 +3169,88 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.84
+            - key: Effect_AGS_Gigantes_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_22_1
+                    type: 1
+                    value: "9999999"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 34
+                    damage_minimize:
+                      base: 9999999
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_23_1
+                    type: 0
+                    value: "34"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.786
           type: 0
           range: 2
           ap: 9
@@ -3525,29 +3315,12 @@ skills:
                       type: 50
                       target: 0
                   overlap: 4
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_2_3
-                    type: 0
-                    value: "75"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 88
-                    off:
-                      type: 75
-                      target: 0
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_4
+                    desc: Effect_AGS_Gigantes_N_2_3
                     type: 1
                     value: "-0.150000"
-                    level: "-0.007500"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -3556,11 +3329,11 @@ skills:
                     type: 1
                     attack:
                       base: -15%
-                      per: -0.75%
+                      per: -1%
                   overlap: 4
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_5
+                    desc: Effect_AGS_Gigantes_N_2_4
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -3575,42 +3348,6 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_21
               on: attack_success
@@ -3664,7 +3401,88 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.025
+            - key: Effect_AGS_Gigantes_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_22_1
+                    type: 1
+                    value: "9999999"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 34
+                    damage_minimize:
+                      base: 9999999
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_23_1
+                    type: 0
+                    value: "34"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.985
           type: 0
           range: 2
           ap: 9
@@ -3729,29 +3547,12 @@ skills:
                       type: 50
                       target: 0
                   overlap: 4
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_2_3
-                    type: 0
-                    value: "75"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 88
-                    off:
-                      type: 75
-                      target: 0
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_4
+                    desc: Effect_AGS_Gigantes_N_2_3
                     type: 1
                     value: "-0.150000"
-                    level: "-0.007500"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -3760,11 +3561,11 @@ skills:
                     type: 1
                     attack:
                       base: -15%
-                      per: -0.75%
+                      per: -1%
                   overlap: 4
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_5
+                    desc: Effect_AGS_Gigantes_N_2_4
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -3779,42 +3580,6 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_21
               on: attack_success
@@ -3868,7 +3633,88 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.21
+            - key: Effect_AGS_Gigantes_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_22_1
+                    type: 1
+                    value: "9999999"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 34
+                    damage_minimize:
+                      base: 9999999
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_23_1
+                    type: 0
+                    value: "34"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 3.184
           type: 0
           range: 2
           ap: 9
@@ -3933,29 +3779,12 @@ skills:
                       type: 50
                       target: 0
                   overlap: 4
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_2_3
-                    type: 0
-                    value: "75"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 88
-                    off:
-                      type: 75
-                      target: 0
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_4
+                    desc: Effect_AGS_Gigantes_N_2_3
                     type: 1
                     value: "-0.150000"
-                    level: "-0.007500"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -3964,11 +3793,11 @@ skills:
                     type: 1
                     attack:
                       base: -15%
-                      per: -0.75%
+                      per: -1%
                   overlap: 4
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_5
+                    desc: Effect_AGS_Gigantes_N_2_4
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -3983,42 +3812,6 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_21
               on: attack_success
@@ -4072,7 +3865,88 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.395
+            - key: Effect_AGS_Gigantes_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_22_1
+                    type: 1
+                    value: "9999999"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 34
+                    damage_minimize:
+                      base: 9999999
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_23_1
+                    type: 0
+                    value: "34"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 3.383
           type: 0
           range: 2
           ap: 9
@@ -4137,29 +4011,12 @@ skills:
                       type: 50
                       target: 0
                   overlap: 4
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_2_3
-                    type: 0
-                    value: "75"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 88
-                    off:
-                      type: 75
-                      target: 0
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_4
+                    desc: Effect_AGS_Gigantes_N_2_3
                     type: 1
                     value: "-0.150000"
-                    level: "-0.007500"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -4168,11 +4025,11 @@ skills:
                     type: 1
                     attack:
                       base: -15%
-                      per: -0.75%
+                      per: -1%
                   overlap: 4
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_5
+                    desc: Effect_AGS_Gigantes_N_2_4
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -4187,42 +4044,6 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_21
               on: attack_success
@@ -4276,7 +4097,88 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.58
+            - key: Effect_AGS_Gigantes_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_22_1
+                    type: 1
+                    value: "9999999"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 34
+                    damage_minimize:
+                      base: 9999999
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_23_1
+                    type: 0
+                    value: "34"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 3.582
           type: 0
           range: 2
           ap: 9
@@ -4341,29 +4243,12 @@ skills:
                       type: 50
                       target: 0
                   overlap: 4
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_2_3
-                    type: 0
-                    value: "75"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 88
-                    off:
-                      type: 75
-                      target: 0
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_4
+                    desc: Effect_AGS_Gigantes_N_2_3
                     type: 1
                     value: "-0.150000"
-                    level: "-0.007500"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -4372,11 +4257,11 @@ skills:
                     type: 1
                     attack:
                       base: -15%
-                      per: -0.75%
+                      per: -1%
                   overlap: 4
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_5
+                    desc: Effect_AGS_Gigantes_N_2_4
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -4391,42 +4276,6 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_21
               on: attack_success
@@ -4480,7 +4329,88 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.765
+            - key: Effect_AGS_Gigantes_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_22_1
+                    type: 1
+                    value: "9999999"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 34
+                    damage_minimize:
+                      base: 9999999
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_23_1
+                    type: 0
+                    value: "34"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 3.781
           type: 0
           range: 2
           ap: 9
@@ -4545,29 +4475,12 @@ skills:
                       type: 50
                       target: 0
                   overlap: 4
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_2_3
-                    type: 0
-                    value: "75"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 88
-                    off:
-                      type: 75
-                      target: 0
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_4
+                    desc: Effect_AGS_Gigantes_N_2_3
                     type: 1
                     value: "-0.150000"
-                    level: "-0.007500"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -4576,11 +4489,11 @@ skills:
                     type: 1
                     attack:
                       base: -15%
-                      per: -0.75%
+                      per: -1%
                   overlap: 4
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_AGS_Gigantes_N_2_5
+                    desc: Effect_AGS_Gigantes_N_2_4
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -4595,42 +4508,6 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_12_1
-                    type: 1
-                    value: "0.250000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
             - key: Effect_AGS_Gigantes_N_21
               on: attack_success
@@ -4680,6 +4557,87 @@ skills:
                     type: 88
                     off:
                       type: 75
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_22_1
+                    type: 1
+                    value: "9999999"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 34
+                    damage_minimize:
+                      base: 9999999
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_23_1
+                    type: 0
+                    value: "34"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 34
                       target: 0
                   overlap: 4
               maxStack: 0
@@ -4715,41 +4673,23 @@ skills:
             base: 50
             per: 0
             chance: 0
-          - icon: BuffIcon_REMOVE_BUFF
-            desc:
-              desc: Effect_AGS_Gigantes_N_2_3
-              type: 0
-              value: "75"
-              level: "0"
-            base: 75
-            per: 0
-            chance: 0
           - icon: BuffIcon_ATK_DOWN
             desc:
-              desc: Effect_AGS_Gigantes_N_2_4
+              desc: Effect_AGS_Gigantes_N_2_3
               type: 1
               value: "-0.150000"
-              level: "-0.007500"
+              level: "-0.010000"
             base: -0.15
-            per: -0.0075
+            per: -0.01
             chance: 1
           - icon: BuffIcon_AP_DOWN
             desc:
-              desc: Effect_AGS_Gigantes_N_2_5
+              desc: Effect_AGS_Gigantes_N_2_4
               type: 1
               value: "-0.100000"
               level: "-0.005000"
             base: -0.1
             per: -0.005
-            chance: 1
-          - icon: BuffIcon_DAMAGE_REDUCE
-            desc:
-              desc: Effect_AGS_Gigantes_N_12_1
-              type: 1
-              value: "0.250000"
-              level: "0.015000"
-            base: 0.25
-            per: 0.015
             chance: 1
           - icon: BuffIcon_REMOVE_BUFF
             desc:
@@ -4769,6 +4709,37 @@ skills:
             base: 75
             per: 0
             chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_AGS_Gigantes_N_22_1
+              type: 1
+              value: "9999999"
+              level: "0"
+            base: 9999999
+            per: 0
+            chance: 1
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_AGS_Gigantes_N_23_1
+              type: 0
+              value: "34"
+              level: "0"
+            base: 34
+            per: 0
+            chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 돌진해 <dmg elem="physics" />를 주고, 대상을 <sec typ="buff"><buff typ="Push" /> 뒤로 <val idx="0" signless />칸 밀어내며</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 행 보호 / 열 보호를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="3" r /></sec>가 감소합니다.
+      EN: |-
+        to a single target charges <dmg elem="physics" /> damage and target <sec typ="buff"><buff typ="Push" /> back <val idx="0" signless />tiles pushes back and</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> Row Protection / Column Protection remove</sec>.
+        <sec typ="cond">On hit</sec>, 2 rounds, target's <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="3" r /></sec> decreases.
+      JP: |-
+        単一対象へ 突撃して<dmg elem="physics" />を与え、、 対象を <sec typ="buff"><buff typ="Push" /> 後方へ <val idx="0" signless />マス ムイルオ内し</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 行保護 / 列保護を 解除</sec>します。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>が減少します。
+      TC: |-
+        單一目標給 衝鋒 造成<dmg elem="physics" />，並 目標 <sec typ="buff"><buff typ="Push" /> 向後 <val idx="0" signless />格 推開內並</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 列保護 / 行保護 解除</sec>。
+        <sec typ="cond">命中時</sec>， 2回合內 目標的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>減少。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -4830,6 +4801,7 @@ skills:
                     rounds: 1
                   value:
                     isBuff: true
+                    chance: 0%
                     type: 50
                     guard: col
                   overlap: 1
@@ -4837,8 +4809,8 @@ skills:
                   desc:
                     desc: Effect_AGS_Gigantes_N_3_2
                     type: 1
-                    value: "0.750000"
-                    level: "0.037500"
+                    value: "0.700000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4846,12 +4818,98 @@ skills:
                     isBuff: true
                     type: 3
                     defense:
-                      base: 75%
-                      per: 3.75%
+                      base: 70%
+                      per: 5%
                   overlap: 4
-                - icon: BuffIcon_DEF_Side
+                - icon: BuffIcon_DEBUFF_PERDOWN
                   desc:
                     desc: Effect_AGS_Gigantes_N_3_3
+                    type: 1
+                    value: "0.300000"
+                    level: "0.030000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 91
+                    resist:
+                      type: debuff_perdown
+                      value:
+                        base: 30%
+                        per: 3%
+                  overlap: 4
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_3_4
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 36
+                    damage_reduce:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_3_5
+                    type: 1
+                    value: "0.250000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 36
+                    damage_reduce:
+                      base: 25%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_31
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DEF_Line
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_31_1
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 50
+                    guard: col
+                  overlap: 1
+                - icon: BuffIcon_DEF_Side
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_31_2
                     type: 0
                     value: "0"
                     level: "0"
@@ -4863,40 +4921,84 @@ skills:
                     type: 75
                     guard: row
                   overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_32
+              on: attack
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_AGS_Gigantes_N_3_4
+                    desc: Effect_AGS_Gigantes_N_32_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.015000"
+                    value: "0.100000"
+                    level: "0.005000"
                   attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 1.5%
+                      base: 10%
+                      per: 0.5%
                   overlap: 4
-                - icon: BuffIcon_DEBUFF_PERDOWN
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_33
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - squad
+                      - defender
+                    type:
+                      - 0
+                    count:
+                      - 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_AGS_Gigantes_N_3_5
+                    desc: Effect_AGS_Gigantes_N_33_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.020000"
+                    value: "0.250000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 91
-                    resist:
-                      type: debuff_perdown
-                      value:
-                        base: 30%
-                        per: 2%
+                    type: 36
+                    damage_reduce:
+                      base: 25%
+                      per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -4921,19 +5023,55 @@ skills:
               level: "0"
             base: 0
             per: 0
-            chance: 1
+            chance: 0
           - icon: BuffIcon_DEF_UP
             desc:
               desc: Effect_AGS_Gigantes_N_3_2
               type: 1
-              value: "0.750000"
-              level: "0.037500"
-            base: 0.75
-            per: 0.0375
+              value: "0.700000"
+              level: "0.050000"
+            base: 0.7
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_DEBUFF_PERDOWN
+            desc:
+              desc: Effect_AGS_Gigantes_N_3_3
+              type: 1
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_AGS_Gigantes_N_3_4
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 0
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_AGS_Gigantes_N_3_5
+              type: 1
+              value: "0.250000"
+              level: "0.010000"
+            base: 0.25
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_DEF_Line
+            desc:
+              desc: Effect_AGS_Gigantes_N_31_1
+              type: 0
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
             chance: 1
           - icon: BuffIcon_DEF_Side
             desc:
-              desc: Effect_AGS_Gigantes_N_3_3
+              desc: Effect_AGS_Gigantes_N_31_2
               type: 0
               value: "0"
               level: "0"
@@ -4942,22 +5080,39 @@ skills:
             chance: 1
           - icon: BuffIcon_DAMAGE_REDUCE
             desc:
-              desc: Effect_AGS_Gigantes_N_3_4
+              desc: Effect_AGS_Gigantes_N_32_1
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_AGS_Gigantes_N_33_1
               type: 1
               value: "0.250000"
-              level: "0.015000"
+              level: "0.010000"
             base: 0.25
-            per: 0.015
-            chance: 0
-          - icon: BuffIcon_DEBUFF_PERDOWN
-            desc:
-              desc: Effect_AGS_Gigantes_N_3_5
-              type: 1
-              value: "0.300000"
-              level: "0.020000"
-            base: 0.3
-            per: 0.02
+            per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="2" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 행 / 열 보호</sec> 효과를 획득합니다.
+        <sec typ="cond">공격 시</sec>, 2라운드 동안 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="7" r inv /></sec>가 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 스쿼드 내 유일한 보호기인 경우</sec>, 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" r inv /></sec>가 감소합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="2" r /></sec> increases and <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> Row / Column Protection</sec> gains the effect.
+        <sec typ="cond">When attacking</sec>, 2 rounds self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="7" r inv /></sec> decreases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self in squad only Defenderif</sec>, self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="8" r inv /></sec> decreases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="2" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 行 / 列保護</sec> 効果を獲得します。
+        <sec typ="cond">攻撃時</sec>、 2ラウンドの間 自身が <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="7" r inv /></sec>が減少します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身が スクワッド 内 ユイルした 保護機の場合</sec>、 自身が <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="8" r inv /></sec>が減少します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="2" r /></sec> 增加，並 <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 列 / 行保護</sec> 獲得效果。
+        <sec typ="cond">攻擊時</sec>， 2回合內 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="7" r inv /></sec>減少。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身 小隊 內 唯一 保護機若為</sec>， 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="8" r inv /></sec>減少。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -4993,11 +5148,7 @@ skills:
             - key: Effect_AGS_Gigantes_N_4
               on: round
               if:
-                - on:
-                    func: OR
-                    select:
-                      - 55
-                    attr: 0
+                - false
                 - false
               body:
                 - 0
@@ -5020,7 +5171,7 @@ skills:
                     level: "0.010000"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 1
@@ -5028,31 +5179,15 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_4_2
-                    type: 1
-                    value: "0.500000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: 50%
-                      per: 5%
-                  overlap: 4
                 - icon: BuffIcon_CRITICAL_UP
                   desc:
-                    desc: Effect_AGS_Gigantes_N_4_3
+                    desc: Effect_AGS_Gigantes_N_4_2
                     type: 1
                     value: "0.100000"
                     level: "0.005000"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 9
@@ -5060,27 +5195,26 @@ skills:
                       base: 10%
                       per: 0.5%
                   overlap: 4
-                - icon: BuffIcon_REMOVE_BUFF
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_4_3
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
                   desc:
                     desc: Effect_AGS_Gigantes_N_4_4
                     type: 0
-                    value: "55"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 88
-                    off:
-                      type: 55
-                      target: 0
-                  overlap: 4
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_AGS_Gigantes_N_4_5
-                    type: 0
                     value: "1.500000"
                     level: "0.100000"
                   attr: 0
@@ -5094,17 +5228,39 @@ skills:
                       base: 1.5
                       per: 0.1
                   overlap: 4
+                - icon: BuffIcon_COUNTER
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_4_5
+                    type: 1
+                    value: "0.800000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 29
+                    counter:
+                      base: 80%
+                      per: 5%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_14
+            - key: Effect_AGS_Gigantes_N_41
               on: round
               if:
+                - on:
+                    target: self
+                    func: UNFILLED
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
                 - on:
                     func: OR
                     select:
                       - 55
                     attr: 0
-                - false
               body:
                 - 0
                 - 1
@@ -5118,9 +5274,57 @@ skills:
                 - 2
               target: 0
               buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_41_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_41_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_41_3
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 50%
+                      per: 5%
+                  overlap: 4
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_AGS_Gigantes_N_14_1
+                    desc: Effect_AGS_Gigantes_N_41_4
                     type: 0
                     value: "1.500000"
                     level: "0.100000"
@@ -5133,18 +5337,23 @@ skills:
                     ap:
                       base: 1.5
                       per: 0.1
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_AGS_Gigantes_N_15
+            - key: Effect_AGS_Gigantes_N_42
               on: round
               if:
+                - on:
+                    target: self
+                    func: UNFILLED
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
                 - on:
                     func: OR
                     select:
                       - 55
                     attr: 0
-                - false
               body:
                 - 0
                 - 1
@@ -5160,8 +5369,8 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_AGS_Gigantes_N_15_1
-                    type: 0
+                    desc: Effect_AGS_Gigantes_N_42_1
+                    type: 1
                     value: "55"
                     level: "0"
                   attr: 3
@@ -5173,7 +5382,202 @@ skills:
                     off:
                       type: 55
                       target: 0
-                  overlap: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_43
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_AGS_Gigantes_N_51
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - 55
+                      - 77
+                    attr: 0
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_43_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_43_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_43_3
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_43_4
+                    type: 0
+                    value: "1.500000"
+                    level: "0.100000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1.5
+                      per: 0.1
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_44
+              on: round
+              if:
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_GigantesArmor_N_1
+                      - Effect_BUFF_GigantesArmor_N_2
+                      - Effect_BUFF_GigantesArmor_N_3
+                      - Effect_BUFF_GigantesArmor_N_4
+                      - Effect_BUFF_GigantesArmor_N_5
+                      - Effect_BUFF_GigantesArmor_N_6
+                      - Effect_BUFF_GigantesArmor_N_7
+                      - Effect_BUFF_GigantesArmor_N_8
+                      - Effect_BUFF_GigantesArmor_N_9
+                      - Effect_BUFF_GigantesArmor_N_10
+                      - Effect_BUFF_GigantesArmor_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - pos: 0
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_COUNTER
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_44_1
+                    type: 1
+                    value: "0.800000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 29
+                    counter:
+                      base: 80%
+                      per: 5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_45
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_GigantesArmor_N_1
+                      - Effect_BUFF_GigantesArmor_N_2
+                      - Effect_BUFF_GigantesArmor_N_3
+                      - Effect_BUFF_GigantesArmor_N_4
+                      - Effect_BUFF_GigantesArmor_N_5
+                      - Effect_BUFF_GigantesArmor_N_6
+                      - Effect_BUFF_GigantesArmor_N_7
+                      - Effect_BUFF_GigantesArmor_N_8
+                      - Effect_BUFF_GigantesArmor_N_9
+                      - Effect_BUFF_GigantesArmor_N_10
+                      - Effect_BUFF_GigantesArmor_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_COUNTER
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_45_1
+                    type: 1
+                    value: "1"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 29
+                    counter:
+                      base: 100%
+                      per: 5%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
     values:
@@ -5198,45 +5602,72 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_AGS_Gigantes_N_4_2
-              type: 1
-              value: "0.500000"
-              level: "0.050000"
-            base: 0.5
-            per: 0.05
-            chance: 1
           - icon: BuffIcon_CRITICAL_UP
             desc:
-              desc: Effect_AGS_Gigantes_N_4_3
+              desc: Effect_AGS_Gigantes_N_4_2
               type: 1
               value: "0.100000"
               level: "0.005000"
             base: 0.1
             per: 0.005
             chance: 1
-          - icon: BuffIcon_REMOVE_BUFF
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_AGS_Gigantes_N_4_3
+              type: 1
+              value: "0.500000"
+              level: "0.050000"
+            base: 0.5
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_AP_UP
             desc:
               desc: Effect_AGS_Gigantes_N_4_4
               type: 0
-              value: "55"
-              level: "0"
-            base: 55
-            per: 0
-            chance: 0
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_AGS_Gigantes_N_4_5
-              type: 0
               value: "1.500000"
               level: "0.100000"
             base: 1.5
             per: 0.1
             chance: 0
+          - icon: BuffIcon_COUNTER
+            desc:
+              desc: Effect_AGS_Gigantes_N_4_5
+              type: 1
+              value: "0.800000"
+              level: "0.050000"
+            base: 0.8
+            per: 0.05
+            chance: 0
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_AGS_Gigantes_N_41_1
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_AGS_Gigantes_N_41_2
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_AGS_Gigantes_N_41_3
+              type: 1
+              value: "0.500000"
+              level: "0.050000"
+            base: 0.5
+            per: 0.05
+            chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_AGS_Gigantes_N_14_1
+              desc: Effect_AGS_Gigantes_N_41_4
               type: 0
               value: "1.500000"
               level: "0.100000"
@@ -5245,13 +5676,335 @@ skills:
             chance: 1
           - icon: BuffIcon_REMOVE_BUFF
             desc:
-              desc: Effect_AGS_Gigantes_N_15_1
-              type: 0
+              desc: Effect_AGS_Gigantes_N_42_1
+              type: 1
               value: "55"
               level: "0"
             base: 55
             per: 0
             chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_AGS_Gigantes_N_43_1
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_AGS_Gigantes_N_43_2
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_AGS_Gigantes_N_43_3
+              type: 1
+              value: "0.500000"
+              level: "0.050000"
+            base: 0.5
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_AGS_Gigantes_N_43_4
+              type: 0
+              value: "1.500000"
+              level: "0.100000"
+            base: 1.5
+            per: 0.1
+            chance: 1
+          - icon: BuffIcon_COUNTER
+            desc:
+              desc: Effect_AGS_Gigantes_N_44_1
+              type: 1
+              value: "0.800000"
+              level: "0.050000"
+            base: 0.8
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_COUNTER
+            desc:
+              desc: Effect_AGS_Gigantes_N_45_1
+              type: 1
+              value: "1"
+              level: "0.050000"
+            base: 1
+            per: 0.05
+            chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond"><buff typ="RANGE_UP" /> 사거리 강화 효과가 적용된 경우</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 해당 효과를 해제</sec>하고 <sec typ="buff">상기 효과가 두 배로 증폭</sec>되며 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 전열인 경우</sec>, <sec typ="buff"><buff typ="COUNTER" /> <val idx="14" r signless /> 위력으로 반격</sec>이 활성화됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="2" r /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond"><buff typ="RANGE_UP" /> Range buff affected by case</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> the removes the effect</sec> and <sec typ="buff">above the effect is doubled amplification</sec>becomes and own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self front rowif</sec>, <sec typ="buff"><buff typ="COUNTER" /> <val idx="14" r signless /> power as Counterattack</sec> is activated.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond"><buff typ="RANGE_UP" /> 射程 強化 効果が適用された 場合</sec>、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 該当 効果を 解除</sec>し、 <sec typ="buff">上記 効果が2倍で 増幅</sec>になり、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身が 前列の場合</sec>、 <sec typ="buff"><buff typ="COUNTER" /> <val idx="14" r signless /> 威力で 反撃</sec>が 有効化されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond"><buff typ="RANGE_UP" /> 射程 強化 已套用效果的 情況</sec>， <sec typ="buff"><buff typ="REMOVE_BUFF" /> 該 效果 解除</sec>並 <sec typ="buff">上述 效果變為2倍以 增幅</sec>變為，且 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身 前排若為</sec>， <sec typ="buff"><buff typ="COUNTER" /> <val idx="14" r signless /> 威力以 反擊</sec> 啟用。
+  "5":
+    key: "5"
+    icon: P.AWACS
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 5
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_AGS_Gigantes_N_5
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_IMMUNITY_DEBUFF
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_5_1
+                    type: 1
+                    value: "55"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 101
+                    debuff_immune: 55
+                  overlap: 4
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_5_2
+                    type: 1
+                    value: "9999999"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 34
+                    damage_minimize:
+                      base: 9999999
+                      per: 0
+                  overlap: 4
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_5_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 106
+                    skill_ratio:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_51
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_51_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 6
+                    accuracy:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_AGS_Gigantes_N_52
+              on:
+                attack_success: passive
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_AGS_Gigantes_N_52_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_IMMUNITY_DEBUFF
+            desc:
+              desc: Effect_AGS_Gigantes_N_5_1
+              type: 1
+              value: "55"
+              level: "0"
+            base: 55
+            per: 0
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_AGS_Gigantes_N_5_2
+              type: 1
+              value: "9999999"
+              level: "0"
+            base: 9999999
+            per: 0
+            chance: 0
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_AGS_Gigantes_N_5_3
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_AGS_Gigantes_N_51_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_AGS_Gigantes_N_52_1
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 사거리 감소 효과에 면역</sec> 상태가 됩니다.
+        <sec typ="cond">공격 적중 시</sec>, 3라운드 동안 자신의 <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="cond"><sec typ="note">실드 차지</sec> 적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 최소화 효과를 해제</sec>하고 자신은 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 <val base="1" per="0" signless />회</sec>를 획득합니다.
+        <sec><sec typ="note">정밀 포착</sec>의 효과 발동을 위한 조건에 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격</sec> 효과를 추가하고, 더 이상 해당 효과를 해제하지 않도록 변경됩니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> Range decrease effect and immunity to</sec> state.
+        <sec typ="cond">On hit</sec>, 3 rounds own <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="4" r /></sec> increases.
+        <sec typ="cond"><sec typ="note">Sildeu kick whether</sec> On hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Damage Minimization removes the effect</sec> and self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Damage Minimization <val base="1" per="0" signless />times</sec> gains.
+        <sec><sec typ="note">precision capture/detect</sec> of effect and trigger above one condition to <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> support attack</sec> effect and additional and, more or more the removes the effect do whether not also Rok is changed.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 射程 減少 効果に 免疫</sec> 状態になります。
+        <sec typ="cond">攻撃命中時</sec>、 3ラウンドの間 自身の <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="4" r /></sec>が増加します。
+        <sec typ="cond"><sec typ="note">スイルドウ チアジイ</sec> 命中時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> ダメージ最小化 効果を 解除</sec>し、 自身は <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージ最小化 <val base="1" per="0" signless />回</sec>を獲得します。
+        <sec><sec typ="note">精密 プオチアク</sec>の 効果 ブアルドオンを ウィした 条件に <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻撃</sec> 効果を 追加し、 ドオ 以上 該当 効果を 解除ハアジイ アもルオク 変更されます。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 射程 減少 效果於 免疫</sec> 變為狀態。
+        <sec typ="cond">攻擊命中時</sec>， 3回合內 自身的 <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="4" r /></sec>增加。
+        <sec typ="cond"><sec typ="note">Sildeu Cha至</sec> 命中時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 傷害最小化 效果 解除</sec>並 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 傷害最小化 <val base="1" per="0" signless />次</sec>獲得。
+        <sec><sec typ="note">精密 捕捉</sec>的 效果 發動 上 條件於 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻擊</sec> 效果 額外並， 更多 以上 該 效果 解除下至 不也越 變更。</sec>
 dialogue:
   KR:
     "":
@@ -5345,20 +6098,13 @@ skins:
   sid: null
   artist: 메카셔군
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5373,25 +6119,20 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_AGS_Gigantes_N
   skins:
     - sid: 1
       artist: 메카셔군
       price: 114
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 32
       stage: false
       subset:
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - B
       anim:
         - false
         - false
@@ -5408,5 +6149,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_AGS_Gigantes_NS1
         consumableKey: Skin_AGS_Gigantes_1

@@ -1,6 +1,6 @@
 import { BuffStat } from "@/types/Buffs";
 import { Equip } from "@/types/DB/Equip";
-import { TARGET_TYPE } from "@/types/Enums";
+// import { TARGET_TYPE } from "@/types/Enums";
 
 import SimulatorEquip from "../types/Equip";
 

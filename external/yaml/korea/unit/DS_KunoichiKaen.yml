@@ -2732,6 +2732,23 @@ skills:
               level: "0"
             value: Char_DS_KunoichiEnrai_N
             chance: 1
+    desc:
+      KR: |-
+        대상에 <dmg elem="fire" />를 주고 적중 시 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="0" r inv /></sec>를 감소시킵니다.
+        치명타 시 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> 화염 고정 피해</sec>를 입힙니다.
+        <sec typ="note">일격필살</sec> 활성화 상태 시 <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      EN: |-
+        target to <dmg elem="fire" /> damage and On hit <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="0" r inv /></sec> decreases.
+        On critical hit <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> Fire fixed damage</sec> deals.
+        <sec typ="note">One-Hit Kill</sec> active state when <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="2" r /></sec> increases.
+      JP: |-
+        対象に<dmg elem="fire" />を与え、 命中時 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="0" r inv /></sec>を減少させます。
+        クリティカル時 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> 火炎 固定 ダメージ</sec>を 与えます。
+        <sec typ="note">一撃必殺</sec> 有効状態 時 <sec typ="dmg"><buff typ="FireATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
+      TC: |-
+        目標於 造成<dmg elem="fire" />，並 命中時 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="0" r inv /></sec>使其減少。
+        暴擊時 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> 火焰 固定 傷害</sec> 造成。
+        <sec typ="note">一擊必殺</sec> 啟用狀態 時 <sec typ="dmg"><buff typ="FireATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -4579,6 +4596,23 @@ skills:
             base: 0.25
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 주고 대상의 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="0" r /></sec>를 감소시킵니다.
+        적이 <sec typ="cond"><buff typ="ICERES_DOWN" /> 냉기 저항 감소</sec> / <sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 감소</sec> 상태일 시 <sec typ="dmg"><buff typ="FireATK_UP" /> 화염 추가 피해 <val idx="1" r /></sec>가 발생합니다.
+        <sec typ="note">일격필살</sec> 활성화 상태 시 <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      EN: |-
+        to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="fire" /> damage and target's <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="0" r /></sec> decreases.
+        enemy <sec typ="cond"><buff typ="ICERES_DOWN" /> Ice Resistance decrease</sec> / <sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance decrease</sec> if in the state <sec typ="dmg"><buff typ="FireATK_UP" /> Fire additional damage <val idx="1" r /></sec> occurs.
+        <sec typ="note">One-Hit Kill</sec> active state when <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="2" r /></sec> increases.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="fire" />を与え、 対象の <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="0" r /></sec>を減少させます。
+        敵が <sec typ="cond"><buff typ="ICERES_DOWN" /> 冷気耐性 減少</sec> / <sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 減少</sec> 状態イル 時 <sec typ="dmg"><buff typ="FireATK_UP" /> 火炎 追加 ダメージ <val idx="1" r /></sec>が 発生します。
+        <sec typ="note">一撃必殺</sec> 有効状態 時 <sec typ="dmg"><buff typ="FireATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
+      TC: |-
+        指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="fire" />，並 目標的 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="0" r /></sec>使其減少。
+        敵人 <sec typ="cond"><buff typ="ICERES_DOWN" /> 冰冷抗性 減少</sec> / <sec typ="cond"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 減少</sec> 狀態一 時 <sec typ="dmg"><buff typ="FireATK_UP" /> 火焰 額外 傷害 <val idx="1" r /></sec> 發生。
+        <sec typ="note">一擊必殺</sec> 啟用狀態 時 <sec typ="dmg"><buff typ="FireATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -5002,6 +5036,43 @@ skills:
             base: 0.35
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec>을 크게 증가시킵니다.
+        해당 효과는 4라운드 동안 점차 감소합니다.
+        1라운드 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val base="0.35" per="0.05" r /></sec>
+        2라운드 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val base="0.29" per="0.04" r /></sec>
+        3라운드 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val base="0.23" per="0.03" r /></sec>
+        4라운드 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val base="0.17" per="0.02" r /></sec>
+        4라운드 이후 : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>
+        <sec>사망 시, <char uid="DS_KunoichiZero" />에게 2라운드 동안 지속되는 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec>버프를 부여합니다.</sec>
+      EN: |-
+        At round start own <sec typ="buff"><buff typ="ATK_UP" /> Attack</sec> greatly increasescauses.
+        the effect 4 rounds gradually decreases.
+        1round: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val base="0.35" per="0.05" r /></sec>
+        2round: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val base="0.29" per="0.04" r /></sec>
+        3round: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val base="0.23" per="0.03" r /></sec>
+        4round: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val base="0.17" per="0.02" r /></sec>
+        4round after: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec>
+        <sec>death when, <char uid="DS_KunoichiZero" /> to 2 rounds continues <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="6" r /></sec>buff grants.</sec>
+      JP: |-
+        ラウンド開始時 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力</sec>を 大きく増加させます。
+        該当 効果は 4ラウンド間 ジオムチア 減少します。
+        1ラウンド：<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val base="0.35" per="0.05" r /></sec>
+        2ラウンド：<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val base="0.29" per="0.04" r /></sec>
+        3ラウンド：<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val base="0.23" per="0.03" r /></sec>
+        4ラウンド：<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val base="0.17" per="0.02" r /></sec>
+        4ラウンド 以後：<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>
+        <sec>死亡 時、 <char uid="DS_KunoichiZero" />に 2ラウンドの間 持続ドウェは <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec>バフを付与します。</sec>
+      TC: |-
+        回合開始時 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力</sec> 大幅增加。
+        該 效果 4回合內 解除omcha 減少。
+        1回合：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val base="0.35" per="0.05" r /></sec>
+        2回合：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val base="0.29" per="0.04" r /></sec>
+        3回合：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val base="0.23" per="0.03" r /></sec>
+        4回合：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val base="0.17" per="0.02" r /></sec>
+        4回合 之後：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>
+        <sec>死亡 時， <char uid="DS_KunoichiZero" />給 2回合內 持續變為 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec>增益賦予。</sec>
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -5166,6 +5237,19 @@ skills:
             base: 0.12
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시 <sec typ="note">일격필살</sec> 버프가 활성화됩니다.
+        <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="1" r /></sec>가 증가합니다.
+      EN: |-
+        At battle start <sec typ="note">One-Hit Kill</sec> buff is activated.
+        <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="1" r /></sec> increases.
+      JP: |-
+        戦闘開始時 <sec typ="note">一撃必殺</sec> バフが 有効化されます。
+        <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>が増加します。
+      TC: |-
+        戰鬥開始時 <sec typ="note">一擊必殺</sec> 增益 啟用。
+        <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r /></sec>增加。
   "5":
     key: "5"
     icon: P.Beam
@@ -5409,6 +5493,23 @@ skills:
             base: 0.4
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="note">불꽃의 춤</sec> 효과 중 라운드 경과에 따른 공격력 점감이 발생하지 않습니다.
+        <sec typ="note">시라누이</sec> 사용 시, 스쿼드 내에 <char uid="DS_KunoichiEnrai" />가 있을 경우 <sec typ="note">호무라</sec> 협동공격을 유도합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, own <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light damage <val idx="0" r /></sec> increases.
+        <sec typ="note">Dance of Flames</sec> effect and during round case and to depending on Attack diminish over time occurs do whether does not.
+        <sec typ="note">when Ranu</sec> When used, in squad to <char uid="DS_KunoichiEnrai" /> if present <sec typ="note">Homura</sec> cooperation attack triggers.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 自身の <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ <val idx="0" r /></sec>が増加します。
+        <sec typ="note">炎の舞</sec> 効果 中 ラウンド グヨンとに ットアルウン 攻撃力 ジオムグアムが ブアルスエンハアジイ しません。
+        <sec typ="note">時ルアンウが</sec> 使用時、 スクワッド 内に <char uid="DS_KunoichiEnrai" />が 存在する場合 <sec typ="note">ハオムウルア</sec> ハヨプドオン攻撃を 誘導します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 自身的 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害 <val idx="0" r /></sec>增加。
+        <sec typ="note">火焰之舞</sec> 效果 中 回合 輕與於 依照 攻擊力 解除遞減 發生ha至 不會。
+        <sec typ="note">時時nu</sec> 使用時， 小隊 內於 <char uid="DS_KunoichiEnrai" /> 存在時 <sec typ="note">Homura</sec> Hyeopdong攻擊 誘發。
 dialogue:
   KR:
     "1":
@@ -5504,10 +5605,8 @@ dialogue:
         명령이, 아냐…? 그럼… 응. 부탁.
         기억해. 카엔을, 기분좋게
         해주세요. ...이것도, 아냐?
-      Oath: >-
-        카엔, 주공한테  배웠어. 주공의 생각, 취향, 습관… 전부, 알아. 이것도… 알아. 응. 사랑. 주공이 카엔을, 카엔이 주공을,
-        사랑해. 
-
+      Oath: |-
+        카엔, 주공한테  배웠어. 주공의 생각, 취향, 습관… 전부, 알아. 이것도… 알아. 응. 사랑. 주공이 카엔을, 카엔이 주공을, 사랑해. 
         이름, 알려줄게. 사랑하면, 이름 알려주는 게 규칙. 카엔의 이름, 하츠나. 유채꽃이라는 뜻. 주공. 하츠나, 불러줘. ...응. 기뻐.
       OathIdle_01: |-
         주공하고 있는 거, 좋아. 주공은,
@@ -5580,9 +5679,8 @@ dialogue:
       SPIdle_02_01: 殿…カエン、おいしい…？カエンも殿、食べる。
       Oath: カエン…うぅん、ハツナ、こんなに幸せなの…初めて。全部、殿がくれた。だからハツナも、殿に、あげる。うん。全部。ハツナは丸ごと、殿のもの。
       OathIdle_01: 殿。今日もハツナから…？うん。お風呂とご飯は、後で。
-      MVP: >-
+      MVP: |-
         司令官様がこんなに積極的なお方だったとは…今までわかりませんでした。…ところで司令官様？どうして私のような気難しくてただ真面目なだけの軍人に興味をお持ちになられたのでしょうか。
-
         理由を聞かせていただけますか？…そうだったんですか。わかりました…これからも司令官様のご期待に沿えるよう最善を尽くしてまいります。
     "":
       Join: …クノイチ・カエン。殿の敵を、始末。
@@ -5612,9 +5710,8 @@ dialogue:
       Idle_03_01: 命令、ないと不安。命令、受ければ――…笑って、ほしい？こう？…殿。変な、顔。
       Idle_04_01: この前の言葉、わかる…気がする。 命令、殿、からっぽ…白紙…。うん。カエン、殿の色に…染めて。
       SPIdle_02_01: 命令じゃ、ない…？ なら…うん。 お願い。仕方、覚えてる。カエンを、気持ちよくしてください。 …これも、違う？
-      Oath: >-
+      Oath: |-
         カエン、殿から教わった。殿の考え、好み、癖… 全部、わかる。これも…わかる。うん。愛。殿はカエンを、カエンは殿を、愛してる。
-
         名前、教えてあげる。愛したら、名前教えるのが、決まり。カエンの名前、ハツナ。 春に咲く花、菜の花、の意味。殿、ハツナって、呼んで。…うん。嬉しい。
       OathIdle_01: 殿といると、いい。 殿は、どう…？
       MVP: ""
@@ -5637,8 +5734,7 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: くぅ…くぅ… ……！！あ、殿…うん。 昼寝。…殿もハツナと、寝る？
-      Idle_01_02: ハツナ。 もう命令、嫌い。命令は全部、痛い…。 痛いし…悲しい。 ううん。 殿は、違う。 殿はいつも、ハツナを嬉しくする。 うん。
-        だから…本当に、好き。
+      Idle_01_02: ハツナ。 もう命令、嫌い。命令は全部、痛い…。 痛いし…悲しい。 ううん。 殿は、違う。 殿はいつも、ハツナを嬉しくする。 うん。 だから…本当に、好き。
       Idle_01_03: |-
         やりたいこと…する？ 何でも？ うん。 …今は、だめ？ なんで？ …殿、嘘ついた。 やってくれるまで殿と、話、しない。
         …今の、冗談。 殿が何しても、大丈夫、だから。 うん。これが、愛。
@@ -5666,8 +5762,7 @@ dialogue:
       Idle_01_01: |-
         Kaen made sushi. Yes. I learned…
         a lot of things. I like… cooking.
-      Idle_01_02: Sumire is liquor. Kaen is snack. You can have either… Why are you
-        taking a deep breath? Are you… angry?
+      Idle_01_02: Sumire is liquor. Kaen is snack. You can have either… Why are you taking a deep breath? Are you… angry?
       Idle_01_03: |-
         Yes. I wore it when I sneaked into quarters.
         People liked Kaen. Do you like it, too?
@@ -5685,9 +5780,8 @@ dialogue:
       SPIdle_02_01: |-
         Umm, Lord… Is Kaen good?
         Kaen wants Lord, too.
-      Oath: >-
+      Oath: |-
         Kyan… Mm, Hatsuna, I’ve never been this happy. Lord gave me all of it.
-
         So, Hatsuna will give it to you as well. Yes. All of it. I, Hatsuna, is fully yours.​
       OathIdle_01: |-
         My Lord. Hatsuna first?
@@ -5738,10 +5832,8 @@ dialogue:
         Not, order? Then… Yes. Favor.
         I remember. Make Kaen
         happy. … No?
-      Oath: >-
-        Kaen learned from Lord. I know your thoughts, taste, habits… everything.
-        I know this too. Yes. Love. Lord loves Kaen, and Kaen loves Lord. 
-
+      Oath: |-
+        Kaen learned from Lord. I know your thoughts, taste, habits… everything. I know this too. Yes. Love. Lord loves Kaen, and Kaen loves Lord. 
         I’ll tell you my name. It’s a rule, telling my name to someone I love. Kaen’s name is Hatsuna. It means canola flower. Lord. Call me Hatsuna. … Yes. I’m happy.
       OathIdle_01: |-
         I like being with you. How about
@@ -5928,20 +6020,13 @@ skins:
   sid: null
   artist: CHoney
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5956,25 +6041,25 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_DS_KunoichiKaen_N
   skins:
     - sid: 1
       artist: CHoney
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 70
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+        G:
+          - _
+          - D
+          - S
       anim:
         - true
         - false
@@ -5991,4 +6076,5 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 5
         2dmodel_dam: 2DModel_DS_KunoichiKaen_NS1_Dam

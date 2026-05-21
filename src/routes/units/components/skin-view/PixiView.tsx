@@ -1,3 +1,4 @@
+import { FunctionalComponent } from "preact";
 import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 import * as PIXI from "pixi.js";
 import { Viewport } from "pixi-viewport";
@@ -37,6 +38,7 @@ interface PixiViewProps {
 	damaged: boolean;
 
 	hidePart: boolean;
+	hidePart2: boolean;
 	hideBG: boolean;
 	displayTouchCollider: boolean;
 
@@ -77,9 +79,9 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 				width: 1,
 				height: 1,
-				// resolution: window.devicePixelRatio || 1,
+				resolution: 1,
 				autoDensity: true,
-				powerPreference: "low-power",
+				powerPreference: "default",
 
 				// eventMode: "passive",
 				eventFeatures: {
@@ -129,6 +131,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 			setPixi(state);
 
 			Shared.instance.renderer = renderer;
+			Shared.instance.viewport = vp;
 
 			const _empty = new PIXI.Container();
 
@@ -195,6 +198,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 			vp.addChild(surface);
 			// stage.addChild(surface);
 			setSurface(surface);
+			Shared.instance.surface = surface;
 
 			playerRef.current.appendChild(renderer.view as HTMLCanvasElement);
 		}
@@ -208,6 +212,8 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 			if (ticker) ticker.destroy();
 			if (renderer) renderer.destroy(true);
 			Shared.instance.renderer = null;
+			Shared.instance.viewport = null;
+			Shared.instance.surface = null;
 			setPixi(null);
 		};
 	}, []);
@@ -243,7 +249,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 					: (props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!;
 
 			const skinPrefix = ["", "G_"][props.google ? 1 : 0];
-			const skinPostfix = ["", "S", "B", "BS"][(props.hidePart ? 1 : 0) | (props.hideBG ? 2 : 0)];
+			const skinPostfix = `${props.hideBG ? "B" : ""}${props.hidePart ? "S" : ""}${props.hidePart2 ? "P" : ""}`;
 			const skinFixs = skinPrefix + skinPostfix;
 			const atlasId = props.U2DModelMetadata.spine
 				? skinFixs in props.U2DModelMetadata.spine
@@ -254,7 +260,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 							? props.U2DModelMetadata.spine[skinPostfix]!
 							: 0
 				: 0;
-console.log(props.U2DModelMetadata.spine)
+			// console.log(_uid, props.U2DModelMetadata.spine);
 
 			let _char: PixiSpineModel | Pixi2DModel | MixedModel | PixiVideoModel | null = char as typeof _char;
 			if (_char && (_char.model !== _uid || (!("atlasId" in _char) || _char.atlasId !== atlasId))) {
@@ -264,10 +270,10 @@ console.log(props.U2DModelMetadata.spine)
 
 			if (_char === null) {
 				if (props.type === "mixed" || props.type === "spine") {
-					console.log((props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!);
+					// console.log((props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!);
 					if (props.type === "mixed")
 						_char = new MixedModel(
-							uid,
+							_uid,
 							(props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!,
 							atlasId,
 						);
@@ -320,7 +326,7 @@ console.log(props.U2DModelMetadata.spine)
 				surface.addChild(_char);
 			}
 		}
-	}, [props.type, props.uid, props.vid, props.google, props.damaged, props.hidePart, props.hideBG, surface]);
+	}, [props.type, props.uid, props.vid, props.google, props.damaged, props.hidePart, props.hidePart2, props.hideBG, surface]);
 
 	useEffect(() => {
 		if (char && ("setFace" in char)) { // type-guard not work with instanceof
@@ -328,10 +334,11 @@ console.log(props.U2DModelMetadata.spine)
 				char.setFace(props.face);
 
 			char.setHidePart(props.hidePart);
+			char.setHidePart2(props.hidePart2);
 			char.setHideBG(props.hideBG);
 			char.setColliderVisible(props.displayTouchCollider);
 		}
-	}, [char, props.hidePart, props.hideBG, props.face, props.displayTouchCollider]);
+	}, [char, props.hidePart, props.hidePart2, props.hideBG, props.face, props.displayTouchCollider]);
 
 	useEffect(() => {
 		const fn = () => {

@@ -2173,6 +2173,19 @@ skills:
             base: -0.12
             per: -0.02
             chance: 1
+    desc:
+      KR: |-
+        적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 치명타 시 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        적 적중 시 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" r /></sec>를 감소시킵니다.
+      EN: |-
+        to the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and On critical hit <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        enemy On hit <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="2" r /></sec> decreases.
+      JP: |-
+        敵に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、、 クリティカル時 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        敵 命中時 <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="2" r /></sec>を減少させます。
+      TC: |-
+        敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 暴擊時 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        敵人 命中時 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="2" r /></sec>使其減少。
   "2":
     key: "2"
     icon: AirStrike
@@ -3241,6 +3254,23 @@ skills:
             base: 0.23
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>를 증가시킵니다.
+        스쿼드 내 <char uid="BR_May" />가 있을 시 지정 타깃 대상으로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">석기 시대로!</sec> 스킬 협동 공격</sec>을 합니다.
+        공격 적중 시 자신의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="2" r /></sec>가 감소합니다.
+      EN: |-
+        to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increases.
+        in squad <char uid="BR_May" /> if present designated target target as <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Back to the Stone Age!</sec> skill coordinated attack</sec>.
+        On hit own <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="2" r /></sec> decreases.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec>を増加させます。
+        スクワッド 内 <char uid="BR_May" />が ある 時 指定 トアグイト 対象で <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">石器時代へ！</sec> スキル 協同攻撃</sec>をします。
+        攻撃命中時 自身の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="2" r /></sec>が減少します。
+      TC: |-
+        指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec>使其增加。
+        小隊 內 <char uid="BR_May" /> 有 時 指定 目標 目標以 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">回到石器時代！</sec> 技能 協同攻擊</sec>。
+        攻擊命中時 自身的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="2" r /></sec>減少。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -3406,6 +3436,11 @@ skills:
             base: 0.12
             per: 0.02
             chance: 1
+    desc:
+      KR: 라운드 개시 시 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff">치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec>를 증가시킵니다.
+      EN: At round start own <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff">Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="3" r /></sec> increases.
+      JP: ラウンド開始時 自身の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff">クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec>を増加させます。
+      TC: 回合開始時 自身的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff">暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec>使其增加。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3676,6 +3711,19 @@ skills:
             base: 0.01
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 지정 범위 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec>를 증가시킵니다.
+        <sec typ="cond"><cmt t="둠 브링어"><import name="DoomBringer" /></cmt> 소속</sec>은 <sec typ="buff">100% 증가된 효과</sec>를 받습니다.
+      EN: |-
+        <sec typ="cond">At round start</sec> designated area allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="2" r /></sec> increases.
+        <sec typ="cond"><cmt t="Doom Bringer"><import name="DoomBringer" /></cmt> affiliated</sec> <sec typ="buff">100% increase applied effect and</sec> receives.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 指定範囲 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="2" r /></sec>を増加させます。
+        <sec typ="cond"><cmt t="ドゥームブリンガー"><import name="DoomBringer" /></cmt> 所属</sec>は <sec typ="buff">100% 増加された 効果</sec>を 受けます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec> 指定範圍 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec>使其增加。
+        <sec typ="cond"><cmt t="毀滅使者"><import name="DoomBringer" /></cmt> 所屬</sec> <sec typ="buff">100% 增加已 效果</sec> 受到。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -3843,6 +3891,11 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: <sec typ="cond">자신이 공격을 적중시키거나</sec> <sec typ="cond">자신을 제외한 아군이 공격을 성공시키면</sec> 자신과 <char uid="BR_May" />의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+      EN: <sec typ="cond">self attack Accuracywhen height/key or</sec> <sec typ="cond">self excluding allies attack success when if activates</sec> self and <char uid="BR_May" /> of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+      JP: <sec typ="cond">自身が 攻撃を 命中時クイまたは</sec> <sec typ="cond">自身を ジエ外した 味方が 攻撃を 宣グオン時クイなら</sec> 自身と <char uid="BR_May" />の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+      TC: <sec typ="cond">自身 攻擊 命中時台或</sec> <sec typ="cond">自身 解除外 我方 攻擊 先g防空時台若</sec> 自身與 <char uid="BR_May" />的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -4017,9 +4070,7 @@ dialogue:
         나는 아직 견습 마법소녀다. 그러니까…
         매지컬 젠틀맨과 이런저런 일을 해도…
         괜찮을 거다.
-      Oath: 사실, 마법소녀 일은 꽤 즐거웠다. 왜냐면, 이 옷… 웨딩드레스처럼 보이지 않나? 그래서, 덕분에 매지컬 젠틀맨과… 사령관과 부부가
-        된 상상을 할 수 있었다. 그런데, 진짜로 이렇게 부부의 서약을 하게 될 줄이야. 정말이지, 마법소녀가 되어서 다행이다. 고맙다…
-        사랑하는 나의 젠틀맨.
+      Oath: 사실, 마법소녀 일은 꽤 즐거웠다. 왜냐면, 이 옷… 웨딩드레스처럼 보이지 않나? 그래서, 덕분에 매지컬 젠틀맨과… 사령관과 부부가 된 상상을 할 수 있었다. 그런데, 진짜로 이렇게 부부의 서약을 하게 될 줄이야. 정말이지, 마법소녀가 되어서 다행이다. 고맙다… 사랑하는 나의 젠틀맨.
       OathIdle_01: |-
         매지컬 젠틀맨, 내가 듣기로 마법소녀는
         사랑의 힘으로 더욱 강해질 수 있다고 한다.
@@ -4081,8 +4132,7 @@ dialogue:
         으, 아… 사, 사령관. 이럴 바엔… 마, 맞다.
         인공적으로도 아이를- 그, 그런가.
         그럼… 사령관에게 전부, 맡기겠다.
-      Oath: 이, 이건… 그, 그렇지. 이제 곧 훈련 시간이다. 사령관, 그럼 조금 이따, 으으… 아, 알고 있다. 그래도 어떻게 반응해야 할 지
-        모르겠어서… 사령관. 이제 잘 알겠지만, 나는 결점 투성이다. 그런 내가 애정이라는 것도 알아갈 수 있도록… 함께, 해주겠나…?
+      Oath: 이, 이건… 그, 그렇지. 이제 곧 훈련 시간이다. 사령관, 그럼 조금 이따, 으으… 아, 알고 있다. 그래도 어떻게 반응해야 할 지 모르겠어서… 사령관. 이제 잘 알겠지만, 나는 결점 투성이다. 그런 내가 애정이라는 것도 알아갈 수 있도록… 함께, 해주겠나…?
       OathIdle_01: |-
         사령관이 자꾸 그… 부끄러운 짓을
         하니까 훈련 스케쥴이 자꾸 어긋난다.
@@ -4242,9 +4292,7 @@ dialogue:
         나는 아직 견습 마법소녀다. 그러니까…
         매지컬 젠틀맨과 이런저런 일을 해도…
         괜찮을 거다.
-      Oath: "[미번역]사실, 마법소녀 일은 꽤 즐거웠다. 왜냐면, 이 옷… 웨딩드레스처럼 보이지 않나? 그래서, 덕분에 매지컬 젠틀맨과…
-        사령관과 부부가 된 상상을 할 수 있었다. 그런데, 진짜로 이렇게 부부의 서약을 하게 될 줄이야. 정말이지, 마법소녀가 되어서
-        다행이다. 고맙다… 사랑하는 나의 젠틀맨."
+      Oath: "[미번역]사실, 마법소녀 일은 꽤 즐거웠다. 왜냐면, 이 옷… 웨딩드레스처럼 보이지 않나? 그래서, 덕분에 매지컬 젠틀맨과… 사령관과 부부가 된 상상을 할 수 있었다. 그런데, 진짜로 이렇게 부부의 서약을 하게 될 줄이야. 정말이지, 마법소녀가 되어서 다행이다. 고맙다… 사랑하는 나의 젠틀맨."
       OathIdle_01: |-
         [미번역]매지컬 젠틀맨, 내가 듣기로 마법소녀는
         사랑의 힘으로 더욱 강해질 수 있다고 한다.
@@ -4278,9 +4326,8 @@ dialogue:
       Idle_03_01: 司令官。私との射撃訓練は満足してもらえただろうか。最善を尽くしたつもりだが…ほ、本当？ふっ…、さすがは司令官、私の努力に気付いて―あ、何でもない。私としたことがつい…
       Idle_04_01: ただの昼寝だったのか…司令官。あのような姿をむやみに他の隊員に見せては―きゃっ！何の真似だ！？なぜ抱き寄せる！？い、一緒に寝よう……？……では少しだけ…失礼する…。
       SPIdle_02_01: うっ、あっ…し、司令官。こんなことをするくらいならいっそのこと…そ、そうだ。人工的に子供を―そ、そうか…。じゃあ…司令官にすべてを委ねる…ことに…する…。
-      Oath: >-
+      Oath: |-
         こ、これは……そ、そうだ。もうすぐ訓練の時間だ。司令官、ではまた後で…、
-
         うぅ…わ、わかっている。ただどう反応したらいいのかわからない… 司令官。よくわかっているだろうが、私は欠点だらけだ…。こんな私だが…愛情というものがどんなものなのか、よくわかるように…手取り足取り…教えてくれるか…？
       OathIdle_01: 司令官がいつも…その…恥ずかしいことをしてくるせいで訓練スケジュールが狂ってしまう…。あっ、いや…、嫌というわけでは…ない。
       MVP: ""
@@ -4331,9 +4378,8 @@ dialogue:
       Idle_01_01: |-
         Uh, Commander. … Thanks. It’s just an outfit,
         but I feel like I got closer to my goal.
-      Idle_01_02: >-
+      Idle_01_02: |-
         You always care about us.
-
         I know that. I’m sure others will be happy, too… Uh, Commander. … N-nothing.
       Idle_01_03: |-
         P-please don’t stare at me like that.
@@ -4357,15 +4403,11 @@ dialogue:
         I’ve always thought so, but you really look happy
         at moments like this. I’m the one who’s feeling good.
         I know that. Then together…
-      Oath: >-
-        I feel like… I’m only receiving from the commander. Commander, do I
-        deserve to be this happy…? Do I
-
+      Oath: |-
+        I feel like… I’m only receiving from the commander. Commander, do I deserve to be this happy…? Do I
         deserve this much lov… Okay. I will try harder to not let your love down, commander.
-      OathIdle_01: >-
-        I thought I was physically strong… But I guess I needed more training. …
-        That’s not part of a training!
-
+      OathIdle_01: |-
+        I thought I was physically strong… But I guess I needed more training. … That’s not part of a training!
         That’s… I-it might be okay.
       MVP: ""
     "2":
@@ -4391,13 +4433,10 @@ dialogue:
         But the issue is that…the beverages are selling too well
         and I can no longer spare time to talk to Commander. Look…
         Another order has come through.​
-      Idle_01_02: >-
+      Idle_01_02: |-
         Selling beverages is a challenge.
-
         It’s not the physical aspect of the job that is challenging, but rather,
-
         understanding the customers’ demands, predicting the intensity of incoming customers, and above all,
-
         conversing with the customers.​
       Idle_01_03: |-
         Walking around carrying a beverage container is a tough task
@@ -4405,46 +4444,32 @@ dialogue:
         so thirsty. Commander, could you give me some wa—
         Huh? Ah, u-um, forget I said anything!​
       SPIdle_01_01: D-don’t do it while I’m busy!​
-      Idle_02_01: >-
+      Idle_02_01: |-
         At first, I sold beer. But the superintendent of the Cityguard
-
         confiscated all the beer, saying that it is dangerous to drink alcohol while playing with water.
-
         I sought after the superintendent
-
         and found her sleeping under a parasol, drunk.​
       Idle_03_01: |-
         This swimsuit? D-does it look weird? I will take it off it is!
         Ah, um… I-I heard from someone that this is the trendiest swimsuit.
         Um… Do you…think it’s…pretty? It’s good…to be pretty.
-      Idle_04_01: >-
+      Idle_04_01: |-
         To be honest, I want to go play with water too.
-
         But I am worried that I would look disgraceful because I haven’t learned how to swim.
-
         Hmm? I don’t have to swim?
-
         T-then… would you go splashing water with me?​
       SPIdle_02_01: |-
         S-squeeze all you want, you will not get a single drop!
         For now…​
-      Oath: >-
-        Hmm? What beverage are you going to or— C-commander, this is… Are you
-        really giving this to me?
-
+      Oath: |-
+        Hmm? What beverage are you going to or— C-commander, this is… Are you really giving this to me?
         Fufu… I started this to talk to Commander and the result has exceeded my expectations.
-
         Will you order a celebratory drink? Anything is free. But if you don’t want to drink anything… T-then… You can order me.
-      OathIdle_01: >-
-        I started selling beverages to help the Commander who was suffering from
-        the heat.
-
+      OathIdle_01: |-
+        I started selling beverages to help the Commander who was suffering from the heat.
         All in all, I think I made the right choice.
-
         My team members are finding me helpful
-
         and they are calling me. Also… I got to know Commander’s feelings.
-
         Nothing could make me happier than this.
       MVP: ""
     "3":
@@ -4531,10 +4556,7 @@ dialogue:
         Oh… Commander… We should… R-right.
         Artificial insemination- I-is it?
         Then… I’ll leave everything to you.
-      Oath: T-this is… Right. It’s almost time for training. Commander, then I’ll…
-        Ugh, I know. But I still don’t know how to react… Commander. You might
-        as well know now, but I have a lot of flaws. But will you help me… learn
-        the feeling of affection?
+      Oath: T-this is… Right. It’s almost time for training. Commander, then I’ll… Ugh, I know. But I still don’t know how to react… Commander. You might as well know now, but I have a lot of flaws. But will you help me… learn the feeling of affection?
       OathIdle_01: |-
         You keep doing embarrassing things…
         We’re falling behind training schedule.
@@ -4830,20 +4852,13 @@ skins:
   sid: null
   artist: SIMA
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -4858,25 +4873,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_ALWraith_N
   skins:
     - sid: 1
       artist: SIMA
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - false
         - false
@@ -4893,24 +4904,20 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_ALWraith_NS1
     - sid: 2
       artist: Cruno
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 12
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - false
         - false
@@ -4927,25 +4934,23 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_ALWraith_NS2
         consumableKey: Skin_BR_ALWraith_2
     - sid: 3
       artist: 2V
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -4962,5 +4967,6 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_ALWraith_NS3
         consumableKey: Skin_BR_ALWraith_3

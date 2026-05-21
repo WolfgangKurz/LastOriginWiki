@@ -1673,6 +1673,19 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        단일 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        대상이 해로운 <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> / <sec typ="cond"><buff typ="ATK_DOWN" /> 공격력 감소</sec> 상태일 때 각각 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        single to the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        target harmful <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion decrease</sec> / <sec typ="cond"><buff typ="ATK_DOWN" /> Attack decrease</sec> state when respectively <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        ドアンイル 敵に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        対象が 有害な <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避 減少</sec> / <sec typ="cond"><buff typ="ATK_DOWN" /> 攻撃力 減少</sec> 状態イル 時 それぞれ <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+      TC: |-
+        全部nil 敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        目標 有害 <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避 減少</sec> / <sec typ="cond"><buff typ="ATK_DOWN" /> 攻擊力 減少</sec> 狀態一 時 各自 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: CruiseMissile
@@ -1909,6 +1922,7 @@ skills:
                     - Char_3P_Amphitrite_N
                     - Char_3P_Salacia_N
                     - Char_3P_Galatea_N
+                    - Char_3P_Nerites_N
                 - false
               body:
                 - 0
@@ -2019,6 +2033,42 @@ skills:
                     isBuff: true
                     type: 97
                     off: Effect_3P_Melite_N_42
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Melite_N_26
+              on:
+                after: use_skill
+              if:
+                - in_battle:
+                    - Char_3P_Nerites_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_3P_Melite_N_26_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 100
+                    off: 1
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2239,6 +2289,7 @@ skills:
                     - Char_3P_Amphitrite_N
                     - Char_3P_Salacia_N
                     - Char_3P_Galatea_N
+                    - Char_3P_Nerites_N
                 - false
               body:
                 - 0
@@ -2349,6 +2400,42 @@ skills:
                     isBuff: true
                     type: 97
                     off: Effect_3P_Melite_N_42
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Melite_N_26
+              on:
+                after: use_skill
+              if:
+                - in_battle:
+                    - Char_3P_Nerites_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_3P_Melite_N_26_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 100
+                    off: 1
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2569,6 +2656,7 @@ skills:
                     - Char_3P_Amphitrite_N
                     - Char_3P_Salacia_N
                     - Char_3P_Galatea_N
+                    - Char_3P_Nerites_N
                 - false
               body:
                 - 0
@@ -2679,6 +2767,42 @@ skills:
                     isBuff: true
                     type: 97
                     off: Effect_3P_Melite_N_42
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Melite_N_26
+              on:
+                after: use_skill
+              if:
+                - in_battle:
+                    - Char_3P_Nerites_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_3P_Melite_N_26_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 100
+                    off: 1
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2899,6 +3023,7 @@ skills:
                     - Char_3P_Amphitrite_N
                     - Char_3P_Salacia_N
                     - Char_3P_Galatea_N
+                    - Char_3P_Nerites_N
                 - false
               body:
                 - 0
@@ -3009,6 +3134,42 @@ skills:
                     isBuff: true
                     type: 97
                     off: Effect_3P_Melite_N_42
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Melite_N_26
+              on:
+                after: use_skill
+              if:
+                - in_battle:
+                    - Char_3P_Nerites_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_3P_Melite_N_26_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 100
+                    off: 1
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3229,6 +3390,7 @@ skills:
                     - Char_3P_Amphitrite_N
                     - Char_3P_Salacia_N
                     - Char_3P_Galatea_N
+                    - Char_3P_Nerites_N
                 - false
               body:
                 - 0
@@ -3339,6 +3501,42 @@ skills:
                     isBuff: true
                     type: 97
                     off: Effect_3P_Melite_N_42
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Melite_N_26
+              on:
+                after: use_skill
+              if:
+                - in_battle:
+                    - Char_3P_Nerites_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_3P_Melite_N_26_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 100
+                    off: 1
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3559,6 +3757,7 @@ skills:
                     - Char_3P_Amphitrite_N
                     - Char_3P_Salacia_N
                     - Char_3P_Galatea_N
+                    - Char_3P_Nerites_N
                 - false
               body:
                 - 0
@@ -3669,6 +3868,42 @@ skills:
                     isBuff: true
                     type: 97
                     off: Effect_3P_Melite_N_42
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Melite_N_26
+              on:
+                after: use_skill
+              if:
+                - in_battle:
+                    - Char_3P_Nerites_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_3P_Melite_N_26_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 100
+                    off: 1
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3889,6 +4124,7 @@ skills:
                     - Char_3P_Amphitrite_N
                     - Char_3P_Salacia_N
                     - Char_3P_Galatea_N
+                    - Char_3P_Nerites_N
                 - false
               body:
                 - 0
@@ -3999,6 +4235,42 @@ skills:
                     isBuff: true
                     type: 97
                     off: Effect_3P_Melite_N_42
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Melite_N_26
+              on:
+                after: use_skill
+              if:
+                - in_battle:
+                    - Char_3P_Nerites_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_3P_Melite_N_26_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 100
+                    off: 1
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -4219,6 +4491,7 @@ skills:
                     - Char_3P_Amphitrite_N
                     - Char_3P_Salacia_N
                     - Char_3P_Galatea_N
+                    - Char_3P_Nerites_N
                 - false
               body:
                 - 0
@@ -4329,6 +4602,42 @@ skills:
                     isBuff: true
                     type: 97
                     off: Effect_3P_Melite_N_42
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Melite_N_26
+              on:
+                after: use_skill
+              if:
+                - in_battle:
+                    - Char_3P_Nerites_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_3P_Melite_N_26_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 100
+                    off: 1
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -4549,6 +4858,7 @@ skills:
                     - Char_3P_Amphitrite_N
                     - Char_3P_Salacia_N
                     - Char_3P_Galatea_N
+                    - Char_3P_Nerites_N
                 - false
               body:
                 - 0
@@ -4659,6 +4969,42 @@ skills:
                     isBuff: true
                     type: 97
                     off: Effect_3P_Melite_N_42
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Melite_N_26
+              on:
+                after: use_skill
+              if:
+                - in_battle:
+                    - Char_3P_Nerites_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_3P_Melite_N_26_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 100
+                    off: 1
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -4879,6 +5225,7 @@ skills:
                     - Char_3P_Amphitrite_N
                     - Char_3P_Salacia_N
                     - Char_3P_Galatea_N
+                    - Char_3P_Nerites_N
                 - false
               body:
                 - 0
@@ -4992,6 +5339,42 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_3P_Melite_N_26
+              on:
+                after: use_skill
+              if:
+                - in_battle:
+                    - Char_3P_Nerites_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_3P_Melite_N_26_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 100
+                    off: 1
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -5094,6 +5477,48 @@ skills:
               level: "0"
             value: Effect_3P_Melite_N_42
             chance: 1
+          - icon: BuffIcon_REMOVE_DEBUFF
+            desc:
+              desc: Effect_3P_Melite_N_26_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+    desc:
+      KR: |-
+        무장을 전탄발사하여 지정 범위 적에게 <dmg elem="physics" />를 줍니다.
+        중행을 제외한 행에는 <sec typ="dmg">25% 감소한 피해</sec>를 입힙니다.
+        적중 시, <sec typ="cond">대상의 HP가 100%인 경우</sec> 이로운 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 무효화 효과를 해제</sec>하고, <sec typ="cond">대상의 HP가 50% 이상인 경우</sec> 이로운 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가 효과를 해제</sec>합니다.
+        <sec typ="note">감사히 받도록!</sec>에 의한 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 증가</sec> 효과가 <sec typ="cond">최대 중첩</sec> 상태일 때, 중첩을 모두 소모하고 <sec typ="note">길을 내어라!</sec>의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량이 <val idx="0" r /> 증가</sec>합니다.
+        스킬 사용 시, 자신은 2라운드 동안 해제 불가한 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="8" r /></sec> 감소 효과를 획득합니다.
+        스쿼드 내에 자신을 제외한 <sec typ="note">머메이드</sec> 전투원이 있으면 행동력 감소 수치가 경감됩니다. (<sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="7" r /></sec>)
+        <sec typ="note">머메이드</sec> 전투원 : <char uid="3P_Amphitrite" />, <char uid="3P_Salacia" />, <char uid="3P_Galatea" />
+      EN: |-
+        armament Full Burst by doing to the designated area the enemy <dmg elem="physics" />.
+        middle row excluding row in <sec typ="dmg">25% reduced damage</sec> deals.
+        On hit, <sec typ="cond">target's HP 100%if</sec> beneficial <sec typ="buff"><buff typ="REMOVE_BUFF" /> Damage Nullification removes the effect</sec> and, <sec typ="cond">target's HP 50% or moreif</sec> beneficial <sec typ="buff"><buff typ="REMOVE_BUFF" /> Defense increase removes the effect</sec>.
+        <sec typ="note">Gamsa hit receives also Rok!</sec> to by <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy increase</sec> effect and <sec typ="cond">up to stack</sec> state when, stack all consume and <sec typ="note">Make Way!</sec> of <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /> increase</sec>.
+        When using the skill, self 2 rounds cannot be removed one <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="8" r /></sec> decrease gains the effect.
+        in squad to self excluding <sec typ="note">Mermaid</sec> combatant if present Action Speed decrease value mitigation. (<sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="7" r /></sec>)
+        <sec typ="note">Mermaid</sec> combatant: <char uid="3P_Amphitrite" />, <char uid="3P_Salacia" />, <char uid="3P_Galatea" />
+      JP: |-
+        武装を 前トアン発射して 指定範囲 敵に<dmg elem="physics" />を与えます。
+        中行を ジエ外した 行には <sec typ="dmg">25% 減少した ダメージ</sec>を 与えます。
+        命中時、 <sec typ="cond">対象の HPが 100%の場合</sec> 有益な <sec typ="buff"><buff typ="REMOVE_BUFF" /> ダメージ無効化 効果を 解除</sec>し、 <sec typ="cond">対象の HPが 50% 以上の場合</sec> 有益な <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防御力 増加 効果を 解除</sec>します。
+        <sec typ="note">グアムスアハイ ブアトもルオク!</sec>に よる <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 増加</sec> 効果が <sec typ="cond">最大 重複</sec> 状態イル 時、 重複を ムオドウ 消費し、 <sec typ="note">道を開けろ！</sec>の <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量が <val idx="0" r /> 増加</sec>します。
+        スキル使用時、 自身は 2ラウンドの間 解除不可した <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="8" r /></sec> 減少 効果を獲得します。
+        スクワッド 内に 自身を ジエ外した <sec typ="note">ムオムエがドウ</sec> 戦闘員が ある場合 行動力 減少 数値が グヨングアムされます。 (<sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="7" r /></sec>)
+        <sec typ="note">ムオムエがドウ</sec> 戦闘員：<char uid="3P_Amphitrite" />、 <char uid="3P_Salacia" />、 <char uid="3P_Galatea" />
+      TC: |-
+        武裝 前彈發射並 指定範圍 敵人給 造成<dmg elem="physics" />。
+        中列 解除外 列於 <sec typ="dmg">25% 減少 傷害</sec> 造成。
+        命中時， <sec typ="cond">目標的 HP 100%若為</sec> 有益 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 傷害無效化 效果 解除</sec>並， <sec typ="cond">目標的 HP 50% 以上若為</sec> 有益 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防禦力 增加 效果 解除</sec>。
+        <sec typ="note">Gamsahi 接受也越!</sec>於 的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 增加</sec> 效果 <sec typ="cond">最大 疊加</sec> 狀態一 時， 疊加 全部 消耗並 <sec typ="note">讓開道路！</sec>的 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /> 增加</sec>。
+        使用技能時， 自身 2回合內 無法解除 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="8" r /></sec> 減少 獲得效果。
+        小隊 內於 自身 解除外 <sec typ="note">美人魚</sec> 戰鬥員 若有 行動力 減少 數值 輕gam。 (<sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="7" r /></sec>)
+        <sec typ="note">美人魚</sec> 戰鬥員：<char uid="3P_Amphitrite" />， <char uid="3P_Salacia" />， <char uid="3P_Galatea" />
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -5129,11 +5554,7 @@ skills:
             - key: Effect_3P_Melite_N_3
               on: round
               if:
-                - on:
-                    func: OR
-                    select:
-                      - 3
-                    attr: 0
+                - false
                 - false
               body:
                 - 0
@@ -5159,6 +5580,7 @@ skills:
                     rounds: 1
                   value:
                     isBuff: true
+                    chance: 0%
                     type: 1
                     attack:
                       base: 5%
@@ -5404,12 +5826,12 @@ skills:
                 - on:
                     target: self
                     select:
-                      - Effect_3P_Melite_N_3
                       - Effect_3P_Melite_N_31
                       - Effect_3P_Melite_N_32
                       - Effect_3P_Melite_N_33
                       - Effect_3P_Melite_N_34
                       - Effect_3P_Melite_N_35
+                      - Effect_3P_Melite_N_38
                     stack: 2
                     attr: 6
                 - false
@@ -5450,12 +5872,12 @@ skills:
                 - on:
                     target: self
                     select:
-                      - Effect_3P_Melite_N_3
                       - Effect_3P_Melite_N_31
                       - Effect_3P_Melite_N_32
                       - Effect_3P_Melite_N_33
                       - Effect_3P_Melite_N_34
                       - Effect_3P_Melite_N_35
+                      - Effect_3P_Melite_N_38
                     stack: 4
                     attr: 6
                 - false
@@ -5488,6 +5910,46 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_3P_Melite_N_38
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - 3
+                    attr: 0
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_3P_Melite_N_38_1
+                    type: 1
+                    value: "0.050000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 5%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -5509,7 +5971,7 @@ skills:
               level: "0.010000"
             base: 0.05
             per: 0.01
-            chance: 1
+            chance: 0
           - icon: BuffIcon_SKILL_UP
             desc:
               desc: Effect_3P_Melite_N_3_2
@@ -5591,6 +6053,33 @@ skills:
             base: 0
             per: 0
             chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_3P_Melite_N_38_1
+              type: 1
+              value: "0.050000"
+              level: "0.010000"
+            base: 0.05
+            per: 0.01
+            chance: 1
+    desc:
+      KR: |-
+        <sec typ="note">자신을 지켜주는 근위대(라고 주장하는 전투원)</sec>가 많을 수록 멜리테는 기세등등해집니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신에게 적용된 이로운 방어 관련 효과 종류에 따라 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> 증가 효과를 획득합니다.
+        방어 관련 효과 : <sec typ="cond"><buff typ="DEF_UP" /> 방어력</sec> / <sec typ="cond"><buff typ="EVADE_UP" /> 회피</sec> / <sec typ="cond"><buff typ="BARRIER" /> 방어막</sec> / <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> / <sec typ="cond"><buff typ="DEF_Char" /> 지정 보호</sec> / <sec typ="cond"><buff typ="DEBUFF_PERDOWN" /> 효과 저항</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 본 스킬을 통해 획득한 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가 효과</sec>가 2중첩 이상일 때 자신의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="8" r /></sec>가 증가하고, 4중첩 이상일 때 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과가 활성화 됩니다.
+      EN: |-
+        The more <sec typ="note">guards who protect her (or so they claim)</sec>, the more triumphant Melite becomes.
+        <sec typ="cond">At round start</sec>, gains an <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> increase effect based on the types of beneficial defense-related effects applied to self.
+        Defense-related effects: <sec typ="cond"><buff typ="DEF_UP" /> Defense</sec> / <sec typ="cond"><buff typ="EVADE_UP" /> Evasion</sec> / <sec typ="cond"><buff typ="BARRIER" /> Barrier</sec> / <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> Damage Reduction</sec> / <sec typ="cond"><buff typ="DEF_Char" /> Designated Protection</sec>
+      JP: |-
+        <sec typ="note">自身を守ってくれる近衛隊（だと主張する戦闘員）</sec>が多いほど、メリテは勢いづきます。
+        <sec typ="cond">ラウンド開始時</sec>、自身に適用された有利な防御関連効果の種類に応じて、<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec>増加効果を獲得します。
+        防御関連効果：<sec typ="cond"><buff typ="DEF_UP" />防御力</sec> / <sec typ="cond"><buff typ="EVADE_UP" />回避</sec> / <sec typ="cond"><buff typ="BARRIER" />バリア</sec> / <sec typ="cond"><buff typ="DAMAGE_REDUCE" />受けるダメージ減少</sec> / <sec typ="cond"><buff typ="DEF_Char" />指定保護</sec>
+      TC: |-
+        <sec typ="note">保護自己的近衛隊（自稱）</sec>越多，梅莉忒越是氣勢高漲。
+        <sec typ="cond">回合開始時</sec>，依自身套用的有利防禦相關效果種類，獲得<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="0" r /></sec>增加效果。
+        防禦相關效果：<sec typ="cond"><buff typ="DEF_UP" />防禦力</sec> / <sec typ="cond"><buff typ="EVADE_UP" />迴避</sec> / <sec typ="cond"><buff typ="BARRIER" />護盾</sec> / <sec typ="cond"><buff typ="DAMAGE_REDUCE" />受到的傷害減少</sec> / <sec typ="cond"><buff typ="DEF_Char" />指定保護</sec>
   "4":
     key: "4"
     icon: P.CannonShotDelay
@@ -5821,6 +6310,39 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_3P_Melite_N_44
+              on: round
+              if:
+                - in_battle:
+                    - Char_3P_Nerites_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 1
+              role:
+                - 1
+              target: 2
+              buffs:
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
+                    desc: Effect_3P_Melite_N_44_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -5897,6 +6419,32 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+          - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_3P_Melite_N_44_1
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격기를 제외한 아군 중장형 전투원의 공격을 지원</sec>합니다.
+        지원공격 시, 실시간으로 좌표를 수정하여 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec>가 증가합니다. (최대 3중첩)
+        자신이 <sec typ="note">길을 내어라!</sec> 효과에 의한 <sec typ="cond"><buff typ="AP_DOWN" /> 행동력 감소</sec> 상태일 때, 지원공격 시 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attacker excluding allies Heavy-type combatant of supports the attack</sec>.
+        support When attacking, Sil when between as Jwa mark number removeong by doing own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec> increases. (up to 3stack)
+        self <sec typ="note">Make Way!</sec> effect and to by <sec typ="cond"><buff typ="AP_DOWN" /> Action Speed decrease</sec> state when, support When attacking own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃機を ジエ外した 味方 重装型 戦闘員の 攻撃を 支援</sec>します。
+        支援攻撃時、 スイル時グアンで ジワプヨを 数ジオンして 自身の <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>が増加します。 (最大 3重複)
+        自身が <sec typ="note">道を開けろ！</sec> 効果に よる <sec typ="cond"><buff typ="AP_DOWN" /> 行動力 減少</sec> 状態イル 時、 支援攻撃時 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻擊機 解除外 我方 重裝型 戰鬥員的 攻擊 支援</sec>。
+        支援攻擊時， Sil時Gan以 Jwapyo 數解除ong並 自身的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>增加。 (最大 3疊加)
+        自身 <sec typ="note">讓開道路！</sec> 效果於 的 <sec typ="cond"><buff typ="AP_DOWN" /> 行動力 減少</sec> 狀態一 時， 支援攻擊時 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>增加。
   "5":
     key: "5"
     icon: P.Command
@@ -5932,7 +6480,8 @@ skills:
             - key: Effect_3P_Melite_N_5
               on: wave
               if:
-                - false
+                - notInBattle:
+                    - Char_3P_Nerites_N
                 - false
               body:
                 - 0
@@ -5955,7 +6504,8 @@ skills:
                     level: "0.025000"
                   attr: 3
                   erase:
-                    until: damaged
+                    count: 1
+                    trigger: damaged
                   value:
                     isBuff: true
                     type: 48
@@ -5971,7 +6521,8 @@ skills:
                     level: "0.015000"
                   attr: 3
                   erase:
-                    until: damaged
+                    count: 0
+                    trigger: damaged
                   value:
                     isBuff: true
                     chance: 0%
@@ -5980,8 +6531,8 @@ skills:
                       base: 15%
                       per: 1.5%
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
+              maxStack: 1
+              overlapGroup: 33
             - key: Effect_3P_Melite_N_51
               on: wave_end
               if:
@@ -6017,6 +6568,44 @@ skills:
                   overlap: 4
               maxStack: 1
               overlapGroup: -1
+            - key: Effect_3P_Melite_N_52
+              on: round
+              if:
+                - in_battle:
+                    - Char_3P_Nerites_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_3P_Melite_N_52_1
+                    type: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 3
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 25%
+                      per: 2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 33
     values:
       index:
         - 0
@@ -6057,6 +6646,32 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+          - icon: BuffIcon_VULNERABLE
+            desc:
+              desc: Effect_3P_Melite_N_52_1
+              type: 1
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
+            chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 모든 적에게 피격 시 1회에 한하여 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec> 증가 효과를 적용합니다.
+        <sec>해당 효과는 효과 저항의 영향을 받지 않습니다.</sec>
+        웨이브 종료 시, 점령에 들뜬 마음을 안고 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" r /></sec>가 증가합니다. (해제 불가)
+      EN: |-
+        <sec typ="cond">At battle start</sec>, all enemiesto When hit 1times to limited to <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> increase applies the effect.
+        <sec>the effect is not affected by Effect Resistance does not.</sec>
+        At the end of the wave, removeomryeong to Tteun mind Ango own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="2" r /></sec> increases. (cannot be removed)
+      JP: |-
+        戦闘開始時、 すべての敵に 被弾時 1回に したして <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="0" r /></sec> 増加 効果を適用します。
+        <sec>該当 効果は 効果抵抗の影響を受けない しません。</sec>
+        ウェーブ終了時、 ジオムルヨンに たちットウン 心を アンし 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="2" r /></sec>が増加します。 (解除不可)
+      TC: |-
+        戰鬥開始時， 所有敵人給 被擊時 1次於 並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="0" r /></sec> 增加 套用效果。
+        <sec>該 效果 不受效果抗性影響 不會。</sec>
+        波次結束時， 解除omryeong於 們Tteun 心情 內並 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="2" r /></sec>增加。 (無法解除)
 dialogue:
   KR:
     "1":
@@ -6342,11 +6957,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        They don't have candied floors or unlimited chocolate fountains… but
-        refreshing sweet drinks and cold bingsu are great too! Amazing! I shall
-        add soda and
-
+      Idle_01_01: |-
+        They don't have candied floors or unlimited chocolate fountains… but refreshing sweet drinks and cold bingsu are great too! Amazing! I shall add soda and
         bingsu to my Chocoland!
       Idle_01_02: |-
         Are you having fun, Admiral? No one else can have fun
@@ -6388,12 +7000,9 @@ dialogue:
         acting like a child in your arms…
         could it get any better? Stay beside me…
         until I wake up.
-      Oath: >-
-        A confession during the festival. You’re not doing this spur of the
-        moment, are you? I mean… it's even better if not!
-
+      Oath: |-
+        A confession during the festival. You’re not doing this spur of the moment, are you? I mean… it's even better if not!
         How would I be able to reject you, Admiral? Now, every day's going to feel like a festival!
-
         No, I just wanted to respond to your confession with one of my own. Each of my days has been a festival ever since I met you!
       OathIdle_01: |-
         Did you have a good time, dear? I know I did.
@@ -6403,8 +7012,7 @@ dialogue:
         to build a true Choco Land!
       MVP: ""
     "":
-      Join: We are on the same side. Glad to meet you, Admiral! Let’s have a feast to
-        commemorate today!
+      Join: We are on the same side. Glad to meet you, Admiral! Let’s have a feast to commemorate today!
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -6422,13 +7030,10 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         My name is Melite, the Queen of Chocoland!
-
         Does Chocoland really exist?
-
         Hmph. That I am Chocoland itself.
-
         Which means, as long as I present, the Kingdom of Chocoland also exists!​
       Idle_01_02: |-
         It takes vast territory to establish a country…
@@ -6442,13 +7047,10 @@ dialogue:
         Hmm…
         What you are doing feels like treating like a child,
         so stop it already.​
-      Idle_02_01: >-
+      Idle_02_01: |-
         Sweet candies on the floor, soaring
-
         chocolate fountain. Those all will become the specialty of Chocoland.
-
         What do you think, Admiral? You can be a contribution to the country's founding.
-
         I'll give you plenty of time to fonder, have a wise choice!​
       Idle_03_01: |-
         Tuna Can? The thing you get when you give
@@ -6466,20 +7068,14 @@ dialogue:
         Good, very good.
         To strengthen our trusting relationship
         Keep stroking, Admiral!​
-      Oath: >-
-        This is…..! Since when did you crush on me? From the beginning… Then,
-        the same as me.
-
+      Oath: |-
+        This is…..! Since when did you crush on me? From the beginning… Then, the same as me.
         I also thought that the only one who could be my husband, it was you, from the beginning. Fine! Let the feast begin!
-
         As splendidly and grandly as possible! Let the world know that the Queen and King of Chocoland have come!
-      OathIdle_01: >-
+      OathIdle_01: |-
         Dear, did you take my chocolate and candy again!
-
         I did promise to brush my teeth before going to bed.
-
         Why are you keep taking it away from me…! According to the national law of Chocoland!
-
         The tickling punishment!​
       MVP: ""
     M:
@@ -6685,20 +7281,14 @@ skins:
   sid: null
   artist: PaintAle
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -6713,25 +7303,20 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_3P_Melite_N
   skins:
     - sid: 1
       artist: PaintAle
       price: 114
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
       anim:
         - false
         - false
@@ -6748,5 +7333,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_3P_Melite_NS1
         consumableKey: Skin_3P_Melite_1

@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useEffect, useMemo, useState } from "preact/hooks";
-import { route } from "preact-router";
+import { useLocation } from "preact-iso";
 import Decimal from "decimal.js";
 
 import { SelectOption } from "@/types/Helper";
@@ -15,7 +15,7 @@ import { BuildClass } from "@/libs/Class";
 import EntitySource from "@/libs/EntitySource";
 import { FormatNumber, isActive } from "@/libs/Functions";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
 import PopupBase from "@/components/popup/base";
@@ -71,6 +71,7 @@ interface EnemyPopupProps {
 
 const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 	const [loc] = useLocale();
+	const location = useLocation();
 	const imageExt = ImageExtension();
 
 	const [propLevel, setPropLevel] = useState<number>(0);
@@ -81,7 +82,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 
 	const FilterableEnemyDB = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
 
-	const target = props.enemy && FilterableEnemyDB && FilterableEnemyDB.find(x => x.id === targetId) || null;
+	const target = props.enemy && assertDBData(FilterableEnemyDB) && FilterableEnemyDB.find(x => x.id === targetId) || null;
 	// const [targetEnemy, setTargetEnemy] = useState<Enemy | null>(null);
 	const targetEnemyKey = useMemo(() => target ? `enemy/${target.id}` : null, [target]);
 	const targetEnemy = useDBData<Enemy>(targetEnemyKey);
@@ -101,9 +102,9 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 
 	// const isEWEnemy = target && /_EW[0-9]*$/.test(target.id);
 	const isNEWEnemy = target && "NEW" in target.used;
-	const isIW = targetEnemy && targetEnemy.category & 2;
+	// const isIW = assertDBData(targetEnemy) && targetEnemy.category & 2;
 
-	const targetStat: Enemy["stat"] | undefined = targetEnemy?.stat ?? undefined;
+	const targetStat: Enemy["stat"] | undefined = assertDBData(targetEnemy) ? targetEnemy.stat : undefined;
 
 	if (targetStat) {
 		if (props.__hp !== undefined) {
@@ -113,7 +114,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 
 	const FamilyList = useMemo((): SelectOption<string>[] => {
 		if (!props.enemy) return [];
-		if (!FilterableEnemyDB) return [];
+		if (!assertDBData(FilterableEnemyDB)) return [];
 
 		const name = loc[`ENEMY_${props.enemy.id}`] ?? "";
 		return FilterableEnemyDB
@@ -163,7 +164,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 	}
 
 	const Skills = useMemo((): Array<EnemySkill | undefined> => {
-		if (!targetEnemy) return [];
+		if (!assertDBData(targetEnemy)) return [];
 		const enemy = targetEnemy;
 		const list = enemy.skills
 			.map(s => {
@@ -229,6 +230,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 
 		const ret: string[][] = [];
 
+		console.log(target)
 		Object.keys(target.used)
 			.forEach(x => ret.push(target.used[x]));
 
@@ -246,7 +248,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 							onClick={ (e): void => {
 								setTargetId(x.value);
 								if (!props.asSub)
-									route(`/enemies/${x.value}`);
+									location.route(`/enemies/${x.value}`);
 							} }
 						>{ x.text }
 						</button>) }
@@ -443,7 +445,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 				</tbody>
 			</table>
 
-			{ targetEnemy
+			{ assertDBData(targetEnemy)
 				? <>
 					<div class="container">
 						<div class="row row-cols-4 row-cols-md-8 enemy-display-tabs mt-1">
@@ -550,6 +552,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 													slot={ idx.toString() }
 													buffBonus={ false }
 													favorBonus={ false }
+													valueDetail={ false }
 													skillBonus={ 0 }
 													experimentalBuffName
 												/>
@@ -759,7 +762,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 		}
 		onHidden={ (): void => {
 			if (!props.asSub && window.location.pathname !== "/enemies")
-				route("/enemies");
+				location.route("/enemies");
 
 			if (props.onHidden)
 				props.onHidden();

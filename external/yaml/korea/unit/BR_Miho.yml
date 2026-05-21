@@ -611,6 +611,8 @@ source:
   - - Ev:Ev33:EV1-3EX
   - - Ev:Ev35:EV1-1EX
     - Ev:Ev35:EV2-3EX
+  - - Ev:Ev36:EV2-4EX
+  - - Ev:Ev39:EV1-1EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1754,6 +1756,23 @@ skills:
               level: "0"
             value: Char_BR_Bulgasari_N
             chance: 1
+    desc:
+      KR: |-
+        저격으로 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 대상이 <buff typ="PROVOKE" /> 도발 또는 <buff typ="MARKING" /> 표식 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">스쿼드 내 <char uid="BR_Bulgasari" />가 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">배터링 램</sec> / <sec typ="note">벙커 버스터</sec> 스킬 협동 공격</sec>을 유도합니다.
+      EN: |-
+        by sniping as <dmg elem="physics" />.
+        <sec typ="cond">Hit target <buff typ="PROVOKE" /> Provoke or <buff typ="MARKING" /> Mark if in the state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">in squad <char uid="BR_Bulgasari" /> if present</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Battering Ram</sec> / <sec typ="note">Bunker Buster</sec> skill coordinated attack</sec> triggers.
+      JP: |-
+        狙撃で<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象が <buff typ="PROVOKE" /> 挑発 または <buff typ="MARKING" /> 標的 状態の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">スクワッド 内 <char uid="BR_Bulgasari" />が 存在する場合</sec>、 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">バタリングラム</sec> / <sec typ="note">バンカーバスター</sec> スキル 協同攻撃</sec>を 誘導します。
+      TC: |-
+        狙擊以 造成<dmg elem="physics" />。
+        <sec typ="cond">命中目標為 <buff typ="PROVOKE" /> 挑釁 或 <buff typ="MARKING" /> 標記 若為狀態</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">小隊 內 <char uid="BR_Bulgasari" /> 存在時</sec>， <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">破城槌</sec> / <sec typ="note">碉堡剋星</sec> 技能 協同攻擊</sec> 誘發。
   "2":
     key: "2"
     icon: Chargeshot
@@ -3501,6 +3520,27 @@ skills:
             base: 0.2
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        심기일전 저격으로 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상의 HP가 낮을수록 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 대상이 <buff typ="VULNERABLE" /> 받는 피해 증가 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 시</sec> <sec typ="cond">스쿼드 내 <char uid="BR_HongRyun" />이 있을 경우</sec>, 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        Renewed Resolve by sniping as <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> damage increases as the target's HP decreases <val idx="0" r /></sec> increases.
+        <sec typ="cond">Hit target <buff typ="VULNERABLE" /> damage taken increase if in the state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
+        <sec typ="cond">On hit</sec> <sec typ="cond">in squad <char uid="BR_HongRyun" /> if present</sec>, own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="4" r /></sec> increases.
+      JP: |-
+        スイム機イル前 狙撃で <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 対象のHPが低いほどダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">命中対象が <buff typ="VULNERABLE" /> 受けるダメージ 増加 状態の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
+        <sec typ="cond">命中時</sec> <sec typ="cond">スクワッド 内 <char uid="BR_HongRyun" />が 存在する場合</sec>、 自身の <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="4" r /></sec>が増加します。
+      TC: |-
+        心台一前 狙擊以 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 目標HP越低傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">命中目標為 <buff typ="VULNERABLE" /> 受到的傷害 增加 若為狀態</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>增加。
+        <sec typ="cond">命中時</sec> <sec typ="cond">小隊 內 <char uid="BR_HongRyun" /> 存在時</sec>， 自身的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="4" r /></sec>增加。
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -4122,6 +4162,23 @@ skills:
             base: 0.15
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 중열/전열에 위치한 아군 보호기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 상기 효과 대상 아군 보호기의 공격을 지원</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="12" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, middle row/front row to positioned allies Defender of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> above effect and target allies Defender of supports the attack</sec>.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="12" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 中列/前列に 位置した 味方 保護機の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 上記 効果 対象 味方 保護機の 攻撃を 支援</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="12" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 中排/前排於 位置 我方 保護機的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 上述 效果 目標 我方 保護機的 攻擊 支援</sec>。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="11" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="12" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -4564,6 +4621,19 @@ skills:
             base: 0.4
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">전위 지원</sec>의 효과 대상 보호기에게 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec> 증가 효과를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 아군 보호기 1기 당 자신의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="note">Vanguard Support</sec> of effect and target Defenderto <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increase grants the effect.
+        <sec typ="cond">At round start</sec>, allies Defender 1 unit per own <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="4" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="note">前衛支援</sec>の 効果 対象 保護機に <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec> 増加 効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、 味方 保護機 1機 ごと 自身の <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="4" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="note">前衛支援</sec>的 效果 目標 保護機給 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec> 增加 賦予效果。
+        <sec typ="cond">回合開始時</sec>， 我方 保護機 1台 每 自身的 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="4" r /></sec>增加。
   "5":
     key: "5"
     icon: P.Snipe
@@ -4940,6 +5010,27 @@ skills:
             base: 0.5
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 <sec typ="note">전위 지원</sec>의 효과 대상 및 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="note">전위 지원</sec>의 효과 대상 보호기에게는 추가로 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> / <sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> 위력으로 반격</sec> 효과를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="몽구스 팀"><import name="TeamMongus" p="0" /></cmt> 소속 전투원의 공격을 지원</sec>하며, <sec typ="note">마무리 저격</sec>의 대상 HP 반비례 피해량 증가 효과를 획득합니다.
+        <sec typ="note">마무리 저격</sec>의 대상 HP 반비례 피해량 증가 효과 : <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상의 HP가 적을수록 피해량 <val idx="8" r /></sec> 증가
+      EN: |-
+        <sec typ="cond">At round start</sec>, 2 rounds <sec typ="note">Vanguard Support</sec> of effect and target and own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increases.
+        <sec typ="note">Vanguard Support</sec> of effect and target Defenderto additionally <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> / <sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> power as Counterattack</sec> grants the effect.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="Mongoose Team"><import name="TeamMongus" p="0" /></cmt> affiliated combatant of supports the attack</sec> and, <sec typ="note">Finishing Snipe</sec> of damage inversely proportional to target HP increase effect.
+        <sec typ="note">Finishing Snipe</sec> of damage inversely proportional to target HP increase effect and: <sec typ="dmg"><buff typ="DamageAmp_Opp" /> target's HP the fewer damage <val idx="8" r /></sec> increase
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 2ラウンドの間 <sec typ="note">前衛支援</sec>の 効果 対象 および 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
+        <sec typ="note">前衛支援</sec>の 効果 対象 保護機には 追加で <sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec> / <sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> 威力で 反撃</sec> 効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="マングースチーム"><import name="TeamMongus" p="0" /></cmt> 所属 戦闘員の 攻撃を 支援</sec>し、 <sec typ="note">仕上げ狙撃</sec>の 対象HPに反比例するダメージ量 増加 効果を獲得します。
+        <sec typ="note">仕上げ狙撃</sec>の 対象HPに反比例するダメージ量 増加 効果：<sec typ="dmg"><buff typ="DamageAmp_Opp" /> 対象の HPが 少ないほど ダメージ量 <val idx="8" r /></sec> 増加
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 2回合內 <sec typ="note">前衛支援</sec>的 效果 目標 以及 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
+        <sec typ="note">前衛支援</sec>的 效果 目標 保護機給 額外 <sec typ="buff"><buff typ="DEF_Line" /> 列保護</sec> / <sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> 威力以 反擊</sec> 賦予效果。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="貓鼬小隊"><import name="TeamMongus" p="0" /></cmt> 所屬 戰鬥員的 攻擊 支援</sec>並， <sec typ="note">終結狙擊</sec>的 與目標HP成反比的傷害量 增加 獲得效果。
+        <sec typ="note">終結狙擊</sec>的 與目標HP成反比的傷害量 增加 效果：<sec typ="dmg"><buff typ="DamageAmp_Opp" /> 目標的 HP 越少 傷害量 <val idx="8" r /></sec> 增加
 dialogue:
   KR:
     "1":
@@ -5095,12 +5186,9 @@ dialogue:
       SPIdle_02_01: |-
         오늘은 평소보다 여유가 없네...? 
         진짜진짜 좋아해, 사령관.
-      Oath: >-
-        있지. 전설에 따르면 구미호는 사람으로 둔갑해서 결혼하고, 백 일 동안 정체를 들키지 않아야 인간이 될 수 있대. 들키면 어떻게
-        되냐구?
-
+      Oath: |-
+        있지. 전설에 따르면 구미호는 사람으로 둔갑해서 결혼하고, 백 일 동안 정체를 들키지 않아야 인간이 될 수 있대. 들키면 어떻게 되냐구?
         음… 남편을 잡아먹어 버린다는 말도 있고, 돌이 되어 버린다는 말도 있고… 사랑하는 남편한테 쫓겨나서 평생 그리워하게 된다는 말도
-
         있어. ...그래도 뭐, 이름이 비슷하긴 해도 난 구미호가 아니니까, 앞으로도 계속 사령관 곁에 있을 거야. 그래도, 되지?
       OathIdle_01: |-
         다른 옷도 입어달라구? 안돼안돼. 아닌 것
@@ -5327,12 +5415,9 @@ dialogue:
       SPIdle_02_01: |-
         (미번역)오늘은 평소보다 여유가 없네...? 
         진짜진짜 좋아해, 사령관.
-      Oath: >-
-        (미번역)있지. 전설에 따르면 구미호는 사람으로 둔갑해서 결혼하고, 백 일 동안 정체를 들키지 않아야 인간이 될 수 있대. 들키면
-        어떻게 되냐구?
-
+      Oath: |-
+        (미번역)있지. 전설에 따르면 구미호는 사람으로 둔갑해서 결혼하고, 백 일 동안 정체를 들키지 않아야 인간이 될 수 있대. 들키면 어떻게 되냐구?
         음… 남편을 잡아먹어 버린다는 말도 있고, 돌이 되어 버린다는 말도 있고… 사랑하는 남편한테 쫓겨나서 평생 그리워하게 된다는 말도
-
         있어. ...그래도 뭐, 이름이 비슷하긴 해도 난 구미호가 아니니까, 앞으로도 계속 사령관 곁에 있을 거야. 그래도, 되지?
       OathIdle_01: |-
         (미번역)다른 옷도 입어달라구? 안돼안돼. 아닌 것
@@ -5453,9 +5538,7 @@ dialogue:
         Hey… haven’t you fondled enough?
         so… What do you… want to do
         now?
-      Oath: Oh! Wait. Are… are you serious? Aren’t we moving too fast? No? I think we
-        are moving too fast.! Ah… Seriously… If I take that… I really don’t know
-        what I’m supposed to do…
+      Oath: Oh! Wait. Are… are you serious? Aren’t we moving too fast? No? I think we are moving too fast.! Ah… Seriously… If I take that… I really don’t know what I’m supposed to do…
       OathIdle_01: |-
         I’ll make chocolates for you from now on.
         Don’t accept any from the other girls.
@@ -5506,11 +5589,8 @@ dialogue:
         you by my side… There’s just
         one more thing that I need. What do you… think it is?
       SPIdle_02_01: Oh… What a fool…
-      Oath: >-
-        Hmm. You realized, didn’t you? I guess I would’ve been disappointed if
-        you didn’t realize it when I’ve been so obvious… I’m just kidding. Thank
-        you so much… for making such precious memory and loving me, commander.
-
+      Oath: |-
+        Hmm. You realized, didn’t you? I guess I would’ve been disappointed if you didn’t realize it when I’ve been so obvious… I’m just kidding. Thank you so much… for making such precious memory and loving me, commander.
         Well, then! Darling, let’s go eat something yummy to celebrate making vows. Haha, I always wanted to call you this.
       OathIdle_01: |-
         Honey, would you… Ugh. You’re making me
@@ -5555,21 +5635,15 @@ dialogue:
         Hehe, it looks like a real tail, doesn’t it?
         I spent a lot of time for this. … The other tail?
         No, fool. … I’ll think about it later.
-      Idle_04_01: >-
-        Actually… it’s been a long time since we started dating. So I thought
-        you might be bored…
-
+      Idle_04_01: |-
+        Actually… it’s been a long time since we started dating. So I thought you might be bored…
         and came up with something
-
         that you might like. … What do you think? Do you like me even better?
       SPIdle_02_01: |-
         You’re rushing than usual… 
         I really like you, Commander.
-      Oath: >-
-        You know. According to the legend, the nine-tailed fox can become a
-        human after getting married while disguising as a human and not get
-        caught for 100 days. What happens if they get caught?
-
+      Oath: |-
+        You know. According to the legend, the nine-tailed fox can become a human after getting married while disguising as a human and not get caught for 100 days. What happens if they get caught?
         Hmm… Some say they eat the husband, some say they become a stone… and some say they get thrown out by their husband and long them for their entire lives.
          … Well, even though my name is similar, I’m not a nine-tailed fox, so I’ll always stay with you. Is that okay with you?
       OathIdle_01: |-
@@ -5618,12 +5692,9 @@ dialogue:
         Help yourself… Hey! Stop putting
         your hand in there! You’re a fool…
       SPIdle_02_01: Hey… haven’t you fondled enough?
-      Oath: >-
-        I knew what that was… But! I never knew you'd carry that to meㅡ… What do
-        I do with this?
-
+      Oath: |-
+        I knew what that was… But! I never knew you'd carry that to meㅡ… What do I do with this?
         Ha, ha. No need to worry about that. Because now, I'm yours…
-
         … But don't loosen up too much. OK?
       OathIdle_01: |-
         I’m always watching over what you’re doing.
@@ -5916,20 +5987,13 @@ skins:
   sid: null
   artist: Rorobomb
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5944,25 +6008,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_Miho_N
   skins:
     - sid: 1
       artist: Rorobomb
       price: 46
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - true
         - false
@@ -5979,24 +6039,18 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_BR_Miho_1
     - sid: 2
       artist: Rorobomb
       price: 136
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 14
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
       anim:
         - true
         - false
@@ -6013,24 +6067,22 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 4
+        dflags: 4
         consumableKey: Skin_BR_Miho_2
     - sid: 3
       artist: Rorobomb
       price: 91
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -6047,4 +6099,5 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_Miho_NS3

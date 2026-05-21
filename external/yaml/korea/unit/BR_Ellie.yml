@@ -1800,6 +1800,23 @@ skills:
             base: -1.5
             per: -0.15
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 주고, 대상을 마비시켜 2라운드 동안 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태를 부여합니다.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>을(를) 감소시킵니다.
+        <sec typ="cond">대상의 행동력이 자신보다 높을 경우</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>을(를) 추가로 감소시킵니다.
+      EN: |-
+        <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> damage and target Mabi when activate 2 rounds <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> state grants.
+        <sec typ="cond">On hit</sec>, target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> decreases.
+        <sec typ="cond">target's Action Speed self than high case</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec> additionally decreases.
+      JP: |-
+        <sec typ="attr">保護無視</sec><dmg elem="lightning" />を与え、、 対象を ムアブイ時クヨ 2ラウンドの間 <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態を付与します。
+        <sec typ="cond">命中時</sec>、 対象の <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>を減少させます。
+        <sec typ="cond">対象の 行動力が 自身より ンオプを 場合</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>を 追加で 減少させます。
+      TC: |-
+        <sec typ="attr">無視保護</sec> 造成<dmg elem="lightning" />，並 目標 Mabi時啟動 2回合內 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 狀態賦予。
+        <sec typ="cond">命中時</sec>， 目標的 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>使其減少。
+        <sec typ="cond">目標的 行動力 自身比 高 情況</sec> <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec> 額外 減少。
   "2":
     key: "2"
     icon: Barrier
@@ -2063,6 +2080,19 @@ skills:
             base: 0.3
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">스킬 사용 시</sec>, 자신은 3라운드 동안 <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 위력으로 반격</sec> / <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="1" signless />회</sec>를 획득합니다.
+        <sec typ="cond">스킬 사용 시</sec>, 아군에게 3라운드 동안 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="4" signless /></sec>을(를) 부여하고 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="5" r /></sec>를 증가시킵니다.
+      EN: |-
+        <sec typ="cond">When using the skill</sec>, self 3 rounds <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> power as Counterattack</sec> / <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification <val idx="1" signless />times</sec> gains.
+        <sec typ="cond">When using the skill</sec>, to allies 3 rounds <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="4" signless /></sec> grants and <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="5" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">スキル使用時</sec>、 自身は 3ラウンドの間 <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力で 反撃</sec> / <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="1" signless />回</sec>を獲得します。
+        <sec typ="cond">スキル使用時</sec>、 味方に 3ラウンドの間 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="4" signless /></sec>を 付与し、 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="5" r /></sec>を増加させます。
+      TC: |-
+        <sec typ="cond">使用技能時</sec>， 自身 3回合內 <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力以 反擊</sec> / <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 <val idx="1" signless />次</sec>獲得。
+        <sec typ="cond">使用技能時</sec>， 我方給 3回合內 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾 <val idx="4" signless /></sec> 賦予，並 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="5" r /></sec>使其增加。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -2401,6 +2431,23 @@ skills:
             base: 0.4
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>가 활성화되고, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec> 감소 <sec typ="attr">일반 효과</sec>를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec> 자신이 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 강화 효과가 적용된 경우</sec>, 해당 효과를 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="5" r /></sec>로 전환합니다.
+        <sec typ="cond">라운드 개시 시</sec> 자신이 <sec typ="cond"><buff typ="SCOUTING" /> 정찰 활성화 상태인 경우</sec>, <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="7" r /></sec>가 크게 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> activated and, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="4" r inv /></sec> decrease <sec typ="attr">normal effect</sec> gains.
+        <sec typ="cond">At round start</sec> self <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> damage taken decrease buff affected by case</sec>, the effect and <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Buff Removal Resistance <val idx="5" r /></sec> as switch.
+        <sec typ="cond">At round start</sec> self <sec typ="cond"><buff typ="SCOUTING" /> Scouting active stateif</sec>, <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="7" r /></sec> greatly increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>が 有効化になり、、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="4" r inv /></sec> 減少 <sec typ="attr">一般効果</sec>を獲得します。
+        <sec typ="cond">ラウンド開始時</sec> 自身が <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少 強化 効果が適用された 場合</sec>、 該当 効果を <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抵抗 <val idx="5" r /></sec>で 前ハワンします。
+        <sec typ="cond">ラウンド開始時</sec> 自身が <sec typ="cond"><buff typ="SCOUTING" /> 偵察 有効状態の場合</sec>、 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec>が 大きく増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec> 啟用變為，且 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="4" r inv /></sec> 減少 <sec typ="attr">一般效果</sec>獲得。
+        <sec typ="cond">回合開始時</sec> 自身 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少 強化 已套用效果的 情況</sec>， 該 效果 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抗性 <val idx="5" r /></sec>以 前轉換。
+        <sec typ="cond">回合開始時</sec> 自身 <sec typ="cond"><buff typ="SCOUTING" /> 偵察 啟用狀態若為</sec>， <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec> 大幅增加。
   "4":
     key: "4"
     icon: P.Barrier
@@ -2731,6 +2778,27 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군에게 <sec typ="buff"><buff typ="DEF_UP" /> 광역 피해 분산 <val idx="0" r signless /></sec> 효과를 부여하고 <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 아군을 지정 보호</sec>합니다.
+        <sec typ="note">방호 모드</sec> 사용 시, <sec>다음 1회 피격 시까지</sec> <sec typ="buff"><buff typ="DEF_UP" /> 광역 피해 분산</sec> 효과가 두 배로 증폭됩니다.
+        <sec typ="cond"><buff typ="SCOUTING" /> 정찰 활성화 상태인 경우</sec>, <sec>다음 2회 피격 시까지</sec> 증폭된 효과가 유지됩니다.
+        <sec typ="cond">피격 시</sec>, 티타임을 방해한 적을 단죄하기 위해 2라운드 동안 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="6" r /></sec>를 증가시킵니다. (최대 3중첩)
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range to allies <sec typ="buff"><buff typ="DEF_UP" /> area damage dispersion <val idx="0" r signless /></sec> effect and grants and <sec typ="buff"><buff typ="DEF_Char" /> Defender excluding Designated Protection for allies</sec>.
+        <sec typ="note">protection mode</sec> When used, <sec>next 1times When hit up to</sec> <sec typ="buff"><buff typ="DEF_UP" /> area damage dispersion</sec> the effect is doubled amplification.
+        <sec typ="cond"><buff typ="SCOUTING" /> Scouting active stateif</sec>, <sec>next 2times When hit up to</sec> amplified effect and maintain.
+        <sec typ="cond">When hit</sec>, Titaim interference one enemy Danjoe do unit to 2 rounds within range allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="6" r /></sec> increases. (up to 3stack)
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方に <sec typ="buff"><buff typ="DEF_UP" /> 広域ダメージ分散 <val idx="0" r signless /></sec> 効果を 付与し、 <sec typ="buff"><buff typ="DEF_Char" /> 保護機を ジエ外した 味方を 指定保護</sec>します。
+        <sec typ="note">ブアンハオ モード</sec> 使用時、 <sec>次 1回 被弾時まで</sec> <sec typ="buff"><buff typ="DEF_UP" /> 広域ダメージ分散</sec> 効果が2倍で 増幅されます。
+        <sec typ="cond"><buff typ="SCOUTING" /> 偵察 有効状態の場合</sec>、 <sec>次 2回 被弾時まで</sec> 増幅された 効果が ユジイされます。
+        <sec typ="cond">被弾時</sec>、 トイトアイムを ブアンしてした 敵を ドアンジウェすること ために 2ラウンドの間 範囲内 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="6" r /></sec>を増加させます。 (最大 3重複)
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方給 <sec typ="buff"><buff typ="DEF_UP" /> 範圍傷害分散 <val idx="0" r signless /></sec> 效果 賦予，並 <sec typ="buff"><buff typ="DEF_Char" /> 保護機 解除外 我方 指定保護</sec>。
+        <sec typ="note">防ho 模式</sec> 使用時， <sec>下次 1次 被擊時至</sec> <sec typ="buff"><buff typ="DEF_UP" /> 範圍傷害分散</sec> 效果變為2倍以 增幅。
+        <sec typ="cond"><buff typ="SCOUTING" /> 偵察 啟用狀態若為</sec>， <sec>下次 2次 被擊時至</sec> 增幅已 效果 維持。
+        <sec typ="cond">被擊時</sec>， Titaim 防 敵人 全部njoe進行 為了 2回合內 範圍內 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="6" r /></sec>使其增加。 (最大 3疊加)
   "5":
     key: "5"
     icon: P.Music
@@ -3051,6 +3119,27 @@ skills:
             base: 750
             per: 75
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">5인 스쿼드로 전투 개시 시</sec>, 정보를 공유 받아 자신은 <sec typ="buff"><buff typ="SCOUTING" /> 정찰 활성화</sec> 상태가 됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">자신과 인접한 아군이 2기 이상일 경우</sec> <sec typ="attr">강화</sec> <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 획득하고, <sec typ="cond">4기 이상일 경우</sec> <sec typ="attr">일반</sec> <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> <val idx="5" signless /> 이하 피해 최소화</sec> 효과를 획득합니다.
+        <sec typ="cond">자신의 HP가 50% 이하인 경우</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 최소화 가능한 피해량</sec>이 50% 증폭됩니다.
+      EN: |-
+        <sec typ="cond">5 is squadas At battle start</sec>, information Gongyu receives self <sec typ="buff"><buff typ="SCOUTING" /> Scouting activation</sec> state.
+        <sec typ="cond">At round start</sec>, <sec typ="cond">self and adjacent allies 2 unit or moreif</sec> <sec typ="attr">buff</sec> <sec typ="buff"><buff typ="MARKING" /> Mark</sec> gains and, <sec typ="cond">4 unit or moreif</sec> <sec typ="attr">normal</sec> <sec typ="buff"><buff typ="MARKING" /> Mark</sec> gains.
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> <val idx="5" signless /> or less Damage Minimization</sec> gains the effect.
+        <sec typ="cond">own HP 50% or lessif</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> minimization possible damage</sec> increased by 50%.
+      JP: |-
+        <sec typ="cond">5である スクワッドで 戦闘開始時</sec>、 情報を 共有 受けて 自身は <sec typ="buff"><buff typ="SCOUTING" /> 偵察 有効化</sec> 状態になります。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond">自身と 隣接する 味方が 2機 以上の場合</sec> <sec typ="attr">強化</sec> <sec typ="buff"><buff typ="MARKING" /> 標的</sec>を 獲得し、 <sec typ="cond">4機 以上の場合</sec> <sec typ="attr">一般</sec> <sec typ="buff"><buff typ="MARKING" /> 標的</sec>を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> <val idx="5" signless /> 以下 ダメージ最小化</sec> 効果を獲得します。
+        <sec typ="cond">自身の HPが 50% 以下の場合</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 最小ハワ 可能した ダメージ量</sec>が 50%増幅されます。
+      TC: |-
+        <sec typ="cond">5為 小隊以 戰鬥開始時</sec>， 資訊 分享 受到 自身 <sec typ="buff"><buff typ="SCOUTING" /> 偵察 啟用</sec> 變為狀態。
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond">自身與 相鄰的 我方 2台 以上若為</sec> <sec typ="attr">強化</sec> <sec typ="buff"><buff typ="MARKING" /> 標記</sec> 獲得，並 <sec typ="cond">4台 以上若為</sec> <sec typ="attr">一般</sec> <sec typ="buff"><buff typ="MARKING" /> 標記</sec>獲得。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> <val idx="5" signless /> 以下 傷害最小化</sec> 獲得效果。
+        <sec typ="cond">自身的 HP 50% 以下若為</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 最小火 可能 傷害量</sec> 增幅50%。
 dialogue:
   KR:
     "1":
@@ -3353,12 +3442,9 @@ dialogue:
       SPIdle_02_01: |-
         Wait! Okay, I removed my hat
         so you can pat my head all you want. Hehe.
-      Oath: >-
-        This… is for me? Commander, did you know? The reason why this picnic was
-        special…
-
+      Oath: |-
+        This… is for me? Commander, did you know? The reason why this picnic was special…
         is because you were here beside me. 
-
         So… I want you to stay with me… just like today! Forever and ever! Promise me!
       OathIdle_01: |-
         Pretty strange, huh? Even when the wind blows…
@@ -3390,11 +3476,9 @@ dialogue:
         I also taught children of the nobles.
         I saw kids who could use some etiquette lessons.
         May I teach them?
-      Idle_01_02: >-
+      Idle_01_02: |-
         I really love black tea.
-
         English breakfast, Darjeeling, Assam, Ceylon… But my favorite is Earl Grey.
-
         Ha. Forget what I just said.
       Idle_01_03: |-
         I was born to make sacrifices.
@@ -3415,11 +3499,9 @@ dialogue:
       SPIdle_02_01: |-
         Actually, I always wanted to act childish.
         Don’t tell the others, okay?
-      Oath: >-
+      Oath: |-
         This is… Is this for me? I see… I get it now.
-
         You always helped, protected, and loved me. You are my Daddy-Long-Legs, Commander!
-
         I’ll become a lady that is worthy of you. So, promise you will wait until that day. I really really like you.
       OathIdle_01: |-
         I still remember that day.
@@ -3626,20 +3708,15 @@ skins:
   sid: null
   artist: Taesi
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - true
-    - false
-    - false
-    - false
-    - true
-    - false
-    - false
+    O:
+      - _
+      - D
+      - DS
   anim:
     - false
     - false
@@ -3654,26 +3731,22 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 1
     2dmodel: 2DModel_BR_Ellie_N
     2dmodel_dam: 2DModel_BR_Ellie_N_Dam
   skins:
     - sid: 1
       artist: Taesi
       price: 114
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
       anim:
         - false
         - false
@@ -3690,6 +3763,7 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_Ellie_NS1
         2dmodel_dam: 2DModel_BR_Ellie_NS1_Dam
         consumableKey: Skin_BR_Ellie_1

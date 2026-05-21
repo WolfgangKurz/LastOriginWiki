@@ -78,7 +78,61 @@ skills:
               overlap: 4
           maxStack: 5
           overlapGroup: -1
-        - unknown: Effect_MP_UnderWatcherGenerator_EW_12
+        - key: Effect_MP_UnderWatcherGenerator_EW_12
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_DEF_All
+              desc:
+                desc: Effect_MP_UnderWatcherGenerator_EW_12_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 9
+              value:
+                isBuff: true
+                type: 33
+                damage_immune:
+                  base: 1
+                  per: 0
+              overlap: 1
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_MP_UnderWatcherGenerator_EW_12_2
+                type: 1
+                value: "0.500000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 50%
+                    per: 1%
+              overlap: 1
+          maxStack: 0
+          overlapGroup: -1
   - key: Skill_MP_UnderWatcherGenerator_EW_2
     icon: SelfDefBuff
     passive: false
@@ -132,7 +186,7 @@ skills:
                 barrier:
                   base: 9000
                   per: 0
-              overlap: 1
+              overlap: 4
             - icon: BuffIcon_REMOVE_DEBUFF
               desc:
                 desc: Effect_MP_UnderWatcherGenerator_EW_2_2
@@ -241,7 +295,43 @@ skills:
               overlap: 1
           maxStack: 0
           overlapGroup: -1
-        - unknown: Effect_MP_UnderWatcherGenerator_EW_13
+        - key: Effect_MP_UnderWatcherGenerator_EW_13
+          on:
+            attack_success: passive
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_All
+              desc:
+                desc: Effect_MP_UnderWatcherGenerator_EW_13_1
+                type: 0
+                value: "3"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 33
+                damage_immune:
+                  base: 3
+                  per: 0
+              overlap: 1
+          maxStack: 1
+          overlapGroup: -1
   - key: Skill_MP_UnderWatcherGenerator_EW_4
     icon: P.SelfSpdDeBuff
     passive: true

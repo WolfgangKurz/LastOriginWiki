@@ -1,6 +1,5 @@
 import { FunctionalComponent } from "preact";
 import { useMemo, useState } from "preact/hooks";
-import { Link } from "preact-router";
 import Decimal from "decimal.js";
 
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, CHARTYPE_GIFTITEM_DAMAGE_TYPE, ITEM_TYPE, ROLE_TYPE } from "@/types/Enums";
@@ -10,7 +9,7 @@ import { UnitDialogueAudioType } from "@/types/DB/Dialogue";
 import { Unit } from "@/types/DB/Unit";
 
 import { CurrentLocale, useLocale } from "@/libs/Locale";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { cn } from "@/libs/Class";
 import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
 import { DecomposeHangulSyllable, FormatDate, FormatNumber } from "@/libs/Functions";
@@ -41,11 +40,13 @@ import style from "./Basic.module.scss";
 const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 	const [loc] = useLocale();
 
-	const FilterableEquipDB = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip)
-		?.map(r => ({
+	const _FilterableEquipDB = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
+	const FilterableEquipDB = assertDBData(_FilterableEquipDB)
+		? _FilterableEquipDB.map(r => ({
 			...r,
 			source: r.source.map(a => a.map(b => new EntitySource(b as unknown as string))),
-		}));
+		}))
+		: null;
 	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
 
 	const [selectedEquip, setSelectedEquip] = useState<FilterableEquip | null>(null);
@@ -248,7 +249,12 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 								</Button>) }
 							</Button.Tab>
 
-							<audio src={ introVoiceUrl } type="audio/mp3" controls preload="none" volume="0.5" />
+							<audio
+								src={ introVoiceUrl }
+								controls
+								preload="none"
+								volume="0.5"
+							/>
 						</div>
 						: <></>
 					}
@@ -497,7 +503,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				/>
 				{ ExclusiveEquip.length > 0
 					? <div class={ style.Equips }>
-						{ ExclusiveEquip.map(limited => <Link
+						{ ExclusiveEquip.map(limited => <a
 							href={ `/equips/${limited.fullKey}` }
 							onClick={ (e): void => {
 								e.preventDefault();
@@ -516,7 +522,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 							<div class={ style.Name }>
 								<Locale k={ `EQUIP_${limited.fullKey}` } />
 							</div>
-						</Link>) }
+						</a>) }
 					</div>
 					: <div class={ style.Empty }>
 						<Locale k="UNIT_VIEW_EXCLUSIVE_EQUIP_EMPTY" />
@@ -593,7 +599,10 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 									</Badge> }
 
 									{ unit.cost.items
-										.map(e => [e, ConsumableDB?.find(c => c.key === e.item)] as [typeof e, Consumable | undefined])
+										.map(e => [
+											e,
+											assertDBData(ConsumableDB) ? ConsumableDB.find(c => c.key === e.item) : undefined,
+										] as [typeof e, Consumable | undefined])
 										.filter(r => !!r[1])
 										.map(([e, item]) => {
 											return <Badge pill variant="success">

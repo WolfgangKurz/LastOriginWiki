@@ -4,7 +4,7 @@ import { useState } from "preact/hooks";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 import { EnemyGroupEnetity, EnemyGroupMap } from "@/types/DB/EnemyGroup";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 import Locale from "@/components/locale";
@@ -28,7 +28,7 @@ const EnemyGroupCard: FunctionalComponent<EnemyGroupCardProps> = (props) => {
 	const [selectedEnemyLevel, setSelectedEnemyLevel] = useState(1);
 
 	const FilterableEnemyDB = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
-	if (FilterableEnemyDB === undefined) {
+	if (FilterableEnemyDB === useDBData.Loading) {
 		return <div class={ style.GroupItem }>
 			<div class={ style.GroupGrid }>
 				{ new Array(9).fill(<i />) }
@@ -41,7 +41,7 @@ const EnemyGroupCard: FunctionalComponent<EnemyGroupCardProps> = (props) => {
 			</div>
 		</div>;
 	}
-	if (!FilterableEnemyDB) return <Loading.Error />;
+	if (!assertDBData(FilterableEnemyDB)) return <Loading.Error />;
 
 	return <div class={ style.GroupItem }>
 		<div class={ style.GroupGrid }>

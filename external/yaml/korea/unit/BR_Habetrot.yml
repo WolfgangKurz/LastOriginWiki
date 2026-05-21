@@ -551,6 +551,7 @@ cv:
     ko: ""
     jp: 白壁爽子
     jpdmm: 白壁爽子
+  "2": {}
   "":
     ko: ""
     jp: 白壁爽子
@@ -594,6 +595,7 @@ source:
   - - Ev:Ev34:EV1-4
   - - Ev:Ev35:EV2-4
   - - Ev:Ev36:EV1-3EX
+  - - Ev:Ev38:EV1-2EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -3004,6 +3006,27 @@ skills:
             base: -0.1
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        눈 딱 감고 무장을 난사하여 범위 내 적에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="chance"><chance idx="2" /> 확률</sec>로 약점을 타격하여 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량<val idx="2" r /></sec>가 크게 증가합니다.
+        적중 여부와 관계없이 2라운드 동안 범위 내 적군의 <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val base="-0.1" per="-0.01" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val base="-0.2" per="-0.02" r /></sec>가 크게 감소합니다.
+        해당 효과는 라운드 경과에 따라 점감하며, 스킬 재사용 시 최대 효과로 갱신됩니다.
+      EN: |-
+        Fires weapons wildly with eyes shut, dealing <dmg elem="physics" /> to enemies within range.
+        Has a <sec typ="chance"><chance idx="2" /> chance</sec> to strike a weak point, greatly increasing <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec>.
+        Regardless of hit, greatly reduces enemies' <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val base="-0.1" per="-0.01" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val base="-0.2" per="-0.02" r /></sec> within range for 2 rounds.
+        This effect diminishes as rounds pass and is refreshed to the maximum effect when the skill is used again.
+      JP: |-
+        目をぎゅっと閉じて武装を乱射し、範囲内の敵に<dmg elem="physics" />を与えます。
+        <sec typ="chance"><chance idx="2" />の確率</sec>で弱点を打撃し、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="2" r /></sec>が大きく増加します。
+        命中の有無に関係なく、2ラウンドの間、範囲内の敵の<sec typ="buff"><buff typ="SKILL_DOWN" />スキル威力 <val base="-0.1" per="-0.01" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val base="-0.2" per="-0.02" r /></sec>が大きく減少します。
+        この効果はラウンド経過に応じて減衰し、スキル再使用時に最大効果へ更新されます。
+      TC: |-
+        閉上眼睛亂射武裝，對範圍內敵人造成<dmg elem="physics" />。
+        有<sec typ="chance"><chance idx="2" />機率</sec>攻擊弱點，使<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="2" r /></sec>大幅增加。
+        不論是否命中，在2回合內大幅降低範圍內敵軍的<sec typ="buff"><buff typ="SKILL_DOWN" />技能威力 <val base="-0.1" per="-0.01" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val base="-0.2" per="-0.02" r /></sec>。
+        此效果會隨回合經過遞減，並在再次使用技能時刷新為最大效果。
   "2":
     key: "2"
     icon: SelfDefBuff
@@ -3705,6 +3728,27 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        3라운드 동안 자신과 주변 아군의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val base="0.4" per="0.02" r /></sec>를 증가시키고, 각자의 <sec typ="buff"><buff typ="SKILL_UP" /> 회피 수치 <val idx="0" r signless /> 만큼 스킬 위력 감쇄</sec> 효과를 적용합니다.
+        해당 효과는 라운드 경과에 따라 점감하며, 스킬 재사용 시 최대 효과로 갱신됩니다.
+        또한 스킬 사용 시, <sec typ="cond">자신보다 회피가 낮은 아군</sec>에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">해로운</sec> 표식 효과를 해제</sec>하며, <sec typ="cond">자신보다 회피가 높은 아군</sec>에게 3라운드 동안 <sec typ="buff"><buff typ="MARKING" /> <sec typ="attr">이로운</sec> 표식</sec>을 부여합니다.
+        <sec>스킬 레벨 10에서 범위가 크게 증가합니다.</sec>
+      EN: |-
+        For 3 rounds, increases self and nearby allies' <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val base="0.4" per="0.02" r /></sec>, and applies <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power reduction equal to each target's EVA value <val idx="0" r signless /></sec>.
+        This effect diminishes as rounds pass and is refreshed to the maximum effect when the skill is used again.
+        Also, when using the skill, <sec typ="cond"></sec> removes <sec typ="buff">harmful<buff typ="REMOVE_DEBUFF" /> Mark effects<sec typ="attr"> applied to </sec>allies with lower EVA than herself</sec>, and grants <sec typ="cond"></sec> <sec typ="buff">beneficial<buff typ="MARKING" /> Mark<sec typ="attr"> to </sec>allies with higher EVA than herself</sec> for 3 rounds.
+        <sec>At Skill Level 10, the range greatly increases.</sec>
+      JP: |-
+        3ラウンドの間、自分と周辺の味方の<sec typ="buff"><buff typ="EVADE_UP" />回避 <val base="0.4" per="0.02" r /></sec>を増加させ、それぞれの<sec typ="buff"><buff typ="SKILL_UP" />回避数値 <val idx="0" r signless />分のスキル威力減衰</sec>効果を適用します。
+        この効果はラウンド経過に応じて減衰し、スキル再使用時に最大効果へ更新されます。
+        また、スキル使用時、<sec typ="cond">自分より回避が低い味方</sec>に適用された<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="attr">有害な</sec>標的効果を解除</sec>し、<sec typ="cond">自分より回避が高い味方</sec>に3ラウンドの間<sec typ="buff"><buff typ="MARKING" /> <sec typ="attr">有益な</sec>標的</sec>を付与します。
+        <sec>スキルレベル10で範囲が大きく増加します。</sec>
+      TC: |-
+        在3回合內，使自身與周圍友軍的<sec typ="buff"><buff typ="EVADE_UP" />迴避 <val base="0.4" per="0.02" r /></sec>增加，並套用<sec typ="buff"><buff typ="SKILL_UP" />等同各自迴避數值 <val idx="0" r signless />的技能威力衰減</sec>效果。
+        此效果會隨回合經過遞減，並在再次使用技能時刷新為最大效果。
+        此外，使用技能時，會<sec typ="cond"></sec>解除<sec typ="buff">迴避低於自身的友軍<buff typ="REMOVE_DEBUFF" />身上的<sec typ="attr">有害</sec>標記效果</sec>，並在3回合內賦予<sec typ="cond">迴避高於自身的友軍</sec><sec typ="buff"><buff typ="MARKING" /> <sec typ="attr">有益</sec>標記</sec>。
+        <sec>技能等級10時，範圍大幅增加。</sec>
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -4055,6 +4099,23 @@ skills:
             base: 0.15
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 자신은 1라운드 동안 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec> 감소 효과를 획득합니다.
+        라운드 개시 시 지정 범위 내 보호기를 제외한, 표식이 없는 아군을 1라운드 동안 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>합니다.
+        <sec>스킬 레벨 10에서 자신의 위치와 관계없이 전체 적용됩니다.</sec>
+      EN: |-
+        At round start, gains <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="4" r inv /></sec> reduction for 1 round.
+        At round start, <sec typ="buff"><buff typ="DEF_Char" /> Designated Protects allies without Mark, excluding Defenders, within the designated range</sec> for 1 round.
+        <sec>At Skill Level 10, applies to the whole field regardless of her position.</sec>
+      JP: |-
+        ラウンド開始時、自分は1ラウンドの間<sec typ="buff"><buff typ="EVADE_UP" />回避 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ <val idx="4" r inv /></sec>減少効果を獲得します。
+        ラウンド開始時、指定範囲内の保護機を除く、標的がない味方を1ラウンドの間<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>します。
+        <sec>スキルレベル10で自分の位置に関係なく全体に適用されます。</sec>
+      TC: |-
+        回合開始時，自身在1回合內獲得<sec typ="buff"><buff typ="EVADE_UP" />迴避 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害 <val idx="4" r inv /></sec>減少效果。
+        回合開始時，在1回合內<sec typ="buff"><buff typ="DEF_Char" />指定保護指定範圍內除保護機以外、沒有標記的友軍</sec>。
+        <sec>技能等級10時，無論自身位置都會套用至全體。</sec>
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -4652,6 +4713,31 @@ skills:
             base: 0.03
             per: 0.003
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 아군 스쿼드에 포함된 전투원 분류에 따라 1라운드 동안 아군 전체에 이하의 효과를 부여합니다.
+        동일한 조건에 의한 효과는 중첩되지 않습니다.
+        경장형 및 중장형 : <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> 증가
+        공격기 및 지원기 : <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> 증가
+        라운드 개시 시, 자신은 활성화된 효과 종류 수에 비례하여 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" r /></sec>가 증가합니다.
+      EN: |-
+        At round start, grants all allies the following effects for 1 round according to the combatant classifications included in the allied squad.
+        Effects from the same condition do not stack.
+        Light and Heavy: increased <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec>
+        Attackers and Supporters: increased <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec>
+        At round start, her <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="8" r /></sec> increases in proportion to the number of activated effect types.
+      JP: |-
+        ラウンド開始時、味方スクワッドに含まれる戦闘員分類に応じて、1ラウンドの間、味方全体に以下の効果を付与します。
+        同じ条件による効果は重複しません。
+        軽装型および重装型：<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="0" r /></sec>増加
+        攻撃機および支援機：<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="6" r /></sec>増加
+        ラウンド開始時、自分は活性化した効果種類数に比例して<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="8" r /></sec>が増加します。
+      TC: |-
+        回合開始時，根據友軍小隊內包含的戰鬥員分類，在1回合內賦予全體友軍以下效果。
+        相同條件造成的效果不會疊加。
+        輕裝型及重裝型：<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿 <val idx="0" r /></sec>增加
+        攻擊機及支援機：<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="6" r /></sec>增加
+        回合開始時，自身的<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="8" r /></sec>會依已啟用效果種類數增加。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -5388,6 +5474,35 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="cond">자신</sec>과 <sec typ="cond">자신보다 회피가 낮은 범위 내 아군</sec>에게 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec> 감소 효과를 부여합니다.
+        스쿼드 내에 <sec typ="cond">보호기가 2기 이상</sec>인 경우, 자신의 공격 스킬에 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시 효과</sec>가 추가됩니다.
+        스쿼드 내의 <sec typ="cond">자신보다 계급이 높은 스틸라인 전투원 수</sec>에 비례하여 라운드 개시 시 아군의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" r /></sec>가 증가합니다.
+        스쿼드 내의 <sec typ="cond">자신보다 계급이 낮은 스틸라인 전투원 수</sec>에 비례하여 라운드 개시 시 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="11" r /></sec>가 증가합니다.
+        자신보다 계급이 높은 스틸라인 전투원 : <char uid="BR_Marie" />, <char uid="BR_RedHood" />, <char uid="BR_Phoenix" />
+        자신보다 계급이 낮은 스틸라인 전투원 : <char uid="BR_Efreeti" />, <char uid="BR_PXSilky" />, <char uid="BR_Gnome" />, <char uid="BR_Leprechaun" />, <char uid="BR_Brownie" />
+      EN: |-
+        At round start, grants <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increase / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="1" r inv /></sec> reduction to <sec typ="cond">herself</sec> and <sec typ="cond">allies within range with lower EVA than herself</sec>.
+        If there are <sec typ="cond">2 or more Defenders</sec> in the squad, her attack skills gain <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec>.
+        At round start, allies' <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="8" r /></sec> increases in proportion to the number of Steel Line combatants in the squad with a higher rank than herself.
+        At round start, allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="11" r /></sec> increases in proportion to the number of Steel Line combatants in the squad with a lower rank than herself.
+        Steel Line combatants with a higher rank than herself: <char uid="BR_Marie" />, <char uid="BR_RedHood" />, <char uid="BR_Phoenix" />
+        Steel Line combatants with a lower rank than herself: <char uid="BR_Efreeti" />, <char uid="BR_PXSilky" />, <char uid="BR_Gnome" />, <char uid="BR_Leprechaun" />, <char uid="BR_Brownie" />
+      JP: |-
+        ラウンド開始時、<sec typ="cond">自分</sec>と<sec typ="cond">自分より回避が低い範囲内の味方</sec>に<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗 <val idx="0" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ <val idx="1" r inv /></sec>減少効果を付与します。
+        スクワッド内に<sec typ="cond">保護機が2機以上</sec>いる場合、自分の攻撃スキルに<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視効果</sec>が追加されます。
+        スクワッド内の<sec typ="cond">自分より階級が高いスチールライン戦闘員数</sec>に比例して、ラウンド開始時、味方の<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="8" r /></sec>が増加します。
+        スクワッド内の<sec typ="cond">自分より階級が低いスチールライン戦闘員数</sec>に比例して、ラウンド開始時、味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="11" r /></sec>が増加します。
+        自分より階級が高いスチールライン戦闘員：<char uid="BR_Marie" />、 <char uid="BR_RedHood" />、 <char uid="BR_Phoenix" />
+        自分より階級が低いスチールライン戦闘員：<char uid="BR_Efreeti" />、 <char uid="BR_PXSilky" />、 <char uid="BR_Gnome" />、 <char uid="BR_Leprechaun" />、 <char uid="BR_Brownie" />
+      TC: |-
+        回合開始時，賦予<sec typ="cond">自身</sec>與<sec typ="cond">範圍內迴避低於自身的友軍</sec><sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗 <val idx="0" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害 <val idx="1" r inv /></sec>減少效果。
+        若小隊內有<sec typ="cond">2名以上保護機</sec>，自身攻擊技能會追加<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護效果</sec>。
+        依小隊內<sec typ="cond">階級高於自身的鋼鐵防線戰鬥員數量</sec>，回合開始時友軍的<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="8" r /></sec>增加。
+        依小隊內<sec typ="cond">階級低於自身的鋼鐵防線戰鬥員數量</sec>，回合開始時友軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="11" r /></sec>增加。
+        階級高於自身的鋼鐵防線戰鬥員：<char uid="BR_Marie" />， <char uid="BR_RedHood" />， <char uid="BR_Phoenix" />
+        階級低於自身的鋼鐵防線戰鬥員：<char uid="BR_Efreeti" />， <char uid="BR_PXSilky" />， <char uid="BR_Gnome" />， <char uid="BR_Leprechaun" />， <char uid="BR_Brownie" />
 dialogue:
   KR:
     "1":
@@ -5455,6 +5570,66 @@ dialogue:
         저는 여기 있는데. 바쁜 일 있으면
         도와줄게요. 없으면 둘이 놀러 가구요!​
       MVP: 해냈다...! 지금 바로 복귀하겠습니다, 오ㅃ...! 아아아아...!!
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        오빠♥ 에헤헤… 잘은 못하지만…
+        열심히 꾸며봤는데 저 오늘 어때요…?​
+        네…? 저, 정말 예쁘다구요…? 이거… 꿈 아니죠?
+        정말 다행이에요~ 열심히 꾸민 보람이 있네요!
+      Idle_01_02: |-
+        손… 잡아도 될까요…?​
+        모처럼 데이트니까…​
+        오늘은… 오빠랑 떨어지고 싶지 않아요…
+        땀이 나도 모른 척 해주기~! 헤헤…
+      Idle_01_03: |-
+        좋아… 아직까진 계획대로예요…
+        그럼 다음은…​ 오빠,
+        저쪽에 맛있는 디저트 카페가 있다는데…
+        같이 가보실래요?​
+        분명 오빠도 마음에 드실 거예요…!
+      SPIdle_01_01: 다음에 또 데이트해요!
+      Idle_02_01: |-
+        그러고 보니…
+        근처에 운세 봐주는 카페가 새로 생겼대요.
+        괜찮으시면… 같이 가보는 거 어때요…?
+        저, 절대 연애운이나…
+        궁합을 보진 않을 거예요…! 아마도…?
+      Idle_03_01: |-
+        오, 오빠! 마지막은… 이쪽으로 가보지 않을래요…?​
+        네? 이쪽은 숙소 밖에 없다고요?​
+        우으…! 다 알면서 일부러 놀리려고 그러는 거 맞죠?
+        못됐어 진짜~
+      Idle_04_01: |-
+        어라?
+        뽀뽀를 받은 오빠는 저한테 뭐 해줄 거 없나~용?
+        빨리요~♥
+      SPIdle_02_01: |-
+        오빠…
+        오늘은 숙소로 돌아가고 싶지 않아요…
+        같이 무단 외박 할까요? …헤헤♥
+      Oath: 저… 사실 오늘 데이트를 위해 엘랑 비탈한 계획들로 만반의 준비를 했어요. 그런데도 제가 이 반지를 받게 될 건 제가 세운 계획에는 없던 전개라서… 정말이지~ 대체 오빠는 절 어디까지 몰아붙이실 생각이신 거예요? 매번 오빠한테 얼타는 모습만 보여주는 것 같아서 걱정이에요… 그래도 오빠한테 이 반지 받았으니까, 오빠와의 관계에서도 지금보다 훨씬 더 성장한 모습으로 보답하고 싶어요. 저 하베트롯은… 오빠를 누구보다 사랑하니까요…!
+      OathIdle_01: |-
+        오빠 오늘 데이트 너무 즐거웠어요.
+        그럼 마지막은… 늘 가던 곳으로… 가는 거 맞죠…?
+        저… 오빠가 만족할 수 있도록… 힘낼 테니까요…!
+      MVP: ""
     "":
       Join: 스, 승리! 이번에 합류하게 된 소위 하베트롯이라고 합니다. 잘 부탁- 아니! 잘하겠습니다!​
       SquadJoin: 교본에서 인사가 먼저라고 그랬지...? 스, 승리! 하베트롯 소위입니다!
@@ -5594,6 +5769,35 @@ dialogue:
       Oath: 最初は将校としての責任を果たすため…そして、閣下の優秀な部下になるために日々精進していましたが…いつからか軍人としてではなく、素直に司令官閣下のお力になりたいと思うようになっていました。来たばかりの頃はヘマばかりしてましたが…今はずいぶん見違えたんじゃないですか？たくさん努力したんですよ。私、にーにのために今よりももっと成長します……これからも見守っていてくださいね！
       OathIdle_01: えいっ！そんなに急いでどこに行かれるんですか？にーに？私ならここにいますよ。急用なら私も手伝います。そうじゃないなら……遊びに行きましょう！
       MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: しょ、勝利！この度合流しましたハベトロット少尉です。ふつつかものではござ―ではなく！精一杯頑張ります！
       SquadJoin: ""
@@ -5704,21 +5908,46 @@ dialogue:
         I would habe worn it earlier… I…
         I’m of duty tomorrow.
         If you want, today…​
-      Oath: >-
-        First to do my responsibility as an officer… To be his great
-        subordinate… Some day, I wanted to be of help to the Commander
-
+      Oath: |-
+        First to do my responsibility as an officer… To be his great subordinate… Some day, I wanted to be of help to the Commander
         genuinely, and not as a soldier. I was so blank at first… I changed a lot, right?
-
         I tried so hard. I’ll grow even more for my brother… Please watch over me!
       OathIdle_01: |-
         Eek! Where are you going in such a hurry?
         I'm here. If you're busy
         I'll help. If not, let's hang out!​
       MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
-      Join: V-victory to Orca! I am Warrant Officer Habetrot who has recently joined.
-        It’s nice to… I mean! I’ll do my best!​
+      Join: V-victory to Orca! I am Warrant Officer Habetrot who has recently joined. It’s nice to… I mean! I’ll do my best!​
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -5746,58 +5975,40 @@ dialogue:
         Oh, Commander! You’re here. I’m planning to do
         overtime until I get used to work.
         This will surely help me improve.​
-      Idle_01_03: >-
+      Idle_01_03: |-
         My uniform…? I-is there something wrong with it?
-
         An officer who violates dress code?
-
         You don’t deserve to be warrant officer! Oh, what? You just asked me about it
-
         because I’m wearing my uniform on my day off? Phew, thank god.​
       SPIdle_01_01: |-
         Oh…! N-nothing. I’m just curious why Commander
         would be interested in a girl like me…​
-      Idle_02_01: >-
+      Idle_02_01: |-
         This is the master chief, and this is the sergeant-
-
         V-victory to Orca! Commander, you’re here.
-
         Oh, this is Steel Line’s organization chart. I should learn about peers’ faces
-
         if I want to fit in quickly.​
-      Idle_03_01: >-
+      Idle_03_01: |-
         I’m not into fashion,
-
         so I usually just wear my uniform. It’s easy to move around with this.
-
         But… I-it’s nothing. It’s just that… my upper underwear started to feel stuffy lately.
-
         Next time, I’m going to apply for a larger one.​
-      Idle_04_01: >-
+      Idle_04_01: |-
         Huh…?! Oh, it’s Commander… I must be dreaming again.
-
         Please pet on me like as always.
-
         I’ve been a good girl, daddy… Huh? Huh?! My God… It wasn’t a dream…?! Aaaahhhh…!
-
         I’m sorry, I am so sorry!​
       SPIdle_02_01: |-
         Please, don’t mention that day…! It was just a slip of a tongue.
         If you keep on asking for favors… *Sighs*
         Promise me it’ll be the last one… P-please, give me all your
         affection, Commander… Aarg…​
-      Oath: >-
-        Huh…? Y-you’re giving this… to me…? I was just a dummy with a lot of
-        mistakes and clumsiness… But you’re telling me that- … Am I dreaming
-        again? Is this really happening? Yes! I’ve been dreaming about this
-        moment
-
+      Oath: |-
+        Huh…? Y-you’re giving this… to me…? I was just a dummy with a lot of mistakes and clumsiness… But you’re telling me that- … Am I dreaming again? Is this really happening? Yes! I’ve been dreaming about this moment
         from the very first day that I met you. … I may not be enough, but I promise you I will always be there for you. Commander…?
-      OathIdle_01: >-
+      OathIdle_01: |-
         When I just arrived, I knew nothing about anything.
-
         I’m glad I can now do my part,
-
         thanks to someone’s guidance. When I think of those early days, phew… Thanks always.​
       MVP: ""
     M:
@@ -5818,25 +6029,19 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         I was just commissioned,
-
         And the commander was you. Of course I was nervous. But now…… Forget it! You’re free from now, right? I’m done with my work,
-
         so let’s go have a walk together.​
       Idle_01_02: |-
         You see? I can now do it by myself.
         Thanks to some very talented guy who taught me.
         Another work? Of course, what is- *Screech*?!
         … I can do this all day it if this was the work you talked about.​
-      Idle_01_03: >-
-        I wasn’t really into decorating myself, but… I’m starting to get
-        interested? … Did I have a change of mind?
-
+      Idle_01_03: |-
+        I wasn’t really into decorating myself, but… I’m starting to get interested? … Did I have a change of mind?
         Of course! Even though I’m a military officer,
-
         I still want to look pretty to a man I like.
-
         Okay?​
       SPIdle_01_01: |-
         Do you like those that much? You only focus on them instead of me.
@@ -5910,6 +6115,35 @@ dialogue:
         咦！你這麼著急去哪兒，哥哥？
         我明明在這裡呀。如果有急事，
         我可以幫你哦。如果沒急事就一起去玩吧！​
+      MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: 勝，勝利！我是這次加入的哈貝特羅少尉。請多——不！我會好好幹的！​
@@ -6024,20 +6258,14 @@ skins:
   sid: null
   artist: BUMCHa
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -6052,25 +6280,25 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_Habetrot_N
   skins:
     - sid: 1
       artist: BUMCHa
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - DS
+        G:
+          - _
+          - D
+          - DS
       anim:
         - false
         - false
@@ -6096,6 +6324,48 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_Habetrot_NS1
         2dmodel_dam: 2DModel_BR_Habetrot_NS1_Dam
         consumableKey: Skin_BR_Habetrot_1
+    - sid: 2
+      artist: WOW
+      price: 192
+      Spine: true
+      SpineDamaged: false
+      parts: 78
+      stage: false
+      subset:
+        O:
+          - _
+          - D
+          - S
+          - DS
+          - DP
+          - DSP
+        G:
+          - _
+          - D
+          - S
+          - DS
+          - DP
+          - DSP
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Everday_Dress
+      facelist: []
+      releaseDate: 1778112000000
+      metadata:
+        imageId: 2
+        iconId: 2
+        tbarId: 2
+        voiceId: 2
+        flags: 2
+        dflags: 1
+        2dmodel_dam: 2DModel_BR_Habetrot_NS2_Dam
+        consumableKey: Skin_BR_Habetrot_2

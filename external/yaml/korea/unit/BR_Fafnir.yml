@@ -3224,6 +3224,23 @@ skills:
             base: -0.5
             per: -0.025
             chance: 1
+    desc:
+      KR: |-
+        연속 공격으로 단일 대상에게 <dmg elem="lightning" />를 줍니다.
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상의 HP가 낮을 수록 피해량 <val idx="0" r /></sec>이 증가합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="note">회로 과열</sec> 상태로 만듭니다.
+      EN: |-
+        consecutive attack as to a single target <dmg elem="lightning" />.
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> target's HP low as damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, 2 rounds target <sec typ="note">Circuit Overheat</sec> inflicts.
+      JP: |-
+        連続攻撃で 単一対象へ<dmg elem="lightning" />を与えます。
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 対象の HPが ンアトを 少ないほど ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象を <sec typ="note">回路過熱</sec> 状態にします。
+      TC: |-
+        連續攻擊以 單一目標給 造成<dmg elem="lightning" />。
+        <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 目標的 HP 降低 數越 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="note">迴路過熱</sec> 使其進入狀態。
   "2":
     key: "2"
     icon: WideLightning
@@ -3360,6 +3377,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -3405,6 +3425,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -3451,6 +3474,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -3497,6 +3523,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -3543,6 +3572,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -3589,6 +3621,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -3630,6 +3665,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -3779,6 +3817,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -3824,6 +3865,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -3870,6 +3914,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -3916,6 +3963,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -3962,6 +4012,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -4008,6 +4061,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -4049,6 +4105,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -4198,6 +4257,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -4243,6 +4305,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -4289,6 +4354,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -4335,6 +4403,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -4381,6 +4452,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -4427,6 +4501,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -4468,6 +4545,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -4617,6 +4697,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -4662,6 +4745,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -4708,6 +4794,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -4754,6 +4843,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -4800,6 +4892,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -4846,6 +4941,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -4887,6 +4985,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -5036,6 +5137,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -5081,6 +5185,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -5127,6 +5234,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -5173,6 +5283,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -5219,6 +5332,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -5265,6 +5381,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -5306,6 +5425,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -5455,6 +5577,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -5500,6 +5625,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -5546,6 +5674,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -5592,6 +5723,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -5638,6 +5772,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -5684,6 +5821,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -5725,6 +5865,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -5874,6 +6017,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -5919,6 +6065,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -5965,6 +6114,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -6011,6 +6163,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -6057,6 +6212,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -6103,6 +6261,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -6144,6 +6305,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -6293,6 +6457,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -6338,6 +6505,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -6384,6 +6554,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -6430,6 +6603,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -6476,6 +6652,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -6522,6 +6701,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -6563,6 +6745,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -6712,6 +6897,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -6757,6 +6945,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -6803,6 +6994,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -6849,6 +7043,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -6895,6 +7092,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -6941,6 +7141,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -6982,6 +7185,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -7131,6 +7337,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -7176,6 +7385,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -7222,6 +7434,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -7268,6 +7483,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -7314,6 +7532,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -7360,6 +7581,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     attr: 6
                 - false
               body:
@@ -7401,6 +7625,9 @@ skills:
                       - Effect_BUFF_Overheat_N_1
                       - Effect_BUFF_Overheat_N_2
                       - Effect_BUFF_Overheat_N_3
+                      - Effect_BUFF_Overheat_N_4
+                      - Effect_BUFF_Overheat_N_5
+                      - Effect_BUFF_Overheat_N_6
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -7536,6 +7763,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        우레와 함께 강하하며 지정 범위에 <dmg elem="lightning" />를 줍니다.
+        <sec typ="dmg">목표 지점 주변은 피해량이 75% 감소합니다.</sec>
+        적중 대상과 인접한 적 수에 따라 <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 대상과 인접한 적 수가 2 이상인 경우</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
+      EN: |-
+        Descends with thunder and to the designated area <dmg elem="lightning" />.
+        <sec typ="dmg">target point nearby damage 75% decreases.</sec>
+        Hit targetand adjacent enemy depending on the number of <sec typ="dmg"><buff typ="LightningATK_UP" /> damage <val idx="4" r /></sec> increases.
+        <sec typ="cond">Hit targetand adjacent number of enemies 2 or moreif</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec>.
+      JP: |-
+        ウルエと ハアムックエ グアンハアし、 指定範囲に<dmg elem="lightning" />を与えます。
+        <sec typ="dmg">目標地点 周辺は ダメージ量が 75% 減少します。</sec>
+        命中 対象と 隣接する 敵 数に応じて <sec typ="dmg"><buff typ="LightningATK_UP" /> ダメージ量 <val idx="4" r /></sec>が増加します。
+        <sec typ="cond">命中 対象と 隣接する 敵数が 2 以上の場合</sec>、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>します。
+      TC: |-
+        Ure與 下mkke Gangha並 指定範圍於 造成<dmg elem="lightning" />。
+        <sec typ="dmg">目標地點 周圍 傷害量 75% 減少。</sec>
+        命中 目標與 相鄰的 敵人 依數量 <sec typ="dmg"><buff typ="LightningATK_UP" /> 傷害量 <val idx="4" r /></sec>增加。
+        <sec typ="cond">命中 目標與 相鄰的 敵人數量 2 以上若為</sec>， <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>。
   "3":
     key: "3"
     icon: P.Hang
@@ -7880,6 +8128,43 @@ skills:
             base: 0.5
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP가 증가</sec>합니다.
+        <sec typ="note">해당 효과는 라운드 경과에 따라 점차 감소합니다.</sec>
+        <sec typ="cond">공격 적중 시</sec> <sec typ="cond">대상의 HP가 75% 이상인 경우</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="4" slot="1" r inv /></sec>가 감소합니다. (중첩 불가)
+        <sec typ="cond"><sec typ="note">뇌정벽력</sec> 적중 대상이 <sec typ="note">회로 과열</sec> 상태인 경우</sec>, <sec>인접한 적 수를 3으로 취급</sec>합니다.
+        <sec typ="cond">1 라운드</sec> : <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>
+        <sec typ="cond">2 라운드</sec> : <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>
+        <sec typ="cond">3 라운드</sec> : <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>
+        <sec typ="cond">4 라운드 및 이후</sec> : <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP increase</sec>.
+        <sec typ="note">the effect round case anddepending on gradually decreases.</sec>
+        <sec typ="cond">On hit</sec> <sec typ="cond">target's HP 75% or moreif</sec>, 2 rounds, target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="4" slot="1" r inv /></sec> decreases. (Cannot stack)
+        <sec typ="cond"><sec typ="note">Thunderbolt</sec> Hit target <sec typ="note">Circuit Overheat</sec> if in the state</sec>, <sec>adjacent number of enemies 3 as treat</sec>.
+        <sec typ="cond">1 round</sec>: <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>
+        <sec typ="cond">2 round</sec>: <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>
+        <sec typ="cond">3 round</sec>: <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>
+        <sec typ="cond">4 round and after</sec>: <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> APが 増加</sec>します。
+        <sec typ="note">該当 効果は ラウンド グヨンとに応じて ジオムチア 減少します.</sec>
+        <sec typ="cond">攻撃命中時</sec> <sec typ="cond">対象の HPが 75% 以上の場合</sec>、 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="4" slot="1" r inv /></sec>が減少します。 (重複不可)
+        <sec typ="cond"><sec typ="note">雷霆霹靂</sec> 命中対象が <sec typ="note">回路過熱</sec> 状態の場合</sec>、 <sec>隣接する 敵数を 3で チウィグウプ</sec>します。
+        <sec typ="cond">1 ラウンド</sec>：<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>
+        <sec typ="cond">2 ラウンド</sec>：<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>
+        <sec typ="cond">3 ラウンド</sec>：<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>
+        <sec typ="cond">4 ラウンド および 以後</sec>：<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP 增加</sec>。
+        <sec typ="note">該 效果 回合 輕與依 解除omcha 減少。</sec>
+        <sec typ="cond">攻擊命中時</sec> <sec typ="cond">目標的 HP 75% 以上若為</sec>， 2回合內 目標的 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="4" slot="1" r inv /></sec>減少。 (不可疊加)
+        <sec typ="cond"><sec typ="note">雷霆霹靂</sec> 命中目標為 <sec typ="note">迴路過熱</sec> 若為狀態</sec>， <sec>相鄰的 敵人數量 3以 視為</sec>。
+        <sec typ="cond">1 回合</sec>：<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>
+        <sec typ="cond">2 回合</sec>：<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>
+        <sec typ="cond">3 回合</sec>：<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>
+        <sec typ="cond">4 回合 以及 之後</sec>：<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -8314,6 +8599,23 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">홀수 라운드 개시 시</sec>, 아군 공격기의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec>가 감소하고 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">짝수 라운드 개시 시</sec>, 적 공격기의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>가 증가하고 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="4" r /></sec>가 감소합니다.
+        <sec typ="cond">적 처치 시</sec>, 2라운드 동안 <sec>상기 효과가 동시에 발현</sec>되며 효과가 두 배로 증폭됩니다.
+      EN: |-
+        <sec typ="cond">At the start of odd-numbered rounds</sec>, allies Attacker of <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="1" r inv /></sec> decreases and <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> increases.
+        <sec typ="cond">At the start of even-numbered rounds</sec>, enemy Attacker of <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec> increases and <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="4" r /></sec> decreases.
+        <sec typ="cond">When killing an enemy</sec>, 2 rounds <sec>above effect and same when to manifestation</sec>becomes and the effect is doubled amplification.
+      JP: |-
+        <sec typ="cond">奇数ラウンド開始時</sec>、 味方 攻撃機の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="1" r inv /></sec>が 減少し、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">偶数ラウンド開始時</sec>、 敵 攻撃機の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="5" r /></sec>が 増加し、 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="4" r /></sec>が減少します。
+        <sec typ="cond">敵撃破時</sec>、 2ラウンドの間 <sec>上記 効果が ドオン時に ブアルハヨン</sec>になり、 効果が2倍で 増幅されます。
+      TC: |-
+        <sec typ="cond">奇數回合開始時</sec>， 我方 攻擊機的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="1" r inv /></sec> 減少，並 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>增加。
+        <sec typ="cond">偶數回合開始時</sec>， 敵人 攻擊機的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="5" r /></sec> 增加，並 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="4" r /></sec>減少。
+        <sec typ="cond">擊殺敵人時</sec>， 2回合內 <sec>上述 效果 同時於 發hyeon</sec>變為，且 效果變為2倍以 增幅。
   "5":
     key: "5"
     icon: P.Beam
@@ -8644,6 +8946,35 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 스쿼드 내 <cmt t="신화 속 '개'"><import name="DOGS" /></cmt>의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="5" /></sec>가 증가하고 <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 행 / 열 보호</sec>가 활성화됩니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 공격 지원을 받고 있을 경우</sec>, <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시가 활성화</sec>됩니다.
+        <define name="DOGS">
+        <char uid="PECS_Cerberus" />, <char uid="3P_Fenrir" />, <char uid="BR_Vargr" />
+        </define>
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, in squad <cmt t="Sinhwa inside 'unit(s)'"><import name="DOGS" /></cmt> of <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="5" /></sec> increases and <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> Row / Column Protection</sec> is activated.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self Attack Support receiving if present</sec>, <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection activation</sec>.
+        <define name="DOGS">
+        <char uid="PECS_Cerberus" />, <char uid="3P_Fenrir" />, <char uid="BR_Vargr" />
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 スクワッド 内 <cmt t="スインハワ スオク '個'"><import name="DOGS" /></cmt>の <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="5" /></sec>が 増加し、 <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 行 / 列保護</sec>が 有効化されます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身が 攻撃支援を 受けて 存在する場合</sec>、 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視が 有効化</sec>されます。
+        <define name="DOGS">
+        <char uid="PECS_Cerberus" />、 <char uid="3P_Fenrir" />、 <char uid="BR_Vargr" />
+        </define>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 小隊 內 <cmt t="Sinhwa 屬 '個'"><import name="DOGS" /></cmt>的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="5" /></sec> 增加，並 <sec typ="buff"><buff typ="DEF_Line" /><buff typ="DEF_Side" /> 列 / 行保護</sec> 啟用。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身 攻擊支援 受到 存在時</sec>， <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護 啟用</sec>。
+        <define name="DOGS">
+        <char uid="PECS_Cerberus" />， <char uid="3P_Fenrir" />， <char uid="BR_Vargr" />
+        </define>
 dialogue:
   KR:
     "1":
@@ -8698,11 +9029,9 @@ dialogue:
         부정 탈 짓 했으니까 각오 했겠지?​
         침대로 가서 여신의 노여움을…
         잔뜩 풀어줘야 할 거야.
-      Oath: >-
+      Oath: |-
         흥, 마지막 판돈 치곤 너무 작아. 난 너한테 뭘 걸었냐고? 당연히 내 전부를 걸었지. 내 몸과 마음… 나의 전부를 말이야. 
-
         그런데도 고작 반지 하나로 올인이란 단어를 쓰는 거야? 좋아, 결과를 확인해볼까? ​…뭐야 내가 졌잖아? 승부는 승부니까, 내 모든 걸 가져갈 준비는 됐겠지?
-
         오늘 밤 내 몸도 마음도…​ 난 엄청난 보물이니까 소중히 다루라고… 알았지, 내 황금?
       OathIdle_01: |-
         내가 얻은 보물, 깔고 자는 것도 좋고…
@@ -8763,9 +9092,7 @@ dialogue:
         만졌으면 대가를 치뤄야지.
         어디서 지불할래? 여기서? 내 보물고?
         아니면… 침실?
-      Oath: 순금은 아니네. 보증서는? 없어? 그러면 가치가 좀 떨어지는데. 하지만… 그래도 내가 가진 것들 중에서 두 번째로 귀한 보물이야. 첫
-        번째? 뭘 그런 걸 묻고 그래. 당연히 너지! 처음 만날 때부터 말했잖아. 널 내 것으로 하겠다고. 나에게 귀중한 것은 많지만
-        소중한 것은 너뿐이야!
+      Oath: 순금은 아니네. 보증서는? 없어? 그러면 가치가 좀 떨어지는데. 하지만… 그래도 내가 가진 것들 중에서 두 번째로 귀한 보물이야. 첫 번째? 뭘 그런 걸 묻고 그래. 당연히 너지! 처음 만날 때부터 말했잖아. 널 내 것으로 하겠다고. 나에게 귀중한 것은 많지만 소중한 것은 너뿐이야!
       OathIdle_01: |-
         나는 내 보물 위에서 자는 걸 좋아하거든?
         그런데 지금 졸리네...
@@ -9062,20 +9389,15 @@ skins:
   sid: null
   artist: Taesi
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+    G:
+      - _
   anim:
     - false
     - false
@@ -9090,25 +9412,31 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_Fafnir_N
   skins:
     - sid: 1
       artist: Taesi
       price: 272
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 110
       stage: false
       subset:
-        - true
-        - true
-        - true
-        - false
-        - true
-        - true
-        - false
-        - true
+        O:
+          - _
+          - D
+          - B
+          - DB
+          - DS
+          - DBS
+        G:
+          - _
+          - D
+          - B
+          - DB
+          - DS
+          - DBS
       anim:
         - false
         - false
@@ -9125,6 +9453,7 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 3
+        dflags: 1
         2dmodel: 2DModel_BR_Fafnir_NS1
         2dmodel_dam: 2DModel_BR_Fafnir_NS1_Dam
         consumableKey: Skin_BR_Fafnir_1

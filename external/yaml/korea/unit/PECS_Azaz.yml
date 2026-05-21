@@ -504,6 +504,7 @@ source:
   - - Ev:Ev11:Ev2-3Ex
   - - Ev:Ev18:EV3-2Ex
   - - Ev:Ev20:EV3-2B
+  - - Ev:Ev39:EV1-1EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1976,6 +1977,19 @@ skills:
               level: "0"
             value: Effect_PECS_Azaz_N_33
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond"><buff typ="SCOUTING" /> 정찰 활성화</sec> 상태에서 전투 시작 시 <sec typ="note">정보 수집 중</sec> 버프가 활성화 되고 이 상태로 대기시 <sec typ="note">정보 획득 완료</sec> 버프가 활성화 되며, <sec typ="note">정보 획득 완료</sec> 버프 활성화 시 피격된 적은 저항 불가한 <sec typ="important">웨이브 당 1회 한정</sec> <sec typ="buff"><buff typ="STUN" /> 행동 불능</sec> 상태가 됩니다
+      EN: |-
+        to the target with <dmg elem="physics" />.
+        <sec typ="cond"><buff typ="SCOUTING" /> Scouting activation</sec> while in the state At battle start <sec typ="note">information number Jip during</sec> buff activation becomes and to the state wait when <sec typ="note">Information Acquired</sec> buff activation becomes and, <sec typ="note">Information Acquired</sec> buff activation when hit enemy resistance no one <sec typ="important">We b per 1times one removeong</sec> <sec typ="buff"><buff typ="STUN" /> Stunned</sec> state
+      JP: |-
+        対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond"><buff typ="SCOUTING" /> 偵察 有効化</sec> 状態で 戦闘開始時 <sec typ="note">情報 収集 中</sec> バフが 有効化 になり、 が 状態に 待機時 <sec typ="note">情報取得完了</sec> バフが 有効化 になり、、 <sec typ="note">情報取得完了</sec> バフ 有効化 時 被弾された 敵は 耐性 不可した <sec typ="important">ウェーブ ごと 1回 したジオン</sec> <sec typ="buff"><buff typ="STUN" /> 行動不能</sec> 状態になります
+      TC: |-
+        對目標 造成<dmg elem="physics" />。
+        <sec typ="cond"><buff typ="SCOUTING" /> 偵察 啟用</sec> 在狀態下 戰鬥開始時 <sec typ="note">資訊 收集 中</sec> 增益 啟用 變為，且 成為狀態 待機時 <sec typ="note">資訊取得完成</sec> 增益 啟用 變為，且 <sec typ="note">資訊取得完成</sec> 增益 啟用 時 被擊已 敵人 抗性 不可 <sec typ="important">波次 每 1次 解除ong</sec> <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 變為狀態
   "2":
     key: "2"
     icon: Barrier
@@ -2537,6 +2551,23 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        아군 진영에 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="9" slot="5" /></sec> 생성, 공격기, 보호기 대상 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" slot="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="10" slot="5" r /></sec> 증가, <char uid="PECS_Azaz" />의 <sec typ="note">부품 확보</sec> 버프 적용 기능이 있는 <sec typ="buff">골든 팩토리</sec>를 설치합니다.
+        <sec typ="note">부품 확보</sec> 상태에서 대기시 <char uid="PECS_Azaz" />에게 1라운드 <sec typ="buff"><buff typ="DEF_All" /> 피해 무시</sec> / <sec typ="buff"><buff typ="MARKING" /> 이로운 표식</sec> 버프가 부여 됩니다.
+        <sec>소환 스킬은 <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 감소</sec> 효과에 영향받지 않습니다.</sec>
+      EN: |-
+        allies formation/camp to <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="9" slot="5" /></sec> create, Attacker, Defender target <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="8" slot="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="10" slot="5" r /></sec> increase, <char uid="PECS_Azaz" /> of <sec typ="note">Parts Secured</sec> buff applies function exists <sec typ="buff">Golden Paektori</sec> install.
+        <sec typ="note">Parts Secured</sec> while in the state wait when <char uid="PECS_Azaz" /> to 1round <sec typ="buff"><buff typ="DEF_All" /> damage ignore</sec> / <sec typ="buff"><buff typ="MARKING" /> beneficial Mark</sec> buff grant.
+        <sec>summon skill <sec typ="buff"><buff typ="RANGE_DOWN" /> Range decrease</sec> effect and to not affected does not.</sec>
+      JP: |-
+        味方 ジインヨンに <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="9" slot="5" /></sec> 生成、 攻撃機、 保護機 対象 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" slot="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="10" slot="5" r /></sec> 増加、 <char uid="PECS_Azaz" />の <sec typ="note">部品確保</sec> バフ 適用 機ンウンが ある <sec typ="buff">グオルドウン プエクトオルイ</sec>を スオルチイします。
+        <sec typ="note">部品確保</sec> 状態で 待機時 <char uid="PECS_Azaz" />に 1ラウンド <sec typ="buff"><buff typ="DEF_All" /> ダメージ 無視</sec> / <sec typ="buff"><buff typ="MARKING" /> 有益な 標的</sec> バフが ブウヨ されます。
+        <sec>スオハワン スキルは <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 減少</sec> 効果に ヨンハヤンブアトジイ しません。</sec>
+      TC: |-
+        我方 陣營於 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾 <val idx="9" slot="5" /></sec> 生成， 攻擊機， 保護機 目標 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" slot="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="10" slot="5" r /></sec> 增加， <char uid="PECS_Azaz" />的 <sec typ="note">零件確保</sec> 增益 套用 台能力 有 <sec typ="buff">Goldeun 破ektori</sec> 三設置。
+        <sec typ="note">零件確保</sec> 在狀態下 待機時 <char uid="PECS_Azaz" />給 1回合 <sec typ="buff"><buff typ="DEF_All" /> 傷害 無視</sec> / <sec typ="buff"><buff typ="MARKING" /> 有益 標記</sec> 增益 賦予。
+        <sec>召喚 技能 <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 減少</sec> 效果於 影響bat至 不會。</sec>
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -2852,6 +2883,19 @@ skills:
               level: "0"
             value: Effect_PECS_Azaz_N_32
             chance: 1
+    desc:
+      KR: |-
+        라운드 시작 시 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>를 증가 시킵니다.
+        <sec typ="cond"><equip uid="Sub_Barrier" /> 또는 <equip uid="Sub_ImBarrier" /> 장착</sec> 상태에서는 전투 시작시 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>이(가) 증가 합니다.
+      EN: |-
+        round when operation when own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> increase causes.
+        <sec typ="cond"><equip uid="Sub_Barrier" /> or <equip uid="Sub_ImBarrier" /> equip</sec> while in the state battle when operation when own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>() increase.
+      JP: |-
+        ラウンド 時ジアク 時 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>を 増加 させます。
+        <sec typ="cond"><equip uid="Sub_Barrier" /> または <equip uid="Sub_ImBarrier" /> ジアンチアク</sec> 状態では 戦闘 時ジアク時 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec>が 増加します。
+      TC: |-
+        回合 時作 時 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> 增加。
+        <sec typ="cond"><equip uid="Sub_Barrier" /> 或 <equip uid="Sub_ImBarrier" /> 裝備</sec> 在狀態下 戰鬥 時作時 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" /></sec> 增加。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -3365,6 +3409,11 @@ skills:
             base: -0.072
             per: -0.027
             chance: 1
+    desc:
+      KR: 적의 수에 비례하여 적의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>를 중첩하여 감소 시킵니다.
+      EN: enemy's in proportion to the number of enemy's <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> stack by doing decrease causes.
+      JP: 敵の 数に比例して 敵の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec>を 重複して 減少 させます。
+      TC: 敵人的 依數量成比例 敵人的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec> 疊加並 減少。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -3916,6 +3965,35 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        같은 스쿼드에 있는 로봇 캐릭터의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>, <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec>, <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">스쿼드에 <char uid="PECS_Fortune" />이 있을 시</sec> 각 버프가 추가로 증가 합니다.
+        <box t="추가 증가분">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec>, <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="4" r /></sec>, <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec> 증가
+        </box>
+        <sec typ="cond">대기 시</sec> 아군 전체의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="10" r inv /></sec>가 감소 합니다.
+      EN: |-
+        same squad exists Robot character of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec>, <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" r /></sec>, <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increases.
+        <sec typ="cond">squad <char uid="PECS_Fortune" /> if present</sec> each buff additionally increase.
+        <box t="additional increase Bun">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec>, <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="4" r /></sec>, <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="5" r /></sec> increase
+        </box>
+        <sec typ="cond">On standby</sec> all allies of <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="10" r inv /></sec> decrease.
+      JP: |-
+        グアトは スクワッドに ある ロボット クエルイクトオの <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>、 <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" r /></sec>、 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">スクワッドに <char uid="PECS_Fortune" />が ある 時</sec> 各 バフが 追加で 増加します。
+        <box t="追加 増加ブウン">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec>、 <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="4" r /></sec>、 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec> 増加
+        </box>
+        <sec typ="cond">待機時</sec> 味方全体の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="10" r inv /></sec>が 減少します。
+      TC: |-
+        相同 小隊於 有 機器人 角色的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>， <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" r /></sec>， <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
+        <sec typ="cond">小隊於 <char uid="PECS_Fortune" /> 有 時</sec> 各 增益 額外 增加。
+        <box t="額外 增加分配">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec>， <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="4" r /></sec>， <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec> 增加
+        </box>
+        <sec typ="cond">待機時</sec> 全體我方的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="10" r inv /></sec> 減少。
 dialogue:
   KR:
     "1":
@@ -3972,11 +4050,9 @@ dialogue:
         사람에게, 예쁘다는 말을 듣는 게 이렇게
         기쁠 줄은 몰랐으니까요. 자, 어서 안아줘요.
         저 지금... 보기보다 여유가 없으니까.
-      Oath: >-
+      Oath: |-
         사실, 그동안 이런 거랑은 담을 쌓고 살았어요. 알죠? 저 맨날 틀어박혀서 기계만 만지는 거. 그런데… ‘해체자’가 아니라
-
         한 명의 여자로서 사랑받는 것도 꽤 좋네요. ...아니, 미안해요. 사실은 정말로 좋아요. 그리고 그것보다도 더 당신을 좋아하구요.
-
         그럼 방으로 갈까요? 어서 편안한 장소로 가서, 좋아하는 사람한테 사랑받고 싶으니까요. 여자로서.
       OathIdle_01: |-
         가끔은 이런 것도 나쁘지 않네요. 당신은
@@ -4106,9 +4182,7 @@ dialogue:
         할래요? 그렇게 달라붙지 마요.
         슈트 벗을 테니까 잠깐만.
         알았죠?
-      Oath: 사령관, 저처럼 재미없는 여자랑 서약해도 괜찮겠어요? 알다시피 제 머릿속엔 기계밖에 없고, 쉴 땐 하루 종일 틀어박혀서 부품이나
-        만지작댄다구요? …맞아요. 거짓말이에요. 요새는 머릿속에 사령관 밖에 없어요. 일도 손에 안 잡히고요. 절 선택해 줘서 고마워요.
-        앞으로는 마음을 숨기는 게 더 어려워지겠네요.
+      Oath: 사령관, 저처럼 재미없는 여자랑 서약해도 괜찮겠어요? 알다시피 제 머릿속엔 기계밖에 없고, 쉴 땐 하루 종일 틀어박혀서 부품이나 만지작댄다구요? …맞아요. 거짓말이에요. 요새는 머릿속에 사령관 밖에 없어요. 일도 손에 안 잡히고요. 절 선택해 줘서 고마워요. 앞으로는 마음을 숨기는 게 더 어려워지겠네요.
       OathIdle_01: |-
         어젯밤이 그렇게 좋았어요?
         무슨 생각 하는지 다 보여요.
@@ -4184,11 +4258,9 @@ dialogue:
       Idle_03_01: 無理に褒めなくても大丈夫です。オルカには私みたいな地味な女じゃなくて—あら。司令官は本当に正直ですね。そういうところ、大好きです。
       Idle_04_01: 司令官にここまで褒めてもらえるなんて、時間をかけた甲斐があります。それじゃあ一緒に部屋に行きましょう。もう参加する意味もなくなりましたので。まだ分からないのですか？私、司令官に言われた言葉のせいですごくドキドキしてるんです。
       SPIdle_02_01: 我慢できそうにないですか？実は私もです。好きな人に綺麗と言われたら、こんなに嬉しいってこと、初めて知りました。さぁ、早く抱いてください。私、今…こう見えて限界なんです。
-      Oath: >-
+      Oath: |-
         実は、今までこういったこととは距離を置いて生きてきました。知っていますよね？私がいつも部屋に閉じこもって機械ばかりいじっていること。
-
         でも…「解体者」ではなく、ひとりの女として愛されるのもなかなか悪くないですね。…いえ、すみません。本当のことを言うと、とても嬉しいんです。そして何よりもあなたを本当に愛してます。
-
         では部屋に行きましょうか。早く落ち着ける場所で、大好きな人に愛されてみたいんです。女として。
       OathIdle_01: たまにはこういうのも悪くないですね。あなたはどっちが好きですか？普段の私？それとも思い切りおしゃれした私？言っておきますが、私はどんな姿のあなたも好きですよ。
       MVP: PECSの秘書が全員オメガに従うわけではありません。 反旗を掲げる姉妹がいたり、仕方なく従う姉妹もいるのです。
@@ -4315,19 +4387,14 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         Can we just go to the room and finish up
-
         making the model? I was just asking…… Then how about we go to the craft room?
-      Idle_01_02: >-
-        This is the first time I’ve put on make-up… It takes up a lot of time.
-        For the time being,
-
+      Idle_01_02: |-
+        This is the first time I’ve put on make-up… It takes up a lot of time. For the time being,
         I would have completed more than ten works…
-      Idle_01_03: >-
-        How do I look? I did participate because Machina suggested… But this is
-        more embarrassing than I thought.
-
+      Idle_01_03: |-
+        How do I look? I did participate because Machina suggested… But this is more embarrassing than I thought.
         And the costume is too revealing…
       SPIdle_01_01: |-
         I’m sorry. I’m in a rush right now.
@@ -4352,13 +4419,9 @@ dialogue:
         that I’m pretty.
         I never knew how happy I’d be. Embrace me right now.
         I can’t… wait any more.
-      Oath: >-
-        Actually, my life has been far away from these things. You know that,
-        right? I always stay in the room and play with machines. But… it feels
-        quite good
-
+      Oath: |-
+        Actually, my life has been far away from these things. You know that, right? I always stay in the room and play with machines. But… it feels quite good
         to be loved as a woman, not a "dismantler." … No, I’m sorry. I’m actually very happy. And I like you even more than that.
-
         Should we go to the room then? I want to go to somewhere comfortable and get loved by someone I like. As a woman.
       OathIdle_01: |-
         This isn’t bad. Which one
@@ -4401,36 +4464,27 @@ dialogue:
       SPIdle_01_01: |-
         I haven’t even started playing the piano, Commander.
         I’ll let you after the session, okay?​
-      Idle_02_01: >-
-        Soothing music and decent interior designs… Working at a cafe isn’t bad
-        at all.
-
+      Idle_02_01: |-
+        Soothing music and decent interior designs… Working at a cafe isn’t bad at all.
         Plus, Commander often comes by too.
-
         Haha. Next time, I’ll be the one to visit.​
       Idle_03_01: |-
         Before I met you, I just did what I wanted to do.
         But now, I also consider how it’ll make you happy, Commander.
         I wasn’t like this before.
         You have changed me, Commander.​
-      Idle_04_01: >-
+      Idle_04_01: |-
         My song and piano wasn’t half bad, right?
-
         Why a breakup song? I just picked it because of the melody.
-
         But since I sang in amabile,
-
         It should be enough to tell you what’s in my heart.  I’ve poured my heart into it.​
       SPIdle_02_01: |-
         Hey, no touching in the middle of the song.
         Take my stockings off of me. They are already a mess anyway.
         And it’s all on you, Commander.​
-      Oath: >-
-        Handling machines and getting my hands greasy used to be my whole world.
-        Ever since I met you, I discover
-
+      Oath: |-
+        Handling machines and getting my hands greasy used to be my whole world. Ever since I met you, I discover
         A new side of me that I didn’t know that existed. … That happened today as well. I never imagined myself being this much excited by a thin metallic loop… 
-
         Can I hug you? I want to breath, smile and… love in your arms.
       OathIdle_01: |-
         Would’ve I believed if I haven’t met you?
@@ -4494,11 +4548,7 @@ dialogue:
         Want to do it? Don’t cling to me like that.
         Hold on. Let me take off my suit.
         Okay?
-      Oath: Commander, are you sure you want to make a pledge with someone as boring
-        as me? You know, all I think of are machines. I use parts as toy when I
-        don’t have anything to do. … Right. It was a lie. I only think about you
-        these days. I can’t do my work right. Thank you for choosing me. Now
-        it’d be more difficult to hide my feelings.
+      Oath: Commander, are you sure you want to make a pledge with someone as boring as me? You know, all I think of are machines. I use parts as toy when I don’t have anything to do. … Right. It was a lie. I only think about you these days. I can’t do my work right. Thank you for choosing me. Now it’d be more difficult to hide my feelings.
       OathIdle_01: |-
         Did you enjoy the night that much?
         I can see what you’re thinking.
@@ -4785,20 +4835,13 @@ skins:
   sid: null
   artist: Taesi
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -4813,25 +4856,25 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Azaz_N
   skins:
     - sid: 1
       artist: Taesi
       price: 159
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 70
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+        G:
+          - _
+          - D
+          - S
       anim:
         - true
         - false
@@ -4848,24 +4891,24 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 5
         2dmodel_dam: 2DModel_PECS_Azaz_NS1_Dam
     - sid: 2
       artist: Taesi
       price: 196
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 76
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+        G:
+          - _
+          - D
+          - S
       anim:
         - false
         - false
@@ -4882,6 +4925,7 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_PECS_Azaz_NS2
         2dmodel_dam: 2DModel_PECS_Azaz_NS2_Dam
         consumableKey: Skin_PECS_Azaz_2

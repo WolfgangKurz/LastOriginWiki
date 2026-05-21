@@ -519,6 +519,7 @@ chart:
   - 4
 cv:
   "1": {}
+  "2": {}
   "":
     ko: ""
     jp: 恒松あゆみ
@@ -721,6 +722,7 @@ source:
     - Ev:Ev35:EV2-1
     - Ev:Ev35:EV2-4EX
   - - Ev:Ev36:EV1-4EX
+  - - Ev:Ev37:EV1-3EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2322,6 +2324,19 @@ skills:
               level: "0"
             value: Char_PECS_PuppHead_N
             chance: 1
+    desc:
+      KR: |-
+        리볼버를 발사해 <dmg elem="physics" />를 주고, 대상을 2라운드 동안 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하며 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="3" r /></sec>를 낮춥니다.
+        스쿼드 내에 <char uid="PECS_PuppHead" />가 있을 시, 대상에게 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">테이저 건</sec> 스킬 협동 공격</sec>을 합니다.
+      EN: |-
+        revolver fires <dmg elem="physics" /> damage and target 2 rounds <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> and <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="3" r /></sec>reduces.
+        in squad to <char uid="PECS_PuppHead" /> if present, to the target <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Taser Gun</sec> skill coordinated attack</sec>.
+      JP: |-
+        ルイブオルブオを 発射して<dmg elem="physics" />を与え、、 対象を 2ラウンドの間 <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>し、 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="3" r /></sec>を低下させます。
+        スクワッド 内に <char uid="PECS_PuppHead" />が ある 時、 対象に <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">テイザーガン</sec> スキル 協同攻撃</sec>をします。
+      TC: |-
+        利左輪 發射 造成<dmg elem="physics" />，並 目標 2回合內 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>並 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="3" r /></sec>降低。
+        小隊 內於 <char uid="PECS_PuppHead" /> 有 時， 對目標 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">電擊槍</sec> 技能 協同攻擊</sec>。
   "2":
     key: "2"
     icon: SelfAtkDeBuff
@@ -3012,6 +3027,11 @@ skills:
             base: -0.15
             per: -0.005
             chance: 1
+    desc:
+      KR: 고압 가스탄을 발사해 목표 대상들에게 <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="1" r /></sec>를 감소시킵니다.
+      EN: high-pressure gas shell fires to the target with <dmg elem="physics" /> damage and 2 rounds <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> and <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="1" r /></sec> decreases.
+      JP: 高圧ガス弾を 発射して 目標対象たちに<dmg elem="physics" />を与え、、 2ラウンドの間 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec>と <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="1" r /></sec>を減少させます。
+      TC: 高壓瓦斯彈 發射 目標對象們給 造成<dmg elem="physics" />，並 2回合內 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec>與 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="1" r /></sec>使其減少。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -3279,6 +3299,11 @@ skills:
             base: 0.06
             per: 0.01
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, 자신에게 <sec typ="buff"><buff typ="MARKING" /> 이로운 표식</sec>을 지정하고 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec>와 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 모든 속성 저항 <val idx="4" r /></sec>를 증가시키며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec>를 감소시킵니다.
+      EN: <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="MARKING" /> beneficial Mark</sec> designated and own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" r /></sec> and <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> all Elemental Resistances <val idx="4" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="2" r inv /></sec> decreases.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 自身に <sec typ="buff"><buff typ="MARKING" /> 有益な 標的</sec>を 指定し、 自身の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" r /></sec>と <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 全属性耐性 <val idx="4" r /></sec>を 増加させ、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="2" r inv /></sec>を減少させます。
+      TC: <sec typ="cond">回合開始時</sec>， 自身給 <sec typ="buff"><buff typ="MARKING" /> 有益 標記</sec> 指定並 自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" r /></sec>與 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 所有屬性抗性 <val idx="4" r /></sec> 使其增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="2" r inv /></sec>使其減少。
 dialogue:
   KR:
     "1":
@@ -3335,6 +3360,76 @@ dialogue:
         이런 곳에 회초리를 준비해 두셨다니…
         일부러라도… 실수를 해야 하는 걸까요?
       MVP: 흠, 이 경력을 어디에 추가해야 할지...
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        사령관님 승인 없이는 해제 불가…​
+        흐음? 치안을 담당하는 쪽은 제가 아니라,
+        사령관님이라고 해도 이상하지 않겠네요. 우후후…
+      Idle_01_02: |-
+        네? 볼일은 어떻게 보는지 궁금하시다고요?​
+        그건 말이죠… 그냥 그대로 이렇게……​
+        후후, 장난입니다!
+      Idle_01_03: |-
+        아, 열쇠에 달린 버튼을 누르시면…​
+        앗… 으응…! 생각보다… 훨씬 더…
+        자극이 강한 것 같네요…​
+        저는 언제까지… 읏…! 참아야 하는 걸까요…?
+      SPIdle_01_01: |-
+        아직 이 잠금 장치는
+        사령관님에게 버거울지도 모르겠군요.
+      Idle_02_01: |-
+        들어올 때는 마음대로셨겠지만,
+        나갈 때는 그렇지 않답니다.
+        사령관님의 몸과 마음을
+        전부 단속하기 전까지는,
+        나갈 수 없는 방이니까요.
+        설마 제 경비 경력을
+        무시하시는 건 아니겠죠?
+      Idle_03_01: |-
+        후후, 금일 야간 경비는 평소보다
+        훨씬 더 길어질 것 같습니다.
+        사령관님의 총기 손질을
+        담당하게 됐으니까요.
+      Idle_04_01: |-
+        아아… 드디어…
+        이날만을 기다리고 있었습니다.
+        오늘은 안전한 날이에요… 그러니까…​.
+        사령관님, 어서 그 열쇠로
+        저의 자물쇠를 벗겨주세요.
+        더 이상은… 사령관님을 향한
+        넘치는 마음을 참을 필요 없으니까요…
+      SPIdle_02_01: |-
+        후후, 신경 쓰이시나요?
+        오늘도 제대로 착용하고 있답니다.
+        이곳은 사령관님 말고는…
+        그 누구도 손댈 수 없는 곳이니까요.
+      Oath: 이건… 제가 사령관님의 것이라는 서약의 증표입니다.​ 지금부터는 스스로의 위로조차 사령관님의 허가 없이는 할 수 없겠네요.​ 열쇠도, 규칙도… 제가 가진 모든 걸 평생 사령관님께 맡기겠습니다.​ 사령관님의 관리에 저는 기꺼이… 따르겠습니다.
+      OathIdle_01: |-
+        최근 자물쇠를 푸는 횟수가
+        부쩍 늘어난 것 같은데… 기분 탓일까요?
+        이렇게 되면 이 옷을 입는 이유가…
+        …잠금을 푸는 순간이 좋으시다고요?
+        후후, 오늘 밤도 사령관님의 열쇠가
+        제 자물쇠 안으로 안전하게
+        들어올 예정인 모양이네요.​
+      MVP: ""
     "":
       Join: 사령관님, 만나게 되어 반갑습니다.
       SquadJoin: 통상 진압 임무가 아니군요, 사살까지 허용된단 말입니까?
@@ -3453,6 +3548,35 @@ dialogue:
       Oath: 家政婦として働いている時にプロポーズしてくるなんて。もしかしてこの格好がそんなに良かったですか？私は司令官、いえ、ご主人様をお守りできるならどちらでも構いませんよ…。家事をしている時の私への態度からして…答えは…わかる気がします。警護には自信がありますが、家事の方ももう少し努力してみます。もっと素敵な時間を過ごせるようにです。ご主人様も、私も。
       OathIdle_01: こんな場所に鞭を準備されてるなんて…わざと…ミスをした方がよろしいでしょうか？
       MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: 司令官、お会いできて嬉しいです。
       SquadJoin: ""
@@ -3542,8 +3666,7 @@ dialogue:
         I’ll be your maid from today.
         I’m Miss Safety. Call me anytime
         if you need anything.
-      Idle_01_02: Orca is peaceful under your command… As the security officer, I’m
-        looking for a side job.
+      Idle_01_02: Orca is peaceful under your command… As the security officer, I’m looking for a side job.
       Idle_01_03: |-
         According to research, maids always
         wore this uniform. Don’t I look like
@@ -3556,21 +3679,46 @@ dialogue:
       Idle_03_01: |-
         The outfit had another purpose?
         B-but if you say it’s okay… I’ll… wear it. J-just in case…
-      Idle_04_01: >-
+      Idle_04_01: |-
         If I didn’t become a maid, I would have never knew
-
         that your room was in such a mess. But luckily… I can help you. I’ll clean up soon.
       SPIdle_02_01: |-
         I think we all got wet… I think I should clean you up first
         before cleaning up this place.
-      Oath: >-
-        I can’t believe you proposed to me while I’m working as a housekeeper.
-        Do you perhaps like me this way even more? I’ll be fine either way
-
+      Oath: |-
+        I can’t believe you proposed to me while I’m working as a housekeeper. Do you perhaps like me this way even more? I’ll be fine either way
         as long as I can be with you, master… But looking back on what you did to me while I was doing chores… I think I know the answer.
-
         I’ll guard the house perfectly, but I’ll try hard to get better at doing housework. So we can spend more enjoyable time together. Both master and I.
       OathIdle_01: You prepared a cane here… Should I try and make some mistakes?
+      MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: Nice to meet you, Commander.
@@ -3614,10 +3762,8 @@ dialogue:
       SPIdle_02_01: |-
         Don't worry. I'll only use the police baton.
         I will not use a gun.
-      Oath: >-
-        Huh? This… doesn't suit a public servicer like me. But… since the public
-        is gone…
-
+      Oath: |-
+        Huh? This… doesn't suit a public servicer like me. But… since the public is gone…
         I guess it'd be OK to consider my personal profits a bit more. Thank you. This means a lot to me.
       OathIdle_01: |-
         Sometimes I feel like
@@ -3653,10 +3799,8 @@ dialogue:
       Idle_01_03: |-
         A police baton again…? I’ll have it ready if you need it.
         It might be a good idea to come up with various uses.
-      SPIdle_01_01: >-
-        From now on, the place is lawless. So… Let’s do some bad things we
-        shouldn’t normally be doing.
-
+      SPIdle_01_01: |-
+        From now on, the place is lawless. So… Let’s do some bad things we shouldn’t normally be doing.
         No one will hold us accountable.
       MVP: ""
   TC:
@@ -3713,6 +3857,35 @@ dialogue:
       OathIdle_01: |-
         竟然在這樣的地方準備了鞭子…
         是不是要故意…失誤一下？
+      MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: 司令官大人，見到你很高興！
@@ -3803,20 +3976,14 @@ skins:
   sid: null
   artist: Rorobomb
   priceEx: ""
-  G: false
   Spine: true
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - D
   anim:
     - false
     - false
@@ -3831,25 +3998,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 2
+    dflags: 1
     2dmodel_dam: 2DModel_PECS_MissSafety_N_Dam
   skins:
     - sid: 1
       artist: Rorobomb
       price: 68
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -3866,4 +4031,42 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_PECS_MissSafety_NS1
+    - sid: 2
+      artist: Cho gyeong nam
+      price: 192
+      Spine: true
+      SpineDamaged: false
+      parts: 78
+      stage: false
+      subset:
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Lingerie
+      facelist: []
+      releaseDate: 1774483200000
+      metadata:
+        imageId: 2
+        iconId: 2
+        tbarId: 2
+        voiceId: 2
+        flags: 2
+        dflags: 1
+        2dmodel_dam: 2DModel_PECS_MissSafety_NS2_Dam
+        consumableKey: Skin_PECS_MissSafety_2

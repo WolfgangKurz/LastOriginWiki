@@ -513,6 +513,7 @@ source:
   - - Ev:Ev30:EV2-3B
   - - Ev:Ev33:EV1-4EX
   - - Ev:Ev34:EV1-8
+  - - Ev:Ev36:EV2-7
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1925,6 +1926,19 @@ skills:
             base: 36
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        호박을 던져 대상에게 <dmg elem="fire" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec> 증가 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="1" r /></sec> 감소 상태로 만듭니다.
+        적중 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 감소 효과를 해제</sec>합니다.
+      EN: |-
+        protection Bak throws to the target with <dmg elem="fire" /> damage and 2 rounds <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="2" r /></sec> increase / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="1" r /></sec> decrease inflicts.
+        Hit target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Damage Reduction removes the effect</sec>.
+      JP: |-
+        ハオブアクを ドオンジヨ 対象に<dmg elem="fire" />を与え、、 2ラウンドの間 <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="2" r /></sec> 増加 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="1" r /></sec> 減少 状態にします。
+        命中対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> ダメージ 減少 効果を 解除</sec>します。
+      TC: |-
+        Hobak 更多投擲 對目標 造成<dmg elem="fire" />，並 2回合內 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="2" r /></sec> 增加 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="1" r /></sec> 減少 使其進入狀態。
+        命中目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 傷害 減少 效果 解除</sec>。
   "2":
     key: "2"
     icon: TeamAtkDeBuff
@@ -2223,6 +2237,23 @@ skills:
             base: 7
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>를 감소시키며 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 적중 강화 효과를 해제</sec>합니다.
+        적중 대상은 해당 라운드 동안 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬을 사용하지 못합니다</sec>.
+        <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+      EN: |-
+        to the designated area <dmg elem="physics" /> damage and 2 rounds <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> decreases and <sec typ="buff"><buff typ="REMOVE_BUFF" /> Accuracy removes buffs</sec>.
+        Hit target each round <sec typ="buff"><buff typ="SEAL_SKILL" /> skill use do whether Mot</sec>.
+        <sec>At skill level 10, range increases.</sec>
+      JP: |-
+        指定範囲に<dmg elem="physics" />を与え、、 2ラウンドの間 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>を 減少させ、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 命中 強化効果を 解除</sec>します。
+        命中対象は 該当 ラウンド間 <sec typ="buff"><buff typ="SEAL_SKILL" /> スキルを スアヨンハアジイ ムオトします</sec>。
+        <sec>スキルレベル10で 範囲が増加します。</sec>
+      TC: |-
+        指定範圍於 造成<dmg elem="physics" />，並 2回合內 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> 使其減少，並 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 命中 強化效果 解除</sec>。
+        命中目標 該 回合內 <sec typ="buff"><buff typ="SEAL_SKILL" /> 技能 使用ha至 Mot</sec>。
+        <sec>技能等級10時 範圍增加。</sec>
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -2383,6 +2414,19 @@ skills:
             base: -0.285
             per: -0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 인접 바이오로이드들에게 마실 것을 줘 대상들의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>를 증가시키지만 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="3" r /></sec>가 감소합니다.
+        해당 효과들은 장비와 동일한 <sec typ="attr">기타 효과</sec>로 분류됩니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, gives drinks to adjacent Bioroids, increasing their <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec>, but decreasing <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="3" r /></sec>.
+        These effects are classified as <sec typ="attr">miscellaneous effects</sec>, the same category as equipment.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、隣接するバイオロイドに飲み物を渡し、対象の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="2" r /></sec>を増加させますが、<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="3" r /></sec>が減少します。
+        これらの効果は装備と同じ<sec typ="attr">その他効果</sec>に分類されます。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，給相鄰的生化人飲料，使目標的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="2" r /></sec>增加，但<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="3" r /></sec>降低。
+        這些效果被分類為與裝備相同的<sec typ="attr">其他效果</sec>。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -2697,6 +2741,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec>가 증가하며 <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec> 다음에 출현할 적을 확인할 수 있습니다.
+        <sec typ="cond"><buff typ="SCOUTING" /> 정찰</sec> 활성화 시, 해당 효과가 50% 추가 적용됩니다.
+        <equip uid="Sub_FortuneOrb" />를 장착하면 <sec typ="cond">라운드 개시 시</sec>, 자신과 주변 아군들의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>을(를) 올려줍니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> increases and <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> next to appearing next enemy can view.
+        <sec typ="cond"><buff typ="SCOUTING" /> Scouting</sec> activation when, the effect and 50% additionally applied.
+        <equip uid="Sub_FortuneOrb" /> equip if doing <sec typ="cond">At round start</sec>, self and nearby allies of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec>が 増加し、 <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 次に チウルハヨンできる 敵を 確認できます。
+        <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 有効化 時、 該当 効果が 50% 追加適用されます。
+        <equip uid="Sub_FortuneOrb" />を ジアンチアクハアなら <sec typ="cond">ラウンド開始時</sec>、 自身と 周辺 味方たちの <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>を 上昇させます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec> 增加，並 <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 下次於 出現可 敵人 可以確認。
+        <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 啟用 時， 該 效果 50% 額外套用。
+        <equip uid="Sub_FortuneOrb" /> 裝備ha若 <sec typ="cond">回合開始時</sec>， 自身與 周圍 我方們的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> 提高。
 dialogue:
   KR:
     "1":
@@ -2810,8 +2871,7 @@ dialogue:
         후훗, 사령관님께서 용기의 물약을
         많이 마시셨나보네요.
         그런 거 없어도… 사령관님이라면 괜찮은데…
-      Oath: 크리스마스 선물인가요? 그러면 저도 선물을 드려야겠네요. 사령관님은 올 한 해 착한 아이셨나요? 네? 아이가 아니라고요? 음… 그러면
-        착한 어른이셨나요? 착한 어른에게 산타가 키르케를 선물합니다. 평생 동안 소중히 아껴주세요. 아셨죠? 후후.
+      Oath: 크리스마스 선물인가요? 그러면 저도 선물을 드려야겠네요. 사령관님은 올 한 해 착한 아이셨나요? 네? 아이가 아니라고요? 음… 그러면 착한 어른이셨나요? 착한 어른에게 산타가 키르케를 선물합니다. 평생 동안 소중히 아껴주세요. 아셨죠? 후후.
       OathIdle_01: |-
         지역마다 다르지만 옛시대에는 9월에
         태어나는 아이들이 많았다고 해요.
@@ -3127,12 +3187,9 @@ dialogue:
       SPIdle_02_01: |-
         Then should we pick up
         where we left off?
-      Oath: >-
-        Commander, you look concerned. Haha. How about you stop thinking about
-        that for a second, and drink this with me?
-
+      Oath: |-
+        Commander, you look concerned. Haha. How about you stop thinking about that for a second, and drink this with me?
         This is the magic sap I prepared that will make us become one.
-
         Oh, if you also have sap, commander… Can you share a little with me? Just a little bit is enough…​
       OathIdle_01: |-
         Even if you don’t say it,
@@ -3216,10 +3273,8 @@ dialogue:
       SPIdle_02_01: |-
         Umm… it just felt like teasing… Kaboom! Can’t you just
         make it exciting like that?
-      Oath: >-
-        I was just an ordinary witch. I would drink liquor all alone where no
-        one was around.
-
+      Oath: |-
+        I was just an ordinary witch. I would drink liquor all alone where no one was around.
         But not anymore. I found the place I should be. Commander? How about… we talk over a glass of wine?
       OathIdle_01: |-
         One, two, good.
@@ -3243,10 +3298,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        I used to do nothing but drinking because I was lonely… But it’s good to
-        be with someone.
-
+      Idle_01_01: |-
+        I used to do nothing but drinking because I was lonely… But it’s good to be with someone.
         Do you know what I mean?​
       Idle_01_02: |-
         I had a drink~
@@ -3449,20 +3502,13 @@ skins:
   sid: null
   artist: Rorobomb
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -3477,25 +3523,27 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Circe_N
   skins:
     - sid: 1
       artist: Taesi
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 70
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - true
         - false
@@ -3512,24 +3560,26 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 5
         2dmodel_dam: 2DModel_PECS_Circe_NS1_Dam
     - sid: 2
       artist: WOW
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -3546,6 +3596,7 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_PECS_Circe_NS2
         2dmodel_dam: 2DModel_PECS_Circe_NS2_Dam
         consumableKey: Skin_PECS_Circe_2

@@ -546,6 +546,7 @@ source:
   - - Ev:Ev31:EV1-4
   - - Ev:Ev33:EV3-9
   - - Ev:Ev35:EV2-3
+  - - Ev:Ev37:EV2-2EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2516,6 +2517,31 @@ skills:
               level: "0"
             value: Char_BR_Harpy_N
             chance: 1
+    desc:
+      KR: |-
+        빔 포트를 발사하여 지정 범위에 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상이 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="cond">대상이 중장형인 경우</sec> 효과가 두 배로 증폭됩니다. (중첩 불가)
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+        <sec typ="cond">스쿼드 내 <char uid="BR_Harpy" />가 있을 경우</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">풀 버스트</sec> 스킬 협동 공격을 유도</sec>합니다.
+      EN: |-
+        beam Poteu fires to the designated area <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 2 rounds target <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> increases.
+        <sec typ="cond">target Heavy-typeif</sec> the effect is doubled amplification. (cannot stack)
+        <sec typ="cond">On critical hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken decrease removes the effect</sec>.
+        <sec typ="cond">in squad <char uid="BR_Harpy" /> if present</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Full Burst</sec> skill coordinated attack trigger</sec>.
+      JP: |-
+        ビーム プオトウを 発射して 指定範囲に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象が <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="0" r /></sec>を増加させます。
+        <sec typ="cond">対象が 重装型の場合</sec> 効果が2倍で 増幅されます。 (重複不可)
+        <sec typ="cond">クリティカル時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ 減少 効果を 解除</sec>します。
+        <sec typ="cond">スクワッド 内 <char uid="BR_Harpy" />が 存在する場合</sec>、 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">フルバースト</sec> スキル 協同攻撃を 誘導</sec>します。
+      TC: |-
+        光束 Poteu 發射並 指定範圍於 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="0" r /></sec>使其增加。
+        <sec typ="cond">目標 重裝型若為</sec> 效果變為2倍以 增幅。 (不可疊加)
+        <sec typ="cond">暴擊時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害 減少 效果 解除</sec>。
+        <sec typ="cond">小隊 內 <char uid="BR_Harpy" /> 存在時</sec>， <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">全火力爆發</sec> 技能 協同攻擊 誘發</sec>。
   "2":
     key: "2"
     icon: AirStrike
@@ -6636,6 +6662,23 @@ skills:
             base: 0.15
             per: 0.075
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고 <sec typ="dmg"><buff typ="REMOVE_BUFF" />  대 기동형 피해량 / 적중 증가 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="dmg"><buff typ="MOBILITY_DMG_DOWN" /> 대 기동형 피해량 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="8" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다. (중첩 불가)
+        <sec typ="cond">아군이 기동형만으로 구성되어 있을 경우</sec>, 해당 라운드 동안 지속 효과가 50% 증폭됩니다.
+      EN: |-
+        to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and <sec typ="dmg"><buff typ="REMOVE_BUFF" /> Anti-Mobile damage / Accuracy increase removes the effect</sec>.
+        <sec typ="cond">On hit</sec>, 2 rounds, target's <sec typ="dmg"><buff typ="MOBILITY_DMG_DOWN" /> Anti-Mobile damage <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="8" r /></sec> decreases and <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> inflicts. (cannot stack)
+        <sec typ="cond">allies Mobile-type only as composition becomes if present</sec>, each round continuous effect and increased by 50%.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、 <sec typ="dmg"><buff typ="REMOVE_BUFF" /> 対機動型ダメージ / 命中 増加 効果を 解除</sec>します。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象の <sec typ="dmg"><buff typ="MOBILITY_DMG_DOWN" /> 対機動型ダメージ <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="8" r /></sec>を 減少時クイし <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態にします。 (重複不可)
+        <sec typ="cond">味方が 機動型だけで 構成になり 存在する場合</sec>、 該当 ラウンド間 持続 効果が 50%増幅されます。
+      TC: |-
+        指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 <sec typ="dmg"><buff typ="REMOVE_BUFF" /> 對機動型傷害 / 命中 增加 效果 解除</sec>。
+        <sec typ="cond">命中時</sec>， 2回合內 目標的 <sec typ="dmg"><buff typ="MOBILITY_DMG_DOWN" /> 對機動型傷害 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="8" r /></sec> 減少時台並 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 使其進入狀態。 (不可疊加)
+        <sec typ="cond">我方 機動型僅以 組成變為 存在時</sec>， 該 回合內 持續 效果 增幅50%。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -7027,6 +7070,19 @@ skills:
             base: 53
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="1" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <cmt t="스카이 나이츠"><import name="SkyKnight" /></cmt> 소속 전투원의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="5" /></sec>를 증가시킵니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light damage <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy damage <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, within range <cmt t="Sky Knights"><import name="SkyKnight" /></cmt> affiliated combatant of <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="4" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="5" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="1" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 <cmt t="スカイナイツ"><import name="SkyKnight" /></cmt> 所属 戦闘員の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="5" /></sec>を増加させます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害 <val idx="1" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec>， 範圍內 <cmt t="天空騎士"><import name="SkyKnight" /></cmt> 所屬 戰鬥員的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="5" /></sec>使其增加。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -7407,6 +7463,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 1라운드 동안 자신은 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시 효과</sec>를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond">자신 외의 <cmt t="스카이 나이츠"><import name="SkyKnight" /></cmt> 소속 전투원이 있을 경우</sec>, <sec typ="note">간섭 대응 유닛</sec>의 효과 지속이 각각 1라운드씩 증가합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, 1 round self <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection effect and</sec> gains.
+        <sec typ="cond">At round start</sec>, 2 rounds own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="3" r /></sec> increases.
+        <sec typ="cond">self other than of <cmt t="Sky Knights"><import name="SkyKnight" /></cmt> affiliated combatant if present</sec>, <sec typ="note">between Seop anti Eung Yunit</sec> of effect and continuous respectively 1round each increases.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 1ラウンドの間 自身は <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視 効果</sec>を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、 2ラウンドの間 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が増加します。
+        <sec typ="cond">自身 外の <cmt t="スカイナイツ"><import name="SkyKnight" /></cmt> 所属 戦闘員が 存在する場合</sec>、 <sec typ="note">グアンスオプ ドエウン ユンイト</sec>の 効果 持続が それぞれ 1ラウンドッスイク 増加します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 1回合內 自身 <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化</sec> / <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護 效果</sec>獲得。
+        <sec typ="cond">回合開始時</sec>， 2回合內 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>增加。
+        <sec typ="cond">自身 外的 <cmt t="天空騎士"><import name="SkyKnight" /></cmt> 所屬 戰鬥員 存在時</sec>， <sec typ="note">Ganseop 對eung Yunit</sec>的 效果 持續 各自 1回合各 增加。
   "5":
     key: "5"
     icon: P.AWACS
@@ -7551,6 +7624,27 @@ skills:
             base: 0.1
             per: 0.05
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">지휘 통제</sec> 범위 내 기동형 아군에게 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 강제 이동 면역</sec> 효과를 부여합니다.
+        <sec typ="cond"><sec typ="note">대공 무력화</sec> 치명타 시</sec>, 해당 라운드 동안 대상의 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="10" slot="2" r inv /></sec>를 감소시킵니다.
+        <sec>효과는 <sec typ="note">대공 무력화</sec>의 스킬 레벨에 비례합니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="note">command Tong.</sec> within range Mobile-type to allies <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> forced same immunity</sec> grants the effect.
+        <sec typ="cond"><sec typ="note">anti-air neutralize</sec> On critical hit</sec>, each round target's <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="10" slot="2" r inv /></sec> decreases.
+        <sec>effect <sec typ="note">anti-air neutralize</sec> of skill level.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="note">指揮 トオンジエ</sec> 範囲内 機動型 味方に <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> グアンジエ がドオン 免疫</sec> 効果を付与します。
+        <sec typ="cond"><sec typ="note">ドエグオン ムウルヨクハワ</sec> クリティカル時</sec>、 該当 ラウンド間 対象の <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="10" slot="2" r inv /></sec>を減少させます。
+        <sec>効果は <sec typ="note">ドエグオン ムウルヨクハワ</sec>の スキル レベルに 比例します。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="0" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="note">指揮 Tongje</sec> 範圍內 機動型 我方給 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 強制 同 免疫</sec> 賦予效果。
+        <sec typ="cond"><sec typ="note">對防空 無ryeokhwa</sec> 暴擊時</sec>， 該 回合內 目標的 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="10" slot="2" r inv /></sec>使其減少。
+        <sec>效果 <sec typ="note">對防空 無ryeokhwa</sec>的 技能 等級於 成比例。</sec>
 dialogue:
   KR:
     "1":
@@ -7740,8 +7834,7 @@ dialogue:
         흣… 이 모습을 소대원들이
         보기라도 하면… 아, 안돼요
         사령관님….
-      Oath: 사령관님이 이렇게 적극적인 분이셨을 줄은… 저도 미처 몰랐습니다. ... 그런데 사령관님? 어째서 저처럼 깐깐하고, 고지식한 군인에게
-        관심을 가지셨는지. 여쭤봐도 될까요? ... 그런가요? 알겠습니다… 앞으로도 사령관님의 기대에 부응하도록 최선을 다하겠어요.
+      Oath: 사령관님이 이렇게 적극적인 분이셨을 줄은… 저도 미처 몰랐습니다. ... 그런데 사령관님? 어째서 저처럼 깐깐하고, 고지식한 군인에게 관심을 가지셨는지. 여쭤봐도 될까요? ... 그런가요? 알겠습니다… 앞으로도 사령관님의 기대에 부응하도록 최선을 다하겠어요.
       OathIdle_01: |-
         사령관님? 소대원들의 계도는 끝내
         두었으니, 이제 걱정하실 것 없어요.
@@ -7868,9 +7961,8 @@ dialogue:
       Idle_03_01: 盗聴器は無力化させておきましたが、古典的な方法だけはこの私でも…その…、ドアの外から盗み聞くような方法には対応のしようがありません。
       Idle_04_01: 私と司令官様の関係が、小隊員たちにバレてしまったのではないかと少し心配です…
       SPIdle_02_01: ふぅ…こんな姿を小隊員たちに見られたりしたら……だ、だめです。司令官様…
-      Oath: >-
+      Oath: |-
         司令官様がこんなに積極的なお方だったとは…今までわかりませんでした。…ところで司令官様？どうして私のような気難しくてただ真面目なだけの軍人に興味をお持ちになられたのでしょうか。
-
         理由を聞かせていただけますか？…そうだったんですか。わかりました…これからも司令官様のご期待に沿えるよう最善を尽くしてまいります。
       OathIdle_01: 司令官様？隊員たちならしっかりと教育しておきましたので、もう心配ございません。
       MVP: ""
@@ -7922,18 +8014,15 @@ dialogue:
       Idle_01_02: |-
         Look forward to it, Producer. We-
         All of us are putting in a lot of effort.
-      Idle_01_03: >-
-        I have to do my best to get the best result… I’m sorry, but will you
-        join me in my practice,
-
+      Idle_01_03: |-
+        I have to do my best to get the best result… I’m sorry, but will you join me in my practice,
         Producer?
       SPIdle_01_01: I-I’ll take it as a mistake.
       Idle_02_01: |-
         Momo…? She’s waiting for the concert?
         Is that true? You’re not lying, are you?!
         Everyone. Let’s get in full swing from the first song!
-      Idle_03_01: … May I lean on your shoulder? I wanted to rest… Thanks to you, it
-        was successful… Yes. Good work, Producer.
+      Idle_03_01: … May I lean on your shoulder? I wanted to rest… Thanks to you, it was successful… Yes. Good work, Producer.
       Idle_04_01: |-
         I know my taste and personality are…
         kind of a nuisance… But you still understood me.
@@ -7942,16 +8031,12 @@ dialogue:
         … Producer?
         You do know concert is about to begin, right?
         … Gosh. Okay, but… you know, right?
-      Oath: >-
-        This wasn’t part of the rehearsal… Is this a really happening? At least
-        it happened after the live performance.
-
+      Oath: |-
+        This wasn’t part of the rehearsal… Is this a really happening? At least it happened after the live performance.
         If it happened during it, it would’ve been an accident. Okay. As an idol, I’ll make your wish come true.
-
         Just remember that you can’t terminate it any time.​
-      OathIdle_01: >-
+      OathIdle_01: |-
         A private idol?
-
         I’m very strict with my contract terms… But if it’s you, I’m okay with everything.
       MVP: ""
     "2":
@@ -7972,12 +8057,9 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        I found a floaty that I like, but it took me a long time to find a
-        swimsuit that looks good on me.
-
+      Idle_01_01: |-
+        I found a floaty that I like, but it took me a long time to find a swimsuit that looks good on me.
         Since it’s a vacation with everyone… 
-
         and because you're joining the summer trip.
       Idle_01_02: |-
         I wanted to get Momo’s signature on the Magical Momo
@@ -8020,12 +8102,9 @@ dialogue:
         swimsuit? Well, either way, it doesn't really matter.
         I actually kinda like you
         being aggressive like this.
-      Oath: >-
-        I didn't wear this swimsuit just to get your attention. But it'd be a
-        lie if I told you I didn't want that.
-
+      Oath: |-
+        I didn't wear this swimsuit just to get your attention. But it'd be a lie if I told you I didn't want that.
         Anyway, it's been quite a while since we had a vacation. I'll never be able to forget this day.
-
         Everything is more than great, but what makes it even better is that I got to know how you feel.
       OathIdle_01: |-
         It's been a while since we had a summer vacation.
@@ -8086,9 +8165,7 @@ dialogue:
         Oh… If the members
         see us… N-no.
         Commander…
-      Oath: I didn’t know you could be so active. … But Commander? Why would you be
-        interested in a strict, hardhead solider like me? May I ask you that? …
-        Is that so? Okay… I’ll do my best to live up to your expectation.
+      Oath: I didn’t know you could be so active. … But Commander? Why would you be interested in a strict, hardhead solider like me? May I ask you that? … Is that so? Okay… I’ll do my best to live up to your expectation.
       OathIdle_01: |-
         Commander? I finished
         guiding the members. Don’t worry.
@@ -8337,20 +8414,13 @@ skins:
   sid: null
   artist: BUMCHa
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -8365,25 +8435,20 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_Hraesvelgr_N
   skins:
     - sid: 1
       artist: BUMCHa
       price: 219
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 28
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
       anim:
         - false
         - false
@@ -8400,24 +8465,22 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_Hraesvelgr_NS1
     - sid: 2
       artist: BUMCHa
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -8434,5 +8497,6 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_Hraesvelgr_NS2
         consumableKey: Skin_BR_Hraesvelgr_2

@@ -595,6 +595,8 @@ source:
   - - Ev:Ev33:EV2-1EX
     - Ev:Ev33:EV4-3EX
   - - Ev:Ev35:EV1-2EX
+  - - Ev:Ev37:EV1-3EX
+  - - Ev:Ev39:EV1-2EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2716,6 +2718,19 @@ skills:
             base: -0.5
             per: -0.025
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 물대포를 발사해 <dmg elem="ice" />를 주고, 2라운드 동안 대상을 <sec typ="note">침수</sec> 상태로 만듭니다.
+        <sec typ="note">침수</sec> : <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="5" r /></sec>
+      EN: |-
+        to the designated area water cannon fires <dmg elem="ice" /> damage and 2 rounds target <sec typ="note">Flooded</sec> inflicts.
+        <sec typ="note">Flooded</sec>: <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="4" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="5" r /></sec>
+      JP: |-
+        指定範囲に ムウルドエプオを 発射して<dmg elem="ice" />を与え、、 2ラウンドの間 対象を <sec typ="note">浸水</sec> 状態にします。
+        <sec typ="note">浸水</sec>：<sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="5" r /></sec>
+      TC: |-
+        指定範圍於 無l帶炮 發射 造成<dmg elem="ice" />，並 2回合內 目標 <sec typ="note">浸水</sec> 使其進入狀態。
+        <sec typ="note">浸水</sec>：<sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="5" r /></sec>
   "2":
     key: "2"
     icon: MeleeAttack
@@ -4183,6 +4198,19 @@ skills:
             base: 0
             per: 0
             chance: 0.5
+    desc:
+      KR: |-
+        지정 대상에게 묘목을 심어 <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="1" r /></sec>를 낮춥니다.
+        대상이 <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 상태면 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>가 증가하는 상태로 만들며, <sec typ="chance"><chance idx="4" /> 확률</sec>로 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태가 됩니다.
+      EN: |-
+        designated to the target sapling Sim uh <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="1" r /></sec>reduces.
+        target <sec typ="cond"><buff typ="DEF_DOWN" /> Defense decrease</sec> if in the state <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec> increase to the state makes and, <sec typ="chance"><chance idx="4" /> chance</sec> as <sec typ="buff"><buff typ="STUN" /> Stunned</sec> state.
+      JP: |-
+        指定対象に ムヨムオクを スイムオ<dmg elem="physics" />を与え、、 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="1" r /></sec>を低下させます。
+        対象が <sec typ="cond"><buff typ="DEF_DOWN" /> 防御力 減少</sec> 状態なら <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="3" r /></sec>が 増加する 状態に し、 <sec typ="chance"><chance idx="4" /> 確率</sec>で <sec typ="buff"><buff typ="STUN" /> 行動不可</sec> 状態になります。
+      TC: |-
+        指定目標給 Myomok 心eo 造成<dmg elem="physics" />，並 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="1" r /></sec>降低。
+        目標 <sec typ="cond"><buff typ="DEF_DOWN" /> 防禦力 減少</sec> 若處於狀態 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="3" r /></sec> 增加 成為狀態 使其，並 <sec typ="chance"><chance idx="4" /> 機率</sec>以 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 變為狀態。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -4323,6 +4351,11 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, 자신과 같은 행의 뒤에 배치된 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>를 증가시키며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec>를 감소시킵니다.
+      EN: <sec typ="cond">At round start</sec>, self and same row of behind to placed allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="2" r inv /></sec> decreases.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 自身と 同じ行の ドウィに 配置された 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>を 増加させ、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="2" r inv /></sec>を減少させます。
+      TC: <sec typ="cond">回合開始時</sec>， 自身與 同一列的 後於 配置於 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> 使其增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="2" r inv /></sec>使其減少。
   "4":
     key: "4"
     icon: P.SelfDefBuff
@@ -4694,6 +4727,11 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>를 증가시키며, <char uid="PECS_DarkElf" />의 패시브 효과를 받는 대상과 <char uid="PECS_HighElven" />, <char uid="PECS_Sekhmet" />, <char uid="PECS_DarkElf" />의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec>를 증가시키고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="6" r inv /></sec>를 감소시킵니다.
+      EN: <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> increases and <char uid="PECS_DarkElf" /> of pass when b effect and receives targetand <char uid="PECS_HighElven" />, <char uid="PECS_Sekhmet" />, <char uid="PECS_DarkElf" /> of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="5" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="6" r inv /></sec> decreases.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>を 増加させ、、 <char uid="PECS_DarkElf" />の パッシブ 効果を 受ける 対象と <char uid="PECS_HighElven" />、 <char uid="PECS_Sekhmet" />、 <char uid="PECS_DarkElf" />の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="5" r /></sec>を 増加時クイし <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="6" r inv /></sec>を減少させます。
+      TC: <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> 使其增加，並 <char uid="PECS_DarkElf" />的 被動 效果 受到 目標與 <char uid="PECS_HighElven" />， <char uid="PECS_Sekhmet" />， <char uid="PECS_DarkElf" />的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="5" r /></sec> 增加時台並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="6" r inv /></sec>使其減少。
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -4918,6 +4956,19 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="3" r /></sec> 효과를 얻습니다.
+        <sec typ="cond">스킬 사용 시</sec>, 행동력 증가 효과를 받지 않는 모든 적의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec>를 2라운드 동안 증가시킵니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Buff Removal Resistance <val idx="3" r /></sec> effect and gains.
+        <sec typ="cond">When using the skill</sec>, Action Speed increase effect and not affected not all enemies of <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="2" r /></sec> 2 rounds increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抵抗 <val idx="3" r /></sec> 効果を オトます。
+        <sec typ="cond">スキル使用時</sec>、 行動力 増加 効果を ブアトジイ アは すべての敵の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="2" r /></sec>を 2ラウンドの間 増加させます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抗性 <val idx="3" r /></sec> 效果 獲得。
+        <sec typ="cond">使用技能時</sec>， 行動力 增加 效果 受到 不 所有敵人的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="2" r /></sec> 2回合內 增加。
 dialogue:
   KR:
     "2":
@@ -5250,12 +5301,9 @@ dialogue:
         If you do that so suddenly, I get surprised,
         Commander… We have time,
         slow down…
-      Oath: >-
-        Now that I’m up here, I’m getting a little nervous… Huh? Wh-what are you
-        talking about?
-
+      Oath: |-
+        Now that I’m up here, I’m getting a little nervous… Huh? Wh-what are you talking about?
         You know, I knew that you will choose me. So
-
         … Ha! … Mm… Can you do that… one more time…? I’m talking about the kiss…
       OathIdle_01: |-
         What? You mean about the pledge? Well,
@@ -5305,9 +5353,8 @@ dialogue:
       SPIdle_02_01: |-
         Oh! What are you
         thinking…
-      Oath: >-
+      Oath: |-
         W-wait! That's too fast! Are you serious? Really?…?
-
         … Then from now on,… even if I pester you, you'll be TOTALLY OK with that. Deal? He he.
       OathIdle_01: |-
         I pushed you around?
@@ -5495,20 +5542,13 @@ skins:
   sid: null
   artist: SNOWBALL
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5523,25 +5563,25 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_ElvenForestmaker_N
   skins:
     - sid: 1
       artist: SNOWBALL
       price: 91
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 66
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+        G:
+          - _
+          - D
+          - S
       anim:
         - true
         - false
@@ -5558,25 +5598,23 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 5
         2dmodel_dam: 2DModel_PECS_ElvenForestmaker_NS1_Dam
         consumableKey: Skin_PECS_ElvenForestmaker_1
     - sid: 2
       artist: SNOWBALL
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 12
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -5593,4 +5631,5 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_PECS_ElvenForestmaker_NS2

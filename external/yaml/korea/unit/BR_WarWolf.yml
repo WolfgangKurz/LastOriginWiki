@@ -759,6 +759,8 @@ source:
     - Ev:Ev35:EV2-3
     - Ev:Ev35:EV2-4
   - - Ev:Ev36:EV1-1EX
+    - Ev:Ev36:EV2-3EX
+  - - Ev:Ev37:EV2-4EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2731,6 +2733,19 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        총검 사격으로 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">대상이 <buff typ="EVADE_DOWN" /> 회피 / <buff typ="DEF_DOWN" /> 방어력 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        Deals <dmg elem="physics" /> to a single target with bayonet fire.
+        <sec typ="cond">If the target is under <buff typ="EVADE_DOWN" /> Evasion / <buff typ="DEF_DOWN" /> DEF Down</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        銃剣射撃で単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">対象が<buff typ="EVADE_DOWN" />回避 / <buff typ="DEF_DOWN" />防御力減少状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
+      TC: |-
+        以刺刀射擊對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">若目標處於<buff typ="EVADE_DOWN" />迴避 / <buff typ="DEF_DOWN" />防禦力降低狀態</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -4618,6 +4633,19 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 돌격해 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        Charges a single target to deal <dmg elem="physics" />.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        単一対象へ突撃し、<dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
+      TC: |-
+        突擊單一目標並造成<dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4857,6 +4885,19 @@ skills:
             base: 0.15
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">자신이 <buff typ="SUPPORT_ATTACK" /> 공격 지원을 받고 있을 경우</sec>, 상기 효과가 두 배로 증폭됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical Rate <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="2" r /></sec> increases.
+        <sec typ="cond">If self is receiving <buff typ="SUPPORT_ATTACK" /> attack support</sec>, the above effects are doubled.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="2" r /></sec>が増加します。
+        <sec typ="cond">自身が<buff typ="SUPPORT_ATTACK" />攻撃支援を受けている場合</sec>、上記効果が2倍に増幅されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="2" r /></sec>增加。
+        <sec typ="cond">若自身正受到<buff typ="SUPPORT_ATTACK" />攻擊支援</sec>，上述效果增幅為兩倍。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -5496,6 +5537,59 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피</sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec>이(가) 증가합니다.
+        <box t="전열">
+        	<sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>
+        	<sec typ="cond">공격 적중 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="1" slot="1" r /></sec>가 증가합니다. <sec>해당 효과는 액티브 스킬 레벨에 비례합니다.</sec>
+        	<sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="4" /></sec>가 증가합니다.
+        </box>
+        <box t="중열">
+        	<sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="7" r /></sec>
+        </box>
+        <box t="후열">
+        	<sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="10" r /></sec>
+        </box>
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy</sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion</sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power</sec> increases.
+        <box t="Front Row">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="2" r /></sec>
+        <sec typ="cond">On attack hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="1" slot="1" r /></sec> increases. <sec>This effect is proportional to active skill level.</sec>
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="Action_Number_Change_Up" /> maximum action count <val idx="4" /></sec> increases.
+        </box>
+        <box t="Middle Row">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="7" r /></sec>
+        </box>
+        <box t="Back Row">
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="9" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="10" r /></sec>
+        </box>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ACCURACY_UP" />命中</sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避</sec> / <sec typ="buff"><buff typ="AP_UP" />行動力</sec>が増加します。
+        <box t="前列">
+        <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>
+        <sec typ="cond">攻撃命中時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="1" slot="1" r /></sec>が増加します。<sec>この効果はアクティブスキルレベルに比例します。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動回数<val idx="4" /></sec>が増加します。
+        </box>
+        <box t="中列">
+        <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>
+        </box>
+        <box t="後列">
+        <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="9" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="10" r /></sec>
+        </box>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ACCURACY_UP" />命中</sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避</sec> / <sec typ="buff"><buff typ="AP_UP" />行動力</sec>增加。
+        <box t="前列">
+        <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>
+        <sec typ="cond">攻擊命中時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="1" slot="1" r /></sec>增加。<sec>該效果與主動技能等級成比例。</sec>
+        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動次數<val idx="4" /></sec>增加。
+        </box>
+        <box t="中列">
+        <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>
+        </box>
+        <box t="後列">
+        <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="9" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="10" r /></sec>
+        </box>
   "5":
     key: "5"
     icon: P.Beam
@@ -6247,6 +6341,39 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="0" r /></sec>가 증가합니다.
+        <box t="대기 시">
+        	자신을 제외한 <sec typ="important">아군과 적</sec>을 다음 라운드 동안 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만듭니다.
+        	자신은 <sec typ="dmg">보호 무시</sec>가 활성화되고 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수가 <val idx="5" signless />(으)로 증가</sec>하며, <sec typ="note">총검 사격</sec>의 소모 AP가 3 감소합니다.
+        	<sec typ="cond">6회째의 액티브 스킬</sec>은 <sec typ="buff"><buff typ="PhyATK_UP" /> 피해량 증가</sec> 효과가 두 배로 증폭됩니다.
+        	상기 효과는 <sec>전투 당 1회</sec> 사용할 수 있으며, <sec>효과 종료 시 모든 AP를 소모합니다.</sec>
+        </box>
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="0" r /></sec> increases.
+        <box t="When Waiting">
+        Inflicts <sec typ="important">allies and enemies</sec> other than self with <sec typ="buff"><buff typ="STUN" /> Stun</sec> for the next round.
+        Self activates <sec typ="dmg">Ignore Protection</sec>, <sec typ="buff"><buff typ="Action_Number_Change_Up" /> maximum action count increases to <val idx="5" signless /></sec>, and the AP cost of <sec typ="note">Bayonet Fire</sec> decreases by 3.
+        The <sec typ="cond">6th active skill</sec> has its <sec typ="buff"><buff typ="PhyATK_UP" /> damage increase</sec> effect doubled.
+        The above effects can be used <sec>once per battle</sec>, and <sec>all AP is consumed when the effects end.</sec>
+        </box>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="SKILL_UP" />スキル威力<val idx="0" r /></sec>が増加します。
+        <box t="待機時">
+        自身を除く<sec typ="important">味方と敵</sec>を次のラウンドの間、<sec typ="buff"><buff typ="STUN" />行動不可</sec>状態にします。
+        自身は<sec typ="dmg">保護無視</sec>が有効になり、<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動回数が<val idx="5" signless />に増加</sec>し、<sec typ="note">銃剣射撃</sec>の消費APが3減少します。
+        <sec typ="cond">6回目のアクティブスキル</sec>は<sec typ="buff"><buff typ="PhyATK_UP" />ダメージ増加</sec>効果が2倍に増幅されます。
+        上記効果は<sec>戦闘につき1回</sec>使用でき、<sec>効果終了時にすべてのAPを消費します。</sec>
+        </box>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="SKILL_UP" />技能威力<val idx="0" r /></sec>增加。
+        <box t="待機時">
+        使除自身外的<sec typ="important">友軍與敵人</sec>在下一回合期間處於<sec typ="buff"><buff typ="STUN" />無法行動</sec>狀態。
+        自身啟用<sec typ="dmg">無視保護</sec>，<sec typ="buff"><buff typ="Action_Number_Change_Up" />最大行動次數增加至<val idx="5" signless /></sec>，且<sec typ="note">刺刀射擊</sec>的消耗AP減少3。
+        <sec typ="cond">第6次主動技能</sec>的<sec typ="buff"><buff typ="PhyATK_UP" />傷害量增加</sec>效果增幅為兩倍。
+        上述效果可<sec>每場戰鬥使用1次</sec>，且<sec>效果結束時消耗所有AP。</sec>
+        </box>
   F1:
     key: F1
     icon: ARShot
@@ -8335,6 +8462,19 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        총검 사격으로 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">대상이 <buff typ="EVADE_DOWN" /> 회피 / <buff typ="DEF_DOWN" /> 방어력 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to a single target with bayonet fire.
+        <sec typ="cond">If the target has <buff typ="EVADE_DOWN" /> reduced Evasion / <buff typ="DEF_DOWN" /> reduced DEF</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        銃剣射撃で単一対象へ<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">対象が<buff typ="EVADE_DOWN" />回避 / <buff typ="DEF_DOWN" />防御力減少状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+      TC: |-
+        以刺刀射擊對單一目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        <sec typ="cond">若目標處於<buff typ="EVADE_DOWN" />迴避 / <buff typ="DEF_DOWN" />防禦力降低狀態</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   F2:
     key: F2
     icon: AssaultAttack
@@ -10263,6 +10403,19 @@ skills:
             base: 0.4
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 돌격해 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        Charges at a single target and deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On Critical</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        単一対象へ突撃し、<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+      TC: |-
+        突擊單一目標，造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -10310,8 +10463,7 @@ dialogue:
       SPIdle_02_01: |-
         사령관의 대포, 청소가 좀 필요할 것 같은데... 
         내가 깨끗하게 닦아줄까?
-      Oath: 하핫, 이거... 내 해적으로서의 커리어 하이를 찍어버렸네. 사령관의 마음을 훔치다니 말이야. 전설 속의 해적들도 나만큼 엄청난 걸
-        훔치지는 못했을 걸? 뭐... 그래도 해적한테 잡혔다고 해서 너무 걱정하진 마, 사령관. 나도 사령관한테 홀딱 빠졌거든.
+      Oath: 하핫, 이거... 내 해적으로서의 커리어 하이를 찍어버렸네. 사령관의 마음을 훔치다니 말이야. 전설 속의 해적들도 나만큼 엄청난 걸 훔치지는 못했을 걸? 뭐... 그래도 해적한테 잡혔다고 해서 너무 걱정하진 마, 사령관. 나도 사령관한테 홀딱 빠졌거든.
       OathIdle_01: |-
         사령관이랑 럼주 그리고 금화.
         날 미소 짓게 만드는 세 가지야.
@@ -10430,9 +10582,7 @@ dialogue:
         상당히 겁이 없는데, 사령관…?
         그럼 어디까지 대담해질 수 있는지…
         한 번 볼까?
-      Oath: 경파라는 걸 간단히 말하자면... 절대 타협하지 않는 자세야. 그 어떤 일이 일어나더라도 절대 포기하지 않고, 꼭 자기가 목표로 한
-        것을 이루고 말지. 사령관과의 사랑도 마찬가지야. 우리 앞에 어떤 고난이 놓여 있더라도, 이 워울프님께서 멋지게 박살내 줄 테니
-        걱정하지 마, 사령관!
+      Oath: 경파라는 걸 간단히 말하자면... 절대 타협하지 않는 자세야. 그 어떤 일이 일어나더라도 절대 포기하지 않고, 꼭 자기가 목표로 한 것을 이루고 말지. 사령관과의 사랑도 마찬가지야. 우리 앞에 어떤 고난이 놓여 있더라도, 이 워울프님께서 멋지게 박살내 줄 테니 걱정하지 마, 사령관!
       OathIdle_01: |-
         불량배는 규칙 같은 거 안 지켜.
         그러니까... 시도때도 없이 야한 짓을 해도
@@ -10578,9 +10728,7 @@ dialogue:
       SPIdle_02_01: |-
         [미번역]사령관의 대포, 청소가 좀 필요할 것 같은데... 
         내가 깨끗하게 닦아줄까?
-      Oath: "[미번역]하핫, 이거... 내 해적으로서의 커리어 하이를 찍어버렸네. 사령관의 마음을 훔치다니 말이야. 전설 속의 해적들도 나만큼
-        엄청난 걸 훔치지는 못했을 걸? 뭐... 그래도 해적한테 잡혔다고 해서 너무 걱정하진 마, 사령관. 나도 사령관한테 홀딱
-        빠졌거든."
+      Oath: "[미번역]하핫, 이거... 내 해적으로서의 커리어 하이를 찍어버렸네. 사령관의 마음을 훔치다니 말이야. 전설 속의 해적들도 나만큼 엄청난 걸 훔치지는 못했을 걸? 뭐... 그래도 해적한테 잡혔다고 해서 너무 걱정하진 마, 사령관. 나도 사령관한테 홀딱 빠졌거든."
       OathIdle_01: |-
         [미번역]사령관이랑 럼주 그리고 금화.
         날 미소 짓게 만드는 세 가지야.
@@ -10766,18 +10914,15 @@ dialogue:
       Idle_01_01: |-
         Since I’m wearing something like this, maybe I should sing a song!
         Haha, it’s a cheerful song, so don’t worry about it.​
-      Idle_01_02: >-
+      Idle_01_02: |-
         It is said that long ago,
-
         this costume did not raise anyone’s suspicion. There are stories of people
-
         robbing banks dressed like this!​
       Idle_01_03: |-
         Huh? It’s forbidden to dress like this
         and drink alcohol and smoke?
         C’mon, The Light is not that petty.​
-      SPIdle_01_01: It is said that those who lay their hands on the clergy with ill
-        intention are punished…​
+      SPIdle_01_01: It is said that those who lay their hands on the clergy with ill intention are punished…​
       Idle_02_01: |-
         the reason why I’m wearing this clothing? Mmm… Because
         I watched a movie where the protagonist wears it. Wanna watch together?
@@ -10797,20 +10942,14 @@ dialogue:
         Are you doing this because I’m wearing this outfit,
         or because you want me?
         I really wouldn’t mind it…if it’s the latter…​
-      Oath: >-
-        Yeah, I’m dressed like a nun, but I don’t believe in God. I’m just
-        imitating what I saw in a movie…
-
+      Oath: |-
+        Yeah, I’m dressed like a nun, but I don’t believe in God. I’m just imitating what I saw in a movie…
         But now, I’ve found someone to whom I can devote myself forever. I, War Wolf, in good health and in good faith,
-
         swear to offer my body, mind, and soul to Commander. Just you watch, “My Lord.” Fufu.
-      OathIdle_01: >-
+      OathIdle_01: |-
         So sayeth War Wolf, O’ Commander, the light is long,
-
         lonely, and is void of physical warmth, how must I proceed? O’ Commander,
-
         War Wolf longs for thy comfort amid her cries.
-
         Your follower is calling. Answer it.​
       MVP: ""
     "3":
@@ -10891,12 +11030,9 @@ dialogue:
       SPIdle_02_01: |-
         *Sighs*… you can’t hold it? Should we
         go… somewhere quiet?
-      Oath: >-
-        What…? Commander? Now?… You're not joking… But am I supposed to answer
-        now? 
-
+      Oath: |-
+        What…? Commander? Now?… You're not joking… But am I supposed to answer now? 
         … Well… Of course I like you, Commander. Thank you for being with me always. From this out,
-
         let's be a bit more honest to each other. Since now… we have a special relationship.
       OathIdle_01: |-
         If I knew I’d end up like this…
@@ -11155,20 +11291,13 @@ skins:
   sid: null
   artist: Rorobomb
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -11183,25 +11312,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_WarWolf_N
   skins:
     - sid: 1
       artist: Rorobomb
       price: 66
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 14
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - true
         - false
@@ -11218,24 +11343,20 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_BR_WarWolf_1
     - sid: 2
       artist: Rorobomb
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - false
         - false
@@ -11252,25 +11373,27 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_WarWolf_NS2
         consumableKey: Skin_BR_WarWolf_2
     - sid: 3
       artist: Axoo
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -11287,6 +11410,7 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_WarWolf_NS3
         2dmodel_dam: 2DModel_BR_WarWolf_NS3_Dam
         consumableKey: Skin_BR_WarWolf_3

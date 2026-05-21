@@ -587,6 +587,7 @@ source:
   - - Ev:Ev34:EV1-3
   - - Ev:Ev35:EV2-3
   - - Ev:Ev36:EV1-2EX
+  - - Ev:Ev39:EV1-1EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2040,6 +2041,19 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        범위 내 대상에게 <dmg elem="lightning" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만듭니다.
+      EN: |-
+        within range to the target with <dmg elem="lightning" />.
+        <sec typ="cond">On hit</sec>, 2 rounds, target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> decreases and <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> inflicts.
+      JP: |-
+        範囲内 対象に<dmg elem="lightning" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>を 減少時クイし <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態にします。
+      TC: |-
+        範圍內 對目標 造成<dmg elem="lightning" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec> 減少時台並 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 使其進入狀態。
   "2":
     key: "2"
     icon: WideLightning
@@ -3787,6 +3801,23 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 주고 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 전기 저항 증가 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="3" r /></sec>를 감소시킵니다.
+        <sec typ="cond"><buff typ="SNARE" /> 대상이 이동 불가</sec> 상태인 경우, <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        to a single target <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> damage and <sec typ="buff"><buff typ="REMOVE_BUFF" /> Lightning Resistance increase removes the effect</sec>.
+        <sec typ="cond">On hit</sec>, 2 rounds, target's <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="3" r /></sec> decreases.
+        <sec typ="cond"><buff typ="SNARE" /> target Immobilized</sec> if in the state, <sec typ="dmg"><buff typ="LightningATK_UP" /> damage <val idx="4" r /></sec> increases.
+      JP: |-
+        単一対象へ <sec typ="attr">保護無視</sec><dmg elem="lightning" />を与え、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 電気耐性 増加 効果を 解除</sec>します。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象の <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="3" r /></sec>を減少させます。
+        <sec typ="cond"><buff typ="SNARE" /> 対象が 移動不可</sec> 状態の場合、 <sec typ="dmg"><buff typ="LightningATK_UP" /> ダメージ量 <val idx="4" r /></sec>が増加します。
+      TC: |-
+        單一目標給 <sec typ="attr">無視保護</sec> 造成<dmg elem="lightning" />，並 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 電擊抗性 增加 效果 解除</sec>。
+        <sec typ="cond">命中時</sec>， 2回合內 目標的 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="3" r /></sec>使其減少。
+        <sec typ="cond"><buff typ="SNARE" /> 目標 無法移動</sec> 若為狀態， <sec typ="dmg"><buff typ="LightningATK_UP" /> 傷害量 <val idx="4" r /></sec>增加。
   "3":
     key: "3"
     icon: P.DefCounter
@@ -4051,6 +4082,27 @@ skills:
             base: 0.35
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">공격 받을 시</sec>, <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 위력으로 반격</sec>합니다.
+        <sec typ="cond">반격 시</sec>, 2라운드 동안 <sec typ="note">치아라!</sec> 효과가 추가로 적용됩니다. (최대 3중첩)
+        자신의 공격은 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상의 HP가 낮을 수록 피해량 <val idx="5" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="1" r /></sec> increases.
+        <sec typ="cond">When attacked</sec>, <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> power as Counterattack</sec>.
+        <sec typ="cond">When counterattacking</sec>, 2 rounds <sec typ="note">value Ara!</sec> effect and additionally is applied. (up to 3stack)
+        own attack <sec typ="dmg"><buff typ="DamageAmp_Opp" /> target's HP low as damage <val idx="5" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">攻撃を受ける時</sec>、 <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 威力で 反撃</sec>します。
+        <sec typ="cond">反撃時</sec>、 2ラウンドの間 <sec typ="note">チイアルア!</sec> 効果が 追加で 適用されます。 (最大 3重複)
+        自身の 攻撃は <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 対象の HPが ンアトを 少ないほど ダメージ量 <val idx="5" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="1" r /></sec>增加。
+        <sec typ="cond">受到攻擊時</sec>， <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 威力以 反擊</sec>。
+        <sec typ="cond">反擊時</sec>， 2回合內 <sec typ="note">值ara!</sec> 效果 額外 套用。 (最大 3疊加)
+        自身的 攻擊 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 目標的 HP 降低 數越 傷害量 <val idx="5" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -4158,8 +4210,6 @@ skills:
                     - Char_AGS_Aeda_N
                     - Char_PECS_CoCoWhiteShell_N
                     - Char_PECS_Spartoia_N
-                    - Char_PECS_LemonadeEpsilon_N
-                    - Char_PECS_Stinger_N
                     - Char_PECS_Ireina_N
                 - false
               body:
@@ -4337,6 +4387,27 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 기동형 또는 <sec typ="note">오비탈 와쳐</sec> 소속 전투원의 공격을 지원합니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격 / 공격 지원 시</sec>, 3라운드 동안 상기 효과의 대상이 되는 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec>를 증가시킵니다. (최대 10중첩)
+        <sec typ="cond">라운드 개시 시</sec> 자신이 <sec typ="cond"><buff typ="DEF_Char" /> 지정 보호를 받고 있을 경우</sec>, 자신의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="5" r /></sec>가 증가합니다.
+        <sec typ="note">오비탈 와쳐</sec> : <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+      EN: |-
+        <sec typ="cond">At round start</sec>, Mobile-type or <sec typ="note">Orbital Watcher</sec> affiliated combatant of attack supports.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> follow-up attack / Attack Support when</sec>, 3 rounds above effect and of target becomes allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec> increases. (up to 10stack)
+        <sec typ="cond">At round start</sec> self <sec typ="cond"><buff typ="DEF_Char" /> Designated Protection receiving if present</sec>, own <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="5" r /></sec> increases.
+        <sec typ="note">Orbital Watcher</sec>: <char uid="AGS_Aeda" />, <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_Stinger" />, <char uid="PECS_Spartoia" />, <char uid="PECS_Hussar" />, <char uid="PECS_LemonadeEpsilon" />
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 機動型 または <sec typ="note">オービタルウォッチャー</sec> 所属 戦闘員の 攻撃を 支援します。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃 / 攻撃支援 時</sec>、 3ラウンドの間 上記 効果の 対象が ドウェは 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec>を増加させます。 (最大 10重複)
+        <sec typ="cond">ラウンド開始時</sec> 自身が <sec typ="cond"><buff typ="DEF_Char" /> 指定保護を 受けて 存在する場合</sec>、 自身の <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="5" r /></sec>が増加します。
+        <sec typ="note">オービタルウォッチャー</sec>：<char uid="AGS_Aeda" />、 <char uid="PECS_CoCoWhiteShell" />、 <char uid="PECS_Stinger" />、 <char uid="PECS_Spartoia" />、 <char uid="PECS_Hussar" />、 <char uid="PECS_LemonadeEpsilon" />
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 機動型 或 <sec typ="note">軌道觀測者</sec> 所屬 戰鬥員的 攻擊 支援。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊 / 攻擊支援 時</sec>， 3回合內 上述 效果的 目標 變為 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec>使其增加。 (最大 10疊加)
+        <sec typ="cond">回合開始時</sec> 自身 <sec typ="cond"><buff typ="DEF_Char" /> 指定保護 受到 存在時</sec>， 自身的 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="5" r /></sec>增加。
+        <sec typ="note">軌道觀測者</sec>：<char uid="AGS_Aeda" />， <char uid="PECS_CoCoWhiteShell" />， <char uid="PECS_Stinger" />， <char uid="PECS_Spartoia" />， <char uid="PECS_Hussar" />， <char uid="PECS_LemonadeEpsilon" />
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -4431,8 +4502,6 @@ skills:
                     - Char_AGS_Aeda_N
                     - Char_PECS_CoCoWhiteShell_N
                     - Char_PECS_Spartoia_N
-                    - Char_PECS_LemonadeEpsilon_N
-                    - Char_PECS_Stinger_N
                     - Char_PECS_Ireina_N
                 - false
               body:
@@ -5158,6 +5227,23 @@ skills:
             base: -0.25
             per: -0.025
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 기동형 또는 <sec typ="note">오비탈 와쳐</sec> 소속 전투원의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 기동형 아군 수에 비례하여 적 전체의 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="4" r /></sec>를 감소시킵니다.
+        <sec typ="cond">기동형 적의 수보다 기동형 아군 수가 많을 경우</sec>, <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 감소 효과가 50% 증폭</sec>됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, Mobile-type or <sec typ="note">Orbital Watcher</sec> affiliated combatant of <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, Mobile-type all enemies' <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="4" r /></sec> decreases.
+        <sec typ="cond">Mobile-type enemy's number than Mobile-type number of allies many case</sec>, <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance decrease effect and increased by 50%</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 機動型 または <sec typ="note">オービタルウォッチャー</sec> 所属 戦闘員の <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ <val idx="0" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、 機動型 味方 数に比例して 敵全体の <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="4" r /></sec>を減少させます。
+        <sec typ="cond">機動型 敵の 数より 機動型 味方数が ムアを 場合</sec>、 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 減少 効果が 50%増幅</sec>されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 機動型 或 <sec typ="note">軌道觀測者</sec> 所屬 戰鬥員的 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害 <val idx="0" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec>， 機動型 我方 依數量成比例 全體敵人的 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="4" r /></sec>使其減少。
+        <sec typ="cond">機動型 敵人的 數比 機動型 我方數量 Manh 情況</sec>， <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 減少 效果 增幅50%</sec>。
 dialogue:
   KR:
     "1":
@@ -5278,8 +5364,7 @@ dialogue:
         말 돌릴려고 그러는 거 내 모를 줄 아나?
         시, 싫다는 건 아니고...
         ……조, 조금만이다?
-      Oath: 좋은 걸 주신다고요? 바이크!? 아, 아니구나 반지… 반지!? 진짜가? 싫냐고? 싫기는! 내 좋아하는 거 안 보이나? 바이크 뭉티기로
-        줘도 반지 하나보다 안 기쁠 거다. ……그래도 한 대 정도는 있어도 기쁠 것 같은데… 헤헤.
+      Oath: 좋은 걸 주신다고요? 바이크!? 아, 아니구나 반지… 반지!? 진짜가? 싫냐고? 싫기는! 내 좋아하는 거 안 보이나? 바이크 뭉티기로 줘도 반지 하나보다 안 기쁠 거다. ……그래도 한 대 정도는 있어도 기쁠 것 같은데… 헤헤.
       OathIdle_01: |-
         알고 있다. 오빠야가 내 걱정해가지고 계속
         안 된다 카는 거. 그래도 나는 포기 안 한다.
@@ -5461,8 +5546,7 @@ dialogue:
         [미번역]말 돌릴려고 그러는 거 내 모를 줄 아나?
         시, 싫다는 건 아니고...
         ……조, 조금만이다?
-      Oath: "[미번역]좋은 걸 주신다고요? 바이크!? 아, 아니구나 반지… 반지!? 진짜가? 싫냐고? 싫기는! 내 좋아하는 거 안 보이나?
-        바이크 뭉티기로 줘도 반지 하나보다 안 기쁠 거다. ……그래도 한 대 정도는 있어도 기쁠 것 같은데… 헤헤."
+      Oath: "[미번역]좋은 걸 주신다고요? 바이크!? 아, 아니구나 반지… 반지!? 진짜가? 싫냐고? 싫기는! 내 좋아하는 거 안 보이나? 바이크 뭉티기로 줘도 반지 하나보다 안 기쁠 거다. ……그래도 한 대 정도는 있어도 기쁠 것 같은데… 헤헤."
       OathIdle_01: |-
         [미번역]알고 있다. 오빠야가 내 걱정해가지고 계속
         안 된다 카는 거. 그래도 나는 포기 안 한다.
@@ -5540,31 +5624,22 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        I heard that the Bunny Girl not only means the subjects’ loyalty but
-        also is a high-class costume only for the elites,
-
+      Idle_01_01: |-
+        I heard that the Bunny Girl not only means the subjects’ loyalty but also is a high-class costume only for the elites,
         And also… Commander, like is the best… Huh? No?!​
-      Idle_01_02: >-
-        Matey said he likes this costume… Then, if I wear this, I can also do
-        this and that… Ugh…! I used to be not this promiscuous,
-
+      Idle_01_02: |-
+        Matey said he likes this costume… Then, if I wear this, I can also do this and that… Ugh…! I used to be not this promiscuous,
         why am I… Huh?!
-
         Commander, when did you…?
-      Idle_01_03: >-
-        The makeup’s well done… The costume is perfect… It’s a rabbit costume,
-        so I will
-
+      Idle_01_03: |-
+        The makeup’s well done… The costume is perfect… It’s a rabbit costume, so I will
         have little baby rabbits with Matey… Hehe. You’re such an idiot.
       SPIdle_01_01: |-
         Noooo!
         I’ll give it away if I have a run in my stockings…
-      Idle_02_01: >-
+      Idle_02_01: |-
         Stop laughing! I really thought it was the other meaning!
-
         Fine, I’ll change right now… W-why do you say I’m cute… Do you really think I’m cute?
-
         Well then… I should keep it on.
       Idle_03_01: |-
         I dressed up properly this time.
@@ -5572,21 +5647,15 @@ dialogue:
         The next is… W-wait!
         I left something. I’ll come back later!
         It was such a rare opportunity… You idiot…
-      Idle_04_01: >-
-        No one’s going to take me now… To show Matey such an embarrassing sight…
-        I’m finished…
-
+      Idle_04_01: |-
+        No one’s going to take me now… To show Matey such an embarrassing sight… I’m finished…
         *Sniffles*… Take the responsibility? Are you serious…? Hmmm… W-well, that’s a different story then.
-
         And… I’m not that cheeky as I look. Got it…?
       SPIdle_02_01: |-
         You see… You said you’ll take care of me.
         So… you can take a little more initiative…
-      Oath: >-
-        Commander… I mean, Matey… Are you serious? You always tease me to say
-        blueberry smoothie… And then suddenly compliment me on my clothes…
-        You’re on my mind ever since… Fine.
-
+      Oath: |-
+        Commander… I mean, Matey… Are you serious? You always tease me to say blueberry smoothie… And then suddenly compliment me on my clothes… You’re on my mind ever since… Fine.
         You said you’d make me happy. I’ll make you happy, too.
       OathIdle_01: |-
         Matey, Matey! You’re all I got.
@@ -5659,11 +5728,9 @@ dialogue:
       SPIdle_01_01: |-
         W-wh-what the heck-
         … What are you doing?
-      Idle_02_01: >-
+      Idle_02_01: |-
         Commander, what are you looking at? ……!
-
         W-where did you get my battle records?
-
         W-well, if I get heated up during battles… I can’t help myself going wild… Ha ha…
       Idle_03_01: |-
         Why? Never seen a bioroid speaking in dialect?
@@ -5679,11 +5746,7 @@ dialogue:
         So… it d, did exist.
         I thought you were making it up…
         Ahhhh… Maybe something like this?
-      Oath: Commander, do you know why I tried so hard to talk normally? Because I’m
-        different. I didn’t want to seem like the outcast… Although you did
-        tease me sometimes, you encouraged me to be comfortable around you. So…
-        I’m going to call you Matey, from now on. Yeah. I like this better.
-        Matey, don’t you have a special nickname for me…?
+      Oath: Commander, do you know why I tried so hard to talk normally? Because I’m different. I didn’t want to seem like the outcast… Although you did tease me sometimes, you encouraged me to be comfortable around you. So… I’m going to call you Matey, from now on. Yeah. I like this better. Matey, don’t you have a special nickname for me…?
       OathIdle_01: |-
         Matey, you promised you’ll take me to an amusement park.
         Then I’ll have to fight harder.
@@ -5714,8 +5777,7 @@ dialogue:
         Matey, call my nickname already… Hehe. What? Am I not embarrassed?
         W-was this something embarrassing?
         I-I told you I don’t know stuff like that…
-      Idle_01_03: You know. I’m really happy to be with you… Is that so? T-that’s…
-        embarrassing. If you keep doing that… Ugh… O, Matey… I really like you.
+      Idle_01_03: You know. I’m really happy to be with you… Is that so? T-that’s… embarrassing. If you keep doing that… Ugh… O, Matey… I really like you.
       SPIdle_01_01: Mmm… What is this… It’s strange, stop…
       MVP: ""
   TC:
@@ -5918,20 +5980,13 @@ skins:
   sid: null
   artist: BUMCHa
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5946,25 +6001,20 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Hussar_N
   skins:
     - sid: 1
       artist: BUMCHa
       price: 114
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
       anim:
         - false
         - false
@@ -5981,25 +6031,20 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_PECS_Hussar_NS1
         consumableKey: Skin_PECS_Hussar_1
     - sid: 2
       artist: Axoo
       price: 147
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
       anim:
         - false
         - false
@@ -6016,6 +6061,7 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_PECS_Hussar_NS2
         2dmodel_dam: 2DModel_PECS_Hussar_NS2_Dam
         consumableKey: Skin_PECS_Hussar_2

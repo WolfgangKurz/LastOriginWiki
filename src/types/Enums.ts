@@ -965,6 +965,9 @@ export enum FACETYPE {
 	AROUSE,
 	ELIPSIS,
 	FRONT,
+	FOREPLAY,
+	NYAH,
+	EXPECTATION,
 }
 
 /** 가챠(유산) 타입 */

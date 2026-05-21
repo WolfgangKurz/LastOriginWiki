@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useEffect } from "preact/hooks";
-import { route } from "preact-router";
+import { useLocation } from "preact-iso";
 
 import { World } from "@/types/DB/Map";
 
@@ -8,7 +8,7 @@ import { useLocale } from "@/libs/Locale";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import { useDBData } from "@/libs/Loader";
+import { assertDBData, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
 import WorldItem from "../components/WorldItem";
@@ -20,6 +20,7 @@ interface WORLDViewProps {
 }
 
 const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
+	const location = useLocation();
 	const [loc] = useLocale();
 	const imgExt = ImageExtension();
 
@@ -35,7 +36,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 	}, [wid]);
 
 	const MapDB = useDBData<World>(`map/${wid}`);
-	if (!MapDB) return <></>;
+	if (!assertDBData(MapDB)) return <></>;
 
 	const Worlds = Object.keys(MapDB);
 	const evPost = wid === "Ev14" ? "a" : "";
@@ -43,7 +44,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 	return <div class="worlds-world text-start">
 		<div class="row">
 			<div class="col-auto">
-				<button class="btn btn-dark" onClick={ (): void => void (route("/worlds")) }>
+				<button class="btn btn-dark" onClick={ () => location.route("/worlds") }>
 					<Icons.ArrowLeft class="me-1" />
 					<Locale k="WORLDS_BACK_TO_WORLDS" />
 				</button>
@@ -58,7 +59,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 			: <></>
 		}
 
-		<WorldItem wid={ wid } imageless center>
+		<WorldItem wid={ wid } imageless>
 			<div class="mt-3 row row-cols-1 row-cols-lg-2 row-cols-xl-3 justify-content-center">
 				{ Worlds.map((world, i) => <div class="col">
 					<div class="card worlds-world text-center mb-2">
@@ -78,13 +79,19 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 									</div>
 
 									<div class="btn-group mt-2">
-										<button class="btn btn-warning" onClick={ (): void => void (route(`/worlds/${wid}/${world}`)) }>
+										<button
+											class="btn btn-warning"
+											onClick={ () => location.route(`/worlds/${wid}/${world}`) }
+										>
 											<Icons.Compass class="me-1" />
 											<span class="d-inline-block">
 												<Locale k="WORLDS_WORLD_MAP" />
 											</span>
 										</button>
-										<button class="btn btn-primary" onClick={ (): void => void (route(`/worlds/${wid}/${world}/drop`)) }>
+										<button
+											class="btn btn-primary"
+											onClick={ () => location.route(`/worlds/${wid}/${world}/drop`) }
+										>
 											<Icons.Table class="me-2" />
 											<span class="d-inline-block">
 												<Locale k="WORLDS_DROP_TABLE" />

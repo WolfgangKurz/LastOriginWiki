@@ -65,4 +65,5 @@ export interface IWStage {
 
 	reward: string;
 	rankCriteria: number;
+	anomaly: string;
 }

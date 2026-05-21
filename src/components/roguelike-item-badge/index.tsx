@@ -1,5 +1,4 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 
 import RoguelikeItem from "@/types/DB/Roguelike.Item";
 
@@ -48,7 +47,7 @@ const RoguelikeItemBadge: FunctionalComponent<RoguelikeItemBadgeProps> = (props)
 				</div>
 			</div>
 
-			<Link href="#" class="stretched-link" onClick={ (e): void => {
+			<a href="#" class="stretched-link" onClick={ (e): void => {
 				e.preventDefault();
 				display.set(true);
 			} } />

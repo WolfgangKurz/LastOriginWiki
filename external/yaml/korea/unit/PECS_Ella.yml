@@ -1031,6 +1031,11 @@ skills:
             base: -0.17
             per: -0.02
             chance: 1
+    desc:
+      KR: 범위 내의 적에게 <dmg elem="physics" />를 입히고 피격된 적의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>를 감소시킵니다.
+      EN: within range to the enemy <dmg elem="physics" /> deals and hit enemy's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> decreases.
+      JP: 範囲内の 敵に<dmg elem="physics" />を 与えし 被弾された 敵の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>を減少させます。
+      TC: 範圍內的 敵人給 <dmg elem="physics" /> 造成並 被擊已 敵人的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="0" r /></sec>使其減少。
   "2":
     key: "2"
     icon: SatelliteBeam
@@ -1200,6 +1205,11 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: 아군 전체의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>하고 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 모든 속성 저항 <val idx="0" r /></sec> 버프를 증가시키며 <sec typ="note">천사의 포옹</sec> 버프를 부여합니다.
+      EN: all allies of <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec> and <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> all Elemental Resistances <val idx="0" r /></sec> buff increases and <sec typ="note">Angel's Embrace</sec> buff grants.
+      JP: 味方全体の <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>し、 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 全属性耐性 <val idx="0" r /></sec> バフを 増加させ、 <sec typ="note">天使の抱擁</sec> バフを付与します。
+      TC: 全體我方的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>並 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 所有屬性抗性 <val idx="0" r /></sec> 增益 使其增加，並 <sec typ="note">天使的擁抱</sec> 增益賦予。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -1528,6 +1538,31 @@ skills:
             base: 0.21
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        전투 시작 시 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec>가 상승하고 <sec typ="cond">피격 시</sec> <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="3" r /></sec> 증가 효과를 받으며 최대 3중첩됩니다.
+        전투 시작 시 자신에게 3라운드에 걸쳐 점차 위력이 차감되는 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 효과를 부여합니다.
+        1 라운드 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /> 감소</sec>
+        2 라운드 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="5" r inv /> 감소</sec>
+        3 라운드 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="6" r inv /> 감소</sec>
+      EN: |-
+        At battle start own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> rise and <sec typ="cond">When hit</sec> <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="3" r /></sec> increase effect and receives as Myeo up to 3stack.
+        At battle start self 3round to Geolchyeo gradually power kick Gam becomes <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease</sec> grants the effect.
+        1 round: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="4" r inv /> decrease</sec>
+        2 round: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="5" r inv /> decrease</sec>
+        3 round: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="6" r inv /> decrease</sec>
+      JP: |-
+        戦闘開始時 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec>が スアンスウンし、 <sec typ="cond">被弾時</sec> <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="3" r /></sec> 増加 効果を ブアトウし 最大 3重複されます。
+        戦闘開始時 自身に 3ラウンドに グオルチヨ ジオムチア 威力が チアグアムドウェは <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少</sec> 効果を付与します。
+        1 ラウンド：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="4" r inv /> 減少</sec>
+        2 ラウンド：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="5" r inv /> 減少</sec>
+        3 ラウンド：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="6" r inv /> 減少</sec>
+      TC: |-
+        戰鬥開始時 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> 上升並 <sec typ="cond">被擊時</sec> <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="3" r /></sec> 增加 效果 接受eu並 最大 3疊加。
+        戰鬥開始時 自身給 3回合於 Geolchyeo 解除omcha 威力 扣除doe <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少</sec> 賦予效果。
+        1 回合：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="4" r inv /> 減少</sec>
+        2 回合：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="5" r inv /> 減少</sec>
+        3 回合：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="6" r inv /> 減少</sec>
   "4":
     key: "4"
     icon: P.TeamDefDeBuff
@@ -1835,6 +1870,27 @@ skills:
             base: -0.33
             per: -0.03
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시 적군 전체에게 <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 모든 속성 저항 <val idx="0" r /></sec> 감소를 부여합니다.
+        <equip uid="Sub_AntiCold" /> 장비 착용 시 <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="4" r /></sec>가 크게 감소하는 대신 <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 전기/화염 저항 감소</sec> 효과는 발동하지 않습니다.
+        <equip uid="Sub_AntiFire" /> 장비 착용 시 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="3" r /></sec>가 크게 감소하는 대신 <sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 전기/냉기 저항 감소</sec> 효과는 발동하지 않습니다.
+        <equip uid="Sub_AntiLightning" /> 장비 착용 시 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="5" r /></sec>가 크게 감소하는 대신 <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> 화염/냉기 저항 감소</sec> 효과는 발동하지 않습니다.
+      EN: |-
+        At round start all enemiesto <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> all Elemental Resistances <val idx="0" r /></sec> decrease grants.
+        <equip uid="Sub_AntiCold" /> equipment equipped when <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="4" r /></sec> greatly decrease instead <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> Lightning/Fire Resistance decrease</sec> effect does not trigger.
+        <equip uid="Sub_AntiFire" /> equipment equipped when <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="3" r /></sec> greatly decrease instead <sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> Lightning/Ice Resistance decrease</sec> effect does not trigger.
+        <equip uid="Sub_AntiLightning" /> equipment equipped when <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="5" r /></sec> greatly decrease instead <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> Fire/Ice Resistance decrease</sec> effect does not trigger.
+      JP: |-
+        ラウンド開始時 敵全体に <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 全属性耐性 <val idx="0" r /></sec> 減少を付与します。
+        <equip uid="Sub_AntiCold" /> 装備 チアクヨン 時 <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="4" r /></sec>が クウく 減少する 代わりに <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 電気/火炎耐性 減少</sec> 効果は 発動しません。
+        <equip uid="Sub_AntiFire" /> 装備 チアクヨン 時 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="3" r /></sec>が クウく 減少する 代わりに <sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 電気/冷気耐性 減少</sec> 効果は 発動しません。
+        <equip uid="Sub_AntiLightning" /> 装備 チアクヨン 時 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="5" r /></sec>が クウく 減少する 代わりに <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> 火炎/冷気耐性 減少</sec> 効果は 発動しません。
+      TC: |-
+        回合開始時 全體敵方給 <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 所有屬性抗性 <val idx="0" r /></sec> 減少賦予。
+        <equip uid="Sub_AntiCold" /> 裝備 穿戴 時 <sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="4" r /></sec> 大 減少 改為 <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 電擊/火焰抗性 減少</sec> 效果 不會發動。
+        <equip uid="Sub_AntiFire" /> 裝備 穿戴 時 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="3" r /></sec> 大 減少 改為 <sec typ="buff"><buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 電擊/冰冷抗性 減少</sec> 效果 不會發動。
+        <equip uid="Sub_AntiLightning" /> 裝備 穿戴 時 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="5" r /></sec> 大 減少 改為 <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> 火焰/冰冷抗性 減少</sec> 效果 不會發動。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -2183,6 +2239,19 @@ skills:
             base: 0.26
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        전투 시작 시 3라운드 동안 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>가 증가합니다.
+        라운드 개시 시 <sec typ="note">천사의 포옹</sec> 버프가 적용된 아군은 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="9" r /></sec>가 증가합니다.
+      EN: |-
+        At battle start 3 rounds own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> increases.
+        At round start <sec typ="note">Angel's Embrace</sec> buff enemy applied allies <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="7" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="9" r /></sec> increases.
+      JP: |-
+        戦闘開始時 3ラウンドの間 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>が増加します。
+        ラウンド開始時 <sec typ="note">天使の抱擁</sec> バフが 適用された 味方は <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="9" r /></sec>が増加します。
+      TC: |-
+        戰鬥開始時 3回合內 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>增加。
+        回合開始時 <sec typ="note">天使的擁抱</sec> 增益 套用已 我方 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="9" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -2290,10 +2359,8 @@ dialogue:
         하읏… 아, 아뇨. 괜찮아요.
         사령관님이 절 아껴주신다는게 느껴지니까…
         하나도 힘들지 않아요.
-      Oath: >-
-        사령관님… 이걸 저에게 주신다는 건, 그만큼 제가 도움이 됐다는 뜻이겠죠? 앞으로도- 네? 아닌가요…? 그러면… 그, 그냥 옆에
-        있어주는 것만으로도 좋다니, 그런건…
-
+      Oath: |-
+        사령관님… 이걸 저에게 주신다는 건, 그만큼 제가 도움이 됐다는 뜻이겠죠? 앞으로도- 네? 아닌가요…? 그러면… 그, 그냥 옆에 있어주는 것만으로도 좋다니, 그런건…
         사령관님, 앞으로도 엘라는 사령관님을… 아니, 사령관님 곁에 평생 있을게요.
       OathIdle_01: |-
         사령관님, 진짜 이렇게 안겨만 있어도 되나요…?
@@ -2445,11 +2512,9 @@ dialogue:
         The loser has to grant the winner’s wish?
         I have to be serious about this.
         Commander. Pick a card.
-      Idle_01_03: >-
+      Idle_01_03: |-
         Ehehe, it’s what I wear when I rest.
-
         Uniforms are tight. They’re uncomfortable… Do you want animal pajamas, too?
-
         You should show it to Saetti and Empress later.
       SPIdle_01_01: This one’s important, Commander.
       Idle_02_01: |-
@@ -2468,10 +2533,7 @@ dialogue:
       SPIdle_02_01: |-
         Doing something I like in a comfortable space,
         with someone I like… I guess I can’t help feeling this way, right?
-      Oath: Oh… a ring… Are you proposing to me?… I-I’m just happy to just play
-        boardgames with you, commander… I was so excited I didn’t know what to
-        do… but now I can’t think straight because I’m so happy… Of course, I’ll
-        be with you forever, commander. Ahaha.
+      Oath: Oh… a ring… Are you proposing to me?… I-I’m just happy to just play boardgames with you, commander… I was so excited I didn’t know what to do… but now I can’t think straight because I’m so happy… Of course, I’ll be with you forever, commander. Ahaha.
       OathIdle_01: |-
         I used to enjoy playing board games
         because I couldn’t go out, but now- N-nothing.
@@ -2515,14 +2577,11 @@ dialogue:
       Idle_03_01: |-
         Commander. Umm, tonight… Yes!
         I’ll go get changed into pajamas.
-      Idle_04_01: A-aren’t I heavy? N-no. I don’t feel uncomfortable… It’s cozy. I
-        want to stay like this forever.
+      Idle_04_01: A-aren’t I heavy? N-no. I don’t feel uncomfortable… It’s cozy. I want to stay like this forever.
       SPIdle_02_01: |-
         Ah… N-no… It's fine.
         I can feel that you care for me… It's not tough at all.
-      Oath: Commander… You're giving this to me because I've been helpful, right? From
-        now on- Huh? No…? Then… J-just staying beside you is meaningful enough?
-        That's… Commander, Ella will stay with you from now on… No, forever.
+      Oath: Commander… You're giving this to me because I've been helpful, right? From now on- Huh? No…? Then… J-just staying beside you is meaningful enough? That's… Commander, Ella will stay with you from now on… No, forever.
       OathIdle_01: |-
         Commander, can I really just stay like this?
         If you’re uncomfortable…… Yes.
@@ -2714,20 +2773,15 @@ skins:
   sid: null
   artist: SIMA
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+    G:
+      - _
   anim:
     - false
     - false
@@ -2742,6 +2796,7 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Ella_N
   skins:
     - sid: 1
@@ -2749,20 +2804,21 @@ skins:
         Jam
         SIMA
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -2784,5 +2840,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_PECS_Ella_NS1
         2dmodel_dam: 2DModel_PECS_Ella_NS1_Dam

@@ -3,7 +3,7 @@ import { FunctionalComponent } from "preact";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
 import { useLocale } from "@/libs/Locale";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
@@ -23,7 +23,7 @@ export const Equip: FunctionalComponent<EquipProps> = (props) => {
 	const [loc] = useLocale();
 
 	const db = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
-	if (!db) return <></>;
+	if (!assertDBData(db)) return <></>;
 
 	const equips = db.filter(x => x.fullKey === props.uid || x.fullKey.startsWith(props.uid));
 	const equip = equips && equips[equips.length - 1];

@@ -539,6 +539,7 @@ source:
   - - Ev:Ev24:EV2-1Ex
   - - Ev:Ev27:EV2-2Ex
   - - Ev:Ev33:EV3-3EX
+  - - Ev:Ev38:EV1-3EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1224,6 +1225,19 @@ skills:
             base: 0.3
             per: 0.04
             chance: 0
+    desc:
+      KR: |-
+        미사일을 난사해 지정 범위에 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="6" slot="4" r /></sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">대상이 중장형인 경우</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        missile fires rapidly to the designated area <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="6" slot="4" r /></sec> <dmg elem="physics" />.
+        <sec typ="cond">target Heavy-typeif</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        ミサイルを 乱射して 指定範囲に<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="6" slot="4" r /></sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">対象が 重装型の場合</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+      TC: |-
+        飛彈 掃射 指定範圍於 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="6" slot="4" r /></sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">目標 重裝型若為</sec> <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: AirStrike
@@ -2531,6 +2545,23 @@ skills:
               level: "0"
             value: Char_BR_NightAngel_N
             chance: 1
+    desc:
+      KR: |-
+        미사일 폭격으로 대상 지점에 <sec typ="attr">보호 무시</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="6" slot="4" r signless /></sec> <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 디버프를 가지고 있으면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">스쿼드에 <char uid="BR_NightAngel" />이 있다면</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">고공 폭격</sec> 협동 공격</sec>을 유도합니다.
+      EN: |-
+        missile by bombardment as target point to <sec typ="attr">Ignore Protection</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="6" slot="4" r signless /></sec> <dmg elem="physics" />.
+        target <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion decrease</sec> debuff and if present <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">squad <char uid="BR_NightAngel" /> if present</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">High-Altitude Bombing</sec> coordinated attack</sec> triggers.
+      JP: |-
+        ミサイル爆撃で 対象 地点に <sec typ="attr">保護無視</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="6" slot="4" r signless /></sec><dmg elem="physics" />を与えます。
+        対象が <sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避 減少</sec> デバフを 持って ある場合 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">スクワッドに <char uid="BR_NightAngel" />が 存在するなら</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">高空爆撃</sec> 協同攻撃</sec>を 誘導します。
+      TC: |-
+        以飛彈轟炸 目標 地點於 <sec typ="attr">無視保護</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="6" slot="4" r signless /></sec> 造成<dmg elem="physics" />。
+        目標 <sec typ="cond"><buff typ="MARKING" /> 標記</sec> / <sec typ="cond"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 迴避 減少</sec> 減益 持有 若有 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">小隊於 <char uid="BR_NightAngel" /> 若存在</sec> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">高空轟炸</sec> 協同攻擊</sec> 誘發。
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -2838,6 +2869,27 @@ skills:
             base: 0.1
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">중열</sec> 또는 <sec typ="cond">후열</sec>에 있는 경우, 1스킬 사용 후 <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec>이 증가하고, 2스킬 사용 후 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력</sec>이 증가합니다.
+        <sec typ="buff"><buff typ="AP_UP" /> 행동력</sec>은 <sec typ="cond">후열</sec>에 있을 때, <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력</sec>은 <sec typ="cond">중열</sec>에 있을 때 최대 수치로 적용되며, 반대의 경우 50%만 적용됩니다.
+        중열 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="5" r /></sec>
+        후열 : <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="6" r /></sec>
+      EN: |-
+        <sec typ="cond">middle row</sec> or <sec typ="cond">back row</sec> to if present, 1After using the skill <sec typ="buff"><buff typ="AP_UP" /> Action Speed</sec> increases and 2After using the skill <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power</sec> increases.
+        <sec typ="buff"><buff typ="AP_UP" /> Action Speed</sec> <sec typ="cond">back row</sec> to exists when, <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power</sec> <sec typ="cond">middle row</sec> to exists when up to value as is applied and, opposite of case 50%only is applied.
+        middle row: <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="5" r /></sec>
+        back row: <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="6" r /></sec>
+      JP: |-
+        <sec typ="cond">中列</sec> または <sec typ="cond">後列</sec>に ある 場合、 1スキル使用後 <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>が 増加し、 2スキル使用後 <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力</sec>が増加します。
+        <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec>は <sec typ="cond">後列</sec>に ある 時、 <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力</sec>は <sec typ="cond">中列</sec>に ある 時 最大 数値で 適用され、、 ブアンドエの 場合 50%だけ 適用されます。
+        中列：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="5" r /></sec>
+        後列：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="6" r /></sec>
+      TC: |-
+        <sec typ="cond">中排</sec> 或 <sec typ="cond">後排</sec>於 有 情況， 1使用技能後 <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec> 增加，並 2使用技能後 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力</sec>增加。
+        <sec typ="buff"><buff typ="AP_UP" /> 行動力</sec> <sec typ="cond">後排</sec>於 有 時， <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力</sec> <sec typ="cond">中排</sec>於 有 時 最大 數值以 套用，並 相反情況 50%僅 套用。
+        中排：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="5" r /></sec>
+        後排：<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="6" r /></sec>
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3117,6 +3169,19 @@ skills:
             base: 0.3
             per: 0.04
             chance: 1
+    desc:
+      KR: |-
+        언제나 우월감에 가득찬 상태라 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+        스쿼드에 <char uid="BR_NightAngel" />이 있으면 해당 효과가 3배 추가 적용됩니다.
+      EN: |-
+        always superiority complex to filled with state so <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increases.
+        squad <char uid="BR_NightAngel" /> if present the effect and 3 times additionally applied.
+      JP: |-
+        オンジエンア ウウォルグアムに がドウクチアン 状態ルア <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
+        スクワッドに <char uid="BR_NightAngel" />が ある場合 該当 効果が 3ブエ 追加適用されます。
+      TC: |-
+        總是 充滿優越感 狀態時 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
+        小隊於 <char uid="BR_NightAngel" /> 若有 該 效果 3倍 額外套用。
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -3304,6 +3369,19 @@ skills:
             base: -0.1
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 적 전체의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">스쿼드 내에 <char uid="BR_NightAngel" />이 있다면</sec> 적 전체의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="3" r /></sec>를 약화시킵니다.
+      EN: |-
+        <sec typ="cond">At round start</sec> all enemies of <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> decreases.
+        <sec typ="cond">in squad to <char uid="BR_NightAngel" /> if present</sec> all enemies of <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease <val idx="3" r /></sec> weaken causes.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 敵全体の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">スクワッド 内に <char uid="BR_NightAngel" />が 存在するなら</sec> 敵全体の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少 <val idx="3" r /></sec>を 弱化させます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec> 全體敵人的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec>使其減少。
+        <sec typ="cond">小隊 內於 <char uid="BR_NightAngel" /> 若存在</sec> 全體敵人的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少 <val idx="3" r /></sec> 弱化。
 dialogue:
   KR:
     "1":
@@ -3502,13 +3580,10 @@ dialogue:
       SPIdle_02_01: |-
         아... 저, 저기... 부끄러우니까...
         옷은 가급적 그대로, 부탁드려요...
-      Oath: >-
+      Oath: |-
         후후, 역시 사령관님도 저를 필요로 하시는 거군요? 군인으로서는 물론, 여성으로서도... 저는... 죄송해요.
-
         이런 때까지...​ ...맞아요. 저는 컴플렉스 덩어리에요. 군살 투성이인 몸도, 저조한 성과도... 떠올릴 때마다 스스로가 싫어져요.
-
         그리고 다른 분들이 그것 때문에 저를 싫어할까봐... 스스로가 더 미워져요. 그런데도 사령관님은... 괜찮다고, 저는 멋지다고 말해주셨죠.
-
         ...훌쩍, 그러니까, 힘 낼게요. 정말로 좋아하는 사령... 아니, 서방님께서 믿어주신 것처럼, 정말 멋진 사람이 되도록요.
       OathIdle_01: |-
         지금은 다른 분들의 인정보다도, 서방님의...
@@ -3602,8 +3677,7 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: 水着を着るチャンスをずっと窺っていました、やっと私にも運が回ってきたようです！いかがですか？司令官様。ドゥームブリンガーでこういう体型は私しかいませんよね！……
-        あ！ジニヤ―がいましたね……
+      Idle_01_01: 水着を着るチャンスをずっと窺っていました、やっと私にも運が回ってきたようです！いかがですか？司令官様。ドゥームブリンガーでこういう体型は私しかいませんよね！…… あ！ジニヤ―がいましたね……
       Idle_01_02: ダイエットはナイトエンジェルが詳しいのですが、実際はあまり参考になりません。理由ですか？司令官様もご存知じゃないですか。痩せてはならない部位が痩せてしまっているでしょう？あれじゃあ何の意味もありませんよ。
       Idle_01_03: 今回、自分との戦いがどれほど辛いものかよく分かりました。それはまるで苦難と逆境の中で咲き誇る、一輪の花の凄絶な一生のようなもの！大げさに聞こえるかもしれませんが、私がダイエットをして感じたことなのです。
       SPIdle_01_01: はい？何かされましたか？そんなことより、この水着、ちょっと小さくて胸が苦しいんです。今誰かに触られてもよく分からないと思います。
@@ -3695,11 +3769,9 @@ dialogue:
         Oh, Commander! Would you like to come in for a second?
         I’ll get you some food from the kitchen.
         *Snicker* What do you think?​
-      Idle_01_02: >-
+      Idle_01_02: |-
         Losing weight? That’s no biggie.
-
         All you have to do is cut down on snacks and sweets… Sweets… Could you leave me alone for just a moment?
-
         I think I just said something worth treating myself.​
       Idle_01_03: |-
         Am I not embarrassed? Not at all!
@@ -3714,30 +3786,22 @@ dialogue:
         *Snicker* Please enjoy. If there’s anything you need
         don’t hesitate to ask me. Everything’s on the house
         for you, Commander!​
-      Idle_03_01: >-
+      Idle_03_01: |-
         I’ve heard about its hype, but that is not the reason I’m wearing this.
-
         I’m wearing this to show off
-
         my body to you, Commander. What do you think? What’s your impression about my new look?
-
         Oh! I’ll slim down there as well…!​
       Idle_04_01: |-
         I should be able to do anything
         to become a woman befitting to Commander. Including losing weight.
         That’s not difficult at- Y-you surprised me!
         Stop whispering ‘You look so pretty today.’ in my ear…!​
-      SPIdle_02_01: >-
+      SPIdle_02_01: |-
         I-it’s already…! Everyone’s seen us 
-
         coming out of the building together. I better get ba- *Chuckles* You’re not gonna let me go?
-
         If I get fired, you have take care of me for all my life. Okay?​
-      Oath: >-
-        This took long enough. I don’t know how many detours we’ve made… Well,
-        but still, I was certain that today would come someday… Why? You told me
-        I could accomplish anything. So I knew what I wanted the most would
-
+      Oath: |-
+        This took long enough. I don’t know how many detours we’ve made… Well, but still, I was certain that today would come someday… Why? You told me I could accomplish anything. So I knew what I wanted the most would
         someday come true. What comes next is… I’ve only imagined about it, so I don’t really know the details… Would you let me know one by one?
       OathIdle_01: |-
         I used to be full of insecurities.
@@ -3788,15 +3852,10 @@ dialogue:
         by calling me fat. It seems that you prefer a body 
         like mine, but… your preference 
         hasn't changed to ones that are flat, has it?
-      Idle_03_01: >-
-        Ah, Commander! If you're tired, come lie next to me. The tube is soft
-        and cushy, so it'll be nice to rest on it. What's that? You've seen this
-        tube somewhere?
-
+      Idle_03_01: |-
+        Ah, Commander! If you're tired, come lie next to me. The tube is soft and cushy, so it'll be nice to rest on it. What's that? You've seen this tube somewhere?
         What? Is the wet stuff oil?
-
         Ah, no, it's my sweat…
-
         Ah, actually you're right, it's oil.
       Idle_04_01: |-
         What's the difference between a swimsuit and an undergarment?
@@ -3808,14 +3867,10 @@ dialogue:
         Wait… Did you really think I wouldn't know?
         I lied because I thought you'd get embarrassed…
         Ah! I yield. I yield. I lost, Commander.
-      Oath: >-
-        I was so busy trying to lose weight… I can't believe you gave me a ring…
-        It feels like I'm being rewarded for all my hard work.
-
+      Oath: |-
+        I was so busy trying to lose weight… I can't believe you gave me a ring… It feels like I'm being rewarded for all my hard work.
         Actually, there were so many times I wanted to give up because of all the things getting in the way of my diet… but I've decided.
-
         From now on, I'm going to turn every last one of my insecurities into something charming for you.
-
         Just you wait. I'm going to become the most attractive woman on the Orca.
       OathIdle_01: |-
         After trying my best, I realized that there’s
@@ -3843,15 +3898,11 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        Night Angel? Hoo hoo… I’m her older sister. Of course I’m better.
-        Although
-
+      Idle_01_01: |-
+        Night Angel? Hoo hoo… I’m her older sister. Of course I’m better. Although
         she won’t admit that herself.
-      Idle_01_02: >-
-        I said something I didn’t really mean today… I wasn’t going to… I
-        thought I felt annoyed- Oh. C-Commander?!
-
+      Idle_01_02: |-
+        I said something I didn’t really mean today… I wasn’t going to… I thought I felt annoyed- Oh. C-Commander?!
         *Chuckles* Is there something only I can do?
       Idle_01_03: |-
         It can’t be helped. There’s no other bioroid
@@ -3866,23 +3917,17 @@ dialogue:
         Banshee always listens to what I say.
         And Wraith tells me that she respects me. *Sighs*
         I hope Colonel could be like them.
-      Idle_03_01: >-
+      Idle_03_01: |-
         Oh, uh… I’m sorry. In this training,
-
         I made a mistake… You can hate me-
-
         What? … Yes. I’ll do better… next time… It’s okay to make mistakes… No one’s ever told me that…
-      Idle_04_01: >-
+      Idle_04_01: |-
         Um… Commander. I have something to… What? I-I didn’t say anything
-
         yet… Why are you telling me it’s okay?
-
         *Sniffles*… Yes. Then the beautiful and excellent bioroid… I’ll assist you.
       SPIdle_02_01: Oh, um… I’m embarrassed… P-please leave the clothes…
-      Oath: >-
-        Haha, you also need me. don’t you, commander? Indeed as a soldier, and
-        even as a woman… I’m… I’m sorry.
-
+      Oath: |-
+        Haha, you also need me. don’t you, commander? Indeed as a soldier, and even as a woman… I’m… I’m sorry.
         Even in a situation like this… I know. I’m very insecure. I don’t like myself every time I think about stuff like my chubby body and poor performance… And I don’t like myself even more when I think about other people might not like me because of that… But commander… you told me that it is okay and I’m great…*Sniffles* So, I’ll do my best. So that I become the great person that you saw in me, Comman… no, Dear Husband.
       OathIdle_01: |-
         These days, I prefer to hear "Good job" from you
@@ -4157,20 +4202,14 @@ skins:
   sid: null
   artist: Jam
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -4185,25 +4224,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_StratoAngel_N
   skins:
     - sid: 1
       artist: Jam
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -4226,25 +4263,23 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_StratoAngel_NS1
         consumableKey: Skin_BR_StratoAngel_1
     - sid: 2
       artist: D-loG
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -4261,5 +4296,6 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_StratoAngel_NS2
         consumableKey: Skin_BR_StratoAngel_2

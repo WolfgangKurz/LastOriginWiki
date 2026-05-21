@@ -2100,6 +2100,11 @@ skills:
               level: "0"
             value: Char_DS_KunoichiEnrai_N
             chance: 1
+    desc:
+      KR: 적에게 은밀하게 접근하여 <dmg elem="lightning" />를 주고, <sec typ="cond">치명타 시</sec> <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가하며 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 대 중장 피해량 <val idx="2" r /></sec>가 증가합니다.
+      EN: to the enemy push approaches <dmg elem="lightning" /> damage and <sec typ="cond">On critical hit</sec> <sec typ="dmg"><buff typ="LightningATK_UP" /> damage <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> anti Heavy damage <val idx="2" r /></sec> increases.
+      JP: 敵に はムイルするよう ジオプグウンして<dmg elem="lightning" />を与え、、 <sec typ="cond">クリティカル時</sec> <sec typ="dmg"><buff typ="LightningATK_UP" /> ダメージ量 <val idx="0" r /></sec>が 増加し、 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> ドエ 重装 ダメージ量 <val idx="2" r /></sec>が増加します。
+      TC: 敵人給 未l使 解除opgeun並 造成<dmg elem="lightning" />，並 <sec typ="cond">暴擊時</sec> <sec typ="dmg"><buff typ="LightningATK_UP" /> 傷害量 <val idx="0" r /></sec> 增加，並 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 對 重裝 傷害量 <val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: WideLightning
@@ -3647,6 +3652,19 @@ skills:
             base: 0.12
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 주고, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="2" r /></sec>를 감소시킵니다.
+        대상이 <sec typ="cond"><buff typ="FIRERES_DOWN" /> 화염 저항 감소</sec> / <sec typ="cond"><buff typ="ICERES_DOWN" /> 냉기 저항 감소</sec> 상태일 시 <sec typ="dmg"><buff typ="LightningATK_UP" /> 전기 속성 피해량 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> damage and target's <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="2" r /></sec> decreases.
+        target <sec typ="cond"><buff typ="FIRERES_DOWN" /> Fire Resistance decrease</sec> / <sec typ="cond"><buff typ="ICERES_DOWN" /> Ice Resistance decrease</sec> if in the state <sec typ="dmg"><buff typ="LightningATK_UP" /> Lightning elemental damage <val idx="4" r /></sec> increases.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="lightning" />を与え、、 対象の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="2" r /></sec>を減少させます。
+        対象が <sec typ="cond"><buff typ="FIRERES_DOWN" /> 火炎耐性 減少</sec> / <sec typ="cond"><buff typ="ICERES_DOWN" /> 冷気耐性 減少</sec> 状態イル 時 <sec typ="dmg"><buff typ="LightningATK_UP" /> 電気 属性 ダメージ量 <val idx="4" r /></sec>が増加します。
+      TC: |-
+        指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="lightning" />，並 目標的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="2" r /></sec>使其減少。
+        目標 <sec typ="cond"><buff typ="FIRERES_DOWN" /> 火焰抗性 減少</sec> / <sec typ="cond"><buff typ="ICERES_DOWN" /> 冰冷抗性 減少</sec> 狀態一 時 <sec typ="dmg"><buff typ="LightningATK_UP" /> 電擊 屬性 傷害量 <val idx="4" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -3904,6 +3922,11 @@ skills:
             base: 0.06
             per: 0.01
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, 자신과 지정 범위 아군의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec>가 증가하고, <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>가 중첩 증가합니다.
+      EN: <sec typ="cond">At round start</sec>, self and designated area allies' <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" r /></sec> increases and <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="5" r /></sec> stack increases.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 自身と 指定範囲 味方の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="4" r /></sec>が 増加し、 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec>が 重複 増加します。
+      TC: <sec typ="cond">回合開始時</sec>， 自身與 指定範圍 我方的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" r /></sec> 增加，並 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec> 疊加 增加。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -4138,6 +4161,11 @@ skills:
             base: 0.6
             per: 0.1
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="0" r /></sec>를 증가시키고, 적 처치 시 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 회복되고 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec>가 중첩되어 증가합니다.
+      EN: <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Lightning Resistance <val idx="0" r /></sec> increases and When killing an enemy <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>() times Bok becomes and <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> stack becomes increases.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電気耐性 <val idx="0" r /></sec>を 増加時クイし、 敵撃破時 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が 回ブオクになり、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec>が 重複になり 増加します。
+      TC: <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 電擊抗性 <val idx="0" r /></sec> 增加時台並， 擊殺敵人時 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> 次復變為，且 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> 疊加變為 增加。
   "5":
     key: "5"
     icon: P.Beam
@@ -4579,6 +4607,39 @@ skills:
             base: 0.6
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">허공 둔</sec> 효과를 <cmt t="쿠노이치"><import name="KUNOICHI" p="0" /></cmt>에게 추가로 부여합니다.
+        스킬 효과는 <sec typ="note">면허개전</sec>의 스킬 레벨에 비례하고, 행동력을 제외한 기존 <sec typ="note">허공 둔</sec> 효과와 중첩됩니다.
+        <sec typ="note">은밀</sec> 사용 시, 스쿼드 내에 <char uid="DS_KunoichiEnrai" />가 있을 경우 <sec typ="note">이카즈치</sec> 협동공격을 유도합니다.
+        <define name="KUNOICHI">
+        <char uid="DS_KunoichiZero" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiEnrai" />
+        </define>
+      EN: |-
+        <sec typ="cond">At battle start</sec>, own <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> Anti-Light damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="note">air dull</sec> effect and <cmt t="Kunoichi"><import name="KUNOICHI" p="0" /></cmt> to additionally grant.
+        Skill effects <sec typ="note">Menkyo Kaiden</sec> of skill leveland, Action Speed excluding existing <sec typ="note">air dull</sec> effect and stack.
+        <sec typ="note">push</sec> When used, in squad to <char uid="DS_KunoichiEnrai" /> if present <sec typ="note">Kazuchi</sec> cooperation attack triggers.
+        <define name="KUNOICHI">
+        <char uid="DS_KunoichiZero" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiEnrai" />
+        </define>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 自身の <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 対軽装型ダメージ <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="note">ハオグオン ドウン</sec> 効果を <cmt t="くノ一"><import name="KUNOICHI" p="0" /></cmt>に 追加で ブウヨします。
+        スキル 効果は <sec typ="note">免許皆伝</sec>の スキル レベルに 比例し、 行動力を ジエ外した 機ジオン <sec typ="note">ハオグオン ドウン</sec> 効果と 重複されます。
+        <sec typ="note">はムイル</sec> 使用時、 スクワッド 内に <char uid="DS_KunoichiEnrai" />が 存在する場合 <sec typ="note">がクアジウチイ</sec> ハヨプドオン攻撃を 誘導します。
+        <define name="KUNOICHI">
+        <char uid="DS_KunoichiZero" />、 <char uid="DS_KunoichiKaen" />、 <char uid="DS_KunoichiEnrai" />
+        </define>
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 自身的 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 對輕裝型傷害 <val idx="0" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="note">虛防空 二n</sec> 效果 <cmt t="女忍者"><import name="KUNOICHI" p="0" /></cmt>給 額外 賦予。
+        技能 效果 <sec typ="note">免許皆傳</sec>的 技能 等級於 成比例並， 行動力 解除外 台存在 <sec typ="note">虛防空 二n</sec> 效果與 疊加。
+        <sec typ="note">未l</sec> 使用時， 小隊 內於 <char uid="DS_KunoichiEnrai" /> 存在時 <sec typ="note">Kajeuchi</sec> Hyeopdong攻擊 誘發。
+        <define name="KUNOICHI">
+        <char uid="DS_KunoichiZero" />， <char uid="DS_KunoichiKaen" />， <char uid="DS_KunoichiEnrai" />
+        </define>
 dialogue:
   KR:
     "1":
@@ -4693,11 +4754,9 @@ dialogue:
         원하고 계신다면야…
         서툴더라도 천천히…
         주공께 봉사 하겠사와요…​
-      Oath: >-
+      Oath: |-
         소녀… 주공의 반려가 될 수만 있다면 그 어떤 것도 두렵지 않사와요.​ 주공의 여자로 간택 받을 수 없다고 생각했던 소녀…
-
         한때 주공이라는 그물에서 벗어나려 발버둥쳤지만, 그럴수록 옥죄여오는 주공과의 운명을 온 몸으로 깨우칠 뿐…
-
         이젠 그 아픔조차, 하나의 희락이 되어버린 소녀를 가냘피 여기시어… 언제까지나 주공의 곁에 함께할 수 있도록 허락 해주시겠나이까…?​
       OathIdle_01: |-
         지금 이순간만큼은 소녀,
@@ -4886,8 +4945,7 @@ dialogue:
       Idle_01_03: 拙者がただの娘だと甘く見れば、痛い目に遭うと覚悟しておくでござる。
       SPIdle_01_01: ぶっ！？無礼な！
       Idle_02_01: はぁ…こ、これは…！！何とも言えぬ味でござる…！このような………ハッ！は…初めて味わう…最高の味でござった…。
-      Idle_03_01: 幼くして母上を失った後、あの狭い部屋でいつの日か素敵な旦那様が迎えに来てくれると待ち望んでいたでござる…。
-        実際、拙者を救ってくれたのは姉君でござったが……、い、今は……
+      Idle_03_01: 幼くして母上を失った後、あの狭い部屋でいつの日か素敵な旦那様が迎えに来てくれると待ち望んでいたでござる…。 実際、拙者を救ってくれたのは姉君でござったが……、い、今は……
       Idle_04_01: 使命…一族の敵…復讐…このまま御屋形様の傍にいては全てを忘れてしま…うっ！？は、放せ…！…放して…くだされ…
       SPIdle_02_01: はうっ…こ、こんなことをされるのは初めてでござ……あっ…これで終わりではないのでござろう…？
       Oath: |-
@@ -5025,8 +5083,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Join: I am Kunoichi Zero. I will stay with the lord for a moment before we begin
-        our journey.
+      Join: I am Kunoichi Zero. I will stay with the lord for a moment before we begin our journey.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -5075,10 +5132,7 @@ dialogue:
         Oh… I’ve never been loved
         like this… Oh…
         Are you going to end here…
-      Oath: Oh, no! If I accept this, I… What about my revenge…! … My Lord… why do you
-        say… I’m a Ninja, so I should not my reveal my real name. However, if
-        it’s my Lord… My name is Sumire. It means violet flower… Lord, I also
-        adore you. Could you be my prince?
+      Oath: Oh, no! If I accept this, I… What about my revenge…! … My Lord… why do you say… I’m a Ninja, so I should not my reveal my real name. However, if it’s my Lord… My name is Sumire. It means violet flower… Lord, I also adore you. Could you be my prince?
       OathIdle_01: |-
         *Chuckles* You’re my…
         prince.
@@ -5307,20 +5361,17 @@ skins:
   sid: null
   artist: CHoney
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
+    G:
+      - _
+      - S
   anim:
     - false
     - false
@@ -5335,25 +5386,27 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_DS_KunoichiZero_N
   skins:
     - sid: 1
       artist: CHoney
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 70
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - true
         - false
@@ -5370,24 +5423,20 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 5
         2dmodel_dam: 2DModel_DS_KunoichiZero_NS1_Dam
     - sid: 2
       artist: U-rix
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 12
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - false
         - false
@@ -5404,5 +5453,6 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_DS_KunoichiZero_NS2
         consumableKey: Skin_DS_KunoichiZero_2

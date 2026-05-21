@@ -1,8 +1,8 @@
 import { FunctionalComponent } from "preact";
-import { useEffect, useMemo, useRef, useState } from "preact/hooks";
+import { useCallback, useEffect, useMemo, useRef, useState } from "preact/hooks";
 
 import { FACETYPE, SKIN_IN_PARTS } from "@/types/Enums";
-import { SKIN_ANIM_SUBSET_ENUM, SKIN_METADATA_FLAGS, SKIN_SUBSET_ENUM, Unit, UnitSkin } from "@/types/DB/Unit";
+import { SKIN_ANIM_SUBSET_ENUM, SKIN_METADATA_FLAGS, Unit, UnitSkin, UnitSkinEntitySubset } from "@/types/DB/Unit";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { useLocale } from "@/libs/Locale";
@@ -73,6 +73,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const [isCensored, setIsCensored] = useState(false);
 	const [isDamaged, setIsDamaged] = useState(false);
 	const [hideParts, setHideParts] = useState(false);
+	const [hideParts2, setHideParts2] = useState(false);
 	const [hideBG, setHideBG] = useState(false);
 
 	const [gammaPartAvailable, setGammaPartAvailable] = useState(false);
@@ -105,7 +106,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				"_",
 				skinId,
 				"_",
-				skin.G && isCensored ? "G" : "O",
+				isCensored ? "G" : "O",
 				SkinPostfix,
 				".",
 				imageExt,
@@ -122,7 +123,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				"_",
 				skinId,
 				"_",
-				skin.G && isCensored ? "G" : "O",
+				isCensored ? "G" : "O",
 				SkinPostfix,
 				".png",
 			].join(""),
@@ -135,7 +136,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			"_",
 			skinId,
 			"_",
-			skin.G && isCensored ? "G" : "O",
+			isCensored ? "G" : "O",
 			SkinPostfix,
 			"_",
 			face,
@@ -166,7 +167,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		if (!skin.anim[SkinVideoPostfix[0]]) return "";
 
 		const skinId = skin.isDef ? 0 : skin.metadata.imageId;
-		return `${unit.uid}_${skinId}_${skin.G && isCensored ? "G" : "O"}${SkinVideoPostfix[1]}`;
+		return `${unit.uid}_${skinId}_${isCensored ? "G" : "O"}${SkinVideoPostfix[1]}`;
 	}, [
 		props.collapsed,
 		props.animate,
@@ -187,77 +188,71 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	}, [props.unit.uid, props.skin.sid]);
 
 	useEffect(() => {
-		if (!skin.G && isCensored) // not have google
+		if (!("G" in skin.subset) && isCensored) // not have google
 			setIsCensored(false);
-	}, [skin.G, isCensored]);
-
-	// skin mod adjust
-	useEffect(() => {
-		if (isDamaged) {
-			if (hideParts && hideBG && !skin.subset[SKIN_SUBSET_ENUM.DBS]) {
-				if (skin.subset[SKIN_SUBSET_ENUM.DB_])
-					setHideBG(false);
-				else if (skin.subset[SKIN_SUBSET_ENUM.D_S])
-					setHideParts(false);
-				else {
-					setHideBG(false);
-					setHideParts(false);
-				}
-			} else if (hideParts && !hideBG && !skin.subset[SKIN_SUBSET_ENUM.D_S])
-				setHideParts(false);
-			else if (hideBG && !hideParts && !skin.subset[SKIN_SUBSET_ENUM.DB_])
-				setHideBG(false);
-			else if (!hideBG && !hideParts && skin.subset[SKIN_SUBSET_ENUM.D__]) {
-				setHideBG(false);
-				setHideParts(false);
-			} else if (!hideBG && !hideParts && !skin.subset[SKIN_SUBSET_ENUM.D__])
-				setIsDamaged(false);
-		} else {
-			if (hideParts && hideBG && !(skin.subset[SKIN_SUBSET_ENUM._BS] || (gammaPartAvailable && gammaBGAvailable))) {
-				if (skin.subset[SKIN_SUBSET_ENUM._B_] || gammaBGAvailable)
-					setHideBG(false);
-				else if (skin.subset[SKIN_SUBSET_ENUM.__S] || gammaPartAvailable)
-					setHideParts(false);
-				else {
-					setHideBG(false);
-					setHideParts(false);
-				}
-			} else if (hideParts && !hideBG && !(skin.subset[SKIN_SUBSET_ENUM.__S] || gammaPartAvailable))
-				setHideParts(false);
-			else if (hideBG && !hideParts && !(skin.subset[SKIN_SUBSET_ENUM._B_] || gammaBGAvailable))
-				setHideBG(false);
-		}
-	}, [
-		skin.subset,
-		isDamaged,
-		hideParts,
-		hideBG,
-		gammaPartAvailable,
-		gammaBGAvailable,
-	]);
+	}, [isCensored]);
 
 	const DisplayGamma = useMemo( // NOTE: No animated damaged yet
 		() => !!props.animate && !!(skin.metadata.flags & SKIN_METADATA_FLAGS.GAMMA) && !isDamaged,
 		[props.animate, skin.metadata.flags, isDamaged],
 	);
 
+	// skin mod adjust
+	const hasSubsetType = useCallback((type: UnitSkinEntitySubset): boolean => {
+		const G = isCensored ? "G" : "O";
+		return skin.subset[G]?.includes(type) ?? false;
+	}, [skin.subset, isCensored]);
+
+	useEffect(() => {
+		if (DisplayGamma) {
+			if (hideParts2) setHideParts2(false);
+
+			if (!gammaPartAvailable && hideParts) setHideParts(false);
+			if (!gammaBGAvailable && hideBG) setHideBG(false);
+		} else {
+			const key = `${isDamaged ? "D" : ""}${hideBG ? "B" : ""}${hideParts ? "S" : ""}${hideParts2 ? "P" : ""}` as UnitSkinEntitySubset;
+			if (!hasSubsetType(key)) {
+				setHideBG(false);
+				setHideParts(false);
+				setHideParts2(false);
+			}
+		}
+	}, [
+		hasSubsetType,
+		isDamaged,
+		hideBG,
+		hideParts,
+		hideParts2,
+		DisplayGamma,
+		gammaPartAvailable,
+		gammaBGAvailable,
+	]);
+
 	const AvailableS = useMemo(() => !isDamaged
-		? skin.subset[SKIN_SUBSET_ENUM.__S] || (skin.subset[SKIN_SUBSET_ENUM._BS] && hideBG) || (DisplayGamma && gammaPartAvailable)
-		: skin.subset[SKIN_SUBSET_ENUM.D_S] || (skin.subset[SKIN_SUBSET_ENUM.DBS] && hideBG),
-		[skin.subset, isDamaged, hideBG, DisplayGamma, gammaPartAvailable],
+		? hasSubsetType("S") || (hasSubsetType("BS") && hideBG) || (DisplayGamma && gammaPartAvailable)
+		: hasSubsetType("DS") || (hasSubsetType("DBS") && hideBG),
+		[hasSubsetType, isDamaged, hideBG, DisplayGamma, gammaPartAvailable],
 	);
+	const AvailableP = useMemo(() => !DisplayGamma && (
+		!isDamaged
+			? hasSubsetType("P") || (hasSubsetType("BP") && hideBG)
+			: hasSubsetType("DP") || (hasSubsetType("DBP") && hideBG)
+	), [hasSubsetType, isDamaged, hideBG, DisplayGamma]);
 
 	const AvailableBG = useMemo(() => !isDamaged
-		? skin.subset[SKIN_SUBSET_ENUM._B_] || (skin.subset[SKIN_SUBSET_ENUM._BS] && hideParts) || (DisplayGamma && gammaBGAvailable)
-		: skin.subset[SKIN_SUBSET_ENUM.DB_] || (skin.subset[SKIN_SUBSET_ENUM.DBS] && hideParts),
-		[skin.subset, isDamaged, hideParts, DisplayGamma, gammaBGAvailable],
+		? hasSubsetType("B") || (hasSubsetType("BS") && hideParts) || (DisplayGamma && gammaBGAvailable)
+		: hasSubsetType("DB") || (hasSubsetType("DBS") && hideParts),
+		[hasSubsetType, isDamaged, hideParts, DisplayGamma, gammaBGAvailable],
 	);
 
 	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.metadata.imageId}`}`;
 
 	const DisplayMixed = useMemo(
-		() => (skin.metadata.flags === (SKIN_METADATA_FLAGS["2DMODEL"] | SKIN_METADATA_FLAGS.SPINE)) && !!props.animate && !isDamaged,
-		[skin.metadata.flags, props.animate, isDamaged],
+		() => !!props.animate && (isDamaged
+			? (skin.metadata.dflags === (SKIN_METADATA_FLAGS["2DMODEL"] | SKIN_METADATA_FLAGS.SPINE))
+			: (skin.metadata.flags === (SKIN_METADATA_FLAGS["2DMODEL"] | SKIN_METADATA_FLAGS.SPINE))
+		),
+		[skin.metadata.flags, skin.metadata.dflags, props.animate, isDamaged],
 	);
 	const DisplaySpine = useMemo(
 		() => !!(skin.metadata.flags & SKIN_METADATA_FLAGS.SPINE) && (
@@ -267,11 +262,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		[skin.metadata.flags, skin.Spine, skin.SpineDamaged, props.animate, props.collapsed, isDamaged],
 	);
 	const Display2DModel = useMemo(
-		() => (isDamaged || !!(skin.metadata.flags & SKIN_METADATA_FLAGS["2DMODEL"])) && (
-			(!isDamaged && !!skin.metadata["2dmodel"]) ||
-			(isDamaged && !!skin.metadata["2dmodel_dam"])
-		),
-		[isDamaged, skin.metadata.flags, skin.metadata["2dmodel"], skin.metadata["2dmodel_dam"]],
+		() => isDamaged
+			? !!(skin.metadata.dflags & SKIN_METADATA_FLAGS["2DMODEL"]) && !!skin.metadata["2dmodel_dam"]
+			: !!(skin.metadata.flags & SKIN_METADATA_FLAGS["2DMODEL"]) && !!skin.metadata["2dmodel"],
+		[isDamaged, skin.metadata.flags, skin.metadata.dflags, skin.metadata["2dmodel"], skin.metadata["2dmodel_dam"]],
 	);
 	const DisplayVideo = useMemo(() => {
 		return !!props.animate && !!modelVideoId;
@@ -378,6 +372,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 								displayTouchCollider={ displayTouchCollider }
 								hidePart={ hideParts }
+								hidePart2={ hideParts2 }
 								hideBG={ hideBG }
 
 								face={ facePrefix + face }
@@ -627,22 +622,35 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					}
 				</div>
 
-				{ skin.subset[SKIN_SUBSET_ENUM.D__] && <div
+				{ hasSubsetType("D") && <div
 					class={ `${style.SkinToggle} ${style.Damaged}` }
 					data-damaged={ isDamaged ? 1 : 0 }
 					onClick={ (): void => setIsDamaged(!isDamaged) }
 				/> }
-				{ AvailableS && <div
-					class={ `${style.SkinToggle} ${style.Simplified}` }
-					data-simplified={ hideParts ? 1 : 0 }
-					onClick={ (): void => setHideParts(!hideParts) }
-				/> }
+				{ AvailableS && AvailableP
+					? <>
+						<div
+							class={ `${style.SkinToggle} ${style.Props1}` }
+							data-prop={ hideParts ? 1 : 0 }
+							onClick={ (): void => setHideParts(!hideParts) }
+						/>
+						<div
+							class={ `${style.SkinToggle} ${style.Props2}` }
+							data-prop={ hideParts2 ? 1 : 0 }
+							onClick={ (): void => setHideParts2(!hideParts2) }
+						/>
+					</>
+					: AvailableS && <div
+						class={ `${style.SkinToggle} ${style.Props}` }
+						data-prop={ hideParts ? 1 : 0 }
+						onClick={ (): void => setHideParts(!hideParts) }
+					/> }
 				{ AvailableBG && <div
 					class={ `${style.SkinToggle} ${style.BG}` }
 					data-bg={ hideBG ? 1 : 0 }
 					onClick={ (): void => setHideBG(!hideBG) }
 				/> }
-				{ skin.G && <div
+				{ ("G" in skin.subset) && <div
 					class={ `${style.SkinToggle} ${style.Platform}` }
 					data-platform={ isCensored ? 1 : 0 }
 					onClick={ (): void => setIsCensored(!isCensored) }

@@ -2600,6 +2600,19 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 박음선을 표시하며 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>를 증가시키고 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
+      EN: |-
+        Marks a seam on a single target and deals <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, increases the target’s <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> for 2 rounds and increases own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec>.
+      JP: |-
+        単一対象に縫い目を表示し、<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="0" r /></sec>を増加させ、自身の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="2" r /></sec>が増加します。
+      TC: |-
+        對單一目標標示縫線並造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，2回合內增加目標的<sec typ="buff"><buff typ="VULNERABLE" />受到的傷害 <val idx="0" r /></sec>，並增加自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透 <val idx="2" r /></sec>。
   "2":
     key: "2"
     icon: WideBeamShot
@@ -8906,6 +8919,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        화려한 움직임으로 바늘을 춤추게하여 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 대상의 <sec typ="note">바늘땀</sec> 중첩이 2 이상일 경우</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 자신에게 적용된 <sec typ="note">실밥</sec> 중첩 수에 따라 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="6" r /></sec>가 증가합니다. (최대 5중첩)
+        스킬을 사용한 다음 2라운드 동안 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" slot="4" r /></sec>를 증가시킵니다.
+      EN: |-
+        Moves splendidly, making the needle dance to deal <dmg elem="physics" /> to the target.
+        <sec typ="cond">If the hit target has 2 or more <sec typ="note">Stitches</sec> stacks</sec>, removes the target’s <sec typ="buff"><buff typ="REMOVE_BUFF" /> buffs</sec>.
+        <sec typ="cond">On hit</sec>, damage increases according to the number of <sec typ="note">Loose Thread</sec> stacks on self. <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="6" r /></sec> (up to 5 stacks)
+        For 2 rounds after using the skill, increases all allies’ <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="4" slot="4" r /></sec>.
+      JP: |-
+        華麗な動きで針を躍らせ、対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象の<sec typ="note">針目</sec>スタックが2以上の場合</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>します。
+        <sec typ="cond">命中時</sec>、自身に適用された<sec typ="note">糸くず</sec>スタック数に応じて<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="6" r /></sec>が増加します。（最大5スタック）
+        スキル使用後、2ラウンドの間味方全体の<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="4" slot="4" r /></sec>が増加します。
+      TC: |-
+        以華麗的動作讓針舞動，對目標造成<dmg elem="physics" />。
+        <sec typ="cond">若命中目標的<sec typ="note">針腳</sec>疊層為2以上</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />強化效果</sec>。
+        <sec typ="cond">命中時</sec>，依自身套用的<sec typ="note">線頭</sec>疊層數增加<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="6" r /></sec>。（最多5疊）
+        使用技能後，2回合內增加全體我方的<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="4" slot="4" r /></sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -9113,6 +9147,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격 / 지원 공격 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>가 증가합니다. (최대 2중첩)
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="2" /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">적 개체 수가 1</sec>이고 <sec typ="cond"><char uid="PECS_TaylorClothcut" />가 있을 경우</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> 골무</sec>를 준비하여 <sec typ="buff"><sec typ="note">시침질</sec>의 스킬 위력이 감소</sec>하고 <sec typ="buff"><sec typ="note">파피용 스티치</sec>의 스킬 위력이 증가</sec>합니다.
+      EN: |-
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> follow-up attack / support attack when</sec>, 2 rounds own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> increases. (up to 2stack)
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="Action_Number_Change_Up" /> up to number of actions <val idx="2" /></sec> increases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">enemy unit number 1</sec> and <sec typ="cond"><char uid="PECS_TaylorClothcut" /> if present</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> Thimble</sec> prepares <sec typ="buff"><sec typ="note">Basting</sec> of Skill Power decrease</sec> and <sec typ="buff"><sec typ="note">Papillon Stitch</sec> of Skill Power increase</sec>.
+      JP: |-
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃 / 支援攻撃 時</sec>、 2ラウンドの間 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>が増加します。 (最大 2重複)
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大 行ドオン 回数 <val idx="2" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">敵 個体 数が 1</sec>であり <sec typ="cond"><char uid="PECS_TaylorClothcut" />が 存在する場合</sec>、 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 指ぬき</sec>を ジウンブイして <sec typ="buff"><sec typ="note">しつけ縫い</sec>の スキル威力が 減少</sec>し、 <sec typ="buff"><sec typ="note">パピヨンステッチ</sec>の スキル威力が 増加</sec>します。
+      TC: |-
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊 / 支援攻擊 時</sec>， 2回合內 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>增加。 (最大 2疊加)
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大 列同 次數 <val idx="2" /></sec>增加。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">敵人 單位 數 1</sec>且 <sec typ="cond"><char uid="PECS_TaylorClothcut" /> 存在時</sec>， <sec typ="buff"><buff typ="CHANGE_CHAR" /> 頂針</sec> 準備並 <sec typ="buff"><sec typ="note">假縫</sec>的 技能威力 減少</sec>並 <sec typ="buff"><sec typ="note">蝴蝶針法</sec>的 技能威力 增加</sec>。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -9469,6 +9520,35 @@ skills:
             base: 0.3
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 아군 지원기의 공격을 지원</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">상기 효과가 적용된 아군이 있을 경우</sec>, 자신은 <sec>자신에 의한 효과 외의 공격 지원을 발동시킬 수 없습니다.</sec>
+        <sec typ="cond">자신 외의 <cmt t="<PECS> 의상 디자이너"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt>에 의한 효과가 자신에게 적용될 경우</sec>, 일부 효과가 증폭됩니다.
+        <define name="PECS_CLOTHES_DESIGNER">
+        <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
+        </define>
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> allies Supporter of supports the attack</sec> and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec> increases.
+        <sec typ="cond">above affected by allies if present</sec>, self <sec>self to by effect and other than of Attack Support trigger when kill cannot.</sec>
+        <sec typ="cond">self other than of <cmt t="<PECS> Clothing Designer"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt> to by effect and self enemy to be applied case</sec>, some effect and amplification.
+        <define name="PECS_CLOTHES_DESIGNER">
+        <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 味方 支援機の 攻撃を 支援</sec>し、 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>を増加させます。
+        <sec typ="cond">上記 効果が適用された 味方が 存在する場合</sec>、 自身は <sec>自身に よる 効果 外の 攻撃支援を ブアルドオン時クイル 数 ありません。</sec>
+        <sec typ="cond">自身 外の <cmt t="<PECS> 衣装デザイナー"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt>に よる 効果が 自身に 適用になる 場合</sec>、 一部 効果が 増幅されます。
+        <define name="PECS_CLOTHES_DESIGNER">
+        <char uid="PECS_Audrey" />、 <char uid="PECS_TaylorClothcut" />、 <char uid="PECS_Olivia" />
+        </define>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 我方 支援機的 攻擊 支援</sec>並 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="1" /></sec>使其增加。
+        <sec typ="cond">上述 已套用效果的 我方 存在時</sec>， 自身 <sec>自身於 的 效果 外的 攻擊支援 發動時台l 數 不存在。</sec>
+        <sec typ="cond">自身 外的 <cmt t="<PECS> 服裝設計師"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt>於 的 效果 自身給 套用將 情況</sec>， 部分 效果 增幅。
+        <define name="PECS_CLOTHES_DESIGNER">
+        <char uid="PECS_Audrey" />， <char uid="PECS_TaylorClothcut" />， <char uid="PECS_Olivia" />
+        </define>
   "5":
     key: "5"
     icon: P.Hang
@@ -9760,6 +9840,35 @@ skills:
             base: -0.1
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="1" /></sec>이(가) 증가합니다.
+        <sec typ="cond">적 개체 수가 3 이하일 경우</sec>, 자신의 액티브 스킬 효과가 두 배로 증폭됩니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격 / 지원 공격 시</sec>, 2라운드 동안 <cmt t="<PECS> 의상 디자이너"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt>의 액티브 스킬 효과를 받는 적의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="5" r /></sec>를 감소시킵니다. (최대 5중첩)
+        <define name="PECS_CLOTHES_DESIGNER">
+        <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
+        </define>
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Action_Number_Change_Up" /> up to number of actions <val idx="1" /></sec> increases.
+        <sec typ="cond">enemy unit number 3 or lessif</sec>, own active skill the effect is doubled amplification.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> follow-up attack / support attack when</sec>, 2 rounds <cmt t="<PECS> Clothing Designer"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt> of active skill effect and receives enemy's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="5" r /></sec> decreases. (up to 5stack)
+        <define name="PECS_CLOTHES_DESIGNER">
+        <char uid="PECS_Audrey" />, <char uid="PECS_TaylorClothcut" />, <char uid="PECS_Olivia" />
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大 行ドオン 回数 <val idx="1" /></sec>が増加します。
+        <sec typ="cond">敵 個体 数が 3 以下の場合</sec>、 自身の アクティブ スキル 効果が2倍で 増幅されます。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃 / 支援攻撃 時</sec>、 2ラウンドの間 <cmt t="<PECS> 衣装デザイナー"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt>の アクティブ スキル 効果を 受ける 敵の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="5" r /></sec>を減少させます。 (最大 5重複)
+        <define name="PECS_CLOTHES_DESIGNER">
+        <char uid="PECS_Audrey" />、 <char uid="PECS_TaylorClothcut" />、 <char uid="PECS_Olivia" />
+        </define>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大 列同 次數 <val idx="1" /></sec>增加。
+        <sec typ="cond">敵人 單位 數 3 以下若為</sec>， 自身的 主動 技能 效果變為2倍以 增幅。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊 / 支援攻擊 時</sec>， 2回合內 <cmt t="<PECS> 服裝設計師"><import name="PECS_CLOTHES_DESIGNER" p="0" /></cmt>的 主動 技能 效果 受到 敵人的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="5" r /></sec>使其減少。 (最大 5疊加)
+        <define name="PECS_CLOTHES_DESIGNER">
+        <char uid="PECS_Audrey" />， <char uid="PECS_TaylorClothcut" />， <char uid="PECS_Olivia" />
+        </define>
   F1:
     key: F1
     icon: WideSwordAttk
@@ -10108,6 +10217,19 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 박음선을 표시하며 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec>를 증가시키고 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        Marks a seam on a single target and deals <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, increases the target’s <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="2" r /></sec> for 2 rounds and increases own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="4" r /></sec>.
+      JP: |-
+        単一対象に縫い目を表示し、<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間対象の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="2" r /></sec>を増加させ、自身の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="4" r /></sec>が増加します。
+      TC: |-
+        對單一目標標示縫線並造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，2回合內增加目標的<sec typ="buff"><buff typ="VULNERABLE" />受到的傷害 <val idx="2" r /></sec>，並增加自身的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透 <val idx="4" r /></sec>。
   F2:
     key: F2
     icon: WideBeamShot
@@ -16414,6 +16536,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        화려한 움직임으로 바늘을 춤추게하여 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 대상의 <sec typ="note">바늘땀</sec> 중첩이 2 이상일 경우</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 자신에게 적용된 <sec typ="note">실밥</sec> 중첩 수에 따라 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="6" r /></sec>가 증가합니다. (최대 5중첩)
+        스킬을 사용한 다음 2라운드 동안 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" slot="4" r /></sec>를 증가시킵니다.
+      EN: |-
+        Moves splendidly, making the needle dance to deal <dmg elem="physics" /> to the target.
+        <sec typ="cond">If the hit target has 2 or more <sec typ="note">Stitches</sec> stacks</sec>, removes the target’s <sec typ="buff"><buff typ="REMOVE_BUFF" /> buffs</sec>.
+        <sec typ="cond">On hit</sec>, damage increases according to the number of <sec typ="note">Loose Thread</sec> stacks on self. <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="6" r /></sec> (up to 5 stacks)
+        For 2 rounds after using the skill, increases all allies’ <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="4" slot="4" r /></sec>.
+      JP: |-
+        華麗な動きで針を躍らせ、対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象の<sec typ="note">針目</sec>スタックが2以上の場合</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />強化効果を解除</sec>します。
+        <sec typ="cond">命中時</sec>、自身に適用された<sec typ="note">糸くず</sec>スタック数に応じて<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="6" r /></sec>が増加します。（最大5スタック）
+        スキル使用後、2ラウンドの間味方全体の<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="4" slot="4" r /></sec>が増加します。
+      TC: |-
+        以華麗的動作讓針舞動，對目標造成<dmg elem="physics" />。
+        <sec typ="cond">若命中目標的<sec typ="note">針腳</sec>疊層為2以上</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />強化效果</sec>。
+        <sec typ="cond">命中時</sec>，依自身套用的<sec typ="note">線頭</sec>疊層數增加<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="6" r /></sec>。（最多5疊）
+        使用技能後，2回合內增加全體我方的<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="4" slot="4" r /></sec>。
 dialogue:
   KR:
     "1":
@@ -16467,8 +16610,7 @@ dialogue:
         무슨 의미인지 모르겠어?
         그러면… 지금부터 알아가야겠네?
         응? 주. 인. 님?
-      Oath: 바다의 마력 때문일까, 나의 매력 때문일까? 하지만 그게 무슨 상관이야? 당신이 나에게 푹 빠졌다는 건 변함이 없는데. 나? 아직도
-        모르겠어? 내 수영복의 목줄이… 누구를 위해 존재하는 거라고 생각해? 나는 오직 당신 거였는 걸.
+      Oath: 바다의 마력 때문일까, 나의 매력 때문일까? 하지만 그게 무슨 상관이야? 당신이 나에게 푹 빠졌다는 건 변함이 없는데. 나? 아직도 모르겠어? 내 수영복의 목줄이… 누구를 위해 존재하는 거라고 생각해? 나는 오직 당신 거였는 걸.
       OathIdle_01: |-
         긴장했어? 자, 심호흡.
         들이마시고, 내쉬고, 들이마시고, 내쉬고.
@@ -16533,9 +16675,7 @@ dialogue:
         자, 잠깐, 잠깐. 이, 이런 감동은 처, 처음이라.
         그… 내가 감동을 만끽할 수 있게…
         살살… 알았지?
-      Oath: 자, 잠깐만 이, 이런 장면 많이 봤는데… 주인공들이 고백하고… 사랑을 하고 행복해지는 것을 이럴 때 좋은 말은 모, 몰라! 내
-        마음을 어떻게 다른 작품에서 따올 수 있어? 좋아해! 좋아해! 나도 좋아해! 서로의 마음을 확인했으니 우리의 엔딩은 정해졌네?
-        오래오래 행복하게 살았습니다로.
+      Oath: 자, 잠깐만 이, 이런 장면 많이 봤는데… 주인공들이 고백하고… 사랑을 하고 행복해지는 것을 이럴 때 좋은 말은 모, 몰라! 내 마음을 어떻게 다른 작품에서 따올 수 있어? 좋아해! 좋아해! 나도 좋아해! 서로의 마음을 확인했으니 우리의 엔딩은 정해졌네? 오래오래 행복하게 살았습니다로.
       OathIdle_01: |-
         나는 연극, 뮤지컬, 영화, 낭송회,
         준공식용 정장, 유니폼, 만화와 게임 캐릭터를
@@ -16633,8 +16773,7 @@ dialogue:
         무슨 의미인지 모르겠어?
         그러면… 지금부터 알아가야겠네?
         응? 주. 인. 님?
-      Oath: "[미번역]바다의 마력 때문일까, 나의 매력 때문일까? 하지만 그게 무슨 상관이야? 당신이 나에게 푹 빠졌다는 건 변함이 없는데.
-        나? 아직도 모르겠어? 내 수영복의 목줄이… 누구를 위해 존재하는 거라고 생각해? 나는 오직 당신 거였는 걸."
+      Oath: "[미번역]바다의 마력 때문일까, 나의 매력 때문일까? 하지만 그게 무슨 상관이야? 당신이 나에게 푹 빠졌다는 건 변함이 없는데. 나? 아직도 모르겠어? 내 수영복의 목줄이… 누구를 위해 존재하는 거라고 생각해? 나는 오직 당신 거였는 걸."
       OathIdle_01: |-
         [미번역]긴장했어? 자, 심호흡.
         들이마시고, 내쉬고, 들이마시고, 내쉬고.
@@ -16661,19 +16800,14 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: テイラーお姉ちゃんはいつも経済的なところを考えてて、オードリーは何においてもまずは美しさだって言うのよね……。最高の作品を作るためにはデザイナーのモチベーション……つまり心が一番重要だと思うんだよ！私は！
-      Idle_01_02: 3点、2点、4点、1点、1点、4点、2点！2点！0点！ んきぃぃぃぃ！駄作ばっか！10点中5点を超えるものが一つもないなんて！
-        私の基準？そだな～……魔法少女マジカルモモのシーズン1が6点。 ほあ！？今の音は何？え？平和のために規制した？何で！？
+      Idle_01_02: 3点、2点、4点、1点、1点、4点、2点！2点！0点！ んきぃぃぃぃ！駄作ばっか！10点中5点を超えるものが一つもないなんて！ 私の基準？そだな～……魔法少女マジカルモモのシーズン1が6点。 ほあ！？今の音は何？え？平和のために規制した？何で！？
       Idle_01_03: テイラーお姉ちゃんに「何も考えずに思ったことをすぐ口にするな」って怒られちゃった。私、ちゃんと考えて話してるんだけどなぁ……？ドゥームブリンガーの隊長さんに背が小さくて可愛いねって言っただけなのに！あと、一緒にいた副官さんには胸が小さくて羨ましいって言った！褒めて何が悪いのさー！
       SPIdle_01_01: マイナス10点！こんなことするならストライキするよ！
-      Idle_02_01: 私はオリビアよ。オ！リ！ビ！ア！そこでストップ！それ以上は言わなくていいから！言ったら私が厳選したクソ映画100本見せるからね！なんで言っちゃダメなのかって？
-        ……Sewerで検索してみたらわかるよ……
+      Idle_02_01: 私はオリビアよ。オ！リ！ビ！ア！そこでストップ！それ以上は言わなくていいから！言ったら私が厳選したクソ映画100本見せるからね！なんで言っちゃダメなのかって？ ……Sewerで検索してみたらわかるよ……
       Idle_03_01: テイラーお姉ちゃんやオードリーも映画とか舞台衣装のデザインをしたことがあるけど、私には敵わなかったんだぞ！天才は努力する者に勝てず、努力する者は楽しむ者には勝てないって言うじゃん？……まぁ、その逆も言えるんだけどね。
       Idle_04_01: 昨日はハルピュイア、今日はウェアウルフ、明日はミューズ、明後日はオレンジエード、明明後日はガラテア…はぁ…オルカには映画の話ができる友達がたくさんいてすっごく楽しい！！
       SPIdle_02_01: ふわ！ちょ……ちょっと、ちょっと待って…なんか凄くて……感動してるの……こ、こんなの初めて…あのね……もっとゆっくりこの感動を味わいたいから……優しく…して？
-      Oath: ちょ、ちょっと待って… こ、こういうシチュエーション、たくさん見たことあるの…！告白して…愛し合って…幸せになるってやつ…こういうときのセリフは…
-        えーっと、えーっと……な、なんでもいいや！私の気持ちを他の作品なんかで例えられるわけないもん！
-        大好き！大好きなの！私も！本当に！マジで！真面目に！
-        お互いに気持ちが確かめ合ったことだし、エンディングはアレしかないよね？いつまでも幸せに暮らしましたとさ、ってやつ！
+      Oath: ちょ、ちょっと待って… こ、こういうシチュエーション、たくさん見たことあるの…！告白して…愛し合って…幸せになるってやつ…こういうときのセリフは… えーっと、えーっと……な、なんでもいいや！私の気持ちを他の作品なんかで例えられるわけないもん！ 大好き！大好きなの！私も！本当に！マジで！真面目に！ お互いに気持ちが確かめ合ったことだし、エンディングはアレしかないよね？いつまでも幸せに暮らしましたとさ、ってやつ！
       OathIdle_01: 私は演劇、ミュージカル、映画、朗読会、竣工式用の正装、ユニフォーム、漫画やゲームのキャラクター用衣装、そのほかにも色々な衣装をデザインしてきたわ。私に感動を与えてくれるものなら何でも。今は…ふふ。あなたの服をデザインしてみたいかな。
       MVP: ""
     M:
@@ -16751,10 +16885,7 @@ dialogue:
         Don't you get it?
         In that case… you'll just have to learn from now on.
         Yeah? Mmm… Mmm… Mmmaster?
-      Oath: Was it because of the magic of the sea? Or maybe my charms? Meh, who
-        cares? As long as the fact that you’re into me doesn’t change. Me? You
-        still don't get it, don't you? This leash on my swimsuit… who do you
-        think it's for? I was always yours.
+      Oath: Was it because of the magic of the sea? Or maybe my charms? Meh, who cares? As long as the fact that you’re into me doesn’t change. Me? You still don't get it, don't you? This leash on my swimsuit… who do you think it's for? I was always yours.
       OathIdle_01: |-
         Are you nervous? Okay, breathe.
         Inhale… exhale… inhale… exhale…
@@ -16762,8 +16893,7 @@ dialogue:
         You were always my greatest masterpiece!
       MVP: ""
     "":
-      Join: My name is Olivia. I wonder how our encounter will become knotted
-        together.
+      Join: My name is Olivia. I wonder how our encounter will become knotted together.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -16786,23 +16916,15 @@ dialogue:
         Audrey says that the prettiest is the best…
         Isn't the artist's motivation, or in other words, their interests,
         the most important thing for making the best outfit?
-      Idle_01_02: >-
-        3 points, 2 points, 4 points, 1 point, 1 point, 4 points, 2 points! 2
-        points! 0 points!
-
+      Idle_01_02: |-
+        3 points, 2 points, 4 points, 1 point, 1 point, 4 points, 2 points! 2 points! 0 points!
         Sheesh! There's nothing fun in any of these outfits!
-
         Why isn't there a single one that gets higher than 5 out of 10 points?!
-
         My standards? Magical Momo season 1 is…
-
         What was that noise just now? What? The censorship for peace?
-      Idle_01_03: >-
-        Taylor told me not to speak without thinking. I definitely thought about
-        it…
-
+      Idle_01_03: |-
+        Taylor told me not to speak without thinking. I definitely thought about it…
         Was it so bad that I said I envied how short General Doombringer was
-
         and how small the lieutenant’s breasts were?
       SPIdle_01_01: Minus 10 points! I’m going to go on a strike if this continues!
       Idle_02_01: |-
@@ -16811,36 +16933,25 @@ dialogue:
         I’m going to show you the 100 worst outfits I picked out.
         Why do I hate my full name?
         Look up what sewer means.
-      Idle_03_01: >-
+      Idle_03_01: |-
         Taylor and Audrey designed outfits for movies and plays,
-
         but they couldn't come near me in this field. You know what they say, a genius can't beat those who work hard,
-
         and the ones who work hard can't beat those who enjoy it. Of course, it's the same the other way around.
-      Idle_04_01: >-
+      Idle_04_01: |-
         Harpyia yesterday, War Wolf today, Muse tomorrow,
-
         Orangeade the day after, Galatea two days after tomorrow… Ah! I’m so happy I have so many friends on the Orca I can talk to
-
         about this kind of work.
-      SPIdle_02_01: >-
-        Ah, wait, wait. I-it’s my first time experiencing something so… so
-        moving.
-
+      SPIdle_02_01: |-
+        Ah, wait, wait. I-it’s my first time experiencing something so… so moving.
         Take it easy so I can bask in the glow… okay?
-      Oath: >-
+      Oath: |-
         W-wait, I've seen this kind of scene a lot…
-
         When the main characters confess their feelings to each other…
-
         then fall in love… I don't know what to call it! How can you compare my feelings to a different piece of art? I like you! I like you! I like you too! Our ending has been decided ever since we confessed our love for each other. And they lived happily ever after.
-      OathIdle_01: >-
+      OathIdle_01: |-
         I designed outfits for plays, musical, movies, recitals,
-
         suits for opening ceremonies, uniforms, clothes for cartoons and game characters,
-
         and so many more. Anything if it can move me.
-
         Now… Hehe. I want to design your clothes.
       MVP: ""
     M:
@@ -16871,10 +16982,8 @@ dialogue:
         Come here. Take a seat. And look at me.
         Hmm… Hmm… Hehe… Hehe… Okay. I’m happy just looking at you.
         The things you like never disappear or become boring.
-      Idle_01_03: >-
-        If each life is a work of art… my life is a masterpiece. Because you’re
-        in it.
-
+      Idle_01_03: |-
+        If each life is a work of art… my life is a masterpiece. Because you’re in it.
         What others think? Who cares. I like it.
       SPIdle_01_01: |-
         Hmm… Three days for a long take… No! Four!
@@ -17046,20 +17155,14 @@ skins:
   sid: null
   artist: CORGI
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -17074,25 +17177,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Olivia_N
   skins:
     - sid: 1
       artist: CORGI
       price: 167
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - false
         - false
@@ -17109,4 +17208,5 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 2
+        dflags: 0
         consumableKey: Skin_PECS_Olivia_1

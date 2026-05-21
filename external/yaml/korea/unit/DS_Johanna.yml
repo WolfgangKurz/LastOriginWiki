@@ -1989,6 +1989,11 @@ skills:
             base: 36
             per: 0
             chance: 1
+    desc:
+      KR: 검격으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="2" r /></sec> 감소 효과를 줍니다.
+      EN: sword strike as <dmg elem="physics" /> damage and 2 rounds to the target <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="2" r /></sec> decrease effect and deals.
+      JP: 斬撃で<dmg elem="physics" />を与え、、 2ラウンドの間 対象に <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="2" r /></sec> 減少 効果を 与えます。
+      TC: 劍擊以 造成<dmg elem="physics" />，並 2回合內 對目標 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="2" r /></sec> 減少 效果 造成。
   "2":
     key: "2"
     icon: ShieldWall
@@ -2432,6 +2437,19 @@ skills:
             base: 0.25
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        방패를 전개해 3라운드 동안 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> / <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec> 감소 효과를 얻습니다.
+        <sec>스킬 레벨이 오를수록 소모 AP가 감소합니다.</sec>
+      EN: |-
+        shield deploys 3 rounds <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> / <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="3" r inv /></sec> decrease effect and gains.
+        <sec>skill level O as AP cost decreases.</sec>
+      JP: |-
+        盾を展開して 3ラウンドの間 <sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec> / <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="3" r inv /></sec> 減少 効果を オトます。
+        <sec>スキル レベルが オを少ないほど 消費APが減少します。</sec>
+      TC: |-
+        展開盾牌 3回合內 <sec typ="buff"><buff typ="DEF_Line" /> 列保護</sec> / <sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="3" r inv /></sec> 減少 效果 獲得。
+        <sec>技能 等級 O數越 消耗AP減少。</sec>
   "3":
     key: "3"
     icon: P.Command
@@ -3291,6 +3309,31 @@ skills:
             base: 0.05
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 적 수에 비례하여 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 아군 수에 비례하여 적 전체의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="11" r /></sec>가 증가합니다.
+        <sec>해당 효과는 피격 시 해제됩니다.</sec>
+        <sec typ="note">성전 선포</sec>에 의한 <sec typ="cond"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> 효과를 가진 대상에게 <sec typ="note">숙적</sec> 적중 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 강화 효과를 해제</sec>합니다.
+        <sec typ="attr">해당 효과는 강화/해로운 효과 해제로 해제할 수 없습니다.</sec>
+      EN: |-
+        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="0" r /></sec> increases in proportion to the number of enemies.
+        <sec typ="cond">At round start</sec>, all enemies' <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="11" r /></sec> increases in proportion to the number of allies.
+        <sec>This effect is removed when hit.</sec>
+        When a target affected by the <sec typ="note"></sec> damage taken increase<sec typ="cond"> from <buff typ="VULNERABLE" />Declaration of Holy War</sec> is hit by <sec typ="note">Nemesis</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's Damage Reduction buff</sec>.
+        <sec typ="attr">This effect cannot be removed by buff/debuff removal.</sec>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、敵の数に比例して自身の<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、味方の数に比例して敵全体の<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="11" r /></sec>が増加します。
+        <sec>この効果は被弾時に解除されます。</sec>
+        <sec typ="note">聖戦宣言</sec>による<sec typ="cond"><buff typ="VULNERABLE" />受けるダメージ増加</sec>効果を持つ対象に<sec typ="note">宿敵</sec>が命中した時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ減少強化効果を解除</sec>します。
+        <sec typ="attr">この効果は強化/有害効果解除で解除できません。</sec>
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec>依敵人數量增加。
+        <sec typ="cond">回合開始時</sec>，全體敵人的<sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="11" r /></sec>依我方數量增加。
+        <sec>此效果會在被擊時解除。</sec>
+        由<sec typ="note">聖戰宣言</sec>造成的<sec typ="cond"><buff typ="VULNERABLE" />受到的傷害增加</sec>效果目標被<sec typ="note">宿敵</sec>命中時，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的受到傷害減少強化效果</sec>。
+        <sec typ="attr">此效果無法透過強化/負面效果解除來解除。</sec>
   "4":
     key: "4"
     icon: P.Beam
@@ -3741,6 +3784,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
+        <equip uid="Sub_SpAlloyArmor" /> 장착 시, 장비 효과 중 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec> 확률이 <sec typ="chance">100%로 증가</sec>합니다.
+        <sec typ="cond">대기 시</sec>, 아군 전체의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        이후, 자신을 제외한 아군의 수에 비례하여 자신은 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 물리 고정 피해 <val idx="4" signless /></sec>을(를) 입습니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increases.
+        <equip uid="Sub_SpAlloyArmor" /> when equipped, equipment effect and during <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> debuff removal</sec> chance <sec typ="chance">100%as increase</sec>.
+        <sec typ="cond">On standby</sec>, all allies of <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec>.
+        after, self excluding allies' in proportion to the number of self <sec typ="dmg"><buff typ="phyDMG_DOT" /> Physical fixed damage <val idx="4" signless /></sec> takes.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="0" r /></sec>が増加します。
+        <equip uid="Sub_SpAlloyArmor" /> ジアンチアク 時、 装備 効果 中 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果解除</sec> 確率が <sec typ="chance">100%で 増加</sec>します。
+        <sec typ="cond">待機時</sec>、 味方全体の <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>します。
+        以後、 自身を ジエ外した 味方の 数に比例して 自身は <sec typ="dmg"><buff typ="phyDMG_DOT" /> 物理 固定 ダメージ <val idx="4" signless /></sec>を 受けます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="0" r /></sec>增加。
+        <equip uid="Sub_SpAlloyArmor" /> 裝備 時， 裝備 效果 中 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除負面效果</sec> 機率 <sec typ="chance">100%以 增加</sec>。
+        <sec typ="cond">待機時</sec>， 全體我方的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>。
+        之後， 自身 解除外 我方的 依數量成比例 自身 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 物理 固定 傷害 <val idx="4" signless /></sec> 受到。
   "5":
     key: "5"
     icon: P.Barrier
@@ -4537,6 +4601,27 @@ skills:
             base: 0.35
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="note">기사도</sec> 효과를 모두 획득합니다.
+        스킬 효과는 <sec typ="note">수호성인</sec>의 스킬 레벨에 비례합니다.
+        <sec typ="cond"><sec typ="note">기사도</sec> 스킬 사용 시</sec>, 기존 효과 대신 아군 전체에게 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 1회</sec>를 부여합니다.
+        <equip uid="Sub_SpAlloyArmor" /> 장착 시 증가하는 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항</sec> 수치만큼, <sec typ="cond">라운드 개시 시</sec> 자신의 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항</sec>이 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, self <sec typ="note">Chivalry</sec> effect and all gains.
+        Skill effects <sec typ="note">Patron Saint</sec> of skill level.
+        <sec typ="cond"><sec typ="note">Chivalry</sec> When using the skill</sec>, existing effect and instead all to allies <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification 1times</sec> grants.
+        <equip uid="Sub_SpAlloyArmor" /> when equipped increase <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance</sec> by the value, <sec typ="cond">At round start</sec> own <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Buff Removal Resistance</sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="note">騎士道</sec> 効果を ムオドウ 獲得します。
+        スキル 効果は <sec typ="note">守護聖人</sec>の スキル レベルに 比例します。
+        <sec typ="cond"><sec typ="note">騎士道</sec> スキル使用時</sec>、 機ジオン 効果 代わりに 味方全体に <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 1回</sec>を付与します。
+        <equip uid="Sub_SpAlloyArmor" /> ジアンチアク 時 増加する <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗</sec> 数値分、 <sec typ="cond">ラウンド開始時</sec> 自身の <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抵抗</sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="note">騎士道</sec> 效果 全部 獲得。
+        技能 效果 <sec typ="note">守護聖人</sec>的 技能 等級於 成比例。
+        <sec typ="cond"><sec typ="note">騎士道</sec> 使用技能時</sec>， 台存在 效果 改為 全體我方給 <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 1次</sec>賦予。
+        <equip uid="Sub_SpAlloyArmor" /> 裝備 時 增加 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性</sec> 數值等量， <sec typ="cond">回合開始時</sec> 自身的 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抗性</sec>增加。
 dialogue:
   KR:
     "1":
@@ -4606,10 +4691,7 @@ dialogue:
         기쁘기 그지 없군. 
         나 또한 주군을 바라는 바이니… 서로가
         서로를 원하는데 무슨 말이 더 필요한가?​
-      Oath: 나는 배우였기에 이런 상황에서 인용할 수 있는 대사는 많다네. 하나같이 명대사라고 칭할 수 있는 것들이지. 하지만 지금 필요한 것은
-        남이 써준 명언이 아니라 나의 진심이 오롯이 담긴 말이겠지. 내가 어떻게 주군의 고백을 거절할 수 있겠나. 주군의 충성스러운
-        기사라서가 아니라 주군을 그대를 사랑하는 여자로서. 앞으로는 주군의 방패이자 검으로서뿐만 아니라 그대의 반려로서 평생 옆을 지킬
-        것을 맹세하네.
+      Oath: 나는 배우였기에 이런 상황에서 인용할 수 있는 대사는 많다네. 하나같이 명대사라고 칭할 수 있는 것들이지. 하지만 지금 필요한 것은 남이 써준 명언이 아니라 나의 진심이 오롯이 담긴 말이겠지. 내가 어떻게 주군의 고백을 거절할 수 있겠나. 주군의 충성스러운 기사라서가 아니라 주군을 그대를 사랑하는 여자로서. 앞으로는 주군의 방패이자 검으로서뿐만 아니라 그대의 반려로서 평생 옆을 지킬 것을 맹세하네.
       OathIdle_01: |-
         주군을 알게 되면서 나는 더 이상 주군을
         의심하지 않게 되었다네. 미혹을 벗어던지니
@@ -4875,13 +4957,7 @@ dialogue:
         want me this much. 
         I also want you…
         What more can I ask for?
-      Oath: I was an actress, so I have a lot of lines I can say in situations like
-        this. Each one of them could end up as a famous line in a movie. But
-        right now, I’m not going to spit out something that was written by
-        someone else. How would I be able to reject you, my lord. Not as a loyal
-        knight, but as a woman who is in love with you. I swear that I will
-        stand by your side, not only as your sword and shield, but also as your
-        companion.
+      Oath: I was an actress, so I have a lot of lines I can say in situations like this. Each one of them could end up as a famous line in a movie. But right now, I’m not going to spit out something that was written by someone else. How would I be able to reject you, my lord. Not as a loyal knight, but as a woman who is in love with you. I swear that I will stand by your side, not only as your sword and shield, but also as your companion.
       OathIdle_01: |-
         Once I got to know you,
         I never doubted you. Once the confusion was stripped away,
@@ -4890,8 +4966,7 @@ dialogue:
         I stripped away. So? Do you want to see me?
       MVP: ""
     "":
-      Join: I was waiting for you, my Lord. I should write a poem to remember this
-        encounter.
+      Join: I was waiting for you, my Lord. I should write a poem to remember this encounter.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -4935,10 +5010,8 @@ dialogue:
         My sword exists only to
         serve my Master. Forever!
       SPIdle_02_01: Awe… if this is your wish, Master…
-      Oath: >-
-        Umm… My Lord… I knew you were into me… But since I'm a knight, I
-        pretended not to know.
-
+      Oath: |-
+        Umm… My Lord… I knew you were into me… But since I'm a knight, I pretended not to know.
         But… how can I say no to this…?
       OathIdle_01: |-
         Master, you’re neglecting me
@@ -5155,20 +5228,17 @@ skins:
   sid: null
   artist: Kakiman
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 6
   stage: false
   subset:
-    - true
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - D
+    G:
+      - _
+      - D
   anim:
     - true
     - false
@@ -5183,25 +5253,25 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 4
+    dflags: 5
     2dmodel_dam: 2DModel_DS_Johanna_N_Dam
   skins:
     - sid: 1
       artist: Taesi
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+        G:
+          - _
+          - D
+          - S
       anim:
         - false
         - false
@@ -5218,6 +5288,7 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_DS_Johanna_NS1
         2dmodel_dam: 2DModel_DS_Johanna_NS1_Dam
         consumableKey: Skin_DS_Johanna_1

@@ -1,3 +1,4 @@
+import { FunctionalComponent } from "preact";
 import { useEffect, useRef } from "preact/hooks";
 
 import { useFontLoad as useFontReady, useUpdate } from "@/libs/hooks";

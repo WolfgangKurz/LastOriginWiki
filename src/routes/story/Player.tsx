@@ -1,3 +1,4 @@
+import { FunctionalComponent } from "preact";
 import { useCallback, useEffect, useMemo, useRef, useState } from "preact/hooks";
 import Store from "@/store";
 
@@ -11,7 +12,7 @@ import { LocaleTypes } from "@/types/Locale";
 
 import { useUpdate } from "@/libs/hooks";
 import { useLocale } from "@/libs/Locale";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { AssetsRoot, IsDev } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
 import BGMAlbums from "@/libs/BGM";
@@ -114,8 +115,8 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 	const [ignore2DModel, setIgnore2DModel] = useState(false);
 
 	const modelList = useDBData<Record<string, CharModelType>>(StaticDB.Story2DModel);
-	if (!modelList && !ignore2DModel) {
-		if (modelList === null) // was error
+	if (!assertDBData(modelList) && !ignore2DModel) {
+		if (modelList === useDBData.Failed) // was error
 			setIgnore2DModel(true);
 
 		return <></>;
@@ -778,7 +779,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				let char: CharSpriteType | null = null;
 				if (screen && target && img) {
 					const c = ConvertChar(img);
-					const modelType = img in (modelList || {})
+					const modelType = img in (assertDBData(modelList) ? modelList : {})
 						? modelList![img]
 						: CharModelType.None;
 					const forCommu = isCommu(img);

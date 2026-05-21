@@ -605,6 +605,7 @@ source:
     - Ev:Ev33:EV4-4EX
   - - Ev:Ev35:EV1-5
     - Ev:Ev35:EV2-2EX
+  - - Ev:Ev36:EV2-2EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1749,6 +1750,23 @@ skills:
             base: 36
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        HESH탄을 발사해 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        대상이 <sec typ="cond"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 상태일 경우, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+      EN: |-
+        HESH round fires <dmg elem="physics" />.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        target <sec typ="cond"><buff typ="VULNERABLE" /> damage taken increase</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> Defense decrease</sec> if in the state, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken decrease removes the effect</sec>.
+      JP: |-
+        HESH弾を 発射して<dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        対象が <sec typ="cond"><buff typ="VULNERABLE" /> 受けるダメージ 増加</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 防御力 減少</sec> 状態の場合、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ 減少 効果を 解除</sec>します。
+      TC: |-
+        HESH彈 發射 造成<dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        目標 <sec typ="cond"><buff typ="VULNERABLE" /> 受到的傷害 增加</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 防禦力 減少</sec> 狀態若為， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害 減少 效果 解除</sec>。
   "2":
     key: "2"
     icon: CannonShot
@@ -3375,6 +3393,23 @@ skills:
               level: "0"
             value: Char_BR_BeastHunter_N
             chance: 1
+    desc:
+      KR: |-
+        고속 철갑탄을 발사해 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r signless /></sec> <dmg elem="physics" /> 피해를 줍니다.
+        <sec typ="cond">치명타인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+        스쿼드 내에 <char uid="BR_BeastHunter" />가 있을 경우 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">유산탄 포격</sec> 협동 공격</sec>을 유도합니다.
+      EN: |-
+        high-speed armor-piercing shell fires <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r signless /></sec> <dmg elem="physics" /> damage.
+        <sec typ="cond">If it is a critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
+        in squad to <char uid="BR_BeastHunter" /> if present <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">shrapnel shell bombardment</sec> coordinated attack</sec> triggers.
+      JP: |-
+        高速徹甲弾を 発射して <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r signless /></sec><dmg elem="physics" /> ダメージを 与えます。
+        <sec typ="cond">クリティカルの場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
+        スクワッド 内に <char uid="BR_BeastHunter" />が 存在する場合 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">榴散弾 砲撃</sec> 協同攻撃</sec>を 誘導します。
+      TC: |-
+        高速穿甲彈 發射 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r signless /></sec> <dmg elem="physics" /> 傷害 造成。
+        <sec typ="cond">若為暴擊</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>增加。
+        小隊 內於 <char uid="BR_BeastHunter" /> 存在時 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">榴霰彈 砲擊</sec> 協同攻擊</sec> 誘發。
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -3791,6 +3826,23 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">자신이 중열/후열에 위치</sec>한 경우 포격 대열을 전개해 중열/후열에 위치한 중장형 공격기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">대상이 자신과 같은 열에 위치</sec>한 경우, 상기 조건에 의한 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>이(가) 추가로 증가합니다.
+        <sec typ="cond">자신이 적 공격 시</sec>, 중열/후열에 위치한 중장형 공격기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>을(를) 증가시킵니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, <sec typ="cond">self middle row/back row to position</sec>one case Artillery Formation deploys middle row/back row to positioned Heavy-type Attacker of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">target self and same column to position</sec>one case, above condition to by <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>() additionally increases.
+        <sec typ="cond">self When attacking an enemy</sec>, middle row/back row to positioned Heavy-type Attacker of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> increases.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 <sec typ="cond">自身が 中列/後列に 位置</sec>した 場合 砲撃隊列を 展開して 中列/後列に 位置した 重装型 攻撃機の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        <sec typ="cond">対象が 自身と 同じ列に 位置</sec>した 場合、 上記 条件に よる <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>が追加で増加します。
+        <sec typ="cond">自身が 敵攻撃時</sec>、 中列/後列に 位置した 重装型 攻撃機の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>を増加させます。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， <sec typ="cond">自身 中排/後排於 位置</sec> 情況 砲擊隊列 展開 中排/後排於 位置 重裝型 攻擊機的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>使其增加。
+        <sec typ="cond">目標 自身與 同一行於 位置</sec> 情況， 上述 條件於 的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>會額外增加。
+        <sec typ="cond">自身 攻擊敵人時</sec>， 中排/後排於 位置 重裝型 攻擊機的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>使其增加。
   "4":
     key: "4"
     icon: P.SetTurret
@@ -4202,6 +4254,43 @@ skills:
             base: 53
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        대기 시, <sec typ="note">포격 대열</sec> 범위 내 중장형 공격기에게 <sec typ="note">진방렬</sec>을 지시합니다.
+        <cmt t="진방렬"><import name="PANI_4" p="0" /></cmt> 상태의 전투원은 <sec typ="buff"><buff typ="SNARE" /> 이동이 불가능</sec>해지고, <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 강제 이동 효과에 면역</sec> 상태가 되며, <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        <cmt t="진방렬"><import name="PANI_4" p="0" /></cmt>은 <sec typ="attr">강화 해제 효과로 해제되지 않으며</sec>, 파니가 <sec typ="cond">대기 시</sec> <sec typ="buff">일괄 해제</sec>할 수 있습니다.
+        <define name="PANI_4">
+        <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec>
+        <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 강제 이동 효과 면역</sec>
+         <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> 증가
+        </define>
+      EN: |-
+        On standby, <sec typ="note">Artillery Formation</sec> within range Heavy-type Attackerto <sec typ="note">Square Formation</sec> whether when.
+        <cmt t="Square Formation"><import name="PANI_4" p="0" /></cmt> state of combatant <sec typ="buff"><buff typ="SNARE" /> same disabled</sec>becomes, <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> forced same effect and immunity to</sec> state and, <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increases.
+        <cmt t="Square Formation"><import name="PANI_4" p="0" /></cmt> <sec typ="attr">buff removal effect andas is not removed and</sec>, Pani <sec typ="cond">On standby</sec> <sec typ="buff">batch remove</sec>can number exists.
+        <define name="PANI_4">
+        <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec>
+        <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> forced same effect and immunity</sec>
+        <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increase
+        </define>
+      JP: |-
+        待機時、 <sec typ="note">砲撃隊列</sec> 範囲内 重装型 攻撃機に <sec typ="note">陣方列</sec>を ジイ時します。
+        <cmt t="陣方列"><import name="PANI_4" p="0" /></cmt> 状態の 戦闘員は <sec typ="buff"><buff typ="SNARE" /> がドオンが 不可能</sec>してジイし、 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> グアンジエ がドオン 効果に 免疫</sec> 状態が になり、、 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が増加します。
+        <cmt t="陣方列"><import name="PANI_4" p="0" /></cmt>は <sec typ="attr">強化解除 効果で 解除されず、</sec>、 プアンイが <sec typ="cond">待機時</sec> <sec typ="buff">イルグワル 解除</sec>できます。
+        <define name="PANI_4">
+        <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec>
+        <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> グアンジエ がドオン 効果 免疫</sec>
+         <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> 増加
+        </define>
+      TC: |-
+        待機時， <sec typ="note">砲擊隊列</sec> 範圍內 重裝型 攻擊機給 <sec typ="note">方陣</sec> 支時。
+        <cmt t="方陣"><import name="PANI_4" p="0" /></cmt> 狀態的 戰鬥員 <sec typ="buff"><buff typ="SNARE" /> 同 不可能</sec>支並， <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 強制 同 效果於 免疫</sec> 狀態 變為，且 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>增加。
+        <cmt t="方陣"><import name="PANI_4" p="0" /></cmt> <sec typ="attr">強化解除 效果以 不會被解除，且</sec>， 帕尼 <sec typ="cond">待機時</sec> <sec typ="buff">一一併 解除</sec>可以。
+        <define name="PANI_4">
+        <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec>
+        <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 強制 同 效果 免疫</sec>
+         <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> 增加
+        </define>
   "5":
     key: "5"
     icon: P.CannonShotWide
@@ -4856,6 +4945,27 @@ skills:
             base: 0.5
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 스쿼드 내 중장형 전투원 수에 따라 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec>씩 영구 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, 스쿼드 내 공격기 전투원 수에 따라 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="8" r /></sec>씩 영구 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <cmt t="AA 캐노니어 소속 지원기"><import name="AACannonier_Supporter" p="0" /></cmt>를 공격 지원합니다.
+        <sec typ="note">포격 대열</sec> 효과 중 공격 시 증가하는 AP의 50%만큼 <sec typ="cond">자신이 지원/협동 공격 시</sec>에도 대상의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="3" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, in squad Heavy-type number of combatantsdepending on own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec>each permanent increases.
+        <sec typ="cond">At battle start</sec>, in squad Attacker number of combatantsdepending on own <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="8" r /></sec>each permanent increases.
+        <sec typ="cond">At round start</sec>, <cmt t="AA Cannoneer affiliated Supporter"><import name="AACannonier_Supporter" p="0" /></cmt> Attack Support.
+        <sec typ="note">Artillery Formation</sec> effect and during When attacking increase AP of 50%by <sec typ="cond">self support/coordinated attack when</sec>also target's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="3" /></sec> increases.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 スクワッド 内 重装型 戦闘員数に応じて 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec>ッスイク 永久 増加します。
+        <sec typ="cond">戦闘開始時</sec>、 スクワッド 内 攻撃機 戦闘員数に応じて 自身の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="8" r /></sec>ッスイク 永久 増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 <cmt t="AAキャノニア 所属 支援機"><import name="AACannonier_Supporter" p="0" /></cmt>を 攻撃支援します。
+        <sec typ="note">砲撃隊列</sec> 効果 中 攻撃時 増加する APの 50%分 <sec typ="cond">自身が 支援/協同攻撃 時</sec>にも 対象の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="3" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 小隊 內 重裝型 戰鬥員數量依 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec>各 永久 增加。
+        <sec typ="cond">戰鬥開始時</sec>， 小隊 內 攻擊機 戰鬥員數量依 自身的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="8" r /></sec>各 永久 增加。
+        <sec typ="cond">回合開始時</sec>， <cmt t="AA砲手 所屬 支援機"><import name="AACannonier_Supporter" p="0" /></cmt> 攻擊支援。
+        <sec typ="note">砲擊隊列</sec> 效果 中 攻擊時 增加 AP的 50%等量 <sec typ="cond">自身 支援/協同攻擊 時</sec>於也 目標的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="3" /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -5143,11 +5253,8 @@ dialogue:
         We didn’t even take a shower. Aren’t you rushing too much?
         It’s a reward. You cheered for me.
         You can take your time.
-      Oath: >-
-        Wait! Don’t you think it is to too random to propose right after the
-        game? It’s not like I haven’t imagined it before… Okay, no, wait. I want
-        to propose to you. Commander. Please be my man. Kyaa!
-
+      Oath: |-
+        Wait! Don’t you think it is to too random to propose right after the game? It’s not like I haven’t imagined it before… Okay, no, wait. I want to propose to you. Commander. Please be my man. Kyaa!
         Then we are husband and wife now, right? I’m so happy as if I won the game!
       OathIdle_01: |-
         Long hair isn’t really helpful during the match… But you like it.
@@ -5190,9 +5297,8 @@ dialogue:
       SPIdle_02_01: |-
         You devilish Commander! That’s it.
         I’m gonna do the same thing…
-      Oath: >-
+      Oath: |-
         Ha Hat! Are you for real? Really? Seriously?
-
         Thank you, Mr. Commander! I kept waiting and waiting for a day like this. I will never ever let you down.
       OathIdle_01: Pit-a-Pat! You always make me so happy.
       MVP: ""
@@ -5214,11 +5320,9 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         You have to keep working on vacation days to keep your body limber.
-
         Just lying around will only make things worse.
-
         What are you doing? Let's have some fun, Commander! There are so many things we can enjoy!
       Idle_01_02: |-
         I don’t have a special shampoo I use in particular… 
@@ -5376,20 +5480,13 @@ skins:
   sid: null
   artist: Rorobomb
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5404,25 +5501,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_Pani_N
   skins:
     - sid: 1
       artist: Jam
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 76
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+        G:
+          - _
+          - D
       anim:
         - false
         - false
@@ -5443,5 +5538,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_Pani_NS1
         2dmodel_dam: 2DModel_BR_Pani_NS1_Dam

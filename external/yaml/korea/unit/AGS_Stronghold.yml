@@ -2632,6 +2632,11 @@ skills:
             base: -0.21
             per: -0.01
             chance: 1
+    desc:
+      KR: 범위 내 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고 2라운드 동안 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec> 증가 / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="5" r /></sec> 감소 / <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="6" r /></sec> 감소 상태로 만듭니다.
+      EN: within range to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and 2 rounds <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec> increase / <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="5" r /></sec> decrease / <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="6" r /></sec> decrease inflicts.
+      JP: 範囲内 対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、 2ラウンドの間 <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec> 増加 / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="5" r /></sec> 減少 / <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="6" r /></sec> 減少 状態にします。
+      TC: 範圍內 對目標 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 2回合內 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" r /></sec> 增加 / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="5" r /></sec> 減少 / <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="6" r /></sec> 減少 使其進入狀態。
   "2":
     key: "2"
     icon: MeleeAttack
@@ -3701,6 +3706,19 @@ skills:
             base: 0.3
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 <dmg elem="physics" />를 주고 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> 감소 상태로 만듭니다.
+        치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      EN: |-
+        to a single target <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="0" r /></sec> decrease inflicts.
+        On critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+      JP: |-
+        単一対象へ<dmg elem="physics" />を与え、 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> 減少 状態にします。
+        クリティカル時、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
+      TC: |-
+        單一目標給 造成<dmg elem="physics" />，並 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> 減少 使其進入狀態。
+        暴擊時， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -4226,6 +4244,31 @@ skills:
             base: 0.32
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="1" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> 효과가 활성화됩니다.
+        첫 <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec>가 크게 감소하고 일정 라운드동안 수치가 차감되며, 차감된 후 감소된 수치로 유지됩니다.
+        1 라운드 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec> 감소
+        2 라운드 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="5" r inv /></sec> 감소
+        3 라운드 : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="6" r inv /></sec> 감소
+      EN: |-
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="1" r /></sec> increases and <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> effect and is activated.
+        first <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="4" r inv /></sec> greatly decreases and fixed roundfor value kick Gam becomes and, kick Gam applied after reduced value as maintain.
+        1 round: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="4" r inv /></sec> decrease
+        2 round: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="5" r inv /></sec> decrease
+        3 round: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="6" r inv /></sec> decrease
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身 <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="1" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec> 効果が 有効化されます。
+        最初 <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="4" r inv /></sec>が クウく 減少し、 一定 ラウンド間 数値が チアグアムになり、、 チアグアムされた 後 減少された 数値で ユジイされます。
+        1 ラウンド：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="4" r inv /></sec> 減少
+        2 ラウンド：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="5" r inv /></sec> 減少
+        3 ラウンド：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="6" r inv /></sec> 減少
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="1" r /></sec> 增加，並 <sec typ="buff"><buff typ="DEF_Line" /> 列保護</sec> 效果 啟用。
+        首 <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="4" r inv /></sec> 大 減少，並 一定 回合期間 數值 扣除變為，且 扣除已 後 減少已 數值以 維持。
+        1 回合：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="4" r inv /></sec> 減少
+        2 回合：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="5" r inv /></sec> 減少
+        3 回合：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="6" r inv /></sec> 減少
   "4":
     key: "4"
     icon: P.ShieldWall
@@ -4389,6 +4432,11 @@ skills:
             base: 0.06
             per: 0.005
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_Char" /> 범위 내 아군을 지정 보호</sec>하고 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>를 증가시킵니다.
+      EN: <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_Char" /> within range Designated Protection for allies</sec> and allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="3" r /></sec> increases.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_Char" /> 範囲内 味方を 指定保護</sec>し、 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>を増加させます。
+      TC: <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_Char" /> 範圍內 我方 指定保護</sec>並 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>使其增加。
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -4637,6 +4685,11 @@ skills:
             base: 0.055
             per: 0.005
             chance: 1
+    desc:
+      KR: <sec typ="cond">전투 시작 시</sec>, 2라운드 동안 범위 내 적군을 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> 감소 / <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="2" r /></sec> 증가 상태로 만듭니다.
+      EN: <sec typ="cond">At battle start</sec>, 2 rounds within range enemies <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="0" r /></sec> decrease / <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="2" r /></sec> increase inflicts.
+      JP: 戦闘開始時、 2ラウンドの間 範囲内 敵軍を <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> 減少 / <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="2" r /></sec> 増加 状態にします。
+      TC: 戰鬥開始時， 2回合內 範圍內 敵方 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> 減少 / <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="2" r /></sec> 增加 使其進入狀態。
 dialogue:
   KR:
     "":
@@ -4693,8 +4746,7 @@ dialogue:
       MVP: ""
   EN:
     "":
-      Join: Nice to meet you. Before we start collaboration, let me brief you about
-        myself.
+      Join: Nice to meet you. Before we start collaboration, let me brief you about myself.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -4756,20 +4808,13 @@ skins:
   sid: null
   artist: MAR10
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -4784,4 +4829,5 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_AGS_Stronghold_N

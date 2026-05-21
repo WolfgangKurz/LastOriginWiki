@@ -29,8 +29,8 @@ export const FontPriority = _font_priority;
 const _font_callbacks: Record<string, Array<() => void>> = {};
 const _font_map: FontMap = {};
 
-const _font_ready_promise: Array<() => void> = [];
 let _font_ready = false;
+let _font_loading: Promise<void> | null = null;
 
 const _font_source = {
 	"IBM Plex Sans KR": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap",
@@ -47,86 +47,98 @@ const _font_list = [
 	"IBM Plex Sans KR", "Pretendard Variable", "Pretendard JP Variable",
 	"Noto Sans TC", "Noto Sans SC", "Noto Sans HK",
 ];
-Promise.all(
-	_font_list
-		.map(k => _font_source[k])
-		.map(url => fetch(url)
-			.then(r => r.text())
-			.then(r => {
-				const cssReg = /@font-face ?{([^}]+)}/g;
-				const _matches: string[] = [];
-				{
-					let m: RegExpExecArray | null;
-					while (m = cssReg.exec(r))
-						_matches.push(m[1]);
-				}
 
-				_matches.forEach(async _m => {
-					const name = (
-						/\bfont-family:[ \t]*['"]([^'"]+)['"];/.exec(_m) ||
-						/\bfont-family:[ \t]*['"]([^'"]+)['"]$/.exec(_m)
-					)![1];
-					const _weight = (
-						/\bfont-weight:[ \t]*([^;]+);/.exec(_m) ||
-						/\bfont-weight:[ \t]*([^;]+)$/.exec(_m)
-					)![1].trim();
-					let weight: number;
-					if (_weight.includes(" "))// variable
-						weight = 0;
-					else
-						weight = parseInt(_weight, 10);
+function ensureFontReady (): Promise<void> {
+	if (_font_ready) return Promise.resolve();
+	if (_font_loading) return _font_loading;
 
-					const src = /\bsrc:[ \t]*url\(([^)]+)\)/.exec(_m)![1];
-
-					const _range = /\bunicode-range:[ \t]*([^;]+);/.exec(_m) ||
-						/\bunicode-range:[ \t]*([^;]+)$/.exec(_m);
-					const ranges: FontUnicodeRange[] = [];
-					if (_range) {
-						_range[1].split(",")
-							.map(rg => rg.trim())
-							.forEach(rg => {
-								if (rg.startsWith("U+")) {
-									rg = rg.substring(2);
-									if (rg.includes("-")) // ranged
-										ranges.push(rg.split("-").map(x => parseInt(x, 16)) as [number, number]);
-									else // single char
-										ranges.push(parseInt(rg, 16));
-								} else if (/^[0-9]+$/.test(rg))
-									ranges.push(parseInt(rg, 10));
-								else
-									throw new Error("not implemented unicode-range format [" + rg + "]");
-							});
+	_font_loading = Promise.all(
+		_font_list
+			.map(k => _font_source[k])
+			.map(url => fetch(url)
+				.then(r => {
+					if (!r.ok) throw new Error(`Status ${r.status}`);
+					return r.text();
+				})
+				.then(r => {
+					const cssReg = /@font-face ?{([^}]+)}/g;
+					const _matches: string[] = [];
+					{
+						let m: RegExpExecArray | null;
+						while (m = cssReg.exec(r))
+							_matches.push(m[1]);
 					}
 
-					if (ranges.length > 0) { // dynamic-subset
-						if (weight === 0) { // variable
-							_font_map[name] ||= [];
+					_matches.forEach(_m => {
+						const name = (
+							/\bfont-family:[ \t]*['"]([^'"]+)['"];/.exec(_m) ||
+							/\bfont-family:[ \t]*['"]([^'"]+)['"]$/.exec(_m)
+						)![1];
+						const _weight = (
+							/\bfont-weight:[ \t]*([^;]+);/.exec(_m) ||
+							/\bfont-weight:[ \t]*([^;]+)$/.exec(_m)
+						)![1].trim();
+						let weight: number;
+						if (_weight.includes(" "))// variable
+							weight = 0;
+						else
+							weight = parseInt(_weight, 10);
 
-							const ranged = _font_map[name] as FontNonWeightedSubset[];
-							ranged.push({ ranges, font: src });
-						} else { // specific weight
-							_font_map[name] ||= {};
+						const src = /\bsrc:[ \t]*url\(([^)]+)\)/.exec(_m)![1];
 
-							const subset = _font_map[name] as FontWeightedDynamicSubset;
-							subset[weight] ||= [];
-							subset[weight].push({ ranges, font: src });
+						const _range = /\bunicode-range:[ \t]*([^;]+);/.exec(_m) ||
+							/\bunicode-range:[ \t]*([^;]+)$/.exec(_m);
+						const ranges: FontUnicodeRange[] = [];
+						if (_range) {
+							_range[1].split(",")
+								.map(rg => rg.trim())
+								.forEach(rg => {
+									if (rg.startsWith("U+")) {
+										rg = rg.substring(2);
+										if (rg.includes("-")) // ranged
+											ranges.push(rg.split("-").map(x => parseInt(x, 16)) as [number, number]);
+										else // single char
+											ranges.push(parseInt(rg, 16));
+									} else if (/^[0-9]+$/.test(rg))
+										ranges.push(parseInt(rg, 10));
+									else
+										throw new Error("not implemented unicode-range format [" + rg + "]");
+								});
 						}
-					} else { // static-subset
-						if (weight === 0) // variable
-							_font_map[name] = src;
-						else { // specific weight
-							_font_map[name] ||= {};
-							_font_map[name][weight] = src;
+
+						if (ranges.length > 0) { // dynamic-subset
+							if (weight === 0) { // variable
+								_font_map[name] ||= [];
+
+								const ranged = _font_map[name] as FontNonWeightedSubset[];
+								ranged.push({ ranges, font: src });
+							} else { // specific weight
+								_font_map[name] ||= {};
+
+								const subset = _font_map[name] as FontWeightedDynamicSubset;
+								subset[weight] ||= [];
+								subset[weight].push({ ranges, font: src });
+							}
+						} else { // static-subset
+							if (weight === 0) // variable
+								_font_map[name] = src;
+							else { // specific weight
+								_font_map[name] ||= {};
+								_font_map[name][weight] = src;
+							}
 						}
-					}
-				});
-			})
+					});
+				}),
 		),
-).then(() => {
-	_font_ready = true;
-	_font_ready_promise.forEach(fn => fn());
-	_font_ready_promise.splice(0, _font_ready_promise.length);
-});
+	).then(() => {
+		_font_ready = true;
+	}).catch(e => {
+		_font_loading = null;
+		throw e;
+	});
+
+	return _font_loading;
+}
 
 function charAvailableForFont (family: string, font: opentype.Font, char: string): boolean {
 	if (family in _font_except_chars && _font_except_chars[family].includes(char)) return false;
@@ -135,9 +147,8 @@ function charAvailableForFont (family: string, font: opentype.Font, char: string
 
 export function FontGet (family: string, weight: number, char: string): opentype.Font | null | Promise<opentype.Font | null> {
 	if (!_font_ready) {
-		return new Promise<opentype.Font | null>(resolve => {
-			_font_ready_promise.push(() => resolve(FontGet(family, weight, char)));
-		});
+		return ensureFontReady()
+			.then(() => FontGet(family, weight, char));
 	}
 
 	if (!(family in _font_map)) return null;

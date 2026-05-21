@@ -520,6 +520,7 @@ chart:
 cv:
   "1":
     ko: 가빈
+  "2": {}
   "":
     ko: 가빈
     jp: 杉田萌
@@ -1210,6 +1211,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />와 <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="0" r signless /> 고정 물리 피해</sec>를 입힙니다.
+        대상은 2라운드 동안 <sec typ="buff"><buff typ="Disallow" /> 강화 불가 상태</sec> <sec typ="attr">해로운 효과</sec>를 얻습니다.
+      EN: |-
+        to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> and <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="0" r signless /> fixed Physical damage</sec> deals.
+        the target 2 rounds <sec typ="buff"><buff typ="Disallow" /> Cannot be Buffed state</sec> <sec typ="attr">harmful effects</sec> gains.
+      JP: |-
+        対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />と <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="0" r signless /> 固定物理ダメージ</sec>を 与えます。
+        対象は 2ラウンドの間 <sec typ="buff"><buff typ="Disallow" /> 強化不可 状態</sec> <sec typ="attr">有害効果</sec>を オトます。
+      TC: |-
+        對目標 <sec typ="attr">無視保護</sec> <dmg elem="physics" />與 <sec typ="dmg"><buff typ="PhyATK_UP" /> <val idx="0" r signless /> 固定物理傷害</sec> 造成。
+        目標 2回合內 <sec typ="buff"><buff typ="Disallow" /> 無法強化 狀態</sec> <sec typ="attr">負面效果</sec> 獲得。
   "2":
     key: "2"
     icon: Scan
@@ -1363,6 +1377,11 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: 2라운드 동안 모든 아군에게 <char uid="PECS_Orangeade" />의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r signless />만큼 공격력 증가</sec> 효과를 부여합니다.
+      EN: 2 rounds all to allies <char uid="PECS_Orangeade" /> of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="1" r signless /> by Attack increase</sec> grants the effect.
+      JP: 2ラウンドの間 すべての味方に <char uid="PECS_Orangeade" />の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r signless />分 攻撃力 増加</sec> 効果を付与します。
+      TC: 2回合內 所有我方給 <char uid="PECS_Orangeade" />的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="1" r signless />等量 攻擊力 增加</sec> 賦予效果。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -1531,6 +1550,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시 <sec typ="cond">스쿼드에 기동형 아군 수가 2 이하</sec>일 경우, 모든 아군의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>를 증가시킵니다.
+        해당 효과는 해제할 수 없습니다.
+      EN: |-
+        At battle start <sec typ="cond">squad Mobile-type number of allies 2 or less</sec> if, all allies of <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increases.
+        the effect cannot be removed.
+      JP: |-
+        戦闘開始時 <sec typ="cond">スクワッドに 機動型 味方数が 2 以下</sec>の場合、 すべての味方の <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>を増加させます。
+        該当 効果は 解除できません。
+      TC: |-
+        戰鬥開始時 <sec typ="cond">小隊於 機動型 我方數量 2 以下</sec>若為， 所有我方的 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>使其增加。
+        該 效果 無法解除。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -1655,6 +1687,19 @@ skills:
             base: 150
             per: 10
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시 <sec typ="cond">스쿼드에 중장형 아군 수가 2 이하</sec>일 경우, 모든 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" /></sec>을(를) 증가시킵니다.
+        해당 효과는 해제할 수 없습니다.
+      EN: |-
+        At battle start <sec typ="cond">squad Heavy-type number of allies 2 or less</sec> if, all allies of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" /></sec> increases.
+        the effect cannot be removed.
+      JP: |-
+        戦闘開始時 <sec typ="cond">スクワッドに 重装型 味方数が 2 以下</sec>の場合、 すべての味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" /></sec>を増加させます。
+        該当 効果は 解除できません。
+      TC: |-
+        戰鬥開始時 <sec typ="cond">小隊於 重裝型 我方數量 2 以下</sec>若為， 所有我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" /></sec>使其增加。
+        該 效果 無法解除。
   "5":
     key: "5"
     icon: P.Snipe
@@ -1870,6 +1915,23 @@ skills:
             base: 2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전투 개시 시 <sec typ="cond">스쿼드에 경장형 아군 수가 2 이하</sec>일 경우, 모든 아군의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="1" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="attr">해당 효과는 해제할 수 없습니다.</sec>
+        <sec typ="important">스킬 레벨 10에서 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리</sec>가 추가로 증가합니다.</sec>
+      EN: |-
+        At battle start <sec typ="cond">squad Light-type number of allies 2 or less</sec> if, all allies of <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="1" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> increases.
+        <sec typ="attr">the effect cannot be removed.</sec>
+        <sec typ="important">At skill level 10, <sec typ="buff"><buff typ="RANGE_UP" /> Range</sec>additionally increases.</sec>
+      JP: |-
+        戦闘開始時 <sec typ="cond">スクワッドに 軽装型 味方数が 2 以下</sec>の場合、 すべての味方の <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="1" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec>を増加させます。
+        <sec typ="attr">該当 効果は 解除できません。</sec>
+        <sec typ="important">スキルレベル10で <sec typ="buff"><buff typ="RANGE_UP" /> 射程</sec>が追加で増加します。</sec>
+      TC: |-
+        戰鬥開始時 <sec typ="cond">小隊於 輕裝型 我方數量 2 以下</sec>若為， 所有我方的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="1" /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec>使其增加。
+        <sec typ="attr">該 效果 無法解除。</sec>
+        <sec typ="important">技能等級10時 <sec typ="buff"><buff typ="RANGE_UP" /> 射程</sec>會額外增加。</sec>
 dialogue:
   KR:
     "1":
@@ -1939,6 +2001,49 @@ dialogue:
         오늘은 어디로 갈까요? 물론 사령관님과
         함께라면 뭘 해도 즐겁겠지만요!​
       MVP: 이 정도면 하루 더 데이트해 주셔도 되겠다~ 그쵸? 네? 맞죠?
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: 오랑지.
+      Idle_01_02: |-
+        오랑지?
+        오랑지 오랑지.
+      Idle_01_03: |-
+        오랑지…!
+        오랑 오랑.
+      SPIdle_01_01: 오랑지?
+      Idle_02_01: |-
+        냐하~ 오랑지!
+        오랑지 오랑지 오랑지!
+        오라오라오라!
+      Idle_03_01: |-
+        오랑지!
+        오라오라오라!
+        오랑지 오랑지!
+      Idle_04_01: |-
+        오랑지…!
+        오랑 오랑!
+        오랑지 오랑지.
+        오… 오랑지! 오랑지!
+      SPIdle_02_01: 오랑지 냐하~♥
+      Oath: 오랑지 오랑지? 오라오라오라! 오오오오오라! 오랑지이이!
+      OathIdle_01: 오라오라오라!
+      MVP: ""
     "":
       Join: 짜잔! 다크호스 신입사원, 오렌지에이드 등장! 직접 뵙는 건 처음이죠? 에헷.​
       SquadJoin: 뭐든 맡겨만 주세요! 다 잘할 수 있으니까~
@@ -2078,6 +2183,35 @@ dialogue:
       Oath: 1万冊の恋愛漫画を読みながら、私もこんな風に愛されてみたいって何度も想像してきました。でもいざその状況に直面してみたら…現実は想像と全然違いますね。現実は……最高です！ビビビってきます！ヤバいです！ドッキドキです！えへへへっ！これからもずっとずっと、よろしくお願いしますね、司令官様！
       OathIdle_01: 今日も司令官様とデート！嬉しい！初めてのデートみたいにドキドキして毎回ワクワクしてるんですよ。今日はどこに行きましょうか？もちろん司令官様と一緒ならどこで何をしても全部！楽しいですけどね！
       MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: じゃっじゃじゃ～ん！ダークホース新入社員、オレンジエード参上！実際にお目にかかるのは初めてですよね？えへ。
       SquadJoin: ""
@@ -2173,16 +2307,11 @@ dialogue:
         the movie of an original comics that I REALLY REALLY LOVE!
         How can they ruin it like that! *whine*
         I only wanted to show you nice things…​
-      Idle_03_01: >-
-        Open your mouth, Commander. Isn’t it so tasty? It’s more delicious
-        because
-
+      Idle_03_01: |-
+        Open your mouth, Commander. Isn’t it so tasty? It’s more delicious because
         I’m with you, right? Hehehe! You look embarrassed. So cute of you.
-
         Oh? Oh, you want to give me it too?
-
         Ah… Ah… Th-this is much more embarrassing
-
         than I thought. But… It was very sweet.​
       Idle_04_01: |-
         D-date course is almost over.
@@ -2194,12 +2323,9 @@ dialogue:
         Can't wait for a night time date?
         Then, I know it's still a day time…
         Shall we go straight to the night date?​
-      Oath: >-
-        I've been imagining a lot of moments of being loved by someone while
-        watching 10,000 romance comics.
-
+      Oath: |-
+        I've been imagining a lot of moments of being loved by someone while watching 10,000 romance comics.
         But the moment… is very different from the imagination. The real moment is… much happier!
-
         The best! Awesome! The real world! Hehehehe! Let's take a good care of each other, Commander.
       OathIdle_01: |-
         We do date many times, but it’s always fun!
@@ -2207,9 +2333,37 @@ dialogue:
         Where do you want to go today? Of course, it’s going to be fun
         because we are together!​
       MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
-      Join: Alright! Dark Horse rookie, Orange Ade is here! It’s my first time meeting
-        you, isn’t it? Hehe.​
+      Join: Alright! Dark Horse rookie, Orange Ade is here! It’s my first time meeting you, isn’t it? Hehe.​
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -2246,13 +2400,10 @@ dialogue:
         Awesome! Commander, did you see this? I’m the candidate for
         this month’s most diligent member!
         Let’s see, in terms of working hours… C-Commander is on the top?!
-      Idle_03_01: >-
+      Idle_03_01: |-
         On my day off, I have to loaf around,
-
         reading comic books. I wear a sheet mask… Huh? Do you like comic books, too?
-
         Awesome! Then will you come over to my room?
-
         I have tons of comic books!
       Idle_04_01: |-
         Uhhh…! Then am I done for the day?
@@ -2264,10 +2415,7 @@ dialogue:
         Gosh, we’ll get caught. If we do-
         I won’t… get into trouble, but… Oh, whatever.
         But you have to be gentle.​
-      Oath: … Are you giving this to me? Really? Seriously? Awesome! I've only seen
-        this happening in cartoons… It's very cliche, but this is the moment
-        I've been waiting for. Now that I realized you feel the same way as me…
-        Ahaha! I feel a little shy. Thank you for making today special.
+      Oath: … Are you giving this to me? Really? Seriously? Awesome! I've only seen this happening in cartoons… It's very cliche, but this is the moment I've been waiting for. Now that I realized you feel the same way as me… Ahaha! I feel a little shy. Thank you for making today special.
       OathIdle_01: |-
         You’re my husband… 
         It kind of feels strange. When we’re alone…
@@ -2303,19 +2451,13 @@ dialogue:
         I wonder who has such a handsome lover.
         *Clears Throat* Excuse me, do you have a girlfriend?
         If you don’t, would you like to be my boyfriend?​
-      Idle_01_03: >-
-        Stop sending me away for duties… Your wife might collapse at this rate…
-        Should I just become a housewife?
-
+      Idle_01_03: |-
+        Stop sending me away for duties… Your wife might collapse at this rate… Should I just become a housewife?
         I’ll put on a necktie for you
-
         every morning! House chores…?
-
         Commander, are you good at doing house chores?​
-      SPIdle_01_01: >-
-        I have to go to work tomorrow… You held on to me all night everyday. Now
-        I spent all of my holidays.
-
+      SPIdle_01_01: |-
+        I have to go to work tomorrow… You held on to me all night everyday. Now I spent all of my holidays.
         Promise it’ll be quick? Are you sure? Hmm, then… I won’t let you go this time.
       MVP: ""
   TC:
@@ -2385,6 +2527,35 @@ dialogue:
         就像第一次一樣激動，充滿期待。
         今天要去哪裡呢？只要和司令官一起
         不管做什麼都很開心！
+      MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: 噔噔噔！黑馬新員工，橙汁汽水登場！這還是我們第一次直接見面吧？嗯哼。​
@@ -2499,20 +2670,14 @@ skins:
   sid: null
   artist: BUMCHa
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -2527,25 +2692,19 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Orangeade_N
   skins:
     - sid: 1
       artist: BUMCHa
       price: 136
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
       anim:
         - true
         - false
@@ -2570,4 +2729,35 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_PECS_Orangeade_1
+    - sid: 2
+      artist: ??
+      price: 41
+      Spine: true
+      SpineDamaged: false
+      parts: 78
+      stage: false
+      subset:
+        O:
+          - _
+          - D
+          - DS
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - None
+      facelist: []
+      releaseDate: 1774483200000
+      metadata:
+        imageId: 2
+        iconId: 2
+        tbarId: 2
+        voiceId: 2
+        flags: 2
+        dflags: 1
+        2dmodel_dam: 2DModel_PECS_Orangeade_NS2_Dam

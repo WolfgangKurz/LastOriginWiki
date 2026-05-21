@@ -503,42 +503,42 @@ stat:
     ACC: 110
     EVA: 30
     Resist:
-      fire: 0
-      ice: 0
+      fire: 25
+      ice: 25
       lightning: 0
   - HP:
       - 305
       - 2819.6
     ATK:
-      - 97
-      - 687.04
+      - 122
+      - 712.04
     DEF:
-      - 28
-      - 257.68
+      - 38
+      - 267.68
     SPD: 4.22
-    CRI: 10.5
-    ACC: 113
-    EVA: 31.5
+    CRI: 8
+    ACC: 120
+    EVA: 35
     Resist:
-      fire: 0
-      ice: 0
+      fire: 50
+      ice: 50
       lightning: 0
   - HP:
-      - 425
-      - 2939.6
+      - 405
+      - 2919.6
     ATK:
-      - 147
-      - 737.04
+      - 197
+      - 787.04
     DEF:
-      - 48
-      - 277.68
+      - 58
+      - 287.68
     SPD: 4.25
-    CRI: 13
-    ACC: 122
-    EVA: 32.5
+    CRI: 10
+    ACC: 130
+    EVA: 40
     Resist:
-      fire: 0
-      ice: 0
+      fire: 80
+      ice: 80
       lightning: 0
 chart:
   - 5
@@ -550,6 +550,7 @@ chart:
 cv:
   "1": {}
   "2": {}
+  "3": {}
   "":
     ko: ""
     jp: 上田麗奈
@@ -600,6 +601,7 @@ source:
     - Ev:Ev33:EV4-3EX
   - - Ev:Ev35:EV1-2EX
     - Ev:Ev35:EV2-4EX
+  - - Ev:Ev37:EV2-1
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -624,9 +626,9 @@ skills:
         - 8
         - 9
       data:
-        - rate: 1.665
+        - rate: 1.69
           type: 1
-          range: 2
+          range: 3
           ap: 7
           grid: 0,0,0,0,1,1,0,0,0
           summon: null
@@ -658,8 +660,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -667,15 +669,15 @@ skills:
                     isBuff: true
                     type: 3
                     defense:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_FIRERES_DOWN
                   desc:
                     desc: Effect_ST_Lancer_N_1_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -685,47 +687,30 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -25%
-                        per: -1.25%
+                        base: -20%
+                        per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_UP
                   desc:
                     desc: Effect_ST_Lancer_N_1_3
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
                     chance: 0%
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_1_4
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_ST_Lancer_N_11
-              on: attack_success
+              on: criticaled
               if:
                 - false
                 - false
@@ -746,8 +731,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_11_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -755,50 +740,14 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
-            - key: Effect_ST_Lancer_N_15
-              on: enemy_killed
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_15_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-        - rate: 1.815
+        - rate: 1.859
           type: 1
-          range: 2
+          range: 3
           ap: 7
           grid: 0,0,0,0,1,1,0,0,0
           summon: null
@@ -830,8 +779,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -839,15 +788,15 @@ skills:
                     isBuff: true
                     type: 3
                     defense:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_FIRERES_DOWN
                   desc:
                     desc: Effect_ST_Lancer_N_1_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -857,47 +806,30 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -25%
-                        per: -1.25%
+                        base: -20%
+                        per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_UP
                   desc:
                     desc: Effect_ST_Lancer_N_1_3
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
                     chance: 0%
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_1_4
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_ST_Lancer_N_11
-              on: attack_success
+              on: criticaled
               if:
                 - false
                 - false
@@ -918,8 +850,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_11_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -927,50 +859,14 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
-            - key: Effect_ST_Lancer_N_15
-              on: enemy_killed
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_15_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-        - rate: 1.965
+        - rate: 2.028
           type: 1
-          range: 2
+          range: 3
           ap: 7
           grid: 0,0,0,0,1,1,0,0,0
           summon: null
@@ -1002,8 +898,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1011,15 +907,15 @@ skills:
                     isBuff: true
                     type: 3
                     defense:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_FIRERES_DOWN
                   desc:
                     desc: Effect_ST_Lancer_N_1_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1029,47 +925,30 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -25%
-                        per: -1.25%
+                        base: -20%
+                        per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_UP
                   desc:
                     desc: Effect_ST_Lancer_N_1_3
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
                     chance: 0%
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_1_4
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_ST_Lancer_N_11
-              on: attack_success
+              on: criticaled
               if:
                 - false
                 - false
@@ -1090,8 +969,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_11_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -1099,50 +978,14 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
-            - key: Effect_ST_Lancer_N_15
-              on: enemy_killed
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_15_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-        - rate: 2.115
+        - rate: 2.197
           type: 1
-          range: 2
+          range: 3
           ap: 7
           grid: 0,0,0,0,1,1,0,0,0
           summon: null
@@ -1174,8 +1017,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1183,15 +1026,15 @@ skills:
                     isBuff: true
                     type: 3
                     defense:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_FIRERES_DOWN
                   desc:
                     desc: Effect_ST_Lancer_N_1_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1201,47 +1044,30 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -25%
-                        per: -1.25%
+                        base: -20%
+                        per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_UP
                   desc:
                     desc: Effect_ST_Lancer_N_1_3
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
                     chance: 0%
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_1_4
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_ST_Lancer_N_11
-              on: attack_success
+              on: criticaled
               if:
                 - false
                 - false
@@ -1262,8 +1088,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_11_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -1271,50 +1097,14 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
-            - key: Effect_ST_Lancer_N_15
-              on: enemy_killed
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_15_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-        - rate: 2.265
+        - rate: 2.366
           type: 1
-          range: 2
+          range: 3
           ap: 7
           grid: 0,0,0,0,1,1,0,0,0
           summon: null
@@ -1346,8 +1136,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1355,15 +1145,15 @@ skills:
                     isBuff: true
                     type: 3
                     defense:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_FIRERES_DOWN
                   desc:
                     desc: Effect_ST_Lancer_N_1_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1373,47 +1163,30 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -25%
-                        per: -1.25%
+                        base: -20%
+                        per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_UP
                   desc:
                     desc: Effect_ST_Lancer_N_1_3
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
                     chance: 0%
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_1_4
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_ST_Lancer_N_11
-              on: attack_success
+              on: criticaled
               if:
                 - false
                 - false
@@ -1434,8 +1207,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_11_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -1443,50 +1216,14 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
-            - key: Effect_ST_Lancer_N_15
-              on: enemy_killed
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_15_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-        - rate: 2.415
+        - rate: 2.535
           type: 1
-          range: 2
+          range: 3
           ap: 7
           grid: 0,0,0,0,1,1,0,0,0
           summon: null
@@ -1518,8 +1255,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1527,15 +1264,15 @@ skills:
                     isBuff: true
                     type: 3
                     defense:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_FIRERES_DOWN
                   desc:
                     desc: Effect_ST_Lancer_N_1_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1545,47 +1282,30 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -25%
-                        per: -1.25%
+                        base: -20%
+                        per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_UP
                   desc:
                     desc: Effect_ST_Lancer_N_1_3
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
                     chance: 0%
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_1_4
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_ST_Lancer_N_11
-              on: attack_success
+              on: criticaled
               if:
                 - false
                 - false
@@ -1606,8 +1326,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_11_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -1615,50 +1335,14 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
-            - key: Effect_ST_Lancer_N_15
-              on: enemy_killed
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_15_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-        - rate: 2.565
+        - rate: 2.704
           type: 1
-          range: 2
+          range: 3
           ap: 7
           grid: 0,0,0,0,1,1,0,0,0
           summon: null
@@ -1690,8 +1374,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1699,15 +1383,15 @@ skills:
                     isBuff: true
                     type: 3
                     defense:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_FIRERES_DOWN
                   desc:
                     desc: Effect_ST_Lancer_N_1_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1717,47 +1401,30 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -25%
-                        per: -1.25%
+                        base: -20%
+                        per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_UP
                   desc:
                     desc: Effect_ST_Lancer_N_1_3
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
                     chance: 0%
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_1_4
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_ST_Lancer_N_11
-              on: attack_success
+              on: criticaled
               if:
                 - false
                 - false
@@ -1778,8 +1445,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_11_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -1787,50 +1454,14 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
-            - key: Effect_ST_Lancer_N_15
-              on: enemy_killed
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_15_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-        - rate: 2.715
+        - rate: 2.873
           type: 1
-          range: 2
+          range: 3
           ap: 7
           grid: 0,0,0,0,1,1,0,0,0
           summon: null
@@ -1862,8 +1493,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1871,15 +1502,15 @@ skills:
                     isBuff: true
                     type: 3
                     defense:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_FIRERES_DOWN
                   desc:
                     desc: Effect_ST_Lancer_N_1_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1889,47 +1520,30 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -25%
-                        per: -1.25%
+                        base: -20%
+                        per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_UP
                   desc:
                     desc: Effect_ST_Lancer_N_1_3
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
                     chance: 0%
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_1_4
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_ST_Lancer_N_11
-              on: attack_success
+              on: criticaled
               if:
                 - false
                 - false
@@ -1950,8 +1564,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_11_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -1959,50 +1573,14 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
-            - key: Effect_ST_Lancer_N_15
-              on: enemy_killed
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_15_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-        - rate: 2.865
+        - rate: 3.042
           type: 1
-          range: 2
+          range: 3
           ap: 7
           grid: 0,0,0,0,1,1,0,0,0
           summon: null
@@ -2034,8 +1612,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -2043,15 +1621,15 @@ skills:
                     isBuff: true
                     type: 3
                     defense:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_FIRERES_DOWN
                   desc:
                     desc: Effect_ST_Lancer_N_1_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -2061,47 +1639,30 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -25%
-                        per: -1.25%
+                        base: -20%
+                        per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_UP
                   desc:
                     desc: Effect_ST_Lancer_N_1_3
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
                     chance: 0%
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_1_4
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_ST_Lancer_N_11
-              on: attack_success
+              on: criticaled
               if:
                 - false
                 - false
@@ -2122,8 +1683,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_11_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -2131,50 +1692,14 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
-            - key: Effect_ST_Lancer_N_15
-              on: enemy_killed
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_15_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-        - rate: 3.015
+        - rate: 3.211
           type: 1
-          range: 2
+          range: 3
           ap: 7
           grid: 0,0,0,0,1,1,0,0,0
           summon: null
@@ -2206,8 +1731,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -2215,15 +1740,15 @@ skills:
                     isBuff: true
                     type: 3
                     defense:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_FIRERES_DOWN
                   desc:
                     desc: Effect_ST_Lancer_N_1_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -2233,47 +1758,30 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -25%
-                        per: -1.25%
+                        base: -20%
+                        per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_UP
                   desc:
                     desc: Effect_ST_Lancer_N_1_3
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
                     chance: 0%
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_1_4
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_ST_Lancer_N_11
-              on: attack_success
+              on: criticaled
               if:
                 - false
                 - false
@@ -2294,8 +1802,8 @@ skills:
                   desc:
                     desc: Effect_ST_Lancer_N_11_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -2303,46 +1811,10 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_ST_Lancer_N_15
-              on: enemy_killed
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_15_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
     values:
       index:
@@ -2361,56 +1833,55 @@ skills:
             desc:
               desc: Effect_ST_Lancer_N_1_1
               type: 1
-              value: "-0.250000"
-              level: "-0.012500"
-            base: -0.25
-            per: -0.0125
+              value: "-0.200000"
+              level: "-0.020000"
+            base: -0.2
+            per: -0.02
             chance: 1
           - icon: BuffIcon_FIRERES_DOWN
             desc:
               desc: Effect_ST_Lancer_N_1_2
               type: 1
-              value: "-0.250000"
-              level: "-0.012500"
-            base: -0.25
-            per: -0.0125
+              value: "-0.200000"
+              level: "-0.020000"
+            base: -0.2
+            per: -0.02
             chance: 1
           - icon: BuffIcon_EVADE_UP
             desc:
               desc: Effect_ST_Lancer_N_1_3
               type: 1
-              value: "0.350000"
-              level: "0.050000"
-            base: 0.35
-            per: 0.05
-            chance: 0
-          - icon: BuffIcon_EVADE_UP
-            desc:
-              desc: Effect_ST_Lancer_N_1_4
-              type: 1
-              value: "0.350000"
-              level: "0.050000"
-            base: 0.35
-            per: 0.05
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
             chance: 0
           - icon: BuffIcon_EVADE_UP
             desc:
               desc: Effect_ST_Lancer_N_11_1
               type: 1
-              value: "0.350000"
-              level: "0.050000"
-            base: 0.35
-            per: 0.05
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
             chance: 1
-          - icon: BuffIcon_EVADE_UP
-            desc:
-              desc: Effect_ST_Lancer_N_15_1
-              type: 1
-              value: "0.350000"
-              level: "0.050000"
-            base: 0.35
-            per: 0.05
-            chance: 1
+    desc:
+      KR: |-
+        랜스 돌격으로 지정 범위에 <dmg elem="fire" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="1" r /></sec>가 감소합니다.
+        <sec typ="cond">치명타 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="3" r /></sec>가 증가합니다.
+      EN: |-
+        lance charge as to the designated area <dmg elem="fire" />.
+        <sec typ="cond">On hit</sec>, 2 rounds, target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="1" r /></sec> decreases.
+        <sec typ="cond">On critical hit</sec>, 3 rounds own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="3" r /></sec> increases.
+      JP: |-
+        ルエンスウ ドオルグヨクで 指定範囲に<dmg elem="fire" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="1" r /></sec>が減少します。
+        <sec typ="cond">クリティカル時</sec>、 3ラウンドの間 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="3" r /></sec>が増加します。
+      TC: |-
+        時enseu 突擊以 指定範圍於 造成<dmg elem="fire" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="1" r /></sec>減少。
+        <sec typ="cond">暴擊時</sec>， 3回合內 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="3" r /></sec>增加。
   "2":
     key: "2"
     icon: ShieldWall
@@ -2432,8 +1903,8 @@ skills:
       data:
         - rate: 0
           type: 0
-          range: 6
-          ap: 6
+          range: 0
+          ap: 5
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
           use: null
@@ -2459,59 +1930,84 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 1
+              target: 0
               buffs:
-                - icon: BuffIcon_DEF_Char
+                - icon: BuffIcon_CRITICAL_UP
                   desc:
                     desc: Effect_ST_Lancer_N_2_1
                     type: 1
-                    value: "0"
-                    level: "0"
+                    value: "0.500000"
+                    level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 3
+                    count: 3
+                    trigger:
+                      attack_success: passive
                   value:
                     isBuff: true
-                    type: 76
-                    guard: target
+                    type: 9
+                    critical:
+                      base: 50%
+                      per: 5%
                   overlap: 4
-                - icon: BuffIcon_DEF_UP
+                - icon: BuffIcon_EVADE_UP
                   desc:
                     desc: Effect_ST_Lancer_N_2_2
                     type: 1
-                    value: "0.500000"
+                    value: "0.250000"
                     level: "0.025000"
                   attr: 0
                   erase:
-                    rounds: 0
+                    count: 3
+                    trigger:
+                      attack_success: passive
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 3
-                    defense:
-                      base: 50%
+                    type: 11
+                    evade:
+                      base: 25%
                       per: 2.5%
                   overlap: 4
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_ST_Lancer_N_2_3
                     type: 1
-                    value: "0.250000"
+                    value: "0.200000"
                     level: "0.020000"
                   attr: 0
                   erase:
-                    rounds: 0
+                    count: 3
+                    trigger:
+                      attack_success: passive
                   value:
                     isBuff: true
                     chance: 0%
                     type: 36
                     damage_reduce:
-                      base: 25%
+                      base: 20%
                       per: 2%
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_ST_Lancer_N_12
+                - icon: BuffIcon_BARRIER_PIERCE
+                  desc:
+                    desc: Effect_ST_Lancer_N_2_4
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger:
+                      attack_success: passive
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 94
+                    penetration_force: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 44
+            - key: Effect_ST_Lancer_N_21
               on:
                 after: use_skill
               if:
@@ -2530,25 +2026,27 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEF_UP
+                - icon: BuffIcon_EVADE_UP
                   desc:
-                    desc: Effect_ST_Lancer_N_12_1
+                    desc: Effect_ST_Lancer_N_21_1
                     type: 1
-                    value: "0.500000"
+                    value: "0.250000"
                     level: "0.025000"
                   attr: 0
                   erase:
-                    rounds: 3
+                    count: 3
+                    trigger:
+                      attack_success: passive
                   value:
                     isBuff: true
-                    type: 3
-                    defense:
-                      base: 50%
+                    type: 11
+                    evade:
+                      base: 25%
                       per: 2.5%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-            - key: Effect_ST_Lancer_N_13
+              overlapGroup: 45
+            - key: Effect_ST_Lancer_N_22
               on:
                 after: use_skill
               if:
@@ -2569,19 +2067,189 @@ skills:
               buffs:
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_ST_Lancer_N_13_1
+                    desc: Effect_ST_Lancer_N_22_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    count: 3
+                    trigger:
+                      attack_success: passive
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: 20%
+                      per: 2%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 46
+            - key: Effect_ST_Lancer_N_23
+              on:
+                after: use_skill
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_BARRIER_PIERCE
+                  desc:
+                    desc: Effect_ST_Lancer_N_23_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger:
+                      attack_success: passive
+                  value:
+                    isBuff: true
+                    type: 94
+                    penetration_force: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 47
+            - key: Effect_ST_Lancer_N_24
+              on:
+                after: use_skill
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_ST_Lancer_N_412
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_ST_Lancer_N_24_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: 20%
+                      per: 2%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 48
+            - key: Effect_ST_Lancer_N_25
+              on:
+                after: use_skill
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_ST_Lancer_N_53
+                      - Effect_ST_Lancer_N_55
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DEBUFF_PERDOWN
+                  desc:
+                    desc: Effect_ST_Lancer_N_25_1
                     type: 1
                     value: "0.250000"
-                    level: "0.020000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 3
                   value:
                     isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 25%
-                      per: 2%
+                    type: 91
+                    resist:
+                      type: debuff_perdown
+                      value:
+                        base: 25%
+                        per: 5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_ST_Lancer_N_26
+              on:
+                after: use_skill
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_ST_Lancer_N_53
+                      - Effect_ST_Lancer_N_55
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_Remove_Buff_Resist
+                  desc:
+                    desc: Effect_ST_Lancer_N_26_1
+                    type: 1
+                    value: "0.250000"
+                    level: "0.050000"
+                  attr: 3
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 126
+                    resist:
+                      type: off
+                      value:
+                        base: 25%
+                        per: 5%
                   overlap: 4
               maxStack: 1
               overlapGroup: -1
@@ -2598,54 +2266,120 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_DEF_Char
+        - - icon: BuffIcon_CRITICAL_UP
             desc:
               desc: Effect_ST_Lancer_N_2_1
               type: 1
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
+              value: "0.500000"
+              level: "0.050000"
+            base: 0.5
+            per: 0.05
             chance: 1
-          - icon: BuffIcon_DEF_UP
+          - icon: BuffIcon_EVADE_UP
             desc:
               desc: Effect_ST_Lancer_N_2_2
               type: 1
-              value: "0.500000"
+              value: "0.250000"
               level: "0.025000"
-            base: 0.5
+            base: 0.25
             per: 0.025
             chance: 0
           - icon: BuffIcon_DAMAGE_REDUCE
             desc:
               desc: Effect_ST_Lancer_N_2_3
               type: 1
-              value: "0.250000"
+              value: "0.200000"
               level: "0.020000"
-            base: 0.25
+            base: 0.2
             per: 0.02
             chance: 0
-          - icon: BuffIcon_DEF_UP
+          - icon: BuffIcon_BARRIER_PIERCE
             desc:
-              desc: Effect_ST_Lancer_N_12_1
+              desc: Effect_ST_Lancer_N_2_4
               type: 1
-              value: "0.500000"
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_ST_Lancer_N_21_1
+              type: 1
+              value: "0.250000"
               level: "0.025000"
-            base: 0.5
+            base: 0.25
             per: 0.025
             chance: 1
           - icon: BuffIcon_DAMAGE_REDUCE
             desc:
-              desc: Effect_ST_Lancer_N_13_1
+              desc: Effect_ST_Lancer_N_22_1
               type: 1
-              value: "0.250000"
+              value: "0.200000"
               level: "0.020000"
-            base: 0.25
+            base: 0.2
             per: 0.02
             chance: 1
+          - icon: BuffIcon_BARRIER_PIERCE
+            desc:
+              desc: Effect_ST_Lancer_N_23_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_ST_Lancer_N_24_1
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_DEBUFF_PERDOWN
+            desc:
+              desc: Effect_ST_Lancer_N_25_1
+              type: 1
+              value: "0.250000"
+              level: "0.050000"
+            base: 0.25
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_Remove_Buff_Resist
+            desc:
+              desc: Effect_ST_Lancer_N_26_1
+              type: 1
+              value: "0.250000"
+              level: "0.050000"
+            base: 0.25
+            per: 0.05
+            chance: 1
+    desc:
+      KR: |-
+        무장을 재정비하여 <sec typ="note">예리함</sec> 효과를 획득하고 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>가 증가합니다.
+        <sec>해당 효과는 3회 공격 적중 시까지 유지됩니다.</sec>
+        <sec typ="cond"><sec typ="note">예리함</sec> 효과가 유지되는 동안</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="5" r inv /></sec>가 감소합니다.
+        <sec typ="cond"><sec typ="note">예리함</sec> 효과를 획득할 때마다</sec>, 다음 1회 적중에 한하여 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과가 적용됩니다.
+      EN: |-
+        armament re- removeongbi by doing <sec typ="note">Sharpness</sec> effect and gains and own <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> increases.
+        <sec>the effect 3times On hit up to maintain.</sec>
+        <sec typ="cond"><sec typ="note">Sharpness</sec> effect and maintained for</sec>, own <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="4" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="5" r inv /></sec> decreases.
+        <sec typ="cond"><sec typ="note">Sharpness</sec> effect and can gain when each</sec>, next 1times Accuracy to limited to <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> the effect is applied.
+      JP: |-
+        武装を ジエジオンブイして <sec typ="note">鋭さ</sec> 効果を 獲得し、 自身の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec>が増加します。
+        <sec>該当 効果は 3回 攻撃命中時まで ユジイされます。</sec>
+        <sec typ="cond"><sec typ="note">鋭さ</sec> 効果が ユジイドウェは 間</sec>、 自身の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="4" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="5" r inv /></sec>が減少します。
+        <sec typ="cond"><sec typ="note">鋭さ</sec> 効果を 獲得できる 時ごとに</sec>、 次 1回 命中に したして <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec> 効果が適用されます。
+      TC: |-
+        武裝 再特定bi並 <sec typ="note">銳利</sec> 效果 獲得，並 自身的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec>增加。
+        <sec>該 效果 3次 攻擊命中時至 維持。</sec>
+        <sec typ="cond"><sec typ="note">銳利</sec> 效果 維持doe 期間</sec>， 自身的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="4" r /></sec> 增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="5" r inv /></sec>減少。
+        <sec typ="cond"><sec typ="note">銳利</sec> 效果 獲得可 時每</sec>， 下次 1次 命中於 並 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec> 效果套用。
   "3":
     key: "3"
-    icon: P.TeamAtkBuff
+    icon: P.TeamDefBuff
     target: team
     delayed: false
     target_ground: false
@@ -2667,7 +2401,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,1,0,1,1,1,0,1,0
+          grid: 1,1,1,0,1,0,1,1,1
           summon: null
           use: null
           enabled: true
@@ -2689,6 +2423,7 @@ skills:
                 - 2
               role:
                 - 1
+                - 2
               target: 2
               buffs:
                 - icon: BuffIcon_DEF_Char
@@ -2702,343 +2437,13 @@ skills:
                     rounds: 1
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 76
                     guard: target
                   overlap: 4
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_DEF_Side
                   desc:
                     desc: Effect_ST_Lancer_N_3_2
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_CRITICAL_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_3_3
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_FIRERES_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_3_4
-                    type: 1
-                    value: "0.500000"
-                    level: "0.025000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 15
-                    resist:
-                      elem: fire
-                      value:
-                        base: 50%
-                        per: 2.5%
-                  overlap: 4
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_3_5
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 13
-                    turnSpeed:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_ST_Lancer_N_14
-              on: round
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_14_1
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_CRITICAL_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_14_2
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_ST_Lancer_N_16
-              on: enemy_killed_passive
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 1
-              target: 2
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_16_1
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_CRITICAL_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_16_2
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_16_3
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_ST_Lancer_N_17
-              on: enemy_killed_passive
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_17_1
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_CRITICAL_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_17_2
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_17_3
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_ST_Lancer_N_18
-              on: round
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_FIRERES_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_18_1
-                    type: 1
-                    value: "0.500000"
-                    level: "0.025000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 15
-                    resist:
-                      elem: fire
-                      value:
-                        base: 50%
-                        per: 2.5%
-                  overlap: 4
-                - icon: BuffIcon_ICERES_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_18_2
-                    type: 1
-                    value: "0.500000"
-                    level: "0.025000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 17
-                    resist:
-                      elem: ice
-                      value:
-                        base: 50%
-                        per: 2.5%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_ST_Lancer_N_31
-              on: round
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_DEF_Char
-                  desc:
-                    desc: Effect_ST_Lancer_N_31_1
-                    type: 0
                     value: "0"
                     level: "0"
                   attr: 0
@@ -3046,8 +2451,187 @@ skills:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 76
-                    guard: target
+                    chance: 0%
+                    type: 75
+                    guard: row
+                  overlap: 4
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_3_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 1
+                    attack:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_3_4
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 13
+                    turnSpeed:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_ST_Lancer_N_31
+              on: round
+              if:
+                - near: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DEF_Side
+                  desc:
+                    desc: Effect_ST_Lancer_N_31_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 75
+                    guard: row
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_ST_Lancer_N_32
+              on:
+                use_skill: 1
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_ST_Lancer_N_3
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_32_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_32_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_ST_Lancer_N_33
+              on:
+                use_skill: 1
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_33_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_33_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 10%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3072,17 +2656,17 @@ skills:
               level: "0"
             base: 0
             per: 0
-            chance: 0
-          - icon: BuffIcon_ATK_UP
+            chance: 1
+          - icon: BuffIcon_DEF_Side
             desc:
               desc: Effect_ST_Lancer_N_3_2
               type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_CRITICAL_UP
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
+          - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_ST_Lancer_N_3_3
               type: 1
@@ -3090,127 +2674,89 @@ skills:
               level: "0.005000"
             base: 0.1
             per: 0.005
-            chance: 1
-          - icon: BuffIcon_FIRERES_UP
+            chance: 0
+          - icon: BuffIcon_AP_UP
             desc:
               desc: Effect_ST_Lancer_N_3_4
               type: 1
-              value: "0.500000"
-              level: "0.025000"
-            base: 0.5
-            per: 0.025
-            chance: 0
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_ST_Lancer_N_3_5
-              type: 1
               value: "0.100000"
               level: "0.005000"
             base: 0.1
             per: 0.005
             chance: 0
-          - icon: BuffIcon_ATK_UP
-            desc:
-              desc: Effect_ST_Lancer_N_14_1
-              type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_CRITICAL_UP
-            desc:
-              desc: Effect_ST_Lancer_N_14_2
-              type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_ATK_UP
-            desc:
-              desc: Effect_ST_Lancer_N_16_1
-              type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_CRITICAL_UP
-            desc:
-              desc: Effect_ST_Lancer_N_16_2
-              type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_ST_Lancer_N_16_3
-              type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_ATK_UP
-            desc:
-              desc: Effect_ST_Lancer_N_17_1
-              type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_CRITICAL_UP
-            desc:
-              desc: Effect_ST_Lancer_N_17_2
-              type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_ST_Lancer_N_17_3
-              type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_FIRERES_UP
-            desc:
-              desc: Effect_ST_Lancer_N_18_1
-              type: 1
-              value: "0.500000"
-              level: "0.025000"
-            base: 0.5
-            per: 0.025
-            chance: 1
-          - icon: BuffIcon_ICERES_UP
-            desc:
-              desc: Effect_ST_Lancer_N_18_2
-              type: 1
-              value: "0.500000"
-              level: "0.025000"
-            base: 0.5
-            per: 0.025
-            chance: 1
-          - icon: BuffIcon_DEF_Char
+          - icon: BuffIcon_DEF_Side
             desc:
               desc: Effect_ST_Lancer_N_31_1
-              type: 0
+              type: 1
               value: "0"
               level: "0"
             base: 0
             per: 0
             chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_ST_Lancer_N_32_1
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_ST_Lancer_N_32_2
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_ST_Lancer_N_33_1
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_ST_Lancer_N_33_2
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 1
+    desc:
+      KR: |-
+        자신의 <strong>기본</strong> <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항</sec>과 <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항</sec>이 증가합니다.
+        <sec>승급에 따라 저항 수치가 증가합니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 아군을 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신과 인접한 아군이 있을 경우</sec>, 자신은 <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>가 활성화됩니다.
+        <sec typ="cond"><sec typ="note">랜스 차지</sec> 사용 시</sec>, 2라운드 동안 자신과 자신이 지정 보호 중인 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>가 증가합니다.
+      EN: |-
+        own <strong>base</strong> <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance</sec> and <sec typ="buff"><buff typ="ICERES_UP" /> Ice Resistance</sec> increases.
+        <sec>promotion depending on resistance value increases.</sec>
+        <sec typ="cond">At round start</sec>, within range <sec typ="buff"><buff typ="DEF_Char" /> Defender excluding Designated Protection for allies</sec>.
+        <sec typ="cond">At round start</sec> <sec typ="cond">self and adjacent allies if present</sec>, self <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> is activated.
+        <sec typ="cond"><sec typ="note">Lance Charge</sec> When used</sec>, 2 rounds self and self Designated Protection in progress allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="6" r /></sec> increases.
+      JP: |-
+        自身の <strong>基本</strong> <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性</sec>と <sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性</sec>が増加します。
+        <sec>スウングウプに応じて 耐性 数値が増加します。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 <sec typ="buff"><buff typ="DEF_Char" /> 保護機を ジエ外した 味方を 指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身と 隣接する 味方が 存在する場合</sec>、 自身は <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>が 有効化されます。
+        <sec typ="cond"><sec typ="note">ランスチャージ</sec> 使用時</sec>、 2ラウンドの間 自身と 自身が 指定保護 中の 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>が増加します。
+      TC: |-
+        自身的 <strong>基礎</strong> <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性</sec>與 <sec typ="buff"><buff typ="ICERES_UP" /> 冰冷抗性</sec>增加。
+        <sec>三unggeup依 抗性 數值增加。</sec>
+        <sec typ="cond">回合開始時</sec>， 範圍內 <sec typ="buff"><buff typ="DEF_Char" /> 保護機 解除外 我方 指定保護</sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身與 相鄰的 我方 存在時</sec>， 自身 <sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec> 啟用。
+        <sec typ="cond"><sec typ="note">長槍衝鋒</sec> 使用時</sec>， 2回合內 自身與 自身 指定保護 中的 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>增加。
   "4":
     key: "4"
-    icon: P.TeamDefBuff
+    icon: P.SelfAtkBuff
     target: team
     delayed: false
     target_ground: false
@@ -3232,7 +2778,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,1,0,1,1,1,0,1,0
+          grid: 1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -3241,112 +2787,7 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_ST_Lancer_N_4
-              on: round
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_ICERES_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_4_1
-                    type: 1
-                    value: "0.220000"
-                    level: "0.020000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 17
-                    resist:
-                      elem: ice
-                      value:
-                        base: 22%
-                        per: 2%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_ST_Lancer_N_4_2
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 36
-                    damage_reduce:
-                      base: 16%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_4_3
-                    type: 1
-                    value: "0.105000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 10.5%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_ST_Lancer_N_41
-              on: round
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_ST_Lancer_N_41_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 16%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_ST_Lancer_N_42
-              on: round
+              on: wave
               if:
                 - false
                 - false
@@ -3363,21 +2804,567 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_ST_Lancer_N_42_1
+                    desc: Effect_ST_Lancer_N_4_1
+                    type: 0
+                    value: "1"
+                    level: "0.100000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0.1
+                  overlap: 4
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_ST_Lancer_N_4_2
                     type: 1
-                    value: "0.105000"
-                    level: "0.005000"
+                    value: "0.200000"
+                    level: "0.020000"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
+                    chance: 0%
+                    type: 36
+                    damage_reduce:
+                      base: 20%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_COUNTER
+                  desc:
+                    desc: Effect_ST_Lancer_N_4_3
                     type: 1
-                    attack:
-                      base: 10.5%
-                      per: 0.5%
+                    value: "0.700000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 29
+                    counter:
+                      base: 70%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_4_4
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+                - icon: BuffIcon_ICERES_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_4_5
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_ST_Lancer_N_41
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_41_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    count: 3
+                    trigger:
+                      attack_success: passive
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 44
+            - key: Effect_ST_Lancer_N_42
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_42_1
+                    type: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 0
+                  erase:
+                    count: 3
+                    trigger:
+                      attack_success: passive
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: 25%
+                      per: 2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 45
+            - key: Effect_ST_Lancer_N_43
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_ST_Lancer_N_43_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    count: 3
+                    trigger:
+                      attack_success: passive
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: 20%
+                      per: 2%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 46
+            - key: Effect_ST_Lancer_N_44
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_BARRIER_PIERCE
+                  desc:
+                    desc: Effect_ST_Lancer_N_44_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger:
+                      attack_success: passive
+                  value:
+                    isBuff: true
+                    type: 94
+                    penetration_force: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 47
+            - key: Effect_ST_Lancer_N_45
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_ST_Lancer_N_45_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: 20%
+                      per: 2%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 48
+            - key: Effect_ST_Lancer_N_46
+              on: enemy_killed_passive
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_46_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    count: 3
+                    trigger:
+                      attack_success: passive
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 44
+            - key: Effect_ST_Lancer_N_47
+              on: enemy_killed_passive
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_47_1
+                    type: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 0
+                  erase:
+                    count: 3
+                    trigger:
+                      attack_success: passive
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: 25%
+                      per: 2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 45
+            - key: Effect_ST_Lancer_N_48
+              on: enemy_killed_passive
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_ST_Lancer_N_48_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    count: 3
+                    trigger:
+                      attack_success: passive
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: 20%
+                      per: 2%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 46
+            - key: Effect_ST_Lancer_N_49
+              on: enemy_killed_passive
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_BARRIER_PIERCE
+                  desc:
+                    desc: Effect_ST_Lancer_N_49_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger:
+                      attack_success: passive
+                  value:
+                    isBuff: true
+                    type: 94
+                    penetration_force: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 47
+            - key: Effect_ST_Lancer_N_410
+              on: enemy_killed_passive
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_ST_Lancer_N_410_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: 20%
+                      per: 2%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 48
+            - key: Effect_ST_Lancer_N_411
+              on: attacked
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_ST_Lancer_N_24
+                      - Effect_ST_Lancer_N_45
+                      - Effect_ST_Lancer_N_410
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_COUNTER
+                  desc:
+                    desc: Effect_ST_Lancer_N_411_1
+                    type: 1
+                    value: "0.700000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger:
+                      after: counter
+                  value:
+                    isBuff: true
+                    type: 29
+                    counter:
+                      base: 70%
+                      per: 5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_ST_Lancer_N_412
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_FIRERES_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_412_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+                - icon: BuffIcon_ICERES_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_412_2
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: 20%
+                        per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3394,54 +3381,224 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_ICERES_UP
+        - - icon: BuffIcon_AP_UP
             desc:
               desc: Effect_ST_Lancer_N_4_1
-              type: 1
-              value: "0.220000"
-              level: "0.020000"
-            base: 0.22
-            per: 0.02
+              type: 0
+              value: "1"
+              level: "0.100000"
+            base: 1
+            per: 0.1
             chance: 1
           - icon: BuffIcon_DAMAGE_REDUCE
             desc:
               desc: Effect_ST_Lancer_N_4_2
               type: 1
-              value: "0.160000"
-              level: "0.010000"
-            base: 0.16
-            per: 0.01
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
             chance: 0
-          - icon: BuffIcon_ATK_UP
+          - icon: BuffIcon_COUNTER
             desc:
               desc: Effect_ST_Lancer_N_4_3
               type: 1
-              value: "0.105000"
-              level: "0.005000"
-            base: 0.105
-            per: 0.005
+              value: "0.700000"
+              level: "0.050000"
+            base: 0.7
+            per: 0.05
             chance: 0
-          - icon: BuffIcon_DAMAGE_REDUCE
+          - icon: BuffIcon_FIRERES_UP
+            desc:
+              desc: Effect_ST_Lancer_N_4_4
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 0
+          - icon: BuffIcon_ICERES_UP
+            desc:
+              desc: Effect_ST_Lancer_N_4_5
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 0
+          - icon: BuffIcon_CRITICAL_UP
             desc:
               desc: Effect_ST_Lancer_N_41_1
               type: 1
-              value: "0.160000"
-              level: "0.010000"
-            base: 0.16
-            per: 0.01
+              value: "0.500000"
+              level: "0.050000"
+            base: 0.5
+            per: 0.05
             chance: 1
-          - icon: BuffIcon_ATK_UP
+          - icon: BuffIcon_EVADE_UP
             desc:
               desc: Effect_ST_Lancer_N_42_1
               type: 1
-              value: "0.105000"
-              level: "0.005000"
-            base: 0.105
-            per: 0.005
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
             chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_ST_Lancer_N_43_1
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_BARRIER_PIERCE
+            desc:
+              desc: Effect_ST_Lancer_N_44_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_ST_Lancer_N_45_1
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_ST_Lancer_N_46_1
+              type: 1
+              value: "0.500000"
+              level: "0.050000"
+            base: 0.5
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_ST_Lancer_N_47_1
+              type: 1
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_ST_Lancer_N_48_1
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_BARRIER_PIERCE
+            desc:
+              desc: Effect_ST_Lancer_N_49_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_ST_Lancer_N_410_1
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_COUNTER
+            desc:
+              desc: Effect_ST_Lancer_N_411_1
+              type: 1
+              value: "0.700000"
+              level: "0.050000"
+            base: 0.7
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_FIRERES_UP
+            desc:
+              desc: Effect_ST_Lancer_N_412_1
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_ICERES_UP
+            desc:
+              desc: Effect_ST_Lancer_N_412_2
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><cmt t="예리함"><import name="SHARPEN" /></cmt> 효과를 획득</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">적 처치 시</sec>, <sec typ="buff"><cmt t="예리함"><import name="SHARPEN" /></cmt> 효과를 획득</sec>하고 합니다.
+        <sec typ="cond"><cmt t="예리함"><import name="SHARPEN" /></cmt> 효과를 획득할 때마다</sec>, 다음 1회 피격에 한하여 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="12" r inv /></sec>가 감소하고 <sec typ="buff"><buff typ="COUNTER" /> <val idx="15" r signless /> 위력으로 반격</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /> 화염 / 냉기 저항 <val idx="16" r /></sec>가 증가합니다.
+        <box t="스킬 설명과 실제 버프 동작이 다른 것으로 보이며, 문제가 있을 수도 있습니다">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 회피 증가</sec> 효과 설명이 누락되어있습니다.
+        <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과 설명이 누락되어있습니다.
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 효과가 같은 시점에 두 종류 이상 발생하며, 서로 다른 중첩으로 <sec typ="attr">갱신</sec> 타입으로 획득합니다.
+        </box>
+        <define name="SHARPEN">
+        <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec>
+        </define>
+      EN: |-
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><cmt t="Sharpness"><import name="SHARPEN" /></cmt> effect and gain</sec> and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">When killing an enemy</sec>, <sec typ="buff"><cmt t="Sharpness"><import name="SHARPEN" /></cmt> effect and gain</sec> and.
+        <sec typ="cond"><cmt t="Sharpness"><import name="SHARPEN" /></cmt> effect and can gain when each</sec>, next 1times hit to limited to self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="12" r inv /></sec> decreases and <sec typ="buff"><buff typ="COUNTER" /> <val idx="15" r signless /> power as Counterattack</sec>.
+        <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /> Fire / Ice Resistance <val idx="16" r /></sec> increases.
+        <box t="skill description and Sil. buff same operation other Geot as Bo and, Mun. exists number also exists">
+        <sec typ="buff"><buff typ="EVADE_UP" /> Evasion increase</sec> effect and description is missing.
+        <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> effect and description is missing.
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease</sec> effect and same when removeom to two type or more occurs and, from as other stack as <sec typ="attr">refresh</sec> type as gains.
+        </box>
+        <define name="SHARPEN">
+        <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="5" r /></sec>
+        </define>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 <sec typ="buff"><cmt t="鋭さ"><import name="SHARPEN" /></cmt> 効果を 獲得</sec>し、 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond">敵撃破時</sec>、 <sec typ="buff"><cmt t="鋭さ"><import name="SHARPEN" /></cmt> 効果を 獲得</sec>し、します。
+        <sec typ="cond"><cmt t="鋭さ"><import name="SHARPEN" /></cmt> 効果を 獲得できる 時ごとに</sec>、 次 1回 被弾に したして 自身が <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="12" r inv /></sec>が 減少し、 <sec typ="buff"><buff typ="COUNTER" /> <val idx="15" r signless /> 威力で 反撃</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /> 火炎 / 冷気耐性 <val idx="16" r /></sec>が増加します。
+        <box t="スキル スオル名と スイルジエ バフ ドオンジアクが 異なる グオトで ブオであり, ムウンジエが ある 数も あります">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 回避 増加</sec> 効果 スオル名が ンウルアクになりあります。
+        <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec> 効果 スオル名が ンウルアクになりあります。
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少</sec> 効果が グアトは 時ジオムに ドウ ジオンルユ 以上 ブアルスエンし、 してで 異なる 重複で <sec typ="attr">更新</sec> トアイプで 獲得します。
+        </box>
+        <define name="SHARPEN">
+        <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="5" r /></sec>
+        </define>
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， <sec typ="buff"><cmt t="銳利"><import name="SHARPEN" /></cmt> 效果 獲得</sec>並 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        <sec typ="cond">擊殺敵人時</sec>， <sec typ="buff"><cmt t="銳利"><import name="SHARPEN" /></cmt> 效果 獲得</sec>並。
+        <sec typ="cond"><cmt t="銳利"><import name="SHARPEN" /></cmt> 效果 獲得可 時每</sec>， 下次 1次 被擊於 並 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="12" r inv /></sec> 減少，並 <sec typ="buff"><buff typ="COUNTER" /> <val idx="15" r signless /> 威力以 反擊</sec>。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /> 火焰 / 冰冷抗性 <val idx="16" r /></sec>增加。
+        <box t="技能 三ol名與 Silje 增益 同製作 全部不同 Geot以 Bo且， 無nje 有 數也 存在">
+        <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 增加</sec> 效果 三ol名 Nurak變為存在。
+        <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec> 效果 三ol名 Nurak變為存在。
+        <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少</sec> 效果 相同 時解除om於 二 存在gryu 以上 發生並， 以 全部不同 疊加以 <sec typ="attr">更新</sec> 類型以 獲得。
+        </box>
+        <define name="SHARPEN">
+        <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="5" r /></sec>
+        </define>
   "5":
     key: "5"
-    icon: P.TeamAtkBuff
+    icon: P.AWACS
     target: team
     delayed: false
     target_ground: false
@@ -3463,7 +3620,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,1,0,1,1,1,0,1,0
+          grid: F>1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -3472,95 +3629,6 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_ST_Lancer_N_5
-              on:
-                attack_success: passive
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_5_1
-                    type: 1
-                    value: "0.032000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 3.2%
-                      per: 0.2%
-                  overlap: 4
-                - icon: BuffIcon_ICERES_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_5_2
-                    type: 1
-                    value: "0.055000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 17
-                    resist:
-                      elem: ice
-                      value:
-                        base: 5.5%
-                        per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_5_3
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 13
-                    turnSpeed:
-                      base: 16%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_CRITICAL_UP
-                  desc:
-                    desc: Effect_ST_Lancer_N_5_4
-                    type: 1
-                    value: "0.105000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 9
-                    critical:
-                      base: 10.5%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 6
-              overlapGroup: -1
-            - key: Effect_ST_Lancer_N_51
               on: round
               if:
                 - false
@@ -3580,9 +3648,9 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_ST_Lancer_N_51_1
+                    desc: Effect_ST_Lancer_N_5_1
                     type: 1
-                    value: "0.160000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 0
                   erase:
@@ -3591,27 +3659,338 @@ skills:
                     isBuff: true
                     type: 13
                     turnSpeed:
-                      base: 16%
+                      base: 10%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_UP
+                - icon: BuffIcon_SKILL_UP
                   desc:
-                    desc: Effect_ST_Lancer_N_51_2
+                    desc: Effect_ST_Lancer_N_5_2
                     type: 1
-                    value: "0.105000"
-                    level: "0.005000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 9
-                    critical:
-                      base: 10.5%
-                      per: 0.5%
+                    chance: 0%
+                    type: 111
+                    value: skill_ratio
+                    by:
+                      base: 10%
+                      per: 1%
+                      type: up
+                      target: self
+                      by: evade
+                    r: false
+                  overlap: 4
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_5_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 112
+                    value: skill_ratio
+                    by:
+                      base: 10%
+                      per: 1%
+                      type: down
+                      target: attacker
+                      by: evade
+                    r: false
+                  overlap: 4
+                - icon: BuffIcon_DEBUFF_PERDOWN
+                  desc:
+                    desc: Effect_ST_Lancer_N_5_4
+                    type: 1
+                    value: "0.250000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 91
+                    resist:
+                      type: debuff_perdown
+                      value:
+                        base: 25%
+                        per: 5%
+                  overlap: 4
+                - icon: BuffIcon_Remove_Buff_Resist
+                  desc:
+                    desc: Effect_ST_Lancer_N_5_5
+                    type: 1
+                    value: "0.250000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 126
+                    resist:
+                      type: off
+                      value:
+                        base: 25%
+                        per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_ST_Lancer_N_51
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_51_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 111
+                    value: skill_ratio
+                    by:
+                      base: 10%
+                      per: 1%
+                      type: up
+                      target: self
+                      by: evade
+                    r: false
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_ST_Lancer_N_52
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_ST_Mercury_N_2
+                      - Effect_ST_Mercury_N_21
+                      - Effect_ST_Mercury_N_22
+                      - Effect_ST_Mercury_N_23
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_52_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 112
+                    value: skill_ratio
+                    by:
+                      base: 10%
+                      per: 1%
+                      type: down
+                      target: attacker
+                      by: evade
+                    r: false
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_ST_Lancer_N_53
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_53_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 6
+                    accuracy:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 56
+            - key: Effect_ST_Lancer_N_54
+              on: wave
+              if:
+                - target:
+                    - Char_ST_Tiamat_N
+                    - Char_ST_Ullr_N
+                    - Char_BR_Emily_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_54_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 6
+                    accuracy:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 57
+            - key: Effect_ST_Lancer_N_55
+              on: round
+              if:
+                - round:
+                    operator: ">="
+                    round:
+                      - 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_55_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 6
+                    accuracy:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 56
+            - key: Effect_ST_Lancer_N_56
+              on: round
+              if:
+                - target:
+                    - Char_ST_Tiamat_N
+                    - Char_ST_Ullr_N
+                    - Char_BR_Emily_N
+                - round:
+                    operator: ">="
+                    round:
+                      - 2
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_ST_Lancer_N_56_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 6
+                    accuracy:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 57
     values:
       index:
         - 0
@@ -3625,60 +4004,142 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_ATK_UP
+        - - icon: BuffIcon_AP_UP
             desc:
               desc: Effect_ST_Lancer_N_5_1
               type: 1
-              value: "0.032000"
-              level: "0.002000"
-            base: 0.032
-            per: 0.002
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
             chance: 1
-          - icon: BuffIcon_ICERES_UP
+          - icon: BuffIcon_SKILL_UP
             desc:
               desc: Effect_ST_Lancer_N_5_2
               type: 1
-              value: "0.055000"
-              level: "0.005000"
-            base: 0.055
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_AP_UP
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_SKILL_UP
             desc:
               desc: Effect_ST_Lancer_N_5_3
               type: 1
-              value: "0.160000"
+              value: "0.100000"
               level: "0.010000"
-            base: 0.16
+            base: 0.1
             per: 0.01
             chance: 0
-          - icon: BuffIcon_CRITICAL_UP
+          - icon: BuffIcon_DEBUFF_PERDOWN
             desc:
               desc: Effect_ST_Lancer_N_5_4
               type: 1
-              value: "0.105000"
-              level: "0.005000"
-            base: 0.105
-            per: 0.005
+              value: "0.250000"
+              level: "0.050000"
+            base: 0.25
+            per: 0.05
             chance: 0
-          - icon: BuffIcon_AP_UP
+          - icon: BuffIcon_Remove_Buff_Resist
+            desc:
+              desc: Effect_ST_Lancer_N_5_5
+              type: 1
+              value: "0.250000"
+              level: "0.050000"
+            base: 0.25
+            per: 0.05
+            chance: 0
+          - icon: BuffIcon_SKILL_UP
             desc:
               desc: Effect_ST_Lancer_N_51_1
               type: 1
-              value: "0.160000"
+              value: "0.100000"
               level: "0.010000"
-            base: 0.16
+            base: 0.1
             per: 0.01
             chance: 1
-          - icon: BuffIcon_CRITICAL_UP
+          - icon: BuffIcon_SKILL_UP
             desc:
-              desc: Effect_ST_Lancer_N_51_2
+              desc: Effect_ST_Lancer_N_52_1
               type: 1
-              value: "0.105000"
-              level: "0.005000"
-            base: 0.105
-            per: 0.005
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
             chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_ST_Lancer_N_53_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_ST_Lancer_N_54_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_ST_Lancer_N_55_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_ST_Lancer_N_56_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 회피 <val idx="5" r signless />만큼 스킬 위력이 증가</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신에게 <sec typ="note">최상의 시간</sec> 효과가 적용된 경우</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> 회피 <val idx="6" r signless />만큼 스킬 위력 감쇄</sec> 효과를 획득합니다.
+        <sec typ="cond"><sec typ="note">무장 재정비</sec> 사용 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="8" slot="2" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="9" slot="2" r /></sec>이 증가합니다.
+        <sec><cmt t="X-계열 실험기"><import name="X_SERIES" /></cmt>가 스스로의 스킬로 인해 받는 일부 부작용을 자신이 대신 짊어질 수 있습니다.</sec>
+        <sec>이러한 경우 <sec typ="attr">해로운 효과</sec>로 적용됩니다.</sec>
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+        </define>
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power proportional to Evasion by <val idx="5" r signless /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="cond">if self is affected by <sec typ="note">Best Time</sec></sec>, gains <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power reduction proportional to Evasion by <val idx="6" r signless /></sec>.
+        <sec typ="cond">When using <sec typ="note">Rearmament</sec></sec>, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="8" slot="2" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Buff Removal Resistance <val idx="9" slot="2" r /></sec> increases for 3 rounds.
+        <sec><cmt t="X-series Experimental Unit"><import name="X_SERIES" /></cmt> can have some side effects caused by their own skills borne by self instead.</sec>
+        <sec>In these cases, they are applied as <sec typ="attr">harmful effects</sec>.</sec>
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" />回避 <val idx="5" r signless />分スキル威力が増加</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">自身に<sec typ="note">最良の時間</sec>効果が適用されている場合</sec>、<sec typ="buff"><buff typ="SKILL_UP" />回避 <val idx="6" r signless />分スキル威力減衰</sec>効果を獲得します。
+        <sec typ="cond"><sec typ="note">武装再整備</sec>使用時</sec>、3ラウンドの間自身の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果抵抗 <val idx="8" slot="2" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除抵抗 <val idx="9" slot="2" r /></sec>が増加します。
+        <sec><cmt t="X系列実験機"><import name="X_SERIES" /></cmt>が自身のスキルによって受ける一部の副作用を、自身が代わりに引き受けられます。</sec>
+        <sec>この場合、<sec typ="attr">有害効果</sec>として適用されます。</sec>
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+        </define>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" />依迴避 <val idx="5" r signless />增加技能威力</sec>。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若自身套用<sec typ="note">最佳時機</sec>效果</sec>，獲得<sec typ="buff"><buff typ="SKILL_UP" />依迴避 <val idx="6" r signless />降低技能威力</sec>效果。
+        <sec typ="cond">使用<sec typ="note">重新整備武裝</sec>時</sec>，3回合內自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性 <val idx="8" slot="2" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" />強化解除抗性 <val idx="9" slot="2" r /></sec>增加。
+        <sec><cmt t="X系列實驗機"><import name="X_SERIES" /></cmt>因自身技能承受的部分副作用，可由自身代為承受。</sec>
+        <sec>此時會以<sec typ="attr">負面效果</sec>套用。</sec>
+        <define name="X_SERIES">
+        <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+        </define>
 dialogue:
   KR:
     "1":
@@ -3793,15 +4254,72 @@ dialogue:
         이거 벗기는 방법이 따로 있으니까
         알려드릴게요.
         그러니… 사령관님께서 직접 벗겨주세요.
-      Oath: 누군가 말했죠. 영웅은 고독한 존재라고. 하지만 그 말은 틀렸어요. 저에게는 사령관님이 있고, 사령관님에게는 제가 있으니까요.
-        우리들의 운명에 어떤 고난이 있더라도 사령관님과 저라면 극복할 수 있을 거예요! 자! 사랑의 힘으로 우리의 운명을 개척하도록
-        하죠!
+      Oath: 누군가 말했죠. 영웅은 고독한 존재라고. 하지만 그 말은 틀렸어요. 저에게는 사령관님이 있고, 사령관님에게는 제가 있으니까요. 우리들의 운명에 어떤 고난이 있더라도 사령관님과 저라면 극복할 수 있을 거예요! 자! 사랑의 힘으로 우리의 운명을 개척하도록 하죠!
       OathIdle_01: |-
         꿈을 꿨어요.
         사령관님과 저 그리고 모두와 함께
         평화로운 세상을 이룩하는 꿈을요.
         이제 그 꿈을 현실에 실현시키러 갈까요?
       MVP: 아하. 사령관님께서 지켜봐 주신 덕분이에요.
+    "3":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        파자마 입고 운동하는 게 얼마나 편한데요!
+        생각해보면 침대에서 벌어지는 일도
+        운동의 연장선 아니겠어요? 헤헤헤~
+      Idle_01_02: |-
+        정글 구조요원의 특기를 살려,
+        숙소에 작은 비밀 기지 텐트를 만들었어요.
+        스트라이커즈 대원들과 사령관님이
+        모두 들어가기엔 많이 작지만…
+        이게 파티의 낭만 아니겠어요?
+      Idle_01_03: |-
+        오르카 미식회 분들을
+        파자마 파티에 초대해보는 건 어떨까요?
+        이 파자마도 에키드나 씨가 추천해주신 거예요.
+        사령관님이 보시기에 어떤 가요?
+        …잘 어울리나요?
+      SPIdle_01_01: 사령관님, 아직은 안 돼요… 아직은요!
+      Idle_02_01: |-
+        사령관님, 많이 피곤하세요?
+        매일 업무 때문에 피곤하시다는 건 잘 알고 있지만…
+        ​파자마 파티가 끝나면 이어서 대원들이 준비한
+        스페셜 이벤트가 남아있으니까… 에헤헤♥
+      Idle_03_01: |-
+        그동안 사령관님께서
+        제가 갑옷만 잘 어울린다고 생각하셨다면,
+        오늘은 그 편견을 깰 수 있는
+        색다른 모습을 보여드릴게요!
+        ​불끈불끈한 제 모습도 사랑해주세요, 사령관님.
+      Idle_04_01: |-
+        오늘의 제 활약 무대는 바로 여기, 침실이예요.
+        지금부터 땀이 흠뻑 나도록
+        새로운 영웅담을 만들어 볼까 하는데…
+        도와주시겠어요, 사령관님?​
+      SPIdle_02_01: |-
+        제가 왜 스포츠 언더웨어를 입고 있는지 아시죠?
+        파티 때 많이 먹었으니까… 식후 운동을 시작해 볼까요?
+      Oath: 강력한 갑옷을 입지 않더라도 사령관님을 무장해제 시키는 방법이 있었군요. 하핫…!​ 아직 밤은 길어요, 파티는 곧 끝나지만 사령관님을 향한 제 사랑은 수만 밤이 지나도 끝나지 않을 거거든요!​ 사령관님의 창이 제 몸과 마음을 관통했어요. 제 창도 사령관님의 마음을 관통시킨 거 맞죠?​ 오늘은 흐트러진 제 모습을 보게 되시더라도… 귀엽게 넘어가 주세요. 사랑해요, 사령관님…!​
+      OathIdle_01: |-
+        하아… 너무 열심히 움직였나?
+        흥건 해졌네요… 같이 사워 하실래요?
+      MVP: ""
     "":
       Join: 하늘의 창잡이 미나가 왔어요!
       SquadJoin: 이 부대 소속이 되는군요? 맡겨주세요!
@@ -4006,14 +4524,41 @@ dialogue:
         이거 벗기는 방법이 따로 있으니까
         알려드릴게요.
         그러니… 사령관님께서 직접 벗겨주세요.
-      Oath: "[미번역]누군가 말했죠. 영웅은 고독한 존재라고. 하지만 그 말은 틀렸어요. 저에게는 사령관님이 있고, 사령관님에게는 제가
-        있으니까요. 우리들의 운명에 어떤 고난이 있더라도 사령관님과 저라면 극복할 수 있을 거예요! 자! 사랑의 힘으로 우리의 운명을
-        개척하도록 하죠!"
+      Oath: "[미번역]누군가 말했죠. 영웅은 고독한 존재라고. 하지만 그 말은 틀렸어요. 저에게는 사령관님이 있고, 사령관님에게는 제가 있으니까요. 우리들의 운명에 어떤 고난이 있더라도 사령관님과 저라면 극복할 수 있을 거예요! 자! 사랑의 힘으로 우리의 운명을 개척하도록 하죠!"
       OathIdle_01: |-
         [미번역]꿈을 꿨어요.
         사령관님과 저 그리고 모두와 함께
         평화로운 세상을 이룩하는 꿈을요.
         이제 그 꿈을 현실에 실현시키러 갈까요?
+      MVP: ""
+    "3":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: 空の槍使いミナ、参上しました!
@@ -4115,10 +4660,8 @@ dialogue:
         You gave me this amazing armor.
         I don’t want to disappoint you.
       SPIdle_01_01: I-If you keep doing that… I keep thinking about it during training…
-      Idle_02_01: >-
-        Whether you were made for households, battles, or for rescue missions…
-        You don’t have to limit yourself
-
+      Idle_02_01: |-
+        Whether you were made for households, battles, or for rescue missions… You don’t have to limit yourself
         to the abilities you were given. At least that’s what I think.
       Idle_03_01: |-
         You said I should have interest for something
@@ -4131,13 +4674,9 @@ dialogue:
       SPIdle_02_01: |-
         Commander… Yes. I’m just taking precaution…
         so that I don’t think about it during training…
-      Oath: >-
-        You’ve always encouraged me even when I failed a mission and when I I
-        tried to give up during training, commander. To think that you give me
-        this much love
-
+      Oath: |-
+        You’ve always encouraged me even when I failed a mission and when I I tried to give up during training, commander. To think that you give me this much love
         on top of that… Ahaha… I feel like I’m getting compensated for all my hardships with this. … Commander. I will
-
         always try my best. For you, commander. So… please keep watching me like you’ve been?
       OathIdle_01: |-
         You encouraged me to get this far.
@@ -4145,6 +4684,35 @@ dialogue:
         even further. I really love you, commander.
       MVP: ""
     "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    "3":
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -4216,12 +4784,9 @@ dialogue:
         We don’t have time for this…
         We need to train… awe… okay.
         Just a bit, okay?
-      Oath: >-
-        No, really… I can't be slack… I have to show them that I can be a
-        non-combat unit, too…
-
+      Oath: |-
+        No, really… I can't be slack… I have to show them that I can be a non-combat unit, too…
         Commander, you're an idiot. Because of you… my goal is not clear anymore. I can't
-
         think of anything else.
       OathIdle_01: |-
         No matter how much I like you,
@@ -4352,6 +4917,35 @@ dialogue:
       Oath: ""
       OathIdle_01: ""
       MVP: ""
+    "3":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: 蒼天槍兵「米娜」來了！
       SquadJoin: ""
@@ -4447,20 +5041,13 @@ skins:
   sid: null
   artist: PaintAle
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -4475,25 +5062,25 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_ST_Lancer_N
   skins:
     - sid: 1
       artist: MAR10
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 76
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - DS
+        G:
+          - _
+          - D
+          - DS
       anim:
         - false
         - false
@@ -4510,25 +5097,27 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_ST_Lancer_NS1
         2dmodel_dam: 2DModel_ST_Lancer_NS1_Dam
     - sid: 2
       artist: Mel
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -4545,6 +5134,48 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_ST_Lancer_NS2
         2dmodel_dam: 2DModel_ST_Lancer_NS2_Dam
         consumableKey: Skin_ST_Lancer_2
+    - sid: 3
+      artist: TeddYellow
+      price: 192
+      Spine: true
+      SpineDamaged: false
+      parts: 78
+      stage: false
+      subset:
+        O:
+          - _
+          - D
+          - S
+          - DS
+          - DP
+          - DSP
+        G:
+          - _
+          - D
+          - S
+          - DS
+          - DP
+          - DSP
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Lingerie
+      facelist: []
+      releaseDate: 1776902400000
+      metadata:
+        imageId: 3
+        iconId: 3
+        tbarId: 3
+        voiceId: 3
+        flags: 2
+        dflags: 1
+        2dmodel_dam: 2DModel_ST_Lancer_NS3_Dam
+        consumableKey: Skin_ST_Lancer_3

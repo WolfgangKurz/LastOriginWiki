@@ -39,6 +39,11 @@ export default class MixedModel extends FadeContainer {
 		return this._hidePart;
 	}
 
+	private _hidePart2: boolean = false;
+	public get hidePart2 (): boolean {
+		return this._hidePart2;
+	}
+
 	private _hideBG: boolean = false;
 	public get hideBG (): boolean {
 		return this._hideBG;
@@ -95,6 +100,12 @@ export default class MixedModel extends FadeContainer {
 		this._hidePart = hide;
 		this._2DModel.setHidePart(hide);
 		this._SpineModel.setHidePart(hide);
+	}
+
+	setHidePart2 (hide: boolean) {
+		this._hidePart2 = hide;
+		this._2DModel.setHidePart2(hide);
+		this._SpineModel.setHidePart2(hide);
 	}
 
 	setHideBG (hide: boolean) {

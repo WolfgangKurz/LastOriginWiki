@@ -491,6 +491,7 @@ chart:
 cv:
   "1": {}
   "2": {}
+  "3": {}
   "":
     ko: ""
     jp: 田中あいみ
@@ -504,6 +505,7 @@ source:
   - - Ev:Ev12:Bt3-3B
   - - Ev:Ev18:EV2-2Ex
   - - Ev:Ev23:EV1-5
+  - - Ev:Ev36:EV2-1EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2207,6 +2209,19 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        전격구를 발사해 <dmg elem="lightning" />를 주고, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>와(과) <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 낮춥니다.
+        대상이 <sec typ="cond">침수</sec> 상태면 <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="3" r /></sec>이 증가합니다.
+      EN: |-
+        Fires an electric orb to deal <dmg elem="lightning" /> and decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP by <val idx="0" /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion by <val idx="1" r /></sec>.
+        If the target is <sec typ="cond">Flooded</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> damage dealt increases by <val idx="3" r /></sec>.
+      JP: |-
+        電撃球を発射して<dmg elem="lightning" />を与え、対象の<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>と<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="1" r /></sec>を低下させます。
+        対象が<sec typ="cond">浸水</sec>状態なら、<sec typ="dmg"><buff typ="LightningATK_UP" />ダメージ量<val idx="3" r /></sec>が増加します。
+      TC: |-
+        發射電擊球造成<dmg elem="lightning" />，並降低目標的<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>和<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="1" r /></sec>。
+        若目標處於<sec typ="cond">浸水</sec>狀態，<sec typ="dmg"><buff typ="LightningATK_UP" />傷害量<val idx="3" r /></sec>增加。
   "2":
     key: "2"
     icon: WideLightning
@@ -3485,6 +3500,19 @@ skills:
             base: 0.25
             per: 0.0125
             chance: 1
+    desc:
+      KR: |-
+        전격을 방사해 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 주고, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>와(과) <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 낮춥니다.
+        치명타 시, <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      EN: |-
+        Emits electricity to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" /> and decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP by <val idx="0" /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion by <val idx="1" r /></sec>.
+        On critical hit, <sec typ="dmg"><buff typ="LightningATK_UP" /> damage dealt increases by <val idx="3" r /></sec>.
+      JP: |-
+        電撃を放射して<sec typ="attr">保護無視</sec><dmg elem="lightning" />を与え、対象の<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>と<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="1" r /></sec>を低下させます。
+        クリティカル時、<sec typ="dmg"><buff typ="LightningATK_UP" />ダメージ量<val idx="3" r /></sec>が増加します。
+      TC: |-
+        放射電擊造成<sec typ="attr">無視保護</sec><dmg elem="lightning" />，並降低目標的<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>和<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="1" r /></sec>。
+        暴擊時，<sec typ="dmg"><buff typ="LightningATK_UP" />傷害量<val idx="3" r /></sec>增加。
   "3":
     key: "3"
     icon: P.FormChange
@@ -3693,6 +3721,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        적을 처치할 때마다 짜릿함을 느껴 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff">치명타 <val idx="1" r /></sec> / <sec typ="buff">행동력 <val idx="2" r /></sec>가 증가합니다.
+        해당 효과가 2중첩 이상일 경우, <sec typ="note">전하 방출</sec> 상태가 되어 해당 스테이지를 진행하는 동안 스킬이 강화됩니다.
+      EN: |-
+        Each time she kills an enemy, she feels a thrill and increases <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="0" r /></sec> / <sec typ="buff">Critical by <val idx="1" r /></sec> / <sec typ="buff">Action Power by <val idx="2" r /></sec>.
+        If this effect has 2 or more stacks, she enters <sec typ="note">Charge Release</sec> state and her skills are enhanced for the rest of the stage.
+      JP: |-
+        敵を倒すたびに刺激を感じ、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff">クリティカル<val idx="1" r /></sec> / <sec typ="buff">行動力<val idx="2" r /></sec>が増加します。
+        この効果が2重複以上の場合、<sec typ="note">電荷放出</sec>状態になり、そのステージの進行中スキルが強化されます。
+      TC: |-
+        每次擊殺敵人時都會感到刺激，使<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff">暴擊<val idx="1" r /></sec> / <sec typ="buff">行動力<val idx="2" r /></sec>增加。
+        若該效果達2層以上，會進入<sec typ="note">電荷釋放</sec>狀態，該關卡進行期間技能會被強化。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -3835,6 +3876,19 @@ skills:
             base: 0.04
             per: 0.002
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 인접한 아군의 반응 속도를 향상시켜 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="0" r /></sec>를 올려줍니다.
+        <sec typ="note">전하 방출</sec> 상태가 될 경우, 해당 효과가 25% 증가합니다.
+      EN: |-
+        At round start, improves adjacent allies' reaction speed, increasing <sec typ="buff"><buff typ="EVADE_UP" /> Evasion by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power by <val idx="2" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Electric Resistance by <val idx="0" r /></sec>.
+        If she enters <sec typ="note">Charge Release</sec> state, this effect increases by 25%.
+      JP: |-
+        ラウンド開始時、隣接した味方の反応速度を向上させ、<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電気耐性<val idx="0" r /></sec>を上昇させます。
+        <sec typ="note">電荷放出</sec>状態になる場合、この効果が25%増加します。
+      TC: |-
+        回合開始時，提升相鄰我方的反應速度，使<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電屬性抗性<val idx="0" r /></sec>增加。
+        若進入<sec typ="note">電荷釋放</sec>狀態，該效果增加25%。
   "5":
     key: "5"
     icon: P.ExpUp
@@ -4044,6 +4098,19 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        전투 승리 시, 스쿼드 내 모든 아군의 전투 승리 <sec typ="buff"><buff typ="EXP_UP" /> 경험치 획득량 <val idx="0" r /></sec>가 증가합니다.
+        자신이 적을 공격할 때, 시범을 보여 2라운드 동안 자신과 스쿼드 내 아군들의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        On battle victory, increases <sec typ="buff"><buff typ="EXP_UP" /> combat victory EXP gain by <val idx="0" r /></sec> for all allies in the squad.
+        When she attacks an enemy, she demonstrates, increasing her and squad allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="4" r /></sec> for 2 rounds.
+      JP: |-
+        戦闘勝利時、スクワッド内のすべての味方の戦闘勝利<sec typ="buff"><buff typ="EXP_UP" />経験値獲得量<val idx="0" r /></sec>が増加します。
+        自身が敵を攻撃する時、手本を見せて2ラウンドの間、自身とスクワッド内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="4" r /></sec>が増加します。
+      TC: |-
+        戰鬥勝利時，小隊內所有我方的戰鬥勝利<sec typ="buff"><buff typ="EXP_UP" />經驗值獲得量<val idx="0" r /></sec>增加。
+        自身攻擊敵人時，會示範並在2回合內使自身與小隊內我方的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="4" r /></sec>增加。
   F1:
     key: F1
     icon: Shock
@@ -6531,6 +6598,19 @@ skills:
             base: 36
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전격구를 발사해 <dmg elem="lightning" />를 주고, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>와(과) <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 낮춥니다.
+        대상이 <sec typ="cond">침수</sec> 상태면 <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가하며, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 감소 효과를 해제</sec>합니다.
+      EN: |-
+        Fires an electric orb to deal <dmg elem="lightning" /> and decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP by <val idx="0" /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion by <val idx="1" r /></sec>.
+        If the target is <sec typ="cond">Flooded</sec>, <sec typ="dmg"><buff typ="LightningATK_UP" /> damage dealt increases by <val idx="3" r /></sec> and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes damage reduction effects</sec>.
+      JP: |-
+        電撃球を発射して<dmg elem="lightning" />を与え、対象の<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>と<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="1" r /></sec>を低下させます。
+        対象が<sec typ="cond">浸水</sec>状態なら、<sec typ="dmg"><buff typ="LightningATK_UP" />ダメージ量<val idx="3" r /></sec>が増加し、<sec typ="buff"><buff typ="REMOVE_BUFF" />ダメージ減少効果を解除</sec>します。
+      TC: |-
+        發射電擊球造成<dmg elem="lightning" />，並降低目標的<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>和<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="1" r /></sec>。
+        若目標處於<sec typ="cond">浸水</sec>狀態，<sec typ="dmg"><buff typ="LightningATK_UP" />傷害量<val idx="3" r /></sec>增加，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除傷害減少效果</sec>。
   F2:
     key: F2
     icon: WideLightning
@@ -7809,6 +7889,23 @@ skills:
             base: 0.25
             per: 0.0125
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="attr">보호 무시</sec> 전격을 방사해 <dmg elem="lightning" />를 주고, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>와(과) <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 낮춥니다.
+        치명타 시, <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+        <sec>스킬 레벨 10에서 범위가 크게 증가합니다.</sec>
+      EN: |-
+        Emits <sec typ="attr">Ignore Protection</sec> electricity to deal <dmg elem="lightning" /> and decreases the target's <sec typ="buff"><buff typ="AP_DOWN" /> AP by <val idx="0" /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion by <val idx="1" r /></sec>.
+        On critical hit, <sec typ="dmg"><buff typ="LightningATK_UP" /> damage dealt increases by <val idx="3" r /></sec>.
+        <sec>At skill level 10, the range greatly increases.</sec>
+      JP: |-
+        <sec typ="attr">保護無視</sec>電撃を放射して<dmg elem="lightning" />を与え、対象の<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>と<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="1" r /></sec>を低下させます。
+        クリティカル時、<sec typ="dmg"><buff typ="LightningATK_UP" />ダメージ量<val idx="3" r /></sec>が増加します。
+        <sec>スキルレベル10で範囲が大きく増加します。</sec>
+      TC: |-
+        放射<sec typ="attr">無視保護</sec>電擊造成<dmg elem="lightning" />，並降低目標的<sec typ="buff"><buff typ="AP_DOWN" />AP<val idx="0" /></sec>和<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="1" r /></sec>。
+        暴擊時，<sec typ="dmg"><buff typ="LightningATK_UP" />傷害量<val idx="3" r /></sec>增加。
+        <sec>技能等級10時，範圍大幅增加。</sec>
   F3:
     key: F3
     icon: P.SelfAtkBuff
@@ -8064,6 +8161,11 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: 라운드 개시 시, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>이 증가합니다.
+      EN: At round start, increases <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power by <val idx="2" r /></sec>.
+      JP: ラウンド開始時、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>が増加します。
+      TC: 回合開始時，<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec>增加。
   F4:
     key: F4
     icon: P.SelfAtkBuff
@@ -8206,6 +8308,11 @@ skills:
             base: 0.05
             per: 0.0025
             chance: 1
+    desc:
+      KR: 라운드 개시 시, 인접한 아군의 반응 속도를 향상시켜 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> 전기 저항 <val idx="0" r /></sec>를 올려줍니다.
+      EN: At round start, improves adjacent allies' reaction speed, increasing <sec typ="buff"><buff typ="EVADE_UP" /> Evasion by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power by <val idx="2" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" /> Electric Resistance by <val idx="0" r /></sec>.
+      JP: ラウンド開始時、隣接した味方の反応速度を向上させ、<sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電気耐性<val idx="0" r /></sec>を上昇させます。
+      TC: 回合開始時，提升相鄰我方的反應速度，使<sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_UP" />電屬性抗性<val idx="0" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -8321,6 +8428,75 @@ dialogue:
         여왕이 아니라 한 아이의 엄마가
         되기를… 원하시는군요.
       MVP: 5월의 여왕은... 저로 정해진 건가요?
+    "3":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        이번 감사를 통해 그동안 사장님이
+        얼마나 많은 초과 근무를 하셨는지
+        밝혀내는 게 제 임무랍니다?
+        따끔한 징계가 무서우시다면…
+        협조를 부탁드릴게요. 우후후…
+      Idle_01_02: |-
+        사장님, 오늘도 고생 많으셨어요.
+        나머지는 제가 정리해 놓을 테니
+        이제 그만 퇴근하시는 게 좋겠어요.
+        …그런 표정을 지으셔도 소용없답니다.
+      Idle_01_03: |-
+        어떻게 업무는 막힘 없이 잘 진행되고 계신가요?
+        잠깐 짬을 내서 여기 엘븐 밀크를 넣은 커피를 준비했어요.
+        이걸 드시는 동안만큼은 손에서 일 좀 놓으세요.
+        잠깐 숨을 돌리는 것도 오래 일하기 위해
+        없어서는 안될 중요한 절차랍니다.
+      SPIdle_01_01: |-
+        사장님,
+        아직 일이 끝나지 않았습니다.
+      Idle_02_01: |-
+        사장님… 또 몰래 초과 근무하셨네요.
+        출입 기록과 로그인 시간까지 속이시고요.
+        후후, 제가 모를 줄 아셨어요?
+        명백한 근로기준법 위반인데요.
+        그럼… 규칙을 어긴 대가를 치르실 준비,
+        되셨겠죠?
+      Idle_03_01: |-
+        그동안 고생하셨으니 가산 수당을 드려야겠네요.
+        어떤 수당이 기다리는지는…
+        사장님이라면 이미 누구보다 잘 아시겠죠?
+      Idle_04_01: |-
+        어머, 또 몰래 초과 근무하셨네요.
+        정말 곤란한 분이세요.
+        그렇게까지 가산 수당을 받고 싶으신 건가요?
+        후후… 그럼 이번엔 조금 더
+        '특별한 수당'을 드리는 게 좋겠어요.
+      SPIdle_02_01: |-
+        후후, 사장님.
+        업무 중에 이러시면 곤란합니다.
+        일이 전부 끝날 때까지 못 참으시겠나요?
+        …어쩔 수 없군요.
+        집중 못 하시는 사장님께는,
+        따끔한 처벌이 필요하겠어요.
+      Oath: 사장님… 이건 근로 계약서도, 인사 발령 공지도 아니잖아요.​ 비서에게 이런 마음을 품는 건… 사내 규정 위반입니다. 하지만… 사장님을 위해서라면, 기꺼이 도장을 찍어 드리겠습니다.​ 앞으로도 제가 직접 곁에서—사장님의 일거수일투족을 관리해드리겠습니다.​ 이 결재의 반려 방식은 이 세상의 멸망 뿐이라는 걸 사전에 명시 해드려야겠네요. 우후후…
+      OathIdle_01: |-
+        사장님의 업무 스트레스를 풀어드리는 것도…
+        비서의 일이죠… 후훗… 좀 더 격하게 하셔도 괜찮아요…
+        그편이 저도 흥분되니까요.
+        그동안 쌓인 스트레스를… 저에게 전부… 발산해 주세요.
+      MVP: ""
     "":
       Join: 어머, 가르칠 게 많아 보이는 주인님이군요.
       SquadJoin: 이제 그놈들에게 참교육을 시작할 수 있겠군요.
@@ -8523,6 +8699,35 @@ dialogue:
         여왕이 아니라 한 아이의 엄마가
         되기를… 원하시는군요.
       MVP: ""
+    "3":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: あら、教育しがいがありそうなご主人様ですね。
       SquadJoin: うふふ…奴らに真の教育というものを教えてあげましょう。
@@ -8550,8 +8755,7 @@ dialogue:
       Idle_03_01: ご主人様が…先生になって私を叱る…。それも面白そうですね…。
       Idle_04_01: ええ、お仕置きを受けたいのでしたらいつでも仰ってください。お仕置き部屋を準備しますので。
       SPIdle_02_01: そんなことしたら… 特別授業…しちゃいましょうか？
-      Oath: 何ですか。藪から棒に…
-        。ご、ご主人様！？ご主人様は生徒で、私はただの教師です…。余計な感情などはあっては…。もちろん…これは…私が預かります。預かるだけですよ？預かるだけ。
+      Oath: 何ですか。藪から棒に… 。ご、ご主人様！？ご主人様は生徒で、私はただの教師です…。余計な感情などはあっては…。もちろん…これは…私が預かります。預かるだけですよ？預かるだけ。
       OathIdle_01: 預かっていた物？…な…何のことでしょう？ちょっと、手袋は関係ないでしょう？どうして手袋を取ろうと！
       MVP: ""
     M:
@@ -8637,12 +8841,9 @@ dialogue:
         *Chuckles* Shall we do some
         secret training? Come here…
         Don’t worry. You just leave everything to me.
-      Oath: >-
-        Haha, I'll be doing this… with you forever… Haha… Even I feel shy when
-        it comes to this… 
-
+      Oath: |-
+        Haha, I'll be doing this… with you forever… Haha… Even I feel shy when it comes to this… 
         You must've really liked it, master. Most people get scared… but don't worry, master.
-
         I'll… only use my stick for you.
       OathIdle_01: |-
         Don't worry. Master. You chose
@@ -8696,17 +8897,44 @@ dialogue:
       SPIdle_02_01: |-
         You must have learned…
         how you should treat your lover. Then… Show it to me.
-      Oath: >-
+      Oath: |-
         I didn’t expect you to make such a bold move on me like this… but okay.
-
         I will serve you from my hair to toe, Master.
-
         But… you should also become the best husband that fits the best housewife. … Are you ready for that?
       OathIdle_01: |-
         I tried to become Queen for you.
         What do you think about that? Oh my. Now you want me…
         to become a mother,
         not a queen.
+      MVP: ""
+    "3":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: Hmm… you look like you have a lot to learn, Master.
@@ -8752,10 +8980,8 @@ dialogue:
       SPIdle_02_01: |-
         I will have to do special training
         if you don’t stop!
-      Oath: >-
-        W-what is this… Master! I'm a teacher and you're a student. Even if you
-        may like me
-
+      Oath: |-
+        W-what is this… Master! I'm a teacher and you're a student. Even if you may like me
         you have to hold back. Of course… I'll keep this… stored. I'll only store it. Really.
       OathIdle_01: |-
         The thing I have? I-I don’t know. Wait,
@@ -8785,10 +9011,8 @@ dialogue:
         Are you done for the day?
         You didn’t stop…
         because you wanted to be punished, did you?
-      Idle_01_02: >-
-        Umm… A bad husband should be punished… Where should I do it? If you
-        prefer to be in public,
-
+      Idle_01_02: |-
+        Umm… A bad husband should be punished… Where should I do it? If you prefer to be in public,
         just tell me.
       Idle_01_03: |-
         Yesterday, I was the one giving punishment.
@@ -8913,6 +9137,35 @@ dialogue:
         一個孩子的媽媽…
         而不是女王呀。
       MVP: ""
+    "3":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: 哎喲，看來我得教你很多恭喜呢，我的主人。
       SquadJoin: ""
@@ -9005,20 +9258,17 @@ skins:
   sid: null
   artist: Kakiman
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 6
   stage: false
   subset:
-    - true
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - D
+    G:
+      - _
+      - D
   anim:
     - true
     - false
@@ -9033,25 +9283,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 4
+    dflags: 5
     2dmodel_dam: 2DModel_3P_Alexandra_N_Dam
   skins:
     - sid: 1
       artist: Kakiman
       price: 91
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 14
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - true
         - false
@@ -9068,24 +9314,24 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_3P_Alexandra_1
     - sid: 2
       artist: Jam
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - DS
+        G:
+          - _
+          - D
+          - DS
       anim:
         - false
         - false
@@ -9102,5 +9348,56 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_3P_Alexandra_NS2
         2dmodel_dam: 2DModel_3P_Alexandra_NS2_Dam
+    - sid: 3
+      artist: REN.
+      price: 192
+      Spine: true
+      SpineDamaged: false
+      parts: 78
+      stage: false
+      subset:
+        O:
+          - _
+          - D
+          - B
+          - S
+          - DS
+          - BS
+          - P
+          - DP
+          - BP
+          - SP
+          - DSP
+          - BSP
+        G:
+          - _
+          - D
+          - B
+          - S
+          - DS
+          - BS
+          - DP
+          - DSP
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Suit_Dress
+      facelist: []
+      releaseDate: 1773273600000
+      metadata:
+        imageId: 3
+        iconId: 3
+        tbarId: 3
+        voiceId: 3
+        flags: 3
+        dflags: 1
+        2dmodel: 2DModel_3P_Alexandra_NS3
+        2dmodel_dam: 2DModel_3P_Alexandra_NS3_Dam
+        consumableKey: Skin_3P_Alexandra_3

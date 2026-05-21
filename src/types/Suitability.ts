@@ -15,8 +15,8 @@ export interface Prohibition {
 	squad: string;
 	char: {
 		body: ACTOR_BODY_TYPE;
-		role: ROLE_TYPE;
-		class: ACTOR_CLASS;
+		role: ROLE_TYPE | 3 /*__MAX__*/;
+		class: ACTOR_CLASS | 3 /*__MAX__*/;
 	};
 	desc: string;
 }

@@ -2159,6 +2159,19 @@ skills:
               level: "0"
             value: Char_BR_Valkyrie_N
             chance: 1
+    desc:
+      KR: |-
+        라이플 사격으로 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">대상이 <buff typ="MARKING" />표식 또는 <buff typ="PROVOKE" />도발 상태인 경우</sec>, 각각 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        Deals <dmg elem="physics" /> with rifle fire.
+        <sec typ="cond">If the target is under <buff typ="MARKING" /> Mark or <buff typ="PROVOKE" /> Provoke</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases for each condition.
+      JP: |-
+        ライフル射撃で<dmg elem="physics" />を与えます。
+        <sec typ="cond">対象が<buff typ="MARKING" />標的または<buff typ="PROVOKE" />挑発状態の場合</sec>、それぞれ<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="0" r /></sec>が増加します。
+      TC: |-
+        以步槍射擊造成<dmg elem="physics" />。
+        <sec typ="cond">若目標處於<buff typ="MARKING" />標記或<buff typ="PROVOKE" />挑釁狀態</sec>，每個條件都會使<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: Snipe
@@ -2849,6 +2862,19 @@ skills:
             base: 34
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        정밀 저격으로 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가하고 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 최소화 관련 <sec typ="attr">강화 효과</sec>를 해제</sec>합니다.
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> with precision sniping.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases and <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's damage minimization-related <sec typ="attr">buffs</sec></sec>.
+      JP: |-
+        精密狙撃で<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="0" r /></sec>が増加し、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />ダメージ最小化関連の<sec typ="attr">強化効果</sec>を解除</sec>します。
+      TC: |-
+        以精密狙擊造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="0" r /></sec>增加，並<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的傷害最小化相關<sec typ="attr">強化效果</sec></sec>。
   "3":
     key: "3"
     icon: P.Scan
@@ -3202,6 +3228,23 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec>가 증가합니다.
+        <sec>자신이 후열에 가까울 수록 상기 효과가 50%까지 감소합니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 전열에 위치한 경우</sec>, <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과를 획득합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, her <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="2" r /></sec> increases.
+        <sec>The above effects decrease by up to 50% the closer she is to the back row.</sec>
+        <sec typ="cond">At round start</sec> <sec typ="cond">if she is positioned in the front row</sec>, gains <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="2" r /></sec>が増加します。
+        <sec>自分が後列に近いほど、上記効果は最大50%まで減少します。</sec>
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自分が前列に位置する場合</sec>、<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア / ダメージ減少無視</sec>効果を獲得します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊 <val idx="2" r /></sec>增加。
+        <sec>自身越接近後列，上述效果最多降低50%。</sec>
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若自身位於前列</sec>，獲得<sec typ="buff"><buff typ="BARRIER_PIERCE" />無視防護罩 / 傷害減少</sec>效果。
   "4":
     key: "4"
     icon: P.DefCounter
@@ -3725,6 +3768,27 @@ skills:
             base: 11
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 회피 감소 효과에 면역</sec>을 획득합니다.
+        <sec typ="cond">공격 받을 시</sec>, 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="5" r inv /></sec>가 감소하며 <sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless /> 위력으로 반격</sec>합니다.
+        <sec typ="cond">대기 시</sec>, <sec typ="note"><buff typ="MARKING" /> 표식</sec> 상태인 적을 해당 라운드 동안 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하고 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="8" r /></sec>를 감소시킵니다.
+        <sec>상기 효과를 통해 유발된 반격은 위력이 두 배로 증폭됩니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, her <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="0" r /></sec> increases and she gains <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immunity to EVA decrease effects</sec>.
+        <sec typ="cond">When attacked</sec>, her <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="5" r inv /></sec> decreases and she <sec typ="buff"><buff typ="COUNTER" /> counterattacks with <val idx="6" r signless /> power</sec>.
+        <sec typ="cond">On Standby</sec>, enemies under <sec typ="note"><buff typ="MARKING" /> Mark</sec> are <sec typ="buff"><buff typ="PROVOKE" /> Provoked</sec> for that round and their <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="8" r /></sec> decreases.
+        <sec>Counterattacks triggered through the above effects have doubled power.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="EVADE_UP" />回避 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />回避減少効果に免疫</sec>を獲得します。
+        <sec typ="cond">攻撃を受ける時</sec>、自分が<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ <val idx="5" r inv /></sec>が減少し、<sec typ="buff"><buff typ="COUNTER" /> <val idx="6" r signless />の威力で反撃</sec>します。
+        <sec typ="cond">待機時</sec>、<sec typ="note"><buff typ="MARKING" />標的</sec>状態の敵をそのラウンドの間<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>し、<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="8" r /></sec>を減少させます。
+        <sec>上記効果によって誘発された反撃は威力が2倍に増幅されます。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="EVADE_UP" />迴避 <val idx="0" r /></sec>增加，並獲得<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />對迴避降低效果免疫</sec>。
+        <sec typ="cond">受到攻擊時</sec>，自身的<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害 <val idx="5" r inv /></sec>減少，並<sec typ="buff"><buff typ="COUNTER" />以<val idx="6" r signless />威力反擊</sec>。
+        <sec typ="cond">待機時</sec>，使處於<sec typ="note"><buff typ="MARKING" />標記</sec>狀態的敵人在該回合內受到<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>，並降低<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="8" r /></sec>。
+        <sec>透過上述效果觸發的反擊威力會增幅為2倍。</sec>
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -4009,6 +4073,23 @@ skills:
             base: 0.4
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군 경장 지원기 / <sec typ="note">시스터즈 오브 발할라</sec> 소속 전투원의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">스쿼드 내에<char uid="BR_Leona" />가 있을 경우</sec> <sec typ="cond"><sec typ="note">교란 사격</sec> 적중 시</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">정밀 저격</sec> 협동 공격</sec>을 실행합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="note"></sec> supports attacks<sec typ="buff"> of allied Light Supporters / <buff typ="SUPPORT_ATTACK" />Sisters of Valhalla</sec> combatants.
+        <sec typ="cond">At round start</sec>, her <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="6" r /></sec> increases.
+        <sec typ="cond">If <char uid="BR_Leona" /> is in the squad</sec>, <sec typ="cond">when <sec typ="note">Disruptive Fire</sec> hits</sec>, performs a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> cooperative attack with <sec typ="note">Precision Sniping</sec></sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、味方軽装支援機 / <sec typ="note">シスターズ・オブ・ヴァルハラ</sec>所属戦闘員の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃を支援</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="6" r /></sec>が増加します。
+        <sec typ="cond">スクワッド内に<char uid="BR_Leona" />がいる場合</sec>、<sec typ="cond"><sec typ="note">攪乱射撃</sec>命中時</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">精密狙撃</sec>協同攻撃</sec>を実行します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，<sec typ="note"></sec>支援<sec typ="buff">友軍輕裝支援機 / <buff typ="SUPPORT_ATTACK" />英靈殿姊妹</sec>所屬戰鬥員的攻擊。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫穿 <val idx="6" r /></sec>增加。
+        <sec typ="cond">若小隊內有<char uid="BR_Leona" /></sec>，<sec typ="cond"><sec typ="note">干擾射擊</sec>命中時</sec>，執行<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">精密狙擊</sec>協同攻擊</sec>。
 dialogue:
   KR:
     "1":
@@ -4062,8 +4143,7 @@ dialogue:
         여, 연인으로 위장하기 위함입니까?
         그, 그러면 어쩔 수 없겠죠.
         그러니… 마음껏…
-      Oath: 각하… 아시다시피 저는 누군가를 해치기 위해서 태어났습니다. 저의 이름조차 이를 증명합니다. 그럼에도 저를 사랑하시겠다면… 제가 받은
-        사랑만큼. 아니. 그 이상의 사랑을 각하께 돌려드리겠습니다. 좀 더 교양을 쌓아야하는 이유가 늘었군요.
+      Oath: 각하… 아시다시피 저는 누군가를 해치기 위해서 태어났습니다. 저의 이름조차 이를 증명합니다. 그럼에도 저를 사랑하시겠다면… 제가 받은 사랑만큼. 아니. 그 이상의 사랑을 각하께 돌려드리겠습니다. 좀 더 교양을 쌓아야하는 이유가 늘었군요.
       OathIdle_01: |-
         저격은 신중함과 과감함 사이의 결단이라고
         할 수 있습니다. 그리고 저는 저격수지요.
@@ -4230,9 +4310,7 @@ dialogue:
         횟수가… 무슨 상관이겠습니까.
         서로를 사랑하는... 마음이 있다면 말입니다.
         ……사랑은… 무한입니다.
-      Oath: 오랫동안 바랐던 일이 마침내 이루어지는군요. 이 옷을 입고 각하 앞에 섰으니 오랫동안 간직했던 맹세를 하겠습니다. 기쁠 때나, 슬플
-        때나, 괴로울 때나, 행복할 때나. 죽음이 두 사람을 갈라놓으려 할 지라도… 각하만의 발키리로서 죽어서도 변함없이 각하만을 사랑할
-        것을 맹세합니다.
+      Oath: 오랫동안 바랐던 일이 마침내 이루어지는군요. 이 옷을 입고 각하 앞에 섰으니 오랫동안 간직했던 맹세를 하겠습니다. 기쁠 때나, 슬플 때나, 괴로울 때나, 행복할 때나. 죽음이 두 사람을 갈라놓으려 할 지라도… 각하만의 발키리로서 죽어서도 변함없이 각하만을 사랑할 것을 맹세합니다.
       OathIdle_01: |-
         각하.
         아주 오래전부터 바랐던 소원이 있는데…
@@ -4371,8 +4449,7 @@ dialogue:
         [미번역]여, 연인으로 위장하기 위함입니까?
         그, 그러면 어쩔 수 없겠죠.
         그러니… 마음껏…
-      Oath: "[미번역]각하… 아시다시피 저는 누군가를 해치기 위해서 태어났습니다. 저의 이름조차 이를 증명합니다. 그럼에도 저를 사랑하시겠다면…
-        제가 받은 사랑만큼. 아니. 그 이상의 사랑을 각하께 돌려드리겠습니다. 좀 더 교양을 쌓아야하는 이유가 늘었군요."
+      Oath: "[미번역]각하… 아시다시피 저는 누군가를 해치기 위해서 태어났습니다. 저의 이름조차 이를 증명합니다. 그럼에도 저를 사랑하시겠다면… 제가 받은 사랑만큼. 아니. 그 이상의 사랑을 각하께 돌려드리겠습니다. 좀 더 교양을 쌓아야하는 이유가 늘었군요."
       OathIdle_01: |-
         [미번역]저격은 신중함과 과감함 사이의 결단이라고
         할 수 있습니다. 그리고 저는 저격수지요.
@@ -4632,10 +4709,8 @@ dialogue:
       SPIdle_02_01: |-
         Did you bring it? That’s why…
         you are doing this, right?
-      Oath: >-
-        A rest. and the commander’s confession… Am I dreaming? How are all the
-        good things happening to me?
-
+      Oath: |-
+        A rest. and the commander’s confession… Am I dreaming? How are all the good things happening to me?
         It’s weird. How are all the good things…
       OathIdle_01: |-
         One thing I don’t like about the destruction…
@@ -4692,12 +4767,9 @@ dialogue:
       SPIdle_02_01: |-
         … If it’s you, I can do more than…
         ten times.
-      Oath: >-
-        These days, I’ve been thinking about how I cannot be happier than this.
-        But… lord.
-
+      Oath: |-
+        These days, I’ve been thinking about how I cannot be happier than this. But… lord.
         You always give me more than that. … Commander, can you come to my room?
-
         Although it is just an ordinary room, it is quiet and cozy. We should… celebrate our second anniversary there, just the two of us.
       OathIdle_01: |-
         Hoo hoo, you can’t make me
@@ -4755,11 +4827,7 @@ dialogue:
         The number of times doesn’t matter.
         As long as we love each other.
         Love… is unlimited.
-      Oath: Something I wanted for so long is finally coming true. Standing in front
-        of you wearing this, I will share the promise I’ve kept all this time.
-        Through happiness and sadness, pain and joy, until death do us part… I,
-        Valkyrie, solemnly swear that I will love Your Excellency and no one
-        else.
+      Oath: Something I wanted for so long is finally coming true. Standing in front of you wearing this, I will share the promise I’ve kept all this time. Through happiness and sadness, pain and joy, until death do us part… I, Valkyrie, solemnly swear that I will love Your Excellency and no one else.
       OathIdle_01: |-
         Your Excellency,
         There is a wish that I've had for a very long time…
@@ -4806,8 +4874,7 @@ dialogue:
         Please don’t think that I’ll allow
         anything. No more than…
         10 times, okay?
-      Oath: … A vow. An engagement… Mr. Commander… I hope this moment and your vow
-        lasts forever.
+      Oath: … A vow. An engagement… Mr. Commander… I hope this moment and your vow lasts forever.
       OathIdle_01: |-
         … How is it that you enjoy
         seeing me embarrassed?
@@ -5129,20 +5196,13 @@ skins:
   sid: null
   artist: Rorobomb
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5157,25 +5217,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_Valkyrie_N
   skins:
     - sid: 1
       artist: Rorobomb
       price: 77
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - true
         - false
@@ -5192,24 +5248,18 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_BR_Valkyrie_1
     - sid: 2
       artist: Rorobomb
       price: 159
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 14
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
       anim:
         - true
         - false
@@ -5226,24 +5276,22 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 4
+        dflags: 4
         consumableKey: Skin_BR_Valkyrie_2
     - sid: 3
       artist: Rorobomb
       price: 159
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 44
       stage: false
       subset:
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - B
+        G:
+          - _
+          - B
       anim:
         - false
         - false
@@ -5260,24 +5308,26 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 0
+        dflags: 0
         consumableKey: Skin_BR_Valkyrie_3
     - sid: 4
       artist: MEL
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -5294,6 +5344,7 @@ skins:
         tbarId: 4
         voiceId: 4
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_Valkyrie_NS4
         2dmodel_dam: 2DModel_BR_Valkyrie_NS4_Dam
         consumableKey: Skin_BR_Valkyrie_4

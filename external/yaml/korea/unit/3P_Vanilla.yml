@@ -605,6 +605,8 @@ source:
     - Ev:Ev33:EV4-1EX
   - - Ev:Ev35:EV1-4
     - Ev:Ev35:EV2-1EX
+  - - Ev:Ev36:EV2-1EX
+  - - Ev:Ev37:EV1-1EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1888,6 +1890,27 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        돌격 소총으로 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">스쿼드 내에 <char uid="3P_BlackWyrm" /> / <char uid="3P_Hirume" />가 있을 경우</sec>, <sec typ="dmg"><elem type="fire" /> 화염 속성으로 변경</sec>됩니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="1" r /></sec> 감소 상태로 만듭니다.
+        대상이  <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 상태인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      EN: |-
+        Deals <dmg elem="physics" /> to a single target with an assault rifle.
+        <sec typ="cond">At the start of combat</sec>, <sec typ="cond">if <char uid="3P_BlackWyrm" /> / <char uid="3P_Hirume" /> is in the squad</sec>, it <sec typ="dmg"><elem type="fire" /> changes to Fire element</sec>.
+        <sec typ="cond">On hit</sec>, inflicts the target with <sec typ="buff"><buff typ="SNARE" /> Immobilize</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> MOVE <val idx="1" r /></sec> Decrease for 2 rounds.
+        If the target is under <sec typ="cond"><buff typ="SNARE" /> Immobilize</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> EVA Decrease</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
+      JP: |-
+        アサルトライフルで単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="cond">分隊内に<char uid="3P_BlackWyrm" /> / <char uid="3P_Hirume" />がいる場合</sec>、<sec typ="dmg"><elem type="fire" />火炎属性に変更</sec>されます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="buff"><buff typ="SNARE" />移動不可</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="1" r /></sec>減少状態にします。
+        対象が <sec typ="cond"><buff typ="SNARE" />移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />回避減少</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="3" r /></sec>が増加します。
+      TC: |-
+        以突擊步槍對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">戰鬥開始時</sec>，<sec typ="cond">若小隊內有<char uid="3P_BlackWyrm" /> / <char uid="3P_Hirume" /></sec>，則<sec typ="dmg"><elem type="fire" />變更為火焰屬性</sec>。
+        <sec typ="cond">命中時</sec>，使目標進入<sec typ="buff"><buff typ="SNARE" />無法移動</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力 <val idx="1" r /></sec>降低狀態，持續2回合。
+        若目標處於<sec typ="cond"><buff typ="SNARE" />無法移動</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="3" r /></sec>增加。
   "2":
     key: "2"
     icon: GrenadeAttack_2
@@ -3166,6 +3189,27 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        유탄을 발사해 지정 범위에 <dmg elem="fire" />를 줍니다.
+        <sec typ="dmg">목표 지점 뒷 칸에는 피해가 25% 감소합니다.</sec>
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 행 / 열 보호 효과를 해제</sec>합니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      EN: |-
+        Fires a grenade to deal <dmg elem="fire" /> to the designated area.
+        <sec typ="dmg">The space behind the target point takes 25% less damage.</sec>
+        <sec typ="cond">On hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's Row / Column Protection effects</sec>.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="3" r /></sec> increases.
+      JP: |-
+        榴弾を発射し、指定範囲に<dmg elem="fire" />を与えます。
+        <sec typ="dmg">目標地点の後方マスにはダメージが25%減少します。</sec>
+        <sec typ="cond">命中時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />行 / 列保護効果を解除</sec>します。
+        <sec typ="cond">クリティカル時</sec>、<sec typ="dmg"><buff typ="FireATK_UP" />ダメージ量 <val idx="3" r /></sec>が増加します。
+      TC: |-
+        發射榴彈，對指定範圍造成<dmg elem="fire" />。
+        <sec typ="dmg">目標地點後方一格的傷害減少25%。</sec>
+        <sec typ="cond">命中時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的行 / 列保護效果</sec>。
+        <sec typ="cond">暴擊時</sec>，<sec typ="dmg"><buff typ="FireATK_UP" />傷害量 <val idx="3" r /></sec>增加。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -3522,6 +3566,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군 공격기 / 지원기의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 대상의 공격을 지원</sec>합니다.
+        <sec typ="cond">적 처치 시</sec>, 범위 내 아군 바이오로이드의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 증가합니다.
+        <sec typ="cond">공격 지원 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>가 증가합니다. (최대 2중첩)
+      EN: |-
+        <sec typ="cond">At round start</sec>, allied Attackers / Supporters within range gain <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> and <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> support the target's attack</sec>.
+        <sec typ="cond">When killing an enemy</sec>, allied Bioroids within range gain <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>.
+        <sec typ="cond">When providing Attack Support</sec>, self's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> increases for 2 rounds. (Max 2 stacks)
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方攻撃機 / 支援機の<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="SUPPORT_ATTACK" />対象の攻撃を支援</sec>します。
+        <sec typ="cond">敵を倒した時</sec>、範囲内の味方バイオロイドの<sec typ="buff"><buff typ="AP_UP" />AP <val idx="4" /></sec>が増加します。
+        <sec typ="cond">攻撃支援時</sec>、2ラウンドの間、自分の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="5" r /></sec>が増加します。(最大2スタック)
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，範圍內我軍攻擊機 / 支援機的<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="0" r /></sec>增加，並<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援目標的攻擊</sec>。
+        <sec typ="cond">擊殺敵人時</sec>，範圍內我軍生化人的<sec typ="buff"><buff typ="AP_UP" />AP <val idx="4" /></sec>增加。
+        <sec typ="cond">支援攻擊時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="5" r /></sec>增加，持續2回合。（最多2層）
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -3888,6 +3949,27 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 범위 내 아군 보호기의 공격을 지원</sec>하고 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec>를 활성화합니다.
+        <sec typ="cond">스쿼드 내에 보호기가 없을 경우</sec>, <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> 활성화에 필요한 <sec>역할군 조건이 사라집니다</sec>.
+        <sec typ="cond">상기 효과의 대상이 있을 경우</sec>, <sec typ="note">뒷정리</sec>의 <sec><sec typ="cond">공격 지원 시</sec> 효과의 대상이 '아군 공격기'로 확장</sec>되며, <sec>최대 중첩 수가 4로 증가</sec>합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, allies within range gain <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> MOVE <val idx="2" r /></sec>.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports attacks by allied Defenders within range</sec> and activates <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec>.
+        <sec typ="cond">If there are no Defenders in the squad</sec>, the <sec typ="buff">role condition required to activate<buff typ="DEF_Line" /> </sec><sec> Row Protection</sec> disappears.
+        <sec typ="cond">If there is a target of the above effect</sec>, the target of <sec typ="note">Cleanup</sec>'s <sec><sec typ="cond">When providing Attack Support</sec> effect expands to 'allied Attackers'</sec>, and <sec>the max stack count increases to 4</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="buff"><buff typ="SUPPORT_ATTACK" />範囲内の味方保護機の攻撃を支援</sec>し、<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>を有効化します。
+        <sec typ="cond">分隊内に保護機がいない場合</sec>、<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>の有効化に必要な<sec>役割群条件がなくなります</sec>。
+        <sec typ="cond">上記効果の対象がいる場合</sec>、<sec typ="note">後片付け</sec>の<sec><sec typ="cond">攻撃支援時</sec>効果の対象が「味方攻撃機」に拡張</sec>され、<sec>最大スタック数が4に増加</sec>します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，範圍內我軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="2" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援範圍內我軍保護機的攻擊</sec>，並啟用<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>。
+        <sec typ="cond">若小隊內沒有保護機</sec>，啟用<sec typ="buff"><buff typ="DEF_Line" />行保護</sec>所需的<sec>角色群條件會消失</sec>。
+        <sec typ="cond">若存在上述效果的目標</sec>，<sec typ="note">善後處理</sec>的<sec><sec typ="cond">支援攻擊時</sec>效果目標會擴展為「我軍攻擊機」</sec>，且<sec>最大疊層數增加至4</sec>。
   "5":
     key: "5"
     icon: P.WideFireShot
@@ -4377,6 +4459,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신이 공격을 지원하는 대상의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
+        <sec>해당 효과는 대상과 인접한 아군 수에 따라 증폭됩니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="ref"><buff typ="DEF_DOWN" /> 방어력 감소 / <buff typ="FIRERES_DOWN" /> 화염 저항 감소 상태인 적</sec>의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="6" r /></sec>를 증가시킵니다.
+        <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소 / <buff typ="FIRERES_DOWN" /> 화염 저항 감소가 <cmt t="배틀 메이드"><import name="BattleMaid" /></cmt> 소속 전투원의 스킬 효과인 경우</sec>, 상기 효과가 세 배로 증폭됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, the <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> of targets self supports increases.
+        <sec>This effect is amplified based on the number of allies adjacent to the target.</sec>
+        <sec typ="cond">At round start</sec>, increases the <sec typ="ref"><buff typ="DEF_DOWN" /> received damage <buff typ="FIRERES_DOWN" /></sec> of <sec typ="buff">enemies under <buff typ="VULNERABLE" /> DEF Decrease / <val idx="6" r /> Fire Resistance Decrease</sec>.
+        <sec typ="cond">If <buff typ="DEF_DOWN" /> DEF Decrease / <buff typ="FIRERES_DOWN" /> Fire Resistance Decrease is a skill effect from a <cmt t="Battle Maid"><import name="BattleMaid" /></cmt> unit</sec>, the above effect is tripled.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分が攻撃を支援する対象の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性 <val idx="0" r /></sec>が増加します。
+        <sec>この効果は対象と隣接した味方の数に応じて増幅されます。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="ref"><buff typ="DEF_DOWN" />防御力減少 / <buff typ="FIRERES_DOWN" />火炎耐性減少状態の敵</sec>の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="6" r /></sec>を増加させます。
+        <sec typ="cond"><buff typ="DEF_DOWN" />防御力減少 / <buff typ="FIRERES_DOWN" />火炎耐性減少が<cmt t="バトルメイド"><import name="BattleMaid" /></cmt>所属戦闘員のスキル効果である場合</sec>、上記効果が3倍に増幅されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身支援攻擊目標的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抵抗 <val idx="0" r /></sec>增加。
+        <sec>此效果會依與目標相鄰的我軍數量增幅。</sec>
+        <sec typ="cond">回合開始時</sec>，增加<sec typ="ref">處於<buff typ="DEF_DOWN" />防禦力降低 / <buff typ="FIRERES_DOWN" />火焰抗性降低狀態的敵人</sec>的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害 <val idx="6" r /></sec>。
+        <sec typ="cond">若<buff typ="DEF_DOWN" />防禦力降低 / <buff typ="FIRERES_DOWN" />火焰抗性降低是<cmt t="戰鬥女僕"><import name="BattleMaid" /></cmt>所屬戰鬥員的技能效果</sec>，上述效果會增幅為三倍。
   F1:
     key: F1
     icon: ARShot
@@ -5675,6 +5778,27 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        돌격 소총으로 단일 대상에게 <dmg elem="fire" />를 줍니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">스쿼드 내에 <char uid="3P_BlackWyrm" /> / <char uid="3P_Hirume" />가 없을 경우</sec>, <sec typ="dmg"><elem type="physics" /> 물리 속성으로 변경</sec>됩니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="1" r /></sec> 감소 상태로 만듭니다.
+        대상이  <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 상태인 경우, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      EN: |-
+        Deals <dmg elem="fire" /> to a single target with an assault rifle.
+        <sec typ="cond">At battle start</sec>, <sec typ="cond">if <char uid="3P_BlackWyrm" /> / <char uid="3P_Hirume" /> is not in the squad</sec>, this skill is <sec typ="dmg">changed to <elem type="physics" /> Physical attribute</sec>.
+        <sec typ="cond">On hit</sec>, makes the target <sec typ="buff"><buff typ="SNARE" /> unable to move</sec> / decreases <sec typ="buff"><buff typ="AP_DOWN" /> Action Power by <val idx="1" r /></sec> for 2 rounds.
+        If the target is under <sec typ="cond"><buff typ="SNARE" /> Unable to Move</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> damage dealt increases by <val idx="3" r /></sec>.
+      JP: |-
+        アサルトライフルで単一対象へ<dmg elem="fire" />を与えます。
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="cond">スクワッド内に<char uid="3P_BlackWyrm" /> / <char uid="3P_Hirume" />がいない場合</sec>、<sec typ="dmg"><elem type="physics" />物理属性に変更</sec>されます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="buff"><buff typ="SNARE" />移動不可</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="1" r /></sec>減少状態にします。
+        対象が<sec typ="cond"><buff typ="SNARE" />移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />回避低下</sec>状態の場合、<sec typ="dmg"><buff typ="FireATK_UP" />ダメージ量<val idx="3" r /></sec>が増加します。
+      TC: |-
+        用突擊步槍對單一目標造成<dmg elem="fire" />。
+        <sec typ="cond">戰鬥開始時</sec>，<sec typ="cond">若小隊內沒有<char uid="3P_BlackWyrm" /> / <char uid="3P_Hirume" /></sec>，會<sec typ="dmg">變更為<elem type="physics" />物理屬性</sec>。
+        <sec typ="cond">命中時</sec>，2回合內使目標進入<sec typ="buff"><buff typ="SNARE" />無法移動</sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="1" r /></sec>降低狀態。
+        若目標處於<sec typ="cond"><buff typ="SNARE" />無法移動</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec>狀態，<sec typ="dmg"><buff typ="FireATK_UP" />傷害量<val idx="3" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -6197,12 +6321,9 @@ dialogue:
         Awee! … What a bold first date.
         It’s your usual self… It kind of…
         comforts me.
-      Oath: >-
-        You brought me to a nice place at a pretty good timing. I can’t believe
-        that
-
+      Oath: |-
+        You brought me to a nice place at a pretty good timing. I can’t believe that
         such a dull person like you tried so hard to prepared this romantic scene. I guess… I should talk about
-
         my real feelings some times. I always rely on you, my master.
       OathIdle_01: |-
         C-confession? It wasn’t…bad.
@@ -6310,12 +6431,9 @@ dialogue:
         I’ll make you a chocolate cake.
         Oh, but it’s possible only on a specific date.
       SPIdle_02_01: Do you want me o pretend… that I don’t know what’s going on?
-      Oath: >-
-        …… Such a bad habit. Do you think this is funny? Really, you disgust meㅡ
-        Y-you're telling the
-
+      Oath: |-
+        …… Such a bad habit. Do you think this is funny? Really, you disgust meㅡ Y-you're telling the
         truth. Excuse me. I just never knew this could happen to petty me… My answer?
-
         … Isn't that obvious? I looked after you because I l-like you, my pathetic Master.
       OathIdle_01: |-
         You want me to repeat what I said?
@@ -6573,20 +6691,14 @@ skins:
   sid: null
   artist: PaintAle
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - D
   anim:
     - false
     - false
@@ -6601,26 +6713,24 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 1
     2dmodel: 2DModel_3P_Vanilla_N
     2dmodel_dam: 2DModel_3P_Vanilla_N_Dam
   skins:
     - sid: 1
       artist: BUMCHa
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 70
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+        G:
+          - _
+          - D
       anim:
         - true
         - false
@@ -6637,24 +6747,34 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 5
         2dmodel_dam: 2DModel_3P_Vanilla_NS1_Dam
     - sid: 2
       artist: Axoo
       price: 202
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 110
       stage: false
       subset:
-        - true
-        - true
-        - true
-        - true
-        - true
-        - true
-        - true
-        - true
+        O:
+          - _
+          - D
+          - B
+          - DB
+          - S
+          - DS
+          - BS
+          - DBS
+        G:
+          - _
+          - D
+          - B
+          - DB
+          - S
+          - DS
+          - BS
+          - DBS
       anim:
         - false
         - false
@@ -6671,26 +6791,36 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 3
+        dflags: 1
         2dmodel: 2DModel_3P_Vanilla_NS2
         2dmodel_dam: 2DModel_3P_Vanilla_NS2_Dam
         consumableKey: Skin_3P_Vanilla_2
     - sid: 3
       artist: Axoo
       price: 202
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 110
       stage: false
       subset:
-        - true
-        - true
-        - true
-        - true
-        - true
-        - true
-        - true
-        - true
+        O:
+          - _
+          - D
+          - B
+          - DB
+          - S
+          - DS
+          - BS
+          - DBS
+        G:
+          - _
+          - D
+          - B
+          - DB
+          - S
+          - DS
+          - BS
+          - DBS
       anim:
         - false
         - false
@@ -6707,6 +6837,7 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 3
+        dflags: 1
         2dmodel: 2DModel_3P_Vanilla_NS3
         2dmodel_dam: 2DModel_3P_Vanilla_NS3_Dam
         consumableKey: Skin_3P_Vanilla_3

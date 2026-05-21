@@ -604,6 +604,7 @@ source:
   - - Ev:Ev33:EV2-2EX
   - - Ev:Ev34:EV1-3
   - - Ev:Ev35:EV1-4EX
+  - - Ev:Ev37:EV1-4EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1448,6 +1449,23 @@ skills:
             base: -0.3
             per: -0.03
             chance: 1
+    desc:
+      KR: |-
+        전투소총 저격으로 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec> 증가 / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" r /></sec> 감소 효과를 부여합니다.
+        <sec typ="important">스킬 레벨 당 +10%의 적중 보정이 적용됩니다.</sec>
+      EN: |-
+        Deals <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to a single target with battle-rifle sniping.
+        <sec typ="cond">On hit</sec>, grants the target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / increased <sec typ="buff"><buff typ="VULNERABLE" /> received damage <val idx="1" r /></sec> / reduced <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="2" r /></sec> for 2 rounds.
+        <sec typ="important">A +10% Accuracy correction is applied per skill level.</sec>
+      JP: |-
+        戦闘ライフル狙撃で単一対象へ<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象に<sec typ="buff"><buff typ="MARKING" />標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ <val idx="1" r /></sec>増加 / <sec typ="buff"><buff typ="EVADE_DOWN" />回避 <val idx="2" r /></sec>減少効果を付与します。
+        <sec typ="important">スキルレベルごとに+10%の命中補正が適用されます。</sec>
+      TC: |-
+        以戰鬥步槍狙擊對單一目標造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，在2回合內賦予目標<sec typ="buff"><buff typ="MARKING" />標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" />所受傷害 <val idx="1" r /></sec>增加 / <sec typ="buff"><buff typ="EVADE_DOWN" />迴避 <val idx="2" r /></sec>降低效果。
+        <sec typ="important">每個技能等級套用+10%命中補正。</sec>
   "2":
     key: "2"
     icon: Scan
@@ -2353,6 +2371,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        아군 바이오로이드와 감각을 공유하여 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시키고, 3라운드 동안 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" r /></sec>를 증가시킵니다.
+        <sec typ="important">스킬 레벨에 따라 소모 AP가 감소합니다.</sec>
+      EN: |-
+        Shares senses with an allied Bioroid to increase <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>, and increases <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="4" r /></sec> for 3 rounds.
+        <sec typ="important">AP cost decreases according to skill level.</sec>
+      JP: |-
+        味方バイオロイドと感覚を共有して<sec typ="buff"><buff typ="AP_UP" />AP <val idx="0" /></sec>を増加させ、3ラウンドの間<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="4" r /></sec>を増加させます。
+        <sec typ="important">スキルレベルに応じて消費APが減少します。</sec>
+      TC: |-
+        與友軍生化人共享感官，使<sec typ="buff"><buff typ="AP_UP" />AP <val idx="0" /></sec>增加，並在3回合內增加<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊 <val idx="4" r /></sec>。
+        <sec typ="important">消耗AP會根據技能等級減少。</sec>
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -2719,6 +2750,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="3" /></sec>가 증가합니다.
+        <sec typ="cond">대상이 <sec typ="note">감적 공유</sec> 상태인 경우</sec>, 상기 효과가 두 배로 증폭됩니다.
+        <sec typ="cond">스쿼드 내에 <cmt t="시스터즈 오브 발할라"><import name="Walhalla" /></cmt> 소속 공격기가 없을 경우</sec>, 범위 내 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 아군의 공격을 지원</sec>합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, allies within range gain increased <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="3" /></sec>.
+        <sec typ="cond">If the target is under <sec typ="note">Shared Spotting</sec></sec>, the above effects are doubled.
+        <sec typ="cond">If there is no Attacker from <cmt t="Sisters of Valhalla"><import name="Walhalla" /></cmt> in the squad</sec>, she <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports allies' attacks</sec> within range.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" />防御力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" />射程 <val idx="3" /></sec>が増加します。
+        <sec typ="cond">対象が<sec typ="note">感敵共有</sec>状態の場合</sec>、上記効果が2倍に増幅されます。
+        <sec typ="cond">スクワッド内に<cmt t="シスターズ・オブ・ヴァルハラ"><import name="Walhalla" /></cmt>所属攻撃機がいない場合</sec>、範囲内の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />味方の攻撃を支援</sec>します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，範圍內友軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" />防禦力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="RANGE_UP" />射程 <val idx="3" /></sec>增加。
+        <sec typ="cond">若目標處於<sec typ="note">共享觀測</sec>狀態</sec>，上述效果增幅為2倍。
+        <sec typ="cond">若小隊內沒有<cmt t="英靈殿姊妹"><import name="Wa釋放lla" /></cmt>所屬攻擊機</sec>，則<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援範圍內友軍的攻擊</sec>。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -3010,6 +3058,23 @@ skills:
             base: 17
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond"><sec typ="note">목표 지정 저격</sec> 사용 시</sec>, <sec typ="note">안전 과민증</sec> 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond"><char uid="BR_Leona" />의 <sec typ="note">방어 지휘</sec>가 활성화된 경우</sec>, 아군 전체에 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 냉기 저항 감소 면역</sec> 효과를 부여합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, her <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">When using <sec typ="note">Designated-Target Sniping</sec></sec>, increases allies' <sec typ="note"></sec> AP <sec typ="buff"><buff typ="AP_UP" /> within <val idx="3" />Safety Hypersensitivity</sec> range.
+        <sec typ="cond">At round start</sec> <sec typ="cond">if <char uid="BR_Leona" />'s <sec typ="note">Defensive Command</sec> is active</sec>, grants all allies <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> immunity to Ice Resistance decrease</sec>.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、自分の<sec typ="buff"><buff typ="AP_UP" />AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond"><sec typ="note">目標指定狙撃</sec>使用時</sec>、<sec typ="note">安全過敏症</sec>範囲内の味方の<sec typ="buff"><buff typ="AP_UP" />AP <val idx="3" /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">防御指揮</sec>が活性化している場合</sec>、味方全体に<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />冷気抵抗減少免疫</sec>効果を付与します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" />AP <val idx="0" /></sec>增加。
+        <sec typ="cond">使用<sec typ="note">指定目標狙擊</sec>時</sec>，增加<sec typ="note">安全過敏症</sec>範圍內友軍的<sec typ="buff"><buff typ="AP_UP" />AP <val idx="3" /></sec>。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">若<char uid="BR_Leona" />的<sec typ="note">防禦指揮</sec>已啟用</sec>，賦予全體友軍<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" />冰冷抵抗降低免疫</sec>效果。
   "5":
     key: "5"
     icon: P.EnemyDetect
@@ -3229,6 +3294,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec>가 증가합니다.
+        <sec>해당 효과는 <sec typ="note">목표 지정 저격</sec> 사용 시 해제됩니다.</sec>
+        <sec typ="cond"><sec typ="note">감적 공유</sec>의 효과 대상이 공격기인 경우</sec>, 추가로 대상의 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시를 활성화</sec>합니다.
+        <sec typ="cond"><char uid="BR_Leona" />의 <sec typ="note">공격 지휘</sec>가 활성화된 경우</sec>, <sec typ="note">감적 공유</sec>의 효과가 영구 지속으로 변경됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, her <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> increases.
+        <sec>This effect is removed when <sec typ="note">Designated-Target Sniping</sec> is used.</sec>
+        <sec typ="cond">If the target of <sec typ="note">Shared Spotting</sec> is an Attacker</sec>, additionally <sec typ="buff"><buff typ="Guardpierce_Apply" /> activates Ignore Protection</sec> for the target.
+        <sec typ="cond">If <char uid="BR_Leona" />'s <sec typ="note">Offensive Command</sec> is active</sec>, <sec typ="note">Shared Spotting</sec>'s effect changes to permanent duration.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分の<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="0" r /></sec>が増加します。
+        <sec>この効果は<sec typ="note">目標指定狙撃</sec>使用時に解除されます。</sec>
+        <sec typ="cond"><sec typ="note">感敵共有</sec>の効果対象が攻撃機の場合</sec>、追加で対象の<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視を活性化</sec>します。
+        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">攻撃指揮</sec>が活性化している場合</sec>、<sec typ="note">感敵共有</sec>の効果が永続に変更されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ACCURACY_UP" />命中 <val idx="0" r /></sec>增加。
+        <sec>此效果會在使用<sec typ="note">指定目標狙擊</sec>時解除。</sec>
+        <sec typ="cond">若<sec typ="note">共享觀測</sec>的效果目標為攻擊機</sec>，則額外為目標<sec typ="buff"><buff typ="Guardpierce_Apply" />啟用無視保護</sec>。
+        <sec typ="cond">若<char uid="BR_Leona" />的<sec typ="note">攻擊指揮</sec>已啟用</sec>，<sec typ="note">共享觀測</sec>的效果變更為永久持續。
 dialogue:
   KR:
     "1":
@@ -3344,9 +3430,7 @@ dialogue:
         저희 사이에 아무것도
         끼어들 수 없도록,
         꼭 붙어있도록 하죠.
-      Oath: 알비스가 그러는데, 보디가드는 절대 사랑에 빠지면 안된다고 하더라고요. 사랑에 빠지면 제대로 경호를 하기가 어렵다고. 그런데 어떻게
-        그럴 수 있겠어요? 사령관을 볼 때마다 매번 새롭게 사랑에 빠지는데요. 그러니, 제가 경호를 제대로 할 수 있도록... 제 곁에
-        꼭 붙어 있어 주세요.
+      Oath: 알비스가 그러는데, 보디가드는 절대 사랑에 빠지면 안된다고 하더라고요. 사랑에 빠지면 제대로 경호를 하기가 어렵다고. 그런데 어떻게 그럴 수 있겠어요? 사령관을 볼 때마다 매번 새롭게 사랑에 빠지는데요. 그러니, 제가 경호를 제대로 할 수 있도록... 제 곁에 꼭 붙어 있어 주세요.
       OathIdle_01: |-
         제 경호에 만족하셨나요?
         그렇다면, 업무 평가서에
@@ -3480,9 +3564,8 @@ dialogue:
         はいはい、私の負けです。司令官にはかないません。
         その代わり！場所は…ちゃんとわきまえてください。わかりましたね、司令官？
       SPIdle_02_01: …私が全部準備しておきましたので…ゆっくり…来てくださいね…
-      Oath: >-
+      Oath: |-
         あはは…ここまで呼び出したということは、やっぱり…あれしかないですよね…？私もなんとなく気づいていました。
-
         う～ん、私は今までもそうだったように、あれこれうるさいかもしれません…。こんな私でもよろしいのなら…私が最後までお世話させていただきます。司令官。
       OathIdle_01: 司令官？私がお世話しているのに脇目を振るなんてどういうことですか？そんなことしたら…わかってますよね？
       MVP: ""
@@ -3542,8 +3625,7 @@ dialogue:
       Idle_03_01: 司令官？あ、今絶対私のことめんどくさいと思いましたよね…？ほら、また思ってますよね？そんな風に思ったらダメですよ～？私は司令官のことを考えて……もう、怒りますよー！？
       Idle_04_01: こうなると思ってました…。今はプレート入れてないですよね？早くこっち来てください…。 ほら、はやく…
       SPIdle_02_01: ひぁっ！？誰かに見られたらどうするんですか…！
-      Oath: こ、告白ですか！？！？でしたら…今から司令官のことは全て私が管理します！
-        朝ごはんは済ませましたか？下着は？だ、大丈夫…シャワーの後、着替えれば！あの…歯磨きは…？…だったら…うぅ！！…うう～ん…あの…司令官？…もう一度だけ…してもらったらダメですか？…キス…です…。
+      Oath: こ、告白ですか！？！？でしたら…今から司令官のことは全て私が管理します！ 朝ごはんは済ませましたか？下着は？だ、大丈夫…シャワーの後、着替えれば！あの…歯磨きは…？…だったら…うぅ！！…うう～ん…あの…司令官？…もう一度だけ…してもらったらダメですか？…キス…です…。
       OathIdle_01: 私が見てるってこと知ってますよね？悪～い事したら怒りますよ？
       MVP: ""
     M:
@@ -3640,10 +3722,8 @@ dialogue:
       SPIdle_02_01: |-
         … I brought all the necessary things.
         Come… slowly.
-      Oath: >-
-        Ahaha… I’m sure… you called me out here for… one thing. I already kind
-        of
-
+      Oath: |-
+        Ahaha… I’m sure… you called me out here for… one thing. I already kind of
         knew about it. Hm… As I have been, I might bother you trying to take care of you, commander.
          ​Well, if you are okay with that… I’ll cherish you until the end. My commander.
       OathIdle_01: |-
@@ -3703,10 +3783,7 @@ dialogue:
         We're going to have to stay glued
         to each other, so that nothing
         can get between us.
-      Oath: Alvis told me that a bodyguard should never fall in love, because it will
-        be difficult to guard someone you’ve fallen in love with. But how can I
-        not? I fall in love all over again every time I see you, Commander. So,
-        please stay right by my side… so that I can guard you properly.
+      Oath: Alvis told me that a bodyguard should never fall in love, because it will be difficult to guard someone you’ve fallen in love with. But how can I not? I fall in love all over again every time I see you, Commander. So, please stay right by my side… so that I can guard you properly.
       OathIdle_01: |-
         Were you satisfied with my protection?
         Then, please press recommend
@@ -3758,12 +3835,9 @@ dialogue:
         You don’t have the plate armor on, do you?
         Come here, quickly. Come on~
       SPIdle_02_01: What if someone sees us?
-      Oath: >-
-        I-is this a confession?! Then… From this time on, I will manage
-        everything related to you, Commander!
-
+      Oath: |-
+        I-is this a confession?! Then… From this time on, I will manage everything related to you, Commander!
         Have you had breakfast? What about your underwear? I-it's fine. How about you change, O-oh!! … Oooh…
-
         Uh, Commander? … Can you do that… once more? I mean, kiss me…
       OathIdle_01: |-
         You know I’m watching over you, right?
@@ -4021,20 +4095,13 @@ skins:
   sid: null
   artist: PaintAle
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -4049,25 +4116,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_Bheur_N
   skins:
     - sid: 1
       artist: MAR10
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - true
         - false
@@ -4084,23 +4149,23 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
     - sid: 2
       artist: TunaMaYo
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+        G:
+          - _
+          - D
+          - S
       anim:
         - false
         - false
@@ -4117,6 +4182,7 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_Bheur_NS2
         2dmodel_dam: 2DModel_BR_Bheur_NS2_Dam
         consumableKey: Skin_BR_Bheur_2

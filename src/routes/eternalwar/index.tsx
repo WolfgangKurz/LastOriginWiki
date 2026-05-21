@@ -1,6 +1,5 @@
 import { Component, FunctionalComponent, RenderableProps } from "preact";
 import { useEffect, useLayoutEffect, useState } from "preact/hooks";
-import { Link } from "preact-router";
 
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, EW_STAGE_DIFFICULTY, ROLE_TYPE } from "@/types/Enums";
 import { EWChapter, EWDB } from "@/types/DB/EW";
@@ -10,22 +9,22 @@ import { EnemyCategory } from "@/types/DB/Enemy";
 import { MapEnemyData } from "@/types/DB/Map";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
-import { CurrentDB } from "@/libs/DB";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { useUpdate } from "@/libs/hooks";
 import { BuildClass } from "@/libs/Class";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { useLocale } from "@/libs/Locale";
 
-import Locale, { LocaleGet } from "@/components/locale";
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
+import Locale from "@/components/locale";
+import Loading from "@/components/loading";
 import Icons from "@/components/bootstrap-icon";
 import DropItem from "@/components/drop-item";
 import TbarIcon from "@/components/tbar-icon";
 import EnemyPopup from "@/components/popup/enemy-popup";
 import BuffList from "@/components/buff-list";
-
 import { Char } from "@/components/skill-description/components";
 
 import style from "./style.module.scss";
@@ -39,6 +38,7 @@ interface EternalWarProps {
 }
 
 const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
+	const [loc] = useLocale();
 	const update = useUpdate();
 
 	const [mid, setMID] = useState(props.mid || "");
@@ -57,7 +57,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 	useEffect(() => {
 		SetMeta(["description", "twitter:description"], "변화의 성소 정보를 표시합니다.");
 		SetMeta(["twitter:image", "og:image"], null);
-		UpdateTitle(LocaleGet("MENU_ETERNALWAR"));
+		UpdateTitle(loc["MENU_ETERNALWAR"]);
 	}, []);
 
 	useLayoutEffect(() => {
@@ -75,16 +75,10 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 	const ImageExt = ImageExtension();
 	const muid = (mid && parseInt(mid.replace(/^EW/, ""), 10)) || 0;
 
-	const EWDB = GetJson<EWDB>(StaticDB.EW);
-	if (!EWDB) JsonLoaderCore(CurrentDB, StaticDB.EW).then(r => update());
-
-	const ConsumableDB = GetJson<Consumable[]>(StaticDB.Consumable);
-	if (!ConsumableDB) JsonLoaderCore(CurrentDB, StaticDB.Consumable).then(r => update());
-
-	const FilterableEnemyDB = GetJson<FilterableEnemy[]>(StaticDB.FilterableEnemy);
-	if (!FilterableEnemyDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableEnemy).then(r => update());
-
-	if (!EWDB || !ConsumableDB || !FilterableEnemyDB) return <></>;
+	const EWDB = useDBData<EWDB>(StaticDB.EW);
+	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
+	const FilterableEnemyDB = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
+	if (!assertDBData(EWDB) || !assertDBData(ConsumableDB) || !assertDBData(FilterableEnemyDB)) return <Loading.Data />;
 
 	function GetAvailableDifficulties (ch: EWChapter): EW_STAGE_DIFFICULTY[] {
 		return Object.values(ch)
@@ -231,7 +225,11 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 			if (x.squad)
 				proh_Squads.push(x.squad.substring(6));
 
-			if (x.char.body !== ACTOR_BODY_TYPE.__MAX__ || x.char.role !== ROLE_TYPE.__MAX__ || x.char.class !== ACTOR_CLASS.__MAX__)
+			if (
+				x.char.body !== ACTOR_BODY_TYPE.__MAX__ ||
+				x.char.role !== 3 /*ROLE_TYPE.__MAX__*/ ||
+				x.char.class !== 3/*ACTOR_CLASS.__MAX__*/
+			)
 				proh_Chars.push(x.char);
 		});
 
@@ -270,10 +268,10 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 												x.body !== ACTOR_BODY_TYPE.__MAX__
 													? BodyDisplay[x.body]
 													: <></>,
-												x.class !== ACTOR_CLASS.__MAX__
+												x.class !== 3 // ACTOR_CLASS.__MAX__
 													? ClassDisplay[x.class]
 													: <></>,
-												x.role !== ROLE_TYPE.__MAX__
+												x.role !== 3 // ROLE_TYPE.__MAX__
 													? RoleDisplay[x.role]
 													: <></>,
 											].gap(" ") }
@@ -311,7 +309,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 					<div class="mx-2">
 						<strong class="text-light">
 							{ ParseDescriptionText(
-								(LocaleGet(x.descGroup) || "")
+								(loc[x.descGroup] || "")
 									.toString()
 									.replace(/&([lg]t);/g, (p0, p1) => p1 === "lt" ? "<" : ">"),
 							) }
@@ -319,7 +317,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 						<div class="ps-2">
 
 							{ ParseDescriptionText(
-								(LocaleGet(x.descStage) || "")
+								(loc[x.descStage] || "")
 									.toString()
 									.replace(/&([lg]t);/g, (p0, p1) => p1 === "lt" ? "<" : ">"),
 							) }
@@ -337,7 +335,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 
 		return <div class="card">
 			<div class={ `card-body text-center ${style.Enemies}` }>
-				{ Waves.map((wave, waveIdx) => <Link
+				{ Waves.map((wave, waveIdx) => <a
 					href="#"
 					class="wave-button"
 					onClick={ (e: Event): void => {
@@ -351,7 +349,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 						src={ `${AssetsRoot}/map-current.png` }
 						style={ { display: waveIdx === selectedWave ? "" : "none" } } />
 					<TbarIcon icon="TbarIcon_MP_NightChick_RV" size={ 42 } />
-				</Link>) }
+				</a>) }
 				<div class="mt-3">
 					<div class="mb-3">
 						<div class="btn btn-group">
@@ -428,7 +426,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 											class={ `badge bg-${enemy.enemy.category === EnemyCategory.Boss ? "danger" : "substory"}` }
 										>Lv.{ enemy.lv }</span>
 
-										<Link href="#" class="stretched-link" onClick={ (e: Event): void => {
+										<a href="#" class="stretched-link" onClick={ (e: Event): void => {
 											e.preventDefault();
 											OpenEnemyInfo(enemy.enemy, enemy.lv);
 										} } />
@@ -853,7 +851,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 									</div>
 								</div>
 
-								<Link class="stretched-link unit-stretched" href={ `/eternalwar/${cid}` } />
+								<a class="stretched-link unit-stretched" href={ `/eternalwar/${cid}` } />
 							</div>
 						</div>)
 					}

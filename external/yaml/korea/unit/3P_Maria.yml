@@ -595,6 +595,7 @@ source:
   - - Ev:Ev34:EV1-8
   - - Ev:Ev35:EV2-1
   - - Ev:Ev36:EV1-8
+  - - Ev:Ev39:EV1-4EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1439,6 +1440,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        더블 배럴 샷건으로 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 <sec typ="buff"><buff typ="PROVOKE" /> 대상을 도발</sec>하며 <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="1" r /></sec>를 감소시킵니다.
+      EN: |-
+        Deals <dmg elem="physics" /> to the target with a double-barrel shotgun.
+        <sec typ="cond">On hit</sec>, <sec typ="buff"><buff typ="PROVOKE" /> Provokes the target</sec> for 2 rounds and decreases <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power by <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Power by <val idx="1" r /></sec>.
+      JP: |-
+        ダブルバレルショットガンで対象に<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間<sec typ="buff"><buff typ="PROVOKE" />対象を挑発</sec>し、<sec typ="buff"><buff typ="SKILL_DOWN" />スキル威力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="1" r /></sec>を減少させます。
+      TC: |-
+        用雙管霰彈槍對目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，2回合內<sec typ="buff"><buff typ="PROVOKE" />挑釁目標</sec>，並使<sec typ="buff"><buff typ="SKILL_DOWN" />技能威力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="1" r /></sec>降低。
   "2":
     key: "2"
     icon: SelfDefBuff
@@ -1916,6 +1930,19 @@ skills:
             base: 0.05
             per: 0.0025
             chance: 1
+    desc:
+      KR: |-
+        자신과 대상 아군에게 3라운드 동안 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="0" signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec> 감소 효과를 부여합니다.
+        <sec typ="cond">대상이 보호기가 아닌 경우</sec>, <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec> 효과가 추가됩니다.
+      EN: |-
+        Grants herself and the target ally <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="0" signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decrease by <val idx="3" r inv /></sec> for 3 rounds.
+        <sec typ="cond">If the target is not a Protector</sec>, adds <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec>.
+      JP: |-
+        自身と対象の味方に3ラウンドの間<sec typ="buff"><buff typ="DAMAGE_ABSORB" />バリア<val idx="0" signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="3" r inv /></sec>減少効果を付与します。
+        <sec typ="cond">対象が保護機でない場合</sec>、<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>効果が追加されます。
+      TC: |-
+        賦予自身與目標我方3回合的<sec typ="buff"><buff typ="DAMAGE_ABSORB" />護盾<val idx="0" signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到傷害<val idx="3" r inv /></sec>降低效果。
+        <sec typ="cond">若目標不是保護機</sec>，追加<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>效果。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -2218,6 +2245,27 @@ skills:
             base: 999
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 보호기를 제외한 범위 내 아군에게 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> / <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> <sec typ="attr">일반 효과</sec>를 부여합니다.
+        <sec>상기 효과는 <sec typ="buff">대기</sec>를 통해 해제할 수 있습니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 상기 효과가 적용된 범위 내 아군에게 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화</sec> <sec typ="attr">일반 효과</sec>를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, grants allies within range, excluding Protectors, <sec typ="buff"><buff typ="SEAL_SKILL" /> Unable to Use Skills</sec> / <sec typ="buff"><buff typ="SNARE" /> Unable to Move</sec> <sec typ="attr">General Effects</sec>.
+        <sec>The above effects can be removed by <sec typ="buff">Wait</sec>.</sec>
+        <sec typ="cond">At round start</sec>, grants allies within range affected by the above effects <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification</sec> <sec typ="attr">General Effect</sec>.
+        <sec typ="cond">At round start</sec>, increases allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK by <val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power by <val idx="4" r /></sec> within range.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、保護機を除く範囲内の味方に<sec typ="buff"><buff typ="SEAL_SKILL" />スキル使用不可</sec> / <sec typ="buff"><buff typ="SNARE" />移動不可</sec><sec typ="attr">一般効果</sec>を付与します。
+        <sec>上記効果は<sec typ="buff">待機</sec>で解除できます。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、上記効果が適用された範囲内の味方に<sec typ="buff"><buff typ="DEF_All" />ダメージ無効化</sec><sec typ="attr">一般効果</sec>を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，賦予範圍內除保護機外的我方<sec typ="buff"><buff typ="SEAL_SKILL" />無法使用技能</sec> / <sec typ="buff"><buff typ="SNARE" />無法移動</sec><sec typ="attr">一般效果</sec>。
+        <sec>上述效果可透過<sec typ="buff">待機</sec>解除。</sec>
+        <sec typ="cond">回合開始時</sec>，賦予套用上述效果的範圍內我方<sec typ="buff"><buff typ="DEF_All" />傷害無效化</sec><sec typ="attr">一般效果</sec>。
+        <sec typ="cond">回合開始時</sec>，範圍內我方的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="2" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="3" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="4" r /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -2714,6 +2762,27 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="note">준비됐나요?</sec> 효과의 대상이 되는 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">전투 개시 시</sec>, 인접한 아군 1기당 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">준비됐나요?</sec> 상태가 아닌 범위 내 아군에게 <sec typ="note">형상기억 스커트</sec> 지속 효과를 부여합니다.
+        <sec>스킬 효과는 <sec typ="note">뒷바라지</sec>의 스킬 레벨에 비례합니다.</sec>
+      EN: |-
+        <sec typ="cond">At battle start</sec>, increases <sec typ="note"></sec> AP by <sec typ="buff"><buff typ="AP_UP" /> for allies targeted by <val idx="0" />Are You Ready?</sec>.
+        <sec typ="cond">At battle start</sec>, her <sec typ="buff"><buff typ="AP_UP" /> AP increases by <val idx="8" /></sec> for each adjacent ally.
+        <sec typ="cond">At round start</sec>, grants the <sec typ="note">Are You Ready?</sec> passive effect to allies within range who are not under <sec typ="note">Are You Ready?</sec>.
+        <sec>The skill effects are proportional to the skill level of <sec typ="note">Support Care</sec>.</sec>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="note">準備できましたか?</sec>効果の対象になる味方の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>を増加させます。
+        <sec typ="cond">戦闘開始時</sec>、隣接した味方1機につき自身の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="8" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">準備できましたか?</sec>状態でない範囲内の味方に<sec typ="note">形状記憶スカート</sec>持続効果を付与します。
+        <sec>スキル効果は<sec typ="note">世話焼き</sec>のスキルレベルに比例します。</sec>
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，使成為<sec typ="note">準備好了嗎？</sec>效果目標的我方<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec>，每有1名相鄰我方，自身的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="8" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，賦予範圍內未處於<sec typ="note">準備好了嗎？</sec>狀態的我方<sec typ="note">形狀記憶裙</sec>持續效果。
+        <sec>技能效果與<sec typ="note">照料</sec>的技能等級成比例。</sec>
   "5":
     key: "5"
     icon: P.Charm
@@ -2948,6 +3017,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="note">형상기억 스커트</sec> 사용 시, 대상에게 <sec typ="note">준비됐어요~</sec> 지속 효과를 추가로 부여합니다.
+        <sec typ="buff">대기</sec>를 통해 <sec typ="note">준비됐나요?</sec> 효과를 해제한 아군에게, 다음 2라운드 동안 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 부여합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, her <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance increases by <val idx="0" r /></sec>.
+        When using <sec typ="note">Are You Ready?</sec>, additionally grants the target the <sec typ="note">I'm Ready~</sec> passive effect.
+        Allies who removed <sec typ="buff">Are You Ready?</sec> through <sec typ="note">Wait</sec> gain <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> for the next 2 rounds.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />効果耐性<val idx="0" r /></sec>が増加します。
+        <sec typ="note">形状記憶スカート</sec>使用時、対象に<sec typ="note">準備できました~</sec>持続効果を追加で付与します。
+        <sec typ="buff">待機</sec>によって<sec typ="note">準備できましたか?</sec>効果を解除した味方に、次の2ラウンドの間<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視</sec>効果を付与します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEBUFF_PERDOWN" />效果抗性<val idx="0" r /></sec>增加。
+        使用<sec typ="note">形狀記憶裙</sec>時，額外賦予目標<sec typ="note">準備好了喔～</sec>持續效果。
+        對透過<sec typ="buff">待機</sec>解除<sec typ="note">準備好了嗎？</sec>效果的我方，在接下來2回合內賦予<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>效果。
 dialogue:
   KR:
     "1":
@@ -3057,8 +3143,7 @@ dialogue:
         끝났으니… 이제 성인들의 시간이네요.
         더 많은 아이들이 크리스마스를
         맞이할 수 있게 도와주시겠어요?
-      Oath: 주인…님? 저에게? 후후후, 기뻐요. 아니, 행복해요. 바라는 것 이상의 선물을 받은 어린아이처럼. 선물을 받았으니 저도 주인님께
-        선물을 드리고 싶은데… 받아주시겠어요? 주인님께… 저를 드릴게요. 후후후, 평생을 주인님을 사랑할게요.
+      Oath: 주인…님? 저에게? 후후후, 기뻐요. 아니, 행복해요. 바라는 것 이상의 선물을 받은 어린아이처럼. 선물을 받았으니 저도 주인님께 선물을 드리고 싶은데… 받아주시겠어요? 주인님께… 저를 드릴게요. 후후후, 평생을 주인님을 사랑할게요.
       OathIdle_01: |-
         주인님께선 어떤 스포츠를 좋아하시나요?
         야구? 아니면 축구? 그것도 아니면 럭비?
@@ -3131,12 +3216,9 @@ dialogue:
         또 기저귀에 실수 했어요오…​
         아빠… 어서 엄하게
         혼내 주실 수 있으신가요?​
-      Oath: >-
-        어머나, 부끄럽게... 직접 아빠가 되어보니 어떤가요? 가정을 꾸린다는 건 정말 어려운 일이죠...  제게 직접 육아를 배우셨으니
-        언젠간, 정말로 아이를 만들게 되더라도 잘 해내실 거예요.​
-
+      Oath: |-
+        어머나, 부끄럽게... 직접 아빠가 되어보니 어떤가요? 가정을 꾸린다는 건 정말 어려운 일이죠...  제게 직접 육아를 배우셨으니 언젠간, 정말로 아이를 만들게 되더라도 잘 해내실 거예요.​
         어라, 주인님... 이런 차림의 마리아를 좋아하시다니... 정말이지 못말리는 아빠군요? 음... 그런데 왜일까요? 실습 때문에 역할에 몰입된 탓일까요?​
-
         아니면 주인님께 어리광 부리고 싶은 진짜 아기가 된 걸까요? 오늘 배운 대로 어서 우유를 먹여주시겠어요...?
       OathIdle_01: |-
         더… 더 이상은 못 참아…
@@ -3322,8 +3404,7 @@ dialogue:
       SPIdle_02_01: |-
         子供達は寝たみたいです。静かになりましたし……ここからは大人の時間です。
         もっとたくさんの子供達がクリスマスを迎えられるように……二人で頑張りませんか？
-      Oath: ご主人…様？これを私に…？ふふふ、嬉しい！あっ…ごめんなさい…子供みたいにはしゃいでしまいましたね。幸せで……つい……。私もご主人様にプレゼントをお渡ししたいのですが…受け取ってくださいますか？
-        ご主人様には…私をプレゼントします。これからご主人様を一生を懸けて愛します。
+      Oath: ご主人…様？これを私に…？ふふふ、嬉しい！あっ…ごめんなさい…子供みたいにはしゃいでしまいましたね。幸せで……つい……。私もご主人様にプレゼントをお渡ししたいのですが…受け取ってくださいますか？ ご主人様には…私をプレゼントします。これからご主人様を一生を懸けて愛します。
       OathIdle_01: |-
         ご主人様はスポーツは何がお好きですか？野球？サッカー？それともラグビー？
         あ、リーグ戦も出来るようになったら素敵ですね。どういう意味かって？
@@ -3470,9 +3551,8 @@ dialogue:
       SPIdle_02_01: |-
         Umm… It can be
         more rough.
-      Oath: >-
+      Oath: |-
         I actually have been waiting for this day to come.
-
         Now that it has become my reality, I’m so excited. Master? Please… stay by my side…
       OathIdle_01: |-
         We’re together today…
@@ -3509,15 +3589,11 @@ dialogue:
         Santa is real if the children
         believe in him.
       SPIdle_01_01: J-just a moment. You see… The children.
-      Idle_02_01: >-
+      Idle_02_01: |-
         Christmas has a variety of meanings,
-
         but children don't really 
-
         pay attention to them. They just innocently enjoy
-
         the holiday and season of Christmas. So, you have no choice but to prepare
-
         for a joyful Christmas, right?
       Idle_03_01: |-
         Can you act as Santa who gives gifts
@@ -3535,10 +3611,7 @@ dialogue:
         It's time for the adults.
         Would you help so that even more 
         children can experience Christmas?
-      Oath: …Master? For me? Heehee, I’m glad. No wait, I’m happy. Like a child who
-        got a gift that was even better than what she wanted. Since you gave me
-        a gift, I also want to give you one… Would you accept it? To you, I will
-        give… myself, Master. Hehehe, I’ll love you forever.
+      Oath: …Master? For me? Heehee, I’m glad. No wait, I’m happy. Like a child who got a gift that was even better than what she wanted. Since you gave me a gift, I also want to give you one… Would you accept it? To you, I will give… myself, Master. Hehehe, I’ll love you forever.
       OathIdle_01: |-
         What kind of sports do you like, Master?
         Baseball? Soccer? Or maybe rugby?
@@ -3616,10 +3689,8 @@ dialogue:
       SPIdle_02_01: |-
         M-Master? It’s dangerous here…
         Somewhere else…
-      Oath: >-
-        I… I never know you'd think of me that way… N-no! It's not that I
-        refuse…
-
+      Oath: |-
+        I… I never know you'd think of me that way… N-no! It's not that I refuse…
         Yes… Master. Just like always, I will always be by your side. Forever.
       OathIdle_01: |-
         Yes, Master… Tell me
@@ -3898,20 +3969,15 @@ skins:
   sid: null
   artist: SIMA
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+    G:
+      - _
   anim:
     - false
     - false
@@ -3926,25 +3992,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_3P_Maria_N
   skins:
     - sid: 1
       artist: SIMA
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 12
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - false
         - false
@@ -3961,24 +4023,22 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_3P_Maria_NS1
     - sid: 2
       artist: CORGI
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -3995,25 +4055,25 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_3P_Maria_NS2
         consumableKey: Skin_3P_Maria_2
     - sid: 3
       artist: WOW
       price: 182
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+        G:
+          - _
+          - D
+          - S
       anim:
         - false
         - false
@@ -4030,5 +4090,6 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_3P_Maria_NS3_Dam
         consumableKey: Skin_3P_Maria_3

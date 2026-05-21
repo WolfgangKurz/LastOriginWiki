@@ -511,6 +511,7 @@ source:
   - - Ev:Ev20:EV2-3B
   - - Ev:Ev33:EV4-2EX
   - - Ev:Ev34:EV1-3EX
+  - - Ev:Ev39:EV1-2EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2380,6 +2381,23 @@ skills:
               level: "0"
             value: Effect_PECS_Draculina_N_4
             chance: 1
+    desc:
+      KR: |-
+        목표 지점의 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 대상이 전열에 위치한 경우</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>하고 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 대상이 <sec typ="note">권속</sec>인 경우</sec>, <sec>상기 효과의 위치 조건을 무시</sec>하며 <sec typ="buff">대상을 해방</sec>하고 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 추가로 증가합니다.
+      EN: |-
+        target point of to the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">Hit target front row to if positioned</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec> and <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="1" r /></sec> increases.
+        <sec typ="cond">Hit target <sec typ="note">Servant</sec> if</sec>, <sec>above effect and of position condition ignore</sec> and <sec typ="buff">target liberate</sec> and <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec>additionally increases.
+      JP: |-
+        目標地点の 敵に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象が 前列に 位置している場合</sec>、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>し、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">命中対象が <sec typ="note">眷属</sec>の場合</sec>、 <sec>上記 効果の 位置条件を 無視</sec>し、 <sec typ="buff">対象を 解放</sec>し、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が追加で増加します。
+      TC: |-
+        目標地點的 敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">命中目標為 前排於 位於時</sec>， <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>並 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="1" r /></sec>增加。
+        <sec typ="cond">命中目標為 <sec typ="note">眷屬</sec>若為</sec>， <sec>上述 效果的 位置條件 無視</sec>並 <sec typ="buff">目標 解放</sec>並 <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>會額外增加。
   "2":
     key: "2"
     icon: Wave
@@ -4234,6 +4252,27 @@ skills:
               level: "0"
             value: Effect_PECS_Draculina_N_4
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 대상의 HP가 100%인 경우</sec>, 4라운드 동안 <sec typ="note">상흔</sec>을 남겨 <sec typ="note">권속</sec>을 만들 준비를 합니다.
+        <sec typ="cond">적중 대상이 이미 <sec typ="note">권속</sec>인 경우</sec>, <sec typ="buff">대상을 해방</sec>하고 <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력 <val idx="1" r signless /> 고정 피해</sec>를 줍니다.
+        <sec>스킬 레벨 당 +10%의 적중 보정이 적용됩니다.</sec>
+      EN: |-
+        to a single target <dmg elem="physics" />.
+        <sec typ="cond">Hit target's HP 100%if</sec>, 4 rounds <sec typ="note">Scar</sec> Namgyeo <sec typ="note">Servant</sec> only ready.
+        <sec typ="cond">Hit target un- <sec typ="note">Servant</sec> if</sec>, <sec typ="buff">target liberate</sec> and <sec typ="dmg"><buff typ="PhyATK_UP" /> Attack <val idx="1" r signless /> fixed damage</sec> deals.
+        <sec>per skill level +10% of accuracy correction is applied.</sec>
+      JP: |-
+        単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中対象の HPが 100%の場合</sec>、 4ラウンド間 <sec typ="note">傷痕</sec>を ンアムグヨ <sec typ="note">眷属</sec>を だけたち ジウンブイをします。
+        <sec typ="cond">命中対象が がムイ <sec typ="note">眷属</sec>の場合</sec>、 <sec typ="buff">対象を 解放</sec>し、 <sec typ="dmg"><buff typ="PhyATK_UP" /> 攻撃力 <val idx="1" r signless /> 固定 ダメージ</sec>を 与えます。
+        <sec>スキルレベルごとに +10%の 命中補正が適用されます。</sec>
+      TC: |-
+        單一目標給 造成<dmg elem="physics" />。
+        <sec typ="cond">命中目標的 HP 100%若為</sec>， 4回合內 <sec typ="note">傷痕</sec> Namgyeo <sec typ="note">眷屬</sec> 僅們 準備。
+        <sec typ="cond">命中目標為 未 <sec typ="note">眷屬</sec>若為</sec>， <sec typ="buff">目標 解放</sec>並 <sec typ="dmg"><buff typ="PhyATK_UP" /> 攻擊力 <val idx="1" r signless /> 固定 傷害</sec> 造成。
+        <sec>每技能等級 +10%的 套用命中補正。</sec>
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -4545,6 +4584,23 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond"><sec typ="note">피의 여왕의 밤</sec> 사용 시</sec>, 자신은 <sec typ="note">충만함</sec> 상태가 되어 4라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>가 증가합니다. (중첩 불가)
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 <sec typ="note">충만함</sec> 상태가 아닌 경우</sec>, 굶주려 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> increases.
+        <sec typ="cond"><sec typ="note">Night of the Blood Queen</sec> When used</sec>, self <sec typ="note">Fullness</sec> enters the state and 4 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="6" r /></sec> increases. (Cannot stack)
+        <sec typ="cond">At round start</sec> <sec typ="cond">self <sec typ="note">Fullness</sec> state not case</sec>, becomes hungry and own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond"><sec typ="note">血の女王の夜</sec> 使用時</sec>、 自身は <sec typ="note">満腹感</sec> 状態になり 4ラウンド間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="6" r /></sec>が増加します。 (重複不可)
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">自身が <sec typ="note">満腹感</sec> 状態が ではない 場合</sec>、 グウジウルヨ 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec>增加。
+        <sec typ="cond"><sec typ="note">血之女王的夜晚</sec> 使用時</sec>， 自身 <sec typ="note">充盈</sec> 進入狀態並 4回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="6" r /></sec>增加。 (不可疊加)
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">自身 <sec typ="note">充盈</sec> 狀態 非 情況</sec>， 飢餓juryeo 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>增加。
   "4":
     key: "4"
     icon: P.Hang
@@ -4665,6 +4721,23 @@ skills:
             base: 0.25
             per: 0.025
             chance: 9.99
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">상흔</sec>을 가진 대상을 자신의 <sec typ="note">권속</sec>으로 삼습니다.
+        <sec typ="note">권속</sec>은 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 상태가 되며 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 증가합니다.
+        <sec>상기 효과는 효과 저항의 영향을 받지 않지만 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec>로 해제할 수 있습니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="note">Scar</sec> formation target own <sec typ="note">Servant</sec> as Samseupni all.
+        <sec typ="note">Servant</sec> <sec typ="buff"><buff typ="SEAL_SKILL" /> skill cannot use</sec> state and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increases.
+        <sec>above effect is not affected by Effect Resistance although not <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> debuff removal</sec> as can be removed.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="note">傷痕</sec>を 持つ 対象を 自身の <sec typ="note">眷属</sec>で スアムます。
+        <sec typ="note">眷属</sec>は <sec typ="buff"><buff typ="SEAL_SKILL" /> スキル スアヨン 不可</sec> 状態が になり、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec>が増加します。
+        <sec>上記 効果は 効果抵抗の影響を受けない アジイだけ <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果解除</sec>で 解除できます。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="note">傷痕</sec> 持有 目標 自身的 <sec typ="note">眷屬</sec>以 Sam。
+        <sec typ="note">眷屬</sec> <sec typ="buff"><buff typ="SEAL_SKILL" /> 技能 使用 不可</sec> 狀態 變為，且 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec>增加。
+        <sec>上述 效果 不受效果抗性影響 不至僅 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除負面效果</sec>以 可以解除。</sec>
   "5":
     key: "5"
     icon: P.Scan
@@ -4826,6 +4899,19 @@ skills:
             base: 0.4
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 아군 전체에게 <sec typ="buff"><buff typ="SCOUTING" /> 정찰 활성화</sec>를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상의 HP가 낮을 수록 피해량 <val idx="2" r /></sec>가 증가하는 효과를 획득합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, all to allies <sec typ="buff"><buff typ="SCOUTING" /> Scouting activation</sec> grants.
+        <sec typ="cond">At round start</sec>, self <sec typ="dmg"><buff typ="DamageAmp_Opp" /> target's HP low as damage <val idx="2" r /></sec> increase effect.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 味方全体に <sec typ="buff"><buff typ="SCOUTING" /> 偵察 有効化</sec>を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 対象の HPが ンアトを 少ないほど ダメージ量 <val idx="2" r /></sec>が 増加する 効果を獲得します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 全體我方給 <sec typ="buff"><buff typ="SCOUTING" /> 偵察 啟用</sec>賦予。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 目標的 HP 降低 數越 傷害量 <val idx="2" r /></sec> 增加 獲得效果。
 dialogue:
   KR:
     "1":
@@ -4939,9 +5025,7 @@ dialogue:
         오니답게 행동해야겠지?
         좀 더… 네가 원하는 방식대로…
         거칠게 해도 좋아.
-      Oath: 전설 속의 오니 슈텐도지는 술에 취해서 목숨을 잃었다지. 그 녀석을 모티브로 만든 옷을 입어서 그런가… 나도 취해서 망가져 버린 것
-        같아. 술이 아니라… 너를 향한 사랑에. 그래, 틀림없어. 팬들에게 수많은 선물을 받던 내가, 네가 건네는 반지 하나에 이렇게
-        행복해지는 걸 보면 말이야.
+      Oath: 전설 속의 오니 슈텐도지는 술에 취해서 목숨을 잃었다지. 그 녀석을 모티브로 만든 옷을 입어서 그런가… 나도 취해서 망가져 버린 것 같아. 술이 아니라… 너를 향한 사랑에. 그래, 틀림없어. 팬들에게 수많은 선물을 받던 내가, 네가 건네는 반지 하나에 이렇게 행복해지는 걸 보면 말이야.
       OathIdle_01: |-
         넌 너무 다른 사람 눈치를
         보는 경향이 있어.
@@ -4995,11 +5079,9 @@ dialogue:
       SPIdle_02_01: |-
         햐읏… 트, 특별히 허락해주는 거니까
         영광으로 알아.
-      Oath: >-
+      Oath: |-
         흥. 너도 내 매력에 푹 빠져버린 거야? 이해해. 그러니까 예전에 나를 그렇게들 대우해준 거겠지.
-
         뭐어… 너는 날 그다지 대우해주는 것 같진 않지만…
-
         애초에 배려심이라느니 예의라느니 그런 게 다 뭐야? 핫. 이번엔 제대로 교육을 해주겠다고? 어, 얼마든지 해 봐. 하나도 안 무섭거든?
       OathIdle_01: |-
         옆에 앉아도 돼…? 응…
@@ -5109,8 +5191,7 @@ dialogue:
       SPIdle_02_01: |-
         今の私は鬼よ。だからいつもより凄く強いの、少し乱暴にされたからって全然平気よ。
         だから…ほら…あなたがやりたいようにやりなさいよ…もっと乱暴にしてもいいから。
-      Oath: 伝説の鬼、酒吞童子はお酒に酔って命を落としたらしいわ。そいつをモチーフにした衣装を着てるせいか…私も酔っちゃったみたい。
-        お酒にじゃなくて…あなたに。そうよ、きっとそう。ファンから数えきれないほどプレゼントをもらった私が、あなたからの指輪ひとつでこんなにも幸せになっちゃうんだから。
+      Oath: 伝説の鬼、酒吞童子はお酒に酔って命を落としたらしいわ。そいつをモチーフにした衣装を着てるせいか…私も酔っちゃったみたい。 お酒にじゃなくて…あなたに。そうよ、きっとそう。ファンから数えきれないほどプレゼントをもらった私が、あなたからの指輪ひとつでこんなにも幸せになっちゃうんだから。
       OathIdle_01: |-
         あなたは相手のことを気にしすぎなのよ。たまには自分の思う通りにやりなさいよ。
         …夜だって…その方が…私は好きだし……だから…もっと……してよ。
@@ -5140,8 +5221,7 @@ dialogue:
       SPIdle_01_01: 今すぐその手を離して！うぅ…、気分わる～っ…
       Idle_02_01: ふぅん…。あら、ここにも、昔有名だった子たちが結構いるじゃない。まぁ、私ほどではないけど。
       Idle_03_01: テーマパークを壊してしまった？だったら早く建て直しなさい。城で最高級の部屋は当然だけど、私の部屋にしてね。…こほん、まぁ、特別にあなたは私のすぐ隣の部屋にしてあげるわ。
-      Idle_04_01: 何してるの？さっさとキンキンに冷えたトマトジュースを――え？も、もしかして怒った？そんな…怖い顔して…きゃっ！
-        ご、ごめんなさい、ごめんなさいぃ…お、怒らないでくださいぃ…
+      Idle_04_01: 何してるの？さっさとキンキンに冷えたトマトジュースを――え？も、もしかして怒った？そんな…怖い顔して…きゃっ！ ご、ごめんなさい、ごめんなさいぃ…お、怒らないでくださいぃ…
       SPIdle_02_01: ひゃぁ…と、特別に許可してあげるんだから光栄に思いなさい？
       Oath: ふん。あなたもとうとう私の魅力にハマっちゃった？まぁ、当然よね。昔の人間の、私への態度を見ていたから、わかるのよ。うーん。でも…あなたはそこまで、私に態度よくしてる感じはしなかったわね…そもそも、出会った時に言ってた配慮だとか、礼儀だとか…あれって一体何のことだったの？…へっ？！今度はきちんと教育するつもり！？ふ、ふん。かかってきなさいよ。全然、怖くなんかないんだから！
       OathIdle_01: 隣に座ってもいい…？うん…その、昨日は…あ、何でもない。…その、痛いというよりは…えっと…よかったわ、思ったよりも…。
@@ -5209,21 +5289,16 @@ dialogue:
         Hmph. If you’d like to attend me,
         you should feed me some tomato juice.
         Huh? Really? T-thanks…
-      Idle_04_01: >-
+      Idle_04_01: |-
         You’ll put oil on me? Well, alright. Awe!
-
         I told you my skin’s sensitive! Be more gentle… N-no… Maybe I like it the hard way…
-      SPIdle_02_01: You’re trying to hold me down… like last time… I’m supposed to
-        feel offended… But if it’s you… I feel strange…
-      Oath: >-
+      SPIdle_02_01: You’re trying to hold me down… like last time… I’m supposed to feel offended… But if it’s you… I feel strange…
+      Oath: |-
         Hmph. You probably gave in to Draculina’s swimsuits. Well, alright.
-
         Seeing how you’re being pretty compliant these days, why don’t we just spend the rest of our lives in Aqualand by ourselves…
-
         What is it? What’s with the look this time? There’s no need to be jealous this time. I’m saying that we should go together, you know?
-      OathIdle_01: >-
+      OathIdle_01: |-
         Umm… Why are you being so gentle recently?
-
         It’s not that I don’t like it, but… sometimes… You have to play by my taste. … You made me like this.
       MVP: ""
     "2":
@@ -5277,10 +5352,8 @@ dialogue:
       Idle_01_01: |-
         If you want to motivate me, prepare an awesome stage
         first. Then I’ll think about it.
-      Idle_01_02: >-
-        This is where I’ll be staying? *Sighs*… I used to have a large, antique
-        private room,
-
+      Idle_01_02: |-
+        This is where I’ll be staying? *Sighs*… I used to have a large, antique private room,
         with several kids at my service… But still, you must have tomato juice, right? Hurry and get me a glass.
       Idle_01_03: |-
         Is the theme park still there? When the promotion is over,
@@ -5290,22 +5363,18 @@ dialogue:
       Idle_02_01: |-
         Heh. There are kids who used to be famous.
         Well, not as famous as me.
-      Idle_03_01: >-
+      Idle_03_01: |-
         You smashed the theme park? Then go on and rebuild the place.
-
         Hurry. The best room in the castle will be mine… Well, I’ll let you stay in the room next door.
       Idle_04_01: |-
         What are you doing? Get me cold tomato juice- Huh?
         A-are you angry? You look scary… Oh?!
         I-I’m sorry. I’m sorry… D-don’t scold me…
       SPIdle_02_01: Ha… I’m allowing it specially for you… You should be honored.
-      Oath: >-
-        Hmph! Are you falling for my charms too? I understand. That’s probably
-        why they treated me like that in the past.
-
+      Oath: |-
+        Hmph! Are you falling for my charms too? I understand. That’s probably why they treated me like that in the past.
         Well… You didn’t really treat me that well, but… What was all that talk about being considerate and polite in the first place? Ha. Are you going to teach it to me properly this time? S-sure, come at me. Are you not afraid at all?
-      OathIdle_01: Can I sit beside you? Yes… Look, yesterday… N-never mind. It didn’t
-        really hurt, but… I liked it, actually.
+      OathIdle_01: Can I sit beside you? Yes… Look, yesterday… N-never mind. It didn’t really hurt, but… I liked it, actually.
       MVP: ""
     M:
       SquadJoin: ""
@@ -5518,20 +5587,17 @@ skins:
   sid: null
   artist: 朝凪(Asanagi)
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - D
+    G:
+      - _
+      - D
   anim:
     - false
     - false
@@ -5546,26 +5612,22 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 1
     2dmodel: 2DModel_PECS_Draculina_N
     2dmodel_dam: 2DModel_PECS_Draculina_N_Dam
   skins:
     - sid: 1
       artist: 朝凪(Asanagi)
       price: 159
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - true
         - false
@@ -5582,23 +5644,21 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
     - sid: 2
       artist: 朝凪(Asanagi)
       price: 252
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 92
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+        G:
+          - _
+          - D
       anim:
         - false
         - false
@@ -5615,6 +5675,7 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_PECS_Draculina_NS2
         2dmodel_dam: 2DModel_PECS_Draculina_NS2_Dam
         consumableKey: Skin_PECS_Draculina_2

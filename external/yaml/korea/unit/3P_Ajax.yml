@@ -2260,6 +2260,35 @@ skills:
             base: -0.2
             per: -0.02
             chance: 1
+    desc:
+      KR: |-
+        방패를 내세워 적에게 돌진하여 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="dmg">후방에는 감소된 피해를 입힙니다.</sec>
+        적중 시, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="4" r /></sec>를 감소시킵니다.
+        <sec typ="chance"><chance idx="0" /> 확률</sec>로 적중 대상을 1라운드 동안 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만듭니다.
+        자신이 <sec typ="note">풀려난 고삐</sec> 상태인 경우 확률이 <sec typ="chance"><chance idx="3" /></sec>로 증가하며, 지속 라운드가 증가합니다.
+        <sec typ="cond"><buff typ="COUNTER" /> 반격 상태에서 피격 시</sec>, 자신의 다음 공격에 대한 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="7" slot="3" r /></sec>가 크게 증가합니다.
+      EN: |-
+        Raises the shield and charges at the enemy, dealing <dmg elem="physics" />.
+        <sec typ="dmg">Deals reduced damage to enemies behind the target.</sec>
+        On hit, 2 rounds, target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="4" r /></sec> decreases.
+        <sec typ="chance"><chance idx="0" /> chance</sec> as Hit target 1 round <sec typ="buff"><buff typ="STUN" /> Stunned</sec> inflicts.
+        self <sec typ="note">Released Reins</sec> if in the state chance <sec typ="chance"><chance idx="3" /></sec> as increases and duration increases.
+        <sec typ="cond"><buff typ="COUNTER" /> When hit while Counterattack is active</sec>, for own next attack <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="7" slot="3" r /></sec> greatly increases.
+      JP: |-
+        盾を構えて 敵へ突撃して 対象に<dmg elem="physics" />を与えます。
+        <sec typ="dmg">後方には 減少された ダメージを 与えます。</sec>
+        命中時、 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="4" r /></sec>を減少させます。
+        <sec typ="chance"><chance idx="0" /> 確率</sec>で 命中 対象を 1ラウンドの間 <sec typ="buff"><buff typ="STUN" /> 行動不可</sec> 状態にします。
+        自身が <sec typ="note">解かれた手綱</sec> 状態の場合 確率が <sec typ="chance"><chance idx="3" /></sec>で 増加し、 持続 ラウンドが増加します。
+        <sec typ="cond"><buff typ="COUNTER" /> 反撃 状態で 被弾時</sec>、 自身の 次 攻撃に ドエした <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" slot="3" r /></sec>が 大きく増加します。
+      TC: |-
+        舉盾 向敵人衝鋒 對目標 造成<dmg elem="physics" />。
+        <sec typ="dmg">後方於 減少已 傷害 造成。</sec>
+        命中時， 2回合內 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="4" r /></sec>使其減少。
+        <sec typ="chance"><chance idx="0" /> 機率</sec>以 命中 目標 1回合內 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 使其進入狀態。
+        自身 <sec typ="note">解放韁繩</sec> 若為狀態 機率 <sec typ="chance"><chance idx="3" /></sec>以 增加，並 持續 回合增加。
+        <sec typ="cond"><buff typ="COUNTER" /> 反擊 在狀態下 被擊時</sec>， 自身的 下次 攻擊於 對 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" slot="3" r /></sec> 大幅增加。
   "2":
     key: "2"
     icon: ShieldWall
@@ -2655,6 +2684,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        자신과 대상 아군의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec>를 영구적으로 증가시키고, 해당 라운드 동안 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="6" signless />회</sec>를 부여합니다.
+        <sec typ="cond">스킬 사용 시</sec>, 이전 라운드에 적용된 자신에 의한 아군 대상 영구 효과가 <sec>새로운 대상에게 갱신</sec>됩니다.
+        자신이 <sec typ="note">매어진 고삐</sec> 상태인 경우, 추가로 대상에게 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec> <sec typ="attr">일반 효과</sec>를 부여합니다.
+        자신이 <sec typ="note">풀려난 고삐</sec> 상태인 경우, 추가로 대상에게 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격 지원</sec> <sec typ="attr">일반 효과</sec>를 부여합니다.
+      EN: |-
+        self and target allies' <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="0" r /></sec> permanently increases and each round <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification <val idx="6" signless />times</sec> grants.
+        <sec typ="cond">When using the skill</sec>, previous round to enemy applied self to by allied target permanent effect and <sec>refreshed on the new target</sec>.
+        self <sec typ="note">Tied Reins</sec> if in the state, additionally to the target <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> <sec typ="attr">normal effect</sec> grants.
+        self <sec typ="note">Released Reins</sec> if in the state, additionally to the target <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Attack Support</sec> <sec typ="attr">normal effect</sec> grants.
+      JP: |-
+        自身と 対象 味方の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="0" r /></sec>を 永久に 増加時クイし、 該当 ラウンド間 <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="6" signless />回</sec>を付与します。
+        <sec typ="cond">スキル使用時</sec>、 以前 ラウンドに 適用された 自身に よる 味方 対象 永久 効果が <sec>新しい 対象に 更新</sec>されます。
+        自身が <sec typ="note">繋がれた手綱</sec> 状態の場合、 追加で 対象に <sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec> <sec typ="attr">一般効果</sec>を付与します。
+        自身が <sec typ="note">解かれた手綱</sec> 状態の場合、 追加で 対象に <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃支援</sec> <sec typ="attr">一般効果</sec>を付与します。
+      TC: |-
+        自身與 目標 我方的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="0" r /></sec> 永久 增加時台並， 該 回合內 <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 <val idx="6" signless />次</sec>賦予。
+        <sec typ="cond">使用技能時</sec>， 之前 回合於 套用已 自身於 的 我方 目標 永久 效果 <sec>新的 對目標 更新</sec>。
+        自身 <sec typ="note">束縛韁繩</sec> 若為狀態， 額外 對目標 <sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec> <sec typ="attr">一般效果</sec>賦予。
+        自身 <sec typ="note">解放韁繩</sec> 若為狀態， 額外 對目標 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻擊支援</sec> <sec typ="attr">一般效果</sec>賦予。
   "3":
     key: "3"
     icon: P.FormChange
@@ -3181,6 +3231,31 @@ skills:
               level: "0"
             value: Effect_3P_Ajax_N_25
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">스쿼드 내에 보호기가 자신 밖에 없을 경우</sec>, 자신은 <sec typ="note">매어진 고삐</sec> 상태가 되고, <sec typ="cond">보호기가 자신 외에 있을 경우</sec>, 자신은 <sec typ="note">풀려난 고삐</sec> 상태가 됩니다.
+        <sec typ="note">매어진 고삐</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec> 감소
+        <sec typ="note">풀려난 고삐</sec> : <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> 증가
+        <sec typ="cond">전투 개시 시</sec>, 자신이 <sec typ="note">매어진 고삐</sec> 상태인 경우, 2라운드 동안 <sec typ="buff"><buff typ="DEF_Char" /> 아군 전체를 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신이 <sec typ="note">풀려난 고삐</sec> 상태인 경우, 1라운드 동안 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="6" /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="cond"> if self is the only Defender in the squad</sec>, self <sec typ="note">Tied Reins</sec> state and, <sec typ="cond"> if there is another Defender besides self</sec>, self <sec typ="note">Released Reins</sec> state.
+        <sec typ="note">Tied Reins</sec>: <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decrease
+        <sec typ="note">Released Reins</sec>: <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec> increase
+        <sec typ="cond">At battle start</sec>, self <sec typ="note">Tied Reins</sec> if in the state, 2 rounds <sec typ="buff"><buff typ="DEF_Char" /> all Designated Protection for allies</sec>.
+        <sec typ="cond">At round start</sec>, self <sec typ="note">Released Reins</sec> if in the state, 1 round own <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="6" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond">スクワッド 内に 保護機が 自身 外に 存在しない場合</sec>、 自身は <sec typ="note">繋がれた手綱</sec> 状態が になり、、 <sec typ="cond">保護機が 自身 外に 存在する場合</sec>、 自身は <sec typ="note">解かれた手綱</sec> 状態になります。
+        <sec typ="note">繋がれた手綱</sec>：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec> 減少
+        <sec typ="note">解かれた手綱</sec>：<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> 増加
+        戦闘開始時、 自身が <sec typ="note">繋がれた手綱</sec> 状態の場合、 2ラウンドの間 <sec typ="buff"><buff typ="DEF_Char" /> 味方全体を 指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身が <sec typ="note">解かれた手綱</sec> 状態の場合、 1ラウンドの間 自身の <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="6" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond">小隊 內於 保護機 自身 外於 不存在時</sec>， 自身 <sec typ="note">束縛韁繩</sec> 狀態 變為，且 <sec typ="cond">保護機 自身 外於 存在時</sec>， 自身 <sec typ="note">解放韁繩</sec> 變為狀態。
+        <sec typ="note">束縛韁繩</sec>：<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="0" r inv /></sec> 減少
+        <sec typ="note">解放韁繩</sec>：<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> 增加
+        戰鬥開始時， 自身 <sec typ="note">束縛韁繩</sec> 若為狀態， 2回合內 <sec typ="buff"><buff typ="DEF_Char" /> 全體我方 指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="note">解放韁繩</sec> 若為狀態， 1回合內 自身的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="6" /></sec>增加。
   "4":
     key: "4"
     icon: P.DefCounter
@@ -3523,6 +3598,23 @@ skills:
             base: 0.3
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 위력으로 반격</sec> 일반 효과를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신이 <sec typ="note">매어진 고삐</sec> 상태인 경우, 1라운드 동안 <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="6" r /></sec> 증가 <sec typ="attr">일반 효과</sec>를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신이 <sec typ="note">풀려난 고삐</sec> 상태인 경우, 1라운드 동안 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="8" r /></sec> 증가 <sec typ="attr">일반 효과</sec>를 획득합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> power as Counterattack</sec> normal gains the effect.
+        <sec typ="cond">At round start</sec>, self <sec typ="note">Tied Reins</sec> if in the state, 1 round <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="6" r /></sec> increase <sec typ="attr">normal effect</sec> gains.
+        <sec typ="cond">At round start</sec>, self <sec typ="note">Released Reins</sec> if in the state, 1 round <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="8" r /></sec> increase <sec typ="attr">normal effect</sec> gains.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力で 反撃</sec> 一般 効果を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身が <sec typ="note">繋がれた手綱</sec> 状態の場合、 1ラウンドの間 <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="6" r /></sec> 増加 <sec typ="attr">一般効果</sec>を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身が <sec typ="note">解かれた手綱</sec> 状態の場合、 1ラウンドの間 <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="8" r /></sec> 増加 <sec typ="attr">一般効果</sec>を獲得します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="COUNTER" /> <val idx="0" r signless /> 威力以 反擊</sec> 一般 獲得效果。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="note">束縛韁繩</sec> 若為狀態， 1回合內 <sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="6" r /></sec> 增加 <sec typ="attr">一般效果</sec>獲得。
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="note">解放韁繩</sec> 若為狀態， 1回合內 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="8" r /></sec> 增加 <sec typ="attr">一般效果</sec>獲得。
   "5":
     key: "5"
     icon: P.TeamDefBuff
@@ -4090,6 +4182,23 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">5인 스쿼드</sec>로 <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SKILL_UP" /> 방어력 <val idx="0" rr signless />만큼 스킬 위력 증가</sec> <sec typ="attr">일반 효과</sec>를 획득합니다.
+        <sec typ="cond">2인 이상 스쿼드</sec>로 <sec typ="cond">라운드 개시 시</sec>, 전투원 수에 비례해 아군 전체의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" /></sec>이(가) 증가합니다.
+        <sec typ="cond">2인 이상 스쿼드</sec>로 <sec typ="cond">라운드 개시 시</sec>, 전투원 수에 비례해 아군 전체의 <sec typ="buff"><buff typ="DEF_UP" /> 광역 피해 분산 <val idx="2" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">5 is squad</sec> as <sec typ="cond">At battle start</sec>, self <sec typ="buff"><buff typ="SKILL_UP" /> Defense <val idx="0" rr signless /> by Skill Power increase</sec> <sec typ="attr">normal effect</sec> gains.
+        <sec typ="cond">2 is or more squad</sec> as <sec typ="cond">At round start</sec>, number of combatantsin proportion to all allies of <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" /></sec> increases.
+        <sec typ="cond">2 is or more squad</sec> as <sec typ="cond">At round start</sec>, number of combatantsin proportion to all allies of <sec typ="buff"><buff typ="DEF_UP" /> area damage dispersion <val idx="2" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">5である スクワッド</sec>で 戦闘開始時、 自身は <sec typ="buff"><buff typ="SKILL_UP" /> 防御力 <val idx="0" rr signless />分 スキル威力 増加</sec> <sec typ="attr">一般効果</sec>を獲得します。
+        <sec typ="cond">2である 以上 スクワッド</sec>で <sec typ="cond">ラウンド開始時</sec>、 戦闘員数に比例して 味方全体の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" /></sec>が増加します。
+        <sec typ="cond">2である 以上 スクワッド</sec>で <sec typ="cond">ラウンド開始時</sec>、 戦闘員数に比例して 味方全体の <sec typ="buff"><buff typ="DEF_UP" /> 広域ダメージ分散 <val idx="2" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">5為 小隊</sec>以 戰鬥開始時， 自身 <sec typ="buff"><buff typ="SKILL_UP" /> 防禦力 <val idx="0" rr signless />等量 技能威力 增加</sec> <sec typ="attr">一般效果</sec>獲得。
+        <sec typ="cond">2為 以上 小隊</sec>以 <sec typ="cond">回合開始時</sec>， 戰鬥員數量依比例 全體我方的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" /></sec>增加。
+        <sec typ="cond">2為 以上 小隊</sec>以 <sec typ="cond">回合開始時</sec>， 戰鬥員數量依比例 全體我方的 <sec typ="buff"><buff typ="DEF_UP" /> 範圍傷害分散 <val idx="2" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -4434,12 +4543,9 @@ dialogue:
       SPIdle_02_01: |-
         Why don't you try pulling it down?
         See? I was right. I told you I wasn't coming out…
-      Oath: >-
-        I briefly neglected you because I was busy getting ready to open the
-        shop, but I can see you’ve been thinking about me all this time.
-
+      Oath: |-
+        I briefly neglected you because I was busy getting ready to open the shop, but I can see you’ve been thinking about me all this time.
         That makes me happy! And I’m sorry. I should fix my schedule so nothing like this ever happens again…
-
         From now on, my schedule is to stay by your side at all times.
       OathIdle_01: |-
         Frigga told me that you need a lot of money
@@ -4450,8 +4556,7 @@ dialogue:
         and falling into your arms.
       MVP: ""
     "":
-      Join: Please to meet you, Master. Ajax from the Guardian series, I will not
-        forget the day, today, I joined you.
+      Join: Please to meet you, Master. Ajax from the Guardian series, I will not forget the day, today, I joined you.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -4475,13 +4580,10 @@ dialogue:
         the enemy camp and capture the enemy
         with explosive power from the gene of bull. Also I’m good at paperwork,
         so please call me when you need some.​
-      Idle_01_02: >-
+      Idle_01_02: |-
         It's not that I'm being stubborn on purpose.
-
         I was only to tell the information needed to finish the schedule in a limited time,
-
         but if you felt that I was cold…
-
         I got it. I will try to be more friendly.​
       Idle_01_03: |-
         That’s my pen? You found it for me, thank you.
@@ -4513,12 +4615,9 @@ dialogue:
         I-is it my fault? Still, this is not in the plan…
         Alright, then, promise me you will be
         back on your work after this… Oh!!​
-      Oath: >-
-        Master, was this the blank part of today's schedule for? Oh…! N-no, I'm
-        not refusing it.
-
+      Oath: |-
+        Master, was this the blank part of today's schedule for? Oh…! N-no, I'm not refusing it.
         It is just unexpected… If you really have chosen me… I should totally re-adjust my future plan.
-
         And… Now Master became mine, so I will put my name on you to not losing you.​
       OathIdle_01: |-
         I’m planning the future plan.
@@ -4738,20 +4837,14 @@ skins:
   sid: null
   artist: PaintAle
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -4766,25 +4859,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_3P_Ajax_N
   skins:
     - sid: 1
       artist: CORGI
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -4801,5 +4892,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_3P_Ajax_NS1
         consumableKey: Skin_3P_Ajax_1

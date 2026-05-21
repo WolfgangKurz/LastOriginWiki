@@ -512,6 +512,7 @@ source:
   - - Ev:Ev14:EV2-4Ex
   - - Ev:Ev17:EV3-1Ex
   - - Ev:Ev26:EV1-1Ex
+  - - Ev:Ev38:EV1-2EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2802,6 +2803,19 @@ skills:
             base: -0.15
             per: -0.015
             chance: 1
+    desc:
+      KR: |-
+        빔 공격으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="2" r /></sec> 감소 상태로 만듭니다.
+        <sec typ="note">역습 준비</sec> 활성화 상태면 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="6" r /></sec>를 감소시킵니다.
+      EN: |-
+        Deals <dmg elem="physics" /> with a beam attack and makes the target <sec typ="buff"><buff typ="PROVOKE" /> Provoked</sec> / decreases <sec typ="buff"><buff typ="ATK_DOWN" /> ATK by <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical by <val idx="2" r /></sec> for 2 rounds.
+        If <sec typ="note">Counterattack Preparation</sec> is active, decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF by <val idx="6" r /></sec> for 2 rounds.
+      JP: |-
+        ビーム攻撃で<dmg elem="physics" />を与え、2ラウンドの間、対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="2" r /></sec>減少状態にします。
+        <sec typ="note">逆襲準備</sec>活性化状態なら、2ラウンドの間、対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力<val idx="6" r /></sec>を減少させます。
+      TC: |-
+        以光束攻擊造成<dmg elem="physics" />，並在2回合內使目標進入<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="2" r /></sec>降低狀態。
+        若<sec typ="note">反擊準備</sec>處於啟用狀態，2回合內降低目標的<sec typ="buff"><buff typ="DEF_DOWN" />防禦力<val idx="6" r /></sec>。
   "2":
     key: "2"
     icon: WideParticle
@@ -5069,6 +5083,19 @@ skills:
             base: 0.15
             per: 0.0075
             chance: 1
+    desc:
+      KR: |-
+        빔을 난사해 목표 지점에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        대상에게 적용된 <sec typ="note">화망 구축</sec> <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 효과 중첩에 비례해 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        Fires a beam barrage to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> at the target point.
+        <sec typ="note"></sec> Damage dealt increases by <sec typ="buff"><buff typ="EVADE_DOWN" /> in proportion to the stacks of </sec>Establish Fire Net<sec typ="dmg"> <buff typ="PhyATK_UP" /><val idx="0" r /> Evasion Down</sec> applied to the target.
+      JP: |-
+        ビームを乱射して目標地点に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        対象に適用された<sec typ="note">火網構築</sec><sec typ="buff"><buff typ="EVADE_DOWN" />回避低下</sec>効果の重複に比例して、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量<val idx="0" r /></sec>が増加します。
+      TC: |-
+        亂射光束，對目標地點造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        依照套用於目標的<sec typ="note">建構火網</sec><sec typ="buff"><buff typ="EVADE_DOWN" />迴避降低</sec>效果層數，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -5341,6 +5368,23 @@ skills:
             base: 0.3
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="0" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec>가 감소합니다.
+        피격 시, 3라운드 동안 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="4" r /></sec>가 증가하는 <sec typ="note">역습 준비</sec> 상태가 됩니다. (최대 3중첩)
+        피격 시, <sec typ="note">역습 준비</sec> 중첩이 최대인 경우, 해당 라운드 동안 <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> 자신의 현재 HP의 <val idx="5" r signless /> 만큼 공격자의 방어 관통이 감소</sec>합니다. (방어 관통 저항)
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_UP" /> DEF increases by <val idx="0" r /></sec> and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken decreases by <val idx="1" r inv /></sec>.
+        When hit, enters <sec typ="note">Counterattack Preparation</sec> state for 3 rounds, increasing <sec typ="buff"><buff typ="DEF_UP" /> DEF by <val idx="4" r /></sec>. (Stacks up to 3 times)
+        When hit, if <sec typ="note">Counterattack Preparation</sec> is at max stacks, during that round <sec typ="buff"><buff typ="Current_Hp_Piercedown" /> the attacker's Defense Penetration decreases by <val idx="5" r signless /> of her current HP</sec>. (Defense Penetration Resistance)
+      JP: |-
+        ラウンド開始時、<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="0" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="1" r inv /></sec>が減少します。
+        被撃時、3ラウンドの間<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="4" r /></sec>が増加する<sec typ="note">逆襲準備</sec>状態になります。(最大3重複)
+        被撃時、<sec typ="note">逆襲準備</sec>重複が最大の場合、そのラウンドの間<sec typ="buff"><buff typ="Current_Hp_Piercedown" />自身の現在HPの<val idx="5" r signless />分、攻撃者の防御貫通が減少</sec>します。(防御貫通耐性)
+      TC: |-
+        回合開始時，<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="0" r /></sec>增加，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受到傷害<val idx="1" r inv /></sec>降低。
+        被擊時，3回合內進入<sec typ="buff">反擊準備<buff typ="DEF_UP" />狀態，<val idx="4" r /></sec>防禦力<sec typ="note"></sec>增加。（最多重疊3次）
+        被擊時，若<sec typ="note">反擊準備</sec>層數達最大，該回合內<sec typ="buff"><buff typ="Current_Hp_Piercedown" />依自身目前HP的<val idx="5" r signless />降低攻擊者的防禦貫通</sec>。（防禦貫通抗性）
   "4":
     key: "4"
     icon: P.Command
@@ -5838,6 +5882,27 @@ skills:
             base: 0.4
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        라운드 개시 시, 스쿼드 내 경장형 아군 및 스틸라인 계열 전투원을 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>합니다.
+        라운드 개시 시, 모든 아군에게 <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 기동형 피해량 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="7" r /></sec> 증가 효과를 부여합니다.
+        <sec type="cond">대상이 <cmt t="스틸라인 계열"><import name="SteelLine" /></cmt> 전투원인 경우</sec> 효과가 50% 증가합니다.
+        <sec type="cond">전투 개시 시</sec>, <sec type="cond">스쿼드 내에 휘하 <cmt t="스틸라인 계열"><import name="SteelLine" /></cmt> 전투원이 한 명이라도 존재할 경우</sec> 자신은 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="12" r signless /> HP로 전투 속행</sec> <sec typ="attr">일반 효과</sec>를 획득합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_Char" /> protects Light allies and Steel Line combatants in the squad with Designated Protection</sec>.
+        <sec typ="cond">At round start</sec>, grants all allies <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> damage against Flying units by <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Power by <val idx="7" r /></sec>.
+        <sec type="cond">If the target is a <cmt t="Steel Line"><import name="SteelLine" /></cmt> combatant</sec>, the effects increase by 50%.
+        <sec type="cond">At battle start</sec>, <sec type="cond">if there is at least one subordinate <cmt t="Steel Line"><import name="SteelLine" /></cmt> combatant in the squad</sec>, she gains <sec typ="buff"><buff typ="DEF_RESSURRECT" /> Continue Battle with <val idx="12" r signless /> HP</sec> <sec typ="attr">General Effect</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、スクワッド内の軽装型味方およびスチールライン系戦闘員を<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>します。
+        ラウンド開始時、すべての味方に<sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />対機動型ダメージ量<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>増加効果を付与します。
+        <sec type="cond">対象が<cmt t="スチールライン系統"><import name="SteelLine" /></cmt>戦闘員の場合</sec>、効果が50%増加します。
+        <sec type="cond">戦闘開始時</sec>、<sec type="cond">スクワッド内に配下の<cmt t="スチールライン系統"><import name="SteelLine" /></cmt>戦闘員が1名でも存在する場合</sec>、自身は<sec typ="buff"><buff typ="DEF_RESSURRECT" /><val idx="12" r signless />HPで戦闘続行</sec><sec typ="attr">一般効果</sec>を獲得します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>小隊內輕裝型我方及鋼鐵防線系列戰鬥員。
+        回合開始時，賦予所有我方<sec typ="dmg"><buff typ="MOBILITY_DMG_UP" />對機動型傷害量<val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" />命中<val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />行動力<val idx="7" r /></sec>增加效果。
+        <sec type="cond">若目標為<cmt t="鋼鐵防線系統"><import name="SteelLine" /></cmt>戰鬥員</sec>，效果增加50%。
+        <sec type="cond">戰鬥開始時</sec>，<sec type="cond">若小隊內至少存在一名麾下<cmt t="鋼鐵防線系統"><import name="SteelLine" /></cmt>戰鬥員</sec>，自身獲得<sec typ="buff"><buff typ="DEF_RESSURRECT" />以<val idx="12" r signless />HP戰鬥續行</sec><sec typ="attr">一般效果</sec>。
   "5":
     key: "5"
     icon: P.Particle
@@ -5978,6 +6043,27 @@ skills:
             base: 0.15
             per: 0.0075
             chance: 0
+    desc:
+      KR: |-
+        라운드 개시 시, 최대 3회까지 모든 적에게 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec> 감소 효과를 적용합니다.
+        해당 효과는 <sec typ="important">효과 저항의 영향을 받지 않지만, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec>로 해제할 수 있습니다.</sec>
+        <sec typ="note">화망 구축</sec>이 2중첩 이상인 대상에게 공격 시, <sec typ="buff"><buff typ="VULNERABLE" /> 회피 증가 효과를 해제</sec>합니다.
+        <sec typ="note">화망 구축</sec> 중첩 수가 최대인 대상에게 공격 시, 2라운드 동안 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 <val idx="5" slot="1" r /></sec>를 증가시킵니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, applies <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion decrease by <val idx="0" r /></sec> to all enemies up to 3 times.
+        <sec typ="important">This effect is not affected by Effect Resistance, but can be removed by <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effect removal</sec>.</sec>
+        When attacking a target with 2 or more stacks of <sec typ="note">Establish Fire Net</sec>, <sec typ="buff"><buff typ="VULNERABLE" /> removes Evasion increase effects</sec>.
+        When attacking a target with max stacks of <sec typ="note">Establish Fire Net</sec>, increases the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken by <val idx="5" slot="1" r /></sec> for 2 rounds.
+      JP: |-
+        ラウンド開始時、最大3回まですべての敵に<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="0" r /></sec>減少効果を適用します。
+        この効果は<sec typ="important">効果耐性の影響を受けませんが、<sec typ="buff"><buff typ="REMOVE_DEBUFF" />有害効果解除</sec>で解除できます。</sec>
+        <sec typ="note">火網構築</sec>が2重複以上の対象を攻撃時、<sec typ="buff"><buff typ="VULNERABLE" />回避増加効果を解除</sec>します。
+        <sec typ="note">火網構築</sec>の重複数が最大の対象を攻撃時、2ラウンドの間、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />受けるダメージ<val idx="5" slot="1" r /></sec>を増加させます。
+      TC: |-
+        回合開始時，最多3次對所有敵人套用<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="0" r /></sec>降低效果。
+        該效果<sec typ="important">不受效果抗性影響，但可被<sec typ="buff"><buff typ="REMOVE_DEBUFF" />解除有害效果</sec>解除。</sec>
+        攻擊<sec typ="note">建構火網</sec>2層以上的目標時，<sec typ="buff"><buff typ="VULNERABLE" />解除迴避增加效果</sec>。
+        攻擊<sec typ="note">建構火網</sec>層數達最大的目標時，2回合內使目標的<sec typ="buff"><buff typ="REMOVE_BUFF" />受到傷害<val idx="5" slot="1" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -6133,9 +6219,7 @@ dialogue:
       SPIdle_02_01: |-
         몸은 충분히 풀리셨습니까?
         그렇다면… 저… 체력을 단련하러 가시죠.
-      Oath: 부하들의 마음을 알아보고자 시작한 여름 훈련이었지만… 각하의 마음까지 알게 될 줄은 몰랐습니다. 후후, 제가 사랑하는 사람도 저를
-        사랑하고 있다는 사실은... 이렇게나 기쁜 것이군요. 네, 각하. 앞으로 저희에게 찾아올 수십, 수백 번의 여름을… 각하와 함께
-        하겠습니다.
+      Oath: 부하들의 마음을 알아보고자 시작한 여름 훈련이었지만… 각하의 마음까지 알게 될 줄은 몰랐습니다. 후후, 제가 사랑하는 사람도 저를 사랑하고 있다는 사실은... 이렇게나 기쁜 것이군요. 네, 각하. 앞으로 저희에게 찾아올 수십, 수백 번의 여름을… 각하와 함께 하겠습니다.
       OathIdle_01: |-
         초심을 되새기는 것은 매우 중요한 일입니다.
         그러니, 저희의 첫날 밤에 그랬듯이…
@@ -6352,9 +6436,7 @@ dialogue:
       SPIdle_02_01: |-
         [미번역]몸은 충분히 풀리셨습니까?
         그렇다면… 저… 체력을 단련하러 가시죠.
-      Oath: "[미번역]부하들의 마음을 알아보고자 시작한 여름 훈련이었지만… 각하의 마음까지 알게 될 줄은 몰랐습니다. 후후, 제가 사랑하는
-        사람도 저를 사랑하고 있다는 사실은... 이렇게나 기쁜 것이군요. 네, 각하. 앞으로 저희에게 찾아올 수십, 수백 번의 여름을…
-        각하와 함께 하겠습니다."
+      Oath: "[미번역]부하들의 마음을 알아보고자 시작한 여름 훈련이었지만… 각하의 마음까지 알게 될 줄은 몰랐습니다. 후후, 제가 사랑하는 사람도 저를 사랑하고 있다는 사실은... 이렇게나 기쁜 것이군요. 네, 각하. 앞으로 저희에게 찾아올 수십, 수백 번의 여름을… 각하와 함께 하겠습니다."
       OathIdle_01: |-
         [미번역]초심을 되새기는 것은 매우 중요한 일입니다.
         그러니, 저희의 첫날 밤에 그랬듯이…
@@ -6457,11 +6539,9 @@ dialogue:
         Why am I wearing this?
         … That’s a secret, for now.
       SPIdle_01_01: A man’s behavior should be well mannered.
-      Idle_02_01: >-
+      Idle_02_01: |-
         I’m sure there are many soldiers who are
-
         trying to get your attention. But I’ll bet I’m the only one with courage to
-
         ask you out, right?
       Idle_03_01: |-
         I had a feeling that… if I wear this costume,
@@ -6475,8 +6555,7 @@ dialogue:
         … I’m glad I wore this… Oh,
         never mind. Hey… should we go to
         somewhere more quiet?
-      Oath: Co-commander? This is ridiculous. You knew I was going to confess my
-        feelings to you first… You’re making it impossible for me to decline…
+      Oath: Co-commander? This is ridiculous. You knew I was going to confess my feelings to you first… You’re making it impossible for me to decline…
       OathIdle_01: |-
         My letter? Please
         stop. You can’t read it!
@@ -6520,10 +6599,8 @@ dialogue:
         Commander… Please tell me the spy
         within us…
       SPIdle_02_01: Were you curious… how it felt?
-      Oath: >-
-        Seriously… You are a bad person… How do you always manage to do this
-        when I’m the most vulnerable…?
-
+      Oath: |-
+        Seriously… You are a bad person… How do you always manage to do this when I’m the most vulnerable…?
         Are you trying to make it hard for me to reject?
       OathIdle_01: |-
         It’s really hard to go against
@@ -6581,19 +6658,14 @@ dialogue:
       SPIdle_02_01: |-
         Is your body warmed up?
         Then… let’s go train our bodies.
-      Oath: I started the summer training to get to know my subordinates’ thoughts…
-        But I didn't know I would be able to know yours, Your Excellency. Hehe,
-        The fact that someone I love loves me back… It's a very happy feeling.
-        Yes, Your Excellency. I will spend tens and hundreds of summers to come…
-        with you.
+      Oath: I started the summer training to get to know my subordinates’ thoughts… But I didn't know I would be able to know yours, Your Excellency. Hehe, The fact that someone I love loves me back… It's a very happy feeling. Yes, Your Excellency. I will spend tens and hundreds of summers to come… with you.
       OathIdle_01: |-
         It's very important to remember the basics.
         So, just like our first night together…
         would you hug me tight once again?
       MVP: ""
     "":
-      Join: Nice to meet you. Your Excellency. I hope today’s meeting will become a
-        moment in history.
+      Join: Nice to meet you. Your Excellency. I hope today’s meeting will become a moment in history.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -6642,9 +6714,8 @@ dialogue:
       SPIdle_02_01: |-
         Please behave properly. …
         It won’t look good if other girls see you like this.
-      Oath: >-
+      Oath: |-
         I'm a soldier. Since it's your command… I can't help but receive it…
-
         It's not because I don't like it. Of course I do, too… No. You're a naughty one.
       OathIdle_01: |-
         I heard that in the past…
@@ -6943,20 +7014,13 @@ skins:
   sid: null
   artist: Kakiman
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 6
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - true
     - false
@@ -6971,24 +7035,18 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 4
+    dflags: 4
   skins:
     - sid: 1
       artist: Kakiman
       price: 80
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
       anim:
         - true
         - false
@@ -7005,24 +7063,22 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_BR_Marie_1
     - sid: 2
       artist: Kakiman
       price: 159
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - true
         - false
@@ -7039,24 +7095,24 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 4
+        dflags: 4
         consumableKey: Skin_BR_Marie_2
     - sid: 3
       artist: TunaMaYo
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+        G:
+          - _
+          - D
+          - S
       anim:
         - false
         - false
@@ -7073,6 +7129,7 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_Marie_NS3
         2dmodel_dam: 2DModel_BR_Marie_NS3_Dam
         consumableKey: Skin_BR_Marie_3

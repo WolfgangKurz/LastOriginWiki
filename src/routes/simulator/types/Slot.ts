@@ -9,6 +9,8 @@ export interface SimulatorSlotEntity {
 	level: number;
 	rarity: ACTOR_GRADE;
 
+	favorBonus: boolean;
+	damaged: boolean;
 	leader: boolean;
 
 	links: [number, number, number, number, number];

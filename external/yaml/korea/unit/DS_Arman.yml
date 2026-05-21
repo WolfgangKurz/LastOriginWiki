@@ -2626,6 +2626,19 @@ skills:
             base: 0.25
             per: 0.0125
             chance: 1
+    desc:
+      KR: |-
+        지정 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec> 증가 / <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="7" r inv /></sec> 감소 상태로 만듭니다.
+        치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="6" r /></sec>가 증가하며 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
+      EN: |-
+        designated to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and 2 rounds target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increase / <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="7" r inv /></sec> decrease inflicts.
+        On critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="6" r /></sec> increases and target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec>.
+      JP: |-
+        指定対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、、 2ラウンドの間 対象を <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec> 増加 / <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="7" r inv /></sec> 減少 状態にします。
+        クリティカル時、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="6" r /></sec>が 増加し、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>します。
+      TC: |-
+        指定目標給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 2回合內 目標 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec> 增加 / <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="7" r inv /></sec> 減少 使其進入狀態。
+        暴擊時， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="6" r /></sec> 增加，並 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>。
   "2":
     key: "2"
     icon: TeamSpdBuff
@@ -3079,6 +3092,23 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        아군에게 적용 중인 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>하고, 해당 라운드에 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val base="0.6" per="0.03" r /></sec>, 다음 라운드에 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="6" r /></sec>가 증가합니다.
+        자신의 지휘 효과를 받는 아군은 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec>스킬 레벨 10에서 자신의 위치와 무관하게 아군 영역 전체에 적용됩니다.</sec>
+      EN: |-
+        to allies is active is <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec> and, the round to <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val base="0.6" per="0.03" r /></sec>, next round to <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="6" r /></sec> increases.
+        own command effect and receives allies <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec>At skill level 10, own position and regardless of allies area all to is applied.</sec>
+      JP: |-
+        味方に 適用中である <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>し、 該当 ラウンドに <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val base="0.6" per="0.03" r /></sec>、 次 ラウンドに <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="6" r /></sec>が増加します。
+        自身の 指揮 効果を 受ける 味方は <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec>スキルレベル10で 自身の 位置と ムウグワンするよう 味方 領域 全体に 適用されます。</sec>
+      TC: |-
+        我方給 套用中為 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>並， 該 回合於 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val base="0.6" per="0.03" r /></sec>， 下次 回合於 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="6" r /></sec>增加。
+        自身的 指揮 效果 受到 我方 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        <sec>技能等級10時 自身的 位置與 無gwan使 我方 區域 全體於 套用。</sec>
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -3527,6 +3557,19 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: |-
+        범위 내 공격기에게 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> 증가 효과를 주며, 자신이 장착한 <sec typ="note"> 대 타입 피해량 증가 장비</sec>에 따라 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> <buff typ="ARMORED_DMG_UP" />  대 타입 피해량 <val idx="2" r /></sec>를 올려줍니다.
+        <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+      EN: |-
+        within range Attackerto <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> increase effect and deals and, self equipped <sec typ="note"> Anti-Type damage increase equipment</sec>depending on <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> <buff typ="ARMORED_DMG_UP" /> Anti-Type damage <val idx="2" r /></sec> increases.
+        <sec>At skill level 10, range increases.</sec>
+      JP: |-
+        範囲内 攻撃機に <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> 増加 効果を 与え、、 自身が ジアンチアクした <sec typ="note"> 対タイプダメージ 増加 装備</sec>に応じて <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> <buff typ="ARMORED_DMG_UP" /> 対タイプダメージ <val idx="2" r /></sec>を上昇させます。
+        <sec>スキルレベル10で 範囲が増加します。</sec>
+      TC: |-
+        範圍內 攻擊機給 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> 增加 效果 造成，並 自身 裝備 <sec typ="note"> 對類型傷害 增加 裝備</sec>依 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> <buff typ="ARMORED_DMG_UP" /> 對類型傷害 <val idx="2" r /></sec>提高。
+        <sec>技能等級10時 範圍增加。</sec>
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -4091,6 +4134,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        범위 내 보호기에게 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec> 감소 / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> 증가 효과를 주며, 자신에게 적용된 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 속성 저항 강화</sec> 효과에 맞춰 대상들의 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 속성 저항력 <val idx="3" r /></sec>를 올려줍니다.
+        <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+      EN: |-
+        within range Defenderto <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decrease / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> increase effect and deals and, applied to self <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> Elemental Resistance buff</sec> effect and to aims at target of <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> Elemental Resistance power <val idx="3" r /></sec> increases.
+        <sec>At skill level 10, range increases.</sec>
+      JP: |-
+        範囲内 保護機に <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec> 減少 / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec> 増加 効果を 与え、、 自身に 適用された <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 属性耐性 強化</sec> 効果に ムアトチウォ 対象たちの <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 属性耐性ルヨク <val idx="3" r /></sec>を上昇させます。
+        <sec>スキルレベル10で 範囲が増加します。</sec>
+      TC: |-
+        範圍內 保護機給 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="0" r inv /></sec> 減少 / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec> 增加 效果 造成，並 自身給 套用已 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 屬性抗性 強化</sec> 效果於 Matchwo 目標們的 <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 屬性抗性力 <val idx="3" r /></sec>提高。
+        <sec>技能等級10時 範圍增加。</sec>
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -4325,6 +4381,19 @@ skills:
             base: 0.04
             per: 0.0025
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec> 다음 출현하는 적을 확인할 수 있으며, 모든 적의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="3" r /></sec>가 감소합니다.
+        <sec typ="cond"><buff typ="SCOUTING" /> 정찰</sec> 활성화 상태인 경우, 대상들에게 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec> 증가 효과가 추가로 적용됩니다.
+      EN: |-
+        <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> next appearance do enemy Hwak is can number exists and, all enemies of <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="3" r /></sec> decreases.
+        <sec typ="cond"><buff typ="SCOUTING" /> Scouting</sec> active stateif, to the target <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec> increase effect and additionally is applied.
+      JP: |-
+        <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 次 チウルハヨンする 敵を ハワクであるできる 数 イトウし、 すべての敵の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>が減少します。
+        <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 有効状態の場合、 対象たちに <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="5" r /></sec> 増加 効果が 追加で 適用されます。
+      TC: |-
+        <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 下次 出現 敵人 火k為可 數 存在eu並， 所有敵人的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="3" r /></sec>減少。
+        <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec> 啟用狀態若為， 目標們給 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="5" r /></sec> 增加 效果 額外 套用。
 dialogue:
   KR:
     "1":
@@ -4437,9 +4506,7 @@ dialogue:
         불경한 행동이지만…
         뭐, 일단 저지르고 회개하면 되겠죠.
         네. 안아주십시오, 구원자님.
-      Oath: 동요하지 않을 것이라 생각했습니다. 구원자님의 반응과 행동을  미루어 보았을 때, 이런 일이 있으리라 예상했거든요. 하지만, 그럼에도
-        제게 반지를 내미시는 구원자님을 보니… 행복과 설렘에 목소리가 떨려오는 걸 막을 수가 없군요. 네, 구원자님. 기꺼이 당신과
-        함께하겠나이다.
+      Oath: 동요하지 않을 것이라 생각했습니다. 구원자님의 반응과 행동을  미루어 보았을 때, 이런 일이 있으리라 예상했거든요. 하지만, 그럼에도 제게 반지를 내미시는 구원자님을 보니… 행복과 설렘에 목소리가 떨려오는 걸 막을 수가 없군요. 네, 구원자님. 기꺼이 당신과 함께하겠나이다.
       OathIdle_01: |-
         호칭을 바꿔, 폐하를 구원자님이라 불러도
         별로 어색함이 느껴지거나 하진 않습니다.
@@ -4635,11 +4702,9 @@ dialogue:
       Idle_03_01: 私は…これからどうしたらいいのでしょうか？やるべきことはたくさんあるのに、陛下のことで頭が一杯です。
       Idle_04_01: 陛下をしっかりと補佐できますように。そしていつまでも陛下のお傍にいられますように…
       SPIdle_02_01: へ、陛下…
-      Oath: >-
+      Oath: |-
         陛下？私などがこんな物をもらってもよろしいのでしょうか？…本当ですか？本当に…陛下のお
-
         傍にいてもいいのですか？
-
         …はい！私もこの瞬間をずっと待ちわびておりました。永遠に…永遠に陛下の心の支えになって差し上げます。そして…私が疲れた時は…陛下に寄りかかることを許してくださいますか？
       OathIdle_01: 陛下とこうして包み隠さずお話しできて…私は本当に嬉しいです…
       MVP: ""
@@ -4732,11 +4797,8 @@ dialogue:
         *Squeals*…… P-please,
         somewhere where others
         won’t look…
-      Oath: >-
-        I didn’t want to nag even at a place like this, but these days, your
-        actions are… N-no, it’s not that I’m shy…! … Ugh… Your Majesty, are you
-        really okay?
-
+      Oath: |-
+        I didn’t want to nag even at a place like this, but these days, your actions are… N-no, it’s not that I’m shy…! … Ugh… Your Majesty, are you really okay?
         With such a boring woman like me… Haha, right. You shouldn’t… regret.
       OathIdle_01: |-
         Your Majesty, you’re becoming
@@ -4792,11 +4854,7 @@ dialogue:
         Though our actions are blasphemous…
         We can just ask for forgiveness later, right?
         Yes, embrace me, Savior.
-      Oath: I knew you wouldn't be shaken. Judging from your reaction and your
-        actions, you already knew something like this would happen. However,
-        seeing that you're still handing me a ring… I couldn't stop my voice
-        from shaking from joy. Yes, Savior. I would gladly spend the rest of my
-        days with you.
+      Oath: I knew you wouldn't be shaken. Judging from your reaction and your actions, you already knew something like this would happen. However, seeing that you're still handing me a ring… I couldn't stop my voice from shaking from joy. Yes, Savior. I would gladly spend the rest of my days with you.
       OathIdle_01: |-
         Addressing Your Majesty as Savior
         doesn’t seem to make things awkward.
@@ -4848,12 +4906,9 @@ dialogue:
         to serve you. And that I can
         be with you, forever…
       SPIdle_02_01: Your Majesty… Your Majesty!
-      Oath: >-
-        Your Majesty? May I dare receive that? … May I really? Will it be OK to
-        be by your side, Your Majesty.
-
+      Oath: |-
+        Your Majesty? May I dare receive that? … May I really? Will it be OK to be by your side, Your Majesty.
         … Yes! I only waited for this moment, too. I will serve you forever… and ever, Your Majesty.
-
         And… when I get worn out… would you allow me to depend on you, Your Majesty?
       OathIdle_01: |-
         I’m talking heart to heart with you…
@@ -5109,20 +5164,13 @@ skins:
   sid: null
   artist: SNOWBALL
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5137,25 +5185,20 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_DS_Arman_N
   skins:
     - sid: 1
       artist: SNOWBALL
       price: 159
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
       anim:
         - true
         - false
@@ -5172,24 +5215,19 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_DS_Arman_1
     - sid: 2
       artist: Choyeon
       price: 114
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
       anim:
         - false
         - false
@@ -5206,6 +5244,7 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_DS_Arman_NS2
         2dmodel_dam: 2DModel_DS_Arman_NS2_Dam
         consumableKey: Skin_DS_Arman_2

@@ -1008,6 +1008,11 @@ skills:
             base: -0.55
             per: -0.05
             chance: 1
+    desc:
+      KR: 단일 대상에게 <dmg elem="physics" />를 입히고 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>을(를) 감소시킵니다.
+      EN: to a single target <dmg elem="physics" /> deals and <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec> decreases.
+      JP: 単一対象へ<dmg elem="physics" />を 与えし <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>を減少させます。
+      TC: 單一目標給 <dmg elem="physics" /> 造成並 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="0" /></sec>使其減少。
   "2":
     key: "2"
     icon: TeamAtkDeBuff
@@ -2246,6 +2251,19 @@ skills:
             base: 7
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        범위 내 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 입힙니다.
+        적중한 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec>를 크게 감소시키고 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 적중 강화 효과를 해제</sec>하며 <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="0" r /></sec>를 감소시킵니다.
+      EN: |-
+        within range to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        Hit target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="1" r /></sec> greatly decreases and <sec typ="buff"><buff typ="REMOVE_BUFF" /> Accuracy removes buffs</sec> and <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="0" r /></sec> decreases.
+      JP: |-
+        範囲内 対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        命中した 対象の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec>を クウく 減少時クイし <sec typ="buff"><buff typ="REMOVE_BUFF" /> 命中 強化効果を 解除</sec>し、 <sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="0" r /></sec>を減少させます。
+      TC: |-
+        範圍內 對目標 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        命中 目標的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> 大 減少時台並 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 命中 強化效果 解除</sec>並 <sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="0" r /></sec>使其減少。
   "3":
     key: "3"
     icon: P.EnemyDetect
@@ -2647,6 +2665,19 @@ skills:
             base: 9
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 시작 시</sec>, 주변 아군에게 <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec> 효과를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 주변 아군의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec>를 증가시키고 공격기 대상에게는 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 공격력 감소 / 적중 감소 / 치명타 감소 효과를 제거</sec>하고 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="10" r /></sec>를 증가시킵니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, nearby to allies <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> grants the effect.
+        <sec typ="cond">At round start</sec>, nearby allies' <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec> increases and Attacker to the target <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Attack decrease / Accuracy decrease / Critical decrease removes the effect</sec> and <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="10" r /></sec> increases.
+      JP: |-
+        戦闘開始時、 周辺 味方に <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、 周辺 味方の <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>を 増加時クイし 攻撃機 対象には <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 攻撃力 減少 / 命中 減少 / クリティカル 減少 効果を 除去</sec>し、 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="10" r /></sec>を増加させます。
+      TC: |-
+        戰鬥開始時， 周圍 我方給 <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 賦予效果。
+        <sec typ="cond">回合開始時</sec>， 周圍 我方的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> 增加時台並 攻擊機 對目標 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 攻擊力 減少 / 命中 減少 / 暴擊 減少 效果 移除</sec>並 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="10" r /></sec>使其增加。
   "4":
     key: "4"
     icon: P.Barrier
@@ -2879,6 +2910,11 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">전열 아군</sec> 대상 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>를 감소시켜주고 대상이 <sec typ="cond">보호기</sec>일 경우, <sec typ="buff"><buff typ="MARKING" /> 이로운 표식</sec>과 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec> 감소 효과를 추가 부여합니다.
+      EN: <sec typ="cond">At round start</sec>, <sec typ="cond">front row allies</sec> target <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decrease when activate deals and target <sec typ="cond">Defender</sec> if, <sec typ="buff"><buff typ="MARKING" /> beneficial Mark</sec> and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="4" r inv /></sec> decrease effect and additional grant.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond">前列 味方</sec> 対象 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec>を 減少時クヨ与え、 対象が <sec typ="cond">保護機</sec>の場合、 <sec typ="buff"><buff typ="MARKING" /> 有益な 標的</sec>と <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="4" r inv /></sec> 減少 効果を 追加 ブウヨします。
+      TC: <sec typ="cond">回合開始時</sec>， <sec typ="cond">前排 我方</sec> 目標 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="0" r inv /></sec> 減少時啟動造成，並 目標 <sec typ="cond">保護機</sec>若為， <sec typ="buff"><buff typ="MARKING" /> 有益 標記</sec>與 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="4" r inv /></sec> 減少 效果 額外 賦予。
 dialogue:
   KR:
     "1":
@@ -3135,20 +3171,13 @@ skins:
   sid: null
   artist: MAR10
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -3163,25 +3192,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_AGS_Arachne_N
   skins:
     - sid: 1
       artist: MAR10
       price: 159
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 28
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -3198,5 +3225,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_AGS_Arachne_NS1
         consumableKey: Skin_AGS_Arachne_1

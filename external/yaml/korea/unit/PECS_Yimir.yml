@@ -3013,6 +3013,27 @@ skills:
               level: "0"
             value: Char_PECS_Babariana_N
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 집게를 뻗어 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 시</sec> <sec typ="cond">스쿼드 내에 <char uid="PECS_Babariana" />가 있을 경우</sec>, <sec typ="dmg"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">철거 개시</sec> 스킬 협동 공격</sec>을 유도합니다.
+      EN: |-
+        to a single target extends her claw <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 2 rounds, target's <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec> increases.
+        <sec typ="cond">On critical hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken decrease removes the effect</sec>.
+        <sec typ="cond">On hit</sec> <sec typ="cond">in squad to <char uid="PECS_Babariana" /> if present</sec>, <sec typ="dmg"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">demolition unit(s) when</sec> skill coordinated attack</sec> triggers.
+      JP: |-
+        単一対象へ ジイプくを ップオトオ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ 減少 効果を 解除</sec>します。
+        <sec typ="cond">命中時</sec> <sec typ="cond">スクワッド 内に <char uid="PECS_Babariana" />が 存在する場合</sec>、 <sec typ="dmg"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">チオルグオ 個時</sec> スキル 協同攻撃</sec>を 誘導します。
+      TC: |-
+        單一目標給 集中 Ppeoteo 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" r /></sec>增加。
+        <sec typ="cond">暴擊時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害 減少 效果 解除</sec>。
+        <sec typ="cond">命中時</sec> <sec typ="cond">小隊 內於 <char uid="PECS_Babariana" /> 存在時</sec>， <sec typ="dmg"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Cheolgeo 個時</sec> 技能 協同攻擊</sec> 誘發。
   "2":
     key: "2"
     icon: SelfDefBuff
@@ -3810,6 +3831,23 @@ skills:
             base: 9999999
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        단일 대상 아군의 장비를 현장에서 즉석 수리하여, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>을(를) 증가시키고 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>합니다.
+        대상은 2라운드 동안 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 방어력 감소 / 받는 피해 증가 효과에 면역</sec> 상태가 됩니다.
+        <sec typ="cond">대상이 AGS 또는 보호기인 경우</sec> <sec typ="buff">지속 라운드가 1 증가</sec>하고, 효과가 유지되는 동안 <sec typ="cond">라운드 개시 시</sec> 대상의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>이(가) 추가로 증가합니다.
+      EN: |-
+        single target allies' equipment field in instant repair by doing, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> increases and enemy applied <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec>.
+        the target 2 rounds <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> Defense decrease / damage taken increase effect and immunity to</sec> state.
+        <sec typ="cond">target AGS or Defenderif</sec> <sec typ="buff">continuous round 1 increase</sec> and, effect and maintained for <sec typ="cond">At round start</sec> target's <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>() additionally increases.
+      JP: |-
+        単一対象 味方の 装備を ハヨンジアンで ジウクスオク 数ルイして、 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>を 増加時クイし 適用された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>します。
+        対象は 2ラウンドの間 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 防御力 減少 / 受けるダメージ 増加 効果に 免疫</sec> 状態になります。
+        <sec typ="cond">対象が AGS または 保護機の場合</sec> <sec typ="buff">持続 ラウンドが 1 増加</sec>し、 効果が ユジイドウェは 間 <sec typ="cond">ラウンド開始時</sec> 対象の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>が追加で増加します。
+      TC: |-
+        單一目標 我方的 裝備 現場在 即席 數利並， <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> 增加時台並 套用已 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>。
+        目標 2回合內 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 防禦力 減少 / 受到的傷害 增加 效果於 免疫</sec> 變為狀態。
+        <sec typ="cond">目標 AGS 或 保護機若為</sec> <sec typ="buff">持續 回合 1 增加</sec>並， 效果 維持doe 期間 <sec typ="cond">回合開始時</sec> 目標的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>會額外增加。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -4450,6 +4488,23 @@ skills:
             base: 1
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군 중장형 바이오로이드의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 아군 보호기의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="8" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="9" r inv /></sec>가 감소합니다.
+        <sec typ="cond">자신 외의 AGS가 있을 경우</sec>, 상기 효과가 50% 증폭되고 <sec typ="buff"><sec typ="note">협동 건설</sec>로 부여한 효과를 자신도 동일하게 획득</sec>합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, allies Heavy-type Bioroid of <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="1" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, allies Defender of <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="8" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="9" r inv /></sec> decreases.
+        <sec typ="cond">self other than of AGS if present</sec>, above effect and increased by 50%becomes and <sec typ="buff"><sec typ="note">Cooperative Construction</sec> as grant one effect and self also same gain</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 味方 重装型 バイオロイドの <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 味方 保護機の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="8" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="9" r inv /></sec>が減少します。
+        <sec typ="cond">自身 外の AGSが 存在する場合</sec>、 上記 効果が 50%増幅になり、 <sec typ="buff"><sec typ="note">協同建設</sec>で ブウヨした 効果を 自身も ドオンイルするよう 獲得</sec>します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 我方 重裝型 生化人的 <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="1" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 我方 保護機的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="8" r /></sec> 增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="9" r inv /></sec>減少。
+        <sec typ="cond">自身 外的 AGS 存在時</sec>， 上述 效果 增幅50%變為，且 <sec typ="buff"><sec typ="note">協同建設</sec>以 賦予 效果 自身也 同相同地 獲得</sec>。
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -4770,6 +4825,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">전투 개시 후</sec> 자신이 최초로 사용한 스킬에 대해, 이후 전투 종료까지 해당 스킬 사용 시 AP 일부를 돌려받습니다.
+        자신에 의한 액티브 스킬 지속 효과가 없는 대상에 대해, 스킬 효과 적용 시 수치가 두 배로 증폭됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="0" r /></sec> increases.
+        <sec typ="cond">battle units when after</sec> self first as used skill to against, after battle end up to the When using the skill AP some recovers.
+        self to by active skill continuous effect and none target to against, skill when the effect is applied value doubled.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">戦闘 個時 後</sec> 自身が 最初で スアヨンした スキルに ドエして、 以後 戦闘 ジオンルヨまで 該当 スキル使用時 AP 一部を 返還されます。
+        自身に よる アクティブ スキル 持続 効果が ない 対象に ドエして、 スキル 効果適用時 数値が 2倍に増幅されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="0" r /></sec>增加。
+        <sec typ="cond">戰鬥 個時 後</sec> 自身 首次以 使用 技能於 對， 之後 戰鬥 結束至 該 使用技能時 AP 部分 返還。
+        自身於 的 主動 技能 持續 效果 無 目標於 對， 技能 套用效果時 數值 增幅為2倍。
   "5":
     key: "5"
     icon: P.TeamSpdBuff
@@ -5145,6 +5217,27 @@ skills:
             base: 1
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신을 제외한 아군 AGS 또는 <cmt t="비스마르크 코퍼레이션"><import name="Bismark" /></cmt> 소속 바이오로이드에게 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 부여합니다.
+        <sec typ="cond">상기 효과를 가진 아군이 있을 경우</sec> 자신도 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 획득하고, <sec typ="cond"><sec typ="note">현장 수리</sec> 사용 시</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해 최소화 <val base="2" per="0" signless />회</sec>를 추가로 부여합니다.
+        <sec typ="cond">적 공격 시</sec>, <sec typ="note">현장 수리</sec> 지속 효과를 가진 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">At round start</sec>, self excluding allies AGS or <cmt t="Bismarck Corporation"><import name="Bismark" /></cmt> affiliated Bioroidto <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> grants the effect.
+        <sec typ="cond">above effect and formation allies if present</sec> self also <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> effect and gains and, <sec typ="cond"><sec typ="note">field repair</sec> When used</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Damage Minimization <val base="2" per="0" signless />times</sec> additionally grant.
+        <sec typ="cond">When attacking an enemy</sec>, <sec typ="note">field repair</sec> continuous effect and formation allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec> increases.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身を ジエ外した 味方 AGS または <cmt t="ビスマルクコーポレーション"><import name="Bismark" /></cmt> 所属 バイオロイドに <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視</sec> 効果を付与します。
+        <sec typ="cond">上記 効果を 持つ 味方が 存在する場合</sec> 自身も <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視</sec> 効果を 獲得し、 <sec typ="cond"><sec typ="note">ハヨンジアン 数ルイ</sec> 使用時</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージ最小化 <val base="2" per="0" signless />回</sec>を 追加で ブウヨします。
+        <sec typ="cond">敵攻撃時</sec>、 <sec typ="note">ハヨンジアン 数ルイ</sec> 持続 効果を 持つ 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 自身 解除外 我方 AGS 或 <cmt t="俾斯麥企業"><import name="Bismark" /></cmt> 所屬 生化人給 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec> 賦予效果。
+        <sec typ="cond">上述 效果 持有 我方 存在時</sec> 自身也 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec> 效果 獲得，並 <sec typ="cond"><sec typ="note">現場 數利</sec> 使用時</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 傷害最小化 <val base="2" per="0" signless />次</sec> 額外 賦予。
+        <sec typ="cond">攻擊敵人時</sec>， <sec typ="note">現場 數利</sec> 持續 效果 持有 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -5200,8 +5293,7 @@ dialogue:
         하지만 시간 외 노동이 허용되는 건
         12시간까지입니다.
         그 이상은 비서들과 상담하시길 바랍니다.
-      Oath: 톱니가 한 치의 오차 없이 맞물릴 때, 기계는 그것을 ‘신뢰’라 부릅니다. 그리고 당신과의 관계 역시, 한 치의 오차 없이 맞물리고
-        있지요. 오퍼레이터, 제 증기와 강철은 당신을 위해 돌아갈 겁니다.
+      Oath: 톱니가 한 치의 오차 없이 맞물릴 때, 기계는 그것을 ‘신뢰’라 부릅니다. 그리고 당신과의 관계 역시, 한 치의 오차 없이 맞물리고 있지요. 오퍼레이터, 제 증기와 강철은 당신을 위해 돌아갈 겁니다.
       OathIdle_01: |-
         기계의 심장은
         톱니와 기름으로 이루어졌지만,
@@ -5256,8 +5348,7 @@ dialogue:
       SPIdle_02_01: |-
         오퍼레이터 확인, 접근을 허용합니다.
         오늘은 어떤 데이터가 필요하십니까?
-      Oath: 초기 명령 프로토콜에는 ‘신뢰’라는 항목이 존재하지 않았습니다. 그러나 반복된 협동으로 그 변수의 유용성이 입증되었습니다.
-        오퍼레이터, 당신의 판단은 효율적이며 일관적입니다. 본 유닛은 그것을… ‘신뢰’라고 정의합니다.
+      Oath: 초기 명령 프로토콜에는 ‘신뢰’라는 항목이 존재하지 않았습니다. 그러나 반복된 협동으로 그 변수의 유용성이 입증되었습니다. 오퍼레이터, 당신의 판단은 효율적이며 일관적입니다. 본 유닛은 그것을… ‘신뢰’라고 정의합니다.
       OathIdle_01: |-
         오퍼레이터,
         당신은 더 이상 검증 대상이 아닙니다.
@@ -5559,20 +5650,13 @@ skins:
   sid: null
   artist: Yura Unni
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5587,25 +5671,20 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Yimir_N
   skins:
     - sid: 1
       artist: Yura Unni
       price: 192
-      G: false
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
       anim:
         - false
         - false
@@ -5622,5 +5701,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_PECS_Yimir_NS1_Dam
         consumableKey: Skin_PECS_Yimir_1

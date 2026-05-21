@@ -720,6 +720,10 @@ source:
     - Ev:Ev34:EV1-3EX
   - - Ev:Ev35:EV1-3EX
     - Ev:Ev35:EV2-5
+  - - Ev:Ev36:EV2-7
+  - - Ev:Ev37:EV2-4EX
+  - - Ev:Ev38:EV1-1EX
+  - - Ev:Ev39:EV1-3EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2622,6 +2626,23 @@ skills:
             base: 0.025
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        유탄을 차 날려 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 강화 효과를 해제</sec>합니다.
+      EN: |-
+        grenade kick kicks away <dmg elem="physics" />.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Counterattack removes buffs</sec>.
+      JP: |-
+        榴弾を チア ンアルルヨ<dmg elem="physics" />を与えます。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">命中時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃 強化効果を 解除</sec>します。
+      TC: |-
+        榴彈 Cha Na害怕 造成<dmg elem="physics" />。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">命中時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊 強化效果 解除</sec>。
   "2":
     key: "2"
     icon: MeleeAttack
@@ -5756,6 +5777,31 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        정권지르기로 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> <dmg elem="physics" /> 피해를 줍니다.
+        <sec typ="dmg"><buff typ="PhyATK_UP" /> 대상이 전열에 가까울 수록 피해량이 증가</sec>합니다.
+        대상 전열 : <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>
+        대상 중열 : <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>
+        대상 후열 : <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="4" r /></sec>
+      EN: |-
+        Deals <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> <dmg elem="physics" /> damage with a straight punch.
+        <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage increases the closer the target is to the front row</sec>.
+        Target in front row: <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="2" r /></sec>
+        Target in middle row: <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="3" r /></sec>
+        Target in back row: <sec typ="dmg"><buff typ="PhyATK_UP" /> Damage <val idx="4" r /></sec>
+      JP: |-
+        正拳突きで<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通 <val idx="0" r /></sec><dmg elem="physics" />ダメージを与えます。
+        <sec typ="dmg"><buff typ="PhyATK_UP" />対象が前列に近いほどダメージ量が増加</sec>します。
+        対象前列：<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="2" r /></sec>
+        対象中列：<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="3" r /></sec>
+        対象後列：<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="4" r /></sec>
+      TC: |-
+        以正拳突刺造成<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦穿透 <val idx="0" r /></sec><dmg elem="physics" />傷害。
+        <sec typ="dmg"><buff typ="PhyATK_UP" />目標越靠近前排，傷害量越高</sec>。
+        目標在前排：<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="2" r /></sec>
+        目標在中排：<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="3" r /></sec>
+        目標在後排：<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="4" r /></sec>
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -6076,6 +6122,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_1
+                      - Effect_BUFF_MiniTiequan_N_1
                     attr: 6
                 - false
               body:
@@ -6115,6 +6162,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_2
+                      - Effect_BUFF_MiniTiequan_N_2
                     attr: 6
                 - false
               body:
@@ -6154,6 +6202,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_3
+                      - Effect_BUFF_MiniTiequan_N_3
                     attr: 6
                 - false
               body:
@@ -6193,6 +6242,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_4
+                      - Effect_BUFF_MiniTiequan_N_4
                     attr: 6
                 - false
               body:
@@ -6232,6 +6282,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_5
+                      - Effect_BUFF_MiniTiequan_N_5
                     attr: 6
                 - false
               body:
@@ -6271,6 +6322,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_6
+                      - Effect_BUFF_MiniTiequan_N_6
                     attr: 6
                 - false
               body:
@@ -6310,6 +6362,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_7
+                      - Effect_BUFF_MiniTiequan_N_7
                     attr: 6
                 - false
               body:
@@ -6349,6 +6402,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_8
+                      - Effect_BUFF_MiniTiequan_N_8
                     attr: 6
                 - false
               body:
@@ -6388,6 +6442,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_9
+                      - Effect_BUFF_MiniTiequan_N_9
                     attr: 6
                 - false
               body:
@@ -6427,6 +6482,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_10
+                      - Effect_BUFF_MiniTiequan_N_10
                     attr: 6
                 - false
               body:
@@ -6466,6 +6522,7 @@ skills:
                     func: OR
                     select:
                       - Effect_BUFF_Miji_N_11
+                      - Effect_BUFF_MiniTiequan_N_11
                     attr: 6
                 - false
               body:
@@ -6691,6 +6748,31 @@ skills:
             base: 150
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="cond">적 공격 시</sec>, <sec typ="cond">적 처치 시</sec>, <sec typ="cond">공격 당할 시</sec>마다 해당 수치의 50% 만큼의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec> 증가 효과를 영구 획득합니다. (각 최대 3중첩)
+        <sec typ="cond">적 공격 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec>이(가) 증가합니다.
+        <sec typ="cond">치명타 시</sec>, 추가로 해당 수치의 50% 만큼 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP가 증가</sec>합니다.
+        <sec typ="buff"><buff typ="AP_UP" /> AP 증가 효과</sec>는 각 <sec>액티브 스킬 레벨에 비례</sec>합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> increases.
+        <sec typ="cond">When attacking an enemy</sec>, <sec typ="cond">When killing an enemy</sec>, <sec typ="cond">attack per can when</sec>each the value of 50% by of <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> increase effect and permanent gains. (each up to 3stack)
+        <sec typ="cond">When attacking an enemy</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec> increases.
+        <sec typ="cond">On critical hit</sec>, additionally the value of 50% by own <sec typ="buff"><buff typ="AP_UP" /> AP increase</sec>.
+        <sec typ="buff"><buff typ="AP_UP" /> AP increase effect and</sec> each <sec>active skill level</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>が増加します。
+        <sec typ="cond">敵攻撃時</sec>、 <sec typ="cond">敵撃破時</sec>、 <sec typ="cond">攻撃 ごとできる 時</sec>ごとに 該当 数値の 50% 分の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> 増加 効果を 永久 獲得します。 (各 最大 3重複)
+        <sec typ="cond">敵攻撃時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec>、 追加で 該当 数値の 50% 分 自身の <sec typ="buff"><buff typ="AP_UP" /> APが 増加</sec>します。
+        <sec typ="buff"><buff typ="AP_UP" /> AP 増加 効果</sec>は 各 <sec>アクティブ スキル レベルに 比例</sec>します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec>增加。
+        <sec typ="cond">攻擊敵人時</sec>， <sec typ="cond">擊殺敵人時</sec>， <sec typ="cond">攻擊 每可 時</sec>每 該 數值的 50% 等量的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec> 增加 效果 永久 獲得。 (各 最大 3疊加)
+        <sec typ="cond">攻擊敵人時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" slot="1" /></sec>增加。
+        <sec typ="cond">暴擊時</sec>， 額外 該 數值的 50% 等量 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP 增加</sec>。
+        <sec typ="buff"><buff typ="AP_UP" /> AP 增加 效果</sec> 各 <sec>主動 技能 等級於 成比例</sec>。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -7114,6 +7196,27 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="0" /></sec>가 증가합니다.
+        <sec>스킬 레벨 10에서 사거리가 추가로 증가합니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 최대 행동 횟수 <val idx="4" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="0" /></sec> increases.
+        <sec>At skill level 10, Range additionally increases.</sec>
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="3" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="Action_Number_Change_Up" /> up to number of actions <val idx="4" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>が増加します。
+        <sec>スキルレベル10で 射程が追加で増加します。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大 行ドオン 回数 <val idx="4" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="0" /></sec>增加。
+        <sec>技能等級10時 射程會額外增加。</sec>
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="Action_Number_Change_Up" /> 最大 列同 次數 <val idx="4" /></sec>增加。
   "5":
     key: "5"
     icon: P.AssaultAttack
@@ -7303,6 +7406,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        깨달음을 얻은 티에치엔의 모든 공격은 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 대상의 방어력을 무시</sec>합니다.
+        <sec typ="note">백보신권</sec>의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통</sec> 효과가 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막/받는 피해 감소 무시</sec> 효과로 변환됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="3" r /></sec>가 증가합니다.
+      EN: |-
+        enlightenment gain Tieh Chuan of all attack <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> target's Defense ignore</sec>.
+        <sec typ="note">Hundred-Step Divine Fist</sec> of <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration</sec> effect and <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier/damage taken decrease ignore</sec> effect andas transforms.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy damage <val idx="3" r /></sec> increases.
+      JP: |-
+        ックエドアルウムを オトは トイにチイエンの すべての 攻撃は <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 対象の 防御力を 無視</sec>します。
+        <sec typ="note">百歩神拳</sec>の <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通</sec> 効果が <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア/受けるダメージ 減少 無視</sec> 効果で 変換されます。
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="3" r /></sec>が増加します。
+      TC: |-
+        Kkaedaleum 獲得 Ti於值en的 所有 攻擊 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 目標的 防禦力 無視</sec>。
+        <sec typ="note">百步神拳</sec>的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透</sec> 效果 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 護盾/受到的傷害 減少 無視</sec> 效果以 轉換。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害 <val idx="3" r /></sec>增加。
 dialogue:
   KR:
     "1":
@@ -7405,9 +7525,7 @@ dialogue:
         흐응? 코치. 테니스 코칭보다는…
         침대 위의 코칭에 더 관심이 많아 보이네?
         그러면… 경기장을 바꿔볼까?
-      Oath: 헤에~ 코치, 그런 눈으로 날 바라보고 있었어? 헤헤, 농담. 언제 고백하나 열심히 기다리고 있었지. 그거 알아, 코치? 단식으로
-        뛰기에는 삶이란 경기장이 나에게는 너무 넓어. 그러니... 나랑 같이 복식으로 삶이란 경기장에서 뛰어줄래? 러브 올! 코치와 나의
-        경기는 지금부터야!
+      Oath: 헤에~ 코치, 그런 눈으로 날 바라보고 있었어? 헤헤, 농담. 언제 고백하나 열심히 기다리고 있었지. 그거 알아, 코치? 단식으로 뛰기에는 삶이란 경기장이 나에게는 너무 넓어. 그러니... 나랑 같이 복식으로 삶이란 경기장에서 뛰어줄래? 러브 올! 코치와 나의 경기는 지금부터야!
       OathIdle_01: |-
         수신제가치국평천하라.
         챔피언이 되기 위해선 갈 길이 머네.
@@ -7697,8 +7815,7 @@ dialogue:
       SPIdle_02_01: |-
         Ummm… are you doing this because
         I seem to be out of energy?
-      Oath: Oh… So, what did you like about me, master? I don’t… Ugh, whatever!
-        Anyway, once a master, always a master. So, keep that in mind…!
+      Oath: Oh… So, what did you like about me, master? I don’t… Ugh, whatever! Anyway, once a master, always a master. So, keep that in mind…!
       OathIdle_01: |-
         I want to learn a lot of things
         from you. He… You’ll teach me, right?
@@ -7751,11 +7868,7 @@ dialogue:
         Hmm? Coach. It seems like you’re more interested in…
         coaching on the bed rather than on the court.
         Then… shall we change where we're playing?
-      Oath: Come on, Coach, why are you looking at me like that? Hehe, I’m kidding. I
-        was patiently waiting for you to confess to me. You know what? The court
-        that is life is too big for me to play a single match. So… would you
-        play a doubles match in the game of life with me? Love All! Our match
-        starts now!
+      Oath: Come on, Coach, why are you looking at me like that? Hehe, I’m kidding. I was patiently waiting for you to confess to me. You know what? The court that is life is too big for me to play a single match. So… would you play a doubles match in the game of life with me? Love All! Our match starts now!
       OathIdle_01: |-
         The strength of a nation derives from the integrity of the home.
         I have a long way to go to become a champion.
@@ -7763,8 +7876,7 @@ dialogue:
         shouldn’t I focus more on cleaning up my home?
       MVP: ""
     "":
-      Join: Nice to meet you. You know who I am, right? It doesn’t matter if you
-        don’t. You will soon.
+      Join: Nice to meet you. You know who I am, right? It doesn’t matter if you don’t. You will soon.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -7810,10 +7922,8 @@ dialogue:
       SPIdle_02_01: |-
         *Sighs* This pervert is…
         my Master…
-      Oath: >-
-        Huh? I know you fell in love… in love… Whoa… Master! I was totally
-        thinking the same thing!
-
+      Oath: |-
+        Huh? I know you fell in love… in love… Whoa… Master! I was totally thinking the same thing!
         Let's go up the ladder of success together! Let our goal be… world conquest.
       OathIdle_01: |-
         I wasn’t joking when I said
@@ -7843,14 +7953,10 @@ dialogue:
         a good thing? Master. Can’t you guess
         Why I’m losing weight? You keep saying we should train…
         Well, we could call it training.​
-      Idle_01_02: >-
-        Come to think of it, success isn’t that huge. Finding someone to spend
-        the rest
-
+      Idle_01_02: |-
+        Come to think of it, success isn’t that huge. Finding someone to spend the rest
         of your life with, and tying the knot.
-
         What better success is there?
-
         I’ve already succeeded!​
       Idle_01_03: |-
         What should I do if I achieve world domination? Master.
@@ -7960,9 +8066,8 @@ dialogue:
         嗯？教練，比起網球指導…
         你好像對床上指導更有興趣？
         那麼…我們要不要換個賽場？
-      Oath: >-
+      Oath: |-
         嘿～教練，你在用那種眼神望著我嗎？嘿嘿，開玩笑的，我一直在努力等你告白。
-
 
         教練，你知道嗎？要我在人生這個賽場裡單打的話，場地對我來說太廣了，所以…你要跟我一起在人生這個賽場裡打雙打嗎？LOVE ALL！教練和我的比賽，現在才要開始！
       OathIdle_01: |-
@@ -8068,20 +8173,15 @@ skins:
   sid: null
   artist: SIMA
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+    G:
+      - _
   anim:
     - false
     - false
@@ -8096,25 +8196,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Tiequan_N
   skins:
     - sid: 1
       artist: SIMA
       price: 46
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - true
         - false
@@ -8131,24 +8227,26 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_PECS_Tiequan_1
     - sid: 2
       artist: MEL
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -8165,6 +8263,7 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_PECS_Tiequan_NS2
         2dmodel_dam: 2DModel_PECS_Tiequan_NS2_Dam
         consumableKey: Skin_PECS_Tiequan_2

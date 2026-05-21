@@ -1706,6 +1706,19 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        기관총을 발사해 <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> 상태인 경우 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        Fires a machine gun to deal <dmg elem="physics" />.
+        If the target is under <sec typ="cond"><buff typ="EVADE_DOWN" /> Evasion Down</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> DEF Down</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+      JP: |-
+        機関銃を発射して<dmg elem="physics" />を与えます。
+        対象が<sec typ="cond"><buff typ="EVADE_DOWN" />回避減少</sec> / <sec typ="cond"><buff typ="DEF_DOWN" />防御力減少</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="0" r /></sec>が増加します。
+      TC: |-
+        發射機關槍造成<dmg elem="physics" />。
+        若目標處於<sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec> / <sec typ="cond"><buff typ="DEF_DOWN" />防禦力降低</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: CannonShot
@@ -3633,6 +3646,27 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        대 장갑 로켓포를 발사해 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        대상의 방어력을 일정 비율 무시합니다. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r signless /></sec>
+        <sec typ="cond">적중 시</sec>, 자신의 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="1" r /></sec>가 증가합니다.
+        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> 상태인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      EN: |-
+        Fires an anti-armor rocket launcher to deal <dmg elem="physics" /> to a single target.
+        Ignores a certain percentage of the target's DEF. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="0" r signless /></sec>
+        <sec typ="cond">On hit</sec>, own <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> anti-Heavy damage <val idx="1" r /></sec> increases.
+        If the target is under <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="SNARE" /> Immobilize</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
+      JP: |-
+        対装甲ロケット砲を発射し、単一対象へ<dmg elem="physics" />を与えます。
+        対象の防御力を一定割合無視します。<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r signless /></sec>
+        <sec typ="cond">命中時</sec>、自身の<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />対重装型ダメージ<val idx="1" r /></sec>が増加します。
+        対象が<sec typ="cond"><buff typ="MARKING" />標的</sec> / <sec typ="cond"><buff typ="SNARE" />移動不可</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ<val idx="3" r /></sec>が増加します。
+      TC: |-
+        發射反裝甲火箭砲，對單一目標造成<dmg elem="physics" />。
+        以一定比例無視目標的防禦力。<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="0" r signless /></sec>
+        <sec typ="cond">命中時</sec>，自身的<sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型傷害量<val idx="1" r /></sec>增加。
+        若目標處於<sec typ="cond"><buff typ="MARKING" />標記</sec> / <sec typ="cond"><buff typ="SNARE" />無法移動</sec>狀態，<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量<val idx="3" r /></sec>增加。
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -4140,6 +4174,23 @@ skills:
             base: 1
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신과 같은 열에 위치한 경장 / 중장형 아군의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>하고 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="1" r /></sec>를 증가시킵니다.
+        <sec><cmt t="앵거 오브 호드"><import name="AngerOfTheHorde" /></cmt> 소속 전투원은 상기 효과의 역할군 및 위치 조건을 무시합니다.</sec>
+        <sec typ="cond">전투 개시 시</sec>, 자신과 같은 열에 위치한 경장 / 중장형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports attacks</sec> of Light / Heavy allies in the same column as self and increases their <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="1" r /></sec>.
+        <sec>Combatants belonging to <cmt t="Anger of the Horde"><import name="AngerOfTheHorde" /></cmt> ignore the role and position conditions of the above effects.</sec>
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec> of Light / Heavy allies in the same column as self increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身と同じ列にいる軽装 / 重装型味方の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃を支援</sec>し、<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="1" r /></sec>を増加させます。
+        <sec><cmt t="アンガー・オブ・ホード"><import name="AngerOfTheHorde" /></cmt>所属戦闘員は、上記効果の役割群および位置条件を無視します。</sec>
+        <sec typ="cond">戦闘開始時</sec>、自身と同じ列にいる軽装 / 重装型味方の<sec typ="buff"><buff typ="AP_UP" />AP <val idx="9" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援攻擊</sec>與自身位於同一列的輕裝 / 重裝型友軍，並增加其<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="1" r /></sec>。
+        <sec>隸屬於<cmt t="憤怒部落"><import name="AngerOfTheHorde" /></cmt>的戰鬥員會無視上述效果的角色類型與位置條件。</sec>
+        <sec typ="cond">戰鬥開始時</sec>，與自身位於同一列的輕裝 / 重裝型友軍的<sec typ="buff"><buff typ="AP_UP" />AP <val idx="9" /></sec>增加。
   "4":
     key: "4"
     icon: P.SetTurret
@@ -4856,6 +4907,27 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec>가 감소합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 아군 인원 수에 비례하여 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec>가 증가합니다.
+        <sec typ="cond">스쿼드 내에 자신을 제외한 <cmt t="앵거 오브 호드"><import name="AngerOfTheHorde" /></cmt> 소속 전투원이 있을 경우</sec>, <sec typ="buff"><buff typ="AP_UP" /> 행동력 증가</sec> 효과가 50% 증폭됩니다.
+        <sec typ="cond">자신을 제외한 <cmt t="앵거 오브 호드"><import name="AngerOfTheHorde" /></cmt> 소속 전투원의 단일 대상 스킬 적중 시</sec>, <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">180mm 로켓포</sec> 협동 공격</sec>을 실행합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical Rate <val idx="1" r /></sec> increases, and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="2" r inv /></sec> decreases.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="5" r /></sec> increases in proportion to the number of allies.
+        <sec typ="cond">If there is a combatant belonging to <cmt t="Anger of the Horde"><import name="AngerOfTheHorde" /></cmt> other than self in the squad</sec>, the <sec typ="buff"><buff typ="AP_UP" /> Action Power increase</sec> effect is amplified by 50%.
+        <sec typ="cond">When a combatant belonging to <cmt t="Anger of the Horde"><import name="AngerOfTheHorde" /></cmt> other than self hits with a single-target skill</sec>, performs a <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> cooperative attack with <sec typ="note">180mm Rocket Launcher</sec></sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル<val idx="1" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="2" r inv /></sec>が減少します。
+        <sec typ="cond">ラウンド開始時</sec>、味方の人数に比例して自身の<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>が増加します。
+        <sec typ="cond">スクワッド内に自身を除く<cmt t="アンガー・オブ・ホード"><import name="AngerOfTheHorde" /></cmt>所属戦闘員がいる場合</sec>、<sec typ="buff"><buff typ="AP_UP" />行動力増加</sec>効果が50%増幅されます。
+        <sec typ="cond">自身を除く<cmt t="アンガー・オブ・ホード"><import name="AngerOfTheHorde" /></cmt>所属戦闘員の単一対象スキル命中時</sec>、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">180mmロケット砲</sec>協同攻撃</sec>を実行します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊<val idx="1" r /></sec>增加，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="2" r inv /></sec>減少。
+        <sec typ="cond">回合開始時</sec>，依友軍人數比例增加自身的<sec typ="buff"><buff typ="AP_UP" />行動力<val idx="5" r /></sec>。
+        <sec typ="cond">若小隊內有除自身外隸屬於<cmt t="憤怒部落"><import name="AngerOfTheHorde" /></cmt>的戰鬥員</sec>，<sec typ="buff"><buff typ="AP_UP" />行動力增加</sec>效果增幅50%。
+        <sec typ="cond">除自身外隸屬於<cmt t="憤怒部落"><import name="AngerOfTheHorde" /></cmt>的戰鬥員以單一目標技能命中時</sec>，執行<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">180mm火箭砲</sec>協同攻擊</sec>。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -5049,6 +5121,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">180mm 로켓포</sec>의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="1" r /></sec> 증가 효과를 획득합니다.
+        <sec>스킬 효과는 <sec typ="note">기동 전술 지원</sec> 스킬 레벨에 비례합니다.</sec>
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드 내에 <char uid="BR_Khan" />이 있을 경우</sec>, 범위 내 <cmt t="앵거 오브 호드"><import name="AngerOfTheHorde" /></cmt> 소속 전투원에게 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막/피해 감소 무시</sec> 효과를 부여합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, gains increased <sec typ="note"></sec> DEF Penetration <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> / <val idx="0" r /></sec> anti-Heavy damage <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> effects for <val idx="1" r />180mm Rocket Launcher</sec>.
+        <sec>Skill effects are proportional to the level of <sec typ="note">Mobile Tactical Support</sec>.</sec>
+        <sec typ="cond">At round start</sec>, <sec typ="cond">if <char uid="BR_Khan" /> is in the squad</sec>, grants combatants belonging to <cmt t="Anger of the Horde"><import name="AngerOfTheHorde" /></cmt> within range the <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier/Damage Reduction</sec> effect.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="note">180mmロケット砲</sec>の<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防御貫通<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />対重装型ダメージ<val idx="1" r /></sec>増加効果を獲得します。
+        <sec>スキル効果は<sec typ="note">機動戦術支援</sec>スキルレベルに比例します。</sec>
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">スクワッド内に<char uid="BR_Khan" />がいる場合</sec>、範囲内の<cmt t="アンガー・オブ・ホード"><import name="AngerOfTheHorde" /></cmt>所属戦闘員に<sec typ="buff"><buff typ="BARRIER_PIERCE" />バリア/ダメージ減少無視</sec>効果を付与します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，獲得<sec typ="note">180mm火箭砲</sec>的<sec typ="buff"><buff typ="DEF_PIERCE_UP" />防禦貫通<val idx="0" r /></sec> / <sec typ="dmg"><buff typ="ARMORED_DMG_UP" />對重裝型傷害量<val idx="1" r /></sec>增加效果。
+        <sec>技能效果與<sec typ="note">機動戰術支援</sec>技能等級成比例。</sec>
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若小隊內有<char uid="BR_Khan" /></sec>，賦予範圍內隸屬於<cmt t="憤怒部落"><import name="AngerOfTheHorde" /></cmt>的戰鬥員<sec typ="buff"><buff typ="BARRIER_PIERCE" />無視防護罩/傷害減少</sec>效果。
 dialogue:
   KR:
     "1":
@@ -5159,8 +5248,7 @@ dialogue:
         이거 불건전 이성교제인데.
         그러니까… 다른 애들한테… 들키지 않게…
         마저하자.
-      Oath: 헤헤, 이왕 이런 모습을 했으니 정말로 같이 학교를 다녔으면 더 좋았을 텐데. 같이 등하교하고, 수업을 듣고, 부활동하고,
-        데이트하고. 하지만… 지금이 나쁘다는 건 아냐. 사령관이랑 같이 있다는 게 제일 중요하니까. 헤헤. 앞으로도 쭉 잘 부탁해.
+      Oath: 헤헤, 이왕 이런 모습을 했으니 정말로 같이 학교를 다녔으면 더 좋았을 텐데. 같이 등하교하고, 수업을 듣고, 부활동하고, 데이트하고. 하지만… 지금이 나쁘다는 건 아냐. 사령관이랑 같이 있다는 게 제일 중요하니까. 헤헤. 앞으로도 쭉 잘 부탁해.
       OathIdle_01: |-
         사령관. 나 바뀐 거 없어? 응? 자세히 봐.
         모르겠어? 흐음… 어쩔 수 없지.
@@ -5363,8 +5451,7 @@ dialogue:
         [미번역]이거 불건전 이성교제인데.
         그러니까… 다른 애들한테… 들키지 않게…
         마저하자.
-      Oath: "[미번역]헤헤, 이왕 이런 모습을 했으니 정말로 같이 학교를 다녔으면 더 좋았을 텐데. 같이 등하교하고, 수업을 듣고, 부활동하고,
-        데이트하고. 하지만… 지금이 나쁘다는 건 아냐. 사령관이랑 같이 있다는 게 제일 중요하니까. 헤헤. 앞으로도 쭉 잘 부탁해."
+      Oath: "[미번역]헤헤, 이왕 이런 모습을 했으니 정말로 같이 학교를 다녔으면 더 좋았을 텐데. 같이 등하교하고, 수업을 듣고, 부활동하고, 데이트하고. 하지만… 지금이 나쁘다는 건 아냐. 사령관이랑 같이 있다는 게 제일 중요하니까. 헤헤. 앞으로도 쭉 잘 부탁해."
       OathIdle_01: |-
         [미번역]사령관. 나 바뀐 거 없어? 응? 자세히 봐.
         모르겠어? 흐음… 어쩔 수 없지.
@@ -5484,10 +5571,8 @@ dialogue:
       SPIdle_02_01: |-
         Now you don’t have to make excuses…
         Can you raise it up?
-      Oath: >-
-        Hmm… Although the process was a little strange, it worked out as you
-        wanted. I-it’s not because I was worried that
-
+      Oath: |-
+        Hmm… Although the process was a little strange, it worked out as you wanted. I-it’s not because I was worried that
         I’d only be the one to fall behind. I just… wanted to be in a closer relationship with you, commander. Do you want me to say it in words? I love you.
       OathIdle_01: |-
         You want me to stay like this…?
@@ -5566,11 +5651,9 @@ dialogue:
         it’s not that I don’t like it. It’s just…
         He he…
       SPIdle_02_01: Hey… slow down a bit… you’re rushing…
-      Oath: >-
+      Oath: |-
         Oh my gosh! What is this?! What was it? What wasㅡ it?
-
         Come on. Stop playing games! Heh… How delightfulㅡ I love you too, Commander. 
-
         So… from now on, we have the closest relationship, right?
       OathIdle_01: |-
         I didn’t really enjoy
@@ -5595,10 +5678,8 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
-        I don’t want to show my weaknesses. But… To you, I want to show you
-        everything.
-
+      Idle_01_01: |-
+        I don’t want to show my weaknesses. But… To you, I want to show you everything.
         My weaknesses, my strengths, everything. Is that okay with you?
       Idle_01_02: |-
         You want me to go outside? No!
@@ -5787,20 +5868,13 @@ skins:
   sid: null
   artist: Rorobomb
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5815,25 +5889,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_QuickCamel_N
   skins:
     - sid: 1
       artist: Rorobomb
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - false
         - false
@@ -5850,24 +5920,26 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_QuickCamel_NS1
     - sid: 2
       artist: TunaMaYo
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -5884,6 +5956,7 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_QuickCamel_NS2
         2dmodel_dam: 2DModel_BR_QuickCamel_NS2_Dam
         consumableKey: Skin_BR_QuickCamel_2

@@ -1,10 +1,10 @@
 import { createElement, FunctionalComponent } from "preact";
 import { useEffect, useMemo, useState } from "preact/hooks";
-import { route, useRouter } from "preact-router";
+import { useLocation } from "preact-iso";
 
 import { Unit, UnitSkin } from "@/types/DB/Unit";
 
-import { useDBData } from "@/libs/Loader";
+import { assertDBData, useDBData } from "@/libs/Loader";
 import { useLocale } from "@/libs/Locale";
 import { AssetsRoot, ImageExtension, RarityDisplay, UnitClassDisplay, UnitRoleDisplay } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
@@ -47,6 +47,7 @@ interface UnitsViewProps {
 }
 
 const View: FunctionalComponent<UnitsViewProps> = (props) => {
+	const location = useLocation();
 	const [loc] = useLocale();
 
 	const [DisplayTab, setDisplayTab] = useState<TabTypes>(
@@ -62,9 +63,8 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 	);
 
 	const _unit = useDBData<Unit>(`unit/${props.uid}`);
-
 	const unit = useMemo(() => {
-		if (!_unit) return null;
+		if (!assertDBData(_unit)) return null;
 		return {
 			..._unit,
 			source: _unit.source
@@ -151,12 +151,12 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 					window.history.back();
 					setTimeout(() => {
 						if (window.location.href === href) // not moved?
-							route("/units");
+							location.route("/units");
 					}, 500);
 					// if (router.previous)
 					// 	window.history.back();
 					// else
-					// 	route("/units");
+					// 	location.route("/units");
 				} }>
 					<Locale k="COMMON_BACK" />
 				</Button>

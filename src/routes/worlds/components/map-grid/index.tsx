@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { useEffect, useMemo, useRef, useState } from "preact/hooks";
+import { useEffect, useMemo, useRef } from "preact/hooks";
 
 import { MapNodeEntity } from "@/types/DB/Map";
 import { STAGE_SUB_TYPE } from "@/types/Enums";

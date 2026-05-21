@@ -782,6 +782,10 @@ source:
     - Ev:Ev35:EV2-1
     - Ev:Ev35:EV2-4EX
   - - Ev:Ev36:EV1-8
+    - Ev:Ev36:EV2-2EX
+  - - Ev:Ev37:EV1-1EX
+  - - Ev:Ev38:EV1-3EX
+  - - Ev:Ev39:EV1-2EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -3884,6 +3888,23 @@ skills:
               level: "0"
             value: Char_BR_ALWraith_N
             chance: 1
+    desc:
+      KR: |-
+        리볼버 기관포를 발사해 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 도발하며 적중을 낮춥니다.
+        <sec typ="cond">스쿼드에 <char uid="BR_May" />, <char uid="BR_NightAngel" />, <char uid="BR_Sylphid" />, <char uid="BR_Banshee" />, <char uid="BR_StratoAngel" />, <char uid="BR_ALWraith" />가 있을 시</sec>, <sec typ="chance">100% 확률</sec>로 각각 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">석기 시대로!</sec>, <sec typ="note">고공 폭격</sec>, <sec typ="note">열 추적 로크 미사일</sec>, <sec typ="note">기관포 소사</sec>, <sec typ="note">고고도 폭격</sec>, <sec typ="note">조준 폭격</sec> 스킬로 협동 공격</sec>을 유도합니다.
+        <sec>협동 공격이 가능한 전투원이 여렷인 경우, 위 표기된 순으로 우선권을 가집니다. (<char uid="BR_May" /> -&gt; <char uid="BR_ALWraith" /> 순)</sec>
+      EN: |-
+        revolver machine cannon fires <dmg elem="physics" /> damage and 2 rounds target Provokeand Accuracyreduces.
+        <sec typ="cond">squad <char uid="BR_May" />, <char uid="BR_NightAngel" />, <char uid="BR_Sylphid" />, <char uid="BR_Banshee" />, <char uid="BR_StratoAngel" />, <char uid="BR_ALWraith" /> if present</sec>, <sec typ="chance">100% chance</sec> as respectively <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Back to the Stone Age!</sec>, <sec typ="note">High-Altitude Bombing</sec>, <sec typ="note">column additional enemy lock missile</sec>, <sec typ="note">Machine-Gun Strafing</sec>, <sec typ="note">High-Altitude Bombing</sec>, <sec typ="note">Aimed Bombing</sec> skill as coordinated attack</sec> triggers.
+        <sec>coordinated attack possible combatant multiple if, above listed in order as priority has. (<char uid="BR_May" /> -&gt; <char uid="BR_ALWraith" /> order)</sec>
+      JP: |-
+        リボルバー機関砲を 発射して<dmg elem="physics" />を与え、、 2ラウンドの間 対象を 挑発し、 命中を低下させます。
+        <sec typ="cond">スクワッドに <char uid="BR_May" />、 <char uid="BR_NightAngel" />、 <char uid="BR_Sylphid" />、 <char uid="BR_Banshee" />、 <char uid="BR_StratoAngel" />、 <char uid="BR_ALWraith" />が ある 時</sec>、 <sec typ="chance">100% 確率</sec>で それぞれ <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">石器時代へ！</sec>、 <sec typ="note">高空爆撃</sec>、 <sec typ="note">熱追跡ロックミサイル</sec>、 <sec typ="note">機関砲掃射</sec>、 <sec typ="note">高高度爆撃</sec>、 <sec typ="note">照準爆撃</sec> スキルで 協同攻撃</sec>を 誘導します。
+        <sec>協同攻撃が 可能した 戦闘員が ヨルヨトの場合、 ウィ プヨ機された スウンで 優先権を がジイプンイドア。 (<char uid="BR_May" /> -&順; <char uid="BR_ALWraith" /> スウン)</sec>
+      TC: |-
+        左輪機砲 發射 造成<dmg elem="physics" />，並 2回合內 目標 挑釁並 命中降低。
+        <sec typ="cond">小隊於 <char uid="BR_May" />， <char uid="BR_NightAngel" />， <char uid="BR_Sylphid" />， <char uid="BR_Banshee" />， <char uid="BR_StratoAngel" />， <char uid="BR_ALWraith" /> 有 時</sec>， <sec typ="chance">100% 機率</sec>以 各自 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">回到石器時代！</sec>， <sec typ="note">高空轟炸</sec>， <sec typ="note">熱追蹤鎖定飛彈</sec>， <sec typ="note">機砲掃射</sec>， <sec typ="note">高空轟炸</sec>， <sec typ="note">瞄準轟炸</sec> 技能以 協同攻擊</sec> 誘發。
+        <sec>協同攻擊 可能 戰鬥員 多個若為， 上 標記台已 順序以 優先權。 (<char uid="BR_May" /> -&依; <char uid="BR_ALWraith" /> 順序)</sec>
   "2":
     key: "2"
     icon: MultiMissile
@@ -4046,6 +4067,11 @@ skills:
             base: 0.1
             per: 0.005
             chance: 1
+    desc:
+      KR: 채프 미사일을 발사해 2라운드 동안 지정 범위에 있는 아군의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec>를 올리고, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="2" r inv /></sec>를 낮춥니다.
+      EN: chaff missile fires 2 rounds to the designated area exists allies' <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> raises and, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="2" r inv /></sec>reduces.
+      JP: チャフミサイルを 発射して 2ラウンドの間 指定範囲に ある 味方の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec>を オルルイし、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="2" r inv /></sec>を低下させます。
+      TC: 箔條飛彈 發射 2回合內 指定範圍於 有 我方的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> 提高並， <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="2" r inv /></sec>降低。
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -4251,6 +4277,19 @@ skills:
             base: 0.35
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec>가 증가하며 <sec typ="cond"><sec typ="note">호위 준비 완료</sec>로 <buff typ="DEF_RESSURRECT" /> 전투 속행의 효과를 받는 상태면</sec> <sec typ="buff">2배로 증가</sec>합니다.
+        범위 내 <sec typ="buff"><buff typ="DEF_Char" /> 보호기가 아닌 아군을 지정 보호</sec>합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> increases and <sec typ="cond"><sec typ="note">Escort Ready</sec> as <buff typ="DEF_RESSURRECT" /> Continue Combat of effect and receiving state if</sec> <sec typ="buff">2 times as increase</sec>.
+        within range <sec typ="buff"><buff typ="DEF_Char" /> Defender not Designated Protection for allies</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec>が 増加し、 <sec typ="cond"><sec typ="note">護衛準備完了</sec>で <buff typ="DEF_RESSURRECT" /> 戦闘続行の 効果を 受けている状態なら</sec> <sec typ="buff">2ブエで 増加</sec>します。
+        範囲内 <sec typ="buff"><buff typ="DEF_Char" /> 保護機が ではない 味方を 指定保護</sec>します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> 增加，並 <sec typ="cond"><sec typ="note">護衛準備完成</sec>以 <buff typ="DEF_RESSURRECT" /> 戰鬥續行的 效果 受到的狀態若</sec> <sec typ="buff">2倍以 增加</sec>。
+        範圍內 <sec typ="buff"><buff typ="DEF_Char" /> 保護機 非 我方 指定保護</sec>。
   "4":
     key: "4"
     icon: P.TeamDefDeBuff
@@ -4410,6 +4449,23 @@ skills:
             base: -0.25
             per: -0.02
             chance: 1
+    desc:
+      KR: |-
+        적들이 지니야에게 격한 반응을 보입니다.
+        <sec typ="cond">전투 개시 시</sec>,  3 라운드 동안 적에게 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> <sec typ="attr">일반 효과</sec>를 줍니다.
+        <sec typ="cond">라운드 개시 시</sec>,  적 전체의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="2" r /></sec>를 감소시킵니다.
+      EN: |-
+        enemy Djinnia to intense reaction shows.
+        <sec typ="cond">At battle start</sec>, 3 rounds to the enemy <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> <sec typ="attr">normal effect</sec> deals.
+        <sec typ="cond">At round start</sec>, all enemies of <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="2" r /></sec> decreases.
+      JP: |-
+        敵たちが ジインイヤに グヨクした ブアンウンを ブオです。
+        <sec typ="cond">戦闘開始時</sec>、 3 ラウンド間 敵に <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec> <sec typ="attr">一般効果</sec>を 与えます。
+        <sec typ="cond">ラウンド開始時</sec>、 敵全体の <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec>を減少させます。
+      TC: |-
+        敵人們 支妮亞給 有激烈反應。
+        <sec typ="cond">戰鬥開始時</sec>， 3 回合內 敵人給 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> <sec typ="attr">一般效果</sec> 造成。
+        <sec typ="cond">回合開始時</sec>， 全體敵人的 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec>使其減少。
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -4664,6 +4720,19 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP로 전투 속행</sec> <sec typ="attr">일반 효과</sec>를 얻습니다.
+        <sec typ="cond">라운드 개시 시</sec> 자신은 <sec typ="buff"><buff typ="SKILL_UP" /> 회피 <val idx="3" r signless /> 만큼 스킬 위력 감쇄</sec> 효과를 얻으며 <sec typ="cond">스쿼드에 <cmt t="둠 브링어"><import name="DoomBringer" /></cmt> 구성원이 5명이면</sec> <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="4" signless />회<sub>고정 수치</sub></sec>를 얻습니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP and Continue Combat</sec> <sec typ="attr">normal effect</sec> gains.
+        <sec typ="cond">At round start</sec> self <sec typ="buff"><buff typ="SKILL_UP" /> Evasion <val idx="3" r signless /> by Skill Power reduction</sec> effect and gains and <sec typ="cond">squad <cmt t="Doom Bringer"><import name="DoomBringer" /></cmt> member 5 members if</sec> <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification <val idx="4" signless />times<sub>fixed value</sub></sec> gains.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HPで 戦闘続行</sec> <sec typ="attr">一般効果</sec>を オトます。
+        <sec typ="cond">ラウンド開始時</sec> 自身は <sec typ="buff"><buff typ="SKILL_UP" /> 回避 <val idx="3" r signless /> 分 スキル威力 グアムスウェ</sec> 効果を オトウし <sec typ="cond">スクワッドに <cmt t="ドゥームブリンガー"><import name="DoomBringer" /></cmt> メンバーが 5名なら</sec> <sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="4" signless />回<sub>固定 数値</sub></sec>を オトます。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP以 戰鬥續行</sec> <sec typ="attr">一般效果</sec> 獲得。
+        <sec typ="cond">回合開始時</sec> 自身 <sec typ="buff"><buff typ="SKILL_UP" /> 迴避 <val idx="3" r signless /> 等量 技能威力 降低</sec> 效果 獲得eu並 <sec typ="cond">小隊於 <cmt t="毀滅使者"><import name="DoomBringer" /></cmt> 成員 5名若</sec> <sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 <val idx="4" signless />次<sub>固定 數值</sub></sec> 獲得。
 dialogue:
   KR:
     "1":
@@ -4722,9 +4791,7 @@ dialogue:
         그래도 지식은 있으니까 사령관님께
         하나하나 가르쳐 드릴게요.
         제 몸으로요.
-      Oath: 사령관님, 제가 농사를 시작하자 놀라셨죠? 헤헤, 친구들도 비슷한 반응을 보여줬어요. 하지만 사실 저는 무언가를 키우는 것은 이게
-        처음은 아니에요. 그게 뭔지 아세요? 사령관님을 향한 사랑요. 헤헤, 드디어 이 사랑을 수확할 때가 되었네요. 사랑해요,
-        사령관님!
+      Oath: 사령관님, 제가 농사를 시작하자 놀라셨죠? 헤헤, 친구들도 비슷한 반응을 보여줬어요. 하지만 사실 저는 무언가를 키우는 것은 이게 처음은 아니에요. 그게 뭔지 아세요? 사령관님을 향한 사랑요. 헤헤, 드디어 이 사랑을 수확할 때가 되었네요. 사랑해요, 사령관님!
       OathIdle_01: |-
         앞으로 하고 싶은 일은 많아요.
         키우는 채소의 종류를 늘리고 싶고,
@@ -4771,9 +4838,7 @@ dialogue:
         할 수 있다면 영원히
         사령관님을 지키고 싶어요.
       SPIdle_02_01: 으응… 조금 이상한 기분?
-      Oath: 좋은 걸 주신다고요? 뭔가요? 맛있는 건가요? 둥근 거? 도넛인가요? 작다고요? 마카롱? 반짝인다고요? 사탕? 그것도 아니면… 반…
-        지? 정말요? 실망했냐고요? 그럴 리가요! 세상의 그 어떤 음식도 절 이렇게 행복하게 하지 못하는걸요! 저도 사령관님을 행복하게
-        해드릴게요!
+      Oath: 좋은 걸 주신다고요? 뭔가요? 맛있는 건가요? 둥근 거? 도넛인가요? 작다고요? 마카롱? 반짝인다고요? 사탕? 그것도 아니면… 반… 지? 정말요? 실망했냐고요? 그럴 리가요! 세상의 그 어떤 음식도 절 이렇게 행복하게 하지 못하는걸요! 저도 사령관님을 행복하게 해드릴게요!
       OathIdle_01: |-
         사령관님, 드시고 싶으신 건 있으신가요?
         아무거나? 헤헤, 저도 똑같아요. 사령관님과
@@ -4957,19 +5022,14 @@ dialogue:
         Oh, Commander! I was just naming the corn we've been growing.
         Commander, do you want to name one?
       SPIdle_01_01: W-wait! I've been working, I'm all sweaty…
-      Idle_02_01: >-
+      Idle_02_01: |-
         So, how's farming? Is it hard? Well, there are many factors.
-
         But I find that birds and animals are the biggest problem. Especially when all that remains is the harvesting…
-
         then when I see the garden ruined…
-
         My grudge when it comes to food… I never forget…
-      Idle_03_01: >-
+      Idle_03_01: |-
         When I first started farming,
-
         I thought it was enough to just grow crops for myself.
-
         But the longer I do this, the more I feel the urge to share my crops with others. Hehe, I mean, I can't eat it all anyway.
       Idle_04_01: |-
         Commander, I’ve always saved the best ones for you.
@@ -4979,10 +5039,7 @@ dialogue:
         I haven't started dairy farming yet…
         but I know a few things I can teach you…
         with my body…
-      Oath: Commander, were you surprised that I started farming? Hehe, my friends had
-        a similar reaction. But it's actually not the first time I've grown
-        something. You know what I grew before? My love for you, Commander. Now
-        it's time to harvest my love. I love you, Commander!
+      Oath: Commander, were you surprised that I started farming? Hehe, my friends had a similar reaction. But it's actually not the first time I've grown something. You know what I grew before? My love for you, Commander. Now it's time to harvest my love. I love you, Commander!
       OathIdle_01: |-
         There are many things I wish to do in the future.
         I want to grow more types of crops,
@@ -5028,9 +5085,8 @@ dialogue:
         If I can, I would like
         to protect you forever, Commander.
       SPIdle_02_01: Umm… I feel a bit weird.
-      Oath: >-
+      Oath: |-
         Huh? Oh! A vow? For me? Seriously? He he. I like you so much. 
-
         Commander, you'll buy me good things to eat, won't you? Since our relationship is special. Will you?
       OathIdle_01: |-
         Where can I get the snack you gave me
@@ -5054,13 +5110,10 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: >-
+      Idle_01_01: |-
         Commander, Commander!
-
         Do you like thin bodies?
-
         If that’s true, I’ll go on a diet…!
-
         I can just be the way I am right now…? Hehe… I really like you the way you are, Commander!​
       Idle_01_02: |-
         I’m always worried about you these days.
@@ -5236,20 +5289,13 @@ skins:
   sid: null
   artist: SIMA
   priceEx: ""
-  G: false
   Spine: true
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5264,25 +5310,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 3
+    dflags: 0
     2dmodel: 2DModel_BR_Djinnia_N
   skins:
     - sid: 1
       artist: Serin199
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -5299,5 +5343,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_Djinnia_NS1
         consumableKey: Skin_BR_Djinnia_1

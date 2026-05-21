@@ -2663,6 +2663,23 @@ skills:
               level: "0"
             value: Char_PECS_MissSafety_N
             chance: 1
+    desc:
+      KR: |-
+        적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 남깁니다.
+        피격된 적은 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="4" r /></sec>와 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="5" r /></sec>가 감소합니다.
+        스쿼드 내 <char uid="PECS_MissSafety" />가 있을 시, 대상에게 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">고압 가스탄</sec> 스킬 협동 공격</sec>을 합니다.
+      EN: |-
+        to the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="MARKING" /> Mark</sec> Nam pulls.
+        hit enemy <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="4" r /></sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="5" r /></sec> decreases.
+        in squad <char uid="PECS_MissSafety" /> if present, to the target <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">high-pressure gas shell</sec> skill coordinated attack</sec>.
+      JP: |-
+        敵に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、 <sec typ="buff"><buff typ="MARKING" /> 標的</sec>を ンアムグイプンイドア。
+        被弾された 敵は <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="4" r /></sec>と <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="5" r /></sec>が減少します。
+        スクワッド 内 <char uid="PECS_MissSafety" />が ある 時、 対象に <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">高圧ガス弾</sec> スキル 協同攻撃</sec>をします。
+      TC: |-
+        敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> Namgi。
+        被擊已 敵人 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="4" r /></sec>與 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="5" r /></sec>減少。
+        小隊 內 <char uid="PECS_MissSafety" /> 有 時， 對目標 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">高壓瓦斯彈</sec> 技能 協同攻擊</sec>。
   "2":
     key: "2"
     icon: Command
@@ -6065,6 +6082,11 @@ skills:
             base: 0.01
             per: 0.01
             chance: 1
+    desc:
+      KR: 지정 범위의 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 모든 속성 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="8" r /></sec>를 감소시키며 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="9" r /></sec>를 증가시킵니다.
+      EN: designated area of to the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> all Elemental Resistances <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="8" r /></sec> decreases and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="9" r /></sec> increases.
+      JP: 指定範囲の 敵に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、、 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 全属性耐性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="8" r /></sec>を 減少させ、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="9" r /></sec>を増加させます。
+      TC: 指定範圍的 敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 所有屬性抗性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="8" r /></sec> 使其減少，並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="9" r /></sec>使其增加。
   "3":
     key: "3"
     icon: P.SelfDefBuff
@@ -6515,6 +6537,19 @@ skills:
             base: 0.12
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        전투 시작 시 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        대기 시 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 모든 속성 저항 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="9" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="5" /></sec>이(가) 생성됩니다.
+      EN: |-
+        At battle start own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        On standby own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> all Elemental Resistances <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="9" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="5" /></sec>() create.
+      JP: |-
+        戦闘開始時 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        待機時 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 全属性耐性 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="9" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="5" /></sec>が 生成されます。
+      TC: |-
+        戰鬥開始時 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        待機時 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 所有屬性抗性 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="9" r /></sec> 增加，並 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾 <val idx="5" /></sec> 生成。
   "4":
     key: "4"
     icon: P.EnemyDetect
@@ -6910,6 +6945,19 @@ skills:
             base: 0.01
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        전투 시작 시 아군에게 <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec> 효과를 부여합니다.
+        라운드 시작 시 아군의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 모든 속성 저항 <val idx="5" r /></sec>를 증가시키고, <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" r inv /></sec>를 감소시킵니다.
+      EN: |-
+        At battle start to allies <sec typ="buff"><buff typ="SCOUTING" /> Scouting</sec> grants the effect.
+        round when operation when allies' <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> all Elemental Resistances <val idx="5" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="8" r inv /></sec> decreases.
+      JP: |-
+        戦闘開始時 味方に <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 効果を付与します。
+        ラウンド 時ジアク 時 味方の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 全属性耐性 <val idx="5" r /></sec>を 増加時クイし、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="8" r inv /></sec>を減少させます。
+      TC: |-
+        戰鬥開始時 我方給 <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec> 賦予效果。
+        回合 時作 時 我方的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> 所有屬性抗性 <val idx="5" r /></sec> 增加時台並， <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="8" r inv /></sec>使其減少。
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -7343,6 +7391,39 @@ skills:
             base: 0.11
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 적에게 <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> 공격력 증감</sec> / <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> 회피 증감</sec> / <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 속성 저항 증감</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> 효과가 적용된 상태면 관련 정보를 공유해 능력치를 낮추거나 받는 피해를 증가시킵니다.
+        <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> 공격력 증감</sec> : <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> 감소
+        <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> 회피 증감</sec> : <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="4" r /></sec> 감소
+        <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="FIRERES_DOWN" /> 화염 저항 증감</sec> : <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="5" r /></sec> 감소
+        <sec typ="cond"><buff typ="ICERES_UP" /> <buff typ="ICERES_DOWN" /> 냉기 저항 증감</sec> : <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="6" r /></sec> 감소
+        <sec typ="cond"><buff typ="LIGHTNINGRES_UP" /> <buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 증감</sec> : <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="7" r /></sec> 감소
+        <sec typ="cond"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> : <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="8" r /></sec> 증가
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range to the enemy <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> Attack increase /decrease</sec> / <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> Evasion increase /decrease</sec> / <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> Elemental Resistance increase /decrease</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> damage taken increase</sec> affected by if in the state related information shares stats reduces or damage takenincreases.
+        <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> Attack increase /decrease</sec>: <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> decrease
+        <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> Evasion increase /decrease</sec>: <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="4" r /></sec> decrease
+        <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="FIRERES_DOWN" /> Fire Resistance increase /decrease</sec>: <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="5" r /></sec> decrease
+        <sec typ="cond"><buff typ="ICERES_UP" /> <buff typ="ICERES_DOWN" /> Ice Resistance increase /decrease</sec>: <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="6" r /></sec> decrease
+        <sec typ="cond"><buff typ="LIGHTNINGRES_UP" /> <buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance increase /decrease</sec>: <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="7" r /></sec> decrease
+        <sec typ="cond"><buff typ="VULNERABLE" /> damage taken increase</sec>: <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="8" r /></sec> increase
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 敵に <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> 攻撃力 ジウングアム</sec> / <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> 回避 ジウングアム</sec> / <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 属性耐性 ジウングアム</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> 受けるダメージ 増加</sec> 効果が適用された 状態なら グワンルヨン 情報を 共有して 能力値を ンアトチウまたは 受けるダメージを増加させます。
+        <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> 攻撃力 ジウングアム</sec>：<sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec> 減少
+        <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> 回避 ジウングアム</sec>：<sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="4" r /></sec> 減少
+        <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="FIRERES_DOWN" /> 火炎耐性 ジウングアム</sec>：<sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="5" r /></sec> 減少
+        <sec typ="cond"><buff typ="ICERES_UP" /> <buff typ="ICERES_DOWN" /> 冷気耐性 ジウングアム</sec>：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="6" r /></sec> 減少
+        <sec typ="cond"><buff typ="LIGHTNINGRES_UP" /> <buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 ジウングアム</sec>：<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="7" r /></sec> 減少
+        <sec typ="cond"><buff typ="VULNERABLE" /> 受けるダメージ 増加</sec>：<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="8" r /></sec> 増加
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 敵人給 <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> 攻擊力 解除增減</sec> / <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> 迴避 解除增減</sec> / <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff typ="LIGHTNINGRES_UP" /> <buff typ="FIRERES_DOWN" /> <buff typ="ICERES_DOWN" /> <buff typ="LIGHTNINGRES_DOWN" /> 屬性抗性 解除增減</sec> / <sec typ="cond"><buff typ="VULNERABLE" /> 受到的傷害 增加</sec> 已套用效果的 若處於狀態 相關 資訊 分享 能力值 降低並或 受到的傷害使其增加。
+        <sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> 攻擊力 解除增減</sec>：<sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec> 減少
+        <sec typ="cond"><buff typ="EVADE_UP" /> <buff typ="EVADE_DOWN" /> 迴避 解除增減</sec>：<sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="4" r /></sec> 減少
+        <sec typ="cond"><buff typ="FIRERES_UP" /> <buff typ="FIRERES_DOWN" /> 火焰抗性 解除增減</sec>：<sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="5" r /></sec> 減少
+        <sec typ="cond"><buff typ="ICERES_UP" /> <buff typ="ICERES_DOWN" /> 冰冷抗性 解除增減</sec>：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="6" r /></sec> 減少
+        <sec typ="cond"><buff typ="LIGHTNINGRES_UP" /> <buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 解除增減</sec>：<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="7" r /></sec> 減少
+        <sec typ="cond"><buff typ="VULNERABLE" /> 受到的傷害 增加</sec>：<sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="8" r /></sec> 增加
 dialogue:
   KR:
     "1":
@@ -7519,9 +7600,7 @@ dialogue:
         원래는 시티가드라는 것을 잊었어?
         이 변태를 그냥 두면 큰일나겠네...
         샤워실로... 따라와…
-      Oath: 뜨거운 햇살! 개방적인 바다! 그리고 미소녀 라이프가드! 그러면 헌팅으로 이어지는 건 당연하지. 헤헤, 뭐래. 사령관이 고백해서 너무
-        들떴나봐. 라이프가드가 이러면 안 되는데… 흠흠. 그러면 라이프가드답게 침착하게… 아하핫! 안돼, 못 참겠어! 나도 사랑해,
-        왓슨!
+      Oath: 뜨거운 햇살! 개방적인 바다! 그리고 미소녀 라이프가드! 그러면 헌팅으로 이어지는 건 당연하지. 헤헤, 뭐래. 사령관이 고백해서 너무 들떴나봐. 라이프가드가 이러면 안 되는데… 흠흠. 그러면 라이프가드답게 침착하게… 아하핫! 안돼, 못 참겠어! 나도 사랑해, 왓슨!
       OathIdle_01: |-
         안 지루하냐고? 지루할 틈이 어딨어?
         사고뭉치가 많으니 한시도 눈을 뗄 수가
@@ -7586,9 +7665,7 @@ dialogue:
         치, 친구라서 허락해 주는거 아니라구.
         그냥… 그냥… 으으… 빨리하던 대로
         키, 키스부터 해줘…
-      Oath: 에헤헷, 친구부터 시작한다는 말이 진짜 맞는 거였구나. 응. 나도 사령관 많이 좋아하니까, 이제 친구가 아니라 애인으로- 어…? 겨,
-        결혼인 거야?! 아, 아니 싫은 건 아닌데, 그, 그런 건 좀 더 단계를 밟아가는 게 좋지 않을까요 마음의 준비는 되어있지만
-        그거랑은 좀 다른 이야기이기도 하고 그게… 자, 잘 부탁드립니다…
+      Oath: 에헤헷, 친구부터 시작한다는 말이 진짜 맞는 거였구나. 응. 나도 사령관 많이 좋아하니까, 이제 친구가 아니라 애인으로- 어…? 겨, 결혼인 거야?! 아, 아니 싫은 건 아닌데, 그, 그런 건 좀 더 단계를 밟아가는 게 좋지 않을까요 마음의 준비는 되어있지만 그거랑은 좀 다른 이야기이기도 하고 그게… 자, 잘 부탁드립니다…
       OathIdle_01: |-
         이런 관계는 처음이라 조금 어색하네…
         응? 당연하지. 나라고 전부 다 잘하는
@@ -7662,11 +7739,9 @@ dialogue:
       Idle_03_01: 司令官がワトソンだった時、事件の後始末とかで全然遊べなかったでしょ？これからは時間もたくさんあるし、司令官とあんなことやこんなこともしてみたいな。ってことで！まず最初に…
       Idle_04_01: 司令官に見せるために着たのは事実だけど…そんな風にジロジロ見られると、何だか…
       SPIdle_02_01: うぅ～ん…しょうがないなぁ…またこの前みたいにやったら私、立てなくなっちゃうから、出かける前に少しだけ…だよ？
-      Oath: >-
+      Oath: |-
         やっぱり今日だったんだね？うん。私も期待してた…。
-
         ホントのことを言うと…これだけ頑張ったのに、もし司令官が告白してこなかったら、私から告白しようと思ってたんだ～！えへへ！でも司令官が先に言ってくれてよかった。こういうロマンチックなプロポーズに憧れてたんだよね…。
-
         それと…きょ、今日のために着てきたの…だから司令官が直接……言わなくても…わかるよね？
       OathIdle_01: ホントはね、私も本気で外でデートするつもりはなかったんだ。私の大好きな人がどんな反応するのかくらい、今までの経験でわかりきってることだし！まだまだ…足りないってこともわかってるよ…？
       MVP: ""
@@ -7696,9 +7771,8 @@ dialogue:
       Idle_03_01: ワトソンがそんな風に何度も何度も言うから…、なんだか絞めつけられるのが、気持ちよくなってきちゃったじゃん。…えぇ！？私の！？ここここ！これは私の意思とは関係なくて、私にはどうすることもできない生理現象と言うか、だから…その…もぉ……ワトソンのせいだよ……
       Idle_04_01: たまに、事件を一緒に追いかけたあの頃が懐かしくなるけど……これからは新しい思い出を作っていくから大丈夫。心から愛してるワトソンと一緒に、ね。
       SPIdle_02_01: このリボンは何かって？あはは…もう、全部分かってるくせに。…早く縛って…。私が…動けないように。
-      Oath: >-
+      Oath: |-
         …あのね、今までワトソンって呼ばなかったのはね……。呼んじゃうと、初めて会ったあの日のことを思い出して…自分の気持ちをコントロールできなくなるのが怖かったからなの。
-
         でも今はもう大丈夫なはず、…うん。今まで我慢してきた分、これからはいっぱい口にして、いっぱい伝えるよ。あははっ…思ったより恥ずかしいね。でも…言うよ。愛してる、ワトソン。
       OathIdle_01: 結婚して本当によかったなぁって思ってる。だって…愛してるって気持ちを、隠れて伝える必要なくなったから…。…ワトソンも今まで我慢してきた分―…あ～、違うかな？ワトソンはいつも我慢なんてしてなかったよね？
       MVP: ご主人様…こんな立派に成長なさって、私はもう…
@@ -7757,9 +7831,7 @@ dialogue:
         원래는 시티가드라는 것을 잊었어?
         이 변태를 그냥 두면 큰일나겠네...
         샤워실로... 따라와…
-      Oath: "[미번역]뜨거운 햇살! 개방적인 바다! 그리고 미소녀 라이프가드! 그러면 헌팅으로 이어지는 건 당연하지. 헤헤, 뭐래. 사령관이
-        고백해서 너무 들떴나봐. 라이프가드가 이러면 안 되는데… 흠흠. 그러면 라이프가드답게 침착하게… 아하핫! 안돼, 못 참겠어! 나도
-        사랑해, 왓슨!"
+      Oath: "[미번역]뜨거운 햇살! 개방적인 바다! 그리고 미소녀 라이프가드! 그러면 헌팅으로 이어지는 건 당연하지. 헤헤, 뭐래. 사령관이 고백해서 너무 들떴나봐. 라이프가드가 이러면 안 되는데… 흠흠. 그러면 라이프가드답게 침착하게… 아하핫! 안돼, 못 참겠어! 나도 사랑해, 왓슨!"
       OathIdle_01: |-
         [미번역]안 지루하냐고? 지루할 틈이 어딨어?
         사고뭉치가 많으니 한시도 눈을 뗄 수가
@@ -7860,12 +7932,9 @@ dialogue:
       SPIdle_02_01: |-
         Ugh, it can’t be helped… If you do it like last time,
         I won’t be able to get up. Just a little before we go out…
-      Oath: >-
-        It was today, wasn’t it? Yes. I was also looking forward to it. To be
-        exact… I was just going to tell you my feelings
-
+      Oath: |-
+        It was today, wasn’t it? Yes. I was also looking forward to it. To be exact… I was just going to tell you my feelings
         if you didn’t do it first after all my efforts! Ahaha, it’s a good thing you said it first. I’ve always wanted to get
-
         a romantic proposal like this. Also… I-I only wore this for today… so you should take if off yourself. Okay?​
       OathIdle_01: |-
         In fact, I wasn’t planning to go outside
@@ -7917,20 +7986,15 @@ dialogue:
         I think you made me like tight dresses. … Huh? Me?
         W-well, I didn’t do that on purpose,
         it couldn’t be helped… It’s because of you, Watson…​
-      Idle_04_01: >-
+      Idle_04_01: |-
         Sometimes I miss the time
-
         when we solved cases together… But it’s okay. We’ll make new memories together.
-
         With just you and me.
       SPIdle_02_01: |-
         This string?
         Ahaha… You know what it is… Tie me up. So that… I can’t do anything.
-      Oath: >-
-        … You know. The reason I haven't called you Watson is because of the
-        memory of the day we first met… I was worried my feelings for you would
-        get out of control. But now, I don't think that's necessary.
-
+      Oath: |-
+        … You know. The reason I haven't called you Watson is because of the memory of the day we first met… I was worried my feelings for you would get out of control. But now, I don't think that's necessary.
         Yes, I'll express my love more as much as I held it down for all this time. Ahaha, I'm feeling shyer than I thought. Still… I love you, Watson.
       OathIdle_01: |-
         I think it was a good idea, getting married.
@@ -7969,13 +8033,10 @@ dialogue:
         It’s good if you are,
         but I can teach you if you're not.
         Both sound great.
-      SPIdle_01_01: >-
+      SPIdle_01_01: |-
         Am I not bored? I don't have time to get bored.
-
         I can't take my eyes off of them
-
         because there are so many troublemakers. Also… Watson plays with me at night.
-
         A lot. Hehe.
       Idle_02_01: |-
         I got a nice tan after working all day in the sun.
@@ -7993,19 +8054,14 @@ dialogue:
         Swimsuits are clothes made with masks and strings.
         So this isn't a swimsuit, but a casual outfit…
         What's that? It's not?
-      Oath: What is justice… That's what I always think about. It's natural for a hero
-        to worry about justice, isn't it? But I won't worry about it anymore. To
-        me, you are justice, Commander. If you say it's right, it's right, and
-        if you say it's wrong, it's wrong. But that's so reckless, isn't it?
-        That's what love is.
+      Oath: What is justice… That's what I always think about. It's natural for a hero to worry about justice, isn't it? But I won't worry about it anymore. To me, you are justice, Commander. If you say it's right, it's right, and if you say it's wrong, it's wrong. But that's so reckless, isn't it? That's what love is.
       OathIdle_01: |-
         Why don't AGSs wear swimsuits?
         Shouldn't Stronghold… Or even Riposte…
         be wearing swimsuits?
       MVP: ""
     "":
-      Join: Benevolent Leanne the super genius and pretty detective is here! … Hehe.
-        That’s me!
+      Join: Benevolent Leanne the super genius and pretty detective is here! … Hehe. That’s me!
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -8062,11 +8118,7 @@ dialogue:
         I’m not allowing you because we’re friends.
         Just… Ugh… Just kiss me already
         like you used to.
-      Oath: Hehe, so it was true that we first become friends. Yes. I like you a lot,
-        Commander. So we’re not just friends anymore, but- Huh? M-marriage?!
-        N-no, it’s not like I don’t want it, but aren’t there like steps we need
-        to take? I sure am ready but this is a different matter and… I-I’m in
-        your hands…
+      Oath: Hehe, so it was true that we first become friends. Yes. I like you a lot, Commander. So we’re not just friends anymore, but- Huh? M-marriage?! N-no, it’s not like I don’t want it, but aren’t there like steps we need to take? I sure am ready but this is a different matter and… I-I’m in your hands…
       OathIdle_01: |-
         This is the first time. It’s awkward…
         Huh? Of course. It’s not like I’m good at
@@ -8396,20 +8448,13 @@ skins:
   sid: null
   artist: BUMCHa
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -8424,25 +8469,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Leanne_N
   skins:
     - sid: 1
       artist: BUMCHa
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+        G:
+          - _
+          - D
       anim:
         - false
         - false
@@ -8459,25 +8502,21 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_PECS_Leanne_NS1
         2dmodel_dam: 2DModel_PECS_Leanne_NS1_Dam
     - sid: 2
       artist: BUMCHa
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - false
         - false
@@ -8499,25 +8538,27 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_PECS_Leanne_NS2
         consumableKey: Skin_PECS_Leanne_2
     - sid: 3
       artist: TunaMaYo
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -8534,6 +8575,7 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_PECS_Leanne_NS3
         2dmodel_dam: 2DModel_PECS_Leanne_NS3_Dam
         consumableKey: Skin_PECS_Leanne_3

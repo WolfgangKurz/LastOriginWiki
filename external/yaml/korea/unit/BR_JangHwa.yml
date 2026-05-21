@@ -1054,6 +1054,19 @@ skills:
             base: 0.15
             per: 0.015
             chance: 0
+    desc:
+      KR: |-
+        단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격</sec> 또는 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 시, 2라운드 동안 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="3" slot="4" r /></sec>가 증가합니다.
+      EN: |-
+        to a single target <dmg elem="physics" />.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> support attack</sec> or <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec> when, 2 rounds <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="3" slot="4" r /></sec> increases.
+      JP: |-
+        単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻撃</sec> または <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec> 時、 2ラウンドの間 <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="3" slot="4" r /></sec>が増加します。
+      TC: |-
+        單一目標給 造成<dmg elem="physics" />。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻擊</sec> 或 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec> 時， 2回合內 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="3" slot="4" r /></sec>增加。
   "2":
     key: "2"
     icon: Hang
@@ -1744,6 +1757,19 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        지정 범위의 적에게 {0}의 보호 무시 피해를 줍니다.
+        적중 여부와 상관 없이 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 회피 강화 효과를 해제</sec>하고, 1스킬과 2스킬이 <sec typ="note">원격 폭탄 격발</sec>로 변경됩니다.
+      EN: |-
+        designated area of to the enemy {0} of Ignore Protection damage.
+        Accuracy whether and relation none target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Evasion removes buffs</sec> and, 1skilland 2skill <sec typ="note">Remote Bomb Detonation</sec> as is changed.
+      JP: |-
+        指定範囲の 敵に {0}の 保護無視 ダメージを 与えます。
+        命中 ヨブウに関係なく 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 回避 強化効果を 解除</sec>し、 1スキルと 2スキルが <sec typ="note">遠隔爆弾起爆</sec>で 変更されます。
+      TC: |-
+        指定範圍的 敵人給 {0}的 無視保護 傷害 造成。
+        無論是否命中 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 迴避 強化效果 解除</sec>並， 1技能與 2技能 <sec typ="note">遠端炸彈引爆</sec>以 變更。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -1960,6 +1986,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">공격기가 자신 뿐이거나</sec>, <sec typ="cond">자신 외에 <cmt t="엠프레시스 하운드"><import name="EmpressHound" /></cmt> 전투원이 있는 경우</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과를 획득합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec> increases.
+        <sec typ="cond">Attacker self Ppun or</sec>, <sec typ="cond">self other than to <cmt t="Empress Hound"><import name="EmpressHound" /></cmt> combatant if present</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> gains the effect.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">攻撃機が 自身 ップウンがまたは</sec>、 <sec typ="cond">自身 外に <cmt t="エンプレスハウンド"><import name="EmpressHound" /></cmt> 戦闘員が ある 場合</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec> 効果を獲得します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec>增加。
+        <sec typ="cond">攻擊機 自身 Ppun或</sec>， <sec typ="cond">自身 外於 <cmt t="女帝獵犬"><import name="EmpressHound" /></cmt> 戰鬥員 有 情況</sec> <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec> 獲得效果。
   "4":
     key: "4"
     icon: P.SelfAtkDeBuff
@@ -2212,6 +2251,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        병적인 집착과 광폭함으로 인해 기본 150%의 치명타 수치를 갖습니다.
+        적 사망 시, <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="0" r /></sec> 감소 효과를 영구 획득합니다.
+        자신이 <sec typ="cond"><buff typ="DEF_Char" /> 지정 보호</sec>를 받고 있을 때, 라운드 개시 시 자신에게 적용된 <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 치명타 감소 효과를 해제</sec>합니다.
+      EN: |-
+        sick/pathological enemy is obsession and with ferocity due to base 150% of Critical value has.
+        When an enemy dies, <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="0" r /></sec> decrease effect and permanent gains.
+        self <sec typ="cond"><buff typ="DEF_Char" /> Designated Protection</sec> receiving exists when, At round start applied to self <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Critical decrease removes the effect</sec>.
+      JP: |-
+        ブヨン敵である ジイプチアクと グワンプオクハアムウにより 基本 150%の クリティカル 数値を グアトます。
+        敵死亡時、 <sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="0" r /></sec> 減少 効果を 永久 獲得します。
+        自身が <sec typ="cond"><buff typ="DEF_Char" /> 指定保護</sec>を 受けて ある 時、 ラウンド開始時 自身に 適用された <sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> クリティカル 減少 効果を 解除</sec>します。
+      TC: |-
+        病敵人為 集中chak與 Gwang炮kham而 基礎 150%的 暴擊 數值 相同。
+        敵人死亡時， <sec typ="attr">有害</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="0" r /></sec> 減少 效果 永久 獲得。
+        自身 <sec typ="cond"><buff typ="DEF_Char" /> 指定保護</sec> 受到 有 時， 回合開始時 自身給 套用已 <sec typ="attr">有害</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 暴擊 減少 效果 解除</sec>。
   "5":
     key: "5"
     icon: P.BombActive
@@ -2443,6 +2499,23 @@ skills:
             base: 0.3
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 보호기 / 지원기 아군의 공격을 지원</sec>합니다.
+        자신과 <sec typ="cond">인접한 아군이 2 이상</sec>일 때, 라운드 개시 시 자신은 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec> 증가 효과를 획득합니다.
+        자신과 <sec typ="cond">인접한 아군이 4 이상</sec>일 때, 라운드 개시 시 자신은 <sec typ="buff"><buff typ="ATK_UP" /> 광역 피해 집중 <val idx="4" r /></sec> 효과를 획득합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, within range <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Defender / Supporter allies' supports the attack</sec>.
+        self and <sec typ="cond">adjacent allies 2 or more</sec>when, At round start self <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="3" r /></sec> increase effect.
+        self and <sec typ="cond">adjacent allies 4 or more</sec>when, At round start self <sec typ="buff"><buff typ="ATK_UP" /> area damage concentration <val idx="4" r /></sec> gains the effect.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 保護機 / 支援機 味方の 攻撃を 支援</sec>します。
+        自身と <sec typ="cond">隣接する 味方が 2 以上</sec>イル 時、 ラウンド開始時 自身は <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec> 増加 効果を獲得します。
+        自身と <sec typ="cond">隣接する 味方が 4 以上</sec>イル 時、 ラウンド開始時 自身は <sec typ="buff"><buff typ="ATK_UP" /> 広域ダメージ集中 <val idx="4" r /></sec> 効果を獲得します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 範圍內 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 保護機 / 支援機 我方的 攻擊 支援</sec>。
+        自身與 <sec typ="cond">相鄰的 我方 2 以上</sec>一 時， 回合開始時 自身 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec> 增加 獲得效果。
+        自身與 <sec typ="cond">相鄰的 我方 4 以上</sec>一 時， 回合開始時 自身 <sec typ="buff"><buff typ="ATK_UP" /> 範圍傷害集中 <val idx="4" r /></sec> 獲得效果。
   F1:
     key: F1
     icon: BombActive
@@ -3353,6 +3426,19 @@ skills:
             base: 64
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위의 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 1스킬과 2스킬이 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 기본 형태로 변경</sec>됩니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격</sec> 또는 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 시, 2라운드 동안 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="3" slot="CH_4" r /></sec>가 증가합니다.
+      EN: |-
+        designated area of to the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and 1skilland 2skill <sec typ="buff"><buff typ="CHANGE_CHAR" /> base form as change</sec>.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> support attack</sec> or <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec> when, 2 rounds <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="3" slot="CH_4" r /></sec> increases.
+      JP: |-
+        指定範囲の 敵に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、、 1スキルと 2スキルが <sec typ="buff"><buff typ="CHANGE_CHAR" /> 基本 ハヨントエで 変更</sec>されます。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻撃</sec> または <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec> 時、 2ラウンドの間 <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="3" slot="CH_4" r /></sec>が増加します。
+      TC: |-
+        指定範圍的 敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 1技能與 2技能 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 基礎 Hyeon依ae以 變更</sec>。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻擊</sec> 或 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec> 時， 2回合內 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="3" slot="CH_4" r /></sec>增加。
   F2:
     key: F2
     icon: BombActive
@@ -4263,6 +4349,19 @@ skills:
             base: 64
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위의 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 1스킬과 2스킬이 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 기본 형태로 변경</sec>됩니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격</sec> 또는 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 시, 2라운드 동안 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="3" slot="CH_4" r /></sec>가 증가합니다.
+      EN: |-
+        designated area of to the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and 1skilland 2skill <sec typ="buff"><buff typ="CHANGE_CHAR" /> base form as change</sec>.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> support attack</sec> or <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec> when, 2 rounds <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="3" slot="CH_4" r /></sec> increases.
+      JP: |-
+        指定範囲の 敵に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、、 1スキルと 2スキルが <sec typ="buff"><buff typ="CHANGE_CHAR" /> 基本 ハヨントエで 変更</sec>されます。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻撃</sec> または <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec> 時、 2ラウンドの間 <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="3" slot="CH_4" r /></sec>が増加します。
+      TC: |-
+        指定範圍的 敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 1技能與 2技能 <sec typ="buff"><buff typ="CHANGE_CHAR" /> 基礎 Hyeon依ae以 變更</sec>。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻擊</sec> 或 <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec> 時， 2回合內 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="3" slot="CH_4" r /></sec>增加。
   F4:
     key: F4
     icon: P.SelfAtkDeBuff
@@ -4472,6 +4571,23 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        병적인 집착과 광폭함으로 인해 기본 150%의 치명타 수치를 갖습니다.
+        적 사망 시, <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="0" r /></sec> 감소 효과를 영구 획득합니다.
+        자신이 <sec typ="cond"><buff typ="DEF_Char" /> 지정 보호</sec>를 받고 있을 때, 라운드 개시 시 자신에게 적용된 <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 치명타 감소 효과를 해제</sec>합니다.
+      EN: |-
+        sick/pathological enemy is obsession and with ferocity due to base 150% of Critical value has.
+        When an enemy dies, <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="0" r /></sec> decrease effect and permanent gains.
+        self <sec typ="cond"><buff typ="DEF_Char" /> Designated Protection</sec> receiving exists when, At round start applied to self <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Critical decrease removes the effect</sec>.
+      JP: |-
+        ブヨン敵である ジイプチアクと グワンプオクハアムウにより 基本 150%の クリティカル 数値を グアトます。
+        敵死亡時、 <sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="0" r /></sec> 減少 効果を 永久 獲得します。
+        自身が <sec typ="cond"><buff typ="DEF_Char" /> 指定保護</sec>を 受けて ある 時、 ラウンド開始時 自身に 適用された <sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> クリティカル 減少 効果を 解除</sec>します。
+      TC: |-
+        病敵人為 集中chak與 Gwang炮kham而 基礎 150%的 暴擊 數值 相同。
+        敵人死亡時， <sec typ="attr">有害</sec> <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="0" r /></sec> 減少 效果 永久 獲得。
+        自身 <sec typ="cond"><buff typ="DEF_Char" /> 指定保護</sec> 受到 有 時， 回合開始時 自身給 套用已 <sec typ="attr">有害</sec> <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 暴擊 減少 效果 解除</sec>。
 dialogue:
   KR:
     "1":
@@ -4582,8 +4698,7 @@ dialogue:
       SPIdle_02_01: |-
         저… 혹시 묶어놓고 하는 건…
         싫어… 하시나요?
-      Oath: 상정하지 못한 상황이군요. 지금까지의 작전안을 전부 폐기해야겠습니다. 제가 구상한 어떠한 작전보다… 긍정적인 상황이니까요. 저도...
-        당신을... 사랑합니다. 그러니… 앞으로는 절 혼자 두지 말아주세요. 앞으로도… 영원히…
+      Oath: 상정하지 못한 상황이군요. 지금까지의 작전안을 전부 폐기해야겠습니다. 제가 구상한 어떠한 작전보다… 긍정적인 상황이니까요. 저도... 당신을... 사랑합니다. 그러니… 앞으로는 절 혼자 두지 말아주세요. 앞으로도… 영원히…
       OathIdle_01: |-
         사랑합니다. 사랑합니다. 사랑합니다.
         사랑합니다. 사랑합니다. 사랑합니다.
@@ -4640,8 +4755,7 @@ dialogue:
         어? 처, 천아가 너는 이런 모습 좋아한다고…
         싫었어? 싫으면 그만 두고…
         좋았어? 좋았으면… 더 좋은 모습 보여줄게.
-      Oath: 많이 컸다? 나한테 오라가라 그러고? 그래놓고 준다는 게 반지? 하… 웃음이 절로 나오네. 진짜… 기뻐서… 이런 모습 좋아한다는 게
-        사실이었구나? 네가 싫어했으면 이런 모습도 안 했지. 헤헤. 아! 흠! 흠! 이렇게 됐으니까. 오늘로 1일이다? 알겠지, 남친?
+      Oath: 많이 컸다? 나한테 오라가라 그러고? 그래놓고 준다는 게 반지? 하… 웃음이 절로 나오네. 진짜… 기뻐서… 이런 모습 좋아한다는 게 사실이었구나? 네가 싫어했으면 이런 모습도 안 했지. 헤헤. 아! 흠! 흠! 이렇게 됐으니까. 오늘로 1일이다? 알겠지, 남친?
       OathIdle_01: |-
         천아가 속였다는 걸 알았을 때는
         많이 빡쳤는데… 지금은 괜찮아.
@@ -5052,9 +5166,8 @@ dialogue:
         You were the one who told me to work at the cafe.
         *Chuckles* Yeah right. I only mean so much
         to you, I guess.​
-      Idle_01_03: >-
+      Idle_01_03: |-
         I told them I would never wear this stupid outfit…!
-
         But they’d just annoy me with their grins… What are you looking at? You think this is funny?​
       SPIdle_01_01: Beat it. I’m busy.​
       Idle_02_01: |-
@@ -5074,12 +5187,9 @@ dialogue:
         You want me to wear other stuff as well, Right?
         If you order me to, master,
         I can do anything for you…​
-      Oath: >-
-        This means you’re in love with me, right? … Master? Does this mean
-        you’re not gonna leave me,
-
+      Oath: |-
+        This means you’re in love with me, right? … Master? Does this mean you’re not gonna leave me,
         because I’ve been a good girl…? Hehe… Master, do you want to do something right now? Can I bring you anything to eat?
-
         If that’s not the case… Just tell me anything you want. I can do anything you want me to do for you, Master…
       OathIdle_01: |-
         Hey. What do you want me to wear today?
@@ -5127,13 +5237,10 @@ dialogue:
         Many tell me that I look cold.
         But I’ll show you that's not true.
       SPIdle_02_01: Umm… do you not want to… restrain me?
-      Oath: >-
+      Oath: |-
         It's not what I expected. All of the operation schematics until now
-
         will have to be discarded. It's better than any operation plan I came up with…
-
         I… love you too… So… don't leave me alone by myself from now on…
-
         forever…
       OathIdle_01: |-
         I love you. I love you. I love you.
@@ -5239,27 +5346,19 @@ dialogue:
         Ha, mother this, mother that. Are you playing house or what?
         What? I can become a family? Nonsense!
         I don’t need… that.
-      Idle_03_01: >-
+      Idle_03_01: |-
         After everything disappeared,
-
         I just wandered around with no purpose. Yes, I wanted to find the meaning of my life… Hmph. I can’t believe I’m saying this.
-
         I must have gone crazy like you.​
-      Idle_04_01: >-
+      Idle_04_01: |-
         I’m not sure… about this feeling. I’m relaxed but nervous.
-
         I’m happy, but I feel like going insane. What do you think… I should do? You’re staying here, aren’t you? Don’t…
-
         leave me. Please, please, please…!
-
         … Forget what I just said. It was nothing.​
       SPIdle_02_01: "*Panting*… Go on. So that… I can feel alive."
-      Oath: >-
-        … I’m not sure what to do. I feel lonely, anxious, and happy at the same
-        time. … Right, that’s it.
-
+      Oath: |-
+        … I’m not sure what to do. I feel lonely, anxious, and happy at the same time. … Right, that’s it.
         You are the meaning of my life that I’ve been keep looking for. Haha, Ahahaha. How did I not know about this already? Yes. I love you, really.
-
         So… you will also love me a lot, right? You won’t… leave me alone anymore, right?​
       OathIdle_01: |-
         I’m your bride. Of course I’m always
@@ -5585,20 +5684,21 @@ skins:
   sid: null
   artist: Taesi
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - true
-    - false
-    - true
-    - false
-    - true
-    - false
-    - false
+    O:
+      - _
+      - D
+      - S
+      - DS
+    G:
+      - _
+      - D
+      - S
+      - DS
   anim:
     - false
     - false
@@ -5613,26 +5713,26 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 1
     2dmodel: 2DModel_BR_JangHwa_N
     2dmodel_dam: 2DModel_BR_JangHwa_N_Dam
   skins:
     - sid: 1
       artist: Taesi
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - DS
+        G:
+          - _
+          - D
+          - DS
       anim:
         - false
         - false
@@ -5649,26 +5749,26 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_JangHwa_NS1
         2dmodel_dam: 2DModel_BR_JangHwa_NS1_Dam
         consumableKey: Skin_BR_JangHwa_1
     - sid: 2
       artist: Taesi
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - DS
+        G:
+          - _
+          - D
+          - DS
       anim:
         - false
         - false
@@ -5685,26 +5785,24 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_JangHwa_NS2
         2dmodel_dam: 2DModel_BR_JangHwa_NS2_Dam
         consumableKey: Skin_BR_JangHwa_2
     - sid: 3
       artist: Taesi
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -5721,25 +5819,27 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_JangHwa_NS3
         consumableKey: Skin_BR_JangHwa_3
     - sid: 4
       artist: Taesi
       price: 317
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -5756,5 +5856,6 @@ skins:
         tbarId: 4
         voiceId: 4
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_BR_JangHwa_NS4_Dam
         consumableKey: Skin_BR_JangHwa_4

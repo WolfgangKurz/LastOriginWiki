@@ -72,6 +72,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["3P_Hirume_Title-2", "3P_Hirume_Title-4"]
 		}
 	},
+	"3P_KikiPeiling": {
+		0: {
+			LastOrigin: ["3P_KikiPeiling_Title-1", "3P_KikiPeiling_Title-2", "3P_KikiPeiling_Title-3"],
+			VALOFE: ["3P_KikiPeiling_Velofe1", "3P_KikiPeiling_Velofe2", "3P_KikiPeiling_Velofe3", "3P_KikiPeiling_Velofe4"]
+		}
+	},
 	"3P_Labiata": {
 		0: {
 			LastOrigin: ["3P_Labiata_Title-5", "3P_Labiata_Title-9"]
@@ -746,8 +752,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 	},
 };
 
-type ArtistLinkType = "X" | "Pixiv" | "ArtStation";
-export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>> = {
+type ArtistLinkType = Partial<{
+	X: `https://x.com/${string}`;
+	Pixiv: `https://www.pixiv.net/users/${string}`;
+	ArtStation: `https://www.artstation.com/${string}`;
+}>;
+export const ArtistLinks: Record<string, ArtistLinkType> = {
 	"2V": {
 		X: "https://x.com/dhxhrlflthdn",
 		Pixiv: "https://www.pixiv.net/users/17874125",
@@ -796,6 +806,15 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 		X: "https://x.com/DloG56006129",
 		Pixiv: "https://www.pixiv.net/users/10920551",
 	},
+	"DiisukeHan": {
+		X: "https://x.com/DiisukeHan",
+		Pixiv: "https://www.pixiv.net/users/400511",
+	},
+	"DUTO": {
+		X: "https://x.com/dutomaster",
+		Pixiv: "https://www.pixiv.net/users/4297330",
+		ArtStation: "https://www.artstation.com/dutomaster",
+	},
 	"gonster": {
 		X: "https://x.com/gonstool",
 		Pixiv: "https://www.pixiv.net/users/114920",
@@ -820,6 +839,10 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 	},
 	"MEL": {
 		X: "https://x.com/_05565",
+	},
+	"mikemono": {
+		X: "https://x.com/mikemono_yuu",
+		Pixiv: "https://www.pixiv.net/users/1290206",
 	},
 	"Muloli": {
 		X: "https://x.com/mizuahiru",
@@ -862,7 +885,7 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 		Pixiv: "https://www.pixiv.net/users/97687",
 	},
 	"Sol": {
-		X: "https://twitter.com/arnseo",
+		X: "https://x.com/arnseo",
 		Pixiv: "https://www.pixiv.net/users/26511192",
 	},
 	"Superphotrone": {
@@ -891,6 +914,10 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 	"WOW": {
 		X: "https://x.com/kjyeyo",
 		Pixiv: "https://www.pixiv.net/users/4173989",
+	},
+	"Yura Unni": {
+		X: "https://x.com/GoddessMechanic",
+		Pixiv: "https://www.pixiv.net/users/3491516",
 	},
 	"ZIG": {
 		X: "https://x.com/zigzag999999",

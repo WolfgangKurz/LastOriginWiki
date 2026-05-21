@@ -543,6 +543,7 @@ source:
   - - Ev:Ev30:EV1-5
   - - Ev:Ev31:EV2-2B
   - - Ev:Ev33:EV3-9
+  - - Ev:Ev36:EV2-3EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -710,6 +711,19 @@ skills:
             base: -0.32
             per: -0.02
             chance: 1
+    desc:
+      KR: |-
+        목표 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 입히고 뒷열에는 <sec typ="dmg">감소된 피해</sec>를 입힙니다.
+        대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 적중 강화 효과를 제거</sec>하고 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="2" r /></sec>를 크게 감소시킵니다.
+      EN: |-
+        to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> deals and back row in <sec typ="dmg">reduced damage</sec> deals.
+        target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Accuracy removes buffs</sec> and <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="2" r /></sec> greatly decreases.
+      JP: |-
+        目標対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />を 与えし ドウィト列には <sec typ="dmg">減少された ダメージ</sec>を 与えます。
+        対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 命中 強化効果を 除去</sec>し、 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec>を クウく 減少させます。
+      TC: |-
+        目標對象給 <sec typ="attr">無視保護</sec> <dmg elem="physics" /> 造成並 後t行於 <sec typ="dmg">減少已 傷害</sec> 造成。
+        目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 命中 強化效果 移除</sec>並 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="2" r /></sec> 大 減少。
   "2":
     key: "2"
     icon: SelfSpdBuff
@@ -1088,6 +1102,11 @@ skills:
             base: 0.11
             per: 0.01
             chance: 1
+    desc:
+      KR: 단일 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" r /></sec>를 크게 증가시킵니다.
+      EN: single allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="8" r /></sec> greatly increasescauses.
+      JP: ドアンイル 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>を 大きく増加させます。
+      TC: 全部nil 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec> 大幅增加。
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -1292,6 +1311,23 @@ skills:
             base: 13
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 시작 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군에게 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 회피 감소 및 행동력 감소 면역</sec> 효과를 부여합니다.
+        <sec>해제불가의 디버프는 면역 효과를 무시합니다.</sec>
+      EN: |-
+        <sec typ="cond">At battle start</sec>, within range allies' <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, within range to allies <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> Evasion decrease and Action Speed decrease immunity</sec> grants the effect.
+        <sec>remove no of debuff immunity effect and ignore.</sec>
+      JP: |-
+        戦闘開始時、 範囲内 味方の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方に <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 回避 減少 および 行動力 減少 免疫</sec> 効果を付与します。
+        <sec>解除不可の デバフは 免疫 効果を 無視します。</sec>
+      TC: |-
+        戰鬥開始時， 範圍內 我方的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec>， 範圍內 我方給 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 迴避 減少 以及 行動力 減少 免疫</sec> 賦予效果。
+        <sec>解除不可的 減益 免疫 效果 無視。</sec>
   "4":
     key: "4"
     icon: P.Barrier
@@ -1447,6 +1483,19 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 시작 시</sec>, 자신은 해제 불가한 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP로 전투 속행</sec> 효과를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 모든 해로운 효과를 제거</sec>합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self cannot be removed one <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP and Continue Combat</sec> gains the effect.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> removes all harmful effects</sec>.
+      JP: |-
+        戦闘開始時、 自身は 解除不可した <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HPで 戦闘続行</sec> 効果を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> すべての 有害効果を 除去</sec>します。
+      TC: |-
+        戰鬥開始時， 自身 無法解除 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP以 戰鬥續行</sec> 獲得效果。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 所有 負面效果 移除</sec>。
   "5":
     key: "5"
     icon: P.TeamDefBuff
@@ -2004,6 +2053,31 @@ skills:
               level: "0"
             value: Effect_PECS_Erato_N_47
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond"><sec typ="note">라이브 연주</sec> 사용시</sec>, 대상 아군에게 <sec typ="note">앙코르 연주</sec> 강화 효과를 줍니다.
+        <sec>부여 항목은 <sec typ="note">라이브 연주</sec>와 동일하며 수치는 <sec typ="note">앙코르 연주</sec>의 레벨에 따릅니다.</sec>
+        <sec typ="cond"><char uid="PECS_Erato" /> 피격시</sec>, <sec typ="cond"><char uid="PECS_Erato" />에게 <sec typ="note">여운</sec>이 있고 <sec typ="note">작곡가님…!</sec>이 없다면</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="9" r signless /> HP로 전투 속행</sec>을 주는 <sec typ="note">한곡만 더!</sec>와 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="10" r inv /></sec> 감소를 주는 <sec typ="note">피날레</sec> <sec typ="attr">일반 효과</sec>를 부여하고 <sec typ="buff">여운을 제거</sec>합니다.
+        <sec><sec typ="note">피날레</sec>와 <sec typ="note">한곡만 더!</sec>는 <sec typ="attr">일반 효과</sec>이며 <sec typ="note">피날레</sec>가 있는한 <sec typ="note">한곡만 더!</sec>는 얻을 수 없습니다.</sec>
+        <sec>모든 효과는 중첩이 없습니다.</sec>
+      EN: |-
+        <sec typ="cond"><sec typ="note">Live Performance</sec> when used</sec>, target to allies <sec typ="note">Encore Performance</sec> buffs deals.
+        <sec>grant Hangmok <sec typ="note">Live Performance</sec> and same and value <sec typ="note">Encore Performance</sec> of level to follows.</sec>
+        <sec typ="cond"><char uid="PECS_Erato" /> hit when</sec>, <sec typ="cond"><char uid="PECS_Erato" /> to <sec typ="note">afterglow</sec> exists and <sec typ="note">operation Goknim…!</sec> if absent</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="9" r signless /> HP and Continue Combat</sec> main <sec typ="note">One More Song more!</sec> and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="10" r inv /></sec> decrease main <sec typ="note">Finale</sec> <sec typ="attr">normal effect</sec> grants and <sec typ="buff">afterglow remove</sec>.
+        <sec><sec typ="note">Finale</sec> and <sec typ="note">One More Song more!</sec> <sec typ="attr">normal effect</sec> and <sec typ="note">Finale</sec> exists one <sec typ="note">One More Song more!</sec> gain cannot.</sec>
+        <sec>all effect stack does not.</sec>
+      JP: |-
+        <sec typ="cond"><sec typ="note">ライブ演奏</sec> スアヨン時</sec>、 対象 味方に <sec typ="note">アンコール演奏</sec> 強化効果を 与えます。
+        <sec>ブウヨ ハアンムオクは <sec typ="note">ライブ演奏</sec>と ドオンイルし、 数値は <sec typ="note">アンコール演奏</sec>の レベルに ットアルウプンイドア。</sec>
+        <sec typ="cond"><char uid="PECS_Erato" /> 被弾時</sec>、 <sec typ="cond"><char uid="PECS_Erato" />に <sec typ="note">ヨウン</sec>が あり、 <sec typ="note">ジアクグオクが様…!</sec>が 存在しないなら</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="9" r signless /> HPで 戦闘続行</sec>を ジウは <sec typ="note">したグオクだけ ドオ!</sec>と <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="10" r inv /></sec> 減少を ジウは <sec typ="note">プインアルルエ</sec> <sec typ="attr">一般効果</sec>を 付与し、 <sec typ="buff">ヨウンを 除去</sec>します。
+        <sec><sec typ="note">プインアルルエ</sec>と <sec typ="note">したグオクだけ ドオ!</sec>は <sec typ="attr">一般効果</sec>であり <sec typ="note">プインアルルエ</sec>が あるした <sec typ="note">したグオクだけ ドオ!</sec>は オトを 数 ありません。</sec>
+        <sec>すべての 効果は 重複が ありません。</sec>
+      TC: |-
+        <sec typ="cond"><sec typ="note">現場演奏</sec> 使用時</sec>， 目標 我方給 <sec typ="note">安可演奏</sec> 強化效果 造成。
+        <sec>賦予 下ngmok <sec typ="note">現場演奏</sec>與 同il並 數值 <sec typ="note">安可演奏</sec>的 等級於 Ttareu。</sec>
+        <sec typ="cond"><char uid="PECS_Erato" /> 被擊時</sec>， <sec typ="cond"><char uid="PECS_Erato" />給 <sec typ="note">Yeoun</sec> 有，且 <sec typ="note">作gok大人…!</sec> 若不存在</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="9" r signless /> HP以 戰鬥續行</sec> 主 <sec typ="note">Gok僅 更多!</sec>與 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="10" r inv /></sec> 減少 主 <sec typ="note">Pinalre</sec> <sec typ="attr">一般效果</sec> 賦予，並 <sec typ="buff">Yeoun 移除</sec>。
+        <sec><sec typ="note">Pinalre</sec>與 <sec typ="note">Gok僅 更多!</sec> <sec typ="attr">一般效果</sec>且 <sec typ="note">Pinalre</sec> 有 <sec typ="note">Gok僅 更多!</sec> 獲得 數 不存在。</sec>
+        <sec>所有 效果 疊加 不存在。</sec>
 dialogue:
   KR:
     "1":
@@ -2368,11 +2442,8 @@ dialogue:
       SPIdle_01_01: あの、ダーリン…この服は大事にしたいので…少しだけ待ってもらえますか……？
       Idle_02_01: 恥ずかしくないのか…ですか？ は、恥ずかしいです。でも… ダーリンに見てもらうための衣装なので…… 大丈夫、です。えへへ……。
       Idle_03_01: また私が主役になる日が来るだなんて思ってもみませんでした。でも、私はもう昔の私じゃありません。あのステージの経験と、友達のおかげで……もう怖くありませんから！
-      Idle_04_01: みなさんのウェディングドレス姿を見るたびに、その方に似合う祝福の歌を作っていました。 でもその一方で……皆さんが羨ましかった。
-        私も可愛いドレスが着たいって思っていました……今、ですか？ふふっ、私たちに似合う祝福の歌が、もうずっと頭の中で流れています。…生きているうちには、終わりそうにもないくらい、ずっと続く歌が。
-      SPIdle_02_01: なにかの小説で読んだのですが…結婚式は…あ…
-        あれを…することを公表するものなんだそうです……じゃ、じゃあウェディングドレスは…あれをするための…衣装ってことになります…よね？
-        この服を着た時から覚悟していました。い、いえ……期待、していました。
+      Idle_04_01: みなさんのウェディングドレス姿を見るたびに、その方に似合う祝福の歌を作っていました。 でもその一方で……皆さんが羨ましかった。 私も可愛いドレスが着たいって思っていました……今、ですか？ふふっ、私たちに似合う祝福の歌が、もうずっと頭の中で流れています。…生きているうちには、終わりそうにもないくらい、ずっと続く歌が。
+      SPIdle_02_01: なにかの小説で読んだのですが…結婚式は…あ… あれを…することを公表するものなんだそうです……じゃ、じゃあウェディングドレスは…あれをするための…衣装ってことになります…よね？ この服を着た時から覚悟していました。い、いえ……期待、していました。
       Oath: ほ、本当に、本当ですか？本当に、私に…ですか……？ああ…、この…ドレスを着れただけでも十分だったのに、それだけでもう今日という日が…世界一幸せな日になっていたのに……こんな素敵なものまでもらえるなんて……こんなに幸せなことがあっていいのでしょうか？愛しています、ダーリン。
       OathIdle_01: ど、どうしよう……私、頭がどうにかなってしまったみたいです…だから……その、ダーリンを見ると……頭の中にロマンチックな歌詞しか浮かんでこなくて……愛の歌しか作れなくなってしまいました……
       MVP: ""
@@ -2481,37 +2552,26 @@ dialogue:
         You dolled me up, but… I-I know this isn’t my thing… P-pretty?
         Your words make me really special.
       Idle_01_02: I’m… actually going on stage… N-no. I-I’m okay…… I’ll be okay.
-      Idle_01_03: What if… people don’t like my song… They might jeer and leave… I
-        should have just focused on making songs…
+      Idle_01_03: What if… people don’t like my song… They might jeer and leave… I should have just focused on making songs…
       SPIdle_01_01: Will I be able to forget the reality for a moment?
       Idle_02_01: |-
         Ah, Producer… Yes.
         Say thank you to the ones who helped-
         … Yes. I’d be glad…
         if you can come with me.
-      Idle_03_01: >-
+      Idle_03_01: |-
         Just a while ago, I was anxious and scary… 
-
         I thought I might lose myself… Now that I’m in your arms… Yes. I’ll cheer up. I will sing for you.
-      Idle_04_01: >-
-        My first stage? The stage looked beautiful… The audience enjoyed my
-        song… The SkyNights made harmony with me… Actually, all I can remember
-        is you.
-
+      Idle_04_01: |-
+        My first stage? The stage looked beautiful… The audience enjoyed my song… The SkyNights made harmony with me… Actually, all I can remember is you.
         You cheered for me, and I sang looking at you.
-      SPIdle_02_01: Producer… While I remember the thrill of the stage… Please make
-        this day… the most unforgettable day for me.
-      Oath: >-
-        … I fell in love with you at first sight. At the time, I thought it was
-        just because you are good-looking…
-
+      SPIdle_02_01: Producer… While I remember the thrill of the stage… Please make this day… the most unforgettable day for me.
+      Oath: |-
+        … I fell in love with you at first sight. At the time, I thought it was just because you are good-looking…
         but now I know the real reason. It’s because you shine like a star. I was able to come out of the room,
-
         and to the stage being mesmerized by that light. … Producer, I really love you. I want to give you my all. Will you… accept it…?
-      OathIdle_01: >-
-        Wearing this dress reminds me of that day… I can’t control myself… I
-        love you, Producer.
-
+      OathIdle_01: |-
+        Wearing this dress reminds me of that day… I can’t control myself… I love you, Producer.
         Far more than the stars in the sky.
       MVP: ""
     "2":
@@ -2574,12 +2634,9 @@ dialogue:
         do that… thing… Which means… a wedding dress
         is kinda like… a uniform… I was ready
         ever since I wore this dress. Or more like… looking forward to it?
-      Oath: >-
-        R-really? You're… giving this… to me? Oh… umm… It's just I was already
-        happy to be able to wear a dress.
-
+      Oath: |-
+        R-really? You're… giving this… to me? Oh… umm… It's just I was already happy to be able to wear a dress.
         Today was already more than perfect… And now I'm even getting a gift? Can anyone be this happy?
-
         I love you, darling.
       OathIdle_01: |-
         Oh… Oh no… I think something is happening to my head…
@@ -2650,9 +2707,8 @@ dialogue:
       Idle_02_01: |-
         Actually this song is my favorite one.
         I haven’t completed yet, but I put my heart into it.
-      Idle_03_01: >-
+      Idle_03_01: |-
         Eh…? D-did you read it? Really…? Oh, oh…!
-
         I-I’m sorry. I started reading it because I liked the descriptions… You must have despised me…
       Idle_04_01: |-
         N-not the stage-
@@ -2661,13 +2717,10 @@ dialogue:
       SPIdle_02_01: |-
         Producer…!
         I-I don’t know… What should I do…
-      Oath: >-
-        You're giving this to me…? How come…? What…? You have feelings for me…?
-        ……! W-wait…! This is so unexpected…
-
+      Oath: |-
+        You're giving this to me…? How come…? What…? You have feelings for me…? ……! W-wait…! This is so unexpected…
         *Squeals* Please… don't come closer…! Pretty? I must look so hideous right now… If you keep saying so, I might actually start to think it's true…! So, you really mean it…? I'm relieved, that I'm not the only one…
-      OathIdle_01: I’m still afraid of other people, but… If you hold my hand, I feel
-        relaxed.
+      OathIdle_01: I’m still afraid of other people, but… If you hold my hand, I feel relaxed.
       MVP: ""
     M:
       SquadJoin: ""
@@ -2694,18 +2747,14 @@ dialogue:
         just for Producer.
         Producer, will you allow me to…
         dream once again?
-      Idle_01_02: >-
+      Idle_01_02: |-
         Like you encouraged me, I’d like to…
-
         encourage other people with my songs… Yes. With my heartfelt songs. Just like then.
-      Idle_01_03: >-
+      Idle_01_03: |-
         Umm… Should I refrain myself in the night…?
-
         I-I don’t think so, but if… If you think badly of me… I… Okay… I love you, Producer.
-      SPIdle_01_01: >-
-        I never knew I could be so active… Did you not like it…? Really…? Then…
-        Can I ask you again?
-
+      SPIdle_01_01: |-
+        I never knew I could be so active… Did you not like it…? Really…? Then… Can I ask you again?
         I want to have you more, Producer.
       MVP: ""
   TC:
@@ -2968,20 +3017,14 @@ skins:
   sid: null
   artist: BUMCHa
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -2996,25 +3039,19 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Muse_N
   skins:
     - sid: 1
       artist: BUMCHa
       price: 174
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
       anim:
         - false
         - false
@@ -3038,24 +3075,20 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_PECS_Muse_NS1
     - sid: 2
       artist: Uyu DDongkko
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - false
         - false
@@ -3072,25 +3105,25 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_PECS_Muse_NS2
         consumableKey: Skin_PECS_Muse_2
     - sid: 3
       artist: きろめ(Kirome)
       price: 182
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - DS
+        G:
+          - _
+          - D
+          - DS
       anim:
         - false
         - false
@@ -3107,5 +3140,6 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_PECS_Muse_NS3_Dam
         consumableKey: Skin_PECS_Muse_3

@@ -2387,6 +2387,23 @@ skills:
             base: -0.015
             per: -0.0025
             chance: 1
+    desc:
+      KR: |-
+        기관단총으로 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="3" r /></sec> 감소 상태로 만듭니다.
+        <sec typ="cond"><char uid="BR_Leona" />의 <sec typ="note">방어 지휘</sec>가 활성화된 경우</sec>, 상기 효과의 수치가 50% 증폭됩니다.
+      EN: |-
+        Deals <dmg elem="physics" /> to a single target with a submachine gun.
+        <sec typ="cond">On hit</sec>, inflicts <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical Rate <val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Power <val idx="3" r /></sec> reduction on the target for 2 rounds.
+        <sec typ="cond">If <char uid="BR_Leona" />'s <sec typ="note">Defensive Command</sec> is active</sec>, the values of the above effects are amplified by 50%.
+      JP: |-
+        サブマシンガンで単一対象へ<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻撃力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />クリティカル<val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="3" r /></sec>減少状態にします。
+        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">防御指揮</sec>が有効な場合</sec>、上記効果の数値が50%増幅します。
+      TC: |-
+        使用衝鋒槍對單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，使目標在2回合內陷入<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec> / <sec typ="buff"><buff typ="ATK_DOWN" />攻擊力<val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" />暴擊<val idx="2" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" />行動力<val idx="3" r /></sec>降低狀態。
+        <sec typ="cond"><char uid="BR_Leona" />的<sec typ="note">防禦指揮</sec>啟用時</sec>，上述效果的數值增幅50%。
   "2":
     key: "2"
     icon: TeamDefBuff
@@ -2652,6 +2669,23 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        연막을 퍼트려 3라운드 동안 범위 내 아군에게 <sec typ="buff"><buff typ="DEF_UP" /> 광역 피해 분산 <val idx="2" r signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec> 감소 효과를 부여합니다. (중첩 불가)
+        <sec typ="buff"><buff typ="DEF_UP" /> 광역 피해량 분산</sec>은 적의 공격 범위에 포함된 아군이 많을수록 받는 광역 공격의 최종 피해량이 감소하며, 광역 공격 범위 그리드와 공격을 받는 아군 수가 같을 때 최대로 적용됩니다.
+        <sec typ="important">스킬 레벨 10에서 범위가 증가합니다.</sec>
+      EN: |-
+        Spreads smoke, granting allies within range <sec typ="buff"><buff typ="DEF_UP" /> Area Damage Dispersion <val idx="2" r signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> reduction effects for 3 rounds. (Cannot stack)
+        <sec typ="buff"><buff typ="DEF_UP" /> Area Damage Dispersion</sec> reduces the final damage taken from area attacks as more allies are included in the enemy's attack range, and applies at maximum when the area attack range grid count matches the number of allies being attacked.
+        <sec typ="important">Range increases at Skill Level 10.</sec>
+      JP: |-
+        煙幕を展開し、3ラウンドの間、範囲内の味方に<sec typ="buff"><buff typ="DEF_UP" />範囲ダメージ分散<val idx="2" r signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="0" r inv /></sec>減少効果を付与します。(重複不可)
+        <sec typ="buff"><buff typ="DEF_UP" />範囲ダメージ分散</sec>は、敵の攻撃範囲に含まれる味方が多いほど受ける範囲攻撃の最終ダメージが減少し、範囲攻撃のグリッド数と攻撃を受ける味方の数が同じ時に最大で適用されます。
+        <sec typ="important">スキルレベル10で範囲が増加します。</sec>
+      TC: |-
+        散佈煙幕，賦予範圍內友軍3回合的<sec typ="buff"><buff typ="DEF_UP" />範圍傷害分散<val idx="2" r signless /></sec> / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="0" r inv /></sec>降低效果。（不可重疊）
+        <sec typ="buff"><buff typ="DEF_UP" />範圍傷害分散</sec>會根據敵人攻擊範圍內包含的友軍數量，降低受到範圍攻擊的最終傷害；當範圍攻擊格數與受攻擊友軍數相同時，套用最大效果。
+        <sec typ="important">技能等級10時範圍增加。</sec>
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -2980,6 +3014,23 @@ skills:
             base: 0.3
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 범위 내 경장형 공격기 / 지원기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 경장형 공격기 / 지원기를 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="6" r /></sec>과 <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항 <val idx="7" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" r inv /></sec>가 감소합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, increases <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> of Light Attackers / Supporters within range.
+        <sec typ="cond">At round start</sec>, grants <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> to Light Attackers / Supporters within range.
+        <sec typ="cond">At round start</sec>, increases own <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="6" r /></sec> and <sec typ="buff"><buff typ="ICERES_UP" /> Cold Resistance <val idx="7" r /></sec>, and reduces <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="8" r inv /></sec>.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、範囲内の軽装型攻撃機 / 支援機の<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の軽装型攻撃機 / 支援機を<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="6" r /></sec>と<sec typ="buff"><buff typ="ICERES_UP" />冷気耐性<val idx="7" r /></sec>が増加し、<sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ<val idx="8" r inv /></sec>が減少します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，範圍內輕裝型攻擊機 / 支援機的<sec typ="buff"><buff typ="AP_UP" />AP<val idx="0" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，對範圍內輕裝型攻擊機 / 支援機賦予<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="6" r /></sec>與<sec typ="buff"><buff typ="ICERES_UP" />寒氣抗性<val idx="7" r /></sec>增加，且<sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害<val idx="8" r inv /></sec>降低。
   "4":
     key: "4"
     icon: P.TeamDefDeBuff
@@ -3286,6 +3337,27 @@ skills:
             base: 0.05
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec>자신보다 행동력이 낮은 적</sec>을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하며 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 도발 상태인 모든 적의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>를 증가시킵니다.
+        <sec>해당 효과는 대상이 피격 시 해제됩니다.</sec>
+        <sec typ="cond"><char uid="BR_Leona" />의 <sec typ="note">공격 지휘</sec>가 활성화된 경우</sec>, 상기 효과의 수치가 50% 증폭됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec>enemies with lower Action Power than self</sec> are <sec typ="buff"><buff typ="PROVOKE" /> Provoked</sec>, and their <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> is reduced.
+        <sec typ="cond">At round start</sec>, increases <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec> of all Provoked enemies.
+        <sec>This effect is removed when the target is hit.</sec>
+        <sec typ="cond">If <char uid="BR_Leona" />'s <sec typ="note">Offensive Command</sec> is active</sec>, the values of the above effects are amplified by 50%.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec>自身より行動力が低い敵</sec>を<sec typ="buff"><buff typ="PROVOKE" />挑発</sec>し、<sec typ="buff"><buff typ="EVADE_DOWN" />回避<val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">ラウンド開始時</sec>、挑発状態のすべての敵の<sec typ="buff"><buff typ="VULNERABLE" />受けるダメージ<val idx="3" r /></sec>を増加させます。
+        <sec>この効果は対象が被撃時に解除されます。</sec>
+        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">攻撃指揮</sec>が有効な場合</sec>、上記効果の数値が50%増幅します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，<sec>行動力低於自身的敵人</sec>會受到<sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>，且<sec typ="buff"><buff typ="EVADE_DOWN" />迴避<val idx="1" r /></sec>降低。
+        <sec typ="cond">回合開始時</sec>，增加所有挑釁狀態敵人的<sec typ="buff"><buff typ="VULNERABLE" />所受傷害<val idx="3" r /></sec>。
+        <sec>該效果會在目標被擊中時解除。</sec>
+        <sec typ="cond"><char uid="BR_Leona" />的<sec typ="note">攻擊指揮</sec>啟用時</sec>，上述效果的數值增幅50%。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -6744,6 +6816,35 @@ skills:
             base: 0.075
             per: 0.0075
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 보호기를 제외한 아군을 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 다음 조건을 만족하는 전투원 1기당 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="7" /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>을(를) 증가시킵니다.
+        - <cmt t="신장 145cm 이하의 바이오로이드"><import name="HEIGHT_145" /></cmt> 또는 <cmt t="시스터즈 오브 발할라"><import name="Walhalla" /></cmt> 소속
+        <define name="HEIGHT_145">
+        <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_LRL" />, <char uid="PECS_DutchGirl" />, <char uid="BR_Andvari" />, <char uid="SJ_Tachi" />, <char uid="BR_Efreeti" />, <char uid="3P_Aqua" />, <char uid="PECS_Ella" />, <char uid="BR_May" />, <char uid="BR_DrM" />, <char uid="BR_PXSilky" />, <char uid="PECS_Draculina" />, <char uid="DS_MoMo" />, <char uid="BR_Bulgasari" />, <char uid="BR_Sylphid" />, <char uid="PECS_Empress" />, <char uid="BR_Alvis" />, <char uid="BR_Thetis" />, <char uid="BR_Ellie" />
+        </define>
+      EN: |-
+        <sec typ="cond">At round start</sec>, grants <sec typ="buff"><buff typ="DEF_Char" /> Designated Protection</sec> to allies within range, excluding Protectors.
+        <sec typ="cond">At round start</sec>, for each combatant that meets the following conditions, increases allies' <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" /></sec> / <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="7" /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec> within range.
+        - Affiliated with <cmt t="Bioroids 145 cm tall or shorter"><import name="HEIGHT_145" /></cmt> or <cmt t="Sisters of Valhalla"><import name="Walhalla" /></cmt>
+        <define name="HEIGHT_145">
+        <char uid="PECS_CoCoWhiteShell" />, <char uid="PECS_LRL" />, <char uid="PECS_DutchGirl" />, <char uid="BR_Andvari" />, <char uid="SJ_Tachi" />, <char uid="BR_Efreeti" />, <char uid="3P_Aqua" />, <char uid="PECS_Ella" />, <char uid="BR_May" />, <char uid="BR_DrM" />, <char uid="BR_PXSilky" />, <char uid="PECS_Draculina" />, <char uid="DS_MoMo" />, <char uid="BR_Bulgasari" />, <char uid="BR_Sylphid" />, <char uid="PECS_Empress" />, <char uid="BR_Alvis" />, <char uid="BR_Thetis" />, <char uid="BR_Ellie" />
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の保護機を除く味方を<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、次の条件を満たす戦闘員1機につき、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力<val idx="5" /></sec> / <sec typ="buff"><buff typ="DEF_UP" />防御力<val idx="7" /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />回避<val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />AP<val idx="6" /></sec>を増加させます。
+        - <cmt t="身長145cm以下のバイオロイド"><import name="HEIGHT_145" /></cmt>または<cmt t="シスターズ・オブ・ヴァルハラ"><import name="Walhalla" /></cmt>所属
+        <define name="HEIGHT_145">
+        <char uid="PECS_CoCoWhiteShell" />、 <char uid="PECS_LRL" />、 <char uid="PECS_DutchGirl" />、 <char uid="BR_Andvari" />、 <char uid="SJ_Tachi" />、 <char uid="BR_Efreeti" />、 <char uid="3P_Aqua" />、 <char uid="PECS_Ella" />、 <char uid="BR_May" />、 <char uid="BR_DrM" />、 <char uid="BR_PXSilky" />、 <char uid="PECS_Draculina" />、 <char uid="DS_MoMo" />、 <char uid="BR_Bulgasari" />、 <char uid="BR_Sylphid" />、 <char uid="PECS_Empress" />、 <char uid="BR_Alvis" />、 <char uid="BR_Thetis" />、 <char uid="BR_Ellie" />
+        </define>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，對範圍內除保護機以外的友軍賦予<sec typ="buff"><buff typ="DEF_Char" />指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>，每有1名滿足以下條件的戰鬥員，範圍內友軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力<val idx="5" /></sec> / <sec typ="buff"><buff typ="DEF_UP" />防禦力<val idx="7" /></sec> / <sec typ="buff"><buff typ="EVADE_UP" />迴避<val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" />AP<val idx="6" /></sec>增加。
+        - 隸屬於<cmt t="身高145cm以下的生化人"><import name="HEIGHT_145" /></cmt>或<cmt t="英靈殿姊妹"><import name="Wa釋放lla" /></cmt>
+        <define name="HEIGHT_145">
+        <char uid="PECS_CoCoWhiteShell" />， <char uid="PECS_LRL" />， <char uid="PECS_DutchGirl" />， <char uid="BR_Andvari" />， <char uid="SJ_Tachi" />， <char uid="BR_Efreeti" />， <char uid="3P_Aqua" />， <char uid="PECS_Ella" />， <char uid="BR_May" />， <char uid="BR_DrM" />， <char uid="BR_PXSilky" />， <char uid="PECS_Draculina" />， <char uid="DS_MoMo" />， <char uid="BR_Bulgasari" />， <char uid="BR_Sylphid" />， <char uid="PECS_Empress" />， <char uid="BR_Alvis" />， <char uid="BR_Thetis" />， <char uid="BR_Ellie" />
+        </define>
 dialogue:
   KR:
     "1":
@@ -7125,10 +7226,8 @@ dialogue:
         Did it hurt a lot?
         Please wait. I’ll put some medicine on.
       SPIdle_02_01: I’m going to tell on you to all my sisters!
-      Oath: >-
-        Are you trying to make a deal with me? All right! In return, you have to
-        bring me juice and choco-bars every day, okay?
-
+      Oath: |-
+        Are you trying to make a deal with me? All right! In return, you have to bring me juice and choco-bars every day, okay?
         If you don’t bring me a lot, I’ll bite!
       OathIdle_01: |-
         We made a contract.
@@ -7173,11 +7272,9 @@ dialogue:
         Bodyguards must prepare for all types of situations.
         This is an emergency ration for when I get hungry!
         Hehe. Here, have one, Commander.
-      Idle_03_01: >-
+      Idle_03_01: |-
         Nngh~ That’s strange. I’m sure sister Audrey
-
         Made it just for Alvis… Ah, Commander! This button, Alvis is having trouble
-
         Trying to button it right, Could you help?​
       Idle_04_01: |-
         Commander! Quick, get behind Alvis!
@@ -7186,12 +7283,9 @@ dialogue:
         Hehehe. But don’t worry.
         I’ll make sure to protect you again, this time!
       SPIdle_02_01: D, Don’t… If you keep on doing that, I won’t protect you anymore.​
-      Oath: >-
-        Did you fall for Alvis’s cool moves? Hm~ What should we do? I was told
-        that bodyguards should
-
+      Oath: |-
+        Did you fall for Alvis’s cool moves? Hm~ What should we do? I was told that bodyguards should
         Never fall in love under any circumstances… Hehehe. But if it’s the Commander, it’ll be alright! I’ll stick by your side from now on, Commander.
-
         Whatever threat comes in your way, I will protect you!
       OathIdle_01: |-
         I’m going to stick right next to you today, Commander!
@@ -7250,12 +7344,9 @@ dialogue:
       SPIdle_02_01: |-
         Don’t do that. If you don’t stop,
         I’m not going to give you choco-bars any more!
-      Oath: >-
-        You're giving this to Alvis? Thank you Commander! Alvis will work hard
-        from now on, too! Ha ha-!
-
+      Oath: |-
+        You're giving this to Alvis? Thank you Commander! Alvis will work hard from now on, too! Ha ha-!
         Here-! Since today is a special day, let's share this. Well… Alvis took a bite first…
-
         But that won't matter anymore. Right?
       OathIdle_01: Did you brush your teeth? Shall we do it together?
       MVP: ""
@@ -7508,20 +7599,13 @@ skins:
   sid: null
   artist: Sol
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -7536,25 +7620,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_Alvis_N
   skins:
     - sid: 1
       artist: Sol
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 14
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - true
         - false
@@ -7571,24 +7653,19 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_BR_Alvis_1
     - sid: 2
       artist: Sol
       price: 134
-      G: false
       Spine: true
       SpineDamaged: false
       parts: 22
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
       anim:
         - false
         - false
@@ -7614,4 +7691,5 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 2
+        dflags: 0
         consumableKey: Skin_BR_Alvis_2

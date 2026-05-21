@@ -3049,6 +3049,23 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        화염을 방사해 단일 대상에게 <dmg elem="fire" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상에게 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 지속 화염 피해 <val idx="0" signless /></sec>을(를) 입힙니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+      EN: |-
+        Emits flames to deal <dmg elem="fire" /> to a single target.
+        <sec typ="cond">On hit</sec>, 3 rounds to the target <sec typ="dmg"><buff typ="FireDMG_DOT" /> Fire damage over time <val idx="0" signless /></sec> deals.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="2" r /></sec> increases.
+      JP: |-
+        火炎を放射し、単一対象に<dmg elem="fire" />を与えます。
+        <sec typ="cond">命中時</sec>、 3ラウンドの間 対象に <sec typ="dmg"><buff typ="FireDMG_DOT" /> 持続火炎ダメージ <val idx="0" signless /></sec>を 与えます。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="FireATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
+      TC: |-
+        噴射火焰，對單一目標造成<dmg elem="fire" />。
+        <sec typ="cond">命中時</sec>， 3回合內 對目標 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 持續火焰傷害 <val idx="0" signless /></sec> 造成。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="FireATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: TeamDefDeBuff
@@ -5305,6 +5322,23 @@ skills:
             base: 0.2
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전술 기동을 통해 지정 범위에 <dmg elem="fire" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+      EN: |-
+        tactical Mobile through to the designated area <dmg elem="fire" />.
+        <sec typ="cond">On hit</sec>, 2 rounds, target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="1" r /></sec> decreases.
+        <sec typ="cond">On critical hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken decrease removes the effect</sec>.
+      JP: |-
+        前スウル 機動を 通じて 指定範囲に<dmg elem="fire" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">クリティカル時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ 減少 効果を 解除</sec>します。
+      TC: |-
+        前術 機動 透過 指定範圍於 造成<dmg elem="fire" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="1" r /></sec>使其減少。
+        <sec typ="cond">暴擊時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害 減少 效果 解除</sec>。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -6214,6 +6248,27 @@ skills:
             base: 0.05
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 적 수에 비례하여 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 아군 수에 비례하여 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="13" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 중장형 아군의 공격을 지원</sec>합니다.
+        <sec typ="cond"><char uid="BR_QuickCamel" />이 없을 경우</sec>, 추가로 <cmt t="앵거 오브 호드"><import name="AngerOfHorde" /></cmt> 소속 전투원의 공격을 지원합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, allies in proportion to the number of own <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="13" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> Heavy-type allies' supports the attack</sec>.
+        <sec typ="cond"><char uid="BR_QuickCamel" /> if absent</sec>, additionally <cmt t="Anger of the Horde"><import name="AngerOfHorde" /></cmt> affiliated combatant of attack supports.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 敵 数に比例して 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 味方 数に比例して 自身の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="13" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 重装型 味方の 攻撃を 支援</sec>します。
+        <sec typ="cond"><char uid="BR_QuickCamel" />が 存在しない場合</sec>、 追加で <cmt t="アンガー・オブ・ホード"><import name="AngerOfHorde" /></cmt> 所属 戦闘員の 攻撃を 支援します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 敵人 依數量成比例 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 我方 依數量成比例 自身的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="13" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 重裝型 我方的 攻擊 支援</sec>。
+        <sec typ="cond"><char uid="BR_QuickCamel" /> 不存在時</sec>， 額外 <cmt t="憤怒部落"><import name="AngerOfHorde" /></cmt> 所屬 戰鬥員的 攻擊 支援。
   "4":
     key: "4"
     icon: P.TeamDefDeBuff
@@ -6477,6 +6532,19 @@ skills:
             base: 500
             per: 50
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">적 사망</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 공격 지원</sec> / <sec typ="cond">적중 시</sec>, 3라운드 동안 모든 적의 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="0" r /></sec>를 감소시킵니다. (최대 6중첩)
+        <sec typ="cond">적 처치 시</sec>, 3라운드 동안 모든 적에게 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 지속 화염 피해 <val idx="4" signless /></sec>을(를) 입힙니다.
+      EN: |-
+        <sec typ="cond">enemy death</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> Attack Support</sec> / <sec typ="cond">On hit</sec>, 3 rounds all enemies of <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="0" r /></sec> decreases. (up to 6stack)
+        <sec typ="cond">When killing an enemy</sec>, 3 rounds all enemiesto <sec typ="dmg"><buff typ="FireDMG_DOT" /> Fire damage over time <val idx="4" signless /></sec> deals.
+      JP: |-
+        <sec typ="cond">敵 死亡</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻撃支援</sec> / <sec typ="cond">命中時</sec>、 3ラウンドの間 すべての敵の <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="0" r /></sec>を減少させます。 (最大 6重複)
+        <sec typ="cond">敵撃破時</sec>、 3ラウンドの間 すべての敵に <sec typ="dmg"><buff typ="FireDMG_DOT" /> 持続火炎ダメージ <val idx="4" signless /></sec>を 与えます。
+      TC: |-
+        <sec typ="cond">敵人 死亡</sec> / <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻擊支援</sec> / <sec typ="cond">命中時</sec>， 3回合內 所有敵人的 <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="0" r /></sec>使其減少。 (最大 6疊加)
+        <sec typ="cond">擊殺敵人時</sec>， 3回合內 所有敵人給 <sec typ="dmg"><buff typ="FireDMG_DOT" /> 持續火焰傷害 <val idx="4" signless /></sec> 造成。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -7128,6 +7196,55 @@ skills:
             base: 0.25
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 획득합니다.
+        <sec typ="cond">전투 개시 시</sec>, 아군 스쿼드 구성에 따라 중장형 또는 <cmt t="앵거 오브 호드"><import name="AngerOfHorde" /></cmt> 소속 전투원은 다음 효과를 획득합니다.
+        <box t="지원기 3기 이상">
+            <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec> 증가
+        </box>
+        <box t="공격기 3기 / 지원기 2기">
+            <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="9" r /></sec> 증가
+        </box>
+        <box t="공격기 4기 / 지원기 1기">
+            <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="13" r /></sec> 증가
+        </box>
+      EN: |-
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> gains the effect.
+        <sec typ="cond">At battle start</sec>, allies squad composition depending on Heavy-type or <cmt t="Anger of the Horde"><import name="AngerOfHorde" /></cmt> affiliated combatant next gains the effect.
+        <box t="Supporter 3 unit or more">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec> increase
+        </box>
+        <box t="Attacker 3 unit / Supporter 2 unit">
+        <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="9" r /></sec> increase
+        </box>
+        <box t="Attacker 4 unit / Supporter 1 unit">
+        <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="12" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="13" r /></sec> increase
+        </box>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視</sec> 効果を獲得します。
+        <sec typ="cond">戦闘開始時</sec>、 味方 スクワッド 構成に応じて 重装型 または <cmt t="アンガー・オブ・ホード"><import name="AngerOfHorde" /></cmt> 所属 戦闘員は 次 効果を獲得します。
+        <box t="支援機 3機 以上">
+         <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> 増加
+        </box>
+        <box t="攻撃機 3機 / 支援機 2機">
+         <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="9" r /></sec> 増加
+        </box>
+        <box t="攻撃機 4機 / 支援機 1機">
+         <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="13" r /></sec> 増加
+        </box>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec> 獲得效果。
+        <sec typ="cond">戰鬥開始時</sec>， 我方 小隊 組成依 重裝型 或 <cmt t="憤怒部落"><import name="AngerOfHorde" /></cmt> 所屬 戰鬥員 下次 獲得效果。
+        <box t="支援機 3台 以上">
+         <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec> 增加
+        </box>
+        <box t="攻擊機 3台 / 支援機 2台">
+         <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="9" r /></sec> 增加
+        </box>
+        <box t="攻擊機 4台 / 支援機 1台">
+         <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="12" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="13" r /></sec> 增加
+        </box>
 dialogue:
   KR:
     "1":
@@ -7182,8 +7299,7 @@ dialogue:
       SPIdle_02_01: |-
         캬하핫! 이 모습이 사령관에게 짜릿한가봐?
         그러면 보답으로… 나도 짜릿하게 해달라고?
-      Oath: 먼저 반하면 지는 거라고 했는데 말이야. 캬하핫! 그러면 이 승부… 내가 졌네. 이미 한참 전에 사령관에게 반해있었으니까. 하지만
-        짜릿한 승부였어. 이 짜릿함을 여기서 끝내지는 않겠지? 나는 어지간한 짜릿함으로는 만족 못 한다고. 무슨 말인지… 알지?
+      Oath: 먼저 반하면 지는 거라고 했는데 말이야. 캬하핫! 그러면 이 승부… 내가 졌네. 이미 한참 전에 사령관에게 반해있었으니까. 하지만 짜릿한 승부였어. 이 짜릿함을 여기서 끝내지는 않겠지? 나는 어지간한 짜릿함으로는 만족 못 한다고. 무슨 말인지… 알지?
       OathIdle_01: |-
         칸 대장이 지난 작전 수고 많았다고
         카페 호라이즌으로 모이라고 하네.
@@ -7239,10 +7355,8 @@ dialogue:
       SPIdle_02_01: |-
         헤에… 이게 더 좋아질지도 모르겠네…
         좀 더 해봐야 확실히 알겠어.
-      Oath: >-
-        흠… 나한테? 결혼하고 얼마 안돼서 홀몸이 될지도 모른다? 캬하핫. 농담이야. 사령관 밑에 있으면 그럴 리는 없겠지.
-        ...서약했으니 도박을 그만두라고?
-
+      Oath: |-
+        흠… 나한테? 결혼하고 얼마 안돼서 홀몸이 될지도 모른다? 캬하핫. 농담이야. 사령관 밑에 있으면 그럴 리는 없겠지. ...서약했으니 도박을 그만두라고?
         음… 그건 좀 어렵겠는데. 그렇게 그만두게 하고 싶으면, 내기를 해서 이기던가, 아니면… 다른 자극을 더 많이 주던가. 골라봐.
       OathIdle_01: |-
         응? 아아, 노력은 하고 있어. 그래도 어떻게
@@ -7341,8 +7455,7 @@ dialogue:
       SPIdle_02_01: |-
         [미번역]캬하핫! 이 모습이 사령관에게 짜릿한가봐?
         그러면 보답으로… 나도 짜릿하게 해달라고?
-      Oath: "[미번역]먼저 반하면 지는 거라고 했는데 말이야. 캬하핫! 그러면 이 승부… 내가 졌네. 이미 한참 전에 사령관에게 반해있었으니까.
-        하지만 짜릿한 승부였어. 이 짜릿함을 여기서 끝내지는 않겠지? 나는 어지간한 짜릿함으로는 만족 못 한다고. 무슨 말인지… 알지?"
+      Oath: "[미번역]먼저 반하면 지는 거라고 했는데 말이야. 캬하핫! 그러면 이 승부… 내가 졌네. 이미 한참 전에 사령관에게 반해있었으니까. 하지만 짜릿한 승부였어. 이 짜릿함을 여기서 끝내지는 않겠지? 나는 어지간한 짜릿함으로는 만족 못 한다고. 무슨 말인지… 알지?"
       OathIdle_01: |-
         [미번역]칸 대장이 지난 작전 수고 많았다고
         카페 호라이즌으로 모이라고 하네.
@@ -7374,11 +7487,9 @@ dialogue:
       SPIdle_01_01: なかなかいいわね。博打のスリルには劣るけど、これも悪くないわ。
       Idle_02_01: これ？ウォーカーで焼却処理すると色々と金目の物が燃えないで残るのよ。何かはわからないけど好きで集めてるの。賭けに勝ったらおすそ分けしてあげてもいいわよ？
       Idle_03_01: はぁぁ…ここの生活は退屈すぎるわ。ふふ、そうね、よく言えば安定した生活ってことよね。いつ頭に銃弾が貫通するかもわからない不安な生活よりはマシかしら。そもそも、そんな心配したこともないけど。
-      Idle_04_01: 今日はサイコロで行くわよ？きゃはは、経験がものを言うってね。
-        えっ、ご奉仕券二日分を賭けるって？その勝負受けた。血が騒ぐわ！じゃ、いくわよ？ふふ、さ～て何が ―……ひ、引き分けにしちゃだめ…？
+      Idle_04_01: 今日はサイコロで行くわよ？きゃはは、経験がものを言うってね。 えっ、ご奉仕券二日分を賭けるって？その勝負受けた。血が騒ぐわ！じゃ、いくわよ？ふふ、さ～て何が ―……ひ、引き分けにしちゃだめ…？
       SPIdle_02_01: はぁ…これに夢中になっちゃうかも…も…もう少しやってみればハッキリすると思うわよ…？
-      Oath: ふ～ん…あたしと？結婚してすぐに独りになっても知らないわよ？きゃはは。冗談だってば。
-        司令官の傍にいたらそんなことあるわけないでしょ。…え？誓約を交わしたら賭け事をやめろって？う～ん…それはちょっと難しいかな。そんなにやめさせたいなら、賭けをしてあんたが勝つか、それとも…もっと凄い刺激をくれるかの…二択よ。
+      Oath: ふ～ん…あたしと？結婚してすぐに独りになっても知らないわよ？きゃはは。冗談だってば。 司令官の傍にいたらそんなことあるわけないでしょ。…え？誓約を交わしたら賭け事をやめろって？う～ん…それはちょっと難しいかな。そんなにやめさせたいなら、賭けをしてあんたが勝つか、それとも…もっと凄い刺激をくれるかの…二択よ。
       OathIdle_01: ん？もちろん、努力してるわよ。そんなすぐにやめられたらこんな苦労してないってば。これから先、時間はたっぷりあるんだから。もう少し見守ってて。
       MVP: ""
     M:
@@ -7483,11 +7594,8 @@ dialogue:
       SPIdle_02_01: |-
         Oh… I might grow to like this better.
         I’ll have to do it more to be sure.
-      Oath: >-
-        Hmm… For me? Who knows? You might end up being single again not long
-        after getting married. Muahaha. I’m kidding. That won’t happen if you’re
-        under the Commander. … You want me to quit gambling cause I made a vow?
-
+      Oath: |-
+        Hmm… For me? Who knows? You might end up being single again not long after getting married. Muahaha. I’m kidding. That won’t happen if you’re under the Commander. … You want me to quit gambling cause I made a vow?
         Umm… That might be a bit difficult. If you really want me to quit that badly, either win a bet against me or… Give me something more exciting to do. Take you pick.
       OathIdle_01: |-
         What? Ah, I’m trying. But I can’t just
@@ -7523,18 +7631,13 @@ dialogue:
         to your grave, there’s no point-
         Fine, fine. Gee, I can’t say anything.
         My Hubby is difficult to handle.
-      Idle_01_03: >-
+      Idle_01_03: |-
         You want to go ride Walker? Good. Climb up. Why are you
-
         doing that? It’s not like you’ve never seen it. You don’t care about cleaning up
-
         when you’re focused in the night.
-
         It’s just like that.
-      SPIdle_01_01: >-
-        Pfft. Our minds being connected, being healed… Don’t say such things.
-        You’re giving me goosebumps. Just go on.
-
+      SPIdle_01_01: |-
+        Pfft. Our minds being connected, being healed… Don’t say such things. You’re giving me goosebumps. Just go on.
         You don’t have to say it. I know.
       MVP: ""
   TC:
@@ -7667,20 +7770,14 @@ skins:
   sid: null
   artist: MAR10
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -7695,25 +7792,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_Salamander_N
   skins:
     - sid: 1
       artist: D-loG
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
+        G:
+          - _
+          - S
       anim:
         - false
         - false
@@ -7730,5 +7825,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_Salamander_NS1
         consumableKey: Skin_BR_Salamander_1

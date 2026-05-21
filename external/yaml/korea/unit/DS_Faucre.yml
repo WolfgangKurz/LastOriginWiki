@@ -2718,6 +2718,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        마계의 화염을 던져 <dmg elem="fire" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 대상을 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>으로 지정하여, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec> 증가 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="2" r /></sec> 감소 / <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> 지속 화염 피해</sec>를 부여합니다.
+        대상이 <sec typ="cond"><buff typ="FireDMG_DOT" /> 지속 화염 피해</sec> 상태인 경우, 해당 라운드 동안 동일 효과가 추가 적용됩니다.
+      EN: |-
+        Magye of Fire throws <dmg elem="fire" />.
+        <sec typ="cond">On hit</sec>, target 2 rounds <sec typ="buff"><buff typ="MARKING" /> Mark</sec> as designates, <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> increase / <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val idx="2" r /></sec> decrease / <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> Fire damage over time</sec> grants.
+        target <sec typ="cond"><buff typ="FireDMG_DOT" /> Fire damage over time</sec> if in the state, each round same effect and additionally applied.
+      JP: |-
+        ムアグイェの 火炎を ドオンジヨ<dmg elem="fire" />を与えます。
+        <sec typ="cond">命中時</sec>、 対象を 2ラウンドの間 <sec typ="buff"><buff typ="MARKING" /> 標的</sec>で 指定して、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="0" r /></sec> 増加 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val idx="2" r /></sec> 減少 / <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> 持続火炎ダメージ</sec>を付与します。
+        対象が <sec typ="cond"><buff typ="FireDMG_DOT" /> 持続火炎ダメージ</sec> 状態の場合、 該当 ラウンド間 ドオンイル 効果が 追加適用されます。
+      TC: |-
+        魔界的 火焰 更多投擲 造成<dmg elem="fire" />。
+        <sec typ="cond">命中時</sec>， 目標 2回合內 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>以 指定並， <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="0" r /></sec> 增加 / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val idx="2" r /></sec> 減少 / <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="1" signless /> 持續火焰傷害</sec>賦予。
+        目標 <sec typ="cond"><buff typ="FireDMG_DOT" /> 持續火焰傷害</sec> 若為狀態， 該 回合內 同il 效果 額外套用。
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -4652,6 +4669,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        채찍 연타로 범위 내 적에게 <sec typ="attr">보호 무시</sec> <dmg elem="fire" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec>을(를) 감소시키고 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>으로 지정하여 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="6" signless /> 지속 화염 피해</sec>를 부여합니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="1" r /></sec>가 증가하며 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
+      EN: |-
+        Chaejjik Yeonta as within range to the enemy <sec typ="attr">Ignore Protection</sec> <dmg elem="fire" />.
+        <sec typ="cond">On hit</sec>, target's <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec> decreases and 2 rounds <sec typ="buff"><buff typ="MARKING" /> Mark</sec> as designates <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="6" signless /> Fire damage over time</sec> grants.
+        <sec typ="cond">On critical hit</sec>, <sec typ="dmg"><buff typ="FireATK_UP" /> damage <val idx="1" r /></sec> increases and target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec>.
+      JP: |-
+        チエッジイク ヨントアで 範囲内 敵に <sec typ="attr">保護無視</sec><dmg elem="fire" />を与えます。
+        <sec typ="cond">命中時</sec>、 対象の <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec>を 減少時クイし 2ラウンドの間 <sec typ="buff"><buff typ="MARKING" /> 標的</sec>で 指定して <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="6" signless /> 持続火炎ダメージ</sec>を付与します。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="dmg"><buff typ="FireATK_UP" /> ダメージ量 <val idx="1" r /></sec>が 増加し、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>します。
+      TC: |-
+        Chaej至k Yeonta以 範圍內 敵人給 <sec typ="attr">無視保護</sec> 造成<dmg elem="fire" />。
+        <sec typ="cond">命中時</sec>， 目標的 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec> 減少時台並 2回合內 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>以 指定並 <sec typ="dmg"><buff typ="FireDMG_DOT" /> <val idx="6" signless /> 持續火焰傷害</sec>賦予。
+        <sec typ="cond">暴擊時</sec>， <sec typ="dmg"><buff typ="FireATK_UP" /> 傷害量 <val idx="1" r /></sec> 增加，並 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -5078,6 +5112,31 @@ skills:
             base: 30
             per: 30
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 주변에 있는 바이오로이드들을 세뇌해 능력 이상의 힘을 끌어냅니다. (<sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /></sec>)
+        <sec typ="cond">대기 시</sec>, 동일한 효과가 2라운드 동안 추가 적용되지만 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="9" signless /> 고정 물리 피해</sec>를 줍니다. (중첩 불가)
+        <equip uid="Sub_HornOfBADK" /> 장착 시 부작용 발생을 억제하고, 지속 효과를 두 배로 증폭시킵니다.
+        또한 대기 시 발생하는 <sec typ="note">세뇌의 파동</sec>에 의한 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 고정 물리 피해</sec>를 제거합니다.
+        비록 바이오로이드가 아닐지언정, 배하의 <sec typ="note">군단장</sec>(<char uid="AGS_Goltarion" />)에게도 친히 마력을 하사합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, nearby to exists Bioroid three Noe remove ability or more of power Kkeul uh Naepni all. (<sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="3" r /></sec>)
+        <sec typ="cond">On standby</sec>, same effect and 2 rounds additionally applied but becomes <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="9" signless /> fixed Physical damage</sec> deals. (cannot stack)
+        <equip uid="Sub_HornOfBADK" /> when equipped side effect occurs Eok.and, continuous effect and doubledcauses.
+        also On standby occurs do <sec typ="note">Brainwashing Wave</sec> to by <sec typ="dmg"><buff typ="phyDMG_DOT" /> fixed Physical damage</sec> removes.
+        Birok Bioroid if not whether Eonjeong, times of <sec typ="note">Corps Commander</sec>(<char uid="AGS_Goltarion" />)to also personally Ma power do Sa.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 周辺に ある バイオロイドたちを スエンウェして ンウンルヨク 以上の ハイムを ックウルオンエプンイドア。 (<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /></sec>)
+        <sec typ="cond">待機時</sec>、 同一の 効果が 2ラウンドの間 追加適用ドウェジイだけ <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="9" signless /> 固定物理ダメージ</sec>を 与えます。 (重複不可)
+        <equip uid="Sub_HornOfBADK" /> ジアンチアク 時 ブウジアクヨン ブアルスエンを オクジエし、 持続 効果を 2倍に増幅させます。
+        ットオした 待機時 ブアルスエンする <sec typ="note">洗脳の波動</sec>に よる <sec typ="dmg"><buff typ="phyDMG_DOT" /> 固定物理ダメージ</sec>を 除去します。
+        ブイルオク バイオロイドが アンイルジイオンジオン、 ブエハアの <sec typ="note">軍団長</sec>(<char uid="AGS_Goltarion" />)にも チインハイ ムアルヨクを ハアスアします。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 周圍於 有 生化人們 三noe 能力ryeok 以上的 命中m Kkeuleonae。 (<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /></sec>)
+        <sec typ="cond">待機時</sec>， 相同 效果 2回合內 額外套用不會僅 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="9" signless /> 固定物理傷害</sec> 造成。 (不可疊加)
+        <equip uid="Sub_HornOfBADK" /> 裝備 時 附加製作yong 發生 語kje並， 持續 效果 增幅為2倍。
+        又 待機時 發生 <sec typ="note">洗腦波動</sec>於 的 <sec typ="dmg"><buff typ="phyDMG_DOT" /> 固定物理傷害</sec> 移除。
+        Birok 生化人 不是至eon特定， 倍ha的 <sec typ="note">軍團長</sec>(<char uid="AGS_Goltarion" />)給也 值nhi Maryeok 下sa。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -6493,6 +6552,23 @@ skills:
               level: "0"
             value: Effect_BUFF_HornOfFaucre_N_11
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">자신의 HP가 50% 이상인 경우</sec>, 기세등등해져 효과가 50% 증폭됩니다.
+        <sec typ="cond">자신의 HP가 50% 이하인 경우</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="8" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="9" r inv /></sec>가 감소합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increases.
+        <sec typ="cond">own HP 50% or moreif</sec>, unit three Deungdeung remove Jyeo effect and increased by 50%.
+        <sec typ="cond">own HP 50% or lessif</sec>, <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="8" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="9" r inv /></sec> decreases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">自身の HPが 50% 以上の場合</sec>、 機スエドウンドウンしてジヨ 効果が 50%増幅されます。
+        <sec typ="cond">自身の HPが 50% 以下の場合</sec>、 <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="8" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="9" r inv /></sec>が減少します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>增加。
+        <sec typ="cond">自身的 HP 50% 以上若為</sec>， 台三deungdeung變得 效果 增幅50%。
+        <sec typ="cond">自身的 HP 50% 以下若為</sec>， <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="8" r /></sec> 增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="9" r inv /></sec>減少。
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -6901,6 +6977,27 @@ skills:
             base: 0.15
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군 전체에 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> <sec typ="attr">해로운</sec> 표식 지정 면역</sec> 효과를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 아군 전체의 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="5" r /></sec>를 증가시키지만 대신 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="6" r /></sec>를 증가시킵니다.
+        <sec typ="cond">배하의 <sec typ="note">군단장</sec>(<char uid="AGS_Goltarion" />)</sec>에게는 위 수치 대신 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec>를 증가시키지만 대신 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="4" r /></sec>를 증가시킵니다.
+        해당 효과는 <sec typ="attr">강화 효과</sec>로 분류됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, all allies to <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> <sec typ="attr">harmful</sec> Mark designated immunity</sec> grants the effect.
+        <sec typ="cond">At round start</sec>, all allies of <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="5" r /></sec> increase when but increases instead <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="6" r /></sec> increases.
+        <sec typ="cond">times of <sec typ="note">Corps Commander</sec>(<char uid="AGS_Goltarion" />)</sec> to above value instead <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec> increase when but increases instead <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="4" r /></sec> increases.
+        the effect <sec typ="attr">buffs</sec> as category.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 味方全体に <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> <sec typ="attr">有害な</sec> 標的 指定 免疫</sec> 効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、 味方全体の <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="5" r /></sec>を 増加時クイジイだけ 代わりに <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="6" r /></sec>を増加させます。
+        <sec typ="cond">ブエハアの <sec typ="note">軍団長</sec>(<char uid="AGS_Goltarion" />)</sec>には ウィ 数値 代わりに <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="3" r /></sec>を 増加時クイジイだけ 代わりに <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="4" r /></sec>を増加させます。
+        該当 効果は <sec typ="attr">強化効果</sec>で ブウンルユされます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 全體我方於 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> <sec typ="attr">有害</sec> 標記 指定 免疫</sec> 賦予效果。
+        <sec typ="cond">回合開始時</sec>， 全體我方的 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="5" r /></sec> 增加時台至僅 改為 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="6" r /></sec>使其增加。
+        <sec typ="cond">倍ha的 <sec typ="note">軍團長</sec>(<char uid="AGS_Goltarion" />)</sec>給 上 數值 改為 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="3" r /></sec> 增加時台至僅 改為 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="4" r /></sec>使其增加。
+        該 效果 <sec typ="attr">強化效果</sec>以 分類。
 dialogue:
   KR:
     "1":
@@ -7079,10 +7176,7 @@ dialogue:
         끝나길 기다려주세요.
         무대가 아닌… 침대에서…
         새로운 노래를… 불러드릴게요.​
-      Oath: 처음으로 노래를 들었던 순간을 기억해요. 어디선가 들려오던 노래에 가슴이 두근거려 언젠가 저도 무대 위에 올라 누군가의 가슴을
-        두근거리게 만들고 싶었어요. 그와 마찬가지로 사장님과 처음 만났던 순간도 기억해요. 처음 뵙자마자 가슴이 두근거려 언젠가 저분도
-        저에게 가슴이 두근거리게 하고 싶다고 지금 두 소원이 전부 이루어졌네요. 가슴이 두근거리시나요? 그러면 더욱 가슴이 두근거리게
-        해드릴게요. 저도 사장님을 당신을 사랑해요.​
+      Oath: 처음으로 노래를 들었던 순간을 기억해요. 어디선가 들려오던 노래에 가슴이 두근거려 언젠가 저도 무대 위에 올라 누군가의 가슴을 두근거리게 만들고 싶었어요. 그와 마찬가지로 사장님과 처음 만났던 순간도 기억해요. 처음 뵙자마자 가슴이 두근거려 언젠가 저분도 저에게 가슴이 두근거리게 하고 싶다고 지금 두 소원이 전부 이루어졌네요. 가슴이 두근거리시나요? 그러면 더욱 가슴이 두근거리게 해드릴게요. 저도 사장님을 당신을 사랑해요.​
       OathIdle_01: |-
         저는 욕심쟁이네요. 무대에서 춤추고 노래를
         부르고 싶다는 소원, 사장님께 사랑을 받고
@@ -7411,9 +7505,7 @@ dialogue:
         Are you trying… to make me submit to your desire?
         Awe… we shouldn’t but…
         here… if you touch here then maybe?
-      Oath: Huh? When did you… prepare all this? … Thank you… Thank you so much … I
-        was gonna disappear as just a mediocre actress… but you saved me… Now!
-        I’ll become your own Magical Girl, boss!
+      Oath: Huh? When did you… prepare all this? … Thank you… Thank you so much … I was gonna disappear as just a mediocre actress… but you saved me… Now! I’ll become your own Magical Girl, boss!
       OathIdle_01: |-
         I remember what happened
         that day. It’s the most precious memory
@@ -7465,12 +7557,9 @@ dialogue:
       SPIdle_02_01: |-
         I-is it finally time?
         You’ll undo the other seal, too?
-      Oath: >-
-        This might sound ridiculous, but I always admired an ordinary life.
-        Where you normally date…
-
+      Oath: |-
+        This might sound ridiculous, but I always admired an ordinary life. Where you normally date…
         and ma-marry… A-although this situation doesn’t seem that normal, but that’s okay.
-
         Because I finally became a wife of a person I love. So… it’s probably okay to do the ceremony multiple times…
       OathIdle_01: |-
         W-was it okay…? Then… f, fourth?!
@@ -7539,10 +7628,8 @@ dialogue:
         this song is over.
         I’ll sing you another one…
         in bed…
-      Oath: >-
-        I remember the moment I heard a song. My heart was pounding so hard. I
-        thought to myself that I would
-
+      Oath: |-
+        I remember the moment I heard a song. My heart was pounding so hard. I thought to myself that I would
         love to sing for others, so that I can make their hearts beat like mine did. I also remember the first time we met. My heart was beating out of my chest. I wanted you to feel the same towards me. Now all my wishes have come true. Is your heart pounding? Then I will make your heart pound even more. I love you too.
       OathIdle_01: |-
         I’m so selfish. I wished that I could sing and dance on stage.
@@ -7596,9 +7683,8 @@ dialogue:
         and punish you!
         I’m going to curse you so that you can’t live
         without me!
-      Oath: >-
+      Oath: |-
         I'm not sure. Whether you like me… Or… if you want a sexy devil…
-
         O-of course, I'm definitely ready! Shall I get the whip if you w-want? What?
       OathIdle_01: |-
         I’ll get angry if you keep talking about
@@ -7629,10 +7715,8 @@ dialogue:
       Idle_01_02: |-
         S-sing?
         I-I have been practicing… I-I’ll sing to you in my room later!
-      Idle_01_03: >-
-        I like spending time with Moonbit and Momo… But I’m happier when I’m
-        with you.
-
+      Idle_01_03: |-
+        I like spending time with Moonbit and Momo… But I’m happier when I’m with you.
         Everything looks so beautiful when I’m with you.
       SPIdle_01_01: |-
         Oh… Ahaha.
@@ -7918,20 +8002,13 @@ skins:
   sid: null
   artist: One
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -7946,25 +8023,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_DS_Faucre_N
   skins:
     - sid: 1
       artist: One
       price: 159
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - true
         - false
@@ -7981,24 +8054,22 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_DS_Faucre_1
     - sid: 2
       artist: Kakiman
       price: 205
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 60
       stage: false
       subset:
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - B
+        G:
+          - _
+          - B
       anim:
         - false
         - false
@@ -8015,24 +8086,19 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_DS_Faucre_NS2
     - sid: 3
       artist: CORGI
       price: 174
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 36
       stage: false
       subset:
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - B
       anim:
         - false
         - false
@@ -8049,5 +8115,6 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_DS_Faucre_NS3
         consumableKey: Skin_DS_Faucre_3

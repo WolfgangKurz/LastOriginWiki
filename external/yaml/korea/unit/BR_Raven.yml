@@ -3928,6 +3928,23 @@ skills:
               level: "0"
             value: Char_BR_BeastHunter_N
             chance: 1
+    desc:
+      KR: |-
+        디스크 봄으로 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다.
+        적중 대상이 <sec typ="cond">경장/중장형</sec>인 경우, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 강화 효과를 해제</sec>합니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 보호 효과를 해제</sec>합니다.
+      EN: |-
+        disc by bomb as <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec> decreases.
+        Hit target <sec typ="cond">Light/Heavy-type</sec> if, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Defense removes buffs</sec>.
+        <sec typ="cond">On critical hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> protection effects remove</sec>.
+      JP: |-
+        ディスクボムで <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、、 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を減少させます。
+        命中対象が <sec typ="cond">軽装/重装型</sec>の場合、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防御力 強化効果を 解除</sec>します。
+        <sec typ="cond">クリティカル時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 保護効果を 解除</sec>します。
+      TC: |-
+        圓盤炸彈以 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>使其減少。
+        命中目標為 <sec typ="cond">輕裝/重裝型</sec>若為， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 防禦力 強化效果 解除</sec>。
+        <sec typ="cond">暴擊時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 保護效果 解除</sec>。
   "2":
     key: "2"
     icon: Scan
@@ -6919,6 +6936,23 @@ skills:
               level: "0"
             value: Char_BR_Pani_N
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고, 2라운드 동안 <sec typ="buff"><buff typ="MARKING" /> 표식</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec> 증가 상태로 만듭니다.
+        <sec typ="cond">치명타 시</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 회피  강화 / 피해 감소 효과를 해제</sec>합니다.
+        <sec>스킬 레벨 당 +30%의 적중 보정이 적용됩니다.</sec>
+      EN: |-
+        to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> damage and 2 rounds <sec typ="buff"><buff typ="MARKING" /> Mark</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec> increase inflicts.
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> Evasion buff / Damage Reduction removes the effect</sec>.
+        <sec>per skill level +30% of accuracy correction is applied.</sec>
+      JP: |-
+        対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与え、、 2ラウンドの間 <sec typ="buff"><buff typ="MARKING" /> 標的</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec> 増加 状態にします。
+        <sec typ="cond">クリティカル時</sec>、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 回避 強化 / ダメージ 減少 効果を 解除</sec>します。
+        <sec>スキルレベルごとに +30%の 命中補正が適用されます。</sec>
+      TC: |-
+        對目標 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />，並 2回合內 <sec typ="buff"><buff typ="MARKING" /> 標記</sec> / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" r /></sec> 增加 使其進入狀態。
+        <sec typ="cond">暴擊時</sec>， <sec typ="buff"><buff typ="REMOVE_BUFF" /> 迴避 強化 / 傷害 減少 效果 解除</sec>。
+        <sec>每技能等級 +30%的 套用命中補正。</sec>
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -7591,6 +7625,23 @@ skills:
             base: 0.5
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">공격 적중 시</sec>, 범위 내 중장형 공격기의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시키고, 3라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="5" r /></sec>를 증가시킵니다. (최대 2중첩)
+        자신은 동일한 수치의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="7" r /></sec> 증가 효과를 획득합니다.
+        <sec>스킬 레벨 10에서 자신의 위치와 관계없이 전체 적용됩니다.</sec>
+      EN: |-
+        <sec typ="cond">On hit</sec>, within range Heavy-type Attacker of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases and 3 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="5" r /></sec> increases. (up to 2stack)
+        self same value of <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="7" r /></sec> increase effect.
+        <sec>At skill level 10, regardless of own position all is applied.</sec>
+      JP: |-
+        <sec typ="cond">攻撃命中時</sec>、 範囲内 重装型 攻撃機の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を 増加時クイし、 3ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>を増加させます。 (最大 2重複)
+        自身は 同一の 数値の <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec> 増加 効果を獲得します。
+        <sec>スキルレベル10で 自身の位置に関係なく 全体 適用されます。</sec>
+      TC: |-
+        <sec typ="cond">攻擊命中時</sec>， 範圍內 重裝型 攻擊機的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 增加時台並， 3回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="5" r /></sec>使其增加。 (最大 2疊加)
+        自身 相同 數值的 <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="7" r /></sec> 增加 獲得效果。
+        <sec>技能等級10時 無論自身位置 全體 套用。</sec>
   "4":
     key: "4"
     icon: P.CannonShotDelay
@@ -7756,6 +7807,27 @@ skills:
             base: 0
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가하고 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 적중 감소 효과에 면역</sec> 상태가 됩니다.
+        <sec typ="note">디스크 봄</sec> 적중 시, 스쿼드 내에 <char uid="BR_BeastHunter" />가 있을 경우 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">157mm HEAT탄</sec> 협동 공격</sec>을 유도합니다.
+        <sec typ="note">표적 스캔</sec> 적중 시, 스쿼드 내에 <char uid="BR_Pani" />가 있을 경우 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">183mm HVAP탄</sec> 협동 공격</sec>을 유도합니다.
+        <sec typ="cond">스쿼드 내에 협동 공격을 유도할 대상이 없을 경우</sec>, <sec typ="note">포격 관측</sec>의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" slot="3" /></sec> 증가 효과가 자신에게도 적용됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>() increases and <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> Accuracy decrease effect and immunity to</sec> state.
+        <sec typ="note">Disc Bomb</sec> On hit, in squad to <char uid="BR_BeastHunter" /> if present <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">157mm HEAT round</sec> coordinated attack</sec> triggers.
+        <sec typ="note">Target Scan</sec> On hit, in squad to <char uid="BR_Pani" /> if present <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">183mm HVAP Round</sec> coordinated attack</sec> triggers.
+        <sec typ="cond">in squad to coordinated attack to trigger target if absent</sec>, <sec typ="note">bombardment observation</sec> of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" slot="3" /></sec> increase effect and self also is applied.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が 増加し、 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 命中 減少 効果に 免疫</sec> 状態になります。
+        <sec typ="note">ディスクボム</sec> 命中時、 スクワッド 内に <char uid="BR_BeastHunter" />が 存在する場合 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">157mm HEAT弾</sec> 協同攻撃</sec>を 誘導します。
+        <sec typ="note">標的スキャン</sec> 命中時、 スクワッド 内に <char uid="BR_Pani" />が 存在する場合 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">183mm HVAP弾</sec> 協同攻撃</sec>を 誘導します。
+        <sec typ="cond">スクワッド 内に 協同攻撃を 誘導できる 対象が 存在しない場合</sec>、 <sec typ="note">砲撃 観測</sec>の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" slot="3" /></sec> 増加 効果が 自身にも 適用されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 增加，並 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 命中 減少 效果於 免疫</sec> 變為狀態。
+        <sec typ="note">圓盤炸彈</sec> 命中時， 小隊 內於 <char uid="BR_BeastHunter" /> 存在時 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">157mm HEAT彈</sec> 協同攻擊</sec> 誘發。
+        <sec typ="note">目標掃描</sec> 命中時， 小隊 內於 <char uid="BR_Pani" /> 存在時 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">183mm HVAP彈</sec> 協同攻擊</sec> 誘發。
+        <sec typ="cond">小隊 內於 協同攻擊 誘發可 目標 不存在時</sec>， <sec typ="note">砲擊 觀測</sec>的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" slot="3" /></sec> 增加 效果 自身給也 套用。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -8401,6 +8473,27 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec>가 증가합니다.
+        <sec typ="note">디스크 봄</sec> / <sec typ="note">표적 스캔</sec>의 부가 효과 발동 조건을 '<sec typ="cond">치명타 시</sec>'에서 '<sec typ="cond">적중 시</sec>'로 완화합니다.
+        <sec typ="cond">전투 개시 시</sec>, <cmt t="AA 캐노니어 소속 공격기"><import name="AACannonier_Attacker" p="0" /></cmt>에게 1라운드 동안 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> <sec typ="attr">일반 효과</sec>를 부여합니다.
+        <sec>해당 효과는 적 보호기 수만큼 지속 라운드가 증가합니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="1" r /></sec> increases.
+        <sec typ="note">Disc Bomb</sec> / <sec typ="note">Target Scan</sec> of part effect and trigger condition '<sec typ="cond">On critical hit</sec>' in '<sec typ="cond">On hit</sec>'as relaxation.
+        <sec typ="cond">At battle start</sec>, <cmt t="AA Cannoneer affiliated Attacker"><import name="AACannonier_Attacker" p="0" /></cmt> to 1 round <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> <sec typ="attr">normal effect</sec> grants.
+        <sec>the effect enemy Defender by the amount of duration increases.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="1" r /></sec>が増加します。
+        <sec typ="note">ディスクボム</sec> / <sec typ="note">標的スキャン</sec>の ブウが 効果 ブアルドオン 条件を '<sec typ="cond">クリティカル時</sec>'で '<sec typ="cond">命中時</sec>'で ワンハワします。
+        <sec typ="cond">戦闘開始時</sec>、 <cmt t="AAキャノニア 所属 攻撃機"><import name="AACannonier_Attacker" p="0" /></cmt>に 1ラウンドの間 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視</sec> <sec typ="attr">一般効果</sec>を付与します。
+        <sec>該当 効果は 敵 保護機 数だけ 持続 ラウンドが増加します。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="1" r /></sec>增加。
+        <sec typ="note">圓盤炸彈</sec> / <sec typ="note">目標掃描</sec>的 附加 效果 發動 條件 '<sec typ="cond">暴擊時</sec>'在 '<sec typ="cond">命中時</sec>'以 緩和。
+        <sec typ="cond">戰鬥開始時</sec>， <cmt t="AA砲手 所屬 攻擊機"><import name="AACannonier_Attacker" p="0" /></cmt>給 1回合內 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec> <sec typ="attr">一般效果</sec>賦予。
+        <sec>該 效果 敵人 保護機 依數量 持續 回合增加。</sec>
 dialogue:
   KR:
     "1":
@@ -8717,12 +8810,9 @@ dialogue:
         Our kiddo, the Commander
         Is it time to have fun with your sis? Come here,
         This sis will now teach you the world of adults.​
-      Oath: >-
-        Does this contract mean that you’ll obey me? Huh? No? Then are you
-        trying to make me obey you?
-
+      Oath: |-
+        Does this contract mean that you’ll obey me? Huh? No? Then are you trying to make me obey you?
         A kiddo's proposal… That's brave for you. My answer to it is… YES!
-
         Then, due to this contract, you and I are subordinated to each other. Don't! You! Ever! Forget!
       OathIdle_01: |-
         Who’s this?
@@ -8781,11 +8871,9 @@ dialogue:
         with me? Well? There’s
         only you and me, anyway.
       SPIdle_02_01: Ha, ha… you like me that much?
-      Oath: >-
+      Oath: |-
         Oohㅡ I realized it by your glance, you kiddo… Sigh… What do I do? Haha…
-
         Just kidding, Commander. Your confession makes me so so happy. All you need to do is grab my hand
-
         and follow me. Leave it to me, since I'll show you EVERYTHING else.
       OathIdle_01: |-
         What if…we had to do
@@ -8814,14 +8902,10 @@ dialogue:
         Hm? When did you turn around? When did you learn
         to express your emotions like this? Let's get one
         thing straight. Who do you think is better at these things?
-      Idle_01_02: >-
-        Like an occasional older sister? Hehe, what's that supposed to mean? You
-        were acting like an older sister
-
+      Idle_01_02: |-
+        Like an occasional older sister? Hehe, what's that supposed to mean? You were acting like an older sister
         so many times today! She sat and watched
-
         until the commander woke up! So,
-
         just like an older sister, no?
       Idle_01_03: |-
         Everyone has their downs. However, it’s difficult for the commander
@@ -8984,20 +9068,15 @@ skins:
   sid: null
   artist: SIMA
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 6
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+    G:
+      - _
   anim:
     - true
     - false
@@ -9012,24 +9091,20 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 4
+    dflags: 4
   skins:
     - sid: 1
       artist: D-loG
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - false
         - false
@@ -9046,5 +9121,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_BR_Raven_NS1
         consumableKey: Skin_BR_Raven_1

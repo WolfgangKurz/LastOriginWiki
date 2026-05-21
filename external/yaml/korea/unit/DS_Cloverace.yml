@@ -497,6 +497,7 @@ source:
   - - Ev:Ev28:EV1-2Ex
   - - Ev:Ev29:EV1-2Ex
   - - Ev:Ev30:EV1-2Ex
+  - - Ev:Ev39:EV1-4EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2199,6 +2200,39 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        우정의 철퇴를 휘둘러 단일 대상에게 <dmg elem="physics" />를 입히고, 적중 시 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>합니다.
+        적중 대상이 <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태인 경우, 2라운드 동안 대상의 <sec typ="dmg"><buff typ="TROOPER_DMG_DOWN" /> 대 경장형 피해량 <val idx="3" r /></sec>를 감소시킵니다. (최대 2중첩)
+        <sec type="cond">아군 중 <cmt t="아우"><import name="BROTHER" p="4@0" /></cmt>가 존재하는 경우</sec>, 해당 라운드 동안 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과를 획득합니다.
+        <define name="BROTHER">
+        <sec typ="cond">HP가 25% 이상인 아군</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val param="$1" r /></sec>
+        </define>
+      EN: |-
+        right removeong of Cheoltoe swings to a single target <dmg elem="physics" /> deals and, On hit 2 rounds target <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec>.
+        Hit target <sec typ="cond"><buff typ="PROVOKE" /> Provoke</sec> if in the state, 2 rounds, target's <sec typ="dmg"><buff typ="TROOPER_DMG_DOWN" /> Anti-Light damage <val idx="3" r /></sec> decreases. (up to 2stack)
+        <sec type="cond">allies during <cmt t="Awoo"><import name="BROTHER" p="4@0" /></cmt> exists case</sec>, each round <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier / Damage Reduction</sec> gains the effect.
+        <define name="BROTHER">
+        <sec typ="cond">HP 25% or more is allies</sec>
+        <sec typ="cond">At round start</sec>, 2 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val param="$1" r /></sec>
+        </define>
+      JP: |-
+        ウジオンの チオルトウェを ハウィドウルルオ 単一対象へ<dmg elem="physics" />を 与えし、 命中時 2ラウンドの間 対象を <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>します。
+        命中対象が <sec typ="cond"><buff typ="PROVOKE" /> 挑発</sec> 状態の場合、 2ラウンドの間 対象の <sec typ="dmg"><buff typ="TROOPER_DMG_DOWN" /> 対軽装型ダメージ <val idx="3" r /></sec>を減少させます。 (最大 2重複)
+        <sec type="cond">味方 中 <cmt t="アウ"><import name="BROTHER" p="4@0" /></cmt>が ジオンジエする 場合</sec>、 該当 ラウンド間 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア／ダメージ減少無視</sec> 効果を獲得します。
+        <define name="BROTHER">
+        <sec typ="cond">HPが 25% 以上である 味方</sec>
+        <sec typ="cond">ラウンド開始時</sec>、 2ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val param="$1" r /></sec>
+        </define>
+      TC: |-
+        U特定的 Cheoltoe 揮舞 單一目標給 <dmg elem="physics" /> 造成並， 命中時 2回合內 目標 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>。
+        命中目標為 <sec typ="cond"><buff typ="PROVOKE" /> 挑釁</sec> 若為狀態， 2回合內 目標的 <sec typ="dmg"><buff typ="TROOPER_DMG_DOWN" /> 對輕裝型傷害 <val idx="3" r /></sec>使其減少。 (最大 2疊加)
+        <sec type="cond">我方 中 <cmt t="Au"><import name="BROTHER" p="4@0" /></cmt> 存在 情況</sec>， 該 回合內 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾／傷害減免</sec> 獲得效果。
+        <define name="BROTHER">
+        <sec typ="cond">HP 25% 以上為 我方</sec>
+        <sec typ="cond">回合開始時</sec>， 2回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val param="$1" r /></sec>
+        </define>
   "2":
     key: "2"
     icon: AssaultAttack
@@ -3976,6 +4010,43 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        부츠의 분사 장치를 가동하여 온 몸을 날리며 지정 범위 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 입힙니다.
+        적중 대상이 <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">아군 중 <cmt t="아우"><import name="BROTHER" p="4@0" /></cmt>가 존재하는 경우</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 광역 피해량 집중 <val idx="3" r /></sec> 효과가 적용됩니다.
+        <sec typ="cond">두 조건을 모두 만족하는 경우</sec> 대상은 2라운드 동안 <sec typ="buff"><buff typ="STUN" /> 행동 불능</sec> 상태가 됩니다.
+        <define name="BROTHER">
+        <sec typ="cond">HP가 25% 이상인 아군</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val param="$1" r /></sec>
+        </define>
+      EN: |-
+        Uses a parts-ejection device to launch her body to the designated area the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        Hit target <sec typ="cond"><buff typ="PROVOKE" /> Provoke</sec> if in the state, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">allies during <cmt t="Awoo"><import name="BROTHER" p="4@0" /></cmt> exists case</sec>, <sec typ="buff"><buff typ="ATK_UP" /> area damage concentration <val idx="3" r /></sec> the effect is applied.
+        <sec typ="cond">If both conditions are met</sec> the target 2 rounds <sec typ="buff"><buff typ="STUN" /> Stunned</sec> state.
+        <define name="BROTHER">
+        <sec typ="cond">HP 25% or more is allies</sec>
+        <sec typ="cond">At round start</sec>, 2 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val param="$1" r /></sec>
+        </define>
+      JP: |-
+        ブウチウの ブウンスア ジアンチイを がドオンして オン ムオムを ンアルルイし 指定範囲 対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        命中対象が <sec typ="cond"><buff typ="PROVOKE" /> 挑発</sec> 状態の場合、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">味方 中 <cmt t="アウ"><import name="BROTHER" p="4@0" /></cmt>が ジオンジエする 場合</sec>、 <sec typ="buff"><buff typ="ATK_UP" /> グワンヨク ダメージ量 ジイプ中 <val idx="3" r /></sec> 効果が適用されます。
+        <sec typ="cond">ドウ 条件を ムオドウ だけジオクする 場合</sec> 対象は 2ラウンドの間 <sec typ="buff"><buff typ="STUN" /> 行動不能</sec> 状態になります。
+        <define name="BROTHER">
+        <sec typ="cond">HPが 25% 以上である 味方</sec>
+        <sec typ="cond">ラウンド開始時</sec>、 2ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val param="$1" r /></sec>
+        </define>
+      TC: |-
+        附加cheu的 噴射 裝置 同並 On Mom Nalri並 指定範圍 對目標 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        命中目標為 <sec typ="cond"><buff typ="PROVOKE" /> 挑釁</sec> 若為狀態， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">我方 中 <cmt t="Au"><import name="BROTHER" p="4@0" /></cmt> 存在 情況</sec>， <sec typ="buff"><buff typ="ATK_UP" /> 關係ok 傷害量 集中中 <val idx="3" r /></sec> 效果套用。
+        <sec typ="cond">若同時滿足兩項條件</sec> 目標 2回合內 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 變為狀態。
+        <define name="BROTHER">
+        <sec typ="cond">HP 25% 以上為 我方</sec>
+        <sec typ="cond">回合開始時</sec>， 2回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val param="$1" r /></sec>
+        </define>
   "3":
     key: "3"
     icon: P.Charm
@@ -4575,6 +4646,47 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">5인 스쿼드인 경우</sec>, 효과가 증폭됩니다. (<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="5" r /></sec>)
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">자신이 혼자가 아닌 경우</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="6" r signless /> HP로 전투 속행</sec> 효과를 획득합니다.
+        <sec typ="cond">아군이 수적 열세일 때</sec>, 효과가 추가로 적용됩니다.
+        <sec typ="cond">전투 속행 시</sec>, 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 모든 해로운 효과를 해제</sec>하고, <cmt t="악당"><import name="VILLAIN" p="0" /></cmt>의 모든 강화 효과를 해제합니다.
+        <define name="VILLAIN">
+        <sec typ="cond">HP 비율이 <char uid="DS_Cloverace" />와 같거나 보다 높은 적</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>
+        </define>
+      EN: |-
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> increases.
+        <sec typ="cond">5 is squadif</sec>, effect and amplification. (<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="5" r /></sec>)
+        <sec typ="cond">At battle start</sec>, <sec typ="cond">self Honja not case</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="6" r signless /> HP and Continue Combat</sec> gains the effect.
+        <sec typ="cond">allies number enemy column three when</sec>, effect and additionally is applied.
+        <sec typ="cond">Continue Combat when</sec>, applied to self <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> all harmful effects remove</sec> and, <cmt t="Evil"><import name="VILLAIN" p="0" /></cmt> of all removes buffss.
+        <define name="VILLAIN">
+        <sec typ="cond">HP ratio <char uid="DS_Cloverace" /> and equal or than high enemy</sec>
+        <sec typ="cond">At round start</sec>, 2 rounds <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec>
+        </define>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">5である スクワッドの場合</sec>、 効果が 増幅されます。 (<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="5" r /></sec>)
+        <sec typ="cond">戦闘開始時</sec>、 <sec typ="cond">自身が ハオンジアが ではない 場合</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="6" r signless /> HPで 戦闘続行</sec> 効果を獲得します。
+        <sec typ="cond">味方が 数敵 列スエイル 時</sec>、 効果が 追加で 適用されます。
+        <sec typ="cond">戦闘続行 時</sec>、 自身に 適用された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> すべての 有害効果を 解除</sec>し、 <cmt t="アクごと"><import name="VILLAIN" p="0" /></cmt>の すべての 強化効果を 解除します。
+        <define name="VILLAIN">
+        <sec typ="cond">HP ブイユルが <char uid="DS_Cloverace" />と グアトまたは より ンオプは 敵</sec>
+        <sec typ="cond">ラウンド開始時</sec>、 2ラウンドの間 <sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>
+        </define>
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="0" r /></sec>增加。
+        <sec typ="cond">5為 小隊若為</sec>， 效果 增幅。 (<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="5" r /></sec>)
+        <sec typ="cond">戰鬥開始時</sec>， <sec typ="cond">自身 Honja 非 情況</sec> <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="6" r signless /> HP以 戰鬥續行</sec> 獲得效果。
+        <sec typ="cond">我方 數敵人 行三il 時</sec>， 效果 額外 套用。
+        <sec typ="cond">戰鬥續行 時</sec>， 自身給 套用已 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 所有 負面效果 解除</sec>並， <cmt t="Ak每"><import name="VILLAIN" p="0" /></cmt>的 所有 強化效果 解除。
+        <define name="VILLAIN">
+        <sec typ="cond">HP 比例 <char uid="DS_Cloverace" />與 相同或 比 高 敵人</sec>
+        <sec typ="cond">回合開始時</sec>， 2回合內 <sec typ="attr">有害</sec> <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>
+        </define>
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -4907,6 +5019,39 @@ skills:
             base: 0.03
             per: 0.004
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="4" r /></sec>가 증가하고, HP 25% 이상인 아군을 <cmt t="아우"><import name="BROTHER" p="0" /></cmt>로 지목하여 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">자신을 제외한 <cmt t="D-엔터테인먼트"><import name="Dentertainment" p="0" /></cmt> 전투원이 존재하는 경우</sec> 자신의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="5" r /></sec>가 증가합니다.
+        <sec typ="cond">공격 적중 시</sec>, 2라운드 동안 자신과 <cmt t="아우"><import name="BROTHER" p="4@0" /></cmt>의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>를 증가시킵니다. (최대 3중첩)
+        <define name="BROTHER">
+        <sec typ="cond">HP가 25% 이상인 아군</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val param="$1" r /></sec>
+        </define>
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="4" r /></sec> increases and HP 25% or more is allies <cmt t="Awoo"><import name="BROTHER" p="0" /></cmt> as designates 2 rounds, target's <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> increases.
+        <sec typ="cond">At round start</sec>, <sec typ="cond">self excluding <cmt t="D-Enter Te is Meonteu"><import name="Dentertainment" p="0" /></cmt> combatant exists case</sec> own <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="5" r /></sec> increases.
+        <sec typ="cond">On hit</sec>, 2 rounds self and <cmt t="Awoo"><import name="BROTHER" p="4@0" /></cmt> of <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="6" r /></sec> increases. (up to 3stack)
+        <define name="BROTHER">
+        <sec typ="cond">HP 25% or more is allies</sec>
+        <sec typ="cond">At round start</sec>, 2 rounds <sec typ="buff"><buff typ="ATK_UP" /> Attack <val param="$1" r /></sec>
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="4" r /></sec>が 増加し、 HP 25% 以上である 味方を <cmt t="アウ"><import name="BROTHER" p="0" /></cmt>で ジイムオクして 2ラウンドの間 対象の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond">自身を ジエ外した <cmt t="D-エンタートエであるムオントウ"><import name="Dentertainment" p="0" /></cmt> 戦闘員が ジオンジエする 場合</sec> 自身の <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="5" r /></sec>が増加します。
+        <sec typ="cond">攻撃命中時</sec>、 2ラウンドの間 自身と <cmt t="アウ"><import name="BROTHER" p="4@0" /></cmt>の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>を増加させます。 (最大 3重複)
+        <define name="BROTHER">
+        <sec typ="cond">HPが 25% 以上である 味方</sec>
+        <sec typ="cond">ラウンド開始時</sec>、 2ラウンドの間 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val param="$1" r /></sec>
+        </define>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="4" r /></sec> 增加，並 HP 25% 以上為 我方 <cmt t="Au"><import name="BROTHER" p="0" /></cmt>以 支mok並 2回合內 目標的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond">自身 解除外 <cmt t="D-娛樂Te為Meonteu"><import name="Dentertainment" p="0" /></cmt> 戰鬥員 存在 情況</sec> 自身的 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="5" r /></sec>增加。
+        <sec typ="cond">攻擊命中時</sec>， 2回合內 自身與 <cmt t="Au"><import name="BROTHER" p="4@0" /></cmt>的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="6" r /></sec>使其增加。 (最大 3疊加)
+        <define name="BROTHER">
+        <sec typ="cond">HP 25% 以上為 我方</sec>
+        <sec typ="cond">回合開始時</sec>， 2回合內 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val param="$1" r /></sec>
+        </define>
   "5":
     key: "5"
     icon: P.TeamDefDeBuff
@@ -5251,6 +5396,43 @@ skills:
             base: 0
             per: 0
             chance: 9.99
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">HP 비율이 같거나 자신보다 높은 적</sec>을 <cmt t="악당"><import name="VILLAIN" p="0" /></cmt>으로 지목하여 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" />도발</sec>합니다.
+        <cmt t="악당"><import name="VILLAIN" p="0" /></cmt> 지목은 대상의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" /> 효과 저항</sec>에 영향을 받지 않지만, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec>로 해제할 수 있습니다.
+        <sec typ="cond">적 사망 시</sec>, 모든 <cmt t="악당"><import name="VILLAIN" p="0" /></cmt>은 기세에 눌려 3라운드 동안 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 효과 저항 <val idx="3" inv r /></sec>가 감소합니다. (최대 3중첩)
+        <sec typ="cond">공격 받을 시</sec>, <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태인 적에게 3라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec> 증가 효과를 부여합니다. (최대 3중첩)
+        <define name="VILLAIN">
+        <sec typ="cond">HP 비율이 <char uid="DS_Cloverace" />와 같거나 보다 높은 적</sec>
+        <sec typ="cond">라운드 개시 시</sec>, 2라운드 동안 <sec typ="attr">해로운</sec> <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>
+        </define>
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="cond">HP ratio equal or self than high enemy</sec> <cmt t="Evil"><import name="VILLAIN" p="0" /></cmt> as designates 2 rounds target <sec typ="buff"><buff typ="PROVOKE" />Provoke</sec>.
+        <cmt t="Evil"><import name="VILLAIN" p="0" /></cmt> whether Mok target's <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" /> Effect Resistance</sec> to effect not affected although not, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> debuff removal</sec> as can be removed.
+        <sec typ="cond">When an enemy dies</sec>, all <cmt t="Evil"><import name="VILLAIN" p="0" /></cmt> unit three to Nulryeo 3 rounds <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> Effect Resistance <val idx="3" inv r /></sec> decreases. (up to 3stack)
+        <sec typ="cond">When attacked</sec>, <sec typ="cond"><buff typ="PROVOKE" /> Provoke</sec> in the state to the enemy 3 rounds <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec> increase grants the effect. (up to 3stack)
+        <define name="VILLAIN">
+        <sec typ="cond">HP ratio <char uid="DS_Cloverace" /> and equal or than high enemy</sec>
+        <sec typ="cond">At round start</sec>, 2 rounds <sec typ="attr">harmful</sec> <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec>
+        </define>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond">HP ブイユルが グアトまたは 自身より ンオプは 敵</sec>を <cmt t="アクごと"><import name="VILLAIN" p="0" /></cmt>で ジイムオクして 2ラウンドの間 対象を <sec typ="buff"><buff typ="PROVOKE" />挑発</sec>します。
+        <cmt t="アクごと"><import name="VILLAIN" p="0" /></cmt> ジイムオクは 対象の <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" /> 効果抵抗</sec>に ヨンハヤンを ブアトジイ アジイだけ、 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果解除</sec>で 解除できます。
+        <sec typ="cond">敵死亡時</sec>、 すべての <cmt t="アクごと"><import name="VILLAIN" p="0" /></cmt>は 機スエに ンウルルヨ 3ラウンドの間 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 効果抵抗 <val idx="3" inv r /></sec>が減少します。 (最大 3重複)
+        <sec typ="cond">攻撃を受ける時</sec>、 <sec typ="cond"><buff typ="PROVOKE" /> 挑発</sec> 状態の 敵に 3ラウンドの間 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec> 増加 効果を付与します。 (最大 3重複)
+        <define name="VILLAIN">
+        <sec typ="cond">HP ブイユルが <char uid="DS_Cloverace" />と グアトまたは より ンオプは 敵</sec>
+        <sec typ="cond">ラウンド開始時</sec>、 2ラウンドの間 <sec typ="attr">有害な</sec> <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>
+        </define>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond">HP 比例 相同或 自身比 高 敵人</sec> <cmt t="Ak每"><import name="VILLAIN" p="0" /></cmt>以 支mok並 2回合內 目標 <sec typ="buff"><buff typ="PROVOKE" />挑釁</sec>。
+        <cmt t="Ak每"><import name="VILLAIN" p="0" /></cmt> 支mok 目標的 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> <buff typ="DEBUFF_RATEUP" /> 效果抗性</sec>於 影響 受到 不至僅， <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 解除負面效果</sec>以 可以解除。
+        <sec typ="cond">敵人死亡時</sec>， 所有 <cmt t="Ak每"><import name="VILLAIN" p="0" /></cmt> 台三於 Nu害怕 3回合內 <sec typ="buff"><buff typ="DEBUFF_RATEUP" /> 效果抗性 <val idx="3" inv r /></sec>減少。 (最大 3疊加)
+        <sec typ="cond">受到攻擊時</sec>， <sec typ="cond"><buff typ="PROVOKE" /> 挑釁</sec> 處於狀態的 敵人給 3回合內 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" r /></sec> 增加 賦予效果。 (最大 3疊加)
+        <define name="VILLAIN">
+        <sec typ="cond">HP 比例 <char uid="DS_Cloverace" />與 相同或 比 高 敵人</sec>
+        <sec typ="cond">回合開始時</sec>， 2回合內 <sec typ="attr">有害</sec> <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>
+        </define>
 dialogue:
   KR:
     "1":
@@ -5308,8 +5490,7 @@ dialogue:
         …지휘관?
         슈트에 숨겨진 기능을
         같이 찾아줬으면 하는데?
-      Oath: 이 슈트를 입은 뒤로, 계속 지휘관을 의식하게 돼 버렸어. 더 멋지고 날렵해진 내게서 눈을 떼지 말아줬으면 하는 느낌? 하하… 이렇게
-        지휘관한테 정신까지 함락된 기분도 나쁘지 않은데? 사랑에 패배한 히어로의 처분을 당신한테 맡기도록 할게.
+      Oath: 이 슈트를 입은 뒤로, 계속 지휘관을 의식하게 돼 버렸어. 더 멋지고 날렵해진 내게서 눈을 떼지 말아줬으면 하는 느낌? 하하… 이렇게 지휘관한테 정신까지 함락된 기분도 나쁘지 않은데? 사랑에 패배한 히어로의 처분을 당신한테 맡기도록 할게.
       OathIdle_01: |-
         지구의 미래를 지키기 위해서라도
         2세대 클로버를 당신과 같이 만들어야겠어…
@@ -5385,9 +5566,8 @@ dialogue:
         그래…
         이것도 모두의 행복을 위해 필요하다면
         내가 감수해야지…​
-      Oath: >-
+      Oath: |-
         뭐, 뭐 하는 거야 지휘관? 갑자기 나에게 반지라니. 지금도 자매들은 평화를 위해 싸우고 있는데…그렇군. 
-
         지휘관의 마음을 받아주는 것도 결국 평화를 위한 길이었어. 미안해 지휘관. 눈앞의 적만 쫓다 보니 항상 나를 감싸주고 있는 당신의 존재를 잠시 잊고 있었어. 이런 나를 사랑해 줘서 고마워. 그리고 나도…당신을 세상 그 누구보다 사랑해.​
       OathIdle_01: |-
         당신을 알기 전에 나는 행복과 우정의
@@ -5569,8 +5749,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Join: The symbol of happiness and friendship! Clover Ace! I heard your desperate
-        cries, friend.
+      Join: The symbol of happiness and friendship! Clover Ace! I heard your desperate cries, friend.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -5638,24 +5817,16 @@ dialogue:
         Okay…
         If that’s what's needed
         for everyone to be happy…
-      Oath: >-
-        Wh-what are you doing, Commander? Why are you giving me a ring all of a
-        sudden? The sisters are fighting for peace as we speak… I see it now. 
-
+      Oath: |-
+        Wh-what are you doing, Commander? Why are you giving me a ring all of a sudden? The sisters are fighting for peace as we speak… I see it now. 
         In the end, accepting your affection was also a path to peace. I’m sorry, Commander. I've been so busy chasing after the enemy, I had forgotten about you and how you'd always embrace me. Thank you for loving someone like me. And I… I love you more than anyone else in the world.
-      OathIdle_01: >-
+      OathIdle_01: |-
         Before I knew you, I protected the world 
-
         as a symbol of happiness and friendship. But after I met you,
-
         I began feeling things
-
         I've never felt before. Don't get me wrong.
-
         I'm not planning on ignoring my ways. To my friends, I'm still the symbol
-
         of happiness and friendship.
-
         To you, I'd like to be the symbol of love.
       MVP: ""
     M:
@@ -5802,9 +5973,8 @@ dialogue:
         好吧…
         如果為了大家的幸福需要這樣的話，
         我就必須承受…
-      Oath: >-
+      Oath: |-
         你在幹什麼啊，指揮官？怎麼突然給我戒指？但姐妹們現在也在為和平而戰…原來如此。 
-
         接受指揮官的心意，最終也是為了實現和平。對不起，指揮官。我只顧著追趕眼前的敵人，暫時忘了一直包容我的你。謝謝你愛這樣的我。而我…也比世上的任何人更加愛你。
       OathIdle_01: |-
         認識你之前，我以幸福和友情的
@@ -5864,20 +6034,23 @@ skins:
   sid: null
   artist: おぶい(Obui)
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - true
-    - true
-    - true
-    - false
-    - false
-    - true
-    - false
+    O:
+      - _
+      - D
+      - B
+      - S
+      - BS
+    G:
+      - _
+      - D
+      - B
+      - S
+      - BS
   anim:
     - false
     - false
@@ -5892,26 +6065,26 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 1
     2dmodel: 2DModel_DS_Cloverace_N
     2dmodel_dam: 2DModel_DS_Cloverace_N_Dam
   skins:
     - sid: 1
       artist: おぶい(Obui)
       price: 192
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+        G:
+          - _
+          - D
+          - S
       anim:
         - false
         - false
@@ -5928,5 +6101,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_DS_Cloverace_NS1_Dam
         consumableKey: Skin_DS_Cloverace_1

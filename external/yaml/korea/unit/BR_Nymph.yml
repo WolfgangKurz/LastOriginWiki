@@ -592,6 +592,7 @@ source:
     - Ev:Ev33:EV4-4
   - - Ev:Ev35:EV1-4
     - Ev:Ev35:EV2-1EX
+  - - Ev:Ev36:EV2-1EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2016,6 +2017,19 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        기관총을 발사해 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        대상이 <sec typ="cond"><buff typ="MARKING" /> 표식</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> 방어력 감소</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 상태인 경우, 각각 <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+      EN: |-
+        Fires a machine gun to deal <dmg elem="physics" /> to a single target.
+        If the target is under <sec typ="cond"><buff typ="MARKING" /> Mark</sec> / <sec typ="cond"><buff typ="DEF_DOWN" /> DEF Decrease</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> EVA Decrease</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases for each condition.
+      JP: |-
+        機関銃を発射して単一対象へ<dmg elem="physics" />を与えます。
+        対象が<sec typ="cond"><buff typ="MARKING" />標的</sec> / <sec typ="cond"><buff typ="DEF_DOWN" />防御力減少</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />回避減少</sec>状態の場合、それぞれ<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="0" r /></sec>が増加します。
+      TC: |-
+        發射機槍對單一目標造成<dmg elem="physics" />。
+        若目標處於<sec typ="cond"><buff typ="MARKING" />標記</sec> / <sec typ="cond"><buff typ="DEF_DOWN" />防禦力降低</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" />迴避降低</sec>狀態，則每個條件都會使<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="0" r /></sec>增加。
   "2":
     key: "2"
     icon: MGWideShot
@@ -3733,6 +3747,23 @@ skills:
             base: -0.2
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        기관총을 난사해 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec>적중 여부에 관계 없이</sec>, 제압 사격을 통해 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시킵니다.
+        대상이 <sec typ="cond"><buff typ="VULNERABLE" /> 받는 피해 증가</sec> 또는 <sec typ="cond"><buff typ="PROVOKE" /> 도발</sec> 상태인 경우, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+      EN: |-
+        Fires a machine-gun barrage to deal <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" /> to the designated area.
+        <sec>Regardless of hit</sec>, suppressive fire decreases the target's <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> EVA <val idx="1" r /></sec> for 2 rounds.
+        If the target is under <sec typ="cond"><buff typ="VULNERABLE" /> Received Damage Increase</sec> or <sec typ="cond"><buff typ="PROVOKE" /> Provoke</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
+      JP: |-
+        機関銃を乱射して指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec>命中の有無に関係なく</sec>、制圧射撃により2ラウンドの間、対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />回避 <val idx="1" r /></sec>を減少させます。
+        対象が<sec typ="cond"><buff typ="VULNERABLE" />受けるダメージ増加</sec>または<sec typ="cond"><buff typ="PROVOKE" />挑発</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" />ダメージ量 <val idx="3" r /></sec>が増加します。
+      TC: |-
+        亂射機槍，對指定範圍造成<sec typ="attr">無視保護</sec><dmg elem="physics" />。
+        <sec>不論是否命中</sec>，透過壓制射擊在2回合內降低目標的<sec typ="buff"><buff typ="ACCURACY_DOWN" />命中 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" />迴避 <val idx="1" r /></sec>。
+        若目標處於<sec typ="cond"><buff typ="VULNERABLE" />所受傷害增加</sec>或<sec typ="cond"><buff typ="PROVOKE" />挑釁</sec>狀態，則<sec typ="dmg"><buff typ="PhyATK_UP" />傷害量 <val idx="3" r /></sec>增加。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -4074,6 +4105,23 @@ skills:
             base: 1.5
             per: 0.1
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장형 피해량 <val idx="2" r /></sec>가 증가하며 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 대상의 공격을 지원</sec>합니다.
+        <sec typ="cond"><char uid="BR_Leona" />의 <sec typ="note">공격 지휘</sec>가 활성화된 경우</sec>, 상기 효과가 50% 증폭됩니다.
+        <sec typ="cond">전투 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec>을(를) 증가시킵니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, allies within range gain increased <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> CRIT <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> anti-Light damage <val idx="2" r /></sec>, and she <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports the target's attack</sec>.
+        <sec typ="cond">If <char uid="BR_Leona" />'s <sec typ="note">Offensive Command</sec> is active</sec>, the above effects are amplified by 50%.
+        <sec typ="cond">At battle start</sec>, increases allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="8" /></sec> within range.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP" />攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" />対軽装型ダメージ量 <val idx="2" r /></sec>が増加し、<sec typ="buff"><buff typ="SUPPORT_ATTACK" />対象の攻撃を支援</sec>します。
+        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">攻撃指揮</sec>が活性化している場合</sec>、上記効果が50%増幅されます。
+        <sec typ="cond">戦闘開始時</sec>、範囲内の味方の<sec typ="buff"><buff typ="AP_UP" />AP <val idx="8" /></sec>を増加させます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，範圍內友軍的<sec typ="buff"><buff typ="ATK_UP" />攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊 <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" />對輕裝型傷害量 <val idx="2" r /></sec>增加，並<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援目標攻擊</sec>。
+        <sec typ="cond">若<char uid="BR_Leona" />的<sec typ="note">攻擊指揮</sec>已啟用</sec>，上述效果增幅50%。
+        <sec typ="cond">戰鬥開始時</sec>，使範圍內友軍的<sec typ="buff"><buff typ="AP_UP" />AP <val idx="8" /></sec>增加。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -4415,6 +4463,23 @@ skills:
             base: 0.45
             per: 0.075
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군에게 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec> 증가 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="1" r inv /></sec> 감소 / <sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless /> 위력으로 반격</sec> 효과를 부여합니다.
+        <sec typ="cond"><char uid="BR_Leona" />의 <sec typ="note">방어 지휘</sec>가 활성화된 경우</sec>, 상기 효과가 50% 증폭됩니다.
+        <sec>자신의 기본 <buff typ="ICERES_UP" /> 냉기 저항이 50%로 증가합니다.</sec>
+      EN: |-
+        <sec typ="cond">At round start</sec>, grants allies within range increased <sec typ="buff"><buff typ="EVADE_UP" /> EVA <val idx="0" r /></sec> / reduced <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> received damage <val idx="1" r inv /></sec> / <sec typ="buff"><buff typ="COUNTER" /> counterattack with <val idx="7" r signless /> power</sec>.
+        <sec typ="cond">If <char uid="BR_Leona" />'s <sec typ="note">Defensive Command</sec> is active</sec>, the above effects are amplified by 50%.
+        <sec>Her base <buff typ="ICERES_UP" /> Ice Resistance increases to 50%.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の味方に<sec typ="buff"><buff typ="EVADE_UP" />回避 <val idx="0" r /></sec>増加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />受けるダメージ <val idx="1" r inv /></sec>減少 / <sec typ="buff"><buff typ="COUNTER" /> <val idx="7" r signless />の威力で反撃</sec>効果を付与します。
+        <sec typ="cond"><char uid="BR_Leona" />の<sec typ="note">防御指揮</sec>が活性化している場合</sec>、上記効果が50%増幅されます。
+        <sec>自分の基本<buff typ="ICERES_UP" />冷気抵抗が50%に増加します。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，賦予範圍內友軍<sec typ="buff"><buff typ="EVADE_UP" />迴避 <val idx="0" r /></sec>增加 / <sec typ="buff"><buff typ="DAMAGE_REDUCE" />所受傷害 <val idx="1" r inv /></sec>減少 / <sec typ="buff"><buff typ="COUNTER" />以<val idx="7" r signless />威力反擊</sec>效果。
+        <sec typ="cond">若<char uid="BR_Leona" />的<sec typ="note">防禦指揮</sec>已啟用</sec>，上述效果增幅50%。
+        <sec>自身的基本<buff typ="ICERES_UP" />冰冷抵抗增加至50%。</sec>
   "5":
     key: "5"
     icon: P.Command
@@ -4665,6 +4730,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> 대상 HP 반비례 피해량 <val idx="0" r /></sec> 증가 효과를 획득합니다.
+        <sec typ="cond"><equip uid="Sub_MG80MODKit" />를 장착 중인 경우</sec>, 상기 효과가 50% 증폭되고 <sec typ="note">제압 난사</sec>에 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="4" slot="2" r /></sec>를 감소시키는 효과가 추가됩니다.
+        <sec typ="cond">스쿼드 내에 <char uid="BR_Valkyrie" />가 없을 경우</sec>, 아군 지원기 / 보호기의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, gains <sec typ="dmg"><buff typ="DamageAmp_Opp" /> damage increase inversely proportional to target HP <val idx="0" r /></sec>.
+        <sec typ="cond">If <equip uid="Sub_MG80MODKit" /> is equipped</sec>, the above effect is amplified by 50%, and <sec typ="note">Suppressive Barrage</sec> gains an effect that decreases the target's <sec typ="buff"><buff typ="DEF_DOWN" /> DEF <val idx="4" slot="2" r /></sec>.
+        <sec typ="cond">If <char uid="BR_Valkyrie" /> is not in the squad</sec>, she <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> supports attacks</sec> of allied Supporters / Defenders.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自分は<sec typ="dmg"><buff typ="DamageAmp_Opp" />対象HP反比例ダメージ量 <val idx="0" r /></sec>増加効果を獲得します。
+        <sec typ="cond"><equip uid="Sub_MG80MODKit" />を装着中の場合</sec>、上記効果が50%増幅され、<sec typ="note">制圧乱射</sec>に対象の<sec typ="buff"><buff typ="DEF_DOWN" />防御力 <val idx="4" slot="2" r /></sec>を減少させる効果が追加されます。
+        <sec typ="cond">スクワッド内に<char uid="BR_Valkyrie" />がいない場合</sec>、味方支援機 / 保護機の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃を支援</sec>します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身獲得<sec typ="dmg"><buff typ="DamageAmp_Opp" />依目標HP反比增加傷害量 <val idx="0" r /></sec>效果。
+        <sec typ="cond">若裝備<equip uid="Sub_MG80MODKit" /></sec>，上述效果增幅50%，且<sec typ="note">壓制亂射</sec>追加降低目標<sec typ="buff"><buff typ="DEF_DOWN" />防禦力 <val idx="4" slot="2" r /></sec>的效果。
+        <sec typ="cond">若小隊內沒有<char uid="BR_Valkyrie" /></sec>，則<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援</sec>友軍支援機 / 保護機的攻擊。
 dialogue:
   KR:
     "1":
@@ -4768,9 +4850,7 @@ dialogue:
       SPIdle_02_01: |-
         후후후… 밤까지 기다리실 수 없으신가요?
         임무 중이지만… 어쩔 수 없네요.
-      Oath: 저 같은 건 패밀리의 장기 말, 쓰이고 버려지는 게 당연한 것이라고 생각했어요. 항상 버려지는 것만 각오하면서 살아왔지만...
-        사령관님은 다른 각오를 하시고 계셨네요, 후후. 앞으로 영원히, 잘 부탁 드릴게요. 미래의 아이들에게 맹세코, 가족을 지키겠다는
-        각오는… 절대 잊지 않으니까요.
+      Oath: 저 같은 건 패밀리의 장기 말, 쓰이고 버려지는 게 당연한 것이라고 생각했어요. 항상 버려지는 것만 각오하면서 살아왔지만... 사령관님은 다른 각오를 하시고 계셨네요, 후후. 앞으로 영원히, 잘 부탁 드릴게요. 미래의 아이들에게 맹세코, 가족을 지키겠다는 각오는… 절대 잊지 않으니까요.
       OathIdle_01: |-
         사령관님… 함께 가족을 만들자고 한 약속…
         저도 잊지 않았어요…
@@ -4960,9 +5040,7 @@ dialogue:
       SPIdle_02_01: |-
         [미번역]후후후… 밤까지 기다리실 수 없으신가요?
         임무 중이지만… 어쩔 수 없네요.
-      Oath: "[미번역]저 같은 건 패밀리의 장기 말, 쓰이고 버려지는 게 당연한 것이라고 생각했어요. 항상 버려지는 것만 각오하면서
-        살아왔지만... 사령관님은 다른 각오를 하시고 계셨네요, 후후. 앞으로 영원히, 잘 부탁 드릴게요. 미래의 아이들에게 맹세코,
-        가족을 지키겠다는 각오는… 절대 잊지 않으니까요."
+      Oath: "[미번역]저 같은 건 패밀리의 장기 말, 쓰이고 버려지는 게 당연한 것이라고 생각했어요. 항상 버려지는 것만 각오하면서 살아왔지만... 사령관님은 다른 각오를 하시고 계셨네요, 후후. 앞으로 영원히, 잘 부탁 드릴게요. 미래의 아이들에게 맹세코, 가족을 지키겠다는 각오는… 절대 잊지 않으니까요."
       OathIdle_01: |-
         [미번역]사령관님… 함께 가족을 만들자고 한 약속…
         저도 잊지 않았어요…
@@ -5150,11 +5228,9 @@ dialogue:
         I would like to make you
         a breakfast…
       SPIdle_02_01: You shouldn’t be like this…
-      Oath: >-
+      Oath: |-
         Oh my… I never knew you thought so dearly of me, Commander… My answer?
-
         Come on… How could you…… I feel the same, too. … How could you make a woman
-
         speak her mind out loud… Commander, you're such a bad guy.
       OathIdle_01: |-
         The day of the pledge? Please get it out of your head!
@@ -5358,20 +5434,13 @@ skins:
   sid: null
   artist: Kakiman
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5386,25 +5455,21 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_BR_Nymph_N
   skins:
     - sid: 1
       artist: Kakiman
       price: 114
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - true
         - false
@@ -5421,24 +5486,26 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_BR_Nymph_1
     - sid: 2
       artist: Kloah13
       price: 147
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -5455,6 +5522,7 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_BR_Nymph_NS2
         2dmodel_dam: 2DModel_BR_Nymph_NS2_Dam
         consumableKey: Skin_BR_Nymph_2

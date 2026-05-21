@@ -2815,6 +2815,19 @@ skills:
             base: -0.1
             per: -0.01
             chance: 1
+    desc:
+      KR: |-
+        기관총을 발사해 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>으로 설정하여 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="2" r /></sec>를 감소시킵니다.
+      EN: |-
+        machine gun fires <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 2 rounds target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> as sets <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="2" r /></sec> decreases.
+      JP: |-
+        機関銃を 発射して<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象を <sec typ="buff"><buff typ="MARKING" /> 標的</sec>で スオルジオンして <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="2" r /></sec>を減少させます。
+      TC: |-
+        機槍 發射 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>以 三ol特定並 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="2" r /></sec>使其減少。
   "2":
     key: "2"
     icon: MGShot
@@ -5907,6 +5920,19 @@ skills:
             base: 36
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        전 무장 사격으로 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>으로 설정하여, <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>를 증가시키고 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+      EN: |-
+        wire armament by firing as <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 2 rounds target <sec typ="buff"><buff typ="MARKING" /> Mark</sec> as sets, <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" r /></sec> increases and <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken decrease removes the effect</sec>.
+      JP: |-
+        前 武装 射撃で<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象を <sec typ="buff"><buff typ="MARKING" /> 標的</sec>で スオルジオンして、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec>を 増加時クイし <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ 減少 効果を 解除</sec>します。
+      TC: |-
+        前 武裝 射擊以 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>以 三ol特定並， <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" r /></sec> 增加時台並 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害 減少 效果 解除</sec>。
   "3":
     key: "3"
     icon: P.TeamDefBuff
@@ -6279,6 +6305,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 범위 내 아군을 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="6" r /></sec>가 증가합니다.
+        대기 시, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">터렛 다운 모드</sec>로 전환</sec>하여 일부 스킬을 변경합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_Char" /> Defender excluding within range Designated Protection for allies</sec>.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="6" r /></sec> increases.
+        On standby, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">turret down mode</sec> as switch</sec> by doing some skill changes.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_Char" /> 保護機を ジエ外した 範囲内 味方を 指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>が増加します。
+        待機時、 <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">トオルエト ドアウン モード</sec>で 前ハワン</sec>して 一部 スキルを 変更します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_Char" /> 保護機 解除外 範圍內 我方 指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="6" r /></sec>增加。
+        待機時， <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">Teoret 全部停機模式</sec>以 前轉換</sec>並 部分 技能 變更。
   "4":
     key: "4"
     icon: P.Barrier
@@ -6592,6 +6635,23 @@ skills:
             base: -0.1
             per: -0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 아군 전체의 <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 대 기동형 피해량 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="cond">피격 시</sec>, 2라운드 동안 <sec typ="cond">기동형이거나 <buff typ="MARKING" /> 표식 / <buff typ="PROVOKE" /> 도발 상태인 적의</sec> <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="5" r /></sec>를 감소시킵니다.
+        <sec typ="cond">액티브 스킬의 대상이 기동형인 경우</sec>, 부가 효과 발동 조건을 '<sec typ="cond">적중 시</sec>'에서 '<sec typ="cond">스킬 사용 시</sec>'로 완화합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, all allies of <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> Anti-Mobile damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">When hit</sec>, 2 rounds <sec typ="cond">Mobile-type or <buff typ="MARKING" /> Mark / <buff typ="PROVOKE" /> Provoke in the state enemy's</sec> <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="5" r /></sec> decreases.
+        <sec typ="cond">active skill of target Mobile-typeif</sec>, part effect and trigger condition '<sec typ="cond">On hit</sec>' in '<sec typ="cond">When using the skill</sec>'as relaxation.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 味方全体の <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 対機動型ダメージ <val idx="0" r /></sec>を増加させます。
+        <sec typ="cond">被弾時</sec>、 2ラウンドの間 <sec typ="cond">機動型がまたは <buff typ="MARKING" /> 標的 / <buff typ="PROVOKE" /> 挑発 状態の 敵の</sec> <sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="5" r /></sec>を減少させます。
+        <sec typ="cond">アクティブ スキルの 対象が 機動型の場合</sec>、 ブウが 効果 ブアルドオン 条件を '<sec typ="cond">命中時</sec>'で '<sec typ="cond">スキル使用時</sec>'で ワンハワします。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 全體我方的 <sec typ="dmg"><buff typ="MOBILITY_DMG_UP" /> 對機動型傷害 <val idx="0" r /></sec>使其增加。
+        <sec typ="cond">被擊時</sec>， 2回合內 <sec typ="cond">機動型或 <buff typ="MARKING" /> 標記 / <buff typ="PROVOKE" /> 挑釁 處於狀態的 敵人的</sec> <sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="5" r /></sec>使其減少。
+        <sec typ="cond">主動 技能的 目標 機動型若為</sec>， 附加 效果 發動 條件 '<sec typ="cond">命中時</sec>'在 '<sec typ="cond">使用技能時</sec>'以 緩和。
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -7126,6 +7186,31 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP로 전투 속행</sec> <sec typ="attr">일반 효과</sec>를 획득합니다.
+        <sec typ="cond"><buff typ="DEF_RESSURRECT" /> 전투 속행 즉시</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">터렛 다운 모드</sec>로 전환</sec>합니다.
+        <sec typ="cond"><buff typ="DEF_RESSURRECT" /> 전투 속행을 통한 <buff typ="CHANGE_CHAR" /> 모드 전환 시</sec>, 3라운드 동안 <sec typ="note">터렛 다운 모드</sec>의 지속 효과가 50% 증폭됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond"><buff typ="CHANGE_CHAR" /> 모드를 전환할 때마다</sec> 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP and Continue Combat</sec> <sec typ="attr">normal effect</sec> gains.
+        <sec typ="cond"><buff typ="DEF_RESSURRECT" /> Continue Combat immediately when</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">turret down mode</sec> as switch</sec>.
+        <sec typ="cond"><buff typ="DEF_RESSURRECT" /> Continue Combat through <buff typ="CHANGE_CHAR" /> mode switch when</sec>, 3 rounds <sec typ="note">turret down mode</sec> of continuous effect and increased by 50%.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="5" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Buff Removal Resistance <val idx="6" r /></sec> increases.
+        <sec typ="cond"><buff typ="CHANGE_CHAR" /> mode can switch when each</sec> applied to self <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec> and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec> increases.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HPで 戦闘続行</sec> <sec typ="attr">一般効果</sec>を獲得します。
+        <sec typ="cond"><buff typ="DEF_RESSURRECT" /> 戦闘続行 ジウク時</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">トオルエト ドアウン モード</sec>で 前ハワン</sec>します。
+        <sec typ="cond"><buff typ="DEF_RESSURRECT" /> 戦闘続行を トオンした <buff typ="CHANGE_CHAR" /> モード 前ハワン 時</sec>、 3ラウンドの間 <sec typ="note">トオルエト ドアウン モード</sec>の 持続 効果が 50%増幅されます。
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抵抗 <val idx="6" r /></sec>が増加します。
+        <sec typ="cond"><buff typ="CHANGE_CHAR" /> モードを 前ハワンできる 時ごとに</sec> 自身に 適用された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>し、 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP以 戰鬥續行</sec> <sec typ="attr">一般效果</sec>獲得。
+        <sec typ="cond"><buff typ="DEF_RESSURRECT" /> 戰鬥續行 解除uk時</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">Teoret 全部停機模式</sec>以 前轉換</sec>。
+        <sec typ="cond"><buff typ="DEF_RESSURRECT" /> 戰鬥續行 Tong <buff typ="CHANGE_CHAR" /> 模式 前轉換 時</sec>， 3回合內 <sec typ="note">Teoret 全部停機模式</sec>的 持續 效果 增幅50%。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抗性 <val idx="6" r /></sec>增加。
+        <sec typ="cond"><buff typ="CHANGE_CHAR" /> 模式 前轉換可 時每</sec> 自身給 套用已 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>並 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>增加。
   F1:
     key: F1
     icon: MGShot
@@ -10218,6 +10303,23 @@ skills:
             base: 11
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        기관총을 발사해 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하고 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec>를 감소시키며, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 회피 강화 효과를 해제</sec>합니다.
+        <sec>스킬 레벨 당 5%의 적중 보정이 적용됩니다.</sec>
+      EN: |-
+        machine gun fires <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 2 rounds target <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> and <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> decreases and <sec typ="buff"><buff typ="REMOVE_BUFF" /> Evasion removes buffs</sec>.
+        <sec>per skill level 5% of accuracy correction is applied.</sec>
+      JP: |-
+        機関銃を 発射して<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象を <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>し、 <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec>を 減少させ、、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 回避 強化効果を 解除</sec>します。
+        <sec>スキルレベルごとに 5%の 命中補正が適用されます。</sec>
+      TC: |-
+        機槍 發射 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>並 <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec> 使其減少，並 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 迴避 強化效果 解除</sec>。
+        <sec>每技能等級 5%的 套用命中補正。</sec>
   F2:
     key: F2
     icon: MGWideShot
@@ -12481,6 +12583,27 @@ skills:
             base: -0.55
             per: -0.05
             chance: 1
+    desc:
+      KR: |-
+        기관총을 난사해 <dmg elem="physics" />를 줍니다.
+        <sec typ="dmg">목표 범위 뒷 열은 피해량이 25% 감소</sec>합니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하고 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec>스킬 레벨 당 5%의 적중 보정이 적용됩니다.</sec>
+      EN: |-
+        machine gun fires rapidly <dmg elem="physics" />.
+        <sec typ="dmg">target range rear column damage 25% decrease</sec>.
+        <sec typ="cond">On hit</sec>, 2 rounds target <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> and <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="1" r /></sec> decreases.
+        <sec>per skill level 5% of accuracy correction is applied.</sec>
+      JP: |-
+        機関銃を 乱射して<dmg elem="physics" />を与えます。
+        <sec typ="dmg">目標 範囲 ドウィト 列は ダメージ量が 25% 減少</sec>します。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象を <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>し、 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="1" r /></sec>を減少させます。
+        <sec>スキルレベルごとに 5%の 命中補正が適用されます。</sec>
+      TC: |-
+        機槍 掃射 造成<dmg elem="physics" />。
+        <sec typ="dmg">目標 範圍 後t 行 傷害量 25% 減少</sec>。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>並 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="2" /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="1" r /></sec>使其減少。
+        <sec>每技能等級 5%的 套用命中補正。</sec>
   F3:
     key: F3
     icon: P.TeamDefBuff
@@ -12967,6 +13090,27 @@ skills:
             base: 9999999
             per: 0
             chance: 0.1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 범위 내 아군을 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="8" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="9" r inv /></sec>가 감소하며, <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태가 되지만 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec> 효과를 획득합니다.
+        <sec typ="cond">공격 받을 시</sec>, <sec typ="chance"><chance idx="12" /> 확률</sec>로 도탄이 발생하여 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 피해를 최소화</sec>합니다.
+        <sec typ="cond">대기 시</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">헐 다운 모드</sec>로 전환</sec>하여 일부 스킬을 변경합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_Char" /> Defender excluding within range Designated Protection for allies</sec>.
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="8" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="9" r inv /></sec> decreases and <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> state but becomes <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> gains the effect.
+        <sec typ="cond">When attacked</sec>, <sec typ="chance"><chance idx="12" /> chance</sec> as also round occurs and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage minimization</sec>.
+        <sec typ="cond">On standby</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">Heol down mode</sec> as switch</sec> by doing some skill changes.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_Char" /> 保護機を ジエ外した 範囲内 味方を 指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="8" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="9" r inv /></sec>が 減少し、 <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態が ドウェジイだけ <sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec> 効果を獲得します。
+        <sec typ="cond">攻撃を受ける時</sec>、 <sec typ="chance"><chance idx="12" /> 確率</sec>で もトアンが ブアルスエンして <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージを 最小ハワ</sec>します。
+        <sec typ="cond">待機時</sec>、 <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">ハオル ドアウン モード</sec>で 前ハワン</sec>して 一部 スキルを 変更します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_Char" /> 保護機 解除外 範圍內 我方 指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="8" r /></sec> 增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="9" r inv /></sec> 減少，並 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 狀態 不會僅 <sec typ="buff"><buff typ="DEF_Line" /> 列保護</sec> 獲得效果。
+        <sec typ="cond">受到攻擊時</sec>， <sec typ="chance"><chance idx="12" /> 機率</sec>以 也彈 發生並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 傷害 最小火</sec>。
+        <sec typ="cond">待機時</sec>， <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">虛l 全部停機模式</sec>以 前轉換</sec>並 部分 技能 變更。
   F5:
     key: F5
     icon: P.DefCounter
@@ -13367,6 +13511,27 @@ skills:
             base: -1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="cond">기동형 적이 1기 이상 존재할 경우</sec>, 자신이 지정 보호 중인 아군에게도 동일한 효과를 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">자신보다 회피가 높은 적</sec>의 <sec typ="buff"><buff typ="Action_Number_Change_Down" /> 최대 행동 횟수 <val idx="7" /></sec>를  감소시킵니다.
+        <sec typ="cond"><buff typ="CHANGE_CHAR" /> 모드를 전환할 때마다</sec> 자신에게 적용된 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를 해제</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="5" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Buff Removal Resistance <val idx="4" r /></sec> increases.
+        <sec typ="cond">Mobile-type enemy 1 unit or more if present</sec>, self Designated Protection in progress to allies also same grants the effect.
+        <sec typ="cond">At round start</sec>, <sec typ="cond">self than Evasion high enemy</sec> of <sec typ="buff"><buff typ="Action_Number_Change_Down" /> up to number of actions <val idx="7" /></sec> decreases.
+        <sec typ="cond"><buff typ="CHANGE_CHAR" /> mode can switch when each</sec> applied to self <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> harmful effects remove</sec> and <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="5" /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抵抗 <val idx="4" r /></sec>が増加します。
+        <sec typ="cond">機動型 敵が 1機 以上 ジオンジエできる 場合</sec>、 自身が 指定保護 中の 味方にも 同一の 効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond">自身より 回避が ンオプは 敵</sec>の <sec typ="buff"><buff typ="Action_Number_Change_Down" /> 最大 行ドオン 回数 <val idx="7" /></sec>を 減少させます。
+        <sec typ="cond"><buff typ="CHANGE_CHAR" /> モードを 前ハワンできる 時ごとに</sec> 自身に 適用された <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害効果を 解除</sec>し、 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="5" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抗性 <val idx="4" r /></sec>增加。
+        <sec typ="cond">機動型 敵人 1台 以上 存在可 情況</sec>， 自身 指定保護 中的 我方給也 相同 賦予效果。
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond">自身比 迴避 高 敵人</sec>的 <sec typ="buff"><buff typ="Action_Number_Change_Down" /> 最大 列同 次數 <val idx="7" /></sec> 減少。
+        <sec typ="cond"><buff typ="CHANGE_CHAR" /> 模式 前轉換可 時每</sec> 自身給 套用已 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 負面效果 解除</sec>並 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" slot="5" /></sec>增加。
 dialogue:
   KR:
     "":
@@ -13483,20 +13648,13 @@ skins:
   sid: null
   artist: Sol
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -13511,4 +13669,5 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_AGS_Fortress_N

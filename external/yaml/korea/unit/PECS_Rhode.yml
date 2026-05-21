@@ -467,6 +467,7 @@ age: ""
 secretRoomType: Adult
 marriageVoice: true
 introVoice:
+  - jp
   - ko
 favor:
   present: 1.5
@@ -1783,6 +1784,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">스킬 적중시</sec> 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">대상의 HP가 100%인 경우</sec>, 1라운드 동안 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 효과를 부여합니다.
+      EN: |-
+        to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">skill Accuracywhen</sec> 2 rounds, target's <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="1" r /></sec> decreases.
+        <sec typ="cond">target's HP 100%if</sec>, 1 round <sec typ="buff"><buff typ="SEAL_SKILL" /> skill cannot use</sec> grants the effect.
+      JP: |-
+        対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">スキル 命中時</sec> 2ラウンドの間 対象の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec>と <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">対象の HPが 100%の場合</sec>、 1ラウンドの間 <sec typ="buff"><buff typ="SEAL_SKILL" /> スキル スアヨン 不可</sec> 効果を付与します。
+      TC: |-
+        對目標 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">技能 命中時</sec> 2回合內 目標的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec>與 <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="1" r /></sec>使其減少。
+        <sec typ="cond">目標的 HP 100%若為</sec>， 1回合內 <sec typ="buff"><buff typ="SEAL_SKILL" /> 技能 使用 不可</sec> 賦予效果。
   "2":
     key: "2"
     icon: CannonShot
@@ -3021,6 +3039,19 @@ skills:
             base: 76
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에  회피가 매우 어려운 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중시</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 열/행/지정 보호 효과를 해제</sec>합니다.
+      EN: |-
+        to the designated area Evasion very difficult <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">Accuracywhen</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> column/ row/Designated Protection removes the effect</sec>.
+      JP: |-
+        指定範囲に 回避が ムエウ オルヨウン <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 列/行/指定保護 効果を 解除</sec>します。
+      TC: |-
+        指定範圍於 迴避 每困難 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 行/列/指定保護 效果 解除</sec>。
   "3":
     key: "3"
     icon: P.TeamSpdBuff
@@ -3339,6 +3370,19 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가 시킵니다.
+        <sec typ="cond">라운드 개시시</sec>, 1 라운드 동안 아군의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="4" r /></sec>가 증가하며 <char uid="PECS_LemonadeGamma" />, <char uid="PECS_Merlin" />, <char uid="PECS_Triton" />, <char uid="3P_Merope" />는 추가 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 효과 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 강화 해제 저항 <val idx="6" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">battle units whenwhen</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increase causes.
+        <sec typ="cond">at round start</sec>, 1 round allies' <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="3" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Buff Removal Resistance <val idx="4" r /></sec> increases and <char uid="PECS_LemonadeGamma" />, <char uid="PECS_Merlin" />, <char uid="PECS_Triton" />, <char uid="3P_Merope" /> additional <sec typ="buff"><buff typ="Remove_Buff_Resist" /> Effect Resistance <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Buff Removal Resistance <val idx="6" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">戦闘 個時時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を 増加 させます。
+        <sec typ="cond">ラウンド開始時</sec>、 1 ラウンド間 味方の <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抵抗 <val idx="4" r /></sec>が 増加し、 <char uid="PECS_LemonadeGamma" />、 <char uid="PECS_Merlin" />、 <char uid="PECS_Triton" />、 <char uid="3P_Merope" />は 追加 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 効果抵抗 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 強化解除抵抗 <val idx="6" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">戰鬥 個時時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> 增加。
+        <sec typ="cond">回合開始時</sec>， 1 回合內 我方的 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="3" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除抗性 <val idx="4" r /></sec> 增加，並 <char uid="PECS_LemonadeGamma" />， <char uid="PECS_Merlin" />， <char uid="PECS_Triton" />， <char uid="3P_Merope" /> 額外 <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 效果抗性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 強化解除抗性 <val idx="6" r /></sec>增加。
   "4":
     key: "4"
     icon: P.SelfAtkBuff
@@ -3472,6 +3516,19 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시시</sec>, 1 라운드 동안 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="0" r /></sec>를  증가시킵니다.
+        <sec typ="cond"><sec typ="buff">일반 모드</sec>에서 1번 엑티브 스킬 사용시</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> 대포격 모드로 전환</sec>합니다.
+      EN: |-
+        <sec typ="cond">at round start</sec>, 1 round own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="0" r /></sec> increases.
+        <sec typ="cond"><sec typ="buff">normal mode</sec> in 1 time Ekti b skill when used</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> anti Bombardment Modeas switch</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 1 ラウンド間 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec>を 増加させます。
+        <sec typ="cond"><sec typ="buff">一般 モード</sec>で 1回 エクトイブウ スキル スアヨン時</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> ドエ砲撃モードで 前ハワン</sec>します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 1 回合內 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="0" r /></sec> 增加。
+        <sec typ="cond"><sec typ="buff">一般 模式</sec>在 1次 Ektibeu 技能 使用時</sec> <sec typ="buff"><buff typ="CHANGE_CHAR" /> 對砲擊模式以 前轉換</sec>。
   "5":
     key: "5"
     icon: P.TeamAtkBuff
@@ -3782,6 +3839,27 @@ skills:
             base: 0.05
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시시</sec> <char uid="PECS_LemonadeGamma" />, <char uid="PECS_Triton" />, <char uid="PECS_Merlin" />, <char uid="3P_Merope" />의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond"><char uid="PECS_LemonadeGamma" />와 <char uid="3P_Merope" /></sec>는 추가로 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시시</sec>, 1라운드 동안 <char uid="PECS_LemonadeGamma" />에게 전투중 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막과 받는 피해 감소 무시</sec> 효과를 부여합니다.
+        <sec typ="cond">라운드 개시시</sec>, 1라운드 동안 <char uid="3P_Merope" />에게 전투중 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec> 감소 효과를 부여합니다.
+      EN: |-
+        <sec typ="cond">at round start</sec> <char uid="PECS_LemonadeGamma" />, <char uid="PECS_Triton" />, <char uid="PECS_Merlin" />, <char uid="3P_Merope" /> of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond"><char uid="PECS_LemonadeGamma" /> and <char uid="3P_Merope" /></sec> additionally <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec> increases.
+        <sec typ="cond">at round start</sec>, 1 round <char uid="PECS_LemonadeGamma" /> to during battle <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Ignore Barrier and Damage Reduction</sec> grants the effect.
+        <sec typ="cond">at round start</sec>, 1 round <char uid="3P_Merope" /> to during battle <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="4" r inv /></sec> decrease grants the effect.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> <char uid="PECS_LemonadeGamma" />、 <char uid="PECS_Triton" />、 <char uid="PECS_Merlin" />、 <char uid="3P_Merope" />の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        <sec typ="cond"><char uid="PECS_LemonadeGamma" />と <char uid="3P_Merope" /></sec>は 追加で <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、 1ラウンドの間 <char uid="PECS_LemonadeGamma" />に 戦闘中 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリアと受けるダメージ減少を無視</sec> 効果を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、 1ラウンドの間 <char uid="3P_Merope" />に 戦闘中 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="4" r inv /></sec> 減少 効果を付与します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec> <char uid="PECS_LemonadeGamma" />， <char uid="PECS_Triton" />， <char uid="PECS_Merlin" />， <char uid="3P_Merope" />的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>使其增加。
+        <sec typ="cond"><char uid="PECS_LemonadeGamma" />與 <char uid="3P_Merope" /></sec> 額外 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /></sec>增加。
+        <sec typ="cond">回合開始時</sec>， 1回合內 <char uid="PECS_LemonadeGamma" />給 戰鬥中 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 無視護盾與受到的傷害減免</sec> 賦予效果。
+        <sec typ="cond">回合開始時</sec>， 1回合內 <char uid="3P_Merope" />給 戰鬥中 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="4" r inv /></sec> 減少 賦予效果。
   F1:
     key: F1
     icon: CannonShot
@@ -5010,6 +5088,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">스킬 적중시</sec> 2라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">대상의 HP가 100%인 경우</sec>, 1라운드 동안 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 효과를 부여합니다.
+      EN: |-
+        to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">skill Accuracywhen</sec> 2 rounds, target's <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> and <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="1" r /></sec> decreases.
+        <sec typ="cond">target's HP 100%if</sec>, 1 round <sec typ="buff"><buff typ="SEAL_SKILL" /> skill cannot use</sec> grants the effect.
+      JP: |-
+        対象に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">スキル 命中時</sec> 2ラウンドの間 対象の <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec>と <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">対象の HPが 100%の場合</sec>、 1ラウンドの間 <sec typ="buff"><buff typ="SEAL_SKILL" /> スキル スアヨン 不可</sec> 効果を付与します。
+      TC: |-
+        對目標 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">技能 命中時</sec> 2回合內 目標的 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec>與 <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="1" r /></sec>使其減少。
+        <sec typ="cond">目標的 HP 100%若為</sec>， 1回合內 <sec typ="buff"><buff typ="SEAL_SKILL" /> 技能 使用 不可</sec> 賦予效果。
   F2:
     key: F2
     icon: CannonShot
@@ -7513,6 +7608,23 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 회피가 매우 어려운 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중시</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 열/행/지정 보호 효과를 해제</sec>하고 1라운드 동안 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="8" r /></sec> 증가 효과를 주고 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" /></sec>을(를) 감소시킵니다.
+        <sec typ="cond">사용시</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 원래 형태로 돌아갑니다</sec>.
+      EN: |-
+        to the designated area Evasion very difficult <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">Accuracywhen</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> column/ row/Designated Protection removes the effect</sec> and 1 round <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="8" r /></sec> increase effect and deals and <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" /></sec> decreases.
+        <sec typ="cond">when used</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Wonrae form as Dolagapni all</sec>.
+      JP: |-
+        指定範囲に 回避が ムエウ オルヨウン <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 列/行/指定保護 効果を 解除</sec>し、 1ラウンドの間 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="8" r /></sec> 増加 効果を 与え、 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" /></sec>を減少させます。
+        <sec typ="cond">スアヨン時</sec>、 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> ウォンルエ ハヨントエで ドオルアグアプンイドア</sec>。
+      TC: |-
+        指定範圍於 迴避 每困難 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 行/列/指定保護 效果 解除</sec>並 1回合內 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="8" r /></sec> 增加 效果 造成，並 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="7" /></sec>使其減少。
+        <sec typ="cond">使用時</sec>， <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 人員rae Hyeon依ae以 Dolaga</sec>。
 dialogue:
   KR:
     "1":
@@ -7570,10 +7682,8 @@ dialogue:
       SPIdle_02_01: |-
         사령관님… 천천히 드세요…♥​
         로데는… 아직 많이 남았어요…히힛….​
-      Oath: >-
-        사령관님, 이거 말고 다른 디저트도 더 있는데… 네?​ 로데라는 디저트가 더 좋다고요? 헤… 헤헷… 아, 알겠어요 사령관님.
-        다과회가 끝나면 더 드릴게요.
-
+      Oath: |-
+        사령관님, 이거 말고 다른 디저트도 더 있는데… 네?​ 로데라는 디저트가 더 좋다고요? 헤… 헤헷… 아, 알겠어요 사령관님. 다과회가 끝나면 더 드릴게요.
         저도 사령관님이라는 디저트가 더 먹고 싶은데… ​저도, 많이… 이 상황을… 음미해도 되는 거죠? 헤헤… 알겠어요, 저도 사랑… 해요♥ 사령관님
       OathIdle_01: |-
         사령관님! 어라라… 또… 넘어진다아…!​
@@ -7624,9 +7734,9 @@ dialogue:
         하는 거냐고요?​
         그건… 비밀… 이에요…
         아직까지는 그런 사이가 아니니까요…​
-      Idle_03_01: |-
         네? 그럼 좀 더 친해지면 알려줄 수 있냐고요…?
         그건… 생각해 볼게요…​
+      Idle_03_01: |-
         사령관님! 어디 같이 놀러가지 않으실래요?​
         사령관님과 함께라면 저 어디라도 좋아요!
         단둘이서라면… 더 좋아요…​
@@ -7642,12 +7752,9 @@ dialogue:
         역시 저질이에요… 사령관님…​
         그래도… 사령관님에게라면…
         저… 괜찮아요…​
-      Oath: >-
-        …저한테, 이 반지를 말인가요…? 정말이죠? 이건 꿈이 아닌 거죠?​ 제가 정말 이런 행복을 누려도 괜찮은 걸까요…? 이런 건…
-        상상으로밖에 생각하지 못했는데…
-
+      Oath: |-
+        …저한테, 이 반지를 말인가요…? 정말이죠? 이건 꿈이 아닌 거죠?​ 제가 정말 이런 행복을 누려도 괜찮은 걸까요…? 이런 건… 상상으로밖에 생각하지 못했는데…
         앗… 에헤헤, 평소에 무슨 상상을 했는지 들켜버렸네요… 하지만, 이제 현실이 됐으니까 괜찮겠죠?​ 사령관님… 첫 번째 상상이 이루어졌으니…
-
         다음은 두 번째 상상을 이뤄도 될까요? 저… 기대하고 있을 테니까요.
       OathIdle_01: |-
         저한테 좋은 향기가 난다고요…?
@@ -7965,20 +8072,14 @@ skins:
   sid: null
   artist: BEEEEEN
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -7993,25 +8094,27 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Rhode_N
   skins:
     - sid: 1
       artist: BEEEEEN
       price: 182
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -8028,5 +8131,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_PECS_Rhode_NS1_Dam
         consumableKey: Skin_PECS_Rhode_1

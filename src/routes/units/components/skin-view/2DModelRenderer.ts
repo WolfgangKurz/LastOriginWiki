@@ -1,5 +1,4 @@
 import * as PIXI from "pixi.js";
-import { Viewport } from "pixi-viewport";
 
 import Shared from "@/components/pixi/Shared";
 
@@ -10,41 +9,27 @@ export async function render2DModel (cropByCameraBoundary: boolean = false): Pro
 	const renderer = Shared.instance.renderer;
 	if (!renderer) return null;
 
+	const vp = Shared.instance.viewport;
+	const surface = Shared.instance.surface;
+	const renderRoot = surface || host;
+
 	Shared.instance.inRendering = true;
-
-	// find pixi-viewport layer
-	const vp = (() => {
-		let current: PIXI.Container | undefined = host;
-		while (current && !(current instanceof Viewport))
-			current = current.parent;
-
-		if (current instanceof Viewport) {
-			if (current.parent) current.updateTransform();
-
-			return current;
-		}
-
-		return null;
-	})();
 
 	// save original viewport scale
 	const vpOriginalMatrix = vp ? vp.transform.localTransform.clone() : new PIXI.Matrix().identity();
+	const surfaceOriginalMatrix = surface ? surface.transform.localTransform.clone() : new PIXI.Matrix().identity();
 
 	const rW = renderer.width;
 	const rH = renderer.height;
 
 	try {
-		// make original scale
 		if (vp) {
-			const tf = new PIXI.Matrix().identity();
-			host.Roots.forEach(root => {
-				// extract scale only
-				tf.scale(root.transform.scale.x, root.transform.scale.y);
-			});
-			tf.invert();
-
-			vp.transform.setFromMatrix(tf);
+			vp.transform.setFromMatrix(new PIXI.Matrix().identity());
 			vp.updateTransform();
+		}
+		if (surface) {
+			surface.transform.setFromMatrix(new PIXI.Matrix().identity());
+			surface.updateTransform();
 		}
 
 		const bounds = (() => {
@@ -55,17 +40,21 @@ export async function render2DModel (cropByCameraBoundary: boolean = false): Pro
 			return new PIXI.Rectangle(l, t, r - l, b - t);
 		})();
 
-		const objects = Shared.RenderableObjects(host);
+		const objects = Shared.RenderableObjects(renderRoot);
 		function _render (rt: PIXI.RenderTexture, offsetX: number = 0, offsetY: number = 0) {
-			const offsetMat = new PIXI.Matrix();
-			offsetMat.translate(-bounds.left + offsetX, -bounds.top + offsetY);
+			const matObject = new PIXI.Matrix(
+				1, 0,
+				0, 1,
+				-bounds.left + offsetX,
+				-bounds.top + offsetY,
+			);
 
 			// TODO: Optimize draw call
 			// * [obj1] - [obj2] - [obj3] - [filter,obj4] - [obj5] - [obj6]
 			// *   into
 			// * [obj1, obj2, obj3] - [filter,obj4] - [obj5, obj6]
 			objects.forEach(o => {
-				// if (o.parent) o.updateTransform();
+				if (o.parent) o.updateTransform();
 
 				const _visibles: PIXI.DisplayObject[] = [];
 				if (o.children) {
@@ -80,7 +69,7 @@ export async function render2DModel (cropByCameraBoundary: boolean = false): Pro
 				renderer!.render(o, {
 					clear: false,
 					renderTexture: rt,
-					transform: offsetMat,
+					transform: matObject,
 					skipUpdateTransform: true,
 				});
 
@@ -102,8 +91,6 @@ export async function render2DModel (cropByCameraBoundary: boolean = false): Pro
 			cv.height = _h;
 
 			const ctx = cv.getContext("2d")!;
-
-			debugger;
 			for (let x = 0; x < _w; x += MAX_TEX_SIZE) {
 				for (let y = 0; y < _h; y += MAX_TEX_SIZE) {
 					const w = Math.min(MAX_TEX_SIZE, _w - x);
@@ -130,12 +117,14 @@ export async function render2DModel (cropByCameraBoundary: boolean = false): Pro
 			renderer.resize(w, h);
 			const rt = PIXI.RenderTexture.create({ width: w, height: h });
 
-			_render(rt);
-
+			_render(rt, 0, 0);
 			return renderer.extract.canvas(rt) as HTMLCanvasElement;
 		}
 	} finally {
 		vp?.transform.setFromMatrix(vpOriginalMatrix);
+		if (vp) vp.updateTransform();
+		surface?.transform.setFromMatrix(surfaceOriginalMatrix);
+		if (surface) surface.updateTransform();
 		renderer.resize(rW, rH);
 		Shared.instance.inRendering = false;
 	}

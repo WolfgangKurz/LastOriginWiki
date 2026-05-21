@@ -1,22 +1,20 @@
 import { FunctionalComponent } from "preact";
-import { createPortal, useEffect, useLayoutEffect, useRef, useState } from "preact/compat";
+import { createPortal, useEffect, useRef, useState } from "preact/compat";
 
-import { ResearchTreeData, Unit } from "@/types/DB/Unit";
+import { Unit } from "@/types/DB/Unit";
 import { Research } from "@/types/DB/Research";
 import { Consumable } from "@/types/DB/Consumable";
 
 import { CurrentDB } from "@/libs/DB";
 import { useUpdate } from "@/libs/hooks";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { ImageExtension, AssetsRoot } from "@/libs/Const";
 import { parseVNode } from "@/libs/VNode";
-import { TravelVDOM } from "@/libs/VDomParser";
 import { FormatNumber } from "@/libs/Functions";
-
-import { StaticDB, useDBData } from "@/libs/Loader";
-import { GetUnitFaceURL } from "@/components/unit-face";
 
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
+import { GetUnitFaceURL } from "@/components/unit-face";
 import PopupBase from "@/components/popup/base";
 import EquipIcon from "@/components/equip-icon";
 
@@ -27,8 +25,6 @@ interface ResearchTreeProps {
 }
 
 const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
-	const update = useUpdate();
-
 	const [display, setDisplay] = useState(false);
 	const [curResearch, setCurResearch] = useState("");
 	const [svg, setSVG] = useState<preact.VNode | undefined>(undefined);
@@ -90,7 +86,7 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 		}
 	}, [svgRef.current]);
 
-	const research = curResearch && ResearchDB && ResearchDB.find(x => x.key === curResearch);
+	const research = curResearch && assertDBData(ResearchDB) && ResearchDB.find(x => x.key === curResearch);
 	const ResearchTime = ((): string => {
 		const duration = research && research.time;
 		if (!duration) return "-";
@@ -140,7 +136,7 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 							<Locale k="UNIT_VIEW_RESEARCH_ITEM_EMPTY" />
 						</span>
 						: research.items.map(e => {
-							const item = ConsumableDB && ConsumableDB.find(c => c.key === e.item);
+							const item = assertDBData(ConsumableDB) && ConsumableDB.find(c => c.key === e.item);
 							if (!item) return <>-</>;
 
 							return <span class="badge bg-semilight text-dark me-1 mb-1">

@@ -3087,6 +3087,19 @@ skills:
             base: -3
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 입힙니다.
+        <sec typ="cond">공격 적중 시</sec>, <sec typ="note">열기 흡수</sec> 버프를 획득하고 적의 <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="2" r /></sec>를 감소시킵니다.
+      EN: |-
+        to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="ice" />.
+        <sec typ="cond">On hit</sec>, <sec typ="note">Heat Absorption</sec> buff gains and enemy's <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="2" r /></sec> decreases.
+      JP: |-
+        対象に <sec typ="attr">保護無視</sec><dmg elem="ice" />を与えます。
+        <sec typ="cond">攻撃命中時</sec>、 <sec typ="note">列機 ハウプ数</sec> バフを 獲得し、 敵の <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="2" r /></sec>を減少させます。
+      TC: |-
+        對目標 <sec typ="attr">無視保護</sec> 造成<dmg elem="ice" />。
+        <sec typ="cond">攻擊命中時</sec>， <sec typ="note">行台 吸數</sec> 增益 獲得，並 敵人的 <sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="2" r /></sec>使其減少。
   "2":
     key: "2"
     icon: WideIceShot
@@ -5971,6 +5984,23 @@ skills:
             base: -0.5
             per: -0.025
             chance: 1
+    desc:
+      KR: |-
+        행 범위 대상에게 <dmg elem="ice" />를 입힙니다.
+        <sec typ="note">열기 흡수</sec> 상태일 경우, <sec typ="note">열기 흡수</sec>를 소모하여 <sec typ="dmg"><buff typ="IceATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가하고 적중한 적을 <sec typ="note">침수</sec> 상태로 만듭니다.
+        <sec typ="note">침수</sec> : <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="6" r /></sec>
+      EN: |-
+        row range to the target with <dmg elem="ice" />.
+        <sec typ="note">Heat Absorption</sec> if in the state, <sec typ="note">Heat Absorption</sec> consumes <sec typ="dmg"><buff typ="IceATK_UP" /> damage <val idx="2" r /></sec> increases and Hit enemy <sec typ="note">Flooded</sec> inflicts.
+        <sec typ="note">Flooded</sec>: <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="6" r /></sec>
+      JP: |-
+        行 範囲 対象に<dmg elem="ice" />を与えます。
+        <sec typ="note">列機 ハウプ数</sec> 状態の場合、 <sec typ="note">列機 ハウプ数</sec>を 消費して <sec typ="dmg"><buff typ="IceATK_UP" /> ダメージ量 <val idx="2" r /></sec>が 増加し、 命中した 敵を <sec typ="note">浸水</sec> 状態にします。
+        <sec typ="note">浸水</sec>：<sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="6" r /></sec>
+      TC: |-
+        列 範圍 對目標 造成<dmg elem="ice" />。
+        <sec typ="note">行台 吸數</sec> 狀態若為， <sec typ="note">行台 吸數</sec> 消耗並 <sec typ="dmg"><buff typ="IceATK_UP" /> 傷害量 <val idx="2" r /></sec> 增加，並 命中 敵人 <sec typ="note">浸水</sec> 使其進入狀態。
+        <sec typ="note">浸水</sec>：<sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="6" r /></sec>
   "3":
     key: "3"
     icon: P.WideIceShot
@@ -6634,6 +6664,31 @@ skills:
             base: -0.055
             per: -0.005
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 적 전체의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="7" r /></sec>를 감소시킵니다.
+        <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 감소</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 감소</sec> 효과는 라운드 진행에 따라 약화됩니다.
+        1 라운드 : <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="6" r /></sec> 감소 / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="7" r /></sec> 감소
+        2 라운드 : <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="11" r /></sec> 감소 / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="12" r /></sec> 감소
+        3 라운드 이후 : <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="16" r /></sec> 감소 / <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="17" r /></sec> 감소
+      EN: |-
+        <sec typ="cond">At round start</sec>, all enemies of <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="7" r /></sec> decreases.
+        <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance decrease</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack decrease</sec> effect round formation row depending on weaken.
+        1 round: <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="6" r /></sec> decrease / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="7" r /></sec> decrease
+        2 round: <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="11" r /></sec> decrease / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="12" r /></sec> decrease
+        3 round after: <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="16" r /></sec> decrease / <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="17" r /></sec> decrease
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 敵全体の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="7" r /></sec>を減少させます。
+        <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 減少</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 減少</sec> 効果は ラウンド ジイン行に応じて 弱化されます。
+        1 ラウンド：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="6" r /></sec> 減少 / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="7" r /></sec> 減少
+        2 ラウンド：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="11" r /></sec> 減少 / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="12" r /></sec> 減少
+        3 ラウンド 以後：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="16" r /></sec> 減少 / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="17" r /></sec> 減少
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 全體敵人的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="7" r /></sec>使其減少。
+        <sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 減少</sec> / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 減少</sec> 效果 回合 支n列依 弱化。
+        1 回合：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="6" r /></sec> 減少 / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="7" r /></sec> 減少
+        2 回合：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="11" r /></sec> 減少 / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="12" r /></sec> 減少
+        3 回合 之後：<sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="16" r /></sec> 減少 / <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="17" r /></sec> 減少
   "4":
     key: "4"
     icon: P.DefCounter
@@ -7087,6 +7142,23 @@ skills:
             base: -3
             per: 0
             chance: 0
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소하고 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="note">열기 흡수</sec>상태일 경우, 해제 불가한 <sec typ="buff"><buff typ="RANGE_DOWN" /> 사거리 <val idx="8" /></sec> 감소 효과를 획득합니다.
+        피격 시, <sec typ="buff"><buff typ="COUNTER" /> <val idx="10" r signless /> 위력으로 반격</sec>하고 반격 시 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="6" slot="1" r /></sec>가 추가로 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decreases and <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="4" r /></sec> increases.
+        <sec typ="note">Heat Absorption</sec> if in the state, cannot be removed one <sec typ="buff"><buff typ="RANGE_DOWN" /> Range <val idx="8" /></sec> decrease gains the effect.
+        When hit, <sec typ="buff"><buff typ="COUNTER" /> <val idx="10" r signless /> power as Counterattack</sec> and When counterattacking <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="6" slot="1" r /></sec>additionally increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec>が 減少し、 <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="4" r /></sec>が増加します。
+        <sec typ="note">列機 ハウプ数</sec>状態の場合、 解除不可した <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="8" /></sec> 減少 効果を獲得します。
+        被弾時、 <sec typ="buff"><buff typ="COUNTER" /> <val idx="10" r signless /> 威力で 反撃</sec>し、 反撃 時 <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="6" slot="1" r /></sec>が追加で増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="0" r inv /></sec> 減少，並 <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="4" r /></sec>增加。
+        <sec typ="note">行台 吸數</sec>狀態若為， 無法解除 <sec typ="buff"><buff typ="RANGE_DOWN" /> 射程 <val idx="8" /></sec> 減少 獲得效果。
+        被擊時， <sec typ="buff"><buff typ="COUNTER" /> <val idx="10" r signless /> 威力以 反擊</sec>並 反擊 時 <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="6" slot="1" r /></sec>會額外增加。
   "5":
     key: "5"
     icon: P.ShieldWall
@@ -7229,6 +7301,11 @@ skills:
             base: 0.11
             per: 0.01
             chance: 1
+    desc:
+      KR: <sec typ="buff"><buff typ="DEF_Char" /> 범위 내 아군을 지정 보호</sec>하고 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="2" r /></sec>를 증가시킵니다.
+      EN: <sec typ="buff"><buff typ="DEF_Char" /> within range Designated Protection for allies</sec> and <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="2" r /></sec> increases.
+      JP: <sec typ="buff"><buff typ="DEF_Char" /> 範囲内 味方を 指定保護</sec>し、 <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="2" r /></sec>を増加させます。
+      TC: <sec typ="buff"><buff typ="DEF_Char" /> 範圍內 我方 指定保護</sec>並 <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="2" r /></sec>使其增加。
 dialogue:
   KR:
     "1":
@@ -7440,9 +7517,7 @@ dialogue:
         관리자님,
         무대 액세서리를 더 벗고
         진행해도 되겠습니까?​
-      Oath: 오늘 공연은 뿌듯했습니다. 전 다른 분들의 마음을 이해하기 어려웠습니다. 오늘 보여드린 춤 또한 다른 분과 비교한다면 감정적으로
-        부족한… 그, 그건?!​ 관리자님께 사랑받는 여자가 되어 기쁩니다.​ 칵테일 한 잔 내어드리겠습니다. 제 몸으로 냉각시킬 테니,
-        곁들여 드시기 바랍니다.
+      Oath: 오늘 공연은 뿌듯했습니다. 전 다른 분들의 마음을 이해하기 어려웠습니다. 오늘 보여드린 춤 또한 다른 분과 비교한다면 감정적으로 부족한… 그, 그건?!​ 관리자님께 사랑받는 여자가 되어 기쁩니다.​ 칵테일 한 잔 내어드리겠습니다. 제 몸으로 냉각시킬 테니, 곁들여 드시기 바랍니다.
       OathIdle_01: |-
         술은 몸에 해롭다고 합니다.
         하지만 관리자님의 입은
@@ -7504,13 +7579,10 @@ dialogue:
         가장 적합한 행동을 검색합니다.
         …...본 개체가 시연하는 것은 처음이므로,
         서투르더라도 양해를 부탁드립니다.
-      Oath: >-
+      Oath: |-
         해당 행위는 본 개체가 관리자님과 부부의 연을 맺는 것이라고 판단됩니다. 요청을 승인합니다.
-
         본 개체… 아니, 므네모시네는 관리자님에게 특별한 감정을 품고 있습니다.
-
         관리자님이 본디 모델명에 불과한 ‘므네모시네’라는 인식명을 불러주셨을 때, 제 안에서 무언가가 싹텄습니다.
-
         그것이 저로 하여금, 이 반지를 받는 것에서 기쁨을 느끼게 합니다. 이 감정이 무엇인지 정의할 때까지, 저를 계속 사용해주시길 요청합니다.
       OathIdle_01: |-
         제 제어능력은 완벽하므로, 관리자님께선 언제든
@@ -7671,8 +7743,7 @@ dialogue:
       Login: ""
       Idle_01_01: 本モデルはウォッチャーオブネイチャーの小動物たちと一緒にいる時、一種の…高揚感を感じます。分析結果、管理者様にも精神的な安定感を与え得るものと判断します。
       Idle_01_02: 本モデル、ムネモシュネは施設の管理と維持、情報の保存と処理に特化されています。早急に使用方法を熟知されることを推奨します。
-      Idle_01_03: 話し相手が必要でしたら他のモデルを呼び出します。…はい…？本モデルで構わないのですか？
-        では野花に関する情報を伝達いたします。とても興味深い内容となります。
+      Idle_01_03: 話し相手が必要でしたら他のモデルを呼び出します。…はい…？本モデルで構わないのですか？ では野花に関する情報を伝達いたします。とても興味深い内容となります。
       SPIdle_01_01: 警告。無効なアクセスです。
       Idle_02_01: 本モデルが美しい……？…理解不能。本モデルはただこのように造形されたまでです。…小動物たちを見る時とは似て非なる感情を確認。検索を開始します。
       Idle_03_01: 本モデルは情報の活用には使用されなかったため、演算速度は速くありません。そのため戦争兵器の設計図といった情報を要請される場合、多少時間がかかります。…はい。野花に関する話ならいつでも。
@@ -7701,8 +7772,7 @@ dialogue:
       Login: ""
       Idle_01_01: 感情モジュールにエラー発生。私と一定の距離を置くことを要請します。あっ…体温と心拍数の急激な上昇を確認。そして…管理者様の胸はとても暖かいということも、感知しました。
       Idle_01_02: 管理者様の仰る通り、私が箱舟内の情報にアクセスする場合、私の記録が残ります。…要請を拒否。新設されたプロトコルにより、管理者様の特級権限であっても当該記録は閲覧が不可能です。無理に閲覧を試みる場合、当該記録と箱舟の全ての情報が消去されますのでご注意願います。
-      Idle_01_03: 分析の結果、
-        私が管理者様に感じるこの感情は愛ではないと判断します。私が感じるのは、記録済みの事例とは比較にならないほどの温もりと力であります。歴史が記録され始めて数千年、誰も発見し得なかった特別な感情であることは確かです。この感情を定義するためには、少なくとも25000年の時間が必要と想定されます。
+      Idle_01_03: 分析の結果、 私が管理者様に感じるこの感情は愛ではないと判断します。私が感じるのは、記録済みの事例とは比較にならないほどの温もりと力であります。歴史が記録され始めて数千年、誰も発見し得なかった特別な感情であることは確かです。この感情を定義するためには、少なくとも25000年の時間が必要と想定されます。
       SPIdle_01_01: 管理者様と経験してみたい項目は、あと131件残っています。この項目は約2時間ごとに更新されるため、当該行為を早急に再開するよう要請します。
       MVP: ""
   EN:
@@ -7767,12 +7837,9 @@ dialogue:
         If we go on like this, it is expected that
         I would be "smitten" with you.
         Would it be alright…?
-      Oath: >-
-        So far, the name Mnemosyne just meant the Goddess of Memory and an
-        identification code to me.
-
+      Oath: |-
+        So far, the name Mnemosyne just meant the Goddess of Memory and an identification code to me.
         But, when you came to my room and called me Mnemosyne… The word became more meaningful than anything else to me. … Mr. Manager. I identify an unmeasurable emotion toward you in my heart.
-
         Please stay by my side until I find out what it is.
       OathIdle_01: |-
         Are you feeling…
@@ -7834,20 +7901,14 @@ dialogue:
         due to an increase in the heart rate and temperature.
         While the abnormality persists…
         I ask Mr. Manager to continue what he’s doing until the end.​
-      Oath: >-
-        Ever since you entered my world, my world expanded endlessly and I was
-        able to embrace more and more people.
-
+      Oath: |-
+        Ever since you entered my world, my world expanded endlessly and I was able to embrace more and more people.
         There is one thing that is made clear as my world expands… It is the fact that you are more…precious to me than anything… 
-
         Please wait for me, I will close the shop and return. I don’t want anything to disturb our time together.
-      OathIdle_01: >-
+      OathIdle_01: |-
         As per the suggestion of Queen of Mane’s suggestion,
-
         the price of shaved ice will differ per customer.
-
         As for you, Mr. Manager… Depending on how many you’ve bought…
-
         There’s a hug… And a special course… Please see the menu for more details…​
       MVP: ""
     "3":
@@ -7880,8 +7941,7 @@ dialogue:
       OathIdle_01: ""
       MVP: ""
     "":
-      Join: Special authorization authenticated. I’ll transfer the full rights to this
-        unit to you.
+      Join: Special authorization authenticated. I’ll transfer the full rights to this unit to you.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -7929,24 +7989,17 @@ dialogue:
         to entertain you. All I can do is manage facilities,
         process data… and freeze the surrounding.
         Will you still use this unit?
-      SPIdle_02_01: >-
+      SPIdle_02_01: |-
         To comply with your request,
-
         initiating search to find appropriate action in current situation…… This unit has never demonstrated this before.
-
         Please understand my clumsiness.
-      Oath: >-
-        This action is considered as this unit wedding you, Manager. Request
-        approved.
-
+      Oath: |-
+        This action is considered as this unit wedding you, Manager. Request approved.
         This unit… well, Mnemosyne has special feelings for you, Manager.
-
         When you addressed myself as ‘Mnemosyne’, which was no more than a model name, an indescribable feeling grew inside me.
-
         That makes me feel thrilled about receiving this ring. I request that you keep using me until I can define what this feeling is.
-      OathIdle_01: >-
+      OathIdle_01: |-
         I have perfect control.
-
         You can always touch me… Let me correct it. I request you for an embrace.
       MVP: ""
     M:
@@ -7987,13 +8040,10 @@ dialogue:
         after history has begun.
         It would take at least 25000 years
         to define this feeling.
-      SPIdle_01_01: >-
+      SPIdle_01_01: |-
         There are
-
         131 situations that I’d like to experience with you. The items are renewed
-
         every 2 hours.
-
         Please resume as quickly as possible.
       MVP: ""
   TC:
@@ -8278,20 +8328,14 @@ skins:
   sid: null
   artist: Jam
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -8306,25 +8350,27 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Mnemosyne_N
   skins:
     - sid: 1
       artist: Jam
       price: 159
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 92
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -8346,26 +8392,21 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_PECS_Mnemosyne_NS1
         2dmodel_dam: 2DModel_PECS_Mnemosyne_NS1_Dam
         consumableKey: Skin_PECS_Mnemosyne_1
     - sid: 2
       artist: Jam
       price: 114
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 4
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
       anim:
         - false
         - false
@@ -8382,25 +8423,27 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_PECS_Mnemosyne_NS2
         consumableKey: Skin_PECS_Mnemosyne_2
     - sid: 3
       artist: TunaMaYo
       price: 182
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -8417,5 +8460,6 @@ skins:
         tbarId: 3
         voiceId: 3
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_PECS_Mnemosyne_NS3_Dam
         consumableKey: Skin_PECS_Mnemosyne_3

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "preact/hooks";
 
 import * as YAML from "@/external/yaml";
 
+import { useUpdate } from "@/libs/hooks";
 import { DataRoot } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 
@@ -32,7 +33,12 @@ enum LoaderState {
 	DONE = 3,
 }
 
-const LoadQueue: Record<string, Array<() => void>> = {};
+interface LoadQueueEntry {
+	resolve: () => void;
+	reject: (reason?: unknown) => void;
+}
+
+const LoadQueue: Record<string, LoadQueueEntry[]> = {};
 const Cache: Record<string, any> = {};
 
 function Load (db: string, json: string): Promise<void> {
@@ -45,8 +51,17 @@ function Load (db: string, json: string): Promise<void> {
 			first = true;
 		}
 
-		LoadQueue[json].push((): void => resolve());
+		LoadQueue[json].push({ resolve, reject });
 		if (!first) return;
+
+		const flushQueue = (resolve: boolean, reason?: unknown): void => {
+			const queue = LoadQueue[json] || [];
+			delete LoadQueue[json];
+			if (resolve)
+				queue.forEach(entry => entry.resolve());
+			else
+				queue.forEach(entry => entry.reject(reason));
+		};
 
 		const _rootDB = json.startsWith("!/");
 		const _rootJson = _rootDB ? json : `!/${db}/${json}`;
@@ -68,19 +83,18 @@ function Load (db: string, json: string): Promise<void> {
 
 		const _postfix = _rootJson.includes(".yml") ? _hash : `.yml${_hash}`;
 
-		const xhr = new XMLHttpRequest();
-		xhr.open("GET", `${DataRoot}/${_rootJson.substring(2)}${_postfix}`);
-		xhr.addEventListener("load", (e) => {
-			if (Math.floor(xhr.status / 100) === 2) {
-				const data = YAML.load(xhr.responseText, undefined);
+		fetch(`${DataRoot}/${_rootJson.substring(2)}${_postfix}`)
+			.then(x => {
+				if (!x.ok) throw new Error(`Status ${x.status}`);
+				return x.text();
+			})
+			.then(x => {
+				const data = YAML.load(x, undefined);
 				Cache[json] = data;
-				LoadQueue[json].forEach(c => c());
-				delete LoadQueue[json];
-			} else
-				reject(e);
-		});
-		xhr.addEventListener("error", (e) => reject(e));
-		xhr.send();
+				Object.freeze(Cache[json]); // prevent to corrupt data
+				flushQueue(true);
+			})
+			.catch(e => flushQueue(false, e));
 	});
 }
 
@@ -89,6 +103,12 @@ function normalize (list: string | string[] | undefined): string[] {
 	if (typeof list === "string") return [list];
 	return list;
 }
+
+const DBDataSymbols = {
+	None: Symbol("None"),
+	Loading: Symbol("Loading"),
+	Failed: Symbol("Failed"),
+};
 
 /**
  * Get data from `db/json`.
@@ -99,51 +119,56 @@ function normalize (list: string | string[] | undefined): string[] {
  * @param path Target path of data, after `db` directory. If set `null`, will not fetch and always returns `undefined`.
  * @param db Dataset to get. `"korea"` only available currently.
  * @param requestId Id of request. Used for re-fetch already fetched same path, same db data.
- * @returns `T` if data ready, `undefined` if not ready yet, `null` if failed to get.
+ * @returns `T` if data ready, `useDBData.Loading` if not ready yet, `useDBData.Failed` if failed to get, `useDBData.None` if `path` is `null`.
  */
-export function useDBData<T extends {}> (path: string | null, db: "korea" = CurrentDB, requestId?: number): T | null | undefined {
-	const inCache = !!path && (path in Cache);
-	const [state, setState] = useState(-1); // uninitialized
-	const [result, setResult] = useState<T | undefined>(inCache ? Cache[path!] : undefined);
+export function useDBData<T extends {}> (path: string | null, db: "korea" = CurrentDB, requestId?: number): T | symbol {
+	const inCache = path !== null && (path in Cache);
+	const update = useUpdate();
+	const [result, setResult] = useState<T | symbol>(() => inCache ? Cache[path!] : DBDataSymbols.None);
 
 	useEffect(() => {
 		if (path !== null) {
-			if (path in Cache) {
-				setResult(path in Cache ? Cache[path] : null);
-				setState(2);
-			} else {
-				setResult(undefined);
-				setState(0);
-			}
-		} else {
-			setResult(undefined);
-			setState(-1);
-		}
-	}, [path, db, requestId]);
+			if (path in Cache)
+				setResult(Cache[path]);
+			else {
+				setResult(DBDataSymbols.Loading);
 
-	useEffect(() => {
-		if (state === 0) {
-			const _path = path!;
-			if (_path in Cache) {
-				setState(2);
-				setResult(Cache[_path]);
-			} else {
-				setState(1);
-				Load(db, _path)
-					.then(() => {
-						setState(2);
-						setResult(Cache[_path]);
-					})
+				Load(db, path)
+					.then(() => update())
 					.catch(() => {
-						setState(3);
+						setResult(DBDataSymbols.Failed);
 					});
 			}
-		}
-	}, [state]);
+		} else
+			setResult(DBDataSymbols.None);
+	}, [path, db, requestId, update.value]);
 
-	if (state === 3) return null;
 	return result;
 }
+useDBData.None = DBDataSymbols.None;
+useDBData.Loading = DBDataSymbols.Loading;
+useDBData.Failed = DBDataSymbols.Failed;
+Object.freeze(useDBData); // to prevent overwrite symbols
+
+/**
+ * Check all element of `data` is not `Loading` or `Failed` or `None` state of `useDBData`.
+ * @param data Data to check, return of `useDBData`.
+ * @returns `true` if all data ready, `false` if not.
+ */
+export function assertDBData<T> (data: (T | symbol)[]): data is (T)[];
+/**
+ * Check `data` is not `Loading` or `Failed` or `None` state of `useDBData`.
+ * @param data Data to check, return of `useDBData`.
+ * @returns `true` if data ready, `false` if not.
+ */
+export function assertDBData<T> (data: T | symbol): data is T;
+export function assertDBData<T> (data: T | symbol | [T | symbol]): data is T | [T] {
+	if (Array.isArray(data))
+		return data.every(r => typeof (r) !== "symbol");
+	else
+		return typeof (data) !== "symbol";
+}
+
 
 /**
  * @deprecated Using this method is not recommended. Use `useDBData` instead.

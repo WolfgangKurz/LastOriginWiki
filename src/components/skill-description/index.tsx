@@ -5,7 +5,7 @@ import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { cn } from "@/libs/Class";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { ComponentTable, parseVNode } from "@/libs/VNode";
 import { ParamWithSlot, parseParams } from "@/libs/SkillDescription";
 
@@ -55,31 +55,10 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 
 	const units = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 
-	const content = useMemo(() => {
-		let text = props.text;
-
-		if (!text) return [];
-
-		const _sections = props.sections || {};
-		const _boxs = props.boxs || [];
-		if (props.experimentalBuffName) {
-			const $ret = experimental.BuffName(text);
-			text = $ret.text;
-			Object.keys($ret.sections).forEach(sec => _sections[sec] = $ret.sections[sec]);
-		}
-
-		const tags: Record<string, preact.FunctionalComponent<unknown>> = buildDefaultSection(units);
-		text = text.replace(/\$\$([A-Za-z0-9\-_]+)((:?([?F0-9,@]+))\$|\$?)/g, (p0, p1, p2, p3, p4) => {
-			tags[`SECTION_${p1}`] ??= (): preact.VNode => <>{
-				(_sections[p1] || [])
-					.map((r, i) => <div
-						key={ `SKILL_DESCRIPTION_COMMENT_SECTION_${p1}_LINE_${i}` }
-						class={ style.CommentLine }
-					>{ createElement(r, { params: parseParams(p4) }) }</div>)
-			}</>;
-			return `<SECTION_${p1} />`;
-		});
-		_boxs.forEach((b, i) => {
+	const defaultSections = useMemo(() => buildDefaultSection(units), [units]);
+	const tags = useMemo(() => {
+		const tags: Record<string, preact.FunctionalComponent<unknown>> = {};
+		(props.boxs || []).forEach((b, i) => {
 			tags[`BOX_${i + 1}`] = () => {
 				const _list = b[0]
 					.replace(/^\n+/gs, "")
@@ -106,6 +85,23 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 				);
 			};
 		});
+		return tags;
+	}, [
+		props.boxs, props.sections, props.rates, props.slot, props.values,
+		props.level, props.buffBonus, props.skillBonus, props.favorBonus, props.valueDetail,
+	]);
+	const sections = useMemo(() => Object.assign(props.sections || {}, defaultSections), [props.sections, defaultSections]);
+
+	const content = useMemo(() => {
+		let text = props.text;
+		if (!text) return [];
+
+		let _sections = sections;
+		if (props.experimentalBuffName) {
+			const $ret = experimental.BuffName(text);
+			text = $ret.text;
+			_sections = Object.assign(_sections, $ret.sections);
+		}
 
 		const placeholder: FunctionalComponent<unknown> =
 			(p) => createElement("span", { class: "text-secondary" }, p.children);
@@ -202,6 +198,10 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 		};
 
 		try {
+			interface ImportNode {
+				name: string;
+				p?: string;
+			}
 			return parseVNode(text, [], {
 				...tags,
 
@@ -240,6 +240,16 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 				cmt: Components.Comment,
 
 				box: Components.Box,
+
+				import (p: preact.RenderableProps<ImportNode>) {
+					return <>{
+						(_sections[p.name] || _sections[`SECTION_${p.name}`] || [])
+							.map((r, i) => <div
+								key={ `SKILL_DESCRIPTION_COMMENT_SECTION_${p.name}_LINE_${i}` }
+								class={ style.CommentLine }
+							>{ createElement(r, { params: parseParams(p.p ?? "?") }) }</div>)
+					}</>;
+				},
 			} as unknown as ComponentTable<any>);
 		} catch (e) {
 			// eslint-disable-next-line react/jsx-key

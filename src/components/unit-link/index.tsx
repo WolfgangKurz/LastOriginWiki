@@ -1,10 +1,9 @@
 import preact, { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import Locale from "@/components/locale";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import UnitFace from "@/components/unit-face";
@@ -18,11 +17,11 @@ const UnitLink: FunctionalComponent<UnitLinkProps> = (props) => {
 	const id = props.uid;
 
 	const FilterableUnit = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
-	if (!FilterableUnit) return <span class="badge bg-info">{ id }</span>;
+	if (!assertDBData(FilterableUnit)) return <span class="badge bg-info">{ id }</span>;
 
 	const unit = FilterableUnit.find(x => x.uid === id);
 	if (!unit) return <span class="badge bg-info">{ id }</span>;
-	return <Link href={ `/units/${id}` }>
+	return <a href={ `/units/${id}` }>
 		<BootstrapTooltip
 			placement="top"
 			content={ <UnitCard
@@ -40,6 +39,6 @@ const UnitLink: FunctionalComponent<UnitLinkProps> = (props) => {
 		<div class="preload-area">
 			<UnitFace uid={ id } />
 		</div>
-	</Link>;
+	</a>;
 };
 export default UnitLink;

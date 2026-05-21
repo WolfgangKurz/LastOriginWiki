@@ -1,22 +1,19 @@
+import { FunctionalComponent } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
 import debounce from "lodash.debounce";
 
 import BG, { BGWithRequirements } from "@/types/DB/BG";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { CurrentDB } from "@/libs/DB";
-import { useUpdate } from "@/libs/hooks";
 import { isActive } from "@/libs/Functions";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 
 import style from "./style.module.scss";
 
 const BGPage: FunctionalComponent = () => {
 	const ext = ImageExtension();
-
-	const update = useUpdate();
 
 	const [bgSelected, setBGSelected] = useState<number>(0);
 	const [bgLoaded, setBGLoaded] = useState(false);
@@ -47,24 +44,17 @@ const BGPage: FunctionalComponent = () => {
 		};
 	}, [BGImageRef.current, bgLoaded]);
 
-	const bgs = GetJson<BG[] | null>(StaticDB.BG);
-	if (!bgs) {
-		JsonLoaderCore(CurrentDB, StaticDB.BG)
-			.then(() => update());
-	}
-
+	const bgs = useDBData<BG[]>(StaticDB.BG);
 	const isReqBG = (bg: BG): bg is BGWithRequirements => "req" in bg;
 
-	const selected: BG | null = bgs
-		? bgs[bgSelected]
-		: null;
+	const selected: BG | null = assertDBData(bgs) && bgs[bgSelected] || null;
 
 	return <div class="bg">
 		<h1>BG</h1>
 
 		<div class="row gx-0">
 			<div class="col-12 d-lg-none">
-				{ bgs && <div class="btn btn-group">
+				{ assertDBData(bgs) && <div class="btn btn-group">
 					{ selected && <button
 						class="btn btn-dark dropdown-toggle"
 						type="button"
@@ -106,7 +96,7 @@ const BGPage: FunctionalComponent = () => {
 			<div class="col-2 d-none d-lg-block position-relative">
 				<div class={ `flex-nowrap ${style.BGTabs}` }>
 					<ul class="nav nav-tabs justify-content-start">
-						{ bgs && bgs.map((bg, index) => <li class="nav-item">
+						{ assertDBData(bgs) && bgs.map((bg, index) => <li class="nav-item">
 							<a
 								href="#"
 								class={ [

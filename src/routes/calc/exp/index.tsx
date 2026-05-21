@@ -12,7 +12,7 @@ import { RarityDisplay } from "@/libs/Const";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import { GetJson, StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, GetJson, StaticDB, useDBData } from "@/libs/Loader";
 import { useLocale } from "@/libs/Locale";
 import Loading from "@/components/loading";
 import Locale from "@/components/locale";
@@ -205,7 +205,7 @@ const EXPCalc: FunctionalComponent = () => {
 
 	const MapsDB = targetDB[0] as Maps;
 	const mapDB = Object.keys(MapsDB).map(k => [k, useDBData<World>(`map/${k}`)] as [string, World | null | undefined]);
-	if (mapDB.some(r => !r[1])) return <Loading.Data />;
+	if (mapDB.some(r => !assertDBData(r[1]))) return <Loading.Data />;
 
 	const MapDB = useMemo(() => {
 		const ret: Record<string, World> = {};

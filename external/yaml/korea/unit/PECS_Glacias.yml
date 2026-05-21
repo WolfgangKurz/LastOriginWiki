@@ -5917,6 +5917,23 @@ skills:
             base: -0.055
             per: -0.005
             chance: 0
+    desc:
+      KR: |-
+        단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 입히고 대상의 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> HP%가 낮을 수록 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">대상의 HP%가 50%이하</sec>일 경우, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 감소 효과를 해제</sec>합니다.
+        대상이 <sec typ="cond">침수</sec> 상태인 경우, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>하고 <sec typ="chance"><chance idx="10" /> 확률</sec>로 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태로 만듭니다.
+      EN: |-
+        to a single target <sec typ="attr">Ignore Protection</sec> <dmg elem="ice" /> deals and target's <sec typ="dmg"><buff typ="DamageAmp_Opp" /> HP% low as damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">target's HP% 50%or less</sec> if, <sec typ="buff"><buff typ="REMOVE_BUFF" /> Damage Reduction removes the effect</sec>.
+        target <sec typ="cond">Flooded</sec> if in the state, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec> and <sec typ="chance"><chance idx="10" /> chance</sec> as <sec typ="buff"><buff typ="STUN" /> Stunned</sec> inflicts.
+      JP: |-
+        単一対象へ <sec typ="attr">保護無視</sec><dmg elem="ice" />を 与えし 対象の <sec typ="dmg"><buff typ="DamageAmp_Opp" /> HP%が ンアトを 少ないほど ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">対象の HP%が 50%以下</sec>の場合、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> ダメージ 減少 効果を 解除</sec>します。
+        対象が <sec typ="cond">浸水</sec> 状態の場合、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>し、 <sec typ="chance"><chance idx="10" /> 確率</sec>で <sec typ="buff"><buff typ="STUN" /> 行動不可</sec> 状態にします。
+      TC: |-
+        單一目標給 <sec typ="attr">無視保護</sec> <dmg elem="ice" /> 造成並 目標的 <sec typ="dmg"><buff typ="DamageAmp_Opp" /> HP% 降低 數越 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">目標的 HP% 50%以下</sec>若為， <sec typ="buff"><buff typ="REMOVE_BUFF" /> 傷害 減少 效果 解除</sec>。
+        目標 <sec typ="cond">浸水</sec> 若為狀態， <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>並 <sec typ="chance"><chance idx="10" /> 機率</sec>以 <sec typ="buff"><buff typ="STUN" /> 無法行動</sec> 使其進入狀態。
   "2":
     key: "2"
     icon: WideIceShot
@@ -10513,6 +10530,19 @@ skills:
             base: -0.055
             per: -0.005
             chance: 0
+    desc:
+      KR: |-
+        범위 내 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 입히고 <sec typ="cond"><buff typ="ICERES_DOWN" /> 냉기 저항 감소</sec> 상태인 대상에게 <sec typ="dmg"><buff typ="IceATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        대상이 <sec typ="cond">침수</sec> 상태인 경우, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>하고 <sec typ="buff"><buff typ="SNARE" /> 이동 불가</sec> 상태로 만들며 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="7" r /></sec>를 감소시킵니다.
+      EN: |-
+        within range to the target <sec typ="attr">Ignore Protection</sec> <dmg elem="ice" /> deals and <sec typ="cond"><buff typ="ICERES_DOWN" /> Ice Resistance decrease</sec> in the state to the target <sec typ="dmg"><buff typ="IceATK_UP" /> damage <val idx="0" r /></sec> increases.
+        target <sec typ="cond">Flooded</sec> if in the state, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec> and <sec typ="buff"><buff typ="SNARE" /> Immobilized</sec> to the state makes and <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="7" r /></sec> decreases.
+      JP: |-
+        範囲内 対象に <sec typ="attr">保護無視</sec><dmg elem="ice" />を 与えし <sec typ="cond"><buff typ="ICERES_DOWN" /> 冷気耐性 減少</sec> 状態の 対象に <sec typ="dmg"><buff typ="IceATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        対象が <sec typ="cond">浸水</sec> 状態の場合、 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>し、 <sec typ="buff"><buff typ="SNARE" /> 移動不可</sec> 状態に し、 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="7" r /></sec>を減少させます。
+      TC: |-
+        範圍內 對目標 <sec typ="attr">無視保護</sec> <dmg elem="ice" /> 造成並 <sec typ="cond"><buff typ="ICERES_DOWN" /> 冰冷抗性 減少</sec> 處於狀態的 對目標 <sec typ="dmg"><buff typ="IceATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        目標 <sec typ="cond">浸水</sec> 若為狀態， <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>並 <sec typ="buff"><buff typ="SNARE" /> 無法移動</sec> 成為狀態 使其，並 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="7" r /></sec>使其減少。
   "3":
     key: "3"
     icon: P.SelfAtkBuff
@@ -10806,6 +10836,23 @@ skills:
             base: -0.055
             per: -0.005
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 시작 시</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+        라운드 마다 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="7" r /></sec>가 감소하는데 적을 처치할 경우에는 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="18" slot="1" r /></sec>가 증가합니다.
+        <sec>본 효과를 통한 능력치 증감은 해제 불가합니다.</sec>
+      EN: |-
+        <sec typ="cond">At battle start</sec>, <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> increases.
+        round each <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="7" r /></sec> decrease De enemy kill can casein <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="18" slot="1" r /></sec> increases.
+        <sec>main effect and through stats increase /decrease cannot be removed.</sec>
+      JP: |-
+        戦闘開始時、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec>が増加します。
+        ラウンド ごとに <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="7" r /></sec>が 減少するドエ 敵を 撃破できる 場合には <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="18" slot="1" r /></sec>が増加します。
+        <sec>ブオン 効果を トオンした 能力値 ジウングアムは 解除不可します。</sec>
+      TC: |-
+        戰鬥開始時， <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec>增加。
+        回合 每 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="7" r /></sec> 減少De 敵人 擊殺可 情況於 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="18" slot="1" r /></sec>增加。
+        <sec>Bon 效果 Tong 能力值 解除增減 無法解除。</sec>
   "4":
     key: "4"
     icon: P.TeamAtkBuff
@@ -10973,6 +11020,11 @@ skills:
             base: 0.22
             per: 0.02
             chance: 1
+    desc:
+      KR: <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="3" r /></sec>가 증가합니다.
+      EN: <sec typ="cond">At round start</sec>, within range allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> Fire Resistance <val idx="3" r /></sec> increases.
+      JP: <sec typ="cond">ラウンド開始時</sec>、 範囲内 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="3" r /></sec>が増加します。
+      TC: <sec typ="cond">回合開始時</sec>， 範圍內 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /> 火焰抗性 <val idx="3" r /></sec>增加。
   "5":
     key: "5"
     icon: P.WideIceShot
@@ -11115,6 +11167,11 @@ skills:
             base: -0.105
             per: -0.005
             chance: 1
+    desc:
+      KR: <sec typ="cond">전투 시작 시</sec>, 5라운드 동안 적군의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="2" r /></sec>가 감소합니다.
+      EN: <sec typ="cond">At battle start</sec>, 5 rounds enemies of <sec typ="buff"><buff typ="AP_DOWN" /> Action Speed <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> Evasion <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance <val idx="2" r /></sec> decreases.
+      JP: 戦闘開始時、 5ラウンド間 敵軍の <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気耐性 <val idx="2" r /></sec>が減少します。
+      TC: 戰鬥開始時， 5回合內 敵方的 <sec typ="buff"><buff typ="AP_DOWN" /> 行動力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 迴避 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冰冷抗性 <val idx="2" r /></sec>減少。
 dialogue:
   KR:
     "1":
@@ -11254,11 +11311,9 @@ dialogue:
         Your colleagues are amazing.
         I need to adjust, but my power has not weakened at all
         compared to my original figure. Perhaps… Oh, nothing.
-      Idle_01_02: >-
+      Idle_01_02: |-
         I didn’t mean to, but I’m glad… The reason. Haha, it’s simple.
-
         It’s only natural that you want to look like someone you love.
-
         Even if humans discord with one another and walk a wrong path… I still love them.
       Idle_01_03: |-
         … I can feel your texture and temperature.
@@ -11296,9 +11351,8 @@ dialogue:
         My Sworn Friend. I hope you can stay somewhere safe
         just like now. If you get hurt even a little bit… I’ll devote anything
         to slay your enemies. … Yes. Even my life.
-      Idle_01_03: >-
+      Idle_01_03: |-
         When everything’s over… Well. It won’t be bad,
-
         spending the rest of my life alone… But it would be nice to stay with you, too.
       MVP: ""
   TC:
@@ -11376,20 +11430,14 @@ skins:
   sid: null
   artist: MAR10
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - S
   anim:
     - false
     - false
@@ -11404,25 +11452,20 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Glacias_N
   skins:
     - sid: 1
       artist: MAR10
       price: 159
-      G: false
       Spine: false
       SpineDamaged: false
       parts: 28
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - S
       anim:
         - false
         - false
@@ -11439,5 +11482,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 1
+        dflags: 0
         2dmodel: 2DModel_PECS_Glacias_NS1
         consumableKey: Skin_PECS_Glacias_1

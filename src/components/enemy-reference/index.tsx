@@ -1,11 +1,11 @@
 import { FunctionalComponent } from "preact";
-import { Link, route } from "preact-router";
+import { useLocation } from "preact-iso";
 
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
-import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
@@ -15,54 +15,53 @@ interface EnemyReferenceProps {
 }
 
 const EnemyReference: FunctionalComponent<EnemyReferenceProps> = (props) => {
+	const loc = useLocation();
 	const enemy = props.r;
 	const ImageExt = ImageExtension();
 
-	return <Loader
-		json={ StaticDB.FilterableEnemy } content={ ((): preact.VNode => {
-			const FilterableEnemyDB = GetJson<FilterableEnemy[]>(StaticDB.FilterableEnemy);
-
-			const found = FilterableEnemyDB.find(x => x.id === enemy);
-			if (!found) {
-				return <Link href={ `/enemies/${enemy}` }>
-					<span class="badge bg-danger">
-						<Locale plain k={ `ENEMY_${enemy}` } />
-						<Icons.Link45deg class="ms-1" />
-					</span>
-				</Link>;
-			}
-
-			return <Link href={ `/enemies/${enemy}` } >
-				<BootstrapTooltip
-					placement="top"
-					content={ <div>
-						<img src={ `${AssetsRoot}/${ImageExt}/tbar/${found.icon}.${ImageExt}` } />
-						<div class="my-1" style="font-size:0.8em;font-weight:bold">
-							<Locale k={ `ENEMY_${found.id}` } />
-						</div>
-
-						<Link href="#" class="stretched-link" onClick={ (e: Event): void => {
-							e.preventDefault();
-							route(`/enemies/${enemy}`);
-						} } />
-					</div> }
-				>
-					<span class="badge bg-danger mx-1">
-						<Locale plain k={ `ENEMY_${enemy}` } />
-						<Icons.Link45deg class="ms-1" />
-					</span>
-				</BootstrapTooltip>
-				<div class="preload-area">
-					<img src={ `${AssetsRoot}/${ImageExt}/tbar/${found.icon}.${ImageExt}` } />
-				</div>
-			</Link>;
-		}) }
-		loading={ <Link href={ `/enemies/${enemy}` }>
+	const FilterableEnemyDB = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
+	if (!assertDBData(FilterableEnemyDB)) {
+		return <a href={ `/enemies/${enemy}` }>
 			<span class="badge bg-danger">
 				<Locale plain k={ `ENEMY_${enemy}` } />
 				<Icons.Link45deg class="ms-1" />
 			</span>
-		</Link> }
-	/>;
+		</a>;
+	}
+
+	const found = FilterableEnemyDB.find(x => x.id === enemy);
+	if (!found) {
+		return <a href={ `/enemies/${enemy}` }>
+			<span class="badge bg-danger">
+				<Locale plain k={ `ENEMY_${enemy}` } />
+				<Icons.Link45deg class="ms-1" />
+			</span>
+		</a>;
+	}
+
+	return <a href={ `/enemies/${enemy}` } >
+		<BootstrapTooltip
+			placement="top"
+			content={ <div>
+				<img src={ `${AssetsRoot}/${ImageExt}/tbar/${found.icon}.${ImageExt}` } />
+				<div class="my-1" style="font-size:0.8em;font-weight:bold">
+					<Locale k={ `ENEMY_${found.id}` } />
+				</div>
+
+				<a href="#" class="stretched-link" onClick={ (e: Event): void => {
+					e.preventDefault();
+					loc.route(`/enemies/${enemy}`);
+				} } />
+			</div> }
+		>
+			<span class="badge bg-danger mx-1">
+				<Locale plain k={ `ENEMY_${enemy}` } />
+				<Icons.Link45deg class="ms-1" />
+			</span>
+		</BootstrapTooltip>
+		<div class="preload-area">
+			<img src={ `${AssetsRoot}/${ImageExt}/tbar/${found.icon}.${ImageExt}` } />
+		</div>
+	</a>;
 };
 export default EnemyReference;

@@ -4013,6 +4013,63 @@ skills:
               level: "0"
             value: Char_DS_KunoichiShiden_N
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 <dmg elem="fire,lightning" />를 입힙니다.
+        <sec typ="note">적응형 속성</sec>은 피격 당한 적의 <sec typ="cond"><elem type="lightning" />전기 저항과 <elem type="fire" />화염 저항 중 더 낮은 쪽</sec>의 속성 데미지를 입힙니다. <sec>(저항 수치가 같을 경우 화염 속성 데미지) </sec>
+        <sec typ="cond">적중 시</sec>, 적에게 2라운드 동안 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> <cmt t="감전"><import name="_EFFECT_ELECTRIC_SHOCK" p="3" /></cmt></sec>, <sec typ="buff"><buff typ="FIRERES_DOWN" /> <cmt t="화상"><import name="_EFFECT_BURN" p="2" /></cmt></sec> 디버프를 입힙니다. <sec>(최대 3중첩)</sec>
+        <sec typ="cond">스쿼드에 <char uid="DS_KunoichiEnrai" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiZero" />가 있을 시</sec>, <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">호무라</sec>, <sec typ="note">시라누이</sec>, <sec typ="note">은밀</sec> 스킬로 협동 공격이 유도</sec>됩니다.
+        <sec typ="cond">협동 공격이 가능한 전투원이 여럿인 경우</sec>, 위 표기된 순으로 우선권을 가집니다. <sec>(<char uid="DS_KunoichiEnrai" /> → <char uid="DS_KunoichiKaen" /> → <char uid="DS_KunoichiZero" /> 순)</sec>
+        <sec typ="cond">다수의 적이 대상인 경우</sec>, <sec>사거리가 닿는 적을 우선 선택</sec>하고 <sec typ="cond">사거리로 인해 협동 공격이 불가능할 경우</sec> <sec typ="buff">다음 순서의 전투원이 협동 공격을 실행</sec>합니다.
+        <sec typ="cond">협동 공격이 가능한 대상이 없을 경우</sec>, <char uid="DS_KunoichiShiden" />이 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">뇌화난무</sec>로 협동 공격</sec>합니다.
+        <define name="_EFFECT_ELECTRIC_SHOCK">
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val param="$1" r /></sec> 감소
+        </define>
+        <define name="_EFFECT_BURN">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val param="$1" r /></sec> 감소
+        </define>
+      EN: |-
+        to a single target <dmg elem="fire,lightning" /> deals.
+        <sec typ="note">Adaptive Element</sec> hit per one enemy's <sec typ="cond"><elem type="lightning" />Lightning Resistanceand <elem type="fire" />Fire Resistance during more low side</sec> of elemental damage. <sec>(resistance value same case Fire elemental damage) </sec>
+        <sec typ="cond">On hit</sec>, to the enemy 2 rounds <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> <cmt t="Electrocution"><import name="_EFFECT_ELECTRIC_SHOCK" p="3" /></cmt></sec>, <sec typ="buff"><buff typ="FIRERES_DOWN" /> <cmt t="Burn"><import name="_EFFECT_BURN" p="2" /></cmt></sec> debuff deals. <sec>(up to 3stack)</sec>
+        <sec typ="cond">squad <char uid="DS_KunoichiEnrai" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiZero" /> if present</sec>, <sec typ="chance">100% chance</sec> as <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Homura</sec>, <sec typ="note">when Ranu</sec>, <sec typ="note">push</sec> skill as coordinated attack trigger</sec>.
+        <sec typ="cond">coordinated attack possible combatant multiple if</sec>, above listed in order as priority has. <sec>(<char uid="DS_KunoichiEnrai" /> → <char uid="DS_KunoichiKaen" /> → <char uid="DS_KunoichiZero" /> order)</sec>
+        <sec typ="cond">If there are multiple targets</sec>, <sec>Range prioritizes enemies within range</sec> and <sec typ="cond">Rangedue to coordinated attack if unable</sec> <sec typ="buff">the next combatant in order performs the coordinated attack</sec>.
+        <sec typ="cond">coordinated attack possible target if absent</sec>, <char uid="DS_KunoichiShiden" /> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Noehwa flurry</sec> as coordinated attack</sec>.
+        <define name="_EFFECT_ELECTRIC_SHOCK">
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val param="$1" r /></sec> decrease
+        </define>
+        <define name="_EFFECT_BURN">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val param="$1" r /></sec> decrease
+        </define>
+      JP: |-
+        単一対象へ<dmg elem="fire,lightning" />を 与えます。
+        <sec typ="note">適応型属性</sec>は 被弾 受けた 敵の <sec typ="cond"><elem type="lightning" />電気耐性と <elem type="fire" />火炎耐性 中 ドオ ンアトは ッジオク</sec>の 属性 ダメージを 与えます。 <sec>(耐性 数値が グアトを 場合 火炎 属性 ダメージ)</sec>
+        <sec typ="cond">命中時</sec>、 敵に 2ラウンドの間 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> <cmt t="感電"><import name="_EFFECT_ELECTRIC_SHOCK" p="3" /></cmt></sec>、 <sec typ="buff"><buff typ="FIRERES_DOWN" /> <cmt t="火傷"><import name="_EFFECT_BURN" p="2" /></cmt></sec> デバフを 与えます。 <sec>(最大 3重複)</sec>
+        <sec typ="cond">スクワッドに <char uid="DS_KunoichiEnrai" />、 <char uid="DS_KunoichiKaen" />、 <char uid="DS_KunoichiZero" />が ある 時</sec>、 <sec typ="chance">100% 確率</sec>で <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">ハオムウルア</sec>、 <sec typ="note">時ルアンウが</sec>、 <sec typ="note">はムイル</sec> スキルで 協同攻撃が 誘導</sec>されます。
+        <sec typ="cond">協同攻撃が 可能した 戦闘員が ヨルオトの場合</sec>、 ウィ プヨ機された スウンで 優先権を がジイプンイドア。 <sec>(<char uid="DS_KunoichiEnrai" /> → <char uid="DS_KunoichiKaen" /> → <char uid="DS_KunoichiZero" /> スウン)</sec>
+        <sec typ="cond">ドア数の 敵が 対象の場合</sec>、 <sec>射程が ドアフは 敵を ウ宣 選択</sec>し、 <sec typ="cond">射程により 協同攻撃が 不可能できる 場合</sec> <sec typ="buff">次 順序の 戦闘員が 協同攻撃を 実行</sec>します。
+        <sec typ="cond">協同攻撃が 可能した 対象が 存在しない場合</sec>、 <char uid="DS_KunoichiShiden" />が <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">ンウェハワンアンムウ</sec>で 協同攻撃</sec>します。
+        <define name="_EFFECT_ELECTRIC_SHOCK">
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val param="$1" r /></sec> 減少
+        </define>
+        <define name="_EFFECT_BURN">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val param="$1" r /></sec> 減少
+        </define>
+      TC: |-
+        單一目標給 <dmg elem="fire,lightning" /> 造成。
+        <sec typ="note">適應型屬性</sec> 被擊 受到 敵人的 <sec typ="cond"><elem type="lightning" />電擊抗性與 <elem type="fire" />火焰抗性 中 更多 降低 側</sec>的 屬性 傷害 造成。 <sec>(抗性 數值 相同 情況 火焰 屬性 傷害) </sec>
+        <sec typ="cond">命中時</sec>， 敵人給 2回合內 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> <cmt t="觸電"><import name="_EFFECT_ELECTRIC_SHOCK" p="3" /></cmt></sec>， <sec typ="buff"><buff typ="FIRERES_DOWN" /> <cmt t="灼傷"><import name="_EFFECT_BURN" p="2" /></cmt></sec> 減益 造成。 <sec>(最大 3疊加)</sec>
+        <sec typ="cond">小隊於 <char uid="DS_KunoichiEnrai" />， <char uid="DS_KunoichiKaen" />， <char uid="DS_KunoichiZero" /> 有 時</sec>， <sec typ="chance">100% 機率</sec>以 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Homura</sec>， <sec typ="note">時時nu</sec>， <sec typ="note">未l</sec> 技能以 協同攻擊 誘發</sec>。
+        <sec typ="cond">協同攻擊 可能 戰鬥員 Yeo達到t若為</sec>， 上 標記台已 順序以 優先權。 <sec>(<char uid="DS_KunoichiEnrai" /> → <char uid="DS_KunoichiKaen" /> → <char uid="DS_KunoichiZero" /> 順序)</sec>
+        <sec typ="cond">全部數的 敵人 目標若為</sec>， <sec>射程 全部h 敵人 優先 選擇</sec>並 <sec typ="cond">射程因 協同攻擊 不可能可 情況</sec> <sec typ="buff">下次 順序的 戰鬥員 協同攻擊 執行</sec>。
+        <sec typ="cond">協同攻擊 可能 目標 不存在時</sec>， <char uid="DS_KunoichiShiden" /> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Noehwananmu</sec>以 協同攻擊</sec>。
+        <define name="_EFFECT_ELECTRIC_SHOCK">
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val param="$1" r /></sec> 減少
+        </define>
+        <define name="_EFFECT_BURN">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val param="$1" r /></sec> 減少
+        </define>
   "2":
     key: "2"
     icon: WideSwordAttk
@@ -9385,6 +9442,63 @@ skills:
               level: "0"
             value: Char_DS_KunoichiShiden_N
             chance: 1
+    desc:
+      KR: |-
+        지정 범위 내에 <dmg elem="fire,lightning" />를 입힙니다.
+        <sec typ="note">적응형 속성</sec>은 피격 당한 적의 <sec typ="cond"><elem type="lightning" />전기 저항과 <elem type="fire" />화염 저항 중 더 낮은 쪽</sec>의 속성 데미지를 입힙니다. <sec>(저항 수치가 같을 경우 화염 속성 데미지) </sec>
+        <sec typ="cond">적중 시</sec>, 적에게 부여된 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> <cmt t="감전"><import name="_EFFECT_ELECTRIC_SHOCK" p="1@3" /></cmt></sec>, <sec typ="buff"><buff typ="FIRERES_DOWN" /> <cmt t="화상"><import name="_EFFECT_BURN" p="1@2" /></cmt></sec> 디버프 중첩 수에 따라 <sec typ="dmg"><buff typ="FireATK_UP" /><buff typ="LightningATK_UP" /> 번개/화염 <val idx="5" r signless /> 추가 피해</sec>를 입힙니다. <sec>(최대 3중첩)</sec>
+        <sec typ="cond">스쿼드에 <char uid="DS_KunoichiEnrai" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiZero" />가 있을 시</sec>, <sec typ="chance">100% 확률</sec>로 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">이카즈치</sec>, <sec typ="note">오의 [화신강림]</sec>, <sec typ="note">뇌신 일섬</sec> 스킬로 협동 공격이 유도</sec>됩니다.
+        <sec typ="cond">협동 공격이 가능한 전투원이 여럿인 경우</sec>, 위 표기된 순으로 우선권을 가집니다. <sec>(<char uid="DS_KunoichiEnrai" /> → <char uid="DS_KunoichiKaen" /> → <char uid="DS_KunoichiZero" /> 순)</sec>
+        <sec typ="cond">다수의 적이 대상인 경우</sec>, <sec>사거리가 닿는 적을 우선 선택</sec>하고 <sec typ="cond">사거리로 인해 협동 공격이 불가능할 경우</sec> <sec typ="buff">다음 순서의 전투원이 협동 공격을 실행</sec>합니다.
+        <sec typ="cond">협동 공격이 가능한 대상이 없을 경우</sec>, <char uid="DS_KunoichiShiden" />이 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">무라사키류 오의: 춘뢰</sec>로 협동 공격</sec>합니다.
+        <define name="_EFFECT_ELECTRIC_SHOCK">
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val param="$1" r /></sec> 감소
+        </define>
+        <define name="_EFFECT_BURN">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val param="$1" r /></sec> 감소
+        </define>
+      EN: |-
+        designated area within to <dmg elem="fire,lightning" /> deals.
+        <sec typ="note">Adaptive Element</sec> hit per one enemy's <sec typ="cond"><elem type="lightning" />Lightning Resistanceand <elem type="fire" />Fire Resistance during more low side</sec> of elemental damage. <sec>(resistance value same case Fire elemental damage) </sec>
+        <sec typ="cond">On hit</sec>, to the enemy grant applied <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> <cmt t="Electrocution"><import name="_EFFECT_ELECTRIC_SHOCK" p="1@3" /></cmt></sec>, <sec typ="buff"><buff typ="FIRERES_DOWN" /> <cmt t="Burn"><import name="_EFFECT_BURN" p="1@2" /></cmt></sec> debuff stack depending on the number of <sec typ="dmg"><buff typ="FireATK_UP" /><buff typ="LightningATK_UP" /> time units/Fire <val idx="5" r signless /> additional damage</sec> deals. <sec>(up to 3stack)</sec>
+        <sec typ="cond">squad <char uid="DS_KunoichiEnrai" />, <char uid="DS_KunoichiKaen" />, <char uid="DS_KunoichiZero" /> if present</sec>, <sec typ="chance">100% chance</sec> as <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Kazuchi</sec>, <sec typ="note">O of [Hwasingangrim]</sec>, <sec typ="note">Noesin when Seom</sec> skill as coordinated attack trigger</sec>.
+        <sec typ="cond">coordinated attack possible combatant multiple if</sec>, above listed in order as priority has. <sec>(<char uid="DS_KunoichiEnrai" /> → <char uid="DS_KunoichiKaen" /> → <char uid="DS_KunoichiZero" /> order)</sec>
+        <sec typ="cond">If there are multiple targets</sec>, <sec>Range prioritizes enemies within range</sec> and <sec typ="cond">Rangedue to coordinated attack if unable</sec> <sec typ="buff">the next combatant in order performs the coordinated attack</sec>.
+        <sec typ="cond">coordinated attack possible target if absent</sec>, <char uid="DS_KunoichiShiden" /> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Murasa height/key Ryu O Ui: Chunroe</sec> as coordinated attack</sec>.
+        <define name="_EFFECT_ELECTRIC_SHOCK">
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val param="$1" r /></sec> decrease
+        </define>
+        <define name="_EFFECT_BURN">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> Fire Resistance <val param="$1" r /></sec> decrease
+        </define>
+      JP: |-
+        指定範囲 内に<dmg elem="fire,lightning" />を 与えます。
+        <sec typ="note">適応型属性</sec>は 被弾 受けた 敵の <sec typ="cond"><elem type="lightning" />電気耐性と <elem type="fire" />火炎耐性 中 ドオ ンアトは ッジオク</sec>の 属性 ダメージを 与えます。 <sec>(耐性 数値が グアトを 場合 火炎 属性 ダメージ)</sec>
+        <sec typ="cond">命中時</sec>、 敵に ブウヨされた <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> <cmt t="感電"><import name="_EFFECT_ELECTRIC_SHOCK" p="1@3" /></cmt></sec>、 <sec typ="buff"><buff typ="FIRERES_DOWN" /> <cmt t="火傷"><import name="_EFFECT_BURN" p="1@2" /></cmt></sec> デバフ 重複 数に応じて <sec typ="dmg"><buff typ="FireATK_UP" /><buff typ="LightningATK_UP" /> 回個/火炎 <val idx="5" r signless /> 追加 ダメージ</sec>を 与えます。 <sec>(最大 3重複)</sec>
+        <sec typ="cond">スクワッドに <char uid="DS_KunoichiEnrai" />、 <char uid="DS_KunoichiKaen" />、 <char uid="DS_KunoichiZero" />が ある 時</sec>、 <sec typ="chance">100% 確率</sec>で <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">がクアジウチイ</sec>、 <sec typ="note">オの [ハワスイングアンルイム]</sec>、 <sec typ="note">ンウェスイン イルスオム</sec> スキルで 協同攻撃が 誘導</sec>されます。
+        <sec typ="cond">協同攻撃が 可能した 戦闘員が ヨルオトの場合</sec>、 ウィ プヨ機された スウンで 優先権を がジイプンイドア。 <sec>(<char uid="DS_KunoichiEnrai" /> → <char uid="DS_KunoichiKaen" /> → <char uid="DS_KunoichiZero" /> スウン)</sec>
+        <sec typ="cond">ドア数の 敵が 対象の場合</sec>、 <sec>射程が ドアフは 敵を ウ宣 選択</sec>し、 <sec typ="cond">射程により 協同攻撃が 不可能できる 場合</sec> <sec typ="buff">次 順序の 戦闘員が 協同攻撃を 実行</sec>します。
+        <sec typ="cond">協同攻撃が 可能した 対象が 存在しない場合</sec>、 <char uid="DS_KunoichiShiden" />が <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">ムウルアスアクイルユ オの：チウンルウェ</sec>で 協同攻撃</sec>します。
+        <define name="_EFFECT_ELECTRIC_SHOCK">
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val param="$1" r /></sec> 減少
+        </define>
+        <define name="_EFFECT_BURN">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性 <val param="$1" r /></sec> 減少
+        </define>
+      TC: |-
+        指定範圍 內於 <dmg elem="fire,lightning" /> 造成。
+        <sec typ="note">適應型屬性</sec> 被擊 受到 敵人的 <sec typ="cond"><elem type="lightning" />電擊抗性與 <elem type="fire" />火焰抗性 中 更多 降低 側</sec>的 屬性 傷害 造成。 <sec>(抗性 數值 相同 情況 火焰 屬性 傷害) </sec>
+        <sec typ="cond">命中時</sec>， 敵人給 賦予已 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> <cmt t="觸電"><import name="_EFFECT_ELECTRIC_SHOCK" p="1@3" /></cmt></sec>， <sec typ="buff"><buff typ="FIRERES_DOWN" /> <cmt t="灼傷"><import name="_EFFECT_BURN" p="1@2" /></cmt></sec> 減益 疊加 依數量 <sec typ="dmg"><buff typ="FireATK_UP" /><buff typ="LightningATK_UP" /> 次個/火焰 <val idx="5" r signless /> 額外 傷害</sec> 造成。 <sec>(最大 3疊加)</sec>
+        <sec typ="cond">小隊於 <char uid="DS_KunoichiEnrai" />， <char uid="DS_KunoichiKaen" />， <char uid="DS_KunoichiZero" /> 有 時</sec>， <sec typ="chance">100% 機率</sec>以 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Kajeuchi</sec>， <sec typ="note">O的 [火singangrim]</sec>， <sec typ="note">Noesin 一seom</sec> 技能以 協同攻擊 誘發</sec>。
+        <sec typ="cond">協同攻擊 可能 戰鬥員 Yeo達到t若為</sec>， 上 標記台已 順序以 優先權。 <sec>(<char uid="DS_KunoichiEnrai" /> → <char uid="DS_KunoichiKaen" /> → <char uid="DS_KunoichiZero" /> 順序)</sec>
+        <sec typ="cond">全部數的 敵人 目標若為</sec>， <sec>射程 全部h 敵人 優先 選擇</sec>並 <sec typ="cond">射程因 協同攻擊 不可能可 情況</sec> <sec typ="buff">下次 順序的 戰鬥員 協同攻擊 執行</sec>。
+        <sec typ="cond">協同攻擊 可能 目標 不存在時</sec>， <char uid="DS_KunoichiShiden" /> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">無rasakiryu O的：Chunroe</sec>以 協同攻擊</sec>。
+        <define name="_EFFECT_ELECTRIC_SHOCK">
+        <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val param="$1" r /></sec> 減少
+        </define>
+        <define name="_EFFECT_BURN">
+        <sec typ="buff"><buff typ="FIRERES_DOWN" /> 火焰抗性 <val param="$1" r /></sec> 減少
+        </define>
   "3":
     key: "3"
     icon: P.Beam
@@ -9867,6 +9981,35 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신과 범위 내에 아군에게 <sec typ="note">훈련</sec>을 부여합니다.
+        <sec typ="cond">대상이 <cmt t="쿠노이치"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt> 일 경우</sec> <char uid="DS_KunoichiShiden" />을 제외한 <cmt t="쿠노이치"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt>가 받는 증가 수치가 2배가 되며 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec>를 부여합니다.
+        <sec typ="cond"><cmt t="쿠노이치"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt>가 스퀴드 내 없는 경우</sec> <char uid="DS_KunoichiShiden" />의 수치가 2배가 됩니다.
+        <box t="훈련">
+        <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec> 증가
+        </box>
+      EN: |-
+        <sec typ="cond">At round start</sec>, self and within range to to allies <sec typ="note">Training</sec> grants.
+        <sec typ="cond">target <cmt t="Kunoichi"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt> if</sec> <char uid="DS_KunoichiShiden" /> excluding <cmt t="Kunoichi"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt> receives increase value 2 times becomes and <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> grants.
+        <sec typ="cond"><cmt t="Kunoichi"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt> if there is no such unit in the squad</sec> <char uid="DS_KunoichiShiden" /> of value 2 times.
+        <box t="Training">
+        <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="2" r /></sec> increase
+        </box>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身と 範囲内に 味方に <sec typ="note">訓練</sec>を付与します。
+        <sec typ="cond">対象が <cmt t="くノ一"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt> の場合</sec> <char uid="DS_KunoichiShiden" />を 除いた <cmt t="くノ一"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt>が 受ける 増加 数値が 2倍 になり、 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 保護無視</sec>を付与します。
+        <sec typ="cond"><cmt t="くノ一"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt>が スクワッド内に存在しない場合</sec> <char uid="DS_KunoichiShiden" />の 数値が 2倍 されます。
+        <box t="訓練">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec> 増加
+        </box>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身與 範圍內於 我方給 <sec typ="note">訓練</sec>賦予。
+        <sec typ="cond">目標 <cmt t="女忍者"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt> 若為</sec> <char uid="DS_KunoichiShiden" /> 解除外 <cmt t="女忍者"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt> 受到 增加 數值 2倍 變為，且 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 無視保護</sec>賦予。
+        <sec typ="cond"><cmt t="女忍者"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt> 小隊 內 不存在時</sec> <char uid="DS_KunoichiShiden" />的 數值 2倍。
+        <box t="訓練">
+        <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec> 增加
+        </box>
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -10177,6 +10320,47 @@ skills:
             base: 0.5
             per: 0.025
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신에게 해제 불가능한 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="6" r signless /> HP로 전투 속행</sec>을 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신에게 해제 불가능한 <sec typ="buff"><buff typ="EVADE_UP" /> <cmt t="시간 감각 조작"><import name="_EFFECT_EVA" p="0" /></cmt></sec>과 <sec typ="dmg"><buff typ="COUNTER" /> <val idx="2" r signless /> 위력으로 반격</sec> 버프를 부여합니다.
+        <sec typ="cond">회피 시</sec>, <sec typ="cond"><sec typ="buff"><buff typ="EVADE_UP" /> <cmt t="시간 감각 조작"><import name="_EFFECT_EVA" p="0" /></cmt></sec> 상태라면</sec> <sec typ="buff">시간 감각 조작을 제거</sec>하고 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <cmt t="반동"><import name="_EFFECT_REBOUND" p="4" /></cmt></sec> 효과를 얻습니다.
+        <define name="_EFFECT_EVA">
+        <sec type="buff"><buff typ="EVADE_UP" /> 회피율 <val param="$1" r /></sec> 증가
+        </define>
+        <define name="_EFFECT_REBOUND">
+        자신에게 <sec type="dmg"><buff typ="phyDMG_DOT" /> 물리 지속 피해 <val param="$1" signless /></sec>
+        </define>
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self cannot be removed one <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="6" r signless /> HP and Continue Combat</sec> grants.
+        <sec typ="cond">At round start</sec>, self cannot be removed one <sec typ="buff"><buff typ="EVADE_UP" /> <cmt t="Time Sense Manipulation"><import name="_EFFECT_EVA" p="0" /></cmt></sec> and <sec typ="dmg"><buff typ="COUNTER" /> <val idx="2" r signless /> power as Counterattack</sec> buff grants.
+        <sec typ="cond">When evading</sec>, <sec typ="cond"><sec typ="buff"><buff typ="EVADE_UP" /> <cmt t="Time Sense Manipulation"><import name="_EFFECT_EVA" p="0" /></cmt></sec> state so if</sec> <sec typ="buff">when between sense control remove</sec> and <sec typ="dmg"><buff typ="phyDMG_DOT" /> <cmt t="Ban same"><import name="_EFFECT_REBOUND" p="4" /></cmt></sec> effect and gains.
+        <define name="_EFFECT_EVA">
+        <sec type="buff"><buff typ="EVADE_UP" /> Evasion Yul <val param="$1" r /></sec> increase
+        </define>
+        <define name="_EFFECT_REBOUND">
+        self <sec type="dmg"><buff typ="phyDMG_DOT" /> Physical continuous damage <val param="$1" signless /></sec>
+        </define>
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 自身に 解除不可した <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="6" r signless /> HPで 戦闘続行</sec>を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身に 解除不可した <sec typ="buff"><buff typ="EVADE_UP" /> <cmt t="時間感覚操作"><import name="_EFFECT_EVA" p="0" /></cmt></sec>と <sec typ="dmg"><buff typ="COUNTER" /> <val idx="2" r signless /> 威力で 反撃</sec> バフを付与します。
+        <sec typ="cond">回避時</sec>、 <sec typ="cond"><sec typ="buff"><buff typ="EVADE_UP" /> <cmt t="時間感覚操作"><import name="_EFFECT_EVA" p="0" /></cmt></sec> 状態ルアなら</sec> <sec typ="buff">時グアン グアム各 ジオジアクを 除去</sec>し、 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <cmt t="ブアンドオン"><import name="_EFFECT_REBOUND" p="4" /></cmt></sec> 効果を オトます。
+        <define name="_EFFECT_EVA">
+        <sec type="buff"><buff typ="EVADE_UP" /> 回避ユル <val param="$1" r /></sec> 増加
+        </define>
+        <define name="_EFFECT_REBOUND">
+        自身に <sec type="dmg"><buff typ="phyDMG_DOT" /> 物理 持続 ダメージ <val param="$1" signless /></sec>
+        </define>
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 自身給 無法解除 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="6" r signless /> HP以 戰鬥續行</sec>賦予。
+        <sec typ="cond">回合開始時</sec>， 自身給 無法解除 <sec typ="buff"><buff typ="EVADE_UP" /> <cmt t="時間感知操控"><import name="_EFFECT_EVA" p="0" /></cmt></sec>與 <sec typ="dmg"><buff typ="COUNTER" /> <val idx="2" r signless /> 威力以 反擊</sec> 增益賦予。
+        <sec typ="cond">迴避時</sec>， <sec typ="cond"><sec typ="buff"><buff typ="EVADE_UP" /> <cmt t="時間感知操控"><import name="_EFFECT_EVA" p="0" /></cmt></sec> 狀態若</sec> <sec typ="buff">時Gan Gam各 Jo製作 移除</sec>並 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <cmt t="Bandong"><import name="_EFFECT_REBOUND" p="4" /></cmt></sec> 效果 獲得。
+        <define name="_EFFECT_EVA">
+        <sec type="buff"><buff typ="EVADE_UP" /> 迴避Yul <val param="$1" r /></sec> 增加
+        </define>
+        <define name="_EFFECT_REBOUND">
+        自身給 <sec type="dmg"><buff typ="phyDMG_DOT" /> 物理 持續 傷害 <val param="$1" signless /></sec>
+        </define>
   "5":
     key: "5"
     icon: P.SelfDefBuff
@@ -10498,6 +10682,23 @@ skills:
             base: 0
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">보호기가 없을 경우</sec> <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="0" r /></sec>가 상승하며, 자신에게 <sec typ="buff"><buff typ="MARKING" /> 표식</sec>을 부여합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">범위 내 자신을 제외한 <cmt t="쿠노이치"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt>가 하나 이상일 경우</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="5" r inv /></sec> 감소가 부여됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">자신을 제외한 <cmt t="쿠노이치"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt>가 한명도 없을 경우</sec> <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="6" r /></sec>가 증가하고 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 및 받는 피해 감소 무시</sec>를 부여합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, <sec typ="cond">Defender if absent</sec> <sec typ="buff"><buff typ="EVADE_UP" /> Evasion <val idx="0" r /></sec> rise and, self <sec typ="buff"><buff typ="MARKING" /> Mark</sec> grants.
+        <sec typ="cond">At round start</sec>, <sec typ="cond">within range self excluding <cmt t="Kunoichi"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt> one or moreif</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="5" r inv /></sec> decrease grant.
+        <sec typ="cond">At round start</sec>, <sec typ="cond">self excluding <cmt t="Kunoichi"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt> one members also if absent</sec> <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="6" r /></sec> increases and <sec typ="buff"><buff typ="BARRIER_PIERCE" /> Barrier and damage taken decrease ignore</sec> grants.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond">保護機が 存在しない場合</sec> <sec typ="buff"><buff typ="EVADE_UP" /> 回避 <val idx="0" r /></sec>が スアンスウンし、 自身に <sec typ="buff"><buff typ="MARKING" /> 標的</sec>を付与します。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond">範囲内 自身を ジエ外した <cmt t="くノ一"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt>が ハアンア 以上の場合</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="5" r inv /></sec> 減少が ブウヨされます。
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="cond">自身を ジエ外した <cmt t="くノ一"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt>が した名も 存在しない場合</sec> <sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="6" r /></sec>が 増加し、 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア および 受けるダメージ 減少 無視</sec>を付与します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond">保護機 不存在時</sec> <sec typ="buff"><buff typ="EVADE_UP" /> 迴避 <val idx="0" r /></sec> 上升並， 自身給 <sec typ="buff"><buff typ="MARKING" /> 標記</sec>賦予。
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond">範圍內 自身 解除外 <cmt t="女忍者"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt> 下na 以上若為</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="5" r inv /></sec> 減少 賦予。
+        <sec typ="cond">回合開始時</sec>， <sec typ="cond">自身 解除外 <cmt t="女忍者"><import name="UNIT_SKILL_SECTION_GROUP_KUNOICHI" /></cmt> 名也 不存在時</sec> <sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="6" r /></sec> 增加，並 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 護盾 以及 受到的傷害 減少 無視</sec>賦予。
 dialogue:
   KR:
     "1":
@@ -10570,12 +10771,9 @@ dialogue:
         그대 또한 열기로 달아올랐으니,
         자아… 치장은 전부 벗어 던지고
         서로 이 열을 주고 받아보자꾸나.
-      Oath: >-
-        계속 이 몸의 곁을 맴돌고 있는 줄로만 알았건만, 언제 이런 것을 준비한게냐…​ 그대는 과연… 만만찮은 인물이구나. 완전히
-        당해버렸노라.
-
+      Oath: |-
+        계속 이 몸의 곁을 맴돌고 있는 줄로만 알았건만, 언제 이런 것을 준비한게냐…​ 그대는 과연… 만만찮은 인물이구나. 완전히 당해버렸노라.
         이 몸의 완패이기에… 그대와의 시간이 끝난 후에도 계속해서 함께 하고 싶다는 생각을 떨칠 수 없게 되어버렸구나.​ 설마 이렇게 부부의 연이 이어지게 될 줄은...
-
         그럼, 둘이서 이대로 아침까지… 아니, 하루 만으로는 부족하겠지.​ 내일도 모레도… 영원히 서로간 애정을 나눠보자꾸나.
       OathIdle_01: |-
         내 문득 떠올리기를,
@@ -10972,20 +11170,19 @@ skins:
   sid: null
   artist: かえぬこ(Kaenuco)
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - true
-    - false
-    - true
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+      - D
+      - S
+    G:
+      - _
+      - D
+      - S
   anim:
     - false
     - false
@@ -11000,26 +11197,28 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 1
     2dmodel: 2DModel_DS_KunoichiShiden_N
     2dmodel_dam: 2DModel_DS_KunoichiShiden_N_Dam
   skins:
     - sid: 1
       artist: かえぬこ(Kaenuco)
       price: 182
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - true
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - S
+          - DS
+        G:
+          - _
+          - D
+          - S
+          - DS
       anim:
         - false
         - false
@@ -11036,5 +11235,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_DS_KunoichiShiden_NS1_Dam
         consumableKey: Skin_DS_KunoichiShiden_1

@@ -321,6 +321,37 @@ group:
       - Story_Char_BR_HongRyun_N_52_BR_HongRyun_4
       - Story_Char_BR_HongRyun_N_52_BR_Miho_5
       - Story_Char_BR_HongRyun_N_52_BR_HongRyun_6
+  - troop: Story_Troop_Group_Squad_OrbitalWatcher
+    key: PCStory_CH_PECS_Ireina_1
+    type: 0
+    char: PECS_Ireina
+    skin: 0
+    group: OrbitalWatcher
+    story:
+      - Story_Char_PECS_Ireina_N_59_BR_Tomoe_1
+      - Story_Char_PECS_Ireina_N_59_PECS_LemonadeEpsilon_2
+      - Story_Char_PECS_Ireina_N_59_BR_Brownie_3
+      - Story_Char_PECS_Ireina_N_59_DS_Charlotte_4
+      - Story_Char_PECS_Ireina_N_59_PECS_Ireina_5
+  - troop: Story_Troop_Group_Squad_OrbitalWatcher
+    key: PCStory_CH_PECS_CoCoWhiteShell_1
+    type: 0
+    char: PECS_CoCoWhiteShell
+    skin: 1
+    group: OrbitalWatcher
+    story:
+      - Story_Char_PECS_CoCoWhiteShell_60_PECS_CoCoWhiteShell_1
+  - troop: Story_Troop_Group_Squad_OrbitalWatcher
+    key: PCStory_CH_PECS_LemonadeEpsilon_1
+    type: 0
+    char: PECS_LemonadeEpsilon
+    skin: 2
+    group: OrbitalWatcher
+    story:
+      - Story_Char_PECS_LemonadeEpsilon_N_63_PECS_LemonadeEpsilon_1
+      - Story_Char_PECS_LemonadeEpsilon_N_63_PECS_Ireina_2
+      - Story_Char_PECS_LemonadeEpsilon_N_63_PECS_Ireina_3
+      - Story_Char_PECS_LemonadeEpsilon_N_63_PECS_LemonadeEpsilon_4
   - troop: Story_Troop_Group_Squad_AutoGuardSystem
     key: PCStory_CH_AGS_RheinRitter_1
     type: 0
@@ -610,6 +641,17 @@ group:
       - Story_Char_BR_InvDragon_N_43_BR_Nereid_3
       - Story_Char_BR_InvDragon_N_43_BR_Undine_4
       - Story_Char_BR_InvDragon_N_43_BR_InvDragon_5
+  - troop: Story_Troop_Group_Squad_AngerOfTheHorde
+    key: PCStory_CH_BR_Khan_1
+    type: 0
+    char: BR_Khan
+    skin: 5
+    group: AngerOfTheHorde
+    story:
+      - Story_Char_BR_Khan_N_61_BR_Khan_1
+      - Story_Char_BR_Khan_N_61_BR_TalonFeather_2
+      - Story_Char_BR_Khan_N_61_BR_Kheshig_3
+      - Story_Char_BR_Khan_N_61_BR_Khan_4
   - troop: Story_Troop_Group_Squad_TeamBermuda
     key: PCStory_CH_BR_Wraithy_1
     type: 0
@@ -715,7 +757,7 @@ group:
     key: PCStory_CH_BR_Cheona_1
     type: 0
     char: BR_Cheona
-    skin: 1
+    skin: 3
     group: EmpressHound
     story:
       - Story_Char_BR_Cheona_N_55_BR_Sirene_1
@@ -731,6 +773,17 @@ group:
     group: Poseidon
     story:
       - Story_Char_PECS_Triton_N_17_PECS_Triton_1
+  - troop: Story_Troop_Group_Squad_Poseidon
+    key: PCStory_CH_PECS_LemonadeGamma_1
+    type: 0
+    char: PECS_LemonadeGamma
+    skin: 2
+    group: Poseidon
+    story:
+      - Story_Char_PECS_LemonadeGamma_N_62_PECS_Merlin_1
+      - Story_Char_PECS_LemonadeGamma_N_62_PECS_Rhode_2
+      - Story_Char_PECS_LemonadeGamma_N_62_3P_Merope_3
+      - Story_Char_PECS_LemonadeGamma_N_62_PECS_LemonadeGamma_4
   - troop: Story_Troop_Group_Squad_GuardianSeries
     key: PCStory_CH_3P_Alcyone_1
     type: 0
@@ -743,18 +796,6 @@ group:
       - Story_Char_3P_Alcyone_N_57_3P_Alcyone_3
       - Story_Char_3P_Alcyone_N_57_AGS_Shade_4
       - Story_Char_3P_Alcyone_N_57_3P_Alcyone_5
-  - troop: ""
-    key: PCStory_CH_PECS_Ireina_1
-    type: 0
-    char: PECS_Ireina
-    skin: 0
-    group: OrbitalWatcher
-    story:
-      - Story_Char_PECS_Ireina_N_59_BR_Tomoe_1
-      - Story_Char_PECS_Ireina_N_59_PECS_LemonadeEpsilon_2
-      - Story_Char_PECS_Ireina_N_59_BR_Brownie_3
-      - Story_Char_PECS_Ireina_N_59_DS_Charlotte_4
-      - Story_Char_PECS_Ireina_N_59_PECS_Ireina_5
 story:
   - group: PCStory_CH_BR_Brownie_1
     key: Story_Char_BR_Brownie_N_15_BR_Efreeti_1
@@ -3252,6 +3293,246 @@ story:
       trigger:
         type: 0
         value: Cut_ChCS-56Stage06_1
+  - group: PCStory_CH_PECS_Ireina_1
+    key: Story_Char_PECS_Ireina_N_59_BR_Tomoe_1
+    order: 1
+    char: BR_Tomoe
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_63Stage_IkaGame1ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 2
+          value: Char_PECS_Ireina_N
+          sub: "1"
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS_63Stage_IkaGame1ED
+  - group: PCStory_CH_PECS_Ireina_1
+    key: Story_Char_PECS_Ireina_N_59_PECS_LemonadeEpsilon_2
+    order: 2
+    char: PECS_LemonadeEpsilon
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_63Stage_IkaGame2ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_Ireina_N_59_BR_Tomoe_1
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS_63Stage_IkaGame2ED
+  - group: PCStory_CH_PECS_Ireina_1
+    key: Story_Char_PECS_Ireina_N_59_BR_Brownie_3
+    order: 3
+    char: BR_Brownie
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_63Stage_IkaGame3ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_Ireina_N_59_PECS_LemonadeEpsilon_2
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS_63Stage_IkaGame3ED
+  - group: PCStory_CH_PECS_Ireina_1
+    key: Story_Char_PECS_Ireina_N_59_DS_Charlotte_4
+    order: 4
+    char: DS_Charlotte
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_63Stage_IkaGame4ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_Ireina_N_59_BR_Brownie_3
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS_63Stage_IkaGame4ED
+  - group: PCStory_CH_PECS_Ireina_1
+    key: Story_Char_PECS_Ireina_N_59_PECS_Ireina_5
+    order: 5
+    char: PECS_Ireina
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_63Stage_IkaGame5ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_Ireina_N_59_DS_Charlotte_4
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS_63Stage_IkaGame5ED
+  - group: PCStory_CH_PECS_CoCoWhiteShell_1
+    key: Story_Char_PECS_CoCoWhiteShell_60_PECS_CoCoWhiteShell_1
+    order: 1
+    char: PECS_CoCoWhiteShell
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_64Stage_Story_CoCoWhiteShell_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 2
+          value: Char_PECS_CoCoWhiteShell_N
+          sub: "1"
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-64Stage01_1
+  - group: PCStory_CH_PECS_LemonadeEpsilon_1
+    key: Story_Char_PECS_LemonadeEpsilon_N_63_PECS_LemonadeEpsilon_1
+    order: 1
+    char: PECS_LemonadeEpsilon
+    skin: 1
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_67Stage_LALALA1ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 8
+          value: Char_PECS_LemonadeEpsilon_N
+          sub: "100"
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-67Stage01_1
+  - group: PCStory_CH_PECS_LemonadeEpsilon_1
+    key: Story_Char_PECS_LemonadeEpsilon_N_63_PECS_Ireina_2
+    order: 2
+    char: PECS_Ireina
+    skin: 1
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_67Stage_LALALA2ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_LemonadeEpsilon_N_63_PECS_LemonadeEpsilon_1
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-67Stage02_1
+  - group: PCStory_CH_PECS_LemonadeEpsilon_1
+    key: Story_Char_PECS_LemonadeEpsilon_N_63_PECS_Ireina_3
+    order: 3
+    char: PECS_Ireina
+    skin: 1
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_67Stage_LALALA3ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_LemonadeEpsilon_N_63_PECS_Ireina_2
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-67Stage03_1
+  - group: PCStory_CH_PECS_LemonadeEpsilon_1
+    key: Story_Char_PECS_LemonadeEpsilon_N_63_PECS_LemonadeEpsilon_4
+    order: 4
+    char: PECS_LemonadeEpsilon
+    skin: 2
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_67Stage_LALALA4ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_LemonadeEpsilon_N_63_PECS_Ireina_3
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-67Stage04_1
   - group: PCStory_CH_AGS_RheinRitter_1
     key: Story_Char_AGS_RheinRitter_N_41_PECS_Azaz_1
     order: 1
@@ -6156,6 +6437,102 @@ story:
       trigger:
         type: 0
         value: Cut_ChCS-47Stage05_1
+  - group: PCStory_CH_BR_Khan_1
+    key: Story_Char_BR_Khan_N_61_BR_Khan_1
+    order: 1
+    char: BR_Khan
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_65Stage_AcrossTheMilkyway1ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 8
+          value: Char_BR_Khan_N
+          sub: "100"
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-65Stage01_1
+  - group: PCStory_CH_BR_Khan_1
+    key: Story_Char_BR_Khan_N_61_BR_TalonFeather_2
+    order: 2
+    char: BR_TalonFeather
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_65Stage_AcrossTheMilkyway2ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_BR_Khan_N_61_BR_Khan_1
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-65Stage02_1
+  - group: PCStory_CH_BR_Khan_1
+    key: Story_Char_BR_Khan_N_61_BR_Kheshig_3
+    order: 3
+    char: BR_Kheshig
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_65Stage_AcrossTheMilkyway3ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_BR_Khan_N_61_BR_TalonFeather_2
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-65Stage03_1
+  - group: PCStory_CH_BR_Khan_1
+    key: Story_Char_BR_Khan_N_61_BR_Khan_4
+    order: 4
+    char: BR_Khan
+    skin: 5
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_65Stage_AcrossTheMilkyway4ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_BR_Khan_N_61_BR_Kheshig_3
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-65Stage04_1
   - group: PCStory_CH_BR_Wraithy_1
     key: Story_Char_BR_Wraithy_N_38_BR_Wraithy_1
     order: 1
@@ -7212,6 +7589,102 @@ story:
       trigger:
         type: 0
         value: Cut_ChCS-21Stage01_1
+  - group: PCStory_CH_PECS_LemonadeGamma_1
+    key: Story_Char_PECS_LemonadeGamma_N_62_PECS_Merlin_1
+    order: 1
+    char: PECS_Merlin
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_66Stage_WakeUpPoseidon1ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 8
+          value: Char_PECS_LemonadeGamma_N
+          sub: "100"
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-66Stage01_1
+  - group: PCStory_CH_PECS_LemonadeGamma_1
+    key: Story_Char_PECS_LemonadeGamma_N_62_PECS_Rhode_2
+    order: 2
+    char: PECS_Rhode
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_66Stage_WakeUpPoseidon2ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_LemonadeGamma_N_62_PECS_Merlin_1
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-66Stage02_1
+  - group: PCStory_CH_PECS_LemonadeGamma_1
+    key: Story_Char_PECS_LemonadeGamma_N_62_3P_Merope_3
+    order: 3
+    char: 3P_Merope
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_66Stage_WakeUpPoseidon3ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_LemonadeGamma_N_62_PECS_Rhode_2
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-66Stage03_1
+  - group: PCStory_CH_PECS_LemonadeGamma_1
+    key: Story_Char_PECS_LemonadeGamma_N_62_PECS_LemonadeGamma_4
+    order: 4
+    char: PECS_LemonadeGamma
+    skin: 2
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_66Stage_WakeUpPoseidon4ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_LemonadeGamma_N_62_3P_Merope_3
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-66Stage04_1
   - group: PCStory_CH_3P_Alcyone_1
     key: Story_Char_3P_Alcyone_N_57_3P_Melite_1
     order: 1
@@ -7332,123 +7805,3 @@ story:
       trigger:
         type: 0
         value: Cut_ChCS-61Stage05_1
-  - group: PCStory_CH_PECS_Ireina_1
-    key: Story_Char_PECS_Ireina_N_59_BR_Tomoe_1
-    order: 1
-    char: BR_Tomoe
-    skin: 0
-    triggerHidden: false
-    start:
-      dialog: DG_ChCS_63Stage_IkaGame1ED
-      trigger:
-        type: "0"
-        trigger1:
-          type: 2
-          value: Char_PECS_Ireina_N
-          sub: "1"
-        trigger2:
-          type: 12
-          value: ""
-          sub: ""
-    stage: ""
-    end:
-      dialog: ""
-      trigger:
-        type: 0
-        value: Cut_ChCS_63Stage_IkaGame1ED
-  - group: PCStory_CH_PECS_Ireina_1
-    key: Story_Char_PECS_Ireina_N_59_PECS_LemonadeEpsilon_2
-    order: 2
-    char: PECS_LemonadeEpsilon
-    skin: 0
-    triggerHidden: false
-    start:
-      dialog: DG_ChCS_63Stage_IkaGame2ED
-      trigger:
-        type: "0"
-        trigger1:
-          type: 6
-          value: Story_Char_PECS_Ireina_N_59_BR_Tomoe_1
-          sub: ""
-        trigger2:
-          type: 12
-          value: ""
-          sub: ""
-    stage: ""
-    end:
-      dialog: ""
-      trigger:
-        type: 0
-        value: Cut_ChCS_63Stage_IkaGame2ED
-  - group: PCStory_CH_PECS_Ireina_1
-    key: Story_Char_PECS_Ireina_N_59_BR_Brownie_3
-    order: 3
-    char: BR_Brownie
-    skin: 0
-    triggerHidden: false
-    start:
-      dialog: DG_ChCS_63Stage_IkaGame3ED
-      trigger:
-        type: "0"
-        trigger1:
-          type: 6
-          value: Story_Char_PECS_Ireina_N_59_PECS_LemonadeEpsilon_2
-          sub: ""
-        trigger2:
-          type: 12
-          value: ""
-          sub: ""
-    stage: ""
-    end:
-      dialog: ""
-      trigger:
-        type: 0
-        value: Cut_ChCS_63Stage_IkaGame3ED
-  - group: PCStory_CH_PECS_Ireina_1
-    key: Story_Char_PECS_Ireina_N_59_DS_Charlotte_4
-    order: 4
-    char: DS_Charlotte
-    skin: 0
-    triggerHidden: false
-    start:
-      dialog: DG_ChCS_63Stage_IkaGame4ED
-      trigger:
-        type: "0"
-        trigger1:
-          type: 6
-          value: Story_Char_PECS_Ireina_N_59_BR_Brownie_3
-          sub: ""
-        trigger2:
-          type: 12
-          value: ""
-          sub: ""
-    stage: ""
-    end:
-      dialog: ""
-      trigger:
-        type: 0
-        value: Cut_ChCS_63Stage_IkaGame4ED
-  - group: PCStory_CH_PECS_Ireina_1
-    key: Story_Char_PECS_Ireina_N_59_PECS_Ireina_5
-    order: 5
-    char: PECS_Ireina
-    skin: 0
-    triggerHidden: false
-    start:
-      dialog: DG_ChCS_63Stage_IkaGame5ED
-      trigger:
-        type: "0"
-        trigger1:
-          type: 6
-          value: Story_Char_PECS_Ireina_N_59_DS_Charlotte_4
-          sub: ""
-        trigger2:
-          type: 12
-          value: ""
-          sub: ""
-    stage: ""
-    end:
-      dialog: ""
-      trigger:
-        type: 0
-        value: Cut_ChCS_63Stage_IkaGame5ED

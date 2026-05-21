@@ -442,6 +442,7 @@ age: ""
 secretRoomType: Adult
 marriageVoice: true
 introVoice:
+  - jp
   - ko
 favor:
   present: 1.25
@@ -490,7 +491,8 @@ cv:
   "1": {}
   "": {}
   M: {}
-source: []
+source:
+  - - Ev:Ev37:EV2-3EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2091,6 +2093,23 @@ skills:
               level: "0"
             value: Char_PECS_Sadius_N
             chance: 1
+    desc:
+      KR: |-
+        단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 줍니다.
+        스킬 적중에 따른 <sec typ="cond">치명타 발생 시</sec> 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 강화 효과를 해제</sec>합니다.
+        <sec typ="cond">스킬 적중 시</sec> <char uid="PECS_Sadius" />가 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">테이져 캐논</sec>으로 공격 지원</sec>합니다.
+      EN: |-
+        to a single target <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" />.
+        skill Accuracy to depending on <sec typ="cond">When a critical hit occurs</sec> target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes buffs</sec>.
+        <sec typ="cond">When the skill hits</sec> <char uid="PECS_Sadius" /> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">Taser Cannon</sec> as Attack Support</sec>.
+      JP: |-
+        単一対象へ <sec typ="attr">保護無視</sec><dmg elem="lightning" />を与えます。
+        スキル 命中に ットアルウン <sec typ="cond">クリティカル発生時</sec> 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化効果を 解除</sec>します。
+        <sec typ="cond">スキル命中時</sec> <char uid="PECS_Sadius" />が <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">テイザーキャノン</sec>で 攻撃支援</sec>します。
+      TC: |-
+        單一目標給 <sec typ="attr">無視保護</sec> 造成<dmg elem="lightning" />。
+        技能 命中於 依照 <sec typ="cond">發生暴擊時</sec> 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 強化效果 解除</sec>。
+        <sec typ="cond">技能命中時</sec> <char uid="PECS_Sadius" /> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">電擊加農炮</sec>以 攻擊支援</sec>。
   "2":
     key: "2"
     icon: FireShot
@@ -4034,6 +4053,23 @@ skills:
               level: "0"
             value: Char_PECS_Sonia_N
             chance: 1
+    desc:
+      KR: |-
+        지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 줍니다.
+        스킬 적중에 따른 <sec typ="cond">치명타 발생 시</sec> 대상의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 전기 속성 저항 하한 및 반전 효과를 해제</sec>합니다.
+        <sec typ="cond">스킬 적중 시</sec> <char uid="PECS_Sonia" />가 <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">HEDP</sec>로 공격 지원</sec>합니다.
+      EN: |-
+        to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="lightning" />.
+        skill Accuracy to depending on <sec typ="cond">When a critical hit occurs</sec> target's <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> Lightning Elemental Resistance lower limit and inversion removes the effect</sec>.
+        <sec typ="cond">When the skill hits</sec> <char uid="PECS_Sonia" /> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">HEDP</sec> as Attack Support</sec>.
+      JP: |-
+        指定範囲に<sec typ="attr">保護無視</sec><dmg elem="lightning" />を与えます。
+        スキル 命中に ットアルウン <sec typ="cond">クリティカル発生時</sec> 対象の <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 電気 属性耐性 ハアした および ブアン前 効果を 解除</sec>します。
+        <sec typ="cond">スキル命中時</sec> <char uid="PECS_Sonia" />が <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">HEDP</sec>で 攻撃支援</sec>します。
+      TC: |-
+        指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="lightning" />。
+        技能 命中於 依照 <sec typ="cond">發生暴擊時</sec> 目標的 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 電擊 屬性抗性 下 以及 Ban前 效果 解除</sec>。
+        <sec typ="cond">技能命中時</sec> <char uid="PECS_Sonia" /> <sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">HEDP</sec>以 攻擊支援</sec>。
   "3":
     key: "3"
     icon: P.TeamAtkBuff
@@ -4357,6 +4393,23 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">공격 적중 시</sec> 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>을(를) 증가시킵니다.
+        <sec typ="cond">적 처치 시</sec> 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>을(를) 추가로 증가시킵니다.
+        <cmt t="시티 가드"><import name="CityGuard" /></cmt> 소속 전투원은 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /> / <val idx="6" /></sec>을(를) 추가로 증가시킵니다.
+      EN: |-
+        <sec typ="cond">On hit</sec> allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">When killing an enemy</sec> allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> additionally increases.
+        <cmt t="City Guard"><import name="CityGuard" /></cmt> affiliated combatant <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /> / <val idx="6" /></sec> additionally increases.
+      JP: |-
+        <sec typ="cond">攻撃命中時</sec> 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>を増加させます。
+        <sec typ="cond">敵撃破時</sec> 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec>を 追加で 増加させます。
+        <cmt t="シティガード"><import name="CityGuard" /></cmt> 所属 戦闘員は <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /> / <val idx="6" /></sec>を 追加で 増加させます。
+      TC: |-
+        <sec typ="cond">攻擊命中時</sec> 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>使其增加。
+        <sec typ="cond">擊殺敵人時</sec> 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="4" /></sec> 額外 增加。
+        <cmt t="城市警衛"><import name="CityGuard" /></cmt> 所屬 戰鬥員 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="5" /> / <val idx="6" /></sec> 額外 增加。
   "4":
     key: "4"
     icon: P.SelfSpdBuff
@@ -4680,6 +4733,23 @@ skills:
             base: 0.03
             per: 0.03
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">공격 적중 시</sec> 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>를 증가시킵니다.
+        <sec typ="cond">적 처치 시</sec> 아군의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="4" /></sec>를 추가로 증가 시킵니다.
+        <cmt t="시티 가드"><import name="CityGuard" /></cmt> 소속 전투원은 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /> / <val idx="6" r /></sec>를 추가로 증가시킵니다.
+      EN: |-
+        <sec typ="cond">On hit</sec> allies' <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> increases.
+        <sec typ="cond">When killing an enemy</sec> allies' <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="4" /></sec> additionally increase causes.
+        <cmt t="City Guard"><import name="CityGuard" /></cmt> affiliated combatant <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="5" r /> / <val idx="6" r /></sec>additionally increases.
+      JP: |-
+        <sec typ="cond">攻撃命中時</sec> 味方の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec>を増加させます。
+        <sec typ="cond">敵撃破時</sec> 味方の <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="4" /></sec>を 追加で 増加 させます。
+        <cmt t="シティガード"><import name="CityGuard" /></cmt> 所属 戦闘員は <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /> / <val idx="6" r /></sec>を追加で増加させます。
+      TC: |-
+        <sec typ="cond">攻擊命中時</sec> 我方的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec>使其增加。
+        <sec typ="cond">擊殺敵人時</sec> 我方的 <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="4" /></sec> 額外 增加。
+        <cmt t="城市警衛"><import name="CityGuard" /></cmt> 所屬 戰鬥員 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /> / <val idx="6" r /></sec>會額外增加。
   "5":
     key: "5"
     icon: P.Hang
@@ -4855,6 +4925,19 @@ skills:
             base: -0.23
             per: -0.03
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> 적대 대상 전체의 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="0" r /></sec>를 감소시킵니다.
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <cmt t="시티 가드"><import name="CityGuard" /></cmt> 소속 전투원이 있을 경우</sec> 적대 대상 전체의 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="2" r /></sec>를 추가로 감소시킵니다.
+      EN: |-
+        <sec typ="cond">At round start</sec> hostile targets all of <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="0" r /></sec> decreases.
+        <sec typ="cond">At round start</sec> <sec typ="cond">squad <cmt t="City Guard"><import name="CityGuard" /></cmt> affiliated combatant if present</sec> hostile targets all of <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance <val idx="2" r /></sec> additionally decreases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> 敵対対象 全体の <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="0" r /></sec>を減少させます。
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond">スクワッドに <cmt t="シティガード"><import name="CityGuard" /></cmt> 所属 戦闘員が 存在する場合</sec> 敵対対象 全体の <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気耐性 <val idx="2" r /></sec>を 追加で 減少させます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec> 敵對目標 全體的 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="0" r /></sec>使其減少。
+        <sec typ="cond">回合開始時</sec> <sec typ="cond">小隊於 <cmt t="城市警衛"><import name="CityGuard" /></cmt> 所屬 戰鬥員 存在時</sec> 敵對目標 全體的 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性 <val idx="2" r /></sec> 額外 減少。
 dialogue:
   KR:
     "1":
@@ -4922,9 +5005,7 @@ dialogue:
       SPIdle_02_01: |-
         정말이지…
         시도 때도 없이 날 홈런치게 만드려는 거야?​
-      Oath: 이야~ 매니저님, 마운드에서 뛰는 제게 푹 빠져버리신 겁니까? 사실… 저도 매니저님한테 반했습니다~​ 세상 그 누구보다 뜨거운
-        열정이… 제 온몸을 녹여버릴 것 같아요!​ 으읏? 따, 땀 냄새나는데… 아, 안아주시는 겁니까? 그렇다면… 저도 매니저님이 주신
-        이 방망이를 힘껏 닦아보겠습니다! 사랑합니다, 저의 매니저님♥
+      Oath: 이야~ 매니저님, 마운드에서 뛰는 제게 푹 빠져버리신 겁니까? 사실… 저도 매니저님한테 반했습니다~​ 세상 그 누구보다 뜨거운 열정이… 제 온몸을 녹여버릴 것 같아요!​ 으읏? 따, 땀 냄새나는데… 아, 안아주시는 겁니까? 그렇다면… 저도 매니저님이 주신 이 방망이를 힘껏 닦아보겠습니다! 사랑합니다, 저의 매니저님♥
       OathIdle_01: |-
         타자는 공을 골라야 하고…
         투수는 타자가 노리는 공을 안 줘야하지.
@@ -4986,8 +5067,7 @@ dialogue:
         그치만…! 이런 임무는 아무래도 낯서니까,
         계속 연습해서 능숙해질 수 있게…
         협조, 부탁할게.​
-      Oath: 아, 진짜 애송이… 너…! 내가 100년만 어렸어도 가만히 안 냅뒀어.​ 뭐 지금도 충분히 예쁘다고? 에헷… 고마워.​ 계속해서
-        지금처럼만 나를 신뢰해 줄래? 절대로… 절대로 날 배신하지 말아줘…
+      Oath: 아, 진짜 애송이… 너…! 내가 100년만 어렸어도 가만히 안 냅뒀어.​ 뭐 지금도 충분히 예쁘다고? 에헷… 고마워.​ 계속해서 지금처럼만 나를 신뢰해 줄래? 절대로… 절대로 날 배신하지 말아줘…
       OathIdle_01: |-
         체력 좋아?
         오늘도 비밀 특훈 상대로 부르신 겁니까,
@@ -5283,20 +5363,13 @@ skins:
   sid: null
   artist: TunaMaYo
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -5311,25 +5384,27 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_PECS_Shepherd_N
   skins:
     - sid: 1
       artist: TunaMaYo
       price: 182
-      G: true
       Spine: true
       SpineDamaged: false
       parts: 78
       stage: false
       subset:
-        - true
-        - true
-        - true
-        - false
-        - false
-        - true
-        - false
-        - false
+        O:
+          - _
+          - D
+          - B
+          - DS
+        G:
+          - _
+          - D
+          - B
+          - DS
       anim:
         - false
         - false
@@ -5346,5 +5421,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 2
+        dflags: 1
         2dmodel_dam: 2DModel_PECS_Shepherd_NS1_Dam
         consumableKey: Skin_PECS_Shepherd_1

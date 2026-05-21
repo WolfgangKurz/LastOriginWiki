@@ -538,6 +538,7 @@ source:
   - - Ev:Ev31:EV1-3B
   - - Ev:Ev33:EV3-1
   - - Ev:Ev36:EV1-2EX
+  - - Ev:Ev37:EV1-4EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -3008,6 +3009,23 @@ skills:
             base: 0.5
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        투창으로 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하고 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="1" r /></sec>를 감소시킵니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>하고 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 감소 효과가 50% 증폭</sec>됩니다.
+      EN: |-
+        spear throw as <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, 2 rounds target <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> and <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="1" r /></sec> decreases.
+        <sec typ="cond">On critical hit</sec>, target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Counterattack removes the effect</sec> and <sec typ="buff"><buff typ="ATK_DOWN" /> Attack decrease effect and increased by 50%</sec>.
+      JP: |-
+        トウチアンで <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象を <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>し、 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="1" r /></sec>を減少させます。
+        <sec typ="cond">クリティカル時</sec>、 対象の <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃 効果を 解除</sec>し、 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 減少 効果が 50%増幅</sec>されます。
+      TC: |-
+        投槍以 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>並 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="1" r /></sec>使其減少。
+        <sec typ="cond">暴擊時</sec>， 目標的 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 反擊 效果 解除</sec>並 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 減少 效果 增幅50%</sec>。
   "2":
     key: "2"
     icon: AssaultAttack
@@ -5583,6 +5601,27 @@ skills:
             base: 0.5
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        근접 공격으로 <dmg elem="physics" />를 주고, <sec typ="cond"><buff typ="PROVOKE" /> 대상이 도발 상태인 경우</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+        <sec typ="cond">적중 대상의 HP가 50% 이하인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="cond"><sec typ="note">멧돼지 몰이</sec>를 통해 적 처치 시</sec>, 전리품을 분배하여 다음 2라운드 동안 아군 전체의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" slot="4" /></sec>을(를) 증가시킵니다.
+        <sec>전리품 분배로 증가되는 <sec typ="buff"><buff typ="AP_UP" /> AP</sec>는<sec typ="note">멧되지 몰이</sec>가 아닌 <sec typ="note">펠타스트 숙련</sec> 레벨에 비례합니다.</sec>
+      EN: |-
+        Performs a melee attack to deal <dmg elem="physics" /> damage and <sec typ="cond"><buff typ="PROVOKE" /> target Provoke if in the state</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> damage taken decrease removes the effect</sec>.
+        <sec typ="cond">Hit target's HP 50% or lessif</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="3" r /></sec> increases.
+        <sec typ="cond"><sec typ="note">Boar Hunt</sec>through When killing an enemy</sec>, distributes loot Yeo next 2 rounds all allies of <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" slot="4" /></sec> increases.
+        <sec>distributes loot as increase becomes <sec typ="buff"><buff typ="AP_UP" /> AP</sec><sec typ="note">Boar Hunt</sec> not <sec typ="note">Peltast Mastery</sec> level.</sec>
+      JP: |-
+        近接攻撃で<dmg elem="physics" />を与え、、 <sec typ="cond"><buff typ="PROVOKE" /> 対象が 挑発 状態の場合</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ 減少 効果を 解除</sec>します。
+        <sec typ="cond">命中対象の HPが 50% 以下の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
+        <sec typ="cond"><sec typ="note">イノシシ狩り</sec>を通じて 敵撃破時</sec>、 戦利品を ブウンブエして 次 2ラウンドの間 味方全体の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" slot="4" /></sec>を増加させます。
+        <sec>戦利品 ブウンブエで 増加ドウェは <sec typ="buff"><buff typ="AP_UP" /> AP</sec>は<sec typ="note">イノシシ狩り</sec>が ではない <sec typ="note">ペルタスト熟練</sec> レベルに 比例します。</sec>
+      TC: |-
+        近距離攻擊以 造成<dmg elem="physics" />，並 <sec typ="cond"><buff typ="PROVOKE" /> 目標 挑釁 若為狀態</sec> <sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到的傷害 減少 效果 解除</sec>。
+        <sec typ="cond">命中目標的 HP 50% 以下若為</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="3" r /></sec>增加。
+        <sec typ="cond"><sec typ="note">野豬狩獵</sec>透過 擊殺敵人時</sec>， 戰利品 分配bae並 下次 2回合內 全體我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" slot="4" /></sec>使其增加。
+        <sec>戰利品 分配bae以 增加變為 <sec typ="buff"><buff typ="AP_UP" /> AP</sec><sec typ="note">野豬狩獵</sec> 非 <sec typ="note">輕盾兵熟練</sec> 等級於 成比例。</sec>
   "3":
     key: "3"
     icon: P.DefCounter
@@ -5816,6 +5855,27 @@ skills:
             base: 0.8
             per: 0.05
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 숙련된 전투 기술로 인해 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소합니다.
+        <sec typ="cond">공격 적중 시</sec>, 3라운드 동안 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec>가 추가로 감소합니다. (최대 3중첩)
+        <sec typ="note">용맹</sec> 중첩 효과는 강화 효과 해제로 해제되지 않습니다.
+        <sec typ="cond">피격 시</sec>, 자신은 <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 위력으로 반격</sec> 효과를 획득합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, self trained combat skills due to <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decreases.
+        <sec typ="cond">On hit</sec>, 3 rounds self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="3" r inv /></sec> additionally decreases. (up to 3stack)
+        <sec typ="note">Valor</sec> stack effect removes buffs as is not removed.
+        <sec typ="cond">When hit</sec>, self <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> power as Counterattack</sec> gains the effect.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は 熟練した戦闘技術により <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec>が減少します。
+        <sec typ="cond">攻撃命中時</sec>、 3ラウンドの間 自身が <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="3" r inv /></sec>が 追加で 減少します。 (最大 3重複)
+        <sec typ="note">勇猛</sec> 重複 効果は 強化効果 解除で 解除ドウェジイ しません。
+        <sec typ="cond">被弾時</sec>、 自身は <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 威力で 反撃</sec> 効果を獲得します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身 熟練的戰鬥技術使 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="0" r inv /></sec>減少。
+        <sec typ="cond">攻擊命中時</sec>， 3回合內 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="3" r inv /></sec> 額外 減少。 (最大 3疊加)
+        <sec typ="note">勇猛</sec> 疊加 效果 強化效果 解除以 解除不會 不會。
+        <sec typ="cond">被擊時</sec>， 自身 <sec typ="buff"><buff typ="COUNTER" /> <val idx="4" r signless /> 威力以 反擊</sec> 獲得效果。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -6319,6 +6379,23 @@ skills:
             base: -0.05
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_Line" /> 행 보호</sec>가 활성화되고, <sec typ="buff"><buff typ="DEF_Char" /> 같은 열에 위치한 공격기/지원기를 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 아군 전체의 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장형 피해량 <val idx="7" r /></sec>를 증가시킵니다.
+        <sec typ="note">용맹</sec> 중첩 단계에 따라 상기 효과가 증폭됩니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="DEF_Line" /> Row Protection</sec> activated and, <sec typ="buff"><buff typ="DEF_Char" /> same column to positioned Attacker/Supporter Designated Protection</sec>.
+        <sec typ="cond">At round start</sec>, all allies of <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> Anti-Heavy damage <val idx="7" r /></sec> increases.
+        <sec typ="note">Valor</sec> stack Dangye depending on above effect and amplification.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="DEF_Line" /> 行保護</sec>が 有効化になり、、 <sec typ="buff"><buff typ="DEF_Char" /> 同じ列に 位置した 攻撃機/支援機を 指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、 味方全体の <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 対重装型ダメージ <val idx="7" r /></sec>を増加させます。
+        <sec typ="note">勇猛</sec> 重複 ドアングイェに応じて 上記 効果が 増幅されます。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="DEF_Line" /> 列保護</sec> 啟用變為，且 <sec typ="buff"><buff typ="DEF_Char" /> 同一行於 位置 攻擊機/支援機 指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>， 全體我方的 <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 對重裝型傷害 <val idx="7" r /></sec>使其增加。
+        <sec typ="note">勇猛</sec> 疊加 全部ngye依 上述 效果 增幅。
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -6608,6 +6685,23 @@ skills:
             base: 0.15
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond"><sec typ="note">용맹</sec> 중첩이 최대치인 경우</sec>, 완벽한 방패술로 <sec typ="buff"><buff typ="DEF_All" /> 피해를 <val idx="0" signless />회 무효화</sec>합니다.
+        <sec typ="cond">피격 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>가 증가합니다. (최대 3중첩)
+        <sec typ="cond"><sec typ="note">황금사과</sec>를 보유한 경우</sec>, 자신의 공격은 대상이 후열에 가까울 수록 피해량이 증가합니다. (중열 : <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" slot="1" r /></sec>, 후열 : <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="6" slot="1" r /></sec>)
+      EN: |-
+        <sec typ="cond">At round start</sec> <sec typ="cond"><sec typ="note">Valor</sec> stack up to value if</sec>, perfect shield technique as <sec typ="buff"><buff typ="DEF_All" /> damage <val idx="0" signless />times nullifies</sec>.
+        <sec typ="cond">When hit</sec>, 3 rounds own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="6" r /></sec> increases. (up to 3stack)
+        <sec typ="cond"><sec typ="note">Golden Apple</sec> if having</sec>, own attack target back row to close as damage increases. (middle row: <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" slot="1" r /></sec>, back row: <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="6" slot="1" r /></sec>)
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec> <sec typ="cond"><sec typ="note">勇猛</sec> 重複が 最大チイの場合</sec>、 ワンブヨクした ブアン牌スウルで <sec typ="buff"><buff typ="DEF_All" /> ダメージを <val idx="0" signless />回 ムウハヨハワ</sec>します。
+        <sec typ="cond">被弾時</sec>、 3ラウンドの間 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="6" r /></sec>が増加します。 (最大 3重複)
+        <sec typ="cond"><sec typ="note">黄金のリンゴ</sec>を 保有している場合</sec>、 自身の 攻撃は 対象が 後列に がックアウル 少ないほど ダメージ量が増加します。 (中列：<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="5" slot="1" r /></sec>、 後列：<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="6" slot="1" r /></sec>)
+      TC: |-
+        <sec typ="cond">回合開始時</sec> <sec typ="cond"><sec typ="note">勇猛</sec> 疊加 最大值若為</sec>， Wanbyeok 防牌術以 <sec typ="buff"><buff typ="DEF_All" /> 傷害 <val idx="0" signless />次 無hyohwa</sec>。
+        <sec typ="cond">被擊時</sec>， 3回合內 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="6" r /></sec>增加。 (最大 3疊加)
+        <sec typ="cond"><sec typ="note">黃金蘋果</sec> 持有時</sec>， 自身的 攻擊 目標 後排於 靠近 數越 傷害量增加。 (中排：<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="5" slot="1" r /></sec>， 後排：<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="6" slot="1" r /></sec>)
 dialogue:
   KR:
     "1":
@@ -6941,9 +7035,8 @@ dialogue:
         … For beasts… you stimulate
         somewhere else… Here…
         Let me turn around…
-      Oath: >-
+      Oath: |-
         There was a woman named Callisto. Zeus… threw her into the sea of stars.
-
         Are you saying… you don’t care how I look? If I really become a bear… I’m… anxious… that you will abandon me later…
       OathIdle_01: |-
         I’m worried that…
@@ -6994,10 +7087,8 @@ dialogue:
         I’m just a prey to you,
         right?
         Do you want to see a real hunter?
-      Oath: >-
-        I swore my virginity to Artemis. What we're doing now… could lead to
-        destruction.
-
+      Oath: |-
+        I swore my virginity to Artemis. What we're doing now… could lead to destruction.
         But… with you… I'm not afraid of anything… Do you also think so?
       OathIdle_01: |-
         When you’re looking at me,
@@ -7027,13 +7118,10 @@ dialogue:
         decent wine. If you're done with work…
         maybe we can have a sip? I thank Artemis…
         for bringing you and me together.
-      Idle_01_02: >-
+      Idle_01_02: |-
         A little cold? Indeed, I agree.
-
         I could have treated someone that way
-
         if I didn’t know them properly. But you're different. I felt like you and I
-
         were destined by the gods themselves.
       Idle_01_03: |-
         At one point, I thought glory was acquired
@@ -7200,20 +7288,15 @@ skins:
   sid: null
   artist: Kakiman
   priceEx: ""
-  G: true
   Spine: false
   SpineDamaged: false
   parts: 6
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
+    G:
+      - _
   anim:
     - true
     - false
@@ -7228,24 +7311,20 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 4
+    dflags: 4
   skins:
     - sid: 1
       artist: Kakiman
       price: 136
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 6
       stage: false
       subset:
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+        G:
+          - _
       anim:
         - true
         - false
@@ -7262,4 +7341,5 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 4
+        dflags: 4
         consumableKey: Skin_DS_Atalanta_1

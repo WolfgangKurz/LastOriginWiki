@@ -1,6 +1,9 @@
+import { FunctionalComponent } from "preact";
+import { useMemo } from "preact/hooks";
+
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, BUFF_ATTR_TYPE, BUFF_OVERLAP_TYPE, ROLE_TYPE, TARGET_TYPE } from "@/types/Enums";
 import BuffCategory from "@/types/DB/BuffCategory";
-import { BUFFEFFECT_TYPE } from "@/types/BuffEffect";
+import { BUFFEFFECT_TYPE, BuffEffectList } from "@/types/BuffEffect";
 import { BUFFEFFECT_TRIGGER_TYPE } from "@/types/BuffTrigger";
 import { BUFFEFFECT_ERASE_TYPE } from "@/types/BuffErase";
 
@@ -8,17 +11,16 @@ import { CombinedBuffEffectTypes, ExcludedBuffEffectTypes } from "../common";
 
 import { AssetsRoot } from "@/libs/Const.1";
 import { useLocale } from "@/libs/Locale";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { BuildClass, cn } from "@/libs/Class";
-import { clamp, UniqueID } from "@/libs/Functions";
+import { clamp } from "@/libs/Functions";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import Input from "@/components/Input";
 import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
-import { useMemo } from "preact/hooks";
 
 type ConditionLogical = "AND" | "OR";
 export enum ConditionCategory {
@@ -265,6 +267,7 @@ const ExcludedBuffEffectTriggers: BUFFEFFECT_TRIGGER_TYPE[] = [ // 사용처가 
 	BUFFEFFECT_TRIGGER_TYPE.IF_CHAR_INGRID,
 	BUFFEFFECT_TRIGGER_TYPE.USE_SKILL_ENEMY,
 	BUFFEFFECT_TRIGGER_TYPE.SUMMON_CREATE,
+	BUFFEFFECT_TRIGGER_TYPE.USE_SKILL_ALLY,
 ];
 
 /**
@@ -289,6 +292,12 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 	const conds = props.conds;
 
 	const BuffCategoryDB = useDBData<BuffCategory[]>(StaticDB.BuffCategory);
+	const SortedBuffCategoryDB = useMemo(
+		() => assertDBData(BuffCategoryDB)
+			? BuffCategoryDB.toSorted((a, b) => a.buffEffectType[0] - b.buffEffectType[0])
+			: null,
+		[BuffCategoryDB],
+	);
 
 	const BuffNameList = useMemo(() => {
 		const regex = /^(.+)([：:].+)$/;
@@ -630,39 +639,36 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 		return <div class={ style.ConditionsTable }>
 			{ conds.map((c, idx) => {
 				return <>
-					{ idx + 1 < conds.length
-						? <div
-							class={ BuildClass(style.LogicalColumn) }
-							style={ {
-								gridRowStart: idx + 1,
-								gridRowEnd: idx + 3,
-							} }
-						>
-							{ c.logicType === "OR"
-								? <button
-									class={ BuildClass(style.ButtonOR, "btn btn-sm btn-dark") }
+					{ idx + 1 < conds.length && <div
+						class={ BuildClass(style.LogicalColumn) }
+						style={ {
+							gridRowStart: idx + 1,
+							gridRowEnd: idx + 3,
+						} }
+					>
+						{ c.logicType === "OR"
+							? <button
+								class={ BuildClass(style.ButtonOR, "btn btn-sm btn-dark") }
+								onClick={ e => {
+									e.preventDefault();
+									updateCond(idx, { ...c, logicType: "AND" });
+								} }
+							>
+								OR
+							</button>
+							: <>
+								<button
+									class={ BuildClass(style.ButtonAND, "btn btn-sm btn-dark") }
 									onClick={ e => {
 										e.preventDefault();
-										updateCond(idx, { ...c, logicType: "AND" });
+										updateCond(idx, { ...c, logicType: "OR" });
 									} }
 								>
-									OR
+									AND
 								</button>
-								: <>
-									<button
-										class={ BuildClass(style.ButtonAND, "btn btn-sm btn-dark") }
-										onClick={ e => {
-											e.preventDefault();
-											updateCond(idx, { ...c, logicType: "OR" });
-										} }
-									>
-										AND
-									</button>
-								</>
-							}
-						</div>
-						: <></>
-					}
+							</>
+						}
+					</div> }
 
 					<div class={ style.ConditionColumn }>
 						<div>
@@ -870,24 +876,21 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 							/>
 						</div> }
 
-						{ IsComparableCondition(c)
-							? <div>
-								<select
-									class="form-select form-select-sm"
-									value={ c.compare }
-									onChange={ e => {
-										e.preventDefault();
-										updateCond(idx, {
-											...c,
-											compare: e.currentTarget.value as any,
-										});
-									} }
-								>
-									{ RenderCompareOption(c, c.compare) }
-								</select>
-							</div>
-							: <></>
-						}
+						{ IsComparableCondition(c) && <div>
+							<select
+								class="form-select form-select-sm"
+								value={ c.compare }
+								onChange={ e => {
+									e.preventDefault();
+									updateCond(idx, {
+										...c,
+										compare: e.currentTarget.value as any,
+									});
+								} }
+							>
+								{ RenderCompareOption(c, c.compare) }
+							</select>
+						</div> }
 
 						{ c.category === ConditionCategory.Rarity && <div>
 							{ c.compare === ConditionCompare.FromTo
@@ -1339,103 +1342,90 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 										<Locale k="SEARCH_COND_BUFF_BUFF_ANY" />
 									</option>
 
-									{ BuffCategoryDB
-										? <>
-											{ BuffCategoryDB
-												.sort((a, b) => a.buffEffectType[0] - b.buffEffectType[0])
-												.map(r => {
-													const buffs = r.buffEffectType.filter(b => !ExcludedBuffEffectTypes.includes(b));
-													if (buffs.length === 0) return <></>;
+									{ SortedBuffCategoryDB && <>
+										{ SortedBuffCategoryDB.map(r => {
+											const buffs = r.buffEffectType.filter(b => !ExcludedBuffEffectTypes.includes(b));
+											if (buffs.length === 0) return <></>;
 
-													return buffs.length > 1
-														? <optgroup label={ loc[r.groupName] }>
-															{ buffs.map(b => <option value={ b } selected={ c.buff === b }>
-																<Locale k={ `SEARCH_CONF_BUFF_BUFF_.${b}` } />
-															</option>) }
-														</optgroup>
-														: <option value={ buffs[0] } selected={ c.buff === buffs[0] }>
-															<Locale k={ r.groupName } />
-														</option>;
-												}) }
-										</>
-										: <></>
-									}
+											return buffs.length > 1
+												? <optgroup label={ loc[r.groupName] }>
+													{ buffs.map(b => <option value={ b } selected={ c.buff === b }>
+														<Locale k={ `SEARCH_CONF_BUFF_BUFF_.${b}` } />
+													</option>) }
+												</optgroup>
+												: <option value={ buffs[0] } selected={ c.buff === buffs[0] }>
+													<Locale k={ r.groupName } />
+												</option>;
+										}) }
+									</> }
 								</select>
 							</div>
 
-							{ IsConditionRequiresBuffType(c)
-								? <div>
-									<select
-										class="form-select form-select-sm"
-										value={ c.targetBuffEnum ?? "" }
-										onChange={ e => {
-											e.preventDefault();
-											updateCond(idx, {
-												...c,
-												targetBuffEnum: e.currentTarget.value === ""
-													? undefined
-													: parseInt(e.currentTarget.value, 10),
-											});
-										} }
-									>
-										<option value="" selected={ c.targetBuffEnum === undefined }>
-											<Locale k="SEARCH_COND_BUFF_BUFF_ANY" />
-										</option>
+							{ IsConditionRequiresBuffType(c) && <div>
+								<select
+									class="form-select form-select-sm"
+									value={ c.targetBuffEnum ?? "" }
+									onChange={ e => {
+										e.preventDefault();
+										updateCond(idx, {
+											...c,
+											targetBuffEnum: e.currentTarget.value === ""
+												? undefined
+												: parseInt(e.currentTarget.value, 10),
+										});
+									} }
+								>
+									<option value="" selected={ c.targetBuffEnum === undefined }>
+										<Locale k="SEARCH_COND_BUFF_BUFF_ANY" />
+									</option>
 
-										{ BuffCategoryDB
-											? <>
-												{ BuffCategoryDB.map(r => {
-													const buffs = r.buffEffectType.filter(b => !ExcludedBuffEffectTypes.includes(b));
-													if (buffs.length === 0) return <></>;
+									{ BuffCategoryDB && <>
+										{ BuffCategoryDB.map(r => {
+											const buffs = r.buffEffectType.filter(b => !ExcludedBuffEffectTypes.includes(b));
+											if (buffs.length === 0) return <></>;
 
-													return buffs.length > 1
-														? <optgroup label={ loc[r.groupName] }>
-															{ buffs.map(b => <option value={ b } selected={ c.targetBuffEnum === b }>
-																<Locale k={ `SEARCH_CONF_BUFF_BUFF_.${b}` } />
-															</option>) }
-														</optgroup>
-														: <option value={ buffs[0] } selected={ c.targetBuffEnum === buffs[0] }>
-															<Locale k={ r.groupName } />
-														</option>;
-												}) }
-											</>
-											: <></>
-										}
-									</select>
-								</div>
-								: <></>
-							}
-							{ c.buff === BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF_KEY_ALL_ATTRTYPE
-								? <div>
-									<select
-										class="form-select form-select-sm"
-										value={ c.targetBuffType ?? "" }
-										onChange={ e => {
-											e.preventDefault();
-											updateCond(idx, {
-												...c,
-												targetBuffType: e.currentTarget.value === ""
-													? undefined
-													: parseInt(e.currentTarget.value, 10),
-											});
-										} }
-									>
-										<option value="" selected={ c.targetBuffType === undefined }>
-											<Locale k="SEARCH_COND_BUFF_TYPE_ANY" />
-										</option>
-										<option value="0" selected={ c.targetBuffType === 0 }>
-											<Locale k="SEARCH_COND_BUFF_TYPE_BUFF" />
-										</option>
-										<option value="1" selected={ c.targetBuffType === 1 }>
-											<Locale k="SEARCH_COND_BUFF_TYPE_DEBUFF" />
-										</option>
-										<option value="3" selected={ c.targetBuffType === 3 }>
-											<Locale k="SEARCH_COND_BUFF_TYPE_ETC" />
-										</option>
-									</select>
-								</div>
-								: <></>
-							}
+											return buffs.length > 1
+												? <optgroup label={ loc[r.groupName] }>
+													{ buffs.map(b => <option value={ b } selected={ c.targetBuffEnum === b }>
+														<Locale k={ `SEARCH_CONF_BUFF_BUFF_.${b}` } />
+													</option>) }
+												</optgroup>
+												: <option value={ buffs[0] } selected={ c.targetBuffEnum === buffs[0] }>
+													<Locale k={ r.groupName } />
+												</option>;
+										}) }
+									</> }
+								</select>
+							</div> }
+
+							{ c.buff === BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF_KEY_ALL_ATTRTYPE && <div>
+								<select
+									class="form-select form-select-sm"
+									value={ c.targetBuffType ?? "" }
+									onChange={ e => {
+										e.preventDefault();
+										updateCond(idx, {
+											...c,
+											targetBuffType: e.currentTarget.value === ""
+												? undefined
+												: parseInt(e.currentTarget.value, 10),
+										});
+									} }
+								>
+									<option value="" selected={ c.targetBuffType === undefined }>
+										<Locale k="SEARCH_COND_BUFF_TYPE_ANY" />
+									</option>
+									<option value="0" selected={ c.targetBuffType === 0 }>
+										<Locale k="SEARCH_COND_BUFF_TYPE_BUFF" />
+									</option>
+									<option value="1" selected={ c.targetBuffType === 1 }>
+										<Locale k="SEARCH_COND_BUFF_TYPE_DEBUFF" />
+									</option>
+									<option value="3" selected={ c.targetBuffType === 3 }>
+										<Locale k="SEARCH_COND_BUFF_TYPE_ETC" />
+									</option>
+								</select>
+							</div> }
 						</> }
 						{ c.category === ConditionCategory.BuffName && <>
 							<div>
@@ -1497,19 +1487,17 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 					</div>
 				</>;
 			}) }
-			{ conds.map((c, idx) =>
-				idx + 1 >= conds.length || !IsConditionANDRoot(conds, idx)
-					? <></>
-					: <div
-						key={ `Condition-AND-Line-${idx}` }
-						class={ style.ConditionANDLine }
-						style={ {
-							gridRowStart: idx + 1,
-							gridRowEnd: idx + 2 + GetConditionANDCount(conds, idx),
-						} }
-					>
-						<div />
-					</div>
+			{ conds.map((c, idx) => !(idx + 1 >= conds.length || !IsConditionANDRoot(conds, idx)) &&
+				<div
+					key={ `Condition-AND-Line-${idx}` }
+					class={ style.ConditionANDLine }
+					style={ {
+						gridRowStart: idx + 1,
+						gridRowEnd: idx + 2 + GetConditionANDCount(conds, idx),
+					} }
+				>
+					<div />
+				</div>
 			) }
 		</div >;
 	}

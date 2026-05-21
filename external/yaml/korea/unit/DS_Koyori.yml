@@ -1904,6 +1904,23 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        부적을 던져 지정 범위에 <dmg elem="physics" />를 줍니다.
+        대상의 방어력을 일정 비율 무시합니다. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec> 증가 상태로 만듭니다.
+      EN: |-
+        part enemy throws to the designated area <dmg elem="physics" />.
+        target's Defense fixed ratio ignore. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="0" r /></sec>
+        <sec typ="cond">On hit</sec>, 2 rounds target <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> and <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="4" r /></sec> increase inflicts.
+      JP: |-
+        ブウ敵を ドオンジヨ 指定範囲に<dmg elem="physics" />を与えます。
+        対象の 防御力を 一定 ブイユル 無視します。 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>
+        <sec typ="cond">命中時</sec>、 2ラウンドの間 対象を <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>し、 <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec> 増加 状態にします。
+      TC: |-
+        附加敵人 更多投擲 指定範圍於 造成<dmg elem="physics" />。
+        目標的 防禦力 一定 比例 無視。 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec>
+        <sec typ="cond">命中時</sec>， 2回合內 目標 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>並 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="4" r /></sec> 增加 使其進入狀態。
   "2":
     key: "2"
     icon: Vortex
@@ -3023,6 +3040,27 @@ skills:
             base: -0.3
             per: -0.05
             chance: 1
+    desc:
+      KR: |-
+        수인을 맺고 구자진언을 외며 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        목표 지점에서 멀 수록 피해량이 최대 50%까지 감소합니다.
+        <sec typ="cond">적중 대상이 <buff typ="PROVOKE" /> 도발 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">치명타 시</sec>, 대상은 해당 라운드 동안 <sec typ="buff"><buff typ="SKILL_DOWN" /> 스킬 위력 <val idx="2" r /></sec>가 크게 감소합니다.
+      EN: |-
+        number is Maetgo Guja formation Eon other than Myeo to the designated area <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
+        target point in far as damage up to 50%up to decreases.
+        <sec typ="cond">Hit target <buff typ="PROVOKE" /> Provoke if in the state</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="0" r /></sec> increases.
+        <sec typ="cond">On critical hit</sec>, the target each round <sec typ="buff"><buff typ="SKILL_DOWN" /> Skill Power <val idx="2" r /></sec> greatly decreases.
+      JP: |-
+        数であるを ムエトし グウジアジインオンを 外し 指定範囲に<sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
+        目標地点で ムオル 少ないほど ダメージ量が 最大 50%まで 減少します。
+        <sec typ="cond">命中対象が <buff typ="PROVOKE" /> 挑発 状態の場合</sec>、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec>、 対象は 該当 ラウンド間 <sec typ="buff"><buff typ="SKILL_DOWN" /> スキル威力 <val idx="2" r /></sec>が クウく 減少します。
+      TC: |-
+        數為 每t並 Guja至neon 外並 指定範圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
+        目標地點在 遠 數越 傷害量 最大 50%至 減少。
+        <sec typ="cond">命中目標為 <buff typ="PROVOKE" /> 挑釁 若為狀態</sec>， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="0" r /></sec>增加。
+        <sec typ="cond">暴擊時</sec>， 目標 該 回合內 <sec typ="buff"><buff typ="SKILL_DOWN" /> 技能威力 <val idx="2" r /></sec> 大 減少。
   "3":
     key: "3"
     icon: P.Charm
@@ -3321,6 +3359,19 @@ skills:
             base: 0.2
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP로 전투 속행</sec> 효과를 획득합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신에게 적용된 <sec>모든 공격력 증감 효과를 해제</sec><sup><sec typ="attr">재생성</sec></sup>하고 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="2" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At battle start</sec>, self <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP and Continue Combat</sec> gains the effect.
+        <sec typ="cond">At round start</sec>, applied to self <sec>all Attack increase /decrease removes the effect</sec><sup><sec typ="attr">regenerate</sec></sup> and own <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="2" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、 自身は <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HPで 戦闘続行</sec> 効果を獲得します。
+        <sec typ="cond">ラウンド開始時</sec>、 自身に 適用された <sec>すべての 攻撃力 ジウングアム 効果を 解除</sec><sup><sec typ="attr">ジエ生成</sec></sup>し、 自身の <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="2" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>， 自身 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="0" r signless /> HP以 戰鬥續行</sec> 獲得效果。
+        <sec typ="cond">回合開始時</sec>， 自身給 套用已 <sec>所有 攻擊力 解除增減 效果 解除</sec><sup><sec typ="attr">再生成</sec></sup>並 自身的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="2" r /></sec>增加。
   "4":
     key: "4"
     icon: P.SuicideBomb
@@ -3570,6 +3621,19 @@ skills:
               level: "0"
             value: Effect_DS_Koyori_N_4
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 재공격</sec> 효과를 획득합니다.
+        <sec typ="cond">전투 속행 시</sec> <sec typ="cond">자신에게 <buff typ="DEF_RESSURRECT" /> 전투 속행 효과가 없을 경우</sec>, <sec typ="note">식신 바사로</sec>의 효과를 다음 2라운드 동안 봉인하고 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="2" r signless /> HP로 전투 속행 효과</sec>를 획득합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> follow-up attack</sec> gains the effect.
+        <sec typ="cond">Continue Combat when</sec> <sec typ="cond">self <buff typ="DEF_RESSURRECT" /> Continue Combat effect and if absent</sec>, <sec typ="note">Siksin Basa as</sec> of effect and next 2 rounds seal and <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="2" r signless /> HP and Continue Combat effect and</sec> gains.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身は <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再攻撃</sec> 効果を獲得します。
+        <sec typ="cond">戦闘続行 時</sec> <sec typ="cond">自身に <buff typ="DEF_RESSURRECT" /> 戦闘続行 効果が 存在しない場合</sec>、 <sec typ="note">スイクスイン ブアスアで</sec>の 効果を 次 2ラウンドの間 ブオンであるし、 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="2" r signless /> HPで 戦闘続行 効果</sec>を獲得します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 再次攻擊</sec> 獲得效果。
+        <sec typ="cond">戰鬥續行 時</sec> <sec typ="cond">自身給 <buff typ="DEF_RESSURRECT" /> 戰鬥續行 效果 不存在時</sec>， <sec typ="note">Siksin Basa以</sec>的 效果 下次 2回合內 封印為並 <sec typ="buff"><buff typ="DEF_RESSURRECT" /> <val idx="2" r signless /> HP以 戰鬥續行 效果</sec>獲得。
   "5":
     key: "5"
     icon: P.SelfSpdBuff
@@ -3957,6 +4021,23 @@ skills:
             base: 0.6
             per: 0.06
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
+        <sec typ="cond">적 사망 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec>가 증가합니다. (최대 4중첩)
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">급급여율령</sec>에 의한 행동력 중첩 수에 따라 자신의 <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="4" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At round start</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec> increases.
+        <sec typ="cond">When an enemy dies</sec>, 3 rounds own <sec typ="buff"><buff typ="AP_UP" /> Action Speed <val idx="3" r /></sec> increases. (up to 4stack)
+        <sec typ="cond">At round start</sec>, <sec typ="note">Geupgeupyeoyulryeong</sec> to by Action Speed stack depending on the number of own <sec typ="buff"><buff typ="SKILL_UP" /> Skill Power <val idx="4" r /></sec> increases.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、 自身の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+        <sec typ="cond">敵死亡時</sec>、 3ラウンドの間 自身の <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>が増加します。 (最大 4重複)
+        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="note">グウプグウプヨユルルヨン</sec>に よる 行動力 重複 数に応じて 自身の <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="4" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>， 自身的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>增加。
+        <sec typ="cond">敵人死亡時</sec>， 3回合內 自身的 <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec>增加。 (最大 4疊加)
+        <sec typ="cond">回合開始時</sec>， <sec typ="note">Geupgeupyeoyu害怕ng</sec>於 的 行動力 疊加 依數量 自身的 <sec typ="buff"><buff typ="SKILL_UP" /> 技能威力 <val idx="4" r /></sec>增加。
 dialogue:
   KR:
     "20":
@@ -4009,9 +4090,7 @@ dialogue:
       SPIdle_02_01: |-
         후후... 내 매력에 푹 빠지기라도 한 거야?
         하긴, 내 미모에 반하는 건 당연한 일이지.
-      Oath: 옛날 생각 나네. 보상으로 공주님을 주세요! 라고 했다가 정말 공주님을 받았던 적이 있거든. 물론 그건 어디까지나 각본 상의
-        일이었지만… 이번에는 진짜로 왕자님을 받아버렸네? 다행히 이번 보상은 내 마음에 쏙 드는데… 좋아, 이제부터 사령관은 내 거야.
-        절대 안 돌려줄 거니까 각오해?
+      Oath: 옛날 생각 나네. 보상으로 공주님을 주세요! 라고 했다가 정말 공주님을 받았던 적이 있거든. 물론 그건 어디까지나 각본 상의 일이었지만… 이번에는 진짜로 왕자님을 받아버렸네? 다행히 이번 보상은 내 마음에 쏙 드는데… 좋아, 이제부터 사령관은 내 거야. 절대 안 돌려줄 거니까 각오해?
       OathIdle_01: |-
         사령관을 돕는 이유? 그야, 보상금 때문에…
         …농담이니까 그렇게 보지 마.
@@ -4070,9 +4149,7 @@ dialogue:
       SPIdle_02_01: |-
         흐음~ 뭐, 그만큼 내가 매력적이라는 거겠지.
         다음부터는 먼저 물어보고 해. 알았지?
-      Oath: 이 정의외 미모의 무녀 코요리가 마음에 들었다는 거지? 옛날에도 나 좋다고 하던 애들이 있었는데 말이야… 음. 지금 다른 애들
-        이야기는 멋없지? 하하하! 다행스럽게도 나도 사령관이 마음에 들어. 오늘 일은 절대로 잊지 않을게. 그러니 사령관도 잊지 말아
-        줘. 알겠지?
+      Oath: 이 정의외 미모의 무녀 코요리가 마음에 들었다는 거지? 옛날에도 나 좋다고 하던 애들이 있었는데 말이야… 음. 지금 다른 애들 이야기는 멋없지? 하하하! 다행스럽게도 나도 사령관이 마음에 들어. 오늘 일은 절대로 잊지 않을게. 그러니 사령관도 잊지 말아 줘. 알겠지?
       OathIdle_01: |-
         인류가 멸망하고 나쁜 일만 있을 거라고 
         생각했는데… 꼭 그런 것만은 아니네.
@@ -4406,20 +4483,13 @@ skins:
   sid: null
   artist: 2V
   priceEx: ""
-  G: false
   Spine: false
   SpineDamaged: false
   parts: 4
   stage: false
   subset:
-    - true
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
-    - false
+    O:
+      - _
   anim:
     - false
     - false
@@ -4434,25 +4504,23 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 1
+    dflags: 0
     2dmodel: 2DModel_DS_Koyori_N
   skins:
     - sid: 1
       artist: 司 淳(Jun Tsukasa)
       priceEx: Exchange
-      G: true
       Spine: false
       SpineDamaged: false
       parts: 68
       stage: false
       subset:
-        - true
-        - true
-        - false
-        - false
-        - false
-        - false
-        - false
-        - false
+        O:
+          - _
+          - D
+        G:
+          - _
+          - D
       anim:
         - false
         - false
@@ -4468,6 +4536,7 @@ skins:
         iconId: 1
         tbarId: 1
         flags: 1
+        dflags: 1
         2dmodel: 2DModel_DS_Koyori_NS1
         2dmodel_dam: 2DModel_DS_Koyori_NS1_Dam
         consumableKey: Skin_DS_Koyori_1
@@ -4475,20 +4544,13 @@ skins:
     sid: 20
     artist: 2V
     priceEx: Promotion
-    G: false
     Spine: false
     SpineDamaged: false
     parts: 4
     stage: false
     subset:
-      - true
-      - false
-      - false
-      - false
-      - false
-      - false
-      - false
-      - false
+      O:
+        - _
     anim:
       - false
       - false
@@ -4504,4 +4566,5 @@ skins:
       iconId: 0
       tbarId: 0
       flags: 0
+      dflags: 0
       2dmodel: 2DModel_DS_Koyori_PS1

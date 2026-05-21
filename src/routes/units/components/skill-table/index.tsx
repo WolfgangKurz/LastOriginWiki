@@ -7,11 +7,9 @@ import { SkillEntity, SkillGroup } from "@/types/DB/Skill";
 import { ACTOR_BODY_TYPE, ACTOR_GRADE } from "@/types/Enums";
 import { BuffStat } from "@/types/Buffs";
 
-import { useLocale } from "@/libs/Locale";
+import { CurrentLocale, useLocale } from "@/libs/Locale";
 import Session from "@/libs/Session";
-import { isActive } from "@/libs/Functions";
-import { objState } from "@/libs/State";
-import { ImageExtension, RarityDisplay } from "@/libs/Const";
+import { RarityDisplay } from "@/libs/Const";
 import { BuildClass, cn } from "@/libs/Class";
 import { GetSkillDescription } from "@/libs/SkillDescription";
 
@@ -20,13 +18,14 @@ import ElemIcon from "@/components/elem-icon";
 import RarityBadge from "@/components/rarity-badge";
 import SkillBound from "@/components/skill-bound";
 import SkillDescription, { SkillDescriptionValueData } from "@/components/skill-description";
-import SummonBadge from "../../components/summon-badge";
 import BuffList from "@/components/buff-list";
 import SkillIcon from "@/components/skill-icon";
-
-import style from "./style.module.scss";
 import Button from "@/components/Button";
 import Badge from "@/components/Badge";
+
+import SummonBadge from "../../components/summon-badge";
+
+import style from "./style.module.scss";
 
 interface SkillItem extends SkillEntity {
 	slot: string;
@@ -45,7 +44,7 @@ interface SkillTableProps {
 }
 
 const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc, _, locKey] = useLocale();
 
 	const unit = props.unit;
 	const skills = useMemo((): Record<string, SkillItem> => {
@@ -137,11 +136,12 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 	}, [skills]);
 
 	const GetSkillDescriptions = useCallback((skill: SkillItem, values: Record<string, SkillDescriptionValueData[]>) => {
-		const key = `UNIT_SKILL_DESC_${unit.uid}_${skill.key}`;
-		const orig = loc[key] || "";
+		const orig = skill.desc?.[locKey] ||
+			// loc[`UNIT_SKILL_DESC_${unit.uid}_${skill.key}`] ||
+			"";
 
 		return GetSkillDescription(orig, skill.slot, values);
-	}, [loc, unit]);
+	}, [loc, locKey, unit]);
 	function GetRates (skill: SkillItem): number[] {
 		return skill.buffs.index
 			.map(x => skill.buffs.data[x].rate);
@@ -191,7 +191,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 						class="form-check-input"
 						type="checkbox"
 						checked={ favorBonus }
-						disabled={ unit.body === ACTOR_BODY_TYPE.AGS }
+						// disabled={ unit.body === ACTOR_BODY_TYPE.AGS }
 						onChange={ (): void => {
 							const v = !favorBonus;
 							setFavorBonus(v);
@@ -408,7 +408,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			<div class={ style.Title }>
 				<Locale k="UNIT_SKILL" />
 
-				{ HasFormChange && <Button.Group>
+				{ HasFormChange && <Button.Group class="ms-3">
 					<Button
 						active={ formState === "normal" }
 						variant="warning"

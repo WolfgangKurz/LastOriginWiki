@@ -15,7 +15,7 @@ import { StatType } from "@/types/Stat";
 import { useLocale } from "@/libs/Locale";
 import { BuildClass } from "@/libs/Class";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Button from "@/components/Button";
 import Loading from "@/components/loading";
@@ -48,7 +48,7 @@ const Units: FunctionalComponent = () => {
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 
 	const UnitList = useMemo((): FilterableUnit[] => {
-		if (!FilterableUnitDB) return [];
+		if (!assertDBData(FilterableUnitDB)) return [];
 
 		const conds = Store.Units.AdvSearchConds.value;
 
@@ -77,8 +77,16 @@ const Units: FunctionalComponent = () => {
 							.map(x => typeof x === "object" ? x.initial || "" : x)
 							.join("");
 
+						const grp = (loc[`UNIT_GROUP_${x.group}`] || "").replaceAll(" ", ""); // ignore space
+						const grpFirstName = grp
+							.split("")
+							.map(x => DecomposeHangulSyllable(x) || x)
+							.map(x => typeof x === "object" ? x.initial || "" : x)
+							.join("");
+
 						return input.test(name) || input.test(firstName) ||
-							input.test(alias) || input.test(aliasFirstName);
+							input.test(alias) || input.test(aliasFirstName) ||
+							input.test(grp) || input.test(grpFirstName);
 					} catch {
 						return false;
 					}

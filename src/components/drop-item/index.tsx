@@ -1,5 +1,4 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 import { createPortal, useState } from "preact/compat";
 
 import { Consumable } from "@/types/DB/Consumable";
@@ -159,7 +158,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 				</div>
 			</div>
 
-			<Link href="#" class="stretched-link" onClick={ (e): void => {
+			<a href="#" class="stretched-link" onClick={ (e): void => {
 				e.preventDefault();
 				setDisplay(true);
 			} } />

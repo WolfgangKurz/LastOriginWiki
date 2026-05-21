@@ -1,6 +1,5 @@
 import { FunctionalComponent } from "preact";
 import { useMemo, useRef } from "preact/hooks";
-import { Link } from "preact-router";
 
 import { ACTOR_GRADE } from "@/types/Enums";
 import { BUFFEFFECT_TYPE } from "@/types/BuffEffect";
@@ -8,7 +7,7 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import BuffCategory from "@/types/DB/BuffCategory";
 import { UnitsListProps } from "..";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { cn } from "@/libs/Class";
 
 import Locale from "@/components/locale";
@@ -26,12 +25,14 @@ const UnitsBuffGrouped: FunctionalComponent<UnitsListProps> = (props) => {
 	const TabledBuffCategory = useMemo(
 		() => {
 			const ret: Record<BUFFEFFECT_TYPE, BuffCategory> = {} as typeof ret;
-			BuffCategoryDB?.forEach(c => {
-				c.buffEffectType.forEach(t => {
-					if (t in ret) return;
-					ret[t] = c;
+			if (assertDBData(BuffCategoryDB)) {
+				BuffCategoryDB.forEach(c => {
+					c.buffEffectType.forEach(t => {
+						if (t in ret) return;
+						ret[t] = c;
+					});
 				});
-			});
+			}
 			return ret;
 		},
 		[BuffCategoryDB],
@@ -96,12 +97,12 @@ const UnitsBuffGrouped: FunctionalComponent<UnitsListProps> = (props) => {
 				</div>
 			</>;
 
-			ret[unit.uid] = <Link
+			ret[unit.uid] = <a
 				class={ cn(style.UnitItem, !unit && style.Placeholder) }
 				href={ `/units/${unit.uid}` }
 			>
 				{ content }
-			</Link>;
+			</a>;
 		});
 		return ret;
 	}, [props.list]);
@@ -113,7 +114,7 @@ const UnitsBuffGrouped: FunctionalComponent<UnitsListProps> = (props) => {
 			</div>
 			<div class={ style.List }>
 				{ GroupKeys.map(g => <div>
-					<Link
+					<a
 						href={ `#${g}` }
 						onClick={ e => {
 							e.preventDefault();
@@ -130,7 +131,7 @@ const UnitsBuffGrouped: FunctionalComponent<UnitsListProps> = (props) => {
 								fallback={ g }
 							/> }
 						/>
-					</Link>
+					</a>
 				</div>) }
 			</div>
 		</div>

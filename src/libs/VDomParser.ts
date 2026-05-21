@@ -30,7 +30,7 @@ export default function ParseVDOM (el: Node): preact.ComponentChild {
 	const childs: preact.ComponentChild[] = [];
 	_el.childNodes.forEach(c => childs.push(ParseVDOM(c)));
 
-	return createElement(tag, attrs, childs.filter(x => x));
+	return createElement(tag, attrs, childs.filter(x => x !== null && x !== undefined));
 }
 
 export function TravelVDOM (node: preact.VNode, cb: (vdom: preact.VNode, parent: preact.VNode | undefined, depth: number) => void, parent?: preact.VNode, depth: number = 0): void {
