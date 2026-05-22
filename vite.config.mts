@@ -85,10 +85,13 @@ export default defineConfig(async ({ mode, command }) => {
 		const outs: DBHashType = {};
 		await Promise.all(list.map(async filePath => {
 			const name = strip_ext(path.relative(yamlDir, filePath).replace(/\\/g, "/"));
-			const hash = crypto.createHash("sha1")
-				.update(fs.readFileSync(filePath, "utf-8"))
-				.digest("hex")
-				.substring(0, 8);
+			const hasher = crypto.createHash("sha1")
+				.update(fs.readFileSync(filePath, "utf-8"));
+			if (/locale[\\/]/.test(filePath)) {
+				console.log(yellow(`    - ${filePath}`));
+				hasher.update(viteEnv.VITE_LOCALE_HASH_SEED ?? "");
+			}
+			const hash = hasher.digest("hex").substring(0, 8);
 
 			const parts = name.split("/");
 			let cursor = outs;
