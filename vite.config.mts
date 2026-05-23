@@ -88,7 +88,7 @@ export default defineConfig(async ({ mode, command }) => {
 			const hasher = crypto.createHash("sha1")
 				.update(fs.readFileSync(filePath, "utf-8"));
 			if (/locale[\\/]/.test(filePath)) {
-				console.log(yellow(`    - ${filePath}`));
+				// console.log(yellow(`    - ${filePath}`));
 				hasher.update(viteEnv.VITE_LOCALE_HASH_SEED ?? "");
 			}
 			const hash = hasher.digest("hex").substring(0, 8);
