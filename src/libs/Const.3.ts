@@ -872,6 +872,9 @@ export const ArtistLinks: Record<string, ArtistLinkType> = {
 		X: "https://x.com/Ru_BeeAna",
 		Pixiv: "https://www.pixiv.net/users/8930920",
 	},
+	"se_ol": {
+		X: "https://x.com/yeon30835559",
+	},
 	"Serin199": {
 		X: "https://x.com/serin199",
 		Pixiv: "https://www.pixiv.net/users/10410554",
