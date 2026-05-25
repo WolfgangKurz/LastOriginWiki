@@ -5443,7 +5443,7 @@ export default {
 			"3P_Rhea": "34c20ae8",
 			"3P_Salacia": "5845c721",
 			"3P_Satgat": "ab530d45",
-			"3P_ScissorsLise": "f4ece288",
+			"3P_ScissorsLise": "ae85b32a",
 			"3P_SnowFeather": "7d9b37f5",
 			"3P_Sowan": "70b54a42",
 			"3P_Titania": "da716f2c",
