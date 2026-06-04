@@ -47,6 +47,7 @@ const FaceTypeTable: Partial<Record<FaceTypeKey, string>> = {
 	"HAPPYGL": "HappyGL",
 	"EMBARRASSGL": "EmbarrassGL",
 	"SADGL1": "SadGL1",
+	"SULLEN": "Sullen",
 };
 
 export const FaceTable: Record<FACETYPE, string> = (() => {

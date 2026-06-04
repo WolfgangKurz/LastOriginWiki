@@ -812,6 +812,22 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 								? <Locale raw={ false } k="BUFFEFFECT_BY_MAX_HP" />
 								: <Locale raw={ false } k="BUFFEFFECT_BY_HP" />,
 						] } />;
+					case BUFFEFFECT_TYPE.ADJUST_AP_ACTIVE_SKILL_1: // 148
+						return <Locale raw={ false } k="BUFFTYPE_ADJUST_AP_ACTIVE_SKILL" p={ [1] } />;
+					case BUFFEFFECT_TYPE.ADJUST_AP_ACTIVE_SKILL_2: // 149
+						return <Locale raw={ false } k="BUFFTYPE_ADJUST_AP_ACTIVE_SKILL" p={ [2] } />;
+					case BUFFEFFECT_TYPE.BUFF_DISALLOW_SPECIFIC: // 150
+						return <Locale
+							raw={ false }
+							k="BUFFTYPE_BUFF_DISALLOW_SPECIFIC"
+							p={ [<Locale raw={ false } k="BUFFEFFECT_ATTR_PREFIX_0" />] }
+						/>;
+					case BUFFEFFECT_TYPE.ENUM_DISALLOW_SPECIFIC: // 151
+						return <Locale
+							raw={ false }
+							k="BUFFTYPE_BUFF_DISALLOW_SPECIFIC"
+							p={ [<Locale raw={ false } k="BUFFEFFECT_ATTR_PREFIX_6" />] }
+						/>;
 				}
 				return <>{ type }</>;
 			})() }
@@ -1696,9 +1712,14 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				return <Locale raw={ false } k="BUFFEFFECT_GUARDPIERCE_APPLY" />;
 			return <Locale raw={ false } k="BUFFEFFECT_GUARDPIERCE_NO_APPLY" />;
 		}
-		else if ("buff_disallow" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_BUFF_DISALLOW" />;
-		else if ("wide" in stat) {
+		else if ("disallow" in stat) {
+			if (stat.disallow === "all")
+				return <Locale raw={ false } k="BUFFEFFECT_BUFF_DISALLOW" />;
+			else
+				return <Locale raw={ false } k="BUFFEFFECT_BUFF_DISALLOW_SPECIFIC" p={ [
+					getBuffEffectTypeText(stat.type, stat.attr),
+				] } />;
+		} else if ("wide" in stat) {
 			return <Locale
 				raw={ false }
 				k={ `BUFFEFFECT_WIDE_${stat.wide.type.toUpperCase()}_RATIO` }

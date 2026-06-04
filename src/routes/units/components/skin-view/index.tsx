@@ -13,7 +13,6 @@ import { cn } from "@/libs/Class";
 import { render2DModel } from "./2DModelRenderer";
 
 import Locale from "@/components/locale";
-import PopupBase from "@/components/popup/base";
 import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import MergedVideo from "@/components/merged-video";
@@ -440,6 +439,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 									style.DownloadContent,
 									style.ToggleButton,
 									downloadPlusCameraBoundary && style.Active,
+									"text-light",
 								) }
 								href="#"
 								onClick={ e => {

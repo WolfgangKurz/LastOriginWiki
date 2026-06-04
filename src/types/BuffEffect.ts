@@ -154,6 +154,8 @@ export enum BUFFEFFECT_TYPE {
 	RATIO_DMG_TARGET_CURRENT_HP = 147,
 	ADJUST_AP_ACTIVE_SKILL_1 = 148,
 	ADJUST_AP_ACTIVE_SKILL_2 = 149,
+	BUFF_DISALLOW_SPECIFIC = 150,
+	ENUM_DISALLOW_SPECIFIC = 151,
 }
 
 export type BuffEffect = BuffEffect_Base & {
@@ -492,9 +494,15 @@ interface BuffEffect_GuardPierceApply {
 	guardpierce_apply: boolean;
 }
 
-interface BuffEffect_BuffDisallow {
-	buff_disallow: true;
+interface BuffEffect_BuffDisallow_All {
+	disallow: "all";
 }
+interface BuffEffect_BuffDisallow_Type {
+	disallow: "type";
+	attr: BUFF_ATTR_TYPE;
+	value: BUFFEFFECT_TYPE;
+}
+type BuffEffect_BuffDisallow = BuffEffect_BuffDisallow_All | BuffEffect_BuffDisallow_Type;
 
 interface BuffEffect_Wide {
 	wide: {
