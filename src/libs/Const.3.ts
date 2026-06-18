@@ -957,6 +957,10 @@ export const ArtistLinks: Record<string, ArtistLinkType> = {
 		X: "https://x.com/Retsuna_Blue",
 		Pixiv: "https://www.pixiv.net/users/59560",
 	},
+	"赤魂(AkaDama2010RB15)": {
+		X: "https://x.com/AkaDama2010RB15",
+		Pixiv: "https://www.pixiv.net/users/23787",
+	},
 	"朝凪(Asanagi)": {
 		X: "https://x.com/Victim_Girls",
 		Pixiv: "https://www.pixiv.net/users/355065",

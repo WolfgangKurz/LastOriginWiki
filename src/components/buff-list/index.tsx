@@ -451,7 +451,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				</div> }>
 					<span class={ cn("SubBadge", style.SubBadge, style.DetailedBadge, color && `text-${color}`) }>
 						{ attr }
-						<span class="badge bg-dark ms-1" data-type="buff-uid">
+						<span class="badge bg-dark ms-0" data-type="buff-uid">
 							{ uids }
 						</span>
 						{ name || "???" }
@@ -1307,13 +1307,18 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					raw={ false }
 					k="BUFFTRIGGER_APPLY_ONE_OF"
 					p={ [<>{
-						trigger.apply_one_of.map(name =>
+						trigger.apply_one_of.map(row => <>
 							<span class={ cn("SubBadge", style.SubBadge, style.Narrow) }>
-								<span data-type="buff-uid" class="badge bg-dark">
-									{ getBuffUid(props.uid, name) }
+								<span data-type="buff-uid" class="badge bg-dark ms-1 me-1">
+									{ getBuffUid(props.uid, row.key) }
 								</span>
-								<Locale raw={ false } k={ name } />
-							</span>)
+								<Locale raw={ false } k={ row.key } />
+
+								<span data-type="buff-ratio" class="badge bg-success ms-1 me-0">
+									{ nsignedValue({ base: row.ratio, per: 0 }, 0, true) }%
+								</span>
+							</span>
+						</>)
 							.gap("・")
 					}</>
 					] } />;
@@ -1782,7 +1787,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		} else if ("rounds" in erase) {
 			if (erase.rounds === 0) return <></>;
 			return <Locale raw={ false } k="BUFFERASE_ROUND" p={ [erase.rounds] } />;
-		}
+		} else if ("preserve" in erase)
+			return <Locale raw={ false } k="BUFFERASE_PRESERVE" />;
+
 		return <Locale raw={ false } k="BUFFERASE_PERMANENT" />;
 	}
 	function getTargetText (body: ACTOR_BODY_TYPE[], cls: ACTOR_CLASS[], role: ROLE_TYPE[], target: TARGET_TYPE): preact.VNode {
