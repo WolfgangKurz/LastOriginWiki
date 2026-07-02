@@ -78,6 +78,12 @@ export default class DialogObject extends PIXI.Container {
 					case DIALOG_SPEAKER.CENTER:
 						this.charDisp.position.set(this.WIDTH / 2 - 340 / 2, -17);
 						break;
+					case DIALOG_SPEAKER.LEFT_CENTER:
+						this.charDisp.position.set(this.WIDTH / 4 - 68, -17);
+						break;
+					case DIALOG_SPEAKER.RIGHT_CENTER:
+						this.charDisp.position.set(this.WIDTH * 3 / 4 - 272, -17);
+						break;
 				}
 
 				if (!prev)
