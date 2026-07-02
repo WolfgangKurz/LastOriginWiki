@@ -20,7 +20,7 @@ const Changelog: FunctionalComponent = () => <>
 			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
 		</> }
 		skin={ <>
-			<li>전투원 <BY>그레이브 송</BY>의 스킨 <BR>가르DEAD or ALIVE : 인기 스트리머 전용 의상</BR>의 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>그레이브 송</BY>의 스킨 <BR>DEAD or ALIVE : 인기 스트리머 전용 의상</BR>의 정보가 추가되었습니다.</li>
 			<li>전투원 <BY>스트롱홀드</BY>의 스킨 <BR>오르카 기술부 연구실적</BR>의 정보가 추가되었습니다.</li>
 		</> }
 		dialogue={ <>
