@@ -1091,5 +1091,26 @@ const MapPosition: MapPositionType = {
 			"EV1-4EX": [4, 2],
 		},
 	},
+	Ev40: {
+		1: {
+			"EV1-1": [0, 0],
+			"EV1-2": [0.8, 0],
+			"EV1-3": [1.6, 0],
+			"EV1-4": [2.4, 0],
+			"EV1-5": [3.2, 0],
+			"EV1-6": [4, 0],
+			"EV1-7": [4.8, 0],
+
+			"EV1-1EX": [0, 1, false],
+			"EV1-2EX": [0.8, 1],
+			"EV1-3EX": [1.6, 1],
+			"EV1-4EX": [2.4, 1],
+
+			"EV1-1EXH": [0, 2, false],
+			"EV1-2EXH": [0.8, 2],
+			"EV1-3EXH": [1.6, 2],
+			"EV1-4EXH": [2.4, 2],
+		},
+	},
 };
 export default MapPosition;

@@ -35,6 +35,18 @@ promotions:
         count: 250
       - id: RobotParts_ExParts
         count: 50
+  - to: 5
+    level: 90
+    favor: "100"
+    req:
+      - id: Consumable_OriginDustAdv
+        count: 450
+      - id: Consumable_OriginDustSp
+        count: 150
+      - id: Special_Module
+        count: 100
+      - id: RobotParts_HeavyWeapon
+        count: 150
 lvLimits:
   - level: 101
     items:
@@ -507,16 +519,16 @@ stat:
       ice: 0
       lightning: 0
   - HP:
-      - 237
-      - 2181.36
+      - 287
+      - 2231.36
     ATK:
-      - 65
-      - 695.63
+      - 99
+      - 729.63
     DEF:
-      - 20
-      - 220.97
-    SPD: 4.05
-    CRI: 6.5
+      - 65
+      - 265.97
+    SPD: 4
+    CRI: 10
     ACC: 140
     EVA: 10
     Resist:
@@ -527,32 +539,32 @@ stat:
       - 387
       - 2331.36
     ATK:
-      - 104
-      - 734.63
+      - 149
+      - 779.63
     DEF:
-      - 45
-      - 245.97
-    SPD: 4.1
-    CRI: 7.5
+      - 115
+      - 315.97
+    SPD: 4.05
+    CRI: 15
     ACC: 145
-    EVA: 12.5
+    EVA: 10
     Resist:
       fire: 0
       ice: 0
       lightning: 0
   - HP:
-      - 587
-      - 2531.36
+      - 487
+      - 2431.36
     ATK:
-      - 159
-      - 789.63
+      - 199
+      - 829.63
     DEF:
-      - 75
-      - 275.97
-    SPD: 4.15
-    CRI: 10
+      - 215
+      - 415.97
+    SPD: 4.1
+    CRI: 20
     ACC: 150
-    EVA: 15
+    EVA: 10
     Resist:
       fire: 0
       ice: 0
@@ -748,6 +760,8 @@ source:
     - Ev:Ev35:EV2-3
   - - Ev:Ev36:EV1-4EX
   - - Ev:Ev37:EV2-1EX
+  - - Ev:Ev40:EV1-3EX
+    - Ev:Ev40:EV1-3EXH
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -755,7 +769,7 @@ research: false
 skills:
   "1":
     key: "1"
-    icon: SelfDefDeBuff
+    icon: AntiArmorShot
     target: enemy
     delayed: false
     target_ground: false
@@ -772,9 +786,9 @@ skills:
         - 8
         - 9
       data:
-        - rate: 1.135
+        - rate: 1.14
           type: 0
-          range: 3
+          range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -800,31 +814,31 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_DEF_DOWN
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
-                  attr: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 3
-                    defense:
-                      base: -25%
-                      per: -1.25%
+                    type: 58
+                    penetration:
+                      base: 15%
+                      per: 1.5%
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_2
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
-                  attr: 1
+                    level: "0.020000"
+                  attr: 0
                   erase:
                     rounds: 0
                   value:
@@ -833,14 +847,19 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_12
-              on: criticaled
+            - key: Effect_PECS_DutchGirl_N_11
+              on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 48
+                    attr: 6
                 - false
               body:
                 - 0
@@ -857,10 +876,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_12_1
+                    desc: Effect_PECS_DutchGirl_N_11_1
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -869,13 +888,54 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.23
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.254
           type: 0
-          range: 3
+          range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -901,31 +961,31 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_DEF_DOWN
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
-                  attr: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 3
-                    defense:
-                      base: -25%
-                      per: -1.25%
+                    type: 58
+                    penetration:
+                      base: 15%
+                      per: 1.5%
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_2
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
-                  attr: 1
+                    level: "0.020000"
+                  attr: 0
                   erase:
                     rounds: 0
                   value:
@@ -934,14 +994,19 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_12
-              on: criticaled
+            - key: Effect_PECS_DutchGirl_N_11
+              on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 48
+                    attr: 6
                 - false
               body:
                 - 0
@@ -958,10 +1023,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_12_1
+                    desc: Effect_PECS_DutchGirl_N_11_1
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -970,13 +1035,54 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.325
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.368
           type: 0
-          range: 3
+          range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -1002,31 +1108,31 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_DEF_DOWN
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
-                  attr: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 3
-                    defense:
-                      base: -25%
-                      per: -1.25%
+                    type: 58
+                    penetration:
+                      base: 15%
+                      per: 1.5%
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_2
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
-                  attr: 1
+                    level: "0.020000"
+                  attr: 0
                   erase:
                     rounds: 0
                   value:
@@ -1035,14 +1141,19 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_12
-              on: criticaled
+            - key: Effect_PECS_DutchGirl_N_11
+              on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 48
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1059,10 +1170,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_12_1
+                    desc: Effect_PECS_DutchGirl_N_11_1
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1071,13 +1182,54 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.42
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.482
           type: 0
-          range: 3
+          range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -1103,31 +1255,31 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_DEF_DOWN
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
-                  attr: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 3
-                    defense:
-                      base: -25%
-                      per: -1.25%
+                    type: 58
+                    penetration:
+                      base: 15%
+                      per: 1.5%
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_2
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
-                  attr: 1
+                    level: "0.020000"
+                  attr: 0
                   erase:
                     rounds: 0
                   value:
@@ -1136,14 +1288,19 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_12
-              on: criticaled
+            - key: Effect_PECS_DutchGirl_N_11
+              on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 48
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1160,10 +1317,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_12_1
+                    desc: Effect_PECS_DutchGirl_N_11_1
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1172,13 +1329,54 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.515
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.596
           type: 0
-          range: 3
+          range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -1204,31 +1402,31 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_DEF_DOWN
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
-                  attr: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 3
-                    defense:
-                      base: -25%
-                      per: -1.25%
+                    type: 58
+                    penetration:
+                      base: 15%
+                      per: 1.5%
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_2
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
-                  attr: 1
+                    level: "0.020000"
+                  attr: 0
                   erase:
                     rounds: 0
                   value:
@@ -1237,14 +1435,19 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_12
-              on: criticaled
+            - key: Effect_PECS_DutchGirl_N_11
+              on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 48
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1261,10 +1464,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_12_1
+                    desc: Effect_PECS_DutchGirl_N_11_1
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1273,13 +1476,54 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.61
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.71
           type: 0
-          range: 3
+          range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -1305,31 +1549,31 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_DEF_DOWN
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
-                  attr: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 3
-                    defense:
-                      base: -25%
-                      per: -1.25%
+                    type: 58
+                    penetration:
+                      base: 15%
+                      per: 1.5%
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_2
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
-                  attr: 1
+                    level: "0.020000"
+                  attr: 0
                   erase:
                     rounds: 0
                   value:
@@ -1338,14 +1582,19 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_12
-              on: criticaled
+            - key: Effect_PECS_DutchGirl_N_11
+              on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 48
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1362,10 +1611,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_12_1
+                    desc: Effect_PECS_DutchGirl_N_11_1
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1374,13 +1623,54 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.705
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.824
           type: 0
-          range: 3
+          range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -1406,31 +1696,31 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_DEF_DOWN
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
-                  attr: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 3
-                    defense:
-                      base: -25%
-                      per: -1.25%
+                    type: 58
+                    penetration:
+                      base: 15%
+                      per: 1.5%
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_2
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
-                  attr: 1
+                    level: "0.020000"
+                  attr: 0
                   erase:
                     rounds: 0
                   value:
@@ -1439,14 +1729,19 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_12
-              on: criticaled
+            - key: Effect_PECS_DutchGirl_N_11
+              on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 48
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1463,10 +1758,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_12_1
+                    desc: Effect_PECS_DutchGirl_N_11_1
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1475,13 +1770,54 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.8
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.938
           type: 0
-          range: 3
+          range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -1507,31 +1843,31 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_DEF_DOWN
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
-                  attr: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 3
-                    defense:
-                      base: -25%
-                      per: -1.25%
+                    type: 58
+                    penetration:
+                      base: 15%
+                      per: 1.5%
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_2
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
-                  attr: 1
+                    level: "0.020000"
+                  attr: 0
                   erase:
                     rounds: 0
                   value:
@@ -1540,14 +1876,19 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_12
-              on: criticaled
+            - key: Effect_PECS_DutchGirl_N_11
+              on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 48
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1564,10 +1905,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_12_1
+                    desc: Effect_PECS_DutchGirl_N_11_1
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1576,13 +1917,54 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.895
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.052
           type: 0
-          range: 3
+          range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -1608,31 +1990,31 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_DEF_DOWN
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
-                  attr: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 3
-                    defense:
-                      base: -25%
-                      per: -1.25%
+                    type: 58
+                    penetration:
+                      base: 15%
+                      per: 1.5%
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_2
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
-                  attr: 1
+                    level: "0.020000"
+                  attr: 0
                   erase:
                     rounds: 0
                   value:
@@ -1641,14 +2023,19 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_12
-              on: criticaled
+            - key: Effect_PECS_DutchGirl_N_11
+              on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 48
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1665,10 +2052,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_12_1
+                    desc: Effect_PECS_DutchGirl_N_11_1
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1677,13 +2064,54 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.99
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.166
           type: 0
-          range: 3
+          range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -1709,31 +2137,31 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_DEF_DOWN
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
-                  attr: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 3
-                    defense:
-                      base: -25%
-                      per: -1.25%
+                    type: 58
+                    penetration:
+                      base: 15%
+                      per: 1.5%
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_1_2
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
-                  attr: 1
+                    level: "0.020000"
+                  attr: 0
                   erase:
                     rounds: 0
                   value:
@@ -1742,14 +2170,19 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_12
-              on: criticaled
+            - key: Effect_PECS_DutchGirl_N_11
+              on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 48
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1766,10 +2199,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_12_1
+                    desc: Effect_PECS_DutchGirl_N_11_1
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1778,8 +2211,49 @@ skills:
                     type: 83
                     damage_add:
                       base: 20%
-                      per: 1%
-                  overlap: 0
+                      per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
     values:
@@ -1795,52 +2269,65 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_DEF_DOWN
+        - - icon: BuffIcon_DEF_PIERCE_UP
             desc:
               desc: Effect_PECS_DutchGirl_N_1_1
               type: 1
-              value: "-0.250000"
-              level: "-0.012500"
-            base: -0.25
-            per: -0.0125
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
             chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_PECS_DutchGirl_N_1_2
               type: 1
               value: "0.200000"
-              level: "0.010000"
+              level: "0.020000"
             base: 0.2
-            per: 0.01
+            per: 0.02
             chance: 0
           - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_PECS_DutchGirl_N_12_1
+              desc: Effect_PECS_DutchGirl_N_11_1
               type: 1
               value: "0.200000"
-              level: "0.010000"
+              level: "0.020000"
             base: 0.2
-            per: 0.01
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_PECS_DutchGirl_N_35_1
+              type: 1
+              value: "76"
+              level: "0"
+            base: 76
+            per: 0
             chance: 1
     desc:
       KR: |-
-        드릴을 발사해 <dmg elem="physics" />를 주며, 3라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 낮춥니다.
-        치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+        드릴을 발사해 단일 대상에 <dmg elem="physics" />를 줍니다.
+        대상의 방어력을 일정 비율 무시합니다. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>
+        <sec typ="cond">적중 대상이 <buff typ="VULNERABLE" /> 받는 피해 증가 상태일 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
       EN: |-
-        drill fires <dmg elem="physics" /> deals and, 3 rounds, target's <sec typ="buff"><buff typ="DEF_DOWN" /> Defense <val idx="0" r /></sec>reduces.
-        On critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
+        Fires a drill to deal <dmg elem="physics" /> to a single target.
+        Ignores a certain percentage of the target's DEF. <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="0" r /></sec>
+        <sec typ="cond">If the hit target has <buff typ="VULNERABLE" /> Increased Damage Taken</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="2" r /></sec> increases.
       JP: |-
-        ドリルを 発射して<dmg elem="physics" />を 与え、、 3ラウンドの間 対象の <sec typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を低下させます。
-        クリティカル時、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
+        ドリルを発射し、単一対象に<dmg elem="physics" />を与えます。
+        対象の防御力を一定割合無視します。<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>
+        <sec typ="cond">命中対象が<buff typ="VULNERABLE" /> 被ダメージ増加状態の場合</sec>、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="2" r /></sec>が増加します。
       TC: |-
-        鑽頭 發射 <dmg elem="physics" /> 造成，並 3回合內 目標的 <sec typ="buff"><buff typ="DEF_DOWN" /> 防禦力 <val idx="0" r /></sec>降低。
-        暴擊時， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
+        發射鑽頭，對單一目標造成<dmg elem="physics" />。
+        以一定比例無視目標的防禦力。<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec>
+        <sec typ="cond">若命中目標處於<buff typ="VULNERABLE" /> 受到傷害增加狀態</sec>，<sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="2" r /></sec>增加。
   "2":
     key: "2"
     icon: BombActive
     target: enemy
     delayed: false
-    target_ground: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -1854,355 +2341,7 @@ skills:
         - 8
         - 9
       data:
-        - rate: 0.995
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,1,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: true
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_PECS_DutchGirl_N_2
-              on: enemy_killed
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_2_1
-                    type: 1
-                    value: "0.750000"
-                    level: "0.037500"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 70
-                    fixed_damage:
-                      base: 75%
-                      per: 3.75%
-                  overlap: 3
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_14
-              on: criticaled
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_PECS_DutchGirl_N_4
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_VULNERABLE
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_14_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 20%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-        - rate: 1.085
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,1,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: true
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_PECS_DutchGirl_N_2
-              on: enemy_killed
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_2_1
-                    type: 1
-                    value: "0.750000"
-                    level: "0.037500"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 70
-                    fixed_damage:
-                      base: 75%
-                      per: 3.75%
-                  overlap: 3
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_14
-              on: criticaled
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_PECS_DutchGirl_N_4
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_VULNERABLE
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_14_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 20%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-        - rate: 1.175
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,1,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: true
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_PECS_DutchGirl_N_2
-              on: enemy_killed
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_2_1
-                    type: 1
-                    value: "0.750000"
-                    level: "0.037500"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 70
-                    fixed_damage:
-                      base: 75%
-                      per: 3.75%
-                  overlap: 3
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_14
-              on: criticaled
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_PECS_DutchGirl_N_4
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_VULNERABLE
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_14_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 20%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-        - rate: 1.265
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,1,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: true
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_PECS_DutchGirl_N_2
-              on: enemy_killed
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_2_1
-                    type: 1
-                    value: "0.750000"
-                    level: "0.037500"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 70
-                    fixed_damage:
-                      base: 75%
-                      per: 3.75%
-                  overlap: 3
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_14
-              on: criticaled
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_PECS_DutchGirl_N_4
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_VULNERABLE
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_14_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 20%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-        - rate: 1.355
+        - rate: 1.01
           type: 0
           range: 4
           ap: 7
@@ -2215,7 +2354,7 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_PECS_DutchGirl_N_2
-              on: enemy_killed
+              on: attack_success
               if:
                 - false
                 - false
@@ -2226,45 +2365,6 @@ skills:
                 - 0
                 - 1
                 - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_2_1
-                    type: 1
-                    value: "0.750000"
-                    level: "0.037500"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 70
-                    fixed_damage:
-                      base: 75%
-                      per: 3.75%
-                  overlap: 3
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_14
-              on: criticaled
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_PECS_DutchGirl_N_4
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
               role:
                 - 0
                 - 1
@@ -2273,9 +2373,9 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_14_1
+                    desc: Effect_PECS_DutchGirl_N_2_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.150000"
                     level: "0.010000"
                   attr: 1
                   erase:
@@ -2284,12 +2384,106 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
+                      base: 15%
                       per: 1%
                   overlap: 4
-              maxStack: 1
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_2_2
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
-        - rate: 1.445
+            - key: Effect_PECS_DutchGirl_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.111
           type: 0
           range: 4
           ap: 7
@@ -2302,7 +2496,7 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_PECS_DutchGirl_N_2
-              on: enemy_killed
+              on: attack_success
               if:
                 - false
                 - false
@@ -2313,45 +2507,6 @@ skills:
                 - 0
                 - 1
                 - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_2_1
-                    type: 1
-                    value: "0.750000"
-                    level: "0.037500"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 70
-                    fixed_damage:
-                      base: 75%
-                      per: 3.75%
-                  overlap: 3
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_14
-              on: criticaled
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_PECS_DutchGirl_N_4
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
               role:
                 - 0
                 - 1
@@ -2360,9 +2515,9 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_14_1
+                    desc: Effect_PECS_DutchGirl_N_2_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.150000"
                     level: "0.010000"
                   attr: 1
                   erase:
@@ -2371,12 +2526,106 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
+                      base: 15%
                       per: 1%
                   overlap: 4
-              maxStack: 1
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_2_2
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
-        - rate: 1.535
+            - key: Effect_PECS_DutchGirl_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.212
           type: 0
           range: 4
           ap: 7
@@ -2389,7 +2638,7 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_PECS_DutchGirl_N_2
-              on: enemy_killed
+              on: attack_success
               if:
                 - false
                 - false
@@ -2400,45 +2649,6 @@ skills:
                 - 0
                 - 1
                 - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_2_1
-                    type: 1
-                    value: "0.750000"
-                    level: "0.037500"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 70
-                    fixed_damage:
-                      base: 75%
-                      per: 3.75%
-                  overlap: 3
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_14
-              on: criticaled
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_PECS_DutchGirl_N_4
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
               role:
                 - 0
                 - 1
@@ -2447,9 +2657,9 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_14_1
+                    desc: Effect_PECS_DutchGirl_N_2_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.150000"
                     level: "0.010000"
                   attr: 1
                   erase:
@@ -2458,12 +2668,106 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
+                      base: 15%
                       per: 1%
                   overlap: 4
-              maxStack: 1
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_2_2
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
-        - rate: 1.625
+            - key: Effect_PECS_DutchGirl_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.313
           type: 0
           range: 4
           ap: 7
@@ -2476,7 +2780,7 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_PECS_DutchGirl_N_2
-              on: enemy_killed
+              on: attack_success
               if:
                 - false
                 - false
@@ -2487,45 +2791,6 @@ skills:
                 - 0
                 - 1
                 - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_2_1
-                    type: 1
-                    value: "0.750000"
-                    level: "0.037500"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 70
-                    fixed_damage:
-                      base: 75%
-                      per: 3.75%
-                  overlap: 3
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_14
-              on: criticaled
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_PECS_DutchGirl_N_4
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
               role:
                 - 0
                 - 1
@@ -2534,9 +2799,9 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_14_1
+                    desc: Effect_PECS_DutchGirl_N_2_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.150000"
                     level: "0.010000"
                   attr: 1
                   erase:
@@ -2545,12 +2810,106 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
+                      base: 15%
                       per: 1%
                   overlap: 4
-              maxStack: 1
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_2_2
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
-        - rate: 1.715
+            - key: Effect_PECS_DutchGirl_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.414
           type: 0
           range: 4
           ap: 7
@@ -2563,7 +2922,7 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_PECS_DutchGirl_N_2
-              on: enemy_killed
+              on: attack_success
               if:
                 - false
                 - false
@@ -2574,45 +2933,6 @@ skills:
                 - 0
                 - 1
                 - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_2_1
-                    type: 1
-                    value: "0.750000"
-                    level: "0.037500"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 70
-                    fixed_damage:
-                      base: 75%
-                      per: 3.75%
-                  overlap: 3
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_14
-              on: criticaled
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_PECS_DutchGirl_N_4
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
               role:
                 - 0
                 - 1
@@ -2621,9 +2941,9 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_14_1
+                    desc: Effect_PECS_DutchGirl_N_2_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.150000"
                     level: "0.010000"
                   attr: 1
                   erase:
@@ -2632,12 +2952,106 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
+                      base: 15%
                       per: 1%
                   overlap: 4
-              maxStack: 1
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_2_2
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
-        - rate: 1.805
+            - key: Effect_PECS_DutchGirl_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.515
           type: 0
           range: 4
           ap: 7
@@ -2650,7 +3064,7 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_PECS_DutchGirl_N_2
-              on: enemy_killed
+              on: attack_success
               if:
                 - false
                 - false
@@ -2661,45 +3075,6 @@ skills:
                 - 0
                 - 1
                 - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_2_1
-                    type: 1
-                    value: "0.750000"
-                    level: "0.037500"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 70
-                    fixed_damage:
-                      base: 75%
-                      per: 3.75%
-                  overlap: 3
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_DutchGirl_N_14
-              on: criticaled
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_PECS_DutchGirl_N_4
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
               role:
                 - 0
                 - 1
@@ -2708,9 +3083,9 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_14_1
+                    desc: Effect_PECS_DutchGirl_N_2_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.150000"
                     level: "0.010000"
                   attr: 1
                   erase:
@@ -2719,10 +3094,672 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
+                      base: 15%
                       per: 1%
                   overlap: 4
-              maxStack: 1
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_2_2
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.616
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,1,0,1,1,1,0,1,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_PECS_DutchGirl_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_2_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_2_2
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.717
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,1,0,1,1,1,0,1,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_PECS_DutchGirl_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_2_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_2_2
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.818
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,1,0,1,1,1,0,1,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_PECS_DutchGirl_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_2_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_2_2
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.919
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,1,0,1,1,1,0,1,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_PECS_DutchGirl_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_2_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_2_2
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_35
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_3
+                      - Effect_PECS_DutchGirl_N_31
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_35_1
+                    type: 1
+                    value: "76"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 76
+                      target: 0
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
     values:
       index:
@@ -2737,44 +3774,62 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_PhyATK_UP
+        - - icon: BuffIcon_VULNERABLE
             desc:
               desc: Effect_PECS_DutchGirl_N_2_1
               type: 1
-              value: "0.750000"
-              level: "0.037500"
-            base: 0.75
-            per: 0.0375
-            chance: 1
-          - icon: BuffIcon_VULNERABLE
-            desc:
-              desc: Effect_PECS_DutchGirl_N_14_1
-              type: 1
-              value: "0.200000"
+              value: "0.150000"
               level: "0.010000"
-            base: 0.2
+            base: 0.15
             per: 0.01
+            chance: 1
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_PECS_DutchGirl_N_2_2
+              type: 1
+              value: "36"
+              level: "0"
+            base: 36
+            per: 0
+            chance: 0
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_PECS_DutchGirl_N_21_1
+              type: 1
+              value: "36"
+              level: "0"
+            base: 36
+            per: 0
+            chance: 1
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_PECS_DutchGirl_N_35_1
+              type: 1
+              value: "76"
+              level: "0"
+            base: 76
+            per: 0
             chance: 1
     desc:
       KR: |-
-        굴착용 폭탄으로 대상과 대상 주변에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
-        적이 처치된 경우 연쇄 폭발로 주변에 <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력 <val idx="0" r signless /> 고정 물리 피해</sec>를 줍니다.
-        <sec>스킬 레벨 5부터 범위가 증가합니다.</sec>
+        굴착용 폭탄으로 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 대상이 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="0" r /></sec>가 증가합니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
       EN: |-
-        excavation-use by bomb as targetand target nearby to <sec typ="attr">Ignore Protection</sec> <dmg elem="physics" />.
-        enemy killed case chain explosion as nearby to <sec typ="dmg"><buff typ="PhyATK_UP" /> Attack <val idx="0" r signless /> fixed Physical damage</sec> deals.
-        <sec>From skill level 5, range increases.</sec>
+        Deals <sec typ="attr">protection-ignoring</sec> <dmg elem="physics" /> to the specified area with an excavation bomb.
+        <sec typ="cond">On hit</sec>, the target's <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="0" r /></sec> increases for 2 rounds.
+        <sec typ="cond">On critical hit</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Damage Taken Reduction effect</sec>.
       JP: |-
-        グウルチアクヨン プオクトアンで 対象と 対象 周辺に <sec typ="attr">保護無視</sec><dmg elem="physics" />を与えます。
-        敵が 撃破された 場合 ヨンスウェ プオクブアルで 周辺に <sec typ="dmg"><buff typ="PhyATK_UP" /> 攻撃力 <val idx="0" r signless /> 固定物理ダメージ</sec>を 与えます。
-        <sec>スキルレベル5から 範囲が増加します。</sec>
+        掘削用爆弾で指定範囲に<sec typ="attr">保護無視</sec>の<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、2ラウンドの間、対象が受ける<sec typ="buff"><buff typ="VULNERABLE" /> ダメージ <val idx="0" r /></sec>が増加します。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 被ダメージ減少効果を解除</sec>します。
       TC: |-
-        挖掘用 炸彈以 目標與 目標 周圍於 <sec typ="attr">無視保護</sec> 造成<dmg elem="physics" />。
-        敵人 擊殺已 情況 連鎖 爆炸以 周圍於 <sec typ="dmg"><buff typ="PhyATK_UP" /> 攻擊力 <val idx="0" r signless /> 固定物理傷害</sec> 造成。
-        <sec>自技能等級5起 範圍增加。</sec>
+        使用挖掘用炸彈對指定範圍造成<sec typ="attr">無視保護</sec>的<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，目標的<sec typ="buff"><buff typ="VULNERABLE" /> 受到傷害 <val idx="0" r /></sec>增加，持續2回合。
+        <sec typ="cond">暴擊時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 受到傷害減少效果</sec>。
   "3":
     key: "3"
-    icon: P.SelfAtkBuff
+    icon: P.SelfDefBuff
     target: team
     delayed: false
     target_ground: false
@@ -2807,7 +3862,12 @@ skills:
             - key: Effect_PECS_DutchGirl_N_3
               on: round
               if:
-                - false
+                - on:
+                    target: self
+                    func: UNFILLED
+                    select:
+                      - Effect_PECS_DutchGirl_N_51
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2822,25 +3882,9 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_DutchGirl_N_3_1
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 4
                 - icon: BuffIcon_CRITICAL_UP
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_3_2
+                    desc: Effect_PECS_DutchGirl_N_3_1
                     type: 1
                     value: "0.100000"
                     level: "0.005000"
@@ -2856,9 +3900,9 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_3_3
+                    desc: Effect_PECS_DutchGirl_N_3_2
                     type: 1
-                    value: "0.330000"
+                    value: "0.300000"
                     level: "0.030000"
                   attr: 0
                   erase:
@@ -2867,11 +3911,264 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 33%
+                      base: 30%
                       per: 3%
+                  overlap: 4
+                - icon: BuffIcon_DEBUFF_PERDOWN
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_3_3
+                    type: 1
+                    value: "0.250000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 91
+                    resist:
+                      type: debuff_perdown
+                      value:
+                        base: 25%
+                        per: 2%
+                  overlap: 4
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_3_4
+                    type: 1
+                    value: "0.250000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 36
+                    damage_reduce:
+                      base: 25%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_3_5
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 0
+                      target: 0
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_31
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_31_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_31_2
+                    type: 1
+                    value: "0.600000"
+                    level: "0.060000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 60%
+                      per: 6%
+                  overlap: 4
+                - icon: BuffIcon_DEBUFF_PERDOWN
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_31_3
+                    type: 1
+                    value: "0.500000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 91
+                    resist:
+                      type: debuff_perdown
+                      value:
+                        base: 50%
+                        per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_32
+              on:
+                attack_success: passive
+              if:
+                - on:
+                    target: self
+                    func: UNFILLED
+                    select:
+                      - Effect_PECS_DutchGirl_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_32_1
+                    type: 1
+                    value: "0.250000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: 25%
+                      per: 2%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_33
+              on:
+                attack_success: passive
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_33_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: 50%
+                      per: 4%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 81
+            - key: Effect_PECS_DutchGirl_N_34
+              on:
+                after: support
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_34_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: 50%
+                      per: 4%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 81
     values:
       index:
         - 0
@@ -2885,18 +4182,9 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_ATK_UP
+        - - icon: BuffIcon_CRITICAL_UP
             desc:
               desc: Effect_PECS_DutchGirl_N_3_1
-              type: 1
-              value: "0.150000"
-              level: "0.007500"
-            base: 0.15
-            per: 0.0075
-            chance: 1
-          - icon: BuffIcon_CRITICAL_UP
-            desc:
-              desc: Effect_PECS_DutchGirl_N_3_2
               type: 1
               value: "0.100000"
               level: "0.005000"
@@ -2905,24 +4193,117 @@ skills:
             chance: 1
           - icon: BuffIcon_DEF_PIERCE_UP
             desc:
-              desc: Effect_PECS_DutchGirl_N_3_3
+              desc: Effect_PECS_DutchGirl_N_3_2
               type: 1
-              value: "0.330000"
+              value: "0.300000"
               level: "0.030000"
-            base: 0.33
+            base: 0.3
             per: 0.03
             chance: 1
+          - icon: BuffIcon_DEBUFF_PERDOWN
+            desc:
+              desc: Effect_PECS_DutchGirl_N_3_3
+              type: 1
+              value: "0.250000"
+              level: "0.020000"
+            base: 0.25
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_PECS_DutchGirl_N_3_4
+              type: 1
+              value: "0.250000"
+              level: "0.020000"
+            base: 0.25
+            per: 0.02
+            chance: 0
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_PECS_DutchGirl_N_3_5
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_31_1
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_DEF_PIERCE_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_31_2
+              type: 1
+              value: "0.600000"
+              level: "0.060000"
+            base: 0.6
+            per: 0.06
+            chance: 1
+          - icon: BuffIcon_DEBUFF_PERDOWN
+            desc:
+              desc: Effect_PECS_DutchGirl_N_31_3
+              type: 1
+              value: "0.500000"
+              level: "0.040000"
+            base: 0.5
+            per: 0.04
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_PECS_DutchGirl_N_32_1
+              type: 1
+              value: "0.250000"
+              level: "0.020000"
+            base: 0.25
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_PECS_DutchGirl_N_33_1
+              type: 1
+              value: "0.500000"
+              level: "0.040000"
+            base: 0.5
+            per: 0.04
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_PECS_DutchGirl_N_34_1
+              type: 1
+              value: "0.500000"
+              level: "0.040000"
+            base: 0.5
+            per: 0.04
+            chance: 1
     desc:
-      KR: 채굴 레벨이 늘어, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
-      EN: mining level increases, <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> Defense Penetration <val idx="2" r /></sec> increases.
-      JP: チエグウル レベルが ンウルオ、 <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が増加します。
-      TC: 採礦 等級 增加， <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="2" r /></sec>增加。
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="2" r /></sec>가 증가합니다.
+        <sec typ="cond">공격 적중 시</sec>, 다음 <sec typ="important">1회</sec>에 한하여 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="8" r inv /></sec>가 감소합니다.
+        <sec typ="cond">치명타 발생 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 지정 보호 효과를 해제</sec>합니다.
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, this unit's <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical Rate <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="2" r /></sec> increases.
+        <sec typ="cond">When an attack hits</sec>, for the next <sec typ="important">1 instance</sec> only, this unit's <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="8" r inv /></sec> decreases.
+        <sec typ="cond">When a critical hit occurs</sec>, removes the target's <sec typ="buff"><buff typ="REMOVE_BUFF" /> Target Protection effect</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル率 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果耐性 <val idx="2" r /></sec>が増加します。
+        <sec typ="cond">攻撃命中時</sec>、次の<sec typ="important">1回</sec>に限り、自身が受ける<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージ <val idx="8" r inv /></sec>が減少します。
+        <sec typ="cond">クリティカル発生時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 指定保護効果を解除</sec>します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊率 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="2" r /></sec>增加。
+        <sec typ="cond">攻擊命中時</sec>，僅限接下來<sec typ="important">1次</sec>，自身<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到傷害 <val idx="8" r inv /></sec>減少。
+        <sec typ="cond">暴擊發生時</sec>，解除目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 指定保護效果</sec>。
   "4":
     key: "4"
-    icon: P.SelfDefBuff
+    icon: P.SelfAtkBuff
     target: team
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 4
     buffs:
       index:
@@ -2941,7 +4322,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
+          grid: 1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -2967,46 +4348,113 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
+                - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_4_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 20%
-                      per: 2%
+                    chance: 0%
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: 10%
+                        per: 1%
                   overlap: 4
-                - icon: BuffIcon_DEBUFF_PERDOWN
+                - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
                     desc: Effect_PECS_DutchGirl_N_4_2
                     type: 1
-                    value: "0.150000"
-                    level: "0.030000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 91
-                    resist:
-                      type: debuff_perdown
+                    chance: 0%
+                    type: 61
+                    damage_multiply:
+                      target: heavy
                       value:
-                        base: 15%
-                        per: 3%
+                        base: 10%
+                        per: 1%
                   overlap: 4
-                - icon: BuffIcon_TROOPER_DMG_UP
+                - icon: BuffIcon_SUPPORT_ATTACK
                   desc:
                     desc: Effect_PECS_DutchGirl_N_4_3
                     type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_4_4
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 1
+                    attack:
+                      base: 15%
+                      per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_41
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - enemy
+                      - light
+                    type:
+                      - 0
+                    count:
+                      - 0
+                      - 1
+                      - 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TROOPER_DMG_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_41_1
+                    type: 1
                     value: "0.100000"
-                    level: "0.005000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -3017,14 +4465,94 @@ skills:
                       target: light
                       value:
                         base: 10%
-                        per: 0.5%
+                        per: 1%
                   overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_42
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - enemy
+                      - light
+                    type:
+                      - 0
+                    count:
+                      - 3
+                      - 4
+                      - 5
+                      - 6
+                      - 7
+                      - 8
+                      - 9
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TROOPER_DMG_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_42_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_43
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - enemy
+                      - heavy
+                    type:
+                      - 1
+                    count:
+                      - 0
+                      - 1
+                      - 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_4_4
+                    desc: Effect_PECS_DutchGirl_N_43_1
                     type: 1
                     value: "0.100000"
-                    level: "0.005000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -3035,24 +4563,210 @@ skills:
                       target: heavy
                       value:
                         base: 10%
-                        per: 0.5%
+                        per: 1%
                   overlap: 4
-                - icon: BuffIcon_VULNERABLE
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_44
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - enemy
+                      - heavy
+                    type:
+                      - 1
+                    count:
+                      - 3
+                      - 4
+                      - 5
+                      - 6
+                      - 7
+                      - 8
+                      - 9
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_PECS_DutchGirl_N_4_5
+                    desc: Effect_PECS_DutchGirl_N_44_1
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
+                    level: "0.020000"
                   attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 48
-                    damage_increase:
-                      base: 20%
-                      per: 1%
+                    type: 61
+                    damage_multiply:
+                      target: heavy
+                      value:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_45
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_45_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_46
+              on: round
+              if:
+                - target:
+                    - Char_PECS_TommyWalker_N
+                    - Char_PECS_Drone_N
+                    - Char_PECS_Triaina_N
+                    - Char_PECS_Lumberjane_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_46_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_47
+              on:
+                after: support
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_47_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 15%
+                      per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_48
+              on:
+                attack_success: passive
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_DutchGirl_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_48_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 15%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3069,64 +4783,558 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_DAMAGE_REDUCE
+        - - icon: BuffIcon_TROOPER_DMG_UP
             desc:
               desc: Effect_PECS_DutchGirl_N_4_1
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_ARMORED_DMG_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_4_2
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_PECS_DutchGirl_N_4_3
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 0
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_4_4
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 0
+          - icon: BuffIcon_TROOPER_DMG_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_41_1
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_TROOPER_DMG_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_42_1
               type: 1
               value: "0.200000"
               level: "0.020000"
             base: 0.2
             per: 0.02
             chance: 1
-          - icon: BuffIcon_DEBUFF_PERDOWN
+          - icon: BuffIcon_ARMORED_DMG_UP
             desc:
-              desc: Effect_PECS_DutchGirl_N_4_2
-              type: 1
-              value: "0.150000"
-              level: "0.030000"
-            base: 0.15
-            per: 0.03
-            chance: 1
-          - icon: BuffIcon_TROOPER_DMG_UP
-            desc:
-              desc: Effect_PECS_DutchGirl_N_4_3
+              desc: Effect_PECS_DutchGirl_N_43_1
               type: 1
               value: "0.100000"
-              level: "0.005000"
+              level: "0.010000"
             base: 0.1
-            per: 0.005
+            per: 0.01
             chance: 1
           - icon: BuffIcon_ARMORED_DMG_UP
             desc:
-              desc: Effect_PECS_DutchGirl_N_4_4
-              type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_VULNERABLE
-            desc:
-              desc: Effect_PECS_DutchGirl_N_4_5
+              desc: Effect_PECS_DutchGirl_N_44_1
               type: 1
               value: "0.200000"
-              level: "0.010000"
+              level: "0.020000"
             base: 0.2
-            per: 0.01
-            chance: 0
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_PECS_DutchGirl_N_45_1
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_PECS_DutchGirl_N_46_1
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_47_1
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_48_1
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" /> 대 경장형 & 중장형 피해량 <val idx="2" r /></sec>가 증가하며 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="0" r inv /></sec>가 감소합니다.
-        해당 효과가 활성화 된 상태에서 경장 / 중장형 적에게 <sec typ="note">다이너마이트 웜</sec> 치명타 적중 시, 2라운드 동안 대상이 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" slot="2" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="ARMORED_DMG_UP" /> 대 경장형 / 중장형 피해량 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="cond">경장형 / 중장형 적 수가 3 이상일 경우</sec>, 각 효과 수치가 두 배로 증폭됩니다.
+        <sec typ="cond">라운드 개시 시</sec>, 범위 내 경장형 아군 및 <cmt t="골든 워커즈"><import name="GoldenWorkers" /></cmt> 소속 전투원의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>합니다.
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원 공격 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="10" r /></sec>가 증가합니다.
       EN: |-
-        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" /> Anti-Light & Anti-Heavy damage <val idx="2" r /></sec> increases and <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="0" r inv /></sec> decreases.
-        the effect and activation applied while in the state Light / Heavy-type to the enemy <sec typ="note">Dynamite Worm</sec> Critical On hit, 2 rounds target <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="1" slot="2" r /></sec> increases.
+        <sec typ="cond">At the start of the round</sec>, this unit's <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="ARMORED_DMG_UP" /> damage against Light / Heavy types <val idx="4" r /></sec> increases.
+        <sec typ="cond">If there are 3 or more Light / Heavy enemies</sec>, each effect value is amplified twofold.
+        <sec typ="cond">At the start of the round</sec>, performs <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> support attacks</sec> for Light-type allies within range and combatants affiliated with <cmt t="Golden Workers"><import name="GoldenWorkers" /></cmt>.
+        <sec typ="cond">When performing a <buff typ="SUPPORT_ATTACK" /> support attack</sec>, this unit's <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="10" r /></sec> increases for 2 rounds.
       JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 効果抵抗 <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" /> 対軽装型＆重装型ダメージ <val idx="2" r /></sec>が 増加し、 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="0" r inv /></sec>が減少します。
-        該当 効果が 有効化 された 状態で 軽装 / 重装型 敵に <sec typ="note">ダイナマイトワーム</sec> クリティカル 命中時、 2ラウンドの間 対象が <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" slot="2" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、自身の<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="ARMORED_DMG_UP" /> 対軽装型 / 重装型ダメージ量 <val idx="4" r /></sec>が増加します。
+        <sec typ="cond">軽装型 / 重装型の敵の数が3体以上の場合</sec>、各効果数値が2倍に増幅されます。
+        <sec typ="cond">ラウンド開始時</sec>、範囲内の軽装型の味方および<cmt t="ゴールデンワーカーズ"><import name="GoldenWorkers" /></cmt>所属戦闘員の<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃を支援</sec>します。
+        <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 支援攻撃時</sec>、2ラウンドの間、自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="10" r /></sec>が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="1" r /></sec> / <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="ARMORED_DMG_UP" /> 對輕裝型＆重裝型傷害 <val idx="2" r /></sec> 增加，並 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="0" r inv /></sec>減少。
-        該 效果 啟用 已 在狀態下 輕裝 / 重裝型 敵人給 <sec typ="note">炸藥蠕蟲</sec> 暴擊 命中時， 2回合內 目標 <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="1" slot="2" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，自身的<sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="ARMORED_DMG_UP" /> 對輕裝型 / 重裝型傷害量 <val idx="4" r /></sec>增加。
+        <sec typ="cond">若輕裝型 / 重裝型敵人數量為3名以上</sec>，各效果數值增幅為兩倍。
+        <sec typ="cond">回合開始時</sec>，對範圍內的輕裝型友軍及隸屬於<cmt t="黃金工作者"><import name="GoldenWorkers" /></cmt>的戰鬥員進行<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 支援攻擊</sec>。
+        <sec typ="cond">進行<buff typ="SUPPORT_ATTACK" /> 支援攻擊時</sec>，自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="10" r /></sec>增加，持續2回合。
+  "5":
+    key: "5"
+    icon: P.Earthquake
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 5
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_PECS_DutchGirl_N_5
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_5_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 106
+                    skill_ratio:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_5_2
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 6
+                    accuracy:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_51
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_51_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 6
+                    accuracy:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_52
+              on: round
+              if:
+                - in_squad_buff:
+                    - Effect_PECS_DutchGirl_N_45
+                    - Effect_PECS_DutchGirl_N_46
+                  count:
+                    - 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_52_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_53
+              on: round
+              if:
+                - in_squad_buff:
+                    - Effect_PECS_DutchGirl_N_45
+                    - Effect_PECS_DutchGirl_N_46
+                  count:
+                    - 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_53_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 20%
+                      per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_54
+              on: round
+              if:
+                - in_squad_buff:
+                    - Effect_PECS_DutchGirl_N_45
+                    - Effect_PECS_DutchGirl_N_46
+                  count:
+                    - 3
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_54_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.030000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 30%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_55
+              on: round
+              if:
+                - in_squad_buff:
+                    - Effect_PECS_DutchGirl_N_45
+                    - Effect_PECS_DutchGirl_N_46
+                  count:
+                    - 4
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_55_1
+                    type: 1
+                    value: "0.400000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 40%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_DutchGirl_N_56
+              on: round
+              if:
+                - in_squad_buff:
+                    - Effect_PECS_DutchGirl_N_45
+                    - Effect_PECS_DutchGirl_N_46
+                  count:
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_PECS_DutchGirl_N_56_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_5_1
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_5_2
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_51_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_52_1
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_53_1
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_54_1
+              type: 1
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
+            chance: 1
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_55_1
+              type: 1
+              value: "0.400000"
+              level: "0.040000"
+            base: 0.4
+            per: 0.04
+            chance: 1
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_PECS_DutchGirl_N_56_1
+              type: 1
+              value: "0.500000"
+              level: "0.050000"
+            base: 0.5
+            per: 0.05
+            chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신이 지원 공격 중인 아군 수에 따라 자신의 <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="3" r /></sec>가 증가합니다.
+        <sec typ="note">신형 채굴 장비</sec>의 효과 수치가 두 배로 증폭됩니다.
+        <sec>자신의 패시브 스킬로 인한 <sec typ="cond">공격 적중 시</sec> / <sec typ="cond">지원 공격 시</sec> 효과가 서로 발동 조건을 공유합니다.</sec>
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, this unit's <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power <val idx="3" r /></sec> increases based on the number of allies this unit is supporting with support attacks.
+        The effect value of <sec typ="note">New Mining Equipment</sec> is amplified twofold.
+        <sec>Effects from this unit's passive skills that trigger <sec typ="cond">when an attack hits</sec> / <sec typ="cond">when performing a support attack</sec> share their trigger conditions with each other.</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身が支援攻撃している味方の数に応じて、自身の<sec typ="dmg"><buff typ="SKILL_UP" /> スキル威力 <val idx="3" r /></sec>が増加します。
+        <sec typ="note">新型採掘装備</sec>の効果数値が2倍に増幅されます。
+        <sec>自身のパッシブスキルによる<sec typ="cond">攻撃命中時</sec> / <sec typ="cond">支援攻撃時</sec>効果が、互いに発動条件を共有します。</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，根據自身支援攻擊的友軍數量，自身的<sec typ="dmg"><buff typ="SKILL_UP" /> 技能威力 <val idx="3" r /></sec>增加。
+        <sec typ="note">新型採礦設備</sec>的效果數值增幅為兩倍。
+        <sec>自身被動技能所造成的<sec typ="cond">攻擊命中時</sec> / <sec typ="cond">支援攻擊時</sec>效果會互相共享發動條件。</sec>
 dialogue:
   KR:
     "1":

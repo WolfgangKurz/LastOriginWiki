@@ -23,6 +23,18 @@ promotions:
         count: 250
       - id: RobotParts_SuperAlloyArmor
         count: 50
+  - to: 5
+    level: 90
+    favor: "100"
+    req:
+      - id: Consumable_OriginDustAdv
+        count: 450
+      - id: Consumable_OriginDustSp
+        count: 150
+      - id: Special_Module
+        count: 100
+      - id: RobotParts_SuperAlloyArmor
+        count: 150
 lvLimits:
   - level: 101
     items:
@@ -494,18 +506,35 @@ stat:
       ice: 0
       lightning: 0
   - HP:
-      - 360
-      - 3181.5
+      - 410
+      - 3231.5
     ATK:
-      - 72
-      - 611.55
+      - 52
+      - 591.55
     DEF:
-      - 69
-      - 529.35
+      - 44
+      - 504.35
     SPD: 3.93
-    CRI: 6.8
+    CRI: 5
     ACC: 135
-    EVA: 12.2
+    EVA: 12
+    Resist:
+      fire: 0
+      ice: 0
+      lightning: 0
+  - HP:
+      - 710
+      - 3531.5
+    ATK:
+      - 62
+      - 601.55
+    DEF:
+      - 74
+      - 534.35
+    SPD: 3.95
+    CRI: 6
+    ACC: 140
+    EVA: 15
     Resist:
       fire: 0
       ice: 0
@@ -564,6 +593,8 @@ source:
   - - Ev:Ev34:EV1-1EX
   - - Ev:Ev35:EV2-1
   - - Ev:Ev36:EV1-8
+  - - Ev:Ev40:EV1-3EX
+    - Ev:Ev40:EV1-3EXH
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -571,7 +602,7 @@ research: false
 skills:
   "1":
     key: "1"
-    icon: TeamAtkDeBuff
+    icon: Haze
     target: enemy
     delayed: false
     target_ground: true
@@ -590,14 +621,14 @@ skills:
       data:
         - rate: 0.21
           type: 0
-          range: 2
-          ap: 8
-          grid: 0,0,0,0,1,0,0,1,0
+          range: 3
+          ap: 7
+          grid: 0,0,0,0,1,1,0,1,1
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
+          dismiss_guard: true
+          acc_bonus: 20
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Saetti_N_1
@@ -623,77 +654,61 @@ skills:
                     desc: Effect_PECS_Saetti_N_1_1
                     type: 1
                     value: "-0.100000"
-                    level: "-0.005000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 1
                     attack:
                       base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_2
-                    type: 1
-                    value: "-0.200000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: -20%
                       per: -1%
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_PECS_Saetti_N_1_3
+                    desc: Effect_PECS_Saetti_N_1_2
                     type: 1
                     value: "-0.100000"
-                    level: "-0.005000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 9
                     critical:
                       base: -10%
-                      per: -0.5%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_PECS_Saetti_N_1_4
+                    desc: Effect_PECS_Saetti_N_1_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.100000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    type: 58
+                    penetration:
+                      base: -10%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 0.225
+        - rate: 0.231
           type: 0
-          range: 2
-          ap: 8
-          grid: 0,0,0,0,1,0,0,1,0
+          range: 3
+          ap: 7
+          grid: 0,0,0,0,1,1,0,1,1
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
+          dismiss_guard: true
+          acc_bonus: 40
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Saetti_N_1
@@ -719,77 +734,61 @@ skills:
                     desc: Effect_PECS_Saetti_N_1_1
                     type: 1
                     value: "-0.100000"
-                    level: "-0.005000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 1
                     attack:
                       base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_2
-                    type: 1
-                    value: "-0.200000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: -20%
                       per: -1%
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_PECS_Saetti_N_1_3
+                    desc: Effect_PECS_Saetti_N_1_2
                     type: 1
                     value: "-0.100000"
-                    level: "-0.005000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 9
                     critical:
                       base: -10%
-                      per: -0.5%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_PECS_Saetti_N_1_4
+                    desc: Effect_PECS_Saetti_N_1_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.100000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    type: 58
+                    penetration:
+                      base: -10%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 0.24
+        - rate: 0.252
           type: 0
-          range: 2
-          ap: 8
-          grid: 0,0,0,0,1,0,0,1,0
+          range: 3
+          ap: 7
+          grid: 0,0,0,0,1,1,0,1,1
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
+          dismiss_guard: true
+          acc_bonus: 60
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Saetti_N_1
@@ -815,77 +814,61 @@ skills:
                     desc: Effect_PECS_Saetti_N_1_1
                     type: 1
                     value: "-0.100000"
-                    level: "-0.005000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 1
                     attack:
                       base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_2
-                    type: 1
-                    value: "-0.200000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: -20%
                       per: -1%
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_PECS_Saetti_N_1_3
+                    desc: Effect_PECS_Saetti_N_1_2
                     type: 1
                     value: "-0.100000"
-                    level: "-0.005000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 9
                     critical:
                       base: -10%
-                      per: -0.5%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_PECS_Saetti_N_1_4
+                    desc: Effect_PECS_Saetti_N_1_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.100000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    type: 58
+                    penetration:
+                      base: -10%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 0.255
+        - rate: 0.273
           type: 0
-          range: 2
-          ap: 8
-          grid: 0,0,0,0,1,0,0,1,0
+          range: 3
+          ap: 7
+          grid: 0,0,0,0,1,1,0,1,1
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
+          dismiss_guard: true
+          acc_bonus: 80
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Saetti_N_1
@@ -911,77 +894,61 @@ skills:
                     desc: Effect_PECS_Saetti_N_1_1
                     type: 1
                     value: "-0.100000"
-                    level: "-0.005000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 1
                     attack:
                       base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_2
-                    type: 1
-                    value: "-0.200000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: -20%
                       per: -1%
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_PECS_Saetti_N_1_3
+                    desc: Effect_PECS_Saetti_N_1_2
                     type: 1
                     value: "-0.100000"
-                    level: "-0.005000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 9
                     critical:
                       base: -10%
-                      per: -0.5%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_PECS_Saetti_N_1_4
+                    desc: Effect_PECS_Saetti_N_1_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.100000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    type: 58
+                    penetration:
+                      base: -10%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 0.27
+        - rate: 0.294
           type: 0
-          range: 2
-          ap: 8
-          grid: 0,0,0,0,1,0,0,1,0
+          range: 3
+          ap: 7
+          grid: 0,0,0,0,1,1,0,1,1
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
+          dismiss_guard: true
+          acc_bonus: 100
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Saetti_N_1
@@ -1007,461 +974,61 @@ skills:
                     desc: Effect_PECS_Saetti_N_1_1
                     type: 1
                     value: "-0.100000"
-                    level: "-0.005000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 1
                     attack:
                       base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_2
-                    type: 1
-                    value: "-0.200000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: -20%
                       per: -1%
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_PECS_Saetti_N_1_3
+                    desc: Effect_PECS_Saetti_N_1_2
                     type: 1
                     value: "-0.100000"
-                    level: "-0.005000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 9
                     critical:
                       base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_VULNERABLE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_4
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-        - rate: 0.285
-          type: 0
-          range: 2
-          ap: 8
-          grid: 0,0,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_PECS_Saetti_N_1
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_ATK_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_1
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.005000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_2
-                    type: 1
-                    value: "-0.200000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: -20%
                       per: -1%
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_DOWN
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_Saetti_N_1_3
                     type: 1
                     value: "-0.100000"
-                    level: "-0.005000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_VULNERABLE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_4
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-        - rate: 0.3
-          type: 0
-          range: 2
-          ap: 8
-          grid: 0,0,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_PECS_Saetti_N_1
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_ATK_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_1
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.005000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_2
-                    type: 1
-                    value: "-0.200000"
                     level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 7
-                    accuracy:
-                      base: -20%
-                      per: -1%
-                  overlap: 4
-                - icon: BuffIcon_CRITICAL_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_3
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.005000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
+                    type: 58
+                    penetration:
                       base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_VULNERABLE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_4
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 0.315
           type: 0
-          range: 2
-          ap: 8
-          grid: 0,0,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_PECS_Saetti_N_1
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_ATK_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_1
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.005000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_2
-                    type: 1
-                    value: "-0.200000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: -20%
-                      per: -1%
-                  overlap: 4
-                - icon: BuffIcon_CRITICAL_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_3
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.005000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_VULNERABLE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_4
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-        - rate: 0.33
-          type: 0
-          range: 2
-          ap: 8
-          grid: 0,0,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_PECS_Saetti_N_1
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_ATK_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_1
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.005000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_2
-                    type: 1
-                    value: "-0.200000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: -20%
-                      per: -1%
-                  overlap: 4
-                - icon: BuffIcon_CRITICAL_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_3
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.005000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_VULNERABLE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_4
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-        - rate: 0.345
-          type: 0
-          range: 2
-          ap: 8
+          range: 3
+          ap: 7
           grid: 0,0,0,0,1,1,0,1,1
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
+          dismiss_guard: true
+          acc_bonus: 120
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Saetti_N_1
@@ -1487,64 +1054,368 @@ skills:
                     desc: Effect_PECS_Saetti_N_1_1
                     type: 1
                     value: "-0.100000"
-                    level: "-0.005000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 1
                     attack:
                       base: -10%
-                      per: -0.5%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_1_2
-                    type: 1
-                    value: "-0.200000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: -20%
                       per: -1%
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_PECS_Saetti_N_1_3
+                    desc: Effect_PECS_Saetti_N_1_2
                     type: 1
                     value: "-0.100000"
-                    level: "-0.005000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 9
                     critical:
                       base: -10%
-                      per: -0.5%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_PECS_Saetti_N_1_4
+                    desc: Effect_PECS_Saetti_N_1_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.100000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    type: 58
+                    penetration:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 0.336
+          type: 0
+          range: 3
+          ap: 7
+          grid: 0,0,0,0,1,1,0,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 140
+          buff_rate: 100
+          buffs:
+            - key: Effect_PECS_Saetti_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_PECS_Saetti_N_1_1
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_PECS_Saetti_N_1_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_1_3
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 0.357
+          type: 0
+          range: 3
+          ap: 7
+          grid: 0,0,0,0,1,1,0,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 160
+          buff_rate: 100
+          buffs:
+            - key: Effect_PECS_Saetti_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_PECS_Saetti_N_1_1
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_PECS_Saetti_N_1_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_1_3
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 0.378
+          type: 0
+          range: 3
+          ap: 7
+          grid: 0,0,0,0,1,1,0,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 180
+          buff_rate: 100
+          buffs:
+            - key: Effect_PECS_Saetti_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_PECS_Saetti_N_1_1
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_PECS_Saetti_N_1_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_1_3
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 0.399
+          type: 0
+          range: 3
+          ap: 7
+          grid: 0,0,0,0,1,1,0,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 200
+          buff_rate: 100
+          buffs:
+            - key: Effect_PECS_Saetti_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_PECS_Saetti_N_1_1
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_PECS_Saetti_N_1_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_1_3
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: -10%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1566,50 +1437,45 @@ skills:
               desc: Effect_PECS_Saetti_N_1_1
               type: 1
               value: "-0.100000"
-              level: "-0.005000"
-            base: -0.1
-            per: -0.005
-            chance: 1
-          - icon: BuffIcon_ACCURACY_DOWN
-            desc:
-              desc: Effect_PECS_Saetti_N_1_2
-              type: 1
-              value: "-0.200000"
               level: "-0.010000"
-            base: -0.2
+            base: -0.1
             per: -0.01
             chance: 1
           - icon: BuffIcon_CRITICAL_DOWN
             desc:
+              desc: Effect_PECS_Saetti_N_1_2
+              type: 1
+              value: "-0.100000"
+              level: "-0.010000"
+            base: -0.1
+            per: -0.01
+            chance: 1
+          - icon: BuffIcon_DEF_PIERCE_UP
+            desc:
               desc: Effect_PECS_Saetti_N_1_3
               type: 1
               value: "-0.100000"
-              level: "-0.005000"
+              level: "-0.010000"
             base: -0.1
-            per: -0.005
-            chance: 1
-          - icon: BuffIcon_VULNERABLE
-            desc:
-              desc: Effect_PECS_Saetti_N_1_4
-              type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
+            per: -0.01
             chance: 1
     desc:
       KR: |-
-        센서 교란용 가스탄으로 <dmg elem="physics" />를 주고, 2라운드 동안 대상을 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="2" r /></sec> 감소 / <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="3" r /></sec> 증가 상태로 만듭니다.
-        각 효과는 중첩 가능하며, <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+        센서 교란용 가스탄으로 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상의 <sec typ="buff"><buff typ="ATK_DOWN" /> 공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 감소합니다.
+        <sec typ="important">스킬 레벨당 +20%의 적중 보정이 적용됩니다.</sec>
       EN: |-
-        Sen from Gyoran use gas shell as <dmg elem="physics" /> damage and 2 rounds target <sec typ="buff"><buff typ="ATK_DOWN" /> Attack <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> Accuracy <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical <val idx="2" r /></sec> decrease / <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="3" r /></sec> increase inflicts.
-        each effect stack ability and, <sec>At skill level 10, range increases.</sec>
+        Deals <sec typ="attr">protection-ignoring</sec> <dmg elem="physics" /> to the specified area with a sensor-disrupting gas shell.
+        <sec typ="cond">On hit</sec>, the target's <sec typ="buff"><buff typ="ATK_DOWN" /> ATK <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> Critical Rate <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="2" r /></sec> decreases for 3 rounds.
+        <sec typ="important">A +20% Accuracy modifier is applied per skill level.</sec>
       JP: |-
-        スエンして グヨルアンヨン がスウトアンで<dmg elem="physics" />を与え、、 2ラウンドの間 対象を <sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル <val idx="2" r /></sec> 減少 / <sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="3" r /></sec> 増加 状態にします。
-        各 効果は 重複 可能し、 <sec>スキルレベル10で 範囲が増加します。</sec>
+        センサー攪乱用ガス弾で指定範囲に<sec typ="attr">保護無視</sec>の<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、3ラウンドの間、対象の<sec typ="buff"><buff typ="ATK_DOWN" /> 攻撃力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> クリティカル率 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec>が減少します。
+        <sec typ="important">スキルレベルごとに+20%の命中補正が適用されます。</sec>
       TC: |-
-        三n Gyoranyong 三utan以 造成<dmg elem="physics" />，並 2回合內 目標 <sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊 <val idx="2" r /></sec> 減少 / <sec typ="buff"><buff typ="VULNERABLE" /> 受到的傷害 <val idx="3" r /></sec> 增加 使其進入狀態。
-        各 效果 疊加 可能並， <sec>技能等級10時 範圍增加。</sec>
+        使用感測器干擾用瓦斯彈，對指定範圍造成<sec typ="attr">無視保護</sec>的<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，目標的<sec typ="buff"><buff typ="ATK_DOWN" /> 攻擊力 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_DOWN" /> 暴擊率 <val idx="1" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="2" r /></sec>減少，持續3回合。
+        <sec typ="important">每技能等級套用+20%的命中補正。</sec>
   "2":
     key: "2"
     icon: AssaultAttack
@@ -1629,9 +1495,9 @@ skills:
         - 8
         - 9
       data:
-        - rate: 1.595
+        - rate: 1.6
           type: 0
-          range: 3
+          range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -1659,146 +1525,56 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PROVOKE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_Saetti_N_2_1
-                    type: 0
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PROVOKE
+                  desc:
+                    desc: Effect_PECS_Saetti_N_2_2
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_2
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_PECS_Saetti_N_2_3
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_4
-                    type: 1
-                    value: "0.250000"
-                    level: "0.020000"
-                  attr: 1
-                  erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_11
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_11_1
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 1
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_12
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_Saetti_N_12_1
-                    type: 1
-                    value: "0.400000"
-                    level: "0.020000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_13
+            - key: Effect_PECS_Saetti_N_21
               on:
                 after: use_skill
               if:
@@ -1819,25 +1595,25 @@ skills:
               buffs:
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_PECS_Saetti_N_13_1
+                    desc: Effect_PECS_Saetti_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-        - rate: 1.74
+              overlapGroup: 82
+        - rate: 1.76
           type: 0
-          range: 3
+          range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -1865,146 +1641,56 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PROVOKE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_Saetti_N_2_1
-                    type: 0
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PROVOKE
+                  desc:
+                    desc: Effect_PECS_Saetti_N_2_2
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_2
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_PECS_Saetti_N_2_3
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_4
-                    type: 1
-                    value: "0.250000"
-                    level: "0.020000"
-                  attr: 1
-                  erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_11
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_11_1
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 1
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_12
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_Saetti_N_12_1
-                    type: 1
-                    value: "0.400000"
-                    level: "0.020000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_13
+            - key: Effect_PECS_Saetti_N_21
               on:
                 after: use_skill
               if:
@@ -2025,25 +1711,25 @@ skills:
               buffs:
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_PECS_Saetti_N_13_1
+                    desc: Effect_PECS_Saetti_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-        - rate: 1.885
+              overlapGroup: 82
+        - rate: 1.92
           type: 0
-          range: 3
+          range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -2071,146 +1757,56 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PROVOKE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_Saetti_N_2_1
-                    type: 0
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PROVOKE
+                  desc:
+                    desc: Effect_PECS_Saetti_N_2_2
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_2
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_PECS_Saetti_N_2_3
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_4
-                    type: 1
-                    value: "0.250000"
-                    level: "0.020000"
-                  attr: 1
-                  erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_11
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_11_1
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 1
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_12
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_Saetti_N_12_1
-                    type: 1
-                    value: "0.400000"
-                    level: "0.020000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_13
+            - key: Effect_PECS_Saetti_N_21
               on:
                 after: use_skill
               if:
@@ -2231,25 +1827,25 @@ skills:
               buffs:
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_PECS_Saetti_N_13_1
+                    desc: Effect_PECS_Saetti_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-        - rate: 2.03
+              overlapGroup: 82
+        - rate: 2.08
           type: 0
-          range: 3
+          range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -2277,146 +1873,56 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PROVOKE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_Saetti_N_2_1
-                    type: 0
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PROVOKE
+                  desc:
+                    desc: Effect_PECS_Saetti_N_2_2
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_2
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_PECS_Saetti_N_2_3
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_4
-                    type: 1
-                    value: "0.250000"
-                    level: "0.020000"
-                  attr: 1
-                  erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_11
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_11_1
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 1
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_12
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_Saetti_N_12_1
-                    type: 1
-                    value: "0.400000"
-                    level: "0.020000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_13
+            - key: Effect_PECS_Saetti_N_21
               on:
                 after: use_skill
               if:
@@ -2437,25 +1943,25 @@ skills:
               buffs:
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_PECS_Saetti_N_13_1
+                    desc: Effect_PECS_Saetti_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-        - rate: 2.175
+              overlapGroup: 82
+        - rate: 2.24
           type: 0
-          range: 3
+          range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -2483,146 +1989,56 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PROVOKE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_Saetti_N_2_1
-                    type: 0
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PROVOKE
+                  desc:
+                    desc: Effect_PECS_Saetti_N_2_2
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_2
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_PECS_Saetti_N_2_3
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_4
-                    type: 1
-                    value: "0.250000"
-                    level: "0.020000"
-                  attr: 1
-                  erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_11
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_11_1
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 1
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_12
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_Saetti_N_12_1
-                    type: 1
-                    value: "0.400000"
-                    level: "0.020000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_13
+            - key: Effect_PECS_Saetti_N_21
               on:
                 after: use_skill
               if:
@@ -2643,25 +2059,25 @@ skills:
               buffs:
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_PECS_Saetti_N_13_1
+                    desc: Effect_PECS_Saetti_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-        - rate: 2.32
+              overlapGroup: 82
+        - rate: 2.4
           type: 0
-          range: 3
+          range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -2689,146 +2105,56 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PROVOKE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_Saetti_N_2_1
-                    type: 0
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PROVOKE
+                  desc:
+                    desc: Effect_PECS_Saetti_N_2_2
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_2
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_PECS_Saetti_N_2_3
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_4
-                    type: 1
-                    value: "0.250000"
-                    level: "0.020000"
-                  attr: 1
-                  erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_11
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_11_1
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 1
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_12
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_Saetti_N_12_1
-                    type: 1
-                    value: "0.400000"
-                    level: "0.020000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_13
+            - key: Effect_PECS_Saetti_N_21
               on:
                 after: use_skill
               if:
@@ -2849,25 +2175,25 @@ skills:
               buffs:
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_PECS_Saetti_N_13_1
+                    desc: Effect_PECS_Saetti_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-        - rate: 2.465
+              overlapGroup: 82
+        - rate: 2.56
           type: 0
-          range: 3
+          range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -2895,146 +2221,56 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PROVOKE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_Saetti_N_2_1
-                    type: 0
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PROVOKE
+                  desc:
+                    desc: Effect_PECS_Saetti_N_2_2
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_2
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_PECS_Saetti_N_2_3
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_4
-                    type: 1
-                    value: "0.250000"
-                    level: "0.020000"
-                  attr: 1
-                  erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_11
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_11_1
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 1
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_12
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_Saetti_N_12_1
-                    type: 1
-                    value: "0.400000"
-                    level: "0.020000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_13
+            - key: Effect_PECS_Saetti_N_21
               on:
                 after: use_skill
               if:
@@ -3055,25 +2291,25 @@ skills:
               buffs:
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_PECS_Saetti_N_13_1
+                    desc: Effect_PECS_Saetti_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-        - rate: 2.61
+              overlapGroup: 82
+        - rate: 2.72
           type: 0
-          range: 3
+          range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -3101,146 +2337,56 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PROVOKE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_Saetti_N_2_1
-                    type: 0
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PROVOKE
+                  desc:
+                    desc: Effect_PECS_Saetti_N_2_2
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_2
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_PECS_Saetti_N_2_3
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_4
-                    type: 1
-                    value: "0.250000"
-                    level: "0.020000"
-                  attr: 1
-                  erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_11
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_11_1
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 1
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_12
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_Saetti_N_12_1
-                    type: 1
-                    value: "0.400000"
-                    level: "0.020000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_13
+            - key: Effect_PECS_Saetti_N_21
               on:
                 after: use_skill
               if:
@@ -3261,25 +2407,25 @@ skills:
               buffs:
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_PECS_Saetti_N_13_1
+                    desc: Effect_PECS_Saetti_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-        - rate: 2.755
+              overlapGroup: 82
+        - rate: 2.88
           type: 0
-          range: 3
+          range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -3307,146 +2453,56 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PROVOKE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_Saetti_N_2_1
-                    type: 0
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PROVOKE
+                  desc:
+                    desc: Effect_PECS_Saetti_N_2_2
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_2
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_PECS_Saetti_N_2_3
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_4
-                    type: 1
-                    value: "0.250000"
-                    level: "0.020000"
-                  attr: 1
-                  erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_11
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_11_1
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 1
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_12
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_Saetti_N_12_1
-                    type: 1
-                    value: "0.400000"
-                    level: "0.020000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_13
+            - key: Effect_PECS_Saetti_N_21
               on:
                 after: use_skill
               if:
@@ -3467,25 +2523,25 @@ skills:
               buffs:
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_PECS_Saetti_N_13_1
+                    desc: Effect_PECS_Saetti_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-        - rate: 2.9
+              overlapGroup: 82
+        - rate: 3.04
           type: 0
-          range: 3
+          range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
           summon: null
@@ -3513,146 +2569,56 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PROVOKE
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_PECS_Saetti_N_2_1
-                    type: 0
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PROVOKE
+                  desc:
+                    desc: Effect_PECS_Saetti_N_2_2
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_2
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_PECS_Saetti_N_2_3
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_PECS_Saetti_N_2_4
-                    type: 1
-                    value: "0.250000"
-                    level: "0.020000"
-                  attr: 1
-                  erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_11
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_11_1
-                    type: 0
-                    value: "-1"
-                    level: "-0.050000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 20
-                    ap:
-                      base: -1
-                      per: -0.05
-                  overlap: 1
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_12
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_PECS_Saetti_N_12_1
-                    type: 1
-                    value: "0.400000"
-                    level: "0.020000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 40%
-                      per: 2%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_13
+            - key: Effect_PECS_Saetti_N_21
               on:
                 after: use_skill
               if:
@@ -3673,22 +2639,22 @@ skills:
               buffs:
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_PECS_Saetti_N_13_1
+                    desc: Effect_PECS_Saetti_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 36
                     damage_reduce:
-                      base: 25%
-                      per: 2%
+                      base: 20%
+                      per: 5%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
+              overlapGroup: 82
     values:
       index:
         - 0
@@ -3702,92 +2668,69 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_PROVOKE
+        - - icon: BuffIcon_DEF_PIERCE_UP
             desc:
               desc: Effect_PECS_Saetti_N_2_1
-              type: 0
+              type: 1
+              value: "-0.200000"
+              level: "-0.020000"
+            base: -0.2
+            per: -0.02
+            chance: 1
+          - icon: BuffIcon_PROVOKE
+            desc:
+              desc: Effect_PECS_Saetti_N_2_2
+              type: 1
               value: "0"
               level: "0"
             base: 0
             per: 0
             chance: 1
-          - icon: BuffIcon_AP_DOWN
-            desc:
-              desc: Effect_PECS_Saetti_N_2_2
-              type: 0
-              value: "-1"
-              level: "-0.050000"
-            base: -1
-            per: -0.05
-            chance: 0
-          - icon: BuffIcon_PhyATK_UP
+          - icon: BuffIcon_DAMAGE_REDUCE
             desc:
               desc: Effect_PECS_Saetti_N_2_3
               type: 1
-              value: "0.400000"
-              level: "0.020000"
-            base: 0.4
-            per: 0.02
+              value: "0.200000"
+              level: "0.050000"
+            base: 0.2
+            per: 0.05
             chance: 0
           - icon: BuffIcon_DAMAGE_REDUCE
             desc:
-              desc: Effect_PECS_Saetti_N_2_4
+              desc: Effect_PECS_Saetti_N_21_1
               type: 1
-              value: "0.250000"
-              level: "0.020000"
-            base: 0.25
-            per: 0.02
-            chance: 0
-          - icon: BuffIcon_AP_DOWN
-            desc:
-              desc: Effect_PECS_Saetti_N_11_1
-              type: 0
-              value: "-1"
-              level: "-0.050000"
-            base: -1
-            per: -0.05
-            chance: 1
-          - icon: BuffIcon_PhyATK_UP
-            desc:
-              desc: Effect_PECS_Saetti_N_12_1
-              type: 1
-              value: "0.400000"
-              level: "0.020000"
-            base: 0.4
-            per: 0.02
-            chance: 1
-          - icon: BuffIcon_DAMAGE_REDUCE
-            desc:
-              desc: Effect_PECS_Saetti_N_13_1
-              type: 1
-              value: "0.250000"
-              level: "0.020000"
-            base: 0.25
-            per: 0.02
+              value: "0.200000"
+              level: "0.050000"
+            base: 0.2
+            per: 0.05
             chance: 1
     desc:
       KR: |-
-        대상에게 돌진해 <dmg elem="physics" />를 주고, <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>을(를) 감소시키고 2라운드 동안 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec> 상태로 만듭니다.
-        치명타 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="5" r /></sec>가 증가합니다.
-        스킬 사용 시, 2라운드 동안 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="6" r inv /></sec>가 감소합니다.
+        몸을 둥글게 말아 단일 대상에게 돌진해 <dmg elem="physics" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 3라운드 동안 대상을 <sec typ="buff"><buff typ="PROVOKE" /> 도발</sec>하고 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec>를 감소시킵니다.
+        <sec typ="cond">스킬 사용 시</sec> <sec typ="note">위험해요!</sec> 효과로 인한 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 효과를 갱신합니다.
+        <sec>갱신한 라운드에는 피격 시에도 횟수가 감소하지 않습니다.</sec>
       EN: |-
-        to the target charges <dmg elem="physics" /> damage and <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec> decreases and 2 rounds <sec typ="buff"><buff typ="PROVOKE" /> Provoke</sec> inflicts.
-        On critical hit, <sec typ="dmg"><buff typ="PhyATK_UP" /> damage <val idx="5" r /></sec> increases.
-        When using the skill, 2 rounds self <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="6" r inv /></sec> decreases.
+        Curls into a ball and charges at a single target to deal <dmg elem="physics" />.
+        <sec typ="cond">On hit</sec>, <sec typ="buff"><buff typ="PROVOKE" /> Provokes</sec> the target and decreases their <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="0" r /></sec> for 3 rounds.
+        <sec typ="cond">When using the skill</sec>, refreshes the <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> Damage Taken Reduction</sec> effect from <sec typ="note">It's Dangerous!</sec>.
+        <sec>During the round it is refreshed, its count does not decrease even when hit.</sec>
       JP: |-
-        対象に 突撃して<dmg elem="physics" />を与え、、 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>を 減少時クイし 2ラウンドの間 <sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec> 状態にします。
-        クリティカル時、 <sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="5" r /></sec>が増加します。
-        スキル使用時、 2ラウンドの間 自身が <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="6" r inv /></sec>が減少します。
+        体を丸めて単一対象に突進し、<dmg elem="physics" />を与えます。
+        <sec typ="cond">命中時</sec>、3ラウンドの間、対象を<sec typ="buff"><buff typ="PROVOKE" /> 挑発</sec>し、<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>を減少させます。
+        <sec typ="cond">スキル使用時</sec>、<sec typ="note">危ないです！</sec>効果による<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 被ダメージ減少</sec>効果を更新します。
+        <sec>更新したラウンドでは、被撃時にも回数が減少しません。</sec>
       TC: |-
-        對目標 衝鋒 造成<dmg elem="physics" />，並 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec> 減少時台並 2回合內 <sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec> 使其進入狀態。
-        暴擊時， <sec typ="dmg"><buff typ="PhyATK_UP" /> 傷害量 <val idx="5" r /></sec>增加。
-        使用技能時， 2回合內 自身 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="6" r inv /></sec>減少。
+        將身體蜷成一團，衝向單一目標造成<dmg elem="physics" />。
+        <sec typ="cond">命中時</sec>，使目標進入<sec typ="buff"><buff typ="PROVOKE" /> 挑釁</sec>狀態，並使其<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="0" r /></sec>減少，持續3回合。
+        <sec typ="cond">使用技能時</sec>，刷新<sec typ="note">危險啊！</sec>效果所造成的<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到傷害減少</sec>效果。
+        <sec>在刷新該效果的回合中，即使受到攻擊，次數也不會減少。</sec>
   "3":
     key: "3"
-    icon: P.SelfDefBuff
+    icon: P.TeamDefBuff
     target: team
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 3
     buffs:
       index:
@@ -3806,7 +2749,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,1,0,0,1,0,0,1,0
+          grid: 1,1,0,1,1,0,1,1,0
           summon: null
           use: null
           enabled: true
@@ -3827,15 +2770,14 @@ skills:
                 - 1
                 - 2
               role:
-                - 0
                 - 1
                 - 2
-              target: 0
+              target: 2
               buffs:
-                - icon: BuffIcon_DEF_Side
+                - icon: BuffIcon_DEF_Char
                   desc:
                     desc: Effect_PECS_Saetti_N_3_1
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 0
@@ -3843,65 +2785,47 @@ skills:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 75
-                    guard: row
-                  overlap: 1
-                - icon: BuffIcon_DEF_UP
+                    type: 76
+                    guard: target
+                  overlap: 4
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_PECS_Saetti_N_3_2
                     type: 1
-                    value: "0.600000"
-                    level: "0.030000"
+                    value: "0.200000"
+                    level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 1
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 3
-                    defense:
-                      base: 60%
-                      per: 3%
+                    chance: 0%
+                    type: 36
+                    damage_reduce:
+                      base: 20%
+                      per: 5%
                   overlap: 4
                 - icon: BuffIcon_AP_UP
                   desc:
                     desc: Effect_PECS_Saetti_N_3_3
-                    type: 0
-                    value: "1"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 20
-                    ap:
-                      base: 1
-                      per: 0.05
-                  overlap: 4
-                - icon: BuffIcon_DEBUFF_PERDOWN
-                  desc:
-                    desc: Effect_PECS_Saetti_N_3_4
                     type: 1
                     value: "0.100000"
-                    level: "0.013500"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 91
-                    resist:
-                      type: debuff_perdown
-                      value:
-                        base: 10%
-                        per: 1.35%
+                    type: 13
+                    turnSpeed:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_14
-              on: wave
+            - key: Effect_PECS_Saetti_N_31
+              on: round
               if:
                 - false
                 - false
@@ -3916,27 +2840,28 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 2
+              target: 0
               buffs:
-                - icon: BuffIcon_AP_UP
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_PECS_Saetti_N_14_1
-                    type: 0
-                    value: "1"
+                    desc: Effect_PECS_Saetti_N_31_1
+                    type: 1
+                    value: "0.200000"
                     level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 0
+                    count: 3
+                    trigger: damaged
                   value:
                     isBuff: true
-                    type: 20
-                    ap:
-                      base: 1
-                      per: 0.05
-                  overlap: 3
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_15
+                    type: 36
+                    damage_reduce:
+                      base: 20%
+                      per: 5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 82
+            - key: Effect_PECS_Saetti_N_32
               on: damaged
               if:
                 - false
@@ -3954,228 +2879,21 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEBUFF_PERDOWN
+                - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_PECS_Saetti_N_15_1
+                    desc: Effect_PECS_Saetti_N_32_1
                     type: 1
                     value: "0.100000"
-                    level: "0.013500"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 91
-                    resist:
-                      type: debuff_perdown
-                      value:
-                        base: 10%
-                        per: 1.35%
-                  overlap: 4
-              maxStack: 3
-              overlapGroup: -1
-    values:
-      index:
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-      data:
-        - - icon: BuffIcon_DEF_Side
-            desc:
-              desc: Effect_PECS_Saetti_N_3_1
-              type: 0
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
-            chance: 1
-          - icon: BuffIcon_DEF_UP
-            desc:
-              desc: Effect_PECS_Saetti_N_3_2
-              type: 1
-              value: "0.600000"
-              level: "0.030000"
-            base: 0.6
-            per: 0.03
-            chance: 1
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_PECS_Saetti_N_3_3
-              type: 0
-              value: "1"
-              level: "0.050000"
-            base: 1
-            per: 0.05
-            chance: 0
-          - icon: BuffIcon_DEBUFF_PERDOWN
-            desc:
-              desc: Effect_PECS_Saetti_N_3_4
-              type: 1
-              value: "0.100000"
-              level: "0.013500"
-            base: 0.1
-            per: 0.0135
-            chance: 0
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_PECS_Saetti_N_14_1
-              type: 0
-              value: "1"
-              level: "0.050000"
-            base: 1
-            per: 0.05
-            chance: 1
-          - icon: BuffIcon_DEBUFF_PERDOWN
-            desc:
-              desc: Effect_PECS_Saetti_N_15_1
-              type: 1
-              value: "0.100000"
-              level: "0.013500"
-            base: 0.1
-            per: 0.0135
-            chance: 1
-    desc:
-      KR: |-
-        <sec typ="cond">전투 개시 시</sec>, 자신과 양 옆에 있는 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>이(가) 증가합니다.
-        <sec typ="cond">라운드 개시 시</sec>, 자신에게 <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec> / <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="1" r /></sec> 증가 효과가 적용됩니다.
-        피격 시, 자신의 <sec typ="buff"><buff typ="DEF_Side" /> 효과 저항 <val idx="4" r /></sec>가 증가하며 최대 3중첩까지 가능합니다.
-      EN: |-
-        <sec typ="cond">At battle start</sec>, self and amount beside to exists allies' <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec> increases.
-        <sec typ="cond">At round start</sec>, self <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec> / <sec typ="buff"><buff typ="DEF_UP" /> Defense <val idx="1" r /></sec> increase the effect is applied.
-        When hit, own <sec typ="buff"><buff typ="DEF_Side" /> Effect Resistance <val idx="4" r /></sec> increases and up to 3stack up to ability.
-      JP: |-
-        戦闘開始時、 自身と ヤン ヨプに ある 味方の <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>が増加します。
-        <sec typ="cond">ラウンド開始時</sec>、 自身に <sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="1" r /></sec> 増加 効果が適用されます。
-        被弾時、 自身の <sec typ="buff"><buff typ="DEF_Side" /> 効果抵抗 <val idx="4" r /></sec>が 増加し、 最大 3重複まで 可能します。
-      TC: |-
-        戰鬥開始時， 自身與 Yang Yeop於 有 我方的 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>增加。
-        <sec typ="cond">回合開始時</sec>， 自身給 <sec typ="buff"><buff typ="DEF_Side" /> 行保護</sec> / <sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="1" r /></sec> 增加 效果套用。
-        被擊時， 自身的 <sec typ="buff"><buff typ="DEF_Side" /> 效果抗性 <val idx="4" r /></sec> 增加，並 最大 3疊加至 可能。
-  "4":
-    key: "4"
-    icon: P.TeamDefBuff
-    target: team
-    delayed: false
-    target_ground: false
-    leastGrade: 4
-    buffs:
-      index:
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-      data:
-        - rate: 0
-          type: 0
-          range: 0
-          ap: 0
-          grid: F>1,0,0,1,0,0,1,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_PECS_Saetti_N_4
-              on: round
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_DEF_Char
-                  desc:
-                    desc: Effect_PECS_Saetti_N_4_1
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 76
-                    guard: target
-                  overlap: 4
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Saetti_N_4_2
-                    type: 1
-                    value: "0.190000"
-                    level: "0.016000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 19%
-                      per: 1.6%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_PECS_Saetti_N_41
-              on: round
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - 36
-                    attr: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Saetti_N_41_1
-                    type: 1
-                    value: "0.190000"
-                    level: "0.016000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 19%
-                      per: 1.6%
+                    type: 13
+                    turnSpeed:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -4194,44 +2912,1018 @@ skills:
       data:
         - - icon: BuffIcon_DEF_Char
             desc:
-              desc: Effect_PECS_Saetti_N_4_1
-              type: 0
+              desc: Effect_PECS_Saetti_N_3_1
+              type: 1
               value: "0"
               level: "0"
             base: 0
             per: 0
             chance: 1
-          - icon: BuffIcon_ATK_UP
+          - icon: BuffIcon_DAMAGE_REDUCE
             desc:
-              desc: Effect_PECS_Saetti_N_4_2
+              desc: Effect_PECS_Saetti_N_3_2
               type: 1
-              value: "0.190000"
-              level: "0.016000"
-            base: 0.19
-            per: 0.016
+              value: "0.200000"
+              level: "0.050000"
+            base: 0.2
+            per: 0.05
             chance: 0
-          - icon: BuffIcon_ATK_UP
+          - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_PECS_Saetti_N_41_1
+              desc: Effect_PECS_Saetti_N_3_3
               type: 1
-              value: "0.190000"
-              level: "0.016000"
-            base: 0.19
-            per: 0.016
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_PECS_Saetti_N_31_1
+              type: 1
+              value: "0.200000"
+              level: "0.050000"
+            base: 0.2
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_32_1
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="DEF_Char" /> 후열의 공격기 / 지원기를 지정 보호</sec>합니다.
-        자신이 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 상태일 시, 지정 보호 대상들의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력<val idx="2" r /></sec>를 증가시킵니다.
+        <sec typ="cond">라운드 개시 시</sec>, 보호기를 제외한 범위 내 아군을 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="important">3회</sec> 피격에 한하여 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="3" r inv /></sec>가 감소합니다.
+        <sec typ="cond">피격 시</sec>, 2라운드 동안 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec>가 증가합니다.
       EN: |-
-        <sec typ="cond">At round start</sec>, <sec typ="buff"><buff typ="DEF_Char" /> back row of Attacker / Supporter Designated Protection</sec>.
-        self <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> damage taken decrease</sec> if in the state, Designated Protection target of <sec typ="buff"><buff typ="ATK_UP" /> Attack<val idx="2" r /></sec> increases.
+        <sec typ="cond">At the start of the round</sec>, grants <sec typ="buff"><buff typ="DEF_Char" /> Target Protection</sec> to allies within range, excluding Protectors.
+        <sec typ="cond">At the start of the round</sec>, for the next <sec typ="important">3 hits</sec> only, this unit's <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="3" r inv /></sec> decreases.
+        <sec typ="cond">When hit</sec>, this unit's <sec typ="buff"><buff typ="AP_UP" /> Action Power <val idx="4" r /></sec> increases for 2 rounds.
       JP: |-
-        <sec typ="cond">ラウンド開始時</sec>、 <sec typ="buff"><buff typ="DEF_Char" /> 後列の 攻撃機 / 支援機を 指定保護</sec>します。
-        自身が <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ 減少</sec> 状態イル 時、 指定保護 対象たちの <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力<val idx="2" r /></sec>を増加させます。
+        <sec typ="cond">ラウンド開始時</sec>、保護機を除く範囲内の味方を<sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="important">3回</sec>の被撃に限り、自身が受ける<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージ <val idx="3" r inv /></sec>が減少します。
+        <sec typ="cond">被撃時</sec>、2ラウンドの間、自身の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>が増加します。
       TC: |-
-        <sec typ="cond">回合開始時</sec>， <sec typ="buff"><buff typ="DEF_Char" /> 後排的 攻擊機 / 支援機 指定保護</sec>。
-        自身 <sec typ="cond"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 減少</sec> 狀態一 時， 指定保護 目標們的 <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力<val idx="2" r /></sec>使其增加。
+        <sec typ="cond">回合開始時</sec>，對範圍內除保護機以外的友軍賦予<sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>。
+        <sec typ="cond">回合開始時</sec>，僅限受到攻擊<sec typ="important">3次</sec>，自身<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到傷害 <val idx="3" r inv /></sec>減少。
+        <sec typ="cond">受到攻擊時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="4" r /></sec>增加，持續2回合。
+  "4":
+    key: "4"
+    icon: P.SelfDefBuff
+    target: team
+    delayed: false
+    target_ground: true
+    leastGrade: 4
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: 1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_PECS_Saetti_N_4
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DEF_Side
+                  desc:
+                    desc: Effect_PECS_Saetti_N_4_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 75
+                    guard: row
+                  overlap: 4
+                - icon: BuffIcon_DEBUFF_PERDOWN
+                  desc:
+                    desc: Effect_PECS_Saetti_N_4_2
+                    type: 1
+                    value: "0.300000"
+                    level: "0.030000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 91
+                    resist:
+                      type: debuff_perdown
+                      value:
+                        base: 30%
+                        per: 3%
+                  overlap: 4
+                - icon: BuffIcon_DEF_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_4_3
+                    type: 1
+                    value: "0.300000"
+                    level: "0.030000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 3
+                    defense:
+                      base: 30%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_4_4
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 1
+                    attack:
+                      base: 20%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_4_5
+                    type: 0
+                    value: "1"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0.05
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_Saetti_N_41
+              on: round
+              if:
+                - on:
+                    target: self
+                    func: UNFILLED
+                    select:
+                      - Effect_PECS_Saetti_N_55
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DEF_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_41_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.030000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: 30%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_Saetti_N_42
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_Saetti_N_55
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DEF_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_42_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.030000"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: 30%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_Saetti_N_43
+              on:
+                attack_success: passive
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_Saetti_N_55
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DEF_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_43_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.030000"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: 30%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_Saetti_N_44
+              on: round
+              if:
+                - test: higher
+                  target: target
+                  operand: DEF
+                  ratio: 0
+                  than: DEF
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_44_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 20%
+                      per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_Saetti_N_45
+              on: wave
+              if:
+                - pos: 0
+                - pos:
+                    target: target
+                    position: 0
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_45_1
+                    type: 0
+                    value: "1"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0.05
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_Saetti_N_46
+              on: wave
+              if:
+                - pos: 1
+                - pos:
+                    target: target
+                    position: 1
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_46_1
+                    type: 0
+                    value: "1"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0.05
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_Saetti_N_47
+              on: wave
+              if:
+                - pos: 2
+                - pos:
+                    target: target
+                    position: 2
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_47_1
+                    type: 0
+                    value: "1"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0.05
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_DEF_Side
+            desc:
+              desc: Effect_PECS_Saetti_N_4_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_DEBUFF_PERDOWN
+            desc:
+              desc: Effect_PECS_Saetti_N_4_2
+              type: 1
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
+            chance: 0
+          - icon: BuffIcon_DEF_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_4_3
+              type: 1
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
+            chance: 0
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_4_4
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 0
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_4_5
+              type: 0
+              value: "1"
+              level: "0.050000"
+            base: 1
+            per: 0.05
+            chance: 0
+          - icon: BuffIcon_DEF_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_41_1
+              type: 1
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
+            chance: 1
+          - icon: BuffIcon_DEF_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_42_1
+              type: 1
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
+            chance: 1
+          - icon: BuffIcon_DEF_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_43_1
+              type: 1
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_44_1
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_45_1
+              type: 0
+              value: "1"
+              level: "0.050000"
+            base: 1
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_46_1
+              type: 0
+              value: "1"
+              level: "0.050000"
+            base: 1
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_47_1
+              type: 0
+              value: "1"
+              level: "0.050000"
+            base: 1
+            per: 0.05
+            chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>가 활성화되고 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="5" r /></sec> / <sec typ="buff"><s><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="1" r /></s></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">자신보다 방어력이 낮은 범위 내 아군</sec>의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="8" r /></sec>가 증가합니다.
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">자신과 같은 열에 위치한 아군</sec>의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>이(가) 증가합니다.
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, this unit activates <sec typ="buff"><buff typ="DEF_Side" /> Column Protection</sec>, and gains increased <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="5" r /></sec> / <sec typ="buff"><s><buff typ="DEBUFF_PERDOWN" /> Effect Resistance <val idx="1" r /></s></sec>.
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">allies within range with lower DEF than this unit</sec> gain increased <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="8" r /></sec>.
+        <sec typ="cond">At the start of battle</sec>, <sec typ="cond">allies located in the same column as this unit</sec> gain increased <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、自身は<sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>が有効化され、<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="5" r /></sec> / <sec typ="buff"><s><buff typ="DEBUFF_PERDOWN" /> 効果耐性 <val idx="1" r /></s></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">自身より防御力が低い範囲内の味方</sec>の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="8" r /></sec>が増加します。
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="cond">自身と同じ列に位置する味方</sec>の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，自身啟用<sec typ="buff"><buff typ="DEF_Side" /> 列保護</sec>，且<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="5" r /></sec> / <sec typ="buff"><s><buff typ="DEBUFF_PERDOWN" /> 效果抗性 <val idx="1" r /></s></sec>增加。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">範圍內防禦力低於自身的友軍</sec>的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="8" r /></sec>增加。
+        <sec typ="cond">戰鬥開始時</sec>，<sec typ="cond">與自身位於同一列的友軍</sec>的<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="9" /></sec>增加。
+  "5":
+    key: "5"
+    icon: P.TeamAtkDeBuff
+    target: enemy
+    delayed: false
+    target_ground: true
+    leastGrade: 5
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: F>1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_PECS_Saetti_N_5
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_5_1
+                    type: 1
+                    value: "-0.400000"
+                    level: "-0.040000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 58
+                    penetration:
+                      base: -40%
+                      per: -4%
+                  overlap: 4
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_5_2
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 58
+                    penetration:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_PECS_Saetti_N_5_3
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_Saetti_N_51
+              on: round
+              if:
+                - round:
+                    operator: <=
+                    round:
+                      - 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_51_1
+                    type: 1
+                    value: "-0.400000"
+                    level: "-0.040000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 58
+                    penetration:
+                      base: -40%
+                      per: -4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_Saetti_N_52
+              on: round
+              if:
+                - round:
+                    operator: =
+                    round:
+                      - 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_52_1
+                    type: 1
+                    value: "-0.300000"
+                    level: "-0.030000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 58
+                    penetration:
+                      base: -30%
+                      per: -3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_Saetti_N_53
+              on: round
+              if:
+                - round:
+                    operator: ">="
+                    round:
+                      - 3
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_53_1
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 58
+                    penetration:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_Saetti_N_54
+              on: damaged
+              if:
+                - test: higher
+                  target: target
+                  operand: DEF
+                  ratio: 0
+                  than: DEF
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_PECS_Saetti_N_54_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_Saetti_N_55
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DEF_UP
+                  desc:
+                    desc: Effect_PECS_Saetti_N_55_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 2
+                    defense:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_DEF_PIERCE_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_5_1
+              type: 1
+              value: "-0.400000"
+              level: "-0.040000"
+            base: -0.4
+            per: -0.04
+            chance: 0
+          - icon: BuffIcon_DEF_PIERCE_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_5_2
+              type: 1
+              value: "-0.200000"
+              level: "-0.020000"
+            base: -0.2
+            per: -0.02
+            chance: 0
+          - icon: BuffIcon_VULNERABLE
+            desc:
+              desc: Effect_PECS_Saetti_N_5_3
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 0
+          - icon: BuffIcon_DEF_PIERCE_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_51_1
+              type: 1
+              value: "-0.400000"
+              level: "-0.040000"
+            base: -0.4
+            per: -0.04
+            chance: 9.99
+          - icon: BuffIcon_DEF_PIERCE_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_52_1
+              type: 1
+              value: "-0.300000"
+              level: "-0.030000"
+            base: -0.3
+            per: -0.03
+            chance: 9.99
+          - icon: BuffIcon_DEF_PIERCE_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_53_1
+              type: 1
+              value: "-0.200000"
+              level: "-0.020000"
+            base: -0.2
+            per: -0.02
+            chance: 9.99
+          - icon: BuffIcon_VULNERABLE
+            desc:
+              desc: Effect_PECS_Saetti_N_54_1
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 1
+          - icon: BuffIcon_DEF_UP
+            desc:
+              desc: Effect_PECS_Saetti_N_55_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, 모든 적의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="3" r /> → <val idx="4" r /> → <val idx="5" r /></sec>가 감소합니다.
+        <sec>해당 효과는 대상의 <sec typ="chance">효과 저항을 무시</sec>하며 라운드 경과에 따라 점감합니다.</sec>
+        <sec typ="cond">피격 시</sec>, 2라운드 동안 <sec typ="cond">자신보다 방어력이 낮은 적</sec>이 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="6" r /></sec>가 증가합니다.
+        <sec><sec typ="note">조심하세요!</sec>로 인한 방어력 증가 효과가 <sec typ="cond">공격 적중 시</sec>에도 발동</sec>하고, <sec>지속 라운드가 무제한으로 변경됩니다</sec>.
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, all enemies' <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Pierce <val idx="3" r /> → <val idx="4" r /> → <val idx="5" r /></sec> decreases.
+        <sec>This effect <sec typ="chance">ignores the target's Effect Resistance</sec> and diminishes as rounds pass.</sec>
+        <sec typ="cond">When hit</sec>, <sec typ="cond">enemies with lower DEF than this unit</sec> have their <sec typ="buff"><buff typ="VULNERABLE" /> damage taken <val idx="6" r /></sec> increased for 2 rounds.
+        <sec>The DEF increase effect from <sec typ="note">Be Careful!</sec> also triggers <sec typ="cond">when an attack hits</sec></sec>, and <sec>its duration is changed to unlimited</sec>.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、すべての敵の<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="3" r /> → <val idx="4" r /> → <val idx="5" r /></sec>が減少します。
+        <sec>この効果は対象の<sec typ="chance">効果耐性を無視</sec>し、ラウンドの経過に応じて逓減します。</sec>
+        <sec typ="cond">被撃時</sec>、2ラウンドの間、<sec typ="cond">自身より防御力が低い敵</sec>が受ける<sec typ="buff"><buff typ="VULNERABLE" /> ダメージ <val idx="6" r /></sec>が増加します。
+        <sec><sec typ="note">気をつけてください！</sec>による防御力増加効果が<sec typ="cond">攻撃命中時</sec>にも発動</sec>し、<sec>持続ラウンドが無制限に変更されます</sec>。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，所有敵人的<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦穿透 <val idx="3" r /> → <val idx="4" r /> → <val idx="5" r /></sec>減少。
+        <sec>此效果會<sec typ="chance">無視目標的效果抗性</sec>，並隨著回合經過而遞減。</sec>
+        <sec typ="cond">受到攻擊時</sec>，<sec typ="cond">防禦力低於自身的敵人</sec>的<sec typ="buff"><buff typ="VULNERABLE" /> 受到傷害 <val idx="6" r /></sec>增加，持續2回合。
+        <sec><sec typ="note">請小心！</sec>所造成的防禦力增加效果也會在<sec typ="cond">攻擊命中時</sec>發動</sec>，且<sec>持續回合變更為無限制</sec>。
 dialogue:
   KR:
     "1":
