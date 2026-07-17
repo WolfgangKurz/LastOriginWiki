@@ -643,7 +643,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 									</div>
 								</div>
 								<div>
-									<Locale k={ `EQUIP_${e.uid}` } />
+									<Locale raw={ false } k={ `EQUIP_${e.uid}` } />
 								</div>
 							</div>
 							: <div class="equip-slot" data-type={ unitInfo.slots[i] }>

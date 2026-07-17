@@ -80,7 +80,7 @@ const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 			{ ((e): preact.VNode => equip && e
 				? <>
 					<div class="equip-title">
-						<Locale k={ `EQUIP_${e.uid}` } />
+						<Locale raw={ false } k={ `EQUIP_${e.uid}` } />
 					</div>
 					<div class="equip-level">
 						<input type="range" class="form-range" min="0" max="10" value={ equip.level } onInput={ (e): void => {
