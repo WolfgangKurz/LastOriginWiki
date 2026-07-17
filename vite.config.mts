@@ -21,7 +21,7 @@ export default defineConfig(async ({ mode, command }) => {
 	const isProd = mode === "production";
 	const isDev = !isProd;
 
-	// template scripts
+	// MARK: template scripts
 	console.log(lightMagenta("  + preprocessing template scripts..."));
 	{
 		const jiti = createJiti(import.meta.url);
@@ -35,7 +35,7 @@ export default defineConfig(async ({ mode, command }) => {
 		}
 	}
 
-	// buildtime
+	// MARK: buildtime
 	console.log(lightMagenta("  + buildtime updating..."));
 	{
 		const dest = path.resolve(__dirname, "src", "buildtime.ts");
@@ -65,7 +65,7 @@ export default defineConfig(async ({ mode, command }) => {
 		);
 	}
 
-	// yaml hash
+	// MARK: yaml hash
 	if (isProd) {
 		console.log(lightMagenta("  + yaml hash updating..."));
 
@@ -235,14 +235,6 @@ export default defineConfig(async ({ mode, command }) => {
 			minify: isProd,
 			sourcemap: isDev,
 
-			watch: command === "serve"
-				? {
-					exclude: [
-						"external/yaml/**",
-						"db/**",
-					]
-				}
-				: undefined,
 			rollupOptions: {
 				onLog (_level, log, _handler) {
 					if (log.code === "CIRCULAR_DEPENDENCY")
@@ -273,6 +265,14 @@ export default defineConfig(async ({ mode, command }) => {
 			fs: {
 				allow: [__dirname],
 			},
+			watch: command === "serve"
+				? {
+					ignored: [
+						path.join(__dirname, "external", "yaml", "**"),
+						path.join(__dirname, "db", "**"),
+					]
+				}
+				: undefined,
 		},
 		css: {
 			preprocessorOptions: {
