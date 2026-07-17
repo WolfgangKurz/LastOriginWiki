@@ -5,7 +5,7 @@ export const WorldIds: string[] = [
 	"Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "EvA0", "Ev7", "Ev8", "Ev9", "Ev10",
 	"Ev11", "Ev12", "Ev13", "Ev14", "Ev15", "Ev16", "Ev17", "Ev18", "Ev19", "Ev20",
 	"Ev21", "Ev22", "Ev23", "Ev24", "Ev25", "Ev26", "Ev27", "Ev28", "Ev29", "Ev30",
-	"Ev31", "Ev32", "Ev33", "Ev34", "Ev35", "Ev36", "Ev37", "Ev38", "Ev39",
+	"Ev31", "Ev32", "Ev33", "Ev34", "Ev35", "Ev36", "Ev37", "Ev38", "Ev39", "Ev40",
 ];
 export const SubStoryUnit: Record<string, string> = {
 	"S1-1": "AGS_Rampart",
@@ -30,9 +30,9 @@ export const PermanentEvents: string[] = [
 	"Ev11", "Ev12", "Ev13", "Ev14", "Ev15", "Ev16", "Ev17", "Ev18", "Ev19",
 ];
 export const NewMapList: string[] = [];
-export const CurrentEventId = "Ev39";
-export const EventFrom = new Date(2026, 5 - 1, 21);
-export const EventTo = new Date(2026, 6 - 1, 18);
+export const CurrentEventId = "Ev40";
+export const EventFrom = new Date(2026, 7 - 1, 2);
+export const EventTo = new Date(2026, 7 - 1, 30);
 
 export const IsEventRunning = CurrentEventId && (d => EventFrom < d && d < EventTo)(new Date());
 export const CurrentEvent = IsEventRunning ? CurrentEventId : "";

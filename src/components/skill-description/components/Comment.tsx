@@ -1,5 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
+import he from "he";
 
 import * as Popper from "@popperjs/core";
 
@@ -62,8 +63,8 @@ export const Comment: FunctionalComponent<CommentProps> = (props) => {
 			popperInstance.update();
 	});
 
-	const display = props.display || props.t;
-	const locale = props.locale || props.loc;
+	const display = he.unescape(props.display ?? props.t ?? "");
+	const locale = !!(props.locale ?? props.loc);
 
 	const _display = display
 		? `UNIT_SKILL_SECTION_NAME_${display}`

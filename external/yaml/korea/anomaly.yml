@@ -179,7 +179,7 @@ Anomaly_003:
           desc:
             desc: Effect_BUFF_Anomaly_N_30_1
             type: 0
-            value: "6"
+            value: "7"
             level: "0"
           attr: 3
           erase:
@@ -188,7 +188,7 @@ Anomaly_003:
             isBuff: true
             type: 21
             ap_set:
-              base: 6
+              base: 7
               per: 0
           overlap: 4
         - icon: BuffIcon_ATK_UP
@@ -297,6 +297,7 @@ Anomaly_005:
         - 1
       class:
         - 0
+        - 1
         - 2
       role:
         - 0
@@ -365,7 +366,7 @@ Anomaly_005:
           desc:
             desc: Effect_BUFF_Anomaly_N_50_4
             type: 1
-            value: "-0.400000"
+            value: "-0.300000"
             level: "0"
           attr: 3
           erase:
@@ -374,8 +375,119 @@ Anomaly_005:
             isBuff: true
             type: 13
             turnSpeed:
-              base: -40%
+              base: -30%
               per: 0%
           overlap: 4
       maxStack: 0
+    - key: Effect_BUFF_Flood_N_29
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 5
+      buffs:
+        - icon: BuffIcon_FIRERES_UP
+          desc:
+            desc: Effect_BUFF_Flood_N_29_1
+            type: 1
+            value: "0.750000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 15
+            resist:
+              elem: fire
+              value:
+                base: 75%
+                per: 0%
+          overlap: 4
+      maxStack: 1
+    - key: Effect_BUFF_Flood_N_30
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 5
+      buffs:
+        - icon: BuffIcon_ICERES_DOWN
+          desc:
+            desc: Effect_BUFF_Flood_N_30_1
+            type: 1
+            value: "-0.750000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 17
+            resist:
+              elem: ice
+              value:
+                base: -75%
+                per: 0%
+          overlap: 4
+      maxStack: 1
+    - key: Effect_BUFF_Flood_N_31
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 5
+      buffs:
+        - icon: BuffIcon_LIGHTNINGRES_DOWN
+          desc:
+            desc: Effect_BUFF_Flood_N_31_1
+            type: 1
+            value: "-0.750000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 19
+            resist:
+              elem: lightning
+              value:
+                base: -75%
+                per: 0%
+          overlap: 4
+      maxStack: 1
   lv: 1

@@ -95,9 +95,11 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	}
 
 	function Speaker (data: StoryData): DialogCharacter | undefined {
-		const speakerTable: Record<DIALOG_SPEAKER, "L" | "C" | "R" | ""> = {
+		const speakerTable: Record<DIALOG_SPEAKER, "L" | "LC" | "C" | "RC" | "R" | ""> = {
 			[DIALOG_SPEAKER.LEFT]: "L",
+			[DIALOG_SPEAKER.LEFT_CENTER]: "LC",
 			[DIALOG_SPEAKER.CENTER]: "C",
+			[DIALOG_SPEAKER.RIGHT_CENTER]: "RC",
 			[DIALOG_SPEAKER.RIGHT]: "R",
 			[DIALOG_SPEAKER.NONE]: "",
 		};
@@ -108,18 +110,17 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			.filter(r => r.SCG === SCG_ACTIVATION.ACTIVATION)
 			.filter(r => !r.image.includes("_Cut"));
 	}
-	function ImageToFace (model: string): { uid: string; skin: number; fallback: string; } | null {
+	function ImageToFace (model: string): { src: string; uid: string; skin: number; fallback: string; } | null {
 		let sid = model
+			.replace(/DL([0-9]+)?$/g, "")
+			.replace(/_$/g, "")
 			.replace(/_N_DL(_[0-9]+)?/g, "_N")
-			.replace(/(_[NS]S[0-9]+)_NDL/g, "$1")
+			.replace(/(_[NS]S[0-9]+)_N/g, "$1")
 			.replace(/_SS([0-9]+)/g, (p, p1) => `_NS${parseInt(p1, 10) + 20}`)
 			.replace(/_N[0-9]+/g, "_N")
-			.replace(/_DL_N/g, "")
-			.replace(/_DL/g, "")
-			.replace(/_NDL/g, "_N")
 			.replace(/_N_N/g, "_N")
 			.replace(/_D$/g, "") // same with _DL_N
-			.replace(/^2DModel_(.*)_([NPS])(S[0-9]+)?$/, (p, p1, p2, p3) => {
+			.replace(/^(?:2DModel_)?(.*)_([NPS])(S[0-9]+)?$/, (p, p1, p2, p3) => {
 				if (p2 === "N") {
 					if (p3)
 						return `${p1}_${p3.substring(1)}`;
@@ -137,6 +138,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 
 		if (sid.includes("_Dialog")) { // story 2dmodel
 			return {
+				src: model,
 				uid: "!",
 				skin: 0,
 				fallback: `${AssetsRoot}/${imgExt}/story/${sid.replace(/^2DModel_/, "")}.${imgExt}`,
@@ -147,6 +149,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		const r = /^(.+)_([0-9]+)$/.exec(sid);
 		if (!r) {
 			return {
+				src: model,
 				uid: sid,
 				skin: 0,
 				fallback: `${AssetsRoot}/${imgExt}/story/${sid}_0.${imgExt}`,
@@ -155,6 +158,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 
 		const skin = parseInt(r[2], 10);
 		return {
+			src: model,
 			uid: r[1],
 			skin,
 			fallback: `${AssetsRoot}/${imgExt}/story/${r[1]}_${skin}.${imgExt}`,
@@ -311,6 +315,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	const faces = useMemo(() => {
 		if (!assertDBData(storyData)) return [];
 		interface FaceMetadata {
+			src: string;
 			uid: string;
 			skin: number;
 			fallback: string;
@@ -438,7 +443,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			{ faces.map(f => IsDev
 				? <div class="d-inline-block px-2">
 					<small class="d-block">
-						{ f.uid } { f.skin }
+						{ f.src }<br />{ f.uid }<br />{ f.skin }
 					</small>
 					<UnitFace class="mx-1" { ...f } size="3rem" />
 				</div>

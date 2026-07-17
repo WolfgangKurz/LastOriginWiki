@@ -93,21 +93,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 		Skill: "Skill",
 	};
 
-	const [equips, setEquips] = useState<Array<Equip | false | null>>([null, null, null, null]);
 	const equipList = slot.equips.map(e => useDBData<Equip>(e ? `equip/${e.uid}` : null));
-
-	useEffect(() => {
-		slot.equips.forEach((x, i) => {
-			const v = equips[i];
-			if (
-				(!x && v !== null) ||
-				(x && ((v === null) || (v && x.uid !== v.uid)))
-			)
-				// 원본은 없는데 비어있지 않은 경우
-				// 원본은 있는데 비어있는 경우 또는 원본과 서로 다른 장비인 경우
-				setEquips(a => a.map((v, j) => j === i ? null : v));
-		});
-	}, [slot.equips, equips]);
 
 	function levelValue (value: number | [number, number], level: number): Decimal {
 		if (typeof value === "number")
@@ -461,7 +447,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 			DMGTakenInc: calcSingle("DMGTakenInc"),
 			DMGTakenDec: calcSingle("DMGTakenDec"),
 		};
-	}, [baseStats, unitInfo, slot]);
+	}, [baseStats, unitInfo, slot, equipList, includeBuffs]);
 
 	const costData = useMemo((): {
 		metal: number;
@@ -643,7 +629,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 									</div>
 								</div>
 								<div>
-									<Locale k={ `EQUIP_${e.uid}` } />
+									<Locale raw={ false } k={ `EQUIP_${e.uid}` } />
 								</div>
 							</div>
 							: <div class="equip-slot" data-type={ unitInfo.slots[i] }>

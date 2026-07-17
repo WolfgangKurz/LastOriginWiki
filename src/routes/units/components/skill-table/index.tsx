@@ -185,13 +185,13 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 		</select>
 		<span class="text-secondary ps-2">|</span>
 		<div class="d-inline-block ms-2">
-			<div class={ cn("form-check d-inline-block me-2", unit.body === ACTOR_BODY_TYPE.AGS && "text-secondary") }>
+			<div class={ cn("form-check d-inline-block me-2", !unit.oathable && "text-secondary") }>
 				<label>
 					<input
 						class="form-check-input"
 						type="checkbox"
 						checked={ favorBonus }
-						// disabled={ unit.body === ACTOR_BODY_TYPE.AGS }
+						disabled={ !unit.oathable }
 						onChange={ (): void => {
 							const v = !favorBonus;
 							setFavorBonus(v);

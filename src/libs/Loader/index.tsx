@@ -157,16 +157,30 @@ Object.freeze(useDBData); // to prevent overwrite symbols
  */
 export function assertDBData<T> (data: (T | symbol)[]): data is (T)[];
 /**
+ * Check all element of `data` is not `Loading` or `Failed` or `None` state of `useDBData`.
+ * @param data Data to check, return of `useDBData`.
+ * @param allows Types to allow of state of `useDBData`.
+ * @returns `true` if all data ready, `false` if not.
+ */
+export function assertDBData<T> (data: (T | symbol)[], allows: symbol[]): data is (T)[];
+/**
  * Check `data` is not `Loading` or `Failed` or `None` state of `useDBData`.
  * @param data Data to check, return of `useDBData`.
  * @returns `true` if data ready, `false` if not.
  */
 export function assertDBData<T> (data: T | symbol): data is T;
-export function assertDBData<T> (data: T | symbol | [T | symbol]): data is T | [T] {
+/**
+ * Check `data` is not `Loading` or `Failed` or `None` state of `useDBData`.
+ * @param data Data to check, return of `useDBData`.
+ * @param allows Types to allow of state of `useDBData`.
+ * @returns `true` if data ready, `false` if not.
+ */
+export function assertDBData<T> (data: T | symbol, allows: symbol[]): data is T;
+export function assertDBData<T> (data: T | symbol | [T | symbol], allows: symbol[] = []): data is T | [T] {
 	if (Array.isArray(data))
-		return data.every(r => typeof (r) !== "symbol");
+		return data.every(r => typeof (r) !== "symbol" || allows.includes(r));
 	else
-		return typeof (data) !== "symbol";
+		return typeof (data) !== "symbol" || allows.includes(data);
 }
 
 

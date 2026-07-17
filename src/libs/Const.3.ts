@@ -872,6 +872,9 @@ export const ArtistLinks: Record<string, ArtistLinkType> = {
 		X: "https://x.com/Ru_BeeAna",
 		Pixiv: "https://www.pixiv.net/users/8930920",
 	},
+	"se_ol": {
+		X: "https://x.com/yeon30835559",
+	},
 	"Serin199": {
 		X: "https://x.com/serin199",
 		Pixiv: "https://www.pixiv.net/users/10410554",
@@ -953,6 +956,10 @@ export const ArtistLinks: Record<string, ArtistLinkType> = {
 	"れつな(Retsuna)": {
 		X: "https://x.com/Retsuna_Blue",
 		Pixiv: "https://www.pixiv.net/users/59560",
+	},
+	"赤魂(AkaDama2010RB15)": {
+		X: "https://x.com/AkaDama2010RB15",
+		Pixiv: "https://www.pixiv.net/users/23787",
 	},
 	"朝凪(Asanagi)": {
 		X: "https://x.com/Victim_Girls",

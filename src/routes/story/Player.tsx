@@ -5,7 +5,7 @@ import Store from "@/store";
 import * as PIXI from "pixi.js";
 import * as LAYERS from "@pixi/layers";
 
-import { APPEAR_EFFECT, DIALOG_SPEAKER, OFF_EFFECT, SCG_ACTIVATION, SCREEN_EFFECT } from "@/types/Enums";
+import { APPEAR_EFFECT, DIALOG_CHAREMOJI_EFFECT, DIALOG_SPEAKER, OFF_EFFECT, SCG_ACTIVATION, SCREEN_EFFECT } from "@/types/Enums";
 import { DialogCharacter, DialogSelection, StoryData } from "@/types/Story/Story";
 import { StoryModelMeta } from "@/types/Story/Model";
 import { LocaleTypes } from "@/types/Locale";
@@ -95,8 +95,8 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 	const [bgDesc, setBGDesc] = useState<Record<LocaleTypes, string | undefined> | null>(null);
 	const [bgImage, setBGImage] = useState<string>("");
 
-	const [chars, setChars] = useState<Tuple<DialogCharacter | null, 3>>([null, null, null]);
-	const charRef = useRef<Tuple<CharSpriteType | undefined, 3>>([undefined, undefined, undefined]);
+	const [chars, setChars] = useState<Tuple<DialogCharacter | null, 5>>([null, null, null, null, null]);
+	const charRef = useRef<Tuple<CharSpriteType | undefined, 5>>([undefined, undefined, undefined, undefined, undefined]);
 
 	const [addImage, setAddImage] = useState<string>("");
 	const [addImageAppear, setAddImageAppear] = useState<APPEAR_EFFECT>(APPEAR_EFFECT.NONE);
@@ -108,7 +108,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 	const [selDisp, setSelDisp] = useState(false);
 
 	const screenEffectFilter = useMemo(() => new PIXI.ColorMatrixFilter(), []);
-	const speakerFilter = useMemo(() => [0, 0, 0].map(() => new PIXI.ColorMatrixFilter()), []);
+	const speakerFilter = useMemo(() => [0, 0, 0, 0, 0].map(() => new PIXI.ColorMatrixFilter()), []);
 
 	const playerRef = useRef<HTMLDivElement>(null);
 
@@ -122,7 +122,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		return <></>;
 	}
 
-	function setCharsByIndex (value: DialogCharacter | null, index: 0 | 1 | 2) {
+	function setCharsByIndex (value: DialogCharacter | null, index: 0 | 1 | 2 | 3 | 4) {
 		setChars(prev => {
 			const ret: Mutable<typeof chars> = [...prev];
 			ret[index] = value;
@@ -277,6 +277,8 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			BR_Brownie_01_0_O: "BR_Brownie_0_O",
 			BR_Brownie_02_0_O: "BR_Brownie_0_O",
 		};
+
+		// TODO: Implement EmojiEffect & LiveEffect
 
 		const reg = /^2DModel_(.+)_([NPS])(S([0-9]+))?$/;
 		if (reg.test(model)) {
@@ -565,6 +567,12 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			if (curData.char.C) setCharsByIndex(curData.char.C, 2);
 			else if (chars[2]) setCharsByIndex(null, 2);
 
+			if (curData.char.LC) setCharsByIndex(curData.char.LC, 3);
+			else if (chars[3]) setCharsByIndex(null, 3);
+
+			if (curData.char.RC) setCharsByIndex(curData.char.RC, 4);
+			else if (chars[4]) setCharsByIndex(null, 4);
+
 			if (curData.add) {
 				if (curData.add.image !== addImage)
 					setAddImage(curData.add.image);
@@ -739,11 +747,11 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		}
 	}, [...charRef.current, curData]);
 
-	{ // Char L/R/C
-		const SPLITCOUNT = 6;
-		const SPLITINDEX = [1, SPLITCOUNT - 1, SPLITCOUNT / 2];
+	{ // Char L/R/C/LC/RC
+		const SPLITCOUNT = 6; // [0 1 2 3 4 5 6]
+		const SPLITINDEX = [1, 5, 3, 2, 4]; // L R C LC RC
 
-		for (let i = 0; i < 3; i++) {
+		for (let i = 0; i < 5; i++) {
 			const index = i;
 
 			useEffect(() => { // Char
@@ -856,7 +864,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 						}
 
 						char.filters = [speakerFilter[index]];
-						char.name = "Char" + ["L", "R", "C"][index];
+						char.name = "Char" + ["L", "R", "C", "LC", "RC"][index];
 						char.zIndex = 501 + index;
 
 						char.position.set(...p);
@@ -947,9 +955,11 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		if (dialog && curData) {
 			const hasText = Object.values(curData.text).some(r => r);
 			if (hasText) {
-				const speakerTable: Record<Exclude<DIALOG_SPEAKER, DIALOG_SPEAKER.NONE>, "L" | "C" | "R"> = {
+				const speakerTable: Record<Exclude<DIALOG_SPEAKER, DIALOG_SPEAKER.NONE>, "L" | "LC" | "C" | "RC" | "R"> = {
 					[DIALOG_SPEAKER.LEFT]: "L",
+					[DIALOG_SPEAKER.LEFT_CENTER]: "LC",
 					[DIALOG_SPEAKER.CENTER]: "C",
+					[DIALOG_SPEAKER.RIGHT_CENTER]: "RC",
 					[DIALOG_SPEAKER.RIGHT]: "R",
 				};
 
@@ -960,6 +970,8 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				speakerFilter[0].tint(curData.char.L?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
 				speakerFilter[1].tint(curData.char.R?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
 				speakerFilter[2].tint(curData.char.C?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
+				speakerFilter[3].tint(curData.char.LC?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
+				speakerFilter[4].tint(curData.char.RC?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
 
 				dialog.setText(Nn(LText(curData.text)) || "~");
 				if (speaker && LText(speaker.name).trim()) {

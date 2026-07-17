@@ -1,5 +1,5 @@
 import { LocaleTypes } from "../Locale";
-import { APPEAR_EFFECT, DIALOG_SPEAKER, OFF_EFFECT, SCG_ACTIVATION, SCREEN_EFFECT } from "../Enums";
+import { APPEAR_EFFECT, DIALOG_CHARACTER_EFFECT, DIALOG_CHAREMOJI_EFFECT, DIALOG_SPEAKER, OFF_EFFECT, SCG_ACTIVATION, SCREEN_EFFECT } from "../Enums";
 
 type Localed<T> = Record<LocaleTypes, T>;
 type LString = Localed<string | undefined>;
@@ -34,6 +34,8 @@ export interface DialogCharacter extends DialogImage {
 
 	animAdd: string;
 	SCG: SCG_ACTIVATION;
+	live: DIALOG_CHARACTER_EFFECT;
+	emoji: DIALOG_CHAREMOJI_EFFECT;
 }
 
 export interface DialogSelection {
@@ -63,6 +65,8 @@ export interface StoryData {
 		L?: DialogCharacter;
 		C?: DialogCharacter;
 		R?: DialogCharacter;
+		LC?: DialogCharacter;
+		RC?: DialogCharacter;
 	};
 
 	add?: DialogImage;

@@ -325,7 +325,10 @@ interface BuffTrigger_Near {
 }
 
 interface BuffTrigger_ApplyOneOf {
-	apply_one_of: string[];
+	apply_one_of: Array<{
+		key: string;
+		ratio: number;
+	}>;
 }
 
 interface BuffTrigger_Beaten {

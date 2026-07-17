@@ -17,11 +17,14 @@ export enum BUFFEFFECT_ERASE_TYPE {
 	/** 영구 */
 	PERMANENT = 3,
 
-	// __MAX__ = 4,
+	/** 보존 (웨이브 종료 시에도 유지) */
+	PRESERVE = 4,
+
+	// __MAX__ = 5,
 }
 
 /** 계산된 버프 삭제 조건 */
-export type BuffErase = BuffErase_Round | BuffErase_Count | BuffErase_Trigger | Record<string, never>/* {} */;
+export type BuffErase = BuffErase_Round | BuffErase_Count | BuffErase_Trigger | BuffErase_Preserve | Record<string, never>/* {} */;
 
 /**
  * 매 라운드 시작 시 `rounds` 감소, 0이 되면 삭제
@@ -45,4 +48,11 @@ interface BuffErase_Count {
 interface BuffErase_Trigger {
 	rounds?: number;
 	until: BuffTrigger;
+}
+
+/**
+ * 웨이브 종료 후에도 유지되는 버프
+ */
+interface BuffErase_Preserve {
+	preserve: true;
 }

@@ -451,7 +451,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				</div> }>
 					<span class={ cn("SubBadge", style.SubBadge, style.DetailedBadge, color && `text-${color}`) }>
 						{ attr }
-						<span class="badge bg-dark ms-1" data-type="buff-uid">
+						<span class="badge bg-dark ms-0" data-type="buff-uid">
 							{ uids }
 						</span>
 						{ name || "???" }
@@ -812,6 +812,22 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 								? <Locale raw={ false } k="BUFFEFFECT_BY_MAX_HP" />
 								: <Locale raw={ false } k="BUFFEFFECT_BY_HP" />,
 						] } />;
+					case BUFFEFFECT_TYPE.ADJUST_AP_ACTIVE_SKILL_1: // 148
+						return <Locale raw={ false } k="BUFFTYPE_ADJUST_AP_ACTIVE_SKILL" p={ [1] } />;
+					case BUFFEFFECT_TYPE.ADJUST_AP_ACTIVE_SKILL_2: // 149
+						return <Locale raw={ false } k="BUFFTYPE_ADJUST_AP_ACTIVE_SKILL" p={ [2] } />;
+					case BUFFEFFECT_TYPE.BUFF_DISALLOW_SPECIFIC: // 150
+						return <Locale
+							raw={ false }
+							k="BUFFTYPE_BUFF_DISALLOW_SPECIFIC"
+							p={ [<Locale raw={ false } k="BUFFEFFECT_ATTR_PREFIX_0" />] }
+						/>;
+					case BUFFEFFECT_TYPE.ENUM_DISALLOW_SPECIFIC: // 151
+						return <Locale
+							raw={ false }
+							k="BUFFTYPE_BUFF_DISALLOW_SPECIFIC"
+							p={ [<Locale raw={ false } k="BUFFEFFECT_ATTR_PREFIX_6" />] }
+						/>;
 				}
 				return <>{ type }</>;
 			})() }
@@ -1291,13 +1307,18 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					raw={ false }
 					k="BUFFTRIGGER_APPLY_ONE_OF"
 					p={ [<>{
-						trigger.apply_one_of.map(name =>
+						trigger.apply_one_of.map(row => <>
 							<span class={ cn("SubBadge", style.SubBadge, style.Narrow) }>
-								<span data-type="buff-uid" class="badge bg-dark">
-									{ getBuffUid(props.uid, name) }
+								<span data-type="buff-uid" class="badge bg-dark ms-1 me-1">
+									{ getBuffUid(props.uid, row.key) }
 								</span>
-								<Locale raw={ false } k={ name } />
-							</span>)
+								<Locale raw={ false } k={ row.key } />
+
+								<span data-type="buff-ratio" class="badge bg-success ms-1 me-0">
+									{ nsignedValue({ base: row.ratio, per: 0 }, 0, true) }%
+								</span>
+							</span>
+						</>)
 							.gap("・")
 					}</>
 					] } />;
@@ -1696,9 +1717,14 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				return <Locale raw={ false } k="BUFFEFFECT_GUARDPIERCE_APPLY" />;
 			return <Locale raw={ false } k="BUFFEFFECT_GUARDPIERCE_NO_APPLY" />;
 		}
-		else if ("buff_disallow" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_BUFF_DISALLOW" />;
-		else if ("wide" in stat) {
+		else if ("disallow" in stat) {
+			if (stat.disallow === "all")
+				return <Locale raw={ false } k="BUFFEFFECT_BUFF_DISALLOW" />;
+			else
+				return <Locale raw={ false } k="BUFFEFFECT_BUFF_DISALLOW_SPECIFIC" p={ [
+					getBuffEffectTypeText(stat.type, stat.attr),
+				] } />;
+		} else if ("wide" in stat) {
 			return <Locale
 				raw={ false }
 				k={ `BUFFEFFECT_WIDE_${stat.wide.type.toUpperCase()}_RATIO` }
@@ -1761,7 +1787,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		} else if ("rounds" in erase) {
 			if (erase.rounds === 0) return <></>;
 			return <Locale raw={ false } k="BUFFERASE_ROUND" p={ [erase.rounds] } />;
-		}
+		} else if ("preserve" in erase)
+			return <Locale raw={ false } k="BUFFERASE_PRESERVE" />;
+
 		return <Locale raw={ false } k="BUFFERASE_PERMANENT" />;
 	}
 	function getTargetText (body: ACTOR_BODY_TYPE[], cls: ACTOR_CLASS[], role: ROLE_TYPE[], target: TARGET_TYPE): preact.VNode {

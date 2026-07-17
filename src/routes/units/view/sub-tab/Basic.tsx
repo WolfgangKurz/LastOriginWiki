@@ -520,7 +520,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 							</Badge>
 
 							<div class={ style.Name }>
-								<Locale k={ `EQUIP_${limited.fullKey}` } />
+								<Locale raw={ false } k={ `EQUIP_${limited.fullKey}` } />
 							</div>
 						</a>) }
 					</div>
