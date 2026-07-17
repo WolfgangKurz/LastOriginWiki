@@ -3215,11 +3215,7 @@ skills:
             - key: Effect_3P_Lamia_N_3
               on: round
               if:
-                - in_battle:
-                    - Char_3P_Calypso_N
-                  more:
-                    - 0
-                    - 1
+                - false
                 - false
               body:
                 - 0
@@ -3325,9 +3321,7 @@ skills:
               if:
                 - in_battle:
                     - Char_3P_Calypso_N
-                  more:
-                    - 1
-                    - 1
+                    - Char_3P_Charybdis_N
                 - false
               body:
                 - 0
@@ -3346,8 +3340,8 @@ skills:
                   desc:
                     desc: Effect_3P_Lamia_N_31_1
                     type: 1
-                    value: "0.040000"
-                    level: "0.040000"
+                    value: "0.020000"
+                    level: "0.020000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -3355,15 +3349,15 @@ skills:
                     isBuff: true
                     type: 1
                     attack:
-                      base: 4%
-                      per: 4%
+                      base: 2%
+                      per: 2%
                   overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
                     desc: Effect_3P_Lamia_N_31_2
                     type: 1
-                    value: "0.040000"
-                    level: "0.040000"
+                    value: "0.020000"
+                    level: "0.020000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -3371,15 +3365,15 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: 4%
-                      per: 4%
+                      base: 2%
+                      per: 2%
                   overlap: 4
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_3P_Lamia_N_31_3
                     type: 1
-                    value: "0.040000"
-                    level: "0.040000"
+                    value: "0.020000"
+                    level: "0.020000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -3387,8 +3381,8 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 4%
-                      per: 4%
+                      base: 2%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3398,6 +3392,7 @@ skills:
                 - target:
                     - Char_3P_Calypso_N
                     - Char_3P_Lamia_N
+                    - Char_3P_Charybdis_N
                 - false
               body:
                 - 0
@@ -3438,6 +3433,7 @@ skills:
                 - target:
                     - Char_3P_Calypso_N
                     - Char_3P_Lamia_N
+                    - Char_3P_Charybdis_N
                 - false
               body:
                 - 0
@@ -3467,6 +3463,78 @@ skills:
                     attack_support:
                       base: 100%
                       per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Charybdis_N_51
+              on: enemy_killed_passive
+              if:
+                - target:
+                    - Char_3P_Calypso_N
+                    - Char_3P_Lamia_N
+                    - Char_3P_Charybdis_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_3P_Charybdis_N_51_1
+                    type: 0
+                    value: "100"
+                    level: "0"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 0
+                    attack:
+                      base: 100
+                      per: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Charybdis_N_52
+              on: enemy_killed_passive
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_3P_Charybdis_N_52_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 100
+                    off: 1
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3532,28 +3600,28 @@ skills:
             desc:
               desc: Effect_3P_Lamia_N_31_1
               type: 1
-              value: "0.040000"
-              level: "0.040000"
-            base: 0.04
-            per: 0.04
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
             chance: 1
           - icon: BuffIcon_ACCURACY_UP
             desc:
               desc: Effect_3P_Lamia_N_31_2
               type: 1
-              value: "0.040000"
-              level: "0.040000"
-            base: 0.04
-            per: 0.04
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
             chance: 1
           - icon: BuffIcon_DEF_PIERCE_UP
             desc:
               desc: Effect_3P_Lamia_N_31_3
               type: 1
-              value: "0.040000"
-              level: "0.040000"
-            base: 0.04
-            per: 0.04
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
             chance: 1
           - icon: BuffIcon_DamageAmp_Me
             desc:
@@ -3571,6 +3639,24 @@ skills:
               value: "1"
               level: "0"
             base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_3P_Charybdis_N_51_1
+              type: 0
+              value: "100"
+              level: "0"
+            base: 100
+            per: 0
+            chance: 1
+          - icon: BuffIcon_REMOVE_DEBUFF
+            desc:
+              desc: Effect_3P_Charybdis_N_52_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
             per: 0
             chance: 1
     desc:
@@ -3628,11 +3714,7 @@ skills:
             - key: Effect_3P_Lamia_N_4
               on: round
               if:
-                - in_battle:
-                    - Char_3P_Calypso_N
-                  more:
-                    - 0
-                    - 1
+                - false
                 - false
               body:
                 - 0
@@ -3739,9 +3821,7 @@ skills:
               if:
                 - in_battle:
                     - Char_3P_Calypso_N
-                  more:
-                    - 1
-                    - 1
+                    - Char_3P_Charybdis_N
                 - false
               body:
                 - 0
@@ -3767,6 +3847,7 @@ skills:
                     rounds: 1
                   value:
                     isBuff: true
+                    chance: 0%
                     type: 9
                     critical:
                       base: 2%
@@ -3783,6 +3864,7 @@ skills:
                     rounds: 1
                   value:
                     isBuff: true
+                    chance: 0%
                     type: 60
                     damage_multiply:
                       target: light
@@ -4103,7 +4185,7 @@ skills:
               level: "0.020000"
             base: 0.02
             per: 0.02
-            chance: 1
+            chance: 0
           - icon: BuffIcon_TROOPER_DMG_UP
             desc:
               desc: Effect_3P_Lamia_N_41_2
@@ -4112,7 +4194,7 @@ skills:
               level: "0.020000"
             base: 0.02
             per: 0.02
-            chance: 1
+            chance: 0
           - icon: BuffIcon_ARMORED_DMG_UP
             desc:
               desc: Effect_3P_Lamia_N_41_3
@@ -4363,6 +4445,7 @@ skills:
                 - target:
                     - Char_3P_Calypso_N
                     - Char_3P_Lamia_N
+                    - Char_3P_Charybdis_N
                 - false
               body:
                 - 0
@@ -4398,9 +4481,10 @@ skills:
               if:
                 - in_battle:
                     - Char_3P_Calypso_N
+                    - Char_3P_Charybdis_N
                   more:
                     - 1
-                    - 1
+                    - 2
                 - false
               body:
                 - 0
@@ -4507,6 +4591,47 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_3P_Lamia_N_55
+              on: round
+              if:
+                - in_battle:
+                    - Char_3P_Calypso_N
+                    - Char_3P_Charybdis_N
+                  more:
+                    - 2
+                    - 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_3P_Lamia_N_55_1
+                    type: 0
+                    value: "0.100000"
+                    level: "0.100000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 0.1
+                      per: 0.1
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -4600,6 +4725,15 @@ skills:
               level: "0.010000"
             base: 0.01
             per: 0.01
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_3P_Lamia_N_55_1
+              type: 0
+              value: "0.100000"
+              level: "0.100000"
+            base: 0.1
+            per: 0.1
             chance: 1
     desc:
       KR: |-

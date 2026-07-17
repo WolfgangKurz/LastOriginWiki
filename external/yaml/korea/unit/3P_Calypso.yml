@@ -2340,6 +2340,62 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_3P_Calypso_N_32
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_3P_Charybdis_N_6
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_3P_Calypso_N_32_1
+                    type: 1
+                    value: "0.210000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 21%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_3P_Calypso_N_32_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 15%
+                      per: 5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -2392,6 +2448,24 @@ skills:
           - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_3P_Calypso_N_31_2
+              type: 1
+              value: "0.150000"
+              level: "0.050000"
+            base: 0.15
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_3P_Calypso_N_32_1
+              type: 1
+              value: "0.210000"
+              level: "0.010000"
+            base: 0.21
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_3P_Calypso_N_32_2
               type: 1
               value: "0.150000"
               level: "0.050000"
@@ -2483,7 +2557,7 @@ skills:
                       base: -11%
                       per: -1%
                   overlap: 4
-                - icon: "0"
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_3P_Calypso_N_4_2
                     type: 1
@@ -2556,7 +2630,7 @@ skills:
                       base: -22%
                       per: -2%
                   overlap: 4
-                - icon: "0"
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_3P_Calypso_N_41_2
                     type: 1
@@ -2629,7 +2703,7 @@ skills:
                       base: -33%
                       per: -3%
                   overlap: 4
-                - icon: "0"
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_3P_Calypso_N_42_2
                     type: 1
@@ -2702,7 +2776,7 @@ skills:
                       base: -44%
                       per: -4%
                   overlap: 4
-                - icon: "0"
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_3P_Calypso_N_43_2
                     type: 1
@@ -2775,7 +2849,7 @@ skills:
                       base: -44%
                       per: -4%
                   overlap: 4
-                - icon: "0"
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_3P_Calypso_N_44_2
                     type: 1
@@ -2808,6 +2882,78 @@ skills:
                   overlap: 0
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_3P_Charybdis_N_51
+              on: enemy_killed_passive
+              if:
+                - target:
+                    - Char_3P_Calypso_N
+                    - Char_3P_Lamia_N
+                    - Char_3P_Charybdis_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_3P_Charybdis_N_51_1
+                    type: 0
+                    value: "100"
+                    level: "0"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 0
+                    attack:
+                      base: 100
+                      per: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Charybdis_N_52
+              on: enemy_killed_passive
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_3P_Charybdis_N_52_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 100
+                    off: 1
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -2830,7 +2976,7 @@ skills:
             base: -0.11
             per: -0.01
             chance: 1
-          - icon: "0"
+          - icon: BuffIcon_DEF_DOWN
             desc:
               desc: Effect_3P_Calypso_N_4_2
               type: 1
@@ -2857,7 +3003,7 @@ skills:
             base: -0.22
             per: -0.02
             chance: 1
-          - icon: "0"
+          - icon: BuffIcon_DEF_DOWN
             desc:
               desc: Effect_3P_Calypso_N_41_2
               type: 1
@@ -2884,7 +3030,7 @@ skills:
             base: -0.33
             per: -0.03
             chance: 1
-          - icon: "0"
+          - icon: BuffIcon_DEF_DOWN
             desc:
               desc: Effect_3P_Calypso_N_42_2
               type: 1
@@ -2911,7 +3057,7 @@ skills:
             base: -0.44
             per: -0.04
             chance: 1
-          - icon: "0"
+          - icon: BuffIcon_DEF_DOWN
             desc:
               desc: Effect_3P_Calypso_N_43_2
               type: 1
@@ -2938,7 +3084,7 @@ skills:
             base: -0.44
             per: -0.04
             chance: 1
-          - icon: "0"
+          - icon: BuffIcon_DEF_DOWN
             desc:
               desc: Effect_3P_Calypso_N_44_2
               type: 1
@@ -2956,6 +3102,24 @@ skills:
             base: 0
             per: 0
             chance: 0
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_3P_Charybdis_N_51_1
+              type: 0
+              value: "100"
+              level: "0"
+            base: 100
+            per: 0
+            chance: 1
+          - icon: BuffIcon_REMOVE_DEBUFF
+            desc:
+              desc: Effect_3P_Charybdis_N_52_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
     desc:
       KR: |-
         <sec typ="cond">전투 개시 시</sec>, <sec typ="cond">아군이 5기 이하</sec>면 모든 적의 <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="0" r /></sec> 및 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="1" r /></sec>를 감소시킵니다.
