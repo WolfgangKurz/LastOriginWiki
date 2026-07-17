@@ -28,20 +28,6 @@ interface SimulatorEquipProps {
 
 const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 	const slot = props.slot;
-	const [equips, setEquips] = useState<Array<Equip | false | null>>([null, null, null, null]);
-
-	useEffect(() => {
-		slot.equips.forEach((x, i) => {
-			const v = equips[i];
-			if (
-				(!x && v !== null) ||
-				(x && ((v === null) || (v && x.uid !== v.uid)))
-			)
-				// 원본은 없는데 비어있지 않은 경우
-				// 원본은 있는데 비어있는 경우 또는 원본과 서로 다른 장비인 경우
-				setEquips(a => a.map((v, j) => j === i ? null : v));
-		});
-	}, [slot.equips, equips]);
 
 	const [displayEquipPopup, setDisplayEquipPopup] = useState<boolean>(false);
 	const [currentPopup, setCurrentPopup] = useState<string | undefined>(undefined);
@@ -50,7 +36,7 @@ const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 	const FilterableEquip = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
 	const unit = useDBData<Unit>(`unit/${slot.uid}`);
 	const equipList = slot.equips.map(e => useDBData<Equip>(e ? `equip/${e.uid}` : null));
-	if (!assertDBData(FilterableEquip) || !assertDBData(unit) || !assertDBData(equipList))
+	if (!assertDBData(FilterableEquip) || !assertDBData(unit) || !(assertDBData(equipList, [useDBData.None])))
 		return <Loading.Data />;
 
 	return <div class="simulator-equips">
@@ -129,7 +115,7 @@ const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 					<BuffChecklist
 						class="equip-buffs"
 						uid={ slot.uid }
-						list={ e.stats[equip.level] }
+						list={ e.stats?.[equip.level] }
 						level={ equip.level }
 						buffTable={ equip.buffs }
 						onUpdate={ (key, checked): void => {
