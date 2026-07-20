@@ -47,13 +47,15 @@ const ReleaseDate: FunctionalComponent<UnitsListProps> = (props) => {
 				if (!displayUnitRelease.value && !s.releaseDate) return null!;
 				if (!displaySkinRelease.value && s.releaseDate) return null!;
 
-				const unit = list.find(u => u.uid === s.uid)!;
-				return [s.releaseDate || unit.releaseDate, s] as [number, SkinData];
+				const unit = list.find(u => u.uid === s.uid);
+				return [s.releaseDate || unit?.releaseDate || Number.MAX_SAFE_INTEGER, s] as [number, SkinData];
 			})
 			.filter(x => x)
 			.sort((a, b) => a[0] - b[0])
 			.forEach(s => {
-				const d = FormatDate(s[0]);
+				const d = s[0] === Number.MAX_SAFE_INTEGER
+					? "N/A"
+					: FormatDate(s[0]);
 
 				if (!(d in ret)) ret[d] = [];
 				ret[d].push(s[1]);

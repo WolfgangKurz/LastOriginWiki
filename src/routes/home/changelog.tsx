@@ -6,6 +6,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13176" date="2026-07-20"
+		bugfix={ <>
+			<li><BY>전투원정보</BY>의 <BB>스킨 보기</BB>의 <BG>출시일</BG> 페이지가 표기되지 않던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13174" date="2026-07-18"
 		new={ <>
 			<li>신규 전투원 <BY>카리브디스</BY>의 정보가 추가되었습니다.</li>
