@@ -27,7 +27,8 @@ export const SubStoryUnit: Record<string, string> = {
 
 export const PermanentEvents: string[] = [
 	"Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "Ev7", "Ev8", "Ev9", "Ev10",
-	"Ev11", "Ev12", "Ev13", "Ev14", "Ev15", "Ev16", "Ev17", "Ev18", "Ev19",
+	"Ev11", "Ev12", "Ev13", "Ev14", "Ev15", "Ev16", "Ev17", "Ev18", "Ev19", "Ev20",
+	"Ev21",
 ];
 export const NewMapList: string[] = [];
 export const CurrentEventId = "Ev40";
