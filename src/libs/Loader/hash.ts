@@ -1822,7 +1822,7 @@ export default {
 		"filterable.enemy": "17ee4472",
 		"filterable.equip": "d4a993da",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "0f64ed42",
+		"filterable.unit": "fced3d58",
 		"gacha": "88d68dd1",
 		"iw": {
 			"Colossus_01": "c33e7edc",
@@ -5691,7 +5691,7 @@ export default {
 			"PECS_Muse": "5122d452",
 			"PECS_Nidhogg": "9cf5f4f2",
 			"PECS_Olivia": "8cd8c0b1",
-			"PECS_Orangeade": "fc1e738c",
+			"PECS_Orangeade": "1e8d393f",
 			"PECS_Peregrinus": "5b81ccd9",
 			"PECS_PuppHead": "a351a739",
 			"PECS_QueenMane": "dbd7ad3b",
