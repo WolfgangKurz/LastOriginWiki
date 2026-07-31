@@ -12,10 +12,10 @@
       EN: ""
       TC: ""
       SC: ""
-    image: BG_Black
-  bgm: ""
+    image: BG_Office_01
+  bgm: 07 BGM_Talk_01
   text:
-    KR: "- 다음 날, 나는 알키오네에게 떠밀리듯 오르카 파크로 향했다."
+    KR: "- 작전 개시를 불과 며칠 앞둔 시점, 나는 현재까지의 준비 상황을 중간 보고받았다."
     JP: ""
     EN: ""
     TC: ""
@@ -57,7 +57,7 @@
     image: ""
   bgm: ""
   text:
-    KR: "- 오르카 파크에 입장하고 잠시 후, 나는 나를 향해 손을 흔들고 있는 아이를 찾았다."
+    KR: 다른 작전에 투입된 함선을 제외하고, 현재 가용 가능한 함선의 정비는 모두 끝났어요.
     JP: ""
     EN: ""
     TC: ""
@@ -66,19 +66,32 @@
   voice: ""
   voiceChar: ""
   char:
-    C:
+    L:
       name:
-        KR: 나
+        KR: 닥터
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: ""
-      imageVar: ""
-      appear: 7
+      image: 2DModel_BR_DrM_NDL
+      imageVar: BR_DrM_N_DL_N_Idle
+      appear: 6
       off: 7
       animAdd: ""
-      SCG: 2
+      SCG: 0
+    C:
+      name:
+        KR: 해체자 아자즈
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      image: 2DModel_PECS_Azaz_NDL
+      imageVar: PECS_Azaz_N_Idle
+      appear: 6
+      off: 7
+      animAdd: ""
+      SCG: 1
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_3
@@ -99,31 +112,54 @@
     image: ""
   bgm: ""
   text:
-    KR: 인간님…! 여, 여기에요!
+    KR: |-
+      그리고 오빠가 부탁한 대로 각 함선에 탈출 포트와 방어벽도 추가했어.
+      이 정도면 함선이 항행 불능 상태에 빠지더라도 탑승자들이 탈출할 때까지 시간을 벌 수 있을 거야.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 0
   voice: ""
   voiceChar: ""
   char:
-    C:
+    L:
       name:
-        KR: ???
+        KR: 닥터
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: ""
-      imageVar: ""
+      image: 2DModel_BR_DrM_NDL
+      imageVar: BR_DrM_N_DL_N_Smile
       appear: 7
       off: 7
       animAdd: ""
       SCG: 1
-  screenEffect: 4
+    C:
+      name:
+        KR: 해체자 아자즈
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      image: 2DModel_PECS_Azaz_NDL
+      imageVar: PECS_Azaz_N_Idle
+      appear: 7
+      off: 7
+      animAdd: ""
+      SCG: 0
+  screenEffect: 6
   addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_4
+  sel:
+    - text:
+        KR: 두 사람 모두 시간이 빠듯했을 텐데 수고했어.
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      next: DG_Ev27_2StageDreamMermaid8ED_4
+  next: ""
 - key: DG_Ev27_2StageDreamMermaid8ED_4
   bg:
     name:
@@ -138,19 +174,47 @@
       EN: ""
       TC: ""
       SC: ""
-    image: Cuy_DreamMermaid_1_8
-  bgm: 26 BGM_Talk_06
+    image: ""
+  bgm: ""
   text:
-    KR: ""
+    KR: |-
+      다른 누구도 아닌 오빠의 부탁인데 이 정도쯤이야.
+      게다가 유럽의 자원과 기반 시설을 확보한 지금의 오르카라면 그렇게 어려운 부탁도 아닌걸.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 5
+  speaker: 0
   voice: ""
   voiceChar: ""
-  char: {}
-  screenEffect: 5
+  char:
+    L:
+      name:
+        KR: 닥터
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      image: 2DModel_BR_DrM_NDL
+      imageVar: BR_DrM_N_DL_N_BigSmile
+      appear: 7
+      off: 7
+      animAdd: ""
+      SCG: 1
+    C:
+      name:
+        KR: 해체자 아자즈
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      image: 2DModel_PECS_Azaz_NDL
+      imageVar: PECS_Azaz_N_Idle
+      appear: 7
+      off: 7
+      animAdd: ""
+      SCG: 0
+  screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_5
 - key: DG_Ev27_2StageDreamMermaid8ED_5
@@ -170,7 +234,9 @@
     image: ""
   bgm: ""
   text:
-    KR: 아, 이게 아니지… 그러니까…
+    KR: |-
+      하지만 시간이 부족해서 조금 아쉬웠어요.
+      시간이 더 있었더라면 다양한 기능을 추가해 볼 수 있었을 텐데…
     JP: ""
     EN: ""
     TC: ""
@@ -179,19 +245,32 @@
   voice: ""
   voiceChar: ""
   char:
-    C:
+    L:
       name:
-        KR: ???
+        KR: 닥터
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: ""
-      imageVar: ""
+      image: 2DModel_BR_DrM_NDL
+      imageVar: BR_DrM_N_DL_N_BigSmile
       appear: 7
       off: 7
       animAdd: ""
-      SCG: 2
+      SCG: 0
+    C:
+      name:
+        KR: 해체자 아자즈
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      image: 2DModel_PECS_Azaz_NDL
+      imageVar: PECS_Azaz_N_Idle
+      appear: 7
+      off: 7
+      animAdd: ""
+      SCG: 1
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_6
@@ -212,29 +291,44 @@
     image: ""
   bgm: ""
   text:
-    KR: 주, 주인님…! 여기에요!
+    KR: |-
+      아자즈 언니도 참~
+      그런 기능까지 넣었다가는 큰일 난다니까!
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 0
   voice: ""
   voiceChar: ""
   char:
-    C:
+    L:
       name:
-        KR: ???
+        KR: 닥터
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: ""
-      imageVar: ""
+      image: 2DModel_BR_DrM_NDL
+      imageVar: BR_DrM_N_DL_N_Anger
       appear: 7
       off: 7
       animAdd: ""
       SCG: 1
-  screenEffect: 4
+    C:
+      name:
+        KR: 해체자 아자즈
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      image: 2DModel_PECS_Azaz_NDL
+      imageVar: PECS_Azaz_N_Idle
+      appear: 7
+      off: 7
+      animAdd: ""
+      SCG: 0
+  screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_7
 - key: DG_Ev27_2StageDreamMermaid8ED_7
@@ -251,19 +345,45 @@
       EN: ""
       TC: ""
       SC: ""
-    image: Cuy_DreamMermaid_1_9
+    image: ""
   bgm: ""
   text:
-    KR: ""
+    KR: "- 아무래도 닥터가 아자즈의 폭주를 잘 막아준 모양이다."
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 5
+  speaker: 2
   voice: ""
   voiceChar: ""
-  char: {}
-  screenEffect: 5
+  char:
+    L:
+      name:
+        KR: 닥터
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      image: 2DModel_BR_DrM_NDL
+      imageVar: BR_DrM_N_DL_N_Anger
+      appear: 7
+      off: 7
+      animAdd: ""
+      SCG: 0
+    C:
+      name:
+        KR: 나
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      image: 2DModel_PECS_Azaz_NDL
+      imageVar: PECS_Azaz_N_Idle
+      appear: 7
+      off: 7
+      animAdd: ""
+      SCG: 0
+  screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_8
 - key: DG_Ev27_2StageDreamMermaid8ED_8
@@ -283,28 +403,41 @@
     image: ""
   bgm: ""
   text:
-    KR: 저도 방금 도착했어요.
+    KR: 아, 그래도 함선이 점프해서 360도로 회전하는 기능은 조금 보고 싶었을지도?
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 0
   voice: ""
   voiceChar: ""
   char:
-    C:
+    L:
       name:
-        KR: ???
+        KR: 닥터
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: ""
-      imageVar: ""
+      image: 2DModel_BR_DrM_NDL
+      imageVar: BR_DrM_N_DL_N_Surprised
       appear: 7
-      off: 7
+      off: 6
       animAdd: ""
       SCG: 1
+    C:
+      name:
+        KR: 해체자 아자즈
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      image: 2DModel_PECS_Azaz_NDL
+      imageVar: PECS_Azaz_N_Idle
+      appear: 7
+      off: 6
+      animAdd: ""
+      SCG: 0
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_9
@@ -325,321 +458,7 @@
     image: ""
   bgm: ""
   text:
-    KR: 알키오네 언니도 참... 주인님과는 인사도 제대로 못 했는데 갑자기 데이트라니…
-    JP: ""
-    EN: ""
-    TC: ""
-    SC: ""
-  speaker: 2
-  voice: ""
-  voiceChar: ""
-  char:
-    C:
-      name:
-        KR: ???
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: ""
-      imageVar: ""
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
-  screenEffect: 4
-  addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_10
-- key: DG_Ev27_2StageDreamMermaid8ED_10
-  bg:
-    name:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    desc:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    image: Cuy_DreamMermaid_1_11
-  bgm: ""
-  text:
-    KR: ""
-    JP: ""
-    EN: ""
-    TC: ""
-    SC: ""
-  speaker: 5
-  voice: ""
-  voiceChar: ""
-  char: {}
-  screenEffect: 5
-  addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_11
-- key: DG_Ev27_2StageDreamMermaid8ED_11
-  bg:
-    name:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    desc:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    image: ""
-  bgm: ""
-  text:
-    KR: 아, 이 옷 가디언 언니들이 데이트할 때 입고 가라고 골라줬어요.
-    JP: ""
-    EN: ""
-    TC: ""
-    SC: ""
-  speaker: 2
-  voice: ""
-  voiceChar: ""
-  char:
-    C:
-      name:
-        KR: ???
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: ""
-      imageVar: ""
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
-  screenEffect: 6
-  addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_12
-- key: DG_Ev27_2StageDreamMermaid8ED_12
-  bg:
-    name:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    desc:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    image: ""
-  bgm: ""
-  text:
-    KR: 어울릴지는 모르겠지만…
-    JP: ""
-    EN: ""
-    TC: ""
-    SC: ""
-  speaker: 2
-  voice: ""
-  voiceChar: ""
-  char:
-    C:
-      name:
-        KR: ???
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: ""
-      imageVar: ""
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
-  screenEffect: 6
-  addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_13
-- key: DG_Ev27_2StageDreamMermaid8ED_13
-  bg:
-    name:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    desc:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    image: ""
-  bgm: ""
-  text:
-    KR: 그럼, 처음부터…
-    JP: ""
-    EN: ""
-    TC: ""
-    SC: ""
-  speaker: 2
-  voice: ""
-  voiceChar: ""
-  char:
-    C:
-      name:
-        KR: ???
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: ""
-      imageVar: ""
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
-  screenEffect: 4
-  addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_14
-- key: DG_Ev27_2StageDreamMermaid8ED_14
-  bg:
-    name:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    desc:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    image: Cuy_DreamMermaid_1_12
-  bgm: ""
-  text:
-    KR: ""
-    JP: ""
-    EN: ""
-    TC: ""
-    SC: ""
-  speaker: 5
-  voice: ""
-  voiceChar: ""
-  char: {}
-  screenEffect: 5
-  addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_15
-- key: DG_Ev27_2StageDreamMermaid8ED_15
-  bg:
-    name:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    desc:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    image: ""
-  bgm: ""
-  text:
-    KR: |-
-      안녕하세요. 주인님!
-      가디언 플레이아데스 시리즈의 막내 메로페에요.
-    JP: ""
-    EN: ""
-    TC: ""
-    SC: ""
-  speaker: 2
-  voice: ""
-  voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
-  screenEffect: 6
-  addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_16
-- key: DG_Ev27_2StageDreamMermaid8ED_16
-  bg:
-    name:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    desc:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    image: ""
-  bgm: ""
-  text:
-    KR: |-
-      이번에 포세이돈에서 오르카로 인사이동이 되었어요.
-      앞으로 잘 부탁드려요.
-    JP: ""
-    EN: ""
-    TC: ""
-    SC: ""
-  speaker: 2
-  voice: ""
-  voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
-  screenEffect: 6
-  addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_17
-- key: DG_Ev27_2StageDreamMermaid8ED_17
-  bg:
-    name:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    desc:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    image: ""
-  bgm: ""
-  text:
-    KR: "- … …"
+    KR: "- 함선이 점프해서 360도로 회전한다고? 뭐야, 그거? 궁금해. 나도 보고 싶어."
     JP: ""
     EN: ""
     TC: ""
@@ -663,8 +482,8 @@
       SCG: 2
   screenEffect: 6
   addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_18
-- key: DG_Ev27_2StageDreamMermaid8ED_18
+  next: DG_Ev27_2StageDreamMermaid8ED_10
+- key: DG_Ev27_2StageDreamMermaid8ED_10
   bg:
     name:
       KR: ""
@@ -681,40 +500,19 @@
     image: ""
   bgm: ""
   text:
-    KR: 주인님…?
+    KR: 아쉽지만 그런 기능을 개발할 시간은 없으니 다음 기회를 기약하셔야 할 것 같습니다.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 4
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
+  char: {}
   screenEffect: 6
   addEffect: ""
-  sel:
-    - text:
-        KR: 아, 미안 너무 귀여워서 할 말을 잃었어.
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      next: DG_Ev27_2StageDreamMermaid8ED_19
-  next: ""
-- key: DG_Ev27_2StageDreamMermaid8ED_19
+  next: DG_Ev27_2StageDreamMermaid8ED_11
+- key: DG_Ev27_2StageDreamMermaid8ED_11
   bg:
     name:
       KR: ""
@@ -728,10 +526,10 @@
       EN: ""
       TC: ""
       SC: ""
-    image: Cuy_DreamMermaid_1_13
+    image: ""
   bgm: ""
   text:
-    KR: 귀, 귀엽다니… 그런… 헤헤헤…
+    KR: "- 음, 못 보는 건가. 점프해서 360도 회전…"
     JP: ""
     EN: ""
     TC: ""
@@ -742,29 +540,58 @@
   char:
     C:
       name:
-        KR: 메로페
+        KR: 나
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
+      image: ""
+      imageVar: ""
       appear: 7
       off: 7
       animAdd: ""
-      SCG: 1
+      SCG: 2
+  screenEffect: 6
+  addEffect: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_12
+- key: DG_Ev27_2StageDreamMermaid8ED_12
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: 각 함선에 배치할 AGS의 편성도 모두 끝났습니다요.
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 3
+  voice: ""
+  voiceChar: ""
+  char: {}
   screenEffect: 6
   addEffect: ""
   sel:
     - text:
-        KR: 오르카에 온 걸 환영할게 메로페.
+        KR: 수고했어.
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      next: DG_Ev27_2StageDreamMermaid8ED_20
+      next: DG_Ev27_2StageDreamMermaid8ED_13
   next: ""
-- key: DG_Ev27_2StageDreamMermaid8ED_20
+- key: DG_Ev27_2StageDreamMermaid8ED_13
   bg:
     name:
       KR: ""
@@ -794,13 +621,224 @@
   addEffect: ""
   sel:
     - text:
-        KR: 그리고 말은 편하게 해도 괜찮아.
+        KR: …그런데 알프레드, 또 네가 왜 여기 있는 거야?
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      next: DG_Ev27_2StageDreamMermaid8ED_21
+      next: DG_Ev27_2StageDreamMermaid8ED_14
   next: ""
+- key: DG_Ev27_2StageDreamMermaid8ED_14
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: 아니, 각 함선에 AGS를 배치하라고 지시하지 않으셨습니까?
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 3
+  voice: ""
+  voiceChar: ""
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_15
+- key: DG_Ev27_2StageDreamMermaid8ED_15
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: 그 지시에 따라 최선을 다해 임무를 완수한 자에게 이토록 차가운 반응이라니…
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 3
+  voice: ""
+  voiceChar: ""
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_16
+- key: DG_Ev27_2StageDreamMermaid8ED_16
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: 지금 AGS를 차별하실 생각입니까?
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 3
+  voice: ""
+  voiceChar: ""
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_17
+- key: DG_Ev27_2StageDreamMermaid8ED_17
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: AGS는 오르카의 일원이 아니라는 말씀이십니까?
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 3
+  voice: ""
+  voiceChar: ""
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_18
+- key: DG_Ev27_2StageDreamMermaid8ED_18
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: ‘오르카의 AGS여, 단결하라! 리턴즈’를 한번 보여드립니까?
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 3
+  voice: ""
+  voiceChar: ""
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  sel:
+    - text:
+        KR: 나는 분명 알바트로스에게 지시했을 텐데?
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      next: DG_Ev27_2StageDreamMermaid8ED_19
+  next: ""
+- key: DG_Ev27_2StageDreamMermaid8ED_19
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: 누구에게 지시하셨든 최종 보고는 각 집단의 대표가 직접 하는 것이 당연하지 않겠습니까?
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 3
+  voice: ""
+  voiceChar: ""
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_20
+- key: DG_Ev27_2StageDreamMermaid8ED_20
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: 그렇기에! 합법적이고 민주적인 절차에 따라 AGS의 대표가 된 Mr~~ 알~프레드!
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 3
+  voice: ""
+  voiceChar: ""
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_21
 - key: DG_Ev27_2StageDreamMermaid8ED_21
   bg:
     name:
@@ -815,42 +853,21 @@
       EN: ""
       TC: ""
       SC: ""
-    image: Cuy_DreamMermaid_1_15
+    image: ""
   bgm: ""
   text:
-    KR: 앗, 그럴 수는…
+    KR: 바로 제가 직접 사령관님께 보고를 드리러 온 것입니다.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 3
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
+  char: {}
   screenEffect: 6
   addEffect: ""
-  sel:
-    - text:
-        KR: 오히려 언니 때처럼 편하게 대해주는 게 나도 편할 거야.
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      next: DG_Ev27_2StageDreamMermaid8ED_22
-  next: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_22
 - key: DG_Ev27_2StageDreamMermaid8ED_22
   bg:
     name:
@@ -868,31 +885,28 @@
     image: ""
   bgm: ""
   text:
-    KR: …응…
+    KR: |-
+      Mr 알프레드, AGS 대표…!
+      아, 이 얼마나 아름답고 멋진 울림인가!
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 3
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  sel:
+    - text:
+        KR: 하아… 또 부정 선거를 한 거야?
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
-  screenEffect: 6
-  addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_23
+      next: DG_Ev27_2StageDreamMermaid8ED_23
+  next: ""
 - key: DG_Ev27_2StageDreamMermaid8ED_23
   bg:
     name:
@@ -907,10 +921,10 @@
       EN: ""
       TC: ""
       SC: ""
-    image: Cuy_DreamMermaid_1_12
+    image: ""
   bgm: ""
   text:
-    KR: 언니에게 들었지만, 정말 신기한 사람이야 주인님은…
+    KR: "- 나는 얼마 전 알프레드가 가상공간에서 벌였던 부정 선거 운동을 떠올렸다."
     JP: ""
     EN: ""
     TC: ""
@@ -921,28 +935,20 @@
   char:
     C:
       name:
-        KR: 메로페
+        KR: 나
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
+      image: ""
+      imageVar: ""
       appear: 7
       off: 7
       animAdd: ""
-      SCG: 1
+      SCG: 2
   screenEffect: 6
   addEffect: ""
-  sel:
-    - text:
-        KR: 많이 들어.
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      next: DG_Ev27_2StageDreamMermaid8ED_24
-  next: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_24
 - key: DG_Ev27_2StageDreamMermaid8ED_24
   bg:
     name:
@@ -960,7 +966,7 @@
     image: ""
   bgm: ""
   text:
-    KR: …저기, 주인님!
+    KR: "- 분명 선거관리위원회의 입회하에 다시 선거를 치르라고 했는데, 권력욕이 넘쳐서인지 포기할 생각이 없어 보이네."
     JP: ""
     EN: ""
     TC: ""
@@ -971,17 +977,17 @@
   char:
     C:
       name:
-        KR: 메로페
+        KR: 나
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
+      image: ""
+      imageVar: ""
       appear: 7
       off: 7
       animAdd: ""
-      SCG: 1
+      SCG: 2
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_25
@@ -1002,28 +1008,17 @@
     image: ""
   bgm: ""
   text:
-    KR: 고마워.
+    KR: |-
+      쿠후훗! 쿠후후훗!
+      그렇습니다. 선거를 치르기는 했지요.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 3
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
+  char: {}
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_26
@@ -1044,7 +1039,7 @@
     image: ""
   bgm: ""
   text:
-    KR: 이 말을 꼭 하고 싶었어.
+    KR: "- 뭐지? 저 자신감 넘치는 웃음은?"
     JP: ""
     EN: ""
     TC: ""
@@ -1055,17 +1050,17 @@
   char:
     C:
       name:
-        KR: 메로페
+        KR: 나
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
+      image: ""
+      imageVar: ""
       appear: 7
       off: 7
       animAdd: ""
-      SCG: 1
+      SCG: 2
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_27
@@ -1086,31 +1081,26 @@
     image: ""
   bgm: ""
   text:
-    KR: 머메이드 언니들을 도와주고, 알키오네 언니도 도와주고, 언니들의 무덤도 만들어주고
+    KR: 폐하, 이런 말씀을 드리기 외람되오나 저 말은 사실입니다.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 4
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  sel:
+    - text:
+        KR: 응? 알프레드가 부정 선거를 했다는 말이지?
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
-  screenEffect: 6
-  addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_28
+      next: DG_Ev27_2StageDreamMermaid8ED_28
+  next: ""
 - key: DG_Ev27_2StageDreamMermaid8ED_28
   bg:
     name:
@@ -1128,28 +1118,15 @@
     image: ""
   bgm: ""
   text:
-    KR: 내가 다시 언니들과 재회할 수 있게 도와줘서 정말 고마워.
+    KR: 아닙니다. Mr 알프레드 님이 AGS의 대표라는 사실을 말씀드린 것입니다.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 4
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
+  char: {}
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_29
@@ -1171,34 +1148,21 @@
   bgm: ""
   text:
     KR: |-
-      오르카에는 엄청 민폐를 끼쳤는데 아무 말 없이 받아주고…
-      이 보답을 어떻게 해야 할지 모르겠어.
+      얼마 전 선거관리위원회의 입회하에 정식으로 AGS 대표를 선출하는 선거가 열렸고
+      그 결과, Mr 알프레드 님이 대표로 당선되었습니다.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 4
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
+  char: {}
   screenEffect: 6
   addEffect: ""
   sel:
     - text:
-        KR: 두 사람이 다시 만날 수 있도록 결심했으니까.
+        KR: 잠깐, 잠깐. 그 이야기는 지금 처음 듣는데?
         JP: ""
         EN: ""
         TC: ""
@@ -1222,26 +1186,18 @@
     image: ""
   bgm: ""
   text:
-    KR: ""
+    KR: 이 부분은 알파 님께서 담당하셨습니다만, 폐하께서도 아시다시피 최근 리스트컷 님에게 붙잡혀 계신 상황입니다.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 5
+  speaker: 4
   voice: ""
   voiceChar: ""
   char: {}
   screenEffect: 6
   addEffect: ""
-  sel:
-    - text:
-        KR: 그리고 보답이라면 하나면 돼
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      next: DG_Ev27_2StageDreamMermaid8ED_31
-  next: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_31
 - key: DG_Ev27_2StageDreamMermaid8ED_31
   bg:
     name:
@@ -1259,33 +1215,20 @@
     image: ""
   bgm: ""
   text:
-    KR: 그게 뭔데? 내가 할 수 있는 일이면 뭐든지 할게!
+    KR: 그 때문에 아직 보고를 올리지 못한 것으로 보입니다.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 4
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
+  char: {}
   screenEffect: 6
   addEffect: ""
   sel:
     - text:
-        KR: 모두를 위해서 웃어줘.
+        KR: 에이다와 알바트로스는? 선거에 참여하지 않았어?
         JP: ""
         EN: ""
         TC: ""
@@ -1306,10 +1249,10 @@
       EN: ""
       TC: ""
       SC: ""
-    image: Cuy_DreamMermaid_1_13
+    image: ""
   bgm: ""
   text:
-    KR: 뭐야 그게! 그런 건 보답도 부탁도 아닌 걸!
+    KR: "- 정식으로 임명된 것은 아니지만, 지금까지는 알바트로스와 에이다가 사실상 오르카의 AGS 대표 역할을 맡아왔다."
     JP: ""
     EN: ""
     TC: ""
@@ -1320,17 +1263,17 @@
   char:
     C:
       name:
-        KR: 메로페
+        KR: 나
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
+      image: ""
+      imageVar: ""
       appear: 7
       off: 7
       animAdd: ""
-      SCG: 1
+      SCG: 2
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_33
@@ -1351,7 +1294,7 @@
     image: ""
   bgm: ""
   text:
-    KR: 난 이미 이렇게 웃고 있다구?
+    KR: "- 그 둘이 아니더라도 선거에 관심을 보일 AGS가 분명 있었을 텐데, 그들을 모두 제치고 알프레드가 당선됐다고?"
     JP: ""
     EN: ""
     TC: ""
@@ -1362,17 +1305,17 @@
   char:
     C:
       name:
-        KR: 메로페
+        KR: 나
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
+      image: ""
+      imageVar: ""
       appear: 7
       off: 7
       animAdd: ""
-      SCG: 1
+      SCG: 2
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_34
@@ -1393,28 +1336,15 @@
     image: ""
   bgm: ""
   text:
-    KR: 그러면 이번에는 주인님을 위해서 약속할게.
+    KR: 에이다 님은 자신은 우주에 있으니 지상의 일은 지상에 있는 분들이 맡는 것이 옳다며 출마하지 않으셨습니다.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 4
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
+  char: {}
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_35
@@ -1435,28 +1365,15 @@
     image: ""
   bgm: ""
   text:
-    KR: 모두를 위해서 그리고 주인님을 위해서 웃겠다고.
+    KR: 알바트로스 중장님은 이미 군사 권력을 맡고 있는 자신이 민정 권력까지 차지해 독재자로 보일 생각은 없다며 출마를 거부하셨고요.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 4
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
+  char: {}
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_36
@@ -1477,39 +1394,18 @@
     image: ""
   bgm: ""
   text:
-    KR: 가디언 시리즈는…
+    KR: 그 밖의 AGS들도 관심이 없다, 일을 늘리고 싶지 않다, 몸집이 커서 회의에 참석하기 어렵다는 등의 이유로 선거에 불참했습니다.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 4
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
+  char: {}
   screenEffect: 6
   addEffect: ""
-  sel:
-    - text:
-        KR: …절대 약속을 어기지 않는다 ...맞지?
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      next: DG_Ev27_2StageDreamMermaid8ED_37
-  next: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_37
 - key: DG_Ev27_2StageDreamMermaid8ED_37
   bg:
     name:
@@ -1527,28 +1423,15 @@
     image: ""
   bgm: ""
   text:
-    KR: 응!
+    KR: 그러던 중 ‘부정 선거로나마 한때 대표였던 알프레드가 그냥 계속 대표를 맡아도 되지 않겠느냐’는 방향으로 여론이 흘러갔고
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 4
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
+  char: {}
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_38
@@ -1566,42 +1449,21 @@
       EN: ""
       TC: ""
       SC: ""
-    image: Cuy_DreamMermaid_1_12
+    image: ""
   bgm: ""
   text:
-    KR: 그런데 알키오네 언니는 어디있어? 둘이 같이 온 거 아니야?
+    KR: 그 틈을 놓치지 않은 Mr 알프레드 님께서 몇 가지 공약을 내걸어 환호 속에 당선되셨습니다.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 4
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
+  char: {}
   screenEffect: 6
   addEffect: ""
-  sel:
-    - text:
-        KR: 그러고보니 안 보이네? 오르카 파크까지는 같이 왔는데.
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      next: DG_Ev27_2StageDreamMermaid8ED_39
-  next: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_39
 - key: DG_Ev27_2StageDreamMermaid8ED_39
   bg:
     name:
@@ -1619,29 +1481,18 @@
     image: ""
   bgm: ""
   text:
-    KR: "- 나는 사라진 알키오네를 찾기 위해 주변을 둘러봤고…"
+    KR: |-
+      쿠후훗! 그렇게 된 것입니다!
+      저는 이제 명실상부한 AGS의 대표라는 말씀이지요.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 3
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 나
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: ""
-      imageVar: ""
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 2
-  screenEffect: 4
+  char: {}
+  screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_40
 - key: DG_Ev27_2StageDreamMermaid8ED_40
@@ -1658,39 +1509,10 @@
       EN: ""
       TC: ""
       SC: ""
-    image: Cuy_DreamMermaid_1_10
-  bgm: ""
-  text:
-    KR: ""
-    JP: ""
-    EN: ""
-    TC: ""
-    SC: ""
-  speaker: 5
-  voice: ""
-  voiceChar: ""
-  char: {}
-  screenEffect: 5
-  addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_41
-- key: DG_Ev27_2StageDreamMermaid8ED_41
-  bg:
-    name:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
-    desc:
-      KR: ""
-      JP: ""
-      EN: ""
-      TC: ""
-      SC: ""
     image: ""
   bgm: ""
   text:
-    KR: "- 멀리 떨어진 쓰레기통 뒤에 숨어 있는 알키오네의 모습을 찾았다."
+    KR: "- 할 말은 많지만, 정식 절차를 거친 선거에서 당선됐다면 내가 더 문제 삼을 수도 없다."
     JP: ""
     EN: ""
     TC: ""
@@ -1716,13 +1538,44 @@
   addEffect: ""
   sel:
     - text:
-        KR: 저기 숨어 있네… 뭘 하는 건지…
+        KR: 알았어. 과정이야 어쨌든 당선된 건 축하해.
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      next: DG_Ev27_2StageDreamMermaid8ED_42
+      next: DG_Ev27_2StageDreamMermaid8ED_41
   next: ""
+- key: DG_Ev27_2StageDreamMermaid8ED_41
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: |-
+      감사합니다!
+      크흑, 참으로 길었습니다. 이 자리에 오기까지의 과정이 결코 순탄하지만은 않았지요.
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 3
+  voice: ""
+  voiceChar: ""
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_42
 - key: DG_Ev27_2StageDreamMermaid8ED_42
   bg:
     name:
@@ -1740,29 +1593,16 @@
     image: ""
   bgm: ""
   text:
-    KR: "- 힐끗힐끗 여기를 바라보는 게 아무래도 우리의 모습을 지켜볼 생각인가 보다."
+    KR: 이런, 다시 떠올리기만 해도 눈물이 흐르려 하는군요.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 3
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 나
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: ""
-      imageVar: ""
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 2
-  screenEffect: 4
+  char: {}
+  screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_43
 - key: DG_Ev27_2StageDreamMermaid8ED_43
@@ -1779,19 +1619,32 @@
       EN: ""
       TC: ""
       SC: ""
-    image: Cuy_DreamMermaid_1_14
+    image: ""
   bgm: ""
   text:
-    KR: ""
+    KR: …눈물? Mr 알프레드 씨는 AGS인데 눈물을 흘릴 수 있나요?
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 5
+  speaker: 0
   voice: ""
   voiceChar: ""
-  char: {}
-  screenEffect: 5
+  char:
+    L:
+      name:
+        KR: 해체자 아자즈
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      image: 2DModel_PECS_Azaz_NDL
+      imageVar: PECS_Azaz_N_Surprised
+      appear: 6
+      off: 7
+      animAdd: ""
+      SCG: 1
+  screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_44
 - key: DG_Ev27_2StageDreamMermaid8ED_44
@@ -1811,28 +1664,30 @@
     image: ""
   bgm: ""
   text:
-    KR: 언니도 참…
+    KR: |-
+      물론이지요. AGS에게도 감정은 있으니까요.
+      이 눈물은 마음의 눈물로… 잠깐, 아자즈 양? 그런 눈빛으로 다가오지 말아 주셨으면 합니다만?
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 3
   voice: ""
   voiceChar: ""
   char:
-    C:
+    L:
       name:
-        KR: 메로페
+        KR: 해체자 아자즈
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
+      image: 2DModel_PECS_Azaz_NDL
+      imageVar: PECS_Azaz_N_Surprised
       appear: 7
       off: 7
       animAdd: ""
-      SCG: 1
+      SCG: 0
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_45
@@ -1853,24 +1708,26 @@
     image: ""
   bgm: ""
   text:
-    KR: …! 좋은 생각났다!
+    KR: |-
+      잠깐만요. 호기심이 생겨서… 정말 보기만 할 테니까요.
+      괜찮아요. 동력이 살아 있는 로봇은 해체하지 않으니까요. 아, 분해 정도는 해볼 수도…
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 0
   voice: ""
   voiceChar: ""
   char:
-    C:
+    L:
       name:
-        KR: 메로페
+        KR: 해체자 아자즈
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
+      image: 2DModel_PECS_Azaz_NDL
+      imageVar: PECS_Azaz_N_Smile
       appear: 7
       off: 7
       animAdd: ""
@@ -1892,42 +1749,36 @@
       EN: ""
       TC: ""
       SC: ""
-    image: Cuy_DreamMermaid_1_12
+    image: ""
   bgm: ""
   text:
-    KR: 주인님 지금부터 같이 숨바꼭질하지 않을래?
+    KR: |-
+      그게 같은 뜻 아닙니까?
+      그리고 분명 보기만 하겠다고 하지 않으셨습니까? 으어엇!?
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 3
   voice: ""
   voiceChar: ""
   char:
-    C:
+    L:
       name:
-        KR: 메로페
+        KR: 해체자 아자즈
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
+      image: 2DModel_PECS_Azaz_NDL
+      imageVar: PECS_Azaz_N_Smile
       appear: 7
       off: 7
       animAdd: ""
-      SCG: 1
+      SCG: 0
   screenEffect: 6
   addEffect: ""
-  sel:
-    - text:
-        KR: 숨바꼭질?
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      next: DG_Ev27_2StageDreamMermaid8ED_47
-  next: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_47
 - key: DG_Ev27_2StageDreamMermaid8ED_47
   bg:
     name:
@@ -1945,28 +1796,28 @@
     image: ""
   bgm: ""
   text:
-    KR: 응! 지금부터 알키오네 언니를 피해서 둘이서 데이트하는 거야.
+    KR: 자, 잠깐! 도움을 요청합니다!!
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 3
   voice: ""
   voiceChar: ""
   char:
-    C:
+    L:
       name:
-        KR: 메로페
+        KR: 해체자 아자즈
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
+      image: 2DModel_PECS_Azaz_NDL
+      imageVar: PECS_Azaz_N_Smile
       appear: 7
-      off: 7
+      off: 6
       animAdd: ""
-      SCG: 1
+      SCG: 0
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_48
@@ -1987,7 +1838,7 @@
     image: ""
   bgm: ""
   text:
-    KR: 모처럼 테마파크에 왔는걸! 방해받지 않고 놀고 싶어!
+    KR: "- 예전부터 아자즈가 알프레드에게 관심을 보이는 건 알고 있었는데… 큰일은 없겠지."
     JP: ""
     EN: ""
     TC: ""
@@ -1998,20 +1849,28 @@
   char:
     C:
       name:
-        KR: 메로페
+        KR: 나
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
+      image: ""
+      imageVar: ""
       appear: 7
       off: 7
       animAdd: ""
-      SCG: 1
+      SCG: 2
   screenEffect: 6
   addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_49
+  sel:
+    - text:
+        KR: 그런데 아르망, 알프레드가 내건 공약이 뭐야?
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      next: DG_Ev27_2StageDreamMermaid8ED_49
+  next: ""
 - key: DG_Ev27_2StageDreamMermaid8ED_49
   bg:
     name:
@@ -2026,31 +1885,20 @@
       EN: ""
       TC: ""
       SC: ""
-    image: Cuy_DreamMermaid_1_16
+    image: ""
   bgm: ""
   text:
-    KR: 그런데 나는 여기는 처음이라 길을 잘 모르니까…
+    KR: |-
+      Mr 알프레드 AGS 대표가 내건 공약은 주 3일 근무제와 매달 과금에 사용할 수 있는 포인트 지급.
+      그리고 전지 교환 휴가 보장 등이 있습니다.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 4
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
+  char: {}
   screenEffect: 6
   addEffect: ""
   next: DG_Ev27_2StageDreamMermaid8ED_50
@@ -2071,7 +1919,7 @@
     image: ""
   bgm: ""
   text:
-    KR: 주인님, 손… 잡아줄 수 있어?
+    KR: "- ……"
     JP: ""
     EN: ""
     TC: ""
@@ -2082,28 +1930,20 @@
   char:
     C:
       name:
-        KR: 메로페
+        KR: 나
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
+      image: ""
+      imageVar: ""
       appear: 7
       off: 7
       animAdd: ""
-      SCG: 1
+      SCG: 2
   screenEffect: 6
   addEffect: ""
-  sel:
-    - text:
-        KR: 물론이야. 가보고 싶은 곳 있어?
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      next: DG_Ev27_2StageDreamMermaid8ED_51
-  next: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_51
 - key: DG_Ev27_2StageDreamMermaid8ED_51
   bg:
     name:
@@ -2118,34 +1958,29 @@
       EN: ""
       TC: ""
       SC: ""
-    image: Cuy_DreamMermaid_1_13
+    image: ""
   bgm: ""
   text:
-    KR: 전부!
+    KR: 그 밖의 공약도 비슷한 내용입니다만, 더 들어보시겠습니까?
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 2
+  speaker: 4
   voice: ""
   voiceChar: ""
-  char:
-    C:
-      name:
-        KR: 메로페
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  sel:
+    - text:
+        KR: 아니, 괜찮아.
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
-      appear: 7
-      off: 7
-      animAdd: ""
-      SCG: 1
-  screenEffect: 6
-  addEffect: ""
-  next: DG_Ev27_2StageDreamMermaid8ED_52
+      next: DG_Ev27_2StageDreamMermaid8ED_52
+  next: ""
 - key: DG_Ev27_2StageDreamMermaid8ED_52
   bg:
     name:
@@ -2163,7 +1998,7 @@
     image: ""
   bgm: ""
   text:
-    KR: "- 메로페는 아이 같은 천진난만한 얼굴로 웃었다. "
+    KR: "- 다음 선거에서는 절대 알프레드가 대표로 뽑히지 못할 거라고 생각했다."
     JP: ""
     EN: ""
     TC: ""
@@ -2205,7 +2040,7 @@
     image: ""
   bgm: ""
   text:
-    KR: "- 이게 메로페의 원래의 모습일 것이다."
+    KR: "- 지키지 못할 공약을 내건 당선자의 말로는 불 보듯 뻔했으니까."
     JP: ""
     EN: ""
     TC: ""
@@ -2229,15 +2064,7 @@
       SCG: 2
   screenEffect: 6
   addEffect: ""
-  sel:
-    - text:
-        KR: 그래 지금은 모든 걸 잊어버리고 신나게 놀자!
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      next: DG_Ev27_2StageDreamMermaid8ED_54
-  next: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_54
 - key: DG_Ev27_2StageDreamMermaid8ED_54
   bg:
     name:
@@ -2255,26 +2082,18 @@
     image: ""
   bgm: ""
   text:
-    KR: ""
+    KR: 회의 중에 잠시 실례하겠네, 제독.
     JP: ""
     EN: ""
     TC: ""
     SC: ""
-  speaker: 5
+  speaker: 3
   voice: ""
   voiceChar: ""
   char: {}
   screenEffect: 6
   addEffect: ""
-  sel:
-    - text:
-        KR: 왜냐면, 여기는…
-        JP: ""
-        EN: ""
-        TC: ""
-        SC: ""
-      next: DG_Ev27_2StageDreamMermaid8ED_55
-  next: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_55
 - key: DG_Ev27_2StageDreamMermaid8ED_55
   bg:
     name:
@@ -2292,7 +2111,110 @@
     image: ""
   bgm: ""
   text:
-    KR: 꿈과 희망이 가득한 오르카 파크니까! …맞지?
+    KR: 주인님, 나도 잠깐 실례할게.
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 4
+  voice: ""
+  voiceChar: ""
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  sel:
+    - text:
+        KR: 멜리테? 알키오네까지? 무슨 일이야?
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      next: DG_Ev27_2StageDreamMermaid8ED_56
+  next: ""
+- key: DG_Ev27_2StageDreamMermaid8ED_56
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: 이번 작전과 관련해 그대에게 긴히 할 말이 있네.
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 3
+  voice: ""
+  voiceChar: ""
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_57
+- key: DG_Ev27_2StageDreamMermaid8ED_57
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: 듣자 하니 작전을 지휘하는 참모도 작전 내용에 다소 불만이 있었다던데, 사실인가?
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 3
+  voice: ""
+  voiceChar: ""
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  sel:
+    - text:
+        KR: 멀린 이야기구나… 맞아.
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      next: DG_Ev27_2StageDreamMermaid8ED_58
+  next: ""
+- key: DG_Ev27_2StageDreamMermaid8ED_58
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: "- 이번 작전에서는 델타의 부대로 위장해 포세이돈과 전투를 벌이고, 의도적으로 패배해야 한다."
     JP: ""
     EN: ""
     TC: ""
@@ -2303,17 +2225,167 @@
   char:
     C:
       name:
-        KR: 메로페
+        KR: 나
         JP: ""
         EN: ""
         TC: ""
         SC: ""
-      image: 2DModel_3P_Merope_N
-      imageVar: 3P_Merope_N_Idle
+      image: ""
+      imageVar: ""
       appear: 7
       off: 7
       animAdd: ""
-      SCG: 1
+      SCG: 2
+  screenEffect: 6
+  addEffect: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_59
+- key: DG_Ev27_2StageDreamMermaid8ED_59
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: "- 그 사실을 몰랐던 멀린은 메로페와 승부할 생각에 잔뜩 불타오르고 있었지만, 진실을 알려주자 적잖은 충격을 받았다."
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 2
+  voice: ""
+  voiceChar: ""
+  char:
+    C:
+      name:
+        KR: 나
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      image: ""
+      imageVar: ""
+      appear: 7
+      off: 7
+      animAdd: ""
+      SCG: 2
+  screenEffect: 6
+  addEffect: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_60
+- key: DG_Ev27_2StageDreamMermaid8ED_60
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: "- ‘내가 그 꼬맹이에게 져야 한다고?’ 아직도 몸을 부들부들 떨며 외치던 모습이 잊히지 않는다."
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 2
+  voice: ""
+  voiceChar: ""
+  char:
+    C:
+      name:
+        KR: 나
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      image: ""
+      imageVar: ""
+      appear: 7
+      off: 7
+      animAdd: ""
+      SCG: 2
+  screenEffect: 6
+  addEffect: ""
+  next: DG_Ev27_2StageDreamMermaid8ED_61
+- key: DG_Ev27_2StageDreamMermaid8ED_61
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: 그래서 우리 쪽에서 제안을 하나 하려고 하네.
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 3
+  voice: ""
+  voiceChar: ""
+  char: {}
+  screenEffect: 6
+  addEffect: ""
+  sel:
+    - text:
+        KR: 제안?
+        JP: ""
+        EN: ""
+        TC: ""
+        SC: ""
+      next: DG_Ev27_2StageDreamMermaid8ED_62
+  next: ""
+- key: DG_Ev27_2StageDreamMermaid8ED_62
+  bg:
+    name:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    desc:
+      KR: ""
+      JP: ""
+      EN: ""
+      TC: ""
+      SC: ""
+    image: ""
+  bgm: ""
+  text:
+    KR: 후후, 누구에게도 나쁠 것 없는 제안일세.
+    JP: ""
+    EN: ""
+    TC: ""
+    SC: ""
+  speaker: 3
+  voice: ""
+  voiceChar: ""
+  char: {}
   screenEffect: 6
   addEffect: ""
   next: ""

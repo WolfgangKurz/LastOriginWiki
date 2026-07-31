@@ -31,9 +31,9 @@ export const PermanentEvents: string[] = [
 	"Ev21",
 ];
 export const NewMapList: string[] = [];
-export const CurrentEventId = "Ev40";
-export const EventFrom = new Date(2026, 7 - 1, 2);
-export const EventTo = new Date(2026, 7 - 1, 30);
+export const CurrentEventId = "Ev27";
+export const EventFrom = new Date(2026, 7 - 1, 29);
+export const EventTo = new Date(2026, 8 - 1, 27);
 
 export const IsEventRunning = CurrentEventId && (d => EventFrom < d && d < EventTo)(new Date());
 export const CurrentEvent = IsEventRunning ? CurrentEventId : "";
