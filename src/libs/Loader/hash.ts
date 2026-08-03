@@ -5534,7 +5534,7 @@ export default {
 			"3P_ScissorsLise": "819c9828",
 			"3P_SnowFeather": "e5639447",
 			"3P_Sowan": "70b54a42",
-			"3P_Titania": "d63e2c6b",
+			"3P_Titania": "1913ef6d",
 			"3P_Vanilla": "80f22378",
 			"AGS_Aeda": "cd2e43af",
 			"AGS_Albatross": "a91fdfc4",

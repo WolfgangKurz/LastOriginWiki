@@ -6,6 +6,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13182" date="2026-08-04"
+		bugfix={ <>
+			<li>전투원 <BY>티타니아 프로스트</BY>의 스킬 정보가 갱신되지 않은 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13181" date="2026-08-01"
 		new={ <>
 			<li>이벤트 <BY>꿈꾸지 않는 인어를 위해</BY>의 복각이 시작되었습니다.</li>
