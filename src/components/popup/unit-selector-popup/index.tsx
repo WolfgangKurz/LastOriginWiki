@@ -211,7 +211,7 @@ const UnitSelectorPopup: FunctionalComponent<UnitSelectorPopupProps> = (props) =
 					<div class="d-inline-block text-start">
 						<div>
 							<strong>
-								<Locale plain k={ `UNIT_${u.uid}` } />
+								<Locale k={ `UNIT_${u.uid}` } />
 							</strong>
 						</div>
 						<div>

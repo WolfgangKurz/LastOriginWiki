@@ -124,11 +124,11 @@ const Home: FunctionalComponent = () => {
 			</div>
 
 			<div class={ style.Description }>
-				<Locale raw={ false } k="HOME_DEVELOPER" />
+				<Locale k="HOME_DEVELOPER" />
 			</div>
 
 			<div class={ style.Caution }>
-				<Locale raw={ false } k="COMMON_NSFW_CAUTION" />
+				<Locale k="COMMON_NSFW_CAUTION" />
 			</div>
 		</div>
 
@@ -139,15 +139,15 @@ const Home: FunctionalComponent = () => {
 		<Changelog />
 
 		<p class="mt-4">
-			<Locale k="HOME_DESCRIPTION" />
+			<Locale raw k="HOME_DESCRIPTION" />
 		</p>
 
 		{ ext === "png" && <div class="alert alert-danger">
-			<Locale k="HOME_WEBP_UNAVAILABLE" />
+			<Locale raw k="HOME_WEBP_UNAVAILABLE" />
 		</div> }
 
 		<p>
-			<Locale k="HOME_COPYRIGHT" />
+			<Locale raw k="HOME_COPYRIGHT" />
 		</p>
 		<p>
 			<small>

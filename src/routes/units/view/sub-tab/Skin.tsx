@@ -78,7 +78,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 					const o = a.indexOf(":");
 					const tag = a.substring(0, o);
 					const body = a.substring(o + 1);
-					return <Locale k={ `UNIT_VIEW_ILLUSTRATOR_TAG_${tag}` } p={ [body] } />;
+					return <Locale raw k={ `UNIT_VIEW_ILLUSTRATOR_TAG_${tag}` } p={ [body] } />;
 				}
 
 				const linked = ArtistLinks[a];
@@ -131,8 +131,8 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 
 						<span>
 							{ skin.sid === null
-								? <Locale plain k={ `UNIT_${unit.uid}` } />
-								: <Locale plain k={ `UNIT_SKIN_${unit.uid}_${skin.sid}` } /> }
+								? <Locale k={ `UNIT_${unit.uid}` } />
+								: <Locale k={ `UNIT_SKIN_${unit.uid}_${skin.sid}` } /> }
 						</span>
 
 						<br />
@@ -170,7 +170,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 		{ skin && skin.sid && !skin.isPro
 			? <div class={ `card mt-3 ${style.SkinNameDesc}` }>
 				<div class="card-header">
-					<Locale plain k={ skin.metadata.consumableKey
+					<Locale k={ skin.metadata.consumableKey
 						? `CONSUMABLE_${skin.metadata.consumableKey}`
 						: `CONSUMABLE_Skin_${unit.uid}_${ssid}`
 					} />
@@ -220,7 +220,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 								{ categories.length > 0
 									? <div class="mb-1">
 										{ categories.map(x => <span class="badge bg-success me-1">
-											<Locale plain k={ `SKIN_CATEGORY_${x}` } />
+											<Locale k={ `SKIN_CATEGORY_${x}` } />
 										</span>) }
 									</div>
 									: <></>

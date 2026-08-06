@@ -37,7 +37,7 @@ const StickerPage: FunctionalComponent = () => {
 			footerClass="justify-content-start"
 			header={ <div class="text-start">
 				{ selected && <>
-					<Locale plain k={ selected.key } />
+					<Locale k={ selected.key } />
 					<div style="font-size: 60%">{ selected.key }</div>
 				</> }
 			</div> }
@@ -60,7 +60,7 @@ const StickerPage: FunctionalComponent = () => {
 					</div>
 					<div class="card-body">
 						<strong>
-							<Locale plain k={ s.key } />
+							<Locale k={ s.key } />
 						</strong>
 					</div>
 				</div>

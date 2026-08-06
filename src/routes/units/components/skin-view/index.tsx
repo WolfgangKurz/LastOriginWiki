@@ -457,7 +457,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							tooltipClass={ style.DownloadTooltipContainer }
 							placement="left"
 							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-								<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
+								<Locale k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
 							</span> }
 						>
 							<a
@@ -481,7 +481,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							tooltipClass={ style.DownloadTooltipContainer }
 							placement="left"
 							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-								<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOAD" />
+								<Locale k="UNIT_VIEW_SKIN_DOWNLOAD" />
 							</span> }
 						>
 							<a
@@ -526,7 +526,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						? <BootstrapTooltip
 							placement="top"
 							content={ <span class="word-keep">
-								<Locale k={ skin.stage ? "UNIT_VIEW_SKIN_L2D_PLUS" : "UNIT_VIEW_SKIN_L2D" } />
+								<Locale raw k={ skin.stage ? "UNIT_VIEW_SKIN_L2D_PLUS" : "UNIT_VIEW_SKIN_L2D" } />
 							</span> }
 						>
 							<div class="position-relative alert">

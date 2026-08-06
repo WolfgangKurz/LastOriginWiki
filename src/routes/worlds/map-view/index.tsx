@@ -329,7 +329,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 	const SubstoryName = (text: string): preact.VNode => {
 		const unit = FilterableUnitDB.find(x => x.uid === SubStoryUnit[text]);
 		if (!unit) return <>???</>;
-		return <Locale plain k={ `UNIT_${unit.uid}` } />;
+		return <Locale k={ `UNIT_${unit.uid}` } />;
 	};
 
 	useEffect(() => {
@@ -575,7 +575,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								</span>
 
 								<span class="font-ibm">
-									<Locale plain k={ `WORLD_MAP_${props.wid}_${selected.text}` } />
+									<Locale k={ `WORLD_MAP_${props.wid}_${selected.text}` } />
 								</span>
 
 								{ selected
@@ -641,7 +641,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								}
 							</h5>
 							<div>
-								<Locale plain k={ `WORLD_MAP_DESC_${props.wid}_${selected.text}` } />
+								<Locale k={ `WORLD_MAP_DESC_${props.wid}_${selected.text}` } />
 							</div>
 						</div>
 					</div>
@@ -850,7 +850,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 													<div class="card-body">
 														{ selected.prevIds.length === 0
 															? <div class="text-secondary">
-																<Locale plain k="WORLD_VIEW_CONDITION_EMPTY" />
+																<Locale k="WORLD_VIEW_CONDITION_EMPTY" />
 															</div>
 															: <ul class="list-group">
 																{ selected.prevIds.map(r => <li class="list-group-item">
@@ -879,7 +879,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 														{ ((mm) => {
 															if (mm.length === 0) {
 																return <div class="text-secondary">
-																	<Locale plain k="WORLD_VIEW_CONDITION_EMPTY" />
+																	<Locale k="WORLD_VIEW_CONDITION_EMPTY" />
 																</div>;
 															}
 
@@ -891,7 +891,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																		<MissionText mission={ m } />
 																	</div>
 																	<small class="text-secondary ps-4">
-																		<Locale plain k={ m } />
+																		<Locale k={ m } />
 																	</small>
 																</li>) }
 															</ul>;
@@ -961,7 +961,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 													<div class="card-body">
 														{ selected.prevIds.length === 0
 															? <div class="text-secondary">
-																<Locale plain k="WORLD_VIEW_CONDITION_EMPTY" />
+																<Locale k="WORLD_VIEW_CONDITION_EMPTY" />
 															</div>
 															: <ul class="list-group">
 																{ selected.prevIds.map(r => <li class="list-group-item">
@@ -1279,7 +1279,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 							</div>
 
 							<span>
-								<Locale plain k={ x.char } />
+								<Locale k={ x.char } />
 							</span>
 
 							<div class="clearfix" />
@@ -1292,11 +1292,11 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												return <>{ id[2] }</>;
 
 											return <span class={ `badge ${style.SubStoryUnlockCondStage}` }>
-												<Locale plain k={ `WORLD_${wid[1]}` } />
+												<Locale k={ `WORLD_${wid[1]}` } />
 												<span class="ms-2">{ id[2] }</span>
 											</span>;
 										}
-										return <Locale plain k={ id } />;
+										return <Locale k={ id } />;
 									}
 
 									return <div class={ style.SubStory }>
@@ -1317,7 +1317,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 										<PCIcon item={ y.icon } size={ 40 } />
 
 										<span class="ms-2">
-											<Locale plain k={ y.key } />
+											<Locale k={ y.key } />
 										</span>
 
 										<div>
@@ -1327,12 +1327,11 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												{ y.unlock.params
 													.map(p => <span class={ style.SubStoryUnlockCond }>
 														<Locale
-															plain
 															k={ `SUBSTORY_UNLOCK_${y.unlock.cond}` }
 															p={ [conv(p)] }
 														/>
 													</span>)
-													.gap(<Locale plain k={ `SUBSTORY_UNLOCK_JOIN_${y.unlock.type}` } />)
+													.gap(<Locale k={ `SUBSTORY_UNLOCK_JOIN_${y.unlock.type}` } />)
 												}
 											</div>
 										</div>

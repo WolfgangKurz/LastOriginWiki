@@ -90,18 +90,6 @@ function parseVNode<T> (template: string, p: LocaleProps<T>["p"], components: Lo
 
 export const GetLocaleTable = (locale: LocaleTypes) => GetCachedLocaleTable(locale);
 
-export interface LocalePropsLegacy<T> {
-	k: string;
-	p?: Array<string | number | boolean | preact.VNode>;
-	preprocessor?: (source: string) => string;
-	fallback?: string | number | boolean | preact.VNode;
-	components?: LocaleComponentProp<T>;
-
-	/**
-	 * @deprecated This property should not be used. Use `raw` instead.
-	 */
-	plain?: boolean;
-}
 export interface LocaleProps<T> {
 	k: string;
 	p?: Array<string | number | boolean | preact.VNode>;
@@ -109,18 +97,11 @@ export interface LocaleProps<T> {
 	fallback?: string | number | boolean | preact.VNode;
 	components?: LocaleComponentProp<T>;
 
-	/** default `true` for compatibility, will be changed to `false` in future. */
 	raw?: boolean;
 }
 
-const Locale: FunctionalComponent<LocalePropsLegacy<any> | LocaleProps<any>> = (props) => {
+const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
 	const [locale, localeReady] = useLocale();
-
-	const isRaw = "raw" in props
-		? props.raw
-		: "plain" in props
-			? !props.plain
-			: true; // for compatibility
 
 	if (localeReady) {
 		if (props.k in locale) {
@@ -128,7 +109,7 @@ const Locale: FunctionalComponent<LocalePropsLegacy<any> | LocaleProps<any>> = (
 			if (props.preprocessor)
 				t = props.preprocessor(t);
 
-			if (isRaw)
+			if (props.raw)
 				return <>{ parseVNode(t, props.p, props.components || {}) }</>;
 
 			return <>{ t

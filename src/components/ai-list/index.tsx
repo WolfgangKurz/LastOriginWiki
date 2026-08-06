@@ -509,7 +509,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 												slot,
 												<span class="badge bg-light text-dark">
 													<Locale k="AI_SKILL_TO" p={ [
-														<Locale k="AI_SKILL_BUFF" p={ [
+														<Locale raw k="AI_SKILL_BUFF" p={ [
 															<span
 																class="badge bg-primary"
 																style={ { fontSize: "inherit" } }
@@ -799,7 +799,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 
 				<Locale k="ENEMY_AI_INVALID" />
 				<br />
-				<Locale k="ENEMY_AI_REPORT" />
+				<Locale raw k="ENEMY_AI_REPORT" />
 			</div>
 			: flowNodes.length > 0
 				? <ReactFlow

@@ -27,7 +27,7 @@ const DropEquip: FunctionalComponent<DropEquipProps> = (props) => {
 				<EquipIcon class="float-start me-2" image={ props.equip.icon } />
 				<div class="text-start">
 					<span class="badge bg-secondary me-1">{ RarityDisplay[props.equip.rarity] }</span>
-					<Locale raw={ false } k={ `EQUIP_${props.equip.fullKey}` } />
+					<Locale k={ `EQUIP_${props.equip.fullKey}` } />
 
 					{ count > 1
 						? <span class="badge bg-dark ms-1">x{ count }</span>

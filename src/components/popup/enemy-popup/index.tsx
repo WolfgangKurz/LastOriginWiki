@@ -489,7 +489,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 									<div class="col border border-top-0 text-start p-3">
 										<ElemIcon elem={ skill.type } />
 										<strong>
-											<Locale plain k={ skill.key } />
+											<Locale k={ skill.key } />
 										</strong>
 										<small class="ms-1">Lv.1</small>
 
@@ -599,7 +599,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 							? <div class="row">
 								<div class="col break-keep white-pre-line border border-top-0 text-start p-1">
 									<div class={ BuildClass("bg-dark text-light p-3", style.EnemyDescription) }>
-										<Locale plain k={ `ENEMY_INTRO_${target.id}` } />
+										<Locale k={ `ENEMY_INTRO_${target.id}` } />
 									</div>
 								</div>
 							</div>

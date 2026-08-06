@@ -28,7 +28,7 @@ const Worlds: FunctionalComponent = () => {
 
 	return <div class="worlds text-start">
 		<h2>
-			<Locale k="MENU_WORLDS" />
+			<Locale raw k="MENU_WORLDS" />
 		</h2>
 		<hr />
 
@@ -48,7 +48,7 @@ const Worlds: FunctionalComponent = () => {
 					link="/eternalwar"
 					wid=""
 					image="EW"
-					title={ <Locale k="WORLDS_ETERNALWAR" /> }
+					title={ <Locale raw k="WORLDS_ETERNALWAR" /> }
 				/>
 			</div>
 			<div class="col">
@@ -64,7 +64,7 @@ const Worlds: FunctionalComponent = () => {
 		<hr />
 
 		<h4>
-			<Locale k="WORLDS_SUBSTORY_CHALLENGE" components={ { IconDot: Icons.Dot } } />
+			<Locale raw k="WORLDS_SUBSTORY_CHALLENGE" components={ { IconDot: Icons.Dot } } />
 		</h4>
 		<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
 			{ Subs.map(item => <div class="col">

@@ -70,7 +70,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 		else if (Source.IsPrivateItem) {
 			if (assertDBData(FilterableUnit)) {
 				const unit = FilterableUnit.find(x => x.uid === Source.PrivateId);
-				if (unit) return <Locale plain k={ `UNIT_${unit.uid}` } />;
+				if (unit) return <Locale k={ `UNIT_${unit.uid}` } />;
 				return <>{ Source.PrivateId }</>;
 			} else
 				return <></>;
@@ -138,7 +138,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 				return <>
 					<Locale
 						k="COMMON_SOURCE_SUBSTORY"
-						p={ [<Locale plain k={ `UNIT_${Source.SubStoryUnit}` } fallback={ Source.Map } />] }
+						p={ [<Locale k={ `UNIT_${Source.SubStoryUnit}` } fallback={ Source.Map } />] }
 					/>
 					&nbsp;{ text }
 				</>;

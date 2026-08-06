@@ -34,19 +34,19 @@ const Horizontal: FunctionalComponent<UnitCardProps> = (props) => {
 		<UnitFace uid={ props.unit.uid } class="float-md-start" />
 
 		<div class="unit-name font-ibm">
-			<Locale plain k={ `UNIT_${props.unit.uid}` } />
+			<Locale k={ `UNIT_${props.unit.uid}` } />
 		</div>
 
 		<div class="unit-flag">
 			{ props.unit.body === ACTOR_BODY_TYPE.AGS
 				? <span class="badge bg-info me-1">
-					<Locale plain k="COMMON_UNIT_BODY_AGS" />
+					<Locale k="COMMON_UNIT_BODY_AGS" />
 				</span>
 				: <></>
 			}
 			{ isPromoted
 				? <span class="badge bg-danger me-1">
-					<Locale plain k="UNIT_CARD_PROMOTION_AFTER" />
+					<Locale k="UNIT_CARD_PROMOTION_AFTER" />
 				</span>
 				: <></>
 			}
@@ -54,7 +54,7 @@ const Horizontal: FunctionalComponent<UnitCardProps> = (props) => {
 			{ promotion
 				? <div class="float-end">
 					<RarityBadge class="ms-1" rarity={ promotion }>
-						<Locale plain k="UNIT_CARD_PROMOTION_BADGE" p={ [RarityDisplay[promotion]] } />
+						<Locale k="UNIT_CARD_PROMOTION_BADGE" p={ [RarityDisplay[promotion]] } />
 					</RarityBadge>
 				</div>
 				: <></>
@@ -94,7 +94,7 @@ const UnitCard: FunctionalComponent<UnitCardProps> & {
 				.split(sname)
 				.map(x => x.length === 0 ? <>{ sname }</> : <span class="text-secondary">{ x }</span>);
 		}
-		return <Locale plain k={ `UNIT_${unit.uid}` } />;
+		return <Locale k={ `UNIT_${unit.uid}` } />;
 	})();
 
 	const promotion = (unit.promo || [])

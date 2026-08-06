@@ -392,7 +392,7 @@ const Units: FunctionalComponent = () => {
 					onClick={ () => Store.Units.DisplayType.value = "table" }
 				>
 					<Icons.Table class="mx-1" />
-					<Locale k="UNITS_VIEW_TABLE" />
+					<Locale raw k="UNITS_VIEW_TABLE" />
 				</Button>
 				<Button
 					class={ style.DisplayTab }
@@ -401,7 +401,7 @@ const Units: FunctionalComponent = () => {
 					onClick={ () => Store.Units.DisplayType.value = "list" }
 				>
 					<GridIcon class="mx-1" />
-					<Locale k="UNITS_VIEW_LIST" />
+					<Locale raw k="UNITS_VIEW_LIST" />
 				</Button>
 				<Button
 					class={ style.DisplayTab }
@@ -410,7 +410,7 @@ const Units: FunctionalComponent = () => {
 					onClick={ () => Store.Units.DisplayType.value = "skin" }
 				>
 					<IconHanger class="mx-1" />
-					<Locale k="UNITS_VIEW_SKIN" />
+					<Locale raw k="UNITS_VIEW_SKIN" />
 				</Button>
 				<Button
 					class={ style.DisplayTab }
@@ -419,7 +419,7 @@ const Units: FunctionalComponent = () => {
 					onClick={ () => Store.Units.DisplayType.value = "buff_grouped" }
 				>
 					<Icons.Filter class="mx-1" />
-					<Locale k="UNITS_VIEW_BUFF_GROUPED" />
+					<Locale raw k="UNITS_VIEW_BUFF_GROUPED" />
 				</Button>
 			</Button.Group>
 		</div>

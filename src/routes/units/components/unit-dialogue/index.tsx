@@ -200,8 +200,8 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 				<div>
 					<strong>
 						{ props.voice.sid === null
-							? <Locale plain k={ `UNIT_${unit.uid}` } />
-							: <Locale plain k={ `UNIT_SKIN_${unit.uid}_${voice.sid}` } />
+							? <Locale k={ `UNIT_${unit.uid}` } />
+							: <Locale k={ `UNIT_SKIN_${unit.uid}_${voice.sid}` } />
 						}
 					</strong>
 				</div>

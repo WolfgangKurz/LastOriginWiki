@@ -71,7 +71,7 @@ const ReleaseDate: FunctionalComponent<UnitsListProps> = (props) => {
 					const o = a.indexOf(":");
 					const tag = a.substring(0, o);
 					const body = a.substring(o + 1);
-					return <Locale k={ `UNIT_VIEW_ILLUSTRATOR_TAG_${tag}` } p={ [body] } />;
+					return <Locale raw k={ `UNIT_VIEW_ILLUSTRATOR_TAG_${tag}` } p={ [body] } />;
 				} else {
 					return <span class="badge bg-primary">{ a }</span>;
 				}
@@ -138,7 +138,7 @@ const ReleaseDate: FunctionalComponent<UnitsListProps> = (props) => {
 											<div class={ style.SkinTooltipName }>
 												{ !skin.sid
 													? <Locale k="SKIN_CATEGORY_" />
-													: <Locale k={ `UNIT_SKIN_${skin.uid}_${skin.sid}` } plain />
+													: <Locale k={ `UNIT_SKIN_${skin.uid}_${skin.sid}` } />
 												}
 											</div>
 											<div class="mb-1">
@@ -165,7 +165,7 @@ const ReleaseDate: FunctionalComponent<UnitsListProps> = (props) => {
 											<div class={ style.SkinTooltipName }>
 												{ !skin.sid
 													? <Locale k="SKIN_CATEGORY_" />
-													: <Locale k={ `UNIT_SKIN_${skin.uid}_${skin.sid}` } plain />
+													: <Locale k={ `UNIT_SKIN_${skin.uid}_${skin.sid}` } />
 												}
 											</div>
 											<div class="mb-1">

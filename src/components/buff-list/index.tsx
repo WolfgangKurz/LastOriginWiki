@@ -20,7 +20,7 @@ import { BuildClass, cn } from "@/libs/Class";
 import { arrayrize, diff2, groupBy } from "@/libs/Functions";
 
 import { assertDBData, GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
-import LocaleBase, { LocaleProps, LocalePropsLegacy } from "@/components/locale";
+import LocaleBase, { LocaleProps } from "@/components/locale";
 import Loading from "@/components/loading";
 import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
@@ -37,7 +37,7 @@ import Badge from "@/components/Badge";
 import style from "./style.module.scss";
 
 // default fallback ??? string
-const Locale: FunctionalComponent<LocaleProps<any> | LocalePropsLegacy<any>> = (props) =>
+const Locale: FunctionalComponent<LocaleProps<any>> = (props) =>
 	<LocaleBase
 		fallback={ IsDev
 			? <span title={ props.k }>???</span>
@@ -257,9 +257,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 			return <span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
 				<span class={ style.SubBadgeBadge }>
-					<Locale raw={ false } k="BUFF_UNIT_SIDE_TEAM" />
+					<Locale k="BUFF_UNIT_SIDE_TEAM" />
 				</span>
-				<Locale raw={ false } k={ `UNIT_${unit.uid}` } />
+				<Locale k={ `UNIT_${unit.uid}` } />
 			</span>;
 		} else if (key.startsWith("MOB_")) {
 			const ekey = key.replace(/MOB_MP_(.+)/, "$1");
@@ -268,11 +268,11 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				data-key={ ekey }
 			>
 				<span class={ style.SubBadgeBadge }>
-					<Locale raw={ false } k="BUFF_UNIT_SIDE_ENEMY" />
+					<Locale k="BUFF_UNIT_SIDE_ENEMY" />
 				</span>
 				<a class={ style.SubBadgeLink } href={ `/enemies/${ekey}` } target="_blank">
 					<Icons.Link45deg />
-					<Locale raw={ false } k={ `ENEMY_${ekey}` } />
+					<Locale k={ `ENEMY_${ekey}` } />
 				</a>
 			</span>;
 		} else if (key.startsWith("Skill_")) {
@@ -280,12 +280,12 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			const fc = key.replace(/^.+_(N|CH)_([a-zA-Z0-9]+)$/, "$1") === "CH";
 			const idx = key.replace(/^.+_(N|CH)_([a-zA-Z0-9]+)$/, "$2");
 
-			return <Locale raw={ false } k="BUFF_BADGE_A_OF_B" p={ [
+			return <Locale k="BUFF_BADGE_A_OF_B" p={ [
 				<span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
-					<Locale raw={ false } k={ `UNIT_${char}` } />
+					<Locale k={ `UNIT_${char}` } />
 				</span>,
 				<span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
-					<Locale raw={ false } k={ `UNIT_SKILL_${char}_${fc ? "F" : ""}${idx}` } />
+					<Locale k={ `UNIT_SKILL_${char}_${fc ? "F" : ""}${idx}` } />
 				</span>,
 			] } />;
 		} else if (key.startsWith("SUMMON_")) {
@@ -294,9 +294,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				data-key={ key }
 			>
 				<span class={ style.SubBadgeBadge }>
-					<Locale raw={ false } k="BUFF_UNIT_SIDE_SUMMON" />
+					<Locale k="BUFF_UNIT_SIDE_SUMMON" />
 				</span>
-				<Locale raw={ false } k={ key } />
+				<Locale k={ key } />
 			</span>;
 		}
 
@@ -327,7 +327,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 			const attr = groups[g][0].attr !== undefined
 				? <u class={ style.BuffAttr }>
-					<Locale raw={ false } k={ `BUFFEFFECT_ATTR_PREFIX_${groups[g][0].attr}` } />
+					<Locale k={ `BUFFEFFECT_ATTR_PREFIX_${groups[g][0].attr}` } />
 				</u>
 				: <></>;
 
@@ -344,24 +344,23 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							{ from.key !== props.uid
 								? <a href={ `/units/${from.key}` } target="_blank">
 									<RarityBadge border rarity="A">
-										<Locale plain k={ `UNIT_${from.key}` } fallback={ from.key } />
+										<Locale k={ `UNIT_${from.key}` } fallback={ from.key } />
 										<Icons.Link45deg />
 									</RarityBadge>
 								</a>
 								: <RarityBadge border rarity="A">
-									<Locale plain k={ `UNIT_${from.key}` } fallback={ from.key } />
+									<Locale k={ `UNIT_${from.key}` } fallback={ from.key } />
 								</RarityBadge>
 							}
 
 							<Icons.Dash />
 
 							<Locale
-								raw={ false }
 								k={ `BUFFFROM_${isP ? "PASSIVE" : "ACTIVE"}${isFC ? "_F" : ""}` }
 								p={ [idx, pp] }
 							/>
 							<Badge class="ms-1" variant="primary">
-								<Locale raw={ false } k={ `UNIT_SKILL_${from.key}_${from.index}` } />
+								<Locale k={ `UNIT_SKILL_${from.key}_${from.index}` } />
 							</Badge>
 						</>;
 					}
@@ -369,7 +368,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						return <>
 							<a href={ `/equips/${from.key}` } target="_blank">
 								<RarityBadge border rarity="A">
-									<Locale plain k={ `EQUIP_${from.key}` } />
+									<Locale k={ `EQUIP_${from.key}` } />
 									<Icons.Link45deg />
 								</RarityBadge>
 							</a>
@@ -377,7 +376,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							<Icons.Dash />
 
 							<strong class={ style.EquipLevel }>
-								<Locale raw={ false } k={ "BUFFFROM_EQUIP_LEVEL" } p={ [from.level] } />
+								<Locale k={ "BUFFFROM_EQUIP_LEVEL" } p={ [from.level] } />
 							</strong>
 						</>;
 					case "enemy": {
@@ -390,7 +389,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						return <>
 							<a href={ `/enemies/${from.key}` } target="_blank">
 								<RarityBadge border rarity="SSS">
-									<Locale plain k={ `ENEMY_${from.key}` } />
+									<Locale k={ `ENEMY_${from.key}` } />
 									<Icons.Link45deg />
 								</RarityBadge>
 							</a>
@@ -398,12 +397,11 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							<Icons.Dash />
 
 							<Locale
-								raw={ false }
 								k={ `BUFFFROM_${isP ? "PASSIVE" : "ACTIVE"}${isFC ? "_F" : ""}` }
 								p={ [idx, pp] }
 							/>
 							<Badge class="ms-1" variant="primary">
-								<Locale raw={ false } k={ from.index } />
+								<Locale k={ from.index } />
 							</Badge>
 						</>;
 					}
@@ -416,18 +414,17 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						const pp = ["st", "nd", "rd", "th"][idx > 3 ? 3 : idx - 1];
 						return <>
 							<RarityBadge border rarity="S">
-								<Locale plain k={ from.key } />
+								<Locale k={ from.key } />
 							</RarityBadge>
 
 							<Icons.Dash />
 
 							<Locale
-								raw={ false }
 								k={ `BUFFFROM_${isP ? "PASSIVE" : "ACTIVE"}${isFC ? "_F" : ""}` }
 								p={ [idx, pp] }
 							/>
 							<Badge class="ms-1" variant="primary">
-								<Locale raw={ false } k={ from.index } />
+								<Locale k={ from.index } />
 							</Badge>
 						</>;
 					}
@@ -483,68 +480,68 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 		if (chance === "0%") {
 			return <span class="badge bg-success-dark ms-3" title={ formatString(loc["BUFFCHANCE"] ?? "", "0%") }>
-				<Locale raw={ false } k="BUFFCHANCE_0" />
+				<Locale k="BUFFCHANCE_0" />
 			</span>;
 		}
 
 		return <span class="badge bg-success ms-3">
-			<Locale raw={ false } k="BUFFCHANCE" p={ [chance] } />
+			<Locale k="BUFFCHANCE" p={ [chance] } />
 		</span>;
 	}
 	function getBuffEffectTypeText (type: BUFFEFFECT_TYPE, target: BUFF_ATTR_TYPE): preact.VNode {
 		return <>
 			<u class={ style.BuffAttr }>
-				<Locale raw={ false } k={ `BUFFEFFECT_ATTR_PREFIX_${target}` } />
+				<Locale k={ `BUFFEFFECT_ATTR_PREFIX_${target}` } />
 			</u>
 
 			{ ((): preact.VNode => {
 				switch (type) {
 					case BUFFEFFECT_TYPE.STAT_ATK_VALUE: // 0
 					case BUFFEFFECT_TYPE.STAT_ATK_RATIO: // 1
-						return <Locale raw={ false } k="BUFFTYPE_ATK" />;
+						return <Locale k="BUFFTYPE_ATK" />;
 					case BUFFEFFECT_TYPE.STAT_DEF_VALUE: // 2
 					case BUFFEFFECT_TYPE.STAT_DEF_RATIO: // 3
-						return <Locale raw={ false } k="BUFFTYPE_DEF" />;
+						return <Locale k="BUFFTYPE_DEF" />;
 					case BUFFEFFECT_TYPE.STAT_HP_VALUE: // 4
 					case BUFFEFFECT_TYPE.STAT_HP_RATIO: // 5
-						return <Locale raw={ false } k="BUFFTYPE_HP" />;
+						return <Locale k="BUFFTYPE_HP" />;
 					case BUFFEFFECT_TYPE.STAT_RATING_VALUE: // 6
 					case BUFFEFFECT_TYPE.STAT_RATING_RATIO: // 7
-						return <Locale raw={ false } k="BUFFTYPE_ACC" />;
+						return <Locale k="BUFFTYPE_ACC" />;
 					case BUFFEFFECT_TYPE.STAT_CRITICAL_VALUE: // 8
 					case BUFFEFFECT_TYPE.STAT_CRITICAL_RATIO: // 9
-						return <Locale raw={ false } k="BUFFTYPE_CRIT" />;
+						return <Locale k="BUFFTYPE_CRIT" />;
 					case BUFFEFFECT_TYPE.STAT_AVOID_VALUE: // 10
 					case BUFFEFFECT_TYPE.STAT_AVOID_RATIO: // 11
-						return <Locale raw={ false } k="BUFFTYPE_EVA" />;
+						return <Locale k="BUFFTYPE_EVA" />;
 					case BUFFEFFECT_TYPE.STAT_SPEED_VALUE: // 12
 					case BUFFEFFECT_TYPE.STAT_SPEED_RATIO: // 13
-						return <Locale raw={ false } k="BUFFTYPE_SPD" />;
+						return <Locale k="BUFFTYPE_SPD" />;
 					case BUFFEFFECT_TYPE.STAT_RESFIRE_VALUE: // 14
 					case BUFFEFFECT_TYPE.STAT_RESFIRE_RATIO: // 15
 						return <>
 							<ElemIcon elem="fire" class="me-1 mb-0" />
-							<Locale raw={ false } k="BUFFTYPE_FIRE_RES" />
+							<Locale k="BUFFTYPE_FIRE_RES" />
 						</>;
 					case BUFFEFFECT_TYPE.STAT_RESICE_VALUE: // 16
 					case BUFFEFFECT_TYPE.STAT_RESICE_RATIO: // 17
 						return <>
 							<ElemIcon elem="ice" class="me-1 mb-0" />
-							<Locale raw={ false } k="BUFFTYPE_ICE_RES" />
+							<Locale k="BUFFTYPE_ICE_RES" />
 						</>;
 					case BUFFEFFECT_TYPE.STAT_RESLIGHTNING_VALUE: // 18
 					case BUFFEFFECT_TYPE.STAT_RESLIGHTNING_RATIO: // 19
 						return <>
 							<ElemIcon elem="lightning" class="me-1 mb-0" />
-							<Locale raw={ false } k="BUFFTYPE_THUNDER_RES" />
+							<Locale k="BUFFTYPE_THUNDER_RES" />
 						</>;
 					case BUFFEFFECT_TYPE.STAGE_AP_VALUE: // 20
 					case BUFFEFFECT_TYPE.STAGE_AP_SHIFT: // 21
-						return <Locale raw={ false } k="BUFFTYPE_AP" />;
+						return <Locale k="BUFFTYPE_AP" />;
 					case BUFFEFFECT_TYPE.STAGE_AP_STOP: // 22
-						return <Locale raw={ false } k="BUFFTYPE_STUN" />;
+						return <Locale k="BUFFTYPE_STUN" />;
 					case BUFFEFFECT_TYPE.UI_INFO_NEXTENEMY: // 23
-						return <Locale raw={ false } k="BUFFTYPE_SCOUT" />;
+						return <Locale k="BUFFTYPE_SCOUT" />;
 					case BUFFEFFECT_TYPE.STAGE_THORNS_RATIO: // 24
 						return <>STAGE_THORNS_RATIO</>; // 사용처 없음, 알 수 없음 (이름으로 보아, 공격 시 공격 일부가 반사되는 것으로 보임)
 					case BUFFEFFECT_TYPE.STAGE_REFLECTPHYSICS_VALUE: // 25
@@ -556,221 +553,220 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					case BUFFEFFECT_TYPE.STAGE_REFLECTLIGHTNIG_VALUE: // 28
 						return <>STAGE_REFLECTLIGHTNIG_VALUE</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 전기 속성으로)
 					case BUFFEFFECT_TYPE.STAGE_REFLECTPHYSICS_RATIO_DEFENDER: // 29
-						return <Locale raw={ false } k="BUFFTYPE_COUNTER_PHYSICS" />; // 피격자가 물리 반격
+						return <Locale k="BUFFTYPE_COUNTER_PHYSICS" />; // 피격자가 물리 반격
 					case BUFFEFFECT_TYPE.STAGE_REFLECTFIRE_RATIO_DEFENDER: // 30
-						return <Locale raw={ false } k="BUFFTYPE_COUNTER_FIRE" />; // 피격자가 화염 반격
+						return <Locale k="BUFFTYPE_COUNTER_FIRE" />; // 피격자가 화염 반격
 					case BUFFEFFECT_TYPE.STAGE_REFLECTICE_RATIO_DEFENDER: // 31
-						return <Locale raw={ false } k="BUFFTYPE_COUNTER_ICE" />; // 피격자가 냉기 반격
+						return <Locale k="BUFFTYPE_COUNTER_ICE" />; // 피격자가 냉기 반격
 					case BUFFEFFECT_TYPE.STAGE_REFLECTLIGHTNIG_RATIO_DEFENDER: // 32
-						return <Locale raw={ false } k="BUFFTYPE_COUNTER_LIGHTNING" />; // 피격자가 전기 반격
+						return <Locale k="BUFFTYPE_COUNTER_LIGHTNING" />; // 피격자가 전기 반격
 					case BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_TIME: // 33
-						return <Locale raw={ false } k="BUFFTYPE_DMG_IMMUNE" />; // 피해 무효화
+						return <Locale k="BUFFTYPE_DMG_IMMUNE" />; // 피해 무효화
 					case BUFFEFFECT_TYPE.STAGE_SHIELD_VALUE: // 34
-						return <Locale raw={ false } k="BUFFTYPE_DMG_MINIMIZE" />; // value 이하 피해 1로 적용
+						return <Locale k="BUFFTYPE_DMG_MINIMIZE" />; // value 이하 피해 1로 적용
 					case BUFFEFFECT_TYPE.STAGE_SHIELD_VALUE_LIMITED: // 35
 						return <>STAGE_SHIELD_VALUE_LIMITED</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_SHIELD_RATIO: // 36
-						return <Locale raw={ false } k="BUFFTYPE_GET_DMG_DOWN" />; // 받는 피해 감소
+						return <Locale k="BUFFTYPE_GET_DMG_DOWN" />; // 받는 피해 감소
 					case BUFFEFFECT_TYPE.STAGE_SHIELD_RATIO_LIMITED: // 37
 						return <>STAGE_SHIELD_RATIO_LIMITED</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_VALUE: // 38
-						return <Locale raw={ false } k="BUFFTYPE_BARRIER" />; // 방어막
+						return <Locale k="BUFFTYPE_BARRIER" />; // 방어막
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_RATIO: // 39
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_VALUE: // 40
-						return <Locale raw={ false } k="BUFFTYPE_ADDDMG_PHYSICS" />;
+						return <Locale k="BUFFTYPE_ADDDMG_PHYSICS" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEFIRE_RATIO: // 41
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEFIRE_VALUE: // 42
-						return <Locale raw={ false } k="BUFFTYPE_ADDDMG_FIRE" />;
+						return <Locale k="BUFFTYPE_ADDDMG_FIRE" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEICE_RATIO: // 43
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEICE_VALUE: // 44
-						return <Locale raw={ false } k="BUFFTYPE_ADDDMG_ICE" />;
+						return <Locale k="BUFFTYPE_ADDDMG_ICE" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGELIGHTNING_RATIO: // 45
 					case BUFFEFFECT_TYPE.STAGE_DAMAGELIGHTNING_VALUE: // 46
-						return <Locale raw={ false } k="BUFFTYPE_ADDDMG_THUNDER" />;
+						return <Locale k="BUFFTYPE_ADDDMG_THUNDER" />;
 					case BUFFEFFECT_TYPE.STAGE_LOCKON01_TIME: // 47
 						return <>STAGE_LOCKON01_TIME</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_ADDDAMAGE_RATIO: // 48
-						return <Locale raw={ false } k="BUFFTYPE_GET_DMG_UP" />; // 받는 피해 증가 %
+						return <Locale k="BUFFTYPE_GET_DMG_UP" />; // 받는 피해 증가 %
 					case BUFFEFFECT_TYPE.STAGE_ADDDAMAGE_VALUE: // 49
 						return <>STAGE_ADDDAMAGE_VALUE</>; // 사용처 없음, 받는 피해 증가 고정값
 					case BUFFEFFECT_TYPE.STAGE_BLOCK_COLUMN: // 50
-						return <Locale raw={ false } k="BUFFTYPE_BLOCK_COLUMN" />; // 행 보호
+						return <Locale k="BUFFTYPE_BLOCK_COLUMN" />; // 행 보호
 					case BUFFEFFECT_TYPE.STAGE_BLOCK_GRID: // 51
 						return <>STAGE_BLOCK_GRID</>; // 사용처 없음, 격자 보호?
 					case BUFFEFFECT_TYPE.STAGE_MOVE_BACK: // 52
-						return <Locale raw={ false } k="BUFFTYPE_PUSH" />;
+						return <Locale k="BUFFTYPE_PUSH" />;
 					case BUFFEFFECT_TYPE.STAGE_MOVE_FRONT: // 53
-						return <Locale raw={ false } k="BUFFTYPE_PULL" />;
+						return <Locale k="BUFFTYPE_PULL" />;
 					case BUFFEFFECT_TYPE.STAGE_CRITICAL_NEXTATTACK: // 54
-						return <Locale raw={ false } k="BUFFTYPE_CRIT_NEXT" />;
+						return <Locale k="BUFFTYPE_CRIT_NEXT" />;
 					case BUFFEFFECT_TYPE.STAT_RANGE_VALUE: // 55
-						return <Locale raw={ false } k="BUFFTYPE_RANGE" />;
+						return <Locale k="BUFFTYPE_RANGE" />;
 					case BUFFEFFECT_TYPE.STAGE_AGRO_VALUE: // 56
 						return <>STAGE_AGRO_VALUE</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_DEFPIERCE_VALUE: // 57
 						return <>STAGE_DEFPIERCE_VALUE</>; // 방어 관통 고정값?
 					case BUFFEFFECT_TYPE.STAGE_DEFPIERCE_RATIO: // 58
-						return <Locale raw={ false } k="DEF_PIERCE" />;
+						return <Locale k="DEF_PIERCE" />;
 					case BUFFEFFECT_TYPE.STAGE_GRID_CHANGE: // 59
 						return <>STAGE_GRID_CHANGE</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_TROOPERTYPEDMGBONUS_RATIO: // 60
-						return <Locale raw={ false } k="BUFFTYPE_ANTI_LIGHT_DMG" />;
+						return <Locale k="BUFFTYPE_ANTI_LIGHT_DMG" />;
 					case BUFFEFFECT_TYPE.STAGE_ARMOREDTYPEDMGBONUS_RATIO: // 61
-						return <Locale raw={ false } k="BUFFTYPE_ANTI_HEAVY_DMG" />;
+						return <Locale k="BUFFTYPE_ANTI_HEAVY_DMG" />;
 					case BUFFEFFECT_TYPE.STAGE_MOBILITYTYPEDMGBONUS_RATIO: // 62
-						return <Locale raw={ false } k="BUFFTYPE_ANTI_MOBILITY_DMG" />;
+						return <Locale k="BUFFTYPE_ANTI_MOBILITY_DMG" />;
 					case BUFFEFFECT_TYPE.STAGE_CHARCHANGE_PERMANENT: // 63
 					case BUFFEFFECT_TYPE.STAGE_CHARCHANGE_LIMITED: // 64
-						return <Locale raw={ false } k="BUFFTYPE_TRANSFORM" />;
+						return <Locale k="BUFFTYPE_TRANSFORM" />;
 					case BUFFEFFECT_TYPE.STAGE_PHYSICS_DOT: // 65
-						return <Locale raw={ false } k="BUFFTYPE_DOT_PHYSICS" />;
+						return <Locale k="BUFFTYPE_DOT_PHYSICS" />;
 					case BUFFEFFECT_TYPE.STAGE_FIRE_DOT: // 66
-						return <Locale raw={ false } k="BUFFTYPE_DOT_FIRE" />;
+						return <Locale k="BUFFTYPE_DOT_FIRE" />;
 					case BUFFEFFECT_TYPE.STAGE_ICE_DOT: // 67
-						return <Locale raw={ false } k="BUFFTYPE_DOT_ICE" />;
+						return <Locale k="BUFFTYPE_DOT_ICE" />;
 					case BUFFEFFECT_TYPE.STAGE_LIGHTNING_DOT: // 68
-						return <Locale raw={ false } k="BUFFTYPE_DOT_THUNDER" />;
+						return <Locale k="BUFFTYPE_DOT_THUNDER" />;
 					case BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF_ENUM: // 69
 					case BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF: // 88
 					case BUFFEFFECT_TYPE.STAGE_REMOVE_DEBUFF: // 89
 					case BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF_KEY_ALL_ATTRTYPE: // 97
 					case BUFFEFFECT_TYPE.STAGE_REMOVE_ALL_BUFF: // 99
 					case BUFFEFFECT_TYPE.STAGE_REMOVE_ALL_DEBUFF: // 100
-						return <Locale raw={ false } k="BUFFTYPE_OFF" />;
+						return <Locale k="BUFFTYPE_OFF" />;
 					case BUFFEFFECT_TYPE.STAGE_PHYSICS_DAMAGE_APPLY: // 70
-						return <Locale raw={ false } k="BUFFTYPE_DMG_PHYSICS_BY_ATK" />;
+						return <Locale k="BUFFTYPE_DMG_PHYSICS_BY_ATK" />;
 					case BUFFEFFECT_TYPE.STAGE_FIRE_DAMAGE_APPLY: // 71
-						return <Locale raw={ false } k="BUFFTYPE_DMG_FIRE_BY_ATK" />;
+						return <Locale k="BUFFTYPE_DMG_FIRE_BY_ATK" />;
 					case BUFFEFFECT_TYPE.STAGE_ICE_DAMAGE_APPLY: // 72
-						return <Locale raw={ false } k="BUFFTYPE_DMG_ICE_BY_ATK" />;
+						return <Locale k="BUFFTYPE_DMG_ICE_BY_ATK" />;
 					case BUFFEFFECT_TYPE.STAGE_LIGHTNING_DAMAGE_APPLY: // 73
-						return <Locale raw={ false } k="BUFFTYPE_DMG_THUNDER_BY_ATK" />;
+						return <Locale k="BUFFTYPE_DMG_THUNDER_BY_ATK" />;
 					case BUFFEFFECT_TYPE.STAGE_PROVOKE: // 74
-						return <Locale raw={ false } k="BUFFTYPE_PROVOKE" />;
+						return <Locale k="BUFFTYPE_PROVOKE" />;
 					case BUFFEFFECT_TYPE.STAGE_BLOCK_ROW: // 75
-						return <Locale raw={ false } k="BUFFTYPE_BLOCK_ROW" />;
+						return <Locale k="BUFFTYPE_BLOCK_ROW" />;
 					case BUFFEFFECT_TYPE.STAGE_BLOCK_CHARACTER: // 76
-						return <Locale raw={ false } k="BUFFTYPE_BLOCK_CHAR" />;
+						return <Locale k="BUFFTYPE_BLOCK_CHAR" />;
 					case BUFFEFFECT_TYPE.STAGE_SUPPORT_ATTACK: // 77
-						return <Locale raw={ false } k="BUFFTYPE_SUPPORT_ATK" />;
+						return <Locale k="BUFFTYPE_SUPPORT_ATK" />;
 					case BUFFEFFECT_TYPE.STAGE_SNARE: // 78
-						return <Locale raw={ false } k="BUFFTYPE_SNARE" />;
+						return <Locale k="BUFFTYPE_SNARE" />;
 					case BUFFEFFECT_TYPE.STAGE_SEAL_SKILL: // 79
-						return <Locale raw={ false } k="BUFFTYPE_SEAL" />;
+						return <Locale k="BUFFTYPE_SEAL" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEAMP_BYHP_ME: // 80
-						return <Locale raw={ false } k="BUFFTYPE_DMG_UP_BY_HP" />;
+						return <Locale k="BUFFTYPE_DMG_UP_BY_HP" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEAMP_BYHP_OPP: // 81
-						return <Locale raw={ false } k="BUFFTYPE_DMG_UP_BY_TARGET_HP" />;
+						return <Locale k="BUFFTYPE_DMG_UP_BY_TARGET_HP" />;
 					case BUFFEFFECT_TYPE.STAGE_RESURRECT: // 82
 					case BUFFEFFECT_TYPE.STAGE_RESURRECT_RATIO: // 98
-						return <Locale raw={ false } k="BUFFTYPE_RESURRECT" />;
+						return <Locale k="BUFFTYPE_RESURRECT" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEPHYSICS_RATIO_INS: // 83
-						return <Locale raw={ false } k="BUFFTYPE_DMG" />;
+						return <Locale k="BUFFTYPE_DMG" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEFIRE_RATIO_INS: // 84
-						return <Locale raw={ false } k="BUFFTYPE_DMG_FIRE" />;
+						return <Locale k="BUFFTYPE_DMG_FIRE" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGEICE_RATIO_INS: // 85
-						return <Locale raw={ false } k="BUFFTYPE_DMG_ICE" />;
+						return <Locale k="BUFFTYPE_DMG_ICE" />;
 					case BUFFEFFECT_TYPE.STAGE_DAMAGELIGHTNING_RATIO_INS: // 86
-						return <Locale raw={ false } k="BUFFTYPE_DMG_THUNDER" />;
+						return <Locale k="BUFFTYPE_DMG_THUNDER" />;
 					case BUFFEFFECT_TYPE.STAGE_MARKING: // 87
-						return <Locale raw={ false } k="BUFFTYPE_MARKING" />;
+						return <Locale k="BUFFTYPE_MARKING" />;
 					case BUFFEFFECT_TYPE.STAGE_DEBUFF_RATEUP: // 90
-						return <Locale raw={ false } k="BUFFTYPE_RES_DEBUFF_RATEUP1" />;
+						return <Locale k="BUFFTYPE_RES_DEBUFF_RATEUP1" />;
 					case BUFFEFFECT_TYPE.STAGE_DEBUFF_PERDOWN: // 91
-						return <Locale raw={ false } k="BUFFTYPE_RES_DEBUFF_PERDOWN" />;
+						return <Locale k="BUFFTYPE_RES_DEBUFF_PERDOWN" />;
 					case BUFFEFFECT_TYPE.STAGE_BUFFEFFECTRATE_CHANGE: // 92
-						return <Locale raw={ false } k="BUFFTYPE_EFFECT_RATE" />;
+						return <Locale k="BUFFTYPE_EFFECT_RATE" />;
 					case BUFFEFFECT_TYPE.REMOVE_SUMMON_INSTENV: // 93
-						return <Locale raw={ false } k="BUFFTYPE_SUMMON_INSTENV" />;
+						return <Locale k="BUFFTYPE_SUMMON_INSTENV" />;
 					case BUFFEFFECT_TYPE.BARRIER_PIERCE: // 94
-						return <Locale raw={ false } k="BUFFTYPE_BARRIER_PIERCE" />;
+						return <Locale k="BUFFTYPE_BARRIER_PIERCE" />;
 					case BUFFEFFECT_TYPE.STAGE_EXP_UP: // 95
-						return <Locale raw={ false } k="BUFFTYPE_EXP" />;
+						return <Locale k="BUFFTYPE_EXP" />;
 					case BUFFEFFECT_TYPE.STAGE_ANALYZE: // 96
 						return <>STAGE_ANALYZE</>; // 사용처 없음, 알 수 없음
 					case BUFFEFFECT_TYPE.STAGE_IMMUNITY_DEBUFF: // 101
-						return <Locale raw={ false } k="BUFFTYPE_DEBUFF_IMMUNE" />; // 효과 면역
+						return <Locale k="BUFFTYPE_DEBUFF_IMMUNE" />; // 효과 면역
 					case BUFFEFFECT_TYPE.STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_1: // 102
 					case BUFFEFFECT_TYPE.STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_2: // 103
-						return <Locale raw={ false } k="BUFFTYPE_TOGETHER" />;
+						return <Locale k="BUFFTYPE_TOGETHER" />;
 					case BUFFEFFECT_TYPE.STAT_MAXHP_VALUE: // 104
 					case BUFFEFFECT_TYPE.STAT_MAXHP_RATIO: // 105
-						return <Locale raw={ false } k="BUFFTYPE_MAXHP" />;
+						return <Locale k="BUFFTYPE_MAXHP" />;
 					case BUFFEFFECT_TYPE.STAT_SKILL_RATIO: // 106
-						return <Locale raw={ false } k="BUFFTYPE_SKILL_RATIO" />;
+						return <Locale k="BUFFTYPE_SKILL_RATIO" />;
 					case BUFFEFFECT_TYPE.STAT_RANGE_VALUE_ACTIVE_SKILL_1: // 107
 					case BUFFEFFECT_TYPE.STAT_RANGE_VALUE_ACTIVE_SKILL_2: // 108
 						return <Locale
-							raw={ false }
 							k="BUFFTYPE_SKILL_RANGE"
 							p={ [type - BUFFEFFECT_TYPE.STAT_RANGE_VALUE_ACTIVE_SKILL_1 + 1] }
 						/>;
 					case BUFFEFFECT_TYPE.FOCUSED_ATTACK: // 109
-						return <Locale raw={ false } k="BUFFTYPE_FOCUSED_ATTACK" />;
+						return <Locale k="BUFFTYPE_FOCUSED_ATTACK" />;
 					case BUFFEFFECT_TYPE.DAMAGE_DISPERSE: // 110
-						return <Locale raw={ false } k="BUFFTYPE_DAMAGE_DISPERSE" />;
+						return <Locale k="BUFFTYPE_DAMAGE_DISPERSE" />;
 					case BUFFEFFECT_TYPE.EVADE_SKILLDMGUP_ME: // 111
-						return <Locale raw={ false } k="BUFFTYPE_BY" p={ [
-							<Locale raw={ false } k="BUFFTARGET_BY_SELF" />,
-							<Locale raw={ false } k="BUFFEFFECT_BY_EVADE" />,
-							<Locale raw={ false } k="BUFFEFFECT_BY_SKILL_RATIO" />,
+						return <Locale k="BUFFTYPE_BY" p={ [
+							<Locale k="BUFFTARGET_BY_SELF" />,
+							<Locale k="BUFFEFFECT_BY_EVADE" />,
+							<Locale k="BUFFEFFECT_BY_SKILL_RATIO" />,
 						] } />;
 					case BUFFEFFECT_TYPE.EVADE_SKILLDMGDOWN: // 112
-						return <Locale raw={ false } k="BUFFTYPE_BY" p={ [
-							<Locale raw={ false } k="BUFFTARGET_BY_TARGET" />,
-							<Locale raw={ false } k="BUFFEFFECT_BY_EVADE" />,
-							<Locale raw={ false } k="BUFFEFFECT_BY_RECEIVE_SKILL_RATIO" />,
+						return <Locale k="BUFFTYPE_BY" p={ [
+							<Locale k="BUFFTARGET_BY_TARGET" />,
+							<Locale k="BUFFEFFECT_BY_EVADE" />,
+							<Locale k="BUFFEFFECT_BY_RECEIVE_SKILL_RATIO" />,
 						] } />;
 					case BUFFEFFECT_TYPE.DEF_SKILLDMGUP_ME: // 113
-						return <Locale raw={ false } k="BUFFTYPE_BY" p={ [
-							<Locale raw={ false } k="BUFFTARGET_BY_SELF" />,
-							<Locale raw={ false } k="BUFFEFFECT_BY_DEF" />,
-							<Locale raw={ false } k="BUFFEFFECT_BY_SKILL_RATIO" />,
+						return <Locale k="BUFFTYPE_BY" p={ [
+							<Locale k="BUFFTARGET_BY_SELF" />,
+							<Locale k="BUFFEFFECT_BY_DEF" />,
+							<Locale k="BUFFEFFECT_BY_SKILL_RATIO" />,
 						] } />;
 					case BUFFEFFECT_TYPE.DEF_CRTDOWN: // 114
-						return <Locale raw={ false } k="BUFFTYPE_BY" p={ [
-							<Locale raw={ false } k="BUFFTARGET_BY_SELF" />,
-							<Locale raw={ false } k="BUFFEFFECT_BY_DEF" />,
-							<Locale raw={ false } k="BUFFEFFECT_BY_ATTACKER_CRIT" />,
+						return <Locale k="BUFFTYPE_BY" p={ [
+							<Locale k="BUFFTARGET_BY_SELF" />,
+							<Locale k="BUFFEFFECT_BY_DEF" />,
+							<Locale k="BUFFEFFECT_BY_ATTACKER_CRIT" />,
 						] } />;
 					case BUFFEFFECT_TYPE.BUFFER_ATK_ATKUP: // 115
-						return <Locale raw={ false } k="BUFFTYPE_BY" p={ [
-							<Locale raw={ false } k="BUFFTARGET_BY_BUFFER" />,
-							<Locale raw={ false } k="BUFFEFFECT_BY_EVADE" />,
-							<Locale raw={ false } k="BUFFEFFECT_BY_SKILL_RATIO" />,
+						return <Locale k="BUFFTYPE_BY" p={ [
+							<Locale k="BUFFTARGET_BY_BUFFER" />,
+							<Locale k="BUFFEFFECT_BY_EVADE" />,
+							<Locale k="BUFFEFFECT_BY_SKILL_RATIO" />,
 						] } />;
 					case BUFFEFFECT_TYPE.RESFIRE_VALUE_MIN: // 116
-						return <Locale raw={ false } k="BUFFTYPE_FIRE_RES_MIN" />;
+						return <Locale k="BUFFTYPE_FIRE_RES_MIN" />;
 					case BUFFEFFECT_TYPE.RESICE_VALUE_MIN: // 117
-						return <Locale raw={ false } k="BUFFTYPE_ICE_RES_MIN" />;
+						return <Locale k="BUFFTYPE_ICE_RES_MIN" />;
 					case BUFFEFFECT_TYPE.RESLIGHTNING_VALUE_MIN: // 118
-						return <Locale raw={ false } k="BUFFTYPE_THUNDER_RES_MIN" />;
+						return <Locale k="BUFFTYPE_THUNDER_RES_MIN" />;
 					case BUFFEFFECT_TYPE.RESFIRE_VALUE_FIX: // 119
-						return <Locale raw={ false } k="BUFFTYPE_FIRE_RES_MIN" />;
+						return <Locale k="BUFFTYPE_FIRE_RES_MIN" />;
 					case BUFFEFFECT_TYPE.RESICE_VALUE_FIX: // 120
-						return <Locale raw={ false } k="BUFFTYPE_ICE_RES_FIX" />;
+						return <Locale k="BUFFTYPE_ICE_RES_FIX" />;
 					case BUFFEFFECT_TYPE.RESLIGHTNING_VALUE_FIX: // 121
-						return <Locale raw={ false } k="BUFFTYPE_THUNDER_RES_FIX" />;
+						return <Locale k="BUFFTYPE_THUNDER_RES_FIX" />;
 					case BUFFEFFECT_TYPE.RESFIRE_DEBUFF_REVERSE: // 122
-						return <Locale raw={ false } k="BUFFTYPE_FIRE_RES_REVERSE" />;
+						return <Locale k="BUFFTYPE_FIRE_RES_REVERSE" />;
 					case BUFFEFFECT_TYPE.RESICE_DEBUFF_REVERSE: // 123
-						return <Locale raw={ false } k="BUFFTYPE_ICE_RES_REVERSE" />;
+						return <Locale k="BUFFTYPE_ICE_RES_REVERSE" />;
 					case BUFFEFFECT_TYPE.RESLIGHTNING_DEBUFF_REVERSE: // 124
-						return <Locale raw={ false } k="BUFFTYPE_THUNDER_RES_REVERSE" />;
+						return <Locale k="BUFFTYPE_THUNDER_RES_REVERSE" />;
 					case BUFFEFFECT_TYPE.BUFF_DISALLOW: // 125
-						return <Locale raw={ false } k="BUFFTYPE_BUFF_DISALLOW" />;
+						return <Locale k="BUFFTYPE_BUFF_DISALLOW" />;
 					case BUFFEFFECT_TYPE.REMOVE_BUFF_RESIST: // 126
-						return <Locale raw={ false } k="BUFFTYPE_RES_OFF" />;
+						return <Locale k="BUFFTYPE_RES_OFF" />;
 					case BUFFEFFECT_TYPE.ACTION_NUMBER_CHANGE: // 127
-						return <Locale raw={ false } k="BUFFTYPE_ACT_COUNT" />;
+						return <Locale k="BUFFTYPE_ACT_COUNT" />;
 					case BUFFEFFECT_TYPE.PROVOKE_ATTACKER: // 128
-						return <Locale raw={ false } k="BUFFTYPE_PROVOKE_TARGET" />;
+						return <Locale k="BUFFTYPE_PROVOKE_TARGET" />;
 					case BUFFEFFECT_TYPE.CURRENT_HP_PIERCEDOWN: // 129
-						return <Locale raw={ false } k="BUFFTYPE_PENETRATION_RES" />;
+						return <Locale k="BUFFTYPE_PENETRATION_RES" />;
 					case BUFFEFFECT_TYPE.GUARDPIERCE_APPLY: // 130
-						return <Locale raw={ false } k="BUFFTYPE_GUARDPIERCE_APPLY" />;
+						return <Locale k="BUFFTYPE_GUARDPIERCE_APPLY" />;
 					case BUFFEFFECT_TYPE.GUARDPIERCE_NO_APPLY: // 131
-						return <Locale raw={ false } k="BUFFTYPE_GUARDPIERCE_NO_APPLY" />;
+						return <Locale k="BUFFTYPE_GUARDPIERCE_NO_APPLY" />;
 					case BUFFEFFECT_TYPE.DAMAGE_RECOVER_THISROUND: // 132
 						return <>DAMAGE_RECOVER_THISROUND</>; // 사용처 없음, 이번 라운드 받은 피해 복구?
 					case BUFFEFFECT_TYPE.SAME_SKILL_HIT_DAMAGE_REDUCE: // 133
@@ -778,55 +774,52 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					case BUFFEFFECT_TYPE.STAGE_SEAL_SKILL_ACTIVE_1: // 134
 					case BUFFEFFECT_TYPE.STAGE_SEAL_SKILL_ACTIVE_2: // 135
 						return <Locale
-							raw={ false }
 							k="BUFFTYPE_SEAL_ACTIVE"
 							p={ [type - BUFFEFFECT_TYPE.STAGE_SEAL_SKILL_ACTIVE_1 + 1] }
 						/>;
 					case BUFFEFFECT_TYPE.STAGE_SEAL_SKILL_PASSIVE: // 136
-						return <Locale raw={ false } k="BUFFTYPE_SEAL_PASSIVE" />;
+						return <Locale k="BUFFTYPE_SEAL_PASSIVE" />;
 					case BUFFEFFECT_TYPE.ADD_ROLE_TYPE: // 137
-						return <Locale raw={ false } k="ADD_ROLE_TYPE" />; // 사용처 없음, 알 수 없음... ~ 타입으로 간주하도록 추가?
+						return <Locale k="ADD_ROLE_TYPE" />; // 사용처 없음, 알 수 없음... ~ 타입으로 간주하도록 추가?
 					case BUFFEFFECT_TYPE.WIDE_SKILL_RATIO: // 138
-						return <Locale raw={ false } k="BUFFTYPE_WIDE_SKILL_RATIO" />; // 광역 스킬 위력 증감
+						return <Locale k="BUFFTYPE_WIDE_SKILL_RATIO" />; // 광역 스킬 위력 증감
 					case BUFFEFFECT_TYPE.WIDE_DAMAGE_RATIO: // 139
-						return <Locale raw={ false } k="BUFFTYPE_WIDE_DAMAGE_RATIO" />; // 사용처 없음, 광역 피해량 증감?
+						return <Locale k="BUFFTYPE_WIDE_DAMAGE_RATIO" />; // 사용처 없음, 광역 피해량 증감?
 					case BUFFEFFECT_TYPE.STAGE_DOUBLE_ATTACK_RATIO: // 140
-						return <Locale raw={ false } k="BUFFTYPE_STAGE_DOUBLE_ATTACK_RATIO" />; // 사용처 없음, 공격력 2배?
+						return <Locale k="BUFFTYPE_STAGE_DOUBLE_ATTACK_RATIO" />; // 사용처 없음, 공격력 2배?
 					case BUFFEFFECT_TYPE.RESIST_CHECK_ATTACK_POWER: // 141
-						return <Locale raw={ false } k="BUFFTYPE_RESIST_CHECK_ATTACK_POWER" />;
+						return <Locale k="BUFFTYPE_RESIST_CHECK_ATTACK_POWER" />;
 
 					case BUFFEFFECT_TYPE.DEF_DAMAGE_REDUCE: // 방어력 비례 방어막
-						return <Locale raw={ false } k="BUFFTYPE_DEF_DAMAGE_REDUCE" />;
+						return <Locale k="BUFFTYPE_DEF_DAMAGE_REDUCE" />;
 					case BUFFEFFECT_TYPE.DEF_DAMAGE_ADD: // 방어력 비례 피해량 증가
-						return <Locale raw={ false } k="BUFFTYPE_DEF_DAMAGE_ADD" />;
+						return <Locale k="BUFFTYPE_DEF_DAMAGE_ADD" />;
 
 					case BUFFEFFECT_TYPE.RATIO_DMG_GIVER_MAX_HP: // 버퍼 최대 HP 비례 피해
 					case BUFFEFFECT_TYPE.RATIO_DMG_GIVER_CURRENT_HP: // 버퍼 현재 HP 비례 피해
 					case BUFFEFFECT_TYPE.RATIO_DMG_TARGET_MAX_HP: // 대상 최대 HP 비례 피해
 					case BUFFEFFECT_TYPE.RATIO_DMG_TARGET_CURRENT_HP: // 대상 현재 HP 비례 피해
-						return <Locale raw={ false } k="BUFFTYPE_RATIO_DMG_OF" p={ [
+						return <Locale k="BUFFTYPE_RATIO_DMG_OF" p={ [
 							type === BUFFEFFECT_TYPE.RATIO_DMG_GIVER_MAX_HP || type === BUFFEFFECT_TYPE.RATIO_DMG_GIVER_CURRENT_HP
-								? <Locale raw={ false } k="BUFFTARGET_BY_BUFFER" />
-								: <Locale raw={ false } k="BUFFTARGET_BY_TARGET" />,
+								? <Locale k="BUFFTARGET_BY_BUFFER" />
+								: <Locale k="BUFFTARGET_BY_TARGET" />,
 							type === BUFFEFFECT_TYPE.RATIO_DMG_GIVER_MAX_HP || type === BUFFEFFECT_TYPE.RATIO_DMG_TARGET_MAX_HP
-								? <Locale raw={ false } k="BUFFEFFECT_BY_MAX_HP" />
-								: <Locale raw={ false } k="BUFFEFFECT_BY_HP" />,
+								? <Locale k="BUFFEFFECT_BY_MAX_HP" />
+								: <Locale k="BUFFEFFECT_BY_HP" />,
 						] } />;
 					case BUFFEFFECT_TYPE.ADJUST_AP_ACTIVE_SKILL_1: // 148
-						return <Locale raw={ false } k="BUFFTYPE_ADJUST_AP_ACTIVE_SKILL" p={ [1] } />;
+						return <Locale k="BUFFTYPE_ADJUST_AP_ACTIVE_SKILL" p={ [1] } />;
 					case BUFFEFFECT_TYPE.ADJUST_AP_ACTIVE_SKILL_2: // 149
-						return <Locale raw={ false } k="BUFFTYPE_ADJUST_AP_ACTIVE_SKILL" p={ [2] } />;
+						return <Locale k="BUFFTYPE_ADJUST_AP_ACTIVE_SKILL" p={ [2] } />;
 					case BUFFEFFECT_TYPE.BUFF_DISALLOW_SPECIFIC: // 150
 						return <Locale
-							raw={ false }
 							k="BUFFTYPE_BUFF_DISALLOW_SPECIFIC"
-							p={ [<Locale raw={ false } k="BUFFEFFECT_ATTR_PREFIX_0" />] }
+							p={ [<Locale k="BUFFEFFECT_ATTR_PREFIX_0" />] }
 						/>;
 					case BUFFEFFECT_TYPE.ENUM_DISALLOW_SPECIFIC: // 151
 						return <Locale
-							raw={ false }
 							k="BUFFTYPE_BUFF_DISALLOW_SPECIFIC"
-							p={ [<Locale raw={ false } k="BUFFEFFECT_ATTR_PREFIX_6" />] }
+							p={ [<Locale k="BUFFEFFECT_ATTR_PREFIX_6" />] }
 						/>;
 				}
 				return <>{ type }</>;
@@ -837,38 +830,38 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		if (typeof trigger === "string") {
 			switch (trigger) {
 				case "damaged":
-					return <Locale raw={ false } k="BUFFTRIGGER_DAMAGED" />;
+					return <Locale k="BUFFTRIGGER_DAMAGED" />;
 				case "damaged_active":
-					return <Locale raw={ false } k="BUFFTRIGGER_DAMAGED_ACTIVE" />;
+					return <Locale k="BUFFTRIGGER_DAMAGED_ACTIVE" />;
 				case "after_damaged":
-					return <Locale raw={ false } k="BUFFTRIGGER_AFTER_DAMAGED" />;
+					return <Locale k="BUFFTRIGGER_AFTER_DAMAGED" />;
 				case "attack_success":
-					return <Locale raw={ false } k="BUFFTRIGGER_ATTACK_SUCCESS" />;
+					return <Locale k="BUFFTRIGGER_ATTACK_SUCCESS" />;
 				case "team_dead":
-					return <Locale raw={ false } k="BUFFTRIGGER_TEAM_DIED" />;
+					return <Locale k="BUFFTRIGGER_TEAM_DIED" />;
 				case "self_dead":
-					return <Locale raw={ false } k="BUFFTRIGGER_DIED" />;
+					return <Locale k="BUFFTRIGGER_DIED" />;
 				case "enemy_dead":
-					return <Locale raw={ false } k="BUFFTRIGGER_ENEMY_DIED" />;
+					return <Locale k="BUFFTRIGGER_ENEMY_DIED" />;
 				case "wave":
-					return <Locale raw={ false } k="BUFFTRIGGER_BATTLE_START" />;
+					return <Locale k="BUFFTRIGGER_BATTLE_START" />;
 				case "round":
-					return <Locale raw={ false } k="BUFFTRIGGER_EVERY_ROUND" />;
+					return <Locale k="BUFFTRIGGER_EVERY_ROUND" />;
 				case "attack":
-					return <Locale raw={ false } k="BUFFTRIGGER_ATTACK" />;
+					return <Locale k="BUFFTRIGGER_ATTACK" />;
 				case "attacked":
-					return <Locale raw={ false } k="BUFFTRIGGER_ATTACKED" />;
+					return <Locale k="BUFFTRIGGER_ATTACKED" />;
 				case "wait":
-					return <Locale raw={ false } k="BUFFTRIGGER_WAIT" />;
+					return <Locale k="BUFFTRIGGER_WAIT" />;
 				case "move":
-					return <Locale raw={ false } k="BUFFTRIGGER_MOVE" />;
+					return <Locale k="BUFFTRIGGER_MOVE" />;
 				case "evade":
-					return <Locale raw={ false } k="BUFFTRIGGER_EVADE" />;
+					return <Locale k="BUFFTRIGGER_EVADE" />;
 				case "wave_end":
-					return <Locale raw={ false } k="BUFFTRIGGER_END_WAVE" />;
+					return <Locale k="BUFFTRIGGER_END_WAVE" />;
 				case "enemy_killed":
 					return <>
-						<Locale raw={ false } k="BUFFTRIGGER_KILL" />
+						<Locale k="BUFFTRIGGER_KILL" />
 
 						<BootstrapTooltip
 							class={ style.BadgeIcon }
@@ -890,7 +883,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					</>;
 				case "enemy_killed_passive":
 					return <>
-						<Locale raw={ false } k="BUFFTRIGGER_KILL_PASSIVE" />
+						<Locale k="BUFFTRIGGER_KILL_PASSIVE" />
 
 						<BootstrapTooltip
 							class={ style.BadgeIcon }
@@ -912,7 +905,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					</>;
 				case "enemy_killed_counter":
 					return <>
-						<Locale raw={ false } k="BUFFTRIGGER_KILL_COUNTER" />
+						<Locale k="BUFFTRIGGER_KILL_COUNTER" />
 
 						<BootstrapTooltip
 							class={ style.BadgeIcon }
@@ -933,9 +926,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						</BootstrapTooltip>
 					</>;
 				case "criticaled":
-					return <Locale raw={ false } k="BUFFTRIGGER_CRITICALED" />;
+					return <Locale k="BUFFTRIGGER_CRITICALED" />;
 				case "revive":
-					return <Locale raw={ false } k="BUFFTRIGGER_RESURRECT" />;
+					return <Locale k="BUFFTRIGGER_RESURRECT" />;
 
 			}
 		} else if (trigger) {
@@ -944,131 +937,131 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			else if ("after" in trigger) {
 				switch (trigger.after) {
 					case "counter":
-						return <Locale raw={ false } k="BUFFTRIGGER_AFTER_COUNTER" />;
+						return <Locale k="BUFFTRIGGER_AFTER_COUNTER" />;
 					case "use_skill":
-						return <Locale raw={ false } k="BUFFTRIGGER_AFTER_SKILL" />;
+						return <Locale k="BUFFTRIGGER_AFTER_SKILL" />;
 					case "support":
-						return <Locale raw={ false } k="BUFFTRIGGER_AFTER_SUPPORT" />;
+						return <Locale k="BUFFTRIGGER_AFTER_SUPPORT" />;
 					case "together":
-						return <Locale raw={ false } k="BUFFTRIGGER_AFTER_TOGETHER" />;
+						return <Locale k="BUFFTRIGGER_AFTER_TOGETHER" />;
 				}
 			} else if ("damaged" in trigger) {
 				switch (trigger.damaged) {
 					case "fire":
 						return <>
 							<ElemIcon elem={ trigger.damaged } class="me-1 mb-0" />
-							<Locale raw={ false } k="BUFFTRIGGER_DAMAGED_FIRE" />
+							<Locale k="BUFFTRIGGER_DAMAGED_FIRE" />
 						</>;
 					case "ice":
 						return <>
 							<ElemIcon elem={ trigger.damaged } class="me-1 mb-0" />
-							<Locale raw={ false } k="BUFFTRIGGER_DAMAGED_ICE" />
+							<Locale k="BUFFTRIGGER_DAMAGED_ICE" />
 						</>;
 					case "lightning":
 						return <>
 							<ElemIcon elem={ trigger.damaged } class="me-1 mb-0" />
-							<Locale raw={ false } k="BUFFTRIGGER_DAMAGED_THUNDER" />
+							<Locale k="BUFFTRIGGER_DAMAGED_THUNDER" />
 						</>;
 					case "skill":
-						return <Locale raw={ false } k="BUFFTRIGGER_DAMAGED_SKILL" p={ [
+						return <Locale k="BUFFTRIGGER_DAMAGED_SKILL" p={ [
 							singleBuff(convertBuff(trigger.key))
 						] } />;
 				}
 			} else if ("hp>=" in trigger) {
 				if (Array.isArray(trigger["hp>="]))
-					return <Locale raw={ false } k="BUFFTRIGGER_HP_>=" p={ [trigger["hp>="].join("/")] } />;
+					return <Locale k="BUFFTRIGGER_HP_>=" p={ [trigger["hp>="].join("/")] } />;
 
 				const target = {
-					self: <Locale raw={ false } k="BUFFTARGET_SELF" />,
-					target: <Locale raw={ false } k="BUFFTARGET_TARGET" />,
+					self: <Locale k="BUFFTARGET_SELF" />,
+					target: <Locale k="BUFFTARGET_TARGET" />,
 				}[trigger["hp>="].target];
-				return <Locale raw={ false } k="BUFFTRIGGER_HP_>=_TARGET" p={ [target, trigger["hp>="].value.join("/")] } />;
+				return <Locale k="BUFFTRIGGER_HP_>=_TARGET" p={ [target, trigger["hp>="].value.join("/")] } />;
 			} else if ("hp<=" in trigger) {
 				if (Array.isArray(trigger["hp<="]))
-					return <Locale raw={ false } k="BUFFTRIGGER_HP_<=" p={ [trigger["hp<="].join("/")] } />;
+					return <Locale k="BUFFTRIGGER_HP_<=" p={ [trigger["hp<="].join("/")] } />;
 
 				const target = {
-					self: <Locale raw={ false } k="BUFFTARGET_SELF" />,
-					target: <Locale raw={ false } k="BUFFTARGET_TARGET" />,
+					self: <Locale k="BUFFTARGET_SELF" />,
+					target: <Locale k="BUFFTARGET_TARGET" />,
 				}[trigger["hp<="].target];
-				return <Locale raw={ false } k="BUFFTRIGGER_HP_<=_TARGET" p={ [target, trigger["hp<="].value.join("/")] } />;
+				return <Locale k="BUFFTRIGGER_HP_<=_TARGET" p={ [target, trigger["hp<="].value.join("/")] } />;
 			} else if ("hp>" in trigger) {
 				if (Array.isArray(trigger["hp>"]))
-					return <Locale raw={ false } k="BUFFTRIGGER_HP_>" p={ [trigger["hp>"].join("/")] } />;
+					return <Locale k="BUFFTRIGGER_HP_>" p={ [trigger["hp>"].join("/")] } />;
 
 				const target = {
-					self: <Locale raw={ false } k="BUFFTARGET_SELF" />,
-					target: <Locale raw={ false } k="BUFFTARGET_TARGET" />,
+					self: <Locale k="BUFFTARGET_SELF" />,
+					target: <Locale k="BUFFTARGET_TARGET" />,
 				}[trigger["hp>"].target];
-				return <Locale raw={ false } k="BUFFTRIGGER_HP_>_TARGET" p={ [target, trigger["hp>"].value.join("/")] } />;
+				return <Locale k="BUFFTRIGGER_HP_>_TARGET" p={ [target, trigger["hp>"].value.join("/")] } />;
 			} else if ("hp<" in trigger) {
 				if (Array.isArray(trigger["hp<"]))
-					return <Locale raw={ false } k="BUFFTRIGGER_HP_<" p={ [trigger["hp<"].join("/")] } />;
+					return <Locale k="BUFFTRIGGER_HP_<" p={ [trigger["hp<"].join("/")] } />;
 
 				const target = {
-					self: <Locale raw={ false } k="BUFFTARGET_SELF" />,
-					target: <Locale raw={ false } k="BUFFTARGET_TARGET" />,
+					self: <Locale k="BUFFTARGET_SELF" />,
+					target: <Locale k="BUFFTARGET_TARGET" />,
 				}[trigger["hp<"].target];
-				return <Locale raw={ false } k="BUFFTRIGGER_HP_<_TARGET" p={ [target, trigger["hp<"].value.join("/")] } />;
+				return <Locale k="BUFFTRIGGER_HP_<_TARGET" p={ [target, trigger["hp<"].value.join("/")] } />;
 			} else if ("hpRange" in trigger) {
-				return <Locale raw={ false } k="BUFFTRIGGER_HP_RANGE" p={ [...trigger.hpRange] } />;
+				return <Locale k="BUFFTRIGGER_HP_RANGE" p={ [...trigger.hpRange] } />;
 			} else if ("in_battle" in trigger) {
 				if (trigger.more) {
 					if (typeof trigger.in_battle === "string") {
-						return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE_MORE" p={ [
+						return <Locale k="BUFFTRIGGER_IN_BATTLE_MORE" p={ [
 							singleBuff(convertBuff(trigger.in_battle)),
 							trigger.more[0],
 						] } />;
 					}
 
 					const src = computeBuff(trigger.in_battle.map(convertBuff));
-					return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE_MORE" p={ [
-						<>{ src.gap(<Locale raw={ false } k="BUFFTRIGGER_OR" />) }</>,
+					return <Locale k="BUFFTRIGGER_IN_BATTLE_MORE" p={ [
+						<>{ src.gap(<Locale k="BUFFTRIGGER_OR" />) }</>,
 						trigger.more[0],
 					] } />;
 				} else {
 					if (typeof trigger.in_battle === "string")
-						return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE" p={ [singleBuff(convertBuff(trigger.in_battle))] } />;
+						return <Locale k="BUFFTRIGGER_IN_BATTLE" p={ [singleBuff(convertBuff(trigger.in_battle))] } />;
 
 					const src = computeBuff(trigger.in_battle.map(convertBuff));
-					return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE" p={ [
-						<>{ src.gap(<Locale raw={ false } k="BUFFTRIGGER_OR" />) }</>,
+					return <Locale k="BUFFTRIGGER_IN_BATTLE" p={ [
+						<>{ src.gap(<Locale k="BUFFTRIGGER_OR" />) }</>,
 					] } />;
 				}
 			} else if ("in_squad" in trigger) {
 				if (typeof trigger.in_squad === "string")
-					return <Locale raw={ false } k="BUFFTRIGGER_IN_SQUAD" p={ [singleBuff(convertBuff(trigger.in_squad))] } />;
+					return <Locale k="BUFFTRIGGER_IN_SQUAD" p={ [singleBuff(convertBuff(trigger.in_squad))] } />;
 
 				const src = computeBuff(trigger.in_squad.map(convertBuff));
-				return <Locale raw={ false } k="BUFFTRIGGER_IN_SQUAD" p={ [
-					<>{ src.gap(<Locale raw={ false } k="BUFFTRIGGER_OR" />) }</>,
+				return <Locale k="BUFFTRIGGER_IN_SQUAD" p={ [
+					<>{ src.gap(<Locale k="BUFFTRIGGER_OR" />) }</>,
 				] } />;
 			} else if ("in_enemy" in trigger) {
 				if (typeof trigger.in_enemy === "string")
-					return <Locale raw={ false } k="BUFFTRIGGER_IN_ENEMY" p={ [singleBuff(convertBuff(trigger.in_enemy))] } />;
+					return <Locale k="BUFFTRIGGER_IN_ENEMY" p={ [singleBuff(convertBuff(trigger.in_enemy))] } />;
 
 				const src = computeBuff(trigger.in_enemy.map(convertBuff));
-				return <Locale raw={ false } k="BUFFTRIGGER_IN_ENEMY" p={ [
-					<>{ src.gap(<Locale raw={ false } k="BUFFTRIGGER_OR" />) }</>,
+				return <Locale k="BUFFTRIGGER_IN_ENEMY" p={ [
+					<>{ src.gap(<Locale k="BUFFTRIGGER_OR" />) }</>,
 				] } />;
 			} else if ("pos" in trigger) {
 				if (typeof trigger.pos === "number") {
 					switch (trigger.pos) {
 						case UNIT_POSITION.FRONT:
-							return <Locale raw={ false } k="BUFFTRIGGER_POS_FRONTROW" />;
+							return <Locale k="BUFFTRIGGER_POS_FRONTROW" />;
 						case UNIT_POSITION.MIDDLE:
-							return <Locale raw={ false } k="BUFFTRIGGER_POS_MIDROW" />;
+							return <Locale k="BUFFTRIGGER_POS_MIDROW" />;
 						case UNIT_POSITION.BACK:
-							return <Locale raw={ false } k="BUFFTRIGGER_POS_BACKROW" />;
+							return <Locale k="BUFFTRIGGER_POS_BACKROW" />;
 					}
 				}
 				switch (trigger.pos.position) {
 					case UNIT_POSITION.FRONT:
-						return <Locale raw={ false } k="BUFFTRIGGER_POS_TARGET_FRONTROW" />;
+						return <Locale k="BUFFTRIGGER_POS_TARGET_FRONTROW" />;
 					case UNIT_POSITION.MIDDLE:
-						return <Locale raw={ false } k="BUFFTRIGGER_POS_TARGET_MIDROW" />;
+						return <Locale k="BUFFTRIGGER_POS_TARGET_MIDROW" />;
 					case UNIT_POSITION.BACK:
-						return <Locale raw={ false } k="BUFFTRIGGER_POS_TARGET_BACKROW" />;
+						return <Locale k="BUFFTRIGGER_POS_TARGET_BACKROW" />;
 				}
 			} else if ("on" in trigger) {
 				if ("func" in trigger.on && Array.isArray(trigger.on.select)) {
@@ -1084,16 +1077,16 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							.unique(VNodeRender);
 
 					if (select.length === 1)
-						return <Locale raw={ false } k={ `BUFFTRIGGER_ON_SINGLE_${trigger.on.func}` } p={ [select[0]] } />;
+						return <Locale k={ `BUFFTRIGGER_ON_SINGLE_${trigger.on.func}` } p={ [select[0]] } />;
 
-					return <Locale raw={ false } k={ `BUFFTRIGGER_ON_MULTIPLE_${trigger.on.func}` } p={ [
+					return <Locale k={ `BUFFTRIGGER_ON_MULTIPLE_${trigger.on.func}` } p={ [
 						<>{ select.gap(", ") }</>,
 					] } />;
 				} else if ("target" in trigger.on && "stack" in trigger.on) {
 					const select = computeBuff((trigger.on.select as string[]).map(convertBuff));
 
 					// BuffTrigger_On_BuffStack
-					const target = <Locale raw={ false } k={ `BUFFTARGET_${trigger.on.target.toUpperCase()}` } />;
+					const target = <Locale k={ `BUFFTARGET_${trigger.on.target.toUpperCase()}` } />;
 					const params = [
 						target,
 						<>{ select.gap(", ") }</>,
@@ -1105,7 +1098,6 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					// 	trigger.on.func === "UNFILLED" ? "UNFILLED" : "",
 					// ].filter(x => x).join("_"));
 					return <Locale
-						raw={ false }
 						k={ [
 							"BUFFTRIGGER_ON_STACK_TARGET",
 							select.length === 1 ? "SINGLE" : "MULTIPLE",
@@ -1120,7 +1112,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							.map(convertBuff)
 							.map(x => <>
 								<u class={ style.BuffAttr }>
-									<Locale raw={ false } k={ `BUFFEFFECT_ATTR_PREFIX_${trigger.on.attr}` } />
+									<Locale k={ `BUFFEFFECT_ATTR_PREFIX_${trigger.on.attr}` } />
 								</u>
 								{ x }
 							</>)
@@ -1132,22 +1124,22 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							.reduce(VNodeReduce, [])
 							.unique(VNodeRender);
 
-					const target = <Locale raw={ false } k={ `BUFFTARGET_${trigger.on.target.toUpperCase()}` } />;
+					const target = <Locale k={ `BUFFTARGET_${trigger.on.target.toUpperCase()}` } />;
 
 					if (select.length === 1)
-						return <Locale raw={ false } k={ `BUFFTRIGGER_ON_TARGET_SINGLE_${trigger.on.func}` } p={ [target, select[0]] } />;
+						return <Locale k={ `BUFFTRIGGER_ON_TARGET_SINGLE_${trigger.on.func}` } p={ [target, select[0]] } />;
 
 					const out = select.gap(", ").flat();
 					if (typeof select[0] === "number") {
 						// BuffTrigger_On_BuffTypeExists
-						return <Locale raw={ false } k={ `BUFFTRIGGER_ON_TARGET_MULTIPLE_${trigger.on.func}` } p={ [
+						return <Locale k={ `BUFFTRIGGER_ON_TARGET_MULTIPLE_${trigger.on.func}` } p={ [
 							target,
 							<>{ out }</>,
 						] } />;
 					}
 
 					// BuffTrigger_On_BuffExists
-					return <Locale raw={ false } k={ `BUFFTRIGGER_ON_TARGET_MULTIPLE_${trigger.on.func}` } p={ [
+					return <Locale k={ `BUFFTRIGGER_ON_TARGET_MULTIPLE_${trigger.on.func}` } p={ [
 						target,
 						<>{ out }</>,
 					] } />;
@@ -1168,29 +1160,27 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				const value = Decimal.mul(trigger.ratio, 100).toNumber();
 				if (trigger.ratio === 0) {
 					return <Locale
-						raw={ false }
 						k={ `BUFFTRIGGER_TEST0_${list.join("_")}` }
 						p={ [
-							<Locale raw={ false } k={ `BUFFTRIGGER_TEST_${trigger.operand}` } />,
-							<Locale raw={ false } k={ `BUFFTRIGGER_TEST_${trigger.than}` } />,
+							<Locale k={ `BUFFTRIGGER_TEST_${trigger.operand}` } />,
+							<Locale k={ `BUFFTRIGGER_TEST_${trigger.than}` } />,
 						] }
 					/>;
 				}
 				return <Locale
-					raw={ false }
 					k={ `BUFFTRIGGER_TEST_${list.join("_")}` }
 					p={ [
-						<Locale raw={ false } k={ `BUFFTRIGGER_TEST_${trigger.operand}` } />,
+						<Locale k={ `BUFFTRIGGER_TEST_${trigger.operand}` } />,
 						`${value}%`,
-						<Locale raw={ false } k={ `BUFFTRIGGER_TEST_${trigger.than}` } />,
+						<Locale k={ `BUFFTRIGGER_TEST_${trigger.than}` } />,
 					] }
 				/>;
 			} else if ("target" in trigger) {
 				if (trigger.target.length === 1)
-					return <Locale raw={ false } k="BUFFTRIGGER_ON_TARGET_SINGLE_OR" p={ [singleBuff(convertBuff(trigger.target[0]))] } />;
+					return <Locale k="BUFFTRIGGER_ON_TARGET_SINGLE_OR" p={ [singleBuff(convertBuff(trigger.target[0]))] } />;
 
 				const list = computeBuff((typeof trigger.target === "string" ? [trigger.target] : trigger.target).map(convertBuff));
-				return <Locale raw={ false } k="BUFFTRIGGER_ON_TARGET_SINGLE_OR" p={ [
+				return <Locale k="BUFFTRIGGER_ON_TARGET_SINGLE_OR" p={ [
 					<>{ list.gap(", ") }</>,
 				] } />;
 			} else if ("unitCount" in trigger) {
@@ -1202,14 +1192,14 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 				const typeList = filters.includes("attacker") || filters.includes("defender") || filters.includes("supporter")
 					? [
-						<Locale raw={ false } k="COMMON_UNIT_ROLE_DEFENDER" />,
-						<Locale raw={ false } k="COMMON_UNIT_ROLE_ATTACKER" />,
-						<Locale raw={ false } k="COMMON_UNIT_ROLE_SUPPORTER" />,
+						<Locale k="COMMON_UNIT_ROLE_DEFENDER" />,
+						<Locale k="COMMON_UNIT_ROLE_ATTACKER" />,
+						<Locale k="COMMON_UNIT_ROLE_SUPPORTER" />,
 					]
 					: [
-						<Locale raw={ false } k="COMMON_UNIT_TYPE_LIGHT" />,
-						<Locale raw={ false } k="COMMON_UNIT_TYPE_HEAVY" />,
-						<Locale raw={ false } k="COMMON_UNIT_TYPE_MOBILITY" />,
+						<Locale k="COMMON_UNIT_TYPE_LIGHT" />,
+						<Locale k="COMMON_UNIT_TYPE_HEAVY" />,
+						<Locale k="COMMON_UNIT_TYPE_MOBILITY" />,
 					];
 				const typeText = type.length === 3
 					? false
@@ -1223,70 +1213,69 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 				if (filters.includes("all")) {
 					if (filters.includes("bioroid"))
-						return <Locale raw={ false } k="BUFFTRIGGER_UNIT_BIOROID" p={ typeCountParams } />;
+						return <Locale k="BUFFTRIGGER_UNIT_BIOROID" p={ typeCountParams } />;
 					else if (filters.includes("ags"))
-						return <Locale raw={ false } k="BUFFTRIGGER_UNIT_AGS" p={ typeCountParams } />;
+						return <Locale k="BUFFTRIGGER_UNIT_AGS" p={ typeCountParams } />;
 					else if (typeText)
-						return <Locale raw={ false } k="BUFFTRIGGER_UNIT_TYPE" p={ typeCountParams } />;
-					return <Locale raw={ false } k="BUFFTRIGGER_UNIT_ALL" p={ countParams } />;
+						return <Locale k="BUFFTRIGGER_UNIT_TYPE" p={ typeCountParams } />;
+					return <Locale k="BUFFTRIGGER_UNIT_ALL" p={ countParams } />;
 				} else if (filters.includes("squad")) {
 					if (filters.includes("bioroid"))
-						return <Locale raw={ false } k="BUFFTRIGGER_TEAM_BIOROID" p={ typeCountParams } />;
+						return <Locale k="BUFFTRIGGER_TEAM_BIOROID" p={ typeCountParams } />;
 					else if (filters.includes("ags"))
-						return <Locale raw={ false } k="BUFFTRIGGER_TEAM_AGS" p={ typeCountParams } />;
+						return <Locale k="BUFFTRIGGER_TEAM_AGS" p={ typeCountParams } />;
 					else if (typeText)
-						return <Locale raw={ false } k="BUFFTRIGGER_TEAM_TYPE" p={ typeCountParams } />;
-					return <Locale raw={ false } k="BUFFTRIGGER_TEAM_ALL" p={ countParams } />;
+						return <Locale k="BUFFTRIGGER_TEAM_TYPE" p={ typeCountParams } />;
+					return <Locale k="BUFFTRIGGER_TEAM_ALL" p={ countParams } />;
 				} else if (filters.includes("enemy")) {
 					if (filters.includes("bioroid"))
-						return <Locale raw={ false } k="BUFFTRIGGER_ENEMY_BIOROID" p={ typeCountParams } />;
+						return <Locale k="BUFFTRIGGER_ENEMY_BIOROID" p={ typeCountParams } />;
 					else if (filters.includes("ags"))
-						return <Locale raw={ false } k="BUFFTRIGGER_ENEMY_AGS" p={ typeCountParams } />;
+						return <Locale k="BUFFTRIGGER_ENEMY_AGS" p={ typeCountParams } />;
 					else if (typeText)
-						return <Locale raw={ false } k="BUFFTRIGGER_ENEMY_TYPE" p={ typeCountParams } />;
-					return <Locale raw={ false } k="BUFFTRIGGER_ENEMY_ALL" p={ countParams } />;
+						return <Locale k="BUFFTRIGGER_ENEMY_TYPE" p={ typeCountParams } />;
+					return <Locale k="BUFFTRIGGER_ENEMY_ALL" p={ countParams } />;
 				}
 			} else if ("round" in trigger) {
 				if (trigger.round.operator === "even" || trigger.round.operator === "odd")
-					return <Locale raw={ false } k={ `BUFFTRIGGER_ROUND_${trigger.round.operator.toUpperCase()}` } />;
+					return <Locale k={ `BUFFTRIGGER_ROUND_${trigger.round.operator.toUpperCase()}` } />;
 				else if (trigger.round.operator === "=" || trigger.round.operator === "<=" || trigger.round.operator === ">=")
-					return <Locale raw={ false } k={ `BUFFTRIGGER_ROUND_${trigger.round.operator}` } p={ [trigger.round.round.join(", ")] } />;
+					return <Locale k={ `BUFFTRIGGER_ROUND_${trigger.round.operator}` } p={ [trigger.round.round.join(", ")] } />;
 			} else if ("notInBattle" in trigger) {
 				return <Locale
-					raw={ false }
 					k="BUFFTRIGGER_NOT_IN_BATTLE"
 					p={ [<>{ trigger.notInBattle.map(convertBuff).gap(",") }</>] }
 				/>;
 			} else if ("troop" in trigger) {
-				return <Locale raw={ false } k="BUFFTRIGGER_TROOP" p={ [<>{
+				return <Locale k="BUFFTRIGGER_TROOP" p={ [<>{
 					trigger.troop
 						.map(x => <span class={ `SubBadge ${style.SubBadge}` }>
-							<Locale raw={ false } k={ TroopNameTable[x] } />
+							<Locale k={ TroopNameTable[x] } />
 						</span>)
-						.gap(<Locale raw={ false } k="BUFFTRIGGER_OR" />)
+						.gap(<Locale k="BUFFTRIGGER_OR" />)
 				}</>] } />;
 			} else if ("use_skill" in trigger) {
 				if (typeof trigger.use_skill === "number") {
 					if (trigger.use_skill === 0)
-						return <Locale raw={ false } k="BUFFTRIGGER_ALLY_USE_SKILL" />;
-					return <Locale raw={ false } k="BUFFTRIGGER_USE_SKILL" p={ [trigger.use_skill] } />;
+						return <Locale k="BUFFTRIGGER_ALLY_USE_SKILL" />;
+					return <Locale k="BUFFTRIGGER_USE_SKILL" p={ [trigger.use_skill] } />;
 				} else
-					return <Locale raw={ false } k="BUFFTRIGGER_USE_SKILL" p={ [
+					return <Locale k="BUFFTRIGGER_USE_SKILL" p={ [
 						<span class={ cn("SubBadge", style.SubBadge, style.Narrow) }>
 							<span data-type="buff-uid" class="badge bg-dark">
 								{ getBuffUid(props.uid, trigger.use_skill) }
 							</span>
-							<Locale raw={ false } k={ trigger.use_skill } />
+							<Locale k={ trigger.use_skill } />
 						</span>
 					] } />;
 			} else if ("buffed" in trigger) {
-				return <Locale raw={ false } k="BUFFTRIGGER_BUFFED" p={ [<>
+				return <Locale k="BUFFTRIGGER_BUFFED" p={ [<>
 					{ arrayrize(trigger.buffed)
 						.map(r => <span class={ cn("SubBadge", style.SubBadge, style.Narrow) }>
 							<span data-type="buff-uid" class="badge bg-dark">
 								{ getBuffUid(props.uid, r) }
 							</span>
-							<Locale raw={ false } k={ r } />
+							<Locale k={ r } />
 						</span>)
 						.gap("・")
 					}
@@ -1294,17 +1283,16 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			} else if ("fail" in trigger) {
 				switch (trigger.fail) {
 					case "active":
-						return <Locale raw={ false } k="BUFFTRIGGER_FAIL_ACTIVE" />;
+						return <Locale k="BUFFTRIGGER_FAIL_ACTIVE" />;
 					case "passive":
-						return <Locale raw={ false } k="BUFFTRIGGER_FAIL_PASSIVE" />;
+						return <Locale k="BUFFTRIGGER_FAIL_PASSIVE" />;
 				}
 			} else if ("near" in trigger) {
 				if (trigger.near !== false)
-					return <Locale raw={ false } k="BUFFTRIGGER_NEAR_EXISTS" p={ [trigger.near] } />;
-				return <Locale raw={ false } k="BUFFTRIGGER_NEAR_NOTEXISTS" />;
+					return <Locale k="BUFFTRIGGER_NEAR_EXISTS" p={ [trigger.near] } />;
+				return <Locale k="BUFFTRIGGER_NEAR_NOTEXISTS" />;
 			} else if ("apply_one_of" in trigger) {
 				return <Locale
-					raw={ false }
 					k="BUFFTRIGGER_APPLY_ONE_OF"
 					p={ [<>{
 						trigger.apply_one_of.map(row => <>
@@ -1312,7 +1300,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 								<span data-type="buff-uid" class="badge bg-dark ms-1 me-1">
 									{ getBuffUid(props.uid, row.key) }
 								</span>
-								<Locale raw={ false } k={ row.key } />
+								<Locale k={ row.key } />
 
 								<span data-type="buff-ratio" class="badge bg-success ms-1 me-0">
 									{ nsignedValue({ base: row.ratio, per: 0 }, 0, true) }%
@@ -1325,26 +1313,26 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			} else if ("attack_success" in trigger) {
 				switch (trigger.attack_success) {
 					case "active":
-						return <Locale raw={ false } k="BUFFTRIGGER_ATTACK_SUCCESS_ACTIVE" />;
+						return <Locale k="BUFFTRIGGER_ATTACK_SUCCESS_ACTIVE" />;
 					case "passive":
-						return <Locale raw={ false } k="BUFFTRIGGER_ATTACK_SUCCESS_PASSIVE" />;
+						return <Locale k="BUFFTRIGGER_ATTACK_SUCCESS_PASSIVE" />;
 					case "ally":
-						return <Locale raw={ false } k="BUFFTRIGGER_ATTACK_SUCCESS_ALLY" />;
+						return <Locale k="BUFFTRIGGER_ATTACK_SUCCESS_ALLY" />;
 				}
 			} else if ("beaten" in trigger) {
 				switch (trigger.beaten) {
 					case "ally":
-						return <Locale raw={ false } k="BUFFTRIGGER_BEATEN_ALLY" />;
+						return <Locale k="BUFFTRIGGER_BEATEN_ALLY" />;
 					case "ally_physics":
-						return <Locale raw={ false } k="BUFFTRIGGER_BEATEN_ALLY_PHYSICS" />;
+						return <Locale k="BUFFTRIGGER_BEATEN_ALLY_PHYSICS" />;
 					case "ally_fire":
-						return <Locale raw={ false } k="BUFFTRIGGER_BEATEN_ALLY_FIRE" />;
+						return <Locale k="BUFFTRIGGER_BEATEN_ALLY_FIRE" />;
 					case "ally_ice":
-						return <Locale raw={ false } k="BUFFTRIGGER_BEATEN_ALLY_ICE" />;
+						return <Locale k="BUFFTRIGGER_BEATEN_ALLY_ICE" />;
 					case "ally_lightning":
-						return <Locale raw={ false } k="BUFFTRIGGER_BEATEN_ALLY_LIGHTNING" />;
+						return <Locale k="BUFFTRIGGER_BEATEN_ALLY_LIGHTNING" />;
 					case "ally_active":
-						return <Locale raw={ false } k="BUFFTRIGGER_BEATEN_ALLY_ACTIVE" />;
+						return <Locale k="BUFFTRIGGER_BEATEN_ALLY_ACTIVE" />;
 				}
 			}
 
@@ -1357,19 +1345,19 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			return <>#{ stat._comment }</>;
 		else if ("off" in stat) {
 			if (typeof stat.off === "string") {
-				return <Locale raw={ false } k="BUFFEFFECT_OFF" p={ [<span class="badge bg-warning text-dark">
+				return <Locale k="BUFFEFFECT_OFF" p={ [<span class="badge bg-warning text-dark">
 					<span data-type="buff-uid" class="badge bg-dark ms-1">
 						{ getBuffUid(props.uid, stat.off) }
 					</span>
 
-					<Locale raw={ false } k={ stat.off } />
+					<Locale k={ stat.off } />
 				</span>] } />;
 			} else if (typeof stat.off === "number")
-				return <Locale raw={ false } k="BUFFEFFECT_OFF" p={ [<Locale raw={ false } k={ `BUFFEFFECT_ATTR_${stat.off}` } />] } />;
+				return <Locale k="BUFFEFFECT_OFF" p={ [<Locale k={ `BUFFEFFECT_ATTR_${stat.off}` } />] } />;
 			else if ("target" in stat.off)
-				return <Locale raw={ false } k="BUFFEFFECT_OFF" p={ [getBuffEffectTypeText(stat.off.type, stat.off.target)] } />;
+				return <Locale k="BUFFEFFECT_OFF" p={ [getBuffEffectTypeText(stat.off.type, stat.off.target)] } />;
 
-			return <Locale raw={ false } k="BUFFEFFECT_OFF" p={ [getBuffEffectTypeText(stat.off.type, BUFF_ATTR_TYPE.NO_MATTER)] } />;
+			return <Locale k="BUFFEFFECT_OFF" p={ [getBuffEffectTypeText(stat.off.type, BUFF_ATTR_TYPE.NO_MATTER)] } />;
 		} else if ("attack" in stat) {
 			if (stat.attack.base === 0 && stat.attack.per === 0)
 				if (IsDev)
@@ -1377,7 +1365,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				else
 					return <></>;
 
-			return <Locale raw={ false } k="BUFFEFFECT_ATK" p={ [signedValue(stat.attack, level)] } />;
+			return <Locale k="BUFFEFFECT_ATK" p={ [signedValue(stat.attack, level)] } />;
 		} else if ("defense" in stat) {
 			if (stat.defense.base === 0 && stat.defense.per === 0)
 				if (IsDev)
@@ -1385,21 +1373,21 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				else
 					return <></>;
 
-			return <Locale raw={ false } k="BUFFEFFECT_DEF" p={ [signedValue(stat.defense, level)] } />;
+			return <Locale k="BUFFEFFECT_DEF" p={ [signedValue(stat.defense, level)] } />;
 		} else if ("hp" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_HP" p={ [signedValue(stat.hp, level)] } />;
+			return <Locale k="BUFFEFFECT_HP" p={ [signedValue(stat.hp, level)] } />;
 		else if ("accuracy" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_ACC" p={ [signedValue(stat.accuracy, level)] } />;
+			return <Locale k="BUFFEFFECT_ACC" p={ [signedValue(stat.accuracy, level)] } />;
 		else if ("critical" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_CRIT" p={ [signedValue(stat.critical, level)] } />;
+			return <Locale k="BUFFEFFECT_CRIT" p={ [signedValue(stat.critical, level)] } />;
 		else if ("evade" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_EVA" p={ [signedValue(stat.evade, level)] } />;
+			return <Locale k="BUFFEFFECT_EVA" p={ [signedValue(stat.evade, level)] } />;
 		else if ("turnSpeed" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_SPD" p={ [signedValue(stat.turnSpeed, level)] } />;
+			return <Locale k="BUFFEFFECT_SPD" p={ [signedValue(stat.turnSpeed, level)] } />;
 		else if ("ap" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_AP" p={ [signedValue(stat.ap, level)] } />;
+			return <Locale k="BUFFEFFECT_AP" p={ [signedValue(stat.ap, level)] } />;
 		else if ("ap_set" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_AP_SET" p={ [signedValue(stat.ap_set, level)] } />;
+			return <Locale k="BUFFEFFECT_AP_SET" p={ [signedValue(stat.ap_set, level)] } />;
 		else if ("resist" in stat) {
 			if ("elem" in stat.resist) {
 				switch (stat.resist.elem) {
@@ -1407,186 +1395,185 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						if ("min" in stat.resist) {
 							return <>
 								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
-								<Locale raw={ false } k="BUFFEFFECT_FIRE_RES_MIN" p={ [signedValue(stat.resist.min, level)] } />
+								<Locale k="BUFFEFFECT_FIRE_RES_MIN" p={ [signedValue(stat.resist.min, level)] } />
 							</>;
 						}
 						if ("fix" in stat.resist) {
 							return <>
 								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
-								<Locale raw={ false } k="BUFFEFFECT_FIRE_RES_FIX" p={ [signedValue(stat.resist.fix, level)] } />
+								<Locale k="BUFFEFFECT_FIRE_RES_FIX" p={ [signedValue(stat.resist.fix, level)] } />
 							</>;
 						}
 						if ("reverse" in stat.resist) {
 							return <>
 								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
-								<Locale raw={ false } k="BUFFEFFECT_FIRE_RES_REVERSE" />
+								<Locale k="BUFFEFFECT_FIRE_RES_REVERSE" />
 							</>;
 						}
 						return <>
 							<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
-							<Locale raw={ false } k="BUFFEFFECT_FIRE_RES" p={ [signedValue(stat.resist.value, level)] } />
+							<Locale k="BUFFEFFECT_FIRE_RES" p={ [signedValue(stat.resist.value, level)] } />
 						</>;
 					case "ice":
 						if ("min" in stat.resist) {
 							return <>
 								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
-								<Locale raw={ false } k="BUFFEFFECT_ICE_RES_MIN" p={ [signedValue(stat.resist.min, level)] } />
+								<Locale k="BUFFEFFECT_ICE_RES_MIN" p={ [signedValue(stat.resist.min, level)] } />
 							</>;
 						}
 						if ("fix" in stat.resist) {
 							return <>
 								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
-								<Locale raw={ false } k="BUFFEFFECT_ICE_RES_FIX" p={ [signedValue(stat.resist.fix, level)] } />
+								<Locale k="BUFFEFFECT_ICE_RES_FIX" p={ [signedValue(stat.resist.fix, level)] } />
 							</>;
 						}
 						if ("reverse" in stat.resist) {
 							return <>
 								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
-								<Locale raw={ false } k="BUFFEFFECT_ICE_RES_REVERSE" />
+								<Locale k="BUFFEFFECT_ICE_RES_REVERSE" />
 							</>;
 						}
 						return <>
 							<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
-							<Locale raw={ false } k="BUFFEFFECT_ICE_RES" p={ [signedValue(stat.resist.value, level)] } />
+							<Locale k="BUFFEFFECT_ICE_RES" p={ [signedValue(stat.resist.value, level)] } />
 						</>;
 					case "lightning":
 						if ("min" in stat.resist) {
 							return <>
 								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
-								<Locale raw={ false } k="BUFFEFFECT_THUNDER_RES_MIN" p={ [signedValue(stat.resist.min, level)] } />
+								<Locale k="BUFFEFFECT_THUNDER_RES_MIN" p={ [signedValue(stat.resist.min, level)] } />
 							</>;
 						}
 						if ("fix" in stat.resist) {
 							return <>
 								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
-								<Locale raw={ false } k="BUFFEFFECT_THUNDER_RES_FIX" p={ [signedValue(stat.resist.fix, level)] } />
+								<Locale k="BUFFEFFECT_THUNDER_RES_FIX" p={ [signedValue(stat.resist.fix, level)] } />
 							</>;
 						}
 						if ("reverse" in stat.resist) {
 							return <>
 								<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
-								<Locale raw={ false } k="BUFFEFFECT_THUNDER_RES_REVERSE" />
+								<Locale k="BUFFEFFECT_THUNDER_RES_REVERSE" />
 							</>;
 						}
 						return <>
 							<ElemIcon elem={ stat.resist.elem } class="mx-1 mb-0" />
-							<Locale raw={ false } k="BUFFEFFECT_THUNDER_RES" p={ [signedValue(stat.resist.value, level)] } />
+							<Locale k="BUFFEFFECT_THUNDER_RES" p={ [signedValue(stat.resist.value, level)] } />
 						</>;
 				}
 			}
 
 			switch (stat.resist.type) {
 				case "debuff_rateup":
-					return <Locale raw={ false } k="BUFFEFFECT_RES_DEBUFF_RATEUP" p={ [signedValue(stat.resist.value, level)] } />;
+					return <Locale k="BUFFEFFECT_RES_DEBUFF_RATEUP" p={ [signedValue(stat.resist.value, level)] } />;
 				case "debuff_perdown":
-					return <Locale raw={ false } k="BUFFEFFECT_RES_DEBUFF_PERDOWN" p={ [signedValue(stat.resist.value, level)] } />;
+					return <Locale k="BUFFEFFECT_RES_DEBUFF_PERDOWN" p={ [signedValue(stat.resist.value, level)] } />;
 				case "off":
-					return <Locale raw={ false } k="BUFFEFFECT_RES_OFF" p={ [signedValue(stat.resist.value, level)] } />;
+					return <Locale k="BUFFEFFECT_RES_OFF" p={ [signedValue(stat.resist.value, level)] } />;
 			}
 		} else if ("ap_stop" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_STUN" />;
+			return <Locale k="BUFFEFFECT_STUN" />;
 		else if ("scout" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_SCOUT" />;
+			return <Locale k="BUFFEFFECT_SCOUT" />;
 		else if ("counter" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_COUNTER" p={ [nsignedValue(stat.counter, level)] } />;
+			return <Locale k="BUFFEFFECT_COUNTER" p={ [nsignedValue(stat.counter, level)] } />;
 		else if ("damage_immune" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_DMG_IMMUNE" p={ [nsignedInteger(stat.damage_immune, level)] } />;
+			return <Locale k="BUFFEFFECT_DMG_IMMUNE" p={ [nsignedInteger(stat.damage_immune, level)] } />;
 		else if ("damage_minimize" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_DMG_MINIMIZE" p={ [nsignedInteger(stat.damage_minimize, level)] } />;
+			return <Locale k="BUFFEFFECT_DMG_MINIMIZE" p={ [nsignedInteger(stat.damage_minimize, level)] } />;
 		else if ("damage_reduce" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_GET_DMG_DOWN" p={ [nsignedValue(stat.damage_reduce, level)] } />;
+			return <Locale k="BUFFEFFECT_GET_DMG_DOWN" p={ [nsignedValue(stat.damage_reduce, level)] } />;
 		else if ("damage_increase" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_GET_DMG_UP" p={ [nsignedValue(stat.damage_increase, level)] } />;
+			return <Locale k="BUFFEFFECT_GET_DMG_UP" p={ [nsignedValue(stat.damage_increase, level)] } />;
 		else if ("damage" in stat) {
 			if ("elem" in stat.damage) {
 				switch (stat.damage.elem) {
 					case "fire":
 						return <>
 							<ElemIcon elem={ stat.damage.elem } class="me-1 mb-0" />
-							<Locale raw={ false } k="BUFFEFFECT_ADDDMG_FIRE" p={ [nsignedValue(stat.damage.damage, level)] } />
+							<Locale k="BUFFEFFECT_ADDDMG_FIRE" p={ [nsignedValue(stat.damage.damage, level)] } />
 						</>;
 					case "ice":
 						return <>
 							<ElemIcon elem={ stat.damage.elem } class="me-1 mb-0" />
-							<Locale raw={ false } k="BUFFEFFECT_ADDDMG_ICE" p={ [nsignedValue(stat.damage.damage, level)] } />
+							<Locale k="BUFFEFFECT_ADDDMG_ICE" p={ [nsignedValue(stat.damage.damage, level)] } />
 						</>;
 					case "lightning":
 						return <>
 							<ElemIcon elem={ stat.damage.elem } class="me-1 mb-0" />
-							<Locale raw={ false } k="BUFFEFFECT_ADDDMG_THUNDER" p={ [nsignedValue(stat.damage.damage, level)] } />
+							<Locale k="BUFFEFFECT_ADDDMG_THUNDER" p={ [nsignedValue(stat.damage.damage, level)] } />
 						</>;
 				}
 			}
-			return <Locale raw={ false } k="BUFFEFFECT_ADDDMG_PHYSICS" p={ [nsignedValue(stat.damage, level)] } />;
+			return <Locale k="BUFFEFFECT_ADDDMG_PHYSICS" p={ [nsignedValue(stat.damage, level)] } />;
 		} else if ("damage_multiply" in stat) {
 			switch (stat.damage_multiply.target) {
 				case "light":
-					return <Locale raw={ false } k="BUFFEFFECT_ANTI_LIGHT" p={ [signedValue(stat.damage_multiply.value, level)] } />;
+					return <Locale k="BUFFEFFECT_ANTI_LIGHT" p={ [signedValue(stat.damage_multiply.value, level)] } />;
 				case "air":
-					return <Locale raw={ false } k="BUFFEFFECT_ANTI_MOBILITY" p={ [signedValue(stat.damage_multiply.value, level)] } />;
+					return <Locale k="BUFFEFFECT_ANTI_MOBILITY" p={ [signedValue(stat.damage_multiply.value, level)] } />;
 				case "heavy":
-					return <Locale raw={ false } k="BUFFEFFECT_ANTI_HEAVY" p={ [signedValue(stat.damage_multiply.value, level)] } />;
+					return <Locale k="BUFFEFFECT_ANTI_HEAVY" p={ [signedValue(stat.damage_multiply.value, level)] } />;
 			}
 		} else if ("damage_by_hp" in stat) {
 			const target = stat.damage_by_hp.target === "target"
-				? <Locale raw={ false } k="BUFFTARGET_TARGET" />
-				: <Locale raw={ false } k="BUFFTARGET_SELF" />;
-			return <Locale raw={ false } k="BUFFEFFECT_DMG_BY_HP" p={ [target, nsignedValue(stat.damage_by_hp.damage, level)] } />;
+				? <Locale k="BUFFTARGET_TARGET" />
+				: <Locale k="BUFFTARGET_SELF" />;
+			return <Locale k="BUFFEFFECT_DMG_BY_HP" p={ [target, nsignedValue(stat.damage_by_hp.damage, level)] } />;
 		} else if ("damage_add" in stat) {
 			if ("elem" in stat.damage_add) {
 				switch (stat.damage_add.elem) {
 					case "fire":
 						return <>
 							<ElemIcon elem={ stat.damage_add.elem } class="me-1 mb-0" />
-							<Locale raw={ false } k="BUFFEFFECT_DMG_FIRE" p={ [signedValue(stat.damage_add.damage, level)] } />
+							<Locale k="BUFFEFFECT_DMG_FIRE" p={ [signedValue(stat.damage_add.damage, level)] } />
 						</>;
 					case "ice":
 						return <>
 							<ElemIcon elem={ stat.damage_add.elem } class="me-1 mb-0" />
-							<Locale raw={ false } k="BUFFEFFECT_DMG_ICE" p={ [signedValue(stat.damage_add.damage, level)] } />
+							<Locale k="BUFFEFFECT_DMG_ICE" p={ [signedValue(stat.damage_add.damage, level)] } />
 						</>;
 					case "lightning":
 						return <>
 							<ElemIcon elem={ stat.damage_add.elem } class="me-1 mb-0" />
-							<Locale raw={ false } k="BUFFEFFECT_DMG_THUNDER" p={ [signedValue(stat.damage_add.damage, level)] } />
+							<Locale k="BUFFEFFECT_DMG_THUNDER" p={ [signedValue(stat.damage_add.damage, level)] } />
 						</>;
 				}
 			}
-			return <Locale raw={ false } k="BUFFEFFECT_DMG" p={ [signedValue(stat.damage_add, level)] } />;
+			return <Locale k="BUFFEFFECT_DMG" p={ [signedValue(stat.damage_add, level)] } />;
 		} else if ("barrier" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_BARRIER" p={ [signedValue(stat.barrier, level)] } />;
+			return <Locale k="BUFFEFFECT_BARRIER" p={ [signedValue(stat.barrier, level)] } />;
 		else if ("guard" in stat) {
 			switch (stat.guard) {
 				case "col":
-					return <Locale raw={ false } k="BUFFEFFECT_BLOCK_COLUMN" />;
+					return <Locale k="BUFFEFFECT_BLOCK_COLUMN" />;
 				case "row":
-					return <Locale raw={ false } k="BUFFEFFECT_BLOCK_ROW" />;
+					return <Locale k="BUFFEFFECT_BLOCK_ROW" />;
 				case "target":
-					return <Locale raw={ false } k="BUFFEFFECT_BLOCK_TARGET" />;
+					return <Locale k="BUFFEFFECT_BLOCK_TARGET" />;
 			}
 		} else if ("position" in stat) {
 			switch (stat.position.type) {
 				case "pull":
-					return <Locale raw={ false } k="BUFFEFFECT_PULL" p={ [nsignedInteger(stat.position.range, level)] } />;
+					return <Locale k="BUFFEFFECT_PULL" p={ [nsignedInteger(stat.position.range, level)] } />;
 				case "push":
-					return <Locale raw={ false } k="BUFFEFFECT_PUSH" p={ [nsignedInteger(stat.position.range, level)] } />;
+					return <Locale k="BUFFEFFECT_PUSH" p={ [nsignedInteger(stat.position.range, level)] } />;
 			}
 		} else if ("next_crit" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_CRIT_NEXT" p={ [signedValue(stat.next_crit, level)] } />;
+			return <Locale k="BUFFEFFECT_CRIT_NEXT" p={ [signedValue(stat.next_crit, level)] } />;
 		else if ("range" in stat) {
 			if ("skill" in stat)
-				return <Locale raw={ false } k="BUFFEFFECT_RANGE_SKILL" p={ [stat.skill, signedInteger(stat.range, level)] } />;
-			return <Locale raw={ false } k="BUFFEFFECT_RANGE" p={ [signedInteger(stat.range, level)] } />;
+				return <Locale k="BUFFEFFECT_RANGE_SKILL" p={ [stat.skill, signedInteger(stat.range, level)] } />;
+			return <Locale k="BUFFEFFECT_RANGE" p={ [signedInteger(stat.range, level)] } />;
 		} else if ("penetration" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_DEFPIERCE" p={ [signedValue(stat.penetration, level)] } />;
+			return <Locale k="BUFFEFFECT_DEFPIERCE" p={ [signedValue(stat.penetration, level)] } />;
 		else if ("metamolphosis" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_TRANSFORM" />;
+			return <Locale k="BUFFEFFECT_TRANSFORM" />;
 		else if ("fixed_damage" in stat) {
 			if ("elem" in stat.fixed_damage) {
 				switch (stat.fixed_damage.elem) {
 					case "fire":
 						return <Locale
-							raw={ false }
 							k={ isRatioValue(stat.fixed_damage.damage, "1", "") ? "BUFFEFFECT_DOT_FIRE_RATIO" : "BUFFEFFECT_DOT_FIRE" }
 							p={ [
 								nsignedValue(stat.fixed_damage.damage, level),
@@ -1594,13 +1581,12 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							] }
 						/>;
 					case "ice":
-						return <Locale raw={ false } k={ isRatioValue(stat.fixed_damage.damage, "1", "") ? "BUFFEFFECT_DOT_ICE_RATIO" : "BUFFEFFECT_DOT_ICE" } p={ [
+						return <Locale k={ isRatioValue(stat.fixed_damage.damage, "1", "") ? "BUFFEFFECT_DOT_ICE_RATIO" : "BUFFEFFECT_DOT_ICE" } p={ [
 							nsignedValue(stat.fixed_damage.damage, level),
 							<ElemIcon elem={ stat.fixed_damage.elem } class="me-1 mb-0" />,
 						] } />;
 					case "lightning":
 						return <Locale
-							raw={ false }
 							k={ isRatioValue(stat.fixed_damage.damage, "1", "") ? "BUFFEFFECT_DOT_THUNDER_RATIO" : "BUFFEFFECT_DOT_THUNDER" }
 							p={ [
 								nsignedValue(stat.fixed_damage.damage, level),
@@ -1609,46 +1595,46 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						/>;
 				}
 			}
-			return <Locale raw={ false } k={ isRatioValue(stat.fixed_damage, "1", "") ? "BUFFEFFECT_DOT_PHYSICS_RATIO" : "BUFFEFFECT_DOT_PHYSICS" } p={ [
+			return <Locale k={ isRatioValue(stat.fixed_damage, "1", "") ? "BUFFEFFECT_DOT_PHYSICS_RATIO" : "BUFFEFFECT_DOT_PHYSICS" } p={ [
 				nsignedValue(stat.fixed_damage, level),
 				<ElemIcon elem={ SKILL_ATTR.PHYSICS } class="me-1 mb-0" />,
 			] } />;
 		} else if ("provoke" in stat) {
 			if (stat.provoke === "self")
-				return <Locale raw={ false } k="BUFFEFFECT_PROVOKE" />;
-			return <Locale raw={ false } k="BUFFEFFECT_PROVOKE_TARGET" />;
+				return <Locale k="BUFFEFFECT_PROVOKE" />;
+			return <Locale k="BUFFEFFECT_PROVOKE_TARGET" />;
 		} else if ("stun" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_STUN" />;
+			return <Locale k="BUFFEFFECT_STUN" />;
 		else if ("attack_support" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_SUPPORT_ATK" p={ [nsignedValue(stat.attack_support, level)] } />;
+			return <Locale k="BUFFEFFECT_SUPPORT_ATK" p={ [nsignedValue(stat.attack_support, level)] } />;
 		else if ("immovable" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_SNARE" />;
+			return <Locale k="BUFFEFFECT_SNARE" />;
 		else if ("skill_disable" in stat) {
 			switch (stat.skill_disable) {
 				case 0:
-					return <Locale raw={ false } k="BUFFEFFECT_SEAL_PASSIVE" />;
+					return <Locale k="BUFFEFFECT_SEAL_PASSIVE" />;
 				case 1:
 				case 2:
-					return <Locale raw={ false } k="BUFFEFFECT_SEAL_ACTIVE" p={ [stat.skill_disable] } />;
+					return <Locale k="BUFFEFFECT_SEAL_ACTIVE" p={ [stat.skill_disable] } />;
 				case true:
-					return <Locale raw={ false } k="BUFFEFFECT_SEAL" />;
+					return <Locale k="BUFFEFFECT_SEAL" />;
 			}
 		} else if ("revive" in stat) {
 			if (typeof stat.revive.base === "string")
-				return <Locale raw={ false } k="BUFFEFFECT_RESURRECT_MAXIMUM" p={ [nsignedValue(stat.revive, level)] } />;
-			return <Locale raw={ false } k="BUFFEFFECT_RESURRECT" p={ [nsignedValue(stat.revive, level)] } />;
+				return <Locale k="BUFFEFFECT_RESURRECT_MAXIMUM" p={ [nsignedValue(stat.revive, level)] } />;
+			return <Locale k="BUFFEFFECT_RESURRECT" p={ [nsignedValue(stat.revive, level)] } />;
 		} else if ("attack_target" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_MARKING" />;
+			return <Locale k="BUFFEFFECT_MARKING" />;
 		else if ("invokeChance" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_EFFECT_RATE" p={ [signedValue(stat.invokeChance, level)] } />;
+			return <Locale k="BUFFEFFECT_EFFECT_RATE" p={ [signedValue(stat.invokeChance, level)] } />;
 		else if ("summon_remove" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_REMOVE_SUMMON" />;
+			return <Locale k="BUFFEFFECT_REMOVE_SUMMON" />;
 		else if ("penetration_force" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_BARRIER_PIERCE" />;
+			return <Locale k="BUFFEFFECT_BARRIER_PIERCE" />;
 		else if ("exp" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_EXP" p={ [signedValue(stat.exp, level)] } />;
+			return <Locale k="BUFFEFFECT_EXP" p={ [signedValue(stat.exp, level)] } />;
 		else if ("debuff_immune" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_DEBUFF_IMMUNE" p={ [getBuffEffectTypeText(stat.debuff_immune, BUFF_ATTR_TYPE.DEBUFF)] } />;
+			return <Locale k="BUFFEFFECT_DEBUFF_IMMUNE" p={ [getBuffEffectTypeText(stat.debuff_immune, BUFF_ATTR_TYPE.DEBUFF)] } />;
 		else if ("collaborate" in stat) {
 			const uid = convertBuffToUid(stat.collaborate.with);
 
@@ -1664,74 +1650,73 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 				if (!ReferencedEnemy) return <></>;
 
-				return <Locale raw={ false } k="BUFFEFFECT_COOP" p={ [
+				return <Locale k="BUFFEFFECT_COOP" p={ [
 					<strong>
 						<Locale k={ `ENEMY_${uid}` } />
 					</strong>,
 					<span class="text-danger">#{ stat.collaborate.skill }</span>,
 					<span class="text-danger">
-						<Locale raw={ false } k={ ReferencedEnemy.skills[stat.collaborate.skill - 1].key } />
+						<Locale k={ ReferencedEnemy.skills[stat.collaborate.skill - 1].key } />
 					</span>,
 				] } />;
 			}
 
-			return <Locale raw={ false } k="BUFFEFFECT_COOP" p={ [
+			return <Locale k="BUFFEFFECT_COOP" p={ [
 				<UnitLink uid={ convertChar(stat.collaborate.with) } />, // convertBuff(stat.collaborate.with, "primary"),
 				<span class="text-danger">#{ stat.collaborate.skill }</span>,
 				<span class="text-danger">
 					{ [
-						<Locale raw={ false } k={ `UNIT_SKILL_${uid}_${stat.collaborate.skill}` } />,
+						<Locale k={ `UNIT_SKILL_${uid}_${stat.collaborate.skill}` } />,
 						!(`UNIT_SKILL_${uid}_F${stat.collaborate.skill}` in loc)
 							? <></>
-							: [" / ", <Locale raw={ false } k={ `UNIT_SKILL_${uid}_F${stat.collaborate.skill}` } />],
+							: [" / ", <Locale k={ `UNIT_SKILL_${uid}_F${stat.collaborate.skill}` } />],
 					] }
 				</span>,
 			] } />;
 		} else if ("max_hp" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_MAXHP" p={ [signedValue(stat.max_hp, level)] } />;
+			return <Locale k="BUFFEFFECT_MAXHP" p={ [signedValue(stat.max_hp, level)] } />;
 		else if ("skill_ratio" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_SKILL_RATIO" p={ [signedValue(stat.skill_ratio, level)] } />;
+			return <Locale k="BUFFEFFECT_SKILL_RATIO" p={ [signedValue(stat.skill_ratio, level)] } />;
 		else if ("less_target" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_LESS_TARGET" p={ [signedValue(stat.less_target, level)] } />;
+			return <Locale k="BUFFEFFECT_LESS_TARGET" p={ [signedValue(stat.less_target, level)] } />;
 		else if ("disperse" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_DISPERSE" p={ [nsignedValue(stat.disperse, level)] } />;
+			return <Locale k="BUFFEFFECT_DISPERSE" p={ [nsignedValue(stat.disperse, level)] } />;
 		else if ("by" in stat) {
 			const forPercent = stat.r ?? false;
 
-			return <Locale raw={ false } k="BUFFEFFECT_BY" p={ [
-				<Locale raw={ false } k={ `BUFFTARGET_BY_${stat.by.target.toUpperCase()}` } />,
+			return <Locale k="BUFFEFFECT_BY" p={ [
+				<Locale k={ `BUFFTARGET_BY_${stat.by.target.toUpperCase()}` } />,
 				<strong class="text-danger">
-					<Locale raw={ false } k={ `BUFFEFFECT_BY_${stat.by.by.toUpperCase()}` } />
+					<Locale k={ `BUFFEFFECT_BY_${stat.by.by.toUpperCase()}` } />
 				</strong>,
 				<strong class="text-orange">{ nsignedValue(stat.by, level, forPercent) }</strong>,
 				<strong class="text-primary">
-					<Locale raw={ false } k={ `BUFFEFFECT_BY_${stat.value.toUpperCase()}` } />
+					<Locale k={ `BUFFEFFECT_BY_${stat.value.toUpperCase()}` } />
 				</strong>,
-				<Locale raw={ false } k={ `BUFFTYPE_${stat.by.type.toUpperCase()}` } />,
+				<Locale k={ `BUFFTYPE_${stat.by.type.toUpperCase()}` } />,
 			] } />;
 		}
 		else if ("act_count" in stat)
-			return <Locale raw={ false } k="BUFFEFFECT_ACT_COUNT" p={ [stat.act_count > 0 ? `+${stat.act_count}` : stat.act_count] } />;
+			return <Locale k="BUFFEFFECT_ACT_COUNT" p={ [stat.act_count > 0 ? `+${stat.act_count}` : stat.act_count] } />;
 		else if ("guardpierce_apply" in stat) {
 			if (stat.guardpierce_apply)
-				return <Locale raw={ false } k="BUFFEFFECT_GUARDPIERCE_APPLY" />;
-			return <Locale raw={ false } k="BUFFEFFECT_GUARDPIERCE_NO_APPLY" />;
+				return <Locale k="BUFFEFFECT_GUARDPIERCE_APPLY" />;
+			return <Locale k="BUFFEFFECT_GUARDPIERCE_NO_APPLY" />;
 		}
 		else if ("disallow" in stat) {
 			if (stat.disallow === "all")
-				return <Locale raw={ false } k="BUFFEFFECT_BUFF_DISALLOW" />;
+				return <Locale k="BUFFEFFECT_BUFF_DISALLOW" />;
 			else
-				return <Locale raw={ false } k="BUFFEFFECT_BUFF_DISALLOW_SPECIFIC" p={ [
+				return <Locale k="BUFFEFFECT_BUFF_DISALLOW_SPECIFIC" p={ [
 					getBuffEffectTypeText(stat.type, stat.attr),
 				] } />;
 		} else if ("wide" in stat) {
 			return <Locale
-				raw={ false }
 				k={ `BUFFEFFECT_WIDE_${stat.wide.type.toUpperCase()}_RATIO` }
 				p={ [signedValue(stat.wide, level)] }
 			/>;
 		} else if ("reuse_skill" in stat) {
-			return <Locale raw={ false } k="BUFFEFFECT_REUSE_SKILL" />;
+			return <Locale k="BUFFEFFECT_REUSE_SKILL" />;
 		} else if ("min_resist" in stat) {
 			let elem = <>???</>;
 
@@ -1739,33 +1724,33 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				case "fire":
 					elem = <>
 						<ElemIcon elem="fire" inline />
-						<Locale raw={ false } k="COMMON_ELEM_FIRE" />
+						<Locale k="COMMON_ELEM_FIRE" />
 					</>;
 					break;
 				case "ice":
 					elem = <>
 						<ElemIcon elem="ice" inline />
-						<Locale raw={ false } k="COMMON_ELEM_ICE" />
+						<Locale k="COMMON_ELEM_ICE" />
 					</>;
 					break;
 				case "lightning":
 					elem = <>
 						<ElemIcon elem="lightning" inline />
-						<Locale raw={ false } k="COMMON_ELEM_ELECTRIC" />
+						<Locale k="COMMON_ELEM_ELECTRIC" />
 					</>;
 					break;
 			}
-			return <Locale raw={ false } k="BUFFEFFECT_RESIST_CHECK_ATTACK_POWER" p={ [elem] } />;
+			return <Locale k="BUFFEFFECT_RESIST_CHECK_ATTACK_POWER" p={ [elem] } />;
 		} else if ("sudden_death" in stat) {
-			return <Locale raw={ false } k="BUFFEFFECT_RATIO_DMG_OF" p={ [
-				<Locale raw={ false } k={ `BUFFTARGET_BY_${stat.sudden_death.target.toUpperCase()}` } />,
+			return <Locale k="BUFFEFFECT_RATIO_DMG_OF" p={ [
+				<Locale k={ `BUFFTARGET_BY_${stat.sudden_death.target.toUpperCase()}` } />,
 				<strong class="text-danger">
-					<Locale raw={ false } k={ `BUFFEFFECT_BY_${stat.sudden_death.by.toUpperCase()}` } />
+					<Locale k={ `BUFFEFFECT_BY_${stat.sudden_death.by.toUpperCase()}` } />
 				</strong>,
 				<strong class="text-orange">{ nsignedValue(stat.sudden_death, level) }</strong>,
 			] } />;
 		} else if ("adjust_ap" in stat) {
-			return <Locale raw={ false } k="BUFFEFFECT_ADJUST_AP" p={ [
+			return <Locale k="BUFFEFFECT_ADJUST_AP" p={ [
 				<span class="text-danger">#{ stat.adjust_ap.skill }</span>,
 				signedValue(stat.adjust_ap, level),
 			] } />;
@@ -1777,54 +1762,54 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		if ("trigger" in erase) {
 			const trigger = getTriggerText(erase.trigger);
 			if (trigger)
-				return <Locale raw={ false } k="BUFFERASE_COUNT_TRIGGER" p={ [erase.count, trigger] } />;
-			return <Locale raw={ false } k="BUFFERASE_COUNT" p={ [erase.count] } />;
+				return <Locale k="BUFFERASE_COUNT_TRIGGER" p={ [erase.count, trigger] } />;
+			return <Locale k="BUFFERASE_COUNT" p={ [erase.count] } />;
 		} else if ("until" in erase) {
 			const trigger = getTriggerText(erase.until);
 			if (erase.rounds !== undefined)
-				return <Locale raw={ false } k="BUFFERASE_ROUND_TRIGGER" p={ [erase.rounds, trigger || <></>] } />;
-			return <Locale raw={ false } k="BUFFERASE_TRIGGER" p={ [trigger || <></>] } />;
+				return <Locale k="BUFFERASE_ROUND_TRIGGER" p={ [erase.rounds, trigger || <></>] } />;
+			return <Locale k="BUFFERASE_TRIGGER" p={ [trigger || <></>] } />;
 		} else if ("rounds" in erase) {
 			if (erase.rounds === 0) return <></>;
-			return <Locale raw={ false } k="BUFFERASE_ROUND" p={ [erase.rounds] } />;
+			return <Locale k="BUFFERASE_ROUND" p={ [erase.rounds] } />;
 		} else if ("preserve" in erase)
-			return <Locale raw={ false } k="BUFFERASE_PRESERVE" />;
+			return <Locale k="BUFFERASE_PRESERVE" />;
 
-		return <Locale raw={ false } k="BUFFERASE_PERMANENT" />;
+		return <Locale k="BUFFERASE_PERMANENT" />;
 	}
 	function getTargetText (body: ACTOR_BODY_TYPE[], cls: ACTOR_CLASS[], role: ROLE_TYPE[], target: TARGET_TYPE): preact.VNode {
 		const _bodies: preact.VNode[] = [
-			<Locale raw={ false } k="BUFFTARGET_BIOROID" />,
-			<Locale raw={ false } k="BUFFTARGET_AGS" />,
+			<Locale k="BUFFTARGET_BIOROID" />,
+			<Locale k="BUFFTARGET_AGS" />,
 		];
 		const _classes: preact.VNode[] = [
-			<Locale raw={ false } k="BUFFTARGET_LIGHT" />,
-			<Locale raw={ false } k="BUFFTARGET_HEAVY" />,
-			<Locale raw={ false } k="BUFFTARGET_MOBILITY" />,
+			<Locale k="BUFFTARGET_LIGHT" />,
+			<Locale k="BUFFTARGET_HEAVY" />,
+			<Locale k="BUFFTARGET_MOBILITY" />,
 		];
 		const _roles: preact.VNode[] = [
-			<Locale raw={ false } k="BUFFTARGET_DEFENDER" />,
-			<Locale raw={ false } k="BUFFTARGET_ATTACKER" />,
-			<Locale raw={ false } k="BUFFTARGET_SUPPORTER" />,
+			<Locale k="BUFFTARGET_DEFENDER" />,
+			<Locale k="BUFFTARGET_ATTACKER" />,
+			<Locale k="BUFFTARGET_SUPPORTER" />,
 		];
 
 		const targetSide = target === TARGET_TYPE.SELF
-			? <Locale raw={ false } k="BUFFTARGET_SELF" />
+			? <Locale k="BUFFTARGET_SELF" />
 			: target === TARGET_TYPE.OUR_ALL
 				? props.invert
-					? <Locale raw={ false } k="BUFFTARGET_ENEMY_ALL" />
-					: <Locale raw={ false } k="BUFFTARGET_TEAM_ALL" />
+					? <Locale k="BUFFTARGET_ENEMY_ALL" />
+					: <Locale k="BUFFTARGET_TEAM_ALL" />
 				: target === TARGET_TYPE.ENEMY_ALL
 					? props.invert
-						? <Locale raw={ false } k="BUFFTARGET_TEAM_ALL" />
-						: <Locale raw={ false } k="BUFFTARGET_ENEMY_ALL" />
+						? <Locale k="BUFFTARGET_TEAM_ALL" />
+						: <Locale k="BUFFTARGET_ENEMY_ALL" />
 					: target === TARGET_TYPE.OUR || target === TARGET_TYPE.OUR_GRID
 						? props.invert
-							? <Locale raw={ false } k="BUFFTARGET_ENEMY" />
-							: <Locale raw={ false } k="BUFFTARGET_TEAM" />
+							? <Locale k="BUFFTARGET_ENEMY" />
+							: <Locale k="BUFFTARGET_TEAM" />
 						: props.invert
-							? <Locale raw={ false } k="BUFFTARGET_TEAM" />
-							: <Locale raw={ false } k="BUFFTARGET_ENEMY" />;
+							? <Locale k="BUFFTARGET_TEAM" />
+							: <Locale k="BUFFTARGET_ENEMY" />;
 
 		const b = body.length === 2
 			? null
@@ -1991,7 +1976,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					<span class="badge bg-dark text-bg-dark me-2">
 						{ getBuffUid(props.uid, stat.key) }
 					</span>
-					<Locale raw={ false } k={ stat.key } />
+					<Locale k={ stat.key } />
 
 					{ IsDev
 						? <small class="ms-2 text-secondary">{ stat.key }</small>
@@ -2020,7 +2005,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			}
 			{ target
 				? <span class="badge bg-stat-def ms-1 text-wrap">
-					<Locale raw={ false } k="BUFFTARGET_TO" p={ [target] } />
+					<Locale k="BUFFTARGET_TO" p={ [target] } />
 				</span>
 				: <></>
 			}
@@ -2076,10 +2061,10 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						<div class="float-end">
 							{ overlap !== false
 								? <BootstrapTooltip content={ <span class={ style.OverlapTooltip }>
-									<Locale raw={ false } k={ `BUFFOVERLAP_DESC_${StackTable[overlap]}` } />
+									<Locale k={ `BUFFOVERLAP_DESC_${StackTable[overlap]}` } />
 								</span> }>
 									<span class={ `badge bg-orange ms-2 ${style.OverlapBadge}` }>
-										<Locale raw={ false } k={ `BUFFOVERLAP_${StackTable[overlap]}` } />
+										<Locale k={ `BUFFOVERLAP_${StackTable[overlap]}` } />
 										<Icons.QuestionCircleFill class={ `ms-1 ${style.QuestionIcon}` } />
 									</span>
 								</BootstrapTooltip>
@@ -2087,7 +2072,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							}
 
 							<span class="badge bg-substory ms-2 text-wrap">
-								<Locale raw={ false } k={ `BUFFEFFECT_ATTR_${buff.attr}` } />
+								<Locale k={ `BUFFEFFECT_ATTR_${buff.attr}` } />
 							</span>
 						</div>
 					</div>
@@ -2099,9 +2084,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						<div class="float-end text-end">
 							<span class="badge bg-dark ms-1 text-wrap">
 								{ [
-									<Locale raw={ false } k="BUFFSTACK" p={ [stat.maxStack] } />,
-									<Locale raw={ false } k="BUFFSTACK" p={ [1] } />,
-									<Locale raw={ false } k="BUFFSTACK_UNLIMITED" />,
+									<Locale k="BUFFSTACK" p={ [stat.maxStack] } />,
+									<Locale k="BUFFSTACK" p={ [1] } />,
+									<Locale k="BUFFSTACK_UNLIMITED" />,
 									<></>,
 								][BuffMaxStackAvailable(stat.maxStack, buff.overlap, buff.erase)] }
 							</span>
@@ -2178,7 +2163,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					{ isStatable(buff.type)
 						? <div class="float-end text-end">
 							<span class="badge bg-dark">
-								<Locale raw={ false } k="BUFFPOINT" p={ [toStatablePoint(buff, level)] } />
+								<Locale k="BUFFPOINT" p={ [toStatablePoint(buff, level)] } />
 							</span>
 						</div>
 						: <></>
@@ -2195,7 +2180,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			{ isStatable(stat.type)
 				? <div class="float-end text-end">
 					<span class="badge bg-dark">
-						<Locale raw={ false } k="BUFFPOINT" p={ [toStatablePoint(stat, level)] } />
+						<Locale k="BUFFPOINT" p={ [toStatablePoint(stat, level)] } />
 					</span>
 				</div>
 				: <></>

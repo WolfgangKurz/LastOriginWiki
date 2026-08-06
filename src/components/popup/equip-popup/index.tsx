@@ -395,7 +395,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 						/>
 					</div>
 					<div class="col text-start">
-						<Locale plain k={ `EQUIP_${target.fullKey}` } />
+						<Locale k={ `EQUIP_${target.fullKey}` } />
 						<div style="font-size: 60%">
 							{ aliasNames.length > 0 && <div class={ style.EquipAliasNames }>
 								{ aliasNames.map(r => <Badge variant="primary">{ r }</Badge>) }
@@ -579,7 +579,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 									{ target.rarity === ACTOR_GRADE.SSS && family.some(r => r.rarity === ACTOR_GRADE.SS)
 										? <div class="alert alert-danger mt-3 p-1 pb-2">
 											<div class="alert alert-light mb-3 p-1">
-												<Locale
+												<Locale raw
 													k="EQUIP_VIEW_SOURCE_T4"
 													p={ [
 														<span style="text-decoration:underline">{

@@ -70,11 +70,11 @@ const SubStoryView: FunctionalComponent = () => {
 				case DLG_START_TRIGGER_TYPE.PCLEVEL:
 				case DLG_START_TRIGGER_TYPE.PCGF_GAUGE:
 					return <span class="mx-1 badge bg-warning text-bg-warning">
-						<Locale plain k={ `UNIT_${trigger.value.replace(charReg, "$1")}` } />
+						<Locale k={ `UNIT_${trigger.value.replace(charReg, "$1")}` } />
 					</span>;
 				case DLG_START_TRIGGER_TYPE.EXIST_EQUIP:
 					return <span class="mx-1 badge bg-warning text-bg-warning">
-						<Locale plain k={ `EQUIP_${trigger.value}` } />
+						<Locale k={ `EQUIP_${trigger.value}` } />
 					</span>;
 				case DLG_START_TRIGGER_TYPE.PLAYERLEVEL:
 					return <span class="mx-1 badge bg-success text-bg-success">{ trigger.value }</span>;
@@ -82,19 +82,19 @@ const SubStoryView: FunctionalComponent = () => {
 					return <span class="mx-1 badge bg-stat-eva text-bg-stat-eva">{ trigger.value }</span>;
 				case DLG_START_TRIGGER_TYPE.STORYCLEAR:
 					return <span class="mx-1 badge bg-stat-eva text-bg-stat-eva">
-						<Locale plain k={ trigger.value } />
+						<Locale k={ trigger.value } />
 					</span>;
 				case DLG_START_TRIGGER_TYPE.KILLMONSTER:
 					return <span class="mx-1 badge bg-danger text-bg-danger">
-						<Locale plain k={ `ENEMY_${trigger.value.replace(enemyReg, "$1")}` } />
+						<Locale k={ `ENEMY_${trigger.value.replace(enemyReg, "$1")}` } />
 					</span>;
 				case DLG_START_TRIGGER_TYPE.EXIST_SKIN:
 					return <span class="mx-1 badge bg-danger text-bg-danger">
-						<Locale plain k={ `UNIT_SKIN_${trigger.value.replace(charSkinReg, "$1_$2")}` } />
+						<Locale k={ `UNIT_SKIN_${trigger.value.replace(charSkinReg, "$1_$2")}` } />
 					</span>;
 				case DLG_START_TRIGGER_TYPE.MARRIAGE_PC:
 					return <span class="mx-1 badge bg-warning text-bg-warning">
-						<Locale plain k={ `UNIT_${trigger.value.replace(charReg, "$1")}` } />
+						<Locale k={ `UNIT_${trigger.value.replace(charReg, "$1")}` } />
 					</span>;
 				case DLG_START_TRIGGER_TYPE.MISSIONCLEAR:
 					return <span class="mx-1 badge bg-dark text-bg-dark">{ trigger.value }</span>;
@@ -162,14 +162,12 @@ const SubStoryView: FunctionalComponent = () => {
 
 						<span>
 							{ !troop
-								? <Locale plain k="WORLDS_SUBSTORY_DISPLAYALL" />
+								? <Locale k="WORLDS_SUBSTORY_DISPLAYALL" />
 								: troop.key === "Story_Uncategorized"
-									? <Locale raw={ false } k="UNIT_GROUP_Uncategorized" />
+									? <Locale k="UNIT_GROUP_Uncategorized" />
 									: <Locale
-										plain
 										k={ `UNIT_GROUP_${groupTable[troop.group] || troop.group}_1` }
 										fallback={ <Locale
-											plain
 											k={ `UNIT_GROUP_${groupTable[troop.group] || troop.group}` }
 										/> }
 									/>
@@ -184,7 +182,7 @@ const SubStoryView: FunctionalComponent = () => {
 			? <div class="px-2 py-5 text-center font-ibm">
 				<img src={ `${AssetsRoot}/ui/no_substory.png` } />
 				<br />
-				<Locale plain k="WORLDS_SUBSTORY_EMPTY" />
+				<Locale k="WORLDS_SUBSTORY_EMPTY" />
 			</div>
 			: <div class="mt-2 row">
 				<div class="col-12 col-lg-5 col-xl-6 order-2 order-lg-1">
@@ -195,7 +193,7 @@ const SubStoryView: FunctionalComponent = () => {
 									<UnitFace uid={ g.char } skin={ g.skin } />
 
 									<div class={ style.SubStoryGroupName }>
-										<Locale plain k={ `UNIT_${g.char}` } />
+										<Locale k={ `UNIT_${g.char}` } />
 									</div>
 
 									<a class="stretched-link" href="#" onClick={ e => {
@@ -215,11 +213,11 @@ const SubStoryView: FunctionalComponent = () => {
 								? <div class="px-2 py-5 text-center">
 									<img src={ `${AssetsRoot}/ui/no_substory.png` } />
 									<br />
-									<Locale plain k="WORLDS_SUBSTORY_GROUP_YET" />
+									<Locale k="WORLDS_SUBSTORY_GROUP_YET" />
 								</div>
 								: <>
 									<h4 class="font-ibm">
-										<Locale plain k={ storyGroup.key } />
+										<Locale k={ storyGroup.key } />
 									</h4>
 									<hr class="my-1" />
 
@@ -271,18 +269,17 @@ const SubStoryView: FunctionalComponent = () => {
 													No.<strong>{ s.order }</strong>
 												</span>
 												<span class="font-ibm">
-													<Locale plain k={ s.key } />
+													<Locale k={ s.key } />
 												</span>
 											</div>
 											<div class={ style.SubStoryDesc }>
-												<Locale plain k={ `${s.key}_DESC` } />
+												<Locale k={ `${s.key}_DESC` } />
 											</div>
 											<ul class={ style.SubStoryTriggers }>
 												{ [s.start.trigger.trigger1, s.start.trigger.trigger2]
 													.filter(t => t.type !== DLG_START_TRIGGER_TYPE.__MAX__)
 													.map(t => <li>
 														<Locale
-															plain
 															k={ `WORLDS_SUBSTORY_TRIGGER_START_${t.type}` }
 															p={ [
 																TriggerValue(t),
@@ -293,7 +290,7 @@ const SubStoryView: FunctionalComponent = () => {
 														/>
 													</li>)
 													.gap(<li class={ style.TriggerJoin }>
-														<Locale plain k={ `SUBSTORY_UNLOCK_JOIN_${1 - s.start.trigger.type}` } />
+														<Locale k={ `SUBSTORY_UNLOCK_JOIN_${1 - s.start.trigger.type}` } />
 													</li>)
 												}
 											</ul>

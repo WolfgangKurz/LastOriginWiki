@@ -183,7 +183,6 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 						? <div class={ style.GroupInfo }>
 							<img src={ `${AssetsRoot}/${imgExt}/group/${getGroupImage(list[0]!.group)}.${imgExt}` } />
 							<Locale
-								raw={ false }
 								k={ `UNIT_GROUP_${groupByMethod === "roughly"
 									? getGroup1(list[0]!.group)
 									: list[0]!.group}`
@@ -223,7 +222,6 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 												) }
 											</span>
 											: <Locale
-												raw={ false }
 												k={ `UNIT_${unit.uid}` }
 											/>
 										: <></>

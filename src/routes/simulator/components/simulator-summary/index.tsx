@@ -538,7 +538,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 						<div class="unit-level">
 							Lv. { level }
 						</div>
-						<Locale plain k={ `UNIT_${unitUid}` } />
+						<Locale k={ `UNIT_${unitUid}` } />
 					</div>
 
 					<div class="unit-linkbonus">
@@ -629,7 +629,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 									</div>
 								</div>
 								<div>
-									<Locale raw={ false } k={ `EQUIP_${e.uid}` } />
+									<Locale k={ `EQUIP_${e.uid}` } />
 								</div>
 							</div>
 							: <div class="equip-slot" data-type={ unitInfo.slots[i] }>

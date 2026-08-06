@@ -145,7 +145,7 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 						<div>
 							<EquipIcon image={ g.icon } />
 							<br />
-							<Locale plain k={ `CONSUMABLE_${g.key}` } />
+							<Locale k={ `CONSUMABLE_${g.key}` } />
 						</div>
 
 						<span class="badge bg-warning text-dark">
@@ -175,7 +175,7 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 								</span>
 								: g.type === GACHA_CATEGORY.DUMMY
 									? <span class={ `ms-1 badge bg-succeeded ${style.BoxPrice}` }>
-										<Locale plain k="UNIT_SKILL_DUMMY" />
+										<Locale k="UNIT_SKILL_DUMMY" />
 									</span>
 									: <></>
 						}
@@ -263,7 +263,6 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 							<div class="card-header">
 								<strong class="me-4">
 									<Locale
-										plain
 										k="GACHA_RESULT_TITLE"
 										p={ [
 											Result.length - i,
@@ -273,7 +272,7 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 								</strong>
 
 								<span class="me-2">
-									<Locale plain k={ `CONSUMABLE_${r.key}` } />
+									<Locale k={ `CONSUMABLE_${r.key}` } />
 								</span>
 
 								<span class="badge bg-warning text-dark">
@@ -314,7 +313,7 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 												</div>
 
 												<small class={ style.ResultName }>
-													<Locale plain k={ `CONSUMABLE_${ec.key}` } />
+													<Locale k={ `CONSUMABLE_${ec.key}` } />
 												</small>
 											</div>
 										</div>;
@@ -340,7 +339,7 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 										</div>
 										<div class="col text-start">
 											<span class={ style.ListName }>
-												<Locale plain k={ `CONSUMABLE_${item.key}` } />
+												<Locale k={ `CONSUMABLE_${item.key}` } />
 											</span>
 
 											{ x.count > 1

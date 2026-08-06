@@ -238,7 +238,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 				? <div class="mt-2 card bg-dark text-light text-start">
 					<div class="card-header text-center">
 						<strong>
-							<Locale plain k="EW_PROHIBITION" />
+							<Locale k="EW_PROHIBITION" />
 						</strong>
 					</div>
 					<div class="card-body p-1">
@@ -246,12 +246,12 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 							{ proh_Squads.length > 0 && <>
 								<div>
 									<Icons.Dot />
-									<Locale plain k="EW_PROHIBITION_SQUAD" />
+									<Locale k="EW_PROHIBITION_SQUAD" />
 								</div>
 								<div>
 									{ proh_Squads.map(x =>
 										<span class="mx-2 badge bg-warning text-dark">
-											<Locale plain k={ `UNIT_GROUP_${x}` } />
+											<Locale k={ `UNIT_GROUP_${x}` } />
 										</span>
 									) }
 								</div>
@@ -259,7 +259,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 							{ proh_Chars.length > 0 && <>
 								<div>
 									<Icons.Dot />
-									<Locale plain k="EW_PROHIBITION_UNIT" />
+									<Locale k="EW_PROHIBITION_UNIT" />
 								</div>
 								<div>
 									{ proh_Chars.map(x => <div>
@@ -288,7 +288,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 			{ d.suitability.map(x => <div class="mt-2 card bg-dark text-light text-start">
 				<div class="card-header text-center">
 					<strong>
-						<Locale plain k="EW_SUITABILITY" />
+						<Locale k="EW_SUITABILITY" />
 					</strong>
 				</div>
 				<div class="card-body p-1">
@@ -299,7 +299,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 						<div class="ps-2">
 							{ [
 								...x.squads.map(q => <span class="badge bg-warning text-dark m-1">
-									<Locale plain k={ `UNIT_GROUP_${q}` } />
+									<Locale k={ `UNIT_GROUP_${q}` } />
 								</span>),
 								...x.chars.map(q => <Char class="m-1" uid={ q } />)
 							] }
@@ -565,7 +565,6 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 								<div class="card mt-2">
 									<div class="card-header bg-warning">
 										<Locale
-											plain
 											k="EW_STAGE_REWARD_SUMMARY"
 											p={ [
 												<span class="badge bg-dark me-1">
@@ -628,7 +627,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 
 								<div class="card mt-2">
 									<div class="card-header bg-warning">
-										<Locale plain k="EW_STAGE_REWARD_SUMMARY_ALL" />
+										<Locale k="EW_STAGE_REWARD_SUMMARY_ALL" />
 									</div>
 									<div class="card-body">
 										<div class="row">
@@ -705,7 +704,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 										} }
 									>
 										<Icons.AwardFill class="me-1" />
-										<Locale plain k="EW_STAGE_TAB_REWARD" />
+										<Locale k="EW_STAGE_TAB_REWARD" />
 									</a>
 								</li>
 								<li class="nav-item">
@@ -718,7 +717,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 										} }
 									>
 										<Icons.ClipboardData class="me-1" />
-										<Locale plain k="EW_STAGE_TAB_SUIT_PROH" />
+										<Locale k="EW_STAGE_TAB_SUIT_PROH" />
 									</a>
 								</li>
 								<li class="nav-item">
@@ -731,7 +730,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 										} }
 									>
 										<Icons.BugFill class="me-1" />
-										<Locale plain k="EW_STAGE_TAB_ENEMY" />
+										<Locale k="EW_STAGE_TAB_ENEMY" />
 									</a>
 								</li>
 							</ul>
@@ -830,7 +829,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 						.map(cid => <div class="col mb-3">
 							<div class={ `card bg-dark text-light ${style.ChapterCard}` }>
 								<div class="card-header">
-									<Locale plain k={ `EW_${cid}` } />
+									<Locale k={ `EW_${cid}` } />
 								</div>
 
 								<div class={ style.ChapterContent }>
@@ -846,7 +845,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 										</div>
 
 										<div class={ style.DescriptionText }>
-											<Locale plain k={ `EW_DESC_${cid}` } />
+											<Locale k={ `EW_DESC_${cid}` } />
 										</div>
 									</div>
 								</div>

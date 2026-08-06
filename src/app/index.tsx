@@ -165,7 +165,7 @@ const App: FunctionalComponent = () => {
 						<Icons.ChatDots class="align-top" />
 					</div>
 					<div style={ { whiteSpace: "pre-wrap" } }>
-						<Locale plain k="COMMON_REQUIRE_RELOAD" />
+						<Locale k="COMMON_REQUIRE_RELOAD" />
 					</div>
 				</PopupBase>
 				: <></>

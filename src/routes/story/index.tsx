@@ -374,7 +374,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 								</div>
 
 								<div class={ style.StoryTitle }>
-									<Locale plain k={ `WORLD_MAP_${sKey}_${r.text}` } />
+									<Locale k={ `WORLD_MAP_${sKey}_${r.text}` } />
 								</div>
 							</div>)
 						}
@@ -390,14 +390,14 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 						? <div class={ style.SubstoryEmpty }>
 							<img src={ `${AssetsRoot}/ui/no_substory.png` } />
 							<br />
-							<Locale plain k="WORLDS_SUBSTORY_EMPTY" />
+							<Locale k="WORLDS_SUBSTORY_EMPTY" />
 						</div>
 						: <div class={ style.SubstoryItemList }>
 							{ Substories.map(r => <div class={ style.StoryItem }>
 								<strong>
 									<PCIcon class={ style.SubstoryIcon } item={ r.icon } size={ 48 } />
 
-									<Locale raw={ false } k={ r.char } />
+									<Locale k={ r.char } />
 								</strong>
 
 								<div class={ style.SubstoryList }>
@@ -405,7 +405,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 										<PCIcon class={ cn("me-2", style.SubstoryIcon) } item={ s.icon } size={ 32 } />
 
 										<span>
-											<Locale raw={ false } k={ s.key } />
+											<Locale k={ s.key } />
 										</span>
 
 										<button

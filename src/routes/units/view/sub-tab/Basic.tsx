@@ -183,7 +183,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 						No. <span>{ unit.id }</span>
 					</span>
 					<span class={ style.UnitName }>
-						<Locale plain k={ `UNIT_${unit.uid}` } />
+						<Locale k={ `UNIT_${unit.uid}` } />
 					</span>
 					<span class={ style.UnitType }>
 						<span>
@@ -263,7 +263,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				<div class={ style.IntroText }>
 					{ unit.uid === "PECS_Olivia" && CurrentLocale.value === "KR"
 						? PreprocessUnitIntro(unit.uid)
-						: <Locale plain k={ `UNIT_INTRO_${unit.uid}` } />
+						: <Locale k={ `UNIT_INTRO_${unit.uid}` } />
 					}
 				</div>
 			</div>
@@ -296,12 +296,11 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				<div class={ style.Body }>
 					{ unit.company
 						? <Locale
-							raw={ false }
 							k={ `UNIT_COMPANY_${unit.company}` }
 							fallback={ unit.company }
 						/>
 						: <span class="text-secondary">
-							<Locale plain k="UNIT_COMPANY_Undefined" />
+							<Locale k="UNIT_COMPANY_Undefined" />
 						</span>
 					}
 				</div>
@@ -312,12 +311,11 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				<div class={ style.Body }>
 					{ unit.maker
 						? <Locale
-							raw={ false }
 							k={ `UNIT_MAKER_${unit.maker}` }
 							fallback={ unit.maker }
 						/>
 						: <span class="text-secondary">
-							<Locale plain k="UNIT_MAKER_Undefined" />
+							<Locale k="UNIT_MAKER_Undefined" />
 						</span>
 					}
 				</div>
@@ -333,13 +331,12 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 								src={ `${AssetsRoot}/flags/unit_country/${unit.country}.png` }
 							/>
 							<Locale
-								raw={ false }
 								k={ `UNIT_COUNTRY_${unit.country}` }
 								fallback={ unit.country }
 							/>
 						</>
 						: <span class="text-secondary">
-							<Locale plain k="UNIT_COUNTRY_Undefined" />
+							<Locale k="UNIT_COUNTRY_Undefined" />
 						</span>
 					}
 				</div>
@@ -394,9 +391,9 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				<div class={ cn(style.Body, style.Numeric) }>
 					{ unit.body === ACTOR_BODY_TYPE.BIOROID
 						? unit.age
-							? <Locale plain k="UNIT_AGE" p={ [unit.age] } />
+							? <Locale k="UNIT_AGE" p={ [unit.age] } />
 							: <span class="text-secondary">
-								<Locale plain k="UNIT_AGE_Undefined" />
+								<Locale k="UNIT_AGE_Undefined" />
 							</span>
 						: <span class="text-secondary">-</span>
 					}
@@ -411,10 +408,10 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				<div class={ style.Body }>
 					{ unit.oathable
 						? <strong class="text-danger">
-							<Locale raw={ false } k="UNIT_VIEW_ABLE" />
+							<Locale k="UNIT_VIEW_ABLE" />
 						</strong>
 						: <span class="text-secondary">
-							<Locale raw={ false } k="UNIT_VIEW_UNABLE" />
+							<Locale k="UNIT_VIEW_UNABLE" />
 						</span>
 					}
 				</div>
@@ -520,7 +517,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 							</Badge>
 
 							<div class={ style.Name }>
-								<Locale raw={ false } k={ `EQUIP_${limited.fullKey}` } />
+								<Locale k={ `EQUIP_${limited.fullKey}` } />
 							</div>
 						</a>) }
 					</div>

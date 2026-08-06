@@ -34,7 +34,7 @@ const PromoTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 
 	if (!unit.promotions) {
 		return <div class="p-4 text-secondary">
-			<Locale plain k="UNIT_VIEW_PROMO_EMPTY" />
+			<Locale k="UNIT_VIEW_PROMO_EMPTY" />
 		</div>;
 	}
 
@@ -74,7 +74,7 @@ const PromoTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 										<span class={ style.ItemIcon }>
 											{ icon
 												? <BootstrapTooltip
-													content={ <Locale plain k={ `CONSUMABLE_${r.id}` } /> }
+													content={ <Locale k={ `CONSUMABLE_${r.id}` } /> }
 												>
 													<EquipIcon
 														image={ icon }

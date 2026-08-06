@@ -28,7 +28,7 @@ const NavItem: FunctionalComponent<LinkData> = (props) => {
 			class={ cn("nav-link", active && "active") }
 			href={ props.href }
 		>
-			{ props.children ? props.children : <Locale k={ props.text || "" } /> }
+			{ props.children ? props.children : <Locale raw k={ props.text || "" } /> }
 		</a>
 	</li>;
 };
@@ -75,7 +75,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 						/>
 					</i>
 					<span class="font-ibm">
-						<Locale k="MENU_TITLE" />
+						<Locale raw k="MENU_TITLE" />
 					</span>
 				</span>
 			</div>

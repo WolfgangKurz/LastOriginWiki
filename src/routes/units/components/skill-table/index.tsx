@@ -321,9 +321,9 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			<div>
 				<div class={ cn(style.SkillFlavor, !(displayFlavor && flavorKey in loc) && "d-none") }>
 					{ flavorKey in loc
-						? loc[flavorKey].startsWith("<div>")
+						? /<(?:div|i)(?:\s|>)/.test(loc[flavorKey])
 							? <Locale k={ flavorKey } raw />
-							: <Locale k={ flavorKey } raw={ false } />
+							: <Locale k={ flavorKey } />
 						: <></>
 					}
 				</div>
@@ -435,7 +435,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					{ skillHeader }
 				</div>
 				<div class={ style.Header }>
-					<Locale k="UNIT_SKILL_RANGE" />
+					<Locale raw k="UNIT_SKILL_RANGE" />
 				</div>
 
 				{ Skills.map(skill => {
@@ -452,7 +452,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 							<div class={ style.SkillNameCard }>
 								<SkillIcon icon={ skill.icon } passive={ skill.isPassive } />
 								<div class={ style.SkillName }>
-									<Locale plain k={ `UNIT_SKILL_${unit.uid}_${skill.key}` } />
+									<Locale k={ `UNIT_SKILL_${unit.uid}_${skill.key}` } />
 								</div>
 
 								<div>

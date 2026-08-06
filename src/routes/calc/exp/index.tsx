@@ -694,7 +694,7 @@ const EXPCalc: FunctionalComponent = () => {
 									.map(({ data, index }) => <div class={ `clearfix ${style.bonusLine}` } >
 										<UnitFace uid={ data.uid } />
 										<SkillIcon icon={ data.icon } passive />
-										<Locale plain k={ `UNIT_SKILL_${data.uid}_${data.skill}` } />
+										<Locale k={ `UNIT_SKILL_${data.uid}_${data.skill}` } />
 
 										<div class="float-end">
 											<select

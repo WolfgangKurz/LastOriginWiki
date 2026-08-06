@@ -32,7 +32,7 @@ const UnitLink: FunctionalComponent<UnitLinkProps> = (props) => {
 			/> }
 		>
 			<span class="badge bg-primary mx-1">
-				<Locale plain k={ `UNIT_${id}` } />
+				<Locale k={ `UNIT_${id}` } />
 				<Icons.Link45deg class="ms-1" />
 			</span>
 		</BootstrapTooltip>

@@ -65,7 +65,7 @@ const Changelog: FunctionalComponent = () => {
 			<Locale k="CHANGELOG_TITLE" />
 		</h2>
 		<p>
-			<Locale k="CHANGELOG_DESCRIPTION" />
+			<Locale raw k="CHANGELOG_DESCRIPTION" />
 		</p>
 
 		<select

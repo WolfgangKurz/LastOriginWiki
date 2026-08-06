@@ -425,16 +425,16 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		<h1 class={ BuildClass("font-ibm", storyType === "Sub3" ? "mb-1" : "mb-4") }>
 			{ assertDBData(storyMetadata)
 				? storyType === "Sub2"
-					? <Locale plain k={ type } />
+					? <Locale k={ type } />
 					: storyType === "Sub3"
-						? <Locale plain k={ wid } />
+						? <Locale k={ wid } />
 						: LText(storyMetadata.title)
 				: "..."
 			}
 		</h1>
 		{ storyType === "Sub3"
 			? <h6 class="mb-4">
-				<Locale plain k={ `${wid}_DESC` } />
+				<Locale k={ `${wid}_DESC` } />
 			</h6>
 			: <></>
 		}
@@ -481,7 +481,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			{ tab === "player" && <>
 				{ !run && <div class="d-flex justify-content-center align-items-center">
 					<div class="alert alert-light small mt-0 mb-1" style={ { whiteSpace: "pre-line" } }>
-						<Locale plain k="STORY_PLAYER_ENTERANCE" />
+						<Locale k="STORY_PLAYER_ENTERANCE" />
 
 						<br /><br />
 						<button
