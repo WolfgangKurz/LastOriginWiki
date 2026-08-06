@@ -5,7 +5,7 @@ import Store from "@/store";
 
 import { CurrentLocale, LocaleProvider, useLocale } from "@/libs/Locale";
 import { hasCookie, setCookie } from "@/libs/Cookie";
-import { UpdateTitle } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 
 // import DynamicRoute from "@/components/dynamic-route";
 import Locale from "@/components/locale";
@@ -82,13 +82,10 @@ function lazy<T> (loader: () => Promise<T>): FunctionalComponent {
 	return LazyComponent;
 }
 
-const App: FunctionalComponent = () => {
-	const [locale] = useLocale();
-
-	useEffect(() => UpdateTitle(), [locale]);
+const AppContent: FunctionalComponent = () => {
+	useTitle();
 
 	return <div id="app">
-		<LocaleProvider>
 			<LocationProvider>
 				<Header />
 
@@ -195,7 +192,10 @@ const App: FunctionalComponent = () => {
 					}
 				</div>
 			</LocationProvider>
-		</LocaleProvider>
 	</div>;
 };
+
+const App: FunctionalComponent = () => <LocaleProvider>
+	<AppContent />
+</LocaleProvider>;
 export default App;

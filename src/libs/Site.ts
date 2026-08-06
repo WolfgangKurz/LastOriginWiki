@@ -68,7 +68,11 @@ export function SetMeta (name: MetaKeys | MetaKeys[], value: string | null, appe
 	.forEach(x => (meta[x] = defaultMeta[x]));
 updateMeta();
 
-// TODO : change to useTitle(title: string[], dep: any[]): void;
+/**
+ * @deprecated Using this method is not recommended. Use `useTitle` instead.
+ * @note Can use this method for non-preact lifecycle or to prevent lifecycle update.
+ * @param title Title components
+ */
 export function UpdateTitle (...title: string[]): void {
 	const loc = GetLocaleTable(CurrentLocale.value) || {};
 	document.title = [

@@ -1,4 +1,7 @@
-import { useCallback, useEffect, useState } from "preact/hooks";
+import { Inputs, useCallback, useEffect, useState } from "preact/hooks";
+
+import { useLocale } from "@/libs/Locale";
+import { SetMeta } from "@/libs/Site";
 
 export interface useUpdateResult {
 	(): void;
@@ -100,4 +103,28 @@ export function useFontLoad (fontFamily: string): boolean {
 	}, [fontFamily, fn]);
 
 	return ready;
+}
+
+/**
+ * Updates document's title and `twitter:title` and `og:title` meta tags.
+ * @param title Title components
+ * @param inputs Additional update input to update like preact lifecycle
+ */
+export function useTitle (title: string[] = [], inputs?: Inputs): void {
+	const [loc] = useLocale();
+
+	useEffect(() => {
+		document.title = [
+			...title.filter(r => !!r).map(t => t.replace(/&#x200B;/g, "")),
+			loc["COMMON_TITLE"],
+		].filter(r => !!r).join(" - ");
+
+		SetMeta(
+			["twitter:title", "og:title"],
+			[
+				...title.filter(r => !!r).map(t => t.replace(/&#x200B;/g, "")),
+				loc["COMMON_TITLE"], // Meta always title
+			].filter(r => !!r).join(" - "),
+		);
+	}, [loc, title, inputs]);
 }
