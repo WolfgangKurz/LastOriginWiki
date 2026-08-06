@@ -162,7 +162,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 
 							<li><hr class="dropdown-divider" /></li>
 
-							<DropdownExternal href="https://loeq.swaytwig.com/">
+							{/* <DropdownExternal href="https://loeq.swaytwig.com/">
 								<Locale k="MENU_ETC_LOEQ" />
 							</DropdownExternal>
 
@@ -171,12 +171,12 @@ const Header: FunctionalComponent = (): preact.VNode => {
 							<DropdownExternal href="https://arca.live/b/lastorigin/4474753">
 								<Locale k="MENU_ETC_EX01" />
 							</DropdownExternal>
-							{/* <DropdownExternal href="https://lastoriginmap.github.io/">
+							<DropdownExternal href="https://lastoriginmap.github.io/">
 								<Locale k="MENU_ETC_EX02" />
-							</DropdownExternal> */}
+							</DropdownExternal>
 							<DropdownExternal href="https://arca.live/b/lastorigin/10674899">
 								<Locale k="MENU_ETC_EX03" />
-							</DropdownExternal>
+							</DropdownExternal> */}
 							<DropdownExternal href="https://wolfgangkurz.github.io/lo-grid/">
 								<Locale k="MENU_ETC_EX04" />
 							</DropdownExternal>
