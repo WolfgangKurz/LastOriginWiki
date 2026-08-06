@@ -11,7 +11,7 @@ export interface useUpdateResult {
  */
 export function useUpdate (): useUpdateResult {
 	const [value, fn] = useState(0);
-	const ret: useUpdateResult = () => fn(v => v + 1);
+	const ret = useCallback(() => fn(v => v + 1), [fn]) as useUpdateResult;
 	ret.value = value;
 	return ret;
 }
