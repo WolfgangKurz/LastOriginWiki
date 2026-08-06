@@ -215,12 +215,13 @@ const EXPCalc: FunctionalComponent = () => {
 		return ret;
 	}, [mapDB]);
 
-	const worlds = [
+	const worlds = useMemo(() => [
 		"Story",
 		...Object.keys(MapsDB)
 			.filter(x => !excludeWorlds.includes(x))
-			.filter(x => !/^[0-9]+$/.test(x)),
-	];
+			.filter(x => !/^[0-9]+$/.test(x))
+			.toSorted((a, b) => a.localeCompare(b, undefined, { numeric: true })),
+	], [MapsDB, loc, excludeWorlds]);
 
 
 	return <div class="EXPCalculator">
