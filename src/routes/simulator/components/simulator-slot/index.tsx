@@ -23,7 +23,7 @@ interface SimulatorSlotProps {
 }
 
 const SimulatorSlot: FunctionalComponent<SimulatorSlotProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "SIMULATOR" });
 	const slot = useMemo(() => props.slot ?? {
 		uid: "",
 		level: 100,

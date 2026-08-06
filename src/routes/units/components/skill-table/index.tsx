@@ -44,7 +44,7 @@ interface SkillTableProps {
 }
 
 const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
-	const [loc, _, locKey] = useLocale();
+	const [loc, _, locKey] = useLocale({ namespaces: "UNIT", prefixes: "UNIT_SKILL" });
 
 	const unit = props.unit;
 	const skills = useMemo((): Record<string, SkillItem> => {

@@ -29,7 +29,7 @@ interface EquipSelectorPopupProps {
 }
 
 const EquipSelectorPopup: FunctionalComponent<EquipSelectorPopupProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "EQUIP" });
 
 	const [latestValue, setLatestValue] = useState<string | undefined>(undefined);
 

@@ -22,7 +22,7 @@ interface MissionTextRawProps {
 }
 
 const MissionTextRaw: FunctionalComponent<MissionTextRawProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "MISSION" });
 
 	function num (_v: number): string {
 		const base = parseInt(loc["Mission_Unit_Base"], 10);

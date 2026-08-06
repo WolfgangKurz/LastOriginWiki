@@ -53,7 +53,7 @@ interface SkinViewProps {
 }
 
 const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "UNIT" });
 	const imageExt = useImageExtension();
 
 	const unit = props.unit;

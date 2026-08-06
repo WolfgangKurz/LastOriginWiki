@@ -48,7 +48,7 @@ interface DropTableProps {
 
 const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 	const location = useLocation();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["MENU", "WORLD", "WORLDS"] });
 
 	const tableRef = useRef<HTMLTableElement>(null);
 

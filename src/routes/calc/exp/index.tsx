@@ -59,7 +59,7 @@ interface EXPSet {
 
 const EXPCalc: FunctionalComponent = () => {
 	const update = useUpdate();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["MENU", "EQUIP"] });
 
 	const linkColors = ["secondary", "success", "success", "success", "success", "primary"];
 	const rarities: ACTOR_GRADE[] = [

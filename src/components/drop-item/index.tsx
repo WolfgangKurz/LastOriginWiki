@@ -39,7 +39,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 	const variant = props.variant || "secondary";
 	const text = props.text || "light";
 
-	const [loc] = useLocale();
+	const [loc] = useLocale({ keys: `CONSUMABLE_DESC_${props.item.key}` });
 	const [display, setDisplay] = useState(false);
 
 	const ParsedDesc = ((): preact.VNode[] => ParseDescriptionText(

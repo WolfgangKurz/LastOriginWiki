@@ -38,7 +38,7 @@ interface EternalWarProps {
 }
 
 const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["MENU", "SUITABILITYGROUP", "SUITABILITYSTAGE"] });
 	const update = useUpdate();
 
 	const [mid, setMID] = useState(props.mid || "");

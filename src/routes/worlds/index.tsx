@@ -11,7 +11,7 @@ import WorldItem from "@/routes/worlds/components/WorldItem";
 import style from "./style.module.scss";
 
 const Worlds: FunctionalComponent = () => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "MENU" });
 
 	const Subs = ["Sub", "Cha", "Daily"];
 	const List = WorldIds.filter(x =>

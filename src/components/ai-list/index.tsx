@@ -45,7 +45,7 @@ interface AIListProps {
 const edgeType = { smart: CustomEdge };
 
 const AIList: FunctionalComponent<AIListProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc, localeReady, localeKey] = useLocale({ prefixes: "EFFECT", namespaces: ["AI", "UNIT", "ENEMY"] });
 	const [graph, setGraph] = useState<boolean>(false);
 
 	const [error, setError] = useState("");
@@ -69,10 +69,10 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 		setFlowNodes(() => []);
 		setFlowEdges(() => []);
 		setError("");
-	}, [props.aiKey]);
+	}, [props.aiKey, localeReady, localeKey]);
 
 	useEffect(() => {
-		if (graph === false && canvasRef.current) {
+		if (localeReady && graph === false && canvasRef.current) {
 			const el = canvasRef.current!;
 			setGraph(true);
 
@@ -735,7 +735,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 					setError(e.toString());
 				});
 		};
-	}, [graph, canvasRef.current]);
+	}, [graph, canvasRef.current, localeReady]);
 
 	function downloadFlow (): void {
 		if (!wrapperRef.current) return;

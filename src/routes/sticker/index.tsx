@@ -14,7 +14,7 @@ import style from "./style.module.scss";
 import { useState } from "preact/hooks";
 
 const StickerPage: FunctionalComponent = () => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "MENU" });
 
 	SetMeta(["description", "twitter:description"], "장식품 목록을 표시합니다.");
 	SetMeta(["twitter:image", "og:image"], null);

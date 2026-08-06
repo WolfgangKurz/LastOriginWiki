@@ -32,7 +32,7 @@ interface FacilityViewProps {
 
 const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 	const location = useLocation();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["FACILITY", "MENU"] });
 
 	const DBKey = useMemo(() => `/facility/${props.uid}`, [props.uid]);
 	const [level, setLevel] = useState<number>(25);

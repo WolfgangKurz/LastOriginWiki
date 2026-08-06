@@ -6,9 +6,10 @@ import { ExtPassive } from "@/types/DB/ExtPasive";
 import { Consumable } from "@/types/DB/Consumable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { useLocale } from "@/libs/Locale";
 import { FormatNumber } from "@/libs/Functions";
 
-import Locale, { LocaleGet } from "@/components/locale";
+import Locale from "@/components/locale";
 import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import EquipIcon from "@/components/equip-icon";
 import BuffList from "@/components/buff-list";
@@ -25,8 +26,15 @@ const ExtPassiveCard: FunctionalComponent<ExtPassiveCardProps> = (props) => {
 
 	const passive = props.passive;
 	const skill = passive.skill;
+	const [loc, localeReady] = useLocale({ keys: [skill.key, `${skill.key}_DESC`, passive.desc.desc] });
+	const localeGet = (key: string, ...params: unknown[]): string => {
+		if (!localeReady) return "";
+		const text = loc[key];
+		if (text === undefined) return key;
+		return text.replace(/\{([0-9]+)\}/g, (_, index) => String(params[parseInt(index, 10)] ?? ""));
+	};
 
-	const title = LocaleGet(skill.key)
+	const title = localeGet(skill.key)
 		.replace(/^◆[0-9]+ /, "");
 
 	const slotClass = ["", "success", "primary", "event-exchange-old"][passive.slot];
@@ -43,9 +51,9 @@ const ExtPassiveCard: FunctionalComponent<ExtPassiveCardProps> = (props) => {
 					.toNumber();
 				const sign = v > 0 ? "+" : v < 0 ? "-" : "";
 
-				return LocaleGet(desc.desc, sign + v);
+				return localeGet(desc.desc, sign + v);
 			} catch {
-				return LocaleGet(desc.desc);
+				return localeGet(desc.desc);
 			}
 		}
 
@@ -56,9 +64,9 @@ const ExtPassiveCard: FunctionalComponent<ExtPassiveCardProps> = (props) => {
 				.toNumber();
 			const sign = v > 0 ? "+" : v < 0 ? "-" : "";
 
-			return LocaleGet(desc.desc, sign + v);
+			return localeGet(desc.desc, sign + v);
 		} catch {
-			return LocaleGet(desc.desc);
+			return localeGet(desc.desc);
 		}
 	})(passive.desc);
 

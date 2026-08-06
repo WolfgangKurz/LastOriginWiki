@@ -59,7 +59,7 @@ interface MapViewProps {
 
 const MapView: FunctionalComponent<MapViewProps> = (props) => {
 	const location = useLocation();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["MENU", "WORLD", "WORLDS"] });
 	const ImageExt = ImageExtension();
 
 	const [currentMode, setCurrentMode] = useState<"map" | "substory">("map");

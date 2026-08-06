@@ -30,7 +30,7 @@ interface StoryProps {
 
 const Story: FunctionalComponent<StoryProps> = (props) => {
 	const location = useLocation();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["MENU", "WORLD"] });
 
 	const [selectedKey, setSelectedKey] = useState<[string | number, number] | null>(null);
 

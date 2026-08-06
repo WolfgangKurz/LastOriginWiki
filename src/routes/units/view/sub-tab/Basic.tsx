@@ -38,7 +38,7 @@ import { SubpageProps } from "..";
 import style from "./Basic.module.scss";
 
 const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "UNIT", prefixes: "UNIT_INTRO" });
 
 	const _FilterableEquipDB = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
 	const FilterableEquipDB = assertDBData(_FilterableEquipDB)

@@ -287,7 +287,7 @@ interface AdvancedSearchProps {
 }
 
 const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ prefixes: "EFFECT", namespaces: ["BUFF", "SEARCH"] });
 
 	const conds = props.conds;
 

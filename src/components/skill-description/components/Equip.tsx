@@ -20,7 +20,7 @@ interface EquipProps {
 }
 
 export const Equip: FunctionalComponent<EquipProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "EQUIP" });
 
 	const db = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
 	if (!assertDBData(db)) return <></>;

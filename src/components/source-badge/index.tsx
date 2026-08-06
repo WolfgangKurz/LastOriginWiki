@@ -25,7 +25,7 @@ interface SourceBadgeProps {
 }
 
 const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["COMMON", "CONSUMABLE", "EQUIP"] });
 	const FilterableUnit = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 	const Consumable = useDBData<Consumable[]>(StaticDB.Consumable);
 

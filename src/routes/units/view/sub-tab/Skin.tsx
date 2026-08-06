@@ -25,7 +25,7 @@ import { ArtistLinks } from "@/libs/Const.3";
 const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList, onSkinIndexChange }) => {
 	if (!display) return <></>;
 
-	const [loc] = useLocale();
+	const [loc] = useLocale({ prefixes: "CONSUMABLE_DESC" });
 
 	const skin = useMemo<typeof SkinList[0] | undefined>(() => SkinList[skinIndex], [SkinList, skinIndex]);
 	const ssid = useMemo(() => {

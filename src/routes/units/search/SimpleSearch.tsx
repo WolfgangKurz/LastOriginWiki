@@ -15,7 +15,7 @@ import Icons from "@/components/bootstrap-icon";
 import style from "./style.module.scss";
 
 const SimpleSearch: FunctionalComponent = () => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "UNITS" });
 
 	const rarities = [
 		ACTOR_GRADE.SS,

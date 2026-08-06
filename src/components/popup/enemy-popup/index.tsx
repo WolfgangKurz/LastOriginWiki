@@ -70,7 +70,7 @@ interface EnemyPopupProps {
 }
 
 const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "ENEMY", prefixes: "SKILL" });
 	const location = useLocation();
 	const imageExt = ImageExtension();
 

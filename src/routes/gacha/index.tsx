@@ -17,7 +17,7 @@ export interface GachaSubpageProps {
 }
 
 const GachaPage: FunctionalComponent = () => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "MENU" });
 
 	SetMeta(["description", "twitter:description"], "게임의 가챠를 해볼 수 있는 가챠 시뮬레이터입니다.");
 	SetMeta(["twitter:image", "og:image"], null);

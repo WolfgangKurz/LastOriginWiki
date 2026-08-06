@@ -28,7 +28,7 @@ interface SkinData extends UnitSkinEntity {
 
 const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 	const location = useLocation();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "SKIN" });
 
 	const [filterPart, setFilterPart] = useState<Record<Exclude<SKIN_IN_PARTS, SKIN_IN_PARTS.NONE>, boolean | undefined>>({
 		[SKIN_IN_PARTS.LOBBY_ANIMATION]: undefined, // l2d

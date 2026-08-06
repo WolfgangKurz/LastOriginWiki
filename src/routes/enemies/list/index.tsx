@@ -23,16 +23,17 @@ interface EnemiesListProps {
 }
 
 const EnemiesList: FunctionalComponent<EnemiesListProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc, localeReady] = useLocale({ namespaces: ["ENEMIES", "ENEMY", "MENU"] });
 
 	useEffect(() => {
+		if (!localeReady) return;
 		if (!props?.uid) {
 			SetMeta(["description", "twitter:description"], "적의 목록을 표시합니다. 원하는 적을 찾기 위해 검색할 수 있습니다.");
 			SetMeta(["twitter:image", "og:image"], null);
 
 			UpdateTitle(loc["ENEMIES_LIST"]);
 		}
-	}, [props?.uid]);
+	}, [props?.uid, loc, localeReady]);
 
 	const FilterableEnemyDB = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
 	if (!assertDBData(FilterableEnemyDB)) return <Loading.Data />;

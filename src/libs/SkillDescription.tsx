@@ -21,12 +21,15 @@ export interface ParamWithSlot {
 }
 
 let PrebuiltSections: Record<string, PrebuiltSectionType> | undefined;
+let PrebuiltSectionsLocaleTable: Record<string, string> | undefined;
 function InitPrebuiltSections (): void {
-	if (PrebuiltSections) return;
+	const locs = GetLocaleTable(CurrentLocale.value);
+	if (!locs || (PrebuiltSections && PrebuiltSectionsLocaleTable === locs)) return;
+
+	const keys = Object.keys(locs).filter(x => x.startsWith("UNIT_SKILL_SECTION_"));
+	if (keys.length === 0) return;
 
 	const section: Record<string, PrebuiltSectionType> = {};
-	const locs = GetLocaleTable(CurrentLocale.value) || {};
-	const keys = Object.keys(locs).filter(x => x.startsWith("UNIT_SKILL_SECTION_"));
 	keys.forEach(k => {
 		const kk = k.replace(/^UNIT_SKILL_SECTION_(?!NAME_)(.+)$/, "$1");
 		const _p2 = locs[k]
@@ -79,11 +82,11 @@ function InitPrebuiltSections (): void {
 	});
 
 	PrebuiltSections = section;
+	PrebuiltSectionsLocaleTable = locs;
 }
 
 export function GetSkillDescription (content: string, slot: string, values: ValueTable): SkillDescriptionMetadata {
-	if (!PrebuiltSections)
-		InitPrebuiltSections();
+	InitPrebuiltSections();
 
 	const orig = content;
 	const sections: Record<string, FunctionalComponent<SectionProps>[]> = {};

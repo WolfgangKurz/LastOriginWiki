@@ -43,7 +43,7 @@ const FaceAlias: Record<string, string> = {
 
 const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	const location = useLocation();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["PCSTORY", "WORLD"] });
 
 	const [isBackMode] = useState(Store.Story.back.value);
 
@@ -572,7 +572,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 								</div> }
 
 								<div class={ style.TranscriptionText }>
-									{ parseVNode(convTokens(Nn(LText(d.text))), [], {}) }
+									{ parseVNode(convTokens(Nn(LText(d.text), loc["STORY_PLAYER_GAMEPLAYER"] || "")), [], {}) }
 								</div>
 
 								{ d.sel
@@ -592,7 +592,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 													}
 												} }
 											>
-												{ parseVNode(convTokens(Nn(LText(s.text))), [], {}) }
+												{ parseVNode(convTokens(Nn(LText(s.text), loc["STORY_PLAYER_GAMEPLAYER"] || "")), [], {}) }
 											</button>
 										</div>) }
 									</div>

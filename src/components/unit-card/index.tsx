@@ -4,8 +4,9 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { ACTOR_BODY_TYPE, ACTOR_GRADE, ROLE_TYPE } from "@/types/Enums";
 
 import { AssetsRoot, RarityDisplay } from "@/libs/Const";
+import { useLocale } from "@/libs/Locale";
 
-import Locale, { LocaleGet } from "@/components/locale";
+import Locale from "@/components/locale";
 import UnitFace, { GetUnitFaceURL } from "@/components/unit-face";
 import RarityBadge from "@/components/rarity-badge";
 
@@ -73,6 +74,9 @@ const UnitCard: FunctionalComponent<UnitCardProps> & {
 } = (props) => {
 	const unit = props.unit;
 	const rarity = props.rarity || ACTOR_GRADE.B;
+	const nameKey = `UNIT_${unit.uid}`;
+	const shortNameKey = `UNIT_SHORT_${unit.uid}`;
+	const [loc, localeReady] = useLocale({ keys: [nameKey, shortNameKey] });
 
 	const RoleIconId = ({
 		[ROLE_TYPE.ATTACKER]: "Sword",
@@ -84,8 +88,8 @@ const UnitCard: FunctionalComponent<UnitCardProps> & {
 	const UnitFaceUrl = GetUnitFaceURL(unit.uid);
 	const unitName = ((): preact.VNode | preact.VNode[] => {
 		if (props.shortName) {
-			const name = LocaleGet(`UNIT_${unit.uid}`);
-			const sname = LocaleGet(`UNIT_SHORT_${unit.uid}`);
+			const name = localeReady ? loc[nameKey] ?? nameKey : "";
+			const sname = localeReady ? loc[shortNameKey] ?? shortNameKey : "";
 
 			if (name === sname)
 				return <>{ name }</>;

@@ -78,7 +78,7 @@ interface PlayerProps {
 
 const Player: FunctionalComponent<PlayerProps> = (props) => {
 	const update = useUpdate();
-	const [loc] = useLocale();
+	const [loc, localeReady] = useLocale({ namespaces: ["UNIT", "PCSTORY"] });
 
 	const [app, setApp] = useState<PIXI.Application<HTMLCanvasElement> | null>(null);
 	const [cover, setCover] = useState<PIXI.Sprite | null>(null);
@@ -952,6 +952,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 	}, [screen, addImage, addImageAppear, addImageOff]);
 
 	useEffect(() => { // Dialog
+		if (!localeReady) return;
 		if (dialog && curData) {
 			const hasText = Object.values(curData.text).some(r => r);
 			if (hasText) {
@@ -973,7 +974,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				speakerFilter[3].tint(curData.char.LC?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
 				speakerFilter[4].tint(curData.char.RC?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
 
-				dialog.setText(Nn(LText(curData.text)) || "~");
+				dialog.setText(Nn(LText(curData.text), loc["STORY_PLAYER_GAMEPLAYER"] || "") || "~");
 				if (speaker && LText(speaker.name).trim()) {
 					dialog.setSpeaker(LText(speaker.name) || getSpeakerByImage(speaker.image), curData.speaker);
 				} else
@@ -986,7 +987,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 					dialog.setDisplay(false);
 			}
 		}
-	}, [dialog, curData, LText]);
+	}, [dialog, curData, LText, loc, localeReady]);
 	useEffect(() => { // Selection
 		let fn: (idx: number) => void;
 

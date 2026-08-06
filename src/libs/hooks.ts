@@ -111,7 +111,7 @@ export function useFontLoad (fontFamily: string): boolean {
  * @param inputs Additional update input to update like preact lifecycle
  */
 export function useTitle (title: string[] = [], inputs?: Inputs): void {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ keys: "COMMON_TITLE" });
 
 	useEffect(() => {
 		document.title = [

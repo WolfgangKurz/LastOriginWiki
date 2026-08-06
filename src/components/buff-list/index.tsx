@@ -63,7 +63,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	const FilterableUnitDB = _FilterableUnitDB;
 	const BuffFromDB = _BuffFromDB;
 
-	const [loc] = useLocale();
+	const [loc] = useLocale({ prefixes: "EFFECT", namespaces: "UNIT" });
 
 	const [ReferencedEnemy, setReferencedEnemy] = useState<Enemy | null>(null);
 

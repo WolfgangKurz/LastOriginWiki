@@ -41,7 +41,7 @@ interface BuffRendererProps {
 }
 
 const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ prefixes: ["EFFECT", "UNIT_SKILL"], namespaces: "UNIT" });
 
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 	const [referencedEnemy, setReferencedEnemy] = useState<Enemy | null>(null);

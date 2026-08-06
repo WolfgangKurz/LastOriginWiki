@@ -31,7 +31,7 @@ interface SummonBadgeProps {
 }
 
 const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "ENEMY" });
 
 	const summon = props.summon;
 	if (!summon) return <></>;

@@ -35,7 +35,7 @@ interface EquipsProps {
 }
 
 const EquipList: FunctionalComponent<EquipsProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["EQUIP", "MENU"] });
 	const update = useUpdate();
 
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);

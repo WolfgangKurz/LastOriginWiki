@@ -101,7 +101,7 @@ export interface LocaleProps<T> {
 }
 
 const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
-	const [locale, localeReady] = useLocale();
+	const [locale, localeReady] = useLocale({ keys: props.k });
 
 	if (localeReady) {
 		if (props.k in locale) {
@@ -135,7 +135,7 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
 export default Locale;
 
 /**
- * @deprecated This method should not be used. Use `useLocale()` instead.
+ * @deprecated This method should not be used. Use `useLocale({ keys: k })` instead.
  * @param k Key string of locale.
  * @param p Parameter of locale.
  * @returns Localized text. `k` parameter if key not in locale table.
@@ -145,7 +145,7 @@ export function LocaleGet (k: string, ...p: any[]): string {
 }
 
 /**
- * @deprecated This method should not be used. Use `useLocale()` instead.
+ * @deprecated This method should not be used. Use `useLocale({ keys: k })` instead.
  * @param k Key string of locale.
  * @param p Parameter of locale.
  * @returns Localized text. `undefined` if key not in locale table.
@@ -161,7 +161,7 @@ export function LocaleGetEmpty (k: string, ...p: any[]): string | undefined {
 }
 
 /**
- * @deprecated This method should not be used. Use `useLocale()` instead.
+ * @deprecated This method should not be used. Use `useLocale({ keys: k })` instead.
  * @param k Key string of locale.
  * @returns Key exists in locale table.
  */

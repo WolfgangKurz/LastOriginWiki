@@ -37,7 +37,10 @@ export interface UnitsListProps {
 }
 
 const Units: FunctionalComponent = () => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({
+		namespaces: ["MENU", "UNIT"],
+		prefixes: Store.Units.SearchType.value === "advanced" ? "EFFECT" : undefined,
+	});
 
 	useEffect(() => {
 		SetMeta(["description", "twitter:description"], "전투원의 목록을 표시합니다. 원하는 전투원을 찾기 위해 검색할 수 있습니다.");

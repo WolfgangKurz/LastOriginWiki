@@ -24,7 +24,7 @@ import IconAlphabet from "@/components/Icons/IconAlphabet";
 import style from "./style.module.scss";
 
 const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "UNIT" });
 	const imgExt = useImageExtension();
 
 	const withShort = Store.Units.SearchWithShortname.value;

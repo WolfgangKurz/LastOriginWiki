@@ -36,7 +36,7 @@ const DOMUpdateQueue: Array<() => void> = [];
 const BGM: FunctionalComponent = () => {
 	const appContainer = document.querySelector("#page > #app") || document.body;
 
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "WORLD" });
 
 	const [albumsLoaded, setAlbumsLoaded] = useState(false);
 	const [pageReady, setPageReady] = useState(false);
@@ -215,7 +215,7 @@ const BGM: FunctionalComponent = () => {
 				setLastSelectedItemTitle(t);
 		} else
 			setLastSelectedItemTitle("");
-	}, [lastSelectedItem]);
+	}, [lastSelectedItem, loc]);
 
 	function toTimeText (duration: number): string {
 		const d = Math.floor(duration);

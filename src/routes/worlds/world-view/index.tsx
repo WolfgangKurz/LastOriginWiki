@@ -21,7 +21,7 @@ interface WORLDViewProps {
 
 const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 	const location = useLocation();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["MENU", "WORLD"] });
 	const imgExt = ImageExtension();
 
 	const ImagelessEv: string[] = [];

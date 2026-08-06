@@ -14,7 +14,7 @@ import Locale from "@/components/locale";
 import DropItem from "@/components/drop-item";
 
 const ConsumableView: FunctionalComponent = () => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "MENU" });
 
 	const [filterCharTicket, setFilterCharTicket] = useState(false);
 	const [filterSkinPack, setFilterSkinPack] = useState(false);

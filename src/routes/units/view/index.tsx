@@ -48,7 +48,7 @@ interface UnitsViewProps {
 
 const View: FunctionalComponent<UnitsViewProps> = (props) => {
 	const location = useLocation();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["MENU", "UNIT"] });
 
 	const [DisplayTab, setDisplayTab] = useState<TabTypes>(
 		props.sub && props.sub.startsWith("s")

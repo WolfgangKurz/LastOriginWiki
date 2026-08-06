@@ -13,7 +13,7 @@ import Loading from "@/components/loading";
 import FacilityCard from "./components/facility-card";
 
 const Facilities: FunctionalComponent = () => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "MENU" });
 
 	const [filters, setFilters] = useState(() => ({
 		BioroidMaking: true,

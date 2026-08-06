@@ -53,7 +53,7 @@ interface EquipPopupProps {
 }
 
 const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "EQUIP" });
 	const location = useLocation();
 
 	const [latestUid, setLatestUid] = useState<string>("");
