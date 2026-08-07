@@ -2077,7 +2077,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						</div>
 					</div>
 
-					<div class="ps-3">
+					<div class="ps-3 clear-both">
 						<div class="float-start">
 							{ getBuffText(buff.value, level) }
 						</div>

@@ -1,3 +1,4 @@
+import { FunctionalComponent } from "preact";
 import { useMemo } from "preact/hooks";
 
 import { CurrentEvent, PermanentEvents } from "@/libs/Const";
@@ -149,7 +150,9 @@ const SourceTable: FunctionalComponent<SourceTableProps> = (props) => {
 	return <div class={ style.UnitSourceTable }>
 		{ storySource.length > 0 && <>
 			<div class={ style.Header }>
-				<Locale raw k="COMMON_SOURCE_MAINSTORY" />
+				<i>
+					<Locale raw k="COMMON_SOURCE_MAINSTORY" />
+				</i>
 			</div>
 			<div class={ cn(style.Content, style.Available) }>
 				<div class={ style.SourceSectors }>
@@ -173,7 +176,7 @@ const SourceTable: FunctionalComponent<SourceTableProps> = (props) => {
 					gridRow: `${i + 1 + storyAvailable} / ${i + 1 + storyAvailable + spanList[i]}`
 				} }
 			>
-				{ header }
+				<i>{ header }</i>
 			</div> }
 
 			<div class={ cn(style.Content, available && style.Available) }>
