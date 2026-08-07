@@ -4,6 +4,15 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13186" date="2026-08-07"
+		site={ <>
+			<li>전체적으로 성능 개선 및 메모리 사용량 최적화를 진행했습니다.</li>
+			<li>전투원 획득처 테이블의 헤더가 스크롤을 따라다니도록 변경했습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>버프 목록의 스택/삭제 표기가 제대로 정렬되지 않던 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13182" date="2026-08-04"
 		bugfix={ <>
 			<li>전투원 <BY>티타니아 프로스트</BY>의 스킬 정보가 갱신되지 않은 점을 수정했습니다.</li>
