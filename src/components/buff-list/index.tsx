@@ -1,6 +1,6 @@
 import preact, { Fragment, FunctionalComponent, isValidElement } from "preact";
 import { memo } from "preact/compat";
-import { useCallback, useState } from "preact/hooks";
+import { useCallback, useMemo, useState } from "preact/hooks";
 import render from "preact-render-to-string";
 import Decimal from "decimal.js";
 
@@ -68,14 +68,16 @@ interface BuffRendererProps {
 	dummy?: boolean;
 }
 
-export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
-	const _FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
-	const _BuffFromDB = useDBData<Record<string, BuffFrom[]>>(StaticDB.BuffFrom);
-	if (!assertDBData(_FilterableUnitDB) || !assertDBData(_BuffFromDB)) return <></>;
-	const FilterableUnitDB = _FilterableUnitDB;
-	const BuffFromDB = _BuffFromDB;
+interface BuffRendererCoreProps extends BuffRendererProps {
+	filterableUnitDB: FilterableUnit[];
+	buffFromDB: Record<string, BuffFrom[]>;
+	loc: Record<string, string>;
+}
 
-	const [loc] = useLocale({ prefixes: "EFFECT", namespaces: "UNIT" });
+const BuffRendererCoreBase: FunctionalComponent<BuffRendererCoreProps> = (props) => {
+	const FilterableUnitDB = props.filterableUnitDB;
+	const BuffFromDB = props.buffFromDB;
+	const loc = props.loc;
 
 	const [ReferencedEnemy, setReferencedEnemy] = useState<Enemy | null>(null);
 
@@ -2207,6 +2209,23 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	</ul>;
 };
 
+const BuffRendererCore = memo(BuffRendererCoreBase);
+
+export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
+	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
+	const BuffFromDB = useDBData<Record<string, BuffFrom[]>>(StaticDB.BuffFrom);
+	const [loc] = useLocale({ prefixes: "EFFECT", namespaces: "UNIT" });
+
+	if (!assertDBData(FilterableUnitDB) || !assertDBData(BuffFromDB)) return <></>;
+
+	return <BuffRendererCore
+		{ ...props }
+		filterableUnitDB={ FilterableUnitDB }
+		buffFromDB={ BuffFromDB }
+		loc={ loc }
+	/>;
+};
+
 interface BuffListProps {
 	class?: string;
 
@@ -2220,36 +2239,50 @@ interface BuffListProps {
 const BuffList: FunctionalComponent<BuffListProps> = (props) => {
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 	const BuffFromDB = useDBData<Record<string, BuffFrom[]>>(StaticDB.BuffFrom);
+	const [loc] = useLocale({ prefixes: "EFFECT", namespaces: "UNIT" });
+
+	const { staticList, dynamicList } = useMemo(() => {
+		const list = props.list || [];
+		return {
+			staticList: list.filter(x => !("buffs" in x || "unknown" in x)),
+			dynamicList: list.filter(x => "buffs" in x || "unknown" in x),
+		};
+	}, [props.list]);
+
 	if (
 		!assertDBData(FilterableUnitDB) || !assertDBData(BuffFromDB)
 	) return <Loading.Data />;
 
-	const list = props.list || [];
 	const level = props.level || 0;
 	const dummy = props.dummy || false;
 
-	const staticList = list.filter(x => !("buffs" in x || "unknown" in x));
-	const dynamicList = list.filter(x => "buffs" in x || "unknown" in x).map(stat => <BuffRenderer
+	const dynamicRenderers = dynamicList.map(stat => <BuffRendererCore
 		uid={ props.uid ?? "" }
 		stat={ stat }
 		level={ level }
 		invert={ props.invert }
 		dummy={ dummy }
+		filterableUnitDB={ FilterableUnitDB }
+		buffFromDB={ BuffFromDB }
+		loc={ loc }
 	/>);
 	return <div class={ `${style.BuffList} text-dark ${props.class || ""}` }>
 		{ staticList.length > 0
 			? <ul class="list-group text-start">
-				<BuffRenderer
+				<BuffRendererCore
 					uid={ props.uid ?? "" }
 					stat={ staticList }
 					level={ level }
 					invert={ props.invert }
 					dummy={ dummy }
+					filterableUnitDB={ FilterableUnitDB }
+					buffFromDB={ BuffFromDB }
+					loc={ loc }
 				/>
 			</ul>
 			: <></>
 		}
-		{ dynamicList }
+		{ dynamicRenderers }
 	</div>;
 };
 export default memo(BuffList);

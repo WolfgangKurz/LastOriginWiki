@@ -7,7 +7,7 @@ import { SkillEntity, SkillGroup } from "@/types/DB/Skill";
 import { ACTOR_BODY_TYPE, ACTOR_GRADE } from "@/types/Enums";
 import { BuffStat } from "@/types/Buffs";
 
-import { CurrentLocale, useLocale } from "@/libs/Locale";
+import { useLocale } from "@/libs/Locale";
 import Session from "@/libs/Session";
 import { RarityDisplay } from "@/libs/Const";
 import { BuildClass, cn } from "@/libs/Class";
@@ -43,6 +43,107 @@ interface SkillTableProps {
 	rangeBonus: boolean;
 }
 
+interface BuffListMountTask {
+	identity: string;
+	order: number;
+	mount: () => void;
+}
+
+class BuffListMountQueue {
+	private tasks = new Map<string, BuffListMountTask>();
+	private frame: number | undefined;
+	private idle: number | undefined;
+	private disposed = false;
+
+	public enqueue (task: BuffListMountTask): () => void {
+		this.tasks.set(task.identity, task);
+		this.schedule();
+
+		return () => {
+			if (this.tasks.get(task.identity) === task)
+				this.tasks.delete(task.identity);
+		};
+	}
+
+	public dispose (): void {
+		this.disposed = true;
+		this.tasks.clear();
+
+		if (this.frame !== undefined)
+			cancelAnimationFrame(this.frame);
+		if (this.idle !== undefined && "cancelIdleCallback" in window)
+			window.cancelIdleCallback(this.idle);
+
+		this.frame = undefined;
+		this.idle = undefined;
+	}
+
+	private schedule (): void {
+		if (this.disposed || this.frame !== undefined || this.idle !== undefined || this.tasks.size === 0)
+			return;
+
+		this.frame = requestAnimationFrame(() => {
+			this.frame = undefined;
+			if (this.disposed || this.tasks.size === 0) return;
+
+			const mountNext = (): void => {
+				this.idle = undefined;
+				if (this.disposed) return;
+
+				const task = Array.from(this.tasks.values())
+					.sort((a, b) => a.order - b.order || a.identity.localeCompare(b.identity))[0];
+				if (!task) return;
+
+				this.tasks.delete(task.identity);
+				task.mount();
+				this.schedule();
+			};
+
+			if ("requestIdleCallback" in window)
+				this.idle = window.requestIdleCallback(mountNext, { timeout: 100 });
+			else
+				mountNext();
+		});
+	}
+}
+
+interface DeferredBuffListProps {
+	identity: string;
+	order: number;
+	queue: BuffListMountQueue;
+	display: boolean;
+	uid: string;
+	list: readonly BuffStat[];
+	level: number;
+	dummy: boolean;
+}
+
+const DeferredBuffList: FunctionalComponent<DeferredBuffListProps> = (props) => {
+	const [mountedIdentity, setMountedIdentity] = useState<string | null>(null);
+	const mounted = mountedIdentity === props.identity;
+
+	useEffect(() => {
+		if (!props.display || mounted || props.list.length === 0) return;
+
+		return props.queue.enqueue({
+			identity: props.identity,
+			order: props.order,
+			mount: () => setMountedIdentity(props.identity),
+		});
+	}, [props.display, props.identity, props.list.length, props.order, props.queue, mounted]);
+
+	if (!mounted) return null;
+
+	return <div class={ cn(!props.display && "d-none") }>
+		<BuffList
+			uid={ props.uid }
+			list={ props.list }
+			level={ props.level }
+			dummy={ props.dummy }
+		/>
+	</div>;
+};
+
 const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 	const [loc, _, locKey] = useLocale({ namespaces: "UNIT", prefixes: "UNIT_SKILL" });
 
@@ -77,21 +178,16 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 	const [favorBonus, setFavorBonus] = useState<boolean>(Session.get("unit.skill-table.favorBonus", "0") === "1");
 	const [valueDetail, setValueDetail] = useState<boolean>(Session.get("unit.skill-table.valueDetail", "0") === "1");
 	const [displayBuffList, setDisplayBuffList] = useState<boolean>(Session.get("unit.skill-table.displayBuffList", "0") === "1");
-	const [buffListMounted, setBuffListMounted] = useState(false);
 	const [displayBuffDummy, setDisplayBuffDummy] = useState<boolean>(Session.get("unit.skill-table.displayBuffDummy", "0") === "1");
 	const [displayFlavor, setDisplayFlavor] = useState<boolean>(Session.get("unit.skill-table.displayFlavor", "1") === "1");
+	const buffListMountQueue = useMemo(() => new BuffListMountQueue(), [unit.uid]);
 
 	useEffect(() => {
 		if (favorBonus && unit.body === ACTOR_BODY_TYPE.AGS)
 			setFavorBonus(false);
 	}, [unit, favorBonus]);
 
-	useEffect(() => {
-		if (!displayBuffList || buffListMounted) return;
-
-		const frame = requestAnimationFrame(() => setBuffListMounted(true));
-		return () => cancelAnimationFrame(frame);
-	}, [displayBuffList, buffListMounted]);
+	useEffect(() => () => buffListMountQueue.dispose(), [buffListMountQueue]);
 
 	const HasFormChange = useMemo(() => {
 		const raw = skills;
@@ -143,17 +239,13 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 		return output;
 	}, [skills]);
 
-	const GetSkillDescriptions = useCallback((skill: SkillItem, values: Record<string, SkillDescriptionValueData[]>) => {
-		const orig = skill.desc?.[locKey] ||
-			// loc[`UNIT_SKILL_DESC_${unit.uid}_${skill.key}`] ||
-			"";
-
-		return GetSkillDescription(orig, skill.slot, values);
-	}, [loc, locKey, unit]);
-	function GetRates (skill: SkillItem): number[] {
-		return skill.buffs.index
-			.map(x => skill.buffs.data[x].rate);
-	}
+	const SkillRates = useMemo((): Record<string, number[]> => {
+		const output: Record<string, number[]> = {};
+		Skills.forEach(skill => {
+			output[skill.key] = skill.buffs.index.map(x => skill.buffs.data[x].rate);
+		});
+		return output;
+	}, [Skills]);
 
 	const Values = useMemo((): Record<string, SkillDescriptionValueData[]> => {
 		const Values: Record<string, SkillDescriptionValueData[]> = {};
@@ -174,6 +266,15 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 
 		return Values;
 	}, [skills, skillLevel]);
+
+	const SkillDescriptions = useMemo((): Record<string, ReturnType<typeof GetSkillDescription>> => {
+		const output: Record<string, ReturnType<typeof GetSkillDescription>> = {};
+		Skills.forEach(skill => {
+			const orig = skill.desc?.[locKey] || "";
+			output[skill.key] = GetSkillDescription(orig, skill.slot, Values);
+		});
+		return output;
+	}, [Skills, Values, locKey, loc]);
 
 	const skillHeader = useMemo(() => <>
 		<Locale k="UNIT_SKILL_DESCRIPTION" />
@@ -275,11 +376,12 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				</label>
 			</div>
 		</div>
-	</>, [skillLevel, favorBonus, valueDetail, displayBuffList, displayBuffList, displayBuffDummy, displayFlavor]);
+	</>, [skillLevel, favorBonus, valueDetail, displayBuffList, displayBuffDummy, displayFlavor]);
 
-	const tableContent = useCallback((skill: SkillItem): preact.VNode => {
+	const tableContent = useCallback((skill: SkillItem, buffListOrder: number): preact.VNode => {
 		const flavorKey = `UNIT_SKILL_FLAVOR_${props.unit.uid}_${skill.key}`;
-		const descList = GetSkillDescriptions(skill, Values);
+		const descList = SkillDescriptions[skill.key];
+		const rates = SkillRates[skill.key];
 
 		return <>
 			<div class="unit-modal-skill mb-2">
@@ -347,7 +449,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 							text={ line }
 							sections={ descList.sections }
 							boxs={ descList.boxs }
-							rates={ GetRates(skill) }
+							rates={ rates }
 							level={ skillLevel }
 							values={ Values }
 							slot={ skill.slot }
@@ -372,24 +474,28 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				: <></>
 			}
 
-			{ buffListMounted && buffList[skill.key].length > 0
-				? <div class={ cn(!displayBuffList && "d-none") }>
-					<BuffList
-						uid={ unit.uid }
-						list={ buffList[skill.key] }
-						level={ finalSkillLevel }
-						dummy={ displayBuffDummy }
-					/>
-				</div>
+			{ buffList[skill.key].length > 0
+				? <DeferredBuffList
+					key={ unit.uid + ":" + skill.key + ":buff-list" }
+					identity={ unit.uid + ":" + skill.key }
+					order={ buffListOrder }
+					queue={ buffListMountQueue }
+					display={ displayBuffList }
+					uid={ unit.uid }
+					list={ buffList[skill.key] }
+					level={ finalSkillLevel }
+					dummy={ displayBuffDummy }
+				/>
 				: <></>
 			}
 		</>;
 	}, [
 		loc,
-		displayFlavor, GetSkillDescriptions,
+		displayFlavor, SkillDescriptions, SkillRates, Values,
 		skillLevel, favorBonus,
 		props.buffBonus, props.skillBonus,
-		valueDetail, displayBuffList, displayBuffDummy, buffListMounted,
+		valueDetail, displayBuffList, displayBuffDummy,
+		BuffRates, buffList, finalSkillLevel, unit, buffListMountQueue,
 	]);
 
 	const endRarity = useMemo(() => unit.promotions
@@ -449,8 +555,8 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					<Locale raw k="UNIT_SKILL_RANGE" />
 				</div>
 
-				{ Skills.map(skill => {
-					const rates = GetRates(skill);
+				{ Skills.map((skill, skillIndex) => {
+					const rates = SkillRates[skill.key];
 					const el = skill.buffs.data[skill.buffs.index[skillLevel]].type;
 					const v = Decimal.add(rates[skillLevel], bonus)
 						.toFixed(10)
@@ -498,7 +604,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 							</div>
 						</div>
 						<div class={ cn(style.Content, isFChange && style.SkillTableFChange) }>
-							{ tableContent(skill) }
+							{ tableContent(skill, skillIndex) }
 						</div>
 						<div class={ cn(style.Bound) }>
 							<SkillBound

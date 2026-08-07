@@ -30,12 +30,15 @@ interface SummonBadgeProps {
 	summon: SkillSummonInfo | null;
 }
 
-const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
+interface SummonBadgeContentProps {
+	class?: string;
+	summon: SkillSummonInfo;
+}
+
+const SummonBadgeContent: FunctionalComponent<SummonBadgeContentProps> = (props) => {
 	const [loc] = useLocale({ namespaces: "ENEMY" });
 
 	const summon = props.summon;
-	if (!summon) return <></>;
-
 	const [display, setDisplay] = useState<boolean>(false);
 	const [displayTab, setDisplayTab] = useState<string>("skill1");
 
@@ -395,4 +398,9 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 		</PopupBase>
 	</div>;
 };
+
+const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => props.summon
+	? <SummonBadgeContent class={ props.class } summon={ props.summon } />
+	: null;
+
 export default SummonBadge;

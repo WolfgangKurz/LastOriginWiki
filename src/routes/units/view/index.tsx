@@ -1,5 +1,5 @@
 import { createElement, FunctionalComponent } from "preact";
-import { useEffect, useMemo, useState } from "preact/hooks";
+import { useCallback, useEffect, useMemo, useState } from "preact/hooks";
 import { useLocation } from "preact-iso";
 
 import { Unit, UnitSkin } from "@/types/DB/Unit";
@@ -43,6 +43,30 @@ export interface SubpageProps {
 	onSkinIndexChange: (index: number) => void;
 }
 
+const DeferredSkillTab: FunctionalComponent<SubpageProps> = (props) => {
+	const [ready, setReady] = useState(false);
+
+	useEffect(() => {
+		let cancelled = false;
+		let renderFrame: number | undefined;
+		const loadingFrame = requestAnimationFrame(() => {
+			renderFrame = requestAnimationFrame(() => {
+				if (!cancelled) setReady(true);
+			});
+		});
+
+		return () => {
+			cancelled = true;
+			cancelAnimationFrame(loadingFrame);
+			if (renderFrame !== undefined) cancelAnimationFrame(renderFrame);
+		};
+	}, []);
+
+	return ready
+		? <SkillTab { ...props } />
+		: <Loading.Data />;
+};
+
 interface UnitsViewProps {
 	uid: string;
 	sub?: string;
@@ -63,6 +87,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 			? parseInt(props.sub.substring(1), 10)
 			: 0
 	);
+	const onSkinIndexChange = useCallback((value: number): void => setSkinIndex(value), []);
 
 	const _unit = useDBData<Unit>(`unit/${props.uid}`);
 	const unit = useMemo(() => {
@@ -146,7 +171,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 		skin: SkinTab,
 		lvlimit: LvLimitTab,
 		promo: PromoTab,
-		skills: SkillTab,
+		skills: DeferredSkillTab,
 	};
 
 	return <div class={ style.UnitView }>
@@ -261,13 +286,13 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 				}))
 			} */}
 		{ DisplayTab !== "dialogue" && createElement(TabContents[DisplayTab], {
-			key: "tab-" + DisplayTab,
+			key: `tab-${DisplayTab}-${unit.uid}`,
 			display: true,
 			unit,
 			skinIndex,
 			SkinList,
 
-			onSkinIndexChange: v => setSkinIndex(v),
+			onSkinIndexChange,
 		}) }
 
 		<DialogueTab // DialogueTab should be rendered always (background audio playing)
@@ -275,7 +300,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 			unit={ unit }
 			skinIndex={ skinIndex }
 			SkinList={ SkinList }
-			onSkinIndexChange={ v => setSkinIndex(v) }
+			onSkinIndexChange={ onSkinIndexChange }
 		/>
 	</div>;
 };

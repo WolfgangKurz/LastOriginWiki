@@ -2,14 +2,22 @@ import { createElement } from "preact";
 
 import { ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
+import type { SectionProps } from ".";
 
 import { assertDBData } from "@/libs/Loader";
 import { GetSkillDescription } from "@/libs/SkillDescription";
 
 import style from "./components/style.module.scss";
 
-export default function buildDefaultSection (units: FilterableUnit[] | symbol): Record<string, preact.FunctionalComponent<unknown>[]> {
+export type DefaultSectionTable = Record<string, preact.FunctionalComponent<SectionProps>[]>;
+
+const DefaultSectionCache = new WeakMap<FilterableUnit[], DefaultSectionTable>();
+
+export default function buildDefaultSection (units: FilterableUnit[] | symbol): DefaultSectionTable {
 	if (!assertDBData(units)) return {};
+
+	const cached = DefaultSectionCache.get(units);
+	if (cached) return cached;
 
 	let groupUnits: Record<string, FilterableUnit[]> = {};
 	units.forEach(u => {
@@ -67,7 +75,7 @@ export default function buildDefaultSection (units: FilterableUnit[] | symbol): 
 	});
 	groupUnits = Object.assign(groupUnits, groupUnitsAdd);
 
-	const tags: Record<string, preact.FunctionalComponent<unknown>[]> = {};
+	const tags: DefaultSectionTable = {};
 	for (const g in groupUnits) {
 		const section = `<define name="${g}">${groupUnits[g].map(r => `<char uid="${r.uid}" />`).join(", ")}</define>`;
 		const ret = GetSkillDescription(section, "", {});
@@ -84,5 +92,6 @@ export default function buildDefaultSection (units: FilterableUnit[] | symbol): 
 				);
 	}
 
+	DefaultSectionCache.set(units, tags);
 	return tags;
 }
