@@ -10,7 +10,8 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
 import { AssetsRoot } from "@/libs/Const";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 import { useLocale } from "@/libs/Locale";
 import { groupBy, isActive } from "@/libs/Functions";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
@@ -49,6 +50,14 @@ interface DropTableProps {
 const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 	const location = useLocation();
 	const [loc] = useLocale({ namespaces: ["MENU", "WORLD", "WORLDS"] });
+	useTitle(props.wid === "Sub"
+		? [loc["MENU_WORLDS"], loc[`WORLD_${props.wid}`]]
+		: [
+			loc["MENU_WORLDS"],
+			loc[`WORLD_${props.wid}`],
+			loc["WORLDS_WORLD_TITLE"]?.replace(/\{0\}/g, props.mid),
+		]
+	);
 
 	const tableRef = useRef<HTMLTableElement>(null);
 
@@ -66,10 +75,6 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 	SetMeta("keywords", `,${loc[`WORLD_${props.wid}`]}`, true);
 	SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${props.wid}_${props.mid}.png`);
 
-	if (props.wid === "Sub")
-		UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${props.wid}`]);
-	else
-		UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${props.wid}`], loc["WORLDS_WORLD_TITLE"]?.replace(/\{0\}/g, props.mid));
 
 	function toggleArray<T> (list: T[], value: T): T[] {
 		if (list.includes(value)) {

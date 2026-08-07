@@ -10,7 +10,8 @@ import { AssetsRoot, ImageExtension, RarityDisplay, UnitClassDisplay, UnitRoleDi
 import { isActive } from "@/libs/Functions";
 import { cn } from "@/libs/Class";
 import EntitySource from "@/libs/EntitySource";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 
 import Locale from "@/components/locale";
 import Button from "@/components/Button";
@@ -71,6 +72,11 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 				.map(x => (x as unknown as string[]).map(y => new EntitySource(y))),
 		};
 	}, [_unit]);
+	useTitle([
+		loc["MENU_UNITS"],
+		unit ? loc[`UNIT_${unit.uid}`] : undefined,
+	]);
+
 	const SkinList = useMemo((): SkinItem[] => {
 		if (!unit) return [];
 
@@ -129,7 +135,6 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 				`,${[loc[`UNIT_${unit.uid}`], loc[`UNIT_SHORT_${unit.uid}`]].unique().join(",")}`,
 				true,
 			);
-			UpdateTitle(loc["MENU_UNITS"], loc[`UNIT_${unit.uid}`]);
 		}
 	}, [loc, unit]);
 

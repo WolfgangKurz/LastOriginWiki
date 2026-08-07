@@ -6,7 +6,8 @@ import throttle from "lodash.throttle";
 import { BGMAlbum, BGMInfo, BGMInfo_Youtube } from "@/types/BGM";
 
 import { AssetsRoot } from "@/libs/Const";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 import { BuildClass } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
 import BGMAlbums from "@/libs/BGM";
@@ -34,6 +35,8 @@ enum PageType {
 const DOMUpdateQueue: Array<() => void> = [];
 
 const BGM: FunctionalComponent = () => {
+	useTitle(["BGM"]);
+
 	const appContainer = document.querySelector("#page > #app") || document.body;
 
 	const [loc] = useLocale({ namespaces: "WORLD" });
@@ -82,8 +85,6 @@ const BGM: FunctionalComponent = () => {
 		SetMeta(["description", "twitter:description"], "라스트오리진(LastOrigin)에 사용된 BGM 목록과 플레이어입니다.");
 		SetMeta("keywords", ",BGM,OST", true);
 		SetMeta(["twitter:image", "og:image"], null);
-		UpdateTitle("BGM");
-
 		Promise.all( // preload albumarts
 			BGMAlbums
 				.map(r => [r.image, ...r.songs.map(s => s.image)])

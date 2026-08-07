@@ -4,7 +4,8 @@ import { useEffect, useState } from "preact/hooks";
 import { Consumable } from "@/types/DB/Consumable";
 
 import { BuildClass } from "@/libs/Class";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 import { isActive } from "@/libs/Functions";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { useLocale } from "@/libs/Locale";
@@ -15,6 +16,7 @@ import DropItem from "@/components/drop-item";
 
 const ConsumableView: FunctionalComponent = () => {
 	const [loc] = useLocale({ namespaces: "MENU" });
+	useTitle([loc["MENU_ETC_CONSUMABLE"]]);
 
 	const [filterCharTicket, setFilterCharTicket] = useState(false);
 	const [filterSkinPack, setFilterSkinPack] = useState(false);
@@ -26,7 +28,6 @@ const ConsumableView: FunctionalComponent = () => {
 	useEffect(() => {
 		SetMeta(["description", "twitter:description"], "소모품 목록을 표시합니다.");
 		SetMeta(["twitter:image", "og:image"], null);
-		UpdateTitle(loc["MENU_ETC_CONSUMABLE"]);
 	}, []);
 
 	const consumables = useDBData<Consumable[]>(StaticDB.Consumable);

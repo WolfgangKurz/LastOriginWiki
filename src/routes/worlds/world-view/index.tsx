@@ -6,7 +6,8 @@ import { World } from "@/types/DB/Map";
 
 import { useLocale } from "@/libs/Locale";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 
 import { assertDBData, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
@@ -27,13 +28,13 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 	const ImagelessEv: string[] = [];
 
 	const wid = props.wid;
+	useTitle([loc["MENU_WORLDS"], loc[`WORLD_${wid}`]]);
 
 	useEffect(() => {
 		SetMeta(["description", "twitter:description"], `${loc[`WORLD_${wid}`]}의 구역 목록을 표시합니다. 구역의 지도 정보와 이야기를 선택하여 확인할 수 있습니다.`);
 		SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${wid}_1.png`);
 		SetMeta("keywords", `,${loc[`WORLD_${wid}`]}`, true);
-		UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${wid}`]);
-	}, [wid]);
+	}, [loc, wid]);
 
 	const MapDB = useDBData<World>(`map/${wid}`);
 	if (!assertDBData(MapDB)) return <></>;

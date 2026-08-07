@@ -1,7 +1,8 @@
 import { FunctionalComponent } from "preact";
 import { useEffect, useMemo, useState } from "preact/hooks";
 
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
@@ -12,6 +13,8 @@ interface DateData {
 }
 
 const Changelog: FunctionalComponent = () => {
+	useTitle(["Changelog"]);
+
 	const [loading, setLoading] = useState<number>(0);
 	const [content, setContent] = useState<preact.VNode | undefined>(undefined);
 
@@ -57,7 +60,6 @@ const Changelog: FunctionalComponent = () => {
 	useEffect(() => {
 		SetMeta(["description", "twitter:description"], "멸망 전의 전술 교본 사이트의 변경 내역입니다.");
 		SetMeta(["twitter:image", "og:image"], null);
-		UpdateTitle("Changelog");
 	}, []);
 
 	return <div class="changelog text-start">

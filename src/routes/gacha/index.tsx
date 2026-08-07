@@ -5,7 +5,8 @@ import { INNER_GACHA_CATEGORY } from "@/types/DB/Gacha";
 
 import { useLocale } from "@/libs/Locale";
 import { isActive } from "@/libs/Functions";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 
 import Locale from "@/components/locale";
 
@@ -18,11 +19,10 @@ export interface GachaSubpageProps {
 
 const GachaPage: FunctionalComponent = () => {
 	const [loc] = useLocale({ namespaces: "MENU" });
+	useTitle([loc["MENU_ETC_GACHA"]]);
 
 	SetMeta(["description", "twitter:description"], "게임의 가챠를 해볼 수 있는 가챠 시뮬레이터입니다.");
 	SetMeta(["twitter:image", "og:image"], null);
-	UpdateTitle(loc["MENU_ETC_GACHA"]);
-
 	const [cat, setCat] = useState<INNER_GACHA_CATEGORY>(INNER_GACHA_CATEGORY.Box);
 
 	return <>

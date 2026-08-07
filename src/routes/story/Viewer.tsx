@@ -13,7 +13,7 @@ import { AssetsRoot, ImageExtension, IsDev, SubStoryUnit } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { BuildClass, cn } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
-import { UpdateTitle } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
@@ -288,9 +288,13 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			return loc[subGroup.group];
 		}
 		return loc[`WORLD_WORLD_${wid}_${mid}`];
-	}, [lang, storyType, wid, mid, nid]);
+	}, [lang, loc, subGroup, storyType, wid, mid, nid]);
 
 	const storyMetadata = useDBData<StoryMetadata>(`story/${props.id}`);
+	useTitle(!world || !assertDBData(storyMetadata)
+		? ["Story Viewer"]
+		: [LText(storyMetadata.title), world]
+	);
 	useEffect(() => {
 		console.log(props.id, storyMetadata);
 		if (assertDBData(storyMetadata))
@@ -304,14 +308,6 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			? `story/script/${storyMetadata.index[type]}`
 			: null
 	);
-	useEffect(() => {
-		if (!world || !assertDBData(storyMetadata)) {
-			UpdateTitle("Story Viewer");
-		} else {
-			UpdateTitle(LText(storyMetadata.title), world);
-		}
-	}, [lang, world, storyMetadata]);
-
 	const faces = useMemo(() => {
 		if (!assertDBData(storyData)) return [];
 		interface FaceMetadata {

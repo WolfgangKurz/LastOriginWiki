@@ -6,7 +6,8 @@ import { Maps } from "@/types/DB/Map";
 
 import { useLocale } from "@/libs/Locale";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 import { cn } from "@/libs/Class";
 
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
@@ -24,14 +25,14 @@ interface WORLDViewProps {
 const MainStoryView: FunctionalComponent<WORLDViewProps> = (props) => {
 	const location = useLocation();
 	const [loc] = useLocale({ namespaces: ["MENU", "WORLD"] });
+	useTitle([loc["MENU_WORLDS"], loc["WORLD_Story"]]);
 	const imgExt = ImageExtension();
 
 	useEffect(() => {
 		SetMeta(["description", "twitter:description"], "서브스토리 목록을 표시합니다. 이야기를 선택하여 확인할 수 있습니다.");
 		SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/Story_1.png`);
 		SetMeta("keywords", `${loc["WORLD_Story"]}`, true);
-		UpdateTitle(loc["MENU_WORLDS"], loc["WORLD_Story"]);
-	}, []);
+	}, [loc]);
 
 	const MapsDB = useDBData<Maps>(StaticDB.Maps);
 	if (!assertDBData(MapsDB)) return <></>;

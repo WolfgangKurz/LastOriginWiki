@@ -10,7 +10,7 @@ import { useLocale } from "@/libs/Locale";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { AssetsRoot } from "@/libs/Const";
 import { cn } from "@/libs/Class";
-import { UpdateTitle } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 
 import Locale from "@/components/locale";
 import Button from "@/components/Button";
@@ -31,10 +31,9 @@ interface StoryProps {
 const Story: FunctionalComponent<StoryProps> = (props) => {
 	const location = useLocation();
 	const [loc] = useLocale({ namespaces: ["MENU", "WORLD"] });
+	useTitle([loc["MENU_STORY"]]);
 
 	const [selectedKey, setSelectedKey] = useState<[string | number, number] | null>(null);
-
-	UpdateTitle(loc["MENU_STORY"]);
 
 	useEffect(() => {
 		if (props.chapter) {

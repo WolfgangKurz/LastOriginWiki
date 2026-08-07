@@ -10,12 +10,12 @@ import { MapEnemyData } from "@/types/DB/Map";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
-import { useUpdate } from "@/libs/hooks";
+import { useTitle, useUpdate } from "@/libs/hooks";
 import { BuildClass } from "@/libs/Class";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
 import { useLocale } from "@/libs/Locale";
 
 import Locale from "@/components/locale";
@@ -40,6 +40,7 @@ interface EternalWarProps {
 const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 	const [loc] = useLocale({ namespaces: ["MENU", "SUITABILITYGROUP", "SUITABILITYSTAGE"] });
 	const update = useUpdate();
+	useTitle([loc["MENU_ETERNALWAR"]]);
 
 	const [mid, setMID] = useState(props.mid || "");
 	const [sid, setSID] = useState("1");
@@ -57,7 +58,6 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 	useEffect(() => {
 		SetMeta(["description", "twitter:description"], "변화의 성소 정보를 표시합니다.");
 		SetMeta(["twitter:image", "og:image"], null);
-		UpdateTitle(loc["MENU_ETERNALWAR"]);
 	}, []);
 
 	useLayoutEffect(() => {

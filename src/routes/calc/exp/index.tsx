@@ -7,10 +7,10 @@ import { MapWaveGroup, Maps, World } from "@/types/DB/Map";
 import { Equip } from "@/types/DB/Equip";
 import { Unit } from "@/types/DB/Unit";
 
-import { useUpdate } from "@/libs/hooks";
+import { useTitle, useUpdate } from "@/libs/hooks";
 import { RarityDisplay } from "@/libs/Const";
 import { FormatNumber, isActive } from "@/libs/Functions";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
 
 import { assertDBData, GetJson, StaticDB, useDBData } from "@/libs/Loader";
 import { useLocale } from "@/libs/Locale";
@@ -60,6 +60,7 @@ interface EXPSet {
 const EXPCalc: FunctionalComponent = () => {
 	const update = useUpdate();
 	const [loc] = useLocale({ namespaces: ["MENU", "EQUIP"] });
+	useTitle([loc["MENU_ETC_EXPCALC"]]);
 
 	const linkColors = ["secondary", "success", "success", "success", "success", "primary"];
 	const rarities: ACTOR_GRADE[] = [
@@ -180,8 +181,6 @@ const EXPCalc: FunctionalComponent = () => {
 	SetMeta(["description", "twitter:description"], "목표 경험치까지의 전투원의 필요 전투 횟수를 확인할 수 있는 경험치 계산기입니다.");
 	SetMeta("keywords", ",경험치 계산기,경험치계산기", true);
 	SetMeta(["twitter:image", "og:image"], null);
-
-	UpdateTitle(loc["MENU_ETC_EXPCALC"]);
 
 	const targetJson = useMemo(
 		() => [

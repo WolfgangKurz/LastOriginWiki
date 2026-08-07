@@ -14,7 +14,8 @@ import { StoryMetadata, StorySpec } from "@/types/Story/Story";
 import { AssetsRoot, ImageExtension, NewMapList, SubStoryUnit } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
 import { FormatNumber, isActive } from "@/libs/Functions";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 import MapPosition from "@/libs/MapPosition";
 import { formatString, useLocale } from "@/libs/Locale";
 
@@ -81,6 +82,14 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 
 	const isStory = /^[0-9]+$/.test(props.wid);
 	const wid = isStory ? "Story" : props.wid;
+	useTitle(props.wid === "Sub"
+		? [loc["MENU_WORLDS"], loc[`WORLD_${wid}`]]
+		: [
+			loc["MENU_WORLDS"],
+			loc[`WORLD_${wid}`],
+			formatString(loc["WORLDS_WORLD_TITLE"] || "", isStory ? props.wid : props.mid),
+		]
+	);
 
 	const MapDB = useDBData<World>(`map/${props.wid}`);
 	const MapsDB = useDBData<Maps>(StaticDB.Maps);
@@ -103,12 +112,6 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 		SetMeta("keywords", `,${loc[`WORLD_${wid}`]}`, true);
 		SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${wid}_${props.mid}.png`);
 
-		if (props.wid === "Sub")
-			UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${wid}`]);
-		else if (isStory)
-			UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${wid}`], formatString(loc["WORLDS_WORLD_TITLE"], props.wid));
-		else
-			UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${wid}`], formatString(loc["WORLDS_WORLD_TITLE"], props.mid));
 	}, [loc, wid, props.mid]);
 
 	useEffect(() => {

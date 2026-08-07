@@ -5,7 +5,8 @@ import Decimal from "decimal.js";
 import Store from "@/store";
 
 import { DecomposeHangulSyllable, isActive } from "@/libs/Functions";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 
 import { ACTOR_GRADE, SKILL_ATTR, TARGET_TYPE } from "@/types/Enums";
 import { FilterableUnit, FilterableUnitSkill } from "@/types/DB/Unit.Filterable";
@@ -41,12 +42,12 @@ const Units: FunctionalComponent = () => {
 		namespaces: ["MENU", "UNIT"],
 		prefixes: Store.Units.SearchType.value === "advanced" ? "EFFECT" : undefined,
 	});
+	useTitle([loc["MENU_UNITS"]]);
 
 	useEffect(() => {
 		SetMeta(["description", "twitter:description"], "전투원의 목록을 표시합니다. 원하는 전투원을 찾기 위해 검색할 수 있습니다.");
 		SetMeta(["twitter:image", "og:image"], null);
-		UpdateTitle(loc["MENU_UNITS"]);
-	}, [loc]);
+	}, []);
 
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 

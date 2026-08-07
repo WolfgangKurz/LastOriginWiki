@@ -1,4 +1,4 @@
-import { Inputs, useCallback, useEffect, useState } from "preact/hooks";
+import { useCallback, useEffect, useRef, useState } from "preact/hooks";
 
 import { useLocale } from "@/libs/Locale";
 import { SetMeta } from "@/libs/Site";
@@ -105,26 +105,58 @@ export function useFontLoad (fontFamily: string): boolean {
 	return ready;
 }
 
+interface TitleRegistration {
+	priority: number;
+	title: string;
+}
+
+const TitleRegistrations = new Map<symbol, TitleRegistration>();
+let AppliedTitle: string | undefined;
+
+function ApplyRegisteredTitle (): void {
+	let active: TitleRegistration | undefined;
+	for (const registration of TitleRegistrations.values()) {
+		if (!active || registration.priority >= active.priority)
+			active = registration;
+	}
+	const title = active?.title || "";
+	if (title === AppliedTitle && document.title === title) return;
+
+	AppliedTitle = title;
+	document.title = title;
+	SetMeta(["twitter:title", "og:title"], title);
+}
+
 /**
  * Updates document's title and `twitter:title` and `og:title` meta tags.
+ * Titles with more components take precedence over the app-level fallback.
  * @param title Title components
- * @param inputs Additional update input to update like preact lifecycle
  */
-export function useTitle (title: string[] = [], inputs?: Inputs): void {
+export function useTitle (title: readonly (string | null | undefined)[] = []): void {
 	const [loc] = useLocale({ keys: "COMMON_TITLE" });
+	const registrationKey = useRef<symbol | null>(null);
+	if (registrationKey.current === null)
+		registrationKey.current = Symbol("useTitle");
+
+	const resolvedTitle = [
+		...title,
+		loc["COMMON_TITLE"],
+	]
+		.filter((part): part is string => typeof part === "string")
+		.map(part => part.replace(/&#x200B;/g, ""))
+		.filter(part => part.length > 0)
+		.join(" - ");
 
 	useEffect(() => {
-		document.title = [
-			...title.filter(r => !!r).map(t => t.replace(/&#x200B;/g, "")),
-			loc["COMMON_TITLE"],
-		].filter(r => !!r).join(" - ");
+		TitleRegistrations.set(registrationKey.current!, {
+			priority: title.length,
+			title: resolvedTitle,
+		});
+		ApplyRegisteredTitle();
+	}, [resolvedTitle, title.length]);
 
-		SetMeta(
-			["twitter:title", "og:title"],
-			[
-				...title.filter(r => !!r).map(t => t.replace(/&#x200B;/g, "")),
-				loc["COMMON_TITLE"], // Meta always title
-			].filter(r => !!r).join(" - "),
-		);
-	}, [loc, title, inputs]);
+	useEffect(() => () => {
+		TitleRegistrations.delete(registrationKey.current!);
+		ApplyRegisteredTitle();
+	}, []);
 }

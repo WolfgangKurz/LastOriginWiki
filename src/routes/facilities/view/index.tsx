@@ -8,7 +8,8 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 import { FormatNumber } from "@/libs/Functions";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { useLocale } from "@/libs/Locale";
@@ -53,6 +54,11 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 	const facility = useDBData<FacilityEntity>(DBKey);
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
+	useTitle([
+		loc["MENU_FACILITIES"],
+		assertDBData(facility) ? loc[`FACILITY_${props.uid}`] : undefined,
+	]);
+
 	if (!assertDBData(facility) || !assertDBData(FilterableUnitDB) || !assertDBData(ConsumableDB)) return <Loading.Data />;
 
 	SetMeta(
@@ -62,7 +68,6 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 	SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/${ImageExtension()}/facility/${facility.image}.${ImageExtension()}`);
 	SetMeta("keywords", `,${loc[`FACILITY_${facility.uid}`]}`, true);
 
-	UpdateTitle(loc["MENU_FACILITIES"], loc[`FACILITY_${props.uid}`]);
 
 	const CombatantType = (type: string): preact.VNode[][] => {
 		const roleTable: Record<string, ROLE_TYPE> = {

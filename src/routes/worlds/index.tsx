@@ -1,8 +1,9 @@
 import { FunctionalComponent } from "preact";
 
 import { PermanentEvents, AssetsRoot, CurrentEvent, WorldIds } from "@/libs/Const";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
 import { useLocale } from "@/libs/Locale";
+import { useTitle } from "@/libs/hooks";
 
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
@@ -12,6 +13,7 @@ import style from "./style.module.scss";
 
 const Worlds: FunctionalComponent = () => {
 	const [loc] = useLocale({ namespaces: "MENU" });
+	useTitle([loc["MENU_WORLDS"]]);
 
 	const Subs = ["Sub", "Cha", "Daily"];
 	const List = WorldIds.filter(x =>
@@ -24,8 +26,6 @@ const Worlds: FunctionalComponent = () => {
 
 	SetMeta(["description", "twitter:description"], "세계 목록을 표시합니다. 현재 진행중이거나 진행될 예정인 이벤트도 확인할 수 있습니다.");
 	SetMeta(["twitter:image", "og:image"], null);
-	UpdateTitle(loc["MENU_WORLDS"]);
-
 	return <div class="worlds text-start">
 		<h2>
 			<Locale raw k="MENU_WORLDS" />

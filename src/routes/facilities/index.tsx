@@ -5,7 +5,8 @@ import { FilterableFacility } from "@/types/DB/Facility.Filterable";
 
 import { isActive } from "@/libs/Functions";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 import { useLocale } from "@/libs/Locale";
 
 import Locale from "@/components/locale";
@@ -14,6 +15,7 @@ import FacilityCard from "./components/facility-card";
 
 const Facilities: FunctionalComponent = () => {
 	const [loc] = useLocale({ namespaces: "MENU" });
+	useTitle([loc["MENU_FACILITIES"]]);
 
 	const [filters, setFilters] = useState(() => ({
 		BioroidMaking: true,
@@ -28,8 +30,6 @@ const Facilities: FunctionalComponent = () => {
 
 	SetMeta(["description", "twitter:description"], "기지 설비의 목록을 표시합니다.");
 	SetMeta(["twitter:image", "og:image"], null);
-
-	UpdateTitle(loc["MENU_FACILITIES"]);
 
 	const FilterableFacilityDB = useDBData<FilterableFacility[]>(StaticDB.FilterableFacility);
 	if (!assertDBData(FilterableFacilityDB)) return <Loading.Data />;

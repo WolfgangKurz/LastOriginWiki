@@ -3,7 +3,8 @@ import { Sticker } from "@/types/DB/Sticker";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 import { useLocale } from "@/libs/Locale";
 
 import Locale from "@/components/locale";
@@ -15,11 +16,10 @@ import { useState } from "preact/hooks";
 
 const StickerPage: FunctionalComponent = () => {
 	const [loc] = useLocale({ namespaces: "MENU" });
+	useTitle([loc["MENU_ETC_STICKER"]]);
 
 	SetMeta(["description", "twitter:description"], "장식품 목록을 표시합니다.");
 	SetMeta(["twitter:image", "og:image"], null);
-	UpdateTitle(loc["MENU_ETC_STICKER"]);
-
 	const imgExt = ImageExtension();
 	const [selected, setSelected] = useState<Sticker | null>(null);
 

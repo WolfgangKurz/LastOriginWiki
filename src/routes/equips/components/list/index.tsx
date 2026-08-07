@@ -8,12 +8,12 @@ import { ITEM_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
-import { useUpdate } from "@/libs/hooks";
+import { useTitle, useUpdate } from "@/libs/hooks";
 import { useLocale } from "@/libs/Locale";
 import { AssetsRoot, CurrentDate, CurrentEvent, EquipTypeDisplay, ImageExtension, RarityDisplay } from "@/libs/Const";
 import { DecomposeHangulSyllable, groupBy, isActive } from "@/libs/Functions";
 import EntitySource from "@/libs/EntitySource";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
 
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
@@ -53,6 +53,15 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 	const selectedEquip = FilterableEquipDB && props.uid
 		? FilterableEquipDB.find(x => x.fullKey === props.uid) || null
 		: null;
+	useTitle(props.uid
+		? [
+			loc["MENU_EQUIPS"],
+			selectedEquip
+				? loc[`EQUIP_${selectedEquip.fullKey}`]
+				: FilterableEquipDB ? "???" : undefined,
+		]
+		: [loc["MENU_EQUIPS"]]
+	);
 
 	const Filters = Store.Equips;
 
@@ -97,7 +106,6 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 			);
 		}
 
-		UpdateTitle(loc["MENU_EQUIPS"], selectedEquip ? loc[`EQUIP_${selectedEquip.fullKey}`] : "???");
 	}
 
 	useEffect(() => {
