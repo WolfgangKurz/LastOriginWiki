@@ -14,6 +14,7 @@ import { SetMeta } from "@/libs/Site";
 import { useTitle } from "@/libs/hooks";
 
 import Locale from "@/components/locale";
+import Loading from "@/components/loading";
 import Button from "@/components/Button";
 import Icons from "@/components/bootstrap-icon";
 import IconHanger from "@/components/Icons/IconHanger";
@@ -138,7 +139,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 		}
 	}, [loc, unit]);
 
-	if (!unit) return <></>;
+	if (!unit) return <Loading.Data />;
 
 	const TabContents: Record<Exclude<TabTypes, "dialogue">, FunctionalComponent<SubpageProps>> = {
 		basic: BasicTab,

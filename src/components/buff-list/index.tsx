@@ -1,4 +1,5 @@
 import preact, { Fragment, FunctionalComponent, isValidElement } from "preact";
+import { memo } from "preact/compat";
 import { useCallback, useState } from "preact/hooks";
 import render from "preact-render-to-string";
 import Decimal from "decimal.js";
@@ -48,6 +49,17 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) =>
 
 type BuffColors = "primary" | "secondary" | "danger" | "warning" | "info" | "dark" | "light";
 
+const BuffUidMapCache = new WeakMap<Record<string, BuffFrom[]>, ReadonlyMap<string, number>>();
+
+function GetBuffUid (db: Record<string, BuffFrom[]>, buff: string): number {
+	let map = BuffUidMapCache.get(db);
+	if (!map) {
+		map = new Map(Object.keys(db).map((key, index) => [key, index + 1]));
+		BuffUidMapCache.set(db, map);
+	}
+	return map.get(buff) ?? 0;
+}
+
 interface BuffRendererProps {
 	uid: string;
 	stat: BuffStat | BuffStat[];
@@ -67,11 +79,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 	const [ReferencedEnemy, setReferencedEnemy] = useState<Enemy | null>(null);
 
-	const getBuffUidFactory = useCallback(() => {
-		const keys = Object.keys(BuffFromDB);
-		return (_: string, buff: string): number => keys.indexOf(buff) + 1;
-	}, [BuffFromDB]);
-	const getBuffUid = useCallback(getBuffUidFactory(), [getBuffUidFactory]);
+	const getBuffUid = useCallback((_: string, buff: string): number => GetBuffUid(BuffFromDB, buff), [BuffFromDB]);
 
 	const VNodeRender = (entity: preact.VNode): string => render(entity);
 	const VNodeReduce = (() => { // collapse 'same target type, same name` buffs into one
@@ -2210,8 +2218,11 @@ interface BuffListProps {
 }
 
 const BuffList: FunctionalComponent<BuffListProps> = (props) => {
-	const _db = useDBData(StaticDB.FilterableUnit);
-	if (!_db) return <Loading.Data />;
+	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
+	const BuffFromDB = useDBData<Record<string, BuffFrom[]>>(StaticDB.BuffFrom);
+	if (
+		!assertDBData(FilterableUnitDB) || !assertDBData(BuffFromDB)
+	) return <Loading.Data />;
 
 	const list = props.list || [];
 	const level = props.level || 0;
@@ -2241,4 +2252,4 @@ const BuffList: FunctionalComponent<BuffListProps> = (props) => {
 		{ dynamicList }
 	</div>;
 };
-export default BuffList;
+export default memo(BuffList);

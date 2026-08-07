@@ -13,21 +13,23 @@ import { BuildClass, cn } from "@/libs/Class";
 import { isActive } from "@/libs/Functions";
 
 import Locale from "@/components/locale";
+import Loading from "@/components/loading";
 import Button from "@/components/Button";
 import UnitFace from "@/components/unit-face";
 import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
 
-const SubStoryView: FunctionalComponent = () => {
+interface SubStoryViewContentProps {
+	database: SubStoryDB;
+}
+
+const SubStoryViewContent: FunctionalComponent<SubStoryViewContentProps> = ({ database: SubStoryDB }) => {
 	const location = useLocation();
 	const imgExt = ImageExtension();
 
 	const [selectedTroop, setSelectedTroop] = useState<string | null>(Store.Worlds.Sub.Troop.value);
 	const [selectedGroup, setSelectedGroup] = useState<string | null>(Store.Worlds.Sub.Group.value);
-
-	const SubStoryDB = useDBData<SubStoryDB>(StaticDB.SubStory);
-	if (!assertDBData(SubStoryDB)) return <></>;
 
 	const groupTable = {
 		AutoGuardSystem: "AGSRoboTech",
@@ -304,5 +306,12 @@ const SubStoryView: FunctionalComponent = () => {
 			</div>
 		}
 	</div>;
+};
+
+const SubStoryView: FunctionalComponent = () => {
+	const database = useDBData<SubStoryDB>(StaticDB.SubStory);
+	if (!assertDBData(database)) return <Loading.Data />;
+
+	return <SubStoryViewContent database={ database } />;
 };
 export default SubStoryView;

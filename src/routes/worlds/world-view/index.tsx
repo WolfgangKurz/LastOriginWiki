@@ -11,6 +11,7 @@ import { useTitle } from "@/libs/hooks";
 
 import { assertDBData, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
+import Loading from "@/components/loading";
 import Icons from "@/components/bootstrap-icon";
 import WorldItem from "../components/WorldItem";
 
@@ -37,7 +38,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 	}, [loc, wid]);
 
 	const MapDB = useDBData<World>(`map/${wid}`);
-	if (!assertDBData(MapDB)) return <></>;
+	if (!assertDBData(MapDB)) return <Loading.Data />;
 
 	const Worlds = Object.keys(MapDB);
 	const evPost = wid === "Ev14" ? "a" : "";

@@ -12,6 +12,7 @@ import { cn } from "@/libs/Class";
 
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
+import Loading from "@/components/loading";
 import Icons from "@/components/bootstrap-icon";
 import Button from "@/components/Button";
 import WorldItem from "../components/WorldItem";
@@ -35,7 +36,7 @@ const MainStoryView: FunctionalComponent<WORLDViewProps> = (props) => {
 	}, [loc]);
 
 	const MapsDB = useDBData<Maps>(StaticDB.Maps);
-	if (!assertDBData(MapsDB)) return <></>;
+	if (!assertDBData(MapsDB)) return <Loading.Data />;
 
 	const Worlds = Object.keys(MapsDB)
 		.filter(x => /^[0-9]+$/.test(x));

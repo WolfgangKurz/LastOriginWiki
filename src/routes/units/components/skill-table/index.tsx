@@ -1,4 +1,4 @@
-import { FunctionalComponent } from "preact";
+import { Fragment, FunctionalComponent } from "preact";
 import { useCallback, useEffect, useMemo, useState } from "preact/hooks";
 import Decimal from "decimal.js";
 
@@ -77,6 +77,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 	const [favorBonus, setFavorBonus] = useState<boolean>(Session.get("unit.skill-table.favorBonus", "0") === "1");
 	const [valueDetail, setValueDetail] = useState<boolean>(Session.get("unit.skill-table.valueDetail", "0") === "1");
 	const [displayBuffList, setDisplayBuffList] = useState<boolean>(Session.get("unit.skill-table.displayBuffList", "0") === "1");
+	const [buffListMounted, setBuffListMounted] = useState(false);
 	const [displayBuffDummy, setDisplayBuffDummy] = useState<boolean>(Session.get("unit.skill-table.displayBuffDummy", "0") === "1");
 	const [displayFlavor, setDisplayFlavor] = useState<boolean>(Session.get("unit.skill-table.displayFlavor", "1") === "1");
 
@@ -84,6 +85,13 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 		if (favorBonus && unit.body === ACTOR_BODY_TYPE.AGS)
 			setFavorBonus(false);
 	}, [unit, favorBonus]);
+
+	useEffect(() => {
+		if (!displayBuffList || buffListMounted) return;
+
+		const frame = requestAnimationFrame(() => setBuffListMounted(true));
+		return () => cancelAnimationFrame(frame);
+	}, [displayBuffList, buffListMounted]);
 
 	const HasFormChange = useMemo(() => {
 		const raw = skills;
@@ -364,21 +372,24 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				: <></>
 			}
 
-			<div class={ cn(!(displayBuffList && buffList[skill.key].length > 0) && "d-none") }>
-				<BuffList
-					uid={ unit.uid }
-					list={ buffList[skill.key] }
-					level={ finalSkillLevel }
-					dummy={ displayBuffDummy }
-				/>
-			</div>
+			{ buffListMounted && buffList[skill.key].length > 0
+				? <div class={ cn(!displayBuffList && "d-none") }>
+					<BuffList
+						uid={ unit.uid }
+						list={ buffList[skill.key] }
+						level={ finalSkillLevel }
+						dummy={ displayBuffDummy }
+					/>
+				</div>
+				: <></>
+			}
 		</>;
 	}, [
 		loc,
 		displayFlavor, GetSkillDescriptions,
 		skillLevel, favorBonus,
 		props.buffBonus, props.skillBonus,
-		valueDetail, displayBuffList, displayBuffDummy,
+		valueDetail, displayBuffList, displayBuffDummy, buffListMounted,
 	]);
 
 	const endRarity = useMemo(() => unit.promotions
@@ -447,7 +458,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 
 					const isFChange = skill.key[0] === "F";
 
-					return <>
+					return <Fragment key={ `${unit.uid}:${skill.key}` }>
 						<div class={ cn(style.LeftSide, isFChange && style.SkillTableFChange) }>
 							<div class={ style.SkillNameCard }>
 								<SkillIcon icon={ skill.icon } passive={ skill.isPassive } />
@@ -498,7 +509,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 								rangeBonus={ props.rangeBonus }
 							/>
 						</div>
-					</>;
+					</Fragment>;
 				}) }
 			</div>
 		</div >

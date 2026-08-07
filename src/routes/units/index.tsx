@@ -477,7 +477,7 @@ const Units: FunctionalComponent = () => {
 			: <></>
 		}
 
-		{ !FilterableUnitDB
+		{ !assertDBData(FilterableUnitDB)
 			? <Loading.Data />
 			: [
 				Store.Units.DisplayType.value === "table" && <UnitsTable list={ UnitList } />,
