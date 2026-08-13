@@ -174,6 +174,7 @@ export const SkinBanners: string[] = [
     "PECS_Dione_1",
     "PECS_Draculina_2",
     "PECS_DutchGirl_2",
+    "PECS_Ella_2",
     "PECS_Empress_1",
     "PECS_Erato_1",
     "PECS_Erato_2",
