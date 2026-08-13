@@ -92,8 +92,9 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		if (isDamaged) ret.push("D");
 		if (hideBG) ret.push("B");
 		if (hideParts) ret.push("S");
+		if (hideParts2) ret.push("P");
 		return (ret.length > 0 ? "_" : "") + ret.join("");
-	}, [isDamaged, hideBG, hideParts]);
+	}, [isDamaged, hideBG, hideParts, hideParts2]);
 	const SkinImageURL = useMemo(() => {
 		const skinId = skin.isDef ? 0 : skin.metadata.imageId;
 		return [
