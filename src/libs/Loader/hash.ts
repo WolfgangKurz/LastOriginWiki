@@ -1825,7 +1825,7 @@ export default {
 		"filterable.enemy": "063e237f",
 		"filterable.equip": "db3b9e2a",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "dae72444",
+		"filterable.unit": "00915bf8",
 		"gacha": "0fe4bb74",
 		"iw": {
 			"Colossus_01": "c33e7edc",
@@ -5498,7 +5498,7 @@ export default {
 		"unit": {
 			"3P_Ajax": "0d59b5ec",
 			"3P_Alcyone": "cbe15c05",
-			"3P_Alexandra": "52e4cfca",
+			"3P_Alexandra": "fcf78cde",
 			"3P_Alice": "1cdf0648",
 			"3P_Amphitrite": "8b92060b",
 			"3P_Annie": "6acc08b3",
