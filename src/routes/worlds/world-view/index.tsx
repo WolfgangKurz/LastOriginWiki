@@ -1,13 +1,15 @@
 import { FunctionalComponent } from "preact";
-import { useEffect } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import { useLocation } from "preact-iso";
 
 import { World } from "@/types/DB/Map";
 
+import { useTitle } from "@/libs/hooks";
 import { useLocale } from "@/libs/Locale";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { isActive } from "@/libs/Functions";
+import { cn } from "@/libs/Class";
 import { SetMeta } from "@/libs/Site";
-import { useTitle } from "@/libs/hooks";
 
 import { assertDBData, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
@@ -25,6 +27,8 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 	const location = useLocation();
 	const [loc] = useLocale({ namespaces: ["MENU", "WORLD"] });
 	const imgExt = ImageExtension();
+
+	const [censoredType, setCensoredType] = useState<"O" | "G">("O");
 
 	const ImagelessEv: string[] = [];
 
@@ -54,11 +58,32 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 		</div>
 		<hr />
 
-		{ wid.startsWith("Ev") && !ImagelessEv.includes(wid)
-			? <div class={ `mb-4 ${style.EventBanner}` }>
-				<img src={ `${AssetsRoot}/${imgExt}/eventbanner/${wid}${evPost}_O.${imgExt}` } />
+		{ !!(wid.startsWith("Ev") && !ImagelessEv.includes(wid)) &&
+			<div class="d-flex align-items-start mb-4">
+				<div class={ cn("nav", "flex-column", "nav-tabs", style.VerticalTabs) }>
+					<button
+						class={ cn("nav-link", isActive(censoredType === "O")) }
+						onClick={ e => {
+							e.preventDefault();
+							setCensoredType("O");
+						} }
+					>
+						<span class={ style.OneStoreIcon } />
+					</button>
+					<button
+						class={ cn("nav-link", isActive(censoredType === "G")) }
+						onClick={ e => {
+							e.preventDefault();
+							setCensoredType("G");
+						} }
+					>
+						<span class={ style.PlayStoreIcon } />
+					</button>
+				</div>
+				<div class={ cn("tab-content", style.EventBanner) }>
+					<img src={ `${AssetsRoot}/${imgExt}/eventbanner/${wid}${evPost}_${censoredType}.${imgExt}` } />
+				</div>
 			</div>
-			: <></>
 		}
 
 		<WorldItem wid={ wid } imageless>
