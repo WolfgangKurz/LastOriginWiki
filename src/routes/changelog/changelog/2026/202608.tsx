@@ -4,9 +4,10 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 13196" date="2026-08-31"
+	<ChangelogItem title="Build 13197" date="2026-08-31"
 		bugfix={ <>
 			<li><BY>세계정보</BY>의 일부 스토리 노드에서 드롭 정보가 표시되던 점을 수정했습니다.</li>
+			<li><BY>세계정보</BY>에서 일부 노드를 선택하면 페이지가 올바르게 동작하지 않던 점을 수정했습니다.</li>
 		</> }
 	/>
 	<ChangelogItem title="Build 13194" date="2026-08-28"

@@ -303,7 +303,7 @@ export function useLocale (request: LocaleRequest): UseLocaleResult {
 }
 
 export function formatString (template: string, ...p: any[]): string {
-	return template.replace(/\{([0-9]+)\}/g, (_p, p1) => {
+	return template?.replace(/\{([0-9]+)\}/g, (_p, p1) => {
 		const i = parseInt(p1, 10);
 		if (i >= p.length) return "";
 		if (!p[i]) return "";
