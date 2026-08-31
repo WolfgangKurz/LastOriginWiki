@@ -133,7 +133,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 		[props.mid, MapDB, props.wid, isStory],
 	);
 
-	const Waves = useMemo(() => selected?.wave || [], [selected]);
+	const Waves = useMemo(() => selected && selected.type !== STAGE_SUB_TYPE.STORY && selected.wave || [], [selected]);
 
 	const CurrentWave = useMemo((): Array<WaveEnemyInfo | null> => {
 		if (!selected || selected.type === STAGE_SUB_TYPE.STORY)
@@ -368,9 +368,9 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 
 	}, [selected, RewardDrops]);
 	useEffect(() => {
-		if (!Rewardable && CurrentTab === "reward")
+		if (selected && !Rewardable && CurrentTab === "reward")
 			setCurrentTab("drop");
-	}, [Rewardable, CurrentTab]);
+	}, [selected, Rewardable, CurrentTab]);
 
 	return <div class="worlds-map text-start">
 		<div class="row">

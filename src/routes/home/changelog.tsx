@@ -6,6 +6,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13196" date="2026-08-31"
+		bugfix={ <>
+			<li><BY>세계정보</BY>의 일부 스토리 노드에서 드롭 정보가 표시되던 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13194" date="2026-08-28"
 		new={ <>
 			<li>신규 이벤트 <BY>침묵하는 늪</BY>의 정보가 추가되었습니다.</li>
