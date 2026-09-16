@@ -4,6 +4,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13200" date="2026-09-17"
+		bugfix={ <>
+			<li>이벤트 <BY>침묵하는 늪</BY>의 스토리 정보가 누락된 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13199" date="2026-09-12"
 		update={ <>
 			<li>일부 이벤트의 탐색 및 교환소 정보가 갱신되었습니다.</li>
