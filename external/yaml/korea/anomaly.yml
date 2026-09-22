@@ -490,3 +490,78 @@ Anomaly_005:
           overlap: 4
       maxStack: 1
   lv: 1
+Anomaly_006:
+  icon: SkillIconCircle_WideLightning_passive
+  buffs:
+    - key: Effect_BUFF_Anomaly_N_60
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 5
+      buffs:
+        - icon: BuffIcon_LIGHTNINGRES_DOWN
+          desc:
+            desc: Effect_BUFF_Anomaly_N_60_1
+            type: 1
+            value: "-0.650000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 19
+            resist:
+              elem: lightning
+              value:
+                base: -65%
+                per: 0%
+          overlap: 4
+        - icon: BuffIcon_LightningDMG_DOT
+          desc:
+            desc: Effect_BUFF_Anomaly_N_60_2
+            type: 0
+            value: "1000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 68
+            fixed_damage:
+              elem: lightning
+              damage:
+                base: 1000
+                per: 0
+          overlap: 4
+        - icon: BuffIcon_DEF_DOWN
+          desc:
+            desc: Effect_BUFF_Anomaly_N_60_3
+            type: 1
+            value: "-0.800000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 3
+            defense:
+              base: -80%
+              per: 0%
+          overlap: 4
+      maxStack: 0
+  lv: 1

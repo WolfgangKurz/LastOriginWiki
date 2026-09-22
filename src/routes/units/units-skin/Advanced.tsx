@@ -323,7 +323,7 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 						<Button
 							variant="light"
 							textVariant="dark"
-							onClick={ () => location.route(`/units/${currentSkin.uid}/s${currentSkin.sid}`) }
+							onClick={ () => location.route(`/units/${currentSkin.uid}/s${currentSkin.sid ?? 0}`) }
 						>
 							<Locale k="UNIT_SKIN_NAVIGATE" />
 						</Button>
