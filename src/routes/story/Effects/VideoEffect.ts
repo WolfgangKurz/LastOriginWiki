@@ -36,6 +36,10 @@ export default class VideoEffect extends EffectBase {
 				this.sprite.width = 1280;
 				this.sprite.height = 720;
 				this.container.addChild(this.sprite);
+			})
+			.catch(() => { // not available, finish immediately
+				this._done = true;
+				if (this.onDone) this.onDone();
 			});
 	}
 

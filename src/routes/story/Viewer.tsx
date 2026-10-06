@@ -57,6 +57,31 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	}, [props.type]);
 
 	const [voicePreview, setVoicePreview] = useState<string>("");
+	const voiceAudioRef = useRef<HTMLAudioElement>(null);
+	const [voiceMuted, setVoiceMuted] = useState(false);
+	/** resolver of voice played by Player */
+	const voiceDoneRef = useRef<(() => void) | null>(null);
+	const endVoice = useCallback(() => {
+		const done = voiceDoneRef.current;
+		voiceDoneRef.current = null;
+		done?.();
+		setVoicePreview("");
+	}, []);
+	/** Play voice, resolved when ended, failed or replaced */
+	const playVoice = useCallback((voice: string): Promise<void> => {
+		const done = voiceDoneRef.current;
+		voiceDoneRef.current = null;
+		done?.();
+
+		setVoicePreview(voice);
+		if (!voice) return Promise.resolve();
+		return new Promise<void>(resolve => (voiceDoneRef.current = resolve));
+	}, []);
+	useEffect(() => {
+		const audio = voiceAudioRef.current;
+		if (audio && voicePreview)
+			audio.play().catch(endVoice); // autoplay blocked
+	}, [voicePreview]);
 	const [bgm, setBGM] = useState("");
 	const [cursor, setCursor] = useState(initCursor);
 
@@ -495,11 +520,14 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			</> }
 
 			{ voicePreview && <audio
+				ref={ voiceAudioRef }
 				class={ style.BackgroundAudio }
 				src={ getVoice(voicePreview) }
 				autoplay
 				volume={ 0.25 }
-				onEnded={ () => setVoicePreview("") }
+				onEnded={ endVoice }
+				onError={ endVoice }
+				muted={ voiceMuted }
 			/> }
 
 			{ storyData && run && <Player
@@ -510,7 +538,8 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 				data={ storyData as StoryData[] }
 				onDone={ () => setCursor(-1) }
 				onNext={ cursor => setCursor(cursor) }
-				onVoice={ voice => setVoicePreview(voice) }
+				onVoice={ playVoice }
+				onMute={ setVoiceMuted }
 			/> }
 
 			{ tab === "transcription" && assertDBData(storyData) && <>
@@ -560,7 +589,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 										onClick={ e => {
 											e.preventDefault();
 											e.stopPropagation();
-											setVoicePreview(d.voice);
+											playVoice(d.voice);
 										} }
 									>
 										<Icons.VolumeUpFill style={ { verticalAlign: "top" } } />

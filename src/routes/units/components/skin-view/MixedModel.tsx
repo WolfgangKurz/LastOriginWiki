@@ -90,6 +90,11 @@ export default class MixedModel extends FadeContainer {
 		}
 	}
 
+	/** Global position of `face` element of 2DModel, `null` if unknown */
+	getFaceGlobalPosition () {
+		return this._2DModel.getFaceGlobalPosition();
+	}
+
 	setDialogDeactive (deactive: boolean) {
 		this._dialogDeactive = deactive;
 		this._2DModel.setDialogDeactive(deactive);
