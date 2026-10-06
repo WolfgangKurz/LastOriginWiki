@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 import { useEffect, useMemo, useState } from "preact/hooks";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { BuildClass, cn } from "@/libs/Class";
+import { cn } from "@/libs/Class";
 
 import sheetMeta from "./generated";
 import style from "./style.module.scss";

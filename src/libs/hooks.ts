@@ -1,4 +1,7 @@
-import { useCallback, useEffect, useState } from "preact/hooks";
+import { useCallback, useEffect, useRef, useState } from "preact/hooks";
+
+import { useLocale } from "@/libs/Locale";
+import { SetMeta } from "@/libs/Site";
 
 export interface useUpdateResult {
 	(): void;
@@ -11,7 +14,7 @@ export interface useUpdateResult {
  */
 export function useUpdate (): useUpdateResult {
 	const [value, fn] = useState(0);
-	const ret: useUpdateResult = () => fn(v => v + 1);
+	const ret = useCallback(() => fn(v => v + 1), [fn]) as useUpdateResult;
 	ret.value = value;
 	return ret;
 }
@@ -100,4 +103,60 @@ export function useFontLoad (fontFamily: string): boolean {
 	}, [fontFamily, fn]);
 
 	return ready;
+}
+
+interface TitleRegistration {
+	priority: number;
+	title: string;
+}
+
+const TitleRegistrations = new Map<symbol, TitleRegistration>();
+let AppliedTitle: string | undefined;
+
+function ApplyRegisteredTitle (): void {
+	let active: TitleRegistration | undefined;
+	for (const registration of TitleRegistrations.values()) {
+		if (!active || registration.priority >= active.priority)
+			active = registration;
+	}
+	const title = active?.title || "";
+	if (title === AppliedTitle && document.title === title) return;
+
+	AppliedTitle = title;
+	document.title = title;
+	SetMeta(["twitter:title", "og:title"], title);
+}
+
+/**
+ * Updates document's title and `twitter:title` and `og:title` meta tags.
+ * Titles with more components take precedence over the app-level fallback.
+ * @param title Title components
+ */
+export function useTitle (title: readonly (string | null | undefined)[] = []): void {
+	const [loc] = useLocale({ keys: "COMMON_TITLE" });
+	const registrationKey = useRef<symbol | null>(null);
+	if (registrationKey.current === null)
+		registrationKey.current = Symbol("useTitle");
+
+	const resolvedTitle = [
+		...title,
+		loc["COMMON_TITLE"],
+	]
+		.filter((part): part is string => typeof part === "string")
+		.map(part => part.replace(/&#x200B;/g, ""))
+		.filter(part => part.length > 0)
+		.join(" - ");
+
+	useEffect(() => {
+		TitleRegistrations.set(registrationKey.current!, {
+			priority: title.length,
+			title: resolvedTitle,
+		});
+		ApplyRegisteredTitle();
+	}, [resolvedTitle, title.length]);
+
+	useEffect(() => () => {
+		TitleRegistrations.delete(registrationKey.current!);
+		ApplyRegisteredTitle();
+	}, []);
 }

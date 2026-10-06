@@ -287,7 +287,7 @@ interface AdvancedSearchProps {
 }
 
 const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ prefixes: "EFFECT", namespaces: ["BUFF", "SEARCH"] });
 
 	const conds = props.conds;
 
@@ -1232,7 +1232,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 												: tloc;
 
 											return <option value={ r } selected={ c.trigger === r }>
-												<Locale plain k={ loc } p={ p } />
+												<Locale k={ loc } p={ p } />
 											</option>;
 										})
 									}
@@ -1319,7 +1319,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 									</option>
 									{ GetEnumKeys(BUFFEFFECT_ERASE_TYPE)
 										.map(r => <option value={ r } selected={ c.erase === r }>
-											<Locale plain k={ `SEARCH_COND_BUFF_ERASE_${EraseTable[r]}` } />
+											<Locale k={ `SEARCH_COND_BUFF_ERASE_${EraseTable[r]}` } />
 										</option>)
 									}
 								</select>
@@ -1466,7 +1466,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 
 								{ computeBuffNameClass(c.name, c.compare).includes(style.InvalidBuffName) &&
 									<span class={ style.InvalidBuffName }>
-										<Locale raw={ false } k="SEARCH_COND_BUFF_NAME_INVALID" />
+										<Locale k="SEARCH_COND_BUFF_NAME_INVALID" />
 									</span>
 								}
 							</div>

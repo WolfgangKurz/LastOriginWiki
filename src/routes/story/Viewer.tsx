@@ -13,7 +13,7 @@ import { AssetsRoot, ImageExtension, IsDev, SubStoryUnit } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { BuildClass, cn } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
-import { UpdateTitle } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
@@ -43,7 +43,7 @@ const FaceAlias: Record<string, string> = {
 
 const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	const location = useLocation();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["PCSTORY", "WORLD"] });
 
 	const [isBackMode] = useState(Store.Story.back.value);
 
@@ -57,6 +57,31 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	}, [props.type]);
 
 	const [voicePreview, setVoicePreview] = useState<string>("");
+	const voiceAudioRef = useRef<HTMLAudioElement>(null);
+	const [voiceMuted, setVoiceMuted] = useState(false);
+	/** resolver of voice played by Player */
+	const voiceDoneRef = useRef<(() => void) | null>(null);
+	const endVoice = useCallback(() => {
+		const done = voiceDoneRef.current;
+		voiceDoneRef.current = null;
+		done?.();
+		setVoicePreview("");
+	}, []);
+	/** Play voice, resolved when ended, failed or replaced */
+	const playVoice = useCallback((voice: string): Promise<void> => {
+		const done = voiceDoneRef.current;
+		voiceDoneRef.current = null;
+		done?.();
+
+		setVoicePreview(voice);
+		if (!voice) return Promise.resolve();
+		return new Promise<void>(resolve => (voiceDoneRef.current = resolve));
+	}, []);
+	useEffect(() => {
+		const audio = voiceAudioRef.current;
+		if (audio && voicePreview)
+			audio.play().catch(endVoice); // autoplay blocked
+	}, [voicePreview]);
 	const [bgm, setBGM] = useState("");
 	const [cursor, setCursor] = useState(initCursor);
 
@@ -288,9 +313,13 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			return loc[subGroup.group];
 		}
 		return loc[`WORLD_WORLD_${wid}_${mid}`];
-	}, [lang, storyType, wid, mid, nid]);
+	}, [lang, loc, subGroup, storyType, wid, mid, nid]);
 
 	const storyMetadata = useDBData<StoryMetadata>(`story/${props.id}`);
+	useTitle(!world || !assertDBData(storyMetadata)
+		? ["Story Viewer"]
+		: [LText(storyMetadata.title), world]
+	);
 	useEffect(() => {
 		console.log(props.id, storyMetadata);
 		if (assertDBData(storyMetadata))
@@ -304,14 +333,6 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			? `story/script/${storyMetadata.index[type]}`
 			: null
 	);
-	useEffect(() => {
-		if (!world || !assertDBData(storyMetadata)) {
-			UpdateTitle("Story Viewer");
-		} else {
-			UpdateTitle(LText(storyMetadata.title), world);
-		}
-	}, [lang, world, storyMetadata]);
-
 	const faces = useMemo(() => {
 		if (!assertDBData(storyData)) return [];
 		interface FaceMetadata {
@@ -425,16 +446,16 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		<h1 class={ BuildClass("font-ibm", storyType === "Sub3" ? "mb-1" : "mb-4") }>
 			{ assertDBData(storyMetadata)
 				? storyType === "Sub2"
-					? <Locale plain k={ type } />
+					? <Locale k={ type } />
 					: storyType === "Sub3"
-						? <Locale plain k={ wid } />
+						? <Locale k={ wid } />
 						: LText(storyMetadata.title)
 				: "..."
 			}
 		</h1>
 		{ storyType === "Sub3"
 			? <h6 class="mb-4">
-				<Locale plain k={ `${wid}_DESC` } />
+				<Locale k={ `${wid}_DESC` } />
 			</h6>
 			: <></>
 		}
@@ -481,7 +502,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			{ tab === "player" && <>
 				{ !run && <div class="d-flex justify-content-center align-items-center">
 					<div class="alert alert-light small mt-0 mb-1" style={ { whiteSpace: "pre-line" } }>
-						<Locale plain k="STORY_PLAYER_ENTERANCE" />
+						<Locale k="STORY_PLAYER_ENTERANCE" />
 
 						<br /><br />
 						<button
@@ -499,11 +520,14 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			</> }
 
 			{ voicePreview && <audio
+				ref={ voiceAudioRef }
 				class={ style.BackgroundAudio }
 				src={ getVoice(voicePreview) }
 				autoplay
 				volume={ 0.25 }
-				onEnded={ () => setVoicePreview("") }
+				onEnded={ endVoice }
+				onError={ endVoice }
+				muted={ voiceMuted }
 			/> }
 
 			{ storyData && run && <Player
@@ -514,7 +538,8 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 				data={ storyData as StoryData[] }
 				onDone={ () => setCursor(-1) }
 				onNext={ cursor => setCursor(cursor) }
-				onVoice={ voice => setVoicePreview(voice) }
+				onVoice={ playVoice }
+				onMute={ setVoiceMuted }
 			/> }
 
 			{ tab === "transcription" && assertDBData(storyData) && <>
@@ -564,7 +589,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 										onClick={ e => {
 											e.preventDefault();
 											e.stopPropagation();
-											setVoicePreview(d.voice);
+											playVoice(d.voice);
 										} }
 									>
 										<Icons.VolumeUpFill style={ { verticalAlign: "top" } } />
@@ -572,7 +597,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 								</div> }
 
 								<div class={ style.TranscriptionText }>
-									{ parseVNode(convTokens(Nn(LText(d.text))), [], {}) }
+									{ parseVNode(convTokens(Nn(LText(d.text), loc["STORY_PLAYER_GAMEPLAYER"] || "")), [], {}) }
 								</div>
 
 								{ d.sel
@@ -592,7 +617,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 													}
 												} }
 											>
-												{ parseVNode(convTokens(Nn(LText(s.text))), [], {}) }
+												{ parseVNode(convTokens(Nn(LText(s.text), loc["STORY_PLAYER_GAMEPLAYER"] || "")), [], {}) }
 											</button>
 										</div>) }
 									</div>

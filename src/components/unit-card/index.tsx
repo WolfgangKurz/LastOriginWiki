@@ -4,8 +4,9 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { ACTOR_BODY_TYPE, ACTOR_GRADE, ROLE_TYPE } from "@/types/Enums";
 
 import { AssetsRoot, RarityDisplay } from "@/libs/Const";
+import { useLocale } from "@/libs/Locale";
 
-import Locale, { LocaleGet } from "@/components/locale";
+import Locale from "@/components/locale";
 import UnitFace, { GetUnitFaceURL } from "@/components/unit-face";
 import RarityBadge from "@/components/rarity-badge";
 
@@ -34,19 +35,19 @@ const Horizontal: FunctionalComponent<UnitCardProps> = (props) => {
 		<UnitFace uid={ props.unit.uid } class="float-md-start" />
 
 		<div class="unit-name font-ibm">
-			<Locale plain k={ `UNIT_${props.unit.uid}` } />
+			<Locale k={ `UNIT_${props.unit.uid}` } />
 		</div>
 
 		<div class="unit-flag">
 			{ props.unit.body === ACTOR_BODY_TYPE.AGS
 				? <span class="badge bg-info me-1">
-					<Locale plain k="COMMON_UNIT_BODY_AGS" />
+					<Locale k="COMMON_UNIT_BODY_AGS" />
 				</span>
 				: <></>
 			}
 			{ isPromoted
 				? <span class="badge bg-danger me-1">
-					<Locale plain k="UNIT_CARD_PROMOTION_AFTER" />
+					<Locale k="UNIT_CARD_PROMOTION_AFTER" />
 				</span>
 				: <></>
 			}
@@ -54,7 +55,7 @@ const Horizontal: FunctionalComponent<UnitCardProps> = (props) => {
 			{ promotion
 				? <div class="float-end">
 					<RarityBadge class="ms-1" rarity={ promotion }>
-						<Locale plain k="UNIT_CARD_PROMOTION_BADGE" p={ [RarityDisplay[promotion]] } />
+						<Locale k="UNIT_CARD_PROMOTION_BADGE" p={ [RarityDisplay[promotion]] } />
 					</RarityBadge>
 				</div>
 				: <></>
@@ -73,6 +74,9 @@ const UnitCard: FunctionalComponent<UnitCardProps> & {
 } = (props) => {
 	const unit = props.unit;
 	const rarity = props.rarity || ACTOR_GRADE.B;
+	const nameKey = `UNIT_${unit.uid}`;
+	const shortNameKey = `UNIT_SHORT_${unit.uid}`;
+	const [loc, localeReady] = useLocale({ keys: [nameKey, shortNameKey] });
 
 	const RoleIconId = ({
 		[ROLE_TYPE.ATTACKER]: "Sword",
@@ -84,8 +88,8 @@ const UnitCard: FunctionalComponent<UnitCardProps> & {
 	const UnitFaceUrl = GetUnitFaceURL(unit.uid);
 	const unitName = ((): preact.VNode | preact.VNode[] => {
 		if (props.shortName) {
-			const name = LocaleGet(`UNIT_${unit.uid}`);
-			const sname = LocaleGet(`UNIT_SHORT_${unit.uid}`);
+			const name = localeReady ? loc[nameKey] ?? nameKey : "";
+			const sname = localeReady ? loc[shortNameKey] ?? shortNameKey : "";
 
 			if (name === sname)
 				return <>{ name }</>;
@@ -94,7 +98,7 @@ const UnitCard: FunctionalComponent<UnitCardProps> & {
 				.split(sname)
 				.map(x => x.length === 0 ? <>{ sname }</> : <span class="text-secondary">{ x }</span>);
 		}
-		return <Locale plain k={ `UNIT_${unit.uid}` } />;
+		return <Locale k={ `UNIT_${unit.uid}` } />;
 	})();
 
 	const promotion = (unit.promo || [])

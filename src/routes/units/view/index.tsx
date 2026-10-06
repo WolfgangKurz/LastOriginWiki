@@ -1,5 +1,5 @@
 import { createElement, FunctionalComponent } from "preact";
-import { useEffect, useMemo, useState } from "preact/hooks";
+import { useCallback, useEffect, useMemo, useState } from "preact/hooks";
 import { useLocation } from "preact-iso";
 
 import { Unit, UnitSkin } from "@/types/DB/Unit";
@@ -10,9 +10,11 @@ import { AssetsRoot, ImageExtension, RarityDisplay, UnitClassDisplay, UnitRoleDi
 import { isActive } from "@/libs/Functions";
 import { cn } from "@/libs/Class";
 import EntitySource from "@/libs/EntitySource";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 
 import Locale from "@/components/locale";
+import Loading from "@/components/loading";
 import Button from "@/components/Button";
 import Icons from "@/components/bootstrap-icon";
 import IconHanger from "@/components/Icons/IconHanger";
@@ -41,6 +43,30 @@ export interface SubpageProps {
 	onSkinIndexChange: (index: number) => void;
 }
 
+const DeferredSkillTab: FunctionalComponent<SubpageProps> = (props) => {
+	const [ready, setReady] = useState(false);
+
+	useEffect(() => {
+		let cancelled = false;
+		let renderFrame: number | undefined;
+		const loadingFrame = requestAnimationFrame(() => {
+			renderFrame = requestAnimationFrame(() => {
+				if (!cancelled) setReady(true);
+			});
+		});
+
+		return () => {
+			cancelled = true;
+			cancelAnimationFrame(loadingFrame);
+			if (renderFrame !== undefined) cancelAnimationFrame(renderFrame);
+		};
+	}, []);
+
+	return ready
+		? <SkillTab { ...props } />
+		: <Loading.Data />;
+};
+
 interface UnitsViewProps {
 	uid: string;
 	sub?: string;
@@ -48,7 +74,7 @@ interface UnitsViewProps {
 
 const View: FunctionalComponent<UnitsViewProps> = (props) => {
 	const location = useLocation();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["MENU", "UNIT"] });
 
 	const [DisplayTab, setDisplayTab] = useState<TabTypes>(
 		props.sub && props.sub.startsWith("s")
@@ -61,6 +87,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 			? parseInt(props.sub.substring(1), 10)
 			: 0
 	);
+	const onSkinIndexChange = useCallback((value: number): void => setSkinIndex(value), []);
 
 	const _unit = useDBData<Unit>(`unit/${props.uid}`);
 	const unit = useMemo(() => {
@@ -71,6 +98,11 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 				.map(x => (x as unknown as string[]).map(y => new EntitySource(y))),
 		};
 	}, [_unit]);
+	useTitle([
+		loc["MENU_UNITS"],
+		unit ? loc[`UNIT_${unit.uid}`] : undefined,
+	]);
+
 	const SkinList = useMemo((): SkinItem[] => {
 		if (!unit) return [];
 
@@ -129,18 +161,17 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 				`,${[loc[`UNIT_${unit.uid}`], loc[`UNIT_SHORT_${unit.uid}`]].unique().join(",")}`,
 				true,
 			);
-			UpdateTitle(loc["MENU_UNITS"], loc[`UNIT_${unit.uid}`]);
 		}
 	}, [loc, unit]);
 
-	if (!unit) return <></>;
+	if (!unit) return <Loading.Data />;
 
 	const TabContents: Record<Exclude<TabTypes, "dialogue">, FunctionalComponent<SubpageProps>> = {
 		basic: BasicTab,
 		skin: SkinTab,
 		lvlimit: LvLimitTab,
 		promo: PromoTab,
-		skills: SkillTab,
+		skills: DeferredSkillTab,
 	};
 
 	return <div class={ style.UnitView }>
@@ -255,13 +286,13 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 				}))
 			} */}
 		{ DisplayTab !== "dialogue" && createElement(TabContents[DisplayTab], {
-			key: "tab-" + DisplayTab,
+			key: `tab-${DisplayTab}-${unit.uid}`,
 			display: true,
 			unit,
 			skinIndex,
 			SkinList,
 
-			onSkinIndexChange: v => setSkinIndex(v),
+			onSkinIndexChange,
 		}) }
 
 		<DialogueTab // DialogueTab should be rendered always (background audio playing)
@@ -269,7 +300,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 			unit={ unit }
 			skinIndex={ skinIndex }
 			SkinList={ SkinList }
-			onSkinIndexChange={ v => setSkinIndex(v) }
+			onSkinIndexChange={ onSkinIndexChange }
 		/>
 	</div>;
 };

@@ -32,17 +32,32 @@ export interface DialogCharacter extends DialogImage {
 
 	name: LString;
 
-	animAdd: string;
 	SCG: SCG_ACTIVATION;
 	live: DIALOG_CHARACTER_EFFECT;
 	emoji: DIALOG_CHAREMOJI_EFFECT;
+
+	/** Directing time of `appear` in secs, `0` means default (1sec) */
+	appearTime: number;
+	/** Directing time of `off` in secs, `0` means default (1sec) */
+	offTime: number;
+	/** Directing time of `live` in secs, `0` or missing means original tween duration */
+	liveTime?: number;
+
+	/** Custom offset, in game UI unit (1920x1080) */
+	move_x: number;
+	move_y: number;
+	/** Absolute z rotation in degree */
+	rotz: number;
+	/** `1` to flip */
+	flip: number;
+	/** Scale ratio, `0` means not changed */
+	scale_x: number;
+	scale_y: number;
 }
 
 export interface DialogSelection {
 	text: LString;
 	next: DialogKey; // key
-
-	/** Cond is not used at this time */
 }
 
 export interface StoryData {
@@ -54,12 +69,13 @@ export interface StoryData {
 		image: string;
 	};
 	bgm: string;
+	bgmLoop: number; // `1` for not looping
 
 	text: LString;
 	speaker: DIALOG_SPEAKER;
 
 	voice: string; // filename
-	voiceChar: string;
+	voiceSkip: number;
 
 	char: {
 		L?: DialogCharacter;
@@ -71,6 +87,8 @@ export interface StoryData {
 
 	add?: DialogImage;
 	screenEffect: SCREEN_EFFECT;
+	screenEffect_shakeDir: number;
+	screenEffect_time: number;
 	addEffect: string;
 
 	sel?: DialogSelection[];

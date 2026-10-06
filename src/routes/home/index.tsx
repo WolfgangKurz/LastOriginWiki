@@ -4,8 +4,9 @@ import { useMemo } from "preact/hooks";
 import TimeAgo from "javascript-time-ago";
 
 import { AssetsRoot, CurrentEvent, EventTo, ImageExtension, IsEventRunning } from "@/libs/Const";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
-import { CurrentLocale, useLocale } from "@/libs/Locale";
+import { SetMeta } from "@/libs/Site";
+import { CurrentLocale } from "@/libs/Locale";
+import { useTitle } from "@/libs/hooks";
 import { GetTimeAgoLocale } from "@/libs/Setup";
 import { cn } from "@/libs/Class";
 
@@ -45,6 +46,8 @@ const NavItemExternal: FunctionalComponent<LinkData> = (props) => (
 );
 
 const Home: FunctionalComponent = () => {
+	useTitle();
+
 	const ext = ImageExtension();
 
 	const pad = (x: number, y: number): string => x.toString().padStart(y, "0");
@@ -65,8 +68,6 @@ const Home: FunctionalComponent = () => {
 
 	SetMeta(["description", "twitter:description"], null);
 	SetMeta(["twitter:image", "og:image"], null);
-	UpdateTitle();
-
 	return <div class={ style.Home }>
 		<div class={ cn(style.Header) }>
 			{ eventAvailable && <a
@@ -124,11 +125,11 @@ const Home: FunctionalComponent = () => {
 			</div>
 
 			<div class={ style.Description }>
-				<Locale raw={ false } k="HOME_DEVELOPER" />
+				<Locale k="HOME_DEVELOPER" />
 			</div>
 
 			<div class={ style.Caution }>
-				<Locale raw={ false } k="COMMON_NSFW_CAUTION" />
+				<Locale k="COMMON_NSFW_CAUTION" />
 			</div>
 		</div>
 
@@ -139,15 +140,15 @@ const Home: FunctionalComponent = () => {
 		<Changelog />
 
 		<p class="mt-4">
-			<Locale k="HOME_DESCRIPTION" />
+			<Locale raw k="HOME_DESCRIPTION" />
 		</p>
 
 		{ ext === "png" && <div class="alert alert-danger">
-			<Locale k="HOME_WEBP_UNAVAILABLE" />
+			<Locale raw k="HOME_WEBP_UNAVAILABLE" />
 		</div> }
 
 		<p>
-			<Locale k="HOME_COPYRIGHT" />
+			<Locale raw k="HOME_COPYRIGHT" />
 		</p>
 		<p>
 			<small>

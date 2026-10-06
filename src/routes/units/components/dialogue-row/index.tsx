@@ -80,7 +80,7 @@ const DialogueRow: FunctionComponent<DialogueRowProps> = (props) => {
 
 	return <div class={ BuildClass(style.DialogueRow, "row my-2 my-sm-0") }>
 		<div class={ BuildClass(style.TypeColumn, `bg-${TypeColor} text-bg-${TypeColor}`, "col col-12 col-sm-2 border-top") }>
-			<Locale k={ `UNIT_DIALOGUE_TYPE_${type}` } />
+			<Locale raw k={ `UNIT_DIALOGUE_TYPE_${type}` } />
 		</div>
 		{ Array.isArray(dialogue)
 			? <div class="col col-12 col-sm px-0 flex-column">

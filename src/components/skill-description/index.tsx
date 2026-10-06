@@ -1,11 +1,12 @@
 import { createElement, FunctionalComponent, FunctionComponent } from "preact";
+import { memo } from "preact/compat";
 import { useMemo, useState } from "preact/hooks";
 
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { cn } from "@/libs/Class";
-import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
+import { StaticDB, useDBData } from "@/libs/Loader";
 import { ComponentTable, parseVNode } from "@/libs/VNode";
 import { ParamWithSlot, parseParams } from "@/libs/SkillDescription";
 
@@ -13,7 +14,7 @@ import EquipPopup from "@/components/popup/equip-popup";
 import * as Components from "./components";
 
 import experimental from "./experimental";
-import buildDefaultSection from "./section";
+import buildDefaultSection, { DefaultSectionTable } from "./section";
 
 import style from "./components/style.module.scss";
 
@@ -47,15 +48,16 @@ interface SkillDescriptionProps {
 	experimentalBuffName?: boolean;
 }
 
-const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => {
-	const rates = props.rates || [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+interface SkillDescriptionRendererProps extends SkillDescriptionProps {
+	defaultSections?: DefaultSectionTable;
+}
 
-	const [displayEquip, setDisplayEquip] = useState(false);
+const DefaultRates = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+const SkillDescriptionRenderer: FunctionalComponent<SkillDescriptionRendererProps> = (props) => {
+	const rates = props.rates || DefaultRates;
+
 	const [selectedEquip, setSelectedEquip] = useState<FilterableEquip | null>(null);
-
-	const units = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
-
-	const defaultSections = useMemo(() => buildDefaultSection(units), [units]);
 	const tags = useMemo(() => {
 		const tags: Record<string, preact.FunctionalComponent<unknown>> = {};
 		(props.boxs || []).forEach((b, i) => {
@@ -90,7 +92,10 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 		props.boxs, props.sections, props.rates, props.slot, props.values,
 		props.level, props.buffBonus, props.skillBonus, props.favorBonus, props.valueDetail,
 	]);
-	const sections = useMemo(() => Object.assign(props.sections || {}, defaultSections), [props.sections, defaultSections]);
+	const sections = useMemo<DefaultSectionTable>(() => ({
+		...(props.sections || {}),
+		...(props.defaultSections || {}),
+	}), [props.sections, props.defaultSections]);
 
 	const content = useMemo(() => {
 		let text = props.text;
@@ -100,7 +105,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 		if (props.experimentalBuffName) {
 			const $ret = experimental.BuffName(text);
 			text = $ret.text;
-			_sections = Object.assign(_sections, $ret.sections);
+			_sections = { ..._sections, ...$ret.sections };
 		}
 
 		const placeholder: FunctionalComponent<unknown> =
@@ -230,7 +235,6 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 						...p,
 						onEquip: (eq) => {
 							setSelectedEquip(eq);
-							setDisplayEquip(true);
 						},
 					}),
 
@@ -256,21 +260,34 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 			return [<>_</>];
 		}
 	}, [
-		units,
-		props.text, props.sections, props.boxs,
-		props.rates, props.slot, props.values, props.level,
+		tags, sections, rates,
+		props.text, props.slot, props.values, props.level,
 		props.buffBonus, props.skillBonus, props.favorBonus,
+		props.valueDetail, props.experimentalBuffName,
 	]);
 
 	return <span id={ props.id } class={ cn("skill-description", props.class) }>
-		<EquipPopup
+		{ selectedEquip && <EquipPopup
 			asSub
 			fullGroup
-			display={ displayEquip }
+			display
 			equip={ selectedEquip }
-			onHidden={ (): void => setDisplayEquip(false) }
-		/>
+			onHidden={ (): void => setSelectedEquip(null) }
+		/> }
 		{ content }
 	</span>;
 };
-export default SkillDescription;
+
+const SkillDescriptionWithDefaultSections: FunctionalComponent<SkillDescriptionProps> = (props) => {
+	const units = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
+	const defaultSections = useMemo(() => buildDefaultSection(units), [units]);
+
+	return <SkillDescriptionRenderer { ...props } defaultSections={ defaultSections } />;
+};
+
+const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => {
+	return /<import\b/i.test(props.text)
+		? <SkillDescriptionWithDefaultSections { ...props } />
+		: <SkillDescriptionRenderer { ...props } />;
+};
+export default memo(SkillDescription);

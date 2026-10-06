@@ -5,7 +5,8 @@ import Decimal from "decimal.js";
 import Store from "@/store";
 
 import { DecomposeHangulSyllable, isActive } from "@/libs/Functions";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 
 import { ACTOR_GRADE, SKILL_ATTR, TARGET_TYPE } from "@/types/Enums";
 import { FilterableUnit, FilterableUnitSkill } from "@/types/DB/Unit.Filterable";
@@ -37,13 +38,16 @@ export interface UnitsListProps {
 }
 
 const Units: FunctionalComponent = () => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({
+		namespaces: ["MENU", "UNIT"],
+		prefixes: Store.Units.SearchType.value === "advanced" ? "EFFECT" : undefined,
+	});
+	useTitle([loc["MENU_UNITS"]]);
 
 	useEffect(() => {
 		SetMeta(["description", "twitter:description"], "전투원의 목록을 표시합니다. 원하는 전투원을 찾기 위해 검색할 수 있습니다.");
 		SetMeta(["twitter:image", "og:image"], null);
-		UpdateTitle(loc["MENU_UNITS"]);
-	}, [loc]);
+	}, []);
 
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 
@@ -392,7 +396,7 @@ const Units: FunctionalComponent = () => {
 					onClick={ () => Store.Units.DisplayType.value = "table" }
 				>
 					<Icons.Table class="mx-1" />
-					<Locale k="UNITS_VIEW_TABLE" />
+					<Locale raw k="UNITS_VIEW_TABLE" />
 				</Button>
 				<Button
 					class={ style.DisplayTab }
@@ -401,7 +405,7 @@ const Units: FunctionalComponent = () => {
 					onClick={ () => Store.Units.DisplayType.value = "list" }
 				>
 					<GridIcon class="mx-1" />
-					<Locale k="UNITS_VIEW_LIST" />
+					<Locale raw k="UNITS_VIEW_LIST" />
 				</Button>
 				<Button
 					class={ style.DisplayTab }
@@ -410,7 +414,7 @@ const Units: FunctionalComponent = () => {
 					onClick={ () => Store.Units.DisplayType.value = "skin" }
 				>
 					<IconHanger class="mx-1" />
-					<Locale k="UNITS_VIEW_SKIN" />
+					<Locale raw k="UNITS_VIEW_SKIN" />
 				</Button>
 				<Button
 					class={ style.DisplayTab }
@@ -419,7 +423,7 @@ const Units: FunctionalComponent = () => {
 					onClick={ () => Store.Units.DisplayType.value = "buff_grouped" }
 				>
 					<Icons.Filter class="mx-1" />
-					<Locale k="UNITS_VIEW_BUFF_GROUPED" />
+					<Locale raw k="UNITS_VIEW_BUFF_GROUPED" />
 				</Button>
 			</Button.Group>
 		</div>
@@ -473,7 +477,7 @@ const Units: FunctionalComponent = () => {
 			: <></>
 		}
 
-		{ !FilterableUnitDB
+		{ !assertDBData(FilterableUnitDB)
 			? <Loading.Data />
 			: [
 				Store.Units.DisplayType.value === "table" && <UnitsTable list={ UnitList } />,

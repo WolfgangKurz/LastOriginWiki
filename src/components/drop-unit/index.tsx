@@ -70,7 +70,7 @@ const DropUnit: FunctionalComponent<DropUnitProps> = (props) => {
 						</span>
 					</div>
 					<div class="float-start">
-						<Locale plain k={ `UNIT_${unit.uid}` } />
+						<Locale k={ `UNIT_${unit.uid}` } />
 					</div>
 					{ chance < 100
 						? <small class="ms-1 text-bold">({ chance }%)</small>

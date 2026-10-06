@@ -1,4 +1,5 @@
 import { FunctionalComponent } from "preact";
+import { memo } from "preact/compat";
 import { useMemo, useState } from "preact/hooks";
 
 import { UnitDialogueAudioType, UnitDialogueDataType } from "@/types/DB/Dialogue";
@@ -96,4 +97,4 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 		/> }
 	</div>;
 };
-export default DialogueTab;
+export default memo(DialogueTab);

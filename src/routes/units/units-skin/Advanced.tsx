@@ -28,7 +28,7 @@ interface SkinData extends UnitSkinEntity {
 
 const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 	const location = useLocation();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "SKIN" });
 
 	const [filterPart, setFilterPart] = useState<Record<Exclude<SKIN_IN_PARTS, SKIN_IN_PARTS.NONE>, boolean | undefined>>({
 		[SKIN_IN_PARTS.LOBBY_ANIMATION]: undefined, // l2d
@@ -168,7 +168,7 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 	return <>
 		<div class={ style.SkinCategories }>
 			<div class={ style.Header }>
-				<Locale raw={ false } k="UNIT_SKIN_CATEGORY" />
+				<Locale k="UNIT_SKIN_CATEGORY" />
 			</div>
 
 			<div class={ style.Action }>
@@ -191,14 +191,14 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 						});
 					} }
 				>
-					<Locale raw={ false } k={ `SKIN_CATEGORY_${c}` } />
+					<Locale k={ `SKIN_CATEGORY_${c}` } />
 				</Badge>) }
 			</div>
 		</div>
 
 		<div class={ style.SkinFilters }>
 			<div class={ style.Header }>
-				<Locale raw={ false } k="UNIT_SKIN_FILTER" />
+				<Locale k="UNIT_SKIN_FILTER" />
 			</div>
 
 			<div class={ style.Filters }>
@@ -262,14 +262,14 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 
 						<span>
 							{ skin.sid === null
-								? <Locale plain k={ `UNIT_${skin.uid}` } />
+								? <Locale k={ `UNIT_${skin.uid}` } />
 								: <>
 									<div>
 										<Badge class={ style.SkinUnitName } variant="dark">
-											<Locale plain k={ `UNIT_${skin.uid}` } />
+											<Locale k={ `UNIT_${skin.uid}` } />
 										</Badge>
 									</div>
-									<Locale plain k={ `UNIT_SKIN_${skin.uid}_${skin.sid}` } />
+									<Locale k={ `UNIT_SKIN_${skin.uid}_${skin.sid}` } />
 								</>
 							}
 						</span>
@@ -323,9 +323,9 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 						<Button
 							variant="light"
 							textVariant="dark"
-							onClick={ () => location.route(`/units/${currentSkin.uid}/s${currentSkin.sid}`) }
+							onClick={ () => location.route(`/units/${currentSkin.uid}/s${currentSkin.sid ?? 0}`) }
 						>
-							<Locale raw={ false } k="UNIT_SKIN_NAVIGATE" />
+							<Locale k="UNIT_SKIN_NAVIGATE" />
 						</Button>
 					</div>
 				</>

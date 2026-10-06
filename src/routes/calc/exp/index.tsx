@@ -7,10 +7,10 @@ import { MapWaveGroup, Maps, World } from "@/types/DB/Map";
 import { Equip } from "@/types/DB/Equip";
 import { Unit } from "@/types/DB/Unit";
 
-import { useUpdate } from "@/libs/hooks";
+import { useTitle, useUpdate } from "@/libs/hooks";
 import { RarityDisplay } from "@/libs/Const";
 import { FormatNumber, isActive } from "@/libs/Functions";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
 
 import { assertDBData, GetJson, StaticDB, useDBData } from "@/libs/Loader";
 import { useLocale } from "@/libs/Locale";
@@ -59,7 +59,8 @@ interface EXPSet {
 
 const EXPCalc: FunctionalComponent = () => {
 	const update = useUpdate();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["MENU", "EQUIP"] });
+	useTitle([loc["MENU_ETC_EXPCALC"]]);
 
 	const linkColors = ["secondary", "success", "success", "success", "success", "primary"];
 	const rarities: ACTOR_GRADE[] = [
@@ -181,8 +182,6 @@ const EXPCalc: FunctionalComponent = () => {
 	SetMeta("keywords", ",경험치 계산기,경험치계산기", true);
 	SetMeta(["twitter:image", "og:image"], null);
 
-	UpdateTitle(loc["MENU_ETC_EXPCALC"]);
-
 	const targetJson = useMemo(
 		() => [
 			// ...WorldIdList
@@ -215,12 +214,13 @@ const EXPCalc: FunctionalComponent = () => {
 		return ret;
 	}, [mapDB]);
 
-	const worlds = [
+	const worlds = useMemo(() => [
 		"Story",
 		...Object.keys(MapsDB)
 			.filter(x => !excludeWorlds.includes(x))
-			.filter(x => !/^[0-9]+$/.test(x)),
-	];
+			.filter(x => !/^[0-9]+$/.test(x))
+			.toSorted((a, b) => a.localeCompare(b, undefined, { numeric: true })),
+	], [MapsDB, loc, excludeWorlds]);
 
 
 	return <div class="EXPCalculator">
@@ -694,7 +694,7 @@ const EXPCalc: FunctionalComponent = () => {
 									.map(({ data, index }) => <div class={ `clearfix ${style.bonusLine}` } >
 										<UnitFace uid={ data.uid } />
 										<SkillIcon icon={ data.icon } passive />
-										<Locale plain k={ `UNIT_SKILL_${data.uid}_${data.skill}` } />
+										<Locale k={ `UNIT_SKILL_${data.uid}_${data.skill}` } />
 
 										<div class="float-end">
 											<select

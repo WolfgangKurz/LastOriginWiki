@@ -14,7 +14,8 @@ import { StoryMetadata, StorySpec } from "@/types/Story/Story";
 import { AssetsRoot, ImageExtension, NewMapList, SubStoryUnit } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
 import { FormatNumber, isActive } from "@/libs/Functions";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 import MapPosition from "@/libs/MapPosition";
 import { formatString, useLocale } from "@/libs/Locale";
 
@@ -59,7 +60,7 @@ interface MapViewProps {
 
 const MapView: FunctionalComponent<MapViewProps> = (props) => {
 	const location = useLocation();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["MENU", "WORLD", "WORLDS"] });
 	const ImageExt = ImageExtension();
 
 	const [currentMode, setCurrentMode] = useState<"map" | "substory">("map");
@@ -81,6 +82,14 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 
 	const isStory = /^[0-9]+$/.test(props.wid);
 	const wid = isStory ? "Story" : props.wid;
+	useTitle(props.wid === "Sub"
+		? [loc["MENU_WORLDS"], loc[`WORLD_${wid}`]]
+		: [
+			loc["MENU_WORLDS"],
+			loc[`WORLD_${wid}`],
+			formatString(loc["WORLDS_WORLD_TITLE"] || "", isStory ? props.wid : props.mid),
+		]
+	);
 
 	const MapDB = useDBData<World>(`map/${props.wid}`);
 	const MapsDB = useDBData<Maps>(StaticDB.Maps);
@@ -103,12 +112,6 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 		SetMeta("keywords", `,${loc[`WORLD_${wid}`]}`, true);
 		SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${wid}_${props.mid}.png`);
 
-		if (props.wid === "Sub")
-			UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${wid}`]);
-		else if (isStory)
-			UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${wid}`], formatString(loc["WORLDS_WORLD_TITLE"], props.wid));
-		else
-			UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${wid}`], formatString(loc["WORLDS_WORLD_TITLE"], props.mid));
 	}, [loc, wid, props.mid]);
 
 	useEffect(() => {
@@ -130,7 +133,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 		[props.mid, MapDB, props.wid, isStory],
 	);
 
-	const Waves = useMemo(() => selected?.wave || [], [selected]);
+	const Waves = useMemo(() => selected && selected.type !== STAGE_SUB_TYPE.STORY && selected.wave || [], [selected]);
 
 	const CurrentWave = useMemo((): Array<WaveEnemyInfo | null> => {
 		if (!selected || selected.type === STAGE_SUB_TYPE.STORY)
@@ -329,7 +332,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 	const SubstoryName = (text: string): preact.VNode => {
 		const unit = FilterableUnitDB.find(x => x.uid === SubStoryUnit[text]);
 		if (!unit) return <>???</>;
-		return <Locale plain k={ `UNIT_${unit.uid}` } />;
+		return <Locale k={ `UNIT_${unit.uid}` } />;
 	};
 
 	useEffect(() => {
@@ -365,9 +368,9 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 
 	}, [selected, RewardDrops]);
 	useEffect(() => {
-		if (!Rewardable && CurrentTab === "reward")
+		if (selected && !Rewardable && CurrentTab === "reward")
 			setCurrentTab("drop");
-	}, [Rewardable, CurrentTab]);
+	}, [selected, Rewardable, CurrentTab]);
 
 	return <div class="worlds-map text-start">
 		<div class="row">
@@ -575,7 +578,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								</span>
 
 								<span class="font-ibm">
-									<Locale plain k={ `WORLD_MAP_${props.wid}_${selected.text}` } />
+									<Locale k={ `WORLD_MAP_${props.wid}_${selected.text}` } />
 								</span>
 
 								{ selected
@@ -641,7 +644,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								}
 							</h5>
 							<div>
-								<Locale plain k={ `WORLD_MAP_DESC_${props.wid}_${selected.text}` } />
+								<Locale k={ `WORLD_MAP_DESC_${props.wid}_${selected.text}` } />
 							</div>
 						</div>
 					</div>
@@ -850,7 +853,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 													<div class="card-body">
 														{ selected.prevIds.length === 0
 															? <div class="text-secondary">
-																<Locale plain k="WORLD_VIEW_CONDITION_EMPTY" />
+																<Locale k="WORLD_VIEW_CONDITION_EMPTY" />
 															</div>
 															: <ul class="list-group">
 																{ selected.prevIds.map(r => <li class="list-group-item">
@@ -879,7 +882,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 														{ ((mm) => {
 															if (mm.length === 0) {
 																return <div class="text-secondary">
-																	<Locale plain k="WORLD_VIEW_CONDITION_EMPTY" />
+																	<Locale k="WORLD_VIEW_CONDITION_EMPTY" />
 																</div>;
 															}
 
@@ -891,7 +894,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																		<MissionText mission={ m } />
 																	</div>
 																	<small class="text-secondary ps-4">
-																		<Locale plain k={ m } />
+																		<Locale k={ m } />
 																	</small>
 																</li>) }
 															</ul>;
@@ -961,7 +964,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 													<div class="card-body">
 														{ selected.prevIds.length === 0
 															? <div class="text-secondary">
-																<Locale plain k="WORLD_VIEW_CONDITION_EMPTY" />
+																<Locale k="WORLD_VIEW_CONDITION_EMPTY" />
 															</div>
 															: <ul class="list-group">
 																{ selected.prevIds.map(r => <li class="list-group-item">
@@ -1279,7 +1282,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 							</div>
 
 							<span>
-								<Locale plain k={ x.char } />
+								<Locale k={ x.char } />
 							</span>
 
 							<div class="clearfix" />
@@ -1292,11 +1295,11 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												return <>{ id[2] }</>;
 
 											return <span class={ `badge ${style.SubStoryUnlockCondStage}` }>
-												<Locale plain k={ `WORLD_${wid[1]}` } />
+												<Locale k={ `WORLD_${wid[1]}` } />
 												<span class="ms-2">{ id[2] }</span>
 											</span>;
 										}
-										return <Locale plain k={ id } />;
+										return <Locale k={ id } />;
 									}
 
 									return <div class={ style.SubStory }>
@@ -1317,7 +1320,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 										<PCIcon item={ y.icon } size={ 40 } />
 
 										<span class="ms-2">
-											<Locale plain k={ y.key } />
+											<Locale k={ y.key } />
 										</span>
 
 										<div>
@@ -1327,12 +1330,11 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												{ y.unlock.params
 													.map(p => <span class={ style.SubStoryUnlockCond }>
 														<Locale
-															plain
 															k={ `SUBSTORY_UNLOCK_${y.unlock.cond}` }
 															p={ [conv(p)] }
 														/>
 													</span>)
-													.gap(<Locale plain k={ `SUBSTORY_UNLOCK_JOIN_${y.unlock.type}` } />)
+													.gap(<Locale k={ `SUBSTORY_UNLOCK_JOIN_${y.unlock.type}` } />)
 												}
 											</div>
 										</div>

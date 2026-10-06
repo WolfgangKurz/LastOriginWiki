@@ -17,7 +17,7 @@ interface UnitStatChartProps {
 
 const UnitStatChart: FunctionalComponent<UnitStatChartProps> = (props) => {
 	const update = useUpdate();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "UNIT" });
 
 	const fontReadyIBM = useFontReady("IBM Flex Sans KR");
 	const fontReadyPretendard = useFontReady("Pretendard JP Variable") && useFontReady("Pretendard Variable");

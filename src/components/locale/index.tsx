@@ -90,18 +90,6 @@ function parseVNode<T> (template: string, p: LocaleProps<T>["p"], components: Lo
 
 export const GetLocaleTable = (locale: LocaleTypes) => GetCachedLocaleTable(locale);
 
-export interface LocalePropsLegacy<T> {
-	k: string;
-	p?: Array<string | number | boolean | preact.VNode>;
-	preprocessor?: (source: string) => string;
-	fallback?: string | number | boolean | preact.VNode;
-	components?: LocaleComponentProp<T>;
-
-	/**
-	 * @deprecated This property should not be used. Use `raw` instead.
-	 */
-	plain?: boolean;
-}
 export interface LocaleProps<T> {
 	k: string;
 	p?: Array<string | number | boolean | preact.VNode>;
@@ -109,18 +97,11 @@ export interface LocaleProps<T> {
 	fallback?: string | number | boolean | preact.VNode;
 	components?: LocaleComponentProp<T>;
 
-	/** default `true` for compatibility, will be changed to `false` in future. */
 	raw?: boolean;
 }
 
-const Locale: FunctionalComponent<LocalePropsLegacy<any> | LocaleProps<any>> = (props) => {
-	const [locale, localeReady] = useLocale();
-
-	const isRaw = "raw" in props
-		? props.raw
-		: "plain" in props
-			? !props.plain
-			: true; // for compatibility
+const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
+	const [locale, localeReady] = useLocale({ keys: props.k });
 
 	if (localeReady) {
 		if (props.k in locale) {
@@ -128,7 +109,7 @@ const Locale: FunctionalComponent<LocalePropsLegacy<any> | LocaleProps<any>> = (
 			if (props.preprocessor)
 				t = props.preprocessor(t);
 
-			if (isRaw)
+			if (props.raw)
 				return <>{ parseVNode(t, props.p, props.components || {}) }</>;
 
 			return <>{ t
@@ -154,7 +135,7 @@ const Locale: FunctionalComponent<LocalePropsLegacy<any> | LocaleProps<any>> = (
 export default Locale;
 
 /**
- * @deprecated This method should not be used. Use `useLocale()` instead.
+ * @deprecated This method should not be used. Use `useLocale({ keys: k })` instead.
  * @param k Key string of locale.
  * @param p Parameter of locale.
  * @returns Localized text. `k` parameter if key not in locale table.
@@ -164,7 +145,7 @@ export function LocaleGet (k: string, ...p: any[]): string {
 }
 
 /**
- * @deprecated This method should not be used. Use `useLocale()` instead.
+ * @deprecated This method should not be used. Use `useLocale({ keys: k })` instead.
  * @param k Key string of locale.
  * @param p Parameter of locale.
  * @returns Localized text. `undefined` if key not in locale table.
@@ -180,7 +161,7 @@ export function LocaleGetEmpty (k: string, ...p: any[]): string | undefined {
 }
 
 /**
- * @deprecated This method should not be used. Use `useLocale()` instead.
+ * @deprecated This method should not be used. Use `useLocale({ keys: k })` instead.
  * @param k Key string of locale.
  * @returns Key exists in locale table.
  */

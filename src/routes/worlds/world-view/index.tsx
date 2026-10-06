@@ -1,15 +1,19 @@
 import { FunctionalComponent } from "preact";
-import { useEffect } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import { useLocation } from "preact-iso";
 
 import { World } from "@/types/DB/Map";
 
+import { useTitle } from "@/libs/hooks";
 import { useLocale } from "@/libs/Locale";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { isActive } from "@/libs/Functions";
+import { cn } from "@/libs/Class";
+import { SetMeta } from "@/libs/Site";
 
 import { assertDBData, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
+import Loading from "@/components/loading";
 import Icons from "@/components/bootstrap-icon";
 import WorldItem from "../components/WorldItem";
 
@@ -21,22 +25,24 @@ interface WORLDViewProps {
 
 const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 	const location = useLocation();
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["MENU", "WORLD"] });
 	const imgExt = ImageExtension();
+
+	const [censoredType, setCensoredType] = useState<"O" | "G">("O");
 
 	const ImagelessEv: string[] = [];
 
 	const wid = props.wid;
+	useTitle([loc["MENU_WORLDS"], loc[`WORLD_${wid}`]]);
 
 	useEffect(() => {
 		SetMeta(["description", "twitter:description"], `${loc[`WORLD_${wid}`]}의 구역 목록을 표시합니다. 구역의 지도 정보와 이야기를 선택하여 확인할 수 있습니다.`);
 		SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${wid}_1.png`);
 		SetMeta("keywords", `,${loc[`WORLD_${wid}`]}`, true);
-		UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${wid}`]);
-	}, [wid]);
+	}, [loc, wid]);
 
 	const MapDB = useDBData<World>(`map/${wid}`);
-	if (!assertDBData(MapDB)) return <></>;
+	if (!assertDBData(MapDB)) return <Loading.Data />;
 
 	const Worlds = Object.keys(MapDB);
 	const evPost = wid === "Ev14" ? "a" : "";
@@ -52,11 +58,32 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 		</div>
 		<hr />
 
-		{ wid.startsWith("Ev") && !ImagelessEv.includes(wid)
-			? <div class={ `mb-4 ${style.EventBanner}` }>
-				<img src={ `${AssetsRoot}/${imgExt}/eventbanner/${wid}${evPost}_O.${imgExt}` } />
+		{ !!(wid.startsWith("Ev") && !ImagelessEv.includes(wid)) &&
+			<div class="d-flex align-items-start mb-4">
+				<div class={ cn("nav", "flex-column", "nav-tabs", style.VerticalTabs) }>
+					<button
+						class={ cn("nav-link", isActive(censoredType === "O")) }
+						onClick={ e => {
+							e.preventDefault();
+							setCensoredType("O");
+						} }
+					>
+						<span class={ style.OneStoreIcon } />
+					</button>
+					<button
+						class={ cn("nav-link", isActive(censoredType === "G")) }
+						onClick={ e => {
+							e.preventDefault();
+							setCensoredType("G");
+						} }
+					>
+						<span class={ style.PlayStoreIcon } />
+					</button>
+				</div>
+				<div class={ cn("tab-content", style.EventBanner) }>
+					<img src={ `${AssetsRoot}/${imgExt}/eventbanner/${wid}${evPost}_${censoredType}.${imgExt}` } />
+				</div>
 			</div>
-			: <></>
 		}
 
 		<WorldItem wid={ wid } imageless>

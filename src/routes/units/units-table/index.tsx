@@ -111,7 +111,6 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 													<div class={ style.UnitItem }>
 														<UnitFace uid={ unit.uid } />
 														<Locale
-															raw={ false }
 															k={ `UNIT_${unit.uid}` }
 														/>
 													</div>

@@ -20,7 +20,7 @@ const UnitReference: FunctionalComponent<UnitReferenceProps> = (props) => {
 	if (!assertDBData(FilterableUnitDB)) {
 		return <a href={ `/units/${unit}` }>
 			<span class="badge bg-substory">
-				<Locale plain k={ `UNIT_${unit}` } />
+				<Locale k={ `UNIT_${unit}` } />
 				<Icons.Link45deg class="ms-1" />
 			</span>
 		</a>;
@@ -30,7 +30,7 @@ const UnitReference: FunctionalComponent<UnitReferenceProps> = (props) => {
 	if (!found) {
 		return <a href={ `/units/${unit}` }>
 			<span class="badge bg-substory">
-				<Locale plain k={ `UNIT_${unit}` } />
+				<Locale k={ `UNIT_${unit}` } />
 				<Icons.Link45deg class="ms-1" />
 			</span>
 		</a>;
@@ -47,7 +47,7 @@ const UnitReference: FunctionalComponent<UnitReferenceProps> = (props) => {
 			/> }
 		>
 			<span class="badge bg-substory mx-1">
-				<Locale plain k={ `UNIT_${unit}` } />
+				<Locale k={ `UNIT_${unit}` } />
 				<Icons.Link45deg class="ms-1" />
 			</span>
 		</BootstrapTooltip>

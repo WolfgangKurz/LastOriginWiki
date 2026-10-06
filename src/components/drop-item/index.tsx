@@ -39,7 +39,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 	const variant = props.variant || "secondary";
 	const text = props.text || "light";
 
-	const [loc] = useLocale();
+	const [loc] = useLocale({ keys: `CONSUMABLE_DESC_${props.item.key}` });
 	const [display, setDisplay] = useState(false);
 
 	const ParsedDesc = ((): preact.VNode[] => ParseDescriptionText(
@@ -70,7 +70,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 				<Locale k="ITEM_FUNCTION_FAVOR_LIMIT" p={ [favorLimitTable[props.item.func].toFixed(2)] } />
 			</span>;
 		} else if (props.item.func === "Consumable_CommanderDiary") // 사령관의 일지
-			return <Locale k="ITEM_FUNCTION_COMMANDERDIARY" />;
+			return <Locale raw k="ITEM_FUNCTION_COMMANDERDIARY" />;
 		else if (["TacticRecord_01", "TacticRecord_02", "TacticRecord_03"].includes(props.item.func)) { // 경험치 교본
 			const expTable: Record<string, number> = {
 				/* eslint-disable camelcase */
@@ -144,7 +144,6 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 				{ iconNode() }
 				<div class="text-start">
 					<Locale
-						plain
 						k={ `CONSUMABLE_${props.item.key}` }
 						fallback={ props.item.key }
 					/>
@@ -173,7 +172,6 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 			footerClass="justify-content-start"
 			header={ <div class="text-start">
 				<Locale
-					plain
 					k={ `CONSUMABLE_${props.item.key}` }
 					fallback={ props.item.key }
 				/>
@@ -192,7 +190,6 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 				{ iconNode(true) }
 				<h5 class="mt-1">
 					<Locale
-						plain
 						k={ `CONSUMABLE_${props.item.key}` }
 						fallback={ props.item.key }
 					/>

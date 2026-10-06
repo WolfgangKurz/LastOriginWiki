@@ -10,7 +10,8 @@ import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { useLocale } from "@/libs/Locale";
 import { DecomposeHangulSyllable, isActive } from "@/libs/Functions";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
@@ -23,21 +24,30 @@ interface EnemiesListProps {
 }
 
 const EnemiesList: FunctionalComponent<EnemiesListProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: ["ENEMIES", "ENEMY", "MENU"] });
 
 	useEffect(() => {
-		if (!props?.uid) {
+		if (!props.uid) {
 			SetMeta(["description", "twitter:description"], "적의 목록을 표시합니다. 원하는 적을 찾기 위해 검색할 수 있습니다.");
 			SetMeta(["twitter:image", "og:image"], null);
-
-			UpdateTitle(loc["ENEMIES_LIST"]);
 		}
-	}, [props?.uid]);
+	}, [props.uid]);
 
 	const FilterableEnemyDB = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
-	if (!assertDBData(FilterableEnemyDB)) return <Loading.Data />;
+	const selectedEnemy = assertDBData(FilterableEnemyDB) && props.uid
+		? FilterableEnemyDB.find(x => x.id === props.uid) || null
+		: null;
+	useTitle(props.uid
+		? [
+			loc["MENU_ENEMIES"],
+			selectedEnemy
+				? loc[`ENEMY_${selectedEnemy.id}`]
+				: assertDBData(FilterableEnemyDB) ? "???" : undefined,
+		]
+		: [loc["ENEMIES_LIST"]]
+	);
 
-	const selectedEnemy = props.uid && FilterableEnemyDB.find(x => x.id === props.uid) || null;
+	if (!assertDBData(FilterableEnemyDB)) return <Loading.Data />;
 
 	if (props.uid) {
 		if (selectedEnemy) {
@@ -47,9 +57,7 @@ const EnemiesList: FunctionalComponent<EnemiesListProps> = (props) => {
 			SetMeta("keywords", `,${ename}`, true);
 			SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/${ImageExtension()}/tbar/${en.icon}.${ImageExtension()}`);
 
-			UpdateTitle(loc["MENU_ENEMIES"], ename);
-		} else
-			UpdateTitle(loc["MENU_ENEMIES"], "???");
+		}
 	}
 
 	// TODO: wrap with useMemo, with all Store values

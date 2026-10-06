@@ -1,5 +1,3 @@
-import { LocaleGet } from "@/components/locale";
-
 // import { ParseDescriptionText } from "@/libs/FunctionsX";
 // export function Nn (text: string) {
 // 	return ParseDescriptionText(
@@ -16,9 +14,9 @@ import { LocaleGet } from "@/components/locale";
 // 		.replace(/\[-\]\[\/c\]/g, "</span>");
 // }
 
-export function Nn (text: string) {
+export function Nn (text: string, playerName: string) {
 	return text
-		.replace(/\{0\}/g, `[c][66bbff]${LocaleGet("STORY_PLAYER_GAMEPLAYER")}[-][/c]`)
+		.replace(/\{0\}/g, `[c][66bbff]${playerName}[-][/c]`)
 		.replace(/&n/g, "\n")
 		.replace(/\[c\]\[([^\]]+)\]/g, (_, p1) => `\0color\0${p1}\0`)
 		.replace(/\[-\]\[\/c\]/g, "\0")

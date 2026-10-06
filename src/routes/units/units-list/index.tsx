@@ -24,7 +24,7 @@ import IconAlphabet from "@/components/Icons/IconAlphabet";
 import style from "./style.module.scss";
 
 const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "UNIT" });
 	const imgExt = useImageExtension();
 
 	const withShort = Store.Units.SearchWithShortname.value;
@@ -183,7 +183,6 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 						? <div class={ style.GroupInfo }>
 							<img src={ `${AssetsRoot}/${imgExt}/group/${getGroupImage(list[0]!.group)}.${imgExt}` } />
 							<Locale
-								raw={ false }
 								k={ `UNIT_GROUP_${groupByMethod === "roughly"
 									? getGroup1(list[0]!.group)
 									: list[0]!.group}`
@@ -223,7 +222,6 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 												) }
 											</span>
 											: <Locale
-												raw={ false }
 												k={ `UNIT_${unit.uid}` }
 											/>
 										: <></>

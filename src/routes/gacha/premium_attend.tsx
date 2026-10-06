@@ -167,7 +167,6 @@ const PremiumAttendGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 						<div class="card-header">
 							<strong class="me-4">
 								<Locale
-									plain
 									k="GACHA_PREMIUM_ATTEND_RESULT_TITLE"
 									p={ [
 										Result.length - i,
@@ -195,7 +194,7 @@ const PremiumAttendGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 											</div>
 
 											<small class={ style.ResultName }>
-												<Locale plain k={ `CONSUMABLE_${ec.key}` } />
+												<Locale k={ `CONSUMABLE_${ec.key}` } />
 											</small>
 										</div>
 									</div>;
@@ -218,7 +217,7 @@ const PremiumAttendGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 								setSelectedChanceList(i + 1);
 							} }
 						>
-							<Locale plain k={ `GACHA_PREMIUM_ATTEND_DAY${i + 1}` } />
+							<Locale k={ `GACHA_PREMIUM_ATTEND_DAY${i + 1}` } />
 						</a>
 					</li>)
 				}

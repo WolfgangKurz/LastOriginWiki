@@ -1,8 +1,9 @@
 import { FunctionalComponent } from "preact";
 
 import { PermanentEvents, AssetsRoot, CurrentEvent, WorldIds } from "@/libs/Const";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
 import { useLocale } from "@/libs/Locale";
+import { useTitle } from "@/libs/hooks";
 
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
@@ -11,7 +12,8 @@ import WorldItem from "@/routes/worlds/components/WorldItem";
 import style from "./style.module.scss";
 
 const Worlds: FunctionalComponent = () => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "MENU" });
+	useTitle([loc["MENU_WORLDS"]]);
 
 	const Subs = ["Sub", "Cha", "Daily"];
 	const List = WorldIds.filter(x =>
@@ -24,11 +26,9 @@ const Worlds: FunctionalComponent = () => {
 
 	SetMeta(["description", "twitter:description"], "세계 목록을 표시합니다. 현재 진행중이거나 진행될 예정인 이벤트도 확인할 수 있습니다.");
 	SetMeta(["twitter:image", "og:image"], null);
-	UpdateTitle(loc["MENU_WORLDS"]);
-
 	return <div class="worlds text-start">
 		<h2>
-			<Locale k="MENU_WORLDS" />
+			<Locale raw k="MENU_WORLDS" />
 		</h2>
 		<hr />
 
@@ -48,7 +48,7 @@ const Worlds: FunctionalComponent = () => {
 					link="/eternalwar"
 					wid=""
 					image="EW"
-					title={ <Locale k="WORLDS_ETERNALWAR" /> }
+					title={ <Locale raw k="WORLDS_ETERNALWAR" /> }
 				/>
 			</div>
 			<div class="col">
@@ -64,7 +64,7 @@ const Worlds: FunctionalComponent = () => {
 		<hr />
 
 		<h4>
-			<Locale k="WORLDS_SUBSTORY_CHALLENGE" components={ { IconDot: Icons.Dot } } />
+			<Locale raw k="WORLDS_SUBSTORY_CHALLENGE" components={ { IconDot: Icons.Dot } } />
 		</h4>
 		<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
 			{ Subs.map(item => <div class="col">

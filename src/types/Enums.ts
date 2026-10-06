@@ -1124,6 +1124,12 @@ export enum SCREEN_EFFECT {
 	FADE_IN_WHITE,
 	__MAX__,
 }
+export enum CAMERA_SHAKE_DIRECTION {
+	BOTH = 0,
+	HORIZONTAL,
+	VERTICAL,
+	MAX,
+}
 export enum SCG_ACTIVATION {
 	NONE = 0,
 	ACTIVATION,

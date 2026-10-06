@@ -12,9 +12,8 @@ const SkillName: FunctionalComponent<SkillNameProps> = (props) => {
 	const uk = `UNIT_SKILL_${k.replace(/^Skill_(.+)_N_(.+)$/, "$1_$2")}`;
 	return <span class="badge bg-primary">
 		<Locale
-			plain
 			k={ uk }
-			fallback={ <Locale plain k={ k } /> }
+			fallback={ <Locale k={ k } /> }
 		/>
 	</span>;
 };

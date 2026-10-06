@@ -55,12 +55,12 @@ const InfiniteWar: FunctionalComponent = () => {
 
 					<div class={ style.Content }>
 						<h3>
-							<Locale plain k={ `IWSEASON_${current.key}_TITLE` } />
+							<Locale k={ `IWSEASON_${current.key}_TITLE` } />
 						</h3>
 						<h4>
-							<Locale plain k={ `IWSEASON_${current.key}_SUBTITLE` } />
+							<Locale k={ `IWSEASON_${current.key}_SUBTITLE` } />
 							・
-							<Locale plain k={ `IWSEASON_${current.key}_MOB` } />
+							<Locale k={ `IWSEASON_${current.key}_MOB` } />
 						</h4>
 
 						<div class={ BuildClass(style.Date, "font-exo2") }>
@@ -93,12 +93,12 @@ const InfiniteWar: FunctionalComponent = () => {
 
 					<div class={ style.Content }>
 						<h3>
-							<Locale plain k={ `IWSEASON_${season.key}_TITLE` } />
+							<Locale k={ `IWSEASON_${season.key}_TITLE` } />
 						</h3>
 						<h4>
-							<Locale plain k={ `IWSEASON_${season.key}_SUBTITLE` } />
+							<Locale k={ `IWSEASON_${season.key}_SUBTITLE` } />
 							・
-							<Locale plain k={ `IWSEASON_${season.key}_MOB` } />
+							<Locale k={ `IWSEASON_${season.key}_MOB` } />
 						</h4>
 
 						<div class={ BuildClass(style.Date, "font-exo2") }>

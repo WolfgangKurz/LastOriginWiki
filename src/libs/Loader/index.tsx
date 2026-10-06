@@ -2,15 +2,15 @@
 import { FunctionalComponent, createElement } from "preact";
 import { useCallback, useEffect, useState } from "preact/hooks";
 
-import * as YAML from "@/external/yaml";
-
 import { useUpdate } from "@/libs/hooks";
 import { DataRoot } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 
 import DBHash, { DBHashType } from "@/libs/Loader/hash";
+import { loadYAML } from "./yaml";
 
 export * from "./static";
+export { ensureYAMLParser } from "./yaml";
 
 interface SubComponentBase {
 	store: any;
@@ -86,10 +86,10 @@ function Load (db: string, json: string): Promise<void> {
 		fetch(`${DataRoot}/${_rootJson.substring(2)}${_postfix}`)
 			.then(x => {
 				if (!x.ok) throw new Error(`Status ${x.status}`);
-				return x.text();
+				return x.arrayBuffer();
 			})
-			.then(x => {
-				const data = YAML.load(x, undefined);
+			.then(x => loadYAML(x))
+			.then(data => {
 				Cache[json] = data;
 				Object.freeze(Cache[json]); // prevent to corrupt data
 				flushQueue(true);

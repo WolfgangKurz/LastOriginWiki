@@ -53,7 +53,7 @@ interface SkinViewProps {
 }
 
 const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
-	const [loc] = useLocale();
+	const [loc] = useLocale({ namespaces: "UNIT" });
 	const imageExt = useImageExtension();
 
 	const unit = props.unit;
@@ -92,8 +92,9 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		if (isDamaged) ret.push("D");
 		if (hideBG) ret.push("B");
 		if (hideParts) ret.push("S");
+		if (hideParts2) ret.push("P");
 		return (ret.length > 0 ? "_" : "") + ret.join("");
-	}, [isDamaged, hideBG, hideParts]);
+	}, [isDamaged, hideBG, hideParts, hideParts2]);
 	const SkinImageURL = useMemo(() => {
 		const skinId = skin.isDef ? 0 : skin.metadata.imageId;
 		return [
@@ -457,7 +458,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							tooltipClass={ style.DownloadTooltipContainer }
 							placement="left"
 							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-								<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
+								<Locale k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
 							</span> }
 						>
 							<a
@@ -481,7 +482,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							tooltipClass={ style.DownloadTooltipContainer }
 							placement="left"
 							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-								<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOAD" />
+								<Locale k="UNIT_VIEW_SKIN_DOWNLOAD" />
 							</span> }
 						>
 							<a
@@ -526,7 +527,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						? <BootstrapTooltip
 							placement="top"
 							content={ <span class="word-keep">
-								<Locale k={ skin.stage ? "UNIT_VIEW_SKIN_L2D_PLUS" : "UNIT_VIEW_SKIN_L2D" } />
+								<Locale raw k={ skin.stage ? "UNIT_VIEW_SKIN_L2D_PLUS" : "UNIT_VIEW_SKIN_L2D" } />
 							</span> }
 						>
 							<div class="position-relative alert">

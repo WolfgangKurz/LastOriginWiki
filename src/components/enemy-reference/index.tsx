@@ -23,7 +23,7 @@ const EnemyReference: FunctionalComponent<EnemyReferenceProps> = (props) => {
 	if (!assertDBData(FilterableEnemyDB)) {
 		return <a href={ `/enemies/${enemy}` }>
 			<span class="badge bg-danger">
-				<Locale plain k={ `ENEMY_${enemy}` } />
+				<Locale k={ `ENEMY_${enemy}` } />
 				<Icons.Link45deg class="ms-1" />
 			</span>
 		</a>;
@@ -33,7 +33,7 @@ const EnemyReference: FunctionalComponent<EnemyReferenceProps> = (props) => {
 	if (!found) {
 		return <a href={ `/enemies/${enemy}` }>
 			<span class="badge bg-danger">
-				<Locale plain k={ `ENEMY_${enemy}` } />
+				<Locale k={ `ENEMY_${enemy}` } />
 				<Icons.Link45deg class="ms-1" />
 			</span>
 		</a>;
@@ -55,7 +55,7 @@ const EnemyReference: FunctionalComponent<EnemyReferenceProps> = (props) => {
 			</div> }
 		>
 			<span class="badge bg-danger mx-1">
-				<Locale plain k={ `ENEMY_${enemy}` } />
+				<Locale k={ `ENEMY_${enemy}` } />
 				<Icons.Link45deg class="ms-1" />
 			</span>
 		</BootstrapTooltip>

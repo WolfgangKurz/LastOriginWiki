@@ -28,9 +28,9 @@ const EffectFilterPopup: FunctionalComponent<EffectFilterPopupProps> = (props) =
 		damageReduce: <Locale k="BUFF_GROUP_DMG_REDUCE" />,
 		guard: <Locale k="BUFF_GROUP_GUARD" />,
 		speedAp: <Locale k="BUFF_GROUP_AP" />,
-		offPierce: <Locale k="BUFF_GROUP_OFF" />,
+		offPierce: <Locale raw k="BUFF_GROUP_OFF" />,
 		resist: <Locale k="BUFF_GROUP_RESIST" />,
-		damage: <Locale k="BUFF_GROUP_DMG" />,
+		damage: <Locale raw k="BUFF_GROUP_DMG" />,
 		etcBuff: <Locale k="BUFF_GROUP_ETC_BUFF" />,
 		etcDebuff: <Locale k="BUFF_GROUP_ETC_DEBUFF" />,
 	};

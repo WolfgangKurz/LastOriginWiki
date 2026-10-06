@@ -93,7 +93,7 @@ const UnitsBuffGrouped: FunctionalComponent<UnitsListProps> = (props) => {
 				</div>
 
 				<div>
-					<Locale raw={ false } k={ `UNIT_${unit.uid}` } />
+					<Locale k={ `UNIT_${unit.uid}` } />
 				</div>
 			</>;
 

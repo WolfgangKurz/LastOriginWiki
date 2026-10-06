@@ -486,6 +486,14 @@ export default class Pixi2DModel extends FadeContainer {
 			console.warn("[Pixi2DModel] no face element (" + imageVar + "), from " + this.model);
 	}
 
+	/** Global position of `face` element, `null` if not ready or no face element */
+	getFaceGlobalPosition (): PIXI.Point | null {
+		if (!this.ready) return null;
+
+		const faceNode = this.treeItems.find(r => r.name === "face");
+		return faceNode ? faceNode.sprite.getGlobalPosition() : null;
+	}
+
 	setDialogDeactive (deactive: boolean) {
 		this._dialogDeactive = deactive;
 		if (!this.ready) return;

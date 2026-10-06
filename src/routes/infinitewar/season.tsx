@@ -132,13 +132,13 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 
 						<div class={ style.Title }>
 							<h1>
-								<Locale plain k={ `IWSEASON_${season.key}_TITLE` } />
+								<Locale k={ `IWSEASON_${season.key}_TITLE` } />
 							</h1>
 							<h3>
-								<Locale plain k={ `IWSEASON_${season.key}_SUBTITLE` } />
+								<Locale k={ `IWSEASON_${season.key}_SUBTITLE` } />
 							</h3>
 							<h2>
-								<Locale plain k={ `IWSEASON_${season.key}_MOB` } />
+								<Locale k={ `IWSEASON_${season.key}_MOB` } />
 							</h2>
 
 							<div class={ style.Date }>
@@ -156,7 +156,7 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 							{ season.bonus.map(b => {
 								return <BootstrapTooltip
 									content={ <div>
-										<Locale plain k={ `UNIT_${b.char}` } />
+										<Locale k={ `UNIT_${b.char}` } />
 									</div> }
 								>
 									<div class={ BuildClass("col", style.BonusUnit) }>
@@ -229,17 +229,17 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 
 							<div class={ style.AnomalyName }>
 								<strong>
-									<Locale plain k="IW_ANOMALY" />
+									<Locale k="IW_ANOMALY" />
 
 									<Icons.Dot />
 
 									<span class="text-warning">
-										<Locale raw={ false } k={ selectedStage.anomaly } />
+										<Locale k={ selectedStage.anomaly } />
 									</span>
 								</strong>
 							</div>
 							<div class={ style.AnomalyText }>
-								<Locale raw={ false } k={ `${selectedStage.anomaly}_DESC` } />
+								<Locale k={ `${selectedStage.anomaly}_DESC` } />
 							</div>
 						</div>
 

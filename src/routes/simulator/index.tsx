@@ -8,7 +8,8 @@ import { SimulatorSlotType, SimulatorSlotEntity } from "./types/Slot";
 
 import { AssetsRoot, IsDev } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { SetMeta } from "@/libs/Site";
+import { useTitle } from "@/libs/hooks";
 import { GetRequireResource } from "@/libs/Cost";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
@@ -23,10 +24,10 @@ import SimulatorEquips from "./components/simulator-equips";
 import style from "./style.module.scss";
 
 const Simulator: FunctionalComponent = () => {
+	useTitle(["Simulator"]);
+
 	SetMeta(["description", "twitter:description"], "전투원의 스테이터스를 계산해볼 수 있는 시뮬레이터입니다.");
 	SetMeta(["twitter:image", "og:image"], null);
-	UpdateTitle("Simulator");
-
 	const kidx = (row: number, col: number): number => (2 - row) * 3 + (col % 3) + 1;
 
 	const [editTab, setEditTab] = useState<number>(0);

@@ -1,7 +1,5 @@
 import { render, h } from "preact";
 
-import * as YAML from "@/external/yaml";
-
 import App from "@/app";
 
 import "@/themes/index.scss";
@@ -9,7 +7,7 @@ import "@/themes/index.scss";
 import { Extend } from "@/libs/Functions";
 import { SetupLibraries } from "@/libs/Setup";
 
-import { GetJson, JsonLoaderCore } from "@/libs/Loader";
+import { ensureYAMLParser, GetJson, JsonLoaderCore } from "@/libs/Loader";
 import buildtime from "@/buildtime";
 import Store from "@/store";
 
@@ -17,7 +15,7 @@ Extend();
 
 SetupLibraries();
 
-YAML.ensure().then(() => {
+ensureYAMLParser().then(() => {
 	const verCheck = () => {
 		const buildtimeYaml = `!/buildtime.yml?from=${buildtime.build}`;
 		JsonLoaderCore("!", buildtimeYaml)

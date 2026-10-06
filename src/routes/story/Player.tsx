@@ -5,12 +5,11 @@ import Store from "@/store";
 import * as PIXI from "pixi.js";
 import * as LAYERS from "@pixi/layers";
 
-import { APPEAR_EFFECT, DIALOG_CHAREMOJI_EFFECT, DIALOG_SPEAKER, OFF_EFFECT, SCG_ACTIVATION, SCREEN_EFFECT } from "@/types/Enums";
-import { DialogCharacter, DialogSelection, StoryData } from "@/types/Story/Story";
+import { APPEAR_EFFECT, DIALOG_SPEAKER, OFF_EFFECT, SCREEN_EFFECT } from "@/types/Enums";
+import { DialogSelection, StoryData } from "@/types/Story/Story";
 import { StoryModelMeta } from "@/types/Story/Model";
 import { LocaleTypes } from "@/types/Locale";
 
-import { useUpdate } from "@/libs/hooks";
 import { useLocale } from "@/libs/Locale";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { AssetsRoot, IsDev } from "@/libs/Const";
@@ -20,10 +19,8 @@ import BGMAlbums from "@/libs/BGM";
 import Locale from "@/components/locale";
 
 import { Nn } from "./common";
-import EffectBase from "./Effects/EffectBase";
-import VideoEffect from "./Effects/VideoEffect";
-import ShakeAndSoundEffect from "./Effects/ShakeAndSoundEffect";
-import Animation_OpenEyes from "./Animations/Animation_OpenEyes";
+import ShakeScreen from "./Effects/ScreenShake";
+import { AddEffectRun, ApplyAddEffectInstant, HasAddEffect, RunAddEffect } from "./Effects/AddEffects";
 
 import FadeText from "@/components/pixi/FadeText";
 import FadeSprite from "@/components/pixi/FadeSprite";
@@ -34,10 +31,21 @@ import MixedModel from "@/routes/units/components/skin-view/MixedModel";
 import DialogObject from "./Objects/DialogObject";
 import SelectionObject from "./Objects/SelectionObject";
 import CommuSprite from "./Objects/CommuSprite/CommuSprite";
+import CgLayer from "./Objects/CgLayer";
+import ActorStage, { ActorModel, ActorPosition, WORLD_UNIT } from "./Objects/Actor/ActorStage";
+import { IsDialogAssetOverride } from "./Objects/Actor/DialogAssetOverride";
 
 import style from "./style.module.scss";
 
 type CharSpriteType = FadeSprite | CommuSprite | Pixi2DModel | PixiSpineModel | MixedModel;
+
+/** Pixels per Unity unit of `Pixi2DModel` (100px, x3.5 root scale) */
+const PIXI2DMODEL_UNIT = 350;
+/** Character models are drawn as original (`WORLD_UNIT` pixels per unit) */
+const MODEL_SCALE = WORLD_UNIT / PIXI2DMODEL_UNIT;
+
+/** `Panel_DialogNovel.BgTextFadeOutTime` */
+const BG_DESC_FADE_TIME = 3;
 
 enum CharModelType {
 	None = 0,
@@ -46,6 +54,7 @@ enum CharModelType {
 }
 
 /**
+ * 40 - CG (world background)
  * 50 - BG
  * 500 - Character
  * * 500 - C
@@ -73,12 +82,14 @@ interface PlayerProps {
 	onDone?: () => void;
 	onNext?: (cursor: number) => void;
 
-	onVoice?: (voice: string) => void;
+	/** Play voice (empty to stop), resolved when voice ended, failed or replaced */
+	onVoice?: (voice: string) => Promise<void> | void;
+	/** Mute (not pause) voice played by `onVoice` */
+	onMute?: (mute: boolean) => void;
 }
 
 const Player: FunctionalComponent<PlayerProps> = (props) => {
-	const update = useUpdate();
-	const [loc] = useLocale();
+	const [loc, localeReady] = useLocale({ namespaces: ["UNIT", "PCSTORY"] });
 
 	const [app, setApp] = useState<PIXI.Application<HTMLCanvasElement> | null>(null);
 	const [cover, setCover] = useState<PIXI.Sprite | null>(null);
@@ -89,26 +100,45 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 	const [screenEffectObject, setScreenEffectObject] = useState<FadeSprite | null>(null);
 
 	const [voice, setVoice] = useState<string>("");
+	const voiceAudioRef = useRef<HTMLAudioElement>(null);
+	const voiceDoneRef = useRef<(() => void) | null>(null);
+	/** voice is playing and not skippable (`Voice_Skip`), input is ignored */
+	const voiceBlockRef = useRef(false);
 	const [bgm, setBGM] = useState<string>("");
+	const [bgmLoop, setBGMLoop] = useState(true);
+	/** `GameSoundManager.MuteAll` (while playing movie) */
+	const [muted, setMuted] = useState(false);
 
 	const [bgName, setBGName] = useState<Record<LocaleTypes, string | undefined> | null>(null);
 	const [bgDesc, setBGDesc] = useState<Record<LocaleTypes, string | undefined> | null>(null);
 	const [bgImage, setBGImage] = useState<string>("");
 
-	const [chars, setChars] = useState<Tuple<DialogCharacter | null, 5>>([null, null, null, null, null]);
-	const charRef = useRef<Tuple<CharSpriteType | undefined, 5>>([undefined, undefined, undefined, undefined, undefined]);
+	const [stage, setStage] = useState<ActorStage | null>(null);
+	/** cursor moved by playing (not jumped) */
+	const naturalNextRef = useRef<number | null>(null);
+	/** row nodes (or exit nodes) are running, input is ignored */
+	const busyRef = useRef(true);
+	const rowDoneRef = useRef<Promise<void>>(Promise.resolve());
+	const liveDoneRef = useRef<Promise<void>>(Promise.resolve());
+	const cursorRef = useRef(props.cursor);
+	cursorRef.current = props.cursor;
+	/** cursor of row which reached dialogue node */
+	const [readyCursor, setReadyCursor] = useState(-1);
 
 	const [addImage, setAddImage] = useState<string>("");
 	const [addImageAppear, setAddImageAppear] = useState<APPEAR_EFFECT>(APPEAR_EFFECT.NONE);
 	const [addImageOff, setAddImageOff] = useState<OFF_EFFECT>(OFF_EFFECT.NONE);
 
-	const [screenEffect, setScreenEffect] = useState<SCREEN_EFFECT>(SCREEN_EFFECT.NONE);
+	const [cg, setCg] = useState<CgLayer | null>(null);
+	/** add effects started (sounds keep playing until story end) */
+	const effectsRef = useRef<AddEffectRun[]>([]);
+	/** tween id of foreground (screen effect) */
+	const fgTweenRef = useRef(0);
 
 	const [sel, setSel] = useState<DialogSelection[]>([]);
 	const [selDisp, setSelDisp] = useState(false);
 
 	const screenEffectFilter = useMemo(() => new PIXI.ColorMatrixFilter(), []);
-	const speakerFilter = useMemo(() => [0, 0, 0, 0, 0].map(() => new PIXI.ColorMatrixFilter()), []);
 
 	const playerRef = useRef<HTMLDivElement>(null);
 
@@ -120,14 +150,6 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			setIgnore2DModel(true);
 
 		return <></>;
-	}
-
-	function setCharsByIndex (value: DialogCharacter | null, index: 0 | 1 | 2 | 3 | 4) {
-		setChars(prev => {
-			const ret: Mutable<typeof chars> = [...prev];
-			ret[index] = value;
-			return ret;
-		});
 	}
 
 	const curData = props.cursor >= props.data.length
@@ -336,6 +358,142 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		return "";
 	}
 
+	/** Load character model for `ActorStage` */
+	async function createActorModel (image: string, imageVar: string, position: ActorPosition): Promise<ActorModel | null> {
+		const img = image
+			.replace(/_N_DL_([0-9]+)/, (_, p1) => `_${p1}`)
+			.replace(/_DL_N/, "_DL")
+			.replace(/_DL/, "");
+		if (!img) return null;
+
+		const c = ConvertChar(img);
+		const modelType = img in (assertDBData(modelList) ? modelList : {})
+			? modelList![img]
+			: CharModelType.None;
+		const forCommu = isCommu(img);
+		const mirrored = position === ActorPosition.RIGHT || position === ActorPosition.RIGHTCENTER;
+		const baseX = ActorStage.destScreenX(position);
+
+		const getTexURL = (imgVar: string) => c
+			? `${AssetsRoot}/webp/full/${c}.webp`
+			: forCommu
+				? getCommuImage(img, imgVar)
+				: `${AssetsRoot}/story/model/${img}.webp`;
+
+		/** offset from actor destination (`p[0]`), canvas y (`p[1]`), scale (`s`) */
+		const build = (tex: PIXI.Texture | undefined, meta: StoryModelMeta[] | undefined, imgVar: string): [CharSpriteType, Tuple<number, 2>, Tuple<number, 2>, boolean] => {
+			const p: Tuple<number, 2> = [0, 720];
+			const s: Tuple<number, 2> = [1, 1];
+			let isCut = false;
+
+			let char: CharSpriteType;
+			if (modelType === CharModelType.U2DModel) {
+				char = new Pixi2DModel("O/" + img); // always uncensored
+				char.setDialogDeactive(true);
+				char.setFace(imgVar);
+				p[1] = 360;
+			} else if (modelType === CharModelType.Spine) {
+				char = new MixedModel(img, `O/${img}`, 0);
+				char.setFace(imgVar);
+				char.setHidePart(true);
+				char.setDialogDeactive(true);
+				p[1] = 360;
+			} else {
+				tex = tex!;
+				char = new (forCommu ? CommuSprite : FadeSprite)(tex);
+				char.pivot.set(tex.width / 2, tex.height / 4 * 3);
+
+				if (meta) {
+					meta.forEach(e => {
+						p[0] += e.pos[0] * 100;
+						p[1] += e.pos[1] * 100;
+						s[0] *= e.scale[0];
+						s[1] *= e.scale[1];
+					});
+				} else if (forCommu) {
+					if (!img.includes("Cut_")) {
+						p[1] -= 375;
+						s[0] = 213 / tex.width;
+						s[1] = 282 / tex.height;
+					} else {
+						isCut = true;
+						char.pivot.set(tex.width / 2, tex.height / 2);
+						p[0] = 640 - baseX;
+						p[1] = 240;
+						s[0] = s[1] = 1;
+						if (tex.height > 358)
+							s[0] = s[1] = 358 / tex.height;
+					}
+				} else {
+					const ratio = Math.min(1, 720 / tex.height);
+					p[1] -= 40;
+					s[0] = s[1] = ratio;
+				}
+			}
+			return [char, p, s, isCut];
+		};
+
+		const [tex, meta] = await (modelType !== CharModelType.None
+			? Promise.resolve([undefined, undefined] as const)
+			: Promise.all([
+				PIXI.Texture.fromURL(getTexURL(imageVar)),
+				forCommu
+					? Promise.resolve(undefined)
+					: fetch(`${AssetsRoot}/story/model/${c || img}.json`)
+						.then(meta => meta.json())
+						.then(meta => meta as StoryModelMeta[])
+						.catch(() => undefined),
+			]));
+
+		const object = new PIXI.Container();
+		object.name = "Char" + ["L", "R", "C", "LC", "RC"][position];
+
+		let [char, p, s, isCut] = build(tex, meta, imageVar);
+		if (!isCut) object.scale.set(MODEL_SCALE); // around actor origin
+		const place = () => {
+			// actor holder is mirrored, keep offset same with not-mirrored
+			char.position.set((mirrored && !isCut ? -1 : 1) * p[0], p[1] - 360);
+			char.scale.set(...s);
+			object.addChild(char);
+		};
+		place();
+
+		let face = imageVar;
+		return {
+			object,
+			isCut,
+			setFace: (imgVar: string) => {
+				if (face === imgVar) return;
+				face = imgVar;
+
+				if (char instanceof Pixi2DModel || char instanceof PixiSpineModel || char instanceof MixedModel)
+					char.setFace(imgVar);
+				else if (forCommu) { // commu face is image itself
+					PIXI.Texture.fromURL(getTexURL(imgVar))
+						.then(tex => {
+							if (object.destroyed || face !== imgVar) return;
+							const prev = char;
+							[char, p, s] = build(tex, meta, imgVar);
+							place();
+							prev.destroy();
+						})
+						.catch(() => void 0);
+				}
+			},
+			getHead: () => (char instanceof Pixi2DModel || char instanceof MixedModel)
+				? char.getFaceGlobalPosition()
+				: null,
+			unit: modelType !== CharModelType.None
+				? PIXI2DMODEL_UNIT * Math.abs(s[0]) * (isCut ? 1 : MODEL_SCALE)
+				: WORLD_UNIT,
+			destroy: () => {
+				if (!object.destroyed) object.destroy({ children: true });
+			},
+		};
+	}
+	const createActorModelRef = useRef(createActorModel);
+	createActorModelRef.current = createActorModel;
+
 	useEffect(() => { // initialize
 		let app: PIXI.Application<HTMLCanvasElement> | null = null;
 
@@ -401,7 +559,12 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			screenEffect.width = cover.width;
 			screenEffect.height = cover.height;
 			setScreenEffectObject(screenEffect);
-			app.stage.addChild(screenEffect);
+			screen.addChild(screenEffect); // `Texture_Foreground`, under dialogue
+
+			const cg = new CgLayer();
+			cg.zIndex = 40;
+			setCg(cg);
+			screen.addChild(cg);
 
 			app.stage.sortableChildren = true;
 			screen.sortableChildren = true;
@@ -414,126 +577,279 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		};
 	}, [playerRef.current]);
 
+	useEffect(() => { // Actors
+		if (!screen) return;
+
+		const stage = new ActorStage(
+			screen,
+			(image, imageVar, position) => createActorModelRef.current(image, imageVar, position),
+			char => [char.name.KR, char.name.EN, char.name.JP, char.name.TC].find(x => x) || char.image,
+		);
+		setStage(stage);
+
+		return () => stage.destroy();
+	}, [screen]);
+
+	useEffect(() => () => { // stop add effects
+		effectsRef.current.forEach(e => e.dispose());
+		effectsRef.current = [];
+	}, []);
+
+	/** `SetBackground` node is created for row (background image changed) */
+	function isBackgroundChanged (index: number): boolean {
+		const image = props.data[index].bg.image;
+		if (!image) return false;
+		for (let i = index - 1; i >= 0; i--) {
+			const prev = props.data[i].bg.image;
+			if (prev) return prev !== image;
+		}
+		return true;
+	}
+
+	/** Restore state before `cursor` without animation (jumped) */
+	function restoreTo (cursor: number) {
+		if (!stage || !cg) return;
+
+		stage.clear();
+		effectsRef.current.forEach(e => e.dispose());
+		effectsRef.current = [];
+		cg.reset();
+
+		let fg: number | null = null; // foreground color
+		for (let i = 0; i < cursor; i++) {
+			const row = props.data[i];
+			stage.applyInstant(row);
+
+			if (isBackgroundChanged(i)) cg.clearTarget();
+			if (isValidLText(row.bg.name) || isValidLText(row.bg.desc)) fg = null; // `BgNameNode` clears foreground
+			if (row.addEffect) ApplyAddEffectInstant(row.addEffect, cg);
+
+			switch (row.screenEffect) {
+				case SCREEN_EFFECT.FADE_OUT_BLACK: fg = 0x000000; break;
+				case SCREEN_EFFECT.FADE_OUT_WHITE: fg = 0xffffff; break;
+				case SCREEN_EFFECT.FADE_IN_BLACK:
+				case SCREEN_EFFECT.FADE_IN_WHITE:
+					fg = null;
+					break;
+			}
+		}
+
+		fgTweenRef.current++;
+		if (screenEffectObject) {
+			screenEffectObject.stopFade();
+			if (fg !== null) screenEffectFilter.tint(fg);
+			screenEffectObject.alpha = fg !== null ? 1 : 0;
+		}
+	}
+
+	useEffect(() => { // Row nodes (before dialogue)
+		if (!stage || !cg || !screen || !curData) return;
+
+		let alive = true;
+		const cursor = props.cursor;
+		const row = curData;
+
+		stage.assetOverride = IsDialogAssetOverride(row.key);
+		if (naturalNextRef.current !== cursor) // jumped, restore without animation
+			restoreTo(cursor);
+		naturalNextRef.current = null;
+
+		busyRef.current = true;
+		liveDoneRef.current = Promise.resolve();
+
+		const hasText = Object.values(row.text).some(r => r);
+		const hasAddEffect = !!row.addEffect && HasAddEffect(row.addEffect);
+		rowDoneRef.current = (async () => {
+			// SetBackground
+			if (isBackgroundChanged(cursor)) cg.clearTarget();
+
+			// BgNameNode, waits description fading out
+			if (isValidLText(row.bg.name) || isValidLText(row.bg.desc)) {
+				if (screenEffectObject && screenEffectObject.alpha > 0)
+					fadeFG(1, 0, 1); // `Fade_In_FG_Coroutine`
+
+				if (isValidLText(row.bg.desc)) {
+					await stage.wait(BG_DESC_FADE_TIME);
+					if (!alive) return;
+				}
+			}
+
+			const r = await stage.runRow(row, hasText, hasAddEffect, () => showAddImage(row));
+			if (!alive || !r) return;
+
+			// AddEffect node
+			if (row.addEffect) {
+				const run = RunAddEffect(row.addEffect, { screen, cg, wait: secs => stage.wait(secs), muteAll });
+				if (run) {
+					effectsRef.current.push(run);
+					await run.done;
+					if (!alive) return;
+				}
+			}
+
+			liveDoneRef.current = r.liveDone;
+			busyRef.current = false;
+			setReadyCursor(cursor);
+		})();
+
+		return () => {
+			alive = false;
+		};
+	}, [stage, cg, screen, curData]);
+
+	/** Move to row, as playing */
+	function goTo (index: number) {
+		if (index >= 0 && index < props.data.length) {
+			naturalNextRef.current = index;
+			if (props.onNext) props.onNext(index);
+		} else if (props.onDone)
+			props.onDone();
+	}
+	function goNext (row: StoryData) {
+		goTo(props.data.findIndex(r => r.key === row.next));
+	}
+
+	/** `CamEffectNode.duration` */
+	function screenEffectDuration (row: StoryData): number {
+		if (row.screenEffect_time) return row.screenEffect_time;
+		switch (row.screenEffect) {
+			case SCREEN_EFFECT.FADE_OUT_BLACK:
+			case SCREEN_EFFECT.FADE_IN_BLACK:
+			case SCREEN_EFFECT.FADE_OUT_WHITE:
+			case SCREEN_EFFECT.FADE_IN_WHITE:
+				return 1.68;
+		}
+		return 1;
+	}
+
+	/** Tween alpha of foreground (`GetFG`), resolved when finished or replaced */
+	function fadeFG (from: number, to: number, duration: number, color?: number): Promise<void> {
+		const fg = screenEffectObject;
+		if (!fg) return Promise.resolve();
+
+		if (color !== undefined) screenEffectFilter.tint(color);
+		const id = ++fgTweenRef.current;
+		fg.stopFade();
+		fg.alpha = from;
+
+		return new Promise(resolve => {
+			let t = 0;
+			const ticker = PIXI.Ticker.shared;
+			const tick = () => {
+				if (id !== fgTweenRef.current || fg.destroyed) {
+					ticker.remove(tick);
+					return resolve();
+				}
+
+				t += ticker.deltaMS / 1000;
+				fg.alpha = duration > 0 ? from + (to - from) * Math.min(1, t / duration) : to;
+				if (t >= duration) {
+					fg.alpha = to;
+					ticker.remove(tick);
+					resolve();
+				}
+			};
+			ticker.add(tick);
+		});
+	}
+
+	/** `CamEffectNode`, resolved when finished */
+	function runCamEffect (row: StoryData): Promise<void> {
+		const duration = screenEffectDuration(row);
+		switch (row.screenEffect) {
+			case SCREEN_EFFECT.CAM_SHAKE:
+				return screen
+					? ShakeScreen(screen, duration, 4.7, 1, row.screenEffect_shakeDir)
+					: Promise.resolve();
+			case SCREEN_EFFECT.FADE_OUT_BLACK:
+				return fadeFG(0, 1, duration, 0x000000);
+			case SCREEN_EFFECT.FADE_OUT_WHITE:
+				return fadeFG(0, 1, duration, 0xffffff);
+			case SCREEN_EFFECT.FADE_IN_BLACK:
+				return fadeFG(1, 0, duration, 0x000000);
+			case SCREEN_EFFECT.FADE_IN_WHITE:
+				return fadeFG(1, 0, duration, 0xffffff);
+		}
+		return Promise.resolve();
+	}
+
+	/** Play voice (empty to stop), resolved when ended, failed or replaced */
+	function playVoice (voice: string): Promise<void> {
+		if (props.onVoice)
+			return Promise.resolve(props.onVoice(voice));
+
+		const done = voiceDoneRef.current;
+		voiceDoneRef.current = null;
+		done?.();
+
+		setVoice(voice);
+		if (!voice) return Promise.resolve();
+		return new Promise<void>(resolve => (voiceDoneRef.current = resolve));
+	}
+	function endOwnVoice () {
+		const done = voiceDoneRef.current;
+		voiceDoneRef.current = null;
+		done?.();
+		setVoice("");
+	}
+
+	/**
+	 * Run nodes after dialogue (wait live effects, `ExitActorNode`, `CamEffectNode`), then `go`.
+	 * @param choice selected by `NovelChoiceNode`, jumps to destination directly (asset override mode runs camera effect and exit)
+	 */
+	function leaveRow (go: () => void, choice = false) {
+		if (!stage || !curData) return;
+		if (busyRef.current) return;
+
+		busyRef.current = true;
+		const row = curData;
+		const cursor = props.cursor;
+		(async () => {
+			await liveDoneRef.current;
+			if (!choice) {
+				await stage.runExit(row);
+				await runCamEffect(row);
+			} else if (stage.assetOverride) { // `NovelChoiceNode.PlayRowTailThenFinish`
+				await runCamEffect(row);
+				await stage.runExit(row);
+			}
+		})().then(() => {
+			if (cursorRef.current !== cursor) return; // jumped while leaving
+			busyRef.current = false;
+			go();
+		});
+	}
+
 	useEffect(() => { // click event handler
 		let func: (() => void) | undefined = undefined;
-		let screenEffectTimer: number | null = null;
 
 		if (curData && cover) {
 			func = () => {
-				const fn = () => {
-					if (props.onNext) {
-						if (sel.length === 0 || selDisp) {
-							const i = props.data.findIndex(r => r.key === curData.next);
-							if (i >= 0)
-								props.onNext(i);
-							else if (props.onDone)
-								props.onDone();
-						} else
-							setSelDisp(true);
-					}
-				};
+				if (busyRef.current || voiceBlockRef.current) return;
+				if (!props.onNext) return;
 
-				switch (screenEffect) {
-					case SCREEN_EFFECT.FADE_OUT_BLACK:
-					case SCREEN_EFFECT.FADE_OUT_WHITE:
-						if (screenEffectObject) {
-							if (!screenEffectObject.fading) {
-								screenEffectObject.fadeIn(1.0);
-								screenEffectTimer = setTimeout(() => fn(), 1000);
-							} else {
-								screenEffectObject.stopFade();
-								fn();
-							}
-						}
-						break;
-					default:
-						fn();
-						break;
+				if (sel.length > 0) {
+					if (!selDisp) setSelDisp(true); // `NovelChoiceNode` after dialogue
+					return; // choice must be selected
 				}
+				leaveRow(() => goNext(curData));
 			};
 			cover.addEventListener("click", func);
 			cover.addEventListener("tap", func);
 		}
 
 		return () => {
-			if (screenEffectTimer)
-				clearTimeout(screenEffectTimer);
-
 			if (cover && func) {
 				cover.removeEventListener("tap", func);
 				cover.removeEventListener("click", func);
 			}
 		};
-	}, [cover, curData, screenEffect, props.onNext, props.onDone, sel, selDisp]);
-
-	useEffect(() => { // Effect
-		let effectTimer: number = -1;
-		let effect: EffectBase | null = null;
-
-		if (screen && curData?.addEffect) {
-			effect = (() => {
-				const autoNext = () => {
-					if (props.onNext) {
-						const i = props.data.findIndex(r => r.key === curData.next);
-						if (i >= 0)
-							props.onNext(i);
-						else if (props.onDone)
-							props.onDone();
-					}
-				};
-
-				if (curData.addEffect === "Prefab_BangNShaking_01")
-					return new ShakeAndSoundEffect(screen, "Explosion_03", 1.0, 4.7, 1.0, false, 0.0);
-				else if (curData.addEffect === "Prefeb_OpenEyes") {
-					const effect = new Animation_OpenEyes(screen);
-					effect.onDone = autoNext;
-					return effect;
-				} else if (curData.addEffect === "Prefab_IdolEnding") {
-					const effect = new VideoEffect(screen, "Idol_Ending");
-					effect.onDone = autoNext;
-					return effect;
-				} else if (curData.addEffect === "Prefab_3rdAnniversary") {
-					const effect = new VideoEffect(screen, "3rdAnniversary");
-					effect.onDone = autoNext;
-					return effect;
-				}
-
-				console.warn("[STORY] Unknown Effect '" + curData.addEffect + "'");
-				return null;
-			})();
-
-			if (effect) {
-				let time = Date.now();
-				effectTimer = setInterval(() => {
-					const now = Date.now();
-					const delta = (now - time) * 0.001;
-					time = now;
-
-					if (effect) effect.Update(delta);
-				}, 50);
-			}
-		}
-
-		return () => {
-			if (screen)
-				screen.position.set(0, 0);
-
-			if (effect) {
-				effect.Destroy();
-				effect = null;
-			}
-
-			if (effectTimer !== -1)
-				clearInterval(effectTimer);
-		};
-	}, [screen, curData]);
+	}, [cover, screen, stage, cg, curData, props.onNext, props.onDone, sel, selDisp]);
 
 	useEffect(() => { // curData processing
 		console.debug("[STORY:curData]", curData);
 
 		if (screen && curData) {
-			setScreenEffect(curData.screenEffect);
-
 			if (isValidLText(curData.bg.name)) setBGName(curData.bg.name);
 			if (isValidLText(curData.bg.desc)) setBGDesc(curData.bg.desc);
 
@@ -551,53 +867,40 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				}
 			}
 
-			if (curData.voice) {
-				if (props.onVoice)
-					props.onVoice(curData.voice);
-				else
-					setVoice(curData.voice);
-			}
-
-			if (curData.char.L) setCharsByIndex(curData.char.L, 0);
-			else if (chars[0]) setCharsByIndex(null, 0);
-
-			if (curData.char.R) setCharsByIndex(curData.char.R, 1);
-			else if (chars[1]) setCharsByIndex(null, 1);
-
-			if (curData.char.C) setCharsByIndex(curData.char.C, 2);
-			else if (chars[2]) setCharsByIndex(null, 2);
-
-			if (curData.char.LC) setCharsByIndex(curData.char.LC, 3);
-			else if (chars[3]) setCharsByIndex(null, 3);
-
-			if (curData.char.RC) setCharsByIndex(curData.char.RC, 4);
-			else if (chars[4]) setCharsByIndex(null, 4);
-
-			if (curData.add) {
-				if (curData.add.image !== addImage)
-					setAddImage(curData.add.image);
-
-				if (curData.add.appear !== addImageAppear)
-					setAddImageAppear(curData.add.appear);
-
-				if (curData.add.off !== addImageOff)
-					setAddImageOff(curData.add.off);
-			}
-
 			if (curData.sel) {
 				setSelDisp(false);
 				setSel(curData.sel);
 			}
 		}
 	}, [screen, curData]);
+	/** `GameSoundManager.MuteAll`, sounds keep playing */
+	function muteAll (mute: boolean) {
+		setMuted(mute);
+		effectsRef.current.forEach(e => e.setMuted?.(mute));
+		props.onMute?.(mute);
+	}
+
+	/** `StaticImageNode` */
+	function showAddImage (row: StoryData) {
+		if (!row.add) return;
+		setAddImage(row.add.image);
+		setAddImageAppear(row.add.appear);
+		setAddImageOff(row.add.off);
+	}
+
 	useEffect(() => { // BGM processing
 		let _bgm = props.bgm; // find bgm to play
-		for (let i = 0; i <= props.cursor; i++) {
+		let _loop = true; // cutscene bgm always loops
+		for (let i = 0; i <= props.cursor && i < props.data.length; i++) {
 			const v = props.data[i].bgm;
-			if (v) _bgm = v;
+			if (v) {
+				_bgm = v;
+				_loop = props.data[i].bgmLoop !== 1; // `BgSoundNode.bgSoundLoop`
+			}
 		}
 		if (bgm !== _bgm) setBGM(_bgm);
-	}, [props.bgm, props.data, props.cursor, bgm]);
+		if (bgmLoop !== _loop) setBGMLoop(_loop);
+	}, [props.bgm, props.data, props.cursor, bgm, bgmLoop]);
 
 	useEffect(() => { // BG Name (left top)
 		let text: FadeText | null = null;
@@ -626,7 +929,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			setTimeout(() => {
 				if (text && !text.destroyed)
 					text.fadeOut(2.0);
-			}, 4000);
+			}, 3000);
 		}
 
 		return () => {
@@ -660,8 +963,8 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 
 			setTimeout(() => {
 				if (text && !text.destroyed)
-					text.fadeOut(2.0);
-			}, 2000);
+					text.fadeOut(BG_DESC_FADE_TIME);
+			}, 0);
 		}
 
 		return () => {
@@ -730,161 +1033,6 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		};
 	}, [screen, bgImage, props.bgStyle]);
 
-	useEffect(() => { // SCG Activation
-		if (curData) {
-			const zTable: Record<"L" | "R" | "C", number> = { L: 501, R: 502, C: 500 };
-
-			for (let i = 0; i < 3; i++) {
-				const c = charRef.current[i];
-				const k = (["L", "R", "C", ""] satisfies Array<"L" | "R" | "C" | "">)[i];
-				if (c && c.zIndex !== 600) { // not Cut (add)
-					if (curData.char[k]?.SCG === SCG_ACTIVATION.ACTIVATION)
-						c.zIndex = zTable[k] + 10;
-					else
-						c.zIndex = zTable[k];
-				}
-			}
-		}
-	}, [...charRef.current, curData]);
-
-	{ // Char L/R/C/LC/RC
-		const SPLITCOUNT = 6; // [0 1 2 3 4 5 6]
-		const SPLITINDEX = [1, 5, 3, 2, 4]; // L R C LC RC
-
-		for (let i = 0; i < 5; i++) {
-			const index = i;
-
-			useEffect(() => { // Char
-				const target = chars[index];
-
-				const img = (target?.image ?? "")
-					.replace(/_N_DL_([0-9]+)/, (_, p1) => `_${p1}`)
-					.replace(/_DL_N/, "_DL")
-					.replace(/_DL/, "");
-				const imgVar = target?.imageVar ?? "";
-
-				if (charRef.current[index]) {
-					const char = charRef.current[index]!;
-					if (
-						(screen && target && img) && // new char exists
-
-						// U2DModel based (face changeable)
-						(char instanceof Pixi2DModel || char instanceof PixiSpineModel || char instanceof MixedModel) &&
-
-						img === char.model.replace(/^[OG]\//, "") // same model image
-					) {
-						// reusable (only face changed)
-						char.setFace(imgVar);
-						return () => { };
-					} else {
-						charRef.current[index] = undefined;
-						char.fadeOut(0.15);
-						setTimeout(() => char!.destroy(), 150);
-					}
-				}
-
-				let disposed = false;
-				let char: CharSpriteType | null = null;
-				if (screen && target && img) {
-					const c = ConvertChar(img);
-					const modelType = img in (assertDBData(modelList) ? modelList : {})
-						? modelList![img]
-						: CharModelType.None;
-					const forCommu = isCommu(img);
-
-					console.log(img, modelType);
-
-					Promise.all(modelType !== CharModelType.None
-						? new Array(2).fill(Promise.resolve())
-						: [
-							PIXI.Texture.fromURL(c
-								? `${AssetsRoot}/webp/full/${c}.webp`
-								: forCommu
-									? getCommuImage(img, imgVar)
-									: `${AssetsRoot}/story/model/${img}.webp`
-							),
-							forCommu
-								? Promise.resolve()
-								: fetch(`${AssetsRoot}/story/model/${c || img}.json`)
-									.then(meta => meta.json())
-									.then(meta => meta as StoryModelMeta[])
-									.catch(() => undefined),
-						]
-					).then(([tex, meta]) => {
-						if (disposed) {
-							tex.destroy();
-							return;
-						}
-
-						const p = [1280 / SPLITCOUNT * SPLITINDEX[index], 720];
-						const s = [index === 1 ? -1 : 1, 1];
-
-						if (modelType === CharModelType.U2DModel) {
-							char = new Pixi2DModel("O/" + img); // always uncensored
-							char.setDialogDeactive(true);
-							char.setFace(imgVar);
-							// p[1] = 720 / 7 * 5;
-							p[1] = 360;
-						} else if (modelType === CharModelType.Spine) {
-							char = new MixedModel(img, `O/${img}`, 0);
-							char.setFace(imgVar);
-							char.setHidePart(true);
-							char.setDialogDeactive(true);
-							p[1] = 360;
-						} else {
-							char = new (forCommu ? CommuSprite : FadeSprite)(tex);
-							char.pivot.set(tex.width / 2, tex.height / 4 * 3);
-
-							if (meta) {
-								meta.forEach(e => {
-									p[0] += e.pos[0] * 100;
-									p[1] += e.pos[1] * 100;
-									s[0] *= e.scale[0];
-									s[1] *= e.scale[1];
-								});
-							} else if (isCommu(img)) {
-								if (!img.includes("Cut_")) {
-									p[1] -= 375;
-									s[0] = 213 / tex.width;
-									s[1] = 282 / tex.height;
-								} else {
-									char.zIndex = 600;
-									char.pivot.set(tex.width / 2, tex.height / 2);
-									p[0] = 640;
-									p[1] = 240;
-									s[0] = s[1] = 1;
-									if (tex.height > 358)
-										s[0] = s[1] = 358 / tex.height;
-								}
-							} else {
-								const ratio = Math.min(1, 720 / tex.height);
-								p[1] -= 40;
-								s[0] = s[1] = ratio;
-							}
-						}
-
-						char.filters = [speakerFilter[index]];
-						char.name = "Char" + ["L", "R", "C", "LC", "RC"][index];
-						char.zIndex = 501 + index;
-
-						char.position.set(...p);
-						char.scale.set(...s);
-						char.fadeIn(0.15);
-
-						screen.addChild(char);
-
-						charRef.current[index] = char;
-						update();
-					}).catch(() => void (0));
-				}
-
-				return () => {
-					disposed = true;
-				};
-			}, [screen, chars[index]?.image, chars[index]?.imageVar]);
-		}
-	}
-
 	useEffect(() => { // Add Image
 		let disposed = false;
 
@@ -933,7 +1081,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 
 					if (type === "add") {
 						if (fadeIn)
-							add.fadeIn(0.5);
+							add.fadeIn(1.0);
 						else
 							add.alpha = 1;
 					} else {
@@ -951,8 +1099,11 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		};
 	}, [screen, addImage, addImageAppear, addImageOff]);
 
+	const dialogData = readyCursor === props.cursor ? curData : undefined; // dialogue node reached
 	useEffect(() => { // Dialog
-		if (dialog && curData) {
+		if (!localeReady) return;
+		if (dialog && dialogData) {
+			const curData = dialogData;
 			const hasText = Object.values(curData.text).some(r => r);
 			if (hasText) {
 				const speakerTable: Record<Exclude<DIALOG_SPEAKER, DIALOG_SPEAKER.NONE>, "L" | "LC" | "C" | "RC" | "R"> = {
@@ -967,13 +1118,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 					? null
 					: curData.char[speakerTable[curData.speaker]]!;
 
-				speakerFilter[0].tint(curData.char.L?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
-				speakerFilter[1].tint(curData.char.R?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
-				speakerFilter[2].tint(curData.char.C?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
-				speakerFilter[3].tint(curData.char.LC?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
-				speakerFilter[4].tint(curData.char.RC?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
-
-				dialog.setText(Nn(LText(curData.text)) || "~");
+				dialog.setText(Nn(LText(curData.text), loc["STORY_PLAYER_GAMEPLAYER"] || "") || "~");
 				if (speaker && LText(speaker.name).trim()) {
 					dialog.setSpeaker(LText(speaker.name) || getSpeakerByImage(speaker.image), curData.speaker);
 				} else
@@ -986,24 +1131,52 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 					dialog.setDisplay(false);
 			}
 		}
-	}, [dialog, curData, LText]);
+	}, [dialog, dialogData, LText, loc, localeReady]);
+	useEffect(() => { // Voice (`DialogueNode`, `DialogOffNode`)
+		voiceBlockRef.current = false;
+		if (!dialogData?.voice) return;
+
+		let alive = true;
+		const hasText = Object.values(dialogData.text).some(r => r);
+		// dialogue can be skipped while playing voice only with `Voice_Skip`, `DialogOffNode` waits voice always
+		voiceBlockRef.current = !(hasText && dialogData.voiceSkip === 1);
+		playVoice(dialogData.voice).then(() => {
+			if (alive) voiceBlockRef.current = false;
+		});
+
+		return () => {
+			alive = false;
+			voiceBlockRef.current = false;
+			playVoice(""); // voice is stopped when node finished
+		};
+	}, [dialogData]);
+	useEffect(() => { // Row without dialogue
+		if (!dialogData) return;
+		if (Object.values(dialogData.text).some(r => r)) return;
+
+		if (dialogData.sel && dialogData.sel.length > 0) // `NovelChoiceNode` shows choices immediately
+			setSelDisp(true);
+		else if (!dialogData.voice) // `DialogOffNode` finishes immediately without voice
+			leaveRow(() => goNext(dialogData));
+	}, [dialogData]);
+	useEffect(() => { // Own voice player (autoplay blocked)
+		const audio = voiceAudioRef.current;
+		if (audio && voice)
+			audio.play().catch(endOwnVoice);
+	}, [voice]);
 	useEffect(() => { // Selection
 		let fn: (idx: number) => void;
 
 		if (curData && selection) {
 			if (sel.length > 0 && selDisp) {
 				fn = (idx: number) => {
+					if (busyRef.current || voiceBlockRef.current) return;
 					if (props.onNext) {
 						const i = props.data.findIndex(r => r.key === sel[idx].next);
 						if (i >= 0)
-							props.onNext(i);
-						else {
-							const j = props.data.findIndex(r => r.key === curData.next);
-							if (j >= 0)
-								props.onNext(j);
-							else if (props.onDone)
-								props.onDone();
-						}
+							leaveRow(() => goTo(i), true);
+						else // destination not found, continues row
+							leaveRow(() => goNext(curData));
 					}
 
 					setSel([]);
@@ -1021,51 +1194,26 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			if (selection && fn)
 				selection.off("select", fn);
 		};
-	}, [curData, selection, props.onNext, props.onDone, sel, selDisp, LText]);
-
-	useEffect(() => { // Screen Effect
-		let timer: number | null = null;
-
-		if (screenEffectObject) {
-			if (screenEffect === SCREEN_EFFECT.FADE_IN_BLACK || screenEffect === SCREEN_EFFECT.FADE_OUT_BLACK)
-				screenEffectFilter.tint(0x000000);
-			else if (screenEffect === SCREEN_EFFECT.FADE_IN_WHITE || screenEffect === SCREEN_EFFECT.FADE_OUT_WHITE)
-				screenEffectFilter.tint(0xffffff);
-
-			if (screenEffect === SCREEN_EFFECT.FADE_IN_BLACK || screenEffect === SCREEN_EFFECT.FADE_IN_WHITE) {
-				timer = setTimeout(() => {
-					screenEffectObject.fadeOut(1.0);
-
-					timer = setTimeout(() => {
-						if (props.onNext)
-							props.onNext(props.cursor + 1);
-					}, 1000);
-				}, 150);
-			}
-		}
-
-		return () => {
-			if (screenEffectObject)
-				screenEffectObject.stopFade();
-
-			if (timer !== null)
-				clearTimeout(timer);
-		};
-	}, [screenEffectObject, screenEffect]);
+	}, [curData, screen, stage, cg, selection, props.onNext, props.onDone, sel, selDisp, LText]);
 
 	return <>
-		{ bgm && <audio
+		{ (b => b && <audio
 			class={ style.BackgroundAudio }
-			src={ getBGM(bgm) }
+			src={ b }
 			autoplay
-			loop
+			loop={ bgmLoop }
+			muted={ muted }
 			volume={ 0.25 }
-		/> }
+		/>)(getBGM(bgm)) }
 		{ voice && <audio
+			ref={ voiceAudioRef }
 			class={ style.BackgroundAudio }
 			src={ getVoice(voice) }
 			autoplay
 			volume={ 0.25 }
+			muted={ muted }
+			onEnded={ endOwnVoice }
+			onError={ endOwnVoice }
 		/> }
 		<div
 			class={ BuildClass(style.Player, props.display === false && style.Hidden) }
@@ -1082,13 +1230,10 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 					}
 				} else if (e.key === "ArrowRight" || e.key === " " || e.key === "Enter") {
 					if (props.onNext && curData) {
-						if (sel.length === 0) {
-							const i = props.data.findIndex(r => r.key === curData.next);
-							if (i >= 0)
-								props.onNext(i);
-							else if (props.onDone)
-								props.onDone();
-						} else if (!selDisp)
+						if (busyRef.current || voiceBlockRef.current) return;
+						if (sel.length === 0)
+							leaveRow(() => goNext(curData));
+						else if (!selDisp)
 							setSelDisp(true);
 						else
 							return;
