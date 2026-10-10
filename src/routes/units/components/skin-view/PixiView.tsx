@@ -3,7 +3,6 @@ import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 import * as PIXI from "pixi.js";
 import { Viewport } from "pixi-viewport";
 import * as LAYERS from "@pixi/layers";
-import { Animation } from "@esotericsoftware/spine-pixi-v7";
 
 import ResizeObserver from "resize-observer-polyfill";
 
@@ -14,6 +13,7 @@ import { IsDev } from "@/libs/Const.1";
 import Shared from "@/components/pixi/Shared";
 
 import FadeContainer from "@/components/pixi/FadeContainer";
+import PixiGammaModel from "@/components/pixi/PixiGammaModel";
 import PixiSpineModel from "@/components/pixi/PixiSpineModel";
 import Pixi2DModel from "@/components/pixi/Pixi2DModel";
 import PixiVideoModel from "@/components/pixi/PixiVideoModel";
@@ -22,14 +22,28 @@ import MixedModel from "./MixedModel";
 
 import style from "./style.module.scss";
 
+interface AnimationBase {
+	duration: number;
+}
+
 interface PixiState {
 	renderer: PIXI.Renderer;
 	ticker: PIXI.Ticker;
 	vp: Viewport;
 }
 
+type PixiModelTypePairs = {
+	gamma: PixiGammaModel;
+	spine: PixiSpineModel;
+	"2dmodel": Pixi2DModel;
+	mixed: MixedModel;
+	video: PixiVideoModel;
+};
+type PixiViewTypes = keyof PixiModelTypePairs;
+type PixiModelTypes = PixiModelTypePairs[keyof PixiModelTypePairs];
+
 interface PixiViewProps {
-	type: "mixed" | "spine" | "2dmodel" | "video" | "none";
+	type: PixiViewTypes | "none";
 	U2DModelMetadata: UnitSkinEntity["metadata"];
 
 	uid: string;
@@ -52,10 +66,10 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 	const [pixi, setPixi] = useState<PixiState | null>(null);
 	const [surface, setSurface] = useState<PIXI.Container | null>(null);
 
-	const [char, setChar] = useState<PixiSpineModel | Pixi2DModel | MixedModel | PixiVideoModel | null>(null);
+	const [char, setChar] = useState<PixiModelTypes | null>(null);
 	const playerRef = useRef<HTMLDivElement>(null);
 
-	const [animInfo, setAnimInfo] = useState<Animation[] | false>(false);
+	const [animInfo, setAnimInfo] = useState<AnimationBase[] | false>(false);
 	const [animTime, setAnimTime] = useState(0);
 	const [animationIndicator, setAnimationIndicator] = useState<FadeContainer | null>(null);
 	const [animationIndicatorGraphics, setAnimationIndicatorGraphics] = useState<PIXI.Graphics | null>(null);
@@ -242,7 +256,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 	useEffect(() => {
 		if (surface) {
-			const _uid = props.type === "spine" || props.type === "mixed"
+			const _uid = ["gamma", "spine", "mixed"].includes(props.type)
 				? uid + (props.damaged ? "_Dam" : "")
 				: props.type === "video"
 					? props.vid
@@ -262,38 +276,48 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				: 0;
 			// console.log(_uid, props.U2DModelMetadata.spine);
 
-			let _char: PixiSpineModel | Pixi2DModel | MixedModel | PixiVideoModel | null = char as typeof _char;
-			if (_char && (_char.model !== _uid || (!("atlasId" in _char) || _char.atlasId !== atlasId))) {
+			let _char: PixiModelTypes | null = char as typeof _char;
+			if (
+				_char && (
+					_char.model !== _uid ||
+					(("google" in _char) && _char.google !== props.google) ||
+					(("atlasId" in _char) && _char.atlasId !== atlasId)
+				)
+			) {
 				_char.destroy();
 				_char = null;
 			}
 
 			if (_char === null) {
-				if (props.type === "mixed" || props.type === "spine") {
+				if (props.type === "gamma" || props.type === "mixed" || props.type === "spine") {
 					// console.log((props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!);
-					if (props.type === "mixed")
-						_char = new MixedModel(
-							_uid,
-							(props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!,
-							atlasId,
-						);
-					else {
-						_char = new PixiSpineModel(_uid, atlasId);
+					switch (props.type) {
+						case "gamma":
+							_char = new PixiGammaModel(_uid, props.google);
+							break;
+						case "mixed":
+							_char = new MixedModel(
+								_uid,
+								(props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!,
+								atlasId,
+							);
+							break;
+						case "spine":
+							_char = new PixiSpineModel(_uid, atlasId);
+							break;
 					}
 
+					// animation indicator is updated by `animation-start` and `animation-end`
 					_char.on("normal-touch", (m) => {
-						const r = (m as PixiSpineModel | MixedModel).play("Tep_1");
-						if (r) {
-							setAnimTime(Date.now());
-							setAnimInfo(r);
-						}
+						(m as PixiGammaModel | PixiSpineModel | MixedModel)?.play("Tep_1");
 					});
 					_char.on("special-touch", (m) => {
-						const r = (m as PixiSpineModel | MixedModel).play("breast");
-						if (r) {
-							setAnimTime(Date.now());
-							setAnimInfo(r);
-						}
+						(m as PixiGammaModel | PixiSpineModel | MixedModel)?.play("breast");
+					});
+					// emitted for every non-idle animation (intro, touch reaction, ...)
+					_char.on("animation-start", (info: AnimationBase) => {
+						setAnimTime(Date.now());
+						setAnimInfo([info]);
 					});
 					_char.on("animation-end", () => {
 						setAnimInfo(false);
@@ -342,51 +366,51 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 	useEffect(() => {
 		const fn = () => {
-			if (!animationIndicator || !animationIndicatorGraphics || !animInfo || animTime === 0) return;
+			if (!animationIndicator || !animationIndicatorGraphics) return;
 
-			const duration = animInfo.map(r => r.duration).reduce((p, c) => c > p ? c : p, 0);
-			// const progress = Math.min(1, elapsed / animInfo.map(r => r.duration).sort((a, b) => b - a)[0]);
-			const progress = Math.min(
-				(
-					char instanceof PixiSpineModel || char instanceof MixedModel
-						? char.currentAnimationTime() ?? 0
-						: (/* elapsed by browser time */ (Date.now() - animTime) / 1000)
-				) / duration,
-				1,
-			);
+			const progress = animInfo && animTime !== 0
+				? Math.min(
+					(
+						char && "currentAnimationTime" in char
+							? char.currentAnimationTime() ?? 0
+							: (/* elapsed time */ (Date.now() - animTime) / 1000)
+					) / animInfo.map(r => r.duration).reduce((p, c) => c > p ? c : p, 0) /* duration */,
+					1,
+				)
+				: 1.0;
 
 			const g = animationIndicatorGraphics;
-			if (animInfo) {
-				g.clear();
+			g.clear();
 
-				const points: Array<{ x: number; y: number; }> = [];
-				const deg = progress * 360;
-				for (let i = 0; i <= deg; i++) {
-					const rad = (i - 90) * Math.PI / 180;
-					points.push({
-						x: Math.cos(rad) * 15 * _dpr,
-						y: Math.sin(rad) * 15 * _dpr,
-					});
-				}
-				for (let i = 0; i <= deg; i++) {
-					const rad = ((deg - i) - 90) * Math.PI / 180;
-					points.push({
-						x: Math.cos(rad) * 8 * _dpr,
-						y: Math.sin(rad) * 8 * _dpr,
-					});
-				}
-
-				g.beginFill(0xffffff);
-				g.drawPolygon(points);
-				g.endFill();
+			const points: Array<{ x: number; y: number; }> = [];
+			const deg = progress * 360;
+			for (let i = 0; i <= deg; i++) {
+				const rad = (i - 90) * Math.PI / 180;
+				points.push({
+					x: Math.cos(rad) * 15 * _dpr,
+					y: Math.sin(rad) * 15 * _dpr,
+				});
 			}
+			for (let i = 0; i <= deg; i++) {
+				const rad = ((deg - i) - 90) * Math.PI / 180;
+				points.push({
+					x: Math.cos(rad) * 8 * _dpr,
+					y: Math.sin(rad) * 8 * _dpr,
+				});
+			}
+
+			g.beginFill(0xffffff);
+			g.drawPolygon(points);
+			g.endFill();
 		};
 
 		if (animationIndicator) {
 			if (!!animInfo)
 				animationIndicator.fadeIn(.5);
-			else
+			else {
 				animationIndicator.fadeOut(.5);
+				fn();
+			}
 		}
 
 		if (pixi && animInfo) pixi.ticker.add(fn);
@@ -402,6 +426,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 	return <div
 		class={ style.PixiView }
 		style={ { transform: `scale(${1 / _dpr})` } }
+		data-type={ props.type }
 
 		onWheel={ e => e.preventDefault() }
 
