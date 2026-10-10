@@ -454,7 +454,8 @@ country: ""
 age: ""
 secretRoomType: Adult
 marriageVoice: true
-introVoice: []
+introVoice:
+  - ko
 favor:
   present: 1
   clear: 0.75
@@ -516,6 +517,10 @@ chart:
   - 9
   - 8
   - 7
+cv:
+  "1": {}
+  "": {}
+  M: {}
 source: []
 oneoff: false
 oathable: true
@@ -5886,7 +5891,7 @@ skins:
   skins:
     - sid: 1
       artist: WOW
-      price: 352
+      price: 192
       Spine: true
       SpineDamaged: false
       parts: 14
@@ -5894,10 +5899,16 @@ skins:
       subset:
         O:
           - _
+          - D
           - S
+          - DS
+          - DP
+          - DSP
         G:
           - _
           - S
+          - DS
+          - DSP
       anim:
         - false
         - false
@@ -5914,5 +5925,6 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 2
-        dflags: 0
+        dflags: 1
+        2dmodel_dam: 2DModel_3P_Eir_NS1_Dam
         consumableKey: Skin_3P_Eir_1

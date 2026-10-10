@@ -158,6 +158,7 @@ export const SkinBanners: string[] = [
     "DS_KunoichiShiden_3",
     "DS_KunoichiShiden_set",
     "DS_MoMo_3",
+    "DS_Ramiel_2",
     "DS_Saraqael_2",
     "LC_Chii_1",
     "LC_Dhana_1",

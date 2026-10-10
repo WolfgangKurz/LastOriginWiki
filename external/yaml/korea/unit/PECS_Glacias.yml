@@ -410,15 +410,15 @@ company: ""
 country: ""
 age: ""
 secretRoomType: AGS
-marriageVoice: false
+marriageVoice: true
 introVoice:
   - jp
   - ko
 favor:
-  present: 0
-  clear: 0
-  death: 0
-  assistant: 0
+  present: 1.5
+  clear: 1.25
+  death: 0.25
+  assistant: 1
 linkBonus:
   - HP_20
   - ATK_20
@@ -463,12 +463,13 @@ cv:
     ko: ""
     jp: 清水じゅん
     jpdmm: 清水じゅん
+  M: {}
 source:
   - - Ev:Ev19:EV3-3Ex
   - - Ev:Ev33:EV3-3EX
   - - Ev:Ev35:EV2-2EX
 oneoff: false
-oathable: false
+oathable: true
 entryReqMap: []
 cost:
   res:
@@ -11568,9 +11569,8 @@ dialogue:
         내 모든 것은 맹우의 것.
         후후, 그래. 만약 존재한다면... 영혼까지도.
       SPIdle_01_01: |-
-        그대의 요청을 들어줄 수 없어 미안하구나.
-        그래도... 다른 방식이라면,
-        나는 언제든 괜찮단다.
+        그대의 요청을 들어줄 수 없어 미안하구나.
+        그래도... 다른 방식이라면,​ 나는 언제든 괜찮단다.
       MVP: 보탬이 되었다니, 기쁘구나.
     "":
       Join: ...! 그대는, 설마… 운명이란 정말 얄궂구나.
@@ -11604,6 +11604,41 @@ dialogue:
         혼자 여생을 보내는 것도 나쁘지 않겠지만…
         맹우와 함께하는 삶도, 나쁘진 않을 것 같구나.
       MVP: 도움이 되었다니 기쁘구나, 나의 맹우여.
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        나의 맹우여, 그대와 맺은 맹약은 내 안에 깊이 새겨졌다.
+        설령 긴 세월이 다시 흐른다 해도,
+        이 기억만큼은 얼어붙지 않을 것이다.
+      Idle_01_02: |-
+        그대가 내 이름을 불러줄 때마다,
+        오래 잠들어 있던 마음이 깨어나는 듯하구나.
+        후후… 참으로 신기한 일이다.
+      Idle_01_03: |-
+        내가 필요하다면 언제든 부르거라.​
+        이제부터 나는 계약을 이행하기 위해서가 아니라,
+        그대의 곁에 있기 위해 응답할 테니.
+      SPIdle_01_01: |-
+        후후…
+        그대의 손길을 기다리는 게 하나의 즐거움이 되었단다.​
+        이제 그대가 없는 일상은 상상할 수가 없구나.
+      MVP: ""
   JP:
     "1":
       SquadJoin: ""
@@ -11648,6 +11683,29 @@ dialogue:
       Idle_01_01: そなたは竜殺者と実に似ておる。特にその眼が。決然たる意志が感じられる眼が、似ておるのだ。
       Idle_01_02: 盟友よ。そなたには今のように常に安全な場所にいてもらいたい。万が一そなたに、小さな傷ひとつでもついた日には…私はそなたを傷つけた敵を葬るため、全てを捧げるだろう。…そう。私の命までもな。
       Idle_01_03: すべてが終われば…そうだな。誰も知らぬ場所で一人余生を過ごすのも悪くないだろうが…盟友と共に過ごす人生も捨てがたい。
+      MVP: ""
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
       MVP: ""
   EN:
     "1":
@@ -11714,6 +11772,29 @@ dialogue:
       Idle_01_03: |-
         When everything’s over… Well. It won’t be bad,
         spending the rest of my life alone… But it would be nice to stay with you, too.
+      MVP: ""
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
       MVP: ""
   TC:
     "1":
@@ -11785,6 +11866,29 @@ dialogue:
         一切都結束的話…不知道啊。在誰都不知道的地方
         獨自度過餘生也不錯，但是…
         和盟友在一起生活，似乎也不壞。
+      MVP: ""
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
       MVP: ""
 skins:
   sid: null
