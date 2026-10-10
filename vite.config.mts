@@ -192,6 +192,7 @@ export default defineConfig(async ({ mode, command }) => {
 		{ name: "components.skill", test: "/src/components/skill-" },
 		{ name: "components.unit", test: "/src/components/unit-" },
 		{ name: "components.popup", test: "/src/components/popup-" },
+		{ name: "components.pixi", test: "/src/components/pixi/" },
 		{ name: "components", test: "/src/components/" },
 
 		// routes
