@@ -26,6 +26,7 @@ import FadeText from "@/components/pixi/FadeText";
 import FadeSprite from "@/components/pixi/FadeSprite";
 import Pixi2DModel from "@/components/pixi/Pixi2DModel";
 import PixiSpineModel from "@/components/pixi/PixiSpineModel";
+import PixiGammaModel from "@/components/pixi/PixiGammaModel";
 import MixedModel from "@/routes/units/components/skin-view/MixedModel";
 
 import DialogObject from "./Objects/DialogObject";
@@ -37,7 +38,7 @@ import { IsDialogAssetOverride } from "./Objects/Actor/DialogAssetOverride";
 
 import style from "./style.module.scss";
 
-type CharSpriteType = FadeSprite | CommuSprite | Pixi2DModel | PixiSpineModel | MixedModel;
+type CharSpriteType = FadeSprite | CommuSprite | Pixi2DModel | PixiSpineModel | PixiGammaModel | MixedModel;
 
 /** Pixels per Unity unit of `Pixi2DModel` (100px, x3.5 root scale) */
 const PIXI2DMODEL_UNIT = 350;
@@ -51,6 +52,7 @@ enum CharModelType {
 	None = 0,
 	U2DModel = 1,
 	Spine = 2,
+	Gamma = 3,
 }
 
 /**
@@ -180,7 +182,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		return `${AssetsRoot}/story/model/commu/${v}.webp`;
 	}
 	function isStoryModel (model: string): boolean {
-		const list = [
+		const list: string[] = [ /*
 			"2DModel_Woman_N", "2DModel_BR_PastGirl_N", "2DModel_BR_PastMan_N",
 			"2DModel_BR_PastMan2_N", "2DModel_BR_TomoeKIN_N", "2DModel_Eva_N",
 			"2DModel_KaenFake_N", "2DModel_Kasasagi_N", "2DModel_Kirishima_N",
@@ -201,7 +203,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			"2DModel_PECS_LemonadeBeta_N", "2DModel_PECS_Shepherd_N",
 			"2DModel_Mercenary_N", "2DModel_Simon_N", "2DModel_Simon2_N",
 			"2DModel_PECS_LemonadeGamma_N_DL_N",
-		];
+		*/ ];
 		if (list.includes(model)) return true;
 		return false;
 	}
@@ -209,7 +211,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		if (isCommu(model)) return false; // Commu image will be processed with different way
 		if (isStoryModel(model)) return false;
 
-		const charTable: Record<string, string> = {
+		const charTable: Record<string, string> = { /*
 			"3P_Amphitrite_N_DL_0_O": "3P_Amphitrite_0_O_S",
 			"3P_Alice_NS1_DL_0_O": "3P_Alice_1_O_BS",
 			"3P_Daphne_NS2_DL_0_O": "3P_Daphne_2_O_S",
@@ -298,7 +300,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 
 			BR_Brownie_01_0_O: "BR_Brownie_0_O",
 			BR_Brownie_02_0_O: "BR_Brownie_0_O",
-		};
+		*/ };
 
 		// TODO: Implement EmojiEffect & LiveEffect
 
@@ -358,6 +360,11 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		return "";
 	}
 
+	function _get<T> (from: symbol | Record<string, T>, key: string): T | null {
+		if (assertDBData(from)) return from[key];
+		return null;
+	}
+
 	/** Load character model for `ActorStage` */
 	async function createActorModel (image: string, imageVar: string, position: ActorPosition): Promise<ActorModel | null> {
 		const img = image
@@ -367,9 +374,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		if (!img) return null;
 
 		const c = ConvertChar(img);
-		const modelType = img in (assertDBData(modelList) ? modelList : {})
-			? modelList![img]
-			: CharModelType.None;
+		const modelType = _get(modelList, img.toLowerCase()) ?? CharModelType.None;
 		const forCommu = isCommu(img);
 		const mirrored = position === ActorPosition.RIGHT || position === ActorPosition.RIGHTCENTER;
 		const baseX = ActorStage.destScreenX(position);
@@ -386,6 +391,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			const s: Tuple<number, 2> = [1, 1];
 			let isCut = false;
 
+			console.log(img, modelType);
 			let char: CharSpriteType;
 			if (modelType === CharModelType.U2DModel) {
 				char = new Pixi2DModel("O/" + img); // always uncensored
@@ -395,7 +401,11 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			} else if (modelType === CharModelType.Spine) {
 				char = new MixedModel(img, `O/${img}`, 0);
 				char.setFace(imgVar);
-				char.setHidePart(true);
+				char.setDialogDeactive(true);
+				p[1] = 360;
+			} else if (modelType === CharModelType.Gamma) {
+				char = new PixiGammaModel(img, false);
+				char.setFace(imgVar);
 				char.setDialogDeactive(true);
 				p[1] = 360;
 			} else {
@@ -466,7 +476,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				if (face === imgVar) return;
 				face = imgVar;
 
-				if (char instanceof Pixi2DModel || char instanceof PixiSpineModel || char instanceof MixedModel)
+				if ("setFace" in char)
 					char.setFace(imgVar);
 				else if (forCommu) { // commu face is image itself
 					PIXI.Texture.fromURL(getTexURL(imgVar))
@@ -480,7 +490,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 						.catch(() => void 0);
 				}
 			},
-			getHead: () => (char instanceof Pixi2DModel || char instanceof MixedModel)
+			getHead: () => ("getFaceGlobalPosition" in char)
 				? char.getFaceGlobalPosition()
 				: null,
 			unit: modelType !== CharModelType.None

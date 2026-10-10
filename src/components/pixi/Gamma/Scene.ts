@@ -1,12 +1,34 @@
 import type { NodeData, Quat, Vec3 } from "./Types";
 import {
 	Mat4,
-	m4, m4Compose, m4Invert, m4Mul, m4Point, m4Vector,
+	m4, m4Compose, m4Mul, m4Point, m4Vector,
 	qInverse, qMul, qNormalize, qRotate, qToEuler,
 } from "./Math";
 
 const IDENTITY: Quat = [0, 0, 0, 1];
 const MIRROR_EPSILON = 1e-6;
+const ZERO3: Vec3 = [0, 0, 0];
+const ONE3: Vec3 = [1, 1, 1];
+
+/** Unity `InverseSafe`, zero for (nearly) zero scale */
+function inverseSafe (v: number): number {
+	return Math.abs(v) < MIRROR_EPSILON ? 0 : 1 / v;
+}
+
+/** Inverse of `TRS(t, r, s)` = `S^-1 * R^-1 * T^-1`, with `inverseSafe` scale */
+function m4InverseTRS (out: Mat4, t: Readonly<Vec3>, r: Readonly<Quat>, s: Readonly<Vec3>): Mat4 {
+	m4Compose(out, ZERO3, qInverse(r), ONE3);
+	const inv = [inverseSafe(s[0]), inverseSafe(s[1]), inverseSafe(s[2])];
+	for (let c = 0; c < 3; c++)
+		for (let row = 0; row < 3; row++)
+			out[c * 4 + row] *= inv[row];
+
+	const [x, y, z] = t;
+	out[12] = -(out[0] * x + out[4] * y + out[8] * z);
+	out[13] = -(out[1] * x + out[5] * y + out[9] * z);
+	out[14] = -(out[2] * x + out[6] * y + out[10] * z);
+	return out;
+}
 /** 180 degrees rotations, `diag` of sign flip with determinant +1 */
 const FLIP_X: Quat = [1, 0, 0, 0]; // diag(1, -1, -1)
 const FLIP_Y: Quat = [0, 1, 0, 0]; // diag(-1, 1, -1)
@@ -159,11 +181,15 @@ export class GammaNode {
 		this.update();
 		return this._world;
 	}
-	/** `worldToLocalMatrix` */
+	/**
+	 * `worldToLocalMatrix`, inverted per hierarchy level like Unity.
+	 * Zero scale axis (e.g. z of 2D model root) is inverted to zero instead of making whole matrix singular.
+	 */
 	public get worldInverse (): Mat4 {
 		this.update();
 		if (this._worldInvDirty) {
-			m4Invert(this._worldInv, this._world);
+			m4InverseTRS(this._worldInv, this._localPosition, this._localRotation, this._localScale);
+			if (this.parent) m4Mul(this._worldInv, this._worldInv, this.parent.worldInverse);
 			this._worldInvDirty = false;
 		}
 		return this._worldInv;
