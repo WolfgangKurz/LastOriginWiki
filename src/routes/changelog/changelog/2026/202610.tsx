@@ -29,7 +29,6 @@ const Changelog: FunctionalComponent = () => <>
 		dialogue={ <>
 			<li><span class="badge bg-light text-dark">KST 2026-10-11 05:50:26</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
 			<li>전투원 <BY>에이르</BY>의 한국어 소개 보이스가 추가되었습니다.</li>
-			<li>전투원 <BY>라미엘</BY>의 스킨 <BR>두려워 말라 : 타락으로 되찾은 실체</BR>의 한국어 보이스가 추가되었습니다.</li>
 			<li>전투원 <BY>글라시아스</BY>의 한국어 서약 보이스가 추가되었습니다.</li>
 		</> }
 	/>
