@@ -5,6 +5,36 @@ import {
 	qInverse, qMul, qNormalize, qRotate, qToEuler,
 } from "./Math";
 
+const IDENTITY: Quat = [0, 0, 0, 1];
+const MIRROR_EPSILON = 1e-6;
+/** 180 degrees rotations, `diag` of sign flip with determinant +1 */
+const FLIP_X: Quat = [1, 0, 0, 0]; // diag(1, -1, -1)
+const FLIP_Y: Quat = [0, 1, 0, 0]; // diag(-1, 1, -1)
+const FLIP_Z: Quat = [0, 0, 1, 0]; // diag(-1, -1, 1)
+
+/** Rotation conjugated by mirror `diag(-1, 1, 1)` (`M * R * M`) */
+function reflect (q: Readonly<Quat>, mirrored: boolean): Quat {
+	return mirrored ? [q[0], -q[1], -q[2], q[3]] : [q[0], q[1], q[2], q[3]];
+}
+
+/**
+ * Mirror state of node and remaining sign flip as rotation.
+ * World basis is `parentRotation * parentMirror * localRotation * sign(localScale)`,
+ * sign flips are moved right and split into `rotation * mirror`.
+ */
+function mirrorOf (parentMirrored: boolean, scale: Readonly<Vec3>): [mirrored: boolean, flip: Quat] {
+	// nearly zero scale (e.g. z of -4e-19) is not a mirror
+	const ex = (parentMirrored ? -1 : 1) * (scale[0] < -MIRROR_EPSILON ? -1 : 1);
+	const ey = scale[1] < -MIRROR_EPSILON ? -1 : 1;
+	const ez = scale[2] < -MIRROR_EPSILON ? -1 : 1;
+	const mirrored = ex * ey * ez < 0;
+	const rx = mirrored ? -ex : ex; // remaining diag(rx, ey, ez) has determinant +1
+	if (rx > 0 && ey > 0) return [mirrored, IDENTITY];
+	if (rx > 0) return [mirrored, FLIP_X];
+	if (ey > 0) return [mirrored, FLIP_Y];
+	return [mirrored, FLIP_Z];
+}
+
 /** Unity `Transform` + `GameObject` equivalent */
 export class GammaNode {
 	public readonly index: number;
@@ -22,6 +52,8 @@ export class GammaNode {
 	private _worldInv: Mat4 = m4();
 	private _worldInvDirty = true;
 	private _rotation: Quat = [0, 0, 0, 1];
+	/** World basis is mirrored (odd number of negative scale axes), world matrix ~ `rotation * diag(-1, 1, 1)` */
+	private _mirrored = false;
 
 	/** Called when `activeInHierarchy` may be changed */
 	public onActiveChanged: (() => void) | null = null;
@@ -103,15 +135,21 @@ export class GammaNode {
 		if (!this._dirty) return;
 
 		const local = m4Compose(m4(), this._localPosition, this._localRotation, this._localScale);
-		if (this.parent) {
-			const p = this.parent;
+		const p = this.parent;
+		if (p) {
 			p.update();
 			m4Mul(this._world, p._world, local);
-			this._rotation = qNormalize(qMul(p._rotation, this._localRotation));
-		} else {
+		} else
 			this._world = local;
-			this._rotation = qNormalize(this._localRotation);
-		}
+
+		// rotation as seen on screen (Unity), negative scales of ancestors mirror rotations of descendants
+		const parentMirrored = !!p && p._mirrored;
+		const [mirrored, flip] = mirrorOf(parentMirrored, this._localScale);
+		this._mirrored = mirrored;
+		this._rotation = qNormalize(qMul(
+			qMul(p ? p._rotation : IDENTITY, reflect(this._localRotation, parentMirrored)),
+			flip,
+		));
 		this._dirty = false;
 		this._worldInvDirty = true;
 	}
@@ -146,9 +184,16 @@ export class GammaNode {
 		return [...this._rotation];
 	}
 	public set rotation (q: Readonly<Quat>) {
-		this.localRotation = this.parent
-			? qNormalize(qMul(qInverse(this.parent.rotation), q))
-			: qNormalize(q);
+		// inverse of `update`
+		const p = this.parent;
+		const parentMirrored = !!p && p.rotationMirrored;
+		const [, flip] = mirrorOf(parentMirrored, this._localScale);
+		const r = qMul(qMul(p ? qInverse(p.rotation) : IDENTITY, q), qInverse(flip));
+		this.localRotation = qNormalize(reflect(r, parentMirrored));
+	}
+	private get rotationMirrored (): boolean {
+		this.update();
+		return this._mirrored;
 	}
 	public get eulerAngles (): Vec3 {
 		return qToEuler(this.rotation);

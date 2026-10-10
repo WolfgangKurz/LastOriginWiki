@@ -16,6 +16,10 @@ const SPECIAL_TARGETS = ["special", "chest"];
 
 export const TRIGGER_NORMAL_TOUCH = "Tep_1";
 export const TRIGGER_SPECIAL_TOUCH = "breast";
+const TRIGGER_FACE_ON = "Face_On";
+const TRIGGER_FACE_OFF = "Face_Off";
+/** Face selected by default, same as no face on preset */
+const DEFAULT_FACE = "idle";
 
 const DEFAULT_RENDER_QUEUE = 3000;
 
@@ -60,6 +64,8 @@ export default class GammaModel {
 	private readonly drawItems: DrawItem[];
 	private touchAnimating = false;
 	private lastAnimationElapsed = 0;
+	/** Non-default face is selected, see `setFaceTrigger` */
+	private faceOn = false;
 
 	public events: GammaModelEvents = {};
 
@@ -144,9 +150,7 @@ export default class GammaModel {
 		// `DynamicBone.Start`
 		for (const db of this.dynamicBones) db.setupParticles();
 
-		// `Actor.Start`
-		const main = this.mainAnimator;
-		if (main && main.hasParameter("Face_On")) main.setTrigger("Face_On");
+		// `Face_On` is not set here, game sets it only when face is selected on preset (see `setFace`)
 	}
 
 	/** First animator in hierarchy, `GetComponentInChildren<Animator>()` */
@@ -405,7 +409,25 @@ export default class GammaModel {
 		const f = this.data.faces.find(x => x.n.toLowerCase() === key);
 		if (!f) return false;
 		this.faceRenderer.sprite = f.sp >= 0 ? f.sp : this.faceOriginal;
+		this.setFaceTrigger(key !== DEFAULT_FACE);
 		return true;
+	}
+
+	/**
+	 * `LobbyActor.Start` sets `Face_On` when face is selected on preset (`FaceOn`),
+	 * models switch to states without face morph (`*_NoMorph`) not to override selected face.
+	 * Default face is treated as no face (`FaceOff`), `Face_Off` returns to normal states.
+	 * Trigger is kept until consumed, same as Unity (e.g. selected while touch reaction).
+	 */
+	private setFaceTrigger (on: boolean) {
+		if (this.faceOn === on) return;
+		this.faceOn = on;
+
+		const anim = this.mainAnimator;
+		if (!anim) return;
+		const [set, reset] = on ? [TRIGGER_FACE_ON, TRIGGER_FACE_OFF] : [TRIGGER_FACE_OFF, TRIGGER_FACE_ON];
+		if (anim.hasParameter(reset)) anim.resetTrigger(reset);
+		if (anim.hasParameter(set)) anim.setTrigger(set);
 	}
 	//#endregion
 
@@ -462,8 +484,7 @@ export default class GammaModel {
 
 	/**
 	 * Set trigger to main animator, returns `true` if animation started.
-	 * Accepted only when every layer using the trigger can react now (not on intro etc.),
-	 * otherwise layers would play out of sync (e.g. face reacts but body keeps intro).
+	 * Only layers which can react now are transitioned, same as game.
 	 */
 	public play (trigger: string): boolean {
 		if (!this.canPlay(trigger)) return false;

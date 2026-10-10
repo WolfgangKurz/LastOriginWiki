@@ -140,12 +140,6 @@ class StateMachineRuntime {
 		return null;
 	}
 
-	/** Whether any transition of this machine uses `trigger` */
-	public usesTrigger (trigger: string): boolean {
-		const has = (t: TransitionData) => t.co.some(c => c[1] === trigger);
-		return this.data.any.some(has) || this.data.st.some(st => st.tr.some(has));
-	}
-
 	/** Whether setting `trigger` starts a transition immediately on current state */
 	public canRespond (trigger: string): boolean {
 		if (this.next || this.empty) return false;
@@ -534,10 +528,12 @@ export class AnimatorRuntime {
 		};
 	}
 
-	/** Whether every layer using `trigger` can react to it right now */
+	/**
+	 * Whether any layer can react to `trigger` right now.
+	 * Same as game, layers which can not react (e.g. one-shot layer stays on last state) are just left as is.
+	 */
 	public canRespond (trigger: string): boolean {
-		const machines = [...new Set(this.layers.map(l => l.machine))].filter(m => m.usesTrigger(trigger));
-		return machines.length > 0 && machines.every(m => m.canRespond(trigger));
+		return this.machines.some(m => m.canRespond(trigger));
 	}
 
 	/** Longest remaining non-looping state among layers, `null` if all layers are looping (idle) */
