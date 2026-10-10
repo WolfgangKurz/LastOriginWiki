@@ -19,7 +19,6 @@ import MergedVideo from "@/components/merged-video";
 import Pinch from "@/components/pinch";
 
 import PixiView from "./PixiView";
-import GammaViewer from "./GammaViewer";
 
 import style from "./style.module.scss";
 
@@ -74,9 +73,6 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const [hideParts, setHideParts] = useState(false);
 	const [hideParts2, setHideParts2] = useState(false);
 	const [hideBG, setHideBG] = useState(false);
-
-	const [gammaPartAvailable, setGammaPartAvailable] = useState(false);
-	const [gammaBGAvailable, setGammaBGAvailable] = useState(false);
 
 	const [displayTouchCollider, setDisplayTouchCollider] = useState(false);
 
@@ -178,13 +174,15 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		SkinVideoPostfix,
 	]);
 
-	useEffect(() => { // Reset gamma hiding available, reset face info
-		setGammaPartAvailable(false);
-		setGammaBGAvailable(false);
-
+	useEffect(() => { // Reset face info and `is*`, `hide*` states
 		setFace("");
 		setFacePrefix("");
 		setFaceList([]);
+
+		setIsDamaged(false);
+		setHideParts(false);
+		setHideParts2(false);
+		setHideBG(false);
 	}, [props.unit.uid, props.skin.sid]);
 
 	useEffect(() => {
@@ -192,7 +190,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			setIsCensored(false);
 	}, [isCensored]);
 
-	const DisplayGamma = useMemo( // NOTE: No animated damaged yet
+	const DisplayGamma = useMemo( // NOTE: No animated damaged for gamma
 		() => !!props.animate && !!(skin.metadata.flags & SKIN_METADATA_FLAGS.GAMMA) && !isDamaged,
 		[props.animate, skin.metadata.flags, isDamaged],
 	);
@@ -204,18 +202,11 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	}, [skin.subset, isCensored]);
 
 	useEffect(() => {
-		if (DisplayGamma) {
-			if (hideParts2) setHideParts2(false);
-
-			if (!gammaPartAvailable && hideParts) setHideParts(false);
-			if (!gammaBGAvailable && hideBG) setHideBG(false);
-		} else {
-			const key = `${isDamaged ? "D" : ""}${hideBG ? "B" : ""}${hideParts ? "S" : ""}${hideParts2 ? "P" : ""}` as UnitSkinEntitySubset;
-			if (!hasSubsetType(key)) {
-				setHideBG(false);
-				setHideParts(false);
-				setHideParts2(false);
-			}
+		const key = `${isDamaged ? "D" : ""}${hideBG ? "B" : ""}${hideParts ? "S" : ""}${hideParts2 ? "P" : ""}` as UnitSkinEntitySubset;
+		if (!hasSubsetType(key)) {
+			setHideBG(false);
+			setHideParts(false);
+			setHideParts2(false);
 		}
 	}, [
 		hasSubsetType,
@@ -223,26 +214,22 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		hideBG,
 		hideParts,
 		hideParts2,
-		DisplayGamma,
-		gammaPartAvailable,
-		gammaBGAvailable,
 	]);
 
 	const AvailableS = useMemo(() => !isDamaged
-		? hasSubsetType("S") || (hasSubsetType("BS") && hideBG) || (DisplayGamma && gammaPartAvailable)
+		? hasSubsetType("S") || (hasSubsetType("BS") && hideBG)
 		: hasSubsetType("DS") || (hasSubsetType("DBS") && hideBG),
-		[hasSubsetType, isDamaged, hideBG, DisplayGamma, gammaPartAvailable],
+		[hasSubsetType, isDamaged, hideBG],
 	);
 	const AvailableP = useMemo(() => !DisplayGamma && (
 		!isDamaged
 			? hasSubsetType("P") || (hasSubsetType("BP") && hideBG)
 			: hasSubsetType("DP") || (hasSubsetType("DBP") && hideBG)
 	), [hasSubsetType, isDamaged, hideBG, DisplayGamma]);
-
 	const AvailableBG = useMemo(() => !isDamaged
-		? hasSubsetType("B") || (hasSubsetType("BS") && hideParts) || (DisplayGamma && gammaBGAvailable)
+		? hasSubsetType("B") || (hasSubsetType("BS") && hideParts)
 		: hasSubsetType("DB") || (hasSubsetType("DBS") && hideParts),
-		[hasSubsetType, isDamaged, hideParts, DisplayGamma, gammaBGAvailable],
+		[hasSubsetType, isDamaged, hideParts],
 	);
 
 	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.metadata.imageId}`}`;
@@ -308,6 +295,16 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			});
 	}
 
+	type PixiViewType = Parameters<typeof PixiView>[0]["type"];
+	const pixiViewTypes: [boolean, PixiViewType][] = useMemo(() => [
+		[DisplayMixed, "mixed"],
+		[DisplayGamma, "gamma"],
+		[DisplaySpine, "spine"],
+		[Display2DModel, "2dmodel"],
+		[!!modelVideoId, "video"],
+	], [DisplayMixed, DisplayGamma, DisplaySpine, Display2DModel, !!modelVideoId]);
+	const pixiViewType = useMemo(() => pixiViewTypes.find(c => c[0])?.[1] ?? "none", [pixiViewTypes]);
+
 	return <div class={ cn(style.SkinView, inPlusDownload && style.InPlusDownload) }>
 		<div class={ `ratio ${Aspect} ${style.SkinFull} ${props.collapsed ? style.Collapsed : ""}` }>
 			<div>
@@ -321,13 +318,19 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					class={ cn(style.FullUnit, style.FullUnitMarginless) }
 					ref={ FullUnitEl }
 				>
-					{ DisplayGamma && !!props.collapsed && !!props.animate
-						? <GammaViewer
-							key="skin-gamma-viewer"
+					{ (DisplayMixed || DisplayGamma || DisplaySpine || Display2DModel || DisplayVideo) && !!props.animate
+						? <PixiView
+							type={ pixiViewType }
+							U2DModelMetadata={ skin.metadata }
 
-							model={ `${isCensored ? "G" : "O"}/2dmodel_${modelId}` }
+							uid={ modelId }
+							vid={ modelVideoId }
+							google={ isCensored }
+							damaged={ isDamaged }
+
 							displayTouchCollider={ displayTouchCollider }
 							hidePart={ hideParts }
+							hidePart2={ hideParts2 }
 							hideBG={ hideBG }
 
 							face={ facePrefix + face }
@@ -335,8 +338,9 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								setFaceList(list);
 								setFacePrefix(prefix);
 
-								if (list.includes("idle"))
-									setFace("idle");
+								const i = list.findIndex(x => x.toLowerCase() == "idle");
+								if (i >= 0)
+									setFace(list[i]);
 								else {
 									const listU = list.map(f => f.toUpperCase());
 									for (const ft of Object.keys(FACETYPE)) {
@@ -348,70 +352,25 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 									}
 								}
 							} }
-							onPartAvailable={ v => setGammaPartAvailable(v) }
-							onBGAvailable={ v => setGammaBGAvailable(v) }
+
+							onCameraBoundary={ v => setCameraBoundaryAvailable(v) }
 						/>
-						: (DisplayMixed || DisplaySpine || Display2DModel || DisplayVideo) && !!props.animate
-							? <PixiView
-								type={ DisplayMixed
-									? "mixed"
-									: DisplaySpine
-										? "spine"
-										: Display2DModel
-											? "2dmodel"
-											: modelVideoId
-												? "video"
-												: "none"
-								}
-								U2DModelMetadata={ skin.metadata }
-
-								uid={ modelId }
-								vid={ modelVideoId }
-								google={ isCensored }
-								damaged={ isDamaged }
-
-								displayTouchCollider={ displayTouchCollider }
-								hidePart={ hideParts }
-								hidePart2={ hideParts2 }
-								hideBG={ hideBG }
-
-								face={ facePrefix + face }
-								onFaceList={ (list, prefix) => {
-									setFaceList(list);
-									setFacePrefix(prefix);
-
-									if (list.includes("Idle"))
-										setFace("Idle");
-									else {
-										const listU = list.map(f => f.toUpperCase());
-										for (const ft of Object.keys(FACETYPE)) {
-											const index = listU.indexOf(ft);
-											if (index >= 0) {
-												setFace(list[index]);
-												break;
-											}
-										}
-									}
-								} }
-
-								onCameraBoundary={ v => setCameraBoundaryAvailable(v) }
-							/>
-							: DisplayVideo && modelVideoId.length > 0 && !!props.animate
-								? CanPlayWebM()
-									? <video
-										autoPlay muted loop
-										src={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` }
-									/>
-									: <MergedVideo
-										src={ `${AssetsRoot}/webm/HD.Legacy/${modelVideoId}.mp4` }
-										type="video/mp4"
-									/>
-								: <Pinch
-									minScale={ 0.5 }
-									maxScale={ 3 }
-								>
-									<img src={ SkinImageURL } />
-								</Pinch>
+						: DisplayVideo && modelVideoId.length > 0 && !!props.animate
+							? CanPlayWebM()
+								? <video
+									autoPlay muted loop
+									src={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` }
+								/>
+								: <MergedVideo
+									src={ `${AssetsRoot}/webm/HD.Legacy/${modelVideoId}.mp4` }
+									type="video/mp4"
+								/>
+							: <Pinch
+								minScale={ 0.5 }
+								maxScale={ 3 }
+							>
+								<img src={ SkinImageURL } />
+							</Pinch>
 					}
 				</div>
 

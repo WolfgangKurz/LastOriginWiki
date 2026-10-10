@@ -97,6 +97,14 @@ interface BindedCollider {
 }
 //#endregion
 
+export interface SpineAnimationInfo {
+	/** seconds */
+	duration: number;
+}
+
+/** Touch events played by viewer */
+const TOUCH_EVENTS = ["Tep_1", "breast"];
+
 export default class PixiSpineModel extends FadeContainer {
 	private readonly _model: string;
 	private readonly _atlasId: number;
@@ -145,6 +153,9 @@ export default class PixiSpineModel extends FadeContainer {
 	private animState: Record<string, string> = {};
 
 	private state!: spine.AnimationState;
+
+	/** `animation-start` was emitted without `animation-end` */
+	private oneShotActive = false;
 
 	private colliderBoxs: ColliderBox[] = [];
 	private bindedColliders: BindedCollider[] = [];
@@ -381,11 +392,12 @@ export default class PixiSpineModel extends FadeContainer {
 		this.state.addListener({
 			complete: (entry) => {
 				if (this.animData) {
+					// looping animation completes every iteration
+					if (entry.loop) return;
+
 					const layer = this.animLayers[entry.trackIndex];
 					const state = this.animData[layer].states[this.animState[layer]];
 					const next = state.transitions.find(x => x.cond === "");
-
-					this.emit("animation-end");
 
 					if (IsDev)
 						console.debug(`[Spine] Animation done, layer: "${layer}", state: "${this.animState[layer]}"`);
@@ -398,6 +410,8 @@ export default class PixiSpineModel extends FadeContainer {
 						if (IsDev)
 							console.debug(`[Spine] Next not found`);
 					}
+
+					this.notifyOneShot(false);
 				} else {
 					if (IsDev)
 						console.debug(`[Spine] animData not found`);
@@ -541,25 +555,58 @@ export default class PixiSpineModel extends FadeContainer {
 		return this.animData[layer].states[this.animState[layer]];
 	}
 
-	currentAnimationTime (): number | undefined {
-		if (!this.animData) return undefined;
+	/**
+	 * Non-looping animations in progress which can not be interrupted by touch,
+	 * looping track time keeps growing so excluded
+	 */
+	private oneShotTracks (): spine.TrackEntry[] {
+		const ret: spine.TrackEntry[] = [];
+		if (!this.animData) return ret;
+		if (TOUCH_EVENTS.some(ev => this.canPlay(ev))) return ret;
 
-		let _t: number | undefined = undefined;
 		for (let i = 0; i < this.animLayers.length; i++) {
 			const track = this.state.getCurrent(i);
-			if (!track) continue;
-
-			_t = Math.max(_t || 0, track.trackTime);
+			if (!track || track.loop || track.isComplete()) continue;
+			ret.push(track);
 		}
-
-		return _t;
+		return ret;
 	}
 
-	play (event: string): spine.Animation[] | false {
+	/** Longest duration of non-looping animations in progress, `null` on idle */
+	private oneShotDuration (): number | null {
+		const tracks = this.oneShotTracks();
+		if (tracks.length === 0) return null;
+		return tracks.reduce((p, c) => Math.max(p, c.animationEnd), 0);
+	}
+
+	/**
+	 * Emit `animation-start`/`animation-end` by current states, call after state changed.
+	 * `started` is `true` when non-looping state is started (restarts indicator)
+	 */
+	private notifyOneShot (started: boolean) {
+		const duration = this.oneShotDuration();
+		if (duration !== null) {
+			if (started || !this.oneShotActive)
+				this.emit("animation-start", { duration } as SpineAnimationInfo);
+			this.oneShotActive = true;
+		} else if (this.oneShotActive) {
+			this.oneShotActive = false;
+			this.emit("animation-end");
+		}
+	}
+
+	/** Elapsed seconds of non-looping animations, `undefined` on idle */
+	currentAnimationTime (): number | undefined {
+		const tracks = this.oneShotTracks();
+		if (tracks.length === 0) return undefined;
+		return tracks.reduce((p, c) => Math.max(p, c.trackTime), 0);
+	}
+
+	/** Whether `event` can be played on every layer right now */
+	canPlay (event: string): boolean {
 		if (!this.animData) return false;
 
-		let entry: spine.Animation[] | false = false;
-		if (!this.animLayers.every(layer => {
+		return this.animLayers.every(layer => {
 			const state = this.currentState(layer);
 			if (!state) return false;
 
@@ -567,7 +614,13 @@ export default class PixiSpineModel extends FadeContainer {
 			if (!next) return false;
 
 			return this.playableState(layer, next.to);
-		})) return false;
+		});
+	}
+
+	play (event: string): spine.Animation[] | false {
+		if (!this.canPlay(event)) return false;
+
+		let entry: spine.Animation[] | false = false;
 
 		this.animLayers.forEach(layer => {
 			const state = this.currentState(layer)!;
@@ -636,9 +689,13 @@ export default class PixiSpineModel extends FadeContainer {
 		if (IsDev)
 			console.debug(`[Spine.playState] state "${_state}" in layer "${layer}" playing`);
 
-		const entry = state.setAnimationWith(layerIdx, anim, this.isLoopAnimation(layer, _state));
+		const loop = this.isLoopAnimation(layer, _state);
+		const entry = state.setAnimationWith(layerIdx, anim, loop);
 		if (weight !== undefined) entry.alpha = weight;
 		entry.mixDuration = 0.2;
+
+		// called per layer, events follow states of all layers changed so far
+		this.notifyOneShot(!loop);
 		return anim;
 	}
 
