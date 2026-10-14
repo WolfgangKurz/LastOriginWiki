@@ -1827,7 +1827,7 @@ export default {
 		"filterable.enemy": "e79b143a",
 		"filterable.equip": "73816928",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "f50ba1f2",
+		"filterable.unit": "ebdc5759",
 		"gacha": "0fe4bb74",
 		"iw": {
 			"Colossus_01": "c33e7edc",
@@ -5691,7 +5691,7 @@ export default {
 			"DS_KunoichiShiden": "b546db27",
 			"DS_KunoichiZero": "ab8d82dc",
 			"DS_MoMo": "58a8bd98",
-			"DS_Ramiel": "652b8ab0",
+			"DS_Ramiel": "2d8fb395",
 			"DS_Saraqael": "c799c182",
 			"DS_Sarena": "dce5d929",
 			"LC_Chii": "73b9f985",
