@@ -765,7 +765,7 @@ const BGMAlbums: BGMAlbum[] = [
 	},
 	{
 		id: "album_soulworker",
-		title: "SoulWorker",
+		title: "@WORLD_Ev33",
 		author: "",
 		image: "soulworker",
 		songs: [
@@ -888,6 +888,494 @@ const BGMAlbums: BGMAlbum[] = [
 				duration: 94,
 				filename: "SoulWorker/SW14_FNel_Des_Login_T138.mp3",
 				lyrics: [{ time: 0, text: "FNel Des Login T138" }],
+			},
+		],
+	},
+	{
+		id: "album_saniyang",
+		title: "@WORLD_Ev42",
+		author: "Talesshop",
+		image: "album_saniyang",
+		songs: [
+			{
+				type: "audio",
+				id: "track1",
+				title: "Lament",
+				duration: 176,
+				filename: "Saniyang/SV01_Lament.mp3",
+				lyrics: [
+					{ time: 0, text: "Lament" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track2",
+				title: "Moo",
+				duration: 93,
+				filename: "Saniyang/SV02_Moo.mp3",
+				lyrics: [
+					{ time: 0, text: "Moo" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track3",
+				title: "Namo Likes the Old Ways",
+				duration: 80,
+				filename: "Saniyang/SV03_Namo Likes the Old Ways.mp3",
+				lyrics: [
+					{ time: 0, text: "Namo Likes the Old Ways" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track4",
+				title: "A Peck",
+				duration: 26,
+				filename: "Saniyang/SV04_A Peck.mp3",
+				lyrics: [
+					{ time: 0, text: "A Peck" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track5",
+				title: "XOXO",
+				duration: 20,
+				filename: "Saniyang/SV05_XOXO.mp3",
+				lyrics: [
+					{ time: 0, text: "XOXO" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track6",
+				title: "Kisney World",
+				duration: 103,
+				filename: "Saniyang/SV06_Kisney World.mp3",
+				lyrics: [
+					{ time: 0, text: "Kisney World" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track7",
+				title: "Fluffy Ones",
+				duration: 54,
+				filename: "Saniyang/SV07_Fluffy Ones.mp3",
+				lyrics: [
+					{ time: 0, text: "Fluffy Ones" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track8",
+				title: "Donuts",
+				duration: 140,
+				filename: "Saniyang/SV08_Donuts.mp3",
+				lyrics: [
+					{ time: 0, text: "Donuts" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track9",
+				title: "Boyoyong",
+				duration: 77,
+				filename: "Saniyang/SV09_Boyoyong.mp3",
+				lyrics: [
+					{ time: 0, text: "Boyoyong" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track10",
+				title: "Music for the Mind",
+				duration: 82,
+				filename: "Saniyang/SV10_Music for the Mind.mp3",
+				lyrics: [
+					{ time: 0, text: "Music for the Mind" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track11",
+				title: "Windy Day",
+				duration: 116,
+				filename: "Saniyang/SV11_Windy Day.mp3",
+				lyrics: [
+					{ time: 0, text: "Windy Day" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track12",
+				title: "Smaller, Bigger",
+				duration: 45,
+				filename: "Saniyang/SV12_Smaller, Bigger.mp3",
+				lyrics: [
+					{ time: 0, text: "Smaller, Bigger" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track13",
+				title: "Aestheticism",
+				duration: 78,
+				filename: "Saniyang/SV13_Aestheticism.mp3",
+				lyrics: [
+					{ time: 0, text: "Aestheticism" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track14",
+				title: "Pingfu",
+				duration: 64,
+				filename: "Saniyang/SV14_Pingfu.mp3",
+				lyrics: [
+					{ time: 0, text: "Pingfu" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track15",
+				title: "The Black Something",
+				duration: 66,
+				filename: "Saniyang/SV15_The Black Something.mp3",
+				lyrics: [
+					{ time: 0, text: "The Black Something" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track16",
+				title: "The Sheep Says Moo",
+				duration: 31,
+				filename: "Saniyang/SV16_The Sheep Says Moo.mp3",
+				lyrics: [
+					{ time: 0, text: "The Sheep Says Moo" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track17",
+				title: "Sleep Well, Kiwi",
+				duration: 112,
+				filename: "Saniyang/SV17_Sleep Well, Kiwi.mp3",
+				lyrics: [
+					{ time: 0, text: "Sleep Well, Kiwi" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track18",
+				title: "Just H",
+				duration: 119,
+				filename: "Saniyang/SV18_Just H.mp3",
+				lyrics: [
+					{ time: 0, text: "Just H" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track19",
+				title: "Long-Tailed Tit’s Have No Eyes",
+				duration: 75,
+				filename: "Saniyang/SV19Long-Tailed Tit’s Have No Eyes.mp3",
+				lyrics: [
+					{ time: 0, text: "Long-Tailed Tit’s Have No Eyes" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track20",
+				title: "Cross Channel",
+				duration: 36,
+				filename: "Saniyang/SV20_Cross Channel.mp3",
+				lyrics: [
+					{ time: 0, text: "Cross Channel" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track21",
+				title: "Welcome to Furry World (Title)",
+				duration: 78,
+				filename: "Saniyang/SV21_Welcome to Furry World (Title).mp3",
+				lyrics: [
+					{ time: 0, text: "Welcome to Furry World (Title)" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track22",
+				title: "Back to the Fur",
+				duration: 116,
+				filename: "Saniyang/SV22_Back to the Fur.mp3",
+				lyrics: [
+					{ time: 0, text: "Back to the Fur" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track23",
+				title: "Staring",
+				duration: 32,
+				filename: "Saniyang/SV23_Staring.mp3",
+				lyrics: [
+					{ time: 0, text: "Staring" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track24",
+				title: "Ding Dong Deng",
+				duration: 90,
+				filename: "Saniyang/SV24_Ding Dong Deng.mp3",
+				lyrics: [
+					{ time: 0, text: "Ding Dong Deng" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track25",
+				title: "Purrrr",
+				duration: 50,
+				filename: "Saniyang/SV25_Purrrr.mp3",
+				lyrics: [
+					{ time: 0, text: "Purrrr" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track26",
+				title: "A Cup of Joe",
+				duration: 93,
+				filename: "Saniyang/SV26_A Cup of Joe.mp3",
+				lyrics: [
+					{ time: 0, text: "A Cup of Joe" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track27",
+				title: "Labor Office",
+				duration: 72,
+				filename: "Saniyang/SV27_Labor Office.mp3",
+				lyrics: [
+					{ time: 0, text: "Labor Office" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track28",
+				title: "Wag the Dog",
+				duration: 53,
+				filename: "Saniyang/SV28_Wag the Dog.mp3",
+				lyrics: [
+					{ time: 0, text: "Wag the Dog" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track29",
+				title: "Woof, Woof",
+				duration: 52,
+				filename: "Saniyang/SV29_Woof, Woof.mp3",
+				lyrics: [
+					{ time: 0, text: "Woof, Woof" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track30",
+				title: "Something Just Moved",
+				duration: 128,
+				filename: "Saniyang/SV30_Something Just Moved.mp3",
+				lyrics: [
+					{ time: 0, text: "Something Just Moved" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track31",
+				title: "Gurgle",
+				duration: 26,
+				filename: "Saniyang/SV31_Gurgle.mp3",
+				lyrics: [
+					{ time: 0, text: "Gurgle" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track32",
+				title: "Speedpagon",
+				duration: 40,
+				filename: "Saniyang/SV32_ Speedpagon.mp3",
+				lyrics: [
+					{ time: 0, text: "Speedpagon" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track33",
+				title: "Blink",
+				duration: 67,
+				filename: "Saniyang/SV33_Blink.mp3",
+				lyrics: [
+					{ time: 0, text: "Blink" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track35",
+				title: "Nenoninanino",
+				duration: 77,
+				filename: "Saniyang/SV35_Nenoninanino.mp3",
+				lyrics: [
+					{ time: 0, text: "Nenoninanino" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track36",
+				title: "Namo Squared",
+				duration: 33,
+				filename: "Saniyang/SV36_Namo Squared.mp3",
+				lyrics: [
+					{ time: 0, text: "Namo Squared" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track37",
+				title: "Salada",
+				duration: 128,
+				filename: "Saniyang/SV37_Salada.mp3",
+				lyrics: [
+					{ time: 0, text: "Salada" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track38",
+				title: "Master Dual",
+				duration: 48,
+				filename: "Saniyang/SV38_Master Dual.mp3",
+				lyrics: [
+					{ time: 0, text: "Master Dual" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track39",
+				title: "Tubas",
+				duration: 31,
+				filename: "Saniyang/SV39_Tubas.mp3",
+				lyrics: [
+					{ time: 0, text: "Tubas" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track40",
+				title: "Build-up",
+				duration: 70,
+				filename: "Saniyang/SV40_Build-up.mp3",
+				lyrics: [
+					{ time: 0, text: "Build-up" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track41",
+				title: "Such Beautiful Fur",
+				duration: 140,
+				filename: "Saniyang/SV41_Such Beautiful Fur.mp3",
+				lyrics: [
+					{ time: 0, text: "Such Beautiful Fur" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track42",
+				title: "Boomi",
+				duration: 36,
+				filename: "Saniyang/SV42_Boomi.mp3",
+				lyrics: [
+					{ time: 0, text: "Boomi" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track43",
+				title: "Goran No Suponsaa No (CM)",
+				duration: 63,
+				filename: "Saniyang/SV43_Goran No Suponsaa No (CM).mp3",
+				lyrics: [
+					{ time: 0, text: "Goran No Suponsaa No (CM)" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track44",
+				title: "Witch (CM)",
+				duration: 31,
+				filename: "Saniyang/SV44_Witch (CM).mp3",
+				lyrics: [
+					{ time: 0, text: "Witch (CM)" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track45",
+				title: "Blue (CM)",
+				duration: 32,
+				filename: "Saniyang/SV45_Blue (CM).mp3",
+				lyrics: [
+					{ time: 0, text: "Blue (CM)" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track46",
+				title: "Mimi (CM)",
+				duration: 33,
+				filename: "Saniyang/SV46_Mimi (CM).mp3",
+				lyrics: [
+					{ time: 0, text: "Mimi (CM)" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track47",
+				title: "Tales Park",
+				duration: 63,
+				filename: "Saniyang/SV47_Tales Park.mp3",
+				lyrics: [
+					{ time: 0, text: "Tales Park" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track48",
+				title: "Findpoint",
+				duration: 99,
+				filename: "Saniyang/SV48_Findpoint.mp3",
+				lyrics: [
+					{ time: 0, text: "Findpoint" },
+				],
+			},
+			{
+				type: "audio",
+				id: "track49",
+				title: "Findpoint (Instrumental Ver.)",
+				duration: 99,
+				filename: "Saniyang/SV49_Findpoint (Instrumental Ver.).mp3",
+				lyrics: [
+					{ time: 0, text: "Findpoint (Instrumental Ver.)" },
+				],
 			},
 		],
 	},

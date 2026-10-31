@@ -246,5 +246,7 @@ export const SkinBanners: string[] = [
     "ST_Tiamat_2",
     "ST_Tiamat_3",
     "ST_Ullr_1",
-    "ST_Ullr_2"
+    "ST_Ullr_2",
+    "TC_Namo_1",
+    "TC_SaniYang_1"
 ];

@@ -110,7 +110,7 @@ class Actor {
 	public alpha = 1;
 	/** 0 = gray, 1 = white */
 	public brightness = 1;
-	public depth = 1;
+	public depth = 0;
 
 	/** `is_moving` of original (inverted naming), `true` when slide finished */
 	public slideDone = true;
@@ -135,7 +135,7 @@ class Actor {
 		// `Actor.LoadModel`
 		if (position === ActorPosition.RIGHT || position === ActorPosition.RIGHTCENTER)
 			this.mirrored = true;
-		this.depth = position === ActorPosition.CENTER ? 0 : 1;
+		this.depth = position === ActorPosition.CENTER ? position : 10 + position;
 	}
 
 	public get isCut () {
@@ -176,7 +176,7 @@ class Actor {
 		);
 		this.holder.scale.set((mirrored ? -1 : 1) * this.scaleX, this.scaleY);
 		this.holder.angle = mirrored ? this.eulerZ : -this.eulerZ;
-		this.holder.zIndex = this.isCut ? 600 : 500 + this.depth * 10 + this.position;
+		this.holder.zIndex = this.isCut ? 600 : 500 + this.depth;
 		this.filter.brightness(0.5 + 0.5 * this.brightness, false);
 		// opacity of merged result (actor is rendered to texture by filter, like RenderTexture of original),
 		// `holder.alpha` makes overlapped parts (face on body) transparent each other
@@ -488,6 +488,21 @@ export default class ActorStage {
 		return this.actorsOnScene.find(a => a.position === position);
 	}
 
+	/** Promote only the active actor, preserving the relative order of the others. */
+	private bringActorToFront (target: Actor) {
+		const actors = this.actorsOnScene
+			.filter(actor => actor !== target)
+			.sort((a, b) => a.depth - b.depth);
+		actors.push(target);
+
+		// Keep unique depths within the actor layer, below cut images (600).
+		const step = 20 / Math.max(1, actors.length - 1);
+		actors.forEach((actor, index) => {
+			actor.depth = index * step;
+			actor.sync();
+		});
+	}
+
 	/** @internal */
 	public markExiting (actor: Actor) {
 		this.exitingActors.add(actor);
@@ -755,9 +770,7 @@ export default class ActorStage {
 			const actor = this.getActor(i);
 			if (!actor) return;
 
-			actor.depth = c.activation
-				? 2
-				: i === ActorPosition.CENTER ? 0 : 1;
+			if (c.activation) this.bringActorToFront(actor);
 			actor.setActivation(c.activation);
 		});
 
@@ -868,7 +881,7 @@ export default class ActorStage {
 			if (!actor) return;
 
 			if (c.char.imageVar) actor.setFace(c.char.imageVar);
-			actor.depth = c.activation ? 2 : i === ActorPosition.CENTER ? 0 : 1;
+			if (c.activation) this.bringActorToFront(actor);
 			actor.brightness = c.activation ? 1 : 0;
 			actor.sync();
 		});

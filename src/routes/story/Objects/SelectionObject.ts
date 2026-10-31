@@ -9,6 +9,9 @@ export default class SelectionObject extends PIXI.Container {
 	private texButton: PIXI.Texture | null = null;
 	private buttons: FadeSprite[] = [];
 
+	private static readonly BUTTON_WIDTH = 733;
+	private static readonly BUTTON_SCALE = 0.8695652173913; // 1.0 / 1.15
+
 	private _display = false;
 	public get display () {
 		return this._display;
@@ -36,41 +39,43 @@ export default class SelectionObject extends PIXI.Container {
 		this.height = 720;
 		this.sortableChildren = true;
 
-		const cover = new PIXI.Graphics();
-		cover.beginFill(0x000000, 0.7);
-		cover.drawRect(0, 0, 1280, 720);
+		const coverTex = PIXI.Texture.from(`${AssetsRoot}/story/ui/UI_Dialog_Popup_DialogSelect_Frame_FiveDialog.png`);
+		this.texButton = PIXI.Texture.from(`${AssetsRoot}/story/ui/newui_Dialoge_TextBar_s.png`);
+
+		if (this.destroyed) {
+			coverTex.destroy();
+			this.texButton.destroy();
+			return;
+		}
+
+		const cover = new PIXI.NineSlicePlane(coverTex, 10, 10, 10, 10);
+		cover.position.set(0, 0);
+		cover.width = 1280;
+		cover.height = 720;
 		cover.eventMode = "static";
 		cover.zIndex = 1200;
 		this.addChild(cover);
 
-		PIXI.Texture.fromURL(`${AssetsRoot}/story/ui/InputBtn.png`)
-			.then(tex => {
-				if (this.destroyed) {
-					tex.destroy();
-					return;
-				}
-
-				this.texButton = tex;
-				this.update();
-			});
+		this.update();
 	}
 
 	private update () {
 		if (this.destroyed || !this.texButton) return;
 
 		if (this.buttons.length > 0) {
-			this.buttons.forEach(b => b.destroy());
-			this.buttons.splice(0, this.buttons.length);
+			this.buttons.forEach(b => b.destroy({ baseTexture: false, texture: false }));
+			this.buttons = [];
 		}
 
 		const gap = 28;
 		const baseY = -(66 * (this.text.length - 1) + gap * (this.text.length - 1)) / 2;
-		const BUTTON_WIDTH = 710;
 
 		this.text.forEach((txt, i) => {
-			const btn = new FadeSprite(this.texButton!, 10, 10, 10, 10);
-			btn.width = BUTTON_WIDTH;
-			btn.height = 66;
+			const btn = new FadeSprite(this.texButton!, 0, 0, 0, 0);
+			btn.name = `selection ${i} -> ${txt}`;
+			btn.width = SelectionObject.BUTTON_WIDTH * 1.15;
+			btn.height = 87 * 1.15;
+			btn.scale.set(SelectionObject.BUTTON_SCALE);
 
 			btn.cursor = "pointer";
 			btn.eventMode = "static";
@@ -82,19 +87,27 @@ export default class SelectionObject extends PIXI.Container {
 			btn.addEventListener("click", () => this.emit("select", i));
 			btn.addEventListener("tap", () => this.emit("select", i));
 
+			btn.addEventListener("pointerenter", () => this.scaleTo(btn, SelectionObject.BUTTON_SCALE, 1.0));
+			btn.addEventListener("pointerleave", () => this.scaleTo(btn, 1.0, SelectionObject.BUTTON_SCALE));
+
 			const text = new FadeText("", {
 				align: "CC",
 				fill: "#000",
-				fontWeight: 500,
-				fontSize: 32,
+				fontWeight: 600,
+				fontSize: 27 * 1.15,
+				stroke: "transparent",
+				strokeWidth: 0,
 			});
-			text.position.set(BUTTON_WIDTH / 2, btn.height / 2);
+			text.position.set(
+				(SelectionObject.BUTTON_WIDTH / 2) * 1.15,
+				btn.height / 2 - 7.1 * 1.15
+			);
+			text.eventMode = "none";
 
 			text.on("update", () => {
 				const tw = text.width / text.scale.x;
-				console.log(text.text, tw);
-				if (tw > BUTTON_WIDTH - 40) {
-					const r = (BUTTON_WIDTH - 40) / tw;
+				if (tw > SelectionObject.BUTTON_WIDTH - 40) {
+					const r = (SelectionObject.BUTTON_WIDTH - 40) / tw;
 					text.scale.set(r);
 				}
 			});
@@ -104,5 +117,38 @@ export default class SelectionObject extends PIXI.Container {
 			this.buttons.push(btn);
 			this.addChild(btn);
 		});
+	}
+
+	/** `duration` in secs */
+	private scaleTickers: WeakMap<FadeSprite, number> = new WeakMap();
+	public scaleTo (btn: FadeSprite, from: number, to: number, duration: number = 0.12) {
+		const id = Math.random();
+		this.scaleTickers.set(btn, id);
+
+		btn.scale.set(from);
+		console.log(btn, from, to);
+
+		const ticker = PIXI.Ticker.shared;
+		let elapsed = 0;
+		const onTick = () => {
+			const curId = this.scaleTickers.get(btn);
+			if (id !== curId || this.destroyed) {
+				ticker.remove(onTick);
+				return;
+			}
+
+			elapsed += ticker.deltaMS / 1000;
+			const t = elapsed / duration;
+
+			btn.scale.set(from + (to - from) * t);
+
+			if (t >= 1.0) {
+				ticker.remove(onTick);
+				this.scaleTickers.delete(btn);
+
+				btn.scale.set(to);
+			}
+		};
+		ticker.add(onTick);
 	}
 }

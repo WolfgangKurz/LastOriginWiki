@@ -181,149 +181,6 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		const v = imageVar || (image.replace(/^2DModel_/, "") + "_Idle");
 		return `${AssetsRoot}/story/model/commu/${v}.webp`;
 	}
-	function isStoryModel (model: string): boolean {
-		const list: string[] = [ /*
-			"2DModel_Woman_N", "2DModel_BR_PastGirl_N", "2DModel_BR_PastMan_N",
-			"2DModel_BR_PastMan2_N", "2DModel_BR_TomoeKIN_N", "2DModel_Eva_N",
-			"2DModel_KaenFake_N", "2DModel_Kasasagi_N", "2DModel_Kirishima_N",
-			"2DModel_Man_N", "2DModel_MP_AzazelAlter_N", "2DModel_MP_IronPrince_N",
-			"2DModel_MP_Kidnapper_N", "2DModel_PECS_LemonadeDelta_N", "2DModel_PECS_LemonadeGamma_N",
-			"2DModel_MP_LemonadeOmega_N", "2DModel_MP_MetalGuard_N", "2DModel_MP_NightChick_N",
-			"2DModel_MP_Robert_N", "2DModel_MP_RocC_N", "2DModel_MP_RocC1_N", "2DModel_MP_Speaker_N",
-			"2DModel_MP_Stalker_N", "2DModel_PECS_HelmetWristCut_N", "2DModel_PECS_MachinaFake_N",
-			"2DModel_PECS_SecretaryYumi_N", "2DModel_PECS_WristCut_N", "2DModel_Priest01_N",
-			"2DModel_Priest02_N", "2DModel_PriestAngel_N", "2DModel_PriestGirl01_N",
-			"2DModel_PROP_Diyap11_1_N", "2DModel_Sherlock_N",
-			"2DModel_AGS_MrAlfred_N", "2DModel_PECS_HighElven_N_DL_N", "2DModel_BR_NightAngelFake_N",
-			"2DModel_DS_Ramiel_N_DL_N", "2DModel_DS_BunnySlayer_N_DL_N",
-			"2DModel_PECS_Azaz_NS2", "2DModel_BR_RoyalArsenal_NS2",
-			"2DModel_PECS_Azaz_NS2_DL_N", "2DModel_BR_RoyalArsenal_NS2_DL_N",
-			"2DModel_MiniPerrault_N", "2DModel_Superior01_N",
-			"2DModel_BR_Efreeti_NS1_DL_N",
-			"2DModel_PECS_LemonadeBeta_N", "2DModel_PECS_Shepherd_N",
-			"2DModel_Mercenary_N", "2DModel_Simon_N", "2DModel_Simon2_N",
-			"2DModel_PECS_LemonadeGamma_N_DL_N",
-		*/ ];
-		if (list.includes(model)) return true;
-		return false;
-	}
-	function ConvertChar (model: string): string | false {
-		if (isCommu(model)) return false; // Commu image will be processed with different way
-		if (isStoryModel(model)) return false;
-
-		const charTable: Record<string, string> = { /*
-			"3P_Amphitrite_N_DL_0_O": "3P_Amphitrite_0_O_S",
-			"3P_Alice_NS1_DL_0_O": "3P_Alice_1_O_BS",
-			"3P_Daphne_NS2_DL_0_O": "3P_Daphne_2_O_S",
-			"3P_Galatea_N_DL_0_O": "3P_Galatea_0_O_S",
-			"3P_Salacia_N_DL_0_O": "3P_Salacia_0_O_S",
-			"3P_Titania_NS2_DL_0_O": "3P_Titania_2_O_S",
-			AGS_RheinRitter_NS1_DL_0_O: "AGS_RheinRitter_1_O_S",
-			BR_Alvis_NS1_DL_0_O: "BR_Alvis_1_O_S",
-			BR_DrM_N_DL_0_O: "BR_DrM_0_O_S",
-			BR_Efreeti_NS1_DL_0_O: "BR_Efreeti_1_O_S",
-			BR_Emily_NS1_DL_0_O: "BR_Emily_1_O",
-			BR_Gnome_NS2_DL_0_O: "BR_Gnome_2_O_S",
-			BR_Hela_N_DL_0_O: "BR_Hela_0_O_S",
-			BR_HongRyun_NS4_DL_0_O: "BR_HongRyun_4_O_B",
-			BR_May_NS2_DL_0_O: "BR_May_2_O_S",
-			BR_Nereid_N_DL_0_O: "BR_Nereid_0_O",
-			BR_NightAngel_NS2_DL_0_O: "BR_NightAngel_2_O_S",
-			BR_Phantom_N_DL_0_O: "BR_Phantom_0_O",
-			BR_RoyalArsenal_N_DL_0_O: "BR_RoyalArsenal_0_O_S",
-			BR_Sirene_N_DL_0_O: "BR_Sirene_0_O_S",
-			BR_StratoAngel_NS1_DL_0_O: "BR_StratoAngel_1_O_S",
-			PECS_DarkElf_NS1_DL_0_O: "PECS_DarkElf_1_O_S",
-			PECS_ElvenForestmaker_NS1_DL_0_O: "PECS_ElvenForestmaker_1_O",
-			PECS_HighElven_N_DL_0_O: "PECS_HighElven_0_O",
-			PECS_Hussar_NS1_DL_0_O: "PECS_Hussar_1_O_S",
-			PECS_Sadius_N_DL_0_O: "PECS_Sadius_0_O_S",
-			PECS_Sonia_N_DL_0_O: "PECS_Sonia_0_O_S",
-			PECS_Triaina_N_DL_0_O: "PECS_Triaina_0_O_S",
-
-			"3P_Amphitrite_1_O": "3P_Amphitrite_1_O_S",
-			"3P_BlackLilith_0_O": "3P_BlackLilith_0_O_S",
-			"3P_Eternity_2_O": "3P_Eternity_2_O_S",
-			"3P_Frigga_1_O": "3P_Frigga_1_O_S",
-			"3P_Maria_2_O": "3P_Maria_2_O_S",
-			"3P_Melite_0_O": "3P_Melite_0_O_S",
-			"3P_Melite_1_O": "3P_Melite_1_O_S",
-			"3P_Salacia_1_O": "3P_Salacia_1_O_S",
-			"3P_Sowan_2_O": "3P_Sowan_2_O_S",
-			"3P_Titania_1_O": "3P_Titania_1_O_S",
-			BR_Andvari_0_O: "BR_Andvari_0_O_S",
-			BR_Amy_0_O: "BR_Amy_0_O_S",
-			BR_Amy_2_O: "BR_Amy_2_O_S",
-			BR_Brunhild_0_O: "BR_Brunhild_0_O_S",
-			BR_Habetrot_0_O: "BR_Habetrot_0_O_S",
-			BR_Harpy_1_O: "BR_Harpy_1_O_B",
-			BR_Hela_1_O: "BR_Hela_1_O_S",
-			BR_Hyena_1_O: "BR_Hyena_1_O_S",
-			BR_Leona_0_O: "BR_Leona_0_O_S",
-			BR_Leprechaun_2_O: "BR_Leprechaun_2_O_B",
-			BR_Nashorn_0_O: "BR_Nashorn_0_O_S",
-			BR_Neodym_0_O: "BR_Neodym_0_O_S",
-			BR_Neodym_3_O: "BR_Neodym_3_O_B",
-			BR_Miho_3_O: "BR_Miho_3_O_S",
-			BR_RoyalArsenal_0_O: "BR_RoyalArsenal_0_O_S",
-			BR_Salamander_0_O: "BR_Salamander_0_O_S",
-			BR_Scarabya_0_O: "BR_Scarabya_0_O_S",
-			BR_Scarabya_1_O: "BR_Scarabya_1_O_S",
-			BR_Sirene_1_O: "BR_Sirene_1_O_B",
-			BR_Sirene_2_O: "BR_Sirene_2_O_S",
-			BR_Sleipnir_2_O: "BR_Sleipnir_2_O_S",
-			BR_StratoAngel_0_O: "BR_StratoAngel_0_O_S",
-			BR_Vargr_0_O: "BR_Vargr_0_O_S",
-			BR_Wraithy_2_O: "BR_Wraithy_2_O_S",
-			DS_Angel_1_O: "DS_Angel_1_O_B",
-			DS_Ramiel_0_O: "DS_Ramiel_0_O_S",
-			PECS_Boryeon_1_O: "PECS_Boryeon_1_O_S",
-			PECS_BlindPrincess_1_O: "PECS_BlindPrincess_1_O_B",
-			PECS_BS_1_O: "PECS_BS_1_O_S",
-			PECS_CoCoWhiteShell_0_O: "PECS_CoCoWhiteShell_0_O_S",
-			PECS_Ella_1_O: "PECS_Ella_1_O_S",
-			PECS_Erato_0_O: "PECS_Erato_0_O_S",
-			PECS_Glacias_1_O: "PECS_Glacias_1_O_S",
-			PECS_LemonadeAlpha_0_O: "PECS_LemonadeAlpha_0_O_S",
-			PECS_Mnemosyne_0_O: "PECS_Mnemosyne_0_O_S",
-			PECS_Muse_0_O: "PECS_Muse_0_O_S",
-			PECS_Olivia_0_O: "PECS_Olivia_0_O_S",
-			PECS_Orangeade_0_O: "PECS_Orangeade_0_O_S",
-			PECS_Peregrinus_0_O: "PECS_Peregrinus_0_O_S",
-			PECS_Rena_0_O: "PECS_Rena_0_O_S",
-			PECS_Saetti_2_O: "PECS_Saetti_2_O_S",
-			ST_Lancer_2_O: "ST_Lancer_2_O_S",
-			ST_Mercury_0_O: "ST_Mercury_0_O_S",
-			SJ_Tachi_0_O: "SJ_Tachi_0_O_S",
-			ST_Ullr_0_O: "ST_Ullr_0_O_S",
-			ST_Ullr_1_O: "ST_Ullr_1_O_S",
-
-			BR_Brownie_01_0_O: "BR_Brownie_0_O",
-			BR_Brownie_02_0_O: "BR_Brownie_0_O",
-		*/ };
-
-		// TODO: Implement EmojiEffect & LiveEffect
-
-		const reg = /^2DModel_(.+)_([NPS])(S([0-9]+))?$/;
-		if (reg.test(model)) {
-			const char = model.replace(reg, (p, p1, p2, p3, p4) => {
-				if (p2 === "N")
-					return `${p1}_${p4 ?? 0}_O`;
-				else if (p2 === "P")
-					return `${p1}_${parseInt(p4, 10) + 19}_O`;
-				else if (p2 === "S")
-					return `${p1}_${parseInt(p4, 10) + 20}_O`;
-
-				return `${p1}_0_O`;
-			});
-
-			if (char in charTable)
-				return charTable[char];
-
-			return char;
-		}
-		return false;
-	}
 
 	function getVoice (voice: string): string {
 		if (!voice) return "";
@@ -332,7 +189,6 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 	function getBGM (bgm: string): string {
 		if (!bgm) return "";
 		if (bgm === "15 BGM_Empty") return "";
-		console.warn(bgm);
 
 		const bgmTable: Record<string, string> = {
 			Valentine_01: "Valentine",
@@ -367,23 +223,21 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 
 	/** Load character model for `ActorStage` */
 	async function createActorModel (image: string, imageVar: string, position: ActorPosition): Promise<ActorModel | null> {
-		const img = image
-			.replace(/_N_DL_([0-9]+)/, (_, p1) => `_${p1}`)
-			.replace(/_DL_N/, "_DL")
-			.replace(/_DL/, "");
+		const img = image;
+		// .replace(/_N_DL_([0-9]+)/, (_, p1) => `_${p1}`)
+		// .replace(/_N_DL_([0-9]+)/, (_, p1) => `_NDL${p1}`)
+		// .replace(/_DLN/, "_DL_N")
+		// .replace(/_DL(_N)?/, "DL");
 		if (!img) return null;
 
-		const c = ConvertChar(img);
 		const modelType = _get(modelList, img.toLowerCase()) ?? CharModelType.None;
 		const forCommu = isCommu(img);
 		const mirrored = position === ActorPosition.RIGHT || position === ActorPosition.RIGHTCENTER;
 		const baseX = ActorStage.destScreenX(position);
 
-		const getTexURL = (imgVar: string) => c
-			? `${AssetsRoot}/webp/full/${c}.webp`
-			: forCommu
-				? getCommuImage(img, imgVar)
-				: `${AssetsRoot}/story/model/${img}.webp`;
+		const getTexURL = (imgVar: string) => forCommu
+			? getCommuImage(img, imgVar)
+			: `${AssetsRoot}/story/model/${img}.webp`;
 
 		/** offset from actor destination (`p[0]`), canvas y (`p[1]`), scale (`s`) */
 		const build = (tex: PIXI.Texture | undefined, meta: StoryModelMeta[] | undefined, imgVar: string): [CharSpriteType, Tuple<number, 2>, Tuple<number, 2>, boolean] => {
@@ -391,7 +245,6 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			const s: Tuple<number, 2> = [1, 1];
 			let isCut = false;
 
-			console.log(img, modelType);
 			let char: CharSpriteType;
 			if (modelType === CharModelType.U2DModel) {
 				char = new Pixi2DModel("O/" + img); // always uncensored
@@ -449,7 +302,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				PIXI.Texture.fromURL(getTexURL(imageVar)),
 				forCommu
 					? Promise.resolve(undefined)
-					: fetch(`${AssetsRoot}/story/model/${c || img}.json`)
+					: fetch(`${AssetsRoot}/story/model/${img}.json`)
 						.then(meta => meta.json())
 						.then(meta => meta as StoryModelMeta[])
 						.catch(() => undefined),

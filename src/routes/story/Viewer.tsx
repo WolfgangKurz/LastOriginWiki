@@ -86,8 +86,6 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	const [cursor, setCursor] = useState(initCursor);
 
 	useEffect(() => {
-		if (cursor === 0) return;
-
 		const reg = /^(.+?)(?:[0-9]+)?$/;
 		const r = reg.exec(window.location.pathname);
 		if (r) {
@@ -137,7 +135,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	}
 	function ImageToFace (model: string): { src: string; uid: string; skin: number; fallback: string; } | null {
 		let sid = model
-			.replace(/DL([0-9]+)?$/g, "")
+			.replace(/DL([N0-9]+)?$/g, "")
 			.replace(/_$/g, "")
 			.replace(/_N_DL(_[0-9]+)?/g, "_N")
 			.replace(/(_[NS]S[0-9]+)_N/g, "$1")
@@ -353,6 +351,24 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 					: [...p, c!],
 				[],
 			);
+	}, [storyData]);
+	const selFrom = useMemo(() => {
+		if (!assertDBData(storyData)) return {};
+
+		const ret: Record<string, Array<{ text: string, from: string; }>> = {};
+		storyData.filter(r => r.sel)
+			.forEach(r => {
+				const from = r.key;
+
+				r.sel!.forEach(s => {
+					const text = LText(s.text);
+					const next = s.next;
+
+					if (!(next in ret)) ret[next] = [];
+					ret[next].push({ text, from });
+				});
+			});
+		return ret;
 	}, [storyData]);
 
 	const subUnit = useMemo(() => {
@@ -571,6 +587,17 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 						} }
 					>
 						<div class="row">
+							{ d.key in selFrom && <div class={ style.TranscriptionSelectionFrom }>
+								<Icons.ArrowReturnRight class="me-1" />
+
+								{ selFrom[d.key]
+									.map(f => <div>{ f.text }</div>)
+									.gap(<span class="mx-1 ">
+										<Icons.Dot />
+									</span>)
+								}
+							</div> }
+
 							{ activateFaces.length > 0 && <div class="col-auto">
 								{ activateFaces.map(s => <UnitFace { ...s } size="3rem" />) }
 							</div> }

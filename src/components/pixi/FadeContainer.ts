@@ -38,8 +38,8 @@ export default class FadeContainer extends PIXI.Container {
 
 		const from = this.alpha;
 		let elapsed = 0;
-		const onTick = (dt: number) => {
-			elapsed += dt / PIXI.Ticker.targetFPMS / 1000;
+		const onTick = () => {
+			elapsed += ticker.deltaMS / 1000;
 
 			if (elapsed >= duration || !this._fading || this.destroyed) {
 				this._fading = false;

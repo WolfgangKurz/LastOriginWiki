@@ -35,12 +35,14 @@ type CLIP_PATH = Array<[x: number, y: number]>;
 interface SPRITE_DATA {
 	name: string;
 	vector: SPRITE_VECTOR;
-	tex: number;
+	/** Model-local texture number, or a shared face-bundle/texture path. */
+	tex: number | string;
 	v: CLIP_PATH;
 }
 interface MODEL_OBJECT {
 	id: number;
 	parent: number;
+	active: boolean;
 
 	name: string;
 	vector: OBJECT_VECTOR;
@@ -74,6 +76,13 @@ interface NodeTreeItem {
 	data: MODEL_OBJECT;
 	sprite: PIXI.Sprite;
 	child: NodeTreeItem[];
+}
+
+function spriteTextureURL (baseURL: string, texture: SPRITE_DATA["tex"]): string {
+	const root = typeof texture === "string" && texture.startsWith("face_")
+		? baseURL.substring(0, baseURL.lastIndexOf("/"))
+		: baseURL;
+	return `${root}/${texture}.webp`;
 }
 
 const U2DCache: Record<string, [texture: PIXI.Texture, url: string, timer: number | null]> = {};
@@ -239,10 +248,11 @@ export default class Pixi2DModel extends FadeContainer {
 					this.swapInactiveList = r.list.swapInactive;
 				}
 
-				const _nodes: Record<number, MODEL_OBJECT> = {};
-				Object.values(r.object) // Make node table (id -> object)
-					.flat()
-					.forEach(node => (_nodes[node.id] = node));
+				// NOTE: Not referenced
+				// const _nodes: Record<number, MODEL_OBJECT> = {};
+				// Object.values(r.object) // Make node table (id -> object)
+				// 	.flat()
+				// 	.forEach(node => (_nodes[node.id] = node));
 
 				const _z: Record<number, number> = {};
 				const _layers: Record<number, LAYERS.Layer> = {};
@@ -262,7 +272,8 @@ export default class Pixi2DModel extends FadeContainer {
 					[...r.sprite, ...r.face]
 						// .unique(o => o.tex)
 						.map(sp => new Promise<void>(async (resolve, reject) => {
-							const key = `${this._model}/${sp.tex}/${sp.name}`;
+							const textureURL = spriteTextureURL(baseURL, sp.tex);
+							const key = `${textureURL}/${sp.name}`;
 							const cached = getCache(key);
 							if (cached) {
 								this.spMap[sp.name] = sp;
@@ -293,7 +304,7 @@ export default class Pixi2DModel extends FadeContainer {
 								reject(e);
 							});
 							image.crossOrigin = "Anonymous";
-							image.src = `${baseURL}/${sp.tex}.webp`;
+							image.src = textureURL;
 						})),
 				);
 
@@ -541,7 +552,7 @@ export default class Pixi2DModel extends FadeContainer {
 
 		this.treeItems
 			.filter(r => items.includes(r.name))
-			.forEach(r => r.sprite.visible = !namesToHide.includes(r.name));
+			.forEach(r => r.sprite.visible = (r.data.active ?? true) && !namesToHide.includes(r.name));
 	}
 
 	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {

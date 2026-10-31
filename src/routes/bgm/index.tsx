@@ -614,7 +614,7 @@ const BGM: FunctionalComponent = () => {
 						</div>
 
 						<div class={ style.Volume }>
-							<Icons.VolumeUp />
+							<Icons.VolumeUp class="me-1" />
 							<Slider
 								class={ style.VolumeSlider }
 								min={ 0 }

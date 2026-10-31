@@ -5,7 +5,6 @@ import { DIALOG_SPEAKER } from "@/types/Enums";
 import { AssetsRoot } from "@/libs/Const";
 
 import FadeText from "@/components/pixi/FadeText";
-import FadeSprite from "@/components/pixi/FadeSprite";
 
 export default class DialogObject extends PIXI.Container {
 	private readonly WIDTH: number = 1280 - 45 - 45;
@@ -13,10 +12,15 @@ export default class DialogObject extends PIXI.Container {
 
 	private readonly FadeDuration: number = 0.13;
 
-	private dialogObject: PIXI.NineSlicePlane | null = null;
-	private charDisp: FadeSprite | null = null;
+	private backgroundObject: PIXI.NineSlicePlane | null = null;
+
 	private textObject: FadeText | null = null;
+
 	private speakerObject: FadeText | null = null;
+
+	private deco1_1: PIXI.NineSlicePlane | null = null;
+	private deco1_2: PIXI.NineSlicePlane | null = null;
+	private deco2: PIXI.Sprite | null = null;
 
 	private _display = false;
 	public get display () {
@@ -66,32 +70,26 @@ export default class DialogObject extends PIXI.Container {
 		if (this.speakerObject && speaker)
 			this.speakerObject.text = speaker;
 
-		if (speaker) {
-			if (this.charDisp) {
-				switch (this.speakerPosition) {
-					case DIALOG_SPEAKER.LEFT:
-						this.charDisp.position.set(34, -17);
-						break;
-					case DIALOG_SPEAKER.RIGHT:
-						this.charDisp.position.set(this.WIDTH - 340 - 34, -17);
-						break;
-					case DIALOG_SPEAKER.CENTER:
-						this.charDisp.position.set(this.WIDTH / 2 - 340 / 2, -17);
-						break;
-					case DIALOG_SPEAKER.LEFT_CENTER:
-						this.charDisp.position.set(this.WIDTH / 4 - 68, -17);
-						break;
-					case DIALOG_SPEAKER.RIGHT_CENTER:
-						this.charDisp.position.set(this.WIDTH * 3 / 4 - 272, -17);
-						break;
-				}
+		if (this.speakerObject) {
+			if (speaker) {
+				const x = (() => {
+					switch (this.speakerPosition) {
+						case DIALOG_SPEAKER.LEFT: return 200;
+						case DIALOG_SPEAKER.RIGHT: return 980;
+						case DIALOG_SPEAKER.CENTER: return 595;
+						case DIALOG_SPEAKER.LEFT_CENTER: return 396;
+						case DIALOG_SPEAKER.RIGHT_CENTER: return 788;
+						default: return 595;
+					}
+				})();
+				this.speakerObject.position.set(x, 0);
 
 				if (!prev)
-					this.charDisp.fadeIn(this.FadeDuration);
+					this.speakerObject.fadeIn(this.FadeDuration);
+			} else {
+				if (this.speakerObject.alpha > 0)
+					this.speakerObject.fadeOut(this.FadeDuration);
 			}
-		} else {
-			if (this.charDisp && this.charDisp.alpha > 0)
-				this.charDisp.fadeOut(this.FadeDuration);
 		}
 	}
 
@@ -103,56 +101,110 @@ export default class DialogObject extends PIXI.Container {
 		this.width = this.WIDTH;
 		this.height = this.HEIGHT;
 
-		const dialog = PIXI.Texture.from(`${AssetsRoot}/story/ui/Dialog.png`);
-		const charName = PIXI.Texture.from(`${AssetsRoot}/story/ui/CharName.png`);
+		const background = PIXI.Texture.from(`${AssetsRoot}/story/ui/UI_Common_Frame_GD.png`);
+		const deco1 = PIXI.Texture.from(`${AssetsRoot}/story/ui/newui_Popup_Bg_Title_Deco1.png`);
+		const deco2 = PIXI.Texture.from(`${AssetsRoot}/story/ui/newui_Popup_Bg_Title_Deco2.png`);
 
 		if (this.destroyed) {
-			dialog.destroy();
-			charName.destroy();
+			background.destroy();
+			deco1.destroy();
+			deco2.destroy();
 			return;
 		}
 
-		this.dialogObject = new PIXI.NineSlicePlane(dialog, 10, 128, 657, 114);
-		this.dialogObject.name = "dialogObject";
-		this.dialogObject.width = this.WIDTH;
-		this.dialogObject.height = this.HEIGHT;
-		this.addChild(this.dialogObject);
+		this.backgroundObject = new PIXI.NineSlicePlane(background, 10, 94, 10, 11);
+		this.setNineSliceGeometry(this.backgroundObject, 1998, 265, [7, 63, 7, 7]);
+		this.backgroundObject.position.set(-404, -58);
+		this.backgroundObject.tint = 0x000000;
+		this.backgroundObject.alpha = 225 / 255;
+		this.addChild(this.backgroundObject);
 
-		this.charDisp = new FadeSprite(charName);
-		this.charDisp.name = "charDisp";
-		this.charDisp.width = 340;
-		this.charDisp.height = 32;
-		this.charDisp.alpha = 0;
-		this.addChild(this.charDisp);
+		this.deco1_1 = new PIXI.NineSlicePlane(deco1, 8, 0, 100, 0);
+		this.setNineSliceGeometry(this.deco1_1, 667, 8, [5, 0, 67, 0]);
+		this.deco1_1.position.set(-87, 34);
+		this.deco1_1.alpha = 120 / 255;
+		this.addChild(this.deco1_1);
+
+		this.deco1_2 = new PIXI.NineSlicePlane(deco1, 8, 0, 100, 0);
+		this.setNineSliceGeometry(this.deco1_2, 667, 8, [5, 0, 67, 0], true);
+		this.deco1_2.position.set(610, 34);
+		this.deco1_2.alpha = 120 / 255;
+		this.addChild(this.deco1_2);
+
+		this.deco2 = new PIXI.Sprite(deco2);
+		this.deco2.width = 11;
+		this.deco2.height = 5;
+		this.deco2.anchor.set(0.5, 1);
+		this.deco2.position.set(595, 46);
+		this.addChild(this.deco2);
 
 		this.textObject = new FadeText("", {
 			align: "LC",
 			fontWeight: 500,
-			fontSize: 28,
+			fontSize: 26.2,
 			fill: "#fff",
-			stroke: "#000",
-			strokeWidth: 1.5,
-			lineHeight: 1.35,
-			wrapWidth: this.WIDTH - 60,
+			// stroke: "#000",
+			stroke: "transparent",
+			// strokeWidth: 1.5,
+			lineHeight: 1.38,
+			letterSpacing: 0.41,
+			wrapWidth: this.WIDTH - 204,
 		});
-		this.textObject.position.set(30, 81);
-		this.dialogObject.addChild(this.textObject);
+		this.textObject.position.set(102, 106);
+		this.addChild(this.textObject);
 
 		this.speakerObject = new FadeText("", {
 			align: "CC",
-			fontWeight: 500,
-			fontSize: 20,
+			fontWeight: 600,
+			fontSize: 35,
 			fill: "#fff",
-			stroke: "#000",
-			strokeWidth: 1,
+			stroke: "transparent",
+			// stroke: "#000",
+			// strokeWidth: 0.3,
+			letterSpacing: 0,
+
+			shadowColor: "#000",
+			shadowBlur: 7,
+			shadowOffsetX: 0,
+			shadowOffsetY: 0.5,
 		});
-		this.speakerObject.position.set(170, 12);
-		this.charDisp.addChild(this.speakerObject);
+		// this.speakerObject.position.set(170, 12);
+		// this.speakerContainer.addChild(this.speakerObject);
+		this.addChild(this.speakerObject);
 
 		this.setText(this._text);
 		this.setSpeaker(this._speaker, this._speakerPosition);
 		this.setDisplay(this._display);
 	}
+
+	private setNineSliceGeometry (
+		plane: PIXI.NineSlicePlane,
+		width: number,
+		height: number,
+		borders: [left: number, top: number, right: number, bottom: number],
+		mirrorX = false,
+	) {
+		plane.width = width;
+		plane.height = height;
+
+		const [left, top, right, bottom] = borders;
+		const xs = [0, left, width - right, width];
+		const ys = [0, top, height - bottom, height];
+		const vertices = plane.geometry.getBuffer("aVertexPosition");
+
+		for (let row = 0; row < 4; row++) {
+			for (let col = 0; col < 4; col++) {
+				const index = (row * 4 + col) * 2;
+
+				vertices.data[index] = mirrorX
+					? width - xs[col]
+					: xs[col];
+				vertices.data[index + 1] = ys[row];
+			}
+		}
+
+		vertices.update();
+	};
 
 	/** `duration` in secs */
 	public fadeIn (duration: number = 0.5) {
