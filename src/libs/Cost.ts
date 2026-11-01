@@ -1,4 +1,4 @@
-import { SortieCost } from "@/libs/Const";
+import { SortieCost } from "@/libs/Const.1";
 import { SortieCostBody } from "@/types/Cost";
 import { LinkBonusType } from "@/types/DB/Unit";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ROLE_TYPE } from "@/types/Enums";

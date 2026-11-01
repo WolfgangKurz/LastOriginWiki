@@ -4,7 +4,7 @@ import { useMemo, useState } from "preact/hooks";
 
 import { UnitDialogueAudioType, UnitDialogueDataType } from "@/types/DB/Dialogue";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 import { TitleCalls } from "@/libs/Const.3";
 import { isActive } from "@/libs/Functions";
 
@@ -83,13 +83,15 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 			>日本語</button>
 		</div>
 
-		{ VoiceList.map(voice => <UnitDialogue
-			key={ `voice${voice.isMarriage ? "-M" : ""}-${voice.sid ?? 0}` }
-			unit={ unit }
-			voice={ voice }
-			lang={ dialogueLang }
-			audio={ dialogueAudio }
-		/>) }
+		{ VoiceList.map(voice => <>
+			<UnitDialogue
+				key={ `voice${voice.isMarriage ? "-M" : ""}-${voice.sid ?? "00"}` }
+				unit={ unit }
+				voice={ voice }
+				lang={ dialogueLang }
+				audio={ dialogueAudio }
+			/>
+		</>) }
 
 		{ unit.uid in TitleCalls && <TitleCallDisplay
 			unitId={ unit.uid }

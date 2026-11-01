@@ -5,7 +5,7 @@ import { ROLE_TYPE } from "@/types/Enums";
 
 import { useUpdate } from "@/libs/hooks";
 import { CurrentDB } from "@/libs/DB";
-import { AssetsRoot, RarityDisplay } from "@/libs/Const";
+import { AssetsRoot, RarityDisplay } from "@/libs/Const.1";
 import { BuildClass } from "@/libs/Class";
 import { FormatNumber } from "@/libs/Functions";
 

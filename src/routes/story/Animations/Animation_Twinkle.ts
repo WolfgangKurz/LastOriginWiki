@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 
 import { UI_UNIT } from "../Objects/Actor/ActorStage";
 

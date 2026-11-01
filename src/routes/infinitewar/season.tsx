@@ -7,7 +7,7 @@ import { Anomaly } from "@/types/DB/Anomaly";
 import { Consumable } from "@/types/DB/Consumable";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { BuildClass } from "@/libs/Class";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";

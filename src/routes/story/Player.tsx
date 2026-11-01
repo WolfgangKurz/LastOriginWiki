@@ -12,7 +12,7 @@ import { LocaleTypes } from "@/types/Locale";
 
 import { useLocale } from "@/libs/Locale";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
-import { AssetsRoot, IsDev } from "@/libs/Const";
+import { AssetsRoot, IsDev } from "@/libs/Const.1";
 import { BuildClass } from "@/libs/Class";
 import BGMAlbums from "@/libs/BGM";
 

@@ -8,7 +8,7 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { LinkBonusType, Unit } from "@/types/DB/Unit";
 import { SimulatorSlotType } from "../../types/Slot";
 
-import { RarityDisplay } from "@/libs/Const";
+import { RarityDisplay } from "@/libs/Const.1";
 import { isActive } from "@/libs/Functions";
 import { GetLinkBonus } from "@/libs/LinkBonus";
 

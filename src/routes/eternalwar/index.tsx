@@ -12,7 +12,7 @@ import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { useTitle, useUpdate } from "@/libs/hooks";
 import { BuildClass } from "@/libs/Class";
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 import { SetMeta } from "@/libs/Site";

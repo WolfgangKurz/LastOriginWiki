@@ -8,7 +8,7 @@ import { Equip } from "@/types/DB/Equip";
 import { Unit } from "@/types/DB/Unit";
 
 import { useTitle, useUpdate } from "@/libs/hooks";
-import { RarityDisplay } from "@/libs/Const";
+import { RarityDisplay } from "@/libs/Const.1";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta } from "@/libs/Site";
 

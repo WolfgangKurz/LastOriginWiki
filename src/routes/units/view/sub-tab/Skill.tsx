@@ -6,7 +6,7 @@ import { SelectOption } from "@/types/Helper";
 import { ACTOR_GRADE, ITEM_TYPE } from "@/types/Enums";
 import { LinkBonusType } from "@/types/DB/Unit";
 
-import { RarityDisplay } from "@/libs/Const";
+import { RarityDisplay } from "@/libs/Const.1";
 import { GetRequireResource } from "@/libs/Cost";
 import { GetLinkBonus } from "@/libs/LinkBonus";
 import { cn } from "@/libs/Class";

@@ -1,7 +1,7 @@
 import * as PIXI from "pixi.js";
 import * as LAYERS from "@pixi/layers";
 
-import { AssetsRoot, IsDev } from "@/libs/Const";
+import { AssetsRoot, IsDev } from "@/libs/Const.1";
 import { quat2tf } from "@/libs/Math";
 
 import Shared from "@/components/pixi/Shared";

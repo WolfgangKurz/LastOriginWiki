@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 
-import { IsDev } from "@/libs/Const";
+import { IsDev } from "@/libs/Const.1";
 
 import GammaModel, { TRIGGER_NORMAL_TOUCH, TRIGGER_SPECIAL_TOUCH } from "./Gamma/Model";
 import { GammaModelId, LoadedModel, loadModel, parseModelId } from "./Gamma/Loader";

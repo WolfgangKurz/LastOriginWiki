@@ -2,7 +2,7 @@ import * as PIXI from "pixi.js";
 
 import { DIALOG_SPEAKER } from "@/types/Enums";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 
 import FadeText from "@/components/pixi/FadeText";
 
@@ -190,20 +190,35 @@ export default class DialogObject extends PIXI.Container {
 		const [left, top, right, bottom] = borders;
 		const xs = [0, left, width - right, width];
 		const ys = [0, top, height - bottom, height];
-		const vertices = plane.geometry.getBuffer("aVertexPosition");
+		const updateVertices = () => {
+			const vertices = plane.geometry.getBuffer("aVertexPosition");
+			for (let row = 0; row < 4; row++) {
+				for (let col = 0; col < 4; col++) {
+					const index = (row * 4 + col) * 2;
 
-		for (let row = 0; row < 4; row++) {
-			for (let col = 0; col < 4; col++) {
-				const index = (row * 4 + col) * 2;
-
-				vertices.data[index] = mirrorX
-					? width - xs[col]
-					: xs[col];
-				vertices.data[index + 1] = ys[row];
+					vertices.data[index] = mirrorX
+						? width - xs[col]
+						: xs[col];
+					vertices.data[index + 1] = ys[row];
+				}
 			}
-		}
+			vertices.update();
+		};
 
-		vertices.update();
+		// Texture loading and render-time updates rebuild NineSlicePlane vertices.
+		// Replace the pending listener too: it still refers to the original method.
+		const textureUpdated = plane.textureUpdated;
+		const pendingTexture = !plane.texture.baseTexture.valid;
+		if (pendingTexture)
+			plane.texture.off("update", textureUpdated, plane);
+		plane.textureUpdated = () => {
+			textureUpdated.call(plane);
+			updateVertices();
+		};
+		if (pendingTexture)
+			plane.texture.once("update", plane.textureUpdated, plane);
+
+		updateVertices();
 	};
 
 	/** `duration` in secs */

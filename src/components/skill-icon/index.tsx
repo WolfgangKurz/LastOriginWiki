@@ -1,4 +1,4 @@
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { FunctionalComponent } from "preact";
 
 interface SkillIconProps {

@@ -6,7 +6,7 @@ import { SkillSummonInfo } from "@/types/DB/Skill";
 import { Summon, SummonSkill } from "@/types/DB/Summon";
 import { BuffStat } from "@/types/Buffs";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { UniqueID } from "@/libs/Functions";
 import { useLocale } from "@/libs/Locale";
 import { assertDBData, useDBData } from "@/libs/Loader";

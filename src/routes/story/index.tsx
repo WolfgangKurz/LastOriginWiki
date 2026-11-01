@@ -8,7 +8,7 @@ import { STAGE_SUB_TYPE } from "@/types/Enums";
 
 import { useLocale } from "@/libs/Locale";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 import { cn } from "@/libs/Class";
 import { useTitle } from "@/libs/hooks";
 

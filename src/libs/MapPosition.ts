@@ -7,7 +7,7 @@ type MapPositionWorld = Record<string, MapPositionMap>;
 type MapPositionType = Record<string, MapPositionWorld>;
 
 const MapPosition: MapPositionType = {
-	12: {
+	OLD_12: {
 		1: {
 			"12-1": [0, 1],
 			"12-2": [0.8, 1],
@@ -66,7 +66,7 @@ const MapPosition: MapPositionType = {
 			"12-1C": [4, 2, false],
 		},
 	},
-	13: {
+	OLD_13: {
 		1: {
 			"13-1": [0, 1],
 			"13-2": [0.8, 1],
@@ -157,6 +157,20 @@ const MapPosition: MapPositionType = {
 			"13-3C": [8, 2, false],
 		},
 	},
+
+	1: {
+		1: {
+			"CH1-intro": [0, 1],
+			"CH1-1": [0.8, 1],
+			"CH1-2": [1.6, 1],
+			"CH1-3": [2.4, 1],
+			"CH1-4": [3.2, 1],
+			"CH1-5": [4, 1],
+			"CH1-6": [4.8, 1],
+			"CH1-7": [5.6, 1],
+		},
+	},
+
 	Ev13: {
 		2: {
 			"Ev2-1": [0, 1],

@@ -3,7 +3,8 @@ import { useMemo } from "preact/hooks";
 
 import TimeAgo from "javascript-time-ago";
 
-import { AssetsRoot, CurrentEvent, EventTo, ImageExtension, IsEventRunning } from "@/libs/Const";
+import { CurrentEvent, EventTo, IsEventRunning } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { SetMeta } from "@/libs/Site";
 import { CurrentLocale } from "@/libs/Locale";
 import { useTitle } from "@/libs/hooks";

@@ -9,7 +9,7 @@ import { BuffStat } from "@/types/Buffs";
 
 import { useLocale } from "@/libs/Locale";
 import Session from "@/libs/Session";
-import { RarityDisplay } from "@/libs/Const";
+import { RarityDisplay } from "@/libs/Const.1";
 import { BuildClass, cn } from "@/libs/Class";
 import { GetSkillDescription } from "@/libs/SkillDescription";
 

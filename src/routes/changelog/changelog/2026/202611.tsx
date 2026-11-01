@@ -4,6 +4,19 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13217" date="2026-11-01"
+		new={ <>
+			<li><BY>세계 정보</BY>에 신규 메인스토리 지역이 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li><BY>세계 정보</BY>의 기존 메인스토리 지역이 <BY>OLD</BY>로 변경되었습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>모델 데이터 수정 과정에서 일부 모델이 누락된 점을 수정했습니다.</li>
+			<li><BY>스킨 뷰어</BY> 및 <BY>대사</BY> 탭에서 표정 선택자가 잘못 표시되던 점을 수정했습니다.</li>
+			<li><BY>스토리 플레이어</BY> 에서 대사창의 UI가 잘못 그려지던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13213" date="2026-11-01"
 		knownissue={ <>
 			<li><strong>이번 업데이트에는 적 정보 및 전투원 스킬 정보의 갱신이 포함되지 않았습니다. 신규 전투원의 스킬 정보도 제공되지 않습니다.</strong></li>

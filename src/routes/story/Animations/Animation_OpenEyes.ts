@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 
 import AnimationEffect, { AnimationFrame } from "@/routes/story/Effects/AnimationEffect";
 

@@ -3,7 +3,7 @@ import * as LAYERS from "@pixi/layers";
 import * as spine from "@esotericsoftware/spine-pixi-v7";
 import LZMADecompression from "@/external/lzma";
 
-import { AssetsRoot, IsDev } from "@/libs/Const";
+import { AssetsRoot, IsDev } from "@/libs/Const.1";
 import { quat2eul } from "@/libs/Math";
 
 import ColliderBox from "@/components/pixi/ColliderBox";

@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import { FilterableFacility } from "@/types/DB/Facility.Filterable";
 
-import { ImageExtension, AssetsRoot } from "@/libs/Const";
+import { ImageExtension, AssetsRoot } from "@/libs/Const.1";
 
 import "./style.scss";
 

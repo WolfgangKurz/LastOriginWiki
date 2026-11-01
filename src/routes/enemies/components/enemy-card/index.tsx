@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 
 import Locale from "@/components/locale";
 import RarityBadge from "@/components/rarity-badge";

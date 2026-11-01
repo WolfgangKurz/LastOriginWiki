@@ -7,7 +7,7 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { useLocale } from "@/libs/Locale";
 import { useImageExtension } from "@/libs/ImageExtension";
-import { AssetsRoot, CanPlayWebM, IsDev } from "@/libs/Const";
+import { AssetsRoot, CanPlayWebM, IsDev } from "@/libs/Const.1";
 import { cn } from "@/libs/Class";
 
 import { render2DModel } from "./2DModelRenderer";
@@ -305,6 +305,11 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	], [DisplayMixed, DisplayGamma, DisplaySpine, Display2DModel, !!modelVideoId]);
 	const pixiViewType = useMemo(() => pixiViewTypes.find(c => c[0])?.[1] ?? "none", [pixiViewTypes]);
 
+	function stripFacePrefix (face: string, prefix: string): string {
+		const reg = new RegExp("^" + prefix.replace(/^[OG]\/(2DModel_)?/i, ""), "i");
+		return face.replace(reg, "");
+	}
+
 	return <div class={ cn(style.SkinView, inPlusDownload && style.InPlusDownload) }>
 		<div class={ `ratio ${Aspect} ${style.SkinFull} ${props.collapsed ? style.Collapsed : ""}` }>
 			<div>
@@ -338,7 +343,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								setFaceList(list);
 								setFacePrefix(prefix);
 
-								const i = list.findIndex(x => x.toLowerCase() == "idle");
+								const i = list.findIndex(x => stripFacePrefix(x.toLowerCase(), prefix) == "idle");
 								if (i >= 0)
 									setFace(list[i]);
 								else {
@@ -632,7 +637,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							} }
 						>
 							{ faceList.map(f => {
-								const ft = FACETYPE[f.toUpperCase()];
+								const ft = FACETYPE[stripFacePrefix(f.toUpperCase(), facePrefix)];
 								return <option value={ f } data-raw={ ft }>
 									{ ft
 										? <Locale k={ `FACE_TYPE_${ft}` } />

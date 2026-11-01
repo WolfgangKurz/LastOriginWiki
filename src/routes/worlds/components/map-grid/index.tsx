@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef } from "preact/hooks";
 import { MapNodeEntity } from "@/types/DB/Map";
 import { STAGE_SUB_TYPE } from "@/types/Enums";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 import MapPosition from "@/libs/MapPosition";
 
 import style from "./style.module.scss";

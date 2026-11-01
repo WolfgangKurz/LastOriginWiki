@@ -5,7 +5,7 @@ import { NUM_OUTPUTTYPE } from "@/types/Enums";
 import { ExtPassive } from "@/types/DB/ExtPasive";
 import { Consumable } from "@/types/DB/Consumable";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { useLocale } from "@/libs/Locale";
 import { FormatNumber } from "@/libs/Functions";
 

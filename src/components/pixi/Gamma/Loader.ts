@@ -1,6 +1,6 @@
 import type { ModelData } from "./Types";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 
 /** Gamma models, `${GammaRoot}/<O|G>/<model>/model.json` */
 export const GammaRoot = `${AssetsRoot}/gamma`;

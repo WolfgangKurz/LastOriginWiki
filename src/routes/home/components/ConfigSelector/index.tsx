@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import { LocaleList } from "@/types/Locale";
 
-import { AssetsRoot, ImageExtension, ImageExtensionList } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, ImageExtensionList } from "@/libs/Const.1";
 import { cn } from "@/libs/Class";
 import { ChangeImage } from "@/libs/Functions";
 import { ChangeLanguage, CurrentLocale } from "@/libs/Locale";

@@ -11,7 +11,7 @@ import { Equip } from "@/types/DB/Equip";
 import { BuffEffectValue } from "@/types/BuffEffect";
 import { SimulatorSlotType } from "../../types/Slot";
 
-import { AssetsRoot, RarityDisplay } from "@/libs/Const";
+import { AssetsRoot, RarityDisplay } from "@/libs/Const.1";
 import { GetLinkBonus } from "@/libs/LinkBonus";
 import { GetRequireResource } from "@/libs/Cost";
 

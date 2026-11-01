@@ -6,7 +6,7 @@ import { ROLE_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { SimulatorSlotType, SimulatorSlotEntity } from "./types/Slot";
 
-import { AssetsRoot, IsDev } from "@/libs/Const";
+import { AssetsRoot, IsDev } from "@/libs/Const.1";
 import { isActive } from "@/libs/Functions";
 import { SetMeta } from "@/libs/Site";
 import { useTitle } from "@/libs/hooks";

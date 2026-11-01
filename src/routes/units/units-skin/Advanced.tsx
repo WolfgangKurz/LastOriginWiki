@@ -6,7 +6,7 @@ import { UnitSkinEntity } from "@/types/DB/Unit";
 import { SKIN_IN_PARTS } from "@/types/Enums";
 import { UnitsListProps } from "..";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 import { isActive } from "@/libs/Functions";
 import { useLocale } from "@/libs/Locale";
 import { BuildClass } from "@/libs/Class";

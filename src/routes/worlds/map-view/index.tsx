@@ -11,7 +11,8 @@ import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
 import { StoryMetadata, StorySpec } from "@/types/Story/Story";
 
-import { AssetsRoot, ImageExtension, NewMapList, SubStoryUnit } from "@/libs/Const";
+import { NewMapList, SubStoryUnit } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { BuildClass } from "@/libs/Class";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta } from "@/libs/Site";
@@ -80,14 +81,16 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 
 	const mapBGRef = useRef<HTMLDivElement>(null);
 
-	const isStory = /^[0-9]+$/.test(props.wid);
+	const isStory = /^(OLD_)?[0-9]+$/.test(props.wid);
+	const isOldStory = props.wid.startsWith("OLD_");
+	const normWid = props.wid.replace(/^(OLD_)?/, "");
 	const wid = isStory ? "Story" : props.wid;
 	useTitle(props.wid === "Sub"
 		? [loc["MENU_WORLDS"], loc[`WORLD_${wid}`]]
 		: [
 			loc["MENU_WORLDS"],
-			loc[`WORLD_${wid}`],
-			formatString(loc["WORLDS_WORLD_TITLE"] || "", isStory ? props.wid : props.mid),
+			loc[`WORLD_${wid}`] + (isOldStory ? " (OLD)" : ""),
+			formatString(loc["WORLDS_WORLD_TITLE"] || "", isStory ? normWid : props.mid),
 		]
 	);
 
@@ -122,15 +125,21 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 	}, [currentMode, props.node]);
 
 	const WorldName = useMemo(() => <span class={ `font-ibm ${style.WorldName}` }>
-		<Locale k={ `WORLD_${wid}` } fallback={ props.wid } />
+		<Locale
+			k={ isStory ? "WORLD_Story" : `WORLD_${wid}` }
+			fallback={ props.wid }
+		/>
+		{ isOldStory && <span class="ms-1">(OLD)</span> }
 	</span>, [wid, props.wid]);
 	const AreaName = useMemo(() => (props.mid in MapDB)
-		? <Locale
-			k={ `WORLD_WORLD_${props.wid}_${props.mid}` }
-			fallback={ <Locale k={ "WORLDS_WORLD_TITLE" } p={ [isStory ? props.wid : props.mid] } /> }
-		/>
+		? <>
+			<Locale
+				k={ `WORLD_WORLD_${props.wid}_${props.mid}` }
+				fallback={ <Locale k={ "WORLDS_WORLD_TITLE" } p={ [isStory ? normWid : props.mid] } /> }
+			/>
+		</>
 		: <>???</>,
-		[props.mid, MapDB, props.wid, isStory],
+		[props.mid, MapDB, wid, props.wid, isStory],
 	);
 
 	const Waves = useMemo(() => selected && selected.type !== STAGE_SUB_TYPE.STORY && selected.wave || [], [selected]);
@@ -378,6 +387,8 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				<button class="btn btn-dark" onClick={ (): void => {
 					if (props.wid === "Sub")
 						location.route("/worlds/");
+					else if (isOldStory)
+						location.route("/worlds/OLD_Story");
 					else if (isStory)
 						location.route("/worlds/Story");
 					else
@@ -438,7 +449,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 									{ WorldName }
 									<h5 class="m-0 d-inline-block font-ibm">
 										<span class="badge bg-warning text-dark ms-2">
-											<Locale k="WORLDS_WORLD_TITLE" p={ [isStory ? props.wid : props.mid] } /> :: { AreaName }
+											<Locale k="WORLDS_WORLD_TITLE" p={ [isStory ? normWid : props.mid] } /> :: { AreaName }
 										</span>
 									</h5>
 								</>
@@ -459,7 +470,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											location.route(`/worlds/${props.wid}/${k}`);
 										} }
 									>
-										{ props.wid }-{ k }
+										{ normWid }-{ k }
 									</button>)
 								}
 							</div>

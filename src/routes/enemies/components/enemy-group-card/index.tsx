@@ -5,7 +5,7 @@ import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 import { EnemyGroupEnetity, EnemyGroupMap } from "@/types/DB/EnemyGroup";
 
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";

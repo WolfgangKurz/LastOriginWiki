@@ -3,7 +3,7 @@ import { FunctionalComponent, createElement } from "preact";
 import { useCallback, useEffect, useState } from "preact/hooks";
 
 import { useUpdate } from "@/libs/hooks";
-import { DataRoot } from "@/libs/Const";
+import { DataRoot } from "@/libs/Const.1";
 import { CurrentDB } from "@/libs/DB";
 
 import DBHash, { DBHashType } from "@/libs/Loader/hash";

@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 import { useEffect, useMemo, useState } from "preact/hooks";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { cn } from "@/libs/Class";
 
 import sheetMeta from "./generated";

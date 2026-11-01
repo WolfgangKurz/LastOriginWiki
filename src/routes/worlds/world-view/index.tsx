@@ -6,7 +6,7 @@ import { World } from "@/types/DB/Map";
 
 import { useTitle } from "@/libs/hooks";
 import { useLocale } from "@/libs/Locale";
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { isActive } from "@/libs/Functions";
 import { cn } from "@/libs/Class";
 import { SetMeta } from "@/libs/Site";
@@ -93,7 +93,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 						<div class="card-body">
 							<div class="row gx-0">
 								<div class="col-12">
-									<img class={ style.WorldIcon } src={ `${AssetsRoot}/world/icons/${wid}_${world}.png` } />
+									<img class={ style.WorldIcon } src={ `${AssetsRoot}/world/icons/${wid}_${world}.png?v=2` } />
 								</div>
 								<div class="col">
 									<div>

@@ -8,7 +8,7 @@ import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { objState } from "@/libs/State";
-import { ImageExtension, AssetsRoot } from "@/libs/Const";
+import { ImageExtension, AssetsRoot } from "@/libs/Const.1";
 import { isActive } from "@/libs/Functions";
 
 import Loader, { StaticDB, GetJson } from "@/libs/Loader";

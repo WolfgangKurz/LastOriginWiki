@@ -6,7 +6,7 @@ import RoguelikeEffect from "@/types/DB/Roguelike.Effect";
 
 import { objState } from "@/libs/State";
 import { isActive } from "@/libs/Functions";
-import { ImageExtension, AssetsRoot, RarityDisplay } from "@/libs/Const";
+import { ImageExtension, AssetsRoot, RarityDisplay } from "@/libs/Const.1";
 
 import Loader, { StaticDB, GetJson } from "@/libs/Loader";
 import Locale from "@/components/locale";

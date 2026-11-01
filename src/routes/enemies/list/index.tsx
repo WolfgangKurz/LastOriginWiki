@@ -6,7 +6,7 @@ import Store from "@/store";
 import { ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { useLocale } from "@/libs/Locale";
 import { DecomposeHangulSyllable, isActive } from "@/libs/Functions";

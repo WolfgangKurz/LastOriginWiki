@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 
 import FadeText from "@/components/pixi/FadeText";
 import FadeSprite from "@/components/pixi/FadeSprite";

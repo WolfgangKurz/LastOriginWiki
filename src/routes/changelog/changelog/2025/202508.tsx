@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 
 import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "../../components/badges";

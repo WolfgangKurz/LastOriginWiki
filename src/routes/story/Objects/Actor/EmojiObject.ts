@@ -2,7 +2,7 @@ import * as PIXI from "pixi.js";
 
 import { DIALOG_CHAREMOJI_EFFECT } from "@/types/Enums";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 
 /**
  * Baked `icon_all` prefab (fxeffect bundle) of original game.

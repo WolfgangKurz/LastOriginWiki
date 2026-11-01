@@ -5,7 +5,7 @@ import throttle from "lodash.throttle";
 
 import { BGMAlbum, BGMInfo, BGMInfo_Youtube } from "@/types/BGM";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 import { SetMeta } from "@/libs/Site";
 import { useTitle } from "@/libs/hooks";
 import { BuildClass } from "@/libs/Class";

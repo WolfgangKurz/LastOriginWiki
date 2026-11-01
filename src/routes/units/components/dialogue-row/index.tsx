@@ -3,7 +3,7 @@ import { useMemo } from "preact/hooks";
 
 import { UnitDialogueAudioType } from "@/types/DB/Dialogue";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 import { BuildClass } from "@/libs/Class";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 
