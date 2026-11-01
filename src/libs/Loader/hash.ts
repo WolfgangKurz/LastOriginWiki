@@ -1906,7 +1906,6 @@ export default {
 			"Ev7": "1e4b1d25",
 			"Ev8": "c139d311",
 			"Ev9": "93c10940",
-			"N1": "5850fead",
 			"OLD_1": "fa30c2b4",
 			"OLD_10": "445aa51f",
 			"OLD_11": "7f617cb7",
@@ -1927,8 +1926,8 @@ export default {
 		"research": "37d6f1be",
 		"skill-from": "7c6927ac",
 		"sticker": "a8747733",
-		"story.2dmodel": "c2a38bf3",
-		"story.map": "cd1ece67",
+		"story.2dmodel": "caa44f78",
+		"story.map": "b1c07687",
 		"story": {
 			"Ch01Ev10Stage01": "6a2e22c9",
 			"Ch01Ev10Stage02": "31639879",

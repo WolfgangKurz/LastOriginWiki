@@ -251,7 +251,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 					nid: `${r[2].startsWith("Ev") ? "Ev" : ""}${mid}-${parseInt(r[3], 10)}${postfix}`,
 					storyType: type,
 				};
-			} else { // Story
+			} else { // Story (OLD)
 				return {
 					wid: parseInt(r[1], 10).toString(), // "Story",
 					mid,
@@ -295,6 +295,26 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 					nid: r[1],
 					storyType: "Sub3",
 				};
+			} else { // New Story
+				const reg = /^ChMQC([0-9]+)(N[0-9]+|Ev|Ev[0-9]+)?Stage([0-9]+)(B|Ex|EX|C|S)?$/;
+				const r = reg.exec(props.id);
+				if (r) {
+					const mid = parseInt(r[1], 10);
+					const postfix = r[5] === "EX"
+						? "Ex"
+						: r[5] === "S"
+							? (r[2] === "Ev5" || r[2] === "Ev6")
+								? "ep"
+								: "s"
+							: (r[5] || "");
+
+					return {
+						wid: parseInt(r[1], 10).toString(), // "Story",
+						mid,
+						nid: `${mid}-${parseInt(r[3], 10)}${postfix}`,
+						storyType: type,
+					};
+				}
 			}
 		}
 		return { wid: "", mid: 0, nid: 0, storyType: type };

@@ -54,57 +54,63 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 	const sSub = useMemo(() => selectedKey ? selectedKey[1] : null, [selectedKey]);
 
 	const StoryMapDB = useDBData<StoryMap>(StaticDB.StoryMap);
+	const StoryListSourceNew: StoryKeySourceType[] = [
+		1
+	];
 	const StoryListSource: StoryKeySourceType[] = [
 		"Ev25", // 제로베이스
-		1, 2, 3, 4, 5, 6,
+		...[1, 2, 3, 4, 5, 6].map(x => `OLD_${x}`),
 		"Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6",
-		7,
+		"OLD_7",
 		"Ev7", "Ev8",
-		8,
+		"OLD_8",
 		"Ev9",
 		"Ev17", // 분노의 늑대 송곳니
 		"Ev10", "Ev11",
 		"Ev22", // 당신의 쐐기에 진심을
 		"Ev12", "Ev13",
-		9,
+		"OLD_9",
 		["Ev14", [1, 2]],
 		"Ev15", "Ev16", "Ev18",
-		10,
+		"OLD_10",
 		"Ev19",
-		11,
+		"OLD_11",
 		"Ev20", "Ev21", "Ev23",
-		12,
+		"OLD_12",
 		"Ev24",
 		"Ev31", // 대전란 ~끝없이 내리치는 자색의 번개~
 		"Ev26", "Ev27", "Ev28", "Ev29", "Ev30",
-		13,
-		"Ev32", "Ev33", "Ev34", "Ev35", "Ev36", "Ev37", "Ev38", "Ev39", "Ev40",
+		"OLD_13",
+		"Ev32", "Ev33", "Ev34", "Ev35", "Ev36", "Ev37", "Ev38", "Ev39", "Ev40", "Ev41", "Ev42",
 	];
-	const StoryList: Array<StoryKeyType | null> = useMemo(
+	const StoryList: StoryKeyType[][] = useMemo(
 		() => {
-			const arr: StoryKeyType[] = StoryListSource.map(r => {
+			function fn (r: StoryKeySourceType): StoryKeyType {
 				if (Array.isArray(r)) {
 					const s = r[1];
 					if (Array.isArray(s)) return [r[0], s];
 					return [r[0], [s]];
 				}
 				return [r, [0]];
-			});
+			}
+
+			const arrNew: StoryKeyType[] = StoryListSourceNew.map(fn);
+			const arrOld: StoryKeyType[] = StoryListSource.map(fn);
 
 			if (assertDBData(StoryMapDB)) {
 				const unordered: StoryKeyType[] = Object.keys(StoryMapDB)
-					.filter(k => !arr.some(r => r[0] == k))
+					.filter(k => !arrNew.some(r => r[0] == k) && !arrOld.some(r => r[0] == k))
 					.map(k => [k, [0]]);
 
 				if (unordered.length > 0) {
 					return [
-						...arr,
-						null,
-						...unordered,
+						arrNew,
+						arrOld,
+						unordered,
 					];
 				}
 			}
-			return arr;
+			return [arrNew, arrOld, []];
 		},
 		[StoryMapDB, StoryListSource],
 	);
@@ -115,6 +121,12 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 				return `Story_${k}`;
 			else
 				return `Story_${k}_${s}`;
+		} else if (k.startsWith("OLD_")) {
+			const _k = k.replace(/^OLD_/, "");
+			if (s === 0)
+				return `OLD_Story_${_k}`;
+			else
+				return `OLD_Story_${_k}_${s}`;
 		}
 		return `${k}_${s || 1}`;
 	}
@@ -161,14 +173,15 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 				<img src={ `${AssetsRoot}/world/icons/${GetWorldIcon(k[0], s)}.png` } />
 
 				<div class={ style.StoryType }>
-					{ typeof k[0] === "number"
+					{ typeof k[0] === "number" || k[0].startsWith("OLD_")
 						? <>
 							<span class="badge bg-warning text-bg-warning mx-1">
 								<Locale k="STORY_TYPE_MAINSTORY" />
+								{ k[0].toString().startsWith("OLD_") && <> (OLD)</> }
 							</span>
 
 							<span class="badge bg-dark text-bg-dark mx-1">
-								<Locale k="WORLDS_WORLD_TITLE" p={ [k[0]] } />
+								<Locale k="WORLDS_WORLD_TITLE" p={ [k[0].toString().replace(/^OLD_/, "")] } />
 							</span>
 						</>
 						: <>
@@ -189,17 +202,6 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		</div>);
 	}
 
-	const StoryListA = useMemo((): StoryKeyType[] => {
-		const idx = StoryList.indexOf(null);
-		if (idx >= 0) return StoryList.slice(0, idx) as StoryKeyType[];
-		return StoryList as StoryKeyType[];
-	}, [StoryList]);
-	const StoryListB = useMemo((): StoryKeyType[] => {
-		const idx = StoryList.indexOf(null);
-		if (idx >= 0) return StoryList.slice(idx + 1) as StoryKeyType[];
-		return [];
-	}, [StoryList]);
-
 	return <div class={ style.Story }>
 		<h2>
 			<Locale k="STORY" />
@@ -216,12 +218,16 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		<hr />
 
 		<div class={ style.Timeline }>
-			{ StoryListA.map(k => StoryTimeline(k!)) }
+			{ StoryList[0].map(k => StoryTimeline(k!)) }
 		</div>
-		{ StoryListB.length > 0 && <>
+		<hr />
+		<div class={ style.Timeline }>
+			{ StoryList[1].map(k => StoryTimeline(k!)) }
+		</div>
+		{ StoryList[2].length > 0 && <>
 			<hr />
 			<div class={ style.Timeline }>
-				{ StoryListB.map(k => StoryTimeline(k!)) }
+				{ StoryList[2].map(k => StoryTimeline(k!)) }
 			</div>
 		</> }
 

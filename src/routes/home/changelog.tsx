@@ -4,6 +4,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13226" date="2026-11-02"
+		bugfix={ <>
+			<li>일부 모델 및 스토리 페이지가 제대로 표시되지 않던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13224" date="2026-11-02"
 		new={ <>
 			<li><BY>세계 정보</BY>에 신규 메인스토리 지역이 추가되었습니다.</li>
