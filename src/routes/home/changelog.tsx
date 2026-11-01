@@ -4,7 +4,7 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 13222" date="2026-11-02"
+	<ChangelogItem title="Build 13224" date="2026-11-02"
 		new={ <>
 			<li><BY>세계 정보</BY>에 신규 메인스토리 지역이 추가되었습니다.</li>
 		</> }
@@ -17,6 +17,9 @@ const Changelog: FunctionalComponent = () => <>
 			<li><BY>스토리 플레이어</BY> 에서 대사창의 UI가 잘못 그려지던 문제를 수정했습니다.</li>
 			<li><BY>세계 정보</BY>에서 지역을 눌러도 선택된 표시가 나타나지 않던 문제가 수정되었습니다.</li>
 			<li><BY>세계 정보</BY>에서 메인 스토리 및 메인 스토리 (OLD) 가 개방 조건에서 제대로 표시되지 않던 문제가 수정되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>전투원 <BY>사니</BY>의 스킨 <BR>연구 뒤풀이 가장 파티</BR>의 미검열 중파의 소품 옵션이 제대로 표시되지 않던 문제가 수정되었습니다.</li>
 		</> }
 	/>
 	<ChangelogItem title="Build 13213" date="2026-11-01"

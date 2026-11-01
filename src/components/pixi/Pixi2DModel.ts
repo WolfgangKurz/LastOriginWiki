@@ -61,9 +61,9 @@ interface MODEL_DATA {
 	list: {
 		bg?: string[],
 		dialogDeactive?: string[],
+		parts2?: string[],
 	} & ({
 		parts: string[],
-		parts2: string[],
 	} | {
 		swapActive: string[],
 		swapInactive: string[],
@@ -239,10 +239,10 @@ export default class Pixi2DModel extends FadeContainer {
 				this.faceList = r.face;
 				this.hideBGList = r.list.bg || [];
 				this.dialogDeactiveList = r.list.dialogDeactive || [];
+				this.hidePart2List = r.list.parts2 ?? [];
 
 				if ("parts" in r.list) {
 					this.hidePartList = r.list.parts;
-					this.hidePart2List = r.list.parts2 ?? [];
 				} else if ("swapActive" in r.list) {
 					this.swapActiveList = r.list.swapActive;
 					this.swapInactiveList = r.list.swapInactive;
@@ -552,7 +552,11 @@ export default class Pixi2DModel extends FadeContainer {
 
 		this.treeItems
 			.filter(r => items.includes(r.name))
-			.forEach(r => r.sprite.visible = (r.data.active ?? true) && !namesToHide.includes(r.name));
+			.forEach(r => {
+				// Swap targets can start inactive and must be enabled when selected.
+				const isSwapTarget = this.swapActiveList.includes(r.name) || this.swapInactiveList.includes(r.name);
+				r.sprite.visible = (isSwapTarget || (r.data.active ?? true)) && !namesToHide.includes(r.name);
+			});
 	}
 
 	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {
