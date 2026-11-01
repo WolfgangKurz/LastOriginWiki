@@ -871,8 +871,17 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																	<Locale
 																		k="WORLD_VIEW_UNLOCK_CONDITION_ITEM"
 																		p={ [<>
-																			{ r.wid === "Story"
-																				? <Locale k={ `WORLD_${r.wid}` } fallback={ r.wid } />
+																			{ isStory
+																				? <>
+																					{ /^(OLD_)?[0-9]+$/.test(r.wid)
+																						? <Locale k="WORLD_Story" />
+																						: <Locale
+																							k={ `WORLD_${r.wid}` }
+																							fallback={ r.wid }
+																						/>
+																					}
+																					{ isOldStory && " (OLD)" }
+																				</>
 																				: <Locale k={ `WORLD_WORLD_${r.wid}_${r.cid}` } fallback={ r.cid } />
 																			}
 																			<span class="badge bg-warning text-dark ms-1 font-exo2">
@@ -982,8 +991,17 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																	<Locale
 																		k="WORLD_VIEW_UNLOCK_CONDITION_ITEM"
 																		p={ [<>
-																			{ r.wid === "Story"
-																				? <Locale k={ `WORLD_${r.wid}` } fallback={ r.wid } />
+																			{ isStory
+																				? <>
+																					{ /^(OLD_)?[0-9]+$/.test(r.wid)
+																						? <Locale k="WORLD_Story" />
+																						: <Locale
+																							k={ `WORLD_${r.wid}` }
+																							fallback={ r.wid }
+																						/>
+																					}
+																					{ isOldStory && " (OLD)" }
+																				</>
 																				: <Locale k={ `WORLD_WORLD_${r.wid}_${r.cid}` } fallback={ r.cid } />
 																			}
 																			<span class="badge bg-warning text-dark ms-1 font-exo2">

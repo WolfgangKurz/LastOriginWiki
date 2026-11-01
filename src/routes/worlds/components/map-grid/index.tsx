@@ -255,7 +255,7 @@ const MapGrid: FunctionalComponent<MapGridProps> = (props) => {
 
 		// return [...ret, ...lines];
 		return [...lines, ...ret];
-	}, [props.hardcoded, nodes]);
+	}, [props.hardcoded, props.selected, nodes]);
 
 	useEffect(() => {
 		if (svgRef.current) {
