@@ -472,7 +472,7 @@ stat:
     DEF:
       - 4
       - 43.6
-    SPD: 4.31
+    SPD: 4.11
     CRI: 0
     ACC: 180
     EVA: 5
@@ -496,7 +496,6666 @@ oneoff: false
 oathable: true
 entryReqMap: []
 research: false
-skills: {}
+skills:
+  "1":
+    key: "1"
+    icon: Chargeshot
+    target: enemy
+    delayed: false
+    target_ground: false
+    buffs:
+      index:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+      data:
+        - rate: 1.34
+          type: 2
+          range: 4
+          ap: 5
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Push
+                  desc:
+                    desc: Effect_TC_Namo_N_1_1
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 52
+                    position:
+                      type: push
+                      range:
+                        base: 1
+                        per: 0
+                  overlap: 4
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_1_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_11
+              on: attack_success
+              if:
+                - pos:
+                    target: target
+                    position: 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_11_1
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.474
+          type: 2
+          range: 4
+          ap: 5
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Push
+                  desc:
+                    desc: Effect_TC_Namo_N_1_1
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 52
+                    position:
+                      type: push
+                      range:
+                        base: 1
+                        per: 0
+                  overlap: 4
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_1_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_11
+              on: attack_success
+              if:
+                - pos:
+                    target: target
+                    position: 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_11_1
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.608
+          type: 2
+          range: 4
+          ap: 5
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Push
+                  desc:
+                    desc: Effect_TC_Namo_N_1_1
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 52
+                    position:
+                      type: push
+                      range:
+                        base: 1
+                        per: 0
+                  overlap: 4
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_1_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_11
+              on: attack_success
+              if:
+                - pos:
+                    target: target
+                    position: 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_11_1
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.742
+          type: 2
+          range: 4
+          ap: 5
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Push
+                  desc:
+                    desc: Effect_TC_Namo_N_1_1
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 52
+                    position:
+                      type: push
+                      range:
+                        base: 1
+                        per: 0
+                  overlap: 4
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_1_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_11
+              on: attack_success
+              if:
+                - pos:
+                    target: target
+                    position: 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_11_1
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.876
+          type: 2
+          range: 4
+          ap: 5
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Push
+                  desc:
+                    desc: Effect_TC_Namo_N_1_1
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 52
+                    position:
+                      type: push
+                      range:
+                        base: 1
+                        per: 0
+                  overlap: 4
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_1_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_11
+              on: attack_success
+              if:
+                - pos:
+                    target: target
+                    position: 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_11_1
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.01
+          type: 2
+          range: 4
+          ap: 5
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Push
+                  desc:
+                    desc: Effect_TC_Namo_N_1_1
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 52
+                    position:
+                      type: push
+                      range:
+                        base: 1
+                        per: 0
+                  overlap: 4
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_1_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_11
+              on: attack_success
+              if:
+                - pos:
+                    target: target
+                    position: 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_11_1
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.144
+          type: 2
+          range: 4
+          ap: 5
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Push
+                  desc:
+                    desc: Effect_TC_Namo_N_1_1
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 52
+                    position:
+                      type: push
+                      range:
+                        base: 1
+                        per: 0
+                  overlap: 4
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_1_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_11
+              on: attack_success
+              if:
+                - pos:
+                    target: target
+                    position: 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_11_1
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.278
+          type: 2
+          range: 4
+          ap: 5
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Push
+                  desc:
+                    desc: Effect_TC_Namo_N_1_1
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 52
+                    position:
+                      type: push
+                      range:
+                        base: 1
+                        per: 0
+                  overlap: 4
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_1_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_11
+              on: attack_success
+              if:
+                - pos:
+                    target: target
+                    position: 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_11_1
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.412
+          type: 2
+          range: 4
+          ap: 5
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Push
+                  desc:
+                    desc: Effect_TC_Namo_N_1_1
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 52
+                    position:
+                      type: push
+                      range:
+                        base: 1
+                        per: 0
+                  overlap: 4
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_1_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_11
+              on: attack_success
+              if:
+                - pos:
+                    target: target
+                    position: 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_11_1
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.546
+          type: 2
+          range: 4
+          ap: 5
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Push
+                  desc:
+                    desc: Effect_TC_Namo_N_1_1
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 52
+                    position:
+                      type: push
+                      range:
+                        base: 1
+                        per: 0
+                  overlap: 4
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_1_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_11
+              on: attack_success
+              if:
+                - pos:
+                    target: target
+                    position: 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_STUN
+                  desc:
+                    desc: Effect_TC_Namo_N_11_1
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 22
+                    stun: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_Push
+            desc:
+              desc: Effect_TC_Namo_N_1_1
+              type: 0
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_STUN
+            desc:
+              desc: Effect_TC_Namo_N_1_2
+              type: 0
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
+          - icon: BuffIcon_STUN
+            desc:
+              desc: Effect_TC_Namo_N_11_1
+              type: 0
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_IceATK_UP
+            desc:
+              desc: Effect_TC_SaniYang_N_36_1
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 1
+    desc:
+      KR: |-
+        침입자를 물리치기 위한 제압용 탄환으로 단일 대상에게 <dmg elem="ice" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 대상을 <sec typ="buff"><buff typ="Push" /> 뒤로 <val idx="0" signless />칸 밀어냅니다</sec>.
+        <sec typ="cond">대상이 후열에 위치한 경우</sec>, 해당 라운드 동안 대상은 <sec typ="buff"><buff typ="STUN" /> 행동 불가</sec> 상태가 됩니다.
+      EN: |-
+        Fires a suppression round designed to repel intruders, dealing <dmg elem="ice" /> to a single target.
+        <sec typ="cond">On Hit</sec>, <sec typ="buff"><buff typ="Push" /> pushes the target back <val idx="0" signless /> space(s)</sec>.
+        <sec typ="cond">If the target is in the back row</sec>, the target becomes <sec typ="buff"><buff typ="STUN" /> unable to act</sec> for the current round.
+      JP: |-
+        侵入者を撃退するための制圧弾で、単体の対象に<dmg elem="ice" />を与えます。
+        <sec typ="cond">命中時</sec>、対象を<sec typ="buff"><buff typ="Push" />後方に<val idx="0" signless />マス押し出します</sec>。
+        <sec typ="cond">対象が後列に位置する場合</sec>、そのラウンドの間、対象は<sec typ="buff"><buff typ="STUN" />行動不能</sec>状態になります。
+      TC: |-
+        使用為擊退入侵者而設計的壓制彈，對單一目標造成<dmg elem="ice" />。
+        <sec typ="cond">命中時</sec>，將目標<sec typ="buff"><buff typ="Push" />向後擊退<val idx="0" signless />格</sec>。
+        <sec typ="cond">若目標位於後排</sec>，則該回合目標會進入<sec typ="buff"><buff typ="STUN" />無法行動</sec>狀態。
+  "2":
+    key: "2"
+    icon: WideIceShot
+    target: enemy
+    delayed: false
+    target_ground: true
+    buffs:
+      index:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+      data:
+        - rate: 1.31
+          type: 2
+          range: 5
+          ap: 10
+          grid: 1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_2_4
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_21
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_41
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_21_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_42
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_22_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_43
+                      - Effect_TC_Namo_N_44
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_23_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_24
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_24_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.441
+          type: 2
+          range: 5
+          ap: 10
+          grid: 1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_2_4
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_21
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_41
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_21_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_42
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_22_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_43
+                      - Effect_TC_Namo_N_44
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_23_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_24
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_24_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.572
+          type: 2
+          range: 5
+          ap: 10
+          grid: 1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_2_4
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_21
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_41
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_21_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_42
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_22_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_43
+                      - Effect_TC_Namo_N_44
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_23_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_24
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_24_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.703
+          type: 2
+          range: 5
+          ap: 10
+          grid: 1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_2_4
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_21
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_41
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_21_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_42
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_22_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_43
+                      - Effect_TC_Namo_N_44
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_23_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_24
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_24_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.834
+          type: 2
+          range: 5
+          ap: 10
+          grid: 1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_2_4
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_21
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_41
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_21_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_42
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_22_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_43
+                      - Effect_TC_Namo_N_44
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_23_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_24
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_24_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.965
+          type: 2
+          range: 5
+          ap: 10
+          grid: 1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_2_4
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_21
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_41
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_21_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_42
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_22_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_43
+                      - Effect_TC_Namo_N_44
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_23_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_24
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_24_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.096
+          type: 2
+          range: 5
+          ap: 10
+          grid: 1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_2_4
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_21
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_41
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_21_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_42
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_22_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_43
+                      - Effect_TC_Namo_N_44
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_23_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_24
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_24_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.227
+          type: 2
+          range: 5
+          ap: 10
+          grid: 1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_2_4
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_21
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_41
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_21_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_42
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_22_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_43
+                      - Effect_TC_Namo_N_44
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_23_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_24
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_24_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.358
+          type: 2
+          range: 5
+          ap: 10
+          grid: 1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_2_4
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_21
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_41
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_21_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_42
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_22_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_43
+                      - Effect_TC_Namo_N_44
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_23_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_24
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_24_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.489
+          type: 2
+          range: 5
+          ap: 10
+          grid: 1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_2_4
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_21
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_41
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_21_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 10%
+                        per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_22
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_42
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_22_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_43
+                      - Effect_TC_Namo_N_44
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_23_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 20%
+                        per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_24
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_TC_Namo_N_24_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_SaniYang_N_36
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_TC_SaniYang_N_31
+                      - Effect_TC_SaniYang_N_32
+                      - Effect_TC_SaniYang_N_33
+                      - Effect_TC_SaniYang_N_34
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_IceATK_UP
+                  desc:
+                    desc: Effect_TC_SaniYang_N_36_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 85
+                    damage_add:
+                      elem: ice
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_IceATK_UP
+            desc:
+              desc: Effect_TC_Namo_N_2_1
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_IceATK_UP
+            desc:
+              desc: Effect_TC_Namo_N_2_2
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 0
+          - icon: BuffIcon_IceATK_UP
+            desc:
+              desc: Effect_TC_Namo_N_2_3
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 0
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_TC_Namo_N_2_4
+              type: 1
+              value: "36"
+              level: "0"
+            base: 36
+            per: 0
+            chance: 0
+          - icon: BuffIcon_IceATK_UP
+            desc:
+              desc: Effect_TC_Namo_N_21_1
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_IceATK_UP
+            desc:
+              desc: Effect_TC_Namo_N_22_1
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 1
+          - icon: BuffIcon_IceATK_UP
+            desc:
+              desc: Effect_TC_Namo_N_23_1
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_TC_Namo_N_24_1
+              type: 1
+              value: "36"
+              level: "0"
+            base: 36
+            per: 0
+            chance: 1
+          - icon: BuffIcon_IceATK_UP
+            desc:
+              desc: Effect_TC_SaniYang_N_36_1
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 1
+    desc:
+      KR: |-
+        드론과 함께 모든 무장을 전개하여 지정 범위에 <dmg elem="ice" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 현재 발동 중인 <sec typ="note">대응 레벨 조율</sec>에 따라 <sec typ="dmg"><buff typ="IceATK_UP" /> 피해량 <val idx="4" r /></sec>가 증가합니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+      EN: |-
+        Deploys all weapons alongside the drone, dealing <dmg elem="ice" /> to enemies in the designated area.
+        <sec typ="cond">On Hit</sec>, increases <sec typ="dmg"><buff typ="IceATK_UP" /> Damage Dealt by <val idx="4" r /></sec> based on the currently active <sec typ="note">Response Level Adjustment</sec>.
+        <sec typ="cond">On Critical Hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes the target's Damage Reduction effects</sec>.
+      JP: |-
+        ドローンと共にすべての武装を展開し、指定範囲に<dmg elem="ice" />を与えます。
+        <sec typ="cond">命中時</sec>、現在発動中の<sec typ="note">対応レベル調整</sec>に応じて<sec typ="dmg"><buff typ="IceATK_UP" />与ダメージが<val idx="4" r /></sec>増加します。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />被ダメージ減少効果を解除</sec>します。
+      TC: |-
+        與無人機一同展開所有武裝，對指定範圍造成<dmg elem="ice" />。
+        <sec typ="cond">命中時</sec>，根據目前發動的<sec typ="note">應對等級調整</sec>，使<sec typ="dmg"><buff typ="IceATK_UP" />造成的傷害增加<val idx="4" r /></sec>。
+        <sec typ="cond">暴擊時</sec>，<sec typ="buff"><buff typ="REMOVE_BUFF" />解除目標的所受傷害減少效果</sec>。
+  "3":
+    key: "3"
+    icon: P.SelfAtkBuff
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 3
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: 0,1,0,1,0,1,0,1,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_3
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_3_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 7
+                    accuracy:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_3_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 9
+                    critical:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_31
+              on: round
+              if:
+                - target:
+                    - Char_TC_SaniYang_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_31_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 6
+                    accuracy:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_32
+              on: round
+              if:
+                - on:
+                    target: target
+                    select:
+                      - Effect_TC_Namo_N_31
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - false
+              body:
+                - 0
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_32_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 8
+                    critical:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_33
+              on: round
+              if:
+                - in_squad_buff:
+                    - Effect_TC_Namo_N_32
+                  count:
+                    - 0
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_33_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.025000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 50%
+                      per: 2.5%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_33_2
+                    type: 1
+                    value: "0.500000"
+                    level: "0.025000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 50%
+                      per: 2.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_34
+              on: round
+              if:
+                - in_squad_buff:
+                    - Effect_TC_Namo_N_32
+                  count:
+                    - 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_34_1
+                    type: 1
+                    value: "0.400000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 40%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_34_2
+                    type: 1
+                    value: "0.400000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 40%
+                      per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_35
+              on: round
+              if:
+                - in_squad_buff:
+                    - Effect_TC_Namo_N_32
+                  count:
+                    - 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_35_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 30%
+                      per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_35_2
+                    type: 1
+                    value: "0.300000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 30%
+                      per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_36
+              on: round
+              if:
+                - in_squad_buff:
+                    - Effect_TC_Namo_N_32
+                  count:
+                    - 3
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_36_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_36_2
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_37
+              on: round
+              if:
+                - in_squad_buff:
+                    - Effect_TC_Namo_N_32
+                  count:
+                    - 4
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_37_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_37_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_TC_Namo_N_3_1
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 0
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_TC_Namo_N_3_2
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 0
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_TC_Namo_N_31_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_TC_Namo_N_32_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_TC_Namo_N_33_1
+              type: 1
+              value: "0.500000"
+              level: "0.025000"
+            base: 0.5
+            per: 0.025
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_TC_Namo_N_33_2
+              type: 1
+              value: "0.500000"
+              level: "0.025000"
+            base: 0.5
+            per: 0.025
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_TC_Namo_N_34_1
+              type: 1
+              value: "0.400000"
+              level: "0.020000"
+            base: 0.4
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_TC_Namo_N_34_2
+              type: 1
+              value: "0.400000"
+              level: "0.020000"
+            base: 0.4
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_TC_Namo_N_35_1
+              type: 1
+              value: "0.300000"
+              level: "0.015000"
+            base: 0.3
+            per: 0.015
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_TC_Namo_N_35_2
+              type: 1
+              value: "0.300000"
+              level: "0.015000"
+            base: 0.3
+            per: 0.015
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_TC_Namo_N_36_1
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_TC_Namo_N_36_2
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_TC_Namo_N_37_1
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_TC_Namo_N_37_2
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><sec typ="note">사교성 포인트</sec>를 5중첩 획득</sec>합니다.
+        <sec typ="note">사교성 포인트</sec> 수에 비례하여 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 자신과 인접한 바이오로이드 수에 비례하여 <sec typ="buff"><sec typ="note">사교성 포인트</sec>가 감소</sec>합니다.
+        <sec typ="cond">인접한 아군이 <cmt t="테일즈 코퍼레이션"><import name="TalesCorp" /></cmt> 소속인 경우</sec>, <sec><sec typ="note">사교성 포인트</sec>가 감소하지 않습니다</sec>.
+      EN: |-
+        <sec typ="cond">At the start of battle</sec>, gains <sec typ="buff">5 stacks of <sec typ="note">Social Points</sec></sec>.
+        Increases own <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical Hit Rate by <val idx="5" r /></sec> in proportion to the number of <sec typ="note">Social Points</sec>.
+        <sec typ="cond">At the start of each round</sec>, <sec typ="buff">reduces <sec typ="note">Social Points</sec></sec> based on the number of adjacent Bioroids.
+        <sec typ="cond">If an adjacent ally belongs to <cmt t="Tales Corporation"><import name="TalesCorp" /></cmt></sec>, <sec><sec typ="note">Social Points</sec> are not reduced</sec>.
+      JP: |-
+        <sec typ="cond">戦闘開始時</sec>、<sec typ="buff"><sec typ="note">社交性ポイント</sec>を5スタック獲得</sec>します。
+        <sec typ="note">社交性ポイント</sec>の数に比例して、自身の<sec typ="buff"><buff typ="ACCURACY_UP" />命中率が<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />クリティカル率が<val idx="5" r /></sec>増加します。
+        <sec typ="cond">ラウンド開始時</sec>、自身に隣接するバイオロイドの数に比例して<sec typ="buff"><sec typ="note">社交性ポイント</sec>が減少</sec>します。
+        <sec typ="cond">隣接する味方が<cmt t="テイルズコーポレーション"><import name="TalesCorp" /></cmt>所属の場合</sec>、<sec><sec typ="note">社交性ポイント</sec>は減少しません</sec>。
+      TC: |-
+        <sec typ="cond">戰鬥開始時</sec>，<sec typ="buff">獲得5層<sec typ="note">社交點數</sec></sec>。
+        依據<sec typ="note">社交點數</sec>的數量，按比例增加自身的<sec typ="buff"><buff typ="ACCURACY_UP" />命中率<val idx="4" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" />暴擊率<val idx="5" r /></sec>。
+        <sec typ="cond">回合開始時</sec>，依據與自身相鄰的生化人數量，按比例<sec typ="buff">減少<sec typ="note">社交點數</sec></sec>。
+        <sec typ="cond">若相鄰友軍隸屬於<cmt t="泰爾斯企業"><import name="TalesCorp" /></cmt></sec>，則<sec><sec typ="note">社交點數</sec>不會減少</sec>。
+  "4":
+    key: "4"
+    icon: P.TeamDefDeBuff
+    target: enemy
+    delayed: false
+    target_ground: true
+    leastGrade: 4
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: F>1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_4
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_TC_Namo_N_4_1
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -10%
+                        per: -1%
+                  overlap: 4
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_TC_Namo_N_4_2
+                    type: 1
+                    value: "-0.150000"
+                    level: "-0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -15%
+                        per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_TC_Namo_N_4_3
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -20%
+                        per: -2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_41
+              on: wave
+              if:
+                - unitCount:
+                    filter: enemy
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 1
+                      - 2
+                      - 3
+                - notInBattle:
+                    - Char_TC_SaniYang_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_41_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 10
+                    evade:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_42
+              on: wave
+              if:
+                - unitCount:
+                    filter: enemy
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 4
+                      - 5
+                      - 6
+                - notInBattle:
+                    - Char_TC_SaniYang_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_42_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 10
+                    evade:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_43
+              on: wave
+              if:
+                - unitCount:
+                    filter: enemy
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 7
+                      - 8
+                      - 9
+                - notInBattle:
+                    - Char_TC_SaniYang_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_43_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 10
+                    evade:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_44
+              on: wave
+              if:
+                - in_battle:
+                    - Char_TC_SaniYang_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_44_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 10
+                    evade:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_45
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_41
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_TC_Namo_N_45_1
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -10%
+                        per: -1%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_46
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_42
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_TC_Namo_N_46_1
+                    type: 1
+                    value: "-0.150000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -15%
+                        per: -1.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_47
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_43
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_TC_Namo_N_47_1
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -20%
+                        per: -2%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_48
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_TC_Namo_N_44
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_TC_Namo_N_48_1
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -20%
+                        per: -2%
+                  overlap: 4
+                - icon: BuffIcon_LIGHTNINGRES_DOWN
+                  desc:
+                    desc: Effect_TC_Namo_N_48_2
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 19
+                    resist:
+                      elem: lightning
+                      value:
+                        base: -20%
+                        per: -2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_49
+              on: round
+              if:
+                - target:
+                    - Char_3P_Poi_N
+                    - Char_3P_Fenrir_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_49_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 0
+                    attack:
+                      base: 1
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_410
+              on: round
+              if:
+                - target:
+                    - Char_BR_Tomoe_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_410_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 0
+                    attack:
+                      base: 1
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_411
+              on: round
+              if:
+                - target:
+                    - Char_PECS_BS_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_411_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 0
+                    attack:
+                      base: 1
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_412
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_LunchboxT4_N_1
+                      - Effect_BUFF_LunchboxT4_N_2
+                      - Effect_BUFF_LunchboxT4_N_3
+                      - Effect_BUFF_LunchboxT4_N_4
+                      - Effect_BUFF_LunchboxT4_N_5
+                      - Effect_BUFF_LunchboxT4_N_6
+                      - Effect_BUFF_LunchboxT4_N_7
+                      - Effect_BUFF_LunchboxT4_N_8
+                      - Effect_BUFF_LunchboxT4_N_9
+                      - Effect_BUFF_LunchboxT4_N_10
+                      - Effect_BUFF_LunchboxT4_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_412_1
+                    type: 1
+                    value: "0.050000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 5%
+                      per: 0%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_412_2
+                    type: 1
+                    value: "0.050000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 5%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_ICERES_DOWN
+            desc:
+              desc: Effect_TC_Namo_N_4_1
+              type: 1
+              value: "-0.100000"
+              level: "-0.010000"
+            base: -0.1
+            per: -0.01
+            chance: 0
+          - icon: BuffIcon_ICERES_DOWN
+            desc:
+              desc: Effect_TC_Namo_N_4_2
+              type: 1
+              value: "-0.150000"
+              level: "-0.015000"
+            base: -0.15
+            per: -0.015
+            chance: 0
+          - icon: BuffIcon_ICERES_DOWN
+            desc:
+              desc: Effect_TC_Namo_N_4_3
+              type: 1
+              value: "-0.200000"
+              level: "-0.020000"
+            base: -0.2
+            per: -0.02
+            chance: 0
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_TC_Namo_N_41_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_TC_Namo_N_42_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_TC_Namo_N_43_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_TC_Namo_N_44_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ICERES_DOWN
+            desc:
+              desc: Effect_TC_Namo_N_45_1
+              type: 1
+              value: "-0.100000"
+              level: "-0.010000"
+            base: -0.1
+            per: -0.01
+            chance: 1
+          - icon: BuffIcon_ICERES_DOWN
+            desc:
+              desc: Effect_TC_Namo_N_46_1
+              type: 1
+              value: "-0.150000"
+              level: "-0.015000"
+            base: -0.15
+            per: -0.015
+            chance: 1
+          - icon: BuffIcon_ICERES_DOWN
+            desc:
+              desc: Effect_TC_Namo_N_47_1
+              type: 1
+              value: "-0.200000"
+              level: "-0.020000"
+            base: -0.2
+            per: -0.02
+            chance: 1
+          - icon: BuffIcon_ICERES_DOWN
+            desc:
+              desc: Effect_TC_Namo_N_48_1
+              type: 1
+              value: "-0.200000"
+              level: "-0.020000"
+            base: -0.2
+            per: -0.02
+            chance: 1
+          - icon: BuffIcon_LIGHTNINGRES_DOWN
+            desc:
+              desc: Effect_TC_Namo_N_48_2
+              type: 1
+              value: "-0.200000"
+              level: "-0.020000"
+            base: -0.2
+            per: -0.02
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_TC_Namo_N_49_1
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_TC_Namo_N_410_1
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_TC_Namo_N_411_1
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_TC_Namo_N_412_1
+              type: 1
+              value: "0.050000"
+              level: "0"
+            base: 0.05
+            per: 0
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_TC_Namo_N_412_2
+              type: 1
+              value: "0.050000"
+              level: "0"
+            base: 0.05
+            per: 0
+            chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">전투 개시 시점의 적 수</sec>에 따라 대응 레벨을 조율하여, <sec typ="cond">라운드 개시 시</sec> 모든 적의 <sec typ="buff"><buff typ="ICERES_DOWN" /> 냉기 저항 <val idx="7" r /> / <val idx="8" r /> / <val idx="9" r /></sec>가 감소합니다.
+        대응 레벨은 <sec typ="cond">적 수가 3 / 6 / 9 일 때</sec>, <sec typ="buff">각 1 / 2 / 3 단계로 발동</sec>합니다.
+        <sec typ="cond"><cmt t="교수님"><char uid="TC_SaniYang" /></cmt>이 계실 경우</sec>, <sec typ="buff"><sec typ="note">대응 레벨 조율</sec>은 항상 최대 효율로 발동</sec>하고 추가로 대상의 <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 <val idx="11" r /></sec>가 감소합니다.
+      EN: |-
+        Adjusts the response level based on <sec typ="cond">the number of enemies at the start of battle</sec>, reducing all enemies' <sec typ="buff"><buff typ="ICERES_DOWN" /> Ice Resistance by <val idx="7" r /> / <val idx="8" r /> / <val idx="9" r /></sec> <sec typ="cond">at the start of each round</sec>.
+        The response level <sec typ="buff">activates at Level 1 / 2 / 3</sec> <sec typ="cond">when there are 3 / 6 / 9 enemies, respectively</sec>.
+        <sec typ="cond">If <cmt t="Professor"><char uid="TC_SaniYang" /></cmt> is present</sec>, <sec typ="buff"><sec typ="note">Response Level Adjustment</sec> always activates at maximum efficiency</sec>, additionally reducing the target's <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> Electric Resistance by <val idx="11" r /></sec>.
+      JP: |-
+        <sec typ="cond">戦闘開始時の敵の数</sec>に応じて対応レベルを調整し、<sec typ="cond">ラウンド開始時</sec>、すべての敵の<sec typ="buff"><buff typ="ICERES_DOWN" />冷気属性耐性が<val idx="7" r /> / <val idx="8" r /> / <val idx="9" r /></sec>減少します。
+        対応レベルは<sec typ="cond">敵の数が3 / 6 / 9体の場合</sec>、<sec typ="buff">それぞれレベル1 / 2 / 3で発動</sec>します。
+        <sec typ="cond"><cmt t="教授"><char uid="TC_SaniYang" /></cmt>がいる場合</sec>、<sec typ="buff"><sec typ="note">対応レベル調整</sec>は常に最大効率で発動</sec>し、さらに対象の<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電気属性耐性が<val idx="11" r /></sec>減少します。
+      TC: |-
+        依據<sec typ="cond">戰鬥開始時的敵人數量</sec>調整應對等級，並於<sec typ="cond">回合開始時</sec>，使所有敵人的<sec typ="buff"><buff typ="ICERES_DOWN" />冰屬性抗性降低<val idx="7" r /> / <val idx="8" r /> / <val idx="9" r /></sec>。
+        <sec typ="cond">當敵人數量為3 / 6 / 9名時</sec>，應對等級會<sec typ="buff">分別以第1 / 2 / 3階段發動</sec>。
+        <sec typ="cond">若<cmt t="教授"><char uid="TC_SaniYang" /></cmt>在場</sec>，則<sec typ="buff"><sec typ="note">應對等級調整</sec>始終以最高效率發動</sec>，並額外使目標的<sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />電屬性抗性降低<val idx="11" r /></sec>。
+  "5":
+    key: "5"
+    icon: P.Beam
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 5
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: 1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_TC_Namo_N_5
+              on: round
+              if:
+                - target:
+                    - Char_TC_SaniYang_N
+                    - Char_TC_Namo_N
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_LabTablet_N_1
+                      - Effect_BUFF_LabTablet_N_2
+                      - Effect_BUFF_LabTablet_N_3
+                      - Effect_BUFF_LabTablet_N_4
+                      - Effect_BUFF_LabTablet_N_5
+                      - Effect_BUFF_LabTablet_N_6
+                      - Effect_BUFF_LabTablet_N_7
+                      - Effect_BUFF_LabTablet_N_8
+                      - Effect_BUFF_LabTablet_N_9
+                      - Effect_BUFF_LabTablet_N_10
+                      - Effect_BUFF_LabTablet_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
+                    desc: Effect_TC_Namo_N_5_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+                - icon: BuffIcon_Guardpierce_Apply
+                  desc:
+                    desc: Effect_TC_Namo_N_5_2
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 130
+                    guardpierce_apply: true
+                  overlap: 4
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_5_3
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 106
+                    skill_ratio:
+                      base: 15%
+                      per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_5_4
+                    type: 1
+                    value: "1"
+                    level: "0.100000"
+                  attr: 0
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 7
+                    accuracy:
+                      base: 100%
+                      per: 10%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_51
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_LabTablet_N_1
+                      - Effect_BUFF_LabTablet_N_2
+                      - Effect_BUFF_LabTablet_N_3
+                      - Effect_BUFF_LabTablet_N_4
+                      - Effect_BUFF_LabTablet_N_5
+                      - Effect_BUFF_LabTablet_N_6
+                      - Effect_BUFF_LabTablet_N_7
+                      - Effect_BUFF_LabTablet_N_8
+                      - Effect_BUFF_LabTablet_N_9
+                      - Effect_BUFF_LabTablet_N_10
+                      - Effect_BUFF_LabTablet_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
+                    desc: Effect_TC_Namo_N_51_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_52
+              on:
+                after: support
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_Guardpierce_Apply
+                  desc:
+                    desc: Effect_TC_Namo_N_52_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: attack
+                  value:
+                    isBuff: true
+                    type: 130
+                    guardpierce_apply: true
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_53
+              on:
+                after: support
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_53_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: attack
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 15%
+                      per: 1.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_TC_Namo_N_54
+              on:
+                fail: passive
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_TC_Namo_N_54_1
+                    type: 1
+                    value: "1"
+                    level: "0.100000"
+                  attr: 0
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 100%
+                      per: 10%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_TC_Namo_N_5_1
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_Guardpierce_Apply
+            desc:
+              desc: Effect_TC_Namo_N_5_2
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_TC_Namo_N_5_3
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 0
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_TC_Namo_N_5_4
+              type: 1
+              value: "1"
+              level: "0.100000"
+            base: 1
+            per: 0.1
+            chance: 0
+          - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_TC_Namo_N_51_1
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_Guardpierce_Apply
+            desc:
+              desc: Effect_TC_Namo_N_52_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_TC_Namo_N_53_1
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_TC_Namo_N_54_1
+              type: 1
+              value: "1"
+              level: "0.100000"
+            base: 1
+            per: 0.1
+            chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">범위 내 <cmt t="테일즈 코퍼레이션"><import name="TalesCorp" /></cmt> 소속 전투원</sec>의 <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 공격을 지원</sec>합니다.
+        <sec typ="cond">지원 공격 시</sec>, 자신은 다음 공격 시까지 <sec typ="buff"><buff typ="Guardpierce_Apply" /> 보호 무시</sec> 효과를 획득하고 <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="6" r /></sec>가 증가합니다.
+        <sec typ="cond">공격이 빗나갈 때마다</sec>, 책임을 위해 3라운드 동안 자신의 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="7" r /></sec>가 증가합니다. <sec>(중첩 불가)</sec>
+      EN: |-
+        <sec typ="cond">At the start of each round</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> provides Support Attacks</sec> for <sec typ="cond"><cmt t="Tales Corporation"><import name="TalesCorp" /></cmt> members within range</sec>.
+        <sec typ="cond">When performing a Support Attack</sec>, gains <sec typ="buff"><buff typ="Guardpierce_Apply" /> Ignore Protection</sec> until the next attack and increases <sec typ="dmg"><buff typ="SKILL_UP" /> Skill Power by <val idx="6" r /></sec>.
+        <sec typ="cond">Whenever an attack misses</sec>, increases own <sec typ="buff"><buff typ="ACCURACY_UP" /> Accuracy by <val idx="7" r /></sec> for 3 rounds as a measure of accountability. <sec>(Cannot stack)</sec>
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">範囲内の<cmt t="テイルズコーポレーション"><import name="TalesCorp" /></cmt>所属戦闘員</sec>の<sec typ="buff"><buff typ="SUPPORT_ATTACK" />攻撃を支援</sec>します。
+        <sec typ="cond">支援攻撃時</sec>、自身は次の攻撃まで<sec typ="buff"><buff typ="Guardpierce_Apply" />保護無視</sec>効果を獲得し、<sec typ="dmg"><buff typ="SKILL_UP" />スキル威力が<val idx="6" r /></sec>増加します。
+        <sec typ="cond">攻撃が外れるたびに</sec>、責任を取るため、3ラウンドの間、自身の<sec typ="buff"><buff typ="ACCURACY_UP" />命中率が<val idx="7" r /></sec>増加します。<sec>（重複不可）</sec>
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，對<sec typ="cond">範圍內隸屬於<cmt t="泰爾斯企業"><import name="TalesCorp" /></cmt>的戰鬥員</sec>發動<sec typ="buff"><buff typ="SUPPORT_ATTACK" />支援攻擊</sec>。
+        <sec typ="cond">發動支援攻擊時</sec>，自身獲得持續至下次攻擊的<sec typ="buff"><buff typ="Guardpierce_Apply" />無視保護</sec>效果，並使<sec typ="dmg"><buff typ="SKILL_UP" />技能威力增加<val idx="6" r /></sec>。
+        <sec typ="cond">每當攻擊未命中時</sec>，為了承擔責任，自身的<sec typ="buff"><buff typ="ACCURACY_UP" />命中率增加<val idx="7" r /></sec>，持續3回合。<sec>（不可疊加）</sec>
 dialogue:
   KR:
     "1":
@@ -951,8 +7610,9 @@ skins:
     imageId: 0
     iconId: 0
     tbarId: 0
-    flags: 0
+    flags: 1
     dflags: 0
+    2dmodel: 2DModel_TC_Namo_N
   skins:
     - sid: 1
       artist: MASIN MARO
@@ -988,4 +7648,5 @@ skins:
         tbarId: 1
         voiceId: 1
         flags: 2
-        dflags: 0
+        dflags: 1
+        2dmodel_dam: 2DModel_TC_Namo_NS1_Dam

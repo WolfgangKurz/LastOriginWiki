@@ -4,6 +4,20 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13228" date="2026-11-08"
+		update={ <>
+			<li>전투원 <BY>나모</BY>, <BY>사니</BY>의 스킬 정보가 추가되었습니다.</li>
+			<li>일부 전투원의 능력치 및 스킬 정보가 갱신되었습니다.</li>
+			<li>일부 장비의 효과 정보가 갱신되었습니다.</li>
+			<li>일부 지역의 적 편성 및 클리어 조건 정보가 갱신되었습니다.</li>
+			<li>변칙 <BY>누전</BY>의 효과 정보가 갱신되었습니다.</li>
+			<li>일부 스토리의 대사 표시 및 BGM 정보가 갱신되었습니다.</li>
+			<li><BY>스토리 플레이어</BY>에서 전투원 <BY>닥터</BY>의 모델이 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>전투원 <BY>포츈</BY>의 기본 스킨 중파 정보가 갱신되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13226" date="2026-11-02"
 		bugfix={ <>
 			<li>일부 모델 및 스토리 페이지가 제대로 표시되지 않던 문제를 수정했습니다.</li>
@@ -28,15 +42,12 @@ const Changelog: FunctionalComponent = () => <>
 		</> }
 	/>
 	<ChangelogItem title="Build 13213" date="2026-11-01"
-		knownissue={ <>
-			<li><strong>이번 업데이트에는 적 정보 및 전투원 스킬 정보의 갱신이 포함되지 않았습니다. 신규 전투원의 스킬 정보도 제공되지 않습니다.</strong></li>
-		</> }
 		bugfix={ <>
 			<li><BY>스토리 플레이어</BY>에서 일부 모델이 올바르지 않은 모델로 표시되던 점을 수정했습니다.</li>
 		</> }
 		new={ <>
 			<li>이벤트 <BY>수상한 연구소의 사라진 대학원생</BY>의 정보 및 스토리가 추가되었습니다.</li>
-			<li>신규 전투원 <BY>나모</BY>, <BY>사니</BY>의 정보가 추가되었습니다. <strong>스킬 정보는 제외됩니다.</strong></li>
+			<li>신규 전투원 <BY>나모</BY>, <BY>사니</BY>의 정보가 추가되었습니다.</li>
 			<li>신규 장비 <BY>연구실 태블릿</BY>, <BY>테니스 공</BY>, <BY>대학원생 포션</BY>의 정보가 추가되었습니다.</li>
 			<li>외전 <BY>끝난 세상에서</BY>의 스토리가 추가되었습니다.</li>
 			<li>신규 소모품 및 스티커의 정보가 추가되었습니다.</li>
