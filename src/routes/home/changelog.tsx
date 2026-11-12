@@ -4,6 +4,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13229" date="2026-11-13"
+		bugfix={ <>
+			<li>전투원 <BY>B-11 나이트 앤젤</BY>의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13228" date="2026-11-08"
 		update={ <>
 			<li>전투원 <BY>나모</BY>, <BY>사니</BY>의 스킬 정보가 추가되었습니다.</li>

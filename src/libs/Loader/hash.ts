@@ -5685,7 +5685,7 @@ export default {
 			"BR_Neodym": "690676aa",
 			"BR_Nereid": "38b2d2d2",
 			"BR_NickyTracy": "fa277e82",
-			"BR_NightAngel": "25e8c62f",
+			"BR_NightAngel": "3f83c022",
 			"BR_Nymph": "f98d3282",
 			"BR_PA00EL": "1a769ef5",
 			"BR_PXSilky": "a84d6ec6",
