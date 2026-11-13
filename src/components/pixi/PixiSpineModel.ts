@@ -58,6 +58,7 @@ interface SpineAnimTransitions {
 interface SpineAnimState {
 	clip: string;
 	transitions: SpineAnimTransitions[];
+	loop?: boolean;
 }
 interface SpineAnimLayer {
 	weight?: number;
@@ -100,6 +101,11 @@ interface BindedCollider {
 export interface SpineAnimationInfo {
 	/** seconds */
 	duration: number;
+}
+
+export interface PixiSpineModelOptions {
+	baseURL?: string;
+	name?: string;
 }
 
 /** Touch events played by viewer */
@@ -160,18 +166,18 @@ export default class PixiSpineModel extends FadeContainer {
 	private colliderBoxs: ColliderBox[] = [];
 	private bindedColliders: BindedCollider[] = [];
 
-	constructor (image: string, atlasId: number) {
+	constructor (image: string, atlasId: number, options?: PixiSpineModelOptions) {
 		super();
 		this.sortableChildren = true;
 
-		const fname = image.replace(/^2DModel_(.+)$/, "$1");
+		const fname = options?.name ?? image.replace(/^2DModel_(.+)$/, "$1");
 		this._model = image;
 		this._atlasId = atlasId;
 
 		const atlasIdName = atlasId === 0 ? "" : `.${atlasId}`;
 		const modelWithAtlasId = this._model + atlasIdName;
 
-		const baseURL = `${AssetsRoot}/spine/${fname}`;
+		const baseURL = options?.baseURL ?? `${AssetsRoot}/spine/${fname}`;
 
 		this.layerableChildren = true;
 
@@ -284,7 +290,7 @@ export default class PixiSpineModel extends FadeContainer {
 			const faces = names.filter(x => x.startsWith("face/"));
 			const list = faces.map(face => face.replace(/^.+_([^_]+)$/, "$1"));
 
-			const prefix = faces[0].replace(/^face\/(.+_)[^_]+$/, "$1");
+			const prefix = faces.length > 0 ? faces[0].replace(/^face\/(.+_)[^_]+$/, "$1") : "";
 			this.emit("facelist", list, prefix);
 
 			if (this.lastFace)
@@ -545,7 +551,7 @@ export default class PixiSpineModel extends FadeContainer {
 		if (!_s) return false; // ??????
 
 		// no exit transition
-		return !_s.transitions.some(x => x.cond === "");
+		return !_s.transitions.some(x => x.cond === "") && _s.loop !== false;
 	}
 
 	currentState (layer: string): SpineAnimState | undefined {

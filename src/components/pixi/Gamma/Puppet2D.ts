@@ -10,6 +10,25 @@ const FORWARD: Vec3 = [0, 0, 1];
 const BACK: Vec3 = [0, 0, -1];
 const LEFT: Vec3 = [-1, 0, 0];
 
+/**
+ * Sprite names of Puppet2D editor gizmos (IK/spline control points, bones).
+ *
+ * Game hides them by `Puppet2D_GlobalControl.UpdateVisibility` (`sprite.name.Contains("Control")`) in editor
+ * and by `bone_and_ik` layer, but neither works for viewer (some are on `Default` layer, art can be on `bone_and_ik` layer,
+ * `Contains("Control")` matches art like `FullbodyIMG_PROP_Remote_Control_N`), so matched by exact names.
+ * Textures of these sprites are not shared with art.
+ */
+const GIZMO_SPRITES = new Set([
+	"IKControl", "splineControl", "splineMiddleControl",
+	"BoneNoJoint", "BoneJoint", "BoneScaled",
+	"bone", // crosshair of `AGS_Fallen`
+]);
+
+/** Sprite is Puppet2D control/bone gizmo, not rendered by viewer */
+export function isPuppet2DGizmoSprite (name: string): boolean {
+	return GIZMO_SPRITES.has(name);
+}
+
 export class Puppet2DIKHandle {
 	public readonly node: GammaNode;
 	public enabled: boolean;
@@ -223,6 +242,8 @@ export class Puppet2DGlobalControl {
 	public readonly node: GammaNode;
 	public enabled: boolean;
 	public controlsEnabled: boolean;
+	/** `OnOff`, animated by clips (`OnOff.x` ~ `OnOff.w`) */
+	public readonly onOff: [number, number, number, number];
 
 	constructor (
 		private readonly data: Puppet2DGlobalData,
@@ -233,6 +254,7 @@ export class Puppet2DGlobalControl {
 		this.node = nodes[data.nd];
 		this.enabled = data.en;
 		this.controlsEnabled = data.ce;
+		this.onOff = data.oo ? [...data.oo] : [1, 1, 1, 1];
 	}
 
 	public get lateUpdate (): boolean {
@@ -253,7 +275,11 @@ export class Puppet2DGlobalControl {
 		const aim = v3Scale(v3Normalize(this.node.forward), this.data.fc);
 		for (const ik of this.ik) ik.aimDirection = aim;
 
-		for (const ik of this.ik)
-			ik.calculateIK();
+		// first 4 handles are calculated only when `OnOff[k] == 1` (`IKCtrlType.OnOff`),
+		// bones keep animated (or last calculated) transforms otherwise
+		this.ik.forEach((ik, k) => {
+			if (k > 3 || Math.abs(this.onOff[k] - 1) < 1e-5)
+				ik.calculateIK();
+		});
 	}
 }

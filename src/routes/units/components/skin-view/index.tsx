@@ -17,8 +17,10 @@ import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import MergedVideo from "@/components/merged-video";
 import Pinch from "@/components/pinch";
+import { CHAR_IDLE_TRIGGER, CharAnimationInfo, CharIndex, loadCharIndex } from "@/components/pixi/PixiCharModel";
 
 import PixiView from "./PixiView";
+import CharView from "./CharView";
 
 import style from "./style.module.scss";
 
@@ -51,6 +53,17 @@ interface SkinViewProps {
 	animate?: boolean;
 }
 
+function charModelOf (value: string | undefined, index: CharIndex | null): string | null {
+	if (!value || value === "0" || !index) return null;
+	const name = value.toLowerCase();
+	return name in index.models ? name : null;
+}
+
+function stripFacePrefix (face: string, prefix: string): string {
+	const reg = new RegExp("^" + prefix.replace(/^[OG]\/(2DModel_)?/i, ""), "i");
+	return face.replace(reg, "");
+}
+
 const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const [loc] = useLocale({ namespaces: "UNIT" });
 	const imageExt = useImageExtension();
@@ -67,6 +80,13 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const [face, setFace] = useState("");
 	const [facePrefix, setFacePrefix] = useState("");
 	const [faceList, setFaceList] = useState<string[]>([]);
+
+	const [isCharView, setIsCharView] = useState(false);
+	const [charIndex, setCharIndex] = useState<CharIndex | null>(null);
+	const [charTransformed, setCharTransformed] = useState(false);
+	const [charAnimations, setCharAnimations] = useState<CharAnimationInfo[]>([]);
+	const [charTrigger, setCharTrigger] = useState(CHAR_IDLE_TRIGGER);
+	const [charPlayToken, setCharPlayToken] = useState(0);
 
 	const [isCensored, setIsCensored] = useState(false);
 	const [isDamaged, setIsDamaged] = useState(false);
@@ -179,11 +199,35 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		setFacePrefix("");
 		setFaceList([]);
 
+		setIsCharView(false);
+		setCharTransformed(false);
+		setCharAnimations([]);
+		setCharTrigger(CHAR_IDLE_TRIGGER);
 		setIsDamaged(false);
 		setHideParts(false);
 		setHideParts2(false);
 		setHideBG(false);
 	}, [props.unit.uid, props.skin.sid]);
+
+	useEffect(() => {
+		loadCharIndex()
+			.then(r => setCharIndex(r))
+			.catch(() => setCharIndex(null));
+	}, []);
+
+	const charModel = useMemo(
+		() => charModelOf(skin.metadata.char_model, charIndex),
+		[skin.metadata.char_model, charIndex],
+	);
+	const charModelCh = useMemo(() => {
+		const ch = charModelOf(skin.metadata.char_model_ch, charIndex);
+		return ch !== charModel ? ch : null; // some skins have same model for transformed form
+	}, [skin.metadata.char_model_ch, charModel, charIndex]);
+	const DisplayChar = !!props.animate && !!charModel;
+
+	useEffect(() => {
+		if (!DisplayChar && isCharView) setIsCharView(false);
+	}, [DisplayChar, isCharView]);
 
 	useEffect(() => {
 		if (!("G" in skin.subset) && isCensored) // not have google
@@ -305,10 +349,91 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	], [DisplayMixed, DisplayGamma, DisplaySpine, Display2DModel, !!modelVideoId]);
 	const pixiViewType = useMemo(() => pixiViewTypes.find(c => c[0])?.[1] ?? "none", [pixiViewTypes]);
 
-	function stripFacePrefix (face: string, prefix: string): string {
-		const reg = new RegExp("^" + prefix.replace(/^[OG]\/(2DModel_)?/i, ""), "i");
-		return face.replace(reg, "");
-	}
+	const viewerContent = useMemo(() => {
+		if (isCharView && charModel) {
+			return <CharView
+				model={ charTransformed && charModelCh ? charModelCh : charModel }
+				trigger={ charTrigger }
+				playToken={ charPlayToken }
+				onAnimations={ list => {
+					setCharAnimations(list);
+					// keep selected animation if transformed form has it
+					if (!list.some(a => a.trigger === charTrigger))
+						setCharTrigger(CHAR_IDLE_TRIGGER);
+				} }
+			/>;
+		} else if (
+			(DisplayMixed || DisplayGamma || DisplaySpine || Display2DModel || DisplayVideo) &&
+			!!props.animate
+		) {
+			return <PixiView
+				type={ pixiViewType }
+				U2DModelMetadata={ skin.metadata }
+
+				uid={ modelId }
+				vid={ modelVideoId }
+				google={ isCensored }
+				damaged={ isDamaged }
+
+				displayTouchCollider={ displayTouchCollider }
+				hidePart={ hideParts }
+				hidePart2={ hideParts2 }
+				hideBG={ hideBG }
+
+				face={ facePrefix + face }
+				onFaceList={ (list, prefix) => {
+					setFaceList(list);
+					setFacePrefix(prefix);
+
+					const i = list.findIndex(x => stripFacePrefix(x.toLowerCase(), prefix) == "idle");
+					if (i >= 0)
+						setFace(list[i]);
+					else {
+						const listU = list.map(f => f.toUpperCase());
+						for (const ft of Object.keys(FACETYPE)) {
+							const index = listU.indexOf(ft);
+							if (index >= 0) {
+								setFace(list[index]);
+								break;
+							}
+						}
+					}
+				} }
+
+				onCameraBoundary={ v => setCameraBoundaryAvailable(v) }
+			/>;
+		} else if (DisplayVideo && modelVideoId.length > 0 && !!props.animate) {
+			if (CanPlayWebM())
+				return <video
+					autoPlay muted loop
+					src={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` }
+				/>;
+			else
+				return <MergedVideo
+					src={ `${AssetsRoot}/webm/HD.Legacy/${modelVideoId}.mp4` }
+					type="video/mp4"
+				/>;
+		} else {
+			return <Pinch
+				minScale={ 0.5 }
+				maxScale={ 3 }
+			>
+				<img src={ SkinImageURL } />
+			</Pinch>;
+		}
+	}, [
+		isCharView, charModel, charModelCh, charTransformed, charTrigger, charPlayToken,
+		props.animate,
+		DisplayMixed, DisplayGamma, DisplaySpine, Display2DModel, DisplayVideo,
+		pixiViewType,
+		skin.metadata,
+		modelId, modelVideoId,
+		isCensored, isDamaged,
+		displayTouchCollider,
+		hideParts, hideParts2, hideBG,
+		facePrefix, face,
+		SkinImageURL,
+	]);
 
 	return <div class={ cn(style.SkinView, inPlusDownload && style.InPlusDownload) }>
 		<div class={ `ratio ${Aspect} ${style.SkinFull} ${props.collapsed ? style.Collapsed : ""}` }>
@@ -323,145 +448,93 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					class={ cn(style.FullUnit, style.FullUnitMarginless) }
 					ref={ FullUnitEl }
 				>
-					{ (DisplayMixed || DisplayGamma || DisplaySpine || Display2DModel || DisplayVideo) && !!props.animate
-						? <PixiView
-							type={ pixiViewType }
-							U2DModelMetadata={ skin.metadata }
-
-							uid={ modelId }
-							vid={ modelVideoId }
-							google={ isCensored }
-							damaged={ isDamaged }
-
-							displayTouchCollider={ displayTouchCollider }
-							hidePart={ hideParts }
-							hidePart2={ hideParts2 }
-							hideBG={ hideBG }
-
-							face={ facePrefix + face }
-							onFaceList={ (list, prefix) => {
-								setFaceList(list);
-								setFacePrefix(prefix);
-
-								const i = list.findIndex(x => stripFacePrefix(x.toLowerCase(), prefix) == "idle");
-								if (i >= 0)
-									setFace(list[i]);
-								else {
-									const listU = list.map(f => f.toUpperCase());
-									for (const ft of Object.keys(FACETYPE)) {
-										const index = listU.indexOf(ft);
-										if (index >= 0) {
-											setFace(list[index]);
-											break;
-										}
-									}
-								}
-							} }
-
-							onCameraBoundary={ v => setCameraBoundaryAvailable(v) }
-						/>
-						: DisplayVideo && modelVideoId.length > 0 && !!props.animate
-							? CanPlayWebM()
-								? <video
-									autoPlay muted loop
-									src={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` }
-								/>
-								: <MergedVideo
-									src={ `${AssetsRoot}/webm/HD.Legacy/${modelVideoId}.mp4` }
-									type="video/mp4"
-								/>
-							: <Pinch
-								minScale={ 0.5 }
-								maxScale={ 3 }
-							>
-								<img src={ SkinImageURL } />
-							</Pinch>
-					}
+					{ viewerContent }
 				</div>
 
-				{ modelVideoId && !(DisplaySpine || DisplayMixed) && !!props.animate
-					? <a
-						class={ `${style.SkinToggle} ${style.Download}` }
-						href={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` } // download webm only
-						download={ `${modelVideoId}.webm` }
-						target="_blank"
-					>
-						<svg width="1em" height="1em" viewBox="0 0 24 24">
-							<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-						</svg>
-					</a>
-					: <>
-						{ downloadPlusAble && cameraBoundaryAvailable && <BootstrapTooltip
-							class={ `${style.SkinToggle} ${style.DownloadPlusCameraBoundary}` }
-							tooltipClass={ style.DownloadTooltipContainer }
-							placement="left"
-							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-								<Locale raw k="UNIT_VIEW_SKIN_DOWNLOADPLUS_CAMERABOUNDARY" />
-							</span> }
-						>
-							<a
-								class={ cn(
-									style.DownloadContent,
-									style.ToggleButton,
-									downloadPlusCameraBoundary && style.Active,
-									"text-light",
-								) }
-								href="#"
-								onClick={ e => {
-									e.preventDefault();
-									e.stopImmediatePropagation();
-									setDownloadPlusCameraBoundary(v => !v);
-								} }
-							>
-								{/* <Icons.Crop /> */ }
-								<Icons.AspectRatioFill />
-							</a>
-						</BootstrapTooltip> }
-						{ downloadPlusAble && <BootstrapTooltip
-							class={ `${style.SkinToggle} ${style.DownloadPlus}` }
-							tooltipClass={ style.DownloadTooltipContainer }
-							placement="left"
-							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-								<Locale k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
-							</span> }
-						>
-							<a
-								class={ cn(style.DownloadContent, style.DownloadPlusContent) }
-								href="#"
-								onClick={ e => {
-									e.preventDefault();
-									e.stopImmediatePropagation();
-									download2DModel(SkinImageDownloadPlusFilename, downloadPlusCameraBoundary);
-								} }
-							>
-								<Spinner />
-								<svg width="1em" height="1em" viewBox="0 0 24 24">
-									<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-									<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M 16 6 L 20 6 M 18 4 L 18 8" />
-								</svg>
-							</a>
-						</BootstrapTooltip> }
-						<BootstrapTooltip
+				{ !isCharView && (
+					modelVideoId && !(DisplaySpine || DisplayMixed) && !!props.animate
+						? <a
 							class={ `${style.SkinToggle} ${style.Download}` }
-							tooltipClass={ style.DownloadTooltipContainer }
-							placement="left"
-							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-								<Locale k="UNIT_VIEW_SKIN_DOWNLOAD" />
-							</span> }
+							href={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` } // download webm only
+							download={ `${modelVideoId}.webm` }
+							target="_blank"
 						>
-							<a
-								class={ style.DownloadContent }
-								href={ SkinImageDownloadFilename }
-								download={ SkinImageDownloadFilename.substring(SkinImageDownloadFilename.lastIndexOf("/") + 1) }
-								target="_blank"
+							<svg width="1em" height="1em" viewBox="0 0 24 24">
+								<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+							</svg>
+						</a>
+						: <>
+							{ downloadPlusAble && cameraBoundaryAvailable && <BootstrapTooltip
+								class={ `${style.SkinToggle} ${style.DownloadPlusCameraBoundary}` }
+								tooltipClass={ style.DownloadTooltipContainer }
+								placement="left"
+								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+									<Locale raw k="UNIT_VIEW_SKIN_DOWNLOADPLUS_CAMERABOUNDARY" />
+								</span> }
 							>
-								<svg width="1em" height="1em" viewBox="0 0 24 24">
-									<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-								</svg>
-							</a>
-						</BootstrapTooltip>
-					</>
-				}
+								<a
+									class={ cn(
+										style.DownloadContent,
+										style.ToggleButton,
+										downloadPlusCameraBoundary && style.Active,
+										"text-light",
+									) }
+									href="#"
+									onClick={ e => {
+										e.preventDefault();
+										e.stopImmediatePropagation();
+										setDownloadPlusCameraBoundary(v => !v);
+									} }
+								>
+									{/* <Icons.Crop /> */ }
+									<Icons.AspectRatioFill />
+								</a>
+							</BootstrapTooltip> }
+							{ downloadPlusAble && <BootstrapTooltip
+								class={ `${style.SkinToggle} ${style.DownloadPlus}` }
+								tooltipClass={ style.DownloadTooltipContainer }
+								placement="left"
+								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+									<Locale k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
+								</span> }
+							>
+								<a
+									class={ cn(style.DownloadContent, style.DownloadPlusContent) }
+									href="#"
+									onClick={ e => {
+										e.preventDefault();
+										e.stopImmediatePropagation();
+										download2DModel(SkinImageDownloadPlusFilename, downloadPlusCameraBoundary);
+									} }
+								>
+									<Spinner />
+									<svg width="1em" height="1em" viewBox="0 0 24 24">
+										<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+										<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M 16 6 L 20 6 M 18 4 L 18 8" />
+									</svg>
+								</a>
+							</BootstrapTooltip> }
+							<BootstrapTooltip
+								class={ `${style.SkinToggle} ${style.Download}` }
+								tooltipClass={ style.DownloadTooltipContainer }
+								placement="left"
+								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+									<Locale k="UNIT_VIEW_SKIN_DOWNLOAD" />
+								</span> }
+							>
+								<a
+									class={ style.DownloadContent }
+									href={ SkinImageDownloadFilename }
+									download={ SkinImageDownloadFilename.substring(SkinImageDownloadFilename.lastIndexOf("/") + 1) }
+									target="_blank"
+								>
+									<svg width="1em" height="1em" viewBox="0 0 24 24">
+										<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+									</svg>
+								</a>
+							</BootstrapTooltip>
+						</>
+				) }
 
 				{ !(skin.isPro || skin.isDef) && skin.price
 					? <div class={ style.Price }>
@@ -587,12 +660,12 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					}
 				</div>
 
-				{ hasSubsetType("D") && <div
+				{ !isCharView && hasSubsetType("D") && <div
 					class={ `${style.SkinToggle} ${style.Damaged}` }
 					data-damaged={ isDamaged ? 1 : 0 }
 					onClick={ (): void => setIsDamaged(!isDamaged) }
 				/> }
-				{ AvailableS && AvailableP
+				{ isCharView ? <></> : AvailableS && AvailableP
 					? <>
 						<div
 							class={ `${style.SkinToggle} ${style.Props1}` }
@@ -610,47 +683,95 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						data-prop={ hideParts ? 1 : 0 }
 						onClick={ (): void => setHideParts(!hideParts) }
 					/> }
-				{ AvailableBG && <div
+				{ !isCharView && AvailableBG && <div
 					class={ `${style.SkinToggle} ${style.BG}` }
 					data-bg={ hideBG ? 1 : 0 }
 					onClick={ (): void => setHideBG(!hideBG) }
 				/> }
-				{ ("G" in skin.subset) && <div
+				{ !isCharView && ("G" in skin.subset) && <div
 					class={ `${style.SkinToggle} ${style.Platform}` }
 					data-platform={ isCensored ? 1 : 0 }
 					onClick={ (): void => setIsCensored(!isCensored) }
 				/> }
-				{ (DisplayMixed || DisplaySpine || DisplayGamma) && !!props.animate && <div
+				{ !isCharView && (DisplayMixed || DisplaySpine || DisplayGamma) && !!props.animate && <div
 					class={ `${style.SkinToggle} ${style.Touch}` }
 					data-touch={ displayTouchCollider ? 1 : 0 }
 					onClick={ (): void => setDisplayTouchCollider(!displayTouchCollider) }
 				/> }
 
-				{ faceList.length > 0
-					? <div class={ cn(style.FaceList, props.collapsed && style.FaceListMargin) }>
+				{ DisplayChar && <BootstrapTooltip
+					key="char-mode"
+					class={ cn(style.SkinToggle, style.CharMode, isCharView && style.Active) }
+					placement="left"
+					content={ <span class="word-keep">
+						{ loc["UNIT_VIEW_SKIN_CHAR_MODEL"] || "SD" }
+					</span> }
+				>
+					<div onClick={ (): void => setIsCharView(!isCharView) }>
+						<Icons.PersonStanding />
+					</div>
+				</BootstrapTooltip> }
+				{ isCharView && charModelCh && <BootstrapTooltip
+					key="char-transform"
+					class={ cn(style.SkinToggle, style.CharTransform, charTransformed && style.Active) }
+					placement="left"
+					content={ <span class="word-keep">
+						{ loc["UNIT_VIEW_SKIN_CHAR_TRANSFORM"] || "Transform" }
+					</span> }
+				>
+					<div onClick={ (): void => setCharTransformed(!charTransformed) }>
+						<Icons.Magic />
+					</div>
+				</BootstrapTooltip> }
+
+				{ isCharView
+					? <div class={ cn(style.FaceList, style.CharAnimList, props.collapsed && style.FaceListMargin) }>
 						<select
 							class={ `form-select form-select-sm ${style.FaceList}` }
-							value={ face }
+							value={ charTrigger }
 							onChange={ (e): void => {
-								const value = (e.target as HTMLSelectElement).value;
-								setFace(value);
+								setCharTrigger((e.target as HTMLSelectElement).value);
+								setCharPlayToken(v => v + 1);
 							} }
 						>
-							{ faceList.map(f => {
-								const ft = FACETYPE[stripFacePrefix(f.toUpperCase(), facePrefix)];
-								return <option value={ f } data-raw={ ft }>
-									{ ft
-										? <Locale k={ `FACE_TYPE_${ft}` } />
-										: f.toUpperCase()
-									}
-								</option>;
-							}) }
+							{ charAnimations.map(a => <option value={ a.trigger } data-raw={ a.clip }>
+								{ loc[`UNIT_VIEW_SKIN_CHAR_ANIM_${a.type.toUpperCase()}`] || a.trigger }
+							</option>) }
 						</select>
-						<Icons.EmojiSmileFill />
+						<Icons.PlayFill />
+						<button
+							type="button"
+							class={ cn("btn btn-sm btn-light", style.CharReplay) }
+							onClick={ (): void => setCharPlayToken(v => v + 1) }
+						>
+							<Icons.ArrowRepeat />
+						</button>
 					</div>
-					: <div class={ cn(style.FaceList, style.NoFace) }>
-						<Locale k="UNIT_VIEW_SKIN_FACE_EMPTY" />
-					</div>
+					: faceList.length > 0
+						? <div class={ cn(style.FaceList, props.collapsed && style.FaceListMargin) }>
+							<select
+								class={ `form-select form-select-sm ${style.FaceList}` }
+								value={ face }
+								onChange={ (e): void => {
+									const value = (e.target as HTMLSelectElement).value;
+									setFace(value);
+								} }
+							>
+								{ faceList.map(f => {
+									const ft = FACETYPE[stripFacePrefix(f.toUpperCase(), facePrefix)];
+									return <option value={ f } data-raw={ ft }>
+										{ ft
+											? <Locale k={ `FACE_TYPE_${ft}` } />
+											: f.toUpperCase()
+										}
+									</option>;
+								}) }
+							</select>
+							<Icons.EmojiSmileFill />
+						</div>
+						: <div class={ cn(style.FaceList, style.NoFace) }>
+							<Locale k="UNIT_VIEW_SKIN_FACE_EMPTY" />
+						</div>
 				}
 			</div>
 		</div>

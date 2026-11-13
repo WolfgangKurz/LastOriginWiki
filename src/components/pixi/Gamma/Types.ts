@@ -7,7 +7,7 @@ export type Color = [r: number, g: number, b: number, a: number];
 export type CurveKeys = Array<[time: number, value: number, inSlope: number, outSlope: number]>;
 
 export interface TextureData {
-	/** file name relative to model directory */
+	/** file name relative to model directory, relative to root if contains `/` (char models: textures of dependency bundles, `ref.json`) */
 	f: string;
 	n: string;
 	w: number;
@@ -313,6 +313,10 @@ export interface Puppet2DGlobalData {
 	ce: boolean;
 	fl: boolean;
 	sry: number;
+	/** `OnOff`, first 4 IK handles are calculated only when 1 (char models only, all 1 if missing) */
+	oo?: [x: number, y: number, z: number, w: number];
+	/** `IKCtrlType` (0: OnOff, 1: Frame), Frame is not used by char models and not supported */
+	ty?: number;
 }
 
 export interface PositionConstraintData {
@@ -430,6 +434,48 @@ export interface FaceData {
 	sp: number;
 }
 
+//#region char (battle SD model)
+/** `CreatureMatrial`, animated `_change` is applied to renderers using `m` material */
+export interface CreatureMaterialData {
+	nd: number;
+	/** material property name */
+	n: string;
+	/** material index */
+	m: number;
+	/** default value */
+	v: number;
+}
+
+/** Effect prefab spawned by `PlayMakerFSM` (`CreateObject`) when `nd` node is activated */
+export interface CharSpawnData {
+	/** FSM node */
+	nd: number;
+	/** spawned hierarchy root (inactive, placed by runtime) */
+	rt: number;
+	/** spawn point node, -1 for world origin */
+	sp: number;
+	/** position offset */
+	p?: Vec3;
+	/** euler angles, spawn point rotation if not set */
+	r?: Vec3;
+	/** uniform scale */
+	s: number;
+	/** attached to spawn point */
+	at: boolean;
+	/** lifetime in seconds */
+	lt: number;
+}
+
+export interface CharData {
+	/** node of main animator (`CreatureAnimator`) */
+	an: number;
+	/** `eAndroidAnimationType` -> clip index */
+	slots: Record<string, number>;
+	cm?: CreatureMaterialData[];
+	fx?: CharSpawnData[];
+}
+//#endregion
+
 export interface ModelData {
 	ver: number;
 	name: string;
@@ -456,4 +502,6 @@ export interface ModelData {
 	/** renderer index of face sprite */
 	face: number;
 	faces: FaceData[];
+	/** battle SD model only */
+	char?: CharData;
 }

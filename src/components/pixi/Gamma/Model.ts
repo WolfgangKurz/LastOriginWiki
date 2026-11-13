@@ -3,7 +3,9 @@ import { AnimatorRuntime, PropertyTarget } from "./Animator";
 import { DynamicBone, DynamicBoneCollider } from "./DynamicBone";
 import { m4Point, m4Vector, v3Lerp } from "./Math";
 import { ParticleRendererRuntime, ParticleSystemRuntime } from "./Particles";
-import { Puppet2DGlobalControl, Puppet2DIKHandle, Puppet2DSplineControl } from "./Puppet2D";
+import {
+	Puppet2DGlobalControl, Puppet2DIKHandle, Puppet2DSplineControl, isPuppet2DGizmoSprite,
+} from "./Puppet2D";
 import {
 	DrawItem, MeshRendererRuntime, RendererRuntime, SpriteRendererRuntime,
 } from "./Renderer";
@@ -50,12 +52,12 @@ export default class GammaModel {
 	public readonly animators: AnimatorRuntime[];
 	public readonly colliders: Collider[];
 
-	private readonly dynamicBones: DynamicBone[];
+	protected readonly dynamicBones: DynamicBone[];
 	private readonly dbColliders: DynamicBoneCollider[];
 	private readonly ikHandles: Puppet2DIKHandle[];
 	private readonly splines: Puppet2DSplineControl[];
 	private readonly puppets: Puppet2DGlobalControl[];
-	private readonly particles: ParticleSystemRuntime[];
+	protected readonly particles: ParticleSystemRuntime[];
 
 	private readonly faceRenderer: SpriteRendererRuntime | null;
 	private readonly faceOriginal: number;
@@ -88,8 +90,8 @@ export default class GammaModel {
 			}
 		});
 		for (const r of this.renderers) {
-			// Puppet2D control gizmo, hidden by Unity viewer too
-			if (r instanceof SpriteRendererRuntime && r.spriteData()?.n === "IKControl")
+			// Puppet2D control/bone gizmo, hidden by Unity viewer too (stripped by char converter)
+			if (r instanceof SpriteRendererRuntime && isPuppet2DGizmoSprite(r.spriteData()?.n ?? ""))
 				r.forceHidden = true;
 		}
 		this.drawItems = this.renderers.flatMap(r => r.items);
@@ -252,7 +254,8 @@ export default class GammaModel {
 		return null;
 	}
 
-	private createMonoTarget (b: ClipBindingData, key: string): PropertyTarget | null {
+	/** Overridden by subclass for its own MonoBehaviours, called while constructing (before subclass fields are initialized) */
+	protected createMonoTarget (b: ClipBindingData, key: string): PropertyTarget | null {
 		const float = <T> (obj: T, field: keyof T): PropertyTarget => ({
 			key, kind: "float", size: 1,
 			read: () => [obj[field] as unknown as number],
@@ -319,6 +322,15 @@ export default class GammaModel {
 				switch (b.a) {
 					case "m_Enabled": return discrete(g, "enabled");
 					case "ControlsEnabled": return discrete(g, "controlsEnabled");
+				}
+				if (b.a.startsWith("OnOff.")) {
+					const i = "xyzw".indexOf(b.a.slice(-1));
+					if (i < 0) return null;
+					return {
+						key, kind: "float", size: 1,
+						read: () => [g.onOff[i]],
+						write: v => g.onOff[i] = v[0],
+					};
 				}
 				return null;
 			}
@@ -565,6 +577,9 @@ export default class GammaModel {
 		}
 	}
 
+	/** Called after animators are updated, before constraints and particles */
+	protected afterAnimators (_dt: number) { }
+
 	/** Advance one frame, same order as Unity player loop */
 	public update (dt: number) {
 		dt = Math.max(0, Math.min(dt, 0.1));
@@ -577,6 +592,7 @@ export default class GammaModel {
 		// Animator
 		for (const a of this.animators) a.update(dt);
 		this.checkTouchAnimation();
+		this.afterAnimators(dt);
 
 		// constraints & particles (PreLateUpdate)
 		this.applyConstraints();

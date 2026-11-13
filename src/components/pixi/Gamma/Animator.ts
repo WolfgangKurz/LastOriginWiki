@@ -103,6 +103,15 @@ class StateMachineRuntime {
 		this.current = { index: data.st[def] ? def : -1, time: 0, elapsed: 0 };
 	}
 
+	/** Back to default state, `Animator.Rebind` */
+	public reset () {
+		const def = this.resolve(SELECTOR_BASE, 0) ?? this.data.def;
+		this.current = { index: this.data.st[def] ? def : -1, time: 0, elapsed: 0 };
+		this.next = null;
+		this.transitionElapsed = 0;
+		this.transitionDuration = 0;
+	}
+
 	/** State machine without valid state (empty layer) */
 	public get empty (): boolean {
 		return !this.data.st[this.current.index];
@@ -429,6 +438,11 @@ export class AnimatorRuntime {
 	public resetTrigger (name: string) {
 		this.setParameter(name, false);
 	}
+	/** Reset all trigger parameters, `CreatureAnimator.ResetTriggers` */
+	public resetTriggers () {
+		for (const p of this.params.values())
+			if (p.type === PARAM_TRIGGER) p.value = 0;
+	}
 
 	/** `assumeTrigger` is treated as set, for checking without changing parameters */
 	public checkConditions (conds: ConditionData[], assumeTrigger?: string): boolean {
@@ -547,6 +561,12 @@ export class AnimatorRuntime {
 				best = { elapsed: p[0], length: p[1] };
 		}
 		return best;
+	}
+
+	/** Restart from default states (re-enabled spawned effect) */
+	public restart () {
+		for (const m of this.machines) m.reset();
+		this.resetTriggers();
 	}
 
 	/** Evaluate transitions immediately without advancing time (for triggers) */

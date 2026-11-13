@@ -18,7 +18,7 @@ const GAMMA_MAX_FPS = 60;
 
 let _ticker: PIXI.Ticker | null = null;
 /** Ticker for gamma model updates, separated from shared ticker to cap update rate */
-function gammaTicker (): PIXI.Ticker {
+export function gammaTicker (): PIXI.Ticker {
 	if (!_ticker) {
 		_ticker = new PIXI.Ticker();
 		_ticker.maxFPS = GAMMA_MAX_FPS;
@@ -76,7 +76,7 @@ function release (id: GammaModelId) {
 	}, ModelCacheDuration);
 }
 
-function createTexture (image: ImageBitmap | null, info: TextureData): PIXI.Texture {
+export function createTexture (image: ImageBitmap | null, info: TextureData): PIXI.Texture {
 	if (!image) return PIXI.Texture.WHITE;
 
 	const resource = new PIXI.ImageBitmapResource(image, {

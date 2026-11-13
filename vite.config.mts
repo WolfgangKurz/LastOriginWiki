@@ -269,8 +269,18 @@ export default defineConfig(async ({ mode, command }) => {
 			watch: command === "serve"
 				? {
 					ignored: [
-						path.join(__dirname, "external", "yaml", "**"),
 						path.join(__dirname, "db", "**"),
+						path.join(__dirname, "external", "yaml", "**"),
+						path.join(__dirname, "external", "assets", "png"),
+						path.join(__dirname, "external", "assets", "webp"),
+						path.join(__dirname, "external", "assets", "2dmodel"),
+						path.join(__dirname, "external", "assets", "spine"),
+						path.join(__dirname, "external", "assets", "gamma"),
+						path.join(__dirname, "external", "assets", "char_model"),
+						path.join(__dirname, "external", "assets", "webm"),
+						path.join(__dirname, "external", "assets", "video"),
+						path.join(__dirname, "external", "assets", "audio"),
+						path.join(__dirname, "external", "assets", "story"),
 					]
 				}
 				: undefined,

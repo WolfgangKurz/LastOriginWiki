@@ -65,6 +65,19 @@ export function shaderKindOf (name: string, srcBlend: number): GammaShaderKind {
 			return GammaShaderKind.ParticleMobile;
 		case "Standard":
 			return GammaShaderKind.Standard;
+
+		// battle SD (char_*) effect shaders, approximated
+		case "LastOne/LO_FX/LO_Alpha_Clipping_ColorChange": // `_AdditionalAlpha`, `_BlendMode` same as lobby one, color modify is ignored
+			return GammaShaderKind.AdditionalAlpha;
+		case "Mobile/Particles/Alpha Blended": // tex * vertex color
+		case "LastOne/LO_Sprite_Ctrl_A": // `_A_Ctrl` is ignored
+		case "LastOne/LO_cloaking": // dissolve by `_change` and noise is ignored
+		case "LastOne/LO_cloaking_in":
+		case "LastOne/LO_cloaking_loop":
+		case "VFX/MasterShader": // main texture only (aliased to `_MainTex` by converter), panning/dissolve is ignored
+		case "VFX/MasterShader/Sword":
+		case "johans_wing":
+			return GammaShaderKind.Straight;
 	}
 	if (name.startsWith("LastOne/LO_Hologram"))
 		return GammaShaderKind.Hologram;
