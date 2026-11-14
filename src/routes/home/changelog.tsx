@@ -4,23 +4,16 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 13229" date="2026-11-13"
-		bugfix={ <>
-			<li>전투원 <BY>B-11 나이트 앤젤</BY>의 스킬 정보가 갱신되었습니다.</li>
+	<ChangelogItem title="Build 13233" date="2026-11-15"
+		new={ <>
+			<li><BY>스킨 뷰어</BY>에서 전투원의 전투 SD 모델과 스킬 이펙트를 확인할 수 있는 기능이 추가되었습니다.</li>
 		</> }
-	/>
-	<ChangelogItem title="Build 13228" date="2026-11-08"
 		update={ <>
-			<li>전투원 <BY>나모</BY>, <BY>사니</BY>의 스킬 정보가 추가되었습니다.</li>
-			<li>일부 전투원의 능력치 및 스킬 정보가 갱신되었습니다.</li>
-			<li>일부 장비의 효과 정보가 갱신되었습니다.</li>
-			<li>일부 지역의 적 편성 및 클리어 조건 정보가 갱신되었습니다.</li>
-			<li>변칙 <BY>누전</BY>의 효과 정보가 갱신되었습니다.</li>
-			<li>일부 스토리의 대사 표시 및 BGM 정보가 갱신되었습니다.</li>
-			<li><BY>스토리 플레이어</BY>에서 전투원 <BY>닥터</BY>의 모델이 갱신되었습니다.</li>
+			<li>이벤트 <BY>수상한 연구소의 사라진 대학원생</BY>의 기간이 수정되었습니다.</li>
 		</> }
-		skin={ <>
-			<li>전투원 <BY>포츈</BY>의 기본 스킨 중파 정보가 갱신되었습니다.</li>
+		site={ <>
+			<li>스킨 모델의 텍스쳐 형식을 변경하여 로딩 속도와 메모리 사용량을 개선했습니다.</li>
+			<li>모바일 환경에서 스킨 뷰어의 메모리 사용량과 렌더링 성능을 개선했습니다.</li>
 		</> }
 	/>
 </>;
