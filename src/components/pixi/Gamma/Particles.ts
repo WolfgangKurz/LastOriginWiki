@@ -11,6 +11,9 @@ import {
 import type { GammaNode } from "./Scene";
 import { GeometryBuffer, RendererRuntime } from "./Renderer";
 
+/** `ParticleSystemRenderSpace.Local` of `ParticleRendererData.ra` */
+const RENDER_ALIGNMENT_LOCAL = 2;
+
 const GRAVITY = -9.81;
 const PREWARM_STEP = 1 / 30;
 
@@ -403,6 +406,10 @@ export class ParticleSystemRuntime {
 		const uv = d.uv;
 		const tiles = uv ? Math.max(1, uv.tx) * (uv.at === 1 ? 1 : Math.max(1, uv.ty)) : 1;
 
+		// mesh with `ParticleSystemRenderSpace.Local` is oriented by particle system transform (3D, e.g. mesh in XZ
+		// plane rotated to face camera), others are drawn in XY plane
+		const meshRotation = isMesh && renderer.ra === RENDER_ALIGNMENT_LOCAL ? this.node.rotation : null;
+
 		const pos = g.positions, uvs = g.uvs, col = g.colors, idx = g.indices;
 		for (let n = 0; n < maxCount; n++) {
 			const p = list[n];
@@ -458,8 +465,15 @@ export class ParticleSystemRuntime {
 					ly -= renderer.pv[1] * sy;
 				}
 				const o = (base + i) * 2;
-				pos[o] = center[0] + lx * cr - ly * sr;
-				pos[o + 1] = center[1] + lx * sr + ly * cr;
+				let px = lx * cr - ly * sr;
+				let py = lx * sr + ly * cr;
+				if (meshRotation) {
+					const v = qRotate(meshRotation, [px, py, mesh!.v[i * 3 + 2] * sx]);
+					px = v[0];
+					py = v[1];
+				}
+				pos[o] = center[0] + px;
+				pos[o + 1] = center[1] + py;
 
 				uvs[o] = u0 + muv[i * 2] * us;
 				uvs[o + 1] = v0 + muv[i * 2 + 1] * vs;

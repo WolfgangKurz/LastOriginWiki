@@ -217,6 +217,29 @@ export class GammaNode {
 		const r = qMul(qMul(p ? qInverse(p.rotation) : IDENTITY, q), qInverse(flip));
 		this.localRotation = qNormalize(reflect(r, parentMirrored));
 	}
+	/**
+	 * Unity `Transform.rotation`: product of local rotations, signs of scales are ignored.
+	 * Differs from `rotation` (as seen on screen) only under negative scales. Scripts written against Unity API
+	 * relying on `rotation` and `TransformDirection` being consistent with each other (DynamicBone) use this,
+	 * e.g. mirrored hair bones (`scale.x = -1`) are flipped by 180 degrees every frame with `rotation`.
+	 */
+	public get unityRotation (): Quat {
+		const p = this.parent;
+		return p ? qMul(p.unityRotation, this._localRotation) : [...this._localRotation];
+	}
+	public set unityRotation (q: Readonly<Quat>) {
+		const p = this.parent;
+		this.localRotation = qNormalize(p ? qMul(qInverse(p.unityRotation), q) : [q[0], q[1], q[2], q[3]]);
+	}
+	/** Unity `Transform.TransformDirection`, with `unityRotation` */
+	public unityTransformDirection (d: Readonly<Vec3>): Vec3 {
+		return qRotate(this.unityRotation, d);
+	}
+	/** Unity `Transform.InverseTransformDirection`, with `unityRotation` */
+	public unityInverseTransformDirection (d: Readonly<Vec3>): Vec3 {
+		return qRotate(qInverse(this.unityRotation), d);
+	}
+
 	private get rotationMirrored (): boolean {
 		this.update();
 		return this._mirrored;

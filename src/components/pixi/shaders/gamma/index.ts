@@ -22,6 +22,16 @@ export enum GammaShaderKind {
 	Hologram = 9,
 	/** `Standard` */
 	Standard = 10,
+	/** `VFX/MasterShader` (main texture part of game GLSL, alpha is `tex.a * tex.r`) */
+	MasterShader = 11,
+	/** `Shader Forge/Hexagon_plane_Shader_test` (game GLSL) */
+	HexagonPlane = 12,
+	/** `VFX/MasterShader/Sword` (game GLSL, `_Sub_Tex` dissolve, alpha from main texture red) */
+	Sword = 13,
+	/** `LastOne/LO_cloaking` (game GLSL, 5 textures, vertex alpha is not used) */
+	Cloaking = 14,
+	/** `LO Alpha Masked/Sprites Alpha Masked (Additive) - World Coords` (game GLSL, `ToJ.Mask`) */
+	AlphaMasked = 15,
 }
 
 export enum GammaFadeMode {
@@ -71,13 +81,24 @@ export function shaderKindOf (name: string, srcBlend: number): GammaShaderKind {
 			return GammaShaderKind.AdditionalAlpha;
 		case "Mobile/Particles/Alpha Blended": // tex * vertex color
 		case "LastOne/LO_Sprite_Ctrl_A": // `_A_Ctrl` is ignored
-		case "LastOne/LO_cloaking": // dissolve by `_change` and noise is ignored
-		case "LastOne/LO_cloaking_in":
+		case "LastOne/LO_cloaking_in": // dissolve by `_change` and noise is ignored
 		case "LastOne/LO_cloaking_loop":
-		case "VFX/MasterShader": // main texture only (aliased to `_MainTex` by converter), panning/dissolve is ignored
-		case "VFX/MasterShader/Sword":
 		case "johans_wing":
 			return GammaShaderKind.Straight;
+
+		// reproduced from game GLSL, main texture parts only
+		// (distortion, cutout, dissolve and masks by particle custom data are ignored)
+		case "VFX/MasterShader":
+			return GammaShaderKind.MasterShader;
+		case "Shader Forge/Hexagon_plane_Shader_test":
+			return GammaShaderKind.HexagonPlane;
+		case "VFX/MasterShader/Sword":
+			return GammaShaderKind.Sword;
+		case "LastOne/LO_cloaking":
+			return GammaShaderKind.Cloaking;
+		case "LO Alpha Masked/Sprites Alpha Masked - World Coords":
+		case "LO Alpha Masked/Sprites Alpha Masked Additive - World Coords":
+			return GammaShaderKind.AlphaMasked;
 	}
 	if (name.startsWith("LastOne/LO_Hologram"))
 		return GammaShaderKind.Hologram;

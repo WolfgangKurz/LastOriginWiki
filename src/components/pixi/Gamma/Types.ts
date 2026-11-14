@@ -1,3 +1,5 @@
+import type { UnityGLSLData } from "../shaders/unity";
+
 export type Vec2 = [x: number, y: number];
 export type Vec3 = [x: number, y: number, z: number];
 export type Quat = [x: number, y: number, z: number, w: number];
@@ -33,6 +35,14 @@ export interface MaterialData {
 	cu: number;
 	/** custom render queue, -1 for shader default */
 	q: number;
+	/** game GLSL of shader not implemented by runtime (char models, `tools/char/unity_glsl.py`) */
+	gl?: UnityGLSLData;
+	/** stencil state of game shader pass */
+	sts?: { ref: number; rm: number; wm: number; comp: number; pass: number; fail: number; };
+	/** color write mask of game shader pass (Unity `ColorWriteMask`), omitted if all channels */
+	cm?: number;
+	/** drawn as no-op (shader samples background) */
+	noop?: boolean;
 }
 
 export interface SpriteData {
@@ -473,6 +483,16 @@ export interface CharData {
 	slots: Record<string, number>;
 	cm?: CreatureMaterialData[];
 	fx?: CharSpawnData[];
+	/** `ToJ.Mask` (Alpha Mask asset) */
+	am?: AlphaMaskData[];
+}
+
+export interface AlphaMaskData {
+	/** mask node, its MeshRenderer is disabled */
+	nd: number;
+	/** mapping world axis (0: X, 1: Y, 2: Z) */
+	ax: number;
+	inv: boolean;
 }
 //#endregion
 

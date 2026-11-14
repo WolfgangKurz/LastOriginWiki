@@ -3,12 +3,12 @@ import * as PIXI from "pixi.js";
 import { AssetsRoot, IsDev } from "@/libs/Const.1";
 
 import CharGammaModel from "./Gamma/Char";
-import { loadModelFrom } from "./Gamma/Loader";
+import { type TextureImage, loadModelFrom } from "./Gamma/Loader";
 import type { DrawItem } from "./Gamma/Renderer";
-import type { ModelData } from "./Gamma/Types";
+import type { ClipData, ClipEventData, ModelData } from "./Gamma/Types";
 
 import FadeContainer from "./FadeContainer";
-import GammaMesh from "./GammaMesh";
+import GammaMesh, { warmupPrograms } from "./GammaMesh";
 import PixiSpineModel from "./PixiSpineModel";
 import { GAMMA_UNIT_SCALE, createTexture, gammaTicker } from "./PixiGammaModel";
 
@@ -24,6 +24,18 @@ export interface CharAnimationMeta {
 	d: number;
 	/** clip played after this one by exit time transition (e.g. victory -> victory idle) */
 	nx?: string;
+	/** spine: battle movements by clip events (gamma model receives clip events itself) */
+	mv?: CharMoveSegment[];
+}
+
+/** Battle movement of animation, seconds from animation start */
+export interface CharMoveSegment {
+	/** `go`: to target (`EventMoveMotionStart`), `back`: to start position, `jump`: step (`EventJumpMoveStart`) */
+	k: "go" | "back" | "jump";
+	s: number;
+	d: number;
+	/** `go`: range before target */
+	f?: number;
 }
 
 /** `meta.json` of model, read first to select render path */
@@ -107,6 +119,19 @@ const HOLD_TYPES = ["die"];
 /** Give up waiting for state of played trigger (not consumed by controller) */
 const START_TIMEOUT = 3;
 
+const MOVE_EVENTS: Readonly<Record<string, string>> = {
+	EventMoveMotionStart: "EventMoveMotionEnd",
+	EventMoveMotionBackStart: "EventMoveMotionBackEnd",
+	EventJumpMoveStart: "EventJumpMoveEnd",
+};
+
+interface MoveTween {
+	from: number;
+	to: number;
+	elapsed: number;
+	duration: number;
+}
+
 export interface CharAnimationInfo {
 	trigger: string;
 	/** `eAndroidAnimationType` */
@@ -128,7 +153,7 @@ const CacheDuration = 60 * 1000;
 
 interface LoadedGamma {
 	data: ModelData;
-	images: Array<ImageBitmap | null>;
+	images: Array<TextureImage | null>;
 	textures: PIXI.Texture[] | null;
 }
 
@@ -237,6 +262,14 @@ export default class PixiCharModel extends FadeContainer {
 	private pending: string | null = null;
 	private stateChanged = false;
 
+	private _moveDistance = 0;
+	private moveOffset = 0;
+	private moveTween: MoveTween | null = null;
+	private clipOfEvent = new Map<ClipEventData, ClipData>();
+	// spine: movements of played animation (`CharAnimationMeta.mv`)
+	private spineMoves: CharMoveSegment[] | null = null;
+	private spineMoveType = "";
+
 	// spine
 	private spine: PixiSpineModel | null = null;
 
@@ -313,8 +346,18 @@ export default class PixiCharModel extends FadeContainer {
 			return m;
 		});
 
+		for (const clip of loaded.data.clip)
+			for (const ev of clip.ev) this.clipOfEvent.set(ev, clip);
+
 		const anim = gamma.charAnimator;
-		if (anim) anim.onStateChanged = (_, layer) => this.stateChanged ||= layer === 0;
+		if (anim) {
+			anim.onStateChanged = (_, layer) => this.stateChanged ||= layer === 0;
+			const onEvent = anim.onEvent;
+			anim.onEvent = (a, ev) => {
+				onEvent?.(a, ev);
+				this.onMoveEvent(ev);
+			};
+		}
 
 		gammaTicker().add(this.tick, this);
 		this.tick();
@@ -398,8 +441,26 @@ export default class PixiCharModel extends FadeContainer {
 		p.ended = true;
 		this.emit("animation-end");
 		const next = this._meta?.anims[p.type]?.nx;
-		if (!HOLD_TYPES.includes(p.type) && !next)
+		if (HOLD_TYPES.includes(p.type) || next) return;
+		if (this.gamma?.charAnimator?.deadEnd)
+			this.restartIdle();
+		else
 			this.playGamma(CHAR_IDLE_TRIGGER);
+	}
+
+	/**
+	 * Escapes from state without transition to idle (e.g. `anim_wait`, transform motion),
+	 * game recreates model after it (`Panel_CharacterDetails.RefreshSDModel`), restarts from default (idle) state instead
+	 */
+	private restartIdle () {
+		const anim = this.gamma?.charAnimator;
+		const info = this._animations.find(a => a.trigger === CHAR_IDLE_TRIGGER);
+		if (!anim || !info) return;
+
+		anim.restart();
+		this.pending = null;
+		this.stateChanged = false;
+		this.playing = { ...info, started: true, elapsed: 0, waited: 0, ended: false };
 	}
 
 	private tick () {
@@ -414,6 +475,7 @@ export default class PixiCharModel extends FadeContainer {
 		try {
 			gamma.update(dt);
 			this.updatePlaying(dt);
+			this.updateMove(dt);
 		} catch (e) {
 			// exception in ticker listener stops shared ticker, stop this model only
 			console.error(`[char] ${this.model} update failed`, e);
@@ -431,6 +493,62 @@ export default class PixiCharModel extends FadeContainer {
 			if (mesh.zIndex !== i) mesh.zIndex = i;
 			mesh.sync(mats, this.textures, this.elapsed);
 		});
+	}
+
+	private onMoveEvent (ev: ClipEventData) {
+		const endName = MOVE_EVENTS[ev.fn];
+		if (!endName) return;
+
+		const clip = this.clipOfEvent.get(ev);
+		const timeOf = (name: string) => {
+			const e = clip ? [...clip.ev].reverse().find(x => x.fn === name) : undefined;
+			return e?.t ?? 0;
+		};
+		const duration = Math.max(timeOf(endName) - timeOf(ev.fn), 0);
+
+		const kind: CharMoveSegment["k"] = ev.fn === "EventMoveMotionStart"
+			? "go"
+			: ev.fn === "EventMoveMotionBackStart" ? "back" : "jump";
+		const to = this.moveTarget(kind, ev.f, this.playing?.type ?? "");
+		this.moveTween = { from: this.moveOffset, to, elapsed: 0, duration };
+		this.updateMove(0);
+	}
+
+	/** Destination offset of movement */
+	private moveTarget (kind: CharMoveSegment["k"], range: number, type: string): number {
+		switch (kind) {
+			case "go":
+				return Math.max(this._moveDistance - range, 0);
+			case "back":
+				return 0;
+			default: // frontstep moves forward, backstep moves backward
+				return type.startsWith("backstep") ? -this._moveDistance : this._moveDistance;
+		}
+	}
+
+	/** Applies offset to rendered model */
+	private applyMoveOffset () {
+		const x = this.moveOffset * this.unitScale;
+		if (this.space) this.space.x = x;
+		if (this.spine) this.spine.x = x;
+	}
+
+	private updateMove (dt: number) {
+		const tw = this.moveTween;
+		if (tw) {
+			tw.elapsed += dt;
+			const t = tw.duration > 0 ? Math.min(tw.elapsed / tw.duration, 1) : 1;
+			this.moveOffset = tw.from + (tw.to - tw.from) * t;
+			if (t >= 1) this.moveTween = null;
+		}
+		this.applyMoveOffset();
+	}
+
+	private resetMove () {
+		this.moveTween = null;
+		this.moveOffset = 0;
+		this.spineMoves = null;
+		this.applyMoveOffset();
 	}
 	//#endregion
 
@@ -453,13 +571,79 @@ export default class PixiCharModel extends FadeContainer {
 			if (!this.destroyed) this.setLoaded();
 		});
 	}
+
+	private warmedUp: PIXI.Renderer | null = null;
+	/** Compiles shader programs of all materials on first render, not when effects first appear */
+	public override render (renderer: PIXI.Renderer) {
+		if (this.gamma && this.warmedUp !== renderer) {
+			this.warmedUp = renderer;
+			warmupPrograms(renderer, this.gamma.data.mat);
+		}
+		super.render(renderer);
+	}
+
+	/** Spine is updated by its own ticker, offset is evaluated right before render for the pose being rendered */
+	public override updateTransform () {
+		if (this.spine && this.spineMoves) this.tickSpineMove();
+		super.updateTransform();
+	}
+
+	/**
+	 * Spine model has no clip events, offset is evaluated from time of played animation by `mv` segments
+	 * (same as tweens started by events). Kept after animation ends (steps) until next play.
+	 */
+	private tickSpineMove () {
+		const moves = this.spineMoves;
+		if (!this.spine || !moves) return;
+
+		const t = this.spine.currentAnimationTime();
+		if (t === undefined) return;
+
+		let offset = 0;
+		for (const seg of moves) {
+			if (t < seg.s) break;
+			const p = seg.d > 0 ? Math.min((t - seg.s) / seg.d, 1) : 1;
+			const to = this.moveTarget(seg.k, seg.f ?? 0, this.spineMoveType);
+			offset += (to - offset) * p;
+		}
+		this.moveOffset = offset;
+		this.applyMoveOffset();
+	}
 	//#endregion
 
 	//#region public API
 	/** Play animation by trigger (`anim_skill1`, ...), returns `false` if not playable */
 	public play (trigger: string): boolean {
-		if (this.spine) return this.spine.play(trigger) !== false;
+		this.resetMove();
+		if (this.spine) {
+			const type = this._animations.find(a => a.trigger === trigger)?.type ?? "";
+			const mv = this._meta?.anims[type]?.mv;
+			this.spineMoves = mv?.length ? [...mv].sort((a, b) => a.s - b.s) : null;
+			this.spineMoveType = type;
+			return this.spine.play(trigger) !== false;
+		}
 		return this.playGamma(trigger);
+	}
+
+	/** Pixels of local coordinates per Unity unit */
+	public get unitScale (): number {
+		// `PixiSpineModel`: own scale (3) x prefab root (`root.scale.set(100)`), skeleton is read in Unity units
+		if (this.spine) return this.spine.scale.x * 100;
+		return GAMMA_UNIT_SCALE;
+	}
+
+	public get moveDistance (): number {
+		return this._moveDistance;
+	}
+	public set moveDistance (value: number) {
+		this._moveDistance = Math.max(0, Number.isFinite(value) ? value : 0);
+	}
+
+	public get canMove (): boolean {
+		if (this.spine)
+			return Object.values(this._meta?.anims ?? {}).some(a => !!a.mv?.length);
+		return !!this.gamma && this.clipOfEvent.size > 0 &&
+			[...this.clipOfEvent.keys()].some(ev => ev.fn in MOVE_EVENTS);
 	}
 
 	/** Elapsed seconds of current non-looping animation */
@@ -491,9 +675,12 @@ export default class PixiCharModel extends FadeContainer {
 
 	public override destroy (options?: boolean | PIXI.IDestroyOptions) {
 		gammaTicker().remove(this.tick, this);
+		this.spineMoves = null;
 		this.meshes.forEach(m => m.destroy({ children: true }));
 		this.meshes = [];
 		this.meshOf.clear();
+		this.clipOfEvent.clear();
+		this.moveTween = null;
 		this.gamma = null;
 		if (this.gammaAcquired) releaseGamma(this._model);
 		this.spine?.destroy();

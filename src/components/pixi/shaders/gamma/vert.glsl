@@ -11,6 +11,7 @@ uniform vec4 uMainST;
 varying vec2 vTextureCoord;
 varying vec2 vRawCoord;
 varying vec4 vColor;
+varying vec2 vPosition; // model space position (Unity units), world position of shaders sampling in world space
 
 void main () {
 	gl_Position = vec4((projectionMatrix * translationMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);
@@ -20,4 +21,5 @@ void main () {
 	vTextureCoord = vec2(uv.x, 1.0 - uv.y);
 	vRawCoord = aTextureCoord;
 	vColor = aColor;
+	vPosition = aVertexPosition;
 }

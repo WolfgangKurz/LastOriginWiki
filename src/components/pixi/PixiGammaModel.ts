@@ -3,29 +3,112 @@ import * as PIXI from "pixi.js";
 import { IsDev } from "@/libs/Const.1";
 
 import GammaModel, { TRIGGER_NORMAL_TOUCH, TRIGGER_SPECIAL_TOUCH } from "./Gamma/Model";
-import { GammaModelId, LoadedModel, loadModel, parseModelId } from "./Gamma/Loader";
+import { GammaModelId, LoadedModel, type TextureImage, loadModel, parseModelId } from "./Gamma/Loader";
+import { TranscodedImage } from "./Gamma/Basis";
 import type { DrawItem } from "./Gamma/Renderer";
 import type { TextureData } from "./Gamma/Types";
 
 import FadeContainer from "./FadeContainer";
-import GammaMesh from "./GammaMesh";
+import GammaMesh, { warmupPrograms } from "./GammaMesh";
 
 /** Pixels per Unity unit, Unity viewer camera was orthographic size 1 on 720px height */
 export const GAMMA_UNIT_SCALE = 360;
 
-/** Model update rate cap, high refresh rate display does not need more updates */
-const GAMMA_MAX_FPS = 60;
+//#region view display / frame loop
+/**
+ * Canvas resolution of model views, fixed to 2x of CSS size:
+ * supersampling on low DPI screens, and limits fill rate of high DPI (3x, 4x) mobile screens.
+ */
+export function viewResolution (): number {
+	return 2;
+}
+
+/** MSAA only on low DPI screens, high DPI screens are dense enough (4x MSAA on 2x canvas is costly on mobile GPU) */
+export function viewAntialias (): boolean {
+	return (window.devicePixelRatio || 1) < 2;
+}
+
+/** Touch-only devices (phones, tablets) are paced to 60fps, high refresh rate drains battery */
+function frameInterval (): number {
+	return window.matchMedia("(hover: none) and (pointer: coarse)").matches ? 1000 / 60 : 0;
+}
 
 let _ticker: PIXI.Ticker | null = null;
-/** Ticker for gamma model updates, separated from shared ticker to cap update rate */
+let _raf = 0;
+let _last = -1;
+const _views = new Set<Element>();
+const _visibleViews = new Set<Element>();
+let _observer: IntersectionObserver | null = null;
+
+/** Ticker runs while any view is on screen (or no view is registered) */
+function shouldRun (): boolean {
+	return _views.size === 0 || _visibleViews.size > 0;
+}
+
+function frame (now: number) {
+	_raf = requestAnimationFrame(frame);
+
+	const interval = frameInterval();
+	if (interval > 0 && _last >= 0) {
+		// fixed interval pacing (not Pixi `maxFPS`, which truncates elapsed time and paces unevenly),
+		// 1ms tolerance for rAF jitter, schedule advances by interval to keep average rate on 90/120/144Hz displays,
+		// resynced after stall (dropped frames are not caught up)
+		if (now - _last < interval - 1) return;
+		_last += interval;
+		if (now - _last > interval) _last = now;
+	} else
+		_last = now;
+
+	_ticker!.update(now);
+}
+
+function updateLoop () {
+	if (!_ticker) return;
+	if (shouldRun()) {
+		if (!_raf) {
+			_last = -1;
+			_ticker.lastTime = performance.now(); // no large delta after pause
+			_raf = requestAnimationFrame(frame);
+		}
+	} else if (_raf) {
+		cancelAnimationFrame(_raf);
+		_raf = 0;
+	}
+}
+
+/** Shared ticker of model views, updated by own frame loop (see `observeGammaView`) */
 export function gammaTicker (): PIXI.Ticker {
 	if (!_ticker) {
-		_ticker = new PIXI.Ticker();
-		_ticker.maxFPS = GAMMA_MAX_FPS;
-		_ticker.start();
+		_ticker = new PIXI.Ticker(); // not started, `frame` updates it
+		updateLoop();
 	}
 	return _ticker;
 }
+
+/** Registers view element, shared ticker pauses while all views are off screen. Returns unregister function. */
+export function observeGammaView (el: Element): () => void {
+	_observer ??= new IntersectionObserver(entries => {
+		for (const e of entries) {
+			if (!_views.has(e.target)) continue;
+			if (e.isIntersecting) _visibleViews.add(e.target);
+			else _visibleViews.delete(e.target);
+		}
+		updateLoop();
+	});
+
+	_views.add(el);
+	_visibleViews.add(el); // until first observation
+	_observer.observe(el);
+	updateLoop();
+
+	return () => {
+		_observer?.unobserve(el);
+		_views.delete(el);
+		_visibleViews.delete(el);
+		updateLoop();
+	};
+}
+//#endregion
 
 //#region cache
 interface CacheEntry {
@@ -76,13 +159,27 @@ function release (id: GammaModelId) {
 	}, ModelCacheDuration);
 }
 
-export function createTexture (image: ImageBitmap | null, info: TextureData): PIXI.Texture {
+export function createTexture (image: TextureImage | null, info: TextureData): PIXI.Texture {
 	if (!image) return PIXI.Texture.WHITE;
 
-	const resource = new PIXI.ImageBitmapResource(image, {
-		alphaMode: PIXI.ALPHA_MODES.NPM,
-		ownsImageBitmap: false,
-	});
+	let resource: PIXI.Resource;
+	if (image instanceof TranscodedImage) { // Basis
+		if (!image.data) return PIXI.Texture.WHITE;
+		resource = image.format
+			? new PIXI.CompressedTextureResource(null, {
+				format: image.format,
+				width: image.width,
+				height: image.height,
+				levels: 1,
+				levelBuffers: [{ levelID: 0, levelWidth: image.width, levelHeight: image.height, levelBuffer: image.data }],
+			})
+			: new PIXI.BufferResource(image.data, { width: image.width, height: image.height });
+	} else {
+		resource = new PIXI.ImageBitmapResource(image, {
+			alphaMode: PIXI.ALPHA_MODES.NPM,
+			ownsImageBitmap: false,
+		});
+	}
 	const base = new PIXI.BaseTexture(resource, {
 		alphaMode: PIXI.ALPHA_MODES.NPM,
 		mipmap: PIXI.MIPMAP_MODES.OFF,
@@ -368,6 +465,16 @@ export default class PixiGammaModel extends FadeContainer {
 		return this.gamma?.touchAnimationInfo()?.elapsed;
 	}
 	//#endregion
+
+	private warmedUp: PIXI.Renderer | null = null;
+	/** Compiles shader programs of all materials on first render, not when effects first appear */
+	public override render (renderer: PIXI.Renderer) {
+		if (this.gamma && this.warmedUp !== renderer) {
+			this.warmedUp = renderer;
+			warmupPrograms(renderer, this.gamma.data.mat);
+		}
+		super.render(renderer);
+	}
 
 	public override destroy (options?: boolean | PIXI.IDestroyOptions) {
 		gammaTicker().remove(this.tick, this);

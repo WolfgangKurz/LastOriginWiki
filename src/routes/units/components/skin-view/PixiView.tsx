@@ -13,7 +13,7 @@ import { IsDev } from "@/libs/Const.1";
 import Shared from "@/components/pixi/Shared";
 
 import FadeContainer from "@/components/pixi/FadeContainer";
-import PixiGammaModel from "@/components/pixi/PixiGammaModel";
+import PixiGammaModel, { gammaTicker, observeGammaView, viewAntialias, viewResolution } from "@/components/pixi/PixiGammaModel";
 import PixiSpineModel from "@/components/pixi/PixiSpineModel";
 import Pixi2DModel from "@/components/pixi/Pixi2DModel";
 import PixiVideoModel from "@/components/pixi/PixiVideoModel";
@@ -67,6 +67,9 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 	const [surface, setSurface] = useState<PIXI.Container | null>(null);
 
 	const [char, setChar] = useState<PixiModelTypes | null>(null);
+	/** current model, for unmount (initialize effect captures initial `char` only) */
+	const charRef = useRef<PixiModelTypes | null>(null);
+	charRef.current = char;
 	const playerRef = useRef<HTMLDivElement>(null);
 
 	const [animInfo, setAnimInfo] = useState<AnimationBase[] | false>(false);
@@ -74,7 +77,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 	const [animationIndicator, setAnimationIndicator] = useState<FadeContainer | null>(null);
 	const [animationIndicatorGraphics, setAnimationIndicatorGraphics] = useState<PIXI.Graphics | null>(null);
 
-	const _dpr = Math.max(2, window.devicePixelRatio || 1);
+	const _dpr = viewResolution();
 
 	const uid = useMemo(
 		() => (props.type === "spine" || props.type === "video") ? props.uid : `2DModel_${props.uid}`,
@@ -84,10 +87,13 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 	useEffect(() => { // initialize
 		let renderer: PIXI.Renderer | null = null;
 		let ticker: PIXI.Ticker | null = null;
+		let vpRef: Viewport | null = null;
+		let render: (() => void) | null = null;
+		let unobserve: (() => void) | null = null;
 
 		if (playerRef.current) {
 			renderer = new PIXI.Renderer({
-				antialias: true,
+				antialias: viewAntialias(),
 				backgroundColor: 0x000000,
 				backgroundAlpha: 0,
 
@@ -105,8 +111,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 					wheel: true,
 				},
 			});
-			ticker = new PIXI.Ticker();
-			ticker.maxFPS = 60;
+			ticker = gammaTicker();
 
 			const screen = new PIXI.Sprite(Shared.instance.renderTexture);
 			screen.eventMode = "none";
@@ -136,6 +141,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 					maxScale: 4,
 				});
 			stage.addChild(vp);
+			vpRef = vp;
 
 			const state: PixiState = {
 				renderer,
@@ -149,7 +155,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 			const _empty = new PIXI.Container();
 
-			ticker.add(() => {
+			render = () => {
 				if (!renderer) return;
 				if (Shared.instance.inRendering) return;
 
@@ -194,8 +200,8 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 					skipUpdateTransform: true, // already updated at first-pass
 				});
 				surface.renderable = true;
-			}, PIXI.UPDATE_PRIORITY.LOW);
-			ticker.start();
+			};
+			ticker.add(render, undefined, PIXI.UPDATE_PRIORITY.LOW);
 
 			const animIndi = new FadeContainer();
 			animIndi.name = "[Animation Indicator]";
@@ -215,15 +221,19 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 			Shared.instance.surface = surface;
 
 			playerRef.current.appendChild(renderer.view as HTMLCanvasElement);
+			unobserve = observeGammaView(playerRef.current); // pauses shared ticker while off screen
 		}
 
 		return () => {
-			if (char) {
-				char.destroy();
+			unobserve?.();
+			const c = charRef.current;
+			if (c && !c.destroyed) {
+				c.destroy();
 				setChar(null);
 			}
 
-			if (ticker) ticker.destroy();
+			if (ticker && render) ticker.remove(render);
+			vpRef?.destroy();
 			if (renderer) renderer.destroy(true);
 			Shared.instance.renderer = null;
 			Shared.instance.viewport = null;
@@ -415,11 +425,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 		if (pixi && animInfo) pixi.ticker.add(fn);
 		return () => {
-			if (pixi && animInfo) {
-				try {
-					pixi.ticker.remove(fn);
-				} catch { }
-			}
+			if (pixi && animInfo) pixi.ticker.remove(fn);
 		};
 	}, [pixi, animInfo]);
 

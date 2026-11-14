@@ -8,7 +8,9 @@ import ResizeObserver from "resize-observer-polyfill";
 import { IsDev } from "@/libs/Const.1";
 
 import FadeContainer from "@/components/pixi/FadeContainer";
+import { clearStencil } from "@/components/pixi/GammaMesh";
 import PixiCharModel, { CHAR_IDLE_TRIGGER, CharAnimationInfo } from "@/components/pixi/PixiCharModel";
+import { gammaTicker, observeGammaView, viewAntialias, viewResolution } from "@/components/pixi/PixiGammaModel";
 
 import style from "./style.module.scss";
 
@@ -23,8 +25,6 @@ interface PixiState {
 	surface: PIXI.Container;
 	indicator: FadeContainer;
 	indicatorGraphics: PIXI.Graphics;
-	/** set before destroying, cleanups of other effects run after initialize cleanup on unmount */
-	destroyed: boolean;
 }
 
 interface CharViewProps {
@@ -39,10 +39,9 @@ interface CharViewProps {
 	onError?: () => void;
 }
 
-/** Height of model in view, ratio */
 const FIT_HEIGHT = 0.6;
-/** Feet position from top, ratio */
 const FEET_Y = 0.85;
+const MOVE_DISTANCE = 30;
 
 /** Battle SD model (`char_*`) viewer */
 const CharView: FunctionalComponent<CharViewProps> = (props) => {
@@ -54,13 +53,13 @@ const CharView: FunctionalComponent<CharViewProps> = (props) => {
 
 	const [animInfo, setAnimInfo] = useState<AnimationBase | null>(null);
 
-	const _dpr = Math.max(2, window.devicePixelRatio || 1);
+	const _dpr = viewResolution();
 
 	useEffect(() => { // initialize, same as `PixiView` without 2D model render texture pipeline
 		if (!playerRef.current) return;
 
 		const renderer = new PIXI.Renderer({
-			antialias: true,
+			antialias: viewAntialias(),
 			backgroundColor: 0x000000,
 			backgroundAlpha: 0,
 
@@ -77,8 +76,8 @@ const CharView: FunctionalComponent<CharViewProps> = (props) => {
 				wheel: true,
 			},
 		});
-		const ticker = new PIXI.Ticker();
-		ticker.maxFPS = 60;
+		// models are updated on this ticker, rendered after them in same frame (lower priority), not capped
+		const ticker = gammaTicker();
 
 		const stage = new PIXI.Container();
 		if (IsDev) {
@@ -96,7 +95,7 @@ const CharView: FunctionalComponent<CharViewProps> = (props) => {
 			.pinch().wheel()
 			.clampZoom({
 				minScale: 0.25,
-				maxScale: 2,
+				maxScale: 4,
 			});
 		stage.addChild(vp);
 
@@ -113,16 +112,21 @@ const CharView: FunctionalComponent<CharViewProps> = (props) => {
 		const indicatorGraphics = new PIXI.Graphics();
 		indicator.addChild(indicatorGraphics);
 
-		ticker.add(() => renderer.render(stage), PIXI.UPDATE_PRIORITY.LOW);
-		ticker.start();
+		const render = () => {
+			clearStencil(renderer); // stencil shaders of game (`LO_StensilBack` / `LO_StencilDraw`)
+			renderer.render(stage);
+		};
+		ticker.add(render, undefined, PIXI.UPDATE_PRIORITY.LOW);
 
 		playerRef.current.appendChild(renderer.view as HTMLCanvasElement);
-		const state: PixiState = { renderer, ticker, vp, surface, indicator, indicatorGraphics, destroyed: false };
-		setPixi(state);
+		const unobserve = observeGammaView(playerRef.current); // pauses shared ticker while off screen
+		setPixi({ renderer, ticker, vp, surface, indicator, indicatorGraphics });
 
 		return () => {
-			state.destroyed = true;
-			ticker.destroy();
+			unobserve();
+			// shared ticker, only listeners of this view are removed (viewport removes its own, children are kept)
+			ticker.remove(render);
+			vp.destroy();
 			renderer.destroy(true);
 			setPixi(null);
 		};
@@ -151,17 +155,15 @@ const CharView: FunctionalComponent<CharViewProps> = (props) => {
 		setBounds(null);
 		setAnimInfo(null);
 
+		let frames = 0;
+		const measure = () => {
+			if (model.destroyed || ++frames < 3) return;
+			pixi.ticker.remove(measure);
+			setBounds(model.getModelBounds());
+			model.renderable = true;
+			model.fadeIn(0.3);
+		};
 		model.on("loaded", () => {
-			// bounds of idle pose, first frames may not be updated yet
-			let frames = 0;
-			const measure = () => {
-				if (model.destroyed) return;
-				if (++frames < 3) return;
-				pixi.ticker.remove(measure);
-				setBounds(model.getModelBounds());
-				model.renderable = true;
-				model.fadeIn(0.3);
-			};
 			pixi.ticker.add(measure);
 			props.onAnimations?.([...model.animations]);
 		});
@@ -171,10 +173,15 @@ const CharView: FunctionalComponent<CharViewProps> = (props) => {
 		setChar(model);
 
 		return () => {
+			pixi.ticker.remove(measure); // shared ticker
 			model.destroy();
 			setChar(null);
 		};
 	}, [pixi, props.model]);
+
+	useEffect(() => {
+		if (char) char.moveDistance = MOVE_DISTANCE;
+	}, [char]);
 
 	useEffect(() => { // fit model, feet near bottom
 		if (!pixi || !char) return;
@@ -189,7 +196,8 @@ const CharView: FunctionalComponent<CharViewProps> = (props) => {
 			return;
 		}
 
-		const scale = Math.min(h * FIT_HEIGHT / b.height, w * 0.8 / b.width);
+		const move = MOVE_DISTANCE * char.unitScale;
+		const scale = Math.min(h * FIT_HEIGHT / b.height, w * 0.8 / (b.width + move * 2));
 		char.scale.set(scale);
 		char.position.set(
 			w / 2 - (b.x + b.width / 2) * scale,
@@ -244,8 +252,7 @@ const CharView: FunctionalComponent<CharViewProps> = (props) => {
 			draw();
 		}
 		return () => {
-			// ticker is already destroyed on unmount
-			if (!pixi.destroyed) pixi.ticker.remove(draw);
+			pixi.ticker.remove(draw); // shared ticker, removed even on unmount
 		};
 	}, [pixi, char, animInfo]);
 

@@ -1,5 +1,6 @@
 import type { ModelData } from "./Types";
 import { isPuppet2DGizmoSprite } from "./Puppet2D";
+import { TranscodedImage, transcodeBasis } from "./Basis";
 
 import { AssetsRoot } from "@/libs/Const.1";
 
@@ -7,6 +8,9 @@ import { AssetsRoot } from "@/libs/Const.1";
 export const GammaRoot = `${AssetsRoot}/gamma`;
 
 export type GammaPlatform = "O" | "G";
+
+/** Decoded texture: `ImageBitmap` (PNG, WebP) or transcoded Basis texture, straight alpha */
+export type TextureImage = ImageBitmap | TranscodedImage;
 
 export interface GammaModelId {
 	platform: GammaPlatform;
@@ -18,7 +22,7 @@ export interface LoadedModel {
 	id: GammaModelId;
 	data: ModelData;
 	/** straight alpha images, index matches `data.tex` */
-	images: Array<ImageBitmap | null>;
+	images: Array<TextureImage | null>;
 }
 
 /** Parse `O/2dmodel_xxx`, `G/2dmodel_xxx` or `2dmodel_xxx` (OneStore) */
@@ -40,10 +44,14 @@ export function modelUrl (id: GammaModelId): string {
 	return `${GammaRoot}/${id.platform}/${id.name}`;
 }
 
-export async function loadImage (url: string): Promise<ImageBitmap | null> {
+/** Loads texture file, `.basis` is transcoded into GPU compressed format, others (PNG, WebP) are decoded into `ImageBitmap` */
+export async function loadImage (url: string): Promise<TextureImage | null> {
 	try {
 		const res = await fetch(url);
 		if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+		if (/\.basis(?:$|\?)/i.test(url))
+			return await transcodeBasis(await res.arrayBuffer());
+
 		const blob = await res.blob();
 		// keep straight alpha, shaders reproduce Unity blending
 		return await createImageBitmap(blob, {
@@ -74,7 +82,7 @@ function gizmoTextures (data: ModelData): Set<number> {
  * Load converted model from directory url (`${base}/${file}`, textures).
  * Texture file containing `/` is relative to `root` (shared textures of char models, see `ref.json`).
  */
-export async function loadModelFrom (base: string, file = "model.json", root = base): Promise<{ data: ModelData; images: Array<ImageBitmap | null>; }> {
+export async function loadModelFrom (base: string, file = "model.json", root = base): Promise<{ data: ModelData; images: Array<TextureImage | null>; }> {
 	const res = await fetch(`${base}/${file}`);
 	if (!res.ok) throw new Error(`Failed to load model ${base} (${res.status})`);
 

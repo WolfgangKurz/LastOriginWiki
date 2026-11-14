@@ -162,6 +162,13 @@ class StateMachineRuntime {
 			|| this.data.st[this.current.index].tr.some(t => check(t, false));
 	}
 
+	/** Current state is non-looping and has no transition to leave (stays on last frame forever) */
+	public get deadEnd (): boolean {
+		if (this.next || this.empty) return false;
+		const st = this.data.st[this.current.index];
+		return !st.lp && st.tr.length === 0 && this.data.any.length === 0;
+	}
+
 	private transientEnds = new Map<number, number | null>();
 
 	/** Unconditional exit time transitions of state, state leaves by itself through them */
@@ -548,6 +555,11 @@ export class AnimatorRuntime {
 	 */
 	public canRespond (trigger: string): boolean {
 		return this.machines.some(m => m.canRespond(trigger));
+	}
+
+	/** Base layer stays on state without any transition */
+	public get deadEnd (): boolean {
+		return this.layers[0]?.machine.deadEnd ?? false;
 	}
 
 	/** Longest remaining non-looping state among layers, `null` if all layers are looping (idle) */

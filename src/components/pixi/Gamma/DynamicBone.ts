@@ -215,7 +215,7 @@ export class DynamicBone {
 		this.particles = [];
 		if (!this.root) return;
 
-		this.localGravity = this.root.inverseTransformDirection(this.gravity);
+		this.localGravity = this.root.unityInverseTransformDirection(this.gravity);
 		this.objectScale = Math.abs(this.node.lossyScale[0]);
 		this.objectPrevPosition = this.node.position;
 		this.objectMove = [0, 0, 0];
@@ -255,7 +255,7 @@ export class DynamicBone {
 					? v3Scale(t.inverseTransformPoint(v3Sub(v3Scale(t.position, 2), parent.position)), this.endLength)
 					: [this.endLength, 0, 0];
 			} else
-				p.endOffset = t.inverseTransformPoint(v3Add(this.node.transformDirection(this.endOffset), t.position));
+				p.endOffset = t.inverseTransformPoint(v3Add(this.node.unityTransformDirection(this.endOffset), t.position));
 
 			p.position = t.transformPoint(p.endOffset);
 			p.prevPosition = [...p.position];
@@ -286,13 +286,13 @@ export class DynamicBone {
 	/** `EventReset`, called from animation event `EventDynamicBone` */
 	public eventReset () {
 		if (!this.root) return;
-		this.localGravity = this.root.inverseTransformDirection(this.gravity);
+		this.localGravity = this.root.unityInverseTransformDirection(this.gravity);
 		this.updateParameters();
 	}
 
 	public updateParameters () {
 		if (!this.root) return;
-		this.localGravity = this.root.inverseTransformDirection(this.gravity);
+		this.localGravity = this.root.unityInverseTransformDirection(this.gravity);
 
 		const d = this.data;
 		for (const p of this.particles) {
@@ -406,7 +406,7 @@ export class DynamicBone {
 	private updateParticles1 () {
 		const gravity = this.gravity;
 		const fdir = v3Normalize(gravity);
-		const rf = this.root!.transformDirection(this.localGravity);
+		const rf = this.root!.unityTransformDirection(this.localGravity);
 		const pf = v3Scale(fdir, Math.max(v3Dot(rf, fdir), 0));
 		const force = v3Scale(v3Add(v3Sub(gravity, pf), this.force), this.objectScale);
 
@@ -519,8 +519,8 @@ export class DynamicBone {
 			if (t0.children.length <= 1) {
 				const v = p.transform ? p.transform.localPosition : p.endOffset;
 				const v2 = v3Sub(p.position, p0.position);
-				const rot = qFromTo(t0.transformDirection(v), v2);
-				t0.rotation = qMul(rot, t0.rotation);
+				const rot = qFromTo(t0.unityTransformDirection(v), v2);
+				t0.unityRotation = qMul(rot, t0.unityRotation);
 			}
 
 			if (p.transform)
