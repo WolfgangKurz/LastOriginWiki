@@ -39,7 +39,7 @@ function removeCache (key: string, immediately = false) {
 		const target = SkeletonCache[key];
 		if (target[1] !== null) clearTimeout(target[1]); // reset cache time
 
-		target[1] = setTimeout(() => {
+		target[1] = window.setTimeout(() => {
 			const d = target[0];
 			d.atlas.dispose();
 

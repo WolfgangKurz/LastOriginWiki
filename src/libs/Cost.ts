@@ -14,11 +14,11 @@ export function GetRequireResource (
 	rarity: ACTOR_GRADE,
 	type: ACTOR_CLASS,
 	role: ROLE_TYPE,
-	body: ACTOR_BODY_TYPE,
+	body: ACTOR_BODY_TYPE.BIOROID | ACTOR_BODY_TYPE.AGS,
 	fullLinkBonus: LinkBonusType,
 ): SortieCostResourceText {
 	const table = ((): SortieCostResourceText => {
-		const o = SortieCost[rarity][type][role][body as keyof SortieCostBody];
+		const o = SortieCost[rarity][type][role][body];
 		return {
 			metal: [...o[CURRENCY_TYPE.METAL]],
 			nutrient: [...o[CURRENCY_TYPE.NUTRIENT]],

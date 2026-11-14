@@ -1,4 +1,5 @@
-import { createRef, Component, RenderableProps } from "preact";
+import { createRef, Component } from "preact";
+import type { JSX, RenderableProps } from "preact";
 
 import MergeAlpha from "./alpha-mpeg.wasm?init";
 
@@ -20,7 +21,7 @@ type WASMMergeAlpha = (width: number, height: number) => void;
 interface MergedVideoProps {
 	class?: string;
 	src: string;
-	type?: string;
+	// type?: string;
 	style?: string | preact.JSX.CSSProperties;
 	onLoadedData?: JSX.DOMAttributes<HTMLVideoElement>["onLoadedData"];
 }
@@ -120,7 +121,6 @@ class MergedVideo extends Component<MergedVideoProps> {
 		return <>
 			<video
 				src={ props.src }
-				type={ props.type }
 				muted
 				autoPlay
 				playsInline

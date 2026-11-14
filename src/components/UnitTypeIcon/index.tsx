@@ -1,5 +1,7 @@
-import type { ACTOR_CLASS } from "@/types/Enums";
+import { FunctionalComponent } from "preact";
 import { useMemo } from "preact/hooks";
+
+import type { ACTOR_CLASS } from "@/types/Enums";
 
 import { cn } from "@/libs/Class";
 import { UniqueID } from "@/libs/Functions";

@@ -411,7 +411,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			else
 				return <MergedVideo
 					src={ `${AssetsRoot}/webm/HD.Legacy/${modelVideoId}.mp4` }
-					type="video/mp4"
+					// type="video/mp4"
 				/>;
 		} else {
 			return <Pinch
