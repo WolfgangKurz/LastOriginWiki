@@ -4162,19 +4162,19 @@ skills:
             chance: 1
     desc:
       KR: |-
-        <sec typ="cond">전투 개시 시</sec>, 일정 횟수 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 최소화 <val base="1.1" per="0.1" floor signless />회</sec>가 적용됩니다.
+        <sec typ="cond">전투 개시 시</sec>, 일정 횟수 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 최소화 <val base="1" per="0" floor signless />회</sec>가 적용됩니다.
         <sec typ="cond">라운드 개시 시</sec>, <sec typ="dmg"><buff typ="SKILL_UP" /> 자신의 회피 수치의 <val idx="3" r signless />만큼 스킬 위력이 증가</sec>하며 <sec typ="cond"><sec typ="note">스텔스 모드 : 피해 최소화</sec> 적용 중이면</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>가 증가합니다.
         <sec>스킬 레벨 10에서 받는 피해 최소화 횟수가 늘어납니다.</sec>
       EN: |-
-        <sec typ="cond">At battle start</sec>, fixed count <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> receives Damage Minimization <val base="1.1" per="0.1" floor signless />times</sec> is applied.
+        <sec typ="cond">At battle start</sec>, fixed count <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> receives Damage Minimization <val base="1" per="0" floor signless />times</sec> is applied.
         <sec typ="cond">At round start</sec>, <sec typ="dmg"><buff typ="SKILL_UP" /> own Evasion value of <val idx="3" r signless /> by Skill Power increase</sec> and <sec typ="cond"><sec typ="note">stealth mode: Damage Minimization</sec> is activeif</sec> <sec typ="buff"><buff typ="ATK_UP" /> Attack <val idx="5" r /></sec> increases.
         <sec>At skill level 10, receives Damage Minimization count increases.</sec>
       JP: |-
-        <sec typ="cond">戦闘開始時</sec>、 一定 回数 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受ける ダメージ最小化 <val base="1.1" per="0.1" floor signless />回</sec>が 適用されます。
+        <sec typ="cond">戦闘開始時</sec>、 一定 回数 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受ける ダメージ最小化 <val base="1" per="0" floor signless />回</sec>が 適用されます。
         <sec typ="cond">ラウンド開始時</sec>、 <sec typ="dmg"><buff typ="SKILL_UP" /> 自身の 回避 数値の <val idx="3" r signless />分 スキル威力が 増加</sec>し、 <sec typ="cond"><sec typ="note">ステルス モード：ダメージ最小化</sec> 適用中なら</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec>が増加します。
         <sec>スキルレベル10で 受ける ダメージ最小化 回数が 増加します。</sec>
       TC: |-
-        <sec typ="cond">戰鬥開始時</sec>， 一定 次數 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到 傷害最小化 <val base="1.1" per="0.1" floor signless />次</sec> 套用。
+        <sec typ="cond">戰鬥開始時</sec>， 一定 次數 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到 傷害最小化 <val base="1" per="0" floor signless />次</sec> 套用。
         <sec typ="cond">回合開始時</sec>， <sec typ="dmg"><buff typ="SKILL_UP" /> 自身的 迴避 數值的 <val idx="3" r signless />等量 技能威力 增加</sec>並 <sec typ="cond"><sec typ="note">隱形 模式：傷害最小化</sec> 套用中若</sec> <sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec>增加。
         <sec>技能等級10時 受到 傷害最小化 次數 增加。</sec>
 dialogue:
@@ -5098,7 +5098,8 @@ skins:
     iconId: 0
     tbarId: 0
     flags: 4
-    dflags: 4
+    dflags: 0
+    char_model: Model_BR_NightAngel_N
   skins:
     - sid: 1
       artist: Kakiman
@@ -5128,6 +5129,8 @@ skins:
         flags: 1
         dflags: 0
         2dmodel: 2DModel_BR_NightAngel_NS1
+        char_model: Model_BR_NightAngel_N
+        char_model_ch: Model_BR_NightAngel_N
     - sid: 2
       artist: Kakiman
       price: 159
@@ -5158,7 +5161,9 @@ skins:
         tbarId: 2
         voiceId: 2
         flags: 4
-        dflags: 4
+        dflags: 0
+        char_model: Model_BR_NightAngel_NS2
+        char_model_ch: Model_BR_NightAngel_NS2
         consumableKey: Skin_BR_NightAngel_2
     - sid: 3
       artist: Jam
@@ -5195,6 +5200,8 @@ skins:
         flags: 1
         dflags: 0
         2dmodel: 2DModel_BR_NightAngel_NS3
+        char_model: Model_BR_NightAngel_NS3
+        char_model_ch: Model_BR_NightAngel_NS3
         consumableKey: Skin_BR_NightAngel_3
     - sid: 4
       artist: U-rix
@@ -5232,6 +5239,8 @@ skins:
         flags: 2
         dflags: 1
         2dmodel_dam: 2DModel_BR_NightAngel_NS4_Dam
+        char_model: Model_BR_NightAngel_NS4
+        char_model_ch: Model_BR_NightAngel_NS4
         consumableKey: Skin_BR_NightAngel_4
         spine:
           "": 0

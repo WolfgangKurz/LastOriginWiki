@@ -11,7 +11,7 @@ import { Unit } from "@/types/DB/Unit";
 import { CurrentLocale, useLocale } from "@/libs/Locale";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { cn } from "@/libs/Class";
-import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const.1";
 import { DecomposeHangulSyllable, FormatDate, FormatNumber } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 import EntitySource from "@/libs/EntitySource";

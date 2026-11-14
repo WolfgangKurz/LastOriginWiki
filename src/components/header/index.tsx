@@ -4,7 +4,7 @@ import { exec as isoExec } from "preact-iso/router";
 
 import { LocaleList } from "@/types/Locale";
 
-import { AssetsRoot, Host, IsDev } from "@/libs/Const";
+import { AssetsRoot, Host, IsDev } from "@/libs/Const.1";
 import { ChangeLanguage, CurrentLocale, ReloadLocale } from "@/libs/Locale";
 import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 

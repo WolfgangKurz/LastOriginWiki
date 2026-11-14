@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 import { useEffect, useMemo, useState } from "preact/hooks";
 import Decimal from "decimal.js";
 
-import { ACTOR_CLASS, ROLE_TYPE, TARGET_TYPE } from "@/types/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE, TARGET_TYPE } from "@/types/Enums";
 import { BaseStatType, StatPointValue, StatType } from "@/types/Stat";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
@@ -11,7 +11,7 @@ import { Equip } from "@/types/DB/Equip";
 import { BuffEffectValue } from "@/types/BuffEffect";
 import { SimulatorSlotType } from "../../types/Slot";
 
-import { AssetsRoot, RarityDisplay } from "@/libs/Const";
+import { AssetsRoot, RarityDisplay } from "@/libs/Const.1";
 import { GetLinkBonus } from "@/libs/LinkBonus";
 import { GetRequireResource } from "@/libs/Cost";
 
@@ -128,7 +128,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 		slot.rarity,
 		unit.type,
 		unit.role,
-		unit.body,
+		unit.body as (ACTOR_BODY_TYPE.BIOROID | ACTOR_BODY_TYPE.AGS),
 		"",
 	), [slot, unit]);
 
@@ -461,7 +461,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 			slot.rarity,
 			unit.type,
 			unit.role,
-			unit.body,
+			unit.body as (ACTOR_BODY_TYPE.BIOROID | ACTOR_BODY_TYPE.AGS),
 			slot.linkBonus,
 		);
 

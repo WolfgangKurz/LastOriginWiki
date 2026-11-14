@@ -254,6 +254,7 @@ const EraseTable: Record<BUFFEFFECT_ERASE_TYPE, string> = {
 	[BUFFEFFECT_ERASE_TYPE.COUNT]: "COUNT",
 	[BUFFEFFECT_ERASE_TYPE.TRIGGER]: "TRIGGER",
 	[BUFFEFFECT_ERASE_TYPE.PERMANENT]: "PERMANENT",
+	[BUFFEFFECT_ERASE_TYPE.PRESERVE]: "PRESERVE",
 };
 
 const ExcludedBuffEffectTriggers: BUFFEFFECT_TRIGGER_TYPE[] = [ // 사용처가 없어? 제외
@@ -1379,7 +1380,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 										<Locale k="SEARCH_COND_BUFF_BUFF_ANY" />
 									</option>
 
-									{ BuffCategoryDB && <>
+									{ assertDBData(BuffCategoryDB) && <>
 										{ BuffCategoryDB.map(r => {
 											const buffs = r.buffEffectType.filter(b => !ExcludedBuffEffectTypes.includes(b));
 											if (buffs.length === 0) return <></>;

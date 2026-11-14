@@ -158,6 +158,7 @@ export const SkinBanners: string[] = [
     "DS_KunoichiShiden_3",
     "DS_KunoichiShiden_set",
     "DS_MoMo_3",
+    "DS_Ramiel_2",
     "DS_Saraqael_2",
     "LC_Chii_1",
     "LC_Dhana_1",
@@ -245,5 +246,7 @@ export const SkinBanners: string[] = [
     "ST_Tiamat_2",
     "ST_Tiamat_3",
     "ST_Ullr_1",
-    "ST_Ullr_2"
+    "ST_Ullr_2",
+    "TC_Namo_1",
+    "TC_SaniYang_1"
 ];

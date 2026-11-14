@@ -8,7 +8,7 @@ import { Consumable } from "@/types/DB/Consumable";
 import { GACHA_CATEGORY, ITEM_GRADE } from "@/types/Enums";
 
 import { FormatNumber, isActive, ToOrdinal } from "@/libs/Functions";
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 import { BuildClass } from "@/libs/Class";
 
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";

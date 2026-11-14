@@ -14,7 +14,7 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Enemy } from "@/types/DB/Enemy";
 import BuffFrom from "@/types/DB/BuffFrom";
 
-import { ImageExtension, TroopNameTable, IsDev } from "@/libs/Const";
+import { ImageExtension, TroopNameTable, IsDev } from "@/libs/Const.1";
 import { CurrentDB } from "@/libs/DB";
 import { formatString, useLocale } from "@/libs/Locale";
 import { BuildClass, cn } from "@/libs/Class";

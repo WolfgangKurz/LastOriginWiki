@@ -120,6 +120,7 @@ const AppContent: FunctionalComponent = () => {
 							<Redirect path="/enemies/group" to="/enemies" />
 
 							<Route path="/worlds" component={ lazy(() => import("@/routes/worlds")) } />
+							<Route path="/worlds/OLD_Story" component={ lazy(() => import("@/routes/worlds/OldMainStoryView")) } />
 							<Route path="/worlds/Story" component={ lazy(() => import("@/routes/worlds/MainStoryView")) } />
 							<Route path="/worlds/Sub" component={ lazy(() => import("@/routes/worlds/SubStoryView")) } />
 							<Route path="/worlds/:wid" component={ lazy(() => import("@/routes/worlds/world-view")) } />

@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import { BuffIconType } from "@/types/DescriptionType";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 
 import style from "./style.module.scss";
 

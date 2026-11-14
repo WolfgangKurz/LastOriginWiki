@@ -8,7 +8,7 @@ import { Consumable } from "@/types/DB/Consumable";
 import { CurrentDB } from "@/libs/DB";
 import { useUpdate } from "@/libs/hooks";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
-import { ImageExtension, AssetsRoot } from "@/libs/Const";
+import { ImageExtension, AssetsRoot } from "@/libs/Const.1";
 import { parseVNode } from "@/libs/VNode";
 import { FormatNumber } from "@/libs/Functions";
 

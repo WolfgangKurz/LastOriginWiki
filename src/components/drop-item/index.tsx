@@ -3,7 +3,7 @@ import { createPortal, useState } from "preact/compat";
 
 import { Consumable } from "@/types/DB/Consumable";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { BuildClass } from "@/libs/Class";
 import { FormatNumber } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";

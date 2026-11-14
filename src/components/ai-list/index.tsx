@@ -14,7 +14,7 @@ import dagre from "@dagrejs/dagre";
 import BuffFrom from "@/types/DB/BuffFrom";
 
 import { useLocale } from "@/libs/Locale";
-import { FlowRoot } from "@/libs/Const";
+import { FlowRoot } from "@/libs/Const.1";
 import { BuildClass } from "@/libs/Class";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 

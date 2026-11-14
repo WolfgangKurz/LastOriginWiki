@@ -120,6 +120,8 @@ export interface UnitSkinEntity {
 			"G_B": number;
 			"G_BS": number;
 		}>;
+		char_model?: string;
+		char_model_ch?: string;
 	};
 }
 

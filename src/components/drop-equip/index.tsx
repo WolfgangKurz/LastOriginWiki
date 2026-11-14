@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
-import { RarityDisplay } from "@/libs/Const";
+import { RarityDisplay } from "@/libs/Const.1";
 
 import Locale from "@/components/locale";
 import EquipIcon from "@/components/equip-icon";

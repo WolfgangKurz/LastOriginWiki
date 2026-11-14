@@ -1,13 +1,12 @@
 import { FunctionalComponent } from "preact";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 
 import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Icons from "@/components/bootstrap-icon";
 
 import Locale from "@/components/locale";
-import Icons from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 12659" date="2024-09-26"

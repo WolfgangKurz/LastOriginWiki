@@ -3,7 +3,7 @@ import * as LAYERS from "@pixi/layers";
 import * as spine from "@esotericsoftware/spine-pixi-v7";
 import LZMADecompression from "@/external/lzma";
 
-import { AssetsRoot, IsDev } from "@/libs/Const";
+import { AssetsRoot, IsDev } from "@/libs/Const.1";
 import { quat2eul } from "@/libs/Math";
 
 import ColliderBox from "@/components/pixi/ColliderBox";
@@ -39,7 +39,7 @@ function removeCache (key: string, immediately = false) {
 		const target = SkeletonCache[key];
 		if (target[1] !== null) clearTimeout(target[1]); // reset cache time
 
-		target[1] = setTimeout(() => {
+		target[1] = window.setTimeout(() => {
 			const d = target[0];
 			d.atlas.dispose();
 
@@ -58,6 +58,7 @@ interface SpineAnimTransitions {
 interface SpineAnimState {
 	clip: string;
 	transitions: SpineAnimTransitions[];
+	loop?: boolean;
 }
 interface SpineAnimLayer {
 	weight?: number;
@@ -96,6 +97,19 @@ interface BindedCollider {
 	bindTo: string;
 }
 //#endregion
+
+export interface SpineAnimationInfo {
+	/** seconds */
+	duration: number;
+}
+
+export interface PixiSpineModelOptions {
+	baseURL?: string;
+	name?: string;
+}
+
+/** Touch events played by viewer */
+const TOUCH_EVENTS = ["Tep_1", "breast"];
 
 export default class PixiSpineModel extends FadeContainer {
 	private readonly _model: string;
@@ -146,21 +160,24 @@ export default class PixiSpineModel extends FadeContainer {
 
 	private state!: spine.AnimationState;
 
+	/** `animation-start` was emitted without `animation-end` */
+	private oneShotActive = false;
+
 	private colliderBoxs: ColliderBox[] = [];
 	private bindedColliders: BindedCollider[] = [];
 
-	constructor (image: string, atlasId: number) {
+	constructor (image: string, atlasId: number, options?: PixiSpineModelOptions) {
 		super();
 		this.sortableChildren = true;
 
-		const fname = image.replace(/^2DModel_(.+)$/, "$1");
+		const fname = options?.name ?? image.replace(/^2DModel_(.+)$/, "$1");
 		this._model = image;
 		this._atlasId = atlasId;
 
 		const atlasIdName = atlasId === 0 ? "" : `.${atlasId}`;
 		const modelWithAtlasId = this._model + atlasIdName;
 
-		const baseURL = `${AssetsRoot}/spine/${fname}`;
+		const baseURL = options?.baseURL ?? `${AssetsRoot}/spine/${fname}`;
 
 		this.layerableChildren = true;
 
@@ -273,7 +290,7 @@ export default class PixiSpineModel extends FadeContainer {
 			const faces = names.filter(x => x.startsWith("face/"));
 			const list = faces.map(face => face.replace(/^.+_([^_]+)$/, "$1"));
 
-			const prefix = faces[0].replace(/^face\/(.+_)[^_]+$/, "$1");
+			const prefix = faces.length > 0 ? faces[0].replace(/^face\/(.+_)[^_]+$/, "$1") : "";
 			this.emit("facelist", list, prefix);
 
 			if (this.lastFace)
@@ -381,11 +398,12 @@ export default class PixiSpineModel extends FadeContainer {
 		this.state.addListener({
 			complete: (entry) => {
 				if (this.animData) {
+					// looping animation completes every iteration
+					if (entry.loop) return;
+
 					const layer = this.animLayers[entry.trackIndex];
 					const state = this.animData[layer].states[this.animState[layer]];
 					const next = state.transitions.find(x => x.cond === "");
-
-					this.emit("animation-end");
 
 					if (IsDev)
 						console.debug(`[Spine] Animation done, layer: "${layer}", state: "${this.animState[layer]}"`);
@@ -398,6 +416,8 @@ export default class PixiSpineModel extends FadeContainer {
 						if (IsDev)
 							console.debug(`[Spine] Next not found`);
 					}
+
+					this.notifyOneShot(false);
 				} else {
 					if (IsDev)
 						console.debug(`[Spine] animData not found`);
@@ -531,7 +551,7 @@ export default class PixiSpineModel extends FadeContainer {
 		if (!_s) return false; // ??????
 
 		// no exit transition
-		return !_s.transitions.some(x => x.cond === "");
+		return !_s.transitions.some(x => x.cond === "") && _s.loop !== false;
 	}
 
 	currentState (layer: string): SpineAnimState | undefined {
@@ -541,25 +561,58 @@ export default class PixiSpineModel extends FadeContainer {
 		return this.animData[layer].states[this.animState[layer]];
 	}
 
-	currentAnimationTime (): number | undefined {
-		if (!this.animData) return undefined;
+	/**
+	 * Non-looping animations in progress which can not be interrupted by touch,
+	 * looping track time keeps growing so excluded
+	 */
+	private oneShotTracks (): spine.TrackEntry[] {
+		const ret: spine.TrackEntry[] = [];
+		if (!this.animData) return ret;
+		if (TOUCH_EVENTS.some(ev => this.canPlay(ev))) return ret;
 
-		let _t: number | undefined = undefined;
 		for (let i = 0; i < this.animLayers.length; i++) {
 			const track = this.state.getCurrent(i);
-			if (!track) continue;
-
-			_t = Math.max(_t || 0, track.trackTime);
+			if (!track || track.loop || track.isComplete()) continue;
+			ret.push(track);
 		}
-
-		return _t;
+		return ret;
 	}
 
-	play (event: string): spine.Animation[] | false {
+	/** Longest duration of non-looping animations in progress, `null` on idle */
+	private oneShotDuration (): number | null {
+		const tracks = this.oneShotTracks();
+		if (tracks.length === 0) return null;
+		return tracks.reduce((p, c) => Math.max(p, c.animationEnd), 0);
+	}
+
+	/**
+	 * Emit `animation-start`/`animation-end` by current states, call after state changed.
+	 * `started` is `true` when non-looping state is started (restarts indicator)
+	 */
+	private notifyOneShot (started: boolean) {
+		const duration = this.oneShotDuration();
+		if (duration !== null) {
+			if (started || !this.oneShotActive)
+				this.emit("animation-start", { duration } as SpineAnimationInfo);
+			this.oneShotActive = true;
+		} else if (this.oneShotActive) {
+			this.oneShotActive = false;
+			this.emit("animation-end");
+		}
+	}
+
+	/** Elapsed seconds of non-looping animations, `undefined` on idle */
+	currentAnimationTime (): number | undefined {
+		const tracks = this.oneShotTracks();
+		if (tracks.length === 0) return undefined;
+		return tracks.reduce((p, c) => Math.max(p, c.trackTime), 0);
+	}
+
+	/** Whether `event` can be played on every layer right now */
+	canPlay (event: string): boolean {
 		if (!this.animData) return false;
 
-		let entry: spine.Animation[] | false = false;
-		if (!this.animLayers.every(layer => {
+		return this.animLayers.every(layer => {
 			const state = this.currentState(layer);
 			if (!state) return false;
 
@@ -567,7 +620,13 @@ export default class PixiSpineModel extends FadeContainer {
 			if (!next) return false;
 
 			return this.playableState(layer, next.to);
-		})) return false;
+		});
+	}
+
+	play (event: string): spine.Animation[] | false {
+		if (!this.canPlay(event)) return false;
+
+		let entry: spine.Animation[] | false = false;
 
 		this.animLayers.forEach(layer => {
 			const state = this.currentState(layer)!;
@@ -636,9 +695,13 @@ export default class PixiSpineModel extends FadeContainer {
 		if (IsDev)
 			console.debug(`[Spine.playState] state "${_state}" in layer "${layer}" playing`);
 
-		const entry = state.setAnimationWith(layerIdx, anim, this.isLoopAnimation(layer, _state));
+		const loop = this.isLoopAnimation(layer, _state);
+		const entry = state.setAnimationWith(layerIdx, anim, loop);
 		if (weight !== undefined) entry.alpha = weight;
 		entry.mixDuration = 0.2;
+
+		// called per layer, events follow states of all layers changed so far
+		this.notifyOneShot(!loop);
 		return anim;
 	}
 

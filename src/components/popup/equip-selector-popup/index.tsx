@@ -4,7 +4,7 @@ import { useState } from "preact/hooks";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { ACTOR_GRADE, ITEM_GRADE, ITEM_TYPE } from "@/types/Enums";
 
-import { RarityDisplay } from "@/libs/Const";
+import { RarityDisplay } from "@/libs/Const.1";
 import { groupBy, isActive } from "@/libs/Functions";
 import { useLocale } from "@/libs/Locale";
 

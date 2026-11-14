@@ -5,7 +5,7 @@ import { useLocation } from "preact-iso";
 import { Maps } from "@/types/DB/Map";
 
 import { useLocale } from "@/libs/Locale";
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { SetMeta } from "@/libs/Site";
 import { useTitle } from "@/libs/hooks";
 import { cn } from "@/libs/Class";
@@ -30,7 +30,7 @@ const MainStoryView: FunctionalComponent<WORLDViewProps> = (props) => {
 	const imgExt = ImageExtension();
 
 	useEffect(() => {
-		SetMeta(["description", "twitter:description"], "서브스토리 목록을 표시합니다. 이야기를 선택하여 확인할 수 있습니다.");
+		SetMeta(["description", "twitter:description"], `${loc[`WORLD_Story`]}의 구역 목록을 표시합니다. 구역의 지도 정보와 이야기를 선택하여 확인할 수 있습니다.`);
 		SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/Story_1.png`);
 		SetMeta("keywords", `${loc["WORLD_Story"]}`, true);
 	}, [loc]);
@@ -55,7 +55,7 @@ const MainStoryView: FunctionalComponent<WORLDViewProps> = (props) => {
 			<div class={ style.MainStoryGrid }>
 				{ Worlds.map((world, i) => <div class="col">
 					<div class={ style.StoryWorld }>
-						<img class={ style.MapBack } src={ `${AssetsRoot}/${imgExt}/mapback/${world}.${imgExt}` } />
+						<img class={ style.MapBack } src={ `${AssetsRoot}/${imgExt}/mapback/${world}.${imgExt}?v=2` } />
 
 						<div class={ style.Body }>
 							<div>

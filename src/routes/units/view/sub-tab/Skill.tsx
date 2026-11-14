@@ -3,10 +3,10 @@ import { useCallback, useMemo, useState } from "preact/hooks";
 import Decimal from "decimal.js";
 
 import { SelectOption } from "@/types/Helper";
-import { ACTOR_GRADE, ITEM_TYPE } from "@/types/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_GRADE, ITEM_TYPE } from "@/types/Enums";
 import { LinkBonusType } from "@/types/DB/Unit";
 
-import { RarityDisplay } from "@/libs/Const";
+import { RarityDisplay } from "@/libs/Const.1";
 import { GetRequireResource } from "@/libs/Cost";
 import { GetLinkBonus } from "@/libs/LinkBonus";
 import { cn } from "@/libs/Class";
@@ -63,7 +63,7 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 		costRarity,
 		unit.type,
 		unit.role,
-		unit.body,
+		unit.body as (ACTOR_BODY_TYPE.BIOROID | ACTOR_BODY_TYPE.AGS),
 		fullLinkBonus,
 	), [unit, costRarity, fullLinkBonus]);
 

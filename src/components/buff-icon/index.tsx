@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 
 import "./style.scss";
 

@@ -4,7 +4,7 @@ import debounce from "lodash.debounce";
 
 import BG, { BGWithRequirements } from "@/types/DB/BG";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { isActive } from "@/libs/Functions";
 
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";

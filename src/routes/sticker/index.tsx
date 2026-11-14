@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 import { Sticker } from "@/types/DB/Sticker";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { SetMeta } from "@/libs/Site";
 import { useTitle } from "@/libs/hooks";

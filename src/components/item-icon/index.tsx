@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 
-import { ImageExtension, AssetsRoot } from "@/libs/Const";
+import { ImageExtension, AssetsRoot } from "@/libs/Const.1";
 import { BuildClass } from "@/libs/Class";
 
 interface ItemIconProps {

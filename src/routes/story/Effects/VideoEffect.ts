@@ -1,7 +1,7 @@
 import * as PIXI from "pixi.js";
 
 import EffectBase from "./EffectBase";
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 
 export default class VideoEffect extends EffectBase {
 	private container: PIXI.Container;

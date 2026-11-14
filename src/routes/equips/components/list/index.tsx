@@ -10,7 +10,8 @@ import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
 import { useTitle, useUpdate } from "@/libs/hooks";
 import { useLocale } from "@/libs/Locale";
-import { AssetsRoot, CurrentDate, CurrentEvent, EquipTypeDisplay, ImageExtension, RarityDisplay } from "@/libs/Const";
+import { CurrentEvent } from "@/libs/Const";
+import { AssetsRoot, CurrentDate, EquipTypeDisplay, ImageExtension, RarityDisplay } from "@/libs/Const.1";
 import { DecomposeHangulSyllable, groupBy, isActive } from "@/libs/Functions";
 import EntitySource from "@/libs/EntitySource";
 import { SetMeta } from "@/libs/Site";

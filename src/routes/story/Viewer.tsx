@@ -9,7 +9,8 @@ import SubStoryDB from "@/types/DB/SubStory";
 import { LocaleList, LocaleTypes } from "@/types/Locale";
 
 import { useLocale } from "@/libs/Locale";
-import { AssetsRoot, ImageExtension, IsDev, SubStoryUnit } from "@/libs/Const";
+import { SubStoryUnit } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, IsDev } from "@/libs/Const.1";
 import { isActive } from "@/libs/Functions";
 import { BuildClass, cn } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
@@ -86,8 +87,6 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	const [cursor, setCursor] = useState(initCursor);
 
 	useEffect(() => {
-		if (cursor === 0) return;
-
 		const reg = /^(.+?)(?:[0-9]+)?$/;
 		const r = reg.exec(window.location.pathname);
 		if (r) {
@@ -137,7 +136,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	}
 	function ImageToFace (model: string): { src: string; uid: string; skin: number; fallback: string; } | null {
 		let sid = model
-			.replace(/DL([0-9]+)?$/g, "")
+			.replace(/DL([N0-9]+)?$/g, "")
 			.replace(/_$/g, "")
 			.replace(/_N_DL(_[0-9]+)?/g, "_N")
 			.replace(/(_[NS]S[0-9]+)_N/g, "$1")
@@ -252,7 +251,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 					nid: `${r[2].startsWith("Ev") ? "Ev" : ""}${mid}-${parseInt(r[3], 10)}${postfix}`,
 					storyType: type,
 				};
-			} else { // Story
+			} else { // Story (OLD)
 				return {
 					wid: parseInt(r[1], 10).toString(), // "Story",
 					mid,
@@ -296,6 +295,26 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 					nid: r[1],
 					storyType: "Sub3",
 				};
+			} else { // New Story
+				const reg = /^ChMQC([0-9]+)(N[0-9]+|Ev|Ev[0-9]+)?Stage([0-9]+)(B|Ex|EX|C|S)?$/;
+				const r = reg.exec(props.id);
+				if (r) {
+					const mid = parseInt(r[1], 10);
+					const postfix = r[5] === "EX"
+						? "Ex"
+						: r[5] === "S"
+							? (r[2] === "Ev5" || r[2] === "Ev6")
+								? "ep"
+								: "s"
+							: (r[5] || "");
+
+					return {
+						wid: parseInt(r[1], 10).toString(), // "Story",
+						mid,
+						nid: `${mid}-${parseInt(r[3], 10)}${postfix}`,
+						storyType: type,
+					};
+				}
 			}
 		}
 		return { wid: "", mid: 0, nid: 0, storyType: type };
@@ -353,6 +372,24 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 					: [...p, c!],
 				[],
 			);
+	}, [storyData]);
+	const selFrom = useMemo(() => {
+		if (!assertDBData(storyData)) return {};
+
+		const ret: Record<string, Array<{ text: string, from: string; }>> = {};
+		storyData.filter(r => r.sel)
+			.forEach(r => {
+				const from = r.key;
+
+				r.sel!.forEach(s => {
+					const text = LText(s.text);
+					const next = s.next;
+
+					if (!(next in ret)) ret[next] = [];
+					ret[next].push({ text, from });
+				});
+			});
+		return ret;
 	}, [storyData]);
 
 	const subUnit = useMemo(() => {
@@ -571,6 +608,17 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 						} }
 					>
 						<div class="row">
+							{ d.key in selFrom && <div class={ style.TranscriptionSelectionFrom }>
+								<Icons.ArrowReturnRight class="me-1" />
+
+								{ selFrom[d.key]
+									.map(f => <div>{ f.text }</div>)
+									.gap(<span class="mx-1 ">
+										<Icons.Dot />
+									</span>)
+								}
+							</div> }
+
 							{ activateFaces.length > 0 && <div class="col-auto">
 								{ activateFaces.map(s => <UnitFace { ...s } size="3rem" />) }
 							</div> }

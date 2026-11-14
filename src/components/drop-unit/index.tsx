@@ -3,7 +3,7 @@ import { FunctionalComponent } from "preact";
 import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
-import { RarityDisplay } from "@/libs/Const";
+import { RarityDisplay } from "@/libs/Const.1";
 
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";

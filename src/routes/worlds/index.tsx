@@ -1,6 +1,7 @@
 import { FunctionalComponent } from "preact";
 
-import { PermanentEvents, AssetsRoot, CurrentEvent, WorldIds } from "@/libs/Const";
+import { PermanentEvents, CurrentEvent, WorldIds } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 import { SetMeta } from "@/libs/Site";
 import { useLocale } from "@/libs/Locale";
 import { useTitle } from "@/libs/hooks";
@@ -19,6 +20,7 @@ const Worlds: FunctionalComponent = () => {
 	const List = WorldIds.filter(x =>
 		!x.startsWith("EvA") &&
 		x !== "Story" &&
+		x !== "OLD_Story" &&
 		x !== CurrentEvent &&
 		!Subs.includes(x) &&
 		!PermanentEvents.includes(x)
@@ -37,11 +39,17 @@ const Worlds: FunctionalComponent = () => {
 				<WorldItem large linked wid={ CurrentEvent } />
 			</div> }
 		</div>
-		<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+		<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 justify-content-center">
+			<div class="col">
+				<WorldItem linked wid="OLD_Story" description="OLD" />
+			</div>
+
 			<div class="col">
 				<WorldItem linked wid="Story" />
 			</div>
+		</div>
 
+		<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 justify-content-center">
 			<div class="col">
 				<WorldItem
 					linked

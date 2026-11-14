@@ -2,7 +2,8 @@ import { FunctionalComponent } from "preact";
 
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
-import { CurrentDate, CurrentEvent } from "@/libs/Const";
+import { CurrentEvent } from "@/libs/Const";
+import { CurrentDate } from "@/libs/Const.1";
 import { useLocale } from "@/libs/Locale";
 import EntitySource from "@/libs/EntitySource";
 

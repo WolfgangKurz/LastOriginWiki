@@ -78,6 +78,12 @@ export default class MixedModel extends FadeContainer {
 		this._SpineModel.on("special-touch", (...args) => {
 			this.emit("special-touch", ...args);
 		});
+		this._SpineModel.on("animation-start", (...args) => {
+			this.emit("animation-start", ...args);
+		});
+		this._SpineModel.on("animation-end", (...args) => {
+			this.emit("animation-end", ...args);
+		});
 	}
 
 	setFace (imageVar: string) {

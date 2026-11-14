@@ -10,7 +10,7 @@ import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 import { Enemy, EnemySkill } from "@/types/DB/Enemy";
 
 import { useLocale } from "@/libs/Locale";
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { BuildClass } from "@/libs/Class";
 import EntitySource from "@/libs/EntitySource";
 import { FormatNumber, isActive } from "@/libs/Functions";

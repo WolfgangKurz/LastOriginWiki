@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 
 import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
@@ -36,19 +36,19 @@ const Changelog: FunctionalComponent = () => <>
 				<ul>
 					<li>
 						<div>Title-2</div>
-						<audio src={ `${AssetsRoot}/audio/titlecall/Title-2.mp3` } type="audio/mp3" controls preload="none" volume="0.5" />
+						<audio src={ `${AssetsRoot}/audio/titlecall/Title-2.mp3` } controls preload="none" volume="0.5" />
 					</li>
 					<li>
 						<div>Title-4</div>
-						<audio src={ `${AssetsRoot}/audio/titlecall/Title-4.mp3` } type="audio/mp3" controls preload="none" volume="0.5" />
+						<audio src={ `${AssetsRoot}/audio/titlecall/Title-4.mp3` } controls preload="none" volume="0.5" />
 					</li>
 					<li>
 						<div>Title-6</div>
-						<audio src={ `${AssetsRoot}/audio/titlecall/Title-6.mp3` } type="audio/mp3" controls preload="none" volume="0.5" />
+						<audio src={ `${AssetsRoot}/audio/titlecall/Title-6.mp3` } controls preload="none" volume="0.5" />
 					</li>
 					<li>
 						<div>Title-8</div>
-						<audio src={ `${AssetsRoot}/audio/titlecall/Title-8.mp3` } type="audio/mp3" controls preload="none" volume="0.5" />
+						<audio src={ `${AssetsRoot}/audio/titlecall/Title-8.mp3` } controls preload="none" volume="0.5" />
 					</li>
 				</ul>
 			</li>

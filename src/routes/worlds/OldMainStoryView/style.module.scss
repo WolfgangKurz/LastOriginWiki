@@ -1,0 +1,74 @@
+.MainStory {
+	.PageHeader {
+		text-align: left;
+	}
+
+	.MainStoryGrid {
+		// row-cols-1 row-cols-lg-2 row-cols-xl-3
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+	}
+
+	.StoryWorld {
+		position: relative;
+		border-radius: 8px;
+		border: 1px solid rgba($black, 0.6);
+		color: $light;
+		overflow: hidden;
+
+		&.disabled {
+			opacity: 0.88;
+		}
+
+		> .MapBack {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			max-width: 100% !important;
+		}
+
+		> .Body {
+			position: relative;
+			display: flex;
+			padding: 15px;
+			justify-content: flex-end;
+			background: linear-gradient(to left, rgba($black, 0.65) 55%, transparent 85%, transparent 100%);
+			z-index: 1;
+
+			&::after {
+				content: "";
+				display: table;
+				clear: both;
+			}
+
+			> div {
+				display: inline-block;
+				text-shadow: 0 1px 4px $dark;
+
+				> div:first-child {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+
+	.WorldNumber {
+		font-weight: 600;
+		font-size: 0.8em;
+	}
+	.WorldName {
+		display: inline-block;
+		word-break: keep-all;
+		font-weight: 500;
+		font-size: 1.1rem;
+	}
+
+	> .btn-group > button {
+		font-weight: bold;
+		font-size: 90%;
+	}
+}

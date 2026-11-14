@@ -5,7 +5,7 @@ import { useLocation } from "preact-iso";
 import { IWSeason } from "@/types/DB/IW";
 
 import { BuildClass } from "@/libs/Class";
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";

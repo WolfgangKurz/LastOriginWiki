@@ -7,7 +7,7 @@ import { FacilityEntity, FacilityUpgradeRequiredMaterial, FactilityProduct } fro
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { SetMeta } from "@/libs/Site";
 import { useTitle } from "@/libs/hooks";
 import { FormatNumber } from "@/libs/Functions";

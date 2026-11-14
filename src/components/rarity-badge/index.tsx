@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import { ACTOR_GRADE } from "@/types/Enums";
 
-import { RarityDisplay } from "@/libs/Const";
+import { RarityDisplay } from "@/libs/Const.1";
 
 import Badge from "@/components/Badge";
 

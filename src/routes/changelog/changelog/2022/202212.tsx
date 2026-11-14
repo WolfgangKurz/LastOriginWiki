@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 
 import Locale from "@/components/locale";
 import RarityBadge from "@/components/rarity-badge";

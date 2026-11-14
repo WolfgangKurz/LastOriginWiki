@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 
 /** `Mathf.SmoothDamp` of Unity */
 function SmoothDamp (current: number, target: number, velocity: { v: number }, smoothTime: number, dt: number): number {

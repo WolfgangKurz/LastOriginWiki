@@ -1,7 +1,5 @@
 import * as PIXI from "pixi.js";
 
-import Shared from "@/components/pixi/Shared";
-
 export default class BaseScreenInputFilter extends PIXI.Filter {
 	private static back = PIXI.RenderTexture.create({ width: 1, height: 1 });
 

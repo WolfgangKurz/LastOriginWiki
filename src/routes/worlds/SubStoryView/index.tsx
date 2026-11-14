@@ -8,7 +8,7 @@ import SubStoryDB, { SubStoryStory, SubStoryStoryTrigger } from "@/types/DB/SubS
 import { DLG_START_TRIGGER_TYPE } from "@/types/Enums";
 
 import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension } from "@/libs/Const.1";
 import { BuildClass, cn } from "@/libs/Class";
 import { isActive } from "@/libs/Functions";
 

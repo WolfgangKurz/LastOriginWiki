@@ -9,7 +9,7 @@ import { MapNodeEntity, World } from "@/types/DB/Map";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 import { SetMeta } from "@/libs/Site";
 import { useTitle } from "@/libs/hooks";
 import { useLocale } from "@/libs/Locale";

@@ -7,7 +7,7 @@ import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { UnitsListProps } from "../";
 
-import { RarityDisplay } from "@/libs/Const";
+import { RarityDisplay } from "@/libs/Const.1";
 import { ArrayElse } from "@/libs/Functions";
 import { cn } from "@/libs/Class";
 

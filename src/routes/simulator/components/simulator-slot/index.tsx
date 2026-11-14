@@ -4,7 +4,7 @@ import { useMemo } from "preact/hooks";
 import { ACTOR_GRADE } from "@/types/Enums";
 import { SimulatorSlotType } from "../../types/Slot";
 
-import { AssetsRoot, RarityDisplay } from "@/libs/Const";
+import { AssetsRoot, RarityDisplay } from "@/libs/Const.1";
 import { useLocale } from "@/libs/Locale";
 
 import Icons from "@/components/bootstrap-icon";

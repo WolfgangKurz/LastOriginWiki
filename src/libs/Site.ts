@@ -1,4 +1,4 @@
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 import { CurrentLocale } from "@/libs/Locale";
 import { GetLocaleTable } from "@/components/locale";
 

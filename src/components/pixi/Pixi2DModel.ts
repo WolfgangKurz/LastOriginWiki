@@ -1,12 +1,16 @@
 import * as PIXI from "pixi.js";
 import * as LAYERS from "@pixi/layers";
 
-import { AssetsRoot, IsDev } from "@/libs/Const";
+import { AssetsRoot, IsDev } from "@/libs/Const.1";
 import { quat2tf } from "@/libs/Math";
 
 import Shared from "@/components/pixi/Shared";
 
 import FadeContainer from "./FadeContainer";
+import ClippedSprite, { type ClipGeometry } from "./ClippedSprite";
+import { createTexture } from "./PixiGammaModel";
+import { loadImage, type TextureImage } from "./Gamma/Loader";
+import type { TextureData } from "./Gamma/Types";
 
 import Shader_Multiply from "./shaders/multiply";
 import Shader_Additive from "./shaders/additive";
@@ -35,12 +39,17 @@ type CLIP_PATH = Array<[x: number, y: number]>;
 interface SPRITE_DATA {
 	name: string;
 	vector: SPRITE_VECTOR;
-	tex: number;
-	v: CLIP_PATH;
+	/** Model-local texture number, or a shared face-bundle/texture path. */
+	tex: number | string;
+	/** `webp` if not set */
+	ext?: "basis";
+	/** triangles of tight packed sprite, full rect if not set */
+	v?: CLIP_PATH;
 }
 interface MODEL_OBJECT {
 	id: number;
 	parent: number;
+	active: boolean;
 
 	name: string;
 	vector: OBJECT_VECTOR;
@@ -59,9 +68,9 @@ interface MODEL_DATA {
 	list: {
 		bg?: string[],
 		dialogDeactive?: string[],
+		parts2?: string[],
 	} & ({
 		parts: string[],
-		parts2: string[],
 	} | {
 		swapActive: string[],
 		swapInactive: string[],
@@ -72,43 +81,112 @@ interface NodeTreeItem {
 	id: number;
 	name: string;
 	data: MODEL_OBJECT;
-	sprite: PIXI.Sprite;
+	sprite: ClippedSprite;
 	child: NodeTreeItem[];
 }
 
-const U2DCache: Record<string, [texture: PIXI.Texture, url: string, timer: number | null]> = {};
-const U2DCacheDuration = 60 * 1000;
-function getCache (key: string): PIXI.Texture | null {
-	if (key in U2DCache) {
-		const target = U2DCache[key];
-		if (target[2] !== null) {
-			clearTimeout(target[2]);
-			target[2] = null;
-		}
-		return target[0];
-	}
-	return null;
+function spriteTextureURL (baseURL: string, sp: SPRITE_DATA): string {
+	const texture = sp.tex;
+	const root = typeof texture === "string" && texture.startsWith("face_")
+		? baseURL.substring(0, baseURL.lastIndexOf("/"))
+		: baseURL;
+	return `${root}/${texture}.${sp.ext ?? "webp"}`;
 }
-function setCache (key: string, url: string, value: PIXI.Texture) {
-	removeCache(key, true);
-	U2DCache[key] = [value, url, null];
-}
-function removeCache (key: string, immediately = false) {
-	if (key in U2DCache) {
-		const target = U2DCache[key];
-		if (target[2] !== null) clearTimeout(target[2]); // reset cache time
 
-		target[2] = setTimeout(() => {
-			target[0].destroy();
-			URL.revokeObjectURL(target[1]);
-			delete U2DCache[key];
-		}, immediately ? 0 : U2DCacheDuration);
+//#region Atlas texture cache
+interface AtlasTexture {
+	base: PIXI.BaseTexture;
+	image: TextureImage;
+	width: number;
+	height: number;
+}
+interface AtlasCacheEntry {
+	promise: Promise<AtlasTexture | null>;
+	refs: number;
+	timer: number | null;
+}
+const ATLAS_INFO: TextureData = { f: "", n: "", w: 0, h: 0, wr: [1, 1], fl: 1 };
+const AtlasCache: Record<string, AtlasCacheEntry> = {};
+const AtlasCacheDuration = 60 * 1000;
+
+function acquireAtlas (url: string): Promise<AtlasTexture | null> {
+	let entry = AtlasCache[url];
+	if (!entry) {
+		entry = AtlasCache[url] = {
+			promise: loadImage(url).then(image => {
+				if (!image) return null;
+				const texture = createTexture(image, ATLAS_INFO);
+				if (texture === PIXI.Texture.WHITE) return null;
+				return { base: texture.baseTexture, image, width: image.width, height: image.height };
+			}),
+			refs: 0,
+			timer: null,
+		};
+	} else if (entry.timer !== null) {
+		clearTimeout(entry.timer);
+		entry.timer = null;
 	}
+	entry.refs++;
+	return entry.promise;
+}
+function releaseAtlas (url: string) {
+	const entry = AtlasCache[url];
+	if (!entry) return;
+
+	entry.refs--;
+	if (entry.refs > 0) return;
+
+	entry.timer = window.setTimeout(() => {
+		delete AtlasCache[url];
+		entry.promise.then(atlas => {
+			atlas?.base.destroy();
+			atlas?.image.close();
+		}).catch(() => { });
+	}, AtlasCacheDuration);
+}
+//#endregion
+
+function spriteGeometry (
+	sp: SPRITE_DATA,
+	atlas: AtlasTexture,
+	flipX: boolean,
+	flipY: boolean
+): {
+	geometry: ClipGeometry;
+	width: number;
+	height: number;
+} {
+	const vec = sp.vector;
+	const ppur = 100 / vec.u;
+	const x = vec.rc.w / 2 - (vec.w * vec.px);
+	const y = vec.rc.h / 2 - (vec.h * (1 - vec.py));
+	const width = Math.trunc(Math.ceil(vec.rc.w) * ppur);
+	const height = Math.trunc(Math.ceil(vec.rc.h) * ppur);
+
+	const points: CLIP_PATH = sp.v ?? [
+		[0, 0], [vec.w, 0], [vec.w, vec.h],
+		[0, 0], [vec.w, vec.h], [0, vec.h],
+	];
+	const count = points.length - (points.length % 3);
+
+	const positions = new Float32Array(count * 2);
+	const uvs = new Float32Array(count * 2);
+	const indices = new Uint16Array(count);
+	for (let i = 0; i < count; i++) {
+		const [px, py] = points[i];
+		const lx = (x + px) * ppur - width / 2;
+		const ly = (y + vec.h - py) * ppur - height / 2;
+		positions[i * 2] = flipX ? -lx : lx;
+		positions[i * 2 + 1] = flipY ? -ly : ly;
+		uvs[i * 2] = (vec.x + px) / atlas.width; // atlas is top-down, sprite rect is bottom-up
+		uvs[i * 2 + 1] = (atlas.height - vec.y - py) / atlas.height;
+		indices[i] = i;
+	}
+	return { geometry: { positions, uvs, indices }, width, height };
 }
 
 export default class Pixi2DModel extends FadeContainer {
-	private _objectURLs: string[] = [];
-	private _sprites: string[] = [];
+	private _atlases: string[] = [];
 
 	private readonly _model: string;
 	public get model (): string {
@@ -148,7 +226,7 @@ export default class Pixi2DModel extends FadeContainer {
 	private ready = false;
 
 	private spMap: Record<string, SPRITE_DATA> = {};
-	private texMap: Record<string, PIXI.Texture> = {};
+	private atlasMap: Record<string, AtlasTexture> = {};
 
 	private faceList: SPRITE_DATA[] = [];
 	private hidePartList: string[] = [];
@@ -172,57 +250,7 @@ export default class Pixi2DModel extends FadeContainer {
 
 		this.layerableChildren = true;
 
-		const canvas = document.createElement("canvas");
-
 		Shared.instance.host = this;
-
-		// make sprites with clip path
-		const createClippedTexture = (
-			image: HTMLImageElement,
-			vector: SPRITE_VECTOR,
-			clipPt: CLIP_PATH
-		): Promise<string> => new Promise((resolve, reject) => {
-			const x = vector.rc.w / 2 - (vector.w * vector.px);
-			const y = vector.rc.h / 2 - (vector.h * (1 - vector.py));
-			const w = Math.ceil(vector.rc.w);
-			const h = Math.ceil(vector.rc.h);
-
-			const ppur = 100 / vector.u; // Pixels per Unit Ratio (100 for camera)
-
-			const cv = canvas;
-			cv.width = w * ppur;
-			cv.height = h * ppur;
-
-			const ctx = cv.getContext("2d");
-			if (!ctx) return reject();
-
-			ctx.beginPath();
-			clipPt.forEach((p, i) => {
-				const _x = (x + p[0]) * ppur;
-				const _y = (y + vector.h - p[1]) * ppur;
-				if (i % 3 === 0)
-					ctx.moveTo(_x, _y);
-				else
-					ctx.lineTo(_x, _y);
-			});
-			ctx.clip();
-
-			ctx.drawImage(
-				image,
-				vector.x, (image.height - vector.h - vector.y), // bottom y is zero
-				vector.w, vector.h,
-				x * ppur, y * ppur,
-				vector.w * ppur, vector.h * ppur,
-			);
-
-			cv.toBlob(b => {
-				if (!b) return reject();
-
-				const url = URL.createObjectURL(b);
-				this._objectURLs.push(url);
-				resolve(url);
-			});
-		});
 
 		fetch(`${baseURL}/data.json`)
 			.then(r => r.json() as Promise<MODEL_DATA>)
@@ -230,19 +258,20 @@ export default class Pixi2DModel extends FadeContainer {
 				this.faceList = r.face;
 				this.hideBGList = r.list.bg || [];
 				this.dialogDeactiveList = r.list.dialogDeactive || [];
+				this.hidePart2List = r.list.parts2 ?? [];
 
 				if ("parts" in r.list) {
 					this.hidePartList = r.list.parts;
-					this.hidePart2List = r.list.parts2 ?? [];
 				} else if ("swapActive" in r.list) {
 					this.swapActiveList = r.list.swapActive;
 					this.swapInactiveList = r.list.swapInactive;
 				}
 
-				const _nodes: Record<number, MODEL_OBJECT> = {};
-				Object.values(r.object) // Make node table (id -> object)
-					.flat()
-					.forEach(node => (_nodes[node.id] = node));
+				// NOTE: Not referenced
+				// const _nodes: Record<number, MODEL_OBJECT> = {};
+				// Object.values(r.object) // Make node table (id -> object)
+				// 	.flat()
+				// 	.forEach(node => (_nodes[node.id] = node));
 
 				const _z: Record<number, number> = {};
 				const _layers: Record<number, LAYERS.Layer> = {};
@@ -257,45 +286,19 @@ export default class Pixi2DModel extends FadeContainer {
 						this.addChild(_layers[__z]);
 					});
 
-				// preload all images
-				await Promise.all(
-					[...r.sprite, ...r.face]
-						// .unique(o => o.tex)
-						.map(sp => new Promise<void>(async (resolve, reject) => {
-							const key = `${this._model}/${sp.tex}/${sp.name}`;
-							const cached = getCache(key);
-							if (cached) {
-								this.spMap[sp.name] = sp;
-								this.texMap[sp.name] = cached.clone();
-								return resolve();
-							}
+				// preload all atlas textures
+				if (this.destroyed) return;
+				const sprites = [...r.sprite, ...r.face];
+				const urls = sprites.map(sp => spriteTextureURL(baseURL, sp)).unique();
+				this._atlases.push(...urls);
+				const atlases = await Promise.all(urls.map(url => acquireAtlas(url)));
+				sprites.forEach(sp => {
+					const atlas = atlases[urls.indexOf(spriteTextureURL(baseURL, sp))];
+					if (!atlas) return;
 
-							const image = new Image();
-							image.addEventListener("load", () => {
-								createClippedTexture(image, sp.vector, sp.v)
-									.then(tex => {
-										const _btex = PIXI.BaseTexture.from(tex, {
-											anisotropicLevel: 1,
-											mipmap: PIXI.MIPMAP_MODES.OFF,
-											multisample: PIXI.MSAA_QUALITY.LOW,
-										});
-										const _tex = PIXI.Texture.from(_btex);
-										setCache(key, tex, _tex);
-
-										this.spMap[sp.name] = sp;
-										this.texMap[sp.name] = _tex.clone();
-										this._sprites.push(key);
-										resolve();
-									});
-							});
-							image.addEventListener("error", (e) => {
-								image.remove();
-								reject(e);
-							});
-							image.crossOrigin = "Anonymous";
-							image.src = `${baseURL}/${sp.tex}.webp`;
-						})),
-				);
+					this.spMap[sp.name] = sp;
+					this.atlasMap[sp.name] = atlas;
+				});
 
 				// Make Id-Parent pair list
 				const treeRoot: NodeTreeItem = {
@@ -337,7 +340,7 @@ export default class Pixi2DModel extends FadeContainer {
 							id: node.id,
 							name: node.name,
 							data: node,
-							sprite: new PIXI.Sprite(PIXI.Texture.EMPTY),
+							sprite: new ClippedSprite(PIXI.Texture.EMPTY),
 							child: [],
 						};
 
@@ -423,20 +426,8 @@ export default class Pixi2DModel extends FadeContainer {
 							}
 						}
 
-						if ("sprite" in o && o.sprite !== undefined && this.isValidSpriteNode(o)) {
-							const sp = this.spMap[o.sprite];
-							let tex = this.texMap[sp.name];
-							if (o.flip && (o.flip[0] || o.flip[1])) {
-								tex = tex.clone();
-								if (o.flip[0] && o.flip[1]) // same with 180
-									tex.rotate = PIXI.groupD8.W;
-								else if (o.flip[0])
-									tex.rotate = PIXI.groupD8.MIRROR_HORIZONTAL;
-								else
-									tex.rotate = PIXI.groupD8.MIRROR_VERTICAL;
-							}
-							sprite.texture = tex;
-						}
+						if ("sprite" in o && o.sprite !== undefined && this.isValidSpriteNode(o))
+							this.applySprite(sprite, o.sprite, o.flip);
 					});
 
 				function polyfillFaces (list: string[]): string[] {
@@ -451,8 +442,6 @@ export default class Pixi2DModel extends FadeContainer {
 				this.emit("cameraBoundary", !!this.getChildByName("Camera_Boundary", true));
 			})
 			.finally(() => {
-				canvas.remove();
-
 				this.ready = true;
 				this.setFace(this.face);
 				this.UpdateNodeVisible();
@@ -476,9 +465,9 @@ export default class Pixi2DModel extends FadeContainer {
 		if (faceNode) {
 			const face = this.faceList.find(c => faceNames.includes(c.name));
 			if (face)
-				faceNode.sprite.texture = this.texMap[face.name];
+				this.applySprite(faceNode.sprite, face.name);
 			else if (faceNames.includes("Idle"))
-				faceNode.sprite.texture = PIXI.Texture.EMPTY;
+				this.applySprite(faceNode.sprite, null);
 			else
 				console.warn("[Pixi2DModel] no face sprite for " + imageVar + ", from " + this.model);
 
@@ -541,7 +530,11 @@ export default class Pixi2DModel extends FadeContainer {
 
 		this.treeItems
 			.filter(r => items.includes(r.name))
-			.forEach(r => r.sprite.visible = !namesToHide.includes(r.name));
+			.forEach(r => {
+				// Swap targets can start inactive and must be enabled when selected.
+				const isSwapTarget = this.swapActiveList.includes(r.name) || this.swapInactiveList.includes(r.name);
+				r.sprite.visible = (isSwapTarget || (r.data.active ?? true)) && !namesToHide.includes(r.name);
+			});
 	}
 
 	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {
@@ -556,9 +549,26 @@ export default class Pixi2DModel extends FadeContainer {
 		else
 			super.destroy({ ...options, texture: true });
 
-		// this._objectURLs.forEach(url => URL.revokeObjectURL(url));
-		this._sprites.forEach(key => removeCache(key));
+		this._atlases.forEach(url => releaseAtlas(url));
+		this._atlases = [];
 		// PIXI.Ticker.shared.remove(this.ticker);
+	}
+
+	private applySprite (target: ClippedSprite, name: string | null, flip?: MODEL_OBJECT["flip"]) {
+		const sp = name !== null ? this.spMap[name] : undefined;
+		const atlas = name !== null ? this.atlasMap[name] : undefined;
+		if (!sp || !atlas) {
+			target.setClip(PIXI.Texture.EMPTY, null);
+			return;
+		}
+
+		const { geometry, width, height } = spriteGeometry(sp, atlas, !!flip?.[0], !!flip?.[1]);
+		const texture = new PIXI.Texture(
+			atlas.base,
+			new PIXI.Rectangle(0, 0, atlas.base.width, atlas.base.height),
+			new PIXI.Rectangle(0, 0, width, height), // local bounds
+		);
+		target.setClip(texture, geometry);
 	}
 
 	private isValidSpriteNode (o: MODEL_OBJECT): boolean {

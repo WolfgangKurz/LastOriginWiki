@@ -11,7 +11,7 @@ import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Enemy } from "@/types/DB/Enemy";
 
-import { ImageExtension, AssetsRoot, TroopNameTable } from "@/libs/Const";
+import { ImageExtension, AssetsRoot, TroopNameTable } from "@/libs/Const.1";
 import { CurrentDB } from "@/libs/DB";
 import { useLocale } from "@/libs/Locale";
 

@@ -2,11 +2,11 @@ import { FunctionalComponent } from "preact";
 import { useCallback, useEffect, useMemo, useState } from "preact/hooks";
 import { produce } from "immer";
 
-import { ROLE_TYPE } from "@/types/Enums";
+import { ACTOR_BODY_TYPE, ROLE_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { SimulatorSlotType, SimulatorSlotEntity } from "./types/Slot";
 
-import { AssetsRoot, IsDev } from "@/libs/Const";
+import { AssetsRoot, IsDev } from "@/libs/Const.1";
 import { isActive } from "@/libs/Functions";
 import { SetMeta } from "@/libs/Site";
 import { useTitle } from "@/libs/hooks";
@@ -78,7 +78,7 @@ const Simulator: FunctionalComponent = () => {
 					slot.rarity,
 					unit.type,
 					unit.role,
-					unit.body,
+					unit.body as (ACTOR_BODY_TYPE.BIOROID | ACTOR_BODY_TYPE.AGS),
 					slot.linkBonus,
 				);
 

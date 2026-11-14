@@ -12,7 +12,7 @@ import { Consumable } from "@/types/DB/Consumable";
 import { Equip } from "@/types/DB/Equip";
 
 import { CurrentLocale, useLocale } from "@/libs/Locale";
-import { AssetsRoot, RarityDisplay } from "@/libs/Const";
+import { AssetsRoot, RarityDisplay } from "@/libs/Const.1";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 import EntitySource from "@/libs/EntitySource";

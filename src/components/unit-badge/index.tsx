@@ -18,12 +18,12 @@ interface UnitBadgeProps {
 }
 
 const UnitBadge: FunctionalComponent<UnitBadgeProps> = (props) => {
-	const typeName: Record<Exclude<ACTOR_CLASS, ACTOR_CLASS.__MAX__>, string> = {
+	const typeName: Record<ACTOR_CLASS, string> = {
 		[ACTOR_CLASS.LIGHT]: "LIGHT",
 		[ACTOR_CLASS.AIR]: "MOBILITY",
 		[ACTOR_CLASS.HEAVY]: "HEAVY",
 	};
-	const roleName: Record<Exclude<ROLE_TYPE, ROLE_TYPE.__MAX__>, string> = {
+	const roleName: Record<ROLE_TYPE, string> = {
 		[ROLE_TYPE.ATTACKER]: "ATTACKER",
 		[ROLE_TYPE.DEFENDER]: "DEFENDER",
 		[ROLE_TYPE.SUPPORTER]: "SUPPORTER",

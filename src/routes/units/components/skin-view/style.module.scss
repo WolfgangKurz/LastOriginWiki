@@ -185,6 +185,28 @@
 		}
 	}
 
+	&.CharMode,
+	&.CharTransform {
+		top: 18px;
+		width: 28px;
+		height: 28px;
+		font-size: 24px;
+		line-height: 28px;
+		text-align: center;
+		color: $light;
+		opacity: 0.5;
+
+		&.Active {
+			opacity: 1;
+		}
+	}
+	&.CharMode {
+		right: 168px;
+	}
+	&.CharTransform {
+		right: 14px;
+	}
+
 	&.Download,
 	&.DownloadPlus,
 	&.DownloadPlusCameraBoundary {
@@ -244,7 +266,25 @@ div.FaceList {
 		padding-left: 30px;
 		width: 100%;
 	}
-}
+
+	&.CharAnimList {
+		display: flex;
+		gap: 4px;
+
+		select.FaceList {
+			flex: 1 1 auto;
+		}
+	}
+	.CharReplay {
+		flex: 0 0 auto;
+		line-height: 1;
+
+		i {
+			position: static;
+			transform: none;
+			font-size: 100%;
+		}
+	}}
 
 .SkinView {
 	.SkinFull {

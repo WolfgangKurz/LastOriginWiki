@@ -26,6 +26,11 @@ interface TextStyle {
 	strokeWidth?: number;
 	stroke?: string;
 
+	shadowColor?: string;
+	shadowBlur?: number;
+	shadowOffsetX?: number;
+	shadowOffsetY?: number;
+
 	wrapWidth?: number;
 }
 
@@ -64,10 +69,13 @@ export default class FadeText extends FadeContainer {
 	}
 
 	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {
+		PIXI.Ticker.shared.remove(this.updateTickFn);
+		this.updateRequired = false;
 		this._sprites.forEach(sp => {
 			this.removeChild(sp);
 			sp.destroy(true);
 		});
+		this._sprites = [];
 		this._cv.remove();
 
 		super.destroy(options || true);
@@ -76,6 +84,7 @@ export default class FadeText extends FadeContainer {
 	private updateRequired = false;
 	private updateTickFn = this.updateTicker.bind(this);
 	private markUpdateRequire (): void {
+		if (this.destroyed) return;
 		if (!this.updateRequired) {
 			this.updateRequired = true;
 			PIXI.Ticker.shared.add(this.updateTickFn);
@@ -104,7 +113,7 @@ export default class FadeText extends FadeContainer {
 			this._style?.fontFamily,
 			...FontPriority,
 		]
-			.filter(r => !!r)
+			.filter((r): r is string => !!r)
 			.reduce<string[]>((p, c) => p.includes(c) ? p : [...p, c], []);
 
 		const fontSize = this._style?.fontSize ?? 14;
@@ -213,6 +222,10 @@ export default class FadeText extends FadeContainer {
 
 							const ctx = this._cv.getContext("2d")!;
 							ctx.fillStyle = _fill || "#fff";
+							if (this._style?.shadowColor) ctx.shadowColor = this._style.shadowColor;
+							if (this._style?.shadowBlur) ctx.shadowBlur = this._style.shadowBlur;
+							if (this._style?.shadowOffsetX) ctx.shadowOffsetX = this._style.shadowOffsetX;
+							if (this._style?.shadowOffsetY) ctx.shadowOffsetY = this._style.shadowOffsetY;
 
 							_arr.forEach(([c, _font]) => {
 								if (!_font) { // font not loaded yet
@@ -253,7 +266,16 @@ export default class FadeText extends FadeContainer {
 								x += _cw;
 							});
 
-							const sp = new PIXI.Sprite(PIXI.Texture.from(this._cv.toDataURL()));
+							if (this._cv.width === 0 || this._cv.height === 0) return;
+
+							// Each span owns its texture. Data URLs share cached textures, so a font
+							// refresh destroying one span would invalidate other identical spans.
+							const canvas = document.createElement("canvas");
+							canvas.width = this._cv.width;
+							canvas.height = this._cv.height;
+							canvas.getContext("2d")!.drawImage(this._cv, 0, 0);
+
+							const sp = new PIXI.Sprite(PIXI.Texture.from(canvas));
 							sp.roundPixels = true;
 							sp.name = text;
 							sp.position.set(__x, __y);
