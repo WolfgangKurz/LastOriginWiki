@@ -83,7 +83,7 @@ export function shaderKindOf (name: string, srcBlend: number): GammaShaderKind {
 		case "LastOne/LO_Sprite_Ctrl_A": // `_A_Ctrl` is ignored
 		case "LastOne/LO_cloaking_in": // dissolve by `_change` and noise is ignored
 		case "LastOne/LO_cloaking_loop":
-		case "johans_wing":
+		case "johans_wing": // fallback for WebGL1, rendered with game GLSL (alpha by particle custom data)
 			return GammaShaderKind.Straight;
 
 		// reproduced from game GLSL, main texture parts only

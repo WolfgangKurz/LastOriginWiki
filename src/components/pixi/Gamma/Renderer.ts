@@ -4,6 +4,9 @@ import type {
 import { Mat4, m4, m4FromArray, m4Mul } from "./Math";
 import type { GammaNode } from "./Scene";
 
+/** Floats per vertex of `GeometryBuffer.streams` (TEXCOORD0..3) */
+export const STREAM_FLOATS = 16;
+
 /** Growable vertex/index storage for a draw item */
 export class GeometryBuffer {
 	/** `[x, y, ...]` in model(world) space */
@@ -13,6 +16,12 @@ export class GeometryBuffer {
 	/** `[r, g, b, a, ...]` */
 	public colors = new Float32Array(0);
 	public indices = new Uint16Array(0);
+	/**
+	 * `[TEXCOORD0..3 (vec4 x 4), ...]` packed vertex streams of particles (`ParticleRendererData.vs`),
+	 * used by game GLSL when `hasStreams`, otherwise `TEXCOORD0` is uv and others are default values
+	 */
+	public streams = new Float32Array(0);
+	public hasStreams = false;
 
 	public vertexCount = 0;
 	public indexCount = 0;
@@ -29,6 +38,7 @@ export class GeometryBuffer {
 			this.positions = new Float32Array(cap * 2);
 			this.uvs = new Float32Array(cap * 2);
 			this.colors = new Float32Array(cap * 4);
+			this.streams = new Float32Array(cap * STREAM_FLOATS);
 			changed = true;
 		}
 		if (this.indices.length < indexCount) {

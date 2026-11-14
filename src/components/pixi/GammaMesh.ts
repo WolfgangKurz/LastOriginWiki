@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 
-import type { DrawItem } from "./Gamma/Renderer";
+import { type DrawItem, STREAM_FLOATS } from "./Gamma/Renderer";
 import type { MaterialData } from "./Gamma/Types";
 
 import { GammaFadeMode, GammaShaderKind, fragmentOf, shaderKindOf, vertex } from "./shaders/gamma";
@@ -117,6 +117,7 @@ export default class GammaMesh extends PIXI.Mesh<PIXI.Shader> {
 	private readonly positionBuffer: PIXI.Buffer;
 	private readonly uvsBuffer: PIXI.Buffer;
 	private readonly colorBuffer: PIXI.Buffer;
+	private readonly streamBuffer: PIXI.Buffer;
 	private readonly indexBuffer: PIXI.Buffer;
 	private layoutVersion = -1;
 	private staticVersion = -1;
@@ -131,12 +132,19 @@ export default class GammaMesh extends PIXI.Mesh<PIXI.Shader> {
 		const positionBuffer = new PIXI.Buffer(buf(g.positions), false, false);
 		const uvsBuffer = new PIXI.Buffer(buf(g.uvs), false, false);
 		const colorBuffer = new PIXI.Buffer(buf(g.colors), false, false);
+		const streamBuffer = new PIXI.Buffer(buf(g.streams), false, false);
 		const indexBuffer = new PIXI.Buffer(buf(g.indices), false, true);
 
+		// particle vertex streams (TEXCOORD0..3) for game GLSL, interleaved vec4 x 4
+		const stride = STREAM_FLOATS * 4;
 		const geometry = new PIXI.Geometry()
 			.addAttribute("aVertexPosition", positionBuffer, 2)
 			.addAttribute("aTextureCoord", uvsBuffer, 2)
 			.addAttribute("aColor", colorBuffer, 4)
+			.addAttribute("aStream0", streamBuffer, 4, false, PIXI.TYPES.FLOAT, stride, 0)
+			.addAttribute("aStream1", streamBuffer, 4, false, PIXI.TYPES.FLOAT, stride, 16)
+			.addAttribute("aStream2", streamBuffer, 4, false, PIXI.TYPES.FLOAT, stride, 32)
+			.addAttribute("aStream3", streamBuffer, 4, false, PIXI.TYPES.FLOAT, stride, 48)
 			.addIndex(indexBuffer);
 
 		const shader = new PIXI.Shader(getProgram(GammaShaderKind.SpriteDefault), {
@@ -172,6 +180,7 @@ export default class GammaMesh extends PIXI.Mesh<PIXI.Shader> {
 		this.positionBuffer = positionBuffer;
 		this.uvsBuffer = uvsBuffer;
 		this.colorBuffer = colorBuffer;
+		this.streamBuffer = streamBuffer;
 		this.indexBuffer = indexBuffer;
 		this.eventMode = "none";
 	}
@@ -186,11 +195,13 @@ export default class GammaMesh extends PIXI.Mesh<PIXI.Shader> {
 			this.positionBuffer.update(buf(g.positions));
 			this.uvsBuffer.update(buf(g.uvs));
 			this.colorBuffer.update(buf(g.colors));
+			this.streamBuffer.update(buf(g.streams));
 			this.indexBuffer.update(buf(g.indices));
 			this.staticVersion = g.staticVersion;
 		} else {
 			this.positionBuffer.update();
 			this.colorBuffer.update();
+			if (g.hasStreams) this.streamBuffer.update();
 			if (this.staticVersion !== g.staticVersion) {
 				this.staticVersion = g.staticVersion;
 				this.uvsBuffer.update();
@@ -347,6 +358,8 @@ export default class GammaMesh extends PIXI.Mesh<PIXI.Shader> {
 			return gl.pd[name] ?? null;
 		};
 
+		u.uGammaStreams = item.geometry.hasStreams ? 1 : 0;
+
 		for (const un of up.uniforms) {
 			if (un.type === "sampler2D") {
 				u[un.name] = textureOf(un.name);
@@ -472,7 +485,8 @@ function unityBuiltin (name: string, t: number): ArrayLike<number> | null {
 		case "unity_OrthoParams": return [1, 1, 0, 1];
 		case "_WorldSpaceCameraPos": return [0, 0, -10, 0];
 		case "_WorldSpaceLightPos0": return [0, 0, -1, 0];
-		case "_LightColor0": return [1, 1, 1, 1];
+		// game scenes have no directional light, lit effect shaders (Amplify) get no diffuse/specular term
+		case "_LightColor0": return [0, 0, 0, 0];
 		case "glstate_lightmodel_ambient": return [0.2, 0.2, 0.2, 1];
 		case "unity_ColorSpaceLuminance": return [0.22, 0.707, 0.071, 1];
 		case "_ScreenParams": return null; // set while rendering

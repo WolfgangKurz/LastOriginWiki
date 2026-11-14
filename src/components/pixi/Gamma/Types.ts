@@ -129,6 +129,8 @@ export interface ParticleRendererData extends RendererDataBase {
 	mxs: number;
 	pv: Vec3;
 	sf: number;
+	/** `ParticleSystemVertexStream` list, default (Position, Normal, Color, UV) if not set */
+	vs?: number[];
 }
 export type RendererData = SpriteRendererData | SkinnedMeshRendererData | MeshRendererData | ParticleRendererData;
 
@@ -416,7 +418,14 @@ export interface ParticleSystemData {
 	clv?: { mg: MinMaxCurveData; dp: number; dr: MinMaxCurveData; };
 	uv?: { tx: number; ty: number; at: number; ri: number; fot: MinMaxCurveData; sf: MinMaxCurveData; cy: number; };
 	fo?: { x: MinMaxCurveData; y: MinMaxCurveData; z: MinMaxCurveData; ws: boolean; };
+	/** `CustomDataModule` (Custom1, Custom2), `null` if stream is disabled */
+	cd?: [CustomDataStream | null, CustomDataStream | null];
 }
+
+/** Custom data stream of particles, vector (curves per component) or color */
+export type CustomDataStream =
+	| { m: 1; v: MinMaxCurveData[]; }
+	| { m: 2; c: MinMaxGradientData; };
 
 export interface PartsData {
 	do: boolean;

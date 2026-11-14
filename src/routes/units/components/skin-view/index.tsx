@@ -382,7 +382,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 				face={ facePrefix + face }
 				onFaceList={ (list, prefix) => {
-					setFaceList(list);
+					setFaceList(prev => prev.length === list.length && prev.every((f, i) => f === list[i]) ? prev : list);
 					setFacePrefix(prefix);
 
 					const i = list.findIndex(x => stripFacePrefix(x.toLowerCase(), prefix) == "idle");

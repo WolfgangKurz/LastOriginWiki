@@ -519,8 +519,16 @@ export class DynamicBone {
 			if (t0.children.length <= 1) {
 				const v = p.transform ? p.transform.localPosition : p.endOffset;
 				const v2 = v3Sub(p.position, p0.position);
-				const rot = qFromTo(t0.unityTransformDirection(v), v2);
-				t0.unityRotation = qMul(rot, t0.unityRotation);
+				if (t0.rotationMirrored) {
+					// Unity rotation ignores negative scales, child direction by it is mirrored from actual one
+					// and bone is bent to opposite side (e.g. bangs of 3P_Alcyone under `scale.x = -1`).
+					// Use actual direction by world matrix and rotation as seen on screen, consistent with each other.
+					const rot = qFromTo(t0.transformVector(v), v2);
+					t0.rotation = qMul(rot, t0.rotation);
+				} else {
+					const rot = qFromTo(t0.unityTransformDirection(v), v2);
+					t0.unityRotation = qMul(rot, t0.unityRotation);
+				}
 			}
 
 			if (p.transform)

@@ -240,7 +240,8 @@ export class GammaNode {
 		return qRotate(qInverse(this.unityRotation), d);
 	}
 
-	private get rotationMirrored (): boolean {
+	/** World basis is mirrored (odd number of negative scale axes in hierarchy) */
+	public get rotationMirrored (): boolean {
 		this.update();
 		return this._mirrored;
 	}

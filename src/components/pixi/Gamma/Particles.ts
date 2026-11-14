@@ -1,6 +1,6 @@
 // Simplified Unity `ParticleSystem` (Shuriken)
 import type {
-	Color, GradientData, MeshData, MinMaxCurveData, MinMaxGradientData,
+	Color, CustomDataStream, GradientData, MeshData, MinMaxCurveData, MinMaxGradientData,
 	ModelData, ParticleRendererData, ParticleSystemData, Vec3,
 } from "./Types";
 import {
@@ -9,7 +9,7 @@ import {
 	v3Add, v3Length, v3Lerp, v3Normalize, v3Scale,
 } from "./Math";
 import type { GammaNode } from "./Scene";
-import { GeometryBuffer, RendererRuntime } from "./Renderer";
+import { GeometryBuffer, RendererRuntime, STREAM_FLOATS } from "./Renderer";
 
 /** `ParticleSystemRenderSpace.Local` of `ParticleRendererData.ra` */
 const RENDER_ALIGNMENT_LOCAL = 2;
@@ -109,6 +109,32 @@ interface Particle {
 	r0: number;
 	r1: number;
 	r2: number;
+	r3: number;
+}
+
+/** Components of `ParticleSystemVertexStream` packed into TEXCOORDs (POSITION, NORMAL, TANGENT and COLOR have own semantics) */
+const STREAM_SIZE: Record<number, number> = {
+	4: 2, 5: 2, 6: 2, 7: 2, // UV, UV2, UV3, UV4
+	8: 1, 9: 1, // AnimBlend, AnimFrame
+	10: 3, 11: 1, // Center, VertexID
+	12: 1, 13: 2, 14: 3, // SizeX, SizeXY, SizeXYZ
+	15: 1, 16: 3, 17: 1, 18: 3, // Rotation, Rotation3D, RotationSpeed, Rotation3DSpeed
+	19: 3, 20: 1, // Velocity, Speed
+	21: 1, 22: 1, // AgeLifetime, InvStartLifetime
+	23: 1, 24: 2, 25: 3, 26: 4, // StableRandomX..XYZW
+	27: 1, 28: 2, 29: 3, 30: 4, // VaryingRandomX..XYZW
+	31: 1, 32: 2, 33: 3, 34: 4, // Custom1X..XYZW
+	35: 1, 36: 2, 37: 3, 38: 4, // Custom2X..XYZW
+	39: 1, 40: 2, 41: 3, 42: 1, 43: 2, 44: 3, // NoiseSum, NoiseImpulse (not simulated)
+	45: 1, // MeshIndex
+};
+
+/** Custom data stream value of particle at normalized age `t` */
+function customValue (s: CustomDataStream | null | undefined, t: number, p: Particle): Color {
+	if (!s) return [0, 0, 0, 0];
+	if (s.m === 2) return evalMinMaxGradient(s.c, t, p.r0);
+	const rnd = [p.r0, p.r1, p.r2, p.r3];
+	return [0, 1, 2, 3].map(k => (s.v[k] !== undefined ? evalMinMax(s.v[k], t, rnd[k]) : 0)) as Color;
 }
 
 export class ParticleSystemRuntime {
@@ -260,6 +286,7 @@ export class ParticleSystemRuntime {
 				r0: Math.random(),
 				r1: Math.random(),
 				r2: Math.random(),
+				r3: Math.random(),
 			});
 		}
 	}
@@ -411,6 +438,11 @@ export class ParticleSystemRuntime {
 		const meshRotation = isMesh && renderer.ra === RENDER_ALIGNMENT_LOCAL ? this.node.rotation : null;
 
 		const pos = g.positions, uvs = g.uvs, col = g.colors, idx = g.indices;
+		// vertex streams for game GLSL, packed into TEXCOORD0.. in order (a stream can span two TEXCOORDs like Unity)
+		const layout = renderer.vs?.filter(s => s > 3 && STREAM_SIZE[s] !== undefined) ?? null;
+		g.hasStreams = !!layout;
+		const st = g.streams;
+		const values: number[] = [];
 		for (let n = 0; n < maxCount; n++) {
 			const p = list[n];
 			const t = p.age / p.life;
@@ -435,10 +467,10 @@ export class ParticleSystemRuntime {
 			const r = p.color[0] * c[0], gg = p.color[1] * c[1], b = p.color[2] * c[2], a = p.color[3] * c[3];
 
 			// texture sheet
-			let u0 = 0, v0 = 0, us = 1, vs = 1;
+			let u0 = 0, v0 = 0, us = 1, vs = 1, frame = 0;
 			if (uv) {
 				const ft = (t * uv.cy) % 1;
-				const frame = Math.min(tiles - 1, Math.floor(
+				frame = Math.min(tiles - 1, Math.floor(
 					clamp01(evalMinMax(uv.fot, ft, p.r2)) * tiles + evalMinMax(uv.sf, 0, p.r2) * tiles,
 				) % tiles);
 				const tx = Math.max(1, uv.tx), ty = Math.max(1, uv.ty);
@@ -450,7 +482,16 @@ export class ParticleSystemRuntime {
 				v0 = row * vs;
 			}
 
-			const rot = -p.rotation;
+			// per particle stream values (uv and vertex id are per vertex)
+			let custom1: Color | null = null, custom2: Color | null = null, varying: number[] | null = null;
+			if (layout) {
+				if (layout.some(s => s >= 31 && s <= 34)) custom1 = customValue(d.cd?.[0], t, p);
+				if (layout.some(s => s >= 35 && s <= 38)) custom2 = customValue(d.cd?.[1], t, p);
+				if (layout.some(s => s >= 27 && s <= 30)) varying = [Math.random(), Math.random(), Math.random(), Math.random()];
+			}
+
+			// billboards rotate clockwise for positive rotation, meshes counterclockwise (Z rotation of mesh), like Unity
+			const rot = isMesh ? p.rotation : -p.rotation;
 			const cr = Math.cos(rot), sr = Math.sin(rot);
 			const base = n * mv;
 			for (let i = 0; i < mv; i++) {
@@ -461,8 +502,9 @@ export class ParticleSystemRuntime {
 				} else {
 					lx = ((i === 1 || i === 2) ? 0.5 : -0.5) * sx;
 					ly = ((i >= 2) ? 0.5 : -0.5) * sy;
-					lx -= renderer.pv[0] * sx;
-					ly -= renderer.pv[1] * sy;
+					// pivot moves quad away from particle position (positive x to the right, y up), matches game
+					lx += renderer.pv[0] * sx;
+					ly += renderer.pv[1] * sy;
 				}
 				const o = (base + i) * 2;
 				let px = lx * cr - ly * sr;
@@ -483,6 +525,44 @@ export class ParticleSystemRuntime {
 				col[co + 1] = gg;
 				col[co + 2] = b;
 				col[co + 3] = a;
+
+				if (layout) {
+					// Unity uv (v = 0 at bottom), stored uvs have flipped v
+					const su = uvs[o], sv = 1 - uvs[o + 1];
+					values.length = 0;
+					for (const s of layout) {
+						switch (s) {
+							case 4: case 5: case 6: case 7: values.push(su, sv); break; // frame blending is not reproduced
+							case 8: values.push(0); break;
+							case 9: values.push(frame); break;
+							case 10: values.push(center[0], center[1], center[2]); break;
+							case 11: values.push(i); break;
+							case 12: values.push(sx); break;
+							case 13: values.push(sx, sy); break;
+							case 14: values.push(sx, sy, sx); break;
+							case 15: values.push(p.rotation); break;
+							case 16: values.push(0, 0, p.rotation); break;
+							case 17: values.push(d.rot ? evalMinMax(d.rot, t, p.r1) : 0); break;
+							case 18: values.push(0, 0, d.rot ? evalMinMax(d.rot, t, p.r1) : 0); break;
+							case 19: values.push(p.velocity[0], p.velocity[1], p.velocity[2]); break;
+							case 20: values.push(v3Length(p.velocity)); break;
+							case 21: values.push(t); break;
+							case 22: values.push(1 / p.life); break;
+							default: {
+								const size = STREAM_SIZE[s];
+								const src = s >= 23 && s <= 26 ? [p.r0, p.r1, p.r2, p.r3]
+									: s >= 27 && s <= 30 ? varying!
+										: s >= 31 && s <= 34 ? custom1!
+											: s >= 35 && s <= 38 ? custom2!
+												: null;
+								for (let k = 0; k < size; k++) values.push(src ? src[k] : 0);
+							}
+						}
+					}
+					const so = (base + i) * STREAM_FLOATS;
+					for (let k = 0; k < STREAM_FLOATS; k++)
+						st[so + k] = k < values.length ? values[k] : 0;
+				}
 			}
 			for (let i = 0; i < mi.length; i++)
 				idx[n * mi.length + i] = base + mi[i];

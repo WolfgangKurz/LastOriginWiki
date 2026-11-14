@@ -6,7 +6,8 @@ import * as PIXI from "pixi.js";
  *
  * Sources are patched to fit gamma mesh:
  * - vertex inputs (`in_POSITION0`, `in_TEXCOORD0`, `in_COLOR0`, ...) are mapped to `aVertexPosition` (model space),
- *   `aTextureCoord` (stored with flipped v, given as Unity uv) and `aColor`, missing streams are default values
+ *   `aTextureCoord` (stored with flipped v, given as Unity uv) and `aColor`, missing streams are default values,
+ *   `in_TEXCOORD0..3` of particles with vertex streams are packed `aStream0..3`
  * - matrices (`hlslcc_mtx4x4*` uniforms) become globals set by wrapping `main`, view-projection is
  *   `projectionMatrix * translationMatrix` of Pixi, others (object to world, ...) are identity as positions are in model space
  * - `texture(...)` samples with flipped v (textures are uploaded top row first, Unity uv has v = 0 at bottom)
@@ -37,9 +38,13 @@ export interface UnityProgram {
 	uniforms: UnityUniform[];
 }
 
+/** `aStreamN` are packed particle vertex streams (`ParticleRendererData.vs`), used when `uGammaStreams` is set */
 const STREAM_DEFAULTS: Record<string, string> = {
 	in_POSITION0: "vec4(aVertexPosition, 0.0, 1.0)",
-	in_TEXCOORD0: "vec4(aTextureCoord.x, 1.0 - aTextureCoord.y, 0.0, 0.0)",
+	in_TEXCOORD0: "(uGammaStreams > 0.5 ? aStream0 : vec4(aTextureCoord.x, 1.0 - aTextureCoord.y, 0.0, 0.0))",
+	in_TEXCOORD1: "(uGammaStreams > 0.5 ? aStream1 : vec4(0.0, 0.0, 0.0, 1.0))",
+	in_TEXCOORD2: "(uGammaStreams > 0.5 ? aStream2 : vec4(0.0, 0.0, 0.0, 1.0))",
+	in_TEXCOORD3: "(uGammaStreams > 0.5 ? aStream3 : vec4(0.0, 0.0, 0.0, 1.0))",
 	in_COLOR0: "aColor",
 	in_NORMAL0: "vec4(0.0, 0.0, -1.0, 0.0)",
 	in_TANGENT0: "vec4(1.0, 0.0, 0.0, 1.0)",
@@ -88,6 +93,11 @@ function patchVertex (src: string): string {
 		"in vec2 aVertexPosition;",
 		"in vec2 aTextureCoord;",
 		"in vec4 aColor;",
+		"in vec4 aStream0;",
+		"in vec4 aStream1;",
+		"in vec4 aStream2;",
+		"in vec4 aStream3;",
+		"uniform float uGammaStreams;",
 		"uniform mat3 projectionMatrix;",
 		"uniform mat3 translationMatrix;",
 		...inputs,
@@ -142,7 +152,7 @@ function uniformsOf (src: string, skip: Set<string>): UnityUniform[] {
 }
 
 const cache = new Map<string, UnityProgram>();
-const SKIP_UNIFORMS = new Set(["projectionMatrix", "translationMatrix", "uAlpha", "uFadeMode"]);
+const SKIP_UNIFORMS = new Set(["projectionMatrix", "translationMatrix", "uAlpha", "uFadeMode", "uGammaStreams"]);
 
 /** Patched program of game GLSL, cached by sources */
 export function unityProgram (gl: UnityGLSLData): UnityProgram {

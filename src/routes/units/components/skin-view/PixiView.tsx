@@ -355,6 +355,17 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 			if (_char instanceof PixiSpineModel || _char instanceof MixedModel)
 				_char.setGoogle(props.google);
 
+			// reset for changing mode between 2dmodel and char
+			if (_char && _char !== char && ("setFace" in _char)) {
+				if (props.face)
+					_char.setFace(props.face);
+
+				_char.setHidePart(props.hidePart);
+				_char.setHidePart2(props.hidePart2);
+				_char.setHideBG(props.hideBG);
+				_char.setColliderVisible(props.displayTouchCollider);
+			}
+
 			if (_char) {
 				_char.position.set(0, 0);//props.spine ? 0 : 360);
 				surface.addChild(_char);
