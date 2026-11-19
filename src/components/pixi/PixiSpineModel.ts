@@ -369,7 +369,7 @@ export default class PixiSpineModel extends FadeContainer {
 
 		let root: PIXI.Container | null = null;
 		let current: PIXI.Container = this;
-		console.log(data.metadata);
+		// console.log(data.metadata);
 
 		const _tfs = Array.isArray(data.metadata.transforms[0])
 			? data.metadata.transforms[0]
@@ -380,7 +380,8 @@ export default class PixiSpineModel extends FadeContainer {
 			node.sortableChildren = true;
 
 			node.name = (tf as any).name;
-			node.position.set(tf.position[0], -tf.position[1]);
+			if (root)
+				node.position.set(tf.position[0], -tf.position[1]);
 			node.scale.set(...tf.scale);
 			current.addChild(node);
 
