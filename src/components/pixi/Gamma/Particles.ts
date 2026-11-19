@@ -151,11 +151,92 @@ export class ParticleSystemRuntime {
 	/** animatable properties (data is shared between instances) */
 	public looping: boolean;
 	public shapeRadius: number;
+	public readonly shapeRotation: Vec3;
+	/** copies of `data.init` and `data.em`, values are animated by clips (`animatedValue`) */
+	public readonly init: ParticleSystemData["init"];
+	public readonly em: ParticleSystemData["em"];
 
 	constructor (public readonly data: ParticleSystemData, nodes: GammaNode[]) {
 		this.node = nodes[data.nd];
 		this.looping = data.lp;
 		this.shapeRadius = data.sh.r;
+		this.shapeRotation = [...data.sh.rot];
+		this.init = structuredClone(data.init);
+		this.em = structuredClone(data.em);
+	}
+
+	/**
+	 * Accessor of animated module value (`InitialModule.startSize.scalar`, `InitialModule.startColor.maxColor.r`, ...),
+	 * `null` if not supported
+	 */
+	public animatedValue (attr: string): { get: () => number; set: (v: number) => void; } | null {
+		let m = /^ShapeModule\.m_Rotation\.([xyz])$/.exec(attr);
+		if (m) {
+			const i = "xyz".indexOf(m[1]);
+			return { get: () => this.shapeRotation[i], set: v => this.shapeRotation[i] = v };
+		}
+
+		m = /^InitialModule\.startColor\.(maxColor|minColor)\.([rgba])$/.exec(attr);
+		if (m) {
+			const g = this.init.c;
+			const key = m[1] === "maxColor" ? "c" : "c2";
+			const i = "rgba".indexOf(m[2]);
+			return {
+				get: () => g[key]?.[i] ?? 1,
+				set: v => (g[key] ??= [1, 1, 1, 1])[i] = v,
+			};
+		}
+
+		let slot: { get: () => MinMaxCurveData; set: (c: MinMaxCurveData) => void; } | null = null;
+		let min = false;
+		m = /^InitialModule\.(startLifetime|startSpeed|startSize|startSizeY|startRotation|gravityModifier)\.(scalar|minScalar)$/.exec(attr);
+		if (m) {
+			const key = ({
+				startLifetime: "lt", startSpeed: "sp", startSize: "sz", startSizeY: "szy", startRotation: "rot", gravityModifier: "gr",
+			} as const)[m[1] as "startLifetime"];
+			slot = { get: () => this.init[key], set: c => this.init[key] = c };
+			min = m[2] === "minScalar";
+		}
+		m = /^EmissionModule\.rateOverTime\.(scalar|minScalar)$/.exec(attr);
+		if (m) {
+			slot = { get: () => this.em.rt, set: c => this.em.rt = c };
+			min = m[1] === "minScalar";
+		}
+		m = /^EmissionModule\.m_Bursts\.Array\.data\[(\d+)\]\.countCurve\.(scalar|minScalar)$/.exec(attr);
+		if (m) {
+			const b = this.em.bu[parseInt(m[1], 10)];
+			if (!b) return null;
+			slot = { get: () => b[1], set: c => b[1] = c };
+			min = m[2] === "minScalar";
+		}
+		if (!slot) return null;
+
+		// `scalar` is constant, max of two constants or multiplier of curves, `minScalar` is min of two constants
+		const s = slot;
+		if (min) {
+			return {
+				get: () => {
+					const c = s.get();
+					return Array.isArray(c) ? c[0] : typeof c === "number" ? c : c.s;
+				},
+				set: v => {
+					const c = s.get();
+					if (Array.isArray(c)) s.set([v, c[1]]);
+				},
+			};
+		}
+		return {
+			get: () => {
+				const c = s.get();
+				return typeof c === "number" ? c : Array.isArray(c) ? c[1] : c.s;
+			},
+			set: v => {
+				const c = s.get();
+				if (typeof c === "number") s.set(v);
+				else if (Array.isArray(c)) s.set([c[0], v]);
+				else c.s = v;
+			},
+		};
 	}
 
 	public get active (): boolean {
@@ -182,7 +263,7 @@ export class ParticleSystemRuntime {
 	}
 
 	private resetBursts () {
-		this.bursts = this.data.em.bu.map(b => ({ next: b[0], remaining: Math.max(1, b[2]) }));
+		this.bursts = this.em.bu.map(b => ({ next: b[0], remaining: Math.max(1, b[2]) }));
 	}
 
 	private emitPoint (): { position: Vec3; direction: Vec3; } {
@@ -250,7 +331,7 @@ export class ParticleSystemRuntime {
 			if (sh.sd > 0 && v3Length(p) > 0) d = v3Normalize(v3Lerp(d, v3Normalize(p), sh.sd));
 			if (sh.rp > 0) p = v3Add(p, v3Scale(randomUnit(), sh.rp * Math.random()));
 
-			const q = qEuler(sh.rot[0], sh.rot[1], sh.rot[2]);
+			const q = qEuler(this.shapeRotation[0], this.shapeRotation[1], this.shapeRotation[2]);
 			p = v3Add(qRotate(q, [p[0] * sh.sc[0], p[1] * sh.sc[1], p[2] * sh.sc[2]]), sh.p);
 			d = v3Normalize(qRotate(q, d));
 		}
@@ -258,7 +339,7 @@ export class ParticleSystemRuntime {
 	}
 
 	private emit (count: number) {
-		const init = this.data.init;
+		const init = this.init;
 		const nt = this.data.dur > 0 ? clamp01(this.time / this.data.dur) : 0;
 		for (let i = 0; i < count; i++) {
 			if (this.particles.length >= init.mx) return;
@@ -304,7 +385,7 @@ export class ParticleSystemRuntime {
 
 	/** Emit bursts scheduled in `[from, to]` of current cycle */
 	private emitBursts (from: number, to: number, nt: number) {
-		this.data.em.bu.forEach((b, i) => {
+		this.em.bu.forEach((b, i) => {
 			const state = this.bursts[i];
 			while (state && state.remaining > 0 && state.next >= from && state.next <= to + 1e-6) {
 				if (Math.random() <= b[4])
@@ -327,8 +408,8 @@ export class ParticleSystemRuntime {
 				this.time += dt;
 				const nt = d.dur > 0 ? clamp01(this.time / d.dur) : 0;
 
-				if (d.em.en) {
-					this.emitAccumulator += evalMinMax(d.em.rt, nt, Math.random()) * dt;
+				if (this.em.en) {
+					this.emitAccumulator += evalMinMax(this.em.rt, nt, Math.random()) * dt;
 					const n = Math.floor(this.emitAccumulator);
 					if (n > 0) {
 						this.emitAccumulator -= n;
@@ -342,7 +423,7 @@ export class ParticleSystemRuntime {
 						// next cycle, bursts placed on beginning of cycle are emitted on this frame
 						this.time = d.dur > 0 ? this.time % d.dur : 0;
 						this.resetBursts();
-						if (d.em.en) this.emitBursts(-1, this.time, 0);
+						if (this.em.en) this.emitBursts(-1, this.time, 0);
 					} else
 						this.playing = false;
 				}
@@ -360,7 +441,7 @@ export class ParticleSystemRuntime {
 			}
 			const t = p.age / p.life;
 
-			const g = evalMinMax(d.init.gr, t, p.r0) * GRAVITY * dt;
+			const g = evalMinMax(this.init.gr, t, p.r0) * GRAVITY * dt;
 			if (g !== 0) {
 				const gd: Vec3 = gravityLocal ? gravityLocal : [0, 1, 0];
 				p.velocity = v3Add(p.velocity, v3Scale(gd, g));

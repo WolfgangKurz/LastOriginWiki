@@ -245,6 +245,8 @@ export default class GammaModel {
 					return discrete(() => (ps.looping ? 1 : 0), v => ps.looping = v > 0.5);
 				if (b.a === "ShapeModule.radius.value")
 					return float(1, () => [ps.shapeRadius], v => ps.shapeRadius = v[0]);
+				const value = ps.animatedValue(b.a);
+				if (value) return float(1, () => [value.get()], v => value.set(v[0]));
 				return null;
 			}
 
