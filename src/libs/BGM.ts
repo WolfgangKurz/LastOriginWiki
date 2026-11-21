@@ -99,6 +99,14 @@ const BGMAlbums: BGMAlbum[] = [
 			},
 			{
 				type: "audio",
+				id: "track_talk_09",
+				title: "Talk I",
+				duration: 205,
+				filename: "Album01/Talk_09.mp3",
+				lyrics: [{ time: 0, text: "Talk 09" }],
+			},
+			{
+				type: "audio",
 				id: "track_thrill_01",
 				title: "Talk H - Thrill",
 				duration: 75,
@@ -348,6 +356,31 @@ const BGMAlbums: BGMAlbum[] = [
 				duration: 142,
 				filename: "Album01/Zeta_Boss.mp3",
 				lyrics: [{ time: 0, text: "Zeta Boss" }],
+			},
+
+			{
+				type: "audio",
+				id: "track_briefing_talk_01",
+				title: "Briefing Talk A",
+				duration: 87,
+				filename: "Album01/Briefing_Talk_01.mp3",
+				lyrics: [{ time: 0, text: "Briefing Talk 01" }],
+			},
+			{
+				type: "audio",
+				id: "track_briefing_talk_02",
+				title: "Briefing Talk B",
+				duration: 64,
+				filename: "Album01/Briefing_Talk_02.mp3",
+				lyrics: [{ time: 0, text: "Briefing Talk 02" }],
+			},
+			{
+				type: "audio",
+				id: "track_briefing_talk_03",
+				title: "Briefing Talk C",
+				duration: 119,
+				filename: "Album01/Briefing_Talk_03.mp3",
+				lyrics: [{ time: 0, text: "Briefing Talk 03" }],
 			},
 
 			// 카테고리 없음 (외전 스토리)

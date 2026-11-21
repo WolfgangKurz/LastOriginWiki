@@ -42,7 +42,7 @@ interface SPRITE_DATA {
 	/** Model-local texture number, or a shared face-bundle/texture path. */
 	tex: number | string;
 	/** `webp` if not set */
-	ext?: "basis";
+	ext?: "basis" | "ktx2";
 	/** triangles of tight packed sprite, full rect if not set */
 	v?: CLIP_PATH;
 }

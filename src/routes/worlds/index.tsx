@@ -41,7 +41,7 @@ const Worlds: FunctionalComponent = () => {
 		</div>
 		<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 justify-content-center">
 			<div class="col">
-				<WorldItem linked wid="OLD_Story" description="OLD" />
+				<WorldItem linked wid="OLD_Story" description="CLASSIC" />
 			</div>
 
 			<div class="col">

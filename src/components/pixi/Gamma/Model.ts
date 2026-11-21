@@ -417,13 +417,17 @@ export default class GammaModel {
 		return this.data.faces.map(f => f.n);
 	}
 
+	/**
+	 * `face` is either face name (`idle`) or its sprite name (`BR_Shirayuri_Commu_Idle`, story `imageVar`)
+	 */
 	public setFace (face: string): boolean {
 		if (!this.faceRenderer) return false;
 		const key = face.toLowerCase();
-		const f = this.data.faces.find(x => x.n.toLowerCase() === key);
+		const f = this.data.faces.find(x => x.n.toLowerCase() === key) ??
+			this.data.faces.find(x => x.sp >= 0 && this.data.spr[x.sp]?.n.toLowerCase() === key);
 		if (!f) return false;
 		this.faceRenderer.sprite = f.sp >= 0 ? f.sp : this.faceOriginal;
-		this.setFaceTrigger(key !== DEFAULT_FACE);
+		this.setFaceTrigger(f.n.toLowerCase() !== DEFAULT_FACE);
 		return true;
 	}
 

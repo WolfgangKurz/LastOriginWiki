@@ -1,17 +1,11 @@
 import * as PIXI from "pixi.js";
-import * as opentype from "opentype.js";
-
 import { findSpans } from "unicode-default-word-boundary";
 
-import { FontGet, FontPriority } from "@/libs/Font";
+import { type Font, type FontGlyph, FontGet, FontPriority, FontVariant } from "@/libs/Font";
 
 import FadeContainer from "@/components/pixi/FadeContainer";
 
-const pathCache: {
-	[family_size_weight: string]: {
-		[char: string]: [opentype.Path, number];
-	};
-} = {};
+import { ParseFormattedText } from "@/routes/story/common";
 
 interface TextStyle {
 	align?: "LT" | "CT" | "RT" | "LC" | "CC" | "RC" | "LB" | "CB" | "RB";
@@ -34,6 +28,27 @@ interface TextStyle {
 	wrapWidth?: number;
 }
 
+interface LayoutGlyph {
+	font: Font;
+	glyph: FontGlyph;
+	/** offset from span origin, px */
+	x: number;
+	y: number;
+}
+
+interface LayoutSpan {
+	glyphs: LayoutGlyph[];
+	fill: string;
+	x: number;
+	y: number;
+}
+
+const FALLBACK_CHAR = "?";
+
+/**
+ * Fading text with BB code formatting (see `Nn`),
+ * rendered from font glyph paths (fontkit), independent of the browser text engine.
+ */
 export default class FadeText extends FadeContainer {
 	private _text_height: number = 0;
 
@@ -56,29 +71,29 @@ export default class FadeText extends FadeContainer {
 		this.UpdateTexture();
 	}
 
-	private _cv: HTMLCanvasElement;
-	private _sprites: PIXI.Sprite[] = [];
+	private _sprite: PIXI.Sprite | null = null;
 
 	constructor (text?: string, style?: TextStyle) {
 		super();
 		this._text = text;
 		this._style = style;
 
-		this._cv = document.createElement("canvas");
 		this.UpdateTexture();
 	}
 
 	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {
 		PIXI.Ticker.shared.remove(this.updateTickFn);
 		this.updateRequired = false;
-		this._sprites.forEach(sp => {
-			this.removeChild(sp);
-			sp.destroy(true);
-		});
-		this._sprites = [];
-		this._cv.remove();
+		this.clearSprite();
 
 		super.destroy(options || true);
+	}
+
+	private clearSprite () {
+		if (!this._sprite) return;
+		this.removeChild(this._sprite);
+		this._sprite.destroy(true);
+		this._sprite = null;
 	}
 
 	private updateRequired = false;
@@ -97,19 +112,79 @@ export default class FadeText extends FadeContainer {
 		this.emit("update");
 	}
 
-	private UpdateTexture (): void {
-		this._sprites.forEach(sp => {
-			this.removeChild(sp);
-			sp.destroy(true);
+	/** Font that can draw `char`, `undefined` while loading, `null` if no family can draw it */
+	private resolveFont (families: string[], weight: number, char: string): Font | null | undefined {
+		for (const family of families) {
+			const font = FontGet(family, weight, char);
+			if (font instanceof Promise) {
+				font.then(() => this.markUpdateRequire());
+				return undefined; // wait for higher priority family
+			}
+			if (font) return font;
+		}
+		return null;
+	}
+
+	/** Shape `text` into glyphs, returns span-relative glyphs and its width in px */
+	private shape (
+		families: string[],
+		text: string,
+		weight: number,
+		fontSize: number,
+		letterSpacing: number,
+	): { glyphs: LayoutGlyph[]; width: number; } {
+		// split into segments drawable by the same font
+		const segments: Array<{ font: Font | null; text: string; }> = [];
+		for (const c of text) {
+			let font = this.resolveFont(families, weight, c);
+			let ch = c;
+			if (font === null) {
+				font = this.resolveFont(families, weight, FALLBACK_CHAR);
+				ch = FALLBACK_CHAR;
+			}
+
+			const _font = font ?? null; // `null`: loading or not drawable, placeholder
+			const last = segments[segments.length - 1];
+			if (last && last.font === _font && _font !== null)
+				last.text += ch;
+			else
+				segments.push({ font: _font, text: ch });
+		}
+
+		const glyphs: LayoutGlyph[] = [];
+		let x = 0;
+		segments.forEach(seg => {
+			if (!seg.font) { // placeholder while loading
+				x += (fontSize / 2 + letterSpacing) * [...seg.text].length;
+				return;
+			}
+
+			const font = FontVariant(seg.font, weight);
+			const scale = fontSize / font.unitsPerEm;
+			const run = font.layout(seg.text);
+			run.glyphs.forEach((glyph, i) => {
+				const pos = run.positions[i];
+				glyphs.push({
+					font,
+					glyph,
+					x: x + pos.xOffset * scale,
+					y: -pos.yOffset * scale,
+				});
+				x += pos.xAdvance * scale + letterSpacing;
+			});
 		});
-		this._sprites = [];
+		return { glyphs, width: x };
+	}
+
+	private UpdateTexture (): void {
+		this.clearSprite();
 
 		if (!this._text) {
 			this.emit("update");
 			return;
 		}
 
-		const fontFamilies = [
+		const families = [
 			this._style?.fontFamily,
 			...FontPriority,
 		]
@@ -121,199 +196,109 @@ export default class FadeText extends FadeContainer {
 		const letterSpacing = this._style?.letterSpacing ?? 1.0;
 		const lineHeight = this._style?.lineHeight ?? 1.2;
 		const strokeWidth = this._style?.strokeWidth ?? 0;
-
-		const fallback = "?";
-		const _base_x = (this.style?.stroke && strokeWidth) || 0;
-		const _base_y = _base_x;
-		let x = _base_x, y = _base_y;
-
-		const _stroke = this._style?.stroke ?? "#000";
-
+		const stroke = this._style?.stroke;
 		const wrapWidth = this._style?.wrapWidth ?? 0;
 
-		new Promise(() => {
-			// \0 type \0 param \0 content \0
-			this._text!
-				.split(/(\0[^\0]+\0[^\0]+\0[^\0]+\0)/gs)
-				.forEach(p => {
-					let _fill = this._style?.fill;
-					let text = p;
-					if (p[0] === "\0") { // formatted
-						const r = (/\0([^\0]+)\0([^\0]+)\0([^\0]+)\0/gs).exec(p);
-						if (r) {
-							text = r[3];
+		const _base = (stroke && strokeWidth) || 0;
+		const lineAdvance = fontSize * lineHeight;
 
-							switch (r[1]) {
-								case "color":
-									_fill = `#${r[2]}`;
-									break;
+		// layout
+		const spans: LayoutSpan[] = [];
+		let x = _base;
+		let y = _base;
+		let right = 0;
 
-								case "spchar":
-									text = r[2];
-									break;
-							}
-						}
+		ParseFormattedText(this._text).forEach(run => {
+			const weight = run.bold ? 700 : fontWeight;
+			const fill = run.color ? `#${run.color}` : (this._style?.fill || "#fff");
+
+			[...findSpans(run.text)]
+				.map(s => s.text)
+				.forEach(text => {
+					if (text === "\n") {
+						x = _base;
+						y += lineAdvance;
+						return;
 					}
 
-					let _right = 0;
-					let _bottom = 0;
-
-					[...findSpans(text)]
-						.map(s => s.text)
-						.forEach(text => {
-							let __x = x;
-							let __y = y;
-
-							let pathCacheKey: string = "";
-
-							const _arr: Array<[c: string, font: opentype.Font | null]> = [];
-							let _w = 0;
-							let _h = 0;
-							let _bl = 0;
-							for (let c of text) {
-								let _font: ReturnType<typeof FontGet> = null;
-
-								for (const f of fontFamilies) {
-									_font = FontGet(f, fontWeight, c) ||
-										FontGet(f, 400, c); // try :400 font
-									if (_font) break;
-								}
-								if (!_font) {
-									for (const f of fontFamilies) {
-										_font = FontGet(f, fontWeight, fallback) || // try fallback
-											FontGet(f, 400, fallback); // try fallback :400 font
-										if (_font) break;
-									}
-								}
-								if (!_font) continue; // not drawable... skip
-
-								if (_font instanceof opentype.Font) {
-									pathCacheKey = `${_font.names.fontFamily}_${fontSize}_${fontWeight}`;
-									pathCache[pathCacheKey] ||= {};
-
-									_w += _font.getAdvanceWidth(c, fontSize, {
-										variation: { wght: fontWeight },
-									} as any) + letterSpacing;
-									_arr.push([c, _font]);
-
-									// const h = (_font.ascender - _font.descender) / _font.unitsPerEm * fontSize;
-									// _bl = Math.max(_bl, h + (_font.descender) / _font.unitsPerEm * fontSize);
-									// _h = Math.max(_h, h);
-									const h = fontSize;
-									_bl = h;
-									_h = Math.max(_h, h * lineHeight);
-								} else { // Promise
-									_font.then(() => this.markUpdateRequire());
-									_arr.push([c, null]); // font not loaded yet
-									_w += fontSize / 2;
-								}
-							}
-
-							this._cv.width = _w + _base_x * 2;
-							this._cv.height = _h + _base_y * 2;
-
-							if ((wrapWidth > 0 && x + _w > wrapWidth) || (text === "\n")) {
-								x = __x = _base_x;
-								__x = _base_x;
-								__y = y += fontSize * lineHeight;
-							}
-
-							if (text === "\n") return;
-
-							const ctx = this._cv.getContext("2d")!;
-							ctx.fillStyle = _fill || "#fff";
-							if (this._style?.shadowColor) ctx.shadowColor = this._style.shadowColor;
-							if (this._style?.shadowBlur) ctx.shadowBlur = this._style.shadowBlur;
-							if (this._style?.shadowOffsetX) ctx.shadowOffsetX = this._style.shadowOffsetX;
-							if (this._style?.shadowOffsetY) ctx.shadowOffsetY = this._style.shadowOffsetY;
-
-							_arr.forEach(([c, _font]) => {
-								if (!_font) { // font not loaded yet
-									x += fontSize / 2;
-									return;
-								}
-
-								if (!(pathCacheKey in pathCache && c in pathCache[pathCacheKey])) {
-									const _path = _font.getPath(c, 0, 0, fontSize, {
-										variation: { wght: fontWeight },
-
-										kerning: true,
-										features: {
-											liga: true,
-											rlig: true,
-										},
-									} as any);
-									const _cw = _font.getAdvanceWidth(c, fontSize);
-									pathCache[pathCacheKey][c] = [_path, _cw];
-								}
-
-								const [_path, __cw] = pathCache[pathCacheKey][c];
-								const _cw = __cw + letterSpacing;
-								ctx.save();
-								ctx.translate(x - __x, _bl);
-								// console.log(text, c, x, __x, x - __x, _bl);
-
-								_path.fill = null;
-								_path.stroke = _stroke || null;
-								_path.strokeWidth = strokeWidth * 2;
-								_path.draw(ctx);
-
-								_path.stroke = null;
-								_path.fill = _fill || null;
-								_path.draw(ctx);
-								ctx.restore();
-
-								x += _cw;
-							});
-
-							if (this._cv.width === 0 || this._cv.height === 0) return;
-
-							// Each span owns its texture. Data URLs share cached textures, so a font
-							// refresh destroying one span would invalidate other identical spans.
-							const canvas = document.createElement("canvas");
-							canvas.width = this._cv.width;
-							canvas.height = this._cv.height;
-							canvas.getContext("2d")!.drawImage(this._cv, 0, 0);
-
-							const sp = new PIXI.Sprite(PIXI.Texture.from(canvas));
-							sp.roundPixels = true;
-							sp.name = text;
-							sp.position.set(__x, __y);
-							this.addChild(sp);
-							this._sprites.push(sp);
-
-							_right = Math.max(_right, __x + this._cv.width);
-							_bottom = Math.max(_bottom, __y + this._cv.height);
-						});
-
-					const _align = this._style?.align ?? "LT";
-					const [_g_w, _g_h] = [_right, Math.max(this._text_height, _bottom)];
-					this._text_height = _g_h;
-					switch (_align[0]) {
-						case "L":
-							this.pivot.x = 0;
-							break;
-						case "C":
-							this.pivot.x = _g_w / 2;
-							break;
-						case "R":
-							this.pivot.x = _g_w;
-							break;
+					const shaped = this.shape(families, text, weight, fontSize, letterSpacing);
+					if (wrapWidth > 0 && x + shaped.width > wrapWidth) {
+						x = _base;
+						y += lineAdvance;
 					}
-					switch (_align[1]) {
-						case "T":
-							this.pivot.y = 0;
-							break;
-						case "C":
-							this.pivot.y = _g_h / 2;
-							break;
-						case "B":
-							this.pivot.y = _g_h;
-							break;
-					}
+					if (x === _base && /^\s+$/.test(text)) return; // no leading whitespace on new line
+
+					spans.push({ glyphs: shaped.glyphs, fill, x, y });
+					x += shaped.width;
+					right = Math.max(right, x + _base);
 				});
-
-			this.emit("update");
 		});
+
+		const bottom = y + lineAdvance + _base * 2;
+
+		// draw
+		const canvas = document.createElement("canvas");
+		canvas.width = Math.max(1, Math.ceil(right + _base));
+		canvas.height = Math.max(1, Math.ceil(bottom));
+
+		const ctx = canvas.getContext("2d")!;
+		if (this._style?.shadowColor) ctx.shadowColor = this._style.shadowColor;
+		if (this._style?.shadowBlur) ctx.shadowBlur = this._style.shadowBlur;
+		if (this._style?.shadowOffsetX) ctx.shadowOffsetX = this._style.shadowOffsetX;
+		if (this._style?.shadowOffsetY) ctx.shadowOffsetY = this._style.shadowOffsetY;
+
+		const drawGlyphs = (fn: (span: LayoutSpan, scale: number) => void) => {
+			spans.forEach(span => {
+				const baseline = span.y + fontSize; // baseline at 1em from line top
+				span.glyphs.forEach(g => {
+					const scale = fontSize / g.font.unitsPerEm;
+
+					ctx.save();
+					ctx.translate(span.x + g.x, baseline + g.y);
+					ctx.scale(scale, -scale); // font units are y-up
+					ctx.beginPath();
+					g.glyph.path.toFunction()(ctx);
+					fn(span, scale);
+					ctx.restore();
+				});
+			});
+		};
+
+		// outline pass first, so outlines never cover neighbor glyphs' fill
+		if (stroke && strokeWidth > 0) {
+			ctx.strokeStyle = stroke;
+			ctx.lineJoin = "round";
+			drawGlyphs((_, scale) => {
+				ctx.lineWidth = strokeWidth * 2 / scale;
+				ctx.stroke();
+			});
+		}
+
+		drawGlyphs(span => {
+			ctx.fillStyle = span.fill;
+			ctx.fill();
+		});
+
+		const sp = new PIXI.Sprite(PIXI.Texture.from(canvas));
+		sp.roundPixels = true;
+		this.addChild(sp);
+		this._sprite = sp;
+
+		// align
+		const _align = this._style?.align ?? "LT";
+		const [_g_w, _g_h] = [right, Math.max(this._text_height, bottom)];
+		this._text_height = _g_h;
+		switch (_align[0]) {
+			case "L": this.pivot.x = 0; break;
+			case "C": this.pivot.x = _g_w / 2; break;
+			case "R": this.pivot.x = _g_w; break;
+		}
+		switch (_align[1]) {
+			case "T": this.pivot.y = 0; break;
+			case "C": this.pivot.y = _g_h / 2; break;
+			case "B": this.pivot.y = _g_h; break;
+		}
+
+		this.emit("update");
 	}
 }

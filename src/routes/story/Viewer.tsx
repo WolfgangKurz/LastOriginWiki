@@ -6,6 +6,7 @@ import Store from "@/store";
 import { DIALOG_SPEAKER, SCG_ACTIVATION } from "@/types/Enums";
 import { DialogCharacter, StoryData, StoryMetadata } from "@/types/Story/Story";
 import SubStoryDB from "@/types/DB/SubStory";
+import StoryMap from "@/types/DB/StoryMap";
 import { LocaleList, LocaleTypes } from "@/types/Locale";
 
 import { useLocale } from "@/libs/Locale";
@@ -23,7 +24,7 @@ import Icons from "@/components/bootstrap-icon";
 
 import Notfound from "@/routes/notfound";
 
-import { Nn } from "./common";
+import { Nn, ParseFormattedText } from "./common";
 import Player from "./Player";
 
 import style from "./style.module.scss";
@@ -189,29 +190,12 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		};
 	}
 	function convTokens (text: string): string {
-		return text
-			.split(/(\0[^\0]+\0[^\0]+\0[^\0]+\0)/gs)
-			.map(p => {
-				if (p[0] === "\0") { // formatted
-					const r = (/\0([^\0]+)\0([^\0]*)\0([^\0]*)\0/gs).exec(p);
-					if (r) {
-						switch (r[1]) {
-							case "color":
-								return `<span data-color="${r[2]}" style="color:#${r[2]}">${r[3]}</span>`;
-
-							case "spchar":
-								return {
-									"<": "&lt;",
-									">": "&gt;",
-								}[r[2]] || "";
-
-							default:
-								return r[3];
-						}
-					}
-				}
-
-				return p;
+		return ParseFormattedText(text)
+			.map(run => {
+				let html = run.text.replace(/[<>]/g, c => c === "<" ? "&lt;" : "&gt;");
+				if (run.bold) html = `<b>${html}</b>`;
+				if (run.color) html = `<span data-color="${run.color}" style="color:#${run.color}">${html}</span>`;
+				return html;
 			})
 			.join("");
 	}
@@ -224,101 +208,55 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		return "";
 	}, [lang]);
 
-	const { wid, mid, nid, storyType } = useMemo(() => {
-		const reg = /^Ch([0-9]+)(N[0-9]+|Ev|Ev[0-9]+)?Stage([0-9]+)(B|Ex|EX|C|S)?$/;
-		const r = reg.exec(props.id);
-		if (r) {
-			const mid = parseInt(r[1], 10);
-			// const t = parseInt(r[5], 10);
-			const postfix = r[5] === "EX"
-				? "Ex"
-				: r[5] === "S"
-					? (r[2] === "Ev5" || r[2] === "Ev6")
-						? "ep"
-						: "s"
-					: (r[5] || "");
+	const parsed = useMemo<{ wid: string; mid: string | number; nid: string; storyType: string; }>(() => {
+		const cs = /^ChCS-([0-9]+)Stage([0-9]+)$/.exec(props.id);
+		if (cs) { // old substory
+			return {
+				wid: "-",
+				mid: 1,
+				nid: `S${parseInt(cs[1], 10)}-${parseInt(cs[2], 10)}`,
+				storyType: "Sub",
+			};
+		} else if (props.id.startsWith("SubStory_")) { // map substory
+			const r = /^SubStory_Chapter_([^_]+)_(.+)$/.exec(props.id)!;
+			const mr = /^([0-9]+)(.+)$/.exec(r[1])!;
+			return {
+				wid: mr[2],
+				mid: parseInt(mr[1], 10),
+				nid: r[2],
+				storyType: "Sub2",
+			};
+		} else if (props.id.startsWith("Story_")) { // separated substory
+			const r = /^Story_Char_(.+)_N_.+_([0-9]+)-(START|END)$/.exec(type)!;
+			return {
+				wid: type.substring(0, type.lastIndexOf("-")),
+				mid: parseInt(r[2], 10),
+				nid: r[1],
+				storyType: "Sub3",
+			};
+		}
 
-			if (r[2]) { // EvXX or 12 chapter...
-				return {
-					wid: r[2] === "Ev"
-						? "Ev1"
-						: r[2].startsWith("N")
-							? r[1] // Story
-							: r[2],
-					mid: r[2].startsWith("N")
-						? parseInt(r[2].substring(1), 10).toString()
-						: mid,
-					nid: `${r[2].startsWith("Ev") ? "Ev" : ""}${mid}-${parseInt(r[3], 10)}${postfix}`,
-					storyType: type,
-				};
-			} else { // Story (OLD)
-				return {
-					wid: parseInt(r[1], 10).toString(), // "Story",
-					mid,
-					nid: `${mid}-${parseInt(r[3], 10)}${postfix}`,
-					storyType: type,
-				};
-			}
-		} else {
-			const reg = /^ChCS-([0-9]+)Stage([0-9]+)$/;
-			const r = reg.exec(props.id);
-			if (r) { // old substory
-				const key = `S${parseInt(r[1], 10)}-${parseInt(r[2], 10)}`;
-				return {
-					wid: "-",
-					mid: 1,
-					nid: key,
-					storyType: "Sub",
-				};
-			} else if (props.id.startsWith("SubStory_")) { // map substory
-				const reg = /^SubStory_Chapter_([^_]+)_(.+)$/;
-				const r = reg.exec(props.id)!;
+		// main / event story, located by story map
+		return { wid: "", mid: "", nid: "", storyType: type };
+	}, [props.id, type]);
 
-				const k = r[1];
-				const unit = r[2];
-
-				const mr = /^([0-9]+)(.+)$/.exec(k)!;
-
-				return {
-					wid: mr[2],
-					mid: parseInt(mr[1], 10),
-					nid: unit,
-					storyType: "Sub2",
-				};
-			} else if (props.id.startsWith("Story_")) { // separated substory
-				const reg = /^Story_Char_(.+)_N_.+_([0-9]+)-(START|END)$/;
-				const r = reg.exec(type)!;
-
-				return {
-					wid: type.substring(0, type.lastIndexOf("-")),
-					mid: parseInt(r[2], 10),
-					nid: r[1],
-					storyType: "Sub3",
-				};
-			} else { // New Story
-				const reg = /^ChMQC([0-9]+)(N[0-9]+|Ev|Ev[0-9]+)?Stage([0-9]+)(B|Ex|EX|C|S)?$/;
-				const r = reg.exec(props.id);
-				if (r) {
-					const mid = parseInt(r[1], 10);
-					const postfix = r[5] === "EX"
-						? "Ex"
-						: r[5] === "S"
-							? (r[2] === "Ev5" || r[2] === "Ev6")
-								? "ep"
-								: "s"
-							: (r[5] || "");
-
-					return {
-						wid: parseInt(r[1], 10).toString(), // "Story",
-						mid,
-						nid: `${mid}-${parseInt(r[3], 10)}${postfix}`,
-						storyType: type,
-					};
-				}
+	const StoryMapDB = useDBData<StoryMap>(StaticDB.StoryMap);
+	const mapLocation = useMemo(() => {
+		if (!assertDBData(StoryMapDB)) return null;
+		for (const [wid, maps] of Object.entries(StoryMapDB)) {
+			for (const [mid, map] of Object.entries(maps)) {
+				const node = map.list.find(n => n.key === props.id);
+				if (node) return { wid, mid, nid: node.text };
 			}
 		}
-		return { wid: "", mid: 0, nid: 0, storyType: type };
-	}, [props.id, type]);
+		return null;
+	}, [StoryMapDB, props.id]);
+
+	const isSubStory = ["Sub", "Sub2", "Sub3"].includes(parsed.storyType);
+	const { wid, mid, nid, storyType } = useMemo(() => {
+		if (isSubStory || !mapLocation) return parsed;
+		return { ...parsed, ...mapLocation };
+	}, [parsed, mapLocation, isSubStory]);
 
 	const SubStoryDB = useDBData<SubStoryDB>(storyType === "Sub3" ? StaticDB.SubStory : null);
 	const subGroup = useMemo(() => {
@@ -331,6 +269,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			if (!subGroup) return "...";
 			return loc[subGroup.group];
 		}
+		if (!wid) return ""; // story map not loaded yet
 		return loc[`WORLD_WORLD_${wid}_${mid}`];
 	}, [lang, loc, subGroup, storyType, wid, mid, nid]);
 
@@ -414,8 +353,10 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 						location.route(`/worlds/${wid}/${mid}/substory`);
 					else if (storyType === "Sub3")
 						location.route("/worlds/Sub");
-					else
-						location.route(`/worlds/${wid}/${mid}/${nid}`);
+					else if (mapLocation) // found in story map
+						location.route(`/worlds/${mapLocation.wid}/${mapLocation.mid}/${mapLocation.nid}`);
+					else // story map not loaded or story not in map
+						window.history.back();
 				} }>
 					<Icons.ArrowLeft class="me-1" />
 					<Locale k="WORLDS_BACK_TO_WORLDS" />
@@ -456,7 +397,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		</div>
 
 		<h5 class="font-ibm mt-3">
-			{ world }
+			{ world || "..." }
 
 			<span class="ms-4">
 				{ storyType === "Sub"
@@ -468,7 +409,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 							<Locale k={ `UNIT_${subUnit}` } />
 						</span>
 						: <>
-							{ nid }
+							{ nid || "..." }
 							<span class="ms-2">{ storyType }</span>
 						</>
 				}

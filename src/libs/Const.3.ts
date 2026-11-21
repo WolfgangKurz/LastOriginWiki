@@ -829,6 +829,10 @@ export const ArtistLinks: Record<string, ArtistLinkType> = {
 	"Henry Davis": {
 		X: "https://x.com/HenryDavistwit",
 	},
+	"HISANOA": {
+		X: "https://x.com/HISANOA_maru",
+		ArtStation: "https://www.artstation.com/dotorimaru"
+	},
 	"Jam": {
 		X: "https://x.com/jamjamjam1620",
 		Pixiv: "https://www.pixiv.net/users/4524557",

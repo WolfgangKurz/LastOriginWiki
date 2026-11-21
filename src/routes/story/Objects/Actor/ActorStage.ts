@@ -48,8 +48,6 @@ const PositionKeys = ["L", "R", "C", "LC", "RC"] as const;
 export interface ActorModel {
 	/** Display object of model, placed relative to actor origin, not mirrored */
 	object: PIXI.Container;
-	/** Cut image (shown like add image), not mirrored */
-	isCut: boolean;
 	setFace (face: string): void;
 	/** Global position of face, `null` if unknown */
 	getHead (): PIXI.IPointData | null;
@@ -138,10 +136,6 @@ class Actor {
 		this.depth = position === ActorPosition.CENTER ? position : 10 + position;
 	}
 
-	public get isCut () {
-		return this.model?.isCut ?? false;
-	}
-
 	public setModel (model: ActorModel | null) {
 		if (this.removed) {
 			model?.destroy();
@@ -169,14 +163,14 @@ class Actor {
 	public sync () {
 		if (this.removed) return;
 
-		const mirrored = this.mirrored && !this.isCut;
+		const mirrored = this.mirrored;
 		this.holder.position.set(
 			CANVAS_CENTER.x + this.local.x * UI_UNIT,
 			CANVAS_CENTER.y - this.local.y * UI_UNIT,
 		);
 		this.holder.scale.set((mirrored ? -1 : 1) * this.scaleX, this.scaleY);
 		this.holder.angle = mirrored ? this.eulerZ : -this.eulerZ;
-		this.holder.zIndex = this.isCut ? 600 : 500 + this.depth;
+		this.holder.zIndex = 500 + this.depth;
 		this.filter.brightness(0.5 + 0.5 * this.brightness, false);
 		// opacity of merged result (actor is rendered to texture by filter, like RenderTexture of original),
 		// `holder.alpha` makes overlapped parts (face on body) transparent each other
@@ -374,7 +368,7 @@ class Actor {
 			this.emoji.position.set(0, -180);
 
 		// emoji is not mirrored and not rotated (`Quaternion.Inverse(actor.transform.rotation)`)
-		const mirrored = this.mirrored && !this.isCut;
+		const mirrored = this.mirrored;
 		this.emoji.scale.set((mirrored ? -1 : 1) * unit, -unit);
 		this.emoji.angle = this.holder.angle * (mirrored ? 1 : -1);
 

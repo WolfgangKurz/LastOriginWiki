@@ -1,38 +1,21 @@
-import * as opentype from "opentype.js";
+import * as fontkit from "fontkit/core";
+import { TTFFont } from "fontkit/formats/TTFFont";
+import { WOFF2Font } from "fontkit/formats/WOFF2Font";
+import { HangulShaper } from "fontkit/shapers/HangulShaper";
 
-import woff2dec from "@/external/woff2/woff2dec";
+export type Font = fontkit.Font;
+export type FontGlyph = fontkit.Glyph;
 
-type FontUnicodeRange = number | [from: number, to: number];
+fontkit.registerFormat(TTFFont);
+fontkit.registerFormat(WOFF2Font);
+fontkit.registerShaper(HangulShaper);
 
-type FontNonWeighted = string | opentype.Font;
-type FontNonWeightedSubset = {
-	ranges: FontUnicodeRange[],
-	font: string | opentype.Font, // not loaded when string (lazy-load)
-};
-type FontWeighted = {
-	[weight: number]: FontNonWeighted;
-};
-type FontWeightedDynamicSubset = {
-	[weight: number]: FontNonWeightedSubset[];
-};
-
-type FontMap = {
-	[family: string]: FontNonWeighted | FontNonWeightedSubset[] | FontWeighted | FontWeightedDynamicSubset;
-};
-
-const _font_priority = [
+export const FontPriority = [
 	"IBM Plex Sans KR", "Pretendard JP Variable", "Pretendard Variable",
 	"Noto Sans TC", "Noto Sans SC", "Noto Sans HK",
 ];
-export const FontPriority = _font_priority;
 
-const _font_callbacks: Record<string, Array<() => void>> = {};
-const _font_map: FontMap = {};
-
-let _font_ready = false;
-let _font_loading: Promise<void> | null = null;
-
-const _font_source = {
+export const FontSource: Record<string, string> = {
 	"IBM Plex Sans KR": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap",
 	"Pretendard Variable": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css",
 	"Pretendard JP Variable": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css",
@@ -40,306 +23,160 @@ const _font_source = {
 	"Noto Sans SC": "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap",
 	"Noto Sans HK": "https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&display=swap",
 };
-const _font_except_chars: Record<string, string[]> = {
+
+const FontExceptChars: Record<string, string[]> = {
 	"IBM Plex Sans KR": ["中"],
 };
-const _font_list = [
-	"IBM Plex Sans KR", "Pretendard Variable", "Pretendard JP Variable",
-	"Noto Sans TC", "Noto Sans SC", "Noto Sans HK",
-];
 
-function ensureFontReady (): Promise<void> {
-	if (_font_ready) return Promise.resolve();
-	if (_font_loading) return _font_loading;
+type UnicodeRange = [from: number, to: number];
 
-	_font_loading = Promise.all(
-		_font_list
-			.map(k => _font_source[k])
-			.map(url => fetch(url)
-				.then(r => {
-					if (!r.ok) throw new Error(`Status ${r.status}`);
-					return r.text();
-				})
-				.then(r => {
-					const cssReg = /@font-face ?{([^}]+)}/g;
-					const _matches: string[] = [];
-					{
-						let m: RegExpExecArray | null;
-						while (m = cssReg.exec(r))
-							_matches.push(m[1]);
-					}
+interface FontFaceEntry {
+	/** `null` for variable weight face */
+	weight: number | null;
+	/** `null` when the face covers every character */
+	ranges: UnicodeRange[] | null;
+	url: string;
 
-					_matches.forEach(_m => {
-						const name = (
-							/\bfont-family:[ \t]*['"]([^'"]+)['"];/.exec(_m) ||
-							/\bfont-family:[ \t]*['"]([^'"]+)['"]$/.exec(_m)
-						)![1];
-						const _weight = (
-							/\bfont-weight:[ \t]*([^;]+);/.exec(_m) ||
-							/\bfont-weight:[ \t]*([^;]+)$/.exec(_m)
-						)![1].trim();
-						let weight: number;
-						if (_weight.includes(" "))// variable
-							weight = 0;
-						else
-							weight = parseInt(_weight, 10);
-
-						const src = /\bsrc:[ \t]*url\(([^)]+)\)/.exec(_m)![1];
-
-						const _range = /\bunicode-range:[ \t]*([^;]+);/.exec(_m) ||
-							/\bunicode-range:[ \t]*([^;]+)$/.exec(_m);
-						const ranges: FontUnicodeRange[] = [];
-						if (_range) {
-							_range[1].split(",")
-								.map(rg => rg.trim())
-								.forEach(rg => {
-									if (rg.startsWith("U+")) {
-										rg = rg.substring(2);
-										if (rg.includes("-")) // ranged
-											ranges.push(rg.split("-").map(x => parseInt(x, 16)) as [number, number]);
-										else // single char
-											ranges.push(parseInt(rg, 16));
-									} else if (/^[0-9]+$/.test(rg))
-										ranges.push(parseInt(rg, 10));
-									else
-										throw new Error("not implemented unicode-range format [" + rg + "]");
-								});
-						}
-
-						if (ranges.length > 0) { // dynamic-subset
-							if (weight === 0) { // variable
-								_font_map[name] ||= [];
-
-								const ranged = _font_map[name] as FontNonWeightedSubset[];
-								ranged.push({ ranges, font: src });
-							} else { // specific weight
-								_font_map[name] ||= {};
-
-								const subset = _font_map[name] as FontWeightedDynamicSubset;
-								subset[weight] ||= [];
-								subset[weight].push({ ranges, font: src });
-							}
-						} else { // static-subset
-							if (weight === 0) // variable
-								_font_map[name] = src;
-							else { // specific weight
-								_font_map[name] ||= {};
-								_font_map[name][weight] = src;
-							}
-						}
-					});
-				}),
-		),
-	).then(() => {
-		_font_ready = true;
-	}).catch(e => {
-		_font_loading = null;
-		throw e;
-	});
-
-	return _font_loading;
+	font?: Font | null; // `null` when failed to load
+	loading?: Promise<Font | null>;
 }
 
-function charAvailableForFont (family: string, font: opentype.Font, char: string): boolean {
-	if (family in _font_except_chars && _font_except_chars[family].includes(char)) return false;
-	return font.hasChar(char) && font.charToGlyphIndex(char) !== 0;
-}
+const faces: Record<string, FontFaceEntry[]> = {};
+let facesLoading: Promise<void> | null = null;
+let facesReady = false;
 
-export function FontGet (family: string, weight: number, char: string): opentype.Font | null | Promise<opentype.Font | null> {
-	if (!_font_ready) {
-		return ensureFontReady()
-			.then(() => FontGet(family, weight, char));
-	}
-
-	if (!(family in _font_map)) return null;
-
-	const _font = _font_map[family];
-
-	if (_font instanceof opentype.Font) { // already loaded, variable weight, static-subset
-		if (charAvailableForFont(family, _font, char)) return _font;
-		return null;
-	} else if (typeof _font === "string") { // need to load, variable weight, static-subset
-		if (family in _font_callbacks) {
-			return new Promise(resolve => {
-				_font_callbacks[family].push(() => {
-					const font = _font_map[family] as opentype.Font;
-					if (charAvailableForFont(family, font, char)) resolve(font);
-					else resolve(null);
-				});
-			});
-		}
-
-		_font_callbacks[family] = [];
-		return fetch(new URL(_font, _font_source[family]).href)
-			.then(r => r.arrayBuffer())
-			.then(r => {
-				if (_font.endsWith(".woff2"))
-					return woff2dec(new Uint8Array(r)).then(d => d.buffer);
-				return r;
-			})
-			.then(r => {
-				const font = opentype.parse(r);
-				_font_map[family] = font;
-				_font_callbacks[family].forEach(fn => fn());
-				delete _font_callbacks[family];
-
-				if (charAvailableForFont(family, font, char)) return font;
-				return null;
-			})
-			.catch(e => null);
-	}
-
-	else if (Array.isArray(_font)) { // variable weight, dynamic-subset
-		const c = char.charCodeAt(0);
-
-		const _subset_index = _font.findIndex(subset => {
-			const ranges = subset.ranges;
-			return ranges.some(range => {
-				if (typeof range === "number")
-					return c === range;
-				return c >= range[0] && c <= range[1];
-			});
+function parseUnicodeRange (value: string): UnicodeRange[] {
+	return value.split(",")
+		.map(r => r.trim().replace(/^U\+/i, ""))
+		.filter(r => r.length > 0)
+		.map<UnicodeRange>(r => {
+			if (r.includes("?")) { // wildcard, e.g. U+4??
+				return [parseInt(r.replace(/\?/g, "0"), 16), parseInt(r.replace(/\?/g, "F"), 16)];
+			}
+			const [from, to] = r.split("-").map(x => parseInt(x, 16));
+			return [from, to ?? from];
 		});
-		if (_subset_index < 0) return null;
+}
 
-		const _key = `${family}.${_subset_index}`;
+function parseFontCss (css: string, base: string): FontFaceEntry[] {
+	const ret: FontFaceEntry[] = [];
+	for (const m of css.matchAll(/@font-face\s*{([^}]+)}/g)) {
+		const body = m[1];
 
-		const _subset = _font[_subset_index];
-		const __font = _subset.font;
+		const src = /\bsrc:\s*url\(\s*['"]?([^'")]+)['"]?\s*\)/.exec(body);
+		if (!src) continue;
 
-		if (__font instanceof opentype.Font) { // already loaded, not variable, single font
-			if (charAvailableForFont(family, __font, char)) return __font;
-			return null;
-		} else { // need to load, variable weight, static-subset
-			if (_key in _font_callbacks) {
-				return new Promise(resolve => {
-					_font_callbacks[_key].push(() => {
-						const subsets = _font_map[family] as FontNonWeightedSubset[];
-						const font = subsets[_subset_index].font as opentype.Font;
-						if (charAvailableForFont(family, font, char)) resolve(font);
-						else resolve(null);
-					});
-				});
-			}
+		const _weight = /\bfont-weight:\s*([^;]+)/.exec(body)?.[1].trim() ?? "400";
+		const weight = /\s/.test(_weight) ? null : parseInt(_weight, 10); // "45 920" -> variable
 
-			_font_callbacks[_key] = [];
-			return fetch(new URL(__font, _font_source[family]).href)
-				.then(r => r.arrayBuffer())
-				.then(r => {
-					if (__font.endsWith(".woff2"))
-						return woff2dec(new Uint8Array(r)).then(d => d.buffer);
-					return r;
-				})
-				.then(r => {
-					const font = opentype.parse(r);
+		const _range = /\bunicode-range:\s*([^;]+)/.exec(body)?.[1];
 
-					const subsets = _font_map[family] as FontNonWeightedSubset[];
-					subsets[_subset_index].font = font;
+		ret.push({
+			weight,
+			ranges: _range ? parseUnicodeRange(_range) : null,
+			url: new URL(src[1], base).href,
+		});
+	}
+	return ret;
+}
 
-					_font_callbacks[_key].forEach(fn => fn());
-					delete _font_callbacks[_key];
+function ensureFaces (): Promise<void> {
+	if (facesLoading) return facesLoading;
 
-					if (charAvailableForFont(family, font, char)) return font;
-					return null;
-				})
-				.catch(e => null);
-		}
+	facesLoading = Promise.all(
+		Object.entries(FontSource).map(([family, url]) => fetch(url)
+			.then(r => {
+				if (!r.ok) throw new Error(`Status ${r.status}`);
+				return r.text();
+			})
+			.then(css => {
+				faces[family] = parseFontCss(css, url);
+			})
+			.catch(() => {
+				faces[family] = [];
+			})),
+	).then(() => {
+		facesReady = true;
+	});
+	return facesLoading;
+}
+
+function loadFace (face: FontFaceEntry): Promise<Font | null> {
+	if (face.loading) return face.loading;
+
+	face.loading = fetch(face.url)
+		.then(r => {
+			if (!r.ok) throw new Error(`Status ${r.status}`);
+			return r.arrayBuffer();
+		})
+		.then(buf => fontkit.create(new Uint8Array(buf)))
+		.catch(() => null)
+		.then(font => {
+			face.font = font;
+			return font;
+		});
+	return face.loading;
+}
+
+function faceCovers (face: FontFaceEntry, code: number): boolean {
+	if (!face.ranges) return true;
+	return face.ranges.some(([from, to]) => code >= from && code <= to);
+}
+
+/** Static face of the closest weight, or variable face */
+function pickFaces (family: string, weight: number): FontFaceEntry[] {
+	const list = faces[family] || [];
+	const variable = list.filter(f => f.weight === null);
+	if (variable.length > 0) return variable;
+
+	const weights = [...new Set(list.map(f => f.weight!))];
+	if (weights.length === 0) return [];
+
+	const closest = weights.reduce((p, c) => Math.abs(c - weight) < Math.abs(p - weight) ? c : p);
+	return list.filter(f => f.weight === closest);
+}
+
+function charAvailable (family: string, font: Font, char: string): boolean {
+	if (FontExceptChars[family]?.includes(char)) return false;
+	return font.hasGlyphForCodePoint(char.codePointAt(0)!);
+}
+
+/**
+ * Get font of `family` that can draw `char` at `weight`.
+ * Returns `Promise` when the font is not loaded yet, `null` when not drawable with this family.
+ * For variable fonts, apply weight with `FontVariant`.
+ */
+export function FontGet (family: string, weight: number, char: string): Font | null | Promise<Font | null> {
+	if (!facesReady)
+		return ensureFaces().then(() => FontGet(family, weight, char));
+
+	const code = char.codePointAt(0)!;
+	const face = pickFaces(family, weight).find(f => faceCovers(f, code));
+	if (!face) return null;
+
+	if (face.font !== undefined)
+		return face.font && charAvailable(family, face.font, char) ? face.font : null;
+
+	return loadFace(face)
+		.then(font => font && charAvailable(family, font, char) ? font : null);
+}
+
+const variantCache = new WeakMap<Font, Map<number, Font>>();
+/** Font instance at `weight` (variable fonts), or font itself (static fonts) */
+export function FontVariant (font: Font, weight: number): Font {
+	const axis = font.variationAxes?.wght;
+	if (!axis) return font;
+
+	let map = variantCache.get(font);
+	if (!map) {
+		map = new Map();
+		variantCache.set(font, map);
 	}
 
-	else { // specific weight
-		const subsets = _font[weight];
-		if (!Array.isArray(subsets)) { // static-subset
-			const __font = subsets;
-			if (__font instanceof opentype.Font) {
-				if (charAvailableForFont(family, __font, char)) return __font;
-				return __font;
-			} else {
-				const _key = `${family}:${weight}`;
-				if (_key in _font_callbacks) {
-					return new Promise(resolve => {
-						_font_callbacks[_key].push(() => {
-							const font = _font[weight] as opentype.Font;
-							if (charAvailableForFont(family, font, char)) resolve(font);
-							else resolve(null);
-						});
-					});
-				}
-
-				_font_callbacks[_key] = [];
-				return fetch(new URL(__font, _font_source[family]).href)
-					.then(r => r.arrayBuffer())
-					.then(r => {
-						if (__font.endsWith(".woff2"))
-							return woff2dec(new Uint8Array(r)).then(d => d.buffer);
-						return r;
-					})
-					.then(r => {
-						const font = opentype.parse(r);
-						_font[weight] = font;
-
-						_font_callbacks[_key].forEach(fn => fn());
-						delete _font_callbacks[_key];
-
-						if (charAvailableForFont(family, font, char)) return font;
-						return font;
-					})
-					.catch(e => null);
-			}
-		} else { // dynamic-subset
-			const c = char.charCodeAt(0);
-
-			const _subset_index = subsets.findIndex(subset => {
-				const ranges = subset.ranges;
-				return ranges.some(range => {
-					if (typeof range === "number")
-						return c === range;
-					return c >= range[0] && c <= range[1];
-				});
-			});
-			if (_subset_index < 0) return null;
-
-			const _key = `${family}:${weight}.${_subset_index}`;
-
-			const _subset = subsets[_subset_index];
-			const __font = _subset.font;
-
-			if (__font instanceof opentype.Font) { // already loaded, not variable, single font
-				if (charAvailableForFont(family, __font, char)) return __font;
-				return null;
-			} else { // need to load, variable weight, static-subset
-				if (_key in _font_callbacks) {
-					return new Promise(resolve => {
-						_font_callbacks[_key].push(() => {
-							const subsets = _font_map[family][weight] as FontNonWeightedSubset[];
-							const font = subsets[_subset_index].font as opentype.Font;
-							if (charAvailableForFont(family, font, char)) resolve(font);
-							else resolve(null);
-						});
-					});
-				}
-
-				_font_callbacks[_key] = [];
-				return fetch(new URL(__font, _font_source[family]).href)
-					.then(r => r.arrayBuffer())
-					.then(r => {
-						if (__font.endsWith(".woff2"))
-							return woff2dec(new Uint8Array(r)).then(d => d.buffer);
-						return r;
-					})
-					.then(r => {
-						const font = opentype.parse(r);
-
-						const subsets = _font_map[family][weight] as FontNonWeightedSubset[];
-						subsets[_subset_index].font = font;
-
-						_font_callbacks[_key].forEach(fn => fn());
-						delete _font_callbacks[_key];
-
-						if (charAvailableForFont(family, font, char)) return font;
-						return font;
-					})
-					.catch(e => null);
-			}
-		}
+	let v = map.get(weight);
+	if (!v) {
+		v = font.getVariation({ wght: Math.max(axis.min, Math.min(axis.max, weight)) });
+		map.set(weight, v);
 	}
-};
+	return v;
+}

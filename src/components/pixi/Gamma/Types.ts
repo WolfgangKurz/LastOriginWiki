@@ -35,7 +35,7 @@ export interface MaterialData {
 	cu: number;
 	/** custom render queue, -1 for shader default */
 	q: number;
-	/** game GLSL of shader not implemented by runtime (char models, `tools/char/unity_glsl.py`) */
+	/** game GLSL of shader not implemented by runtime (char models, lo-toolkit `tools/charmodel/unity_glsl.py`) */
 	gl?: UnityGLSLData;
 	/** stencil state of game shader pass */
 	sts?: { ref: number; rm: number; wm: number; comp: number; pass: number; fail: number; };

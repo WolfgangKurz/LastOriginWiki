@@ -1,3 +1,5 @@
+import * as PIXI from "pixi.js";
+
 import type { ModelData } from "./Types";
 import { isPuppet2DGizmoSprite } from "./Puppet2D";
 import { TranscodedImage, transcodeBasis } from "./Basis";
@@ -44,12 +46,12 @@ export function modelUrl (id: GammaModelId): string {
 	return `${GammaRoot}/${id.platform}/${id.name}`;
 }
 
-/** Loads texture file, `.basis` is transcoded into GPU compressed format, others (PNG, WebP) are decoded into `ImageBitmap` */
+/** Loads texture file, `.basis` / `.ktx2` are transcoded into GPU compressed format, others (PNG, WebP) are decoded into `ImageBitmap` */
 export async function loadImage (url: string): Promise<TextureImage | null> {
 	try {
 		const res = await fetch(url);
 		if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-		if (/\.basis(?:$|\?)/i.test(url))
+		if (/\.(?:basis|ktx2)(?:$|\?)/i.test(url))
 			return await transcodeBasis(await res.arrayBuffer());
 
 		const blob = await res.blob();
@@ -62,6 +64,32 @@ export async function loadImage (url: string): Promise<TextureImage | null> {
 		console.warn(`[gamma] failed to load texture ${url}`, e);
 		return null;
 	}
+}
+
+/**
+ * Pixi resource of decoded texture, `null` if transcoding failed.
+ * Basis is compressed (or RGBA if no compressed format is supported), alpha is stored as encoded (`alphaMode`).
+ */
+export function textureResource (image: TextureImage, alphaMode: PIXI.ALPHA_MODES): PIXI.Resource | null {
+	if (image instanceof TranscodedImage) {
+		if (!image.data) return null;
+		if (!image.format)
+			return new PIXI.BufferResource(image.data, { width: image.width, height: image.height });
+
+		// Pixi v7 knows ASTC 4x4 only (extension lookup throws for other block sizes),
+		// resource is created as ASTC 4x4 and real format is set after (`upload` passes `format` as is)
+		const astc = image.format >= 0x93B0 && image.format <= 0x93BD;
+		const resource = new PIXI.CompressedTextureResource(null, {
+			format: astc ? 0x93B0 : image.format,
+			width: image.width,
+			height: image.height,
+			levels: 1,
+			levelBuffers: [{ levelID: 0, levelWidth: image.width, levelHeight: image.height, levelBuffer: image.data }],
+		});
+		if (astc) resource.format = image.format;
+		return resource;
+	}
+	return new PIXI.ImageBitmapResource(image, { alphaMode, ownsImageBitmap: false });
 }
 
 /** Textures used by Puppet2D gizmo sprites only (hidden by runtime), not loaded */

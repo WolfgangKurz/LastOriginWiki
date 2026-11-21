@@ -2,7 +2,7 @@ import * as PIXI from "pixi.js";
 
 /**
  * Game GLSL (GLES3, `#version 300 es`) of Unity shaders, run as is on WebGL2.
- * Converter embeds sources into material (`MaterialData.gl`, `tools/char/unity_glsl.py`).
+ * Converter embeds sources into material (`MaterialData.gl`, lo-toolkit `tools/charmodel/unity_glsl.py`).
  *
  * Sources are patched to fit gamma mesh:
  * - vertex inputs (`in_POSITION0`, `in_TEXCOORD0`, `in_COLOR0`, ...) are mapped to `aVertexPosition` (model space),

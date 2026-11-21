@@ -31,14 +31,13 @@ import MixedModel from "@/routes/units/components/skin-view/MixedModel";
 
 import DialogObject from "./Objects/DialogObject";
 import SelectionObject from "./Objects/SelectionObject";
-import CommuSprite from "./Objects/CommuSprite/CommuSprite";
 import CgLayer from "./Objects/CgLayer";
 import ActorStage, { ActorModel, ActorPosition, WORLD_UNIT } from "./Objects/Actor/ActorStage";
 import { IsDialogAssetOverride } from "./Objects/Actor/DialogAssetOverride";
 
 import style from "./style.module.scss";
 
-type CharSpriteType = FadeSprite | CommuSprite | Pixi2DModel | PixiSpineModel | PixiGammaModel | MixedModel;
+type CharSpriteType = FadeSprite | Pixi2DModel | PixiSpineModel | PixiGammaModel | MixedModel;
 
 /** Pixels per Unity unit of `Pixi2DModel` (100px, x3.5 root scale) */
 const PIXI2DMODEL_UNIT = 350;
@@ -171,17 +170,6 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		return Object.values(str).filter(x => x).length > 0;
 	}
 
-	function isCommu (model: string): boolean {
-		return model.includes("_Commu");
-	}
-	function getCommuImage (image: string, imageVar: string): string {
-		if (imageVar.startsWith("Cut_"))
-			return `${AssetsRoot}/story/add/${imageVar}.webp`;
-
-		const v = imageVar || (image.replace(/^2DModel_/, "") + "_Idle");
-		return `${AssetsRoot}/story/model/commu/${v}.webp`;
-	}
-
 	function getVoice (voice: string): string {
 		if (!voice) return "";
 		return `${AssetsRoot}/audio/voice-ko/${voice}.mp3`;
@@ -231,19 +219,12 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		if (!img) return null;
 
 		const modelType = _get(modelList, img.toLowerCase()) ?? CharModelType.None;
-		const forCommu = isCommu(img);
 		const mirrored = position === ActorPosition.RIGHT || position === ActorPosition.RIGHTCENTER;
-		const baseX = ActorStage.destScreenX(position);
-
-		const getTexURL = (imgVar: string) => forCommu
-			? getCommuImage(img, imgVar)
-			: `${AssetsRoot}/story/model/${img}.webp`;
 
 		/** offset from actor destination (`p[0]`), canvas y (`p[1]`), scale (`s`) */
-		const build = (tex: PIXI.Texture | undefined, meta: StoryModelMeta[] | undefined, imgVar: string): [CharSpriteType, Tuple<number, 2>, Tuple<number, 2>, boolean] => {
+		const build = (tex: PIXI.Texture | undefined, meta: StoryModelMeta[] | undefined, imgVar: string): [CharSpriteType, Tuple<number, 2>, Tuple<number, 2>] => {
 			const p: Tuple<number, 2> = [0, 720];
 			const s: Tuple<number, 2> = [1, 1];
-			let isCut = false;
 
 			let char: CharSpriteType;
 			if (modelType === CharModelType.U2DModel) {
@@ -263,7 +244,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				p[1] = 360;
 			} else {
 				tex = tex!;
-				char = new (forCommu ? CommuSprite : FadeSprite)(tex);
+				char = new FadeSprite(tex);
 				char.pivot.set(tex.width / 2, tex.height / 4 * 3);
 
 				if (meta) {
@@ -273,81 +254,50 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 						s[0] *= e.scale[0];
 						s[1] *= e.scale[1];
 					});
-				} else if (forCommu) {
-					if (!img.includes("Cut_")) {
-						p[1] -= 375;
-						s[0] = 213 / tex.width;
-						s[1] = 282 / tex.height;
-					} else {
-						isCut = true;
-						char.pivot.set(tex.width / 2, tex.height / 2);
-						p[0] = 640 - baseX;
-						p[1] = 240;
-						s[0] = s[1] = 1;
-						if (tex.height > 358)
-							s[0] = s[1] = 358 / tex.height;
-					}
 				} else {
 					const ratio = Math.min(1, 720 / tex.height);
 					p[1] -= 40;
 					s[0] = s[1] = ratio;
 				}
 			}
-			return [char, p, s, isCut];
+			return [char, p, s];
 		};
 
 		const [tex, meta] = await (modelType !== CharModelType.None
 			? Promise.resolve([undefined, undefined] as const)
 			: Promise.all([
-				PIXI.Texture.fromURL(getTexURL(imageVar)),
-				forCommu
-					? Promise.resolve(undefined)
-					: fetch(`${AssetsRoot}/story/model/${img}.json`)
-						.then(meta => meta.json())
-						.then(meta => meta as StoryModelMeta[])
-						.catch(() => undefined),
+				PIXI.Texture.fromURL(`${AssetsRoot}/story/model/${img}.webp`),
+				fetch(`${AssetsRoot}/story/model/${img}.json`)
+					.then(meta => meta.json())
+					.then(meta => meta as StoryModelMeta[])
+					.catch(() => undefined),
 			]));
 
 		const object = new PIXI.Container();
 		object.name = "Char" + ["L", "R", "C", "LC", "RC"][position];
+		object.scale.set(MODEL_SCALE); // around actor origin
 
-		let [char, p, s, isCut] = build(tex, meta, imageVar);
-		if (!isCut) object.scale.set(MODEL_SCALE); // around actor origin
-		const place = () => {
-			// actor holder is mirrored, keep offset same with not-mirrored
-			char.position.set((mirrored && !isCut ? -1 : 1) * p[0], p[1] - 360);
-			char.scale.set(...s);
-			object.addChild(char);
-		};
-		place();
+		const [char, p, s] = build(tex, meta, imageVar);
+		// actor holder is mirrored, keep offset same with not-mirrored
+		char.position.set((mirrored ? -1 : 1) * p[0], p[1] - 360);
+		char.scale.set(...s);
+		object.addChild(char);
 
 		let face = imageVar;
 		return {
 			object,
-			isCut,
 			setFace: (imgVar: string) => {
 				if (face === imgVar) return;
 				face = imgVar;
 
 				if ("setFace" in char)
 					char.setFace(imgVar);
-				else if (forCommu) { // commu face is image itself
-					PIXI.Texture.fromURL(getTexURL(imgVar))
-						.then(tex => {
-							if (object.destroyed || face !== imgVar) return;
-							const prev = char;
-							[char, p, s] = build(tex, meta, imgVar);
-							place();
-							prev.destroy();
-						})
-						.catch(() => void 0);
-				}
 			},
 			getHead: () => ("getFaceGlobalPosition" in char)
 				? char.getFaceGlobalPosition()
 				: null,
 			unit: modelType !== CharModelType.None
-				? PIXI2DMODEL_UNIT * Math.abs(s[0]) * (isCut ? 1 : MODEL_SCALE)
+				? PIXI2DMODEL_UNIT * Math.abs(s[0]) * MODEL_SCALE
 				: WORLD_UNIT,
 			destroy: () => {
 				if (!object.destroyed) object.destroy({ children: true });

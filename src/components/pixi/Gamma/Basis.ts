@@ -1,9 +1,10 @@
 /**
- * Basis Universal (`.basis`, ETC1S) texture transcoding for gamma/char models.
+ * Basis Universal texture transcoding: `.basis` (ETC1S / UASTC) and `.ktx2` (XUASTC LDR / ASTC LDR, ...).
  *
  * Textures are transcoded in web workers by the official transcoder (`public/basis`, basis_universal v2_50)
  * into a GPU compressed format supported by the device (ASTC, BC7, ETC2, BC1/BC3),
- * or into RGBA8 if none is supported. Alpha is straight (not premultiplied), same as WebP textures.
+ * or into RGBA8 if none is supported. Alpha is stored as encoded (straight for models, premultiplied for spine pages).
+ * ASTC LDR based KTX2 (e.g. XUASTC 6x6) is used in its own block size on ASTC devices (no transcoding into ASTC 4x4).
  */
 
 /** `basist::transcoder_texture_format` */
@@ -15,6 +16,9 @@ const enum BasisFormat {
 	BC7_RGBA = 6,
 	ASTC_4x4_RGBA = 10,
 	RGBA32 = 13,
+	/** `ASTC_LDR_5x4_RGBA` ... `ASTC_LDR_12x12_RGBA` are 28 ... 40 */
+	ASTC_LDR_FIRST = 28,
+	ASTC_LDR_LAST = 40,
 }
 
 /** WebGL compressed internal formats, `0` is uncompressed RGBA8 */
@@ -43,6 +47,15 @@ const BASIS_TO_GL: Partial<Record<BasisFormat, GLFormat>> = {
 	[BasisFormat.RGBA32]: GLFormat.RGBA8,
 };
 
+/** WebGL `COMPRESSED_RGBA_ASTC_<w>x<h>_KHR` of `BasisFormat.ASTC_LDR_FIRST + i` (5x4, 5x5, 6x5, 6x6, 8x5, 8x6, 10x5, 10x6, 8x8, 10x8, 10x10, 12x10, 12x12) */
+const ASTC_LDR_GL = [0x93B1, 0x93B2, 0x93B3, 0x93B4, 0x93B5, 0x93B6, 0x93B8, 0x93B9, 0x93B7, 0x93BA, 0x93BB, 0x93BC, 0x93BD];
+
+function glFormatOf (basis: number): number {
+	if (basis >= BasisFormat.ASTC_LDR_FIRST && basis <= BasisFormat.ASTC_LDR_LAST)
+		return ASTC_LDR_GL[basis - BasisFormat.ASTC_LDR_FIRST];
+	return BASIS_TO_GL[basis as BasisFormat] ?? 0;
+}
+
 /** Transcoded texture, level 0 only (models do not use mipmaps) */
 export class TranscodedImage {
 	constructor (
@@ -59,13 +72,13 @@ export class TranscodedImage {
 	}
 }
 
-let targets: { alpha: Target; opaque: Target; } | null = null;
+let targets: { alpha: Target; opaque: Target; astc: boolean; } | null = null;
 
 /**
  * Formats to transcode into, detected by WebGL2 context (WebGL1 if not available) like renderer.
  * Opaque textures prefer 4bpp formats (ETC2 RGB, BC1), alpha ones ASTC / BC7 (better quality) then ETC2 / BC3.
  */
-function detectTargets (): { alpha: Target; opaque: Target; } {
+function detectTargets (): { alpha: Target; opaque: Target; astc: boolean; } {
 	if (targets) return targets;
 
 	const canvas = document.createElement("canvas");
@@ -94,6 +107,7 @@ function detectTargets (): { alpha: Target; opaque: Target; } {
 			[astc, BasisFormat.ASTC_4x4_RGBA],
 			[bptc, BasisFormat.BC7_RGBA],
 		]),
+		astc,
 	};
 	return targets;
 }
@@ -122,15 +136,30 @@ function workerMain () {
 
 		let file: any = null;
 		try {
-			file = new basis.BasisFile(new Uint8Array(m.data));
-			const width = file.getImageWidth(0, 0), height = file.getImageHeight(0, 0);
+			const bytes = new Uint8Array(m.data);
+			// KTX2 identifier `«KTX 20»`
+			const ktx2 = bytes.length > 12 && bytes[0] === 0xAB && bytes[1] === 0x4B && bytes[5] === 0x32 && bytes[6] === 0x30;
+			file = ktx2 ? new basis.KTX2File(bytes) : new basis.BasisFile(bytes);
+			if (ktx2 && !file.isValid()) throw new Error("invalid KTX2 file");
+			const width = ktx2 ? file.getWidth() : file.getImageWidth(0, 0);
+			const height = ktx2 ? file.getHeight() : file.getImageHeight(0, 0);
 			if (!file.startTranscoding()) throw new Error("startTranscoding failed");
 
 			const transcode = (format: number): Uint8Array | null => {
-				const out = new Uint8Array(file.getImageTranscodedSizeInBytes(0, 0, format));
-				return file.transcodeImage(out, 0, 0, format, 0, 0) ? out : null;
+				const size = ktx2
+					? file.getImageTranscodedSizeInBytes(0, 0, 0, format)
+					: file.getImageTranscodedSizeInBytes(0, 0, format);
+				const out = new Uint8Array(size);
+				const ok = ktx2
+					? file.transcodeImage(out, 0, 0, 0, format, 0, -1, -1)
+					: file.transcodeImage(out, 0, 0, format, 0, 0);
+				return ok ? out : null;
 			};
 			let format = file.getHasAlpha() ? m.alpha : m.opaque;
+			// ASTC LDR based KTX2 (XUASTC / ASTC) of block size other than 4x4 is used as is on ASTC devices,
+			// it can not be transcoded into ASTC 4x4
+			if (ktx2 && m.astc && (file.isXUASTC_LDR() || file.isASTC_LDR()) && file.getBlockWidth() * file.getBlockHeight() !== 16)
+				format = basis.getTranscoderTextureFormatFromBasisTexFormat(file.getBasisTexFormat()).value;
 			let data = transcode(format);
 			if (!data && format !== 13) { // RGBA32 fallback
 				format = 13;
@@ -173,7 +202,7 @@ class TranscodeWorker {
 				if (!p) return;
 				this.pending.delete(m.id);
 				this.load--;
-				if (m.ok) p.resolve(new TranscodedImage(m.width, m.height, BASIS_TO_GL[m.format as BasisFormat] ?? 0, m.data));
+				if (m.ok) p.resolve(new TranscodedImage(m.width, m.height, glFormatOf(m.format), m.data));
 				else p.reject(new Error(m.error));
 			};
 		});
@@ -193,7 +222,7 @@ class TranscodeWorker {
 		const t = detectTargets();
 		return new Promise((resolve, reject) => {
 			this.pending.set(id, { resolve, reject });
-			this.worker.postMessage({ type: "transcode", id, data, alpha: t.alpha.basis, opaque: t.opaque.basis }, [data]);
+			this.worker.postMessage({ type: "transcode", id, data, alpha: t.alpha.basis, opaque: t.opaque.basis, astc: t.astc }, [data]);
 		});
 	}
 }
@@ -214,7 +243,7 @@ function workerOf (): TranscodeWorker {
 }
 //#endregion
 
-/** Transcodes `.basis` file data (ownership of `data` is transferred to worker) */
+/** Transcodes `.basis` / `.ktx2` file data (ownership of `data` is transferred to worker) */
 export function transcodeBasis (data: ArrayBuffer): Promise<TranscodedImage> {
 	return workerOf().transcode(nextId++, data);
 }

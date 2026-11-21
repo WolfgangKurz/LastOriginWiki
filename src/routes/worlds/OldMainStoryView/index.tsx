@@ -52,7 +52,7 @@ const MainStoryView: FunctionalComponent<WORLDViewProps> = (props) => {
 
 		<hr />
 
-		<WorldItem wid="OLD_Story" imageless description="OLD">
+		<WorldItem wid="OLD_Story" imageless description="CLASSIC">
 			<div class={ style.MainStoryGrid }>
 				{ Worlds.map((world, i) => <div class="col">
 					<div class={ style.StoryWorld }>

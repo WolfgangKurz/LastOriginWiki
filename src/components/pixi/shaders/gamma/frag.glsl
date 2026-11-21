@@ -13,7 +13,8 @@ uniform float uAlpha;
 uniform float uAdditionalAlpha;
 uniform float uBlendMode;
 uniform float uTime;
-uniform vec4 uHologram; // segments, speed, power, out power
+uniform vec4 uHologram; // `_Segments`, `_speed_wave`, `_pawerofwave`, `_out_power`
+uniform vec4 uHologram2; // `_Screen_Segments`, `_Sceen_posterize`, `_Screen_noise` (uSampler2 `_node_4190`, uSubST)
 uniform vec2 uPan; // uv panning in texture coordinate space (flipped v)
 uniform float uIntensity;
 // VFX/MasterShader/Sword
@@ -64,11 +65,17 @@ void main () {
 	c = vColor * tex * vColor.a;
 #elif KIND == 8 // mobile additive
 	c = tex * vColor;
-#elif KIND == 9 // hologram (approximation of shader forge graph)
-	c = 2.0 * tex * vColor * uColor;
-	float wave = sin((vRawCoord.y * max(uHologram.x, 0.01) * 6.2831853) + uTime * uHologram.y * 6.2831853);
-	c.a *= clamp(0.75 + 0.25 * wave, 0.0, 1.0) * clamp(uHologram.w * 0.5 + 0.5, 0.0, 1.5);
-	c.a = clamp(c.a, 0.0, 1.0);
+#elif KIND == 9 // LastOne/LO_Hologram_noise_Alpha (Shader Forge)
+	vec2 uv = vec2(vRawCoord.x, 1.0 - vRawCoord.y); // Unity uv
+	// moving bright band + posterized scanlines
+	float wave = exp2(log2(max(fract((uTime * uHologram.y + uv.y) * uHologram.x), 1e-6)) * uHologram.z);
+	float scan = floor(fract(uv.y * uHologram2.x) * uHologram2.y) / max(uHologram2.y - 1.0, 1e-4) + 0.9;
+	float bright = scan * 0.1 + wave + 0.9;
+	// glitch: main uv is shifted by noise texture * `_Screen_noise` (animated by clip)
+	vec2 noise = sampleUnity(uSampler2, uv * uSubST.xy + uSubST.zw).xy;
+	vec4 holo = texture2D(uSampler, vTextureCoord + vec2(noise.x, -noise.y) * uHologram2.z);
+	c.rgb = holo.rgb * uColor.rgb * bright * uHologram.w * vColor.rgb;
+	c.a = holo.a * vColor.a;
 #elif KIND == 11 // VFX/MasterShader: _MainColor * _Main_intensity * tex * vertex color, alpha is tex.a * tex.r (straight)
 	c.rgb = abs(uColor.rgb * tex.rgb) * vColor.rgb;
 	c.a = clamp(tex.a * tex.r * vColor.a, 0.0, 1.0);

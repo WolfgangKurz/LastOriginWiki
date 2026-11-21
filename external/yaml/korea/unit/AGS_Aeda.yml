@@ -3206,6 +3206,7 @@ skills:
                     - Char_PECS_Hussar_N
                     - Char_PECS_LemonadeEpsilon_N
                     - Char_PECS_Ireina_N
+                    - Char_PECS_Jupiter_N
                 - false
               body:
                 - 0
@@ -3279,6 +3280,7 @@ skills:
                     - Char_PECS_Hussar_N
                     - Char_PECS_LemonadeEpsilon_N
                     - Char_PECS_Ireina_N
+                    - Char_PECS_Jupiter_N
                 - false
               body:
                 - 1
@@ -3339,6 +3341,50 @@ skills:
                     penetration:
                       base: 20%
                       per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_PECS_Jupiter_N_42
+              on: damaged
+              if:
+                - target:
+                    - Char_PECS_Jupiter_N
+                - on:
+                    func: OR
+                    select:
+                      - Effect_PECS_Jupiter_N_4
+                      - Effect_PECS_Jupiter_N_41
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 8
+              buffs:
+                - icon: BuffIcon_HP_DOWN
+                  desc:
+                    desc: Effect_PECS_Jupiter_N_42_1
+                    type: 1
+                    value: "0.010000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 144
+                    sudden_death:
+                      base: 1%
+                      per: 0%
+                      target: buffer
+                      by: max_hp
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3408,6 +3454,15 @@ skills:
               level: "0.020000"
             base: 0.2
             per: 0.02
+            chance: 1
+          - icon: BuffIcon_HP_DOWN
+            desc:
+              desc: Effect_PECS_Jupiter_N_42_1
+              type: 1
+              value: "0.010000"
+              level: "0"
+            base: 0.01
+            per: 0
             chance: 1
     desc:
       KR: |-
@@ -4047,6 +4102,7 @@ skills:
                     - Char_PECS_Hussar_N
                     - Char_PECS_LemonadeEpsilon_N
                     - Char_PECS_Ireina_N
+                    - Char_PECS_Jupiter_N
                 - false
               body:
                 - 0
@@ -4120,6 +4176,7 @@ skills:
                     - Char_PECS_Hussar_N
                     - Char_PECS_LemonadeEpsilon_N
                     - Char_PECS_Ireina_N
+                    - Char_PECS_Jupiter_N
                 - false
               body:
                 - 1

@@ -9,6 +9,7 @@ import { quat2eul } from "@/libs/Math";
 import ColliderBox from "@/components/pixi/ColliderBox";
 
 import FadeContainer from "./FadeContainer";
+import { loadImage, textureResource } from "./Gamma/Loader";
 
 interface CacheType {
 	skeleton: string;
@@ -210,7 +211,30 @@ export default class PixiSpineModel extends FadeContainer {
 							metadata,
 
 							...atlas.pages.map(page => {
-								const url = changeExt(`${baseURL}/${page.name}`, "webp");
+								// page names are real file names (`.basis` / `.ktx2` / `.webp`), older outputs have `.png` names of `.webp` files
+								const url = /\.(?:basis|ktx2|webp)$/i.test(page.name)
+									? `${baseURL}/${page.name}`
+									: changeExt(`${baseURL}/${page.name}`, "webp");
+
+								if (/\.(?:basis|ktx2)$/i.test(url)) {
+									// GPU compressed, premultiplied (colors are clamped by alpha) when encoded
+									return loadImage(url)
+										.then(img => {
+											const resource = img && textureResource(img, page.pma ? PIXI.ALPHA_MODES.PMA : PIXI.ALPHA_MODES.NPM);
+											if (!resource) throw new Error(`Failed to load texture ${url}`);
+											return new PIXI.BaseTexture(resource, {
+												alphaMode: page.pma ? PIXI.ALPHA_MODES.PMA : PIXI.ALPHA_MODES.NPM,
+												anisotropicLevel: 1,
+												mipmap: PIXI.MIPMAP_MODES.OFF,
+												scaleMode: PIXI.SCALE_MODES.LINEAR,
+											});
+										})
+										.then(r => {
+											page.setTexture(spine.SpineTexture.from(r));
+											return url;
+										});
+								}
+
 								return new Promise<HTMLImageElement>(r => {
 									const img = new Image();
 									img.addEventListener("load", () => r(img));

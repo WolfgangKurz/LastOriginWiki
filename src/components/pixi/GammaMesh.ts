@@ -157,6 +157,7 @@ export default class GammaMesh extends PIXI.Mesh<PIXI.Shader> {
 			uBlendMode: 0,
 			uTime: 0,
 			uHologram: new Float32Array([1, 0, 1, 1]),
+			uHologram2: new Float32Array([1, 2, 0, 0]),
 			uPan: new Float32Array([0, 0]),
 			uIntensity: 1,
 			uSampler2: PIXI.Texture.WHITE,
@@ -307,12 +308,22 @@ export default class GammaMesh extends PIXI.Mesh<PIXI.Shader> {
 		u.uTime = time;
 
 		if (kind === GammaShaderKind.Hologram) {
+			const f = (name: string, def: number) => r.property(name, item.submesh)?.[0] ?? def;
 			(u.uHologram as Float32Array).set([
-				r.property("_Segments", item.submesh)?.[0] ?? 1,
-				r.property("_speed_wave", item.submesh)?.[0] ?? 0,
-				r.property("_pawerofwave", item.submesh)?.[0] ?? 1,
-				r.property("_out_power", item.submesh)?.[0] ?? 1,
+				f("_Segments", 1),
+				f("_speed_wave", 0),
+				f("_pawerofwave", 1),
+				f("_out_power", 1),
 			]);
+			(u.uHologram2 as Float32Array).set([
+				f("_Screen_Segments", 1),
+				f("_Sceen_posterize", 2), // typo is in the original shader
+				f("_Screen_noise", 0), // animated by clip (`mat:_Screen_noise`)
+				0,
+			]);
+			const ti = mat?.t._node_4190 ?? -1;
+			u.uSampler2 = ti >= 0 && textures[ti] ? textures[ti] : PIXI.Texture.WHITE;
+			(u.uSubST as Float32Array).set(r.property("_node_4190_ST", item.submesh) ?? DEFAULT_ST);
 		}
 
 		// container alpha

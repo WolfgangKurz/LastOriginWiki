@@ -55,7 +55,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 
 	const StoryMapDB = useDBData<StoryMap>(StaticDB.StoryMap);
 	const StoryListSourceNew: StoryKeySourceType[] = [
-		1
+		1, 2,
 	];
 	const StoryListSource: StoryKeySourceType[] = [
 		"Ev25", // 제로베이스

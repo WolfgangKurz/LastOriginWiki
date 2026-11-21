@@ -3,8 +3,7 @@ import * as PIXI from "pixi.js";
 import { IsDev } from "@/libs/Const.1";
 
 import GammaModel, { TRIGGER_NORMAL_TOUCH, TRIGGER_SPECIAL_TOUCH } from "./Gamma/Model";
-import { GammaModelId, LoadedModel, type TextureImage, loadModel, parseModelId } from "./Gamma/Loader";
-import { TranscodedImage } from "./Gamma/Basis";
+import { GammaModelId, LoadedModel, type TextureImage, loadModel, parseModelId, textureResource } from "./Gamma/Loader";
 import type { DrawItem } from "./Gamma/Renderer";
 import type { TextureData } from "./Gamma/Types";
 
@@ -162,24 +161,8 @@ function release (id: GammaModelId) {
 export function createTexture (image: TextureImage | null, info: TextureData): PIXI.Texture {
 	if (!image) return PIXI.Texture.WHITE;
 
-	let resource: PIXI.Resource;
-	if (image instanceof TranscodedImage) { // Basis
-		if (!image.data) return PIXI.Texture.WHITE;
-		resource = image.format
-			? new PIXI.CompressedTextureResource(null, {
-				format: image.format,
-				width: image.width,
-				height: image.height,
-				levels: 1,
-				levelBuffers: [{ levelID: 0, levelWidth: image.width, levelHeight: image.height, levelBuffer: image.data }],
-			})
-			: new PIXI.BufferResource(image.data, { width: image.width, height: image.height });
-	} else {
-		resource = new PIXI.ImageBitmapResource(image, {
-			alphaMode: PIXI.ALPHA_MODES.NPM,
-			ownsImageBitmap: false,
-		});
-	}
+	const resource = textureResource(image, PIXI.ALPHA_MODES.NPM);
+	if (!resource) return PIXI.Texture.WHITE;
 	const base = new PIXI.BaseTexture(resource, {
 		alphaMode: PIXI.ALPHA_MODES.NPM,
 		mipmap: PIXI.MIPMAP_MODES.OFF,
