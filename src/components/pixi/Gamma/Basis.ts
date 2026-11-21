@@ -158,8 +158,11 @@ function workerMain () {
 			let format = file.getHasAlpha() ? m.alpha : m.opaque;
 			// ASTC LDR based KTX2 (XUASTC / ASTC) of block size other than 4x4 is used as is on ASTC devices,
 			// it can not be transcoded into ASTC 4x4
-			if (ktx2 && m.astc && (file.isXUASTC_LDR() || file.isASTC_LDR()) && file.getBlockWidth() * file.getBlockHeight() !== 16)
-				format = basis.getTranscoderTextureFormatFromBasisTexFormat(file.getBasisTexFormat()).value;
+			if (ktx2 && m.astc && (file.isXUASTC_LDR() || file.isASTC_LDR()) && file.getBlockWidth() * file.getBlockHeight() !== 16) {
+				// returns plain number (not enum object)
+				const native = basis.getTranscoderTextureFormatFromBasisTexFormat(file.getBasisTexFormat());
+				format = typeof native === "number" ? native : native.value;
+			}
 			let data = transcode(format);
 			if (!data && format !== 13) { // RGBA32 fallback
 				format = 13;

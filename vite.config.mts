@@ -160,7 +160,7 @@ export default defineConfig(async ({ mode, command }) => {
 		{ name: "vendor.popperjs", test: "/node_modules/@popperjs/" },
 		{ name: "vendor.graphlib", test: "/node_modules/graphlib/" },
 		{ name: "vendor.lodash", test: "/node_modules/lodash/" },
-		{ name: "vendor.opentype", test: "/node_modules/opentype.js/" },
+		{ name: "vendor.fontkit", test: "/node_modules/fontkit/" },
 
 		{ name: "vendor.pixi", test: /\/node_modules\/@?pixi[-.]?/ },
 		{ name: "vendor.flow", test: /\/node_modules\/@?(reactflow\/|tisoap\/|dagrejs\/|d3-|pathfinding\/)/ },

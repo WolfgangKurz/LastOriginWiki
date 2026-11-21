@@ -4,6 +4,14 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13246" date="2026-11-21"
+		bugfix={ <>
+			<li>모바일 환경에서 스킨 및 SD 모델의 텍스쳐가 표시되지 않던 점을 수정했습니다.</li>
+			<li>전투원 <BY>ZP95 주피터</BY>의 연구 트리가 표시되지 않던 점을 수정했습니다.</li>
+			<li><BY>스토리 플레이어</BY>에서 일부 효과음이 재생되지 않던 점을 수정했습니다.</li>
+			<li><BY>스토리 플레이어</BY>에서 일부 연출 효과가 대사보다 먼저 재생되던 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13240" date="2026-11-21"
 		new={ <>
 			<li>신규 전투원 <BY>ZP95 주피터</BY>의 정보가 추가되었습니다.</li>
