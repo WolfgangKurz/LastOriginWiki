@@ -401,7 +401,7 @@ lvLimits:
         count: 30
       - id: Consumable_EWMPMetal
         count: 100
-releaseDate: null
+releaseDate: 1795046400000
 height: 12.5m
 weight: 512t
 weapon1: Disassembly Analyzer​
@@ -3638,6 +3638,27 @@ skills:
               level: "0"
             value: Char_PECS_Spartoia_N
             chance: 1
+    desc:
+      KR: |-
+        소행성 절단기로 단일 대상에게 <dmg elem="physics" />를 줍니다.
+        <sec>대상의 방어력을 일정 비율 무시합니다.</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r signless /></sec>
+        <sec typ="cond">적중 시</sec>, 2라운드 동안 자신은 <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 방어막 <val idx="3" signless /></sec>을(를) 획득합니다. <sec>(중첩 불가)</sec>
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 행 / 열 보호 효과를 해제</sec>합니다.
+      EN: |-
+        Deals <dmg elem="physics" /> to a single target with the Asteroid Cutter.
+        <sec>Ignores a portion of the target's DEF.</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> DEF Penetration <val idx="0" r signless /></sec>
+        <sec typ="cond">On hit</sec>, self gains <sec typ="buff"><buff typ="DAMAGE_ABSORB" /> Barrier <val idx="3" signless /></sec> for 2 rounds. <sec>(Does not stack)</sec>
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes Row / Column Protect effects</sec> from the target.
+      JP: |-
+        小惑星切断機で単体の対象に<dmg elem="physics" />を与えます。
+        <sec>対象の防御力を一定割合無視します。</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r signless /></sec>
+        <sec typ="cond">命中時</sec>、2ラウンドの間、自身は<sec typ="buff"><buff typ="DAMAGE_ABSORB" /> バリア <val idx="3" signless /></sec>を獲得します。<sec>(重複不可)</sec>
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 行 / 列保護効果を解除</sec>します。
+      TC: |-
+        以小行星切割器對單一目標造成<dmg elem="physics" />。
+        <sec>無視目標一定比例的防禦力。</sec> <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防禦貫穿 <val idx="0" r signless /></sec>
+        <sec typ="cond">命中時</sec>，自身在2回合內獲得<sec typ="buff"><buff typ="DAMAGE_ABSORB" /> 護盾 <val idx="3" signless /></sec>。<sec>(不可疊加)</sec>
+        <sec typ="cond">暴擊時</sec>，將目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 行 / 列保護效果解除</sec>。
   "2":
     key: "2"
     icon: MultiMissile
@@ -5635,6 +5656,23 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        무장을 전개하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 줍니다.
+        <sec typ="cond">적중 시</sec>, 대상은 <sec typ="cond">다음 공격 시까지</sec> <sec typ="dmg"><buff typ="ARMORED_DMG_DOWN" /> 대 중장형 피해량 <val idx="0" r /></sec>가 감소합니다.
+        <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 지정 보호 효과를 해제</sec>합니다.
+      EN: |-
+        Deploys armaments to deal <sec typ="attr">Protection-ignoring</sec> <dmg elem="lightning" /> to the designated area.
+        <sec typ="cond">On hit</sec>, the target's <sec typ="dmg"><buff typ="ARMORED_DMG_DOWN" /> Damage vs. Heavy <val idx="0" r /></sec> is decreased <sec typ="cond">until its next attack</sec>.
+        <sec typ="cond">On critical hit</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> removes Target Protect effects</sec> from the target.
+      JP: |-
+        武装を展開し、指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="lightning" />を与えます。
+        <sec typ="cond">命中時</sec>、対象は<sec typ="cond">次の攻撃時まで</sec><sec typ="dmg"><buff typ="ARMORED_DMG_DOWN" /> 対重装型ダメージ量 <val idx="0" r /></sec>が減少します。
+        <sec typ="cond">クリティカル時</sec>、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 指定保護効果を解除</sec>します。
+      TC: |-
+        展開武裝，對指定範圍造成<sec typ="attr">無視保護</sec> <dmg elem="lightning" />。
+        <sec typ="cond">命中時</sec>，目標<sec typ="cond">直到下次攻擊為止</sec><sec typ="dmg"><buff typ="ARMORED_DMG_DOWN" /> 對重裝型傷害量 <val idx="0" r /></sec>減少。
+        <sec typ="cond">暴擊時</sec>，將目標的<sec typ="buff"><buff typ="REMOVE_BUFF" /> 指定保護效果解除</sec>。
   "3":
     key: "3"
     icon: P.SelfSpdBuff
@@ -5847,6 +5885,23 @@ skills:
             base: 0.1
             per: 0.01
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">적 처치 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 영구히 증가합니다.
+        <sec typ="cond"><cmt t="오비탈 와쳐"><import name="OrbitalWatcher" /></cmt> 소속 전투원에 의한 <buff typ="SUPPORT_ATTACK" /> 지원 공격이 적용된 아군이 있을 경우</sec>, 대상에게 <sec typ="buff"><buff typ="AP_UP" /> 상기 효과를 공유</sec>하며 <sec typ="buff">자신은 효과가 두 배로 증폭</sec>됩니다.
+        자신의 공격은 <sec typ="cond">적중 대상이 <buff typ="DEF_DOWN" /> 방어력 / <buff typ="LIGHTNINGRES_DOWN" /> 전기 저항 감소 상태인 경우</sec>, 각각 피해량이 증가합니다.
+      EN: |-
+        <sec typ="cond">On defeating an enemy</sec>, own <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="2" r /></sec> is permanently increased.
+        <sec typ="cond">If there is an ally under a <buff typ="SUPPORT_ATTACK" /> Support Attack effect from a <cmt t="Orbital Watcher"><import name="OrbitalWatcher" /></cmt> unit</sec>, <sec typ="buff"><buff typ="AP_UP" /> shares the above effect</sec> with that ally and <sec typ="buff">the effect on self is doubled</sec>.
+        Own attacks deal increased damage for each of the following: <sec typ="cond">if the target hit is under <buff typ="DEF_DOWN" /> DEF / <buff typ="LIGHTNINGRES_DOWN" /> Lightning Resistance Down</sec>.
+      JP: |-
+        <sec typ="cond">敵撃破時</sec>、自身の<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>が永久に増加します。
+        <sec typ="cond"><cmt t="オービタルウォッチャー"><import name="OrbitalWatcher" /></cmt> 所属戦闘員による<buff typ="SUPPORT_ATTACK" /> 支援攻撃が適用された味方がいる場合</sec>、対象に<sec typ="buff"><buff typ="AP_UP" /> 上記効果を共有</sec>し、<sec typ="buff">自身は効果が2倍に増幅</sec>されます。
+        自身の攻撃は<sec typ="cond">命中対象が<buff typ="DEF_DOWN" /> 防御力 / <buff typ="LIGHTNINGRES_DOWN" /> 電気耐性減少状態の場合</sec>、それぞれダメージ量が増加します。
+      TC: |-
+        <sec typ="cond">擊殺敵人時</sec>，自身的<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="2" r /></sec>永久增加。
+        <sec typ="cond">若有我方單位受到<cmt t="軌道守望者"><import name="OrbitalWatcher" /></cmt> 所屬戰鬥員的<buff typ="SUPPORT_ATTACK" /> 支援攻擊效果</sec>，則與該對象<sec typ="buff"><buff typ="AP_UP" /> 共享上述效果</sec>，且<sec typ="buff">自身的效果增幅為兩倍</sec>。
+        自身的攻擊在<sec typ="cond">命中目標處於<buff typ="DEF_DOWN" /> 防禦力 / <buff typ="LIGHTNINGRES_DOWN" /> 電擊抗性減少狀態時</sec>，傷害量各自增加。
   "4":
     key: "4"
     icon: P.TeamDefBuff
@@ -6261,6 +6316,23 @@ skills:
             base: 0.4
             per: 0.02
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">보호기를 제외한 <cmt t="오비탈 와쳐"><import name="OrbitalWatcher" /></cmt> 소속 전투원</sec>을 <sec typ="buff"><buff typ="DEF_Char" /> 지정 보호</sec>하고 <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="4" signless />회</sec> <sec typ="attr">일반 효과</sec>를 부여합니다.
+        <sec typ="cond">자신이 <buff typ="DEF_Char" /> 지정 보호 중인 아군 피격 시</sec>, 피해 무효화에 의한 반동으로 자신은 <sec typ="dmg"><buff typ="HP_DOWN" /> 대상 최대 HP <val idx="2" r signless />만큼 피해</sec>를 받습니다.
+        <sec typ="cond">자신이 피격 시</sec>, 자신이 지정 보호 중인 아군 수에 비례하여 2라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, applies <sec typ="buff"><buff typ="DEF_Char" /> Target Protect</sec> to <sec typ="cond"><cmt t="Orbital Watcher"><import name="OrbitalWatcher" /></cmt> units other than Protectors</sec> and grants them <sec typ="buff"><buff typ="DEF_All" /> Damage Nullification <val idx="4" signless /> time(s)</sec> <sec typ="attr">Normal Effect</sec>.
+        <sec typ="cond">When an ally under own <buff typ="DEF_Char" /> Target Protect is hit</sec>, self takes <sec typ="dmg"><buff typ="HP_DOWN" /> damage equal to <val idx="2" r signless /> of that ally's max HP</sec> as recoil from Damage Nullification.
+        <sec typ="cond">When self is hit</sec>, own <sec typ="buff"><buff typ="ATK_UP" /> ATK <val idx="5" r /></sec> is increased for 2 rounds in proportion to the number of allies under own Target Protect.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">保護機を除く<cmt t="オービタルウォッチャー"><import name="OrbitalWatcher" /></cmt> 所属戦闘員</sec>を<sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>し、<sec typ="buff"><buff typ="DEF_All" /> ダメージ無効化 <val idx="4" signless />回</sec> <sec typ="attr">一般効果</sec>を付与します。
+        <sec typ="cond">自身が<buff typ="DEF_Char" /> 指定保護中の味方の被撃時</sec>、ダメージ無効化の反動で自身は<sec typ="dmg"><buff typ="HP_DOWN" /> 対象の最大HPの<val idx="2" r signless />分のダメージ</sec>を受けます。
+        <sec typ="cond">自身の被撃時</sec>、自身が指定保護中の味方の数に比例して、2ラウンドの間、自身の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，對<sec typ="cond">保護機以外的<cmt t="軌道守望者"><import name="OrbitalWatcher" /></cmt> 所屬戰鬥員</sec>進行<sec typ="buff"><buff typ="DEF_Char" /> 指定保護</sec>，並賦予<sec typ="buff"><buff typ="DEF_All" /> 傷害無效化 <val idx="4" signless />次</sec> <sec typ="attr">一般效果</sec>。
+        <sec typ="cond">自身<buff typ="DEF_Char" /> 指定保護中的我方單位被擊中時</sec>，因傷害無效化的反作用，自身受到<sec typ="dmg"><buff typ="HP_DOWN" /> 相當於對象最大HP <val idx="2" r signless />的傷害</sec>。
+        <sec typ="cond">自身被擊中時</sec>，依自身指定保護中的我方單位數量，自身的<sec typ="buff"><buff typ="ATK_UP" /> 攻擊力 <val idx="5" r /></sec>在2回合內按比例增加。
   "5":
     key: "5"
     icon: P.Command
@@ -6700,6 +6772,23 @@ skills:
             base: 1
             per: 0
             chance: 1
+    desc:
+      KR: |-
+        <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 전열에 위치한 경우</sec>, 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="4" r inv /></sec> 감소하고 <sec typ="buff"><buff typ="DEF_UP" /> 방어력 <val idx="5" r /></sec>가 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 범위 내 <cmt t="오비탈 와쳐"><import name="OrbitalWatcher" /></cmt> 소속 전투원의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="6" /></sec>이(가) 증가합니다.
+        <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond">범위 내 <buff typ="RANGE_UP" /> 사거리 증가 효과가 적용된 아군</sec>의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="7" r /></sec>가 증가합니다.
+      EN: |-
+        <sec typ="cond">At the start of the round</sec>, <sec typ="cond">if self is in the front row</sec>, own <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> damage taken <val idx="4" r inv /></sec> is reduced and <sec typ="buff"><buff typ="DEF_UP" /> DEF <val idx="5" r /></sec> is increased.
+        <sec typ="cond">At the start of the round</sec>, the <sec typ="buff"><buff typ="RANGE_UP" /> Range <val idx="6" /></sec> of <cmt t="Orbital Watcher"><import name="OrbitalWatcher" /></cmt> units within range is increased for 3 rounds.
+        <sec typ="cond">At the start of the round</sec>, the <sec typ="buff"><buff typ="CRITICAL_UP" /> Critical Rate <val idx="7" r /></sec> of <sec typ="cond">allies within range under a <buff typ="RANGE_UP" /> Range Up effect</sec> is increased.
+      JP: |-
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">自身が前列に位置する場合</sec>、自身の<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 被ダメージ <val idx="4" r inv /></sec>が減少し、<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="5" r /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、3ラウンドの間、範囲内の<cmt t="オービタルウォッチャー"><import name="OrbitalWatcher" /></cmt> 所属戦闘員の<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="6" /></sec>が増加します。
+        <sec typ="cond">ラウンド開始時</sec>、<sec typ="cond">範囲内の<buff typ="RANGE_UP" /> 射程増加効果が適用された味方</sec>の<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル <val idx="7" r /></sec>が増加します。
+      TC: |-
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">若自身位於前排</sec>，自身<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受到的傷害 <val idx="4" r inv /></sec>減少，<sec typ="buff"><buff typ="DEF_UP" /> 防禦力 <val idx="5" r /></sec>增加。
+        <sec typ="cond">回合開始時</sec>，範圍內<cmt t="軌道守望者"><import name="OrbitalWatcher" /></cmt> 所屬戰鬥員的<sec typ="buff"><buff typ="RANGE_UP" /> 射程 <val idx="6" /></sec>增加，持續3回合。
+        <sec typ="cond">回合開始時</sec>，<sec typ="cond">範圍內適用<buff typ="RANGE_UP" /> 射程增加效果的我方單位</sec>的<sec typ="buff"><buff typ="CRITICAL_UP" /> 暴擊 <val idx="7" r /></sec>增加。
 dialogue:
   KR:
     "1":

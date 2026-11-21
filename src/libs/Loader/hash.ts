@@ -1838,7 +1838,7 @@ export default {
 		"filterable.enemy": "34674be9",
 		"filterable.equip": "26dc747d",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "3432a85c",
+		"filterable.unit": "9f919ba5",
 		"gacha": "0fe4bb74",
 		"iw": {
 			"Colossus_01": "c33e7edc",
@@ -5812,7 +5812,7 @@ export default {
 			"PECS_Hussar": "50a98f7d",
 			"PECS_Ignis": "2742ab6a",
 			"PECS_Ireina": "e3c68a2b",
-			"PECS_Jupiter": "bb980605",
+			"PECS_Jupiter": "1628f09f",
 			"PECS_LRL": "1a5d2787",
 			"PECS_LaylaCloudy": "c2539a1f",
 			"PECS_Leanne": "c9e17bcf",
