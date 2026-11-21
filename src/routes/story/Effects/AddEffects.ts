@@ -31,7 +31,8 @@ const sound = (sound: string, loop = false): AddEffectSpec => ({ type: "sound", 
 
 /**
  * Prefabs of `noveladdeffect` bundle, key is lowercased prefab name (`AssetBundle.LoadAsset` ignores case).
- * Prefabs not listed here are not used by dialogue data, or not in bundle (ignored by original too).
+ * Prefabs not listed here are not used by dialogue data, or not in bundle.
+ * Name not in bundle is played as `sfx` clip of same name (`PlaySoundEffectNode.Create`), see `resolveSpec`.
  */
 const AddEffectTable: Record<string, AddEffectSpec> = {
 	doorknock_01: sound("DoorKnock_01"),
@@ -67,6 +68,8 @@ const AddEffectTable: Record<string, AddEffectSpec> = {
 	prefab_sound: sound("06 BGM_Battle_Boss_03", true),
 	prefab_sword_slashs: sound("sword_slashs"),
 	prefab_water_splash: sound("water_splash"),
+	prefeb_computer_01: sound("Computer_01"),
+	"prefeb_robot steps_01": sound("Robot Steps_01"),
 
 	prefab_bangnshaking_01: { type: "shakeSound", shake: 1, amount: 4.7, decrease: 1, sound: "Explosion_03" },
 	prefab_bangnshaking_02: { type: "shakeSound", shake: 1, amount: 4.7, decrease: 1, sound: "Explosion_03" },
@@ -108,7 +111,7 @@ export interface AddEffectRun {
 }
 
 function playSound (name: string, loop: boolean): [HTMLAudioElement, Promise<void>] {
-	const audio = new Audio(`${AssetsRoot}/story/se/${name}.mp3`);
+	const audio = new Audio(`${AssetsRoot}/story/se/${encodeURIComponent(name)}.mp3`);
 	audio.loop = loop;
 	audio.volume = 0.25;
 	const ended = new Promise<void>(resolve => {
@@ -119,18 +122,23 @@ function playSound (name: string, loop: boolean): [HTMLAudioElement, Promise<voi
 	return [audio, ended];
 }
 
-/** Prefab exists in bundle (node is created) */
-export function HasAddEffect (name: string): boolean {
-	return name.toLowerCase() in AddEffectTable;
+/** Prefab of bundle, or `sfx` clip of same name if prefab not exists (`PlaySoundEffectNode.Create`) */
+function resolveSpec (name: string): AddEffectSpec {
+	return AddEffectTable[name.toLowerCase()] ?? sound(name);
 }
 
-/** `null` if prefab not exists (original ignores it) */
+/**
+ * Node of effect is created after dialogue (`ExitActorNode`, `CamEffectNode`), and runs after dialogue finished.
+ * Sound node is created before dialogue with `nowFinish`, and keeps live effect running simultaneously with dialogue.
+ */
+export function IsAddEffectAfterDialogue (name: string): boolean {
+	return !!name && resolveSpec(name).type !== "sound";
+}
+
+/** `null` if nothing to run */
 export function RunAddEffect (name: string, ctx: AddEffectContext): AddEffectRun | null {
-	const spec = AddEffectTable[name.toLowerCase()];
-	if (!spec) {
-		console.warn(`[STORY] Unknown add effect '${name}', ignored`);
-		return null;
-	}
+	if (!name) return null;
+	const spec = resolveSpec(name);
 
 	switch (spec.type) {
 		case "sound": { // `_endTime` is 0, finished immediately

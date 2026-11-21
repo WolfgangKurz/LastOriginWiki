@@ -20,7 +20,7 @@ import Locale from "@/components/locale";
 
 import { Nn } from "./common";
 import ShakeScreen from "./Effects/ScreenShake";
-import { AddEffectRun, ApplyAddEffectInstant, HasAddEffect, RunAddEffect } from "./Effects/AddEffects";
+import { AddEffectRun, ApplyAddEffectInstant, IsAddEffectAfterDialogue, RunAddEffect } from "./Effects/AddEffects";
 
 import FadeText from "@/components/pixi/FadeText";
 import FadeSprite from "@/components/pixi/FadeSprite";
@@ -471,7 +471,6 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		liveDoneRef.current = Promise.resolve();
 
 		const hasText = Object.values(row.text).some(r => r);
-		const hasAddEffect = !!row.addEffect && HasAddEffect(row.addEffect);
 		rowDoneRef.current = (async () => {
 			// SetBackground
 			if (isBackgroundChanged(cursor)) cg.clearTarget();
@@ -487,17 +486,14 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				}
 			}
 
-			const r = await stage.runRow(row, hasText, hasAddEffect, () => showAddImage(row));
+			const r = await stage.runRow(row, hasText, () => showAddImage(row));
 			if (!alive || !r) return;
 
-			// AddEffect node
-			if (row.addEffect) {
-				const run = RunAddEffect(row.addEffect, { screen, cg, wait: secs => stage.wait(secs), muteAll });
-				if (run) {
-					effectsRef.current.push(run);
-					await run.done;
-					if (!alive) return;
-				}
+			// AddEffect node of sound, finishes immediately (others run after dialogue, `leaveRow`)
+			if (row.addEffect && !IsAddEffectAfterDialogue(row.addEffect)) {
+				const run = runAddEffect(row.addEffect);
+				if (run) await run.done;
+				if (!alive) return;
 			}
 
 			liveDoneRef.current = r.liveDone;
@@ -606,8 +602,15 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		setVoice("");
 	}
 
+	function runAddEffect (name: string): AddEffectRun | null {
+		if (!stage || !cg || !screen) return null;
+		const run = RunAddEffect(name, { screen, cg, wait: secs => stage.wait(secs), muteAll });
+		if (run) effectsRef.current.push(run);
+		return run;
+	}
+
 	/**
-	 * Run nodes after dialogue (wait live effects, `ExitActorNode`, `CamEffectNode`), then `go`.
+	 * Run nodes after dialogue (wait live effects, `ExitActorNode`, `CamEffectNode`, `AddEffecNode` not of sound), then `go`.
 	 * @param choice selected by `NovelChoiceNode`, jumps to destination directly (asset override mode runs camera effect and exit)
 	 */
 	function leaveRow (go: () => void, choice = false) {
@@ -622,6 +625,10 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			if (!choice) {
 				await stage.runExit(row);
 				await runCamEffect(row);
+				if (IsAddEffectAfterDialogue(row.addEffect)) {
+					if (cursorRef.current !== cursor) return; // jumped while leaving
+					await runAddEffect(row.addEffect)?.done;
+				}
 			} else if (stage.assetOverride) { // `NovelChoiceNode.PlayRowTailThenFinish`
 				await runCamEffect(row);
 				await stage.runExit(row);

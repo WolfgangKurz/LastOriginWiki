@@ -683,10 +683,9 @@ export default class ActorStage {
 	 * Run nodes before dialogue of row :
 	 * ChangeActorTransform, EnterActor, ChangeActorFace, ActivationActor, PlayDialogCharacterEffect, PlayEmojiEffect
 	 *
-	 * @param hasAddEffect `AddEffecNode` exists between live effect and dialogue
 	 * @param onEntered called after `ChangeActorFaceNode`s (where `StaticImageNode` runs)
 	 */
-	public async runRow (row: StoryData, hasText: boolean, hasAddEffect: boolean, onEntered?: () => void): Promise<RowRunResult | null> {
+	public async runRow (row: StoryData, hasText: boolean, onEntered?: () => void): Promise<RowRunResult | null> {
 		const gen = this.generation;
 		const alive = () => gen === this.generation;
 		const chars = this.normalize(row);
@@ -784,8 +783,8 @@ export default class ActorStage {
 
 		let liveDone = Promise.resolve();
 		if (live.length > 0) {
-			// runs simultaneously with dialogue only if dialogue node comes right after
-			const simultaneously = hasText && emoji.length === 0 && !hasAddEffect;
+			// runs simultaneously with dialogue only if dialogue node comes right after (sound `AddEffecNode` keeps it)
+			const simultaneously = hasText && emoji.length === 0;
 			const done = this.playLiveEffect(live);
 			if (simultaneously)
 				liveDone = done;
